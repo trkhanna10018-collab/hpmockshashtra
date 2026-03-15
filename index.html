@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
 <title>Mock Test</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
-
 body{
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:linear-gradient(120deg,#4facfe,#00f2fe);
 margin:0;
 padding:0;
 }
 
 .container{
-max-width:600px;
+max-width:750px;
 margin:auto;
 background:white;
-margin-top:50px;
+margin-top:40px;
 padding:30px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
-text-align:center;
+box-shadow:0 0 12px rgba(0,0,0,0.2);
 }
+
+.center{text-align:center}
 
 button{
 background:#007bff;
@@ -37,18 +36,29 @@ font-size:16px;
 cursor:pointer;
 }
 
-button:hover{
-background:#0056b3;
+button:hover{background:#0056b3}
+
+.question{display:none}
+
+.timer{
+font-size:20px;
+font-weight:bold;
+color:#d60000;
+text-align:center;
+margin-top:20px;
 }
 
-.question{
-display:none;
-text-align:left;
+input[type=text]{
+width:100%;
+padding:8px;
+margin:8px 0;
 }
-
 </style>
 
 <script>
+
+let name="";
+let phone="";
 
 let current=1;
 let score=0;
@@ -61,10 +71,49 @@ let answers={
 5:"d"
 };
 
-function startTest(){
+let questions={
+1:"भारत की राजधानी क्या है?",
+2:"2 + 2 = ?",
+3:"भारत का राष्ट्रीय पशु कौन सा है?",
+4:"भारत का राष्ट्रीय ध्वज किसने डिजाइन किया?",
+5:"सूर्य किस दिशा से उगता है?"
+};
 
+let userAnswers={};
+
+function goToDetails(){
 document.getElementById("cover").style.display="none";
+document.getElementById("details").style.display="block";
+}
+
+function startCountdown(){
+
+name=document.getElementById("name").value;
+phone=document.getElementById("phone").value;
+
+if(name=="" || phone==""){
+alert("Please enter name and phone");
+return;
+}
+
+document.getElementById("details").style.display="none";
+document.getElementById("countdownBox").style.display="block";
+
+let t=5;
+
+let timer=setInterval(function(){
+
+document.getElementById("count").innerHTML=t;
+
+t--;
+
+if(t<0){
+clearInterval(timer);
+document.getElementById("countdownBox").style.display="none";
 document.getElementById("q1").style.display="block";
+}
+
+},1000);
 
 }
 
@@ -72,8 +121,12 @@ function next(){
 
 let q=document.querySelector('input[name="q'+current+'"]:checked');
 
-if(q && q.value==answers[current]){
+if(q){
+userAnswers[current]=q.value;
+
+if(q.value==answers[current]){
 score++;
+}
 }
 
 document.getElementById("q"+current).style.display="none";
@@ -81,14 +134,10 @@ document.getElementById("q"+current).style.display="none";
 current++;
 
 if(current<=5){
-
 document.getElementById("q"+current).style.display="block";
-
 }else{
-
-document.getElementById("result").innerHTML="Your Score: "+score+"/5";
+document.getElementById("result").innerHTML="Score: "+score+"/5";
 document.getElementById("resultBox").style.display="block";
-
 }
 
 }
@@ -97,113 +146,177 @@ function downloadPDF(){
 
 const { jsPDF } = window.jspdf;
 
-let doc = new jsPDF();
+let doc=new jsPDF();
 
-doc.text("Mock Test Result",20,20);
-doc.text("Score: "+score+"/5",20,40);
+let y=20;
 
-doc.save("result.pdf");
+doc.text("Mock Test Result",20,y);
+y+=10;
+
+doc.text("Name: "+name,20,y); y+=8;
+doc.text("Phone: "+phone,20,y); y+=8;
+
+doc.text("Score: "+score+"/5",20,y);
+y+=10;
+
+for(let i=1;i<=5;i++){
+
+doc.text("Q"+i+": "+questions[i],20,y);
+y+=7;
+
+doc.text("Your Answer: "+(userAnswers[i]||"Not Attempted"),25,y);
+y+=7;
+
+doc.text("Correct Answer: "+answers[i],25,y);
+y+=10;
+
+}
+
+doc.save("Mock_Test_Result.pdf");
 
 }
 
 </script>
 
 </head>
-
 <body>
 
-<div class="container" id="cover">
+<!-- COVER PAGE -->
 
-<h1>Online Mock Test</h1>
+<div class="container center" id="cover">
 
-<p>5 Questions | No Negative Marking</p>
+<h2>HIMACHAL PRADESH</h2>
 
-<button onclick="startTest()">Start Test</button>
+<h3>JUNIOR OFFICE ASSISTANT (IT)<br>
+COMPETITIVE EXAMINATION</h3>
+
+<h3>FULL LENGTH MOCK TEST – 07</h3>
+
+<hr>
+
+<p>
+Total Questions : 100<br>
+Maximum Marks : 100<br>
+Time Allowed : 1 Hour 30 Minutes
+</p>
+
+<p><b>Section-wise Distribution</b></p>
+
+<p>
+Computer / IT : 70 Questions<br>
+Himachal Pradesh GK : 20 Questions<br>
+English Grammar : 5 Questions<br>
+Hindi Grammar : 3 Questions<br>
+Reasoning : 2 Questions
+</p>
+
+<hr>
+
+<p style="text-align:left">
+
+Instructions:<br><br>
+
+1. All questions are compulsory.<br>
+2. Each question carries one mark.<br>
+3. There is no negative marking.<br>
+4. Choose the most appropriate answer.<br>
+5. Use of calculator or electronic device is not permitted.<br>
+6. Each question has four options (A, B, C, D).<br>
+7. Use the provided OMR sheet to mark your answers carefully.
+
+</p>
+
+<p><i>Prepared for Practice Purpose Only</i></p>
+
+<br>
+
+<button onclick="goToDetails()">Next</button>
 
 </div>
 
+<!-- NAME PHONE -->
+
+<div class="container" id="details" style="display:none">
+
+<h3>Candidate Details</h3>
+
+Name:
+<input type="text" id="name">
+
+Phone Number:
+<input type="text" id="phone">
+
+<br><br>
+
+<button onclick="startCountdown()">Start Test</button>
+
+</div>
+
+<!-- COUNTDOWN -->
+
+<div class="container center" id="countdownBox" style="display:none">
+
+<h2>Test will start in</h2>
+
+<div class="timer" id="count">5</div>
+
+</div>
+
+<!-- QUESTIONS -->
 
 <div class="container question" id="q1">
-
 <p>1. भारत की राजधानी क्या है?</p>
-
 <label><input type="radio" name="q1" value="a"> दिल्ली</label><br>
 <label><input type="radio" name="q1" value="b"> मुंबई</label><br>
 <label><input type="radio" name="q1" value="c"> कोलकाता</label><br>
 <label><input type="radio" name="q1" value="d"> चेन्नई</label>
-
 <br><br>
-
 <button onclick="next()">Next</button>
-
 </div>
 
-
 <div class="container question" id="q2">
-
 <p>2. 2 + 2 = ?</p>
-
 <label><input type="radio" name="q2" value="a"> 3</label><br>
 <label><input type="radio" name="q2" value="b"> 4</label><br>
 <label><input type="radio" name="q2" value="c"> 5</label><br>
 <label><input type="radio" name="q2" value="d"> 6</label>
-
 <br><br>
-
 <button onclick="next()">Next</button>
-
 </div>
 
-
 <div class="container question" id="q3">
-
 <p>3. भारत का राष्ट्रीय पशु कौन सा है?</p>
-
 <label><input type="radio" name="q3" value="a"> शेर</label><br>
 <label><input type="radio" name="q3" value="b"> हाथी</label><br>
 <label><input type="radio" name="q3" value="c"> बाघ</label><br>
 <label><input type="radio" name="q3" value="d"> घोड़ा</label>
-
 <br><br>
-
 <button onclick="next()">Next</button>
-
 </div>
 
-
 <div class="container question" id="q4">
-
 <p>4. भारत का राष्ट्रीय ध्वज किसने डिजाइन किया?</p>
-
 <label><input type="radio" name="q4" value="a"> पिंगली वेंकैया</label><br>
 <label><input type="radio" name="q4" value="b"> गांधी जी</label><br>
 <label><input type="radio" name="q4" value="c"> नेहरू</label><br>
 <label><input type="radio" name="q4" value="d"> पटेल</label>
-
 <br><br>
-
 <button onclick="next()">Next</button>
-
 </div>
 
-
 <div class="container question" id="q5">
-
 <p>5. सूर्य किस दिशा से उगता है?</p>
-
 <label><input type="radio" name="q5" value="a"> पश्चिम</label><br>
 <label><input type="radio" name="q5" value="b"> उत्तर</label><br>
 <label><input type="radio" name="q5" value="c"> दक्षिण</label><br>
 <label><input type="radio" name="q5" value="d"> पूर्व</label>
-
 <br><br>
-
 <button onclick="next()">Submit</button>
-
 </div>
 
+<!-- RESULT -->
 
-<div class="container" id="resultBox" style="display:none">
+<div class="container center" id="resultBox" style="display:none">
 
 <h2 id="result"></h2>
 
