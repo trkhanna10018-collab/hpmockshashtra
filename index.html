@@ -1,23 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Mock Test</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
+}
+
+button{
+padding:10px 20px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+}
+
+</style>
+
+<script>
+
+function check(){
+
+let score=0;
+
+if(document.querySelector('input[name="q1"]:checked')?.value=="a"){
+score++;
+}
+
+document.getElementById("result").innerHTML="Your Score: "+score;
+
+}
+
+</script>
+
 </head>
 
 <body>
+
+<div class="box">
 
 <h2>Mock Test</h2>
 
 <p>1. भारत की राजधानी क्या है?</p>
 
-<input type="radio" name="q1"> दिल्ली<br>
-<input type="radio" name="q1"> मुंबई<br>
-<input type="radio" name="q1"> कोलकाता<br>
-<input type="radio" name="q1"> चेन्नई<br>
+<label><input type="radio" name="q1" value="a"> दिल्ली</label><br>
+<label><input type="radio" name="q1" value="b"> मुंबई</label><br>
+<label><input type="radio" name="q1" value="c"> कोलकाता</label><br>
+<label><input type="radio" name="q1" value="d"> चेन्नई</label>
 
-<br>
+<br><br>
 
-<button>Submit</button>
+<button onclick="check()">Submit</button>
+
+<h3 id="result"></h3>
+
+</div>
 
 </body>
 </html>
