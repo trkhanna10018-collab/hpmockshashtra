@@ -5,6 +5,8 @@
 
 <title>Mock Test</title>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <style>
 
 body{
@@ -91,6 +93,19 @@ document.getElementById("resultBox").style.display="block";
 
 }
 
+function downloadPDF(){
+
+const { jsPDF } = window.jspdf;
+
+let doc = new jsPDF();
+
+doc.text("Mock Test Result",20,20);
+doc.text("Score: "+score+"/5",20,40);
+
+doc.save("result.pdf");
+
+}
+
 </script>
 
 </head>
@@ -133,6 +148,71 @@ document.getElementById("resultBox").style.display="block";
 <label><input type="radio" name="q2" value="c"> 5</label><br>
 <label><input type="radio" name="q2" value="d"> 6</label>
 
+<br><br>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+
+<div class="container question" id="q3">
+
+<p>3. भारत का राष्ट्रीय पशु कौन सा है?</p>
+
+<label><input type="radio" name="q3" value="a"> शेर</label><br>
+<label><input type="radio" name="q3" value="b"> हाथी</label><br>
+<label><input type="radio" name="q3" value="c"> बाघ</label><br>
+<label><input type="radio" name="q3" value="d"> घोड़ा</label>
+
+<br><br>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+
+<div class="container question" id="q4">
+
+<p>4. भारत का राष्ट्रीय ध्वज किसने डिजाइन किया?</p>
+
+<label><input type="radio" name="q4" value="a"> पिंगली वेंकैया</label><br>
+<label><input type="radio" name="q4" value="b"> गांधी जी</label><br>
+<label><input type="radio" name="q4" value="c"> नेहरू</label><br>
+<label><input type="radio" name="q4" value="d"> पटेल</label>
+
+<br><br>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+
+<div class="container question" id="q5">
+
+<p>5. सूर्य किस दिशा से उगता है?</p>
+
+<label><input type="radio" name="q5" value="a"> पश्चिम</label><br>
+<label><input type="radio" name="q5" value="b"> उत्तर</label><br>
+<label><input type="radio" name="q5" value="c"> दक्षिण</label><br>
+<label><input type="radio" name="q5" value="d"> पूर्व</label>
+
+<br><br>
+
+<button onclick="next()">Submit</button>
+
+</div>
+
+
+<div class="container" id="resultBox" style="display:none">
+
+<h2 id="result"></h2>
+
+<button onclick="downloadPDF()">Download Result PDF</button>
+
+</div>
+
+</body>
+</html>
 <br><br>
 
 <button onclick="next()">Next</button>
