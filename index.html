@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
-<title>HP JOA IT Mock Tests</title>
+<title>JOA IT Mock Test</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
@@ -11,7 +10,7 @@
 
 body{
 font-family:Arial;
-background:#f0f4ff;
+background:#eef2ff;
 margin:0;
 padding:0;
 }
@@ -22,46 +21,35 @@ margin:auto;
 background:white;
 margin-top:40px;
 padding:30px;
-border-radius:10px;
+border-radius:8px;
 box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 .center{text-align:center}
 
 button{
-background:#2a63ff;
+background:#2d5cff;
 color:white;
 border:none;
-padding:12px 20px;
-border-radius:6px;
+padding:10px 18px;
+border-radius:5px;
 font-size:16px;
 cursor:pointer;
 }
 
 button:hover{
-background:#1c46b8;
+background:#1c3cb0;
 }
 
-.question{
-display:none;
-}
-
-.options{
-text-align:left;
-margin-top:10px;
+.option{
+display:block;
+margin-top:6px;
 }
 
 .timer{
-font-size:28px;
-font-weight:bold;
+font-size:30px;
 color:red;
-}
-
-.review{
-background:#f4f4f4;
-padding:15px;
-margin-top:15px;
-border-radius:5px;
+font-weight:bold;
 }
 
 </style>
@@ -72,24 +60,35 @@ let name=""
 let phone=""
 let current=1
 let score=0
-
 let userAnswers={}
+
+/* QUESTIONS DATABASE */
 
 let questions=[
 
-{q:"Which memory is used to store BIOS in a computer?",A:"RAM",B:"ROM",C:"Cache",D:"Register",ans:"B"},
+{q:"Which memory stores BIOS?",A:"RAM",B:"ROM",C:"Cache",D:"Register",ans:"B"},
 
-{q:"Which of the following is an example of an optical storage device?",A:"SSD",B:"DVD",C:"Flash Drive",D:"Hard Disk",ans:"B"},
+{q:"Which device connects networks?",A:"Switch",B:"Hub",C:"Router",D:"Repeater",ans:"C"},
 
-{q:"Which operating system component manages communication between hardware and software?",A:"Kernel",B:"Shell",C:"Compiler",D:"Interpreter",ans:"A"},
+{q:"Sun rises in which direction?",A:"West",B:"North",C:"South",D:"East",ans:"D"},
 
-{q:"Which scheduling algorithm assigns CPU to the process with the smallest execution time?",A:"Round Robin",B:"FCFS",C:"Shortest Job First",D:"Priority Scheduling",ans:"C"},
+{q:"Which protocol is secure web protocol?",A:"HTTP",B:"FTP",C:"HTTPS",D:"SMTP",ans:"C"},
 
-{q:"Which network topology connects each node directly to every other node?",A:"Bus",B:"Star",C:"Mesh",D:"Ring",ans:"C"}
+{q:"Which Excel function counts condition cells?",A:"COUNT",B:"COUNTIF",C:"SUM",D:"AVERAGE",ans:"B"},
+
+{q:"Which topology connects every node directly?",A:"Bus",B:"Star",C:"Mesh",D:"Ring",ans:"C"},
+
+{q:"Which OS component talks to hardware?",A:"Kernel",B:"Shell",C:"Compiler",D:"Interpreter",ans:"A"},
+
+{q:"Pivot table mainly used for?",A:"Formatting",B:"Data analysis",C:"Printing",D:"Charts",ans:"B"},
+
+{q:"Which malware demands money?",A:"Spyware",B:"Trojan",C:"Ransomware",D:"Worm",ans:"C"},
+
+{q:"Capital of Himachal Pradesh?",A:"Shimla",B:"Manali",C:"Kullu",D:"Solan",ans:"A"}
 
 ]
 
-/* ------------ HOME PAGE ------------- */
+/* OPEN MOCK TEST LIST */
 
 function openTests(){
 
@@ -98,7 +97,7 @@ document.getElementById("testList").style.display="block"
 
 }
 
-/* ------------ START TEST ------------- */
+/* START TEST BUTTON */
 
 function startTest(){
 
@@ -107,18 +106,16 @@ document.getElementById("formBox").style.display="block"
 
 }
 
-/* ------------ BEGIN AFTER FORM ------------- */
+/* START AFTER NAME */
 
-function begin(){
+function beginTest(){
 
 name=document.getElementById("name").value
 phone=document.getElementById("phone").value
 
 if(name=="" || phone==""){
-
 alert("Enter name and phone")
 return
-
 }
 
 document.getElementById("formBox").style.display="none"
@@ -146,7 +143,7 @@ showQuestion()
 
 }
 
-/* ------------ SHOW QUESTION ------------- */
+/* SHOW QUESTION */
 
 function showQuestion(){
 
@@ -156,34 +153,29 @@ let html=""
 
 html+="<h3>Q"+current+". "+q.q+"</h3>"
 
-html+='<div class="options">'
+html+='<label class="option"><input type="radio" name="ans" value="A"> A. '+q.A+'</label>'
+html+='<label class="option"><input type="radio" name="ans" value="B"> B. '+q.B+'</label>'
+html+='<label class="option"><input type="radio" name="ans" value="C"> C. '+q.C+'</label>'
+html+='<label class="option"><input type="radio" name="ans" value="D"> D. '+q.D+'</label>'
 
-html+='<label><input type="radio" name="q" value="A"> A. '+q.A+'</label><br>'
-html+='<label><input type="radio" name="q" value="B"> B. '+q.B+'</label><br>'
-html+='<label><input type="radio" name="q" value="C"> C. '+q.C+'</label><br>'
-html+='<label><input type="radio" name="q" value="D"> D. '+q.D+'</label><br>'
-
-html+="</div><br>"
-
-html+='<button onclick="next()">Next</button>'
+html+="<br><button onclick='nextQuestion()'>Next</button>"
 
 document.getElementById("questionBox").innerHTML=html
-
 document.getElementById("questionBox").style.display="block"
 
 }
 
-/* ------------ NEXT QUESTION ------------- */
+/* NEXT QUESTION */
 
-function next(){
+function nextQuestion(){
 
-let q=document.querySelector('input[name="q"]:checked')
+let selected=document.querySelector('input[name="ans"]:checked')
 
-if(q){
+if(selected){
 
-userAnswers[current]=q.value
+userAnswers[current]=selected.value
 
-if(q.value==questions[current-1].ans){
+if(selected.value==questions[current-1].ans){
 
 score++
 
@@ -197,9 +189,7 @@ if(current<=questions.length){
 
 showQuestion()
 
-}
-
-else{
+}else{
 
 showResult()
 
@@ -207,7 +197,7 @@ showResult()
 
 }
 
-/* ------------ RESULT ------------- */
+/* RESULT */
 
 function showResult(){
 
@@ -219,7 +209,7 @@ document.getElementById("score").innerHTML="Score : "+score+" / "+questions.leng
 
 }
 
-/* ------------ PDF ------------- */
+/* PDF GENERATION */
 
 function downloadPDF(){
 
@@ -229,7 +219,7 @@ let doc=new jsPDF()
 
 let y=20
 
-doc.text("HP JOA IT MOCK TEST RESULT",20,y)
+doc.text("JOA IT MOCK TEST RESULT",20,y)
 y+=10
 
 doc.text("Name : "+name,20,y)
@@ -249,20 +239,12 @@ let q=questions[i]
 doc.text("Q"+(i+1)+": "+q.q,20,y)
 y+=8
 
-doc.text("A. "+q.A,25,y)
-y+=6
+doc.text("A. "+q.A,25,y); y+=6
+doc.text("B. "+q.B,25,y); y+=6
+doc.text("C. "+q.C,25,y); y+=6
+doc.text("D. "+q.D,25,y); y+=6
 
-doc.text("B. "+q.B,25,y)
-y+=6
-
-doc.text("C. "+q.C,25,y)
-y+=6
-
-doc.text("D. "+q.D,25,y)
-y+=6
-
-doc.text("Your Answer : "+(userAnswers[i+1] || "Not Attempted"),25,y)
-y+=6
+doc.text("Your Answer : "+(userAnswers[i+1] || "Not Attempted"),25,y); y+=6
 
 doc.text("Correct Answer : "+q.ans,25,y)
 
@@ -271,19 +253,17 @@ y+=10
 if(y>270){
 
 doc.addPage()
-
 y=20
 
 }
 
 }
 
-doc.save("result.pdf")
+doc.save("Mock_Test_Result.pdf")
 
 }
 
 </script>
-
 </head>
 
 <body>
@@ -298,6 +278,7 @@ doc.save("result.pdf")
 
 </div>
 
+
 <div class="container center" id="testList" style="display:none">
 
 <h3>Select Mock Test</h3>
@@ -305,6 +286,7 @@ doc.save("result.pdf")
 <button onclick="startTest()">Mock Test 01</button>
 
 </div>
+
 
 <div class="container" id="formBox" style="display:none">
 
@@ -316,9 +298,10 @@ Name<br>
 Phone<br>
 <input type="text" id="phone"><br><br>
 
-<button onclick="begin()">Start Test</button>
+<button onclick="beginTest()">Start Test</button>
 
 </div>
+
 
 <div class="container center" id="countBox" style="display:none">
 
@@ -328,7 +311,9 @@ Phone<br>
 
 </div>
 
+
 <div class="container" id="questionBox" style="display:none"></div>
+
 
 <div class="container center" id="resultBox" style="display:none">
 
