@@ -66,26 +66,205 @@ let userAnswers={}
 
 let questions=[
 
-{q:"Which memory stores BIOS?",A:"RAM",B:"ROM",C:"Cache",D:"Register",ans:"B"},
+{q:"Which memory is used to store BIOS in a computer?",A:"RAM",B:"ROM",C:"Cache",D:"Register",ans:"B"},
 
-{q:"Which device connects networks?",A:"Switch",B:"Hub",C:"Router",D:"Repeater",ans:"C"},
+{q:"Which of the following is an example of an optical storage device?",A:"SSD",B:"DVD",C:"Flash Drive",D:"Hard Disk",ans:"B"},
 
-{q:"Sun rises in which direction?",A:"West",B:"North",C:"South",D:"East",ans:"D"},
+{q:"Which operating system component manages communication between hardware and software?",A:"Kernel",B:"Shell",C:"Compiler",D:"Interpreter",ans:"A"},
 
-{q:"Which protocol is secure web protocol?",A:"HTTP",B:"FTP",C:"HTTPS",D:"SMTP",ans:"C"},
+{q:"Which scheduling algorithm assigns CPU to the process with the smallest execution time?",A:"Round Robin",B:"FCFS",C:"Shortest Job First",D:"Priority Scheduling",ans:"C"},
 
-{q:"Which Excel function counts condition cells?",A:"COUNT",B:"COUNTIF",C:"SUM",D:"AVERAGE",ans:"B"},
+{q:"Which network topology connects each node directly to every other node?",A:"Bus",B:"Star",C:"Mesh",D:"Ring",ans:"C"},
 
-{q:"Which topology connects every node directly?",A:"Bus",B:"Star",C:"Mesh",D:"Ring",ans:"C"},
+{q:"Which device is used to connect different networks together?",A:"Switch",B:"Hub",C:"Router",D:"Repeater",ans:"C"},
 
-{q:"Which OS component talks to hardware?",A:"Kernel",B:"Shell",C:"Compiler",D:"Interpreter",ans:"A"},
+{q:"Which protocol is used for secure web communication?",A:"HTTP",B:"FTP",C:"HTTPS",D:"SMTP",ans:"C"},
 
-{q:"Pivot table mainly used for?",A:"Formatting",B:"Data analysis",C:"Printing",D:"Charts",ans:"B"},
+{q:"What does MAC address stand for?",A:"Machine Access Code",B:"Media Access Control",C:"Master Access Code",D:"Memory Access Code",ans:"B"},
 
-{q:"Which malware demands money?",A:"Spyware",B:"Trojan",C:"Ransomware",D:"Worm",ans:"C"},
+{q:"In Excel, which function counts cells that meet a specific condition?",A:"COUNT",B:"COUNTIF",C:"SUMIF",D:"AVERAGE",ans:"B"},
 
-{q:"Capital of Himachal Pradesh?",A:"Shimla",B:"Manali",C:"Kullu",D:"Solan",ans:"A"}
+{q:"Which MS Word feature is used to create multiple letters using a single template?",A:"Mail Merge",B:"Page Layout",C:"WordArt",D:"Track Changes",ans:"A"},
 
+{q:"Which technology was primarily used in first generation computers?",A:"Transistors",B:"Integrated Circuits",C:"Vacuum Tubes",D:"Microprocessors",ans:"C"},
+
+{q:"Which generation of computers introduced the use of microprocessors?",A:"Second Generation",B:"Third Generation",C:"Fourth Generation",D:"Fifth Generation",ans:"C"},
+
+{q:"Which type of computer processes continuous physical data such as temperature and pressure?",A:"Digital Computer",B:"Analog Computer",C:"Hybrid Computer",D:"Microcomputer",ans:"B"},
+
+{q:"Which type of computer combines the features of both analog and digital computers?",A:"Analog Computer",B:"Digital Computer",C:"Hybrid Computer",D:"Supercomputer",ans:"C"},
+
+{q:"What is the main difference between a process and a thread?",A:"A process shares memory while a thread has its own memory",B:"A thread shares the memory space of the process",C:"Both process and thread have completely separate memory",D:"A process is part of a thread",ans:"B"},
+
+{q:"Which of the following is considered a lightweight process?",A:"Process",B:"Program",C:"Thread",D:"Job",ans:"C"},
+
+{q:"Threads of the same process share which of the following resources?",A:"Memory space",B:"CPU registers",C:"Program counter",D:"Stack",ans:"A"},
+
+{q:"What is meant by context switching in an operating system?",A:"Switching between different computers",B:"Saving the state of a process and loading the state of another process",C:"Changing the operating system",D:"Restarting the CPU",ans:"B"},
+
+{q:"Context switching occurs mainly when:",A:"A process finishes execution",B:"The CPU switches from one process or thread to another",C:"A computer shuts down",D:"Memory is deleted",ans:"B"},
+
+{q:"In which network topology does each node connect to exactly two other nodes forming a closed loop?",A:"Bus",B:"Star",C:"Ring",D:"Mesh",ans:"C"},
+
+{q:"Which network topology provides the highest reliability because every node has a dedicated connection to every other node?",A:"Bus",B:"Star",C:"Ring",D:"Mesh",ans:"D"},
+
+{q:"In a star topology, which device acts as the central connecting point for all nodes?",A:"Router",B:"Hub or Switch",C:"Repeater",D:"Bridge",ans:"B"},
+
+{q:"Which network device operates at the Data Link Layer and forwards data based on MAC addresses?",A:"Hub",B:"Switch",C:"Repeater",D:"Modem",ans:"B"},
+
+{q:"Which network device connects two different networks and determines the best path for data packets?",A:"Switch",B:"Hub",C:"Router",D:"Bridge",ans:"C"},
+
+{q:"Which device is used to connect networks that use different communication protocols?",A:"Bridge",B:"Gateway",C:"Hub",D:"Switch",ans:"B"},
+
+{q:"Which type of malware is designed to demand payment from the victim in exchange for restoring access to their data?",A:"Spyware",B:"Trojan Horse",C:"Ransomware",D:"Worm",ans:"C"},
+
+{q:"Which statement best describes ransomware in cyber security?",A:"Malware that secretly monitors user activities",B:"Malware that encrypts files and demands payment for decryption",C:"Malware that spreads automatically through networks without user action",D:"Malware that deletes operating system files immediately",ans:"B"},
+
+{q:"Which database model organizes data in a tree-like structure where each child record has only one parent?",A:"Network Model",B:"Relational Model",C:"Hierarchical Model",D:"Object Model",ans:"C"},
+
+{q:"In which database model can a child record have multiple parent records?",A:"Hierarchical Model",B:"Network Model",C:"Relational Model",D:"Object-Oriented Model",ans:"B"},
+
+{q:"In the relational database model, data is stored in the form of:",A:"Trees",B:"Graphs",C:"Tables (Relations)",D:"Pointers",ans:"C"},
+
+{q:"In MS Excel, what is the primary purpose of a Pivot Table?",A:"To create charts automatically",B:"To summarize and analyze large amounts of data",C:"To format cells quickly",D:"To merge worksheets",ans:"B"},
+
+{q:"Which area in a Pivot Table is used to place the fields that will be calculated or summarized?",A:"Filters Area",B:"Columns Area",C:"Rows Area",D:"Values Area",ans:"D"},
+
+{q:"Which operation in a Pivot Table allows grouping numerical data into ranges such as 1–10, 11–20 etc.?",A:"Sorting",B:"Filtering",C:"Grouping",D:"Consolidation",ans:"C"},
+
+{q:"Which feature allows updating a Pivot Table when the underlying data changes?",A:"Refresh",B:"Recalculate",C:"Update Field",D:"Reload",ans:"A"},
+
+{q:"In Excel, if cell A1 contains value 10 and B1 contains value 5, what will be the result of the formula =A1+$B$1 when copied from C1 to C2 (assuming A2 = 20)?",A:"25",B:"15",C:"30",D:"20",ans:"A"},
+
+{q:"If cell A1 = 4 and B1 = 6, what will be the result of the formula =$A$1+B1 when copied from C1 to C2 (assuming B2 = 8)?",A:"10",B:"12",C:"14",D:"8",ans:"B"},
+
+{q:"Cell A1 = 3, B1 = 7. The formula =A1+B$1 is copied from C1 to C2 (A2 = 5). What will be the result?",A:"10",B:"12",C:"14",D:"8",ans:"B"},
+
+{q:"Cell A1 = 2 and B1 = 3. The formula =$A1+$B$1 is copied from C1 to C2 (A2 = 4). What will be the result?",A:"5",B:"7",C:"6",D:"8",ans:"B"},
+
+{q:"In MS Word Mail Merge, which document contains the main text and placeholders for the data fields?",A:"Data Source",B:"Main Document",C:"Address List",D:"Template Sheet",ans:"B"},
+
+{q:"Which component of Mail Merge contains the list of recipients such as names and addresses?",A:"Data Source",B:"Main Document",C:"Output Document",D:"Format File",ans:"A"},
+
+{q:"In MS Word, what is the main purpose of using Styles?",A:"To insert pictures",B:"To apply consistent formatting to text",C:"To create tables",D:"To print documents",ans:"B"},
+
+{q:"Which MS Word feature allows modifying an existing style such as Heading 1?",A:"Edit Format",B:"Modify Style",C:"Change Theme",D:"Update Layout",ans:"B"},
+
+{q:"Which style type in MS Word is used to format entire paragraphs?",A:"Character Style",B:"Paragraph Style",C:"Table Style",D:"List Style",ans:"B"},
+
+{q:"Which style is commonly used for main headings in a Word document?",A:"Title Style",B:"Normal Style",C:"Heading 1",D:"Subtitle",ans:"C"},
+
+{q:"In Microsoft PowerPoint, what is the primary purpose of Slide Master?",A:"To insert images in slides",B:"To control the overall design and layout of all slides",C:"To run the slide show automatically",D:"To add animations to slides",ans:"B"},
+
+{q:"Changes made in Slide Master will affect:",A:"Only the current slide",B:"Only selected slides",C:"All slides using that layout",D:"Only the title slide",ans:"C"},
+
+{q:"Which tab in PowerPoint is used to access the Slide Master feature?",A:"Insert",B:"Design",C:"View",D:"Review",ans:"C"},
+
+{q:"In Microsoft PowerPoint, what does Slide Layout define?",A:"Animation timing of slides",B:"The arrangement of placeholders such as title, text, and images",C:"Background color of slides",D:"Slide transition effects",ans:"B"},
+
+{q:"Which option is used to change the layout of an existing slide in PowerPoint?",A:"Insert Layout",B:"Change Layout",C:"Layout",D:"Modify Slide",ans:"C"},
+
+{q:"Which of the following is a commonly used slide layout in PowerPoint?",A:"Title and Content",B:"Header and Footer",C:"Text and Border",D:"Frame and Shape",ans:"A"},
+
+{q:"Which HTML tag is used to create a form on a web page?",A:"<form>",B:"<input>",C:"<fieldset>",D:"<label>",ans:"A"},
+
+{q:"Which HTML input type is used to allow users to enter a password securely?",A:"text",B:"password",C:"hidden",D:"secure",ans:"B"},
+
+{q:"Which attribute of the <form> tag specifies where the form data will be sent?",A:"method",B:"action",C:"target",D:"name",ans:"B"},
+
+{q:"Which HTML element is used to create a drop-down list in a form?",A:"<input>",B:"<textarea>",C:"<select>",D:"<option>",ans:"C"},
+
+{q:"Which attribute ensures that a form field must be filled before submitting the form?",A:"validate",B:"required",C:"mandatory",D:"check",ans:"B"},
+
+{q:"Which HTML input type is used to select a color from a color picker?",A:"color",B:"palette",C:"rgb",D:"paint",ans:"A"},
+
+{q:"Which HTML input type allows users to select a date from a calendar control?",A:"time",B:"datetime",C:"date",D:"calendar",ans:"C"},
+
+{q:"Which HTML input type is used to upload a file from the user’s computer?",A:"upload",B:"file",C:"attach",D:"document",ans:"B"},
+
+{q:"In data structures, a heap is primarily implemented as which type of tree?",A:"Binary Search Tree",B:"Complete Binary Tree",C:"AVL Tree",D:"B-Tree",ans:"B"},
+
+{q:"In a max-heap, which node always contains the largest value?",A:"Root node",B:"Leaf node",C:"Last node",D:"Middle node",ans:"A"},
+
+{q:"In a min-heap, the value of each parent node is:",A:"Greater than or equal to its children",B:"Less than or equal to its children",C:"Equal to its children",D:"Random compared to children",ans:"B"},
+
+{q:"Which operation is commonly used to insert a new element into a heap?",A:"Heapify Up (Percolate Up)",B:"Heap Sort",C:"Heap Merge",D:"Heap Reverse",ans:"A"},
+
+{q:"Hashing is mainly used for:",A:"Sorting data",B:"Searching data efficiently",C:"Compressing data",D:"Encrypting data",ans:"B"},
+
+{q:"In hashing, what is a collision?",A:"When two keys map to the same hash index",B:"When a key cannot be stored",C:"When memory becomes full",D:"When a key is deleted",ans:"A"},
+
+{q:"Which technique resolves collisions by placing the collided element in another position in the hash table?",A:"Binary Search",B:"Open Addressing",C:"Tree Traversal",D:"Heapify",ans:"B"},
+
+{q:"In the hierarchical database model, how are records organized?",A:"Table structure",B:"Graph structure",C:"Tree structure",D:"Linear structure",ans:"C"},
+
+{q:"In the hierarchical model, a child record can have:",A:"Multiple parents",B:"Only one parent",C:"No parent",D:"Unlimited parents",ans:"B"},
+
+{q:"Which database model allows a record to have multiple parent and child relationships?",A:"Hierarchical Model",B:"Network Model",C:"Relational Model",D:"Object Model",ans:"B"},
+
+{q:"In the relational model, a row in a table is known as:",A:"Attribute",B:"Tuple",C:"Domain",D:"Field",ans:"B"},
+
+{q:"Which database model was proposed by E. F. Codd?",A:"Hierarchical Model",B:"Network Model",C:"Relational Model",D:"Object-Oriented Model",ans:"C"},
+
+{q:"Which part of speech is the word 'quickly' in the sentence: She quickly finished her work?",A:"Adjective",B:"Adverb",C:"Verb",D:"Preposition",ans:"B"},
+
+{q:"In the sentence 'He is a very honest man', the word 'honest' is:",A:"Noun",B:"Verb",C:"Adjective",D:"Adverb",ans:"C"},
+
+{q:"Which part of speech is the word 'and' in the sentence: Ravi and Mohan are friends?",A:"Conjunction",B:"Preposition",C:"Adverb",D:"Interjection",ans:"A"},
+
+{q:"Identify the pronoun in the sentence: They are playing in the garden.",A:"Playing",B:"Garden",C:"They",D:"In",ans:"C"},
+
+{q:"In the sentence 'She wrote a letter', the word 'wrote' is:",A:"Noun",B:"Verb",C:"Adjective",D:"Preposition",ans:"B"},
+
+{q:"'राजपुत्र' शब्द में कौन-सा समास है?",A:"द्वंद्व समास",B:"कर्मधारय समास",C:"तत्पुरुष समास",D:"बहुव्रीहि समास",ans:"C"},
+
+{q:"'चतुर्भुज' शब्द में कौन-सा समास है?",A:"द्वंद्व समास",B:"बहुव्रीहि समास",C:"कर्मधारय समास",D:"तत्पुरुष समास",ans:"D"},
+
+{q:"'मातापिता' शब्द में कौन-सा समास है?",A:"द्वंद्व समास",B:"बहुव्रीहि समास",C:"कर्मधारय समास",D:"अव्ययीभाव समास",ans:"A"},
+
+{q:"Find the missing number in the series: 2, 6, 12, 20, 30, ?",A:"36",B:"40",C:"42",D:"44",ans:"C"},
+
+{q:"If SOUTH is written as TOVUI, how is NORTH written in the same code?",A:"OPSUI",B:"OPSUI",C:"OPSUI",D:"OPSUI",ans:"A"},
+
+{q:"Which princely state in Himachal Pradesh was ruled by the Katoch dynasty?",A:"Chamba",B:"Kangra",C:"Kullu",D:"Sirmaur",ans:"B"},
+
+{q:"The capital of the Chamba princely state was founded by which ruler?",A:"Sahil Varman",B:"Meru Varman",C:"Aditya Varman",D:"Ajay Varman",ans:"A"},
+
+{q:"During the British period, Shimla served as:",A:"Capital of Punjab",B:"Summer Capital of British India",C:"Military headquarters",D:"Trade center",ans:"B"},
+
+{q:"The Gurkha rule in parts of Himachal Pradesh ended after which war?",A:"Anglo-Maratha War",B:"Anglo-Gurkha War",C:"Anglo-Sikh War",D:"Anglo-Mysore War",ans:"B"},
+
+{q:"Which princely state of Himachal Pradesh was known for the Minjar Fair?",A:"Chamba",B:"Mandi",C:"Kullu",D:"Bilaspur",ans:"A"},
+
+{q:"Which hill state was among the largest princely states in present-day Himachal Pradesh during the British period?",A:"Kangra",B:"Chamba",C:"Mandi",D:"Sirmaur",ans:"C"},
+
+{q:"The famous Kullu Dussehra festival is celebrated in which district of Himachal Pradesh?",A:"Mandi",B:"Kullu",C:"Chamba",D:"Kangra",ans:"B"},
+
+{q:"The Minjar Fair of Himachal Pradesh is celebrated in which town?",A:"Kullu",B:"Chamba",C:"Mandi",D:"Shimla",ans:"B"},
+
+{q:"Which of the following is a traditional folk dance of Himachal Pradesh?",A:"Bhangra",B:"Giddha",C:"Nati",D:"Garba",ans:"C"},
+
+{q:"The International Shivratri Fair is celebrated in which town of Himachal Pradesh?",A:"Kullu",B:"Chamba",C:"Mandi",D:"Solan",ans:"C"},
+
+{q:"Which festival of Himachal Pradesh is mainly associated with the Kullu Valley and the worship of Lord Raghunath?",A:"Losar",B:"Kullu Dussehra",C:"Phulaich",D:"Halda",ans:"B"},
+
+{q:"Which of the following rivers originates from the Beas Kund near Rohtang Pass?",A:"Ravi",B:"Chenab",C:"Beas",D:"Sutlej",ans:"C"},
+
+{q:"Shipki La Pass connects Himachal Pradesh with which country?",A:"Nepal",B:"China (Tibet)",C:"Pakistan",D:"Bhutan",ans:"B"},
+
+{q:"Which lake in Himachal Pradesh is the largest natural lake in the state?",A:"Khajjiar Lake",B:"Rewalsar Lake",C:"Renuka Lake",D:"Suraj Tal",ans:"C"},
+
+{q:"Which mountain range runs through the central part of Himachal Pradesh?",A:"Aravalli Range",B:"Pir Panjal Range",C:"Vindhya Range",D:"Satpura Range",ans:"B"},
+
+{q:"Which river in Himachal Pradesh is known as the Chandrabhaga in its upper course?",A:"Ravi",B:"Chenab",C:"Beas",D:"Sutlej",ans:"B"},
+
+{q:"Baralacha La Pass connects Lahaul with which region?",A:"Kullu Valley",B:"Ladakh",C:"Kangra Valley",D:"Spiti Valley",ans:"B"},
+
+{q:"The famous Chandratal Lake is located in which district of Himachal Pradesh?",A:"Kullu",B:"Chamba",C:"Lahaul and Spiti",D:"Kangra",ans:"C"},
+
+{q:"Which river forms the border between Himachal Pradesh and Punjab for some distance?",A:"Ravi",B:"Beas",C:"Sutlej",D:"Yamuna",ans:"C"},
+
+{q:"Kunzum Pass connects Lahaul with which valley?",A:"Kullu Valley",B:"Kangra Valley",C:"Spiti Valley",D:"Chamba Valley",ans:"C"}
 ]
 
 /* OPEN MOCK TEST LIST */
