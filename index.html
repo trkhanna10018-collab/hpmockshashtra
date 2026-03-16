@@ -1,401 +1,804 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
 
+
+
 <meta charset="UTF-8">
+
 <title>Mock Test</title>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+
+
 <style>
 
+
+
 body{
+
 font-family:Arial;
+
 background:linear-gradient(120deg,#4facfe,#00f2fe);
+
 margin:0;
+
 padding:0;
+
 }
 
+
+
 .container{
+
 max-width:750px;
+
 margin:auto;
+
 background:white;
+
 margin-top:40px;
+
 padding:30px;
+
 border-radius:10px;
+
 box-shadow:0 0 12px rgba(0,0,0,0.2);
+
 }
+
+
 
 .center{text-align:center}
 
+
+
 button{
+
 background:#007bff;
+
 color:white;
+
 border:none;
+
 padding:10px 20px;
+
 border-radius:5px;
+
 font-size:16px;
+
 cursor:pointer;
+
 }
+
+
 
 button:hover{background:#0056b3}
 
+
+
 .question{display:none}
 
+
+
 .timer{
+
 font-size:25px;
+
 font-weight:bold;
+
 color:red;
+
 text-align:center;
+
 }
 
+
+
 .review{
+
 background:#f2f2f2;
+
 padding:15px;
+
 margin-top:20px;
+
 }
+
+
 
 </style>
 
+
+
 <script>
 
+
+
 let name="";
+
 let phone="";
+
 let current=1;
+
 let score=0;
 
+
+
 let answers={
+
 1:"B",
+
 2:"B",
-3:"C",
+
+3:"A",
+
 4:"A",
+
 5:"D"
+
 };
+
+
 
 let questions={
 
+
+
 1:{
+
 q:"Which memory is used to store BIOS in computer?",
+
 A:"RAM",
+
 B:"ROM",
+
 C:"Cache",
+
 D:"Register"
+
 },
+
+
 
 2:{
+
 q:"Which of the following is an example of an optical storage device?",
+
 A:"SSD",
+
 B:"DVD",
+
 C:"Flash Drive",
+
 D:"Hard Drive"
+
 },
+
+
 
 3:{
-q:"Which is the national animal of India?",
-A:"Lion",
-B:"Elephant",
-C:"Tiger",
-D:"Horse"
+
+q:"Which operating system component manages communication between hardware and software",
+
+A:"Kernel",
+
+B:"Shell",
+
+C:"Compiler",
+
+D:"Interpreter"
+
 },
+
+
 
 4:{
+
 q:"Who designed the national flag of India?",
+
 A:"Pingali Venkayya",
+
 B:"Mahatma Gandhi",
+
 C:"Jawaharlal Nehru",
+
 D:"Sardar Patel"
+
 },
 
+
+
 5:{
+
 q:"The Sun rises in which direction?",
+
 A:"West",
+
 B:"North",
+
 C:"South",
+
 D:"East"
+
 }
+
+
 
 };
 
+
+
 let userAnswers={};
 
+
+
 function nextCover(){
+
 document.getElementById("cover").style.display="none";
+
 document.getElementById("formBox").style.display="block";
+
 }
+
+
 
 function startCountdown(){
 
+
+
 name=document.getElementById("name").value;
+
 phone=document.getElementById("phone").value;
 
+
+
 if(name=="" || phone==""){
+
 alert("Enter name and phone");
+
 return;
+
 }
 
+
+
 document.getElementById("formBox").style.display="none";
+
 document.getElementById("countBox").style.display="block";
+
+
 
 let t=5;
 
+
+
 let timer=setInterval(function(){
+
+
 
 document.getElementById("count").innerHTML=t;
 
+
+
 t--;
 
+
+
 if(t<0){
+
 clearInterval(timer);
+
 document.getElementById("countBox").style.display="none";
+
 document.getElementById("q1").style.display="block";
+
 }
+
+
 
 },1000);
 
+
+
 }
+
+
 
 function next(){
 
+
+
 let q=document.querySelector('input[name="q'+current+'"]:checked');
+
+
 
 if(q){
 
+
+
 userAnswers[current]=q.value;
 
+
+
 if(q.value==answers[current]){
+
 score++;
-}
 
 }
+
+
+
+}
+
+
 
 document.getElementById("q"+current).style.display="none";
 
+
+
 current++;
+
+
 
 if(current<=5){
 
+
+
 document.getElementById("q"+current).style.display="block";
+
+
 
 }else{
 
+
+
 showResult();
 
-}
+
 
 }
+
+
+
+}
+
+
 
 function showResult(){
 
+
+
 document.getElementById("result").innerHTML="Score: "+score+"/5";
+
+
 
 let reviewHTML="";
 
+
+
 for(let i=1;i<=5;i++){
+
+
 
 let q=questions[i];
 
+
+
 reviewHTML+=`
+
 <div class="review">
+
+
 
 <b>Q${i}: ${q.q}</b><br><br>
 
+
+
 A: ${q.A}<br>
+
 B: ${q.B}<br>
+
 C: ${q.C}<br>
+
 D: ${q.D}<br><br>
 
+
+
 <b>Your Answer:</b> ${userAnswers[i] || "Not Attempted"}<br>
+
 <b>Correct Answer:</b> ${answers[i]}
 
+
+
 </div>
+
 `;
 
+
+
 }
+
+
 
 document.getElementById("reviewBox").innerHTML=reviewHTML;
 
+
+
 document.getElementById("resultBox").style.display="block";
 
+
+
 }
+
+
 
 function downloadPDF(){
 
+
+
 const { jsPDF } = window.jspdf;
+
+
 
 let doc=new jsPDF();
 
+
+
 let y=20;
+
+
 
 doc.text("Mock Test Result",20,y); y+=10;
 
+
+
 doc.text("Name: "+name,20,y); y+=8;
+
 doc.text("Phone: "+phone,20,y); y+=8;
+
+
 
 doc.text("Score: "+score+"/5",20,y); y+=10;
 
+
+
 for(let i=1;i<=5;i++){
+
+
 
 let q=questions[i];
 
+
+
 doc.text("Q"+i+": "+q.q,20,y); y+=8;
 
+
+
 doc.text("A: "+q.A,25,y); y+=6;
+
 doc.text("B: "+q.B,25,y); y+=6;
+
 doc.text("C: "+q.C,25,y); y+=6;
+
 doc.text("D: "+q.D,25,y); y+=8;
+
+
 
 doc.text("Your Answer: "+(userAnswers[i] || "Not Attempted"),25,y); y+=6;
 
+
+
 doc.text("Correct Answer: "+answers[i],25,y); y+=10;
 
+
+
 if(y>270){
+
 doc.addPage();
+
 y=20;
-}
 
 }
+
+
+
+}
+
+
 
 doc.save("Mock_Test_Result.pdf");
 
+
+
 }
+
+
 
 </script>
 
+
+
 </head>
+
+
 
 <body>
 
+
+
 <div class="container center" id="cover">
+
+
 
 <h2>HIMACHAL PRADESH</h2>
 
+
+
 <h3>JUNIOR OFFICE ASSISTANT (IT)<br>
+
 COMPETITIVE EXAMINATION</h3>
+
+
 
 <h3>FULL LENGTH MOCK TEST – 07</h3>
 
+
+
 <hr>
 
+
+
 <p>
+
 Total Questions : 100<br>
+
 Maximum Marks : 100<br>
+
 Time Allowed : 1 Hour 30 Minutes
+
 </p>
+
+
 
 <p><b>Section-wise Distribution</b></p>
 
+
+
 <p>
+
 Computer / IT : 70 Questions<br>
+
 Himachal Pradesh GK : 20 Questions<br>
+
 English Grammar : 5 Questions<br>
+
 Hindi Grammar : 3 Questions<br>
+
 Reasoning : 2 Questions
+
 </p>
+
+
 
 <hr>
 
+
+
 <button onclick="nextCover()">Next</button>
 
+
+
 </div>
+
+
 
 <div class="container" id="formBox" style="display:none">
 
+
+
 <h3>Candidate Details</h3>
 
+
+
 Name<br>
+
 <input type="text" id="name"><br><br>
 
+
+
 Phone Number<br>
+
 <input type="text" id="phone"><br><br>
+
+
 
 <button onclick="startCountdown()">Start Test</button>
 
+
+
 </div>
+
+
 
 <div class="container center" id="countBox" style="display:none">
 
+
+
 <h2>Test will start in</h2>
+
+
 
 <div class="timer" id="count">5</div>
 
+
+
 </div>
+
+
 
 <div class="container question" id="q1">
 
+
+
 <p>1. Which memory is used to store BIOS in a computer?</p>
 
+
+
 <input type="radio" name="q1" value="A"> RAM<br>
+
 <input type="radio" name="q1" value="B"> ROM<br>
+
 <input type="radio" name="q1" value="C"> Cache<br>
+
 <input type="radio" name="q1" value="D"> Register<br><br>
+
+
 
 <button onclick="next()">Next</button>
 
+
+
 </div>
+
+
 
 <div class="container question" id="q2">
 
+
+
 <p>2. Which of the following is an example of an optical storage device?</p>
 
+
+
 <input type="radio" name="q2" value="A"> SSD<br>
+
 <input type="radio" name="q2" value="B"> DVD<br>
+
 <input type="radio" name="q2" value="C"> Flash Drive<br>
+
 <input type="radio" name="q2" value="D"> Hard Drive<br><br>
+
+
 
 <button onclick="next()">Next</button>
 
+
+
 </div>
+
+
 
 <div class="container question" id="q3">
 
-<p>3. Which is the national animal of India?</p>
 
-<input type="radio" name="q3" value="A"> Lion<br>
-<input type="radio" name="q3" value="B"> Elephant<br>
-<input type="radio" name="q3" value="C"> Tiger<br>
-<input type="radio" name="q3" value="D"> Horse<br><br>
+
+<p>3. Which operating system component manages communication between hardware and 
+
+Software? </p>
+
+
+
+<input type="radio" name="q3" value="A"> Kernel<br>
+
+<input type="radio" name="q3" value="B">Shell<br>
+
+<input type="radio" name="q3" value="C"> Compiler<br>
+
+<input type="radio" name="q3" value="D">Interpreter<br><br>
+
+
 
 <button onclick="next()">Next</button>
 
+
+
 </div>
+
+
 
 <div class="container question" id="q4">
 
+
+
 <p>4. Who designed the national flag of India?</p>
 
+
+
 <input type="radio" name="q4" value="A"> Pingali Venkayya<br>
+
 <input type="radio" name="q4" value="B"> Mahatma Gandhi<br>
+
 <input type="radio" name="q4" value="C"> Jawaharlal Nehru<br>
+
 <input type="radio" name="q4" value="D"> Sardar Patel<br><br>
+
+
 
 <button onclick="next()">Next</button>
 
+
+
 </div>
+
+
 
 <div class="container question" id="q5">
 
+
+
 <p>5. The Sun rises in which direction?</p>
 
+
+
 <input type="radio" name="q5" value="A"> West<br>
+
 <input type="radio" name="q5" value="B"> North<br>
+
 <input type="radio" name="q5" value="C"> South<br>
+
 <input type="radio" name="q5" value="D"> East<br><br>
+
+
 
 <button onclick="next()">Submit</button>
 
+
+
 </div>
+
+
 
 <div class="container" id="resultBox" style="display:none">
 
+
+
 <h2 id="result"></h2>
+
+
 
 <div id="reviewBox"></div>
 
+
+
 <br>
+
+
 
 <button onclick="downloadPDF()">Download Result PDF</button>
 
+
+
 </div>
 
+
+
 </body>
+
 </html>
+
