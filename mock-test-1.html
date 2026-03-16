@@ -451,14 +451,14 @@ let img=canvas.toDataURL("image/png")
 
 let pdf=new jsPDF("p","mm","a4")
 
-let imgWidth=190
+let imgWidth=180
 let pageHeight=297
 let imgHeight=canvas.height*imgWidth/canvas.width
 
 let heightLeft=imgHeight
 let position=0
 
-pdf.addImage(img,"PNG",10,position+10,imgWidth,imgHeight)
+pdf.addImage(img,"PNG",15,position+20,imgWidth,imgHeight)
 
 heightLeft-=pageHeight
 
@@ -468,7 +468,7 @@ position=heightLeft-imgHeight
 
 pdf.addPage()
 
-pdf.addImage(img,"PNG",10,position+10,imgWidth,imgHeight)
+pdf.addImage(img,"PNG",15,position+20,imgWidth,imgHeight)
 
 heightLeft-=pageHeight
 
