@@ -128,281 +128,1105 @@ margin-top:10px;
 <script>
 
 let questions=[
+{
+id:1,
+en:"In MS Word, which feature allows multiple users to edit a document simultaneously through cloud services?",
+hi:"MS Word में cloud services के माध्यम से कई उपयोगकर्ताओं को एक साथ document edit करने की सुविधा देने वाला फीचर कौन-सा है?",
+A:"Track Changes",
+B:"Share Document",
+C:"Co-authoring",
+D:"Document Collaboration",
+ans:"C"
+},
 
+{
+id:2,
+en:"Which feature is used to keep specific rows of a table visible across pages when printing?",
+hi:"प्रिंट करते समय table की कुछ पंक्तियों को हर पेज पर दिखाई देने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Repeat Header Rows",
+B:"Freeze Table",
+C:"Lock Table",
+D:"Table Anchor",
+ans:"A"
+},
 
-en:"Which MS Word shortcut key is used to apply superscript formatting to selected text?",
-hi:"MS Word में चयनित टेक्स्ट पर superscript formatting लगाने के लिए कौन-सी shortcut key उपयोग होती है?",
-A:"Ctrl + =",
-B:"Ctrl + Shift + +",
-C:"Ctrl + Shift + =",
-D:"Ctrl + Alt + +",
+{
+id:3,
+en:"Which MS Word feature is used to automatically update fields like date, page number, and references?",
+hi:"MS Word में date, page number और references जैसे fields को स्वतः अपडेट करने वाला फीचर कौन-सा है?",
+A:"Dynamic Fields",
+B:"Field Codes",
+C:"AutoFields",
+D:"Linked Fields",
+ans:"B"
+},
+
+{
+id:4,
+en:"Which key combination updates all fields in a Word document?",
+hi:"Word document में सभी fields को अपडेट करने के लिए कौन-सी key उपयोग होती है?",
+A:"Ctrl + F9",
+B:"F9",
+C:"Alt + F9",
+D:"Shift + F9",
+ans:"B"
+},
+
+{
+id:5,
+en:"In MS Word, which option is used to convert text into a table?",
+hi:"MS Word में text को table में बदलने के लिए कौन-सा विकल्प उपयोग किया जाता है?",
+A:"Insert Table",
+B:"Convert Text to Table",
+C:"Format Table",
+D:"Table Generator",
+ans:"B"
+},
+
+{
+id:6,
+en:"Which feature allows dividing a document into parts with different headers and footers?",
+hi:"Document को अलग-अलग header और footer वाले भागों में बाँटने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Page Break",
+B:"Section Break",
+C:"Line Break",
+D:"Column Break",
+ans:"B"
+},
+
+{
+id:7,
+en:"Which Word tool allows capturing a portion of the screen directly into a document?",
+hi:"Word में स्क्रीन के किसी भाग को सीधे document में डालने के लिए कौन-सा टूल उपयोग होता है?",
+A:"Screen Capture",
+B:"Screenshot",
+C:"Clip Tool",
+D:"Screen Snip",
+ans:"B"
+},
+
+{
+id:8,
+en:"Which feature allows inserting reusable pieces of content such as headers and footers?",
+hi:"Header और footer जैसे reusable content डालने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Quick Parts",
+B:"AutoText",
+C:"Building Blocks",
+D:"Smart Content",
+ans:"C"
+},
+
+{
+id:9,
+en:"Which MS Word feature allows linking data from Excel so that it updates automatically?",
+hi:"Excel से data को Word में link करने और उसे automatically update होने देने वाला फीचर कौन-सा है?",
+A:"Embed Object",
+B:"Paste Special Link",
+C:"Smart Object",
+D:"Dynamic Link",
+ans:"B"
+},
+
+{
+id:10,
+en:"Which command is used to split a table cell into multiple cells?",
+hi:"Table की एक cell को कई cells में बाँटने के लिए कौन-सा command उपयोग होता है?",
+A:"Divide Cells",
+B:"Split Cells",
+C:"Separate Cells",
+D:"Expand Cells",
+ans:"B"
+},
+
+{
+id:11,
+en:"Which feature allows marking entries that appear in the Index?",
+hi:"Index में दिखाई देने वाली entries को mark करने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Mark Entry",
+B:"Index Entry",
+C:"Mark Index",
+D:"Insert Entry",
+ans:"A"
+},
+
+{
+id:12,
+en:"Which Word view allows editing document structure using heading levels?",
+hi:"Heading levels का उपयोग करके document structure edit करने के लिए कौन-सा Word view उपयोग होता है?",
+A:"Outline View",
+B:"Draft View",
+C:"Web Layout",
+D:"Print Layout",
+ans:"A"
+},
+
+{
+id:13,
+en:"Which feature allows hiding text in a document without deleting it?",
+hi:"Document में text को delete किए बिना छिपाने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Hidden Text",
+B:"Invisible Font",
+C:"Conceal Text",
+D:"Mask Text",
+ans:"A"
+},
+
+{
+id:14,
+en:"Which MS Word option allows restricting users to only fill forms in a document?",
+hi:"Document में users को केवल form भरने तक सीमित करने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Protect Form",
+B:"Restrict Editing",
+C:"Lock Editing",
+D:"Secure Form",
+ans:"B"
+},
+
+{
+id:15,
+en:"Which feature automatically generates a list of figures used in a document?",
+hi:"Document में उपयोग की गई figures की सूची automatically बनाने वाला फीचर कौन-सा है?",
+A:"Figure Index",
+B:"Table of Figures",
+C:"Caption List",
+D:"Figure Reference",
+ans:"B"
+},
+
+{
+id:16,
+en:"Which option in Word allows inserting equations using LaTeX-like syntax?",
+hi:"LaTeX जैसी syntax का उपयोग करके equations डालने के लिए Word में कौन-सा विकल्प उपयोग होता है?",
+A:"Math Input Panel",
+B:"Equation Editor",
+C:"Formula Tool",
+D:"Math Builder",
+ans:"B"
+},
+
+{
+id:17,
+en:"Which feature allows inserting cross references to numbered items such as headings?",
+hi:"Headings जैसे numbered items के लिए cross reference डालने वाला फीचर कौन-सा है?",
+A:"Hyperlink",
+B:"Cross-reference",
+C:"Bookmark",
+D:"Reference Link",
+ans:"B"
+},
+
+{
+id:18,
+en:"Which Word option displays vertical and horizontal measurement guides?",
+hi:"Vertical और horizontal measurement guides दिखाने वाला Word विकल्प कौन-सा है?",
+A:"Gridlines",
+B:"Ruler",
+C:"Layout Lines",
+D:"Page Guides",
+ans:"B"
+},
+
+{
+id:19,
+en:"Which feature automatically corrects grammar and punctuation errors?",
+hi:"Grammar और punctuation की गलतियों को automatically सुधारने वाला फीचर कौन-सा है?",
+A:"Proofing Tools",
+B:"Grammar Checker",
+C:"Smart Proofing",
+D:"Auto Grammar",
+ans:"A"
+},
+
+{
+id:20,
+en:"Which command converts selected text into uppercase letters?",
+hi:"Selected text को uppercase letters में बदलने के लिए कौन-सा command उपयोग होता है?",
+A:"Change Case",
+B:"Upper Format",
+C:"Text Case",
+D:"Capitalize",
+ans:"A"
+}, 
+
+{
+id:21,
+en:"Which MS Word feature allows inserting comments that appear in the margin?",
+hi:"MS Word में margin में दिखाई देने वाली comments जोड़ने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Notes",
+B:"Review Comment",
+C:"Comment Tool",
+D:"Margin Notes",
 ans:"C"
 },
 
 {
 id:22,
-en:"Which MS Word shortcut key is used to apply subscript formatting?",
-hi:"MS Word में subscript formatting लगाने के लिए कौन-सी shortcut key उपयोग होती है?",
-A:"Ctrl + =",
-B:"Ctrl + -",
-C:"Ctrl + Shift + -",
-D:"Ctrl + Alt + =",
-ans:"A"
-},
-
-{
-id:23,
-en:"Which feature in MS Word removes all formatting such as font size, bold, color, and styles from selected text?",
-hi:"MS Word में चयनित टेक्स्ट से font size, bold, color और style जैसी सभी formatting हटाने वाला फीचर कौन-सा है?",
-A:"Reset Style",
-B:"Clear Formatting",
-C:"Remove Style",
-D:"Format Reset",
+en:"Which feature allows creating custom templates for repeated document formatting?",
+hi:"Document के बार-बार उपयोग होने वाले formatting के लिए custom template बनाने वाला फीचर कौन-सा है?",
+A:"Document Template",
+B:"Word Template",
+C:"Style Template",
+D:"Custom Format",
 ans:"B"
 },
 
 {
+id:23,
+en:"Which Excel function returns the row number of a reference?",
+hi:"Excel में किसी reference की row number लौटाने वाला function कौन-सा है?",
+A:"ROW()",
+B:"COLUMN()",
+C:"INDEX()",
+D:"MATCH()",
+ans:"A"
+},
+
+{
 id:24,
-en:"Which MS Word command changes text like word to WORD or Word?",
-hi:"MS Word में word को WORD या Word में बदलने वाला command कौन-सा है?",
-A:"Modify Text",
-B:"Change Case",
-C:"Format Case",
-D:"Text Style",
+en:"Which function returns the column number of a reference?",
+hi:"Excel में किसी reference की column number लौटाने वाला function कौन-सा है?",
+A:"COL()",
+B:"COLUMN()",
+C:"INDEX()",
+D:"MATCH()",
 ans:"B"
 },
 
 {
 id:25,
-en:"Which option changes only the color of the characters without affecting the background of the text?",
-hi:"कौन-सा विकल्प टेक्स्ट की background को बदले बिना केवल अक्षरों का रंग बदलता है?",
-A:"Text Highlight Color",
-B:"Font Color",
-C:"Text Shading",
-D:"Background Color",
+en:"What will be the output of =ROUND(25.678,1) ?",
+hi:"=ROUND(25.678,1) का परिणाम क्या होगा?",
+A:"25.6",
+B:"25.7",
+C:"26",
+D:"25.68",
 ans:"B"
 },
 
 {
 id:26,
-en:"In MS Excel, which key combination is used to enter the current system date into a cell?",
-hi:"MS Excel में किसी cell में वर्तमान system date दर्ज करने के लिए कौन-सा key combination उपयोग होता है?",
-A:"Ctrl + D",
-B:"Ctrl + ;",
-C:"Ctrl + Shift + :",
-D:"Alt + D",
-ans:"B"
+en:"Which Excel function returns the absolute value of a number?",
+hi:"Excel में किसी संख्या का absolute value लौटाने वाला function कौन-सा है?",
+A:"ABS()",
+B:"MOD()",
+C:"INT()",
+D:"ROUND()",
+ans:"A"
 },
 
 {
 id:27,
-en:"Which key combination inserts the current system time in an Excel cell?",
-hi:"Excel cell में वर्तमान system time डालने के लिए कौन-सा key combination उपयोग होता है?",
-A:"Ctrl + :",
-B:"Ctrl + Shift + :",
-C:"Ctrl + ;",
-D:"Shift + :",
-ans:"B"
+en:"What will be the result of =INT(7.9) ?",
+hi:"=INT(7.9) का परिणाम क्या होगा?",
+A:"7",
+B:"8",
+C:"7.9",
+D:"Error",
+ans:"A"
 },
 
 {
 id:28,
-en:"Which Excel option removes only the contents of selected cells while keeping formatting intact?",
-hi:"Excel में कौन-सा विकल्प selected cells का केवल content हटाता है लेकिन formatting को बनाए रखता है?",
-A:"Delete Cells",
-B:"Clear Formats",
-C:"Clear Contents",
-D:"Remove Data",
-ans:"C"
+en:"Which function returns the largest value from a list based on position?",
+hi:"किसी सूची में position के आधार पर सबसे बड़ा मान लौटाने वाला function कौन-सा है?",
+A:"LARGE()",
+B:"MAX()",
+C:"BIG()",
+D:"TOP()",
+ans:"A"
 },
 
 {
 id:29,
-en:"Which Excel feature allows editing the content of the active cell without overwriting it?",
-hi:"Excel में active cell के content को overwrite किए बिना edit करने वाला फीचर कौन-सा है?",
-A:"Formula Bar",
-B:"Edit Mode",
-C:"Data Mode",
-D:"Input Mode",
-ans:"B"
+en:"Which function returns the smallest value based on position?",
+hi:"Position के आधार पर सबसे छोटा मान लौटाने वाला function कौन-सा है?",
+A:"SMALL()",
+B:"MIN()",
+C:"LOW()",
+D:"SMALLIF()",
+ans:"A"
 },
 
 {
 id:30,
-en:"Which Excel key is commonly used to quickly enter data and move to the next cell below?",
-hi:"Excel में data दर्ज करके नीचे वाले cell में जाने के लिए सामान्यतः कौन-सी key उपयोग होती है?",
-A:"Tab",
-B:"Enter",
-C:"Shift",
-D:"Alt",
+en:"What does the formula =LEN(\"DATA\") return?",
+hi:"Formula =LEN(\"DATA\") क्या परिणाम देगा?",
+A:"3",
+B:"4",
+C:"5",
+D:"6",
 ans:"B"
 },
 
 {
 id:31,
-enen:"What will be the output of the following C code?",
-hi:"निम्न C code का output क्या होगा?",
-A:"5",
-B:"6",
-C:"4",
-D:"Error",
+en:"Which function extracts characters from the right side of a text string?",
+hi:"Text string के दाएँ भाग से characters निकालने वाला function कौन-सा है?",
+A:"LEFT()",
+B:"RIGHT()",
+C:"MID()",
+D:"TEXT()",
+ans:"B"
+},
+
+{
+id:32,
+en:"What will be the result of =RIGHT(\"COMPUTER\",3) ?",
+hi:"=RIGHT(\"COMPUTER\",3) का परिणाम क्या होगा?",
+A:"TER",
+B:"PUT",
+C:"COM",
+D:"UTE",
 ans:"A"
 },
 
 {
-id:64,
-en:"What will be the output of the following code?",
-hi:"निम्न code का output क्या होगा?",
-A:"10 11",
-B:"11 11",
-C:"10 10",
-D:"Undefined behavior",
-ans:"D"
-},
-
-{
-id:65,
-en:"Which operator is used to access the value stored at the address pointed by a pointer?",
-hi:"pointer द्वारा बताए गए address पर stored value को access करने के लिए कौन-सा operator उपयोग होता है?",
-A:"&",
-B:"*",
-C:"->",
-D:"%",
+id:33,
+en:"Which function removes extra spaces from text except single spaces?",
+hi:"Text से अतिरिक्त spaces हटाकर केवल single space छोड़ने वाला function कौन-सा है?",
+A:"CLEAN()",
+B:"TRIM()",
+C:"STRIP()",
+D:"SPACE()",
 ans:"B"
 },
 
 {
-id:66,
-en:"What will be the output?",
-hi:"निम्न code का output क्या होगा?",
-A:"3",
-B:"4",
-C:"7",
-D:"Error",
-ans:"B"
-},
-
-{
-id:67,
-en:"What is the size of int data type in most modern C compilers?",
-hi:"अधिकांश आधुनिक C compilers में int data type का size कितना होता है?",
-A:"2 bytes",
-B:"4 bytes",
-C:"8 bytes",
-D:"1 byte",
-ans:"B"
-},
-
-{
-id:68,
-en:"Which keyword is used to prevent modification of a variable in C?",
-hi:"C में किसी variable को modify होने से रोकने के लिए कौन-सा keyword उपयोग होता है?",
-A:"static",
-B:"constant",
-C:"const",
-D:"final",
-ans:"C"
-},
-
-{
-id:69,
-en:"What will be the output?",
-{
-id:77,
-en:"Fill in the blank: He would rather ______ at home than go out in the rain.",
-hi:"रिक्त स्थान भरें: He would rather ______ at home than go out in the rain.",
-A:"stayed",
-B:"stay",
-C:"staying",
-D:"to stay",
-ans:"B"
-},
-
-{
-id:78,
-en:"Identify the correct indirect speech: He said, 'I am busy.'",
-hi:"सही indirect speech पहचानिए: He said, 'I am busy.'",
-A:"He said he is busy.",
-B:"He said that he was busy.",
-C:"He says he was busy.",
-D:"He told he was busy.",
-ans:"B"
-},
-
-{
-id:79,
-en:"Choose the correct article: She is ______ honest person.",
-hi:"सही article चुनिए: She is ______ honest person.",
-A:"a",
-B:"an",
-C:"the",
-D:"no article",
-ans:"B"
-},
-
-{
-id:80,
-en:"Fill in the blank: Scarcely ______ the train left when it started raining.",
-hi:"रिक्त स्थान भरें: Scarcely ______ the train left when it started raining.",
-A:"had",
-B:"has",
-C:"did",
-D:"was",
+id:34,
+en:"Which function returns the position of a character within a text string?",
+hi:"Text string में किसी character की position बताने वाला function कौन-सा है?",
+A:"FIND()",
+B:"MATCH()",
+C:"SEARCHPOS()",
+D:"LOCATE()",
 ans:"A"
+},
+
+{
+id:35,
+en:"Which Excel function converts a number into text format?",
+hi:"Excel में किसी संख्या को text format में बदलने वाला function कौन-सा है?",
+A:"TEXT()",
+B:"VALUE()",
+C:"FORMAT()",
+D:"NUMTEXT()",
+ans:"A"
+},
+
+{
+id:36,
+en:"Which function converts text representing numbers into numeric values?",
+hi:"Text के रूप में दी गई संख्या को numeric value में बदलने वाला function कौन-सा है?",
+A:"TEXT()",
+B:"VALUE()",
+C:"NUMBER()",
+D:"INT()",
+ans:"B"
+},
+
+{
+id:37,
+en:"Which function returns the current system time?",
+hi:"Current system time लौटाने वाला function कौन-सा है?",
+A:"NOW()",
+B:"TIME()",
+C:"CLOCK()",
+D:"CURRENTTIME()",
+ans:"A"
+},
+
+{
+id:38,
+en:"Which function combines text from multiple cells with a delimiter?",
+hi:"Delimiter के साथ कई cells के text को जोड़ने वाला function कौन-सा है?",
+A:"CONCAT()",
+B:"TEXTJOIN()",
+C:"MERGE()",
+D:"JOIN()",
+ans:"B"
+},
+
+{
+id:39,
+en:"Which function finds the position of a value within a range?",
+hi:"Range के अंदर किसी value की position खोजने वाला function कौन-सा है?",
+A:"MATCH()",
+B:"LOOKUP()",
+C:"FIND()",
+D:"INDEX()",
+ans:"A"
+},
+
+{
+id:40,
+en:"Which Excel function returns a value from a specified row and column of a table?",
+hi:"Table के किसी विशेष row और column से value लौटाने वाला function कौन-सा है?",
+A:"MATCH()",
+B:"INDEX()",
+C:"LOOKUP()",
+D:"FIND()",
+ans:"B"
 }, 
 
 {
-id:81,
-en:"Which type of Samas is the Hindi word 'यथाशक्ति'?",
-hi:"'यथाशक्ति' शब्द में कौन-सा समास है?",
-A:"तत्पुरुष",
-B:"अव्ययीभाव",
-C:"द्वंद्व",
-D:"बहुव्रीहि",
+id:41,
+en:"What will be the output of =MOD(17,5) ?",
+hi:"=MOD(17,5) का परिणाम क्या होगा?",
+A:"2",
+B:"3",
+C:"4",
+D:"5",
+ans:"A"
+},
+
+{
+id:42,
+en:"Which Excel feature allows summarizing large datasets interactively?",
+hi:"Excel में बड़े datasets को interactive तरीके से summarize करने वाला फीचर कौन-सा है?",
+A:"Pivot Table",
+B:"Data Summary",
+C:"Table Analyzer",
+D:"Smart Table",
+ans:"A"
+},
+
+{
+id:43,
+en:"Which tool visually represents conditional formatting using bars or colors?",
+hi:"Conditional formatting को bars या colors के रूप में दिखाने वाला tool कौन-सा है?",
+A:"Data Bars",
+B:"Highlight Rules",
+C:"Format Graph",
+D:"Color Format",
+ans:"A"
+},
+
+{
+id:44,
+en:"Which feature allows filtering data based on conditions?",
+hi:"Conditions के आधार पर data filter करने वाला फीचर कौन-सा है?",
+A:"Sort",
+B:"Filter",
+C:"Arrange",
+D:"Data Order",
 ans:"B"
 },
 
 {
-id:82,
-en:"What is the one word substitution for 'जो कभी न मरने वाला हो'?",
-hi:"'जो कभी न मरने वाला हो' के लिए एक शब्द क्या है?",
-A:"अजर",
-B:"अमर",
-C:"
+id:45,
+en:"Which Excel feature prevents editing of specific cells?",
+hi:"Excel में कुछ cells की editing रोकने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Lock Cells",
+B:"Protect Sheet",
+C:"Secure Cells",
+D:"Freeze Cells",
+ans:"B"
+},
+
 {
-id:90,
-en:"Which district of Himachal Pradesh has the highest literacy rate according to recent census data?",
-hi:"हाल की जनगणना के अनुसार हिमाचल प्रदेश में सबसे अधिक साक्षरता दर किस जिले की है?",
-A:"Hamirpur",
-B:"Kangra",
-C:"Shimla",
+id:46,
+en:"Which Excel tool is used to find a target value by adjusting one variable?",
+hi:"एक variable बदलकर target value प्राप्त करने के लिए Excel का कौन-सा tool उपयोग होता है?",
+A:"Goal Seek",
+B:"Solver",
+C:"Scenario Manager",
+D:"Data Table",
+ans:"A"
+},
+
+{
+id:47,
+en:"Which Excel feature allows analyzing multiple sets of values for formulas?",
+hi:"Formulas के लिए कई sets of values का analysis करने वाला Excel फीचर कौन-सा है?",
+A:"Scenario Manager",
+B:"Pivot Table",
+C:"Data Model",
+D:"Data Sheet",
+ans:"A"
+},
+
+{
+id:48,
+en:"Which tool is used to remove blank rows quickly in Excel?",
+hi:"Excel में blank rows को जल्दी हटाने के लिए कौन-सा tool उपयोग होता है?",
+A:"Go To Special",
+B:"Filter Blank",
+C:"Data Cleaner",
+D:"Remove Empty",
+ans:"A"
+},
+
+{
+id:49,
+en:"The ancient name of the Kullu Valley was:",
+hi:"कुल्लू घाटी का प्राचीन नाम क्या था?",
+A:"Kuluta",
+B:"Trigarta",
+C:"Audumbara",
+D:"Kinner",
+ans:"A"
+},
+
+{
+id:50,
+en:"The famous Baijnath Temple is located in which district?",
+hi:"प्रसिद्ध बैजनाथ मंदिर हिमाचल प्रदेश के किस जिले में स्थित है?",
+A:"Kangra",
+B:"Chamba",
+C:"Mandi",
+D:"Kullu",
+ans:"A"
+},
+
+{
+id:51,
+en:"The Shrikhand Mahadev Peak is located in which district?",
+hi:"श्रीखंड महादेव शिखर किस जिले में स्थित है?",
+A:"Kullu",
+B:"Shimla",
+C:"Kinnaur",
 D:"Mandi",
 ans:"A"
 },
 
 {
-id:91,
-en:"The river Beas originates from which place?",
-hi:"ब्यास नदी का उद्गम किस स्थान से होता है?",
-A:"Rohtang Pass",
-B:"Beas Kund",
-C:"Baralacha Pass",
-D:"Chandra Tal",
-ans:"B"
-},
-
-{
-id:92,
-en:"The famous Kangra School of painting flourished during the reign of which ruler?",
-hi:"कांगड़ा चित्रकला शैली किस शासक के शासनकाल में विकसित हुई?",
-A:"Sansar Chand",
-B:"Jagat Singh",
-C:"Hari Singh",
-D:"Bhuri Singh",
+id:52,
+en:"The district headquarters of Kinnaur is:",
+hi:"किन्नौर जिले का मुख्यालय कहाँ है?",
+A:"Reckong Peo",
+B:"Kalpa",
+C:"Sangla",
+D:"Pooh",
 ans:"A"
 },
 
 {
+id:53,
+en:"The famous Lavi Fair is held in:",
+hi:"प्रसिद्ध लवी मेला कहाँ आयोजित होता है?",
+A:"Kullu",
+B:"Rampur Bushahr",
+C:"Chamba",
+D:"Mandi",
+ans:"B"
+},
+
+{
+id:54,
+en:"The Pong Dam is also known as:",
+hi:"पोंग बांध को और किस नाम से जाना जाता है?",
+A:"Bhakra Dam",
+B:"Maharana Pratap Sagar",
+C:"Renuka Sagar",
+D:"Govind Sagar",
+ans:"B"
+},
+
+{
+id:55,
+en:"The Parashar Lake is located in which district?",
+hi:"पराशर झील किस जिले में स्थित है?",
+A:"Mandi",
+B:"Kangra",
+C:"Kullu",
+D:"Chamba",
+ans:"A"
+},
+
+{
+id:56,
+en:"The famous \"Chamba Rumal\" embroidery belongs to:",
+hi:"प्रसिद्ध \"चंबा रूमाल\" कढ़ाई किस स्थान से संबंधित है?",
+A:"Kangra",
+B:"Chamba",
+C:"Kullu",
+D:"Mandi",
+ans:"B"
+},
+
+{
+id:57,
+en:"The town of Dalhousie is located in which district?",
+hi:"डलहौजी नगर किस जिले में स्थित है?",
+A:"Kangra",
+B:"Chamba",
+C:"Kullu",
+D:"Shimla",
+ans:"B"
+},
+
+{
+id:58,
+en:"The river Chenab is formed by the confluence of:",
+hi:"चिनाब नदी किन दो नदियों के संगम से बनती है?",
+A:"Chandra and Bhaga",
+B:"Ravi and Beas",
+C:"Satluj and Spiti",
+D:"Parvati and Beas",
+ans:"A"
+},
+
+{
+id:59,
+en:"The Great Himalayan National Park is located in which district?",
+hi:"ग्रेट हिमालयन नेशनल पार्क किस जिले में स्थित है?",
+A:"Shimla",
+B:"Kullu",
+C:"Kangra",
+D:"Chamba",
+ans:"B"
+},
+
+{
+id:60,
+en:"The state bird of Himachal Pradesh is:",
+hi:"हिमाचल प्रदेश का राज्य पक्षी कौन-सा है?",
+A:"Monal",
+B:"Peacock",
+C:"Snowcock",
+D:"Himalayan Griffon",
+ans:"A"
+}, 
+
+{
+id:61,
+en:"Choose the correct synonym of the word \"Scarce\".",
+hi:"\"Scarce\" शब्द का सही पर्यायवाची (synonym) चुनें।",
+A:"Rare",
+B:"Plenty",
+C:"Enough",
+D:"Large",
+ans:"A"
+},
+
+{
+id:62,
+en:"Fill in the blank: He insisted ______ paying the bill.",
+hi:"रिक्त स्थान भरें: He insisted ______ paying the bill.",
+A:"in",
+B:"on",
+C:"at",
+D:"for",
+ans:"B"
+},
+
+{
+id:63,
+en:"Choose the correct sentence.",
+hi:"सही वाक्य चुनिए।",
+A:"She has went to Delhi.",
+B:"She has gone to Delhi.",
+C:"She have gone to Delhi.",
+D:"She going to Delhi.",
+ans:"B"
+},
+
+{
+id:64,
+en:"Choose the correct preposition: He is responsible ______ this mistake.",
+hi:"सही preposition चुनें: He is responsible ______ this mistake.",
+A:"of",
+B:"with",
+C:"for",
+D:"by",
+ans:"C"
+},
+
+{
+id:65,
+en:"Identify the antonym of the word \"Expand\".",
+hi:"\"Expand\" शब्द का विलोम (antonym) पहचानें।",
+A:"Increase",
+B:"Extend",
+C:"Contract",
+D:"Grow",
+ans:"C"
+},
+
+{
+id:66,
+en:"Which prefix is used in the Hindi word \"अभिनंदन\"?",
+hi:"\"अभिनंदन\" शब्द में कौन-सा उपसर्ग है?",
+A:"अभि",
+B:"नंद",
+C:"अभिन",
+D:"अन",
+ans:"A"
+},
+
+{
+id:67,
+en:"The Hindi word \"कमल\" belongs to which gender?",
+hi:"\"कमल\" शब्द किस लिंग का है?",
+A:"पुल्लिंग",
+B:"स्त्रीलिंग",
+C:"नपुंसकलिंग",
+D:"उभयलिंग",
+ans:"A"
+},
+
+{
+id:68,
+en:"In the sentence \"राम ने पानी पिया।\", what is \"पानी\"?",
+hi:"वाक्य \"राम ने पानी पिया।\" में \"पानी\" क्या है?",
+A:"क्रिया",
+B:"सर्वनाम",
+C:"संज्ञा",
+D:"विशेषण",
+ans:"C"
+},
+
+{
+id:69,
+en:"Find the next number in the series: 4, 8, 16, 32, ?",
+hi:"श्रृंखला में अगली संख्या ज्ञात करें: 4, 8, 16, 32, ?",
+A:"48",
+B:"56",
+C:"64",
+D:"72",
+ans:"C"
+},
+
+{
+id:70,
+en:"Find the odd one out.",
+hi:"विषम (odd) शब्द चुनिए।",
+A:"Cow",
+B:"Goat",
+C:"Tiger",
+D:"Dog",
+ans:"C"
+},
+
+{
+id:71,
+en:"The headquarters of the Himachal Pradesh High Court is located at:",
+hi:"हिमाचल प्रदेश उच्च न्यायालय का मुख्यालय कहाँ स्थित है?",
+A:"Dharamshala",
+B:"Shimla",
+C:"Solan",
+D:"Mandi",
+ans:"B"
+},
+
+{
+id:72,
+en:"The famous skiing resort of Himachal Pradesh is located at:",
+hi:"हिमाचल प्रदेश का प्रसिद्ध skiing resort कहाँ स्थित है?",
+A:"Kufri",
+B:"Manali",
+C:"Dalhousie",
+D:"Kasauli",
+ans:"A"
+},
+
+{
+id:73,
+en:"The town of Kasauli is located in which district?",
+hi:"कसौली नगर किस जिले में स्थित है?",
+A:"Solan",
+B:"Shimla",
+C:"Kangra",
+D:"Bilaspur",
+ans:"A"
+},
+
+{
+id:74,
+en:"The International Himalayan Festival is celebrated in:",
+hi:"International Himalayan Festival कहाँ मनाया जाता है?",
+A:"Dharamshala",
+B:"Kullu",
+C:"Manali",
+D:"Shimla",
+ans:"A"
+},
+
+{
+id:75,
+en:"The district Una was earlier part of which district?",
+hi:"ऊना जिला पहले किस जिले का भाग था?",
+A:"Kangra",
+B:"Hamirpur",
+C:"Bilaspur",
+D:"Chamba",
+ans:"A"
+},
+
+{
+id:76,
+en:"The famous Churdhar Peak is located in which district?",
+hi:"प्रसिद्ध चूड़धार शिखर किस जिले में स्थित है?",
+A:"Sirmaur",
+B:"Shimla",
+C:"Solan",
+D:"Kinnaur",
+ans:"A"
+},
+
+{
+id:77,
+en:"The headquarters of the Indo-Tibetan Border Police (ITBP) in Himachal Pradesh is located at:",
+hi:"हिमाचल प्रदेश में ITBP का मुख्यालय कहाँ स्थित है?",
+A:"Shimla",
+B:"Reckong Peo",
+C:"Sarahan",
+D:"Kaza",
+ans:"B"
+},
+
+{
+id:78,
+en:"The famous Renuka Fair is celebrated in which district?",
+hi:"प्रसिद्ध रेणुका मेला किस जिले में मनाया जाता है?",
+A:"Sirmaur",
+B:"Solan",
+C:"Kangra",
+D:"Mandi",
+ans:"A"
+},
+
+{
+id:79,
+en:"Which MySQL command is used to display the structure of a table?",
+hi:"MySQL में table की structure देखने के लिए कौन-सा command उपयोग होता है?",
+A:"SHOW TABLE",
+B:"DESCRIBE",
+C:"DISPLAY",
+D:"VIEW STRUCTURE",
+ans:"B"
+},
+
+{
+id:80,
+en:"Which MySQL function returns the current database name?",
+hi:"MySQL में current database का नाम लौटाने वाला function कौन-सा है?",
+A:"DATABASE()",
+B:"CURRENTDB()",
+C:"DBNAME()",
+D:"SCHEMA()",
+ans:"A"
+}, 
+
+{
+id:81,
+en:"Which MySQL clause is used to limit the number of rows returned?",
+hi:"MySQL में returned rows की संख्या सीमित करने के लिए कौन-सा clause उपयोग होता है?",
+A:"LIMIT",
+B:"RANGE",
+C:"ROWLIMIT",
+D:"TOP",
+ans:"A"
+},
+
+{
+id:82,
+en:"Which MySQL command is used to remove duplicate records in query results?",
+hi:"MySQL में query result से duplicate records हटाने के लिए कौन-सा command उपयोग होता है?",
+A:"UNIQUE",
+B:"DISTINCT",
+C:"REMOVE DUPLICATE",
+D:"DIFFERENT",
+ans:"B"
+},
+
+{
+id:83,
+en:"Which MySQL function returns the current user?",
+hi:"MySQL में current user लौटाने वाला function कौन-सा है?",
+A:"USER()",
+B:"CURRENTUSER()",
+C:"LOGIN()",
+D:"USERNAME()",
+ans:"A"
+},
+
+{
+id:84,
+en:"Which MySQL clause is used to filter groups after aggregation?",
+hi:"Aggregation के बाद groups को filter करने के लिए MySQL में कौन-सा clause उपयोग होता है?",
+A:"WHERE",
+B:"HAVING",
+C:"GROUP FILTER",
+D:"ORDER",
+ans:"B"
+},
+
+{
+id:85,
+en:"Which MySQL function returns the length of a string?",
+hi:"MySQL में string की length लौटाने वाला function कौन-सा है?",
+A:"SIZE()",
+B:"LENGTH()",
+C:"COUNT()",
+D:"CHARLEN()",
+ans:"B"
+},
+
+{
+id:86,
+en:"Which MySQL command displays all databases?",
+hi:"MySQL में सभी databases दिखाने के लिए कौन-सा command उपयोग होता है?",
+A:"SHOW DATABASES",
+B:"LIST DATABASES",
+C:"VIEW DATABASES",
+D:"DISPLAY DATABASES",
+ans:"A"
+},
+
+{
+id:87,
+en:"Which SQL clause removes duplicate rows from query results?",
+hi:"SQL में query result से duplicate rows हटाने के लिए कौन-सा clause उपयोग होता है?",
+A:"UNIQUE",
+B:"DISTINCT",
+C:"DIFFERENT",
+D:"REMOVE",
+ans:"B"
+},
+
+{
+id:88,
+en:"Which SQL statement retrieves data from a database?",
+hi:"Database से data प्राप्त करने के लिए कौन-सा SQL statement उपयोग होता है?",
+A:"SELECT",
+B:"FETCH",
+C:"GET",
+D:"RETRIEVE",
+ans:"A"
+},
+
+{
+id:89,
+en:"Which SQL clause is used to sort query results in descending order?",
+hi:"Query results को descending order में sort करने के लिए कौन-सा SQL clause उपयोग होता है?",
+A:"ORDER BY DESC",
+B:"SORT DESC",
+C:"ORDER DESC",
+D:"GROUP DESC",
+ans:"A"
+},
+
+{
+id:90,
+en:"In Boolean Algebra, what is the result of A + 0 ?",
+hi:"Boolean Algebra में A + 0 का परिणाम क्या होगा?",
+A:"0",
+B:"A",
+C:"1",
+D:"A'",
+ans:"B"
+},
+
+{
+id:91,
+en:"What is the result of A · 1 ?",
+hi:"Boolean Algebra में A · 1 का परिणाम क्या होगा?",
+A:"0",
+B:"1",
+C:"A",
+D:"A'",
+ans:"C"
+},
+
+{
+id:92,
+en:"According to Boolean algebra law, A + A = ?",
+hi:"Boolean algebra के अनुसार A + A का परिणाम क्या होगा?",
+A:"0",
+B:"A",
+C:"1",
+D:"A'",
+ans:"B"
+},
+
+{
+id:93,
+en:"Which HTML tag is used to define the largest heading?",
+hi:"सबसे बड़ा heading define करने के लिए कौन-सा HTML tag उपयोग होता है?",
+A:"<h1>",
+B:"<heading>",
+C:"<head>",
+D:"<title>",
+ans:"A"
+},
+
+{
+id:94,
+en:"Which HTML attribute specifies an alternate text for an image?",
+hi:"Image के लिए alternate text देने वाला HTML attribute कौन-सा है?",
+A:"title",
+B:"alt",
+C:"src",
+D:"link",
+ans:"B"
+},
+
+{
+id:95,
+en:"Which HTML tag defines a table row?",
+hi:"Table row को define करने के लिए कौन-सा HTML tag उपयोग होता है?",
+A:"<td>",
+B:"<th>",
+C:"<tr>",
+D:"<table>",
+ans:"C"
+},
+
+{
+id:96,
+en:"Which HTML element is used to group block elements for styling?",
+hi:"Styling के लिए block elements को group करने के लिए कौन-सा HTML element उपयोग होता है?",
+A:"<span>",
+B:"<group>",
+C:"<div>",
+D:"<block>",
+ans:"C"
+},
+
+{
+id:97,
+en:"Which HTML attribute specifies a unique identifier for an element?",
+hi:"HTML element के लिए unique identifier देने वाला attribute कौन-सा है?",
+A:"class",
+B:"name",
+C:"id",
+D:"key",
+ans:"C"
+},
+
+{
+id:98,
+en:"Which HTML tag is used to create a dropdown list?",
+hi:"Dropdown list बनाने के लिए कौन-सा HTML tag उपयोग होता है?",
+A:"<list>",
+B:"<dropdown>",
+C:"<select>",
+D:"<option>",
+ans:"C"
+},
+
+{
+id:99,
+en:"In CSS, which property controls the spacing between lines of text?",
+hi:"CSS में text की lines के बीच spacing नियंत्रित करने वाला property कौन-सा है?",
+A:"letter-spacing",
+B:"line-height",
+C:"word-spacing",
+D:"text-spacing",
+ans:"B"
+},
+
+{
+id:100,
+en:"Which CSS property is used to make elements flexible within a container?",
+hi:"Container के अंदर elements को flexible बनाने के लिए कौन-सा CSS property उपयोग होता है?",
+A:"grid",
+B:"flex",
+C:"float",
+D:"inline",
+ans:"B"
+}
 
 ]
 let current=0
