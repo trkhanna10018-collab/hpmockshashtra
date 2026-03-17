@@ -1259,22 +1259,37 @@ studentName=document.getElementById("Name").value
 studentPhone=document.getElementById("Phone").value
 
 if(studentName=="" || studentPhone==""){
-
 alert("Enter name and phone")
-
 return
-
 }
 
 document.getElementById("formBox").style.display="none"
+document.getElementById("countBox").style.display="block"
+
+let t=5
+
+let timer=setInterval(function(){
+
+document.getElementById("count").innerHTML=t
+
+t--
+
+if(t<0){
+
+clearInterval(timer)
+
+document.getElementById("countBox").style.display="none"
 
 document.getElementById("questionBox").style.display="block"
-
 document.getElementById("examTimer").style.display="block"
 
 startExamTimer()
 
 showQuestion()
+
+}
+
+},1000)
 
 }
 
