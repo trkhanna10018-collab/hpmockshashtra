@@ -1360,12 +1360,17 @@ box.innerHTML="<div style='text-align:left'>"+html+"</div>"
 
 /* PDF */
 
-async function downloadPDF(){
+function downloadPDF(){
 
 const { jsPDF } = window.jspdf
+
 let doc = new jsPDF()
 
 let y = 20
+let line = 7
+
+doc.setFont("Helvetica","Normal")
+doc.setFontSize(12)
 
 doc.text("JOA IT MOCK TEST RESULT",20,y)
 y+=10
@@ -1378,40 +1383,54 @@ y+=8
 
 doc.text("Score : "+score+" / "+questions.length,20,y)
 
-y+=10
+y+=12
 
 for(let i=0;i<questions.length;i++){
 
 let q = questions[i]
 
-let qText = doc.splitTextToSize("Q"+(i+1)+": "+q.en+" "+q.hi,170)
+let qText = doc.splitTextToSize("Q"+(i+1)+": "+q.en,170)
 
-if(y>270){
+if(y + (qText.length*line) > 280){
 doc.addPage()
-y=20
+y = 20
 }
 
 doc.text(qText,20,y)
-y+=qText.length*7
+y += qText.length*line
 
-doc.text("A. "+q.A,25,y); y+=6
-doc.text("B. "+q.B,25,y); y+=6
-doc.text("C. "+q.C,25,y); y+=6
-doc.text("D. "+q.D,25,y); y+=6
+let hText = doc.splitTextToSize(q.hi,170)
+doc.text(hText,20,y)
+y += hText.length*line
+
+let aText = doc.splitTextToSize("A. "+q.A,160)
+doc.text(aText,25,y)
+y += aText.length*line
+
+let bText = doc.splitTextToSize("B. "+q.B,160)
+doc.text(bText,25,y)
+y += bText.length*line
+
+let cText = doc.splitTextToSize("C. "+q.C,160)
+doc.text(cText,25,y)
+y += cText.length*line
+
+let dText = doc.splitTextToSize("D. "+q.D,160)
+doc.text(dText,25,y)
+y += dText.length*line
 
 doc.text("Your Answer : "+(userAnswers[i+1] || "Not Attempted"),25,y)
-y+=6
+y+=line
 
 doc.text("Correct Answer : "+q.ans,25,y)
 
-y+=10
+y+=12
 
 }
 
 doc.save("Mock_Test_Result.pdf")
 
 }
-
 </script>
 </head>
 
