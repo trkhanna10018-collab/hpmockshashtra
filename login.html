@@ -18,70 +18,42 @@ min-height:100vh;
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:flex-start;
 padding-top:40px;
 }
 
-/* INFO BOX */
+/* 🔵 INFO BOX (Glass effect) */
 .infoBox{
 max-width:750px;
-background:rgba(255,255,255,0.85);
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(15px);
 padding:25px;
 border-radius:15px;
 text-align:center;
+color:white;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 margin-bottom:25px;
-border:1px solid rgba(255,255,255,0.3);
 }
 
-.infoBox h1{
-font-size:30px;
-margin:5px;
-color:#1f2937;
-}
+.infoBox h1{font-size:28px;margin:5px;}
+.infoBox h2{font-size:20px;margin:5px;}
+.infoBox h3{font-size:14px;margin:10px;}
+.infoBox p{font-size:13px;}
+.infoBox li{margin:5px 0;text-align:left;}
 
-.infoBox h2{
-font-size:22px;
-margin:5px;
-color:#374151;
-}
-
-.infoBox h3{
-font-size:16px;
-margin:10px;
-color:#6b7280;
-}
-
-.infoBox p{
-font-size:14px;
-margin:10px 0;
-color:#111827;
-}
-
-.infoBox ul{
-text-align:left;
-padding-left:20px;
-}
-
-.infoBox li{
-margin:6px 0;
-}
-
-/* LOGIN BOX */
+/* 🟣 LOGIN BOX */
 .container{
-background:linear-gradient(145deg,#ffffff,#e0e7ff);
-padding:40px;
+background:#ffffff;
+padding:35px;
 border-radius:20px;
-width:350px;
+width:330px;
 text-align:center;
-box-shadow:0 15px 35px rgba(0,0,0,0.4);
-border:2px solid #6366f1;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+border-top:5px solid #6366f1;
 margin-bottom:25px;
 }
 
 .container h3{
-margin-bottom:25px;
+margin-bottom:20px;
 color:#1e293b;
 }
 
@@ -91,7 +63,6 @@ padding:12px;
 margin:10px 0;
 border-radius:10px;
 border:1px solid #ccc;
-outline:none;
 }
 
 /* BUTTON */
@@ -104,40 +75,40 @@ background:linear-gradient(45deg,#6366f1,#4f46e5);
 color:white;
 font-size:16px;
 cursor:pointer;
-transition:0.3s;
 }
 
-button:hover{
-transform:scale(1.05);
-}
-
-/* DETAILS BOX */
+/* 🔥 PACKAGE BOX (Highlighted) */
 .detailsBox{
 max-width:750px;
-background:rgba(255,255,255,0.9);
-padding:20px;
-border-radius:15px;
+background:linear-gradient(135deg,#1e293b,#0f172a);
+color:white;
+padding:25px;
+border-radius:18px;
 text-align:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.25);
-border:1px solid rgba(255,255,255,0.3);
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+border:2px solid #22c55e;
 }
 
 .detailsBox h3{
+color:#22c55e;
 margin-bottom:10px;
-color:#1f2937;
 }
 
 .detailsBox p{
 margin:6px 0;
 font-size:14px;
-color:#111827;
 }
 
 .price{
-font-size:18px;
+font-size:20px;
 font-weight:bold;
-color:#dc2626;
+color:#facc15;
 margin-top:10px;
+}
+
+.highlight{
+color:#22c55e;
+font-weight:bold;
 }
 
 </style>
@@ -148,30 +119,26 @@ margin-top:10px;
 
 <div class="wrapper">
 
-<!-- 🔥 INFO SECTION -->
+<!-- 🔵 INFO -->
 <div class="infoBox">
 
 <h1>HIMACHAL PRADESH</h1>
 <h2>JUNIOR OFFICE ASSISTANT (IT)</h2>
 <h3>COMPETITIVE EXAMINATION</h3>
 
-<p><strong>Scope of Syllabus:</strong><br>
-The objective type screening test will consist of 100 multiple-choice questions, each carrying 1 mark.
-</p>
-
-<p><strong>Syllabus:</strong></p>
+<p><b>Scope:</b> 120 MCQs | 1 Mark each</p>
 
 <ul>
-<li>Subjects of 10+2 level as per essential qualification.</li>
-<li>Computer Science / IT / ITES / Information Practices.</li>
-<li>General Knowledge including Himachal Pradesh & Current Affairs.</li>
-<li>Everyday Science, Logical Reasoning, Social Science.</li>
-<li>General English & General Hindi (Matric level).</li>
+<li>10+2 Level Subjects</li>
+<li>Computer / IT / ITES / IP</li>
+<li>General Knowledge + HP GK + Current Affairs</li>
+<li>Reasoning + Science + Social Science</li>
+<li>English & Hindi (Matric Level)</li>
 </ul>
 
 </div>
 
-<!-- 🔐 LOGIN BOX -->
+<!-- 🟣 LOGIN -->
 <div class="container">
 
 <h3>Login to Access Mock Tests</h3>
@@ -183,30 +150,28 @@ The objective type screening test will consist of 100 multiple-choice questions,
 
 </div>
 
-<!-- 📢 DETAILS BOX -->
+<!-- 🔥 PACKAGE -->
 <div class="detailsBox">
 
-<h3>Mock Test Package Details</h3>
+<h3>🚀 Mock Test Package</h3>
 
-<p>• Total Mock Tests: 15 Full-Length Tests</p>
-<p>• Based on Latest HP JOA (IT) Exam Pattern</p>
-<p>• Real Exam Interface with Timer</p>
+<p class="highlight">✔ 15 Full-Length Mock Tests</p>
+<p>✔ Based on Latest HP JOA (IT) Pattern</p>
+<p>✔ Real Exam Interface + Timer</p>
 
-<p>• Each Test contains 100 Important Questions</p>
-<p>• Instant Result after submission</p>
-<p>• Attempted Test PDF will be available after each test</p>
+<p class="highlight">✔ 100 Questions in Each Test</p>
+<p>✔ Instant Result after submission</p>
+<p>✔ Attempted Test PDF Available</p>
 
-<p>• Helps in improving speed, accuracy and exam confidence</p>
+<p>✔ Improve Speed, Accuracy & Confidence</p>
 
-<p class="price">💰 Price: ₹199 (Full Package)</p>
+<p class="price">💰 Price: ₹199 (Full Access)</p>
 
-<p>Get full access to all mock tests and practice anytime, anywhere.</p>
+<p>📞 Contact: 8278847614</p>
 
-<br>
-
-<p><strong>For Access / Query:</strong></p>
-<p>📞 Phone: 8278847614</p>
-<p>👤 Username: trkhanna10018</p>
+<p>👤 Created by:</p>
+<p><b>Tilak Raj</b></p>
+<p>Junior Office Assistant (IT)</p>
 
 </div>
 
