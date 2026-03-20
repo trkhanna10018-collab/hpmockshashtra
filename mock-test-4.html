@@ -1245,49 +1245,19 @@ let current=0
 let score=0
 let userAnswers={}
 
-let studentName=""
-let studentPhone=""
+let name=""
+let phone=""
 
-let examTime=5400
-let examTimer
+let time=5401
+let timerInterval
 
-/* START TIMER */
+function startCountdown(){
 
-function startExamTimer(){
+name=document.getElementById("name").value
+phone=document.getElementById("phone").value
 
-examTimer=setInterval(function(){
-
-let min=Math.floor(examTime/60)
-let sec=examTime%60
-
-document.getElementById("examTimer").innerHTML=
-"<span>⏱ Time Left : "+min+":"+(sec<10?"0":"")+sec+"</span>"
-
-examTime--
-
-if(examTime<0){
-
-clearInterval(examTimer)
-
-alert("Time Over! Test Submitted")
-
-showResult()
-
-}
-
-},1000)
-
-}
-
-/* BEGIN TEST */
-
-function beginTest(){
-
-studentName=document.getElementById("Name").value
-studentPhone=document.getElementById("Phone").value
-
-if(studentName=="" || studentPhone==""){
-alert("Enter name and phone")
+if(name=="" || phone==""){
+alert("Enter details")
 return
 }
 
@@ -1295,34 +1265,37 @@ document.getElementById("formBox").style.display="none"
 document.getElementById("countBox").style.display="block"
 
 let t=5
-document.getElementById("count").innerHTML=t
 
-let timer=setInterval(function(){
-
-document.getElementById("count").innerHTML=t
-
+let c=setInterval(()=>{
+document.getElementById("count").innerText=t
 t--
 
 if(t<0){
-
-clearInterval(timer)
-
+clearInterval(c)
 document.getElementById("countBox").style.display="none"
-
 document.getElementById("questionBox").style.display="block"
-document.getElementById("examTimer").style.display="block"
+document.getElementById("timer").style.display="block"
 
-startExamTimer()
-
+startTimer()
 showQuestion()
-
 }
 
 },1000)
-
 }
 
-/* SHOW QUESTION */
+function startTimer(){
+timerInterval=setInterval(()=>{
+let m=Math.floor(time/60)
+let s=time%60
+document.getElementById("timer").innerText="⏱ "+m+":"+(s<10?"0":"")+s
+time--
+
+if(time<0){
+clearInterval(timerInterval)
+showResult()
+}
+},1000)
+}
 
 function showQuestion(){
 
@@ -1330,94 +1303,73 @@ let q=questions[current]
 
 let html=""
 
-html+="<h3>Q"+(current+1)+". "+q.en+"</h3>"
-html+="<p>"+q.hi+"</p>"
+html+=`<b>${name}</b> | ${phone}<br><br>`
 
-html+='<label class="option"><input type="radio" name="ans" value="A"> A. '+q.A+'</label>'
-html+='<label class="option"><input type="radio" name="ans" value="B"> B. '+q.B+'</label>'
-html+='<label class="option"><input type="radio" name="ans" value="C"> C. '+q.C+'</label>'
-html+='<label class="option"><input type="radio" name="ans" value="D"> D. '+q.D+'</label>'
+html+=`<h3>Q${current+1}/${questions.length}. ${q.en}</h3>`
+html+=`<p>${q.hi}</p>`
 
-html+="<br><button onclick='nextQuestion()'>Next</button>"
+html+=`<label class="option"><input type="radio" name="ans" value="A"> A. ${q.A}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="B"> B. ${q.B}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="C"> C. ${q.C}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="D"> D. ${q.D}</label>`
+
+html+=`<br><button onclick="nextQuestion()">Next</button>`
 
 document.getElementById("questionBox").innerHTML=html
-
 }
-
-/* NEXT QUESTION */
 
 function nextQuestion(){
 
 let selected=document.querySelector('input[name="ans"]:checked')
 
 if(selected){
-
 userAnswers[current]=selected.value
-
 if(selected.value==questions[current].ans){
-
 score++
-
 }
-
 }
 
 current++
 
 if(current<questions.length){
-
 showQuestion()
-
 }else{
-
 showResult()
-
 }
-
 }
 
 function showResult(){
 
-clearInterval(examTimer)
+clearInterval(timerInterval)
 
 document.getElementById("questionBox").style.display="none"
 
 let box=document.getElementById("resultBox")
-
 box.style.display="block"
 
 let html=""
 
-html+="<h2 style='text-align:center'>JOA IT MOCK TEST RESULT</h2>"
+html+=`<h2>Result</h2>`
+html+=`<b>Name:</b> ${name}<br>`
+html+=`<b>Phone:</b> ${phone}<br>`
+html+=`<b>Test:</b> ${mockTestNo}<br>`
+html+=`<b>Score:</b> ${score}/${questions.length}<br><br>`
 
-html+="<b>Name :</b> "+studentName+"<br>"
-html+="<b>Phone :</b> "+studentPhone+"<br>"
-html+="<b>Score :</b> "+score+" / "+questions.length+"<br><br>"
+questions.forEach((q,i)=>{
+html+=`<hr>`
+html+=`<b>Q${i+1}. ${q.en}</b><br>`
+html+=`${q.hi}<br><br>`
+html+=`A. ${q.A}<br>`
+html+=`B. ${q.B}<br>`
+html+=`C. ${q.C}<br>`
+html+=`D. ${q.D}<br><br>`
+html+=`Your Answer: ${userAnswers[i] || "Not Attempted"}<br>`
+html+=`Correct Answer: ${q.ans}<br>`
+})
 
-for(let i=0;i<questions.length;i++){
+html+=`<br><button onclick="downloadPDF()">Download PDF</button>`
 
-let q=questions[i]
-
-html+="<hr>"
-
-html+="<b>Q"+(i+1)+". "+q.en+"</b><br>"
-html+=q.hi+"<br><br>"
-
-html+="A. "+q.A+"<br>"
-html+="B. "+q.B+"<br>"
-html+="C. "+q.C+"<br>"
-html+="D. "+q.D+"<br><br>"
-
-html+="Your Answer : "+(userAnswers[i] || "Not Attempted")+"<br>"
-
-html+="Correct Answer : "+q.ans+"<br>"
-
-}
-
-html+="<br><button onclick='downloadPDF()'>Download Result PDF</button>"
-
-box.innerHTML="<div style='text-align:left'>"+html+"</div>"
-
+box.innerHTML=html
 }
 
 async function downloadPDF(){
@@ -1426,9 +1378,14 @@ const { jsPDF } = window.jspdf
 
 let element=document.getElementById("resultBox")
 
-let canvas=await html2canvas(element,{scale:2})
+element.style.background="#fff"
+element.style.color="#000"
 
-let imgData=canvas.toDataURL("image/jpeg",0.6)
+await new Promise(r=>setTimeout(r,800))
+
+let canvas=await html2canvas(element,{scale:1.5})
+
+let imgData=canvas.toDataURL("image/jpeg",0.5)
 
 let pdf=new jsPDF("p","mm","a4")
 
@@ -1440,26 +1397,19 @@ let heightLeft=imgHeight
 let position=10
 
 pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
-
 heightLeft-=pageHeight
 
 while(heightLeft>0){
-
 position=heightLeft-imgHeight
-
 pdf.addPage()
-
 pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
-
 heightLeft-=pageHeight
-
 }
 
-pdf.save("Mock_Test_Result.pdf")
-
+pdf.save(mockTestNo.replace(/\s+/g,'_')+".pdf")
 }
+
 </script>
-
+<script src="auth.js"></script>
 </body>
-
 </html>
