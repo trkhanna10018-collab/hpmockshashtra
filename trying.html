@@ -83,7 +83,9 @@ margin-bottom:15px;
 
 /* OPTIONS */
 .option{
-display:block;
+display:flex;
+align-items:center;
+gap:12px;
 padding:14px;
 margin:10px 0;
 border-radius:10px;
@@ -91,7 +93,10 @@ border:1px solid #e2e8f0;
 background:#f8fafc;
 font-size:20px;
 cursor:pointer;
-transition:0.2s;
+}
+
+.option input{
+margin:0;
 }
 
 .option:hover{
@@ -527,23 +532,38 @@ showResult()
 
 function showQuestion(){
 
-let q=questions[current]
+let q = questions[current]
 
-let html=""
+let html = ""
 
-html+=`<b>${name}</b> | ${phone}<br><br>`
+html += `<b>${name}</b> | ${phone}<br><br>`
 
-html+=`<h3>Q${current+1}/${questions.length}. ${q.en}</h3>`
-html+=`<p>${q.hi}</p>`
+html += `<h3>Q${current+1}/${questions.length}. ${q.en}</h3>`
+html += `<p>${q.hi}</p>`
 
-html+=`<label class="option"><input type="radio" name="ans" value="A"> A. ${q.A}</label>`
-html+=`<label class="option"><input type="radio" name="ans" value="B"> B. ${q.B}</label>`
-html+=`<label class="option"><input type="radio" name="ans" value="C"> C. ${q.C}</label>`
-html+=`<label class="option"><input type="radio" name="ans" value="D"> D. ${q.D}</label>`
+html += `<label class="option">
+  <input type="radio" name="ans" value="A">
+  <span>A. ${q.A}</span>
+</label>`
 
-html+=`<br><button onclick="nextQuestion()">Next</button>`
+html += `<label class="option">
+  <input type="radio" name="ans" value="B">
+  <span>B. ${q.B}</span>
+</label>`
 
-document.getElementById("questionBox").innerHTML=html
+html += `<label class="option">
+  <input type="radio" name="ans" value="C">
+  <span>C. ${q.C}</span>
+</label>`
+
+html += `<label class="option">
+  <input type="radio" name="ans" value="D">
+  <span>D. ${q.D}</span>
+</label>`
+
+html += `<br><button onclick="nextQuestion()">Next</button>`
+
+document.getElementById("questionBox").innerHTML = html
 }
 
 function nextQuestion(){
