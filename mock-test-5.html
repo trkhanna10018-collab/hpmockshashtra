@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>JOA IT Mock Test</title>
+<title>Mock Test</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -11,85 +11,109 @@
 <style>
 
 body{
-font-family:Arial;
-background:#e8f0fe;
 margin:0;
-padding:0;
+font-family:'Segoe UI', sans-serif;
+background:linear-gradient(135deg,#eef2ff,#e0f2fe);
+color:#1e293b;
 }
 
-h2{
+/* HEADER */
+.header{
 text-align:center;
-margin-top:30px;
+padding:20px 10px;
+font-size:24px;
+font-weight:600;
+color:#4338ca;
 }
 
-.container{
-max-width:800px;
-margin:auto;
+/* TIMER */
+.timer{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+margin-bottom:10px;
+color:#dc2626;
+}
+
+/* CARD */
+.card{
+max-width:750px;
+margin:20px auto;
+padding:25px;
+border-radius:16px;
 background:white;
-margin-top:40px;
-padding:30px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* INPUT */
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
 border-radius:8px;
-box-shadow:0 4px 15px rgba(0,0,0,0.15);
+border:1px solid #ddd;
 }
 
-.option{
-display:block;
-margin-top:8px;
-font-size:18px;
-}
-
+/* BUTTON */
 button{
-background:#2563eb;
-color:white;
+width:100%;
+padding:14px;
 border:none;
-padding:10px 18px;
-border-radius:5px;
+border-radius:10px;
 font-size:16px;
+color:white;
+background:linear-gradient(135deg,#6366f1,#3b82f6);
 cursor:pointer;
-margin-top:15px;
 }
 
 button:hover{
-background:#1d4ed8;
+opacity:0.9;
 }
 
-.timer{
-font-size:26px;
-color:#b91c1c;
-font-weight:bold;
-
-margin:15px 0 0 20px;
-
-background:#fff;
-padding:8px 16px;
-
-border-radius:8px;
-
-box-shadow:0 3px 8px rgba(0,0,0,0.15);
-
-display:inline-block;
-
-border-left:5px solid #ef4444;
-
-position:sticky;
-top:10px;
-left:10px;
+/* QUESTION */
+h3{
+font-size:30px;
+margin-bottom:10px;
 }
 
-#questionBox h3{
+p{
 font-size:22px;
+margin-bottom:15px;
 }
 
-#questionBox p{
+/* OPTIONS */
+.option{
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #e2e8f0;
+background:#f8fafc;
 font-size:20px;
+cursor:pointer;
 }
-#countBox{
-text-align:center;
+
+.option input{
+width:auto !important;
+margin:0;
+}
+
+.option:hover{
+background:#e0f2fe;
+border-color:#3b82f6;
+}
+
+.option span{
+flex:1;
+text-align:left;
 }
 
 #count{
-display:inline-block;
-margin-top:10px;
+font-size:50px;
+font-weight:bold;
+text-align:center;
 }
 
 </style>
@@ -98,37 +122,32 @@ margin-top:10px;
 
 <body>
 
-<h2>JOA IT CBT Mock Test</h2>
+<div class="header" id="testTitle"></div>
+<div class="timer" id="timer" style="display:none"></div>
 
-<div class="timer" id="examTimer" style="display:none"></div>
-
-<div class="container" id="formBox">
-
+<div class="card" id="formBox">
 <h3>Enter Details</h3>
-
-<input id="Name" placeholder="Enter Name"><br><br>
-<input id="Phone" placeholder="Enter Phone"><br><br>
-
-<button onclick="beginTest()">Start Test</button>
-
-</div>
-<div class="container center" id="countBox" style="display:none">
-
-<h3>Test will start in</h3>
-
-<div class="timer" id="count">5</div>
-
+<input id="name" placeholder="Enter Name">
+<input id="phone" placeholder="Enter Phone">
+<button onclick="startCountdown()">Start Test</button>
 </div>
 
+<div class="card" id="countBox" style="display:none">
+<h2 style="text-align:center">Test will start in</h2>
+<div id="count">5</div>
+</div>
 
-<div class="container" id="questionBox" style="display:none"></div>
+<div class="card" id="questionBox" style="display:none"></div>
 
-<div class="container" id="resultBox" style="display:none"></div>
+<div class="card" id="resultBox" style="display:none"></div>
 
-<!-- ✅ नया script (security check) -->
-<script src="auth.js"></script>
-  
 <script>
+
+/* CHANGE HERE */
+let mockTestNo = "Mock Test 02"
+
+document.getElementById("testTitle").innerHTML =
+"JUNIOR OFFICE ASSISTANT (IT)<br><span style='font-size:15px'>Competitive Examination</span>"
 
 let questions=[
 {
