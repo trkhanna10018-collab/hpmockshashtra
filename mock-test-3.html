@@ -83,7 +83,9 @@ margin-bottom:15px;
 
 /* OPTIONS */
 .option{
-display:block;
+display:flex;
+align-items:center;
+gap:12px;
 padding:14px;
 margin:10px 0;
 border-radius:10px;
@@ -91,12 +93,21 @@ border:1px solid #e2e8f0;
 background:#f8fafc;
 font-size:20px;
 cursor:pointer;
-transition:0.2s;
+}
+
+.option input{
+width:auto !important;
+margin:0;
 }
 
 .option:hover{
 background:#e0f2fe;
 border-color:#3b82f6;
+}
+
+.option span{
+flex:1;
+text-align:left;
 }
 
 #count{
