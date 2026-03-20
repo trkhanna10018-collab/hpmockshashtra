@@ -12,33 +12,36 @@
 
 body{
 margin:0;
-font-family:Segoe UI, Arial;
-background:#f4f6f9;
+font-family:Arial;
+background:#f1f5f9;
 }
 
 /* HEADER */
 .header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 20px;
-background:#2c3e50;
-color:white;
-font-size:18px;
-}
-
-.timer{
+text-align:center;
+padding:15px;
+font-size:24px;
 font-weight:bold;
+color:#1e293b;
 }
 
-/* MAIN BOX */
-.container{
+/* TIMER CENTER */
+.timer{
+text-align:center;
+font-size:22px;
+font-weight:bold;
+color:#dc2626;
+margin:10px 0;
+}
+
+/* MAIN CARD */
+.card{
 max-width:750px;
 margin:20px auto;
 background:white;
 padding:25px;
 border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
 }
 
 /* INPUT */
@@ -46,13 +49,13 @@ input{
 width:100%;
 padding:12px;
 margin:10px 0;
-border:1px solid #ccc;
 border-radius:6px;
+border:1px solid #ccc;
 }
 
 /* BUTTON */
 button{
-background:#3498db;
+background:#2563eb;
 color:white;
 border:none;
 padding:12px;
@@ -62,40 +65,34 @@ cursor:pointer;
 }
 
 button:hover{
-background:#2980b9;
+background:#1d4ed8;
 }
 
 /* QUESTION */
 h3{
-font-size:26px;
+font-size:28px;
 margin-bottom:10px;
 }
 
 p{
-font-size:20px;
-margin-bottom:15px;
+font-size:22px;
 }
 
 /* OPTIONS */
 .option{
 display:block;
-padding:12px;
-margin:8px 0;
+padding:14px;
+margin:10px 0;
 border:1px solid #ddd;
 border-radius:6px;
+font-size:20px;
 cursor:pointer;
-font-size:18px;
 transition:0.2s;
 }
 
 .option:hover{
-background:#ecf5ff;
-border-color:#3498db;
-}
-
-/* RESULT */
-.result{
-line-height:1.6;
+background:#eff6ff;
+border-color:#2563eb;
 }
 
 </style>
@@ -104,32 +101,30 @@ line-height:1.6;
 
 <body>
 
-<div class="header">
-<div id="testTitle"></div>
-<div class="timer" id="timer"></div>
-</div>
+<div class="header" id="testTitle"></div>
 
-<div class="container" id="formBox">
+<div class="timer" id="timer" style="display:none"></div>
+
+<div class="card" id="formBox">
 <h3>Enter Details</h3>
 <input id="name" placeholder="Enter Name">
 <input id="phone" placeholder="Enter Phone">
 <button onclick="startCountdown()">Start Test</button>
 </div>
 
-<div class="container" id="countBox" style="display:none;text-align:center">
-<h2>Test starts in</h2>
+<div class="card" id="countBox" style="display:none;text-align:center">
+<h2>Test will start in</h2>
 <h1 id="count">5</h1>
 </div>
 
-<div class="container" id="questionBox" style="display:none"></div>
+<div class="card" id="questionBox" style="display:none"></div>
 
-<div class="container" id="resultBox" style="display:none"></div>
+<div class="card" id="resultBox" style="display:none"></div>
 
 <script>
 
-/* 🔥 CHANGE THIS */
+/* CHANGE ONLY THIS */
 let mockTestNo = "Mock Test 1"
-
 document.getElementById("testTitle").innerText = mockTestNo
 
 let questions=[
@@ -186,6 +181,7 @@ if(t<0){
 clearInterval(c)
 document.getElementById("countBox").style.display="none"
 document.getElementById("questionBox").style.display="block"
+document.getElementById("timer").style.display="block"
 
 startTimer()
 showQuestion()
@@ -198,7 +194,7 @@ function startTimer(){
 timerInterval=setInterval(()=>{
 let m=Math.floor(time/60)
 let s=time%60
-document.getElementById("timer").innerText="⏱ "+m+":"+(s<10?"0":"")+s
+document.getElementById("timer").innerText="⏱ Time Left: "+m+":"+(s<10?"0":"")+s
 time--
 
 if(time<0){
