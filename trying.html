@@ -133,29 +133,340 @@ text-align:center;
 <script>
 
 /* CHANGE HERE */
-let mockTestNo = "Mock Test 01"
+let mockTestNo = "Free Mock Test"
 
 document.getElementById("testTitle").innerHTML =
 "JUNIOR OFFICE ASSISTANT (IT)<br><span style='font-size:15px'>Competitive Examination</span>"
 
 let questions=[
 {
-en:"Which aggregate function calculates average?",
-hi:"कौन-सा function average निकालता है?",
-A:"SUM()",
-B:"AVG()",
-C:"COUNT()",
-D:"MAX()",
+id:1,
+en:"Which memory is used to store BIOS in a computer?",
+hi:"कंप्यूटर में BIOS किस मेमोरी में स्टोर किया जाता है?",
+A:"RAM",
+B:"ROM",
+C:"Cache",
+D:"Register",
 ans:"B"
 },
+
 {
-en:"Which SQL clause groups rows?",
-hi:"Rows को group करने के लिए?",
-A:"ORDER BY",
-B:"GROUP BY",
-C:"WHERE",
-D:"HAVING",
+id:2,
+en:"Which HTML input type is used to upload a file from user's computer?",
+hi:"यूज़र के कंप्यूटर से फाइल अपलोड करने के लिए कौन-सा HTML input type उपयोग होता है?",
+A:"upload",
+B:"file",
+C:"attach",
+D:"document",
 ans:"B"
+},
+
+{
+id:3,
+en:"Which of the following is an example of an optical storage device?",
+hi:"निम्न में से कौन-सा ऑप्टिकल स्टोरेज डिवाइस का उदाहरण है?",
+A:"SSD",
+B:"DVD",
+C:"Flash Drive",
+D:"Hard Disk",
+ans:"B"
+},
+
+{
+id:4,
+en:"Which operating system component manages communication between hardware and software?",
+hi:"हार्डवेयर और सॉफ्टवेयर के बीच संचार को कौन-सा ऑपरेटिंग सिस्टम कंपोनेंट नियंत्रित करता है?",
+A:"Kernel",
+B:"Shell",
+C:"Compiler",
+D:"Interpreter",
+ans:"A"
+},
+
+{
+id:5,
+en:"Which scheduling algorithm assigns CPU to the process with the smallest execution time?",
+hi:"कौन-सा scheduling algorithm सबसे कम execution time वाले process को CPU देता है?",
+A:"Round Robin",
+B:"FCFS",
+C:"Shortest Job First",
+D:"Priority Scheduling",
+ans:"C"
+},
+
+{
+id:6,
+en:"Which network topology connects each node directly to every other node?",
+hi:"कौन-सी नेटवर्क टोपोलॉजी में हर node सीधे हर दूसरे node से जुड़ा होता है?",
+A:"Bus",
+B:"Star",
+C:"Mesh",
+D:"Ring",
+ans:"C"
+},
+
+{
+id:7,
+en:"Which device is used to connect different networks together?",
+hi:"अलग-अलग नेटवर्क को जोड़ने के लिए कौन-सा डिवाइस उपयोग किया जाता है?",
+A:"Switch",
+B:"Hub",
+C:"Router",
+D:"Repeater",
+ans:"C"
+},
+
+{
+id:8,
+en:"Which protocol is used for secure web communication?",
+hi:"सुरक्षित वेब कम्युनिकेशन के लिए कौन-सा प्रोटोकॉल उपयोग होता है?",
+A:"HTTP",
+B:"FTP",
+C:"HTTPS",
+D:"SMTP",
+ans:"C"
+},
+
+{
+id:9,
+en:"What does MAC address stand for?",
+hi:"MAC address का पूरा नाम क्या है?",
+A:"Machine Access Code",
+B:"Media Access Control",
+C:"Master Access Code",
+D:"Memory Access Code",
+ans:"B"
+},
+
+{
+id:10,
+en:"In Excel which function counts cells that meet a specific condition?",
+hi:"Excel में कौन-सा function किसी विशेष condition को पूरा करने वाली cells को count करता है?",
+A:"COUNT",
+B:"COUNTIF",
+C:"SUMIF",
+D:"AVERAGE",
+ans:"B"
+},
+
+{
+id:11,
+en:"Which MS Word feature is used to create multiple letters using a single template?",
+hi:"MS Word में एक ही template से कई letters बनाने के लिए कौन-सा feature उपयोग होता है?",
+A:"Mail Merge",
+B:"Page Layout",
+C:"WordArt",
+D:"Track Changes",
+ans:"A"
+},
+
+{
+id:12,
+en:"Which technology was primarily used in first generation computers?",
+hi:"पहली पीढ़ी के कंप्यूटर में मुख्य रूप से कौन-सी तकनीक उपयोग होती थी?",
+A:"Transistors",
+B:"Integrated Circuits",
+C:"Vacuum Tubes",
+D:"Microprocessors",
+ans:"C"
+},
+
+{
+id:13,
+en:"Which generation of computers introduced microprocessors?",
+hi:"किस पीढ़ी के कंप्यूटर में microprocessor का उपयोग शुरू हुआ?",
+A:"Second Generation",
+B:"Third Generation",
+C:"Fourth Generation",
+D:"Fifth Generation",
+ans:"C"
+},
+
+{
+id:14,
+en:"Which type of computer processes continuous physical data such as temperature and pressure?",
+hi:"तापमान और दबाव जैसे निरंतर भौतिक डेटा को कौन-सा कंप्यूटर प्रोसेस करता है?",
+A:"Digital Computer",
+B:"Analog Computer",
+C:"Hybrid Computer",
+D:"Microcomputer",
+ans:"B"
+},
+
+{
+id:15,
+en:"Which type of computer combines the features of analog and digital computers?",
+hi:"कौन-सा कंप्यूटर analog और digital दोनों की विशेषताओं को मिलाता है?",
+A:"Analog Computer",
+B:"Digital Computer",
+C:"Hybrid Computer",
+D:"Supercomputer",
+ans:"C"
+},
+
+{
+id:16,
+en:"What is the main difference between a process and a thread?",
+hi:"Process और thread के बीच मुख्य अंतर क्या है?",
+A:"Process shares memory",
+B:"Thread shares process memory",
+C:"Both have separate memory",
+D:"Process is part of thread",
+ans:"B"
+},
+
+{
+id:17,
+en:"Which of the following is considered a lightweight process?",
+hi:"निम्न में से किसे lightweight process कहा जाता है?",
+A:"Process",
+B:"Program",
+C:"Thread",
+D:"Job",
+ans:"C"
+},
+
+{
+id:18,
+en:"Threads of the same process share which resource?",
+hi:"एक ही process के threads कौन-सा resource साझा करते हैं?",
+A:"Memory space",
+B:"CPU registers",
+C:"Program counter",
+D:"Stack",
+ans:"A"
+},
+
+{
+id:19,
+en:"What is meant by context switching in operating systems?",
+hi:"Operating system में context switching का क्या अर्थ है?",
+A:"Switching computers",
+B:"Saving state of one process and loading another",
+C:"Changing OS",
+D:"Restarting CPU",
+ans:"B"
+},
+
+{
+id:20,
+en:"In which topology does each node connect to exactly two other nodes forming a loop?",
+hi:"किस टोपोलॉजी में हर node दो अन्य nodes से जुड़कर एक loop बनाता है?",
+A:"Bus",
+B:"Star",
+C:"Ring",
+D:"Mesh",
+ans:"C"
+}, 
+
+{
+id:21,
+en:"Which network topology provides the highest reliability because every node has a dedicated connection to every other node?",
+hi:"कौन-सी नेटवर्क टोपोलॉजी में हर node दूसरे node से सीधे जुड़ा होने के कारण सबसे अधिक reliability मिलती है?",
+A:"Bus",
+B:"Star",
+C:"Ring",
+D:"Mesh",
+ans:"D"
+},
+
+{
+id:22,
+en:"In a star topology which device acts as the central connecting point?",
+hi:"Star topology में सभी nodes को जोड़ने वाला central device कौन होता है?",
+A:"Router",
+B:"Hub or Switch",
+C:"Repeater",
+D:"Bridge",
+ans:"B"
+},
+
+{
+id:23,
+en:"Which network device works at the Data Link Layer and forwards data using MAC address?",
+hi:"कौन-सा नेटवर्क डिवाइस Data Link Layer पर काम करता है और MAC address के आधार पर data forward करता है?",
+A:"Hub",
+B:"Switch",
+C:"Repeater",
+D:"Modem",
+ans:"B"
+},
+
+{
+id:24,
+en:"Which device connects different networks and determines the best path for data packets?",
+hi:"कौन-सा डिवाइस अलग-अलग नेटवर्क को जोड़ता है और data packets के लिए best path चुनता है?",
+A:"Switch",
+B:"Hub",
+C:"Router",
+D:"Bridge",
+ans:"C"
+},
+
+{
+id:25,
+en:"Which device connects networks that use different communication protocols?",
+hi:"कौन-सा डिवाइस अलग-अलग communication protocol वाले नेटवर्क को जोड़ता है?",
+A:"Bridge",
+B:"Gateway",
+C:"Hub",
+D:"Switch",
+ans:"B"
+},
+
+{
+id:26,
+en:"Which type of malware demands payment to restore access to encrypted data?",
+hi:"कौन-सा malware डेटा को encrypt करके उसे वापस पाने के लिए पैसे मांगता है?",
+A:"Spyware",
+B:"Trojan Horse",
+C:"Ransomware",
+D:"Worm",
+ans:"C"
+},
+
+{
+id:27,
+en:"Which statement best describes ransomware?",
+hi:"Ransomware के बारे में कौन-सा कथन सही है?",
+A:"Secretly monitors user activity",
+B:"Encrypts files and demands payment",
+C:"Spreads automatically without user action",
+D:"Deletes operating system files",
+ans:"B"
+},
+
+{
+id:28,
+en:"Which database model organizes data in a tree like structure?",
+hi:"कौन-सा database model डेटा को tree structure में व्यवस्थित करता है?",
+A:"Network Model",
+B:"Relational Model",
+C:"Hierarchical Model",
+D:"Object Model",
+ans:"C"
+},
+
+{
+id:29,
+en:"In which database model can a child record have multiple parents?",
+hi:"किस database model में एक child record के कई parent हो सकते हैं?",
+A:"Hierarchical Model",
+B:"Network Model",
+C:"Relational Model",
+D:"Object Oriented Model",
+ans:"B"
+},
+
+{
+id:30,
+en:"In the relational database model data is stored in the form of?",
+hi:"Relational database model में डेटा किस रूप में संग्रहित किया जाता है?",
+A:"Trees",
+B:"Graphs",
+C:"Tables",
+D:"Pointers",
+ans:"C"
 }
 ]
 
