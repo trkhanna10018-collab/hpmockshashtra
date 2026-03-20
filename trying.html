@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
-<title>JOA IT Mock Test</title>
+<title>Mockshastra - JOA IT Test</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -16,7 +17,6 @@ background:linear-gradient(135deg,#667eea,#764ba2);
 color:#fff;
 }
 
-/* HEADER */
 .header{
 text-align:center;
 padding:20px;
@@ -24,21 +24,6 @@ font-size:26px;
 font-weight:bold;
 }
 
-/* TIMER FULL WIDTH */
-.timerBar{
-width:90%;
-max-width:800px;
-margin:10px auto;
-background:rgba(255,255,255,0.2);
-padding:12px;
-border-radius:10px;
-text-align:center;
-font-size:20px;
-font-weight:bold;
-display:none;
-}
-
-/* CARD */
 .card{
 max-width:800px;
 margin:20px auto;
@@ -49,16 +34,14 @@ border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* INPUT */
 input{
 width:100%;
 padding:12px;
 margin:10px 0;
-border-radius:8px;
 border:none;
+border-radius:8px;
 }
 
-/* BUTTON */
 button{
 background:linear-gradient(45deg,#22c55e,#16a34a);
 border:none;
@@ -67,25 +50,25 @@ border-radius:8px;
 color:white;
 font-size:16px;
 cursor:pointer;
-margin-top:10px;
 }
 
 button:hover{
 transform:scale(1.05);
 }
 
-/* OPTIONS */
 .option{
 display:block;
 background:rgba(255,255,255,0.1);
 padding:10px;
-margin-top:8px;
+margin:8px 0;
 border-radius:8px;
 cursor:pointer;
 }
 
-.option:hover{
-background:rgba(255,255,255,0.2);
+.timer{
+text-align:center;
+font-size:20px;
+margin:10px;
 }
 
 </style>
@@ -94,41 +77,31 @@ background:rgba(255,255,255,0.2);
 
 <body>
 
-<div class="header">JOA IT CBT Mock Test</div>
+<div class="header">MOCKSHASTRA - JOA IT MOCK TEST</div>
 
-<div class="timerBar" id="examTimer"></div>
+<div class="timer" id="timer" style="display:none"></div>
 
-<!-- FORM -->
 <div class="card" id="formBox">
 <h3>Enter Details</h3>
 <input id="name" placeholder="Enter Name">
 <input id="phone" placeholder="Enter Phone">
-<button onclick="beginTest()">Start Test</button>
+<button onclick="startTest()">Start Test</button>
 </div>
 
-<!-- COUNTDOWN -->
-<div class="card" id="countBox" style="display:none;text-align:center;">
-<h3>Test starts in</h3>
-<h1 id="count">5</h1>
-</div>
-
-<!-- QUESTIONS -->
 <div class="card" id="questionBox" style="display:none"></div>
 
-<!-- RESULT -->
 <div class="card" id="resultBox" style="display:none"></div>
+
+<!-- PDF hidden -->
+<div id="pdfContent" style="display:none;background:white;color:black;padding:20px"></div>
 
 <script>
 
-let studentName=""
-let studentPhone=""
-
-/* QUESTIONS */
 let questions=[
 {
 id:1,
 en:"Which aggregate function calculates the average value?",
-hi:"कौन-सा aggregate function average value निकालता है?",
+hi:"कौन-सा function average निकालता है?",
 A:"SUM()",
 B:"AVG()",
 C:"COUNT()",
@@ -137,8 +110,8 @@ ans:"B"
 },
 {
 id:2,
-en:"Which SQL clause is used with aggregate functions to group rows?",
-hi:"Aggregate functions के साथ rows को group करने के लिए कौन-सा SQL clause उपयोग होता है?",
+en:"Which SQL clause is used to group rows?",
+hi:"Rows को group करने के लिए कौन सा clause?",
 A:"ORDER BY",
 B:"GROUP BY",
 C:"WHERE",
@@ -151,65 +124,45 @@ let current=0
 let score=0
 let userAnswers={}
 
-let examTime=20  // change to 5400 for full test
-let timer
+let studentName=""
+let studentPhone=""
 
-/* TIMER */
-function startTimer(){
-timer=setInterval(()=>{
-let min=Math.floor(examTime/60)
-let sec=examTime%60
+let time=20
+let timerInterval
 
-document.getElementById("examTimer").innerHTML=
-"⏱ Time Left: "+min+":"+(sec<10?"0":"")+sec
-
-examTime--
-
-if(examTime<0){
-clearInterval(timer)
-alert("Time Over!")
-showResult()
-}
-
-},1000)
-}
+function startTest(){
 
 studentName=document.getElementById("name").value
 studentPhone=document.getElementById("phone").value
-/* BEGIN */
-function beginTest(){
 
-let name=document.getElementById("name").value
-let phone=document.getElementById("phone").value
-
-if(name=="" || phone==""){
+if(studentName=="" || studentPhone==""){
 alert("Enter details")
 return
 }
 
 document.getElementById("formBox").style.display="none"
-document.getElementById("countBox").style.display="block"
-
-let t=5
-
-let c=setInterval(()=>{
-document.getElementById("count").innerHTML=t
-t--
-
-if(t<0){
-clearInterval(c)
-document.getElementById("countBox").style.display="none"
 document.getElementById("questionBox").style.display="block"
-document.getElementById("examTimer").style.display="block"
+document.getElementById("timer").style.display="block"
 
 startTimer()
 showQuestion()
 }
 
+function startTimer(){
+timerInterval=setInterval(()=>{
+let m=Math.floor(time/60)
+let s=time%60
+document.getElementById("timer").innerHTML="⏱ "+m+":"+(s<10?"0":"")+s
+time--
+
+if(time<0){
+clearInterval(timerInterval)
+alert("Time Over")
+showResult()
+}
 },1000)
 }
 
-/* SHOW QUESTION */
 function showQuestion(){
 
 let q=questions[current]
@@ -226,12 +179,11 @@ html+=`<label class="option"><input type="radio" name="ans" value="B"> B. ${q.B}
 html+=`<label class="option"><input type="radio" name="ans" value="C"> C. ${q.C}</label>`
 html+=`<label class="option"><input type="radio" name="ans" value="D"> D. ${q.D}</label>`
 
-html+=`<button onclick="nextQuestion()">Next</button>`
+html+=`<br><button onclick="nextQuestion()">Next</button>`
 
 document.getElementById("questionBox").innerHTML=html
 }
 
-/* NEXT */
 function nextQuestion(){
 
 let selected=document.querySelector('input[name="ans"]:checked')
@@ -252,10 +204,9 @@ showResult()
 }
 }
 
-/* RESULT */
 function showResult(){
 
-clearInterval(timer)
+clearInterval(timerInterval)
 
 document.getElementById("questionBox").style.display="none"
 
@@ -265,82 +216,62 @@ box.style.display="block"
 let html=""
 
 html+=`<h2>RESULT</h2>`
-html+=`Score: ${score} / ${questions.length}<br><br>`
+html+=`<b>Name:</b> ${studentName}<br>`
+html+=`<b>Phone:</b> ${studentPhone}<br>`
+html+=`<b>Score:</b> ${score}/${questions.length}<br><br>`
 
 questions.forEach((q,i)=>{
-
-html+=`<hr><b>Q${i+1}. ${q.en}</b><br>`
+html+=`<hr>`
+html+=`<b>Q${i+1}. ${q.en}</b><br>`
 html+=`${q.hi}<br><br>`
-
 html+=`A. ${q.A}<br>`
 html+=`B. ${q.B}<br>`
 html+=`C. ${q.C}<br>`
 html+=`D. ${q.D}<br><br>`
-
-html+=`<b>Your Answer:</b> ${userAnswers[i]||"Not Attempted"}<br>`
-html+=`<b>Correct Answer:</b> ${q.ans}<br>`
-
+html+=`Your Answer: ${userAnswers[i] || "Not Attempted"}<br>`
+html+=`Correct Answer: ${q.ans}<br>`
 })
 
 html+=`<br><button onclick="downloadPDF()">Download PDF</button>`
 
 box.innerHTML=html
-}
-  document.getElementById("pdfContent").innerHTML=html
 
-/* PDF */
+// PDF content
+document.getElementById("pdfContent").innerHTML=html
+}
+
 async function downloadPDF(){
 
 const { jsPDF } = window.jspdf
 
 let element=document.getElementById("pdfContent")
 element.style.display="block"
-let canvas=await html2canvas(element,{
-scale:2,
-backgroundColor:"#ffffff"
-})
 
-let imgData=canvas.toDataURL("image/jpeg",0.6)
+let canvas=await html2canvas(element,{scale:2,backgroundColor:"#ffffff"})
+
+let imgData=canvas.toDataURL("image/jpeg",0.9)
 
 let pdf=new jsPDF("p","mm","a4")
 
-let imgWidth=190
-let pageHeight=297
-let imgHeight=canvas.height*imgWidth/canvas.width
+let width=190
+let height=canvas.height*width/canvas.width
 
-let heightLeft=imgHeight
-let position=10
-
-/* 🔥 WATERMARK */
-pdf.setFontSize(40)
+// 🔥 MULTIPLE WATERMARK
+for(let y=40;y<280;y+=60){
+pdf.setFontSize(20)
 pdf.setTextColor(200,200,200)
-pdf.text("MOCKSHASTRA",35,150,{angle:45})
-
-pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
-
-heightLeft-=pageHeight
-
-while(heightLeft>0){
-
-position=heightLeft-imgHeight
-
-pdf.addPage()
-
-/* watermark again */
-pdf.setFontSize(40)
-pdf.setTextColor(200,200,200)
-pdf.text("MOCKSHASTRA",35,150,{angle:45})
-
-pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
-
-heightLeft-=pageHeight
+pdf.text("MOCKSHASTRA",20,y,{angle:45})
+pdf.text("MOCKSHASTRA",100,y,{angle:45})
 }
+
+pdf.addImage(imgData,"JPEG",10,10,width,height)
 
 pdf.save("Mockshastra_Result.pdf")
 
-  }
+element.style.display="none"
+}
 
 </script>
-<div id="pdfContent" style="display:none;background:white;color:black;padding:20px"></div>
+
 </body>
 </html>
