@@ -476,7 +476,7 @@ let userAnswers={}
 let name=""
 let phone=""
 
-let time=5400
+let time=5401
 let timerInterval
 
 function startCountdown(){
@@ -536,25 +536,11 @@ html+=`<b>${name}</b> | ${phone}<br><br>`
 html+=`<h3>Q${current+1}/${questions.length}. ${q.en}</h3>`
 html+=`<p>${q.hi}</p>`
 
-html+=`<label class="option">
-  <input type="radio" name="ans" value="A">
-  <span>A. ${q.A}</span>
-</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="A"> A. ${q.A}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="B"> B. ${q.B}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="C"> C. ${q.C}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="D"> D. ${q.D}</label>`
 
-html+=`<label class="option">
-  <input type="radio" name="ans" value="B">
-  <span>B. ${q.B}</span>
-</label>`
-
-html+=`<label class="option">
-  <input type="radio" name="ans" value="C">
-  <span>C. ${q.C}</span>
-</label>`
-
-html+=`<label class="option">
-  <input type="radio" name="ans" value="D">
-  <span>D. ${q.D}</span>
-</label>`
 html+=`<br><button onclick="nextQuestion()">Next</button>`
 
 document.getElementById("questionBox").innerHTML=html
@@ -652,6 +638,6 @@ pdf.save(mockTestNo.replace(/\s+/g,'_')+".pdf")
 }
 
 </script>
-
+<script src="auth.js"></script>
 </body>
 </html>
