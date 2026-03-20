@@ -21,11 +21,11 @@ background:#eef2ff;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 25px;
+padding:15px 20px;
 background:#4f46e5;
 color:white;
-font-weight:bold;
 font-size:18px;
+font-weight:bold;
 }
 
 /* CARD */
@@ -56,22 +56,30 @@ padding:12px 18px;
 border-radius:8px;
 font-size:16px;
 cursor:pointer;
-transition:0.2s;
 }
 
 button:hover{
 background:#4338ca;
 }
 
-/* OPTION */
+/* QUESTION SIZE BIG */
+h3{
+font-size:28px;
+font-weight:bold;
+}
+
+p{
+font-size:22px;
+}
+
 .option{
 display:block;
-padding:12px;
-margin:8px 0;
+font-size:20px;
+padding:14px;
+margin:10px 0;
 background:#f3f4f6;
 border-radius:8px;
 cursor:pointer;
-transition:0.2s;
 }
 
 .option:hover{
@@ -117,7 +125,7 @@ let mockTestNo = "Mock Test 1"
 
 document.getElementById("testTitle").innerText = mockTestNo
 
-/* QUESTIONS */
+/* QUESTIONS (100 डाल सकते हो) */
 let questions=[
 {
 en:"Which aggregate function calculates average?",
@@ -181,6 +189,7 @@ showQuestion()
 },1000)
 }
 
+/* TIMER */
 function startTimer(){
 timerInterval=setInterval(()=>{
 let m=Math.floor(time/60)
@@ -195,6 +204,7 @@ showResult()
 },1000)
 }
 
+/* SHOW QUESTION */
 function showQuestion(){
 
 let q=questions[current]
@@ -218,6 +228,7 @@ html+=`<br><button onclick="nextQuestion()">Next</button>`
 document.getElementById("questionBox").innerHTML=html
 }
 
+/* NEXT */
 function nextQuestion(){
 
 let selected=document.querySelector('input[name="ans"]:checked')
@@ -238,6 +249,7 @@ showResult()
 }
 }
 
+/* RESULT */
 function showResult(){
 
 clearInterval(timerInterval)
@@ -272,6 +284,7 @@ html+=`<br><button onclick="downloadPDF()">Download PDF</button>`
 box.innerHTML=html
 }
 
+/* 🔥 PDF (MULTI PAGE + SMALL SIZE) */
 async function downloadPDF(){
 
 const { jsPDF } = window.jspdf
@@ -283,16 +296,31 @@ element.style.color = "#000"
 
 await new Promise(r=>setTimeout(r,800))
 
-let canvas = await html2canvas(element,{scale:3})
+let canvas = await html2canvas(element,{
+scale:1.5,
+useCORS:true
+})
 
-let imgData = canvas.toDataURL("image/png")
+let imgData = canvas.toDataURL("image/jpeg",0.6)
 
-let pdf = new jsPDF()
+let pdf = new jsPDF("p","mm","a4")
 
-let imgWidth=190
-let imgHeight=canvas.height*imgWidth/canvas.width
+let imgWidth = 190
+let pageHeight = 297
+let imgHeight = canvas.height * imgWidth / canvas.width
 
-pdf.addImage(imgData,"PNG",10,10,imgWidth,imgHeight)
+let heightLeft = imgHeight
+let position = 10
+
+pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
+heightLeft -= pageHeight
+
+while(heightLeft > 0){
+position = heightLeft - imgHeight
+pdf.addPage()
+pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
+heightLeft -= pageHeight
+}
 
 pdf.save("Mock_"+mockTestNo.replace(/\s+/g,'_')+".pdf")
 }
