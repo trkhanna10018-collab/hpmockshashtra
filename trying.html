@@ -12,18 +12,18 @@
 
 body{
 margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#667eea,#764ba2);
+font-family:'Segoe UI', sans-serif;
+background:linear-gradient(180deg,#6d63ff,#6a5acd);
+color:white;
 }
 
 /* HEADER */
 .header{
 text-align:center;
-padding:18px;
+padding:25px 10px;
 font-size:26px;
 font-weight:bold;
-color:white;
-text-shadow:0 2px 10px rgba(0,0,0,0.3);
+color:#ffd166;
 }
 
 /* TIMER */
@@ -31,20 +31,17 @@ text-shadow:0 2px 10px rgba(0,0,0,0.3);
 text-align:center;
 font-size:22px;
 font-weight:bold;
-color:#fff;
-margin:10px 0;
+margin-top:10px;
 }
 
-/* GLASS CARD */
+/* CARD */
 .card{
 max-width:750px;
 margin:20px auto;
 padding:25px;
-border-radius:15px;
-background:rgba(255,255,255,0.2);
-backdrop-filter:blur(15px);
-color:white;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+border-radius:25px;
+background:rgba(255,255,255,0.12);
+box-shadow:0 8px 25px rgba(0,0,0,0.25);
 }
 
 /* INPUT */
@@ -52,30 +49,30 @@ input{
 width:100%;
 padding:12px;
 margin:10px 0;
-border-radius:10px;
 border:none;
-outline:none;
+border-radius:10px;
 }
 
 /* BUTTON */
 button{
-background:linear-gradient(45deg,#22c55e,#16a34a);
-color:white;
+width:100%;
+padding:14px;
 border:none;
-padding:12px;
-border-radius:10px;
+border-radius:15px;
 font-size:16px;
+color:white;
+background:linear-gradient(145deg,#5f6bff,#7c83ff);
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
 cursor:pointer;
 }
 
 button:hover{
-transform:scale(1.05);
+transform:scale(1.03);
 }
 
 /* QUESTION */
 h3{
-font-size:28px;
-margin-bottom:10px;
+font-size:30px;
 }
 
 p{
@@ -87,15 +84,20 @@ font-size:22px;
 display:block;
 padding:14px;
 margin:10px 0;
-border-radius:10px;
-background:rgba(255,255,255,0.25);
-cursor:pointer;
+border-radius:12px;
+background:rgba(255,255,255,0.15);
 font-size:20px;
-transition:0.2s;
+cursor:pointer;
 }
 
 .option:hover{
-background:rgba(255,255,255,0.4);
+background:rgba(255,255,255,0.3);
+}
+
+#count{
+font-size:50px;
+font-weight:bold;
+text-align:center;
 }
 
 </style>
@@ -105,7 +107,6 @@ background:rgba(255,255,255,0.4);
 <body>
 
 <div class="header" id="testTitle"></div>
-
 <div class="timer" id="timer" style="display:none"></div>
 
 <div class="card" id="formBox">
@@ -115,9 +116,9 @@ background:rgba(255,255,255,0.4);
 <button onclick="startCountdown()">Start Test</button>
 </div>
 
-<div class="card" id="countBox" style="display:none;text-align:center">
-<h2>Test will start in</h2>
-<h1 id="count">5</h1>
+<div class="card" id="countBox" style="display:none">
+<h2 style="text-align:center">Test will start in</h2>
+<div id="count">5</div>
 </div>
 
 <div class="card" id="questionBox" style="display:none"></div>
@@ -126,9 +127,11 @@ background:rgba(255,255,255,0.4);
 
 <script>
 
-/* CHANGE THIS */
-let mockTestNo = "Mock Test 1"
-document.getElementById("testTitle").innerText = mockTestNo
+/* CHANGE HERE */
+let mockTestNo = "Mock Test 01"
+
+document.getElementById("testTitle").innerHTML =
+"JUNIOR OFFICE ASSISTANT (IT)<br><span style='font-size:16px;color:white'>Competitive Examination</span>"
 
 let questions=[
 {
@@ -197,7 +200,7 @@ function startTimer(){
 timerInterval=setInterval(()=>{
 let m=Math.floor(time/60)
 let s=time%60
-document.getElementById("timer").innerText="⏱ Time Left: "+m+":"+(s<10?"0":"")+s
+document.getElementById("timer").innerText="⏱ "+m+":"+(s<10?"0":"")+s
 time--
 
 if(time<0){
@@ -295,7 +298,7 @@ await new Promise(r=>setTimeout(r,800))
 
 let canvas=await html2canvas(element,{scale:1.5})
 
-let imgData=canvas.toDataURL("image/jpeg",0.6)
+let imgData=canvas.toDataURL("image/jpeg",0.5)
 
 let pdf=new jsPDF("p","mm","a4")
 
@@ -316,7 +319,7 @@ pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
 heightLeft-=pageHeight
 }
 
-pdf.save("Mock_"+mockTestNo.replace(/\s+/g,'_')+".pdf")
+pdf.save(mockTestNo.replace(/\s+/g,'_')+".pdf")
 }
 
 </script>
