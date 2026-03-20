@@ -141,7 +141,6 @@ C:"COUNT()",
 D:"MAX()",
 ans:"B"
 },
-
 {
 id:2,
 en:"Which SQL clause is used with aggregate functions to group rows?",
@@ -152,94 +151,86 @@ C:"WHERE",
 D:"HAVING",
 ans:"B"
 },
-
 {
 id:3,
 en:"Which SQL join returns only matching rows from both tables?",
-hi:"कौन-सा SQL join केवल matching rows लौटाता है?",
+hi:"कौन-सा SQL join दोनों tables से केवल matching rows return करता है?",
 A:"LEFT JOIN",
 B:"RIGHT JOIN",
 C:"INNER JOIN",
 D:"FULL JOIN",
 ans:"C"
 },
-
 {
 id:4,
 en:"Which SQL join returns all records from the left table and matched records from the right table?",
-hi:"कौन-सा join left table के सभी records और right table के matching records देता है?",
+hi:"कौन-सा SQL join left table के सभी records और right table के matching records देता है?",
 A:"INNER JOIN",
 B:"LEFT JOIN",
 C:"RIGHT JOIN",
 D:"CROSS JOIN",
 ans:"B"
 },
-
 {
 id:5,
 en:"Which join returns all records from both tables regardless of matching?",
-hi:"कौन-सा join दोनों tables के सभी records देता है चाहे match हो या न हो?",
+hi:"कौन-सा join दोनों tables के सभी records (match हो या न हो) return करता है?",
 A:"INNER JOIN",
 B:"FULL OUTER JOIN",
 C:"LEFT JOIN",
 D:"RIGHT JOIN",
 ans:"B"
 },
-
 {
 id:6,
 en:"Which relational algebra operation selects rows that satisfy a given condition?",
-hi:"कौन-सा relational algebra operation condition के अनुसार rows select करता है?",
+hi:"Relational algebra में कौन-सा operation condition के अनुसार rows select करता है?",
 A:"Projection",
 B:"Selection",
 C:"Join",
 D:"Union",
 ans:"B"
 },
-
 {
 id:7,
 en:"Which relational algebra operation selects specific columns from a table?",
-hi:"कौन-सा operation specific columns select करता है?",
+hi:"Relational algebra में कौन-सा operation specific columns select करता है?",
 A:"Selection",
 B:"Projection",
 C:"Join",
 D:"Division",
 ans:"B"
 },
-
 {
 id:8,
 en:"Which relational algebra operation combines rows from two relations?",
-hi:"कौन-सा operation दो relations की rows को combine करता है?",
+hi:"Relational algebra में कौन-सा operation दो relations की rows को combine करता है?",
 A:"Union",
 B:"Join",
 C:"Selection",
 D:"Projection",
 ans:"B"
 },
-
 {
 id:9,
 en:"Which SQL clause is used to sort the result of a query?",
-hi:"Query के result को sort करने के लिए कौन-सा clause उपयोग होता है?",
+hi:"Query के result को sort करने के लिए कौन-सा SQL clause उपयोग होता है?",
 A:"GROUP BY",
 B:"ORDER BY",
 C:"SORT BY",
 D:"ARRANGE BY",
 ans:"B"
 },
-
 {
 id:10,
 en:"Which key uniquely identifies each record in a relation and is chosen from candidate keys?",
-hi:"कौन-सी key हर record को uniquely identify करती है और candidate keys में से चुनी जाती है?",
+hi:"कौन-सी key relation में प्रत्येक record को uniquely identify करती है और candidate keys में से चुनी जाती है?",
 A:"Super Key",
 B:"Primary Key",
 C:"Foreign Key",
 D:"Alternate Key",
 ans:"B"
-},
+}, 
 
 {
 id:11,
@@ -251,7 +242,6 @@ C:"A key used for sorting data",
 D:"A key used only in foreign tables",
 ans:"A"
 },
-
 {
 id:12,
 en:"A candidate key is:",
@@ -262,7 +252,6 @@ C:"A key used only for sorting",
 D:"A key with NULL values",
 ans:"A"
 },
-
 {
 id:13,
 en:"Which key is used to link two tables together?",
@@ -273,7 +262,6 @@ C:"Foreign Key",
 D:"Composite Key",
 ans:"C"
 },
-
 {
 id:14,
 en:"A relation can have how many primary keys?",
@@ -284,7 +272,6 @@ C:"Many",
 D:"None",
 ans:"A"
 },
-
 {
 id:15,
 en:"Which of the following is true about candidate keys?",
@@ -295,7 +282,6 @@ C:"Candidate keys can contain duplicate values",
 D:"Candidate keys must always be numeric",
 ans:"B"
 },
-
 {
 id:16,
 en:"In DBMS, ACID property ensures reliable transaction processing. What does 'A' stand for?",
@@ -306,50 +292,46 @@ C:"Accessibility",
 D:"Availability",
 ans:"B"
 },
-
 {
 id:17,
 en:"Which ACID property ensures that a transaction changes the database from one valid state to another?",
-hi:"कौन-सी ACID property database को एक valid state से दूसरी valid state में ले जाती है?",
+hi:"कौन-सी ACID property database को एक valid state से दूसरी valid state में बदलने को सुनिश्चित करती है?",
 A:"Consistency",
 B:"Isolation",
 C:"Atomicity",
 D:"Durability",
 ans:"A"
 },
-
 {
 id:18,
 en:"Which type of conflict occurs when one transaction reads a data item and another transaction writes the same item?",
-hi:"जब एक transaction read करे और दूसरा write करे तो कौन-सा conflict होता है?",
+hi:"जब एक transaction data को read करे और दूसरा उसी data को write करे तो कौन-सा conflict होता है?",
 A:"W-W Conflict",
 B:"R-R Conflict",
 C:"R-W Conflict",
 D:"W-R Conflict",
 ans:"C"
 },
-
 {
 id:19,
 en:"Which conflict occurs when two transactions attempt to write the same data item?",
-hi:"जब दो transactions एक ही data को write करें तो कौन-सा conflict होता है?",
+hi:"जब दो transactions एक ही data item को write करने की कोशिश करें तो कौन-सा conflict होता है?",
 A:"W-W Conflict",
 B:"R-W Conflict",
 C:"R-R Conflict",
 D:"W-R Conflict",
 ans:"A"
 },
-
 {
 id:20,
 en:"A schedule is conflict serializable if:",
-hi:"Schedule conflict serializable कब होता है?",
+hi:"Schedule कब conflict serializable कहलाती है?",
 A:"All transactions execute simultaneously",
 B:"It can be converted into a serial schedule by swapping non-conflicting operations",
 C:"All transactions are committed",
 D:"It contains only read operations",
 ans:"B"
-},
+}, 
 
 {
 id:21,
@@ -361,51 +343,46 @@ C:"Binary Graph",
 D:"Execution Graph",
 ans:"B"
 },
-
 {
 id:22,
 en:"A schedule is recoverable if:",
-hi:"Schedule recoverable कब होता है?",
+hi:"Schedule recoverable कब कहलाती है?",
 A:"Transactions commit before reading data",
 B:"A transaction commits only after the transaction from which it reads has committed",
 C:"Transactions run simultaneously",
 D:"All transactions abort",
 ans:"B"
 },
-
 {
 id:23,
 en:"Two Phase Locking (2PL) protocol ensures:",
-hi:"Two Phase Locking (2PL) क्या सुनिश्चित करता है?",
+hi:"Two Phase Locking (2PL) protocol क्या सुनिश्चित करता है?",
 A:"Deadlock prevention",
 B:"Serializability",
 C:"Parallel execution",
 D:"Faster execution",
 ans:"B"
 },
-
 {
 id:24,
 en:"In the Timestamp Ordering protocol, transactions are ordered based on:",
-hi:"Timestamp Ordering protocol में transactions किस आधार पर order होते हैं?",
+hi:"Timestamp Ordering protocol में transactions किस आधार पर क्रमबद्ध होते हैं?",
 A:"Priority",
 B:"Arrival time",
 C:"Timestamp value",
 D:"Process ID",
 ans:"C"
 },
-
 {
 id:25,
 en:"In concurrency control, which problem occurs when a transaction reads data that has not yet been committed?",
-hi:"Concurrency control में वह समस्या क्या है जब transaction uncommitted data पढ़ता है?",
+hi:"Concurrency control में जब कोई transaction uncommitted data पढ़ता है तो कौन-सी समस्या होती है?",
 A:"Lost Update",
 B:"Dirty Read",
 C:"Phantom Read",
 D:"Deadlock",
 ans:"B"
 },
-
 {
 id:26,
 en:"Which feature in MS Word is used to quickly copy formatting from one part of the document to another?",
@@ -416,29 +393,26 @@ C:"Style Copy",
 D:"Copy Format",
 ans:"B"
 },
-
 {
 id:27,
 en:"Which shortcut key is used to save a document in MS Word?",
-hi:"MS Word में document save करने के लिए कौन-सी shortcut key उपयोग होती है?",
+hi:"MS Word में document save करने की shortcut key क्या है?",
 A:"Ctrl + S",
 B:"Ctrl + D",
 C:"Ctrl + W",
 D:"Ctrl + E",
 ans:"A"
 },
-
 {
 id:28,
 en:"Which MS Word feature automatically corrects spelling mistakes as you type?",
-hi:"Typing करते समय spelling mistake automatically सही करने वाला feature कौन-सा है?",
+hi:"टाइप करते समय spelling mistakes को automatically correct करने वाला feature कौन-सा है?",
 A:"AutoFormat",
 B:"AutoCorrect",
 C:"Spell Check",
 D:"Grammar Check",
 ans:"B"
 },
-
 {
 id:29,
 en:"Which tab in MS Word contains the option to insert pictures?",
@@ -449,40 +423,37 @@ C:"Layout",
 D:"Review",
 ans:"B"
 },
-
 {
 id:30,
 en:"Which MS Word view shows multiple pages at once for easy navigation?",
-hi:"MS Word में कौन-सा view एक साथ multiple pages दिखाता है?",
+hi:"MS Word का कौन-सा view एक साथ कई pages दिखाता है?",
 A:"Draft View",
 B:"Print Layout",
 C:"Multiple Pages View",
 D:"Web Layout",
 ans:"C"
-},
+}, 
 
 {
 id:31,
 en:"Which feature allows collaboration by adding comments in a document?",
-hi:"Document में comments जोड़कर collaboration करने वाला feature कौन-सा है?",
+hi:"Document में comments जोड़कर collaboration करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Review Comments",
 B:"Insert Comment",
 C:"Track Changes",
 D:"Annotation",
 ans:"B"
 },
-
 {
 id:32,
 en:"Which MS Word feature allows inserting predefined building blocks like cover pages and headers?",
-hi:"Predefined blocks (cover page, header) insert करने वाला feature कौन-सा है?",
+hi:"Predefined building blocks (cover pages, headers आदि) insert करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Quick Parts",
 B:"Smart Parts",
 C:"Word Blocks",
 D:"Text Blocks",
 ans:"A"
 },
-
 {
 id:33,
 en:"Which feature allows inserting a reference to a heading or figure in the document?",
@@ -493,29 +464,26 @@ C:"Cross-reference",
 D:"Citation",
 ans:"C"
 },
-
 {
 id:34,
 en:"Which MS Word option allows changing the orientation of the page?",
-hi:"Page orientation बदलने के लिए कौन-सा option उपयोग होता है?",
+hi:"Page orientation बदलने के लिए MS Word में कौन-सा option उपयोग होता है?",
 A:"Page Layout",
 B:"Orientation",
 C:"Format",
 D:"Page Setup",
 ans:"B"
 },
-
 {
 id:35,
 en:"Which shortcut key centers the selected text?",
-hi:"Selected text को center करने के लिए कौन-सी shortcut key उपयोग होती है?",
+hi:"Selected text को center करने की shortcut key क्या है?",
 A:"Ctrl + C",
 B:"Ctrl + E",
 C:"Ctrl + R",
 D:"Ctrl + L",
 ans:"B"
 },
-
 {
 id:36,
 en:"Which MS Word feature allows automatic numbering of headings?",
@@ -526,7 +494,6 @@ C:"Number Format",
 D:"Heading List",
 ans:"B"
 },
-
 {
 id:37,
 en:"Which tab contains options for inserting shapes and SmartArt?",
@@ -537,29 +504,26 @@ C:"Insert",
 D:"Review",
 ans:"C"
 },
-
 {
 id:38,
 en:"Which feature is used to protect a document with a password?",
-hi:"Document को password से secure करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Document को password से protect करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Document Security",
 B:"Encrypt with Password",
 C:"Secure Mode",
 D:"Lock File",
 ans:"B"
 },
-
 {
 id:39,
 en:"Which feature is used to apply the same formatting style throughout a document?",
-hi:"पूरे document में same formatting apply करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"पूरे document में एक ही formatting style लागू करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Style Set",
 B:"Template",
 C:"Format Style",
 D:"AutoFormat",
 ans:"A"
 },
-
 {
 id:40,
 en:"Which option allows splitting a page into two columns?",
@@ -569,7 +533,7 @@ B:"Insert → Columns",
 C:"Design → Columns",
 D:"View → Columns",
 ans:"A"
-},
+}, 
 
 {
 id:41,
@@ -579,20 +543,18 @@ A:"Shapes",
 B:"SmartArt",
 C:"Chart",
 D:"Drawing Tool",
-ans:"B"
+ans:"A"
 },
-
 {
 id:42,
 en:"Which feature is used to insert page numbers automatically?",
-hi:"Page numbers automatically insert करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Page numbers को automatically insert करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Header/Footer",
 B:"Page Number",
 C:"Page Setup",
 D:"Insert Page",
 ans:"B"
 },
-
 {
 id:43,
 en:"Which MS Word option automatically adjusts column width in a table?",
@@ -603,29 +565,26 @@ C:"Table Adjust",
 D:"Fit Column",
 ans:"A"
 },
-
 {
 id:44,
 en:"Which feature is used to insert citations for research papers?",
-hi:"Research papers में citations insert करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Research papers के लिए citations insert करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Citation Tool",
 B:"Reference Manager",
 C:"Insert Citation",
 D:"Bibliography Tool",
 ans:"C"
 },
-
 {
 id:45,
 en:"Which feature displays document structure based on headings?",
-hi:"Headings के आधार पर document structure दिखाने वाला feature कौन-सा है?",
+hi:"Headings के आधार पर document structure दिखाने के लिए कौन-सा feature उपयोग होता है?",
 A:"Navigation Pane",
 B:"Document Map",
 C:"Outline View",
 D:"Structure View",
 ans:"A"
 },
-
 {
 id:46,
 en:"Which MS Word option allows inserting special symbols?",
@@ -636,7 +595,6 @@ C:"Character Map",
 D:"Special Insert",
 ans:"A"
 },
-
 {
 id:47,
 en:"Which feature helps to merge letters with address lists?",
@@ -647,7 +605,6 @@ C:"Letter Combine",
 D:"Address Merge",
 ans:"A"
 },
-
 {
 id:48,
 en:"Which MS Word option allows inserting watermarks in a document?",
@@ -658,18 +615,16 @@ C:"Insert → Watermark",
 D:"Format → Watermark",
 ans:"B"
 },
-
 {
 id:49,
 en:"Which feature allows splitting text into multiple columns?",
-hi:"Text को multiple columns में divide करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Text को multiple columns में बाँटने के लिए कौन-सा feature उपयोग होता है?",
 A:"Page Break",
 B:"Columns",
 C:"Section Break",
 D:"Layout Split",
 ans:"B"
 },
-
 {
 id:50,
 en:"Which MS Word tool is used to highlight important text?",
@@ -679,63 +634,58 @@ B:"Highlight Tool",
 C:"Text Highlight Color",
 D:"Mark Text",
 ans:"C"
-},
+}, 
 
 {
 id:51,
 en:"Which Excel feature automatically adjusts column width to fit the contents?",
-hi:"Excel में column width को content के अनुसार automatically adjust करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Excel में column width को contents के अनुसार automatically adjust करने के लिए कौन-सा feature उपयोग होता है?",
 A:"AutoWidth",
 B:"AutoFit",
 C:"AutoAdjust",
 D:"FitCell",
 ans:"B"
 },
-
 {
 id:52,
 en:"Which function is used to find the highest value in a range?",
-hi:"Range में highest value निकालने के लिए कौन-सा function उपयोग होता है?",
+hi:"Range में सबसे बड़ी value निकालने के लिए कौन-सा function उपयोग होता है?",
 A:"TOP()",
 B:"MAX()",
 C:"HIGH()",
 D:"LARGE()",
 ans:"B"
 },
-
 {
 id:53,
 en:"Which function counts all non-empty cells?",
-hi:"Non-empty cells को count करने के लिए कौन-सा function उपयोग होता है?",
+hi:"कौन-सा function सभी non-empty cells की गणना करता है?",
 A:"COUNT()",
 B:"COUNTA()",
 C:"COUNTIF()",
 D:"COUNTBLANK()",
 ans:"B"
 },
-
 {
 id:54,
-en:"What will be the result of =LEN(\"EXCEL\") ?",
+en:"What will be the result of the formula =LEN(\"EXCEL\") ?",
 hi:"=LEN(\"EXCEL\") का परिणाम क्या होगा?",
 A:"4",
 B:"5",
 C:"6",
 D:"7",
-ans:"C"
+ans:"B"
 },
-
 {
 id:55,
 en:"Which Excel function returns the current date?",
-hi:"Current date return करने के लिए कौन-सा Excel function उपयोग होता है?",
+hi:"वर्तमान तिथि प्राप्त करने के लिए कौन-सा Excel function उपयोग होता है?",
 A:"DATE()",
 B:"NOW()",
 C:"TODAY()",
 D:"CURRENT()",
 ans:"C"
 },
-
 {
 id:56,
 en:"Which function extracts characters from the middle of a text string?",
@@ -746,7 +696,6 @@ C:"RIGHT()",
 D:"TEXT()",
 ans:"A"
 },
-
 {
 id:57,
 en:"What does the formula =LEFT(\"COMPUTER\",4) return?",
@@ -757,29 +706,26 @@ C:"COM",
 D:"OM",
 ans:"A"
 },
-
 {
 id:58,
 en:"Which Excel feature allows creating charts easily from selected data?",
-hi:"Selected data से charts बनाने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Selected data से आसानी से charts बनाने के लिए कौन-सा feature उपयोग होता है?",
 A:"Quick Chart",
 B:"Chart Wizard",
 C:"Smart Chart",
 D:"Chart Maker",
 ans:"B"
 },
-
 {
 id:59,
 en:"Which function returns the remainder after division?",
-hi:"Division के बाद remainder return करने वाला function कौन-सा है?",
+hi:"Division के बाद remainder देने वाला function कौन-सा है?",
 A:"MOD()",
 B:"REM()",
 C:"DIV()",
 D:"RND()",
 ans:"A"
 },
-
 {
 id:60,
 en:"Which Excel function converts text to uppercase?",
@@ -789,41 +735,38 @@ B:"CAPITAL()",
 C:"UCASE()",
 D:"BIG()",
 ans:"A"
-},
+}, 
 
 {
 id:61,
 en:"Which Excel function returns the smallest value in a range?",
-hi:"Range में सबसे छोटी value निकालने के लिए कौन-सा Excel function उपयोग होता है?",
+hi:"Range में सबसे छोटी value निकालने के लिए कौन-सा function उपयोग होता है?",
 A:"SMALL()",
 B:"MIN()",
 C:"LOW()",
 D:"LOWER()",
 ans:"B"
 },
-
 {
 id:62,
 en:"What will be the output of =POWER(3,2) ?",
-hi:"=POWER(3,2) का परिणाम क्या होगा?",
+hi:"=POWER(3,2) का output क्या होगा?",
 A:"6",
 B:"9",
 C:"12",
 D:"18",
 ans:"B"
 },
-
 {
 id:63,
 en:"Which Excel feature freezes rows or columns while scrolling?",
-hi:"Scrolling के दौरान rows या columns को freeze करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Scroll करते समय rows या columns को freeze करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Lock Pane",
 B:"Freeze Panes",
 C:"Fixed Rows",
 D:"Scroll Lock",
 ans:"B"
 },
-
 {
 id:64,
 en:"Which function joins multiple text strings together?",
@@ -834,29 +777,26 @@ C:"TEXTJOIN()",
 D:"MERGE()",
 ans:"B"
 },
-
 {
 id:65,
 en:"Which function counts cells meeting a specified condition?",
-hi:"Condition के अनुसार cells count करने के लिए कौन-सा function उपयोग होता है?",
+hi:"Specified condition को पूरा करने वाले cells की गणना करने के लिए कौन-सा function उपयोग होता है?",
 A:"COUNT()",
 B:"COUNTIF()",
 C:"COUNTA()",
 D:"COUNTBLANK()",
 ans:"B"
 },
-
 {
 id:66,
 en:"Which Excel function finds the position of a text string within another text?",
-hi:"Text string की position खोजने के लिए कौन-सा function उपयोग होता है?",
+hi:"Text string की position को दूसरे text के अंदर ढूंढने के लिए कौन-सा function उपयोग होता है?",
 A:"SEARCH()",
 B:"FINDPOS()",
 C:"LOCATE()",
 D:"MATCH()",
 ans:"A"
 },
-
 {
 id:67,
 en:"Which function returns the square root of a number?",
@@ -867,7 +807,6 @@ C:"SQUARE()",
 D:"POWER()",
 ans:"B"
 },
-
 {
 id:68,
 en:"Which Excel function converts text to lowercase?",
@@ -878,7 +817,6 @@ C:"LCASE()",
 D:"TEXTLOW()",
 ans:"A"
 },
-
 {
 id:69,
 en:"Which Excel tool removes duplicate records from a dataset?",
@@ -889,18 +827,16 @@ C:"Unique Filter",
 D:"Data Cleaner",
 ans:"A"
 },
-
 {
 id:70,
 en:"Which feature allows applying conditions to format cells automatically?",
-hi:"Conditions के आधार पर cells को format करने के लिए कौन-सा feature उपयोग होता है?",
+hi:"Cells पर conditions के आधार पर formatting apply करने के लिए कौन-सा feature उपयोग होता है?",
 A:"Conditional Formatting",
 B:"Format Rules",
 C:"Auto Formatting",
 D:"Smart Format",
 ans:"A"
-},
-
+}, 
 {
 id:71,
 en:"The ancient name of Kangra was:",
