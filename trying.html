@@ -1,1331 +1,251 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta charset="UTF-8">
-<title>Mock Test</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<title>JOA IT Login</title>
 
 <style>
-
 body{
 margin:0;
-font-family:'Segoe UI', sans-serif;
-background:linear-gradient(135deg,#eef2ff,#e0f2fe);
-color:#1e293b;
+font-family: 'Segoe UI', sans-serif;
+background:linear-gradient(135deg,#667eea,#764ba2);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+/* MAIN CARD */
+.main{
+width:100%;
+max-width:850px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+border-radius:20px;
+padding:30px;
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
 
 /* HEADER */
 .header{
 text-align:center;
-padding:20px 10px;
-font-size:24px;
-font-weight:600;
-color:#4338ca;
+color:white;
+margin-bottom:25px;
 }
 
-/* TIMER */
-.timer{
-text-align:center;
-font-size:20px;
-font-weight:bold;
-margin-bottom:10px;
-color:#dc2626;
+.header h1{
+margin:0;
+font-size:32px;
 }
 
-/* CARD */
-.card{
-max-width:750px;
-margin:20px auto;
-padding:25px;
-border-radius:16px;
+.header p{
+opacity:0.9;
+}
+
+/* FLEX LAYOUT */
+.flex{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+/* LEFT (INFO) */
+.info{
+flex:1;
+min-width:250px;
+color:white;
+}
+
+.info ul{
+padding-left:18px;
+}
+
+.info li{
+margin:8px 0;
+}
+
+/* RIGHT (LOGIN BOX) */
+.login{
+flex:1;
+min-width:250px;
 background:white;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.footer a{
+color:#facc15;
+text-decoration:none;
+font-weight:500;
 }
 
-/* INPUT */
-input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ddd;
+.footer a:hover{
+text-decoration:underline;
 }
+
+.login h3{
+margin-bottom:15px;
+}
+
+input, button{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:10px;
+box-sizing:border-box;
+  }
 
 /* BUTTON */
 button{
 width:100%;
-padding:14px;
+padding:12px;
 border:none;
-border-radius:10px;
-font-size:16px;
+border-radius:8px;
+background:#4f46e5;
 color:white;
-background:linear-gradient(135deg,#6366f1,#3b82f6);
+font-size:16px;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-opacity:0.9;
+background:#4338ca;
 }
 
-/* QUESTION */
-h3{
-font-size:30px;
-margin-bottom:10px;
+/* FREE BUTTON */
+.freeBtn{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#22c55e;
+color:white;
+border-radius:8px;
+text-decoration:none;
 }
 
-p{
-font-size:22px;
-margin-bottom:15px;
+.freeBtn:hover{
+background:#16a34a;
 }
 
-/* OPTIONS */
-.option{
-display:flex;
-align-items:center;
-gap:12px;
-padding:14px;
-margin:10px 0;
+/* PRICE BOX */
+.priceBox{
+margin-top:20px;
+padding:15px;
 border-radius:10px;
-border:1px solid #e2e8f0;
-background:#f8fafc;
-font-size:20px;
-cursor:pointer;
-}
-
-.option input{
-width:auto !important;
-margin:0;
-}
-
-.option:hover{
-background:#e0f2fe;
-border-color:#3b82f6;
-}
-
-.option span{
-flex:1;
-text-align:left;
-}
-
-#count{
-font-size:50px;
-font-weight:bold;
+background:#111827;
+color:white;
 text-align:center;
 }
 
-</style>
+.price{
+color:#facc15;
+font-size:22px;
+font-weight:bold;
+}
 
+/* FOOTER */
+.footer{
+text-align:center;
+margin-top:15px;
+font-size:12px;
+color:white;
+opacity:0.8;
+}
+
+.unlockBtn{
+display:inline-block;
+margin-top:15px;
+padding:12px 20px;
+border-radius:10px;
+background:linear-gradient(45deg,#22c55e,#16a34a);
+color:white;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
+
+.unlockBtn:hover{
+transform:scale(1.05);
+background:#15803d;
+}
+</style>
 </head>
 
 <body>
 
-<div class="header" id="testTitle"></div>
-<div class="timer" id="timer" style="display:none"></div>
+<div class="main">
 
-<div class="card" id="formBox">
-<h3>Enter Details</h3>
-<input id="name" placeholder="Enter Name">
-<input id="phone" placeholder="Enter Phone">
-<button onclick="startCountdown()">Start Test</button>
+<div class="header">
+<img src="logo.png" height="70" style="margin-bottom:10px; filter:drop-shadow(0 0 10px rgba(255,255,255,0.4));">
+<h1>JOA IT Mock Test</h1>
+<p>Practice Like Real Exam • Improve Accuracy & Speed</p>
 </div>
 
-<div class="card" id="countBox" style="display:none">
-<h2 style="text-align:center">Test will start in</h2>
-<div id="count">5</div>
+<div class="flex">
+
+<!-- LEFT INFO -->
+<div class="info">
+<h3>🎯 What You Get:</h3>
+<ul>
+<li>Real Exam Interface</li>
+<li>Timer Based Test</li>
+<li>Instant Result</li>
+<li>Bilingual (English + Hindi)</li>
+<li>15 Full-Length Mock Tests</li>
+</ul>
+
+<a href="joafreetest.html" class="freeBtn">Start Free Test</a>
+
+<div class="priceBox">
+<p>Full Access</p>
+<div class="price">₹199</div>
+<p>WhatsApp after payment</p>
+<p>📞 8278847614</p>
+</div>
+<a href="payment.html" class="unlockBtn">🔓 Unlock Full Access</a>
+
 </div>
 
-<div class="card" id="questionBox" style="display:none"></div>
+<!-- LOGIN -->
+<div class="login">
+<h3>Login</h3>
 
-<div class="card" id="resultBox" style="display:none"></div>
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+</div>
+
+<div class="footer">
+By continuing, you agree to our  
+<a href="terms.html" target="_blank">Terms & Conditions</a> and  
+<a href="privacy.html" target="_blank">Privacy Policy</a>
+</div>
+
+</div>
 
 <script>
+function login(){
 
-/* CHANGE HERE */
-let mockTestNo = "Mock Test 11"
+let u=document.getElementById("username").value
+let p=document.getElementById("password").value
 
-document.getElementById("testTitle").innerHTML =
-"JUNIOR OFFICE ASSISTANT (IT)<br><span style='font-size:15px'>Competitive Examination</span>"
-
-let questions=[
-{
-id:1,
-en:"In MS Word, the Ribbon is primarily used to:",
-hi:"MS Word में Ribbon का मुख्य उपयोग क्या है?",
-A:"Store files",
-B:"Display commands and tools organized in tabs",
-C:"Show document status",
-D:"Print documents",
-ans:"B"
-},
-{
-id:2,
-en:"Which of the following is a component of the Ribbon interface in MS Word?",
-hi:"MS Word के Ribbon interface का कौन-सा भाग है?",
-A:"Cells",
-B:"Slides",
-C:"Groups",
-D:"Records",
-ans:"C"
-},
-{
-id:3,
-en:"In MS Word, the Title Bar displays:",
-hi:"MS Word में Title Bar क्या दिखाता है?",
-A:"Formatting tools",
-B:"File name and application name",
-C:"Page number",
-D:"Status of document editing",
-ans:"B"
-},
-{
-id:4,
-en:"Which of the following best describes the Quick Access Toolbar in MS Word?",
-hi:"MS Word में Quick Access Toolbar का सही वर्णन क्या है?",
-A:"It shows page layout options",
-B:"It provides quick access to frequently used commands like Save, Undo, Redo",
-C:"It displays document statistics",
-D:"It is used to insert images",
-ans:"B"
-},
-{
-id:5,
-en:"Which shortcut key is used to create a new document in MS Word?",
-hi:"MS Word में नया document बनाने के लिए कौन-सी shortcut key है?",
-A:"Ctrl + O",
-B:"Ctrl + N",
-C:"Ctrl + S",
-D:"Ctrl + P",
-ans:"B"
-},
-{
-id:6,
-en:"Which menu/tab option in MS Word is used to create a new document from a template?",
-hi:"MS Word में template से नया document बनाने के लिए कौन-सा option उपयोग होता है?",
-A:"Insert → New",
-B:"File → New",
-C:"Home → New",
-D:"View → New",
-ans:"B"
-},
-{
-id:7,
-en:"In MS Word, which of the following statements is TRUE when opening an existing document using Ctrl + O?",
-hi:"MS Word में Ctrl + O दबाने पर कौन-सा कथन सही है?",
-A:"It directly opens the last saved document without prompt",
-B:"It opens the Save As dialog box",
-C:"It opens the Open dialog box to browse and select files",
-D:"It closes the current document",
-ans:"C"
-},
-{
-id:8,
-en:"Which of the following best describes the difference between “Save” and “Save As” in MS Word?",
-hi:"MS Word में “Save” और “Save As” के बीच सही अंतर क्या है?",
-A:"Save creates a new file, Save As updates existing file",
-B:"Save updates the current file, Save As creates a new copy with different name/location",
-C:"Both perform the same function always",
-D:"Save deletes old file, Save As restores it",
-ans:"B"
-},
-{
-id:9,
-en:"If a document is saved using “Save As” with a different file name, what happens to the original file?",
-hi:"यदि document को “Save As” से नए नाम से save किया जाए तो original file का क्या होगा?",
-A:"It is deleted",
-B:"It is overwritten",
-C:"It remains unchanged",
-D:"It is moved to new location",
-ans:"C"
-},
-{
-id:10,
-en:"In MS Word, what happens when you start typing while some text is already selected?",
-hi:"MS Word में यदि कुछ text select हो और आप typing शुरू करें तो क्या होगा?",
-A:"The selected text remains unchanged",
-B:"The selected text is replaced by the new text",
-C:"The text is copied",
-D:"The text is moved to clipboard",
-ans:"B"
-}, 
-{
-id:11,
-en:"Which mode allows new text to overwrite existing text while typing in MS Word?",
-hi:"MS Word में कौन-सा mode typing करते समय existing text को overwrite करता है?",
-A:"Insert Mode",
-B:"Overtype Mode",
-C:"Replace Mode",
-D:"Edit Mode",
-ans:"B"
-},
-{
-id:12,
-en:"In MS Word, when Overtype Mode is enabled and you place the cursor in the middle of a word, typing will:",
-hi:"MS Word में Overtype Mode चालू होने पर यदि cursor शब्द के बीच में हो तो typing करने पर क्या होगा?",
-A:"Insert text without affecting existing text",
-B:"Delete entire word automatically",
-C:"Replace existing characters one by one",
-D:"Move text to next line",
-ans:"C"
-},
-{
-id:13,
-en:"Which key is commonly used to toggle between Insert Mode and Overtype Mode in MS Word?",
-hi:"MS Word में Insert Mode और Overtype Mode के बीच toggle करने के लिए कौन-सी key उपयोग होती है?",
-A:"Ctrl",
-B:"Shift",
-C:"Insert (Ins)",
-D:"Alt",
-ans:"C"
-},
-{
-id:14,
-en:"In Insert Mode, when typing text in between a sentence, the existing text:",
-hi:"Insert Mode में sentence के बीच typing करने पर existing text क्या करता है?",
-A:"Gets deleted",
-B:"Gets overwritten",
-C:"Shifts to the right",
-D:"Moves to next line",
-ans:"C"
-},
-{
-id:15,
-en:"Which of the following best describes the effect of changing the font type in MS Word?",
-hi:"MS Word में font type बदलने का क्या प्रभाव होता है?",
-A:"It changes the size of the text",
-B:"It changes the style/design of characters",
-C:"It changes the alignment of text",
-D:"It changes the spacing between lines",
-ans:"B"
-},
-{
-id:16,
-en:"If the font size of text is increased from 10 pt to 20 pt, the text size becomes:",
-hi:"यदि font size 10 pt से 20 pt किया जाए तो text का आकार क्या होगा?",
-A:"Twice as large",
-B:"Slightly larger",
-C:"Four times larger",
-D:"Half the size",
-ans:"A"
-},
-{
-id:17,
-en:"Which unit is used to measure font size in MS Word?",
-hi:"MS Word में font size किस unit में मापा जाता है?",
-A:"Pixels",
-B:"Inches",
-C:"Points",
-D:"Centimeters",
-ans:"C"
-},
-{
-id:18,
-en:"In MS Word, which feature under the Review tab is used to check grammatical and spelling mistakes in a document?",
-hi:"MS Word में Review tab के अंतर्गत spelling और grammar check करने के लिए कौन-सा feature उपयोग होता है?",
-A:"Word Count",
-B:"Spelling & Grammar",
-C:"Thesaurus",
-D:"Track Changes",
-ans:"B"
-},
-{
-id:19,
-en:"Which shortcut key is used to open the Spelling & Grammar check in MS Word?",
-hi:"MS Word में Spelling & Grammar check खोलने के लिए कौन-सी shortcut key है?",
-A:"F5",
-B:"F7",
-C:"F9",
-D:"Ctrl + F",
-ans:"B"
-},
-{
-id:20,
-en:"What is the primary function of the Thesaurus feature in MS Word?",
-hi:"MS Word में Thesaurus feature का मुख्य कार्य क्या है?",
-A:"To correct spelling errors",
-B:"To translate text",
-C:"To find synonyms and antonyms",
-D:"To format text",
-ans:"C"
-}, 
-
-{
-id:21,
-en:"In MS Word, which view mode is best suited for reading a document with minimal editing distractions?",
-hi:"MS Word में कौन-सा view mode document को बिना distraction के पढ़ने के लिए सबसे उपयुक्त है?",
-A:"Print Layout",
-B:"Read Mode",
-C:"Web Layout",
-D:"Draft",
-ans:"B"
-},
-{
-id:22,
-en:"Which view shows the document exactly as it will appear when printed?",
-hi:"कौन-सा view document को वैसा ही दिखाता है जैसा वह print होने पर दिखेगा?",
-A:"Read Mode",
-B:"Draft View",
-C:"Print Layout",
-D:"Outline View",
-ans:"C"
-},
-{
-id:23,
-en:"In Read Mode, which of the following is TRUE?",
-hi:"Read Mode में निम्न में से कौन-सा कथन सही है?",
-A:"Full editing features are available",
-B:"The document is displayed for easy reading with limited editing options",
-C:"It shows page margins and rulers",
-D:"It allows inserting tables",
-ans:"B"
-},
-{
-id:24,
-en:"In MS Excel, what is the primary function of the Formula Bar?",
-hi:"MS Excel में Formula Bar का मुख्य कार्य क्या है?",
-A:"To display chart options",
-B:"To enter and edit data or formulas in a cell",
-C:"To show sheet names",
-D:"To format cells",
-ans:"B"
-},
-{
-id:25,
-en:"The Worksheet Area in Excel refers to:",
-hi:"Excel में Worksheet Area किसे कहते हैं?",
-A:"The ribbon at the top",
-B:"The area where charts are displayed",
-C:"The grid of rows and columns where data is entered",
-D:"The status bar",
-ans:"C"
-},
-{
-id:26,
-en:"Sheet Tabs in Excel are used to:",
-hi:"Excel में Sheet Tabs का उपयोग किस लिए किया जाता है?",
-A:"Apply formulas",
-B:"Navigate between different worksheets in a workbook",
-C:"Format text",
-D:"Insert charts",
-ans:"B"
-},
-{
-id:27,
-en:"In MS Excel, how is text data aligned by default in a cell?",
-hi:"MS Excel में text data default रूप से किस ओर align होता है?",
-A:"Center",
-B:"Right",
-C:"Left",
-D:"Justify",
-ans:"C"
-},
-{
-id:28,
-en:"Which of the following is treated as numeric data in Excel?",
-hi:"निम्न में से कौन-सा Excel में numeric data माना जाता है?",
-A:"\"123\"",
-B:"123",
-C:"\"ABC\"",
-D:"\"12A\"",
-ans:"B"
-},
-{
-id:29,
-en:"If you enter a number with a leading apostrophe (e.g., '123), Excel treats it as:",
-hi:"यदि किसी संख्या के आगे apostrophe (जैसे '123) लगाया जाए, तो Excel उसे किस रूप में मानता है?",
-A:"Number",
-B:"Date",
-C:"Text",
-D:"Formula",
-ans:"C"
-},
-{
-id:30,
-en:"Which OSI layer is responsible for transmission of raw bits over a physical medium?",
-hi:"OSI मॉडल की कौन-सी layer raw bits के transmission के लिए जिम्मेदार होती है?",
-A:"Data Link Layer",
-B:"Physical Layer",
-C:"Network Layer",
-D:"Transport Layer",
-ans:"B"
-},
-{
-id:31,
-en:"Which function is performed by the Data Link Layer?",
-hi:"Data Link Layer का कौन-सा कार्य होता है?",
-A:"Routing of packets",
-B:"Error detection and framing",
-C:"Data encryption",
-D:"Session management",
-ans:"B"
-},
-{
-id:32,
-en:"Which layer of the TCP/IP model is responsible for process-to-process communication and corresponds to the Transport layer of OSI?",
-hi:"TCP/IP मॉडल की कौन-सी layer process-to-process communication के लिए जिम्मेदार है और OSI की Transport layer के समान है?",
-A:"Application Layer",
-B:"Internet Layer",
-C:"Transport Layer",
-D:"Network Access Layer",
-ans:"C"
-},
-{
-id:33,
-en:"In the TCP/IP model, which layer is responsible for routing and logical addressing?",
-hi:"TCP/IP मॉडल में routing और logical addressing के लिए कौन-सी layer जिम्मेदार है?",
-A:"Application Layer",
-B:"Internet Layer",
-C:"Transport Layer",
-D:"Network Access Layer",
-ans:"B"
-},
-{
-id:34,
-en:"Which of the following correctly matches TCP/IP layer with its function?",
-hi:"निम्न में से कौन-सा TCP/IP layer और उसके कार्य का सही मिलान है?",
-A:"Application Layer – Frame transmission",
-B:"Internet Layer – End-to-end delivery",
-C:"Transport Layer – Port addressing and segmentation",
-D:"Network Access Layer – Data encryption",
-ans:"C"
-},
-{
-id:35,
-en:"Which wired transmission medium provides the highest bandwidth and is least affected by electromagnetic interference?",
-hi:"कौन-सा wired transmission medium सबसे अधिक bandwidth देता है और electromagnetic interference से सबसे कम प्रभावित होता है?",
-A:"Twisted Pair",
-B:"Coaxial Cable",
-C:"Fiber Optic",
-D:"Telephone Line",
-ans:"C"
-},
-{
-id:36,
-en:"In twisted pair cables, which technique is used to reduce electromagnetic interference?",
-hi:"Twisted pair cables में electromagnetic interference कम करने के लिए कौन-सी technique उपयोग होती है?",
-A:"Shielding with metal",
-B:"Twisting of wire pairs",
-C:"Increasing voltage",
-D:"Using fiber core",
-ans:"B"
-},
-{
-id:37,
-en:"Which wireless technology is primarily used for short-range, low-power communication between devices like headphones and smartphones?",
-hi:"कौन-सी wireless technology short-range और low-power communication (जैसे headphones और smartphones) के लिए उपयोग होती है?",
-A:"Wi-Fi",
-B:"Infrared",
-C:"Bluetooth",
-D:"Satellite",
-ans:"C"
-},
-{
-id:38,
-en:"Which of the following is a limitation of Infrared communication?",
-hi:"Infrared communication की क्या limitation है?",
-A:"Requires high bandwidth",
-B:"Needs line-of-sight between devices",
-C:"Cannot transmit data",
-D:"Very expensive",
-ans:"B"
-},
-{
-id:39,
-en:"Which network device forwards data based on MAC addresses and reduces network collisions?",
-hi:"कौन-सा network device MAC address के आधार पर data forward करता है और collisions को कम करता है?",
-A:"Hub",
-B:"Switch",
-C:"Router",
-D:"Repeater",
-ans:"B"
-},
-{
-id:40,
-en:"Which device operates at the Network Layer and is used to connect different networks?",
-hi:"कौन-सा device Network Layer पर काम करता है और विभिन्न networks को जोड़ता है?",
-A:"Hub",
-B:"Switch",
-C:"Router",
-D:"Bridge",
-ans:"C"
-},
-{
-id:41,
-en:"Which of the following IP addresses is a valid private IP address?",
-hi:"निम्न में से कौन-सा IP address एक valid private IP address है?",
-A:"8.8.8.8",
-B:"172.20.10.5",
-C:"150.10.10.1",
-D:"200.1.1.1",
-ans:"B"
-},
-{
-id:42,
-en:"What is the CIDR notation for a subnet mask of 255.255.255.0?",
-hi:"255.255.255.0 subnet mask का CIDR notation क्या है?",
-A:"/16",
-B:"/24",
-C:"/8",
-D:"/32",
-ans:"B"
-},
-{
-id:43,
-en:"In subnetting, what does the prefix /26 indicate?",
-hi:"Subnetting में /26 prefix क्या दर्शाता है?",
-A:"26 hosts",
-B:"26 bits for network portion",
-C:"26 subnets",
-D:"26 total IP addresses",
-ans:"B"
-},
-{
-id:44,
-en:"Which of the following ranges represents private IP addresses?",
-hi:"निम्न में से कौन-सा range private IP addresses को दर्शाता है?",
-A:"10.0.0.0 – 10.255.255.255",
-B:"100.0.0.0 – 150.255.255.255",
-C:"200.0.0.0 – 210.255.255.255",
-D:"8.0.0.0 – 8.255.255.255",
-ans:"A"
-},
-{
-id:45,
-en:"Which of the following best defines a MAC address?",
-hi:"निम्न में से MAC address की सही परिभाषा क्या है?",
-A:"A logical address assigned by ISP",
-B:"A physical address assigned to a network interface",
-C:"A temporary IP address",
-D:"A routing identifier",
-ans:"B"
-},
-{
-id:46,
-en:"What is the standard format of a MAC address?",
-hi:"MAC address का standard format क्या है?",
-A:"32-bit binary",
-B:"48-bit hexadecimal",
-C:"64-bit decimal",
-D:"128-bit binary",
-ans:"B"
-},
-{
-id:47,
-en:"Which of the following correctly differentiates MAC address from IP address?",
-hi:"निम्न में से MAC address और IP address के बीच सही अंतर क्या है?",
-A:"MAC is logical, IP is physical",
-B:"MAC is physical, IP is logical",
-C:"Both are physical",
-D:"Both are logical",
-ans:"B"
-},
-{
-id:48,
-en:"Which well-known port number is used for secure HTTP (HTTPS)?",
-hi:"Secure HTTP (HTTPS) के लिए कौन-सा well-known port number उपयोग होता है?",
-A:"21",
-B:"25",
-C:"80",
-D:"443",
-ans:"D"
-},
-{
-id:49,
-en:"Which of the following correctly matches the service with its default port number?",
-hi:"निम्न में से कौन-सा service और उसके default port number का सही मिलान है?",
-A:"FTP – 25",
-B:"SMTP – 21",
-C:"FTP – 21",
-D:"HTTP – 443",
-ans:"C"
-},
-{
-id:50,
-en:"Ports in networking are used to:",
-hi:"Networking में ports का उपयोग किस लिए किया जाता है?",
-A:"Identify physical devices",
-B:"Identify specific processes or services on a host",
-C:"Store IP addresses",
-D:"Increase bandwidth",
-ans:"B"
-},
-{
-id:51,
-en:"Which type of cloud deployment is exclusively used by a single organization and offers maximum control over data?",
-hi:"कौन-सा cloud deployment केवल एक organization द्वारा उपयोग किया जाता है और data पर अधिकतम control देता है?",
-A:"Public Cloud",
-B:"Private Cloud",
-C:"Hybrid Cloud",
-D:"Community Cloud",
-ans:"B"
-},
-{
-id:52,
-en:"Which cloud model combines both public and private cloud features?",
-hi:"कौन-सा cloud model public और private cloud दोनों की विशेषताओं को मिलाता है?",
-A:"Public Cloud",
-B:"Private Cloud",
-C:"Hybrid Cloud",
-D:"Distributed Cloud",
-ans:"C"
-},
-{
-id:53,
-en:"In cloud computing, which service model provides virtual machines, storage, and networks to users?",
-hi:"Cloud computing में कौन-सा service model users को virtual machines, storage और networks प्रदान करता है?",
-A:"SaaS",
-B:"PaaS",
-C:"IaaS",
-D:"DaaS",
-ans:"C"
-},
-{
-id:54,
-en:"Which cloud service model allows users to access software applications over the internet without installing them locally?",
-hi:"कौन-सा cloud service model users को बिना local installation के internet पर software applications उपयोग करने देता है?",
-A:"IaaS",
-B:"PaaS",
-C:"SaaS",
-D:"NaaS",
-ans:"C"
-},
-{
-id:55,
-en:"Which command is used to test connectivity between two network devices?",
-hi:"दो network devices के बीच connectivity test करने के लिए कौन-सा command उपयोग होता है?",
-A:"ipconfig",
-B:"ping",
-C:"tracert",
-D:"netstat",
-ans:"B"
-},
-{
-id:56,
-en:"The ipconfig command in Windows is primarily used to:",
-hi:"Windows में ipconfig command का मुख्य उपयोग क्या है?",
-A:"Test network speed",
-B:"Display IP configuration details",
-C:"Reset network cables",
-D:"Monitor bandwidth",
-ans:"B"
-},
-{
-id:57,
-en:"Which ipconfig command is used to release the current IP address assigned to a system?",
-hi:"कौन-सा ipconfig command system को दिए गए current IP address को release करता है?",
-A:"ipconfig /renew",
-B:"ipconfig /all",
-C:"ipconfig /release",
-D:"ipconfig /flushdns",
-ans:"C"
-},
-{
-id:58,
-en:"Waiting Time in CPU scheduling is defined as:",
-hi:"CPU scheduling में Waiting Time की परिभाषा क्या है?",
-A:"Total time taken by a process from arrival to completion",
-B:"Time a process spends in the ready queue waiting for CPU",
-C:"Time taken for execution of a process",
-D:"Time spent in I/O operations",
-ans:"B"
-},
-{
-id:59,
-en:"Which of the following best describes a deadlock in an operating system?",
-hi:"Operating system में deadlock की सही परिभाषा क्या है?",
-A:"A process waiting indefinitely due to lack of CPU time",
-B:"A condition where processes wait indefinitely for resources held by each other",
-C:"A process completing execution quickly",
-D:"A system shutdown",
-ans:"B"
-},
-{
-id:60,
-en:"Starvation occurs when:",
-hi:"Starvation कब होता है?",
-A:"All processes are blocked permanently",
-B:"A process never gets CPU time or resources due to priority of others",
-C:"System memory is full",
-D:"Deadlock is resolved",
-ans:"B"
-},
-
-{
-id:61,
-en:"In disk structure, which component is a concentric circle on a disk surface where data is stored?",
-hi:"Disk structure में कौन-सा component disk surface पर concentric circle होता है जहाँ data store होता है?",
-A:"Sector",
-B:"Track",
-C:"Cylinder",
-D:"Head",
-ans:"B"
-},
-{
-id:62,
-en:"A sector in disk terminology refers to:",
-hi:"Disk terminology में sector किसे कहते हैं?",
-A:"A group of tracks",
-B:"The smallest addressable unit of storage on a disk",
-C:"Entire disk surface",
-D:"A set of cylinders",
-ans:"B"
-},
-{
-id:63,
-en:"Which disk scheduling algorithm services requests in the order they arrive?",
-hi:"कौन-सा disk scheduling algorithm requests को उनके आने के क्रम में service करता है?",
-A:"SSTF",
-B:"SCAN",
-C:"FCFS",
-D:"LOOK",
-ans:"C"
-},
-{
-id:64,
-en:"Which algorithm selects the request closest to the current head position?",
-hi:"कौन-सा algorithm current head position के सबसे नजदीकी request को चुनता है?",
-A:"FCFS",
-B:"SSTF",
-C:"C-SCAN",
-D:"LOOK",
-ans:"B"
-},
-{
-id:65,
-en:"Which disk scheduling algorithm moves the head in one direction servicing requests and then reverses direction?",
-hi:"कौन-सा disk scheduling algorithm head को एक दिशा में चलाता है और फिर direction बदल देता है?",
-A:"SCAN",
-B:"C-SCAN",
-C:"FCFS",
-D:"SSTF",
-ans:"A"
-},
-{
-id:66,
-en:"In which algorithm does the disk head move in one direction only and jumps back to the beginning without servicing on return?",
-hi:"किस algorithm में disk head केवल एक दिशा में चलता है और बिना servicing के वापस शुरू में आ जाता है?",
-A:"SCAN",
-B:"LOOK",
-C:"C-SCAN",
-D:"SSTF",
-ans:"C"
-},
-{
-id:67,
-en:"Which algorithm is an improved version of SCAN that services requests only up to the last request in each direction?",
-hi:"कौन-सा algorithm SCAN का improved version है जो केवल last request तक ही service करता है?",
-A:"FCFS",
-B:"C-LOOK",
-C:"LOOK",
-D:"SSTF",
-ans:"C"
-},
-{
-id:68,
-en:"Authentication in computer security is used to:",
-hi:"Computer security में authentication का उपयोग किस लिए किया जाता है?",
-A:"Grant permissions to files",
-B:"Verify the identity of a user",
-C:"Encrypt data",
-D:"Monitor network traffic",
-ans:"B"
-},
-{
-id:69,
-en:"Which of the following is an example of access control mechanism?",
-hi:"निम्न में से कौन-सा access control mechanism का उदाहरण है?",
-A:"Firewall",
-B:"Password-based login",
-C:"Antivirus",
-D:"Backup system",
-ans:"B"
-},
-{
-id:70,
-en:"Which protection mechanism ensures that users can only access resources they are authorized for?",
-hi:"कौन-सा protection mechanism सुनिश्चित करता है कि user केवल authorized resources ही access करे?",
-A:"Encryption",
-B:"Access Control List (ACL)",
-C:"Compression",
-D:"Debugging",
-ans:"B"
-},
-
-{
-id:71,
-en:"The Rigveda, the oldest Vedic text, is mainly a collection of:",
-hi:"ऋग्वेद, जो सबसे प्राचीन वैदिक ग्रंथ है, मुख्य रूप से किसका संग्रह है?",
-A:"Laws and rules",
-B:"Hymns dedicated to various gods",
-C:"Medical knowledge",
-D:"Mathematical formulas",
-ans:"B"
-},
-{
-id:72,
-en:"Which of the following was the main occupation of people during the Early Vedic Period?",
-hi:"प्रारंभिक वैदिक काल में लोगों का मुख्य व्यवसाय क्या था?",
-A:"Trade",
-B:"Agriculture",
-C:"Pastoralism (cattle rearing)",
-D:"Mining",
-ans:"C"
-},
-{
-id:73,
-en:"Who was the founder of the Maurya Empire?",
-hi:"मौर्य साम्राज्य का संस्थापक कौन था?",
-A:"Ashoka",
-B:"Bindusara",
-C:"Chandragupta Maurya",
-D:"Harsha",
-ans:"C"
-},
-{
-id:74,
-en:"Which Mauryan ruler is known for the propagation of Buddhism after the Kalinga War?",
-hi:"कौन-सा मौर्य शासक कलिंग युद्ध के बाद बौद्ध धर्म के प्रसार के लिए प्रसिद्ध है?",
-A:"Chandragupta Maurya",
-B:"Bindusara",
-C:"Ashoka",
-D:"Kanishka",
-ans:"C"
-},
-{
-id:75,
-en:"Which Delhi Sultan introduced the token currency system (copper coins) that ultimately failed due to widespread forgery?",
-hi:"किस दिल्ली सुल्तान ने टोकन मुद्रा (तांबे के सिक्के) की शुरुआत की जो जालसाजी के कारण असफल रही?",
-A:"Alauddin Khalji",
-B:"Muhammad bin Tughlaq",
-C:"Firoz Shah Tughlaq",
-D:"Iltutmish",
-ans:"B"
-},
-{
-id:76,
-en:"Who among the following was the last Mughal emperor declared as the leader of the Revolt of 1857?",
-hi:"निम्न में से कौन 1857 के विद्रोह का नेता घोषित किया गया अंतिम मुगल सम्राट था?",
-A:"Bahadur Shah I",
-B:"Bahadur Shah II",
-C:"Akbar II",
-D:"Shah Alam II",
-ans:"B"
-},
-{
-id:77,
-en:"Which of the following was NOT a major cause of the Revolt of 1857?",
-hi:"निम्न में से कौन 1857 के विद्रोह का प्रमुख कारण नहीं था?",
-A:"Doctrine of Lapse",
-B:"Introduction of Western education",
-C:"Use of greased cartridges",
-D:"Annexation policies of the British",
-ans:"B"
-},
-{
-id:78,
-en:"The first session of the Indian National Congress (1885) was held at:",
-hi:"भारतीय राष्ट्रीय कांग्रेस का पहला अधिवेशन (1885) कहाँ हुआ था?",
-A:"Calcutta",
-B:"Bombay",
-C:"Madras",
-D:"Delhi",
-ans:"B"
-},
-{
-id:79,
-en:"Which of the following words was NOT originally included in the Preamble of the Indian Constitution but was added later by amendment?",
-hi:"निम्न में से कौन-सा शब्द मूल रूप से संविधान की प्रस्तावना में नहीं था और बाद में जोड़ा गया?",
-A:"Sovereign",
-B:"Socialist",
-C:"Democratic",
-D:"Republic",
-ans:"B"
-},
-{
-id:80,
-en:"The Preamble of the Indian Constitution begins with which phrase?",
-hi:"भारतीय संविधान की प्रस्तावना किस वाक्य से शुरू होती है?",
-A:"We the Government of India",
-B:"We the People of India",
-C:"Republic of India",
-D:"Constitution of India",
-ans:"B"
-},
-
-{
-id:81,
-en:"Which of the following powers of the President of India allows him/her to grant pardon, reprieve, or remission of punishment?",
-hi:"भारत के राष्ट्रपति की कौन-सी शक्ति उन्हें क्षमा, दंड स्थगन या दंड में कमी देने की अनुमति देती है?",
-A:"Legislative Power",
-B:"Judicial Power",
-C:"Executive Power",
-D:"Financial Power",
-ans:"B"
-},
-{
-id:82,
-en:"The Vice President of India is the ex-officio Chairman of:",
-hi:"भारत के उपराष्ट्रपति किस सदन के पदेन सभापति होते हैं?",
-A:"Lok Sabha",
-B:"Rajya Sabha",
-C:"Supreme Court",
-D:"Planning Commission",
-ans:"B"
-},
-{
-id:83,
-en:"In the ancient period of Himachal Pradesh, which of the following tribes is associated with the Kullu and surrounding regions?",
-hi:"हिमाचल प्रदेश के प्राचीन काल में कुल्लू और आसपास के क्षेत्रों से कौन-सी जनजाति जुड़ी हुई थी?",
-A:"Khasas",
-B:"Gujjars",
-C:"Lahaulis",
-D:"Pangwals",
-ans:"A"
-},
-{
-id:84,
-en:"The early inhabitants of Himachal Pradesh mainly belonged to which group?",
-hi:"हिमाचल प्रदेश के प्रारंभिक निवासी मुख्य रूप से किस समूह से संबंधित थे?",
-A:"Aryans only",
-B:"Mongols only",
-C:"Khasas and other tribal communities",
-D:"Europeans",
-ans:"C"
-},
-{
-id:85,
-en:"Which of the following ancient rulers is associated with the Trigarta region (present-day Kangra) in Himachal Pradesh?",
-hi:"निम्न में से कौन-सा प्राचीन शासक त्रिगर्त (वर्तमान कांगड़ा) क्षेत्र से संबंधित है?",
-A:"Porus",
-B:"Susharma",
-C:"Ashoka",
-D:"Harsha",
-ans:"B"
-},
-{
-id:86,
-en:"Which of the following words contains a long vowel (दीर्घ स्वर)?",
-hi:"निम्नलिखित में से किस शब्द में दीर्घ स्वर की मात्रा का प्रयोग हुआ है?",
-A:"घर",
-B:"पथ",
-C:"दीप",
-D:"जल",
-ans:"C"
-},
-{
-id:87,
-en:"Which of the following words correctly contains both short (ह्रस्व) and long (दीर्घ) vowel sounds?",
-hi:"निम्नलिखित में से किस शब्द में ह्रस्व तथा दीर्घ दोनों मात्राओं का सही संयोजन है?",
-A:"पिता",
-B:"नीला",
-C:"फूल",
-D:"देश",
-ans:"A"
-},
-{
-id:88,
-en:"Which of the following sentences uses an intransitive verb (अकर्मक क्रिया)?",
-hi:"निम्नलिखित में से किस वाक्य में अकर्मक क्रिया का प्रयोग हुआ है?",
-A:"उसने पत्र लिखा",
-B:"बच्चे खेल रहे हैं",
-C:"वह किताब पढ़ रहा है",
-D:"राम ने फल खाया",
-ans:"B"
-},
-{
-id:89,
-en:"‘वह पढ़ चुका होगा।’ This sentence expresses which tense?",
-hi:"‘वह पढ़ चुका होगा।’ इस वाक्य में कौन-सा काल व्यक्त हुआ है?",
-A:"पूर्ण भूतकाल",
-B:"संभाव्य भविष्यत् काल",
-C:"अपूर्ण वर्तमान काल",
-D:"सामान्य भविष्यत् काल",
-ans:"B"
-},
-{
-id:90,
-en:"Choose the correct sentence:",
-hi:"निम्नलिखित वाक्य में शुद्ध वाक्य चुनिए:",
-A:"उसने मुझे एक उपहार दिया है जो बहुत सुन्दर हैं।",
-B:"उसने मुझे एक उपहार दिया है जो बहुत सुन्दर है।",
-C:"उसने मुझे एक उपहार दिया है जो बहुत सुन्दर हो।",
-D:"उसने मुझे एक उपहार दिया है जो बहुत सुन्दर थे।",
-ans:"B"
-},
-
-{
-id:91,
-en:"Identify the type of pronoun used in the sentence: “The person who called you is my friend.”",
-hi:"वाक्य में प्रयुक्त सर्वनाम का प्रकार पहचानिए: “The person who called you is my friend.”",
-A:"Personal Pronoun",
-B:"Demonstrative Pronoun",
-C:"Relative Pronoun",
-D:"Interrogative Pronoun",
-ans:"C"
-},
-{
-id:92,
-en:"Convert into indirect speech: He said, “I have finished my work.”",
-hi:"Indirect speech में बदलें: He said, “I have finished my work.”",
-A:"He said that he had finished his work",
-B:"He said that he has finished his work",
-C:"He said that he finished his work",
-D:"He said that he had finish his work",
-ans:"A"
-},
-{
-id:93,
-en:"Convert into indirect speech: The teacher said, “Close the door.”",
-hi:"Indirect speech में बदलें: The teacher said, “Close the door.”",
-A:"The teacher said that close the door",
-B:"The teacher told to close the door",
-C:"The teacher told them to close the door",
-D:"The teacher said them to close the door",
-ans:"C"
-},
-{
-id:94,
-en:"Choose the correct sentence:",
-hi:"सही वाक्य चुनिए:",
-A:"She is more smarter than her sister",
-B:"She is smarter than her sister",
-C:"She is most smarter than her sister",
-D:"She is smart than her sister",
-ans:"B"
-},
-{
-id:95,
-en:"Fill in the blank with correct form: This is the ______ building in the city.",
-hi:"रिक्त स्थान भरें: This is the ______ building in the city.",
-A:"tall",
-B:"taller",
-C:"tallest",
-D:"more tall",
-ans:"C"
-},
-{
-id:96,
-en:"Statement: The government has decided to ban plastic bags to reduce pollution. Assumption: I. Plastic bags contribute significantly to pollution. II. People will stop using plastic bags if banned.",
-hi:"कथन: सरकार ने प्रदूषण कम करने के लिए प्लास्टिक बैग पर प्रतिबंध लगाने का निर्णय लिया है। अनुमान: I. प्लास्टिक बैग प्रदूषण में महत्वपूर्ण योगदान करते हैं। II. प्रतिबंध लगाने पर लोग प्लास्टिक बैग का उपयोग बंद कर देंगे।",
-A:"Only I is implicit",
-B:"Only II is implicit",
-C:"Both I and II are implicit",
-D:"Neither I nor II is implicit",
-ans:"C"
-},
-{
-id:97,
-en:"Statement: The company has increased salaries to improve employee performance. Assumption: I. Higher salary motivates employees to perform better. II. Employees were not performing well earlier.",
-hi:"कथन: कंपनी ने कर्मचारियों के प्रदर्शन को सुधारने के लिए वेतन बढ़ाया है। अनुमान: I. अधिक वेतन कर्मचारियों को बेहतर प्रदर्शन के लिए प्रेरित करता है। II. कर्मचारी पहले अच्छा प्रदर्शन नहीं कर रहे थे।",
-A:"Only I is implicit",
-B:"Only II is implicit",
-C:"Both I and II are implicit",
-D:"Neither I nor II is implicit",
-ans:"C"
-},
-{
-id:98,
-en:"In 2026, who has been appointed as India’s next Ambassador to China?",
-hi:"2026 में भारत के अगले चीन में राजदूत के रूप में किसे नियुक्त किया गया है?",
-A:"Ajit Doval",
-B:"Vikram Doraiswami",
-C:"S. Jaishankar",
-D:"Taranjit Singh Sandhu",
-ans:"B"
-},
-{
-id:99,
-en:"Which international organization warned about possible global “water bankruptcy” ahead of World Water Day 2026?",
-hi:"विश्व जल दिवस 2026 से पहले वैश्विक “जल दिवालियापन” की चेतावनी किस अंतरराष्ट्रीय संगठन ने दी?",
-A:"WHO",
-B:"IMF",
-C:"United Nations",
-D:"World Bank",
-ans:"C"
-},
-{
-id:100,
-en:"India recently became the winner of which major cricket tournament in 2026?",
-hi:"भारत ने 2026 में हाल ही में कौन-सा प्रमुख क्रिकेट टूर्नामेंट जीता?",
-A:"ICC ODI World Cup",
-B:"ICC Champions Trophy",
-C:"ICC Men’s T20 World Cup",
-D:"Asia Cup",
-ans:"B"
+if(
+(u=="user1" && p=="123") ||
+(u=="user2" && p=="123") ||
+(u=="user3" && p=="123")
+){
+sessionStorage.setItem("mockLogin","yes")
+window.location.href="index.html"
+}
+else{
+alert("Wrong Username or Password")
 }
 
-]
-let current=0
-let score=0
-let userAnswers={}
-
-let name=""
-let phone=""
-
-let time=5400
-let timerInterval
-
-function startCountdown(){
-
-name=document.getElementById("name").value
-phone=document.getElementById("phone").value
-
-if(name=="" || phone==""){
-alert("Enter details")
-return
 }
-
-document.getElementById("formBox").style.display="none"
-document.getElementById("countBox").style.display="block"
-
-let t=5
-
-let c=setInterval(()=>{
-document.getElementById("count").innerText=t
-t--
-
-if(t<0){
-clearInterval(c)
-document.getElementById("countBox").style.display="none"
-document.getElementById("questionBox").style.display="block"
-document.getElementById("timer").style.display="block"
-
-startTimer()
-showQuestion()
-}
-
-},1000)
-}
-
-function startTimer(){
-timerInterval=setInterval(()=>{
-let m=Math.floor(time/60)
-let s=time%60
-document.getElementById("timer").innerText="⏱ "+m+":"+(s<10?"0":"")+s
-time--
-
-if(time<0){
-clearInterval(timerInterval)
-showResult()
-}
-},1000)
-}
-
-function showQuestion(){
-
-let q=questions[current]
-
-let html=""
-
-html+=`<b>${name}</b> | ${phone}<br><br>`
-
-html+=`<h3>Q${current+1}/${questions.length}. ${q.en}</h3>`
-html+=`<p>${q.hi}</p>`
-
-html+=`<label class="option"><input type="radio" name="ans" value="A"> A. ${q.A}</label>`
-html+=`<label class="option"><input type="radio" name="ans" value="B"> B. ${q.B}</label>`
-html+=`<label class="option"><input type="radio" name="ans" value="C"> C. ${q.C}</label>`
-html+=`<label class="option"><input type="radio" name="ans" value="D"> D. ${q.D}</label>`
-
-html+=`<br><button onclick="nextQuestion()">Next</button>`
-
-document.getElementById("questionBox").innerHTML=html
-}
-
-function nextQuestion(){
-
-let selected=document.querySelector('input[name="ans"]:checked')
-
-if(selected){
-userAnswers[current]=selected.value
-if(selected.value==questions[current].ans){
-score++
-}
-}
-
-current++
-
-if(current<questions.length){
-showQuestion()
-}else{
-showResult()
-}
-}
-
-function showResult(){
-
-clearInterval(timerInterval)
-
-document.getElementById("questionBox").style.display="none"
-
-let box=document.getElementById("resultBox")
-box.style.display="block"
-
-let html=""
-
-html+=`<h2>Result</h2>`
-html+=`<b>Name:</b> ${name}<br>`
-html+=`<b>Phone:</b> ${phone}<br>`
-html+=`<b>Test:</b> ${mockTestNo}<br>`
-html+=`<b>Score:</b> ${score}/${questions.length}<br><br>`
-
-questions.forEach((q,i)=>{
-html+=`<hr>`
-html+=`<b>Q${i+1}. ${q.en}</b><br>`
-html+=`${q.hi}<br><br>`
-html+=`A. ${q.A}<br>`
-html+=`B. ${q.B}<br>`
-html+=`C. ${q.C}<br>`
-html+=`D. ${q.D}<br><br>`
-html+=`Your Answer: ${userAnswers[i] || "Not Attempted"}<br>`
-html+=`Correct Answer: ${q.ans}<br>`
-})
-
-html+=`<br><button onclick="downloadPDF()">Download PDF</button>`
-
-box.innerHTML=html
-}
-
-async function downloadPDF(){
-
-const { jsPDF } = window.jspdf
-
-let element=document.getElementById("resultBox")
-
-element.style.background="#fff"
-element.style.color="#000"
-
-await new Promise(r=>setTimeout(r,800))
-
-let canvas=await html2canvas(element,{scale:1.5})
-
-let imgData=canvas.toDataURL("image/jpeg",0.5)
-
-let pdf=new jsPDF("p","mm","a4")
-
-let imgWidth=190
-let pageHeight=297
-let imgHeight=canvas.height*imgWidth/canvas.width
-
-let heightLeft=imgHeight
-let position=10
-
-pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
-heightLeft-=pageHeight
-
-while(heightLeft>0){
-position=heightLeft-imgHeight
-pdf.addPage()
-pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
-heightLeft-=pageHeight
-}
-
-pdf.save(mockTestNo.replace(/\s+/g,'_')+".pdf")
-}
-
 </script>
-<script src="auth.js"></script>
+
 </body>
 </html>
