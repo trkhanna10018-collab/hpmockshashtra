@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JOA IT Login</title>
+<title>HPMockShashtra - Home</title>
 
 <style>
 *{
@@ -12,186 +12,102 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
+background:linear-gradient(135deg,#0f172a,#4f46e5,#9333ea);
 min-height:100vh;
-background:linear-gradient(135deg,#1e293b,#4f46e5,#9333ea);
-display:flex;
-justify-content:center;
-align-items:center;
-padding:15px;
-}
-
-/* MAIN */
-.container{
-width:100%;
-max-width:1000px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(25px);
-border-radius:20px;
-padding:25px;
-box-shadow:0 25px 80px rgba(0,0,0,0.5);
+color:white;
 }
 
 /* HEADER */
 .header{
 text-align:center;
-color:white;
-margin-bottom:20px;
+padding:30px 15px 10px;
 }
 
 .logo{
-height:160px;
-margin-bottom:10px;
-filter:drop-shadow(0 0 25px rgba(255,255,255,0.7));
+height:140px;
+filter:drop-shadow(0 0 25px rgba(255,255,255,0.6));
 }
 
 .brand{
-font-size:20px;
+font-size:22px;
 font-weight:700;
 color:#facc15;
 letter-spacing:2px;
+margin-top:5px;
 }
 
 .tagline{
-font-size:13px;
-opacity:0.9;
-margin-top:5px;
-color:#e5e7eb;
-}
-
-.title{
-font-size:28px;
-margin-top:5px;
-}
-
-.subtitle{
-font-size:13px;
+font-size:14px;
 opacity:0.8;
 }
 
 /* GRID */
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
 .grid{
 display:grid;
-grid-template-columns:1fr 320px;
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
-/* LEFT */
-.left{
-color:white;
-}
-
-.left h3{
-margin-bottom:10px;
-}
-
-/* FEATURES */
-.features{
-list-style:none;
-}
-
-.features li{
-margin:10px 0;
-font-size:14px;
-padding:10px;
-border-radius:8px;
+/* CARD */
+.card{
 background:rgba(255,255,255,0.08);
-}
-
-/* BUTTON */
-.freeBtn{
-display:inline-block;
-margin-top:10px;
-padding:10px 18px;
-background:#22c55e;
-border-radius:8px;
-color:white;
-text-decoration:none;
-}
-
-.freeBtn:hover{
-background:#16a34a;
-}
-
-/* PRICE BOX */
-.priceBox{
-margin-top:20px;
-background:#111827;
-padding:15px;
-border-radius:12px;
-text-align:center;
-}
-
-.price{
-color:#facc15;
-font-size:24px;
-font-weight:bold;
-}
-
-/* LOGIN */
-.login{
-background:white;
 border-radius:18px;
-padding:22px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+padding:20px;
+backdrop-filter:blur(15px);
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-.login h3{
-text-align:center;
+.card:hover{
+transform:translateY(-5px) scale(1.02);
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+.card h3{
+margin-bottom:10px;
+font-size:18px;
+}
+
+/* DESC */
+.card p{
+font-size:13px;
+opacity:0.8;
 margin-bottom:15px;
 }
 
-/* INPUT */
-input{
-width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:8px;
-border:1px solid #ddd;
-font-size:14px;
-}
-
-input:focus{
-outline:none;
-border-color:#4f46e5;
-box-shadow:0 0 8px rgba(79,70,229,0.3);
-}
-
 /* BUTTON */
-button{
-width:100%;
-padding:12px;
-border:none;
+.btn{
+display:inline-block;
+padding:10px 15px;
 border-radius:8px;
-background:linear-gradient(45deg,#4f46e5,#6366f1);
-color:white;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-transform:scale(1.04);
-}
-
-/* UNLOCK */
-.unlockBtn{
-display:block;
-margin-top:15px;
-padding:12px;
-text-align:center;
 background:linear-gradient(45deg,#22c55e,#16a34a);
 color:white;
-border-radius:10px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+}
+
+.btn:hover{
+background:#15803d;
+}
+
+/* COMING */
+.soon{
+background:linear-gradient(45deg,#f59e0b,#d97706);
 }
 
 /* FOOTER */
 .footer{
 text-align:center;
-margin-top:15px;
-font-size:12px;
-color:white;
+margin-top:30px;
+padding-bottom:20px;
+font-size:13px;
 opacity:0.8;
 }
 
@@ -200,105 +116,88 @@ color:#facc15;
 text-decoration:none;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.grid{
-grid-template-columns:1fr;
-}
-}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
 <!-- HEADER -->
 <div class="header">
-
 <img src="logo.png" class="logo">
-
 <div class="brand">HPMockShashtra</div>
-
-<div class="tagline">Crack JOA IT with Confidence 🚀</div>
-
-<div class="title">JOA IT Mock Test</div>
-
-<div class="subtitle">Practice Like Real Exam • Improve Accuracy & Speed</div>
-
+<div class="tagline">All Himachal Govt Exam Mock Tests in One Place 🚀</div>
 </div>
+
+<div class="container">
 
 <div class="grid">
 
-<!-- LEFT -->
-<div class="left">
-
-<h3>🎯 What You Get:</h3>
-
-<ul class="features">
-<li>Real Exam Interface</li>
-<li>Timer Based Test</li>
-<li>Instant Result</li>
-<li>Bilingual (English + Hindi)</li>
-<li>15 Full-Length Mock Tests</li>
-</ul>
-
-<a href="joafreetest.html" class="freeBtn">Start Free Test</a>
-
-<div class="priceBox">
-<p>🔥 Limited Offer</p>
-<div class="price">₹199</div>
-<p style="color:#22c55e;">Top 50 users: ₹150</p>
-<p>📞 8278847614</p>
+<!-- JOA IT -->
+<div class="card">
+<h3>💻 JOA IT</h3>
+<p>Complete mock tests based on latest pattern</p>
+<a href="login.html" class="btn">Start Test</a>
 </div>
 
-<a href="payment.html" class="unlockBtn">🔓 Unlock Full Access</a>
+<!-- PATWARI -->
+<div class="card">
+<h3>📍 HP Patwari</h3>
+<p>Coming soon mock tests</p>
+<a href="coming.html" class="btn soon">Coming Soon</a>
+</div>
+
+<!-- JBT -->
+<div class="card">
+<h3>👩‍🏫 HP JBT</h3>
+<p>Teacher exam practice tests</p>
+<a href="coming.html" class="btn soon">Coming Soon</a>
+</div>
+
+<!-- POLICE -->
+<div class="card">
+<h3>👮 HP Police</h3>
+<p>Constable mock & practice</p>
+<a href="coming.html" class="btn soon">Coming Soon</a>
+</div>
+
+<!-- CLERK -->
+<div class="card">
+<h3>🗂 HP Clerk</h3>
+<p>Clerk exam preparation tests</p>
+<a href="coming.html" class="btn soon">Coming Soon</a>
+</div>
+
+<!-- TGT -->
+<div class="card">
+<h3>📘 HP TGT</h3>
+<p>Subject-wise mock tests</p>
+<a href="coming.html" class="btn soon">Coming Soon</a>
+</div>
+
+<!-- GENERAL MOCK -->
+<div class="card">
+<h3>🧠 General Mock</h3>
+<p>Mixed GK + Reasoning + IT</p>
+<a href="coming.html" class="btn soon">Coming Soon</a>
+</div>
+
+<!-- DAILY QUIZ -->
+<div class="card">
+<h3>📅 Daily Quiz</h3>
+<p>Daily 20 questions practice</p>
+<a href="coming.html" class="btn soon">Coming Soon</a>
+</div>
 
 </div>
 
-<!-- LOGIN -->
-<div class="login">
-
-<h3>🔐 Secure Login</h3>
-
-<input id="username" placeholder="Username">
-<input id="password" type="password" placeholder="Password">
-
-<button onclick="login()">Login</button>
-
-</div>
-
-</div>
-
+<!-- FOOTER -->
 <div class="footer">
-© HPMockShashtra • All Rights Reserved  
+© HPMockShashtra  
 <br>
-<a href="terms.html" target="_blank">Terms</a> | 
-<a href="privacy.html" target="_blank">Privacy</a>
+<a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a>
 </div>
 
 </div>
-
-<script>
-function login(){
-
-let u=document.getElementById("username").value
-let p=document.getElementById("password").value
-
-if(
-(u=="user1" && p=="123") ||
-(u=="user2" && p=="123") ||
-(u=="user3" && p=="123")
-){
-sessionStorage.setItem("mockLogin","yes")
-window.location.href="index.html"
-}
-else{
-alert("Wrong Username or Password")
-}
-
-}
-</script>
 
 </body>
 </html>
