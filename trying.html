@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HPMockShashtra - Home</title>
+<title>HPMockShashtra</title>
 
 <style>
 *{
@@ -12,192 +12,265 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0f172a,#4f46e5,#9333ea);
-min-height:100vh;
+background:#f1f5f9;
+}
+
+/* TOP BAR */
+.topbar{
+background:#4f46e5;
 color:white;
+padding:10px;
+text-align:center;
+font-size:14px;
 }
 
 /* HEADER */
 .header{
-text-align:center;
-padding:30px 15px 10px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 15px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.menu{
+font-size:22px;
+cursor:pointer;
 }
 
 .logo{
-height:140px;
-filter:drop-shadow(0 0 25px rgba(255,255,255,0.6));
+font-size:20px;
+font-weight:bold;
+color:#4f46e5;
 }
 
-.brand{
-font-size:22px;
-font-weight:700;
-color:#facc15;
-letter-spacing:2px;
-margin-top:5px;
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#111827;
+color:white;
+padding:20px;
+transition:0.3s;
+z-index:2000;
 }
 
-.tagline{
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+margin:15px 0;
+}
+
+.sidebar.active{
+left:0;
+}
+
+/* HERO */
+.hero{
+padding:30px 15px;
+text-align:center;
+background:linear-gradient(135deg,#4f46e5,#9333ea);
+color:white;
+}
+
+.hero img{
+height:120px;
+margin-bottom:10px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
 font-size:14px;
-opacity:0.8;
+opacity:0.9;
 }
 
 /* GRID */
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
-
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:20px;
 }
 
-/* CARD */
 .card{
-background:rgba(255,255,255,0.08);
-border-radius:18px;
+background:white;
 padding:20px;
-backdrop-filter:blur(15px);
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 transition:0.3s;
-border:1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover{
-transform:translateY(-5px) scale(1.02);
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
+transform:translateY(-5px);
 }
 
-/* TITLE */
 .card h3{
-margin-bottom:10px;
-font-size:18px;
+margin-top:10px;
+font-size:16px;
 }
 
-/* DESC */
-.card p{
-font-size:13px;
-opacity:0.8;
+/* SECTION */
+.section{
+padding:20px;
+}
+
+.section h2{
 margin-bottom:15px;
 }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-padding:10px 15px;
-border-radius:8px;
+/* BANNER */
+.banner{
 background:linear-gradient(45deg,#22c55e,#16a34a);
 color:white;
-text-decoration:none;
-font-weight:600;
-}
-
-.btn:hover{
-background:#15803d;
-}
-
-/* COMING */
-.soon{
-background:linear-gradient(45deg,#f59e0b,#d97706);
+padding:20px;
+border-radius:15px;
+margin:20px;
+text-align:center;
 }
 
 /* FOOTER */
 .footer{
+background:#111827;
+color:white;
+padding:20px;
 text-align:center;
-margin-top:30px;
-padding-bottom:20px;
-font-size:13px;
-opacity:0.8;
 }
-
-.footer a{
-color:#facc15;
-text-decoration:none;
-}
-
 </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-<img src="logo.png" class="logo">
-<div class="brand">HPMockShashtra</div>
-<div class="tagline">All Himachal Govt Exam Mock Tests in One Place 🚀</div>
+<!-- TOP -->
+<div class="topbar">
+🔥 New Mock Tests Coming Weekly!
 </div>
 
-<div class="container">
+<!-- HEADER -->
+<div class="header">
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div class="logo">HPMockShashtra</div>
+<div>🔍</div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+<h3>Menu</h3>
+<a href="#">Home</a>
+<a href="login.html">JOA IT</a>
+<a href="#">HP Patwari</a>
+<a href="#">HP JBT</a>
+<a href="#">HP Police</a>
+<a href="#">GK</a>
+<a href="#">Current Affairs</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<img src="logo.png">
+<h1>HPMockShashtra</h1>
+<p>All HP Exams Mock Platform</p>
+</div>
+
+<!-- MAIN OPTIONS -->
+<div class="section">
+<h2>📌 What You Want?</h2>
 
 <div class="grid">
 
-<!-- JOA IT -->
 <div class="card">
-<h3>💻 JOA IT</h3>
-<p>Complete mock tests based on latest pattern</p>
-<a href="login.html" class="btn">Start Test</a>
+<h3>💻 JOA IT Mock</h3>
+<a href="login.html">Start</a>
 </div>
 
-<!-- PATWARI -->
 <div class="card">
 <h3>📍 HP Patwari</h3>
-<p>Coming soon mock tests</p>
-<a href="coming.html" class="btn soon">Coming Soon</a>
+<p>Coming Soon</p>
 </div>
 
-<!-- JBT -->
-<div class="card">
-<h3>👩‍🏫 HP JBT</h3>
-<p>Teacher exam practice tests</p>
-<a href="coming.html" class="btn soon">Coming Soon</a>
-</div>
-
-<!-- POLICE -->
 <div class="card">
 <h3>👮 HP Police</h3>
-<p>Constable mock & practice</p>
-<a href="coming.html" class="btn soon">Coming Soon</a>
+<p>Coming Soon</p>
 </div>
 
-<!-- CLERK -->
 <div class="card">
-<h3>🗂 HP Clerk</h3>
-<p>Clerk exam preparation tests</p>
-<a href="coming.html" class="btn soon">Coming Soon</a>
+<h3>👩‍🏫 HP JBT</h3>
+<p>Coming Soon</p>
 </div>
 
-<!-- TGT -->
+</div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+<h2>📊 Features</h2>
+
+<div class="grid">
+
 <div class="card">
-<h3>📘 HP TGT</h3>
-<p>Subject-wise mock tests</p>
-<a href="coming.html" class="btn soon">Coming Soon</a>
+<h3>⏱ Timer Based</h3>
 </div>
 
-<!-- GENERAL MOCK -->
 <div class="card">
-<h3>🧠 General Mock</h3>
-<p>Mixed GK + Reasoning + IT</p>
-<a href="coming.html" class="btn soon">Coming Soon</a>
+<h3>📈 Result Analysis</h3>
 </div>
 
-<!-- DAILY QUIZ -->
 <div class="card">
-<h3>📅 Daily Quiz</h3>
-<p>Daily 20 questions practice</p>
-<a href="coming.html" class="btn soon">Coming Soon</a>
+<h3>🌐 Hindi + English</h3>
 </div>
 
+<div class="card">
+<h3>🎯 Real Exam UI</h3>
+</div>
+
+</div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+🔥 Limited Offer ₹199  
+<br><br>
+Unlock Full Mock Series Now
+</div>
+
+<!-- MORE SECTIONS -->
+<div class="section">
+<h2>📚 Study Zone</h2>
+
+<div class="grid">
+
+<div class="card">HP GK</div>
+<div class="card">Previous Papers</div>
+<div class="card">Current Affairs</div>
+<div class="card">Notifications</div>
+
+</div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
 © HPMockShashtra  
 <br>
-<a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a>
+Terms | Privacy
 </div>
 
-</div>
+<script>
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("active")
+}
+</script>
 
 </body>
 </html>
