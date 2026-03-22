@@ -39,15 +39,23 @@ margin-bottom:20px;
 }
 
 .logo{
-height:120px;
-filter:drop-shadow(0 0 20px rgba(255,255,255,0.5));
+height:160px;
+margin-bottom:10px;
+filter:drop-shadow(0 0 25px rgba(255,255,255,0.7));
 }
 
 .brand{
-margin-top:5px;
+font-size:20px;
+font-weight:700;
 color:#facc15;
-font-weight:600;
-letter-spacing:1px;
+letter-spacing:2px;
+}
+
+.tagline{
+font-size:13px;
+opacity:0.9;
+margin-top:5px;
+color:#e5e7eb;
 }
 
 .title{
@@ -60,7 +68,7 @@ font-size:13px;
 opacity:0.8;
 }
 
-/* LAYOUT */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 320px;
@@ -76,6 +84,7 @@ color:white;
 margin-bottom:10px;
 }
 
+/* FEATURES */
 .features{
 list-style:none;
 }
@@ -83,11 +92,12 @@ list-style:none;
 .features li{
 margin:10px 0;
 font-size:14px;
-padding-left:10px;
-border-left:3px solid #22c55e;
+padding:10px;
+border-radius:8px;
+background:rgba(255,255,255,0.08);
 }
 
-/* BUTTONS */
+/* BUTTON */
 .freeBtn{
 display:inline-block;
 margin-top:10px;
@@ -102,7 +112,7 @@ text-decoration:none;
 background:#16a34a;
 }
 
-/* PRICE */
+/* PRICE BOX */
 .priceBox{
 margin-top:20px;
 background:#111827;
@@ -113,7 +123,7 @@ text-align:center;
 
 .price{
 color:#facc15;
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 }
 
@@ -121,7 +131,7 @@ font-weight:bold;
 .login{
 background:white;
 border-radius:18px;
-padding:20px;
+padding:22px;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
@@ -195,9 +205,6 @@ text-decoration:none;
 .grid{
 grid-template-columns:1fr;
 }
-.login{
-margin-top:15px;
-}
 }
 </style>
 </head>
@@ -208,10 +215,17 @@ margin-top:15px;
 
 <!-- HEADER -->
 <div class="header">
+
 <img src="logo.png" class="logo">
+
 <div class="brand">HPMockShashtra</div>
+
+<div class="tagline">Crack JOA IT with Confidence 🚀</div>
+
 <div class="title">JOA IT Mock Test</div>
+
 <div class="subtitle">Practice Like Real Exam • Improve Accuracy & Speed</div>
+
 </div>
 
 <div class="grid">
@@ -232,9 +246,9 @@ margin-top:15px;
 <a href="joafreetest.html" class="freeBtn">Start Free Test</a>
 
 <div class="priceBox">
-<p>Full Access</p>
+<p>🔥 Limited Offer</p>
 <div class="price">₹199</div>
-<p>WhatsApp after payment</p>
+<p style="color:#22c55e;">Top 50 users: ₹150</p>
 <p>📞 8278847614</p>
 </div>
 
@@ -245,7 +259,7 @@ margin-top:15px;
 <!-- LOGIN -->
 <div class="login">
 
-<h3>Login</h3>
+<h3>🔐 Secure Login</h3>
 
 <input id="username" placeholder="Username">
 <input id="password" type="password" placeholder="Password">
@@ -257,9 +271,10 @@ margin-top:15px;
 </div>
 
 <div class="footer">
-By continuing, you agree to our  
-<a href="terms.html" target="_blank">Terms & Conditions</a> and  
-<a href="privacy.html" target="_blank">Privacy Policy</a>
+© HPMockShashtra • All Rights Reserved  
+<br>
+<a href="terms.html" target="_blank">Terms</a> | 
+<a href="privacy.html" target="_blank">Privacy</a>
 </div>
 
 </div>
