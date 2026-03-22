@@ -6,8 +6,8 @@
 <style>
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background:linear-gradient(135deg,#667eea,#764ba2);
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#4f46e5,#7c3aed,#9333ea);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -17,7 +17,7 @@ min-height:100vh;
 /* MAIN CARD */
 .main{
 width:100%;
-max-width:850px;
+max-width:900px;
 background:rgba(255,255,255,0.1);
 backdrop-filter:blur(20px);
 border-radius:20px;
@@ -32,23 +32,38 @@ color:white;
 margin-bottom:25px;
 }
 
+.logo{
+height:110px;
+margin-bottom:10px;
+filter:drop-shadow(0 0 20px rgba(255,255,255,0.5));
+}
+
+.brand{
+font-size:18px;
+font-weight:600;
+letter-spacing:1px;
+color:#facc15;
+}
+
 .header h1{
-margin:0;
-font-size:32px;
+margin:5px 0;
+font-size:34px;
+font-weight:700;
 }
 
 .header p{
 opacity:0.9;
+font-size:14px;
 }
 
-/* FLEX LAYOUT */
+/* FLEX */
 .flex{
 display:flex;
 gap:25px;
 flex-wrap:wrap;
 }
 
-/* LEFT (INFO) */
+/* LEFT */
 .info{
 flex:1;
 min-width:250px;
@@ -63,52 +78,53 @@ padding-left:18px;
 margin:8px 0;
 }
 
-/* RIGHT (LOGIN BOX) */
+/* LOGIN BOX */
 .login{
 flex:1;
 min-width:250px;
-background:white;
+background:rgba(255,255,255,0.95);
 padding:25px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-.footer a{
-color:#facc15;
-text-decoration:none;
-font-weight:500;
-}
-
-.footer a:hover{
-text-decoration:underline;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
 .login h3{
 margin-bottom:15px;
 }
 
-input, button{
+/* INPUT */
+input{
 width:100%;
 padding:14px;
 margin:10px 0;
 border-radius:10px;
+border:1px solid #ddd;
 box-sizing:border-box;
-  }
+transition:0.3s;
+}
+
+input:focus{
+border-color:#4f46e5;
+outline:none;
+box-shadow:0 0 10px rgba(79,70,229,0.3);
+}
 
 /* BUTTON */
 button{
 width:100%;
 padding:12px;
 border:none;
-border-radius:8px;
-background:#4f46e5;
+border-radius:10px;
+background:linear-gradient(45deg,#4f46e5,#6366f1);
 color:white;
 font-size:16px;
 cursor:pointer;
 transition:0.3s;
+font-weight:600;
 }
 
 button:hover{
-background:#4338ca;
+transform:scale(1.05);
 }
 
 /* FREE BUTTON */
@@ -151,6 +167,16 @@ color:white;
 opacity:0.8;
 }
 
+.footer a{
+color:#facc15;
+text-decoration:none;
+font-weight:500;
+}
+
+.footer a:hover{
+text-decoration:underline;
+}
+
 .unlockBtn{
 display:inline-block;
 margin-top:15px;
@@ -174,17 +200,26 @@ background:#15803d;
 
 <div class="main">
 
+<!-- HEADER -->
 <div class="header">
-<img src="logo.png" height="100" style="margin-bottom:15px; filter:drop-shadow(0 0 10px rgba(255,255,255,0.4));">
+
+<img src="logo.png" class="logo">
+
+<div class="brand">HPMockShashtra</div>
+
 <h1>JOA IT Mock Test</h1>
+
 <p>Practice Like Real Exam • Improve Accuracy & Speed</p>
+
 </div>
 
 <div class="flex">
 
-<!-- LEFT INFO -->
+<!-- LEFT -->
 <div class="info">
+
 <h3>🎯 What You Get:</h3>
+
 <ul>
 <li>Real Exam Interface</li>
 <li>Timer Based Test</li>
@@ -201,12 +236,14 @@ background:#15803d;
 <p>WhatsApp after payment</p>
 <p>📞 8278847614</p>
 </div>
+
 <a href="payment.html" class="unlockBtn">🔓 Unlock Full Access</a>
 
 </div>
 
 <!-- LOGIN -->
 <div class="login">
+
 <h3>Login</h3>
 
 <input id="username" placeholder="Username">
@@ -218,6 +255,7 @@ background:#15803d;
 
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
 By continuing, you agree to our  
 <a href="terms.html" target="_blank">Terms & Conditions</a> and  
