@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HPMockShashtra</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f8fafc;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* HEADER */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+background:white;
+box-shadow:0 2px 15px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.menu{
+font-size:40px;
+cursor:pointer;
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+color:#4f46e5;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+top:0;
+left:-100%;
+width:80%;
+height:100%;
+background:#111827;
+color:white;
+padding:30px;
+transition:0.4s;
+z-index:2000;
+}
+
+.sidebar.active{
+left:0;
+}
+
+.close{
+font-size:30px;
+margin-bottom:20px;
+cursor:pointer;
+}
+
+.sidebar a{
+display:block;
+padding:20px;
+margin:15px 0;
+background:#1f2937;
+border-radius:14px;
+text-decoration:none;
+color:white;
+font-size:22px;
+}
+
+/* HERO */
+.hero{
+padding:50px 20px;
+text-align:center;
+background:linear-gradient(135deg,#4f46e5,#9333ea);
+color:white;
+}
+
+.hero img{
+height:170px;
+margin-bottom:10px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+/* SECTION */
+.section{
+padding:35px 20px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+min-height:140px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* BUTTON */
+.btn{
+margin-top:12px;
+padding:10px;
+border-radius:10px;
+background:linear-gradient(45deg,#4f46e5,#6366f1);
+color:white;
+text-decoration:none;
+display:inline-block;
+}
+
+/* BANNER */
+.banner{
+margin:25px;
+padding:30px;
+border-radius:20px;
+background:linear-gradient(45deg,#22c55e,#16a34a);
+color:white;
+text-align:center;
+font-size:20px;
+}
+
+/* FOOTER */
+.footer{
+background:#111827;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:auto;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+<div class="menu" onclick="openMenu()">☰</div>
+<div class="logo">HPMockShashtra</div>
+<div>🔍</div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+<div class="close" onclick="closeMenu()">✖</div>
+
+<a href="index.html">🏠 Home</a>
+<a href="login.html">💻 JOA IT</a>
+<a href="patwarimocklogin.html">📍 Patwari</a>
+<a href="jbtmocklogin.html">👩‍🏫 JBT</a>
+<a href="policemocklogin.html">👮 Police</a>
+
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<img src="logo.png">
+<h1>HPMockShashtra</h1>
+<p>Crack HP Exams with Confidence 🚀</p>
+</div>
+
+<!-- MAIN -->
+<div class="section">
+<h2>🔥 Popular Tests</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>💻 JOA IT</h3>
+<a href="login.html" class="btn">Start Test</a>
+</div>
+
+<div class="card">
+<h3>📍 HP Patwari</h3>
+<a href="patwarimocklogin.html" class="btn">Start Test</a>
+</div>
+
+<div class="card">
+<h3>👮 HP Police</h3>
+<a href="policemocklogin.html" class="btn">Start Test</a>
+</div>
+
+<div class="card">
+<h3>👩‍🏫 HP JBT</h3>
+<a href="jbtmocklogin.html" class="btn">Start Test</a>
+</div>
+
+</div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+<h2>📊 Features</h2>
+
+<div class="grid">
+
+<div class="card">⏱ Timer Based</div>
+<div class="card">📈 Result Analysis</div>
+<div class="card">🌐 Hindi + English</div>
+<div class="card">🎯 Real Exam UI</div>
+
+</div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+🔥 Limited Offer ₹199  
+<br><br>
+Unlock Full Mock Series
+</div>
+
+<!-- STUDY -->
+<div class="section">
+<h2>📚 Study Zone</h2>
+
+<div class="grid">
+
+<div class="card">HP GK</div>
+<div class="card">Previous Papers</div>
+<div class="card">Current Affairs</div>
+<div class="card">Notifications</div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+© HPMockShashtra  
+<br>
+Terms | Privacy
+</div>
+
+<script>
+function openMenu(){
+document.getElementById("sidebar").classList.add("active")
+}
+
+function closeMenu(){
+document.getElementById("sidebar").classList.remove("active")
+}
+</script>
+
+</body>
+</html>
