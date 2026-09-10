@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
-<title>Coming Soon</title>
+<title>Mock Test</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
 
@@ -10,32 +14,106 @@ body{
 margin:0;
 font-family:'Segoe UI', sans-serif;
 background:linear-gradient(135deg,#eef2ff,#e0f2fe);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
+color:#1e293b;
+}
+
+/* HEADER */
+.header{
+text-align:center;
+padding:20px 10px;
+font-size:24px;
+font-weight:600;
+color:#4338ca;
+}
+
+/* TIMER */
+.timer{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+margin-bottom:10px;
+color:#dc2626;
 }
 
 /* CARD */
-.box{
+.card{
+max-width:750px;
+margin:20px auto;
+padding:25px;
+border-radius:16px;
 background:white;
-padding:50px 40px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-text-align:center;
-width:300px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* TEXT */
-h1{
-font-size:28px;
-color:#4338ca;
+/* INPUT */
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+font-size:16px;
+color:white;
+background:linear-gradient(135deg,#6366f1,#3b82f6);
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+/* QUESTION */
+h3{
+font-size:30px;
 margin-bottom:10px;
 }
 
 p{
-font-size:16px;
-color:#64748b;
+font-size:22px;
+margin-bottom:15px;
+}
+
+/* OPTIONS */
+.option{
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #e2e8f0;
+background:#f8fafc;
+font-size:20px;
+cursor:pointer;
+}
+
+.option input{
+width:auto !important;
+margin:0;
+}
+
+.option:hover{
+background:#e0f2fe;
+border-color:#3b82f6;
+}
+
+.option span{
+flex:1;
+text-align:left;
+}
+
+#count{
+font-size:50px;
+font-weight:bold;
+text-align:center;
 }
 
 </style>
@@ -44,10 +122,1204 @@ color:#64748b;
 
 <body>
 
-<div class="box">
-<h1>Coming Soon</h1>
-<p>This mock test will be available shortly.</p>
+<div class="header" id="testTitle"></div>
+<div class="timer" id="timer" style="display:none"></div>
+
+<div class="card" id="formBox">
+<h3>Enter Details</h3>
+<input id="name" placeholder="Enter Name">
+<input id="phone" placeholder="Enter Phone">
+<button onclick="startCountdown()">Start Test</button>
 </div>
+
+<div class="card" id="countBox" style="display:none">
+<h2 style="text-align:center">Test will start in</h2>
+<div id="count">5</div>
+</div>
+
+<div class="card" id="questionBox" style="display:none"></div>
+
+<div class="card" id="resultBox" style="display:none"></div>
+
+<script>
+
+/* CHANGE HERE */
+let mockTestNo = "Mock Test 14"
+
+document.getElementById("testTitle").innerHTML =
+"JUNIOR OFFICE ASSISTANT (IT)<br><span style='font-size:15px'>Competitive Examination</span>"
+
+let questions=[
+{
+id:1,
+en:"Which of the following characteristics of a computer refers to its ability to perform repetitive tasks without getting tired?",
+hi:"निम्नलिखित में से computer की कौन सी विशेषता बिना थके repetitive tasks करने की क्षमता को दर्शाती है?",
+A:"Versatility",
+B:"Automation",
+C:"Diligence",
+D:"Accuracy",
+ans:"C"
+},
+{
+id:2,
+en:"Which generation of computers used Integrated Circuits (ICs)?",
+hi:"किस generation के computers में Integrated Circuits (ICs) का उपयोग किया गया था?",
+A:"First Generation",
+B:"Second Generation",
+C:"Third Generation",
+D:"Fourth Generation",
+ans:"C"
+},
+{
+id:3,
+en:"A computer that processes both analog and digital data is called:",
+hi:"जो computer analog और digital दोनों प्रकार के data को process करता है, उसे क्या कहा जाता है?",
+A:"Analog Computer",
+B:"Digital Computer",
+C:"Hybrid Computer",
+D:"Mainframe Computer",
+ans:"C"
+},
+{
+id:4,
+en:"Which of the following is an example of a digital computer?",
+hi:"निम्नलिखित में से कौन सा digital computer का उदाहरण है?",
+A:"Speedometer",
+B:"ECG Machine",
+C:"Personal Computer",
+D:"Thermometer",
+ans:"C"
+},
+{
+id:5,
+en:"In the basic block diagram of a computer, which unit performs arithmetic and logical operations?",
+hi:"Computer के basic block diagram में कौन सी unit arithmetic और logical operations करती है?",
+A:"Input Unit",
+B:"Output Unit",
+C:"Arithmetic Logic Unit (ALU)",
+D:"Storage Unit",
+ans:"C"
+},
+{
+id:6,
+en:"In the IPO cycle (Input → Process → Output), processing is mainly carried out by:",
+hi:"IPO cycle (Input → Process → Output) में processing मुख्य रूप से किसके द्वारा की जाती है?",
+A:"Scanner",
+B:"CPU",
+C:"Printer",
+D:"Monitor",
+ans:"B"
+},
+{
+id:7,
+en:"Which of the following is the BEST example of computer application in daily life involving real-time data processing?",
+hi:"निम्नलिखित में से daily life में real-time data processing से संबंधित computer application का BEST उदाहरण कौन सा है?",
+A:"Typing a letter in MS Word",
+B:"Watching a downloaded movie",
+C:"Online banking transaction system",
+D:"Printing a document",
+ans:"C"
+},
+{
+id:8,
+en:"Which input device is specifically designed to capture images or text from physical documents and convert them into digital form?",
+hi:"कौन सा input device physical documents से images या text को capture करके उन्हें digital form में convert करने के लिए विशेष रूप से designed है?",
+A:"Webcam",
+B:"Scanner",
+C:"Light Pen",
+D:"Projector",
+ans:"B"
+},
+{
+id:9,
+en:"A Light Pen is mainly used for:",
+hi:"Light Pen का मुख्य रूप से उपयोग किसके लिए किया जाता है?",
+A:"Printing documents",
+B:"Recording sound",
+C:"Direct interaction with the computer screen",
+D:"Scanning barcodes",
+ans:"C"
+},
+{
+id:10,
+en:"Which output device is best suited for displaying presentations to a large audience?",
+hi:"बड़े audience के सामने presentations प्रदर्शित करने के लिए कौन सा output device सबसे उपयुक्त है?",
+A:"Monitor",
+B:"Speaker",
+C:"Printer",
+D:"Projector",
+ans:"D"
+},
+{
+id:11,
+en:"Which of the following statements correctly differentiates system software from application software?",
+hi:"निम्नलिखित में से कौन सा कथन system software और application software के बीच सही अंतर बताता है?",
+A:"System software is designed for end users only, while application software manages hardware",
+B:"System software manages computer resources and provides platform for applications, while application software performs user-specific tasks",
+C:"Application software controls hardware directly, while system software is optional",
+D:"Both are identical in function",
+ans:"B"
+},
+{
+id:12,
+en:"Which of the following is NOT considered system software?",
+hi:"निम्नलिखित में से किसे system software नहीं माना जाता है?",
+A:"Device Driver",
+B:"Operating System",
+C:"Antivirus Utility",
+D:"Spreadsheet Software",
+ans:"D"
+},
+{
+id:13,
+en:"Device drivers are essential because they:",
+hi:"Device drivers आवश्यक होते हैं क्योंकि वे:",
+A:"Create documents and spreadsheets",
+B:"Translate operating system instructions for hardware devices",
+C:"Replace operating systems",
+D:"Increase internet speed",
+ans:"B"
+},
+{
+id:14,
+en:"Which of the following software combinations is correctly matched with its category?",
+hi:"निम्नलिखित में से कौन सा software combination अपनी category के साथ सही रूप से matched है?",
+A:"MS Excel — System Software",
+B:"Linux — Application Software",
+C:"Printer Driver — System Software",
+D:"Antivirus — Application Software only",
+ans:"C"
+},
+{
+id:15,
+en:"Which of the following is a primary function of an operating system?",
+hi:"निम्नलिखित में से operating system का primary function कौन सा है?",
+A:"Designing hardware circuits",
+B:"Managing hardware and software resources",
+C:"Creating internet connections only",
+D:"Replacing application software",
+ans:"B"
+},
+{
+id:16,
+en:"A Time Sharing Operating System is mainly designed to:",
+hi:"Time Sharing Operating System मुख्य रूप से किस उद्देश्य के लिए designed किया जाता है?",
+A:"Allow only one user at a time",
+B:"Execute one task permanently",
+C:"Share CPU time among multiple users/processes efficiently",
+D:"Operate without memory management",
+ans:"C"
+},
+{
+id:17,
+en:"Which of the following operating systems is open-source and widely used in servers and supercomputers?",
+hi:"निम्नलिखित में से कौन सा operating system open-source है और servers तथा supercomputers में व्यापक रूप से उपयोग किया जाता है?",
+A:"Windows",
+B:"MacOS",
+C:"Linux",
+D:"Android",
+ans:"C"
+},
+{
+id:18,
+en:"Which type of operating system allows a user to run multiple applications simultaneously?",
+hi:"किस प्रकार का operating system user को एक साथ multiple applications चलाने की अनुमति देता है?",
+A:"Single User Single Tasking OS",
+B:"Multitasking OS",
+C:"Batch OS",
+D:"Embedded OS",
+ans:"B"
+},
+{
+id:19,
+en:"Which of the following is a major advantage of using a word processor over a typewriter?",
+hi:"Typewriter की तुलना में word processor का प्रमुख advantage निम्नलिखित में से कौन सा है?",
+A:"Permanent text without editing",
+B:"Ability to edit, format, and save documents electronically",
+C:"No need for storage devices",
+D:"Faster internet access",
+ans:"B"
+},
+{
+id:20,
+en:"What happens when you use “Save” for the first time on a newly created MS Word document?",
+hi:"नए बनाए गए MS Word document पर पहली बार “Save” करने पर क्या होता है?",
+A:"Document closes automatically",
+B:"Print dialog box opens",
+C:"You are prompted to choose file name and location",
+D:"File is stored in temporary memory only",
+ans:"C"
+},
+{
+id:21,
+en:"Which of the following statements is TRUE regarding opening a document in MS Word?",
+hi:"MS Word में document खोलने के संबंध में निम्नलिखित में से कौन सा कथन TRUE है?",
+A:"Only one document can be opened at a time",
+B:"Documents can be opened using both File menu and shortcut keys",
+C:"Opening a document automatically creates a backup copy",
+D:"A document once closed cannot be reopened",
+ans:"B"
+},
+{
+id:22,
+en:"Which shortcut key is used to make selected text bold in MS Word?",
+hi:"MS Word में selected text को bold करने के लिए कौन सी shortcut key का उपयोग किया जाता है?",
+A:"Ctrl + I",
+B:"Ctrl + U",
+C:"Ctrl + B",
+D:"Ctrl + Shift + B",
+ans:"C"
+},
+{
+id:23,
+en:"Which feature in MS Word is most useful for automatically replacing every occurrence of a specific word with another word throughout a document?",
+hi:"MS Word में पूरे document में किसी specific word की प्रत्येक occurrence को automatically किसी दूसरे word से replace करने के लिए कौन सा feature सबसे उपयोगी है?",
+A:"Word Count",
+B:"Replace",
+C:"AutoCorrect",
+D:"Track Changes",
+ans:"B"
+},
+{
+id:24,
+en:"Which shortcut key is used to open the “Find” dialog box in MS Word?",
+hi:"MS Word में “Find” dialog box खोलने के लिए कौन सी shortcut key का उपयोग किया जाता है?",
+A:"Ctrl + H",
+B:"Ctrl + F",
+C:"Ctrl + G",
+D:"Ctrl + R",
+ans:"B"
+},
+{
+id:25,
+en:"Which of the following statements about hot keys in MS Word is TRUE?",
+hi:"MS Word में hot keys के संबंध में निम्नलिखित में से कौन सा कथन TRUE है?",
+A:"Hot keys can only be used with mouse",
+B:"Hot keys help perform commands quickly using keyboard combinations",
+C:"Hot keys are available only in Windows 11",
+D:"Hot keys cannot be customized",
+ans:"B"
+},
+{
+id:26,
+en:"Which alignment option places text evenly along both left and right margins in MS Word?",
+hi:"MS Word में कौन सा alignment option text को left और right दोनों margins के साथ evenly align करता है?",
+A:"Left Align",
+B:"Center Align",
+C:"Right Align",
+D:"Justify",
+ans:"D"
+},
+{
+id:27,
+en:"Which paragraph formatting feature controls the distance between lines within a paragraph?",
+hi:"कौन सा paragraph formatting feature paragraph के अंदर lines के बीच की दूरी को नियंत्रित करता है?",
+A:"Indentation",
+B:"Line Spacing",
+C:"Margins",
+D:"Orientation",
+ans:"B"
+},
+{
+id:28,
+en:"What is the purpose of a “Hanging Indent” in MS Word?",
+hi:"MS Word में “Hanging Indent” का उद्देश्य क्या है?",
+A:"First line moves right, remaining lines stay normal",
+B:"Entire paragraph shifts equally",
+C:"First line remains fixed while remaining lines are indented",
+D:"Text is aligned at center",
+ans:"C"
+},
+{
+id:29,
+en:"Which shortcut key is used to align selected text to the center in MS Word?",
+hi:"MS Word में selected text को center align करने के लिए कौन सी shortcut key का उपयोग किया जाता है?",
+A:"Ctrl + L",
+B:"Ctrl + E",
+C:"Ctrl + R",
+D:"Ctrl + J",
+ans:"B"
+},
+{
+id:30,
+en:"Which page orientation is commonly used for printing wide tables or charts in MS Word?",
+hi:"MS Word में wide tables या charts को print करने के लिए सामान्यतः किस page orientation का उपयोग किया जाता है?",
+A:"Portrait",
+B:"Landscape",
+C:"Normal",
+D:"Vertical",
+ans:"B"
+},
+{
+id:31,
+en:"What is the primary purpose of setting margins in a document?",
+hi:"Document में margins set करने का primary purpose क्या है?",
+A:"To change font style",
+B:"To control blank space around the page content",
+C:"To insert headers",
+D:"To adjust line spacing",
+ans:"B"
+},
+{
+id:32,
+en:"Which tab in MS Word contains options related to Margins, Orientation, and Page Size?",
+hi:"MS Word में Margins, Orientation और Page Size से संबंधित options किस tab में होते हैं?",
+A:"Home",
+B:"Insert",
+C:"Layout (Page Layout)",
+D:"Review",
+ans:"C"
+},
+{
+id:33,
+en:"If a document is set to Portrait orientation, the page is:",
+hi:"यदि किसी document को Portrait orientation में set किया गया है, तो page कैसा होता है?",
+A:"Wider than tall",
+B:"Taller than wide",
+C:"Square shaped",
+D:"Horizontally divided",
+ans:"B"
+},
+{
+id:34,
+en:"Which feature in MS Word is used to display repeated information such as page numbers or document title at the top of each page?",
+hi:"MS Word में प्रत्येक page के top पर page numbers या document title जैसी repeated information प्रदर्शित करने के लिए किस feature का उपयोग किया जाता है?",
+A:"Footer",
+B:"Watermark",
+C:"Header",
+D:"Bookmark",
+ans:"C"
+},
+{
+id:35,
+en:"Which option is used to protect a Word document from unauthorized access using a password?",
+hi:"Word document को password का उपयोग करके unauthorized access से protect करने के लिए किस option का उपयोग किया जाता है?",
+A:"Restrict Editing",
+B:"Encrypt with Password",
+C:"Track Changes",
+D:"AutoRecover",
+ans:"B"
+},
+{
+id:36,
+en:"Which type of list is best suited for displaying steps in sequence?",
+hi:"Steps को क्रम (sequence) में प्रदर्शित करने के लिए किस प्रकार की list सबसे उपयुक्त है?",
+A:"Bulleted List",
+B:"Multilevel List",
+C:"Numbered List",
+D:"Symbol List",
+ans:"C"
+},
+{
+id:37,
+en:"What is the advantage of using automatic numbering in MS Word?",
+hi:"MS Word में automatic numbering का उपयोग करने का क्या advantage है?",
+A:"Numbers cannot be edited",
+B:"Numbers update automatically when items are added or removed",
+C:"It changes page orientation automatically",
+D:"It locks the document",
+ans:"B"
+},
+{
+id:38,
+en:"Which option in MS Word is used to combine multiple selected cells into a single cell in a table?",
+hi:"MS Word में table की multiple selected cells को एक single cell में combine करने के लिए किस option का उपयोग किया जाता है?",
+A:"Split Cells",
+B:"Merge Cells",
+C:"Combine Table",
+D:"Group Cells",
+ans:"B"
+},
+{
+id:39,
+en:"What is the purpose of the “Split Cells” feature in MS Word tables?",
+hi:"MS Word tables में “Split Cells” feature का purpose क्या है?",
+A:"To divide one cell into multiple rows or columns",
+B:"To remove borders from table",
+C:"To join two tables",
+D:"To resize the page",
+ans:"A"
+},
+{
+id:40,
+en:"Which tab appears automatically when a table is selected in MS Word?",
+hi:"MS Word में table को select करने पर कौन से tabs automatically दिखाई देते हैं?",
+A:"Review Tab",
+B:"Table Tools / Table Design & Layout Tabs",
+C:"Animation Tab",
+D:"Mailings Tab",
+ans:"B"
+},
+{
+id:41,
+en:"Which method is commonly used to insert a table quickly in MS Word?",
+hi:"MS Word में table को जल्दी insert करने के लिए सामान्यतः किस method का उपयोग किया जाता है?",
+A:"Insert → Table",
+B:"Review → Table",
+C:"Home → Insert Table",
+D:"View → Table",
+ans:"A"
+},
+{
+id:42,
+en:"Which shortcut key is commonly used to start Spelling & Grammar check in MS Word?",
+hi:"MS Word में Spelling & Grammar check शुरू करने के लिए सामान्यतः कौन सी shortcut key का उपयोग किया जाता है?",
+A:"F5",
+B:"F7",
+C:"Ctrl + S",
+D:"Shift + F7",
+ans:"B"
+},
+{
+id:43,
+en:"What is the primary purpose of the Thesaurus feature in MS Word?",
+hi:"MS Word में Thesaurus feature का primary purpose क्या है?",
+A:"To check spelling mistakes",
+B:"To translate text into another language",
+C:"To suggest synonyms and related words",
+D:"To count total words in document",
+ans:"C"
+},
+{
+id:44,
+en:"Mail Merge in MS Word is mainly used for:",
+hi:"MS Word में Mail Merge का मुख्य रूप से उपयोग किसके लिए किया जाता है?",
+A:"Combining multiple Word files into one",
+B:"Sending personalized letters/emails to multiple recipients using a data source",
+C:"Protecting documents with password",
+D:"Creating charts and graphs",
+ans:"B"
+},
+{
+id:45,
+en:"In MS Word, a Macro is best defined as:",
+hi:"MS Word में Macro को सबसे अच्छी तरह कैसे परिभाषित किया जाता है?",
+A:"A large font style",
+B:"An automatic backup feature",
+C:"A recorded sequence of commands used to automate repetitive tasks",
+D:"A type of page layout",
+ans:"C"
+},
+{
+id:46,
+en:"Which feature allows users to see how a document will appear on paper before printing?",
+hi:"कौन सा feature users को यह देखने की सुविधा देता है कि printing से पहले document paper पर कैसा दिखाई देगा?",
+A:"Read Mode",
+B:"Print Preview",
+C:"Zoom",
+D:"Layout View",
+ans:"B"
+},
+{
+id:47,
+en:"Which shortcut key is commonly used to open the Print dialog box in MS Word?",
+hi:"MS Word में Print dialog box खोलने के लिए सामान्यतः कौन सी shortcut key का उपयोग किया जाता है?",
+A:"Ctrl + P",
+B:"Ctrl + Shift + P",
+C:"Alt + P",
+D:"F12",
+ans:"A"
+},
+{
+id:48,
+en:"In the Print settings, which option allows printing only selected pages such as 2, 4, and 6?",
+hi:"Print settings में 2, 4 और 6 जैसे केवल selected pages को print करने के लिए किस option का उपयोग किया जाता है?",
+A:"Print All Pages",
+B:"Custom Print",
+C:"Quick Print",
+D:"Print Markup",
+ans:"B"
+},
+{
+id:49,
+en:"Which of the following statements about Print Preview is TRUE?",
+hi:"Print Preview के संबंध में निम्नलिखित में से कौन सा कथन TRUE है?",
+A:"It permanently changes document formatting",
+B:"It displays the exact appearance of the document before printing",
+C:"It prints document automatically",
+D:"It converts document into PDF",
+ans:"B"
+},
+{
+id:50,
+en:"Which of the following is a major advantage of using a spreadsheet application like MS Excel?",
+hi:"MS Excel जैसे spreadsheet application का उपयोग करने का प्रमुख advantage निम्नलिखित में से कौन सा है?",
+A:"It cannot perform calculations",
+B:"It allows automatic calculations and data analysis",
+C:"It is used only for typing text documents",
+D:"It cannot create charts",
+ans:"B"
+},
+{
+id:51,
+en:"In MS Excel, a Workbook is:",
+hi:"MS Excel में Workbook क्या होता है?",
+A:"A single cell",
+B:"A collection of worksheets stored in one file",
+C:"A type of chart",
+D:"A formatting tool",
+ans:"B"
+},
+{
+id:52,
+en:"A Worksheet in Excel consists of:",
+hi:"Excel में एक Worksheet किससे मिलकर बनी होती है?",
+A:"Only rows",
+B:"Only columns",
+C:"Rows and columns forming cells",
+D:"Charts and graphics only",
+ans:"C"
+},
+{
+id:53,
+en:"Which operation in MS Excel is used to modify the existing content of a cell without deleting it completely?",
+hi:"MS Excel में किसी cell के existing content को पूरी तरह delete किए बिना modify करने के लिए किस operation का उपयोग किया जाता है?",
+A:"Format Cell",
+B:"Edit Cell",
+C:"Merge Cell",
+D:"Freeze Pane",
+ans:"B"
+},
+{
+id:54,
+en:"Which shortcut key is commonly used to edit the active cell directly in Excel?",
+hi:"Excel में active cell को directly edit करने के लिए सामान्यतः कौन सी shortcut key का उपयोग किया जाता है?",
+A:"F1",
+B:"F2",
+C:"F5",
+D:"Ctrl + E",
+ans:"B"
+},
+{
+id:55,
+en:"What happens when a row is inserted in between existing rows in Excel?",
+hi:"Excel में existing rows के बीच एक नई row insert करने पर क्या होता है?",
+A:"Existing rows are deleted",
+B:"Existing rows shift downward automatically",
+C:"Existing columns are removed",
+D:"Data gets permanently lost",
+ans:"B"
+},
+{
+id:56,
+en:"Which of the following is a logical function in MS Excel?",
+hi:"निम्नलिखित में से कौन सा MS Excel में logical function है?",
+A:"SUM()",
+B:"AVERAGE()",
+C:"IF()",
+D:"CONCAT()",
+ans:"C"
+},
+{
+id:57,
+en:"Which function is used to combine text from different cells into one string?",
+hi:"Different cells के text को एक single string में combine करने के लिए किस function का उपयोग किया जाता है?",
+A:"COUNT()",
+B:"CONCAT()",
+C:"MAX()",
+D:"ROUND()",
+ans:"B"
+},
+{
+id:58,
+en:"Which statistical function is used to find the arithmetic mean of selected values?",
+hi:"Selected values का arithmetic mean निकालने के लिए किस statistical function का उपयोग किया जाता है?",
+A:"SUM()",
+B:"COUNT()",
+C:"AVERAGE()",
+D:"IF()",
+ans:"C"
+},
+{
+id:59,
+en:"Which feature in MS Excel is used to apply lines around selected cells?",
+hi:"MS Excel में selected cells के चारों ओर lines लगाने के लिए किस feature का उपयोग किया जाता है?",
+A:"Fill Color",
+B:"Borders",
+C:"Cell Alignment",
+D:"Wrap Text",
+ans:"B"
+},
+{
+id:60,
+en:"Which option is used to change the appearance of data such as font style, number format, and alignment in a cell?",
+hi:"Cell में font style, number format और alignment जैसी data की appearance बदलने के लिए किस option का उपयोग किया जाता है?",
+A:"Cell Formatting",
+B:"Data Validation",
+C:"Freeze Panes",
+D:"Conditional Formula",
+ans:"A"
+},
+{
+id:61,
+en:"Which feature in MS Excel is used to display only records that meet specific criteria?",
+hi:"MS Excel में केवल उन records को display करने के लिए किस feature का उपयोग किया जाता है जो specific criteria को meet करते हैं?",
+A:"Sorting",
+B:"Filtering",
+C:"Freeze Panes",
+D:"Data Merge",
+ans:"B"
+},
+{
+id:62,
+en:"What is the purpose of setting a Print Area in Excel?",
+hi:"Excel में Print Area set करने का purpose क्या है?",
+A:"To protect worksheet from editing",
+B:"To define a specific range of cells for printing",
+C:"To sort selected data",
+D:"To change page orientation",
+ans:"B"
+},
+{
+id:63,
+en:"Which of the following best defines the Internet?",
+hi:"निम्नलिखित में से Internet को सबसे अच्छी तरह कौन परिभाषित करता है?",
+A:"A single powerful computer",
+B:"A worldwide network of interconnected computers",
+C:"A software application",
+D:"A type of operating system",
+ans:"B"
+},
+{
+id:64,
+en:"One of the major uses of the Internet is:",
+hi:"Internet के प्रमुख uses में से एक है:",
+A:"Only playing games",
+B:"Data communication and information sharing",
+C:"Replacing hardware devices",
+D:"Formatting hard disks",
+ans:"B"
+},
+{
+id:65,
+en:"ARPANET, considered the precursor of the modern Internet, was developed by:",
+hi:"Modern Internet के precursor माने जाने वाले ARPANET को किसके द्वारा विकसित किया गया था?",
+A:"Microsoft",
+B:"IBM",
+C:"U.S. Department of Defense",
+D:"Apple",
+ans:"C"
+},
+{
+id:66,
+en:"Which type of malware is designed to replicate itself and spread across networks without attaching to another program?",
+hi:"किस प्रकार का malware स्वयं की copies बनाकर किसी अन्य program से attach हुए बिना networks में फैलने के लिए designed होता है?",
+A:"Trojan Horse",
+B:"Worm",
+C:"Virus",
+D:"Spyware",
+ans:"B"
+},
+{
+id:67,
+en:"A Trojan Horse is dangerous because it:",
+hi:"Trojan Horse खतरनाक होता है क्योंकि यह:",
+A:"Automatically repairs infected files",
+B:"Appears as legitimate software but performs malicious activities",
+C:"Only slows down internet speed",
+D:"Protects the operating system",
+ans:"B"
+},
+{
+id:68,
+en:"What is the primary function of antivirus software?",
+hi:"Antivirus software का primary function क्या है?",
+A:"To increase processor speed",
+B:"To detect, prevent, and remove malicious software",
+C:"To create backups only",
+D:"To manage printers",
+ans:"B"
+},
+{
+id:69,
+en:"A Firewall mainly helps in:",
+hi:"Firewall मुख्य रूप से किस कार्य में सहायता करता है?",
+A:"Formatting storage devices",
+B:"Blocking unauthorized access to or from a network",
+C:"Increasing monitor resolution",
+D:"Running application software faster",
+ans:"B"
+},
+{
+id:70,
+en:"Which of the following statements correctly differentiates wired and wireless networks while also relating to the role of an ISP?",
+hi:"निम्नलिखित में से कौन सा कथन wired और wireless networks के बीच सही अंतर बताता है तथा ISP की भूमिका को भी सही रूप से स्पष्ट करता है?",
+A:"Wired networks use radio waves only, while ISPs manufacture computers",
+B:"Wireless networks require physical cables, while ISP provides antivirus software",
+C:"Wired networks generally provide more stable and faster connections, while an ISP provides internet connectivity services to users",
+D:"ISPs are used only in wireless networks",
+ans:"C"
+},
+{
+id:71,
+en:"The Iqta system under the Delhi Sultanate was primarily associated with:",
+hi:"Delhi Sultanate के अंतर्गत Iqta system मुख्य रूप से किससे संबंधित था?",
+A:"Assignment of revenue from a territory to officials in lieu of salary",
+B:"Hereditary ownership of land by peasants",
+C:"Direct collection of land revenue by village councils",
+D:"Granting of religious lands exclusively to Sufi saints",
+ans:"A"
+},
+{
+id:72,
+en:"Which Sultan of Delhi is known for introducing the policy of “blood and iron” and maintaining a strict theory of kingship?",
+hi:"Delhi के किस Sultan को “blood and iron” की policy अपनाने और kingship की strict theory बनाए रखने के लिए जाना जाता है?",
+A:"Iltutmish",
+B:"Balban",
+C:"Alauddin Khalji",
+D:"Muhammad bin Tughlaq",
+ans:"B"
+},
+{
+id:73,
+en:"Which Mughal ruler's reign is particularly associated with the systematic compilation of the Ain-i-Akbari by Abul Fazl?",
+hi:"किस Mughal ruler के शासनकाल में Abul Fazl द्वारा Ain-i-Akbari का systematic compilation विशेष रूप से किया गया था?",
+A:"Humayun",
+B:"Akbar",
+C:"Jahangir",
+D:"Shah Jahan",
+ans:"B"
+},
+{
+id:74,
+en:"The Indian National Congress adopted the resolution of “Purna Swaraj” as its ultimate goal at which session?",
+hi:"Indian National Congress ने “Purna Swaraj” को अपना ultimate goal किस session में अपनाया था?",
+A:"Calcutta Session, 1928",
+B:"Lahore Session, 1929",
+C:"Karachi Session, 1931",
+D:"Lucknow Session, 1916",
+ans:"B"
+},
+{
+id:75,
+en:"Which event is correctly associated with the beginning of the Quit India Movement?",
+hi:"निम्नलिखित में से कौन सा event Quit India Movement की शुरुआत से सही रूप से associated है?",
+A:"Gandhi's Dandi March",
+B:"Passing of the Lahore Resolution",
+C:"“Do or Die” call given by Mahatma Gandhi",
+D:"Formation of the Indian National Army",
+ans:"C"
+},
+{
+id:76,
+en:"Which of the following constitutional provisions most directly enables Parliament to alter the boundaries or names of existing States?",
+hi:"निम्नलिखित में से कौन सा constitutional provision Parliament को existing States की boundaries या names को बदलने की सबसे प्रत्यक्ष शक्ति प्रदान करता है?",
+A:"Article 2",
+B:"Article 3",
+C:"Article 4",
+D:"Article 368",
+ans:"B"
+},
+{
+id:77,
+en:"A Money Bill passed by the Lok Sabha is transmitted to the Rajya Sabha. Which statement is constitutionally correct?",
+hi:"Lok Sabha द्वारा पारित Money Bill को Rajya Sabha में भेजे जाने पर निम्नलिखित में से कौन सा कथन संवैधानिक रूप से सही है?",
+A:"Rajya Sabha may amend it and Lok Sabha must accept the amendments",
+B:"Rajya Sabha may reject it, after which it automatically lapses",
+C:"Rajya Sabha must return it with or without recommendations within 14 days",
+D:"Rajya Sabha has 30 days to consider it before the President can act",
+ans:"C"
+},
+{
+id:78,
+en:"Under the Constitution of India, the Council of Ministers is collectively responsible to:",
+hi:"भारत के संविधान के अंतर्गत Council of Ministers सामूहिक रूप से किसके प्रति उत्तरदायी होती है?",
+A:"The President",
+B:"The Lok Sabha",
+C:"The Rajya Sabha",
+D:"The Parliament as a whole",
+ans:"B"
+},
+{
+id:79,
+en:"In national income accounting, which of the following is excluded from the calculation of Gross Domestic Product (GDP) for the current year?",
+hi:"National income accounting में निम्नलिखित में से किसे current year के Gross Domestic Product (GDP) की calculation में शामिल नहीं किया जाता है?",
+A:"Value of newly produced machinery",
+B:"Government expenditure on public infrastructure",
+C:"Sale of a second-hand car",
+D:"Fees paid for professional services",
+ans:"C"
+},
+{
+id:80,
+en:"If the Reserve Bank of India increases the Cash Reserve Ratio (CRR), the most direct effect on the banking system is likely to be:",
+hi:"यदि Reserve Bank of India Cash Reserve Ratio (CRR) बढ़ाता है, तो banking system पर इसका सबसे प्रत्यक्ष प्रभाव क्या होने की संभावना है?",
+A:"Increase in banks' lendable funds",
+B:"Reduction in banks' lendable funds",
+C:"Increase in currency circulation automatically",
+D:"Reduction in the statutory liquidity ratio (SLR)",
+ans:"B"
+},
+{
+id:81,
+en:"Which of the following is India's highest civilian award?",
+hi:"निम्नलिखित में से भारत का सर्वोच्च नागरिक सम्मान कौन सा है?",
+A:"Padma Vibhushan",
+B:"Padma Bhushan",
+C:"Bharat Ratna",
+D:"Padma Shri",
+ans:"C"
+},
+{
+id:82,
+en:"Which country hosted the 2025 G20 Leaders’ Summit?",
+hi:"2025 G20 Leaders’ Summit की मेजबानी किस देश ने की?",
+A:"Brazil",
+B:"South Africa",
+C:"India",
+D:"Indonesia",
+ans:"B"
+},
+{
+id:83,
+en:"The 2025 Nobel Peace Prize was awarded to:",
+hi:"2025 का Nobel Peace Prize किसे प्रदान किया गया?",
+A:"Nihon Hidankyo",
+B:"Maria Corina Machado",
+C:"Narges Mohammadi",
+D:"World Food Programme",
+ans:"B"
+},
+{
+id:84,
+en:"Which Indian space mission successfully demonstrated in-space docking technology in January 2025?",
+hi:"जनवरी 2025 में किस Indian space mission ने in-space docking technology का सफल demonstration किया?",
+A:"Chandrayaan-4",
+B:"Aditya-L1",
+C:"SpaDeX",
+D:"Gaganyaan",
+ans:"C"
+},
+{
+id:85,
+en:"In the ancient history of Himachal Pradesh, the Trigarta region is most closely associated with which river system?",
+hi:"हिमाचल प्रदेश के प्राचीन इतिहास में Trigarta region किस river system से सबसे अधिक संबंधित माना जाता है?",
+A:"Ravi, Beas and Sutlej",
+B:"Yamuna, Tons and Ganga",
+C:"Chenab, Jhelum and Indus",
+D:"Parvati, Spiti and Baspa",
+ans:"A"
+},
+{
+id:86,
+en:"Which ruler of the Katoch dynasty is traditionally credited with shifting the capital of Kangra from the old Kangra fort region to Tira Sujanpur?",
+hi:"Katoch dynasty के किस ruler को Kangra की राजधानी को पुराने Kangra Fort region से Tira Sujanpur स्थानांतरित करने का श्रेय पारंपरिक रूप से दिया जाता है?",
+A:"Sansar Chand",
+B:"Ghamand Chand",
+C:"Raja Jai Singh",
+D:"Raja Hamir Chand",
+ans:"D"
+},
+{
+id:87,
+en:"During the freedom struggle, the “Pajhota Movement” in Himachal Pradesh was primarily directed against:",
+hi:"Freedom struggle के दौरान Himachal Pradesh का “Pajhota Movement” मुख्य रूप से किसके विरुद्ध था?",
+A:"British forest laws in Chamba",
+B:"The autocratic rule of the Sirmaur princely state",
+C:"Forced labour imposed by the Bushahr ruler",
+D:"Land revenue policies of the Kangra administration",
+ans:"B"
+},
+{
+id:88,
+en:"निम्नलिखित में से किस वाक्य में क्रिया सकर्मक है?",
+hi:"निम्नलिखित में से किस वाक्य में क्रिया सकर्मक है?",
+A:"बच्चा मैदान में दौड़ रहा है।",
+B:"मोहन ने पत्र लिखा।",
+C:"पक्षी आकाश में उड़ रहे हैं।",
+D:"नदी तेज़ी से बह रही है।",
+ans:"B"
+},
+{
+id:89,
+en:"निम्नलिखित वाक्य में प्रयुक्त काल की पहचान कीजिए— “सीमा अगले महीने अपनी नई नौकरी शुरू करेगी।”",
+hi:"निम्नलिखित वाक्य में प्रयुक्त काल की पहचान कीजिए— “सीमा अगले महीने अपनी नई नौकरी शुरू करेगी।”",
+A:"सामान्य भूतकाल",
+B:"अपूर्ण वर्तमानकाल",
+C:"सामान्य भविष्यत् काल",
+D:"संदिग्ध भूतकाल",
+ans:"C"
+},
+{
+id:90,
+en:"निम्नलिखित में से किस शब्द में ‘प्र’ उपसर्ग का प्रयोग हुआ है?",
+hi:"निम्नलिखित में से किस शब्द में ‘प्र’ उपसर्ग का प्रयोग हुआ है?",
+A:"प्रस्थान",
+B:"परिणाम",
+C:"प्रयास",
+D:"प्रभाव",
+ans:"A"
+},
+{
+id:91,
+en:"निम्नलिखित में से किस शब्द में प्रत्यय का प्रयोग हुआ है?",
+hi:"निम्नलिखित में से किस शब्द में प्रत्यय का प्रयोग हुआ है?",
+A:"अनपढ़",
+B:"उपकार",
+C:"मिठास",
+D:"प्रतिदिन",
+ans:"C"
+},
+{
+id:92,
+en:"Choose the grammatically correct sentence:",
+hi:"सही grammatical sentence चुनिए:",
+A:"Neither the manager nor the employees was willing to accept the proposal.",
+B:"Neither the manager nor the employees were willing to accept the proposal.",
+C:"Neither the manager nor the employees is willing to accept the proposal.",
+D:"Neither the manager nor the employees has willing to accept the proposal.",
+ans:"B"
+},
+{
+id:93,
+en:"Choose the correct option: “Ten kilometres ___ a long distance to walk every day.”",
+hi:"सही option चुनिए: “Ten kilometres ___ a long distance to walk every day.”",
+A:"are",
+B:"were",
+C:"is",
+D:"have",
+ans:"C"
+},
+{
+id:94,
+en:"Choose the correct indirect form of the following sentence: The teacher said to the students, “Do not waste your time.”",
+hi:"निम्नलिखित sentence का सही indirect form चुनिए: The teacher said to the students, “Do not waste your time.”",
+A:"The teacher told the students that they did not waste their time.",
+B:"The teacher advised the students not to waste their time.",
+C:"The teacher said that the students should not wasted their time.",
+D:"The teacher ordered that the students did not waste their time.",
+ans:"B"
+},
+{
+id:95,
+en:"Choose the correct indirect form: Ravi said, “I have completed my assignment.”",
+hi:"सही indirect form चुनिए: Ravi said, “I have completed my assignment.”",
+A:"Ravi said that he has completed his assignment.",
+B:"Ravi said that I had completed my assignment.",
+C:"Ravi said that he had completed his assignment.",
+D:"Ravi said that he completed my assignment.",
+ans:"C"
+},
+{
+id:96,
+en:"Select the pair that has the same relationship as: SCULPTOR : STATUE",
+hi:"उस जोड़ी का चयन कीजिए जिसका संबंध SCULPTOR : STATUE के समान है।",
+A:"Author : Book",
+B:"Farmer : Plough",
+C:"Carpenter : Hammer",
+D:"Painter : Brush",
+ans:"A"
+},
+{
+id:97,
+en:"Select the pair that has the same relationship as: ORNITHOLOGIST : BIRDS",
+hi:"उस जोड़ी का चयन कीजिए जिसका संबंध ORNITHOLOGIST : BIRDS के समान है।",
+A:"Entomologist : Insects",
+B:"Botanist : Rocks",
+C:"Geologist : Plants",
+D:"Astronomer : Fossils",
+ans:"A"
+},
+{
+id:98,
+en:"Statement: “Use our new water purifier to ensure safe drinking water for your family.” Assumptions: I. People are concerned about the safety of their drinking water. II. The new water purifier can help make drinking water safer.",
+hi:"कथन: “अपने परिवार के लिए सुरक्षित पेयजल सुनिश्चित करने के लिए हमारे नए water purifier का उपयोग करें।” धारणाएँ: I. लोग अपने drinking water की safety को लेकर concerned हैं। II. नया water purifier drinking water को अधिक safe बनाने में मदद कर सकता है।",
+A:"Only I is implicit",
+B:"Only II is implicit",
+C:"Both I and II are implicit",
+D:"Neither I nor II is implicit",
+ans:"C"
+},
+{
+id:99,
+en:"Statement: “The company has introduced flexible working hours to improve employee productivity.” Assumptions: I. Working-hour flexibility may influence employee productivity. II. All employees were previously dissatisfied with their working hours.",
+hi:"कथन: “Company ने employee productivity में सुधार करने के लिए flexible working hours शुरू किए हैं।” धारणाएँ: I. Working-hour flexibility employee productivity को प्रभावित कर सकती है। II. सभी employees पहले अपने working hours से dissatisfied थे।",
+A:"Only I is implicit",
+B:"Only II is implicit",
+C:"Both I and II are implicit",
+D:"Neither I nor II is implicit",
+ans:"A"
+},
+{
+id:100,
+en:"In a group of 120 students, 70 study Mathematics, 60 study Science, and 30 study both Mathematics and Science. How many students study neither Mathematics nor Science?",
+hi:"120 students के एक group में 70 Mathematics, 60 Science और 30 Mathematics तथा Science दोनों पढ़ते हैं। कितने students न तो Mathematics और न ही Science पढ़ते हैं?",
+A:"10",
+B:"20",
+C:"30",
+D:"40",
+ans:"A"
+}  
+]
+let current=0
+let score=0
+let userAnswers={}
+
+let name=""
+let phone=""
+
+let time=5400
+let timerInterval
+
+function startCountdown(){
+
+name=document.getElementById("name").value
+phone=document.getElementById("phone").value
+
+if(name=="" || phone==""){
+alert("Enter details")
+return
+}
+
+document.getElementById("formBox").style.display="none"
+document.getElementById("countBox").style.display="block"
+
+let t=5
+
+let c=setInterval(()=>{
+document.getElementById("count").innerText=t
+t--
+
+if(t<0){
+clearInterval(c)
+document.getElementById("countBox").style.display="none"
+document.getElementById("questionBox").style.display="block"
+document.getElementById("timer").style.display="block"
+
+startTimer()
+showQuestion()
+}
+
+},1000)
+}
+
+function startTimer(){
+timerInterval=setInterval(()=>{
+let m=Math.floor(time/60)
+let s=time%60
+document.getElementById("timer").innerText="⏱ "+m+":"+(s<10?"0":"")+s
+time--
+
+if(time<0){
+clearInterval(timerInterval)
+showResult()
+}
+},1000)
+}
+
+function showQuestion(){
+
+let q=questions[current]
+
+let html=""
+
+html+=`<b>${name}</b> | ${phone}<br><br>`
+
+html+=`<h3>Q${current+1}/${questions.length}. ${q.en}</h3>`
+html+=`<p>${q.hi}</p>`
+
+html+=`<label class="option"><input type="radio" name="ans" value="A"> A. ${q.A}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="B"> B. ${q.B}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="C"> C. ${q.C}</label>`
+html+=`<label class="option"><input type="radio" name="ans" value="D"> D. ${q.D}</label>`
+
+html+=`<br><button onclick="nextQuestion()">Next</button>`
+
+document.getElementById("questionBox").innerHTML=html
+}
+
+function nextQuestion(){
+
+let selected=document.querySelector('input[name="ans"]:checked')
+
+if(selected){
+userAnswers[current]=selected.value
+if(selected.value==questions[current].ans){
+score++
+}
+}
+
+current++
+
+if(current<questions.length){
+showQuestion()
+}else{
+showResult()
+}
+}
+
+function showResult(){
+
+clearInterval(timerInterval)
+
+document.getElementById("questionBox").style.display="none"
+
+let box=document.getElementById("resultBox")
+box.style.display="block"
+
+let html=""
+
+html+=`<h2>Result</h2>`
+html+=`<b>Name:</b> ${name}<br>`
+html+=`<b>Phone:</b> ${phone}<br>`
+html+=`<b>Test:</b> ${mockTestNo}<br>`
+html+=`<b>Score:</b> ${score}/${questions.length}<br><br>`
+
+questions.forEach((q,i)=>{
+html+=`<hr>`
+html+=`<b>Q${i+1}. ${q.en}</b><br>`
+html+=`${q.hi}<br><br>`
+html+=`A. ${q.A}<br>`
+html+=`B. ${q.B}<br>`
+html+=`C. ${q.C}<br>`
+html+=`D. ${q.D}<br><br>`
+html+=`Your Answer: ${userAnswers[i] || "Not Attempted"}<br>`
+html+=`Correct Answer: ${q.ans}<br>`
+})
+
+html+=`<br><button onclick="downloadPDF()">Download PDF</button>`
+
+box.innerHTML=html
+}
+
+async function downloadPDF(){
+
+const { jsPDF } = window.jspdf
+
+let element=document.getElementById("resultBox")
+
+element.style.background="#fff"
+element.style.color="#000"
+
+await new Promise(r=>setTimeout(r,800))
+
+let canvas=await html2canvas(element,{scale:1.5})
+
+let imgData=canvas.toDataURL("image/jpeg",0.5)
+
+let pdf=new jsPDF("p","mm","a4")
+
+let imgWidth=190
+let pageHeight=297
+let imgHeight=canvas.height*imgWidth/canvas.width
+
+let heightLeft=imgHeight
+let position=10
+
+pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
+heightLeft-=pageHeight
+
+while(heightLeft>0){
+position=heightLeft-imgHeight
+pdf.addPage()
+pdf.addImage(imgData,"JPEG",10,position,imgWidth,imgHeight)
+heightLeft-=pageHeight
+}
+
+pdf.save(mockTestNo.replace(/\s+/g,'_')+".pdf")
+}
+
+</script>
 <script src="auth.js"></script>
 </body>
 </html>
