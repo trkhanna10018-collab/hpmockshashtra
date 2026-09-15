@@ -428,11 +428,12 @@
 
       try{
 
-        await signInWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
+await setPersistence(auth, browserSessionPersistence);
+await signInWithEmailAndPassword(
+  auth,
+  email,
+  password
+);
 
 
         showMessage(
