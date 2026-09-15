@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard | HPMockShashtra</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Segoe UI",Arial,sans-serif;
+    }
+
+    body{
+      background:#f5f7fb;
+      min-height:100vh;
+      color:#1f2937;
+    }
+
+    /* HEADER */
+    .header{
+      background:white;
+      padding:15px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 15px rgba(0,0,0,0.08);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:20px;
+      font-weight:800;
+      color:#4f46e5;
+    }
+
+    .brand img{
+      width:42px;
+      height:42px;
+      object-fit:contain;
+      border-radius:10px;
+    }
+
+    .logout-btn{
+      border:none;
+      background:#fee2e2;
+      color:#b91c1c;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .logout-btn:hover{
+      background:#fecaca;
+    }
+
+    /* MAIN */
+    .container{
+      width:100%;
+      max-width:1100px;
+      margin:auto;
+      padding:30px 20px 50px;
+    }
+
+    /* WELCOME */
+    .welcome{
+      background:linear-gradient(135deg,#4f46e5,#7c3aed);
+      color:white;
+      border-radius:22px;
+      padding:30px;
+      margin-bottom:28px;
+      box-shadow:0 12px 30px rgba(79,70,229,0.22);
+    }
+
+    .welcome h1{
+      font-size:30px;
+      margin-bottom:8px;
+    }
+
+    .welcome p{
+      opacity:0.9;
+      font-size:15px;
+    }
+
+    .email{
+      margin-top:10px;
+      font-size:14px;
+      opacity:0.85;
+    }
+
+    /* SECTION */
+    .section-title{
+      font-size:22px;
+      margin-bottom:16px;
+      color:#111827;
+    }
+
+    /* CARDS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 7px 25px rgba(0,0,0,0.07);
+      border:1px solid #eef0f5;
+    }
+
+    .card-icon{
+      font-size:35px;
+      margin-bottom:14px;
+    }
+
+    .card h3{
+      font-size:19px;
+      margin-bottom:8px;
+      color:#111827;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#6b7280;
+      line-height:1.5;
+      margin-bottom:18px;
+    }
+
+    .test-btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      text-decoration:none;
+      background:linear-gradient(135deg,#4f46e5,#6366f1);
+      color:white;
+      padding:12px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .test-btn:hover{
+      opacity:0.92;
+    }
+
+    .coming{
+      background:#f3f4f6;
+      color:#6b7280;
+      cursor:not-allowed;
+    }
+
+    /* QUICK STATS */
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:30px;
+      margin-bottom:30px;
+    }
+
+    .stat{
+      background:white;
+      padding:22px;
+      border-radius:16px;
+      text-align:center;
+      box-shadow:0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .stat-number{
+      font-size:27px;
+      font-weight:800;
+      color:#4f46e5;
+    }
+
+    .stat-label{
+      margin-top:5px;
+      color:#6b7280;
+      font-size:13px;
+    }
+
+    /* FOOTER */
+    .footer{
+      text-align:center;
+      padding:25px;
+      color:#6b7280;
+      font-size:13px;
+    }
+
+    /* LOADING */
+    .loading{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:18px;
+      color:#4f46e5;
+    }
+
+    /* MOBILE */
+    @media(max-width:800px){
+
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .header{
+        padding:12px 15px;
+      }
+
+      .brand{
+        font-size:17px;
+      }
+
+      .brand img{
+        width:36px;
+        height:36px;
+      }
+
+      .logout-btn{
+        padding:8px 12px;
+        font-size:12px;
+      }
+
+      .container{
+        padding:20px 15px 40px;
+      }
+
+      .welcome{
+        padding:24px 20px;
+        border-radius:18px;
+      }
+
+      .welcome h1{
+        font-size:25px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOADING -->
+  <div class="loading" id="loading">
+    Loading your dashboard...
+  </div>
+
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" style="display:none;">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <div class="brand">
+
+        <img src="logo.png" alt="HPMockShashtra">
+
+        <span>HPMockShashtra</span>
+
+      </div>
+
+      <button class="logout-btn" id="logoutBtn">
+        Logout
+      </button>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="container">
+
+
+      <!-- WELCOME -->
+      <section class="welcome">
+
+        <h1>
+          Welcome, <span id="userName">Student</span>! 👋
+        </h1>
+
+        <p>
+          Ready to improve your preparation today?
+        </p>
+
+        <div class="email" id="userEmail">
+          Loading email...
+        </div>
+
+      </section>
+
+
+      <!-- TESTS -->
+      <h2 class="section-title">
+        🎯 Available Mock Tests
+      </h2>
+
+
+      <div class="grid">
+
+
+        <!-- JOA IT -->
+        <div class="card">
+
+          <div class="card-icon">
+            💻
+          </div>
+
+          <h3>
+            JOA IT
+          </h3>
+
+          <p>
+            Practice with competitive-level JOA IT mock tests.
+          </p>
+
+          <a
+            href="format.html"
+            class="test-btn"
+          >
+            Start Free Test
+          </a>
+
+        </div>
+
+
+        <!-- PATWARI -->
+        <div class="card">
+
+          <div class="card-icon">
+            📍
+          </div>
+
+          <h3>
+            HP Patwari
+          </h3>
+
+          <p>
+            Patwari mock test series will be available soon.
+          </p>
+
+          <div class="test-btn coming">
+            Coming Soon
+          </div>
+
+        </div>
+
+
+        <!-- POLICE -->
+        <div class="card">
+
+          <div class="card-icon">
+            👮
+          </div>
+
+          <h3>
+            HP Police
+          </h3>
+
+          <p>
+            Police recruitment mock tests will be available soon.
+          </p>
+
+          <div class="test-btn coming">
+            Coming Soon
+          </div>
+
+        </div>
+
+
+        <!-- JBT -->
+        <div class="card">
+
+          <div class="card-icon">
+            👩‍🏫
+          </div>
+
+          <h3>
+            HP JBT
+          </h3>
+
+          <p>
+            JBT mock test series will be available soon.
+          </p>
+
+          <div class="test-btn coming">
+            Coming Soon
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- STATS -->
+      <div class="stats">
+
+        <div class="stat">
+
+          <div class="stat-number">
+            15+
+          </div>
+
+          <div class="stat-label">
+            Mock Tests
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-number">
+            90 Min
+          </div>
+
+          <div class="stat-label">
+            Exam Duration
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-number">
+            Hindi + English
+          </div>
+
+          <div class="stat-label">
+            Bilingual Tests
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+      © HPMockShashtra
+
+    </footer>
+
+  </div>
+
+
+  <!-- FIREBASE -->
+  <script type="module">
+
+    import {
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+    import {
+      auth
+    } from "./firebase-config.js";
+
+
+    const loading =
+      document.getElementById("loading");
+
+    const dashboard =
+      document.getElementById("dashboard");
+
+    const userName =
+      document.getElementById("userName");
+
+    const userEmail =
+      document.getElementById("userEmail");
+
+    const logoutBtn =
+      document.getElementById("logoutBtn");
+
+
+    // CHECK LOGIN STATUS
+
+    onAuthStateChanged(auth, (user) => {
+
+      if(user){
+
+        // USER LOGGED IN
+
+        const name =
+          user.displayName || "Student";
+
+        userName.textContent = name;
+
+        userEmail.textContent =
+          user.email || "";
+
+        loading.style.display = "none";
+
+        dashboard.style.display = "block";
+
+      }
+
+      else{
+
+        // USER NOT LOGGED IN
+
+        window.location.href =
+          "firebase-login.html";
+
+      }
+
+    });
+
+
+    // LOGOUT
+
+    logoutBtn.addEventListener(
+      "click",
+      async () => {
+
+        try{
+
+          await signOut(auth);
+
+          window.location.href =
+            "firebase-login.html";
+
+        }
+
+        catch(error){
+
+          alert(
+            "Unable to logout. Please try again."
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
