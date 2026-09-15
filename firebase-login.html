@@ -336,36 +336,6 @@
        CHECK EXISTING LOGIN SESSION
     =============================== */
 
-    onAuthStateChanged(auth, (user) => {
-
-      if(user){
-
-        /*
-          User is already logged in.
-          No need to login again.
-          Send directly to dashboard.
-        */
-
-        showMessage(
-          "You are already logged in. Opening dashboard...",
-          "success"
-        );
-
-        loginBtn.disabled = true;
-        loginBtn.textContent = "Already Logged In";
-
-        setTimeout(() => {
-
-          window.location.href =
-            "firebase-dashboard.html";
-
-        }, 700);
-
-      }
-
-    });
-
-
     /* ===============================
        LOGIN
     =============================== */
