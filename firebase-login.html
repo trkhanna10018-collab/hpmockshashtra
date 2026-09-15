@@ -96,6 +96,7 @@
       font-weight:700;
       cursor:pointer;
       margin-top:5px;
+      transition:0.2s;
     }
 
     .login-btn:hover{
@@ -117,6 +118,10 @@
       cursor:pointer;
     }
 
+    .forgot:hover{
+      text-decoration:underline;
+    }
+
     .message{
       display:none;
       margin-top:18px;
@@ -124,6 +129,7 @@
       border-radius:10px;
       font-size:14px;
       text-align:center;
+      line-height:1.4;
     }
 
     .signup{
@@ -141,6 +147,10 @@
       text-decoration:none;
     }
 
+    .signup a:hover{
+      text-decoration:underline;
+    }
+
     .back-home{
       display:block;
       text-align:center;
@@ -150,7 +160,12 @@
       font-size:13px;
     }
 
+    .back-home:hover{
+      color:#4f46e5;
+    }
+
     @media(max-width:480px){
+
       .login-box{
         padding:30px 22px;
         border-radius:20px;
@@ -159,6 +174,7 @@
       h1{
         font-size:25px;
       }
+
     }
   </style>
 </head>
@@ -180,7 +196,11 @@
     <form id="loginForm">
 
       <div class="form-group">
-        <label for="email">Email Address</label>
+
+        <label for="email">
+          Email Address
+        </label>
+
         <input
           type="email"
           id="email"
@@ -188,10 +208,16 @@
           required
           autocomplete="email"
         >
+
       </div>
 
+
       <div class="form-group">
-        <label for="password">Password</label>
+
+        <label for="password">
+          Password
+        </label>
+
         <input
           type="password"
           id="password"
@@ -199,26 +225,50 @@
           required
           autocomplete="current-password"
         >
+
       </div>
 
-      <button type="submit" class="login-btn" id="loginBtn">
+
+      <button
+        type="submit"
+        class="login-btn"
+        id="loginBtn"
+      >
         Login
       </button>
 
     </form>
 
-    <a class="forgot" id="forgotPassword">
+
+    <a
+      class="forgot"
+      id="forgotPassword"
+    >
       Forgot Password?
     </a>
 
-    <div class="message" id="message"></div>
+
+    <div
+      class="message"
+      id="message"
+    ></div>
+
 
     <div class="signup">
+
       Don't have an account?
-      <a href="firebase-signup.html">Create Account</a>
+
+      <a href="firebase-signup.html">
+        Create Account
+      </a>
+
     </div>
 
-    <a href="hpmockshashtra-homepage.html" class="back-home">
+
+    <a
+      href="hpmockshashtra-homepage.html"
+      class="back-home"
+    >
       ← Back to Home
     </a>
 
@@ -228,6 +278,7 @@
   <script type="module">
 
     import {
+      onAuthStateChanged,
       signInWithEmailAndPassword,
       sendPasswordResetEmail
     } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
@@ -235,38 +286,144 @@
     import { auth } from "./firebase-config.js";
 
 
-    const loginForm = document.getElementById("loginForm");
-    const loginBtn = document.getElementById("loginBtn");
-    const message = document.getElementById("message");
-    const forgotPassword = document.getElementById("forgotPassword");
+    const loginForm =
+      document.getElementById("loginForm");
 
+    const loginBtn =
+      document.getElementById("loginBtn");
+
+    const message =
+      document.getElementById("message");
+
+    const forgotPassword =
+      document.getElementById("forgotPassword");
+
+    const emailInput =
+      document.getElementById("email");
+
+    const passwordInput =
+      document.getElementById("password");
+
+
+    /* ===============================
+       SHOW MESSAGE
+    =============================== */
 
     function showMessage(text, type){
 
       message.textContent = text;
+
       message.style.display = "block";
 
       if(type === "success"){
+
         message.style.background = "#dcfce7";
         message.style.color = "#166534";
+
       }
       else{
+
         message.style.background = "#fee2e2";
         message.style.color = "#991b1b";
+
       }
+
     }
 
 
-    // LOGIN
+    /* ===============================
+       CHECK EXISTING LOGIN SESSION
+    =============================== */
+
+    onAuthStateChanged(auth, (user) => {
+
+      if(user){
+
+        /*
+          User is already logged in.
+          No need to login again.
+          Send directly to dashboard.
+        */
+
+        showMessage(
+          "You are already logged in. Opening dashboard...",
+          "success"
+        );
+
+        loginBtn.disabled = true;
+        loginBtn.textContent = "Already Logged In";
+
+        setTimeout(() => {
+
+          window.location.href =
+            "firebase-dashboard.html";
+
+        }, 700);
+
+      }
+
+    });
+
+
+    /* ===============================
+       LOGIN
+    =============================== */
+
     loginForm.addEventListener("submit", async (e) => {
 
       e.preventDefault();
 
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
+
+      const email =
+        emailInput.value.trim();
+
+      const password =
+        passwordInput.value;
+
+
+      if(!email || !password){
+
+        showMessage(
+          "Please enter your email and password.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      /*
+        Extra protection:
+        If Firebase already has a logged-in user,
+        simply open dashboard.
+      */
+
+      if(auth.currentUser){
+
+        showMessage(
+          "You are already logged in. Opening dashboard...",
+          "success"
+        );
+
+        loginBtn.disabled = true;
+        loginBtn.textContent = "Already Logged In";
+
+        setTimeout(() => {
+
+          window.location.href =
+            "firebase-dashboard.html";
+
+        }, 700);
+
+        return;
+
+      }
+
 
       loginBtn.disabled = true;
       loginBtn.textContent = "Logging in...";
+
 
       try{
 
@@ -276,94 +433,185 @@
           password
         );
 
+
         showMessage(
-          "Login successful! Redirecting...",
+          "Login successful! Opening dashboard...",
           "success"
         );
 
+
+        loginBtn.textContent =
+          "Login Successful";
+
+
         setTimeout(() => {
-          window.location.href = "firebase-dashboard.html";
-        }, 1000);
+
+          window.location.href =
+            "firebase-dashboard.html";
+
+        }, 700);
+
 
       }
+
       catch(error){
 
-        let errorMessage = "Login failed. Please check your email and password.";
+        console.error(
+          "Firebase Login Error:",
+          error
+        );
+
+
+        let errorMessage =
+          "Login failed. Please check your email and password.";
+
 
         if(
           error.code === "auth/invalid-credential" ||
           error.code === "auth/wrong-password" ||
           error.code === "auth/user-not-found"
         ){
-          errorMessage = "Incorrect email or password.";
+
+          errorMessage =
+            "Incorrect email or password.";
+
         }
 
-        else if(error.code === "auth/invalid-email"){
-          errorMessage = "Please enter a valid email address.";
+        else if(
+          error.code === "auth/invalid-email"
+        ){
+
+          errorMessage =
+            "Please enter a valid email address.";
+
         }
 
-        else if(error.code === "auth/too-many-requests"){
-          errorMessage = "Too many attempts. Please try again later.";
+        else if(
+          error.code === "auth/too-many-requests"
+        ){
+
+          errorMessage =
+            "Too many login attempts. Please try again later.";
+
         }
 
-        showMessage(errorMessage, "error");
+        else if(
+          error.code === "auth/network-request-failed"
+        ){
 
-        loginBtn.disabled = false;
-        loginBtn.textContent = "Login";
-      }
+          errorMessage =
+            "Network error. Please check your internet connection.";
 
-    });
+        }
 
+        else if(
+          error.code === "auth/user-disabled"
+        ){
 
-    // FORGOT PASSWORD
-    forgotPassword.addEventListener("click", async () => {
+          errorMessage =
+            "This account has been disabled.";
 
-      const email = document.getElementById("email").value.trim();
+        }
 
-      if(!email){
 
         showMessage(
-          "Please enter your email address first.",
+          errorMessage,
           "error"
         );
 
-        document.getElementById("email").focus();
 
-        return;
-      }
-
-      try{
-
-        await sendPasswordResetEmail(auth, email);
-
-        showMessage(
-          "Password reset email sent. Please check your inbox.",
-          "success"
-        );
-
-      }
-      catch(error){
-
-        if(error.code === "auth/invalid-email"){
-
-          showMessage(
-            "Please enter a valid email address.",
-            "error"
-          );
-
-        }
-        else{
-
-          showMessage(
-            "Unable to send reset email. Please try again.",
-            "error"
-          );
-
-        }
+        loginBtn.disabled = false;
+        loginBtn.textContent = "Login";
 
       }
 
     });
+
+
+    /* ===============================
+       FORGOT PASSWORD
+    =============================== */
+
+    forgotPassword.addEventListener(
+      "click",
+      async () => {
+
+        const email =
+          emailInput.value.trim();
+
+
+        if(!email){
+
+          showMessage(
+            "Please enter your email address first.",
+            "error"
+          );
+
+          emailInput.focus();
+
+          return;
+
+        }
+
+
+        try{
+
+          await sendPasswordResetEmail(
+            auth,
+            email
+          );
+
+
+          showMessage(
+            "Password reset email sent. Please check your inbox.",
+            "success"
+          );
+
+        }
+
+        catch(error){
+
+          console.error(
+            "Password Reset Error:",
+            error
+          );
+
+
+          if(
+            error.code === "auth/invalid-email"
+          ){
+
+            showMessage(
+              "Please enter a valid email address.",
+              "error"
+            );
+
+          }
+
+          else if(
+            error.code === "auth/user-not-found"
+          ){
+
+            showMessage(
+              "No account found with this email address.",
+              "error"
+            );
+
+          }
+
+          else{
+
+            showMessage(
+              "Unable to send reset email. Please try again.",
+              "error"
+            );
+
+          }
+
+        }
+
+      }
+    );
 
   </script>
 
