@@ -96,7 +96,6 @@
       font-weight:700;
       cursor:pointer;
       margin-top:5px;
-      transition:0.2s;
     }
 
     .login-btn:hover{
@@ -277,12 +276,12 @@
 
   <script type="module">
 
-   import {
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-  setPersistence,
-  browserSessionPersistence
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+    import {
+      signInWithEmailAndPassword,
+      sendPasswordResetEmail,
+      setPersistence,
+      browserSessionPersistence
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
     import { auth } from "./firebase-config.js";
 
@@ -307,7 +306,7 @@
 
 
     /* ===============================
-       SHOW MESSAGE
+       MESSAGE
     =============================== */
 
     function showMessage(text, type){
@@ -321,8 +320,7 @@
         message.style.background = "#dcfce7";
         message.style.color = "#166534";
 
-      }
-      else{
+      }else{
 
         message.style.background = "#fee2e2";
         message.style.color = "#991b1b";
@@ -331,10 +329,6 @@
 
     }
 
-
-    /* ===============================
-       CHECK EXISTING LOGIN SESSION
-    =============================== */
 
     /* ===============================
        LOGIN
@@ -364,46 +358,28 @@
       }
 
 
-      /*
-        Extra protection:
-        If Firebase already has a logged-in user,
-        simply open dashboard.
-      */
-
-      if(auth.currentUser){
-
-        showMessage(
-          "You are already logged in. Opening dashboard...",
-          "success"
-        );
-
-        loginBtn.disabled = true;
-        loginBtn.textContent = "Already Logged In";
-
-        setTimeout(() => {
-
-          window.location.href =
-            "firebase-dashboard.html";
-
-        }, 700);
-
-        return;
-
-      }
-
-
       loginBtn.disabled = true;
       loginBtn.textContent = "Logging in...";
 
 
       try{
 
-await setPersistence(auth, browserSessionPersistence);
-await signInWithEmailAndPassword(
-  auth,
-  email,
-  password
-);
+        /*
+          Login session sirf current
+          browser session ke liye rahegi.
+        */
+
+        await setPersistence(
+          auth,
+          browserSessionPersistence
+        );
+
+
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
 
 
         showMessage(
@@ -425,7 +401,6 @@ await signInWithEmailAndPassword(
 
 
       }
-
       catch(error){
 
         console.error(
@@ -540,7 +515,6 @@ await signInWithEmailAndPassword(
           );
 
         }
-
         catch(error){
 
           console.error(
@@ -559,18 +533,6 @@ await signInWithEmailAndPassword(
             );
 
           }
-
-          else if(
-            error.code === "auth/user-not-found"
-          ){
-
-            showMessage(
-              "No account found with this email address.",
-              "error"
-            );
-
-          }
-
           else{
 
             showMessage(
