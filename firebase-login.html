@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | HPMockShashtra</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Segoe UI", Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+      padding:20px;
+    }
+
+    .login-box{
+      width:100%;
+      max-width:430px;
+      background:#ffffff;
+      border-radius:24px;
+      padding:35px 30px;
+      box-shadow:0 15px 45px rgba(0,0,0,0.12);
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .logo img{
+      width:90px;
+      height:90px;
+      object-fit:contain;
+      border-radius:20px;
+    }
+
+    h1{
+      text-align:center;
+      color:#312e81;
+      font-size:28px;
+      margin-bottom:7px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#6b7280;
+      font-size:14px;
+      margin-bottom:28px;
+    }
+
+    .form-group{
+      margin-bottom:18px;
+    }
+
+    label{
+      display:block;
+      font-weight:600;
+      color:#374151;
+      margin-bottom:7px;
+      font-size:14px;
+    }
+
+    input{
+      width:100%;
+      padding:14px 15px;
+      border:1px solid #d1d5db;
+      border-radius:12px;
+      font-size:15px;
+      outline:none;
+      transition:0.2s;
+    }
+
+    input:focus{
+      border-color:#6366f1;
+      box-shadow:0 0 0 3px rgba(99,102,241,0.12);
+    }
+
+    .login-btn{
+      width:100%;
+      border:none;
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#4f46e5,#7c3aed);
+      color:white;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:5px;
+    }
+
+    .login-btn:hover{
+      opacity:0.93;
+    }
+
+    .login-btn:disabled{
+      opacity:0.6;
+      cursor:not-allowed;
+    }
+
+    .forgot{
+      display:block;
+      text-align:right;
+      margin-top:12px;
+      color:#4f46e5;
+      font-size:14px;
+      text-decoration:none;
+      cursor:pointer;
+    }
+
+    .message{
+      display:none;
+      margin-top:18px;
+      padding:12px;
+      border-radius:10px;
+      font-size:14px;
+      text-align:center;
+    }
+
+    .signup{
+      text-align:center;
+      margin-top:25px;
+      padding-top:22px;
+      border-top:1px solid #e5e7eb;
+      color:#6b7280;
+      font-size:14px;
+    }
+
+    .signup a{
+      color:#4f46e5;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .back-home{
+      display:block;
+      text-align:center;
+      margin-top:18px;
+      color:#6b7280;
+      text-decoration:none;
+      font-size:13px;
+    }
+
+    @media(max-width:480px){
+      .login-box{
+        padding:30px 22px;
+        border-radius:20px;
+      }
+
+      h1{
+        font-size:25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <div class="logo">
+      <img src="logo.png" alt="HPMockShashtra Logo">
+    </div>
+
+    <h1>Welcome Back!</h1>
+
+    <p class="subtitle">
+      Login to your HPMockShashtra account
+    </p>
+
+    <form id="loginForm">
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+          autocomplete="email"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+          autocomplete="current-password"
+        >
+      </div>
+
+      <button type="submit" class="login-btn" id="loginBtn">
+        Login
+      </button>
+
+    </form>
+
+    <a class="forgot" id="forgotPassword">
+      Forgot Password?
+    </a>
+
+    <div class="message" id="message"></div>
+
+    <div class="signup">
+      Don't have an account?
+      <a href="firebase-signup.html">Create Account</a>
+    </div>
+
+    <a href="hpmockshashtra-homepage.html" class="back-home">
+      ← Back to Home
+    </a>
+
+  </div>
+
+
+  <script type="module">
+
+    import {
+      signInWithEmailAndPassword,
+      sendPasswordResetEmail
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+    import { auth } from "./firebase-config.js";
+
+
+    const loginForm = document.getElementById("loginForm");
+    const loginBtn = document.getElementById("loginBtn");
+    const message = document.getElementById("message");
+    const forgotPassword = document.getElementById("forgotPassword");
+
+
+    function showMessage(text, type){
+
+      message.textContent = text;
+      message.style.display = "block";
+
+      if(type === "success"){
+        message.style.background = "#dcfce7";
+        message.style.color = "#166534";
+      }
+      else{
+        message.style.background = "#fee2e2";
+        message.style.color = "#991b1b";
+      }
+    }
+
+
+    // LOGIN
+    loginForm.addEventListener("submit", async (e) => {
+
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      loginBtn.disabled = true;
+      loginBtn.textContent = "Logging in...";
+
+      try{
+
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+        showMessage(
+          "Login successful! Redirecting...",
+          "success"
+        );
+
+        setTimeout(() => {
+          window.location.href = "firebase-dashboard.html";
+        }, 1000);
+
+      }
+      catch(error){
+
+        let errorMessage = "Login failed. Please check your email and password.";
+
+        if(
+          error.code === "auth/invalid-credential" ||
+          error.code === "auth/wrong-password" ||
+          error.code === "auth/user-not-found"
+        ){
+          errorMessage = "Incorrect email or password.";
+        }
+
+        else if(error.code === "auth/invalid-email"){
+          errorMessage = "Please enter a valid email address.";
+        }
+
+        else if(error.code === "auth/too-many-requests"){
+          errorMessage = "Too many attempts. Please try again later.";
+        }
+
+        showMessage(errorMessage, "error");
+
+        loginBtn.disabled = false;
+        loginBtn.textContent = "Login";
+      }
+
+    });
+
+
+    // FORGOT PASSWORD
+    forgotPassword.addEventListener("click", async () => {
+
+      const email = document.getElementById("email").value.trim();
+
+      if(!email){
+
+        showMessage(
+          "Please enter your email address first.",
+          "error"
+        );
+
+        document.getElementById("email").focus();
+
+        return;
+      }
+
+      try{
+
+        await sendPasswordResetEmail(auth, email);
+
+        showMessage(
+          "Password reset email sent. Please check your inbox.",
+          "success"
+        );
+
+      }
+      catch(error){
+
+        if(error.code === "auth/invalid-email"){
+
+          showMessage(
+            "Please enter a valid email address.",
+            "error"
+          );
+
+        }
+        else{
+
+          showMessage(
+            "Unable to send reset email. Please try again.",
+            "error"
+          );
+
+        }
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
