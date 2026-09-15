@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create Account | HPMockShashtra</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Segoe UI", Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+      padding:20px;
+    }
+
+    .signup-box{
+      width:100%;
+      max-width:440px;
+      background:#ffffff;
+      border-radius:24px;
+      padding:35px 30px;
+      box-shadow:0 15px 45px rgba(0,0,0,0.12);
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    .logo img{
+      width:90px;
+      height:90px;
+      object-fit:contain;
+      border-radius:20px;
+    }
+
+    h1{
+      text-align:center;
+      color:#312e81;
+      font-size:27px;
+      margin-bottom:7px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#6b7280;
+      font-size:14px;
+      margin-bottom:28px;
+    }
+
+    .form-group{
+      margin-bottom:17px;
+    }
+
+    label{
+      display:block;
+      font-weight:600;
+      color:#374151;
+      margin-bottom:7px;
+      font-size:14px;
+    }
+
+    input{
+      width:100%;
+      padding:14px 15px;
+      border:1px solid #d1d5db;
+      border-radius:12px;
+      font-size:15px;
+      outline:none;
+      transition:0.2s;
+    }
+
+    input:focus{
+      border-color:#6366f1;
+      box-shadow:0 0 0 3px rgba(99,102,241,0.12);
+    }
+
+    .password-note{
+      color:#6b7280;
+      font-size:12px;
+      margin-top:6px;
+    }
+
+    .signup-btn{
+      width:100%;
+      border:none;
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#4f46e5,#7c3aed);
+      color:white;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:5px;
+    }
+
+    .signup-btn:hover{
+      opacity:0.93;
+    }
+
+    .signup-btn:disabled{
+      opacity:0.6;
+      cursor:not-allowed;
+    }
+
+    .message{
+      display:none;
+      margin-top:18px;
+      padding:12px;
+      border-radius:10px;
+      font-size:14px;
+      text-align:center;
+    }
+
+    .login{
+      text-align:center;
+      margin-top:24px;
+      padding-top:22px;
+      border-top:1px solid #e5e7eb;
+      color:#6b7280;
+      font-size:14px;
+    }
+
+    .login a{
+      color:#4f46e5;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .back-home{
+      display:block;
+      text-align:center;
+      margin-top:18px;
+      color:#6b7280;
+      text-decoration:none;
+      font-size:13px;
+    }
+
+    @media(max-width:480px){
+
+      .signup-box{
+        padding:30px 22px;
+        border-radius:20px;
+      }
+
+      h1{
+        font-size:25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-box">
+
+    <div class="logo">
+      <img src="logo.png" alt="HPMockShashtra Logo">
+    </div>
+
+    <h1>Create Your Account</h1>
+
+    <p class="subtitle">
+      Join HPMockShashtra and start your exam preparation
+    </p>
+
+    <form id="signupForm">
+
+      <!-- NAME -->
+      <div class="form-group">
+        <label for="name">Full Name</label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          required
+          autocomplete="name"
+        >
+      </div>
+
+
+      <!-- EMAIL -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+          autocomplete="email"
+        >
+      </div>
+
+
+      <!-- PASSWORD -->
+      <div class="form-group">
+        <label for="password">Password</label>
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Create a password"
+          required
+          minlength="6"
+          autocomplete="new-password"
+        >
+
+        <div class="password-note">
+          Password must be at least 6 characters.
+        </div>
+      </div>
+
+
+      <!-- CONFIRM PASSWORD -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Re-enter your password"
+          required
+          minlength="6"
+          autocomplete="new-password"
+        >
+      </div>
+
+
+      <button
+        type="submit"
+        class="signup-btn"
+        id="signupBtn"
+      >
+        Create Account
+      </button>
+
+    </form>
+
+
+    <div class="message" id="message"></div>
+
+
+    <div class="login">
+      Already have an account?
+      <a href="firebase-login.html">Login</a>
+    </div>
+
+
+    <a
+      href="hpmockshashtra-homepage.html"
+      class="back-home"
+    >
+      ← Back to Home
+    </a>
+
+  </div>
+
+
+  <script type="module">
+
+    import {
+      createUserWithEmailAndPassword,
+      updateProfile
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+    import {
+      doc,
+      setDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+    import {
+      auth,
+      db
+    } from "./firebase-config.js";
+
+
+    const signupForm = document.getElementById("signupForm");
+    const signupBtn = document.getElementById("signupBtn");
+    const message = document.getElementById("message");
+
+
+    function showMessage(text, type){
+
+      message.textContent = text;
+      message.style.display = "block";
+
+      if(type === "success"){
+
+        message.style.background = "#dcfce7";
+        message.style.color = "#166534";
+
+      }else{
+
+        message.style.background = "#fee2e2";
+        message.style.color = "#991b1b";
+
+      }
+    }
+
+
+    signupForm.addEventListener("submit", async (e) => {
+
+      e.preventDefault();
+
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const password =
+        document.getElementById("password").value;
+
+      const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+
+      // CHECK NAME
+      if(name.length < 2){
+
+        showMessage(
+          "Please enter your full name.",
+          "error"
+        );
+
+        return;
+      }
+
+
+      // CHECK PASSWORD
+      if(password.length < 6){
+
+        showMessage(
+          "Password must be at least 6 characters.",
+          "error"
+        );
+
+        return;
+      }
+
+
+      // CHECK CONFIRM PASSWORD
+      if(password !== confirmPassword){
+
+        showMessage(
+          "Passwords do not match.",
+          "error"
+        );
+
+        return;
+      }
+
+
+      signupBtn.disabled = true;
+      signupBtn.textContent = "Creating Account...";
+
+
+      try{
+
+        // CREATE FIREBASE ACCOUNT
+        const userCredential =
+          await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+
+
+        const user = userCredential.user;
+
+
+        // SAVE NAME IN FIREBASE AUTH PROFILE
+        await updateProfile(user, {
+          displayName: name
+        });
+
+
+        // SAVE USER PROFILE IN FIRESTORE
+        await setDoc(
+          doc(db, "users", user.uid),
+          {
+            uid: user.uid,
+            name: name,
+            email: email,
+            createdAt: serverTimestamp(),
+            role: "student"
+          }
+        );
+
+
+        showMessage(
+          "Account created successfully! Redirecting...",
+          "success"
+        );
+
+
+        // GO TO DASHBOARD
+        setTimeout(() => {
+
+          window.location.href =
+            "firebase-dashboard.html";
+
+        }, 1200);
+
+
+      }
+      catch(error){
+
+        let errorMessage =
+          "Unable to create account. Please try again.";
+
+
+        if(error.code === "auth/email-already-in-use"){
+
+          errorMessage =
+            "This email is already registered. Please login.";
+
+        }
+
+        else if(error.code === "auth/invalid-email"){
+
+          errorMessage =
+            "Please enter a valid email address.";
+
+        }
+
+        else if(error.code === "auth/weak-password"){
+
+          errorMessage =
+            "Password is too weak. Use at least 6 characters.";
+
+        }
+
+        else if(error.code === "auth/network-request-failed"){
+
+          errorMessage =
+            "Network error. Please check your internet connection.";
+
+        }
+
+
+        showMessage(
+          errorMessage,
+          "error"
+        );
+
+
+        signupBtn.disabled = false;
+        signupBtn.textContent = "Create Account";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
