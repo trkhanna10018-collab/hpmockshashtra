@@ -277,11 +277,12 @@
 
   <script type="module">
 
-    import {
-      onAuthStateChanged,
-      signInWithEmailAndPassword,
-      sendPasswordResetEmail
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+   import {
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  setPersistence,
+  browserSessionPersistence
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
     import { auth } from "./firebase-config.js";
 
