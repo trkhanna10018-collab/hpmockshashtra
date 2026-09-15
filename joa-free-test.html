@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JOA IT Free Mock Test | HPMockShashtra</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#eef2ff,#e0f2fe);
+  color:#1e293b;
+}
+
+/* HEADER */
+
+.header{
+  background:white;
+  padding:18px 20px;
+  text-align:center;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.header h1{
+  color:#4338ca;
+  font-size:25px;
+}
+
+.header p{
+  color:#64748b;
+  margin-top:5px;
+  font-size:14px;
+}
+
+/* MAIN */
+
+.container{
+  width:95%;
+  max-width:850px;
+  margin:25px auto;
+}
+
+/* CARD */
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+/* USER INFO */
+
+.user-box{
+  background:linear-gradient(135deg,#4f46e5,#6366f1);
+  color:white;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.user-box h2{
+  margin-bottom:7px;
+}
+
+/* INFO */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.info{
+  background:#f8fafc;
+  border-radius:12px;
+  padding:15px;
+  text-align:center;
+}
+
+.info strong{
+  display:block;
+  font-size:20px;
+  color:#4338ca;
+}
+
+.info span{
+  font-size:13px;
+  color:#64748b;
+}
+
+/* BUTTON */
+
+button{
+  width:100%;
+  border:none;
+  border-radius:12px;
+  padding:15px;
+  margin-top:20px;
+  font-size:17px;
+  font-weight:700;
+  color:white;
+  background:linear-gradient(135deg,#4f46e5,#2563eb);
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.92;
+}
+
+button:disabled{
+  background:#94a3b8;
+  cursor:not-allowed;
+}
+
+/* WARNING */
+
+.warning{
+  margin-top:18px;
+  padding:15px;
+  border-radius:12px;
+  background:#fff7ed;
+  color:#9a3412;
+  font-size:14px;
+}
+
+/* TIMER */
+
+.timer{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:13px;
+  border-radius:12px;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+/* QUESTION */
+
+.question-number{
+  color:#4f46e5;
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.question-en{
+  font-size:21px;
+  font-weight:700;
+  line-height:1.5;
+}
+
+.question-hi{
+  margin-top:10px;
+  font-size:17px;
+  color:#475569;
+  line-height:1.5;
+}
+
+/* OPTIONS */
+
+.option{
+  display:block;
+  margin-top:12px;
+  padding:15px;
+  border:2px solid #e2e8f0;
+  border-radius:12px;
+  background:#f8fafc;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.option:hover{
+  border-color:#6366f1;
+  background:#eef2ff;
+}
+
+.option input{
+  margin-right:10px;
+}
+
+/* RESULT */
+
+.result{
+  text-align:center;
+}
+
+.score{
+  font-size:50px;
+  font-weight:800;
+  color:#4338ca;
+  margin:15px 0;
+}
+
+.result-message{
+  font-size:18px;
+  color:#475569;
+}
+
+.already{
+  text-align:center;
+}
+
+.already .icon{
+  font-size:55px;
+  margin-bottom:10px;
+}
+
+.old-score{
+  font-size:40px;
+  font-weight:800;
+  color:#4338ca;
+  margin:15px;
+}
+
+/* LOADING */
+
+.loading{
+  text-align:center;
+  padding:50px 20px;
+  font-size:18px;
+  color:#64748b;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .question-en{
+    font-size:19px;
+  }
+
+  .question-hi{
+    font-size:16px;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+  .header h1{
+    font-size:21px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+
+  <h1>HPMockShashtra</h1>
+
+  <p>JOA IT Free Mock Test</p>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- LOADING -->
+
+<div class="card loading" id="loadingBox">
+
+  🔄 Checking your account...
+
+</div>
+
+
+<!-- TEST INFORMATION -->
+
+<div class="card" id="infoBox" style="display:none">
+
+  <div class="user-box">
+
+    <h2>Welcome, <span id="studentName">Student</span> 👋</h2>
+
+    <p id="studentEmail"></p>
+
+  </div>
+
+
+  <h2>💻 JOA IT Free Mock Test</h2>
+
+  <p style="margin-top:8px;color:#64748b;">
+    Practice like the real examination and check your preparation.
+  </p>
+
+
+  <div class="info-grid">
+
+    <div class="info">
+      <strong id="questionCount">100</strong>
+      <span>Questions</span>
+    </div>
+
+    <div class="info">
+      <strong>90 Min</strong>
+      <span>Time</span>
+    </div>
+
+    <div class="info">
+      <strong>1</strong>
+      <span>Attempt</span>
+    </div>
+
+  </div>
+
+
+  <div class="warning">
+
+    ⚠️ <b>Important:</b>
+    This free mock test can be attempted only once.
+    After submitting the test, your result will be saved to your account
+    and you will not be able to attempt it again.
+
+  </div>
+
+
+  <button id="startButton" onclick="startTest()">
+
+    🚀 Start Free Test
+
+  </button>
+
+</div>
+
+
+<!-- ALREADY ATTEMPTED -->
+
+<div class="card already" id="alreadyBox" style="display:none">
+
+  <div class="icon">✅</div>
+
+  <h2>You Have Already Attempted This Test</h2>
+
+  <p style="margin-top:10px;color:#64748b;">
+    This free mock test can only be attempted once.
+  </p>
+
+  <div class="old-score" id="oldScore">
+
+    0/100
+
+  </div>
+
+  <p id="oldPercentage" style="font-size:18px;"></p>
+
+  <p id="attemptDate"
+     style="margin-top:12px;color:#64748b;font-size:14px;">
+  </p>
+
+</div>
+
+
+<!-- TEST AREA -->
+
+<div id="testArea" style="display:none">
+
+  <div class="timer" id="timer">
+
+    ⏱ 90:00
+
+  </div>
+
+  <div class="card" id="questionBox">
+
+  </div>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div class="card result" id="resultBox" style="display:none">
+
+  <h2>🎉 Test Completed</h2>
+
+  <p style="margin-top:10px;">
+    Your JOA IT Free Mock Test Result
+  </p>
+
+  <div class="score" id="finalScore">
+
+    0/100
+
+  </div>
+
+  <div class="result-message" id="finalMessage"></div>
+
+  <div style="margin-top:20px;padding:15px;background:#f8fafc;border-radius:12px;">
+
+    <b>Result saved successfully ✅</b>
+
+    <br>
+
+    Your attempt has been recorded in your account.
+
+  </div>
+
+</div>
+
+
+</div>
+
+
+<script type="module">
+
+/* =========================================
+   FIREBASE
+========================================= */
+
+import { auth, db } from "./firebase-config.js";
+
+import {
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+  doc,
+  getDoc,
+  setDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+/* =========================================
+   TEST SETTINGS
+========================================= */
+
+const TEST_ID = "joa_free_test_01";
+
+let currentUser = null;
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let userAnswers = {};
+
+let timeLeft = 5400;
+
+let timerInterval;
+
+
+/* =========================================
+   QUESTIONS
+=========================================
+
+   🔴 APNE QUESTIONS YAHAN DAALNA HAI
+
+   Example:
+
+   {
+     id:1,
+     en:"What is CPU?",
+     hi:"CPU क्या है?",
+     A:"Central Processing Unit",
+     B:"Central Program Unit",
+     C:"Computer Processing Unit",
+     D:"Control Processing Unit",
+     ans:"A"
+   },
+
+========================================= */
+
+
+const questions = [
+
+  {
+    id:1,
+    en:"YOUR QUESTION 1",
+    hi:"आपका प्रश्न 1",
+    A:"Option A",
+    B:"Option B",
+    C:"Option C",
+    D:"Option D",
+    ans:"A"
+  },
+
+  {
+    id:2,
+    en:"YOUR QUESTION 2",
+    hi:"आपका प्रश्न 2",
+    A:"Option A",
+    B:"Option B",
+    C:"Option C",
+    D:"Option D",
+    ans:"B"
+  },
+
+  {
+    id:3,
+    en:"YOUR QUESTION 3",
+    hi:"आपका प्रश्न 3",
+    A:"Option A",
+    B:"Option B",
+    C:"Option C",
+    D:"Option D",
+    ans:"C"
+  }
+
+  /* 🔴 YAHAN APNE BAAKI QUESTIONS ADD KARNA */
+
+];
+
+
+/* =========================================
+   QUESTION COUNT
+========================================= */
+
+document.getElementById("questionCount").innerText =
+  questions.length;
+
+
+/* =========================================
+   AUTH CHECK
+========================================= */
+
+onAuthStateChanged(auth, async (user) => {
+
+  if(!user){
+
+    window.location.href = "firebase-login.html";
+
+    return;
+  }
+
+
+  currentUser = user;
+
+
+  document.getElementById("studentName").innerText =
+    user.displayName || "Student";
+
+
+  document.getElementById("studentEmail").innerText =
+    user.email || "";
+
+
+  await checkPreviousAttempt();
+
+});
+
+
+/* =========================================
+   CHECK PREVIOUS ATTEMPT
+========================================= */
+
+async function checkPreviousAttempt(){
+
+  try{
+
+    const attemptRef = doc(
+      db,
+      "testAttempts",
+      currentUser.uid + "_" + TEST_ID
+    );
+
+
+    const attemptSnap = await getDoc(attemptRef);
+
+
+    document.getElementById("loadingBox").style.display="none";
+
+
+    if(attemptSnap.exists()){
+
+      const data = attemptSnap.data();
+
+
+      document.getElementById("alreadyBox").style.display="block";
+
+
+      document.getElementById("oldScore").innerText =
+        data.score + "/" + data.total;
+
+
+      let percentage =
+        Math.round((data.score / data.total) * 100);
+
+
+      document.getElementById("oldPercentage").innerText =
+        "Percentage: " + percentage + "%";
+
+
+      if(data.attemptedAt){
+
+        const date =
+          data.attemptedAt.toDate();
+
+        document.getElementById("attemptDate").innerText =
+          "Attempted on: " + date.toLocaleString();
+
+      }
+
+    }else{
+
+      document.getElementById("infoBox").style.display="block";
+
+    }
+
+  }catch(error){
+
+    console.error(error);
+
+    document.getElementById("loadingBox").innerHTML =
+      "❌ Unable to check your test status. Please refresh the page.";
+
+  }
+
+}
+
+
+/* =========================================
+   START TEST
+========================================= */
+
+window.startTest = async function(){
+
+  if(!currentUser){
+
+    alert("Please login first.");
+
+    return;
+  }
+
+
+  /* DOUBLE CHECK */
+
+  const attemptRef = doc(
+    db,
+    "testAttempts",
+    currentUser.uid + "_" + TEST_ID
+  );
+
+
+  const attemptSnap = await getDoc(attemptRef);
+
+
+  if(attemptSnap.exists()){
+
+    alert("You have already attempted this free test.");
+
+    location.reload();
+
+    return;
+  }
+
+
+  document.getElementById("infoBox").style.display="none";
+
+  document.getElementById("testArea").style.display="block";
+
+
+  startTimer();
+
+  showQuestion();
+
+};
+
+
+/* =========================================
+   SHOW QUESTION
+========================================= */
+
+function showQuestion(){
+
+  const q = questions[currentQuestion];
+
+
+  let html = "";
+
+
+  html += `
+    <div class="question-number">
+      Question ${currentQuestion + 1} / ${questions.length}
+    </div>
+  `;
+
+
+  html += `
+    <div class="question-en">
+      ${q.en}
+    </div>
+  `;
+
+
+  html += `
+    <div class="question-hi">
+      ${q.hi}
+    </div>
+  `;
+
+
+  html += `
+    <label class="option">
+      <input type="radio" name="answer" value="A">
+      <b>A.</b> ${q.A}
+    </label>
+  `;
+
+
+  html += `
+    <label class="option">
+      <input type="radio" name="answer" value="B">
+      <b>B.</b> ${q.B}
+    </label>
+  `;
+
+
+  html += `
+    <label class="option">
+      <input type="radio" name="answer" value="C">
+      <b>C.</b> ${q.C}
+    </label>
+  `;
+
+
+  html += `
+    <label class="option">
+      <input type="radio" name="answer" value="D">
+      <b>D.</b> ${q.D}
+    </label>
+  `;
+
+
+  if(currentQuestion < questions.length - 1){
+
+    html += `
+      <button onclick="nextQuestion()">
+        Next Question →
+      </button>
+    `;
+
+  }else{
+
+    html += `
+      <button onclick="finishTest()">
+        ✅ Submit Test
+      </button>
+    `;
+
+  }
+
+
+  document.getElementById("questionBox").innerHTML = html;
+
+}
+
+
+/* =========================================
+   NEXT QUESTION
+========================================= */
+
+window.nextQuestion = function(){
+
+  const selected =
+    document.querySelector('input[name="answer"]:checked');
+
+
+  if(!selected){
+
+    alert("Please select an answer.");
+
+    return;
+  }
+
+
+  userAnswers[currentQuestion] =
+    selected.value;
+
+
+  if(selected.value === questions[currentQuestion].ans){
+
+    score++;
+
+  }
+
+
+  currentQuestion++;
+
+
+  showQuestion();
+
+};
+
+
+/* =========================================
+   FINISH TEST
+========================================= */
+
+window.finishTest = async function(){
+
+  const selected =
+    document.querySelector('input[name="answer"]:checked');
+
+
+  if(!selected){
+
+    alert("Please select an answer.");
+
+    return;
+  }
+
+
+  userAnswers[currentQuestion] =
+    selected.value;
+
+
+  if(selected.value === questions[currentQuestion].ans){
+
+    score++;
+
+  }
+
+
+  clearInterval(timerInterval);
+
+
+  /* =====================================
+     SAVE RESULT TO FIRESTORE
+  ===================================== */
+
+  try{
+
+    const attemptRef = doc(
+      db,
+      "testAttempts",
+      currentUser.uid + "_" + TEST_ID
+    );
+
+
+    /* FINAL CHECK BEFORE SAVING */
+
+    const existing =
+      await getDoc(attemptRef);
+
+
+    if(existing.exists()){
+
+      alert("This test has already been submitted.");
+
+      location.reload();
+
+      return;
+    }
+
+
+    await setDoc(attemptRef, {
+
+      uid: currentUser.uid,
+
+      email: currentUser.email || "",
+
+      name: currentUser.displayName || "Student",
+
+      testId: TEST_ID,
+
+      testName: "JOA IT Free Mock Test",
+
+      score: score,
+
+      total: questions.length,
+
+      attemptedAt: serverTimestamp()
+
+    });
+
+
+    /* SHOW RESULT */
+
+    document.getElementById("testArea").style.display="none";
+
+    document.getElementById("resultBox").style.display="block";
+
+
+    document.getElementById("finalScore").innerText =
+      score + "/" + questions.length;
+
+
+    let percentage =
+      Math.round((score / questions.length) * 100);
+
+
+    document.getElementById("finalMessage").innerText =
+      "You scored " + percentage + "%. Keep practicing and improve your score! 🚀";
+
+
+  }catch(error){
+
+    console.error(error);
+
+    alert(
+      "Result save nahi ho paya. Please internet check karke dobara try karein."
+    );
+
+  }
+
+};
+
+
+/* =========================================
+   TIMER
+========================================= */
+
+function startTimer(){
+
+  updateTimer();
+
+
+  timerInterval = setInterval(() => {
+
+    timeLeft--;
+
+
+    updateTimer();
+
+
+    if(timeLeft <= 0){
+
+      clearInterval(timerInterval);
+
+
+      alert("Time is over. Test will be submitted.");
+
+
+      finishTest();
+
+    }
+
+  },1000);
+
+}
+
+
+/* =========================================
+   UPDATE TIMER
+========================================= */
+
+function updateTimer(){
+
+  let minutes =
+    Math.floor(timeLeft / 60);
+
+  let seconds =
+    timeLeft % 60;
+
+
+  document.getElementById("timer").innerText =
+    "⏱ " +
+    minutes +
+    ":" +
+    (seconds < 10 ? "0" : "") +
+    seconds;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
