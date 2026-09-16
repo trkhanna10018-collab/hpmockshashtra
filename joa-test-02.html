@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JOA IT Mock Test 01 | HPMockShashtra</title>
+<title>JOA IT Mock Test 02 | HPMockShashtra</title>
 
 <style>
 *{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
@@ -74,7 +74,7 @@ Once the test starts, the 90-minute timer will continue even if you close this t
 </div>
 
 <div class="top">
-<h1>JOA IT Mock Test 01</h1>
+<h1>JOA IT Mock Test 02</h1>
 <div class="meta">
 <span class="pill">100 Questions</span>
 <span class="pill">90 Minutes</span>
@@ -115,7 +115,7 @@ Once the test starts, the 90-minute timer will continue even if you close this t
 
 <div class="modal-card" id="readyBox">
 <h2>Ready to Start?</h2>
-<p><strong>Important:</strong> Once you start Mock Test 01, the 90-minute timer will continue even if you refresh or close the tab.</p>
+<p><strong>Important:</strong> Once you start Mock Test 02, the 90-minute timer will continue even if you refresh or close the tab.</p>
 <p>This test can be attempted only once.</p>
 <button class="btn primary" id="startBtn">I Understand &amp; Start</button>
 </div>
@@ -141,16 +141,16 @@ serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 import { auth, db } from "./firebase-config.js";
-import { questions } from "./joa-test-01.js";
+import { questions } from "./joa-test-02.js";
 
 /* =========================================================
    TEST CONFIG
    For Test 02, copy this file and change only these values.
    ========================================================= */
 
-const TEST_ID = "joa_test_01";
-const SESSION_ID_SUFFIX = "_joa_test_01";
-const TEST_NAME = "JOA IT Mock Test 01";
+const TEST_ID = "joa_test_02";
+const SESSION_ID_SUFFIX = "_joa_test_02";
+const TEST_NAME = "JOA IT Mock Test 02";
 const TOTAL_SECONDS = 90 * 60;
 
 /* ========================================================= */
@@ -196,7 +196,7 @@ if(!accessSnap.exists() || accessSnap.data().joaitFullSeries !== true){
 
 showError(
 "Access Required",
-"You do not have access to Mock Test 01 yet."
+"You do not have access to Mock Test 02 yet."
 );
 return;
 
@@ -347,7 +347,7 @@ if(!questions.length){
 
 showError(
 "Question Bank Empty",
-"No questions have been added to joa-test-01.js yet."
+"No questions have been added to joa-test-02.js yet."
 );
 
 return;
@@ -712,7 +712,7 @@ $("resultArea").classList.remove("hidden");
 
 $("resultArea").innerHTML = `
 
-<h2>Mock Test 01 Completed</h2>
+<h2>Mock Test 02 Completed</h2>
 
 <div class="score">
 ${score}/${total}
@@ -733,7 +733,7 @@ ${reason === "time_up"
 <a
 class="btn primary"
 style="display:inline-block;text-decoration:none"
-href="study-mode.html?test=joa_test_01"
+href="study-mode.html?test=joa_test_02"
 >
 Study Mode
 </a>
@@ -781,7 +781,7 @@ This mock test can only be attempted once.
 <a
 class="btn primary"
 style="display:inline-block;text-decoration:none"
-href="study-mode.html?test=joa_test_01"
+href="study-mode.html?test=joa_test_02"
 >
 Study Mode
 </a>
