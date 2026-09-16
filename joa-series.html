@@ -250,6 +250,15 @@
       cursor:not-allowed;
     }
 
+    /* ================= ACCESS CHECK ================= */
+
+    .access-message{
+      margin-top:12px;
+      font-size:12px;
+      color:#6b7280;
+      text-align:right;
+    }
+
     /* ================= PURCHASE BOX ================= */
 
     .purchase{
@@ -564,11 +573,11 @@
 
           </div>
 
-          <div class="status locked">
+          <div class="status locked" id="test01-status">
             🔒 LOCKED
           </div>
 
-          <div class="action-btn locked-btn">
+          <div class="action-btn locked-btn" id="test01-action">
             Locked
           </div>
 
@@ -1013,6 +1022,10 @@
           Secure payment • Manual access verification
         </div>
 
+        <div class="access-message" id="access-message">
+          Checking access...
+        </div>
+
       </div>
 
     </section>
@@ -1029,6 +1042,73 @@
 
   </footer>
 
+
+
+  <!-- FIREBASE ACCESS CONTROL -->
+  <script type="module">
+    import { auth, db } from "./firebase-config.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+    const test01Status = document.getElementById("test01-status");
+    const test01Action = document.getElementById("test01-action");
+    const accessMessage = document.getElementById("access-message");
+
+    function showLocked() {
+      test01Status.className = "status locked";
+      test01Status.textContent = "🔒 LOCKED";
+
+      test01Action.className = "action-btn locked-btn";
+      test01Action.textContent = "Locked";
+      test01Action.removeAttribute("href");
+      test01Action.removeAttribute("target");
+      test01Action.onclick = (event) => {
+        event.preventDefault();
+        alert("Paid access is required to start Mock Test 01.");
+      };
+
+      accessMessage.textContent = "Mock Test 01 is locked. Purchase access to unlock the series.";
+    }
+
+    function showUnlocked() {
+      test01Status.className = "status free";
+      test01Status.textContent = "✓ UNLOCKED";
+
+      test01Action.className = "action-btn start-btn";
+      test01Action.textContent = "Start Test";
+      test01Action.href = "joa-test-01.html";
+      test01Action.onclick = null;
+
+      accessMessage.textContent = "Full JOA IT Series access is active.";
+    }
+
+    function showLoginRequired() {
+      showLocked();
+      accessMessage.textContent = "Please log in to check your paid access.";
+    }
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        showLoginRequired();
+        return;
+      }
+
+      try {
+        const accessRef = doc(db, "testAccess", user.uid);
+        const accessSnap = await getDoc(accessRef);
+
+        if (accessSnap.exists() && accessSnap.data().joaitFullSeries === true) {
+          showUnlocked();
+        } else {
+          showLocked();
+        }
+      } catch (error) {
+        console.error("Access check failed:", error);
+        showLocked();
+        accessMessage.textContent = "Unable to verify access. Please refresh the page.";
+      }
+    });
+  </script>
 
 </body>
 </html>
