@@ -786,19 +786,25 @@
 
     async function loadProgress(uid) {
 
-      try {
+      /*
+        IMPORTANT:
+        Progress is user-specific and is read only from the
+        current logged-in user's own attempt documents.
 
-        /*
-          Current Firestore Rules allow users to read
-          their own exact attempt documents.
+        We intentionally do NOT check testAccess here.
+        Every user can see their own Free Test attempt.
+        A paid user's paid-test attempts are also checked,
+        but an inaccessible/unattempted paid test is simply
+        skipped without stopping the whole page.
+      */
 
-          Therefore we check the known attempt IDs
-          individually instead of using a collection query.
-        */
+      const attemptedTests = [];
 
-        const requests = TESTS.map(async (test) => {
+      for (const test of TESTS) {
 
-          const attemptId = `${uid}_${test.id}`;
+        const attemptId = `${uid}_${test.id}`;
+
+        try {
 
           const attemptRef =
             doc(db, "testAttempts", attemptId);
@@ -807,12 +813,12 @@
             await getDoc(attemptRef);
 
           if (!snapshot.exists()) {
-            return null;
+            continue;
           }
 
           const data = snapshot.data();
 
-          return {
+          attemptedTests.push({
 
             id: test.id,
 
@@ -824,71 +830,80 @@
 
             total: Number(data.total ?? 100)
 
-          };
-
-        });
-
-
-        const results = await Promise.all(requests);
-
-
-        /*
-          Remove tests which have not been attempted.
-        */
-
-        const attemptedTests =
-          results.filter(test => test !== null);
-
-
-        /*
-          Sort:
-          Free Test first,
-          then Mock Test 01 → 15.
-        */
-
-        attemptedTests.sort((a, b) => {
-
-          if (a.id === "joa_free_test_01") {
-            return -1;
-          }
-
-          if (b.id === "joa_free_test_01") {
-            return 1;
-          }
-
-          const aNumber =
-            parseInt(a.id.replace("joa_test_", ""), 10);
-
-          const bNumber =
-            parseInt(b.id.replace("joa_test_", ""), 10);
-
-          return aNumber - bNumber;
-
-        });
-
-
-        if (attemptedTests.length === 0) {
-
-          showNoAttempts();
-
-          return;
+          });
 
         }
 
+        catch (error) {
 
-        showProgress(attemptedTests);
+          /*
+            If a particular paid-test document is not readable
+            for this user, skip only that test.
+
+            Most importantly, this must NOT hide a valid
+            Free Test result.
+          */
+
+          console.warn(
+            `Skipping ${test.id}:`,
+            error?.code || error
+          );
+
+          continue;
+
+        }
 
       }
 
-      catch (error) {
 
-        console.error("Progress loading error:", error);
+      /*
+        Sort:
+        Free Test first,
+        then Mock Test 01 → 15.
+      */
 
-        showError(
-          "Your progress could not be loaded. Please refresh the page and try again."
-        );
+      attemptedTests.sort((a, b) => {
+
+        if (a.id === "joa_free_test_01") {
+          return -1;
+        }
+
+        if (b.id === "joa_free_test_01") {
+          return 1;
+        }
+
+        const aNumber =
+          parseInt(
+            a.id.replace("joa_test_", ""),
+            10
+          );
+
+        const bNumber =
+          parseInt(
+            b.id.replace("joa_test_", ""),
+            10
+          );
+
+        return aNumber - bNumber;
+
+      });
+
+
+      /*
+        Only tests that actually have an attempt document
+        are shown. No "Not Attempted" rows are created.
+      */
+
+      if (attemptedTests.length === 0) {
+
+        showNoAttempts();
+
+        return;
 
       }
+
+
+      showProgress(attemptedTests);
 
     }
 
