@@ -1,0 +1,1107 @@
+const questions = [
+
+  {
+id:1,
+en:"Which memory is used to store BIOS in a computer?",
+hi:"कंप्यूटर में BIOS किस मेमोरी में स्टोर किया जाता है?",
+A:"RAM",
+B:"ROM",
+C:"Cache",
+D:"Register",
+ans:"B"
+},
+
+{
+id:2,
+en:"Which HTML input type is used to upload a file from user's computer?",
+hi:"यूज़र के कंप्यूटर से फाइल अपलोड करने के लिए कौन-सा HTML input type उपयोग होता है?",
+A:"upload",
+B:"file",
+C:"attach",
+D:"document",
+ans:"B"
+},
+
+{
+id:3,
+en:"Which of the following is an example of an optical storage device?",
+hi:"निम्न में से कौन-सा ऑप्टिकल स्टोरेज डिवाइस का उदाहरण है?",
+A:"SSD",
+B:"DVD",
+C:"Flash Drive",
+D:"Hard Disk",
+ans:"B"
+},
+
+{
+id:4,
+en:"Which operating system component manages communication between hardware and software?",
+hi:"हार्डवेयर और सॉफ्टवेयर के बीच संचार को कौन-सा ऑपरेटिंग सिस्टम कंपोनेंट नियंत्रित करता है?",
+A:"Kernel",
+B:"Shell",
+C:"Compiler",
+D:"Interpreter",
+ans:"A"
+},
+
+{
+id:5,
+en:"Which scheduling algorithm assigns CPU to the process with the smallest execution time?",
+hi:"कौन-सा scheduling algorithm सबसे कम execution time वाले process को CPU देता है?",
+A:"Round Robin",
+B:"FCFS",
+C:"Shortest Job First",
+D:"Priority Scheduling",
+ans:"C"
+},
+
+{
+id:6,
+en:"Which network topology connects each node directly to every other node?",
+hi:"कौन-सी नेटवर्क टोपोलॉजी में हर node सीधे हर दूसरे node से जुड़ा होता है?",
+A:"Bus",
+B:"Star",
+C:"Mesh",
+D:"Ring",
+ans:"C"
+},
+
+{
+id:7,
+en:"Which device is used to connect different networks together?",
+hi:"अलग-अलग नेटवर्क को जोड़ने के लिए कौन-सा डिवाइस उपयोग किया जाता है?",
+A:"Switch",
+B:"Hub",
+C:"Router",
+D:"Repeater",
+ans:"C"
+},
+
+{
+id:8,
+en:"Which protocol is used for secure web communication?",
+hi:"सुरक्षित वेब कम्युनिकेशन के लिए कौन-सा प्रोटोकॉल उपयोग होता है?",
+A:"HTTP",
+B:"FTP",
+C:"HTTPS",
+D:"SMTP",
+ans:"C"
+},
+
+{
+id:9,
+en:"What does MAC address stand for?",
+hi:"MAC address का पूरा नाम क्या है?",
+A:"Machine Access Code",
+B:"Media Access Control",
+C:"Master Access Code",
+D:"Memory Access Code",
+ans:"B"
+},
+
+{
+id:10,
+en:"In Excel which function counts cells that meet a specific condition?",
+hi:"Excel में कौन-सा function किसी विशेष condition को पूरा करने वाली cells को count करता है?",
+A:"COUNT",
+B:"COUNTIF",
+C:"SUMIF",
+D:"AVERAGE",
+ans:"B"
+},
+
+{
+id:11,
+en:"Which MS Word feature is used to create multiple letters using a single template?",
+hi:"MS Word में एक ही template से कई letters बनाने के लिए कौन-सा feature उपयोग होता है?",
+A:"Mail Merge",
+B:"Page Layout",
+C:"WordArt",
+D:"Track Changes",
+ans:"A"
+},
+
+{
+id:12,
+en:"Which technology was primarily used in first generation computers?",
+hi:"पहली पीढ़ी के कंप्यूटर में मुख्य रूप से कौन-सी तकनीक उपयोग होती थी?",
+A:"Transistors",
+B:"Integrated Circuits",
+C:"Vacuum Tubes",
+D:"Microprocessors",
+ans:"C"
+},
+
+{
+id:13,
+en:"Which generation of computers introduced microprocessors?",
+hi:"किस पीढ़ी के कंप्यूटर में microprocessor का उपयोग शुरू हुआ?",
+A:"Second Generation",
+B:"Third Generation",
+C:"Fourth Generation",
+D:"Fifth Generation",
+ans:"C"
+},
+
+{
+id:14,
+en:"Which type of computer processes continuous physical data such as temperature and pressure?",
+hi:"तापमान और दबाव जैसे निरंतर भौतिक डेटा को कौन-सा कंप्यूटर प्रोसेस करता है?",
+A:"Digital Computer",
+B:"Analog Computer",
+C:"Hybrid Computer",
+D:"Microcomputer",
+ans:"B"
+},
+
+{
+id:15,
+en:"Which type of computer combines the features of analog and digital computers?",
+hi:"कौन-सा कंप्यूटर analog और digital दोनों की विशेषताओं को मिलाता है?",
+A:"Analog Computer",
+B:"Digital Computer",
+C:"Hybrid Computer",
+D:"Supercomputer",
+ans:"C"
+},
+
+{
+id:16,
+en:"What is the main difference between a process and a thread?",
+hi:"Process और thread के बीच मुख्य अंतर क्या है?",
+A:"Process shares memory",
+B:"Thread shares process memory",
+C:"Both have separate memory",
+D:"Process is part of thread",
+ans:"B"
+},
+
+{
+id:17,
+en:"Which of the following is considered a lightweight process?",
+hi:"निम्न में से किसे lightweight process कहा जाता है?",
+A:"Process",
+B:"Program",
+C:"Thread",
+D:"Job",
+ans:"C"
+},
+
+{
+id:18,
+en:"Threads of the same process share which resource?",
+hi:"एक ही process के threads कौन-सा resource साझा करते हैं?",
+A:"Memory space",
+B:"CPU registers",
+C:"Program counter",
+D:"Stack",
+ans:"A"
+},
+
+{
+id:19,
+en:"What is meant by context switching in operating systems?",
+hi:"Operating system में context switching का क्या अर्थ है?",
+A:"Switching computers",
+B:"Saving state of one process and loading another",
+C:"Changing OS",
+D:"Restarting CPU",
+ans:"B"
+},
+
+{
+id:20,
+en:"In which topology does each node connect to exactly two other nodes forming a loop?",
+hi:"किस टोपोलॉजी में हर node दो अन्य nodes से जुड़कर एक loop बनाता है?",
+A:"Bus",
+B:"Star",
+C:"Ring",
+D:"Mesh",
+ans:"C"
+}, 
+
+{
+id:21,
+en:"Which network topology provides the highest reliability because every node has a dedicated connection to every other node?",
+hi:"कौन-सी नेटवर्क टोपोलॉजी में हर node दूसरे node से सीधे जुड़ा होने के कारण सबसे अधिक reliability मिलती है?",
+A:"Bus",
+B:"Star",
+C:"Ring",
+D:"Mesh",
+ans:"D"
+},
+
+{
+id:22,
+en:"In a star topology which device acts as the central connecting point?",
+hi:"Star topology में सभी nodes को जोड़ने वाला central device कौन होता है?",
+A:"Router",
+B:"Hub or Switch",
+C:"Repeater",
+D:"Bridge",
+ans:"B"
+},
+
+{
+id:23,
+en:"Which network device works at the Data Link Layer and forwards data using MAC address?",
+hi:"कौन-सा नेटवर्क डिवाइस Data Link Layer पर काम करता है और MAC address के आधार पर data forward करता है?",
+A:"Hub",
+B:"Switch",
+C:"Repeater",
+D:"Modem",
+ans:"B"
+},
+
+{
+id:24,
+en:"Which device connects different networks and determines the best path for data packets?",
+hi:"कौन-सा डिवाइस अलग-अलग नेटवर्क को जोड़ता है और data packets के लिए best path चुनता है?",
+A:"Switch",
+B:"Hub",
+C:"Router",
+D:"Bridge",
+ans:"C"
+},
+
+{
+id:25,
+en:"Which device connects networks that use different communication protocols?",
+hi:"कौन-सा डिवाइस अलग-अलग communication protocol वाले नेटवर्क को जोड़ता है?",
+A:"Bridge",
+B:"Gateway",
+C:"Hub",
+D:"Switch",
+ans:"B"
+},
+
+{
+id:26,
+en:"Which type of malware demands payment to restore access to encrypted data?",
+hi:"कौन-सा malware डेटा को encrypt करके उसे वापस पाने के लिए पैसे मांगता है?",
+A:"Spyware",
+B:"Trojan Horse",
+C:"Ransomware",
+D:"Worm",
+ans:"C"
+},
+
+{
+id:27,
+en:"Which statement best describes ransomware?",
+hi:"Ransomware के बारे में कौन-सा कथन सही है?",
+A:"Secretly monitors user activity",
+B:"Encrypts files and demands payment",
+C:"Spreads automatically without user action",
+D:"Deletes operating system files",
+ans:"B"
+},
+
+{
+id:28,
+en:"Which database model organizes data in a tree like structure?",
+hi:"कौन-सा database model डेटा को tree structure में व्यवस्थित करता है?",
+A:"Network Model",
+B:"Relational Model",
+C:"Hierarchical Model",
+D:"Object Model",
+ans:"C"
+},
+
+{
+id:29,
+en:"In which database model can a child record have multiple parents?",
+hi:"किस database model में एक child record के कई parent हो सकते हैं?",
+A:"Hierarchical Model",
+B:"Network Model",
+C:"Relational Model",
+D:"Object Oriented Model",
+ans:"B"
+},
+
+{
+id:30,
+en:"In the relational database model data is stored in the form of?",
+hi:"Relational database model में डेटा किस रूप में संग्रहित किया जाता है?",
+A:"Trees",
+B:"Graphs",
+C:"Tables",
+D:"Pointers",
+ans:"C"
+},
+
+{
+id:31,
+en:"What is the main purpose of a Pivot Table in Excel?",
+hi:"Excel में Pivot Table का मुख्य उद्देश्य क्या है?",
+A:"Create charts automatically",
+B:"Summarize and analyze large data",
+C:"Format cells quickly",
+D:"Merge worksheets",
+ans:"B"
+},
+
+{
+id:32,
+en:"Which area of Pivot Table contains calculated values?",
+hi:"Pivot Table में calculated values किस area में रखे जाते हैं?",
+A:"Filters Area",
+B:"Columns Area",
+C:"Rows Area",
+D:"Values Area",
+ans:"D"
+},
+
+{
+id:33,
+en:"Which Pivot Table operation groups numbers into ranges?",
+hi:"Pivot Table में संख्याओं को range में समूहित करने के लिए कौन-सा operation उपयोग होता है?",
+A:"Sorting",
+B:"Filtering",
+C:"Grouping",
+D:"Consolidation",
+ans:"C"
+},
+
+{
+id:34,
+en:"Which feature updates a Pivot Table when source data changes?",
+hi:"जब source data बदलता है तो Pivot Table को update करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Refresh",
+B:"Recalculate",
+C:"Update Field",
+D:"Reload",
+ans:"A"
+},
+
+{
+id:35,
+en:"If A1 is 10 and B1 is 5 what is the result of =A1+$B$1 copied to C2 when A2 is 20?",
+hi:"यदि A1=10 और B1=5 है तो formula =A1+$B$1 को C2 में copy करने पर (A2=20) परिणाम क्या होगा?",
+A:"25",
+B:"15",
+C:"30",
+D:"20",
+ans:"A"
+},
+
+{
+id:36,
+en:"If A1=4 and B1=6 what is the result of =$A$1+B1 copied to C2 when B2=8?",
+hi:"यदि A1=4 और B1=6 है तो formula =$A$1+B1 को C2 में copy करने पर (B2=8) परिणाम क्या होगा?",
+A:"10",
+B:"12",
+C:"14",
+D:"8",
+ans:"B"
+},
+
+{
+id:37,
+en:"Cell A1=3 and B1=7. Formula =A1+B$1 copied to C2 when A2=5 gives?",
+hi:"Cell A1=3 और B1=7 है। Formula =A1+B$1 को C2 में copy करने पर (A2=5) परिणाम क्या होगा?",
+A:"10",
+B:"12",
+C:"14",
+D:"8",
+ans:"B"
+},
+
+{
+id:38,
+en:"If A1=2 and B1=3 what is the result of =$A1+$B$1 copied to C2 when A2=4?",
+hi:"यदि A1=2 और B1=3 है तो formula =$A1+$B$1 को C2 में copy करने पर (A2=4) परिणाम क्या होगा?",
+A:"5",
+B:"7",
+C:"6",
+D:"8",
+ans:"B"
+},
+
+{
+id:39,
+en:"In Mail Merge which document contains placeholders for data fields?",
+hi:"Mail Merge में data fields के placeholder किस document में होते हैं?",
+A:"Data Source",
+B:"Main Document",
+C:"Address List",
+D:"Template Sheet",
+ans:"B"
+},
+
+{
+id:40,
+en:"Which Mail Merge component contains recipient names and addresses?",
+hi:"Mail Merge में recipient के नाम और address किस component में होते हैं?",
+A:"Data Source",
+B:"Main Document",
+C:"Output Document",
+D:"Format File",
+ans:"A"
+}, 
+
+{
+id:41,
+en:"In MS Word what is the main purpose of Styles?",
+hi:"MS Word में Styles का मुख्य उद्देश्य क्या है?",
+A:"Insert pictures",
+B:"Apply consistent formatting",
+C:"Create tables",
+D:"Print documents",
+ans:"B"
+},
+
+{
+id:42,
+en:"Which feature allows modifying an existing style such as Heading 1?",
+hi:"Heading 1 जैसे existing style को modify करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Edit Format",
+B:"Modify Style",
+C:"Change Theme",
+D:"Update Layout",
+ans:"B"
+},
+
+{
+id:43,
+en:"Which style type formats an entire paragraph in MS Word?",
+hi:"MS Word में पूरे paragraph को format करने के लिए कौन-सा style उपयोग होता है?",
+A:"Character Style",
+B:"Paragraph Style",
+C:"Table Style",
+D:"List Style",
+ans:"B"
+},
+
+{
+id:44,
+en:"Which style is commonly used for main headings in Word documents?",
+hi:"Word document में मुख्य headings के लिए सामान्यतः कौन-सा style उपयोग होता है?",
+A:"Title Style",
+B:"Normal Style",
+C:"Heading 1",
+D:"Subtitle",
+ans:"C"
+},
+
+{
+id:45,
+en:"What is the purpose of Slide Master in PowerPoint?",
+hi:"PowerPoint में Slide Master का मुख्य उद्देश्य क्या है?",
+A:"Insert images",
+B:"Control design of all slides",
+C:"Run slide show automatically",
+D:"Add animations",
+ans:"B"
+},
+
+{
+id:46,
+en:"Changes made in Slide Master affect:",
+hi:"Slide Master में किए गए बदलाव किस पर प्रभाव डालते हैं?",
+A:"Current slide only",
+B:"Selected slides only",
+C:"All slides using that layout",
+D:"Only title slide",
+ans:"C"
+},
+
+{
+id:47,
+en:"Which tab is used to open Slide Master in PowerPoint?",
+hi:"PowerPoint में Slide Master खोलने के लिए कौन-सा tab उपयोग होता है?",
+A:"Insert",
+B:"Design",
+C:"View",
+D:"Review",
+ans:"C"
+},
+
+{
+id:48,
+en:"What does Slide Layout define in PowerPoint?",
+hi:"PowerPoint में Slide Layout क्या निर्धारित करता है?",
+A:"Animation timing",
+B:"Arrangement of placeholders",
+C:"Background color",
+D:"Transition effects",
+ans:"B"
+},
+
+{
+id:49,
+en:"Which option changes the layout of an existing slide?",
+hi:"किस option से existing slide का layout बदला जा सकता है?",
+A:"Insert Layout",
+B:"Change Layout",
+C:"Layout",
+D:"Modify Slide",
+ans:"C"
+},
+
+{
+id:50,
+en:"Which is a commonly used slide layout in PowerPoint?",
+hi:"PowerPoint में सामान्यतः उपयोग होने वाला slide layout कौन-सा है?",
+A:"Title and Content",
+B:"Header and Footer",
+C:"Text and Border",
+D:"Frame and Shape",
+ans:"A"
+},
+
+{
+id:51,
+en:"Which HTML tag is used to create a form?",
+hi:"HTML में form बनाने के लिए कौन-सा tag उपयोग होता है?",
+A:"form",
+B:"input",
+C:"fieldset",
+D:"label",
+ans:"A"
+},
+
+{
+id:52,
+en:"Which input type is used to enter password securely?",
+hi:"Password सुरक्षित रूप से दर्ज करने के लिए कौन-सा input type उपयोग होता है?",
+A:"text",
+B:"password",
+C:"hidden",
+D:"secure",
+ans:"B"
+},
+
+{
+id:53,
+en:"Which attribute specifies where form data will be sent?",
+hi:"Form data कहाँ भेजा जाएगा यह कौन-सा attribute निर्धारित करता है?",
+A:"method",
+B:"action",
+C:"target",
+D:"name",
+ans:"B"
+},
+
+{
+id:54,
+en:"Which HTML element creates a drop down list?",
+hi:"HTML में drop-down list बनाने के लिए कौन-सा element उपयोग होता है?",
+A:"input",
+B:"textarea",
+C:"select",
+D:"option",
+ans:"C"
+},
+
+{
+id:55,
+en:"Which attribute makes a form field mandatory?",
+hi:"Form field को अनिवार्य बनाने के लिए कौन-सा attribute उपयोग होता है?",
+A:"validate",
+B:"required",
+C:"mandatory",
+D:"check",
+ans:"B"
+},
+
+{
+id:56,
+en:"Which input type opens a color picker?",
+hi:"कौन-सा input type color picker खोलता है?",
+A:"color",
+B:"palette",
+C:"rgb",
+D:"paint",
+ans:"A"
+},
+
+{
+id:57,
+en:"Which input type allows selecting date from calendar?",
+hi:"Calendar से date चुनने के लिए कौन-सा input type उपयोग होता है?",
+A:"time",
+B:"datetime",
+C:"date",
+D:"calendar",
+ans:"C"
+},
+
+{
+id:58,
+en:"Which HTML input type uploads a file from user's computer?",
+hi:"User के computer से file upload करने के लिए कौन-सा HTML input type उपयोग होता है?",
+A:"upload",
+B:"file",
+C:"attach",
+D:"document",
+ans:"B"
+},
+
+{
+id:59,
+en:"A heap is primarily implemented as which tree?",
+hi:"Heap मुख्य रूप से किस प्रकार के tree के रूप में implement किया जाता है?",
+A:"Binary Search Tree",
+B:"Complete Binary Tree",
+C:"AVL Tree",
+D:"B Tree",
+ans:"B"
+},
+
+{
+id:60,
+en:"In a max heap which node contains the largest value?",
+hi:"Max Heap में सबसे बड़ा value किस node में होता है?",
+A:"Root node",
+B:"Leaf node",
+C:"Last node",
+D:"Middle node",
+ans:"A"
+}, 
+
+{
+id:61,
+en:"In a min heap the value of each parent node is:",
+hi:"Min Heap में प्रत्येक parent node का value अपने children की तुलना में कैसा होता है?",
+A:"Greater than children",
+B:"Less than or equal to children",
+C:"Equal to children",
+D:"Random compared to children",
+ans:"B"
+},
+
+{
+id:62,
+en:"Which operation inserts a new element into a heap?",
+hi:"Heap में नया element insert करने के लिए कौन-सा operation उपयोग होता है?",
+A:"Heapify Up",
+B:"Heap Sort",
+C:"Heap Merge",
+D:"Heap Reverse",
+ans:"A"
+},
+
+{
+id:63,
+en:"Hashing is mainly used for:",
+hi:"Hashing मुख्य रूप से किसके लिए उपयोग किया जाता है?",
+A:"Sorting data",
+B:"Searching data efficiently",
+C:"Compressing data",
+D:"Encrypting data",
+ans:"B"
+},
+
+{
+id:64,
+en:"In hashing what is a collision?",
+hi:"Hashing में collision क्या होता है?",
+A:"Two keys map to same index",
+B:"Key cannot be stored",
+C:"Memory becomes full",
+D:"Key is deleted",
+ans:"A"
+},
+
+{
+id:65,
+en:"Which technique resolves hash collisions by placing element in another location?",
+hi:"Hash collision को दूसरे स्थान पर element रखकर कौन-सी तकनीक हल करती है?",
+A:"Binary Search",
+B:"Open Addressing",
+C:"Tree Traversal",
+D:"Heapify",
+ans:"B"
+},
+
+{
+id:66,
+en:"In hierarchical database model records are organized in:",
+hi:"Hierarchical database model में records किस संरचना में व्यवस्थित होते हैं?",
+A:"Table structure",
+B:"Graph structure",
+C:"Tree structure",
+D:"Linear structure",
+ans:"C"
+},
+
+{
+id:67,
+en:"In hierarchical model a child record can have:",
+hi:"Hierarchical model में child record के कितने parent हो सकते हैं?",
+A:"Multiple parents",
+B:"Only one parent",
+C:"No parent",
+D:"Unlimited parents",
+ans:"B"
+},
+
+{
+id:68,
+en:"Which database model allows multiple parent and child relationships?",
+hi:"कौन-सा database model multiple parent और child relationship की अनुमति देता है?",
+A:"Hierarchical Model",
+B:"Network Model",
+C:"Relational Model",
+D:"Object Model",
+ans:"B"
+},
+
+{
+id:69,
+en:"In relational database a row is called:",
+hi:"Relational database में row को क्या कहा जाता है?",
+A:"Attribute",
+B:"Tuple",
+C:"Domain",
+D:"Field",
+ans:"B"
+},
+
+{
+id:70,
+en:"Which database model was proposed by E F Codd?",
+hi:"E F Codd ने कौन-सा database model प्रस्तावित किया था?",
+A:"Hierarchical Model",
+B:"Network Model",
+C:"Relational Model",
+D:"Object Oriented Model",
+ans:"C"
+},
+
+{
+id:71,
+en:"In the sentence She quickly finished her work the word quickly is:",
+hi:"वाक्य She quickly finished her work में quickly कौन-सा part of speech है?",
+A:"Adjective",
+B:"Adverb",
+C:"Verb",
+D:"Preposition",
+ans:"B"
+},
+
+{
+id:72,
+en:"In the sentence He is a very honest man the word honest is:",
+hi:"वाक्य He is a very honest man में honest क्या है?",
+A:"Noun",
+B:"Verb",
+C:"Adjective",
+D:"Adverb",
+ans:"C"
+},
+
+{
+id:73,
+en:"Which part of speech is the word and in Ravi and Mohan are friends?",
+hi:"वाक्य Ravi and Mohan are friends में and कौन-सा part of speech है?",
+A:"Conjunction",
+B:"Preposition",
+C:"Adverb",
+D:"Interjection",
+ans:"A"
+},
+
+{
+id:74,
+en:"Identify the pronoun in the sentence They are playing in the garden.",
+hi:"वाक्य They are playing in the garden में pronoun कौन-सा है?",
+A:"Playing",
+B:"Garden",
+C:"They",
+D:"In",
+ans:"C"
+},
+
+{
+id:75,
+en:"In the sentence She wrote a letter the word wrote is:",
+hi:"वाक्य She wrote a letter में wrote क्या है?",
+A:"Noun",
+B:"Verb",
+C:"Adjective",
+D:"Preposition",
+ans:"B"
+},
+
+{
+id:76,
+en:"Which samas is used in the Hindi word Rajputra?",
+hi:"राजपुत्र शब्द में कौन-सा समास है?",
+A:"Dvandva Samas",
+B:"Karmadharaya Samas",
+C:"Tatpurush Samas",
+D:"Bahuvrihi Samas",
+ans:"C"
+},
+
+{
+id:77,
+en:"Which samas is used in the Hindi word Chaturbhuj?",
+hi:"चतुर्भुज शब्द में कौन-सा समास है?",
+A:"Dvandva Samas",
+B:"Bahuvrihi Samas",
+C:"Karmadharaya Samas",
+D:"Tatpurush Samas",
+ans:"B"
+},
+
+{
+id:78,
+en:"Which samas is used in the Hindi word Matapita?",
+hi:"मातापिता शब्द में कौन-सा समास है?",
+A:"Dvandva Samas",
+B:"Bahuvrihi Samas",
+C:"Karmadharaya Samas",
+D:"Avyayibhav Samas",
+ans:"A"
+},
+
+{
+id:79,
+en:"Find the missing number in series 2 6 12 20 30 ?",
+hi:"श्रृंखला 2 6 12 20 30 ? में अगली संख्या क्या होगी?",
+A:"36",
+B:"40",
+C:"42",
+D:"44",
+ans:"C"
+},
+
+{
+id:80,
+en:"If SOUTH is coded as TOVUI how will NORTH be coded?",
+hi:"यदि SOUTH को TOVUI लिखा जाए तो NORTH को कैसे लिखा जाएगा?",
+A:"OPSUI",
+B:"OPSUI",
+C:"OPSUI",
+D:"OPSUI",
+ans:"A"
+}, 
+  
+{
+id:81,
+en:"Which princely state in Himachal Pradesh was ruled by the Katoch dynasty?",
+hi:"हिमाचल प्रदेश में कौन-सा रियासती राज्य कटोच वंश द्वारा शासित था?",
+A:"Chamba",
+B:"Kangra",
+C:"Kullu",
+D:"Sirmaur",
+ans:"B"
+},
+
+{
+id:82,
+en:"The capital of the Chamba princely state was founded by which ruler?",
+hi:"चंबा रियासत की राजधानी की स्थापना किस शासक ने की थी?",
+A:"Sahil Varman",
+B:"Meru Varman",
+C:"Aditya Varman",
+D:"Ajay Varman",
+ans:"A"
+},
+
+{
+id:83,
+en:"During the British period Shimla served as:",
+hi:"ब्रिटिश काल में शिमला किस रूप में कार्य करता था?",
+A:"Capital of Punjab",
+B:"Summer Capital of British India",
+C:"Military headquarters",
+D:"Trade center",
+ans:"B"
+},
+
+{
+id:84,
+en:"The Gurkha rule in parts of Himachal Pradesh ended after which war?",
+hi:"हिमाचल प्रदेश के कुछ भागों में गोरखा शासन किस युद्ध के बाद समाप्त हुआ?",
+A:"Anglo Maratha War",
+B:"Anglo Gurkha War",
+C:"Anglo Sikh War",
+D:"Anglo Mysore War",
+ans:"B"
+},
+
+{
+id:85,
+en:"Which princely state of Himachal Pradesh was known for the Minjar Fair?",
+hi:"हिमाचल प्रदेश की कौन-सी रियासत मिंजर मेले के लिए प्रसिद्ध थी?",
+A:"Chamba",
+B:"Mandi",
+C:"Kullu",
+D:"Bilaspur",
+ans:"A"
+},
+
+{
+id:86,
+en:"Which hill state was among the largest princely states in present day Himachal Pradesh during British rule?",
+hi:"ब्रिटिश काल में वर्तमान हिमाचल प्रदेश के सबसे बड़े रियासती राज्यों में से कौन-सा था?",
+A:"Kangra",
+B:"Chamba",
+C:"Mandi",
+D:"Sirmaur",
+ans:"C"
+},
+
+{
+id:87,
+en:"The famous Kullu Dussehra festival is celebrated in which district?",
+hi:"प्रसिद्ध कुल्लू दशहरा उत्सव किस जिले में मनाया जाता है?",
+A:"Mandi",
+B:"Kullu",
+C:"Chamba",
+D:"Kangra",
+ans:"B"
+},
+
+{
+id:88,
+en:"The Minjar Fair of Himachal Pradesh is celebrated in which town?",
+hi:"हिमाचल प्रदेश का मिंजर मेला किस नगर में आयोजित होता है?",
+A:"Kullu",
+B:"Chamba",
+C:"Mandi",
+D:"Shimla",
+ans:"B"
+},
+
+{
+id:89,
+en:"Which of the following is a traditional folk dance of Himachal Pradesh?",
+hi:"निम्न में से कौन-सा हिमाचल प्रदेश का पारंपरिक लोक नृत्य है?",
+A:"Bhangra",
+B:"Giddha",
+C:"Nati",
+D:"Garba",
+ans:"C"
+},
+
+{
+id:90,
+en:"The International Shivratri Fair is celebrated in which town of Himachal Pradesh?",
+hi:"अंतरराष्ट्रीय शिवरात्रि मेला हिमाचल प्रदेश के किस नगर में आयोजित होता है?",
+A:"Kullu",
+B:"Chamba",
+C:"Mandi",
+D:"Solan",
+ans:"C"
+},
+
+{
+id:91,
+en:"Which festival of Himachal Pradesh is associated with worship of Lord Raghunath in Kullu Valley?",
+hi:"कुल्लू घाटी में भगवान रघुनाथ की पूजा से जुड़ा हिमाचल प्रदेश का कौन-सा त्योहार है?",
+A:"Losar",
+B:"Kullu Dussehra",
+C:"Phulaich",
+D:"Halda",
+ans:"B"
+},
+
+{
+id:92,
+en:"Which river originates from the Beas Kund near Rohtang Pass?",
+hi:"रोहतांग दर्रे के पास स्थित ब्यास कुंड से कौन-सी नदी निकलती है?",
+A:"Ravi",
+B:"Chenab",
+C:"Beas",
+D:"Sutlej",
+ans:"C"
+},
+
+{
+id:93,
+en:"Shipki La Pass connects Himachal Pradesh with which country?",
+hi:"शिपकी ला दर्रा हिमाचल प्रदेश को किस देश से जोड़ता है?",
+A:"Nepal",
+B:"China Tibet",
+C:"Pakistan",
+D:"Bhutan",
+ans:"B"
+},
+
+{
+id:94,
+en:"Which lake is the largest natural lake in Himachal Pradesh?",
+hi:"हिमाचल प्रदेश की सबसे बड़ी प्राकृतिक झील कौन-सी है?",
+A:"Khajjiar Lake",
+B:"Rewalsar Lake",
+C:"Renuka Lake",
+D:"Suraj Tal",
+ans:"C"
+},
+
+{
+id:95,
+en:"Which mountain range runs through the central part of Himachal Pradesh?",
+hi:"हिमाचल प्रदेश के मध्य भाग से कौन-सी पर्वत श्रृंखला गुजरती है?",
+A:"Aravalli Range",
+B:"Pir Panjal Range",
+C:"Vindhya Range",
+D:"Satpura Range",
+ans:"B"
+},
+
+{
+id:96,
+en:"Which river in Himachal Pradesh is known as Chandrabhaga in its upper course?",
+hi:"हिमाचल प्रदेश में किस नदी को ऊपरी भाग में चंद्रभागा कहा जाता है?",
+A:"Ravi",
+B:"Chenab",
+C:"Beas",
+D:"Sutlej",
+ans:"B"
+},
+
+{
+id:97,
+en:"Baralacha La Pass connects Lahaul with which region?",
+hi:"बरालाचा ला दर्रा लाहौल को किस क्षेत्र से जोड़ता है?",
+A:"Kullu Valley",
+B:"Ladakh",
+C:"Kangra Valley",
+D:"Spiti Valley",
+ans:"B"
+},
+
+{
+id:98,
+en:"Chandratal Lake is located in which district of Himachal Pradesh?",
+hi:"चंद्रताल झील हिमाचल प्रदेश के किस जिले में स्थित है?",
+A:"Kullu",
+B:"Chamba",
+C:"Lahaul and Spiti",
+D:"Kangra",
+ans:"C"
+},
+
+{
+id:99,
+en:"Which river forms the border between Himachal Pradesh and Punjab for some distance?",
+hi:"कौन-सी नदी कुछ दूरी तक हिमाचल प्रदेश और पंजाब की सीमा बनाती है?",
+A:"Ravi",
+B:"Beas",
+C:"Sutlej",
+D:"Yamuna",
+ans:"C"
+},
+
+{
+id:100,
+en:"Kunzum Pass connects Lahaul with which valley?",
+hi:"कुंजुम दर्रा लाहौल को किस घाटी से जोड़ता है?",
+A:"Kullu Valley",
+B:"Kangra Valley",
+C:"Spiti Valley",
+D:"Chamba Valley",
+ans:"C"
+}
+
+  // Continue the same format up to Question 100
+
+];
+
+export { questions };
