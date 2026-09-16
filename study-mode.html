@@ -452,9 +452,6 @@ let answers = {};
 let current = 0;
 
 $("pageTitle").textContent = `${config.name} — Study Mode`;
-$("goToTest").href = config.testPage;
-$("noAttemptText").textContent =
-  `You have not completed ${config.name} yet.`;
 
 onAuthStateChanged(auth, async (u) => {
 
@@ -483,7 +480,7 @@ onAuthStateChanged(auth, async (u) => {
         <h2>No Attempt Found</h2>
         <p id="noAttemptText">You have not completed this mock test yet.</p>
         <br>
-        <a class="btn primary" id="goToTest" href="joa-free-test.html">Go to Test</a>
+        <a class="btn primary" id="goToTest" href="${config.testPage}">Go to Test</a>
         <a class="btn secondary" href="joa-series.html">Back to Series</a>
       `;
 
