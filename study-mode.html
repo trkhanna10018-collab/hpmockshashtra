@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JOA IT Free Mock Test — Study Mode | HPMockShashtra</title>
+<title>JOA IT Mock Test — Study Mode | HPMockShashtra</title>
 
 <style>
 *{
@@ -297,7 +297,7 @@ body{
 <div class="wrap">
 
   <div class="top">
-    <h1>JOA IT Free Mock Test — Study Mode</h1>
+    <h1 id="pageTitle">JOA IT Mock Test — Study Mode</h1>
     <p>Read-only review of your attempted test</p>
 
     <div class="meta">
@@ -348,10 +348,101 @@ body{
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 import { auth, db } from "./firebase-config.js";
-import { questions } from "./joa-question-bank.js";
 
-const TEST_ID = "joa_free_test_01";
-const ATTEMPT_ID_SUFFIX = "_joa_free_test_01";
+const TEST_ID = new URLSearchParams(window.location.search).get("test")
+  || "joa_free_test_01";
+
+const TEST_CONFIG = {
+  joa_free_test_01: {
+    name: "JOA IT Free Mock Test",
+    testPage: "joa-free-test.html",
+    questionBank: "./joa-question-bank.js"
+  },
+  joa_test_01: {
+    name: "JOA IT Mock Test 01",
+    testPage: "joa-test-01.html",
+    questionBank: "./joa-test-01.js"
+  },
+  joa_test_02: {
+    name: "JOA IT Mock Test 02",
+    testPage: "joa-test-02.html",
+    questionBank: "./joa-test-02.js"
+  },
+  joa_test_03: {
+    name: "JOA IT Mock Test 03",
+    testPage: "joa-test-03.html",
+    questionBank: "./joa-test-03.js"
+  },
+  joa_test_04: {
+    name: "JOA IT Mock Test 04",
+    testPage: "joa-test-04.html",
+    questionBank: "./joa-test-04.js"
+  },
+  joa_test_05: {
+    name: "JOA IT Mock Test 05",
+    testPage: "joa-test-05.html",
+    questionBank: "./joa-test-05.js"
+  },
+  joa_test_06: {
+    name: "JOA IT Mock Test 06",
+    testPage: "joa-test-06.html",
+    questionBank: "./joa-test-06.js"
+  },
+  joa_test_07: {
+    name: "JOA IT Mock Test 07",
+    testPage: "joa-test-07.html",
+    questionBank: "./joa-test-07.js"
+  },
+  joa_test_08: {
+    name: "JOA IT Mock Test 08",
+    testPage: "joa-test-08.html",
+    questionBank: "./joa-test-08.js"
+  },
+  joa_test_09: {
+    name: "JOA IT Mock Test 09",
+    testPage: "joa-test-09.html",
+    questionBank: "./joa-test-09.js"
+  },
+  joa_test_10: {
+    name: "JOA IT Mock Test 10",
+    testPage: "joa-test-10.html",
+    questionBank: "./joa-test-10.js"
+  },
+  joa_test_11: {
+    name: "JOA IT Mock Test 11",
+    testPage: "joa-test-11.html",
+    questionBank: "./joa-test-11.js"
+  },
+  joa_test_12: {
+    name: "JOA IT Mock Test 12",
+    testPage: "joa-test-12.html",
+    questionBank: "./joa-test-12.js"
+  },
+  joa_test_13: {
+    name: "JOA IT Mock Test 13",
+    testPage: "joa-test-13.html",
+    questionBank: "./joa-test-13.js"
+  },
+  joa_test_14: {
+    name: "JOA IT Mock Test 14",
+    testPage: "joa-test-14.html",
+    questionBank: "./joa-test-14.js"
+  },
+  joa_test_15: {
+    name: "JOA IT Mock Test 15",
+    testPage: "joa-test-15.html",
+    questionBank: "./joa-test-15.js"
+  }
+};
+
+const config = TEST_CONFIG[TEST_ID];
+
+if (!config) {
+  throw new Error("Invalid test ID.");
+}
+
+const { questions } = await import(config.questionBank);
+const ATTEMPT_ID_SUFFIX = "_" + TEST_ID;
 
 const $ = id => document.getElementById(id);
 
@@ -359,6 +450,11 @@ let user = null;
 let attempt = null;
 let answers = {};
 let current = 0;
+
+$("pageTitle").textContent = `${config.name} — Study Mode`;
+$("goToTest").href = config.testPage;
+$("noAttemptText").textContent =
+  `You have not completed ${config.name} yet.`;
 
 onAuthStateChanged(auth, async (u) => {
 
@@ -385,9 +481,9 @@ onAuthStateChanged(auth, async (u) => {
       $("errorArea").classList.remove("hidden");
       $("errorArea").innerHTML = `
         <h2>No Attempt Found</h2>
-        <p>You have not completed the JOA IT Free Mock Test yet.</p>
+        <p id="noAttemptText">You have not completed this mock test yet.</p>
         <br>
-        <a class="btn primary" href="joa-free-test.html">Go to Free Test</a>
+        <a class="btn primary" id="goToTest" href="joa-free-test.html">Go to Test</a>
         <a class="btn secondary" href="joa-series.html">Back to Series</a>
       `;
 
@@ -397,7 +493,7 @@ onAuthStateChanged(auth, async (u) => {
     attempt = snap.data();
 
     if(attempt.testId !== TEST_ID){
-      throw new Error("Invalid test record.");
+      throw new Error("Invalid test record for this Study Mode.");
     }
 
     answers = attempt.answers || {};
