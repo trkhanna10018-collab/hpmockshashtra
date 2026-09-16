@@ -1,448 +1,525 @@
 const questions = [
 
- {
+{
 id:1,
-en:"What is OneDrive in Microsoft 365?",
-hi:"Microsoft 365 में OneDrive क्या है?",
-A:"A web browser",
-B:"A cloud storage service",
-C:"An operating system",
-D:"A programming language",
-ans:"B"
+en:"Which MS Word feature is used to raise selected text slightly above the normal line of text?",
+hi:"MS Word में चयनित टेक्स्ट को सामान्य लाइन से थोड़ा ऊपर उठाने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Superscript",
+B:"Subscript",
+C:"Bold",
+D:"Underline",
+ans:"A"
 },
 
 {
 id:2,
-en:"Which option is used to upload files to OneDrive?",
-hi:"OneDrive में फाइल अपलोड करने के लिए कौन-सा विकल्प उपयोग किया जाता है?",
-A:"Import",
-B:"Upload",
-C:"Insert",
-D:"Transfer",
+en:"Which option in MS Word is used to remove all formatting from selected text?",
+hi:"MS Word में चयनित टेक्स्ट से सभी formatting हटाने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Clear Style",
+B:"Clear Formatting",
+C:"Remove Format",
+D:"Format Reset",
 ans:"B"
 },
 
 {
 id:3,
-en:"Which option allows downloading a file from OneDrive to a local computer?",
-hi:"OneDrive से लोकल कंप्यूटर में फाइल डाउनलोड करने के लिए कौन-सा विकल्प उपयोग किया जाता है?",
-A:"Export",
-B:"Save Copy",
-C:"Download",
-D:"Transfer",
-ans:"C"
+en:"Which formatting option is used to draw a line through the middle of text?",
+hi:"टेक्स्ट के बीच में लाइन खींचने के लिए कौन-सा formatting विकल्प उपयोग होता है?",
+A:"Underline",
+B:"Strikethrough",
+C:"Highlight",
+D:"Shadow",
+ans:"B"
 },
 
 {
 id:4,
-en:"Which option is used to permanently remove a file from OneDrive?",
-hi:"OneDrive से फाइल को स्थायी रूप से हटाने के लिए कौन-सा विकल्प उपयोग किया जाता है?",
-A:"Delete",
-B:"Remove",
-C:"Clear",
-D:"Erase",
-ans:"A"
+en:"Which MS Word option allows converting text from lowercase to UPPERCASE or Sentence case?",
+hi:"MS Word में टेक्स्ट को lowercase से UPPERCASE या Sentence case में बदलने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Text Style",
+B:"Font Case",
+C:"Change Case",
+D:"Modify Case",
+ans:"C"
 },
 
 {
 id:5,
-en:"Which feature allows changing the name of a file stored in OneDrive?",
-hi:"OneDrive में फाइल का नाम बदलने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Edit",
-B:"Rename",
-C:"Modify",
-D:"Replace",
+en:"Which feature changes the background color behind selected text?",
+hi:"चयनित टेक्स्ट के पीछे का background color बदलने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Font Color",
+B:"Text Highlight Color",
+C:"Shading",
+D:"Background Text",
 ans:"B"
 },
 
 {
 id:6,
-en:"Which option in OneDrive is used to create a new folder?",
-hi:"OneDrive में नया फोल्डर बनाने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"New Folder",
-B:"Add Folder",
-C:"Create Folder",
-D:"Insert Folder",
-ans:"A"
+en:"Which part of MS Word displays the name of the current document?",
+hi:"MS Word का कौन-सा भाग वर्तमान दस्तावेज़ का नाम दिखाता है?",
+A:"Menu Bar",
+B:"Title Bar",
+C:"Status Bar",
+D:"Ribbon",
+ans:"B"
 },
 
 {
 id:7,
-en:"Which feature allows copying a file from one folder to another in OneDrive?",
-hi:"OneDrive में एक फोल्डर से दूसरे फोल्डर में फाइल कॉपी करने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Duplicate",
-B:"Move to",
-C:"Copy to",
-D:"Transfer",
-ans:"C"
-},
-
-{
-id:8,
-en:"Which OneDrive feature allows viewing previous versions of a file?",
-hi:"OneDrive में फाइल के पुराने संस्करण देखने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"File Backup",
-B:"Version History",
-C:"File Restore",
-D:"History Log",
-ans:"B"
-},
-
-{
-id:9,
-en:"If a file is accidentally deleted in OneDrive, where can it be recovered from?",
-hi:"यदि OneDrive में कोई फाइल गलती से delete हो जाए, तो उसे कहाँ से recover किया जा सकता है?",
-A:"Backup Folder",
-B:"Trash",
-C:"Recycle Bin",
-D:"History",
-ans:"C"
-},
-
-{
-id:10,
-en:"Which OneDrive feature shows how much cloud storage space is used and available?",
-hi:"OneDrive में कौन-सा फीचर उपयोग किए गए और उपलब्ध storage space को दिखाता है?",
-A:"Storage Manager",
-B:"Storage Management",
-C:"Storage Settings",
-D:"Disk Manager",
-ans:"B"
-}, 
-
-{
-id:11,
-en:"Which option is used to create a new document in Microsoft Word Online?",
-hi:"Microsoft Word Online में नया दस्तावेज़ बनाने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"File",
-B:"New",
-C:"Insert",
-D:"Create",
-ans:"B"
-},
-
-{
-id:12,
-en:"Which option allows opening an existing document in Word Online?",
-hi:"Word Online में मौजूदा दस्तावेज़ खोलने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Open",
-B:"Import",
-C:"Load",
-D:"Insert",
-ans:"A"
-},
-
-{
-id:13,
-en:"Where are documents automatically saved in Microsoft Word Online?",
-hi:"Microsoft Word Online में दस्तावेज़ अपने आप कहाँ सेव होते हैं?",
-A:"Local Disk",
-B:"Google Drive",
-C:"OneDrive",
-D:"Desktop",
-ans:"C"
-},
-
-{
-id:14,
-en:"Which feature provides pre-designed layouts for documents?",
-hi:"दस्तावेज़ के लिए पहले से बने डिज़ाइन लेआउट कौन-सा फीचर प्रदान करता है?",
-A:"Themes",
-B:"Templates",
-C:"Styles",
-D:"Layouts",
-ans:"B"
-},
-
-{
-id:15,
-en:"Which shortcut key is used to copy selected text in Word Online?",
-hi:"Word Online में चुने गए टेक्स्ट को कॉपी करने के लिए कौन-सा शॉर्टकट की उपयोग होता है?",
-A:"Ctrl + V",
-B:"Ctrl + C",
-C:"Ctrl + X",
-D:"Ctrl + A",
-ans:"B"
-},
-
-{
-id:16,
-en:"Which shortcut key is used to paste copied text?",
-hi:"कॉपी किए गए टेक्स्ट को पेस्ट करने के लिए कौन-सा शॉर्टकट की उपयोग होता है?",
-A:"Ctrl + P",
-B:"Ctrl + C",
-C:"Ctrl + V",
-D:"Ctrl + X",
-ans:"C"
-},
-
-{
-id:17,
-en:"Which shortcut key is used to undo the last action?",
-hi:"अंतिम क्रिया को वापस लेने (Undo) के लिए कौन-सा शॉर्टकट की उपयोग होता है?",
-A:"Ctrl + Z",
-B:"Ctrl + Y",
-C:"Ctrl + U",
-D:"Ctrl + R",
-ans:"A"
-},
-
-{
-id:18,
-en:"Which feature is used to locate a specific word in a document?",
-hi:"दस्तावेज़ में किसी विशेष शब्द को खोजने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Search",
-B:"Find",
-C:"Locate",
-D:"Detect",
-ans:"B"
-},
-
-{
-id:19,
-en:"Which option is used to insert a table in Microsoft Word Online?",
-hi:"Microsoft Word Online में टेबल डालने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Insert → Table",
-B:"Layout → Table",
-C:"Review → Table",
-D:"Home → Table",
-ans:"A"
-},
-
-{
-id:20,
-en:"Which tab is used to add pictures in a Word Online document?",
-hi:"Word Online दस्तावेज़ में चित्र जोड़ने के लिए कौन-सा टैब उपयोग होता है?",
-A:"Home",
-B:"Insert",
-C:"Layout",
-D:"Review",
-ans:"B"
-}, 
-
-{
-id:21,
-en:"Which option allows inserting shapes such as arrows and rectangles?",
-hi:"तीर और आयत जैसे shapes डालने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Insert → Shapes",
-B:"Home → Shapes",
-C:"Layout → Shapes",
-D:"Review → Shapes",
-ans:"A"
-},
-
-{
-id:22,
-en:"Which feature is used to display repeated information such as title or date at the top of each page?",
-hi:"हर पेज के शीर्ष पर शीर्षक या तिथि जैसी जानकारी दिखाने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Page Layout",
-B:"Header",
-C:"Footer",
+en:"Which MS Word element contains tabs such as Home, Insert, Layout, and Review?",
+hi:"MS Word का कौन-सा भाग Home, Insert, Layout और Review जैसे tabs को दर्शाता है?",
+A:"Menu Bar",
+B:"Ribbon",
+C:"Status Bar",
 D:"Title Bar",
 ans:"B"
 },
 
 {
+id:8,
+en:"Which tool provides quick access to commonly used commands like Save, Undo, and Redo?",
+hi:"Save, Undo और Redo जैसे सामान्य commands तक जल्दी पहुँच देने वाला टूल कौन-सा है?",
+A:"Quick Access Toolbar",
+B:"Ribbon",
+C:"Status Bar",
+D:"Scroll Bar",
+ans:"A"
+},
+
+{
+id:9,
+en:"Which part of the MS Word window displays information such as page number and word count?",
+hi:"MS Word विंडो का कौन-सा भाग page number और word count जैसी जानकारी दिखाता है?",
+A:"Title Bar",
+B:"Menu Bar",
+C:"Status Bar",
+D:"Ruler",
+ans:"C"
+},
+
+{
+id:10,
+en:"Which feature is used to increase or decrease the zoom level of a document?",
+hi:"दस्तावेज़ के zoom level को बढ़ाने या घटाने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"View Buttons",
+B:"Zoom Slider",
+C:"Scroll Bar",
+D:"Ruler",
+ans:"B"
+}, 
+
+{
+id:11,
+en:"Which option is used to create a new blank document in MS Word?",
+hi:"MS Word में नया खाली दस्तावेज़ बनाने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Open",
+B:"New",
+C:"Save",
+D:"Close",
+ans:"B"
+},
+
+{
+id:12,
+en:"Which command is used to open an existing document in MS Word?",
+hi:"MS Word में किसी मौजूदा दस्तावेज़ को खोलने के लिए कौन-सा command उपयोग होता है?",
+A:"Open",
+B:"Save",
+C:"Close",
+D:"Exit",
+ans:"A"
+},
+
+{
+id:13,
+en:"Which option is used to save a document with a different name or format?",
+hi:"दस्तावेज़ को अलग नाम या format में सहेजने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Save",
+B:"Save As",
+C:"Export",
+D:"Rename",
+ans:"B"
+},
+
+{
+id:14,
+en:"Which MS Word file format is the default format in modern versions of Word?",
+hi:"MS Word के आधुनिक संस्करणों में default file format कौन-सा है?",
+A:".doc",
+B:".txt",
+C:".docx",
+D:".rtf",
+ans:"C"
+},
+
+{
+id:15,
+en:"Which command is used to completely close the MS Word application?",
+hi:"MS Word एप्लिकेशन को पूरी तरह बंद करने के लिए कौन-सा command उपयोग होता है?",
+A:"Close",
+B:"Exit",
+C:"End",
+D:"Stop",
+ans:"B"
+},
+
+{
+id:16,
+en:"Which key is used to toggle between Insert Mode and Overtype Mode in MS Word?",
+hi:"MS Word में Insert Mode और Overtype Mode के बीच बदलने के लिए कौन-सी key उपयोग होती है?",
+A:"Shift",
+B:"Insert",
+C:"Ctrl",
+D:"Alt",
+ans:"B"
+},
+
+{
+id:17,
+en:"Which option in MS Word allows pasting content in different formats such as unformatted text, HTML, or picture?",
+hi:"MS Word में content को अलग-अलग formats (जैसे unformatted text, HTML या picture) में paste करने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Smart Paste",
+B:"Paste Format",
+C:"Paste Special",
+D:"Advanced Paste",
+ans:"C"
+},
+
+{
+id:18,
+en:"Which keyboard shortcut is used to undo the last action in MS Word?",
+hi:"MS Word में last action को undo करने के लिए कौन-सा shortcut key उपयोग होता है?",
+A:"Ctrl + Y",
+B:"Ctrl + U",
+C:"Ctrl + Z",
+D:"Ctrl + X",
+ans:"C"
+},
+
+{
+id:19,
+en:"Which shortcut key is used to select the entire document quickly?",
+hi:"पूरे document को जल्दी select करने के लिए कौन-सा shortcut key उपयोग होता है?",
+A:"Ctrl + S",
+B:"Ctrl + A",
+C:"Ctrl + D",
+D:"Ctrl + E",
+ans:"B"
+},
+
+{
+id:20,
+en:"Which MS Word command is used to repeat the last action that was undone?",
+hi:"MS Word में undo किए गए last action को दोबारा करने के लिए कौन-सा command उपयोग होता है?",
+A:"Undo",
+B:"Repeat",
+C:"Redo",
+D:"Restore",
+ans:"C"
+}, 
+
+{
+id:21,
+en:"Which MS Word shortcut key is used to apply superscript formatting to selected text?",
+hi:"MS Word में चयनित टेक्स्ट पर superscript लगाने के लिए कौन-सा shortcut key उपयोग होता है?",
+A:"Ctrl + =",
+B:"Ctrl + Shift + +",
+C:"Ctrl + Shift + =",
+D:"Ctrl + Alt + +",
+ans:"C"
+},
+
+{
+id:22,
+en:"Which MS Word shortcut key is used to apply subscript formatting?",
+hi:"MS Word में subscript लगाने के लिए कौन-सा shortcut key उपयोग होता है?",
+A:"Ctrl + =",
+B:"Ctrl + -",
+C:"Ctrl + Shift + -",
+D:"Ctrl + Alt + =",
+ans:"A"
+},
+
+{
 id:23,
-en:"Which feature automatically numbers pages in a document?",
-hi:"दस्तावेज़ में पेज नंबर अपने आप डालने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Page Count",
-B:"Page Number",
-C:"Page Layout",
-D:"Page Order",
+en:"Which feature in MS Word removes all formatting such as font size, bold, color, and styles from selected text?",
+hi:"MS Word में चयनित टेक्स्ट से font size, bold, color और styles जैसी सभी formatting हटाने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Reset Style",
+B:"Clear Formatting",
+C:"Remove Style",
+D:"Format Reset",
 ans:"B"
 },
 
 {
 id:24,
-en:"Which feature is used to check spelling mistakes in a document?",
-hi:"दस्तावेज़ में वर्तनी (spelling) की गलतियाँ जांचने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Grammar Check",
-B:"Spell Check",
-C:"Text Review",
-D:"Proof Tool",
+en:"Which MS Word command changes text like \"word\" to \"WORD\" or \"Word\"?",
+hi:"MS Word में \"word\" को \"WORD\" या \"Word\" में बदलने के लिए कौन-सा command उपयोग होता है?",
+A:"Modify Text",
+B:"Change Case",
+C:"Format Case",
+D:"Text Style",
 ans:"B"
 },
 
 {
 id:25,
-en:"Which feature allows users to add notes or suggestions in the margin of a document?",
-hi:"दस्तावेज़ के मार्जिन में नोट्स या सुझाव जोड़ने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Remarks",
-B:"Notes",
-C:"Comments",
-D:"Annotations",
-ans:"C"
+en:"Which option changes only the color of the characters without affecting the background of the text?",
+hi:"कौन-सा विकल्प केवल अक्षरों का रंग बदलता है बिना टेक्स्ट के background को बदले?",
+A:"Text Highlight Color",
+B:"Font Color",
+C:"Text Shading",
+D:"Background Color",
+ans:"B"
 },
 
 {
 id:26,
-en:"Which Word feature records all edits made by collaborators in a document?",
-hi:"दस्तावेज़ में सहयोगियों द्वारा किए गए सभी बदलावों को रिकॉर्ड करने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Revision Mode",
-B:"Track Changes",
-C:"Edit Mode",
-D:"Document History",
+en:"In MS Excel, which key combination is used to enter the current system date into a cell?",
+hi:"MS Excel में वर्तमान सिस्टम date को cell में डालने के लिए कौन-सा key combination उपयोग होता है?",
+A:"Ctrl + D",
+B:"Ctrl + ;",
+C:"Ctrl + Shift + :",
+D:"Alt + D",
 ans:"B"
 },
 
 {
 id:27,
-en:"Which feature allows multiple users to edit a document at the same time online?",
-hi:"ऑनलाइन एक ही समय में कई उपयोगकर्ताओं को दस्तावेज़ संपादित करने की अनुमति देने वाला फीचर कौन-सा है?",
-A:"Document Sharing",
-B:"Real-time Editing",
-C:"Live Editing",
-D:"Online Collaboration",
+en:"Which key combination inserts the current system time in an Excel cell?",
+hi:"Excel में वर्तमान सिस्टम time डालने के लिए कौन-सा key combination उपयोग होता है?",
+A:"Ctrl + :",
+B:"Ctrl + Shift + :",
+C:"Ctrl + ;",
+D:"Shift + :",
 ans:"B"
 },
 
 {
 id:28,
-en:"In Microsoft Excel Online, what is a Workbook?",
-hi:"Microsoft Excel Online में Workbook क्या होता है?",
-A:"A single row of data",
-B:"A collection of worksheets",
-C:"A single column of data",
-D:"A chart file",
-ans:"B"
+en:"Which Excel option removes only the contents of selected cells while keeping formatting intact?",
+hi:"Excel में selected cells का केवल content हटाकर formatting को बनाए रखने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Delete Cells",
+B:"Clear Formats",
+C:"Clear Contents",
+D:"Remove Data",
+ans:"C"
 },
 
 {
 id:29,
-en:"In Excel Online, a Worksheet is:",
-hi:"Excel Online में Worksheet क्या होता है?",
-A:"A page within a workbook",
-B:"A collection of workbooks",
-C:"A table only",
-D:"A group of charts",
-ans:"A"
+en:"Which Excel feature allows editing the content of the active cell without overwriting it?",
+hi:"Excel में active cell के content को बिना overwrite किए edit करने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Formula Bar",
+B:"Edit Mode",
+C:"Data Mode",
+D:"Input Mode",
+ans:"B"
 },
 
 {
 id:30,
-en:"Which element is the intersection of a row and a column in Excel?",
-hi:"Excel में row और column के मिलने का स्थान क्या कहलाता है?",
-A:"Field",
-B:"Cell",
-C:"Record",
-D:"Box",
+en:"Which Excel key is commonly used to quickly enter data and move to the next cell below?",
+hi:"Excel में data enter करने के बाद अगले नीचे वाले cell में जाने के लिए कौन-सी key उपयोग होती है?",
+A:"Tab",
+B:"Enter",
+C:"Shift",
+D:"Alt",
 ans:"B"
 }, 
+
 {
 id:31,
-en:"Which type of data in Excel Online represents numbers used for calculations?",
-hi:"Excel Online में किस प्रकार का डेटा गणनाओं के लिए उपयोग किए जाने वाले संख्याओं को दर्शाता है?",
-A:"Text",
-B:"Label",
-C:"Numeric Data",
-D:"String",
-ans:"C"
+en:"What will be the result of the formula =SUM(5,10,15)?",
+hi:"सूत्र =SUM(5,10,15) का परिणाम क्या होगा?",
+A:"25",
+B:"30",
+C:"35",
+D:"20",
+ans:"B"
 },
 
 {
 id:32,
-en:"Which type of data represents words or characters that are not used in calculations?",
-hi:"कौन-सा डेटा प्रकार ऐसे शब्द या अक्षर दर्शाता है जो गणनाओं में उपयोग नहीं होते?",
-A:"Numeric Data",
-B:"Text Data",
-C:"Logical Data",
-D:"Date Data",
-ans:"B"
-},
-
-{
-id:33,
-en:"Which Excel Online data type stores calendar values like 25-12-2025?",
-hi:"Excel Online में 25-12-2025 जैसे कैलेंडर मान किस डेटा प्रकार में स्टोर होते हैं?",
-A:"Numeric",
-B:"Time",
-C:"Date",
-D:"Text",
-ans:"C"
-},
-
-{
-id:34,
-en:"Which data type represents time such as 10:30 AM in Excel?",
-hi:"Excel में 10:30 AM जैसे समय को कौन-सा डेटा प्रकार दर्शाता है?",
-A:"Date",
-B:"Time",
-C:"Number",
-D:"Text",
-ans:"B"
-},
-
-{
-id:35,
-en:"Which Excel feature is used to change the appearance of cells such as font, color, and borders?",
-hi:"फॉन्ट, रंग और बॉर्डर जैसे सेल के appearance को बदलने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Cell Formatting",
-B:"Layout Design",
-C:"Style Control",
-D:"Table Design",
+en:"What will be the output of =AVERAGE(10,20,30)?",
+hi:"=AVERAGE(10,20,30) का परिणाम क्या होगा?",
+A:"20",
+B:"25",
+C:"15",
+D:"30",
 ans:"A"
 },
 
 {
+id:33,
+en:"What will =COUNT(5,10,\"Text\",20) return?",
+hi:"=COUNT(5,10,\"Text\",20) का परिणाम क्या होगा?",
+A:"4",
+B:"3",
+C:"2",
+D:"1",
+ans:"B"
+},
+
+{
+id:34,
+en:"What will be the result of =MAX(12,45,23,67,34)?",
+hi:"=MAX(12,45,23,67,34) का परिणाम क्या होगा?",
+A:"45",
+B:"34",
+C:"67",
+D:"23",
+ans:"C"
+},
+
+{
+id:35,
+en:"What will be the output of =MIN(8,3,15,6)?",
+hi:"=MIN(8,3,15,6) का परिणाम क्या होगा?",
+A:"8",
+B:"3",
+C:"6",
+D:"15",
+ans:"B"
+},
+
+{
 id:36,
-en:"Which formatting option changes how numbers appear (currency, percentage, decimal)?",
-hi:"कौन-सा formatting विकल्प संख्याओं के दिखने के तरीके (currency, percentage, decimal) को बदलता है?",
-A:"Data Format",
-B:"Number Format",
-C:"Numeric Style",
-D:"Cell Pattern",
+en:"What will be the result of the formula =ROUND(18.567,2)?",
+hi:"सूत्र =ROUND(18.567,2) का परिणाम क्या होगा?",
+A:"18.56",
+B:"18.57",
+C:"18.50",
+D:"18.60",
 ans:"B"
 },
 
 {
 id:37,
-en:"Which Excel feature automatically highlights cells based on conditions?",
-hi:"कौन-सा Excel फीचर शर्तों के आधार पर सेल्स को स्वतः हाइलाइट करता है?",
-A:"Data Filter",
-B:"Conditional Formatting",
-C:"Smart Format",
-D:"Auto Style",
-ans:"B"
-},
-
-{
-id:38,
-en:"Which Excel feature allows applying rules like \"greater than 100\" to highlight values?",
-hi:"\"100 से अधिक\" जैसे नियम लगाकर मानों को हाइलाइट करने के लिए कौन-सा Excel फीचर उपयोग होता है?",
-A:"Conditional Formatting",
-B:"Cell Formatting",
-C:"Auto Style",
-D:"Data Highlight",
+en:"What will the formula =IF(10>5,\"Yes\",\"No\") return?",
+hi:"सूत्र =IF(10>5,\"Yes\",\"No\") का परिणाम क्या होगा?",
+A:"Yes",
+B:"No",
+C:"Error",
+D:"10",
 ans:"A"
 },
 
 {
-id:39,
-en:"In Excel Online, which key is commonly used to start editing the selected cell?",
-hi:"Excel Online में चयनित सेल को एडिट करने के लिए सामान्यतः कौन-सी कुंजी उपयोग होती है?",
-A:"F1",
-B:"F2",
-C:"F5",
-D:"F7",
+id:38,
+en:"Which Excel function is used to search for a value in the first column of a table?",
+hi:"किस Excel function का उपयोग table की पहली column में value खोजने के लिए किया जाता है?",
+A:"HLOOKUP",
+B:"VLOOKUP",
+C:"LOOKUP",
+D:"MATCH",
 ans:"B"
 },
 
 {
-id:40,
-en:"Which Excel feature automatically adjusts column width to fit the content?",
-hi:"कौन-सा Excel फीचर कंटेंट के अनुसार कॉलम की चौड़ाई स्वतः समायोजित करता है?",
-A:"Auto Width",
-B:"Auto Fit",
-C:"Fit Column",
-D:"Column Adjust",
-ans:"B"
-}, 
+id:39,
+en:"Which function joins text from multiple cells?",
+hi:"कौन-सा function कई cells के text को जोड़ता है?",
+A:"CONCAT",
+B:"MERGE",
+C:"JOIN",
+D:"COMBINE",
+ans:"A"
+},
 
 {
+id:40,
+en:"Which function returns the current system date and time?",
+hi:"कौन-सा function वर्तमान सिस्टम date और time देता है?",
+A:"TODAY()",
+B:"DATE()",
+C:"NOW()",
+D:"TIME()",
+ans:"C"
+}, 
+{
 id:41,
-en:"Which Excel Online feature is used to arrange data in ascending or descending order?",
-hi:"Excel Online में डेटा को आरोही या अवरोही क्रम में व्यवस्थित करने के लिए कौन-सा फीचर उपयोग होता है?",
+en:"Which type of Excel chart is best used to show trends over time?",
+hi:"समय के साथ होने वाले रुझानों को दिखाने के लिए कौन-सा Excel chart सबसे उपयुक्त है?",
+A:"Pie Chart",
+B:"Line Chart",
+C:"Scatter Chart",
+D:"Area Chart",
+ans:"B"
+},
+
+{
+id:42,
+en:"Which chart is used to represent parts of a whole as percentages?",
+hi:"किस chart का उपयोग पूरे के भागों को प्रतिशत के रूप में दिखाने के लिए किया जाता है?",
+A:"Pie Chart",
+B:"Bar Chart",
+C:"Line Chart",
+D:"Column Chart",
+ans:"A"
+},
+
+{
+id:43,
+en:"Which Excel chart is most suitable for comparing values across categories using vertical bars?",
+hi:"vertical bars का उपयोग करके विभिन्न categories के बीच तुलना करने के लिए कौन-सा chart सबसे उपयुक्त है?",
+A:"Bar Chart",
+B:"Column Chart",
+C:"Line Chart",
+D:"Area Chart",
+ans:"B"
+},
+
+{
+id:44,
+en:"Which chart type is used to show the relationship between two numerical variables?",
+hi:"दो numerical variables के बीच संबंध दिखाने के लिए कौन-सा chart उपयोग होता है?",
+A:"Pie Chart",
+B:"Scatter Chart",
+C:"Column Chart",
+D:"Area Chart",
+ans:"B"
+},
+
+{
+id:45,
+en:"Which chart element displays the meaning of colors or patterns used in a chart?",
+hi:"chart में उपयोग किए गए रंगों या patterns का अर्थ बताने वाला element कौन-सा है?",
+A:"Axis",
+B:"Legend",
+C:"Title",
+D:"Gridlines",
+ans:"B"
+},
+
+{
+id:46,
+en:"Which feature in Excel allows changing the visual appearance of a chart quickly?",
+hi:"Excel में chart की appearance को जल्दी बदलने के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Chart Layout",
+B:"Chart Style",
+C:"Chart Template",
+D:"Chart Format",
+ans:"B"
+},
+
+{
+id:47,
+en:"Which Excel feature is used to organize data in rows and columns with built-in filtering and sorting?",
+hi:"Excel में data को rows और columns में organize करने और built-in filtering व sorting के लिए कौन-सा फीचर उपयोग होता है?",
+A:"Worksheet",
+B:"Table",
+C:"Chart",
+D:"Range",
+ans:"B"
+},
+
+{
+id:48,
+en:"Which option is used to arrange table data in ascending or descending order?",
+hi:"table data को ascending या descending order में व्यवस्थित करने के लिए कौन-सा विकल्प उपयोग होता है?",
 A:"Filter",
 B:"Sort",
 C:"Arrange",
@@ -451,652 +528,603 @@ ans:"B"
 },
 
 {
-id:42,
-en:"Which Excel feature is used to display only specific rows based on conditions?",
-hi:"Excel में शर्तों के आधार पर केवल कुछ पंक्तियों को दिखाने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Sort",
-B:"Filter",
-C:"Group",
-D:"Arrange",
-ans:"B"
-},
-
-{
-id:43,
-en:"Which Excel feature restricts the type of data entered in a cell?",
-hi:"Excel में किसी सेल में डाले जाने वाले डेटा के प्रकार को सीमित करने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Data Control",
-B:"Data Validation",
-C:"Input Restriction",
-D:"Cell Lock",
-ans:"B"
-},
-
-{
-id:44,
-en:"Which chart type is best used to compare values across categories using vertical bars?",
-hi:"वर्टिकल बार के माध्यम से विभिन्न श्रेणियों के मानों की तुलना करने के लिए कौन-सा चार्ट उपयुक्त है?",
-A:"Pie Chart",
-B:"Line Chart",
-C:"Column Chart",
-D:"Area Chart",
-ans:"C"
-},
-
-{
-id:45,
-en:"Which chart represents parts of a whole as percentages?",
-hi:"कौन-सा चार्ट पूरे के हिस्सों को प्रतिशत के रूप में दर्शाता है?",
-A:"Bar Chart",
-B:"Pie Chart",
-C:"Line Chart",
-D:"Scatter Chart",
-ans:"B"
-},
-
-{
-id:46,
-en:"Which chart is most suitable to show trends over time?",
-hi:"समय के साथ रुझानों को दिखाने के लिए कौन-सा चार्ट सबसे उपयुक्त है?",
-A:"Pie Chart",
-B:"Line Chart",
-C:"Column Chart",
-D:"Area Chart",
-ans:"B"
-},
-
-{
-id:47,
-en:"Which Excel feature is used to visually represent data using graphs?",
-hi:"Excel में ग्राफ़ के माध्यम से डेटा को दर्शाने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Tables",
-B:"Charts",
-C:"Styles",
-D:"Layout",
-ans:"B"
-},
-
-{
-id:48,
-en:"In PowerPoint Online, what is a presentation?",
-hi:"PowerPoint Online में presentation क्या होती है?",
-A:"A worksheet",
-B:"A collection of slides",
-C:"A document file",
-D:"A table",
-ans:"B"
-},
-
-{
 id:49,
-en:"Which option is used to create a new presentation in PowerPoint Online?",
-hi:"PowerPoint Online में नई presentation बनाने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Insert",
-B:"File → New",
-C:"Layout",
-D:"Slide Master",
-ans:"B"
+en:"Which Excel table feature is used to display only specific records based on conditions?",
+hi:"conditions के आधार पर केवल कुछ records दिखाने के लिए कौन-सा Excel feature उपयोग होता है?",
+A:"Filter",
+B:"Group",
+C:"Arrange",
+D:"Data Sort",
+ans:"A"
 },
 
 {
 id:50,
-en:"In PowerPoint, a slide is:",
-hi:"PowerPoint में slide क्या होती है?",
-A:"A page in a presentation",
-B:"A chart",
-C:"A document",
-D:"A worksheet",
-ans:"A"
+en:"Which Excel option automatically applies formatting to a table?",
+hi:"table पर automatically formatting लागू करने के लिए कौन-सा विकल्प उपयोग होता है?",
+A:"Table Format",
+B:"Table Style",
+C:"Table Design",
+D:"Table Theme",
+ans:"B"
 }, 
 
 {
 id:51,
-en:"Which feature controls the design and appearance of slides?",
-hi:"कौन-सा फीचर स्लाइड्स के डिज़ाइन और रूप-रंग को नियंत्रित करता है?",
-A:"Layout",
-B:"Themes",
-C:"Style",
-D:"Format",
+en:"What is the result of the Boolean expression A + A’ ?",
+hi:"Boolean अभिव्यक्ति A + A’ का परिणाम क्या होगा?",
+A:"0",
+B:"1",
+C:"A",
+D:"A’",
 ans:"B"
 },
 
 {
 id:52,
-en:"Which tab is used to insert new slides in PowerPoint?",
-hi:"PowerPoint में नई स्लाइड जोड़ने के लिए कौन-सा टैब उपयोग होता है?",
-A:"Insert",
-B:"Home",
-C:"Review",
-D:"Design",
-ans:"B"
+en:"Simplify the Boolean expression A · (A + B).",
+hi:"Boolean अभिव्यक्ति A · (A + B) को सरल करें।",
+A:"A",
+B:"B",
+C:"A + B",
+D:"AB",
+ans:"A"
 },
 
 {
 id:53,
-en:"Which PowerPoint feature ensures a consistent design across all slides?",
-hi:"PowerPoint में सभी स्लाइड्स में समान डिज़ाइन बनाए रखने के लिए कौन-सा फीचर उपयोग होता है?",
-A:"Template",
-B:"Theme",
-C:"Layout",
-D:"Slide Style",
-ans:"B"
+en:"Which CPU scheduling algorithm executes processes in the order of their arrival?",
+hi:"कौन-सा CPU scheduling algorithm processes को उनके arrival के क्रम में execute करता है?",
+A:"Shortest Job First",
+B:"Round Robin",
+C:"First Come First Serve",
+D:"Priority Scheduling",
+ans:"C"
 },
 
 {
 id:54,
-en:"Which option is used to write a new email message?",
-hi:"नया ईमेल संदेश लिखने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Compose",
-B:"Draft",
-C:"Send",
-D:"Reply",
+en:"Which scheduling algorithm gives each process a fixed time slice called a time quantum?",
+hi:"कौन-सा scheduling algorithm प्रत्येक process को एक निश्चित समय (time quantum) देता है?",
+A:"Round Robin",
+B:"FCFS",
+C:"SJF",
+D:"Priority",
 ans:"A"
 },
 
 {
 id:55,
-en:"Which button is used to deliver an email to the recipient?",
-hi:"ईमेल को प्राप्तकर्ता तक भेजने के लिए कौन-सा बटन उपयोग होता है?",
-A:"Attach",
-B:"Send",
-C:"Forward",
-D:"Receive",
+en:"Which scheduling algorithm selects the process with the smallest execution time?",
+hi:"कौन-सा scheduling algorithm सबसे कम execution time वाले process को चुनता है?",
+A:"FCFS",
+B:"Shortest Job First",
+C:"Round Robin",
+D:"FIFO",
 ans:"B"
 },
 
 {
 id:56,
-en:"Which option is used to respond to the sender of an email?",
-hi:"ईमेल भेजने वाले को उत्तर देने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Reply",
-B:"Send",
-C:"Compose",
-D:"Draft",
-ans:"A"
+en:"In CPU scheduling, what is the time a process waits in the ready queue called?",
+hi:"CPU scheduling में ready queue में process के इंतजार करने के समय को क्या कहा जाता है?",
+A:"Turnaround Time",
+B:"Waiting Time",
+C:"Burst Time",
+D:"Response Time",
+ans:"B"
 },
 
 {
 id:57,
-en:"Which option allows sending the received email to another person?",
-hi:"प्राप्त ईमेल को किसी अन्य व्यक्ति को भेजने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Copy",
-B:"Reply",
-C:"Forward",
-D:"Send",
-ans:"C"
+en:"Which scheduling algorithm may cause starvation of long processes?",
+hi:"कौन-सा scheduling algorithm लंबे processes के starvation का कारण बन सकता है?",
+A:"Shortest Job First",
+B:"Round Robin",
+C:"FCFS",
+D:"FIFO",
+ans:"A"
 },
 
 {
 id:58,
-en:"Which option is used to add files such as documents or images to an email?",
-hi:"ईमेल में दस्तावेज़ या चित्र जैसी फाइल जोड़ने के लिए कौन-सा विकल्प उपयोग होता है?",
-A:"Upload",
-B:"Insert",
-C:"Attach",
-D:"Link",
-ans:"C"
+en:"Which HTML5 element is used to specify independent, self-contained content such as blog posts or news articles?",
+hi:"HTML5 में blog posts या news articles जैसे self-contained content के लिए कौन-सा element उपयोग होता है?",
+A:"&lt;section&gt;",
+B:"&lt;article&gt;",
+C:"&lt;aside&gt;",
+D:"&lt;div&gt;",
+ans:"B"
 },
 
 {
 id:59,
-en:"Which data structure follows the principle of LIFO (Last In First Out)?",
-hi:"कौन-सा डेटा स्ट्रक्चर LIFO (Last In First Out) सिद्धांत का पालन करता है?",
-A:"Queue",
-B:"Stack",
-C:"Array",
-D:"Linked List",
+en:"Which HTML attribute is used to specify that an input field must be filled out before submitting a form?",
+hi:"HTML में form submit करने से पहले input field को भरना अनिवार्य बनाने के लिए कौन-सा attribute उपयोग होता है?",
+A:"validate",
+B:"required",
+C:"mandatory",
+D:"needed",
 ans:"B"
 },
 
 {
 id:60,
-en:"Which data structure follows FIFO (First In First Out)?",
-hi:"कौन-सा डेटा स्ट्रक्चर FIFO (First In First Out) सिद्धांत का पालन करता है?",
-A:"Stack",
-B:"Queue",
-C:"Tree",
-D:"Graph",
+en:"Which HTML5 element is used to draw graphics on a web page using JavaScript?",
+hi:"JavaScript की मदद से web page पर graphics draw करने के लिए कौन-सा HTML5 element उपयोग होता है?",
+A:"&lt;svg&gt;",
+B:"&lt;canvas&gt;",
+C:"&lt;graphics&gt;",
+D:"&lt;draw&gt;",
 ans:"B"
-}, 
+},
+
 {
 id:61,
-en:"Which data structure stores elements in contiguous memory locations?",
-hi:"कौन-सा डेटा स्ट्रक्चर elements को contiguous memory locations में store करता है?",
-A:"Linked List",
-B:"Array",
-C:"Tree",
-D:"Graph",
-ans:"B"
-},
-
+en:"Which HTML element is used to define metadata about an HTML document?",
+hi:"HTML document के metadata को define करने के लिए कौन-सा element उपयोग होता है?",
+A:"&lt;meta&gt;",
+B:"&lt;data&gt;",
+C:"&lt;head&gt;",
+D:"&lt;link&gt;",
+ans:"A"
+}, 
 {
 id:62,
-en:"Which traversal technique visits the root node first in a binary tree?",
-hi:"Binary tree में कौन-सी traversal तकनीक सबसे पहले root node को visit करती है?",
-A:"Inorder",
-B:"Postorder",
-C:"Preorder",
-D:"Level Order",
-ans:"C"
-},
-
-{
-id:63,
-en:"Which data structure consists of nodes connected by edges and represents relationships?",
-hi:"कौन-सा डेटा स्ट्रक्चर nodes और edges से बना होता है और relationships को दर्शाता है?",
-A:"Tree",
-B:"Graph",
-C:"Stack",
-D:"Queue",
-ans:"B"
-},
-
-{
-id:64,
-en:"Which layer of the OSI model is responsible for logical addressing and routing?",
-hi:"OSI model की कौन-सी layer logical addressing और routing के लिए जिम्मेदार है?",
-A:"Data Link Layer",
-B:"Network Layer",
-C:"Transport Layer",
-D:"Session Layer",
-ans:"B"
-},
-
-{
-id:65,
-en:"Which protocol operates at the Network Layer of the OSI model?",
-hi:"OSI model की Network Layer पर कौन-सा protocol कार्य करता है?",
-A:"HTTP",
-B:"TCP",
-C:"IP",
-D:"FTP",
-ans:"C"
-},
-
-{
-id:66,
-en:"Which device operates primarily at the Network Layer to forward packets between networks?",
-hi:"कौन-सा डिवाइस Network Layer पर कार्य करता है और नेटवर्क्स के बीच packets को forward करता है?",
-A:"Hub",
-B:"Switch",
-C:"Router",
-D:"Repeater",
-ans:"C"
-},
-
-{
-id:67,
-en:"How many host addresses are available in a subnet with mask /26?",
-hi:"/26 subnet mask में कितने host addresses उपलब्ध होते हैं?",
-A:"62",
-B:"64",
-C:"30",
-D:"126",
+en:"Which HTML5 input type is used for selecting a date from a calendar control?",
+hi:"HTML5 में calendar से date चुनने के लिए कौन-सा input type उपयोग होता है?",
+A:"date",
+B:"calendar",
+C:"datetime",
+D:"time",
 ans:"A"
 },
 
 {
-id:68,
-en:"What is the subnet mask of a /24 network?",
-hi:"/24 network का subnet mask क्या होता है?",
-A:"255.255.0.0",
-B:"255.255.255.0",
-C:"255.255.255.128",
-D:"255.255.0.255",
+id:63,
+en:`What will be the output of the following C code?
+#include<stdio.h>
+int main()
+{
+    int x = 5;
+    printf("%d", x++);
+    return 0;
+}`,
+hi:"निम्न C कोड का आउटपुट क्या होगा?",
+A:"5",
+B:"6",
+C:"4",
+D:"Error",
+ans:"A"
+},
+
+{
+id:64,
+en:`What will be the output of the following code?
+#include<stdio.h>
+int main()
+{
+    int a = 10;
+    printf("%d %d", a, ++a);
+    return 0;
+}`,
+hi:"निम्न कोड का आउटपुट क्या होगा?",
+A:"10 11",
+B:"11 11",
+C:"10 10",
+D:"Undefined behavior",
+ans:"D"
+},
+
+{
+id:65,
+en:"Which operator is used to access the value stored at the address pointed by a pointer?",
+hi:"pointer द्वारा दर्शाए गए address पर stored value को access करने के लिए कौन-सा operator उपयोग होता है?",
+A:"&",
+B:"*",
+C:"->",
+D:"%",
 ans:"B"
 },
 
 {
-id:69,
-en:"Which class of IP address has the default subnet mask 255.255.255.0?",
-hi:"कौन-सी IP address class का default subnet mask 255.255.255.0 होता है?",
-A:"Class A",
-B:"Class B",
-C:"Class C",
-D:"Class D",
+id:66,
+en:`What will be the output?
+#include<stdio.h>
+int main()
+{
+    int a = 4, b = 3;
+    printf("%d", a > b ? a : b);
+    return 0;
+}`,
+hi:"निम्न कोड का आउटपुट क्या होगा?",
+A:"3",
+B:"4",
+C:"7",
+D:"Error",
+ans:"B"
+},
+
+{
+id:67,
+en:"What is the size of int data type in most modern C compilers?",
+hi:"अधिकांश आधुनिक C compilers में int data type का size क्या होता है?",
+A:"2 bytes",
+B:"4 bytes",
+C:"8 bytes",
+D:"1 byte",
+ans:"B"
+},
+
+{
+id:68,
+en:"Which keyword is used to prevent modification of a variable in C?",
+hi:"C में variable को modify होने से रोकने के लिए कौन-सा keyword उपयोग होता है?",
+A:"static",
+B:"constant",
+C:"const",
+D:"final",
 ans:"C"
 },
 
 {
+id:69,
+en:`What will be the output?
+#include<stdio.h>
+int main()
+{
+    int x = 2;
+    printf("%d", x << 1);
+    return 0;
+}`,
+hi:"निम्न कोड का आउटपुट क्या होगा?",
+A:"2",
+B:"4",
+C:"1",
+D:"3",
+ans:"B"
+},
+
+{
 id:70,
-en:"What is the network address of the IP 192.168.1.130 with subnet mask 255.255.255.128?",
-hi:"IP 192.168.1.130 और subnet mask 255.255.255.128 का network address क्या होगा?",
-A:"192.168.1.0",
-B:"192.168.1.128",
-C:"192.168.1.64",
-D:"192.168.1.255",
+en:"Which function is used to dynamically allocate memory in C?",
+hi:"C में dynamic memory allocation के लिए कौन-सा function उपयोग होता है?",
+A:"alloc()",
+B:"malloc()",
+C:"new()",
+D:"create()",
 ans:"B"
 }, 
 
 {
 id:71,
-en:"Find the missing number in the series: 3, 9, 27, 81, ?",
-hi:"श्रृंखला में अगली संख्या ज्ञात करें: 3, 9, 27, 81, ?",
-A:"162",
-B:"243",
-C:"324",
-D:"218",
+en:"Choose the correct sentence.",
+hi:"सही वाक्य चुनें।",
+A:"Hardly had he reached the station than the train left.",
+B:"Hardly had he reached the station when the train left.",
+C:"Hardly he had reached the station when the train left.",
+D:"Hardly he reached the station when the train left.",
 ans:"B"
 },
 
 {
 id:72,
-en:"In a certain code language, COMPUTER is written as RFUVQNPC. How is PRINTER written in that code?",
-hi:"एक कूट भाषा में COMPUTER को RFUVQNPC लिखा जाता है। उसी भाषा में PRINTER को कैसे लिखा जाएगा?",
-A:"UTOJFSQ",
-B:"SFUOJSQ",
-C:"SFUOJQS",
-D:"UTOJFSQ",
-ans:"C"
+en:"Identify the correct passive voice: \"They are repairing the road.\"",
+hi:"सही passive voice पहचानें: \"They are repairing the road.\"",
+A:"The road is being repaired.",
+B:"The road was repaired.",
+C:"The road is repaired.",
+D:"The road has repaired.",
+ans:"A"
 },
 
 {
 id:73,
-en:"Find the next term in the series: 1, 4, 9, 16, 25, ?",
-hi:"श्रृंखला में अगला पद ज्ञात करें: 1, 4, 9, 16, 25, ?",
-A:"30",
-B:"35",
-C:"36",
-D:"49",
-ans:"C"
+en:"Choose the correct one word substitution for \"A person who loves books\".",
+hi:"\"पुस्तकों से प्रेम करने वाले व्यक्ति\" के लिए सही एक शब्द चुनें।",
+A:"Bibliophile",
+B:"Philosopher",
+C:"Librarian",
+D:"Scholar",
+ans:"A"
 },
 
 {
 id:74,
-en:"If in a certain code MONDAY is written as 123456 and DAY is written as 456, then how is MOON written?",
-hi:"यदि MONDAY को 123456 और DAY को 456 लिखा जाता है, तो MOON को कैसे लिखा जाएगा?",
-A:"1223",
-B:"1213",
-C:"1233",
-D:"1123",
+en:"Fill in the blank: No sooner ______ the meeting started than the electricity went off.",
+hi:"रिक्त स्थान भरें: No sooner ______ the meeting started than the electricity went off.",
+A:"had",
+B:"has",
+C:"have",
+D:"did",
 ans:"A"
 },
 
 {
 id:75,
-en:"Himachal Pradesh attained full statehood on:",
-hi:"हिमाचल प्रदेश को पूर्ण राज्य का दर्जा कब प्राप्त हुआ?",
-A:"15 August 1947",
-B:"25 January 1971",
-C:"26 January 1972",
-D:"1 November 1966",
+en:"Choose the correct synonym of the word \"Meticulous\".",
+hi:"\"Meticulous\" शब्द का सही समानार्थी चुनें।",
+A:"Careless",
+B:"Precise",
+C:"Rough",
+D:"Lazy",
 ans:"B"
 },
 
 {
 id:76,
-en:"Who was the first Chief Minister of Himachal Pradesh after it became a full-fledged state?",
-hi:"पूर्ण राज्य बनने के बाद हिमाचल प्रदेश के पहले मुख्यमंत्री कौन थे?",
-A:"Dr. Y.S. Parmar",
-B:"Shanta Kumar",
-C:"Virbhadra Singh",
-D:"Thakur Ram Lal",
-ans:"A"
+en:"Choose the correct antonym of the word \"Obscure\".",
+hi:"\"Obscure\" शब्द का सही विलोम चुनें।",
+A:"Dark",
+B:"Vague",
+C:"Clear",
+D:"Hidden",
+ans:"C"
 },
 
 {
 id:77,
-en:"The Bhakra Dam is built on which river?",
-hi:"भाखड़ा बांध किस नदी पर बना है?",
-A:"Ravi",
-B:"Beas",
+en:"Fill in the blank: He would rather ______ at home than go out in the rain.",
+hi:"रिक्त स्थान भरें: He would rather ______ at home than go out in the rain.",
+A:"stayed",
+B:"stay",
+C:"staying",
+D:"to stay",
+ans:"B"
+},
+
+{
+id:78,
+en:"Identify the correct indirect speech: He said, \"I am busy.\"",
+hi:"सही indirect speech पहचानें: He said, \"I am busy.\"",
+A:"He said he is busy.",
+B:"He said that he was busy.",
+C:"He says he was busy.",
+D:"He told he was busy.",
+ans:"B"
+},
+
+{
+id:79,
+en:"Choose the correct article: She is ______ honest person.",
+hi:"सही article चुनें: She is ______ honest person.",
+A:"a",
+B:"an",
+C:"the",
+D:"no article",
+ans:"B"
+},
+
+{
+id:80,
+en:"Fill in the blank: Scarcely ______ the train left when it started raining.",
+hi:"रिक्त स्थान भरें: Scarcely ______ the train left when it started raining.",
+A:"had",
+B:"has",
+C:"did",
+D:"was",
+ans:"A"
+}, 
+
+{
+id:81,
+en:"‘यथाशक्ति’ शब्द में कौन-सा समास है?",
+hi:"‘यथाशक्ति’ शब्द में कौन-सा समास है?",
+A:"तत्पुरुष",
+B:"अव्ययीभाव",
+C:"द्वंद्व",
+D:"बहुव्रीहि",
+ans:"B"
+},
+
+{
+id:82,
+en:"‘जो कभी न मरने वाला हो’ के लिए एक शब्द क्या है?",
+hi:"‘जो कभी न मरने वाला हो’ के लिए एक शब्द क्या है?",
+A:"अजर",
+B:"अमर",
+C:"अमृत",
+D:"अनश्वर",
+ans:"B"
+},
+
+{
+id:83,
+en:"‘वह बहुत तेज दौड़ता है।’ वाक्य में ‘तेज’ कौन-सा विशेषण है?",
+hi:"‘वह बहुत तेज दौड़ता है।’ वाक्य में ‘तेज’ कौन-सा विशेषण है?",
+A:"गुणवाचक विशेषण",
+B:"संख्यावाचक विशेषण",
+C:"परिमाणवाचक विशेषण",
+D:"संकेतवाचक विशेषण",
+ans:"A"
+},
+
+{
+id:84,
+en:"‘विद्यार्थी’ शब्द में कौन-सा प्रत्यय है?",
+hi:"‘विद्यार्थी’ शब्द में कौन-सा प्रत्यय है?",
+A:"अर्थ",
+B:"आर्थी",
+C:"थी",
+D:"अर्थी",
+ans:"D"
+},
+
+{
+id:85,
+en:"Find the next number in the series: 2, 6, 12, 20, 30, ?",
+hi:"श्रृंखला में अगली संख्या ज्ञात करें: 2, 6, 12, 20, 30, ?",
+A:"40",
+B:"42",
+C:"44",
+D:"36",
+ans:"B"
+},
+
+{
+id:86,
+en:"If CAT is coded as DBU, then how will DOG be coded?",
+hi:"यदि CAT को DBU लिखा जाता है, तो DOG को कैसे लिखा जाएगा?",
+A:"EPH",
+B:"FPH",
+C:"EOG",
+D:"DPH",
+ans:"A"
+},
+
+{
+id:87,
+en:"Find the odd one out:",
+hi:"अलग शब्द/संख्या पहचानें:",
+A:"64",
+B:"125",
+C:"216",
+D:"243",
+ans:"D"
+},
+
+{
+id:88,
+en:"Which ruler of Chamba founded the town of Chamba in the 10th century?",
+hi:"चंबा नगर की स्थापना 10वीं शताब्दी में किस शासक ने की थी?",
+A:"Sahil Varman",
+B:"Ajay Varman",
+C:"Meru Varman",
+D:"Lakshman Varman",
+ans:"A"
+},
+
+{
+id:89,
+en:"The famous temple of Baijnath is dedicated to which deity?",
+hi:"बैजनाथ मंदिर किस देवता को समर्पित है?",
+A:"Vishnu",
+B:"Shiva",
+C:"Brahma",
+D:"Hanuman",
+ans:"B"
+},
+
+{
+id:90,
+en:"Which district of Himachal Pradesh has the highest literacy rate according to recent census data?",
+hi:"हालिया जनगणना के अनुसार हिमाचल प्रदेश में किस जिले की साक्षरता दर सबसे अधिक है?",
+A:"Hamirpur",
+B:"Kangra",
+C:"Shimla",
+D:"Mandi",
+ans:"A"
+}, 
+
+{
+id:91,
+en:"The river Beas originates from which place?",
+hi:"ब्यास नदी का उद्गम स्थल कहाँ है?",
+A:"Rohtang Pass",
+B:"Beas Kund",
+C:"Baralacha Pass",
+D:"Chandra Tal",
+ans:"B"
+},
+
+{
+id:92,
+en:"The famous Kangra School of painting flourished during the reign of which ruler?",
+hi:"प्रसिद्ध कांगड़ा चित्रकला शैली किस शासक के शासनकाल में फली-फूली?",
+A:"Sansar Chand",
+B:"Jagat Singh",
+C:"Hari Singh",
+D:"Bhuri Singh",
+ans:"A"
+},
+
+{
+id:93,
+en:"Which district of Himachal Pradesh shares the longest border with Tibet (China)?",
+hi:"हिमाचल प्रदेश का कौन-सा जिला तिब्बत (चीन) के साथ सबसे लंबी सीमा साझा करता है?",
+A:"Kinnaur",
+B:"Lahaul-Spiti",
+C:"Kangra",
+D:"Chamba",
+ans:"B"
+},
+
+{
+id:94,
+en:"The Great Himalayan National Park is located in which district?",
+hi:"ग्रेट हिमालयन नेशनल पार्क किस जिले में स्थित है?",
+A:"Shimla",
+B:"Kullu",
+C:"Mandi",
+D:"Kangra",
+ans:"B"
+},
+
+{
+id:95,
+en:"Which lake in Himachal Pradesh is considered the largest natural lake in the state?",
+hi:"हिमाचल प्रदेश की सबसे बड़ी प्राकृतिक झील कौन-सी है?",
+A:"Rewalsar Lake",
+B:"Renuka Lake",
+C:"Khajjiar Lake",
+D:"Suraj Tal",
+ans:"B"
+},
+
+{
+id:96,
+en:"The Nathpa Jhakri Hydroelectric Power Project is located on which river?",
+hi:"नाथपा झाकड़ी जलविद्युत परियोजना किस नदी पर स्थित है?",
+A:"Beas",
+B:"Ravi",
 C:"Satluj",
 D:"Chenab",
 ans:"C"
 },
 
 {
-id:78,
-en:"The capital of Himachal Pradesh during winter is:",
-hi:"हिमाचल प्रदेश की शीतकालीन राजधानी क्या है?",
-A:"Dharamshala",
-B:"Shimla",
-C:"Solan",
-D:"Mandi",
-ans:"A"
-},
-
-{
-id:79,
-en:"The famous Minjar Fair is celebrated in which district of Himachal Pradesh?",
-hi:"प्रसिद्ध मिनजार मेला हिमाचल प्रदेश के किस जिले में मनाया जाता है?",
-A:"Kullu",
-B:"Chamba",
-C:"Kangra",
-D:"Mandi",
-ans:"B"
-},
-
-{
-id:80,
-en:"The largest natural lake of Himachal Pradesh is:",
-hi:"हिमाचल प्रदेश की सबसे बड़ी प्राकृतिक झील कौन-सी है?",
-A:"Renuka Lake",
-B:"Rewalsar Lake",
-C:"Khajjiar Lake",
-D:"Suraj Tal",
-ans:"A"
-}, 
-
-{
-id:81,
-en:"Which national park in Himachal Pradesh is a UNESCO World Heritage Site?",
-hi:"हिमाचल प्रदेश का कौन-सा राष्ट्रीय उद्यान UNESCO विश्व धरोहर स्थल है?",
-A:"Pin Valley National Park",
-B:"Great Himalayan National Park",
-C:"Simbalbara National Park",
-D:"Khirganga National Park",
-ans:"B"
-},
-
-{
-id:82,
-en:"The river Yamuna originates from:",
-hi:"यमुना नदी का उद्गम स्थल कहाँ है?",
-A:"Yamunotri Glacier",
-B:"Gangotri Glacier",
-C:"Satopanth Glacier",
-D:"Bara Shigri Glacier",
-ans:"A"
-},
-
-{
-id:83,
-en:"The President of India is elected by:",
-hi:"भारत के राष्ट्रपति का चुनाव किसके द्वारा किया जाता है?",
-A:"Lok Sabha members only",
-B:"Members of Parliament and State Legislative Assemblies",
-C:"Rajya Sabha only",
-D:"Prime Minister",
-ans:"B"
-},
-
-{
-id:84,
-en:"The Finance Commission of India is constituted every:",
-hi:"भारत का वित्त आयोग कितने समय में गठित किया जाता है?",
-A:"3 years",
-B:"5 years",
-C:"6 years",
-D:"10 years",
-ans:"B"
-},
-
-{
-id:85,
-en:"The Fundamental Duties were added to the Constitution by which amendment?",
-hi:"संविधान में मौलिक कर्तव्यों को किस संशोधन द्वारा जोड़ा गया था?",
-A:"42nd Amendment",
-B:"44th Amendment",
-C:"52nd Amendment",
-D:"61st Amendment",
-ans:"A"
-},
-
-{
-id:86,
-en:"The headquarters of the Reserve Bank of India is located at:",
-hi:"भारतीय रिज़र्व बैंक का मुख्यालय कहाँ स्थित है?",
-A:"New Delhi",
-B:"Mumbai",
-C:"Kolkata",
-D:"Chennai",
-ans:"B"
-},
-
-{
-id:87,
-en:"The Indian Space Research Organisation (ISRO) headquarters is located in:",
-hi:"भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) का मुख्यालय कहाँ स्थित है?",
-A:"Bengaluru",
-B:"Hyderabad",
-C:"Chennai",
-D:"New Delhi",
-ans:"A"
-},
-
-{
-id:88,
-en:"The longest river in India is:",
-hi:"भारत की सबसे लंबी नदी कौन-सी है?",
-A:"Yamuna",
-B:"Ganga",
-C:"Godavari",
-D:"Brahmaputra",
-ans:"B"
-},
-
-{
-id:89,
-en:"The Constitution of India came into force on:",
-hi:"भारत का संविधान कब लागू हुआ?",
-A:"26 January 1950",
-B:"15 August 1947",
-C:"26 November 1949",
-D:"2 October 1950",
-ans:"A"
-},
-
-{
-id:90,
-en:"Which country hosted the FIFA World Cup 2022?",
-hi:"FIFA World Cup 2022 की मेजबानी किस देश ने की?",
-A:"Qatar",
-B:"Russia",
-C:"Brazil",
-D:"USA",
-ans:"A"
-}, 
-
-{
-id:91,
-en:"Which organization organizes the Olympic Games?",
-hi:"ओलंपिक खेलों का आयोजन कौन-सा संगठन करता है?",
-A:"FIFA",
-B:"IOC",
-C:"WHO",
-D:"UNESCO",
-ans:"B"
-},
-
-{
-id:92,
-en:"The headquarters of the United Nations is located in:",
-hi:"संयुक्त राष्ट्र का मुख्यालय कहाँ स्थित है?",
-A:"Geneva",
-B:"Paris",
-C:"New York",
-D:"London",
-ans:"C"
-},
-
-{
-id:93,
-en:"Which country recently became the newest member of NATO in 2024?",
-hi:"2024 में NATO का नवीनतम सदस्य कौन-सा देश बना?",
-A:"Sweden",
-B:"Finland",
-C:"Ukraine",
-D:"Norway",
-ans:"A"
-},
-
-{
-id:94,
-en:"Which international organization works for global health?",
-hi:"वैश्विक स्वास्थ्य के लिए कौन-सा अंतरराष्ट्रीय संगठन कार्य करता है?",
-A:"IMF",
-B:"UNESCO",
-C:"WHO",
-D:"WTO",
-ans:"C"
-},
-
-{
-id:95,
-en:"Choose the correct sentence.",
-hi:"सही वाक्य चुनें।",
-A:"Neither of the boys have completed their homework.",
-B:"Neither of the boys has completed his homework.",
-C:"Neither of the boys have completed his homework.",
-D:"Neither of the boys has completed their homework.",
-ans:"B"
-},
-
-{
-id:96,
-en:"Fill in the blank: He is one of those players who ______ always ready to help the team.",
-hi:"रिक्त स्थान भरें: He is one of those players who ______ always ready to help the team.",
-A:"is",
-B:"are",
-C:"was",
-D:"be",
-ans:"B"
-},
-
-{
 id:97,
-en:"‘नीलकंठ’ शब्द में कौन-सा समास है?",
-hi:"‘नीलकंठ’ शब्द में कौन-सा समास है?",
-A:"तत्पुरुष",
-B:"कर्मधारय",
-C:"बहुव्रीहि",
-D:"द्वंद्व",
-ans:"C"
+en:"The famous Lavi Fair is held in which town of Himachal Pradesh?",
+hi:"प्रसिद्ध लवी मेला हिमाचल प्रदेश के किस नगर में आयोजित होता है?",
+A:"Rampur",
+B:"Mandi",
+C:"Kullu",
+D:"Chamba",
+ans:"A"
 },
 
 {
 id:98,
-en:"‘परोपकारी’ शब्द में कौन-सा प्रत्यय है?",
-hi:"‘परोपकारी’ शब्द में कौन-सा प्रत्यय है?",
-A:"कारी",
-B:"ई",
-C:"कार",
-D:"री",
-ans:"A"
+en:"Which pass connects Kullu Valley with Lahaul and Spiti?",
+hi:"कौन-सा दर्रा कुल्लू घाटी को लाहौल और स्पीति से जोड़ता है?",
+A:"Shipki La",
+B:"Rohtang Pass",
+C:"Baralacha La",
+D:"Kunzum Pass",
+ans:"B"
 },
 
 {
 id:99,
-en:"‘नीर-क्षीर विवेक’ मुहावरे का अर्थ क्या है?",
-hi:"‘नीर-क्षीर विवेक’ मुहावरे का अर्थ क्या है?",
-A:"जल और दूध को अलग करना",
-B:"अच्छे और बुरे में भेद करना",
-C:"दूध की शुद्धता पहचानना",
-D:"जल को शुद्ध करना",
+en:"The headquarters of the Indo-Tibetan Border Police (ITBP) in Himachal Pradesh is located at:",
+hi:"हिमाचल प्रदेश में भारत-तिब्बत सीमा पुलिस (ITBP) का मुख्यालय कहाँ स्थित है?",
+A:"Shimla",
+B:"Reckong Peo",
+C:"Dharamshala",
+D:"Kaza",
 ans:"B"
 },
 
 {
 id:100,
-en:"‘सर्वज्ञ’ शब्द में कौन-सा समास है?",
-hi:"‘सर्वज्ञ’ शब्द में कौन-सा समास है?",
-A:"द्वंद्व समास",
-B:"कर्मधारय समास",
-C:"बहुव्रीहि समास",
-D:"तत्पुरुष समास",
-ans:"D"
-}
+en:"The famous Hidimba Devi Temple is located in which town?",
+hi:"प्रसिद्ध हिडिम्बा देवी मंदिर किस नगर में स्थित है?",
+A:"Kullu",
+B:"Manali",
+C:"Chamba",
+D:"Dharamshala",
+ans:"B"
+ }
 
   // Continue the same format up to Question 100
 
