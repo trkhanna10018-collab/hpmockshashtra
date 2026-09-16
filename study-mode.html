@@ -11,7 +11,7 @@
 .wrap{max-width:900px;margin:28px auto;padding:0 16px 50px}.card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
 .head{display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:1px solid #e5e7eb;padding-bottom:15px;margin-bottom:20px}.badge{background:#eef2ff;color:#4338ca;border-radius:20px;padding:7px 11px;font-size:12px;font-weight:800}
 .q{font-size:19px;font-weight:700;line-height:1.55}.hi{font-size:17px;color:#374151;line-height:1.55;margin-top:8px}
-.box{margin-top:18px;padding:14px;border-radius:10px;border:1px solid #e5e7eb}.label{font-size:12px;color:#6b7280;font-weight:700;text-transform:uppercase;margin-bottom:5px}.your{background:#f8fafc}.correct{background:#f0fdf4;border-color:#bbf7d0}.wrong{background:#fef2f2;border-color:#fecaca}
+.box{margin-top:18px;padding:14px;border-radius:10px;border:1px solid #e5e7eb}.options{margin-top:18px;display:grid;gap:10px}.option{padding:13px 14px;border:1px solid #dbe1ea;border-radius:10px;background:#fff;line-height:1.45}.option.selected{border-color:#f59e0b;background:#fffbeb}.option.correct-option{border-color:#22c55e;background:#f0fdf4}.option.selected.correct-option{border-color:#22c55e;background:#ecfdf5}.option-letter{font-weight:800;margin-right:7px}.option-state{float:right;font-size:11px;font-weight:800}.selected-state{color:#b45309}.correct-state{color:#15803d}.label{font-size:12px;color:#6b7280;font-weight:700;text-transform:uppercase;margin-bottom:5px}.your{background:#f8fafc}.correct{background:#f0fdf4;border-color:#bbf7d0}.wrong{background:#fef2f2;border-color:#fecaca}
 .controls{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.btn{border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}.primary{background:#4f46e5;color:#fff}.secondary{background:#f3f4f6;color:#374151}.loading{text-align:center;padding:40px}
 @media(max-width:600px){.header{padding:0 14px}.brand{font-size:17px}.brand img{width:43px;height:43px}.head{align-items:flex-start;flex-direction:column}.controls{flex-direction:column}.btn{width:100%;text-align:center}}
 </style>
@@ -21,6 +21,7 @@
 <div class="wrap"><div id="loading" class="card loading">Loading your study mode...</div><div id="study" class="card" style="display:none">
 <div class="head"><div><h2 style="margin:0">JOA IT Free Mock Test — Study Mode</h2><div style="color:#6b7280;font-size:13px;margin-top:5px">Read-only review of your attempted test</div></div><span class="badge" id="counter"></span></div>
 <div class="q" id="en"></div><div class="hi" id="hi"></div>
+<div class="options" id="options"></div>
 <div class="box your"><div class="label">Your Answer</div><div id="your"></div></div>
 <div class="box correct"><div class="label">Correct Answer</div><div id="correct"></div></div>
 <div class="box" id="resultBox"><div class="label">Result</div><div id="result"></div></div>
@@ -43,7 +44,18 @@ function textAnswer(k,q){return k?`${k}. ${q[k]||"[Option]"}`:"Not Answered"}
 function render(){const q=questions[idx];if(!q){$("en").textContent="Question not found.";return}
 $("counter").textContent=`Question ${idx+1} of ${questions.length}`;
 $("en").textContent=q.en||"[English question will be added here]";$("hi").textContent=q.hi||"[Hindi question will be added here]";
-const ya=answers[idx]||"";$("your").textContent=textAnswer(ya,q);$("correct").textContent=textAnswer(q.ans,q);
+const ya=Array.isArray(answers)?(answers[idx]||""):(answers[idx]||"");
+$("your").textContent=textAnswer(ya,q);$("correct").textContent=textAnswer(q.ans,q);
+const optionBox=$("options");optionBox.innerHTML="";
+["A","B","C","D"].forEach(letter=>{
+  const div=document.createElement("div");
+  div.className="option"+(ya===letter?" selected":"")+(q.ans===letter?" correct-option":"");
+  let state=[];
+  if(ya===letter) state.push('<span class="option-state selected-state">YOUR ANSWER</span>');
+  if(q.ans===letter) state.push('<span class="option-state correct-state">CORRECT ANSWER</span>');
+  div.innerHTML=`<span class="option-letter">${letter}.</span>${q[letter]||"[Option will be added here]"}${state.join(" ")}`;
+  optionBox.appendChild(div);
+});
 const ok=ya && q.ans && ya===q.ans;$("result").textContent=!ya?"Not Answered":ok?"✓ Correct":"✗ Incorrect";$("resultBox").className="box "+(ok?"correct":ya?"wrong":"");
 if(q.explanation){$("explainBox").style.display="block";$("explanation").textContent=q.explanation}else $("explainBox").style.display="none";
 $("prev").disabled=idx===0;$("next").textContent=idx===questions.length-1?"Back to Series":"Next";
