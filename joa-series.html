@@ -1076,8 +1076,10 @@
 
       test01Action.className = "action-btn start-btn";
       test01Action.textContent = "Start Test";
-      test01Action.href = "joa-test-01.html";
-      test01Action.onclick = null;
+      test01Action.removeAttribute("href");
+      test01Action.onclick = () => {
+        window.location.href = "joa-test-01.html";
+      };
 
       accessMessage.textContent = "Full JOA IT Series access is active.";
     }
