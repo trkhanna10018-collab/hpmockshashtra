@@ -642,7 +642,6 @@
 
       </section>
 
-
       <!-- MY PROGRESS -->
 
       <section class="section">
@@ -651,39 +650,34 @@
           My Progress
         </h2>
 
-
         <div class="progress-card">
-
 
           <div class="progress-header">
 
             <div class="progress-name">
-              JOA IT — Free Mock Test
+              JOA IT Mock Test Series
             </div>
 
-            <div
-              class="status status-pending"
-              id="testStatus"
+            <a
+              href="my-progress.html"
+              class="btn btn-primary"
+              style="width:auto; padding:9px 16px;"
             >
-              Not Attempted
-            </div>
+              View My Progress
+            </a>
 
           </div>
 
-
-          <div id="progressContent">
-
-            <div class="progress-message">
-              You have not attempted the JOA IT Free Mock Test yet.
-              Start the test using the button above.
-            </div>
-
+          <div class="progress-message">
+            View your attempted tests, total score, average, highest score,
+            lowest score and Study Mode from the dedicated My Progress page.
           </div>
-
 
         </div>
 
       </section>
+
+
 
 
     </main>
@@ -746,12 +740,6 @@
     const navMenu =
       document.getElementById("navMenu");
 
-    const testStatus =
-      document.getElementById("testStatus");
-
-    const progressContent =
-      document.getElementById("progressContent");
-
 
     /* ================= MOBILE MENU ================= */
 
@@ -795,166 +783,10 @@
       dashboard.style.display = "block";
 
 
-      /* LOAD TEST STATUS */
-
-      await loadTestStatus(user.uid);
 
     });
 
 
-    /* ================= TEST STATUS ================= */
-
-    async function loadTestStatus(uid){
-
-      try{
-
-        /*
-          Free Test attempt document ID:
-          UID + "_joa_free_test_01"
-        */
-
-        const attemptId =
-          uid + "_joa_free_test_01";
-
-
-        const attemptRef =
-          doc(
-            db,
-            "testAttempts",
-            attemptId
-          );
-
-
-        const attemptSnap =
-          await getDoc(attemptRef);
-
-
-        /* ================= NOT ATTEMPTED ================= */
-
-        if(!attemptSnap.exists()){
-
-          testStatus.textContent =
-            "Not Attempted";
-
-          testStatus.className =
-            "status status-pending";
-
-
-          progressContent.innerHTML = `
-
-            <div class="progress-message">
-
-              You have not attempted the
-              <strong>JOA IT Free Mock Test</strong> yet.
-              Open the JOA IT series page using the
-              <strong>View Test Series</strong>
-              button above.
-
-            </div>
-
-          `;
-
-          return;
-
-        }
-
-
-        /* ================= COMPLETED ================= */
-
-        const data =
-          attemptSnap.data();
-
-
-        testStatus.textContent =
-          "Completed";
-
-        testStatus.className =
-          "status status-completed";
-
-
-        const score =
-          Number(data.score ?? 0);
-
-        const total =
-          Number(data.total ?? 100);
-
-        const percentage =
-          total > 0
-          ? Math.round((score / total) * 100)
-          : 0;
-
-
-        progressContent.innerHTML = `
-
-          <div class="progress-details">
-
-            <div class="detail-box">
-
-              <div class="detail-number">
-                ${score}
-              </div>
-
-              <div class="detail-label">
-                Score
-              </div>
-
-            </div>
-
-
-            <div class="detail-box">
-
-              <div class="detail-number">
-                ${total}
-              </div>
-
-              <div class="detail-label">
-                Total Marks
-              </div>
-
-            </div>
-
-
-            <div class="detail-box">
-
-              <div class="detail-number">
-                ${percentage}%
-              </div>
-
-              <div class="detail-label">
-                Percentage
-              </div>
-
-            </div>
-
-          </div>
-
-        `;
-
-      }
-
-
-      catch(error){
-
-        console.error(
-          "Test status error:",
-          error
-        );
-
-
-        progressContent.innerHTML = `
-
-          <div class="progress-message">
-
-            Unable to load your test progress.
-            Please refresh the page and try again.
-
-          </div>
-
-        `;
-
-      }
-
-    }
 
 
     /* ================= LOGOUT ================= */
