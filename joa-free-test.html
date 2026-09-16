@@ -26,7 +26,7 @@ body{margin:0;background:#eef4fb;color:#172033}
 .option:hover{background:#f8fafc}.option.selected{border-color:#4f46e5;background:#eef2ff}.option input{margin-top:3px}
 .controls{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.btn{border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer}.primary{background:#4f46e5;color:#fff}.secondary{background:#f3f4f6;color:#374151}.danger{background:#dc2626;color:#fff}
 .progress{height:7px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin:10px 0 18px}.progress i{display:block;height:100%;width:1%;background:#4f46e5}
-.modal{position:fixed;inset:0;background:rgba(15,23,42,.62);display:flex;align-items:center;justify-content:center;padding:20px;z-index:30}.modal-card{background:#fff;border-radius:14px;max-width:480px;padding:25px;text-align:center}.modal-card h2{margin-top:0}.hidden{display:none!important}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.62);display:flex;align-items:center;justify-content:center;padding:20px;z-index:30}.modal-card{background:#fff;border-radius:14px;max-width:480px;padding:25px;text-align:center}.modal-card h2{margin-top:0}.modal-card button:disabled{opacity:.65;cursor:not-allowed}.hidden{display:none!important}
 .result{text-align:center}.score{font-size:48px;font-weight:900;color:#4f46e5;margin:15px}
 @media(max-width:600px){.header{padding:0 14px}.brand{font-size:17px}.brand img{width:43px;height:43px}.top h1{font-size:21px}.test{padding:16px}.bar{align-items:flex-start}.timer{font-size:18px}.question{font-size:17px}.controls{flex-direction:column}.btn{width:100%}}
 </style>
@@ -63,10 +63,16 @@ Once the test starts, the 90-minute timer will continue even if you close this t
 </div>
 
 <div class="modal hidden" id="startModal">
-<div class="modal-card">
+<div class="modal-card" id="readyBox">
 <h2>Ready to Start?</h2>
-<p><strong>Important:</strong> Once you click Start Test, your 90-minute attempt begins immediately. Closing the tab or refreshing will not reset the timer.</p>
-<button class="btn primary" id="startBtn">Start Test</button>
+<p><strong>Important:</strong> Once you start the test, the 90-minute timer will continue even if you refresh or close the tab. Do not press the Back button or close the tab.</p>
+<button class="btn primary" id="startBtn">I Understand &amp; Start</button>
+</div>
+<div class="modal-card hidden" id="countdownBox">
+<h2>Get Ready!</h2>
+<p>Your test will start in</p>
+<div id="countdown" style="font-size:64px;font-weight:900;color:#4f46e5;line-height:1;margin:18px 0;">5</div>
+<p style="margin:0;color:#6b7280;">Your 90-minute timer starts after the countdown.</p>
 </div>
 </div>
 
@@ -96,16 +102,56 @@ onAuthStateChanged(auth, async u=>{
   }catch(e){console.error(e);$("loading").textContent="Unable to load test. Please refresh and try again."}
 });
 
+let countdownRunning=false;
+
 $("startBtn").onclick=async()=>{
+  if(countdownRunning)return;
+  countdownRunning=true;
+  $("startBtn").disabled=true;
+
+  $("readyBox").classList.add("hidden");
+  $("countdownBox").classList.remove("hidden");
+
+  for(let n=5;n>=1;n--){
+    $("countdown").textContent=n;
+    await new Promise(resolve=>setTimeout(resolve,1000));
+  }
+
   try{
     const snap=await getDoc(sessionRef);
-    if(snap.exists()){session=snap.data();answers=session.answers||{};current=Number(session.current||0)}
-    else{
-      await setDoc(sessionRef,{uid:user.uid,email:user.email||"",testId:TEST_ID,startedAt:serverTimestamp(),answers:{},current:0,status:"in_progress"});
-      const fresh=await getDoc(sessionRef); session=fresh.data();
+
+    if(snap.exists()){
+      session=snap.data();
+      answers=session.answers||{};
+      current=Number(session.current||0);
+    }else{
+      await setDoc(sessionRef,{
+        uid:user.uid,
+        email:user.email||"",
+        testId:TEST_ID,
+        startedAt:serverTimestamp(),
+        answers:{},
+        current:0,
+        status:"in_progress"
+      });
+      const fresh=await getDoc(sessionRef);
+      session=fresh.data();
     }
-    $("startModal").classList.add("hidden");$("testArea").classList.remove("hidden");$("loading").classList.add("hidden");render();startClock();
-  }catch(e){console.error(e);alert("Unable to start the test. Please try again.");}
+
+    $("startModal").classList.add("hidden");
+    $("countdownBox").classList.add("hidden");
+    $("testArea").classList.remove("hidden");
+    $("loading").classList.add("hidden");
+    render();
+    startClock();
+  }catch(e){
+    console.error(e);
+    $("countdownBox").classList.add("hidden");
+    $("readyBox").classList.remove("hidden");
+    $("startBtn").disabled=false;
+    countdownRunning=false;
+    alert("Unable to start the test. Please try again.");
+  }
 };
 
 function render(){
