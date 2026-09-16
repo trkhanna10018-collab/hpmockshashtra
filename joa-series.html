@@ -1050,42 +1050,51 @@
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
     import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-    const test01Status = document.getElementById("test01-status");
-    const test01Action = document.getElementById("test01-action");
     const accessMessage = document.getElementById("access-message");
 
-    function showLocked() {
-      test01Status.className = "status locked";
-      test01Status.textContent = "🔒 LOCKED";
-
-      test01Action.className = "action-btn locked-btn";
-      test01Action.textContent = "Locked";
-      test01Action.removeAttribute("href");
-      test01Action.removeAttribute("target");
-      test01Action.onclick = (event) => {
-        event.preventDefault();
-        alert("Paid access is required to start Mock Test 01.");
+    const TESTS = Array.from({ length: 15 }, (_, i) => {
+      const n = String(i + 1).padStart(2, "0");
+      return {
+        number: n,
+        status: document.getElementById(`test${n}-status`),
+        action: document.getElementById(`test${n}-action`),
+        page: `joa-test-${n}.html`
       };
+    });
 
-      accessMessage.textContent = "Mock Test 01 is locked. Purchase access to unlock the series.";
+    function showLocked(test) {
+      if (!test.status || !test.action) return;
+
+      test.status.className = "status locked";
+      test.status.textContent = "🔒 LOCKED";
+
+      test.action.className = "action-btn locked-btn";
+      test.action.textContent = "Locked";
+      test.action.removeAttribute("href");
+      test.action.removeAttribute("target");
+      test.action.onclick = (event) => {
+        event.preventDefault();
+        alert(`Paid access is required to start Mock Test ${test.number}.`);
+      };
     }
 
-    function showUnlocked() {
-      test01Status.className = "status free";
-      test01Status.textContent = "✓ UNLOCKED";
+    function showUnlocked(test) {
+      if (!test.status || !test.action) return;
 
-      test01Action.className = "action-btn start-btn";
-      test01Action.textContent = "Start Test";
-      test01Action.removeAttribute("href");
-      test01Action.onclick = () => {
-        window.location.href = "joa-test-01.html";
+      test.status.className = "status free";
+      test.status.textContent = "✓ UNLOCKED";
+
+      test.action.className = "action-btn start-btn";
+      test.action.textContent = "Start Test";
+      test.action.removeAttribute("href");
+      test.action.removeAttribute("target");
+      test.action.onclick = () => {
+        window.location.href = test.page;
       };
-
-      accessMessage.textContent = "Full JOA IT Series access is active.";
     }
 
     function showLoginRequired() {
-      showLocked();
+      TESTS.forEach(showLocked);
       accessMessage.textContent = "Please log in to check your paid access.";
     }
 
@@ -1100,13 +1109,15 @@
         const accessSnap = await getDoc(accessRef);
 
         if (accessSnap.exists() && accessSnap.data().joaitFullSeries === true) {
-          showUnlocked();
+          TESTS.forEach(showUnlocked);
+          accessMessage.textContent = "Full JOA IT Series access is active.";
         } else {
-          showLocked();
+          TESTS.forEach(showLocked);
+          accessMessage.textContent = "Full JOA IT Series is locked. Purchase access to unlock all 15 tests.";
         }
       } catch (error) {
         console.error("Access check failed:", error);
-        showLocked();
+        TESTS.forEach(showLocked);
         accessMessage.textContent = "Unable to verify access. Please refresh the page.";
       }
     });
