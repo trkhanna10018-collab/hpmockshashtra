@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JOA IT Mock Test Series | HPMockShashtra</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Segoe UI",Arial,sans-serif;
+    }
+
+    body{
+      background:#f4f6f9;
+      color:#1f2937;
+      min-height:100vh;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header{
+      height:70px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 28px;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      text-decoration:none;
+      color:#111827;
+    }
+
+    .brand img{
+      width:42px;
+      height:42px;
+      object-fit:contain;
+      border-radius:8px;
+    }
+
+    .brand-name{
+      font-size:20px;
+      font-weight:800;
+    }
+
+    .brand-name span{
+      color:#4f46e5;
+    }
+
+    .back-btn{
+      text-decoration:none;
+      background:#f3f4f6;
+      color:#374151;
+      padding:10px 15px;
+      border-radius:8px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .back-btn:hover{
+      background:#e5e7eb;
+    }
+
+    /* ================= MAIN ================= */
+
+    .container{
+      width:100%;
+      max-width:1050px;
+      margin:auto;
+      padding:30px 20px 50px;
+    }
+
+    /* ================= HERO ================= */
+
+    .series-header{
+      background:linear-gradient(135deg,#4338ca,#6366f1);
+      color:#fff;
+      border-radius:18px;
+      padding:30px;
+      margin-bottom:25px;
+      box-shadow:0 10px 28px rgba(67,56,202,.18);
+    }
+
+    .series-label{
+      font-size:13px;
+      font-weight:700;
+      opacity:.85;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+      margin-bottom:8px;
+    }
+
+    .series-header h1{
+      font-size:30px;
+      margin-bottom:8px;
+    }
+
+    .series-header p{
+      font-size:15px;
+      opacity:.92;
+      line-height:1.6;
+      max-width:700px;
+    }
+
+    /* ================= DETAILS ================= */
+
+    .details{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:23px;
+    }
+
+    .detail{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:10px;
+      padding:13px;
+      text-align:center;
+    }
+
+    .detail strong{
+      display:block;
+      font-size:17px;
+      margin-bottom:3px;
+    }
+
+    .detail span{
+      font-size:12px;
+      opacity:.85;
+    }
+
+    /* ================= CONTENT ================= */
+
+    .section-title{
+      font-size:21px;
+      color:#111827;
+      margin-bottom:15px;
+    }
+
+    /* ================= TEST LIST ================= */
+
+    .test-list{
+      display:flex;
+      flex-direction:column;
+      gap:11px;
+    }
+
+    .test-item{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
+      box-shadow:0 3px 12px rgba(0,0,0,.035);
+    }
+
+    .test-info{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .test-number{
+      width:42px;
+      height:42px;
+      border-radius:9px;
+      background:#eef2ff;
+      color:#4338ca;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:13px;
+      flex-shrink:0;
+    }
+
+    .test-name{
+      font-weight:700;
+      color:#111827;
+      margin-bottom:3px;
+    }
+
+    .test-description{
+      font-size:12px;
+      color:#6b7280;
+    }
+
+    /* ================= STATUS ================= */
+
+    .status{
+      font-size:12px;
+      font-weight:700;
+      padding:7px 11px;
+      border-radius:20px;
+      white-space:nowrap;
+    }
+
+    .free{
+      background:#dcfce7;
+      color:#166534;
+    }
+
+    .locked{
+      background:#f3f4f6;
+      color:#6b7280;
+    }
+
+    /* ================= ACTION ================= */
+
+    .action-btn{
+      border:none;
+      padding:9px 15px;
+      border-radius:8px;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .start-btn{
+      background:#4f46e5;
+      color:#fff;
+    }
+
+    .start-btn:hover{
+      background:#4338ca;
+    }
+
+    .locked-btn{
+      background:#f3f4f6;
+      color:#9ca3af;
+      cursor:not-allowed;
+    }
+
+    /* ================= PURCHASE BOX ================= */
+
+    .purchase{
+      margin-top:25px;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:25px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+      box-shadow:0 5px 18px rgba(0,0,0,.05);
+    }
+
+    .purchase h2{
+      font-size:21px;
+      color:#111827;
+      margin-bottom:7px;
+    }
+
+    .purchase p{
+      color:#6b7280;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .price{
+      font-size:28px;
+      font-weight:800;
+      color:#4338ca;
+      white-space:nowrap;
+    }
+
+    .buy-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#16a34a;
+      color:#fff;
+      padding:12px 22px;
+      border-radius:9px;
+      font-weight:800;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .buy-btn:hover{
+      background:#15803d;
+    }
+
+    .payment-note{
+      margin-top:8px;
+      font-size:11px;
+      color:#9ca3af;
+      text-align:right;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer{
+      border-top:1px solid #e5e7eb;
+      background:#fff;
+      text-align:center;
+      padding:22px;
+      color:#6b7280;
+      font-size:13px;
+      margin-top:25px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:800px){
+
+      .header{
+        padding:0 15px;
+      }
+
+      .brand-name{
+        font-size:17px;
+      }
+
+      .brand img{
+        width:37px;
+        height:37px;
+      }
+
+      .details{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .test-item{
+        align-items:flex-start;
+      }
+
+      .purchase{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .purchase-right{
+        width:100%;
+      }
+
+      .buy-btn{
+        display:block;
+        text-align:center;
+        width:100%;
+      }
+
+      .payment-note{
+        text-align:center;
+      }
+
+    }
+
+    @media(max-width:550px){
+
+      .container{
+        padding:20px 14px 40px;
+      }
+
+      .series-header{
+        padding:23px 20px;
+      }
+
+      .series-header h1{
+        font-size:24px;
+      }
+
+      .details{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .test-item{
+        padding:14px;
+      }
+
+      .test-info{
+        gap:10px;
+      }
+
+      .test-description{
+        display:none;
+      }
+
+      .action-btn{
+        padding:8px 11px;
+        font-size:12px;
+      }
+
+      .status{
+        display:none;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <a href="firebase-dashboard.html" class="brand">
+
+      <img src="logo.png" alt="HPMockShashtra">
+
+      <div class="brand-name">
+        HP<span>Mock</span>Shashtra
+      </div>
+
+    </a>
+
+
+    <a
+      href="firebase-dashboard.html"
+      class="back-btn"
+    >
+      ← Dashboard
+    </a>
+
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main class="container">
+
+
+    <!-- SERIES HEADER -->
+
+    <section class="series-header">
+
+      <div class="series-label">
+        JOA IT Examination
+      </div>
+
+      <h1>
+        JOA IT Mock Test Series
+      </h1>
+
+      <p>
+        Practice with a complete set of JOA IT mock tests
+        designed to help you prepare for the examination.
+      </p>
+
+
+      <div class="details">
+
+        <div class="detail">
+          <strong>15</strong>
+          <span>Mock Tests</span>
+        </div>
+
+        <div class="detail">
+          <strong>100</strong>
+          <span>Questions / Test</span>
+        </div>
+
+        <div class="detail">
+          <strong>90 Min</strong>
+          <span>Duration</span>
+        </div>
+
+        <div class="detail">
+          <strong>Hindi + English</strong>
+          <span>Language</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TEST LIST -->
+
+    <section>
+
+      <h2 class="section-title">
+        Mock Tests
+      </h2>
+
+
+      <div class="test-list">
+
+
+        <!-- FREE TEST -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              FREE
+            </div>
+
+            <div>
+
+              <div class="test-name">
+                Free Mock Test
+              </div>
+
+              <div class="test-description">
+                Try our JOA IT mock test before purchasing the full series.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="status free">
+            FREE
+          </div>
+
+
+          <a
+            href="joa-free-test.html"
+            class="action-btn start-btn"
+          >
+            Start Test
+          </a>
+
+        </div>
+
+
+        <!-- MOCK TEST 01 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              01
+            </div>
+
+            <div>
+
+              <div class="test-name">
+                Mock Test 01
+              </div>
+
+              <div class="test-description">
+                Full-length JOA IT practice test.
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 02 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              02
+            </div>
+
+            <div>
+
+              <div class="test-name">
+                Mock Test 02
+              </div>
+
+              <div class="test-description">
+                Full-length JOA IT practice test.
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 03 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              03
+            </div>
+
+            <div>
+
+              <div class="test-name">
+                Mock Test 03
+              </div>
+
+              <div class="test-description">
+                Full-length JOA IT practice test.
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 04 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              04
+            </div>
+
+            <div class="test-name">
+              Mock Test 04
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 05 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              05
+            </div>
+
+            <div class="test-name">
+              Mock Test 05
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 06 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              06
+            </div>
+
+            <div class="test-name">
+              Mock Test 06
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 07 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              07
+            </div>
+
+            <div class="test-name">
+              Mock Test 07
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 08 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              08
+            </div>
+
+            <div class="test-name">
+              Mock Test 08
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 09 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              09
+            </div>
+
+            <div class="test-name">
+              Mock Test 09
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 10 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              10
+            </div>
+
+            <div class="test-name">
+              Mock Test 10
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 11 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              11
+            </div>
+
+            <div class="test-name">
+              Mock Test 11
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 12 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              12
+            </div>
+
+            <div class="test-name">
+              Mock Test 12
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 13 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              13
+            </div>
+
+            <div class="test-name">
+              Mock Test 13
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 14 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              14
+            </div>
+
+            <div class="test-name">
+              Mock Test 14
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+        <!-- MOCK TEST 15 -->
+
+        <div class="test-item">
+
+          <div class="test-info">
+
+            <div class="test-number">
+              15
+            </div>
+
+            <div class="test-name">
+              Mock Test 15
+            </div>
+
+          </div>
+
+          <div class="status locked">
+            🔒 LOCKED
+          </div>
+
+          <div class="action-btn locked-btn">
+            Locked
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- PURCHASE -->
+
+    <section class="purchase">
+
+      <div>
+
+        <h2>
+          Unlock the Full JOA IT Series
+        </h2>
+
+        <p>
+          Get access to all 15 JOA IT mock tests,
+          including full-length practice tests in
+          Hindi and English.
+        </p>
+
+      </div>
+
+
+      <div class="purchase-right">
+
+        <div class="price">
+          ₹99
+        </div>
+
+        <!-- PAYMENT LINK WILL BE ADDED HERE -->
+
+        <a
+          href="#"
+          class="buy-btn"
+          onclick="alert('Payment link will be added here.'); return false;"
+        >
+          Buy Now
+        </a>
+
+        <div class="payment-note">
+          Secure payment • Manual access verification
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    © 2026 HPMockShashtra — Competitive Exam Preparation Platform
+
+  </footer>
+
+
+</body>
+</html>
