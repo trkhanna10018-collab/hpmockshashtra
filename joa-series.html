@@ -221,7 +221,7 @@
       background:#f3f4f6;
       color:#6b7280;
     }
-
+\n    .attempted{\n      background:#dbeafe;\n      color:#1d4ed8;\n    }\n
     /* ================= ACTION ================= */
 
     .action-btn{
@@ -249,7 +249,7 @@
       color:#9ca3af;
       cursor:not-allowed;
     }
-
+\n    .attempted-btn{\n      background:#dbeafe;\n      color:#1d4ed8;\n    }\n\n    .attempted-btn:hover{\n      background:#bfdbfe;\n    }\n
     /* ================= ACCESS CHECK ================= */
 
     .access-message{
@@ -985,7 +985,7 @@
 
     <!-- PURCHASE -->
 
-    <section class="purchase">
+    <section class="purchase" id="purchase-section">
 
       <div>
 
@@ -1051,11 +1051,13 @@
     import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
     const accessMessage = document.getElementById("access-message");
+    const purchaseSection = document.getElementById("purchase-section");
 
     const TESTS = Array.from({ length: 15 }, (_, i) => {
       const n = String(i + 1).padStart(2, "0");
       return {
         number: n,
+        testId: `joa_test_${n}`,
         status: document.getElementById(`test${n}-status`),
         action: document.getElementById(`test${n}-action`),
         page: `joa-test-${n}.html`
@@ -1074,7 +1076,7 @@
       test.action.removeAttribute("target");
       test.action.onclick = (event) => {
         event.preventDefault();
-        alert(`Paid access is required to start Mock Test ${test.number}.`);
+        alert(`Complete the previous mock test first to unlock Mock Test ${test.number}.`);
       };
     }
 
@@ -1093,8 +1095,22 @@
       };
     }
 
+    function showAttempted(test) {
+      if (!test.status || !test.action) return;
+
+      test.status.className = "status attempted";
+      test.status.textContent = "✓ ATTEMPTED";
+
+      test.action.className = "action-btn attempted-btn";
+      test.action.textContent = "📖 Study Mode";
+      test.action.removeAttribute("target");
+      test.action.href = `study-mode.html?test=${test.testId}`;
+      test.action.onclick = null;
+    }
+
     function showLoginRequired() {
       TESTS.forEach(showLocked);
+      purchaseSection.style.display = "flex";
       accessMessage.textContent = "Please log in to check your paid access.";
     }
 
@@ -1108,16 +1124,64 @@
         const accessRef = doc(db, "testAccess", user.uid);
         const accessSnap = await getDoc(accessRef);
 
-        if (accessSnap.exists() && accessSnap.data().joaitFullSeries === true) {
-          TESTS.forEach(showUnlocked);
-          accessMessage.textContent = "Full JOA IT Series access is active.";
-        } else {
+        if (!accessSnap.exists() || accessSnap.data().joaitFullSeries !== true) {
           TESTS.forEach(showLocked);
-          accessMessage.textContent = "Full JOA IT Series is locked. Purchase access to unlock all 15 tests.";
+          purchaseSection.style.display = "flex";
+          accessMessage.textContent = "Full JOA IT Series is locked. Purchase access to unlock the series.";
+          return;
         }
+
+        /* Paid access is active — hide the purchase section. */
+        purchaseSection.style.display = "none";
+
+        /*
+         * Progressive unlocking:
+         * Test 01 is available first.
+         * After a test is submitted, that test becomes ATTEMPTED
+         * and the next test becomes UNLOCKED.
+         */
+        const attempts = [];
+
+        for (const test of TESTS) {
+          try {
+            const attemptRef = doc(db, "testAttempts", user.uid + "_" + test.testId);
+            const attemptSnap = await getDoc(attemptRef);
+            attempts.push(attemptSnap.exists());
+          } catch (error) {
+            console.error(`Attempt check failed for ${test.testId}:`, error);
+            attempts.push(false);
+          }
+        }
+
+        let nextUnlocked = false;
+
+        TESTS.forEach((test, index) => {
+          if (attempts[index]) {
+            showAttempted(test);
+            nextUnlocked = true;
+          } else if (!nextUnlocked && index === 0) {
+            showUnlocked(test);
+          } else if (nextUnlocked) {
+            showUnlocked(test);
+            nextUnlocked = false;
+          } else {
+            showLocked(test);
+          }
+        });
+
+        const completedCount = attempts.filter(Boolean).length;
+
+        if (completedCount === 15) {
+          accessMessage.textContent = "All 15 JOA IT mock tests have been attempted.";
+        } else {
+          accessMessage.textContent =
+            `${completedCount} of 15 mock tests attempted. Complete each test to unlock the next one.`;
+        }
+
       } catch (error) {
         console.error("Access check failed:", error);
         TESTS.forEach(showLocked);
+        purchaseSection.style.display = "flex";
         accessMessage.textContent = "Unable to verify access. Please refresh the page.";
       }
     });
