@@ -225,51 +225,6 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
     </div>
 
 
-    <!-- ATTEMPTED TESTS -->
-
-    <section id="progressSection" class="progress-section">
-
-      <div class="section-header">
-
-        <div>
-          <h2>Attempted Tests</h2>
-        </div>
-
-        <span id="attemptCountText">Loading...</span>
-
-      </div>
-
-
-      <div class="table-wrapper">
-
-        <table>
-
-          <thead>
-            <tr>
-              <th>Test</th>
-              <th>Score</th>
-              <th>Percentage</th>
-              <th>Study</th>
-            </tr>
-          </thead>
-
-          <tbody id="attemptsTableBody">
-
-            <tr>
-              <td colspan="4" style="text-align:center; padding:35px;">
-                <span class="loading">Loading your progress...</span>
-              </td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-
-    </section>
-
     <!-- ================= PERFORMANCE ANALYTICS ================= -->
 
     <section class="analytics-grid" id="analyticsSection">
@@ -291,6 +246,12 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 
     </section>
 
+
+
+    <div id="progressSection" style="display:none!important;" aria-hidden="true">
+      <span id="attemptCountText"></span>
+      <div id="attemptsTableBody"></div>
+    </div>
 
     <!-- NO ATTEMPTS -->
 
