@@ -43,6 +43,15 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 .test-name{font-weight:700;color:#1e293b}.test-type{display:block;font-size:11px;color:#94a3b8;margin-top:2px}
 .score{font-weight:800;color:#312e81;white-space:nowrap}
 .percentage{display:inline-block;font-weight:800;color:#047857;background:#ecfdf5;border:1px solid #bbf7d0;padding:4px 8px;border-radius:999px;min-width:48px;text-align:center}
+
+    table th:nth-child(1), table td:nth-child(1) { width: 36%; }
+    table th:nth-child(2), table td:nth-child(2) { width: 18%; }
+    table th:nth-child(3), table td:nth-child(3) { width: 18%; }
+    table th:nth-child(4), table td:nth-child(4) { width: 28%; }
+    table td:nth-child(2), table td:nth-child(3), table td:nth-child(4) {
+      vertical-align: middle;
+    }
+
 .study-btn{display:inline-block;text-decoration:none;padding:7px 12px;border-radius:8px;border:1px solid #c7d2fe;color:#4338ca;background:#eef2ff;font-size:11px;font-weight:800;transition:.2s;white-space:nowrap}
 .study-btn:hover{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px)}
 .totals{border-top:1px solid #e5eaf1;padding:18px 22px;background:#fafbff;display:flex;justify-content:flex-end;gap:30px;flex-wrap:wrap}
@@ -168,112 +177,6 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       font-size: 10px;
       font-family: Arial, sans-serif;
     }
-
-    .donut-wrap {
-      display: grid;
-      place-items: center;
-      min-height: 185px;
-    }
-
-    .donut {
-      width: 145px;
-      height: 145px;
-      border-radius: 50%;
-      background: conic-gradient(#4f46e5 0deg, #4f46e5 0deg, #e5e7eb 0deg);
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
-
-    .donut::before {
-      content: "";
-      position: absolute;
-      width: 103px;
-      height: 103px;
-      background: #fff;
-      border-radius: 50%;
-    }
-
-    .donut-center {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .donut-center strong {
-      display: block;
-      font-size: 25px;
-      color: #111827;
-      line-height: 1.1;
-    }
-
-    .donut-center span {
-      display: block;
-      margin-top: 4px;
-      font-size: 12px;
-      color: #64748b;
-      font-weight: 700;
-    }
-
-    .donut-legend {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      font-size: 11px;
-      color: #64748b;
-    }
-
-    .donut-legend span {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .legend-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .legend-dot.completed { background: #4f46e5; }
-    .legend-dot.remaining { background: #d1d5db; }
-
-    .tip-card {
-      background: linear-gradient(145deg, #fff, #fffaf0);
-    }
-
-    .tip-content {
-      padding-top: 8px;
-    }
-
-    .tip-quote {
-      color: #312e81;
-      font-size: 16px;
-      line-height: 1.45;
-      font-weight: 800;
-      font-style: italic;
-      margin-bottom: 13px;
-    }
-
-    .tip-content p {
-      color: #64748b;
-      font-size: 12px;
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
-
-    .tip-highlight {
-      background: #eef2ff;
-      border: 1px solid #dbeafe;
-      border-radius: 10px;
-      padding: 11px 12px;
-      color: #4338ca;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
 @media(max-width:850px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-grid{grid-template-columns:1fr}.container{padding-top:28px}.page-heading h1{font-size:27px}}
 @media(max-width:600px){.chart-wrap{height:220px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
 
@@ -402,46 +305,6 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
         <div class="chart-wrap">
           <svg id="performanceChart" viewBox="0 0 720 285" role="img"
                aria-label="Performance overview chart"></svg>
-        </div>
-      </div>
-
-      <div class="analytics-card completion-card">
-        <div class="analytics-title">
-          <div>
-            <h2>Tests Completed</h2>
-            <p>Your JOA IT series progress</p>
-          </div>
-          <span class="analytics-icon blue">◎</span>
-        </div>
-
-        <div class="donut-wrap">
-          <div class="donut" id="completionDonut">
-            <div class="donut-center">
-              <strong id="completedCount">0/16</strong>
-              <span id="completedPercent">0%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="donut-legend">
-          <span><i class="legend-dot completed"></i>Completed <b id="legendCompleted">0</b></span>
-          <span><i class="legend-dot remaining"></i>Remaining <b id="legendRemaining">16</b></span>
-        </div>
-      </div>
-
-      <div class="analytics-card tip-card">
-        <div class="analytics-title">
-          <div>
-            <h2>Study Tip</h2>
-            <p>Make every attempt count</p>
-          </div>
-          <span class="analytics-icon gold">★</span>
-        </div>
-
-        <div class="tip-content">
-          <div class="tip-quote">“Consistency turns practice into progress.”</div>
-          <p>Keep attempting mock tests, review your answers in Study Mode and focus on topics where you lose marks.</p>
-          <div class="tip-highlight">Small steps every day lead to big results.</div>
         </div>
       </div>
 
@@ -937,29 +800,6 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 
     function renderPerformanceAnalytics(tests) {
 
-      const completed = tests.length;
-      const totalTests = 16;
-      const percentage = totalTests > 0
-        ? Math.round((completed / totalTests) * 100)
-        : 0;
-
-      const completedCount = document.getElementById("completedCount");
-      const completedPercent = document.getElementById("completedPercent");
-      const legendCompleted = document.getElementById("legendCompleted");
-      const legendRemaining = document.getElementById("legendRemaining");
-      const donut = document.getElementById("completionDonut");
-
-      if (completedCount) completedCount.textContent = `${completed}/${totalTests}`;
-      if (completedPercent) completedPercent.textContent = `${percentage}%`;
-      if (legendCompleted) legendCompleted.textContent = completed;
-      if (legendRemaining) legendRemaining.textContent = Math.max(0, totalTests - completed);
-
-      if (donut) {
-        const degrees = (completed / totalTests) * 360;
-        donut.style.background =
-          `conic-gradient(#4f46e5 0deg ${degrees}deg, #e5e7eb ${degrees}deg 360deg)`;
-      }
-
       const svg = document.getElementById("performanceChart");
       if (!svg) return;
 
@@ -979,14 +819,29 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
         const x = count === 1
           ? left + chartWidth / 2
           : left + (index / (count - 1)) * chartWidth;
-        const y = top + chartHeight - (Math.max(0, Math.min(maxValue, test.score)) / maxValue) * chartHeight;
-        return { x, y, score: test.score, name: test.id === "joa_free_test_01" ? "Free" : test.id.replace("joa_test_", "") };
+
+        const y = top + chartHeight -
+          (Math.max(0, Math.min(maxValue, test.score)) / maxValue) * chartHeight;
+
+        return {
+          x,
+          y,
+          score: test.score,
+          name: test.id === "joa_free_test_01"
+            ? "Free"
+            : test.id.replace("joa_test_", "")
+        };
       });
 
-      const grid = [0, 20, 40, 60, 80, 100].map(v => {
+      const grid = [0,20,40,60,80,100].map(v => {
         const y = top + chartHeight - (v / maxValue) * chartHeight;
-        return `<line class="chart-grid-line" x1="${left}" y1="${y}" x2="${width-right}" y2="${y}"></line>
-                <text class="chart-axis-label" x="${left-10}" y="${y+4}" text-anchor="end">${v}</text>`;
+
+        return `<line class="chart-grid-line"
+                  x1="${left}" y1="${y}"
+                  x2="${width-right}" y2="${y}"></line>
+                <text class="chart-axis-label"
+                  x="${left-10}" y="${y+4}"
+                  text-anchor="end">${v}</text>`;
       }).join("");
 
       if (!tests.length) {
@@ -994,13 +849,21 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
         return;
       }
 
-      const linePoints = points.map(p => `${p.x},${p.y}`).join(" ");
-      const areaPoints = `${left},${top + chartHeight} ${linePoints} ${width-right},${top + chartHeight}`;
+      const linePoints =
+        points.map(p => `${p.x},${p.y}`).join(" ");
+
+      const areaPoints =
+        `${left},${top + chartHeight} ${linePoints} ${width-right},${top + chartHeight}`;
 
       const labels = points.map(p =>
-        `<text class="chart-score" x="${p.x}" y="${Math.max(16, p.y-10)}" text-anchor="middle">${p.score}</text>
-         <text class="chart-name" x="${p.x}" y="${height-22}" text-anchor="middle">${p.name}</text>
-         <circle class="chart-point" cx="${p.x}" cy="${p.y}" r="5"></circle>`
+        `<text class="chart-score"
+          x="${p.x}" y="${Math.max(16,p.y-10)}"
+          text-anchor="middle">${p.score}</text>
+         <text class="chart-name"
+          x="${p.x}" y="${height-22}"
+          text-anchor="middle">${p.name}</text>
+         <circle class="chart-point"
+          cx="${p.x}" cy="${p.y}" r="5"></circle>`
       ).join("");
 
       svg.innerHTML = `
