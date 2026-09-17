@@ -68,7 +68,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 
     .analytics-grid {
       display: grid;
-      grid-template-columns: 1.7fr .9fr 1fr;
+      grid-template-columns: 1fr;
       gap: 15px;
       margin-top: 18px;
     }
@@ -178,7 +178,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       font-family: Arial, sans-serif;
     }
 @media(max-width:850px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-grid{grid-template-columns:1fr}.container{padding-top:28px}.page-heading h1{font-size:27px}}
-@media(max-width:600px){.chart-wrap{height:245px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
+@media(max-width:600px){.chart-wrap{height:270px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
 
   </style>
 </head>
@@ -883,10 +883,10 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
         return `
           <g>
             <rect
-              x="${p.x - 17}"
-              y="${scoreY - 15}"
-              width="34"
-              height="22"
+              x="${p.x - 21}"
+              y="${scoreY - 17}"
+              width="42"
+              height="26"
               rx="11"
               fill="#eef2ff"
               stroke="#c7d2fe">
