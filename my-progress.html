@@ -82,13 +82,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       min-width: 0;
     }
 
-    .analytics-title {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
+    .analytics-title{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
 
     .analytics-title h2 {
       color: #111827;
@@ -124,11 +118,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       background: #fef3c7;
     }
 
-    .chart-wrap {
-      width: 100%;
-      height: 245px;
-      overflow: hidden;
-    }
+    .chart-wrap{width:100%;height:360px;overflow:hidden;margin-top:8px}
 
     #performanceChart {
       width: 100%;
@@ -141,11 +131,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       stroke-width: 1;
     }
 
-    .chart-axis-label {
-      fill: #94a3b8;
-      font-size: 11px;
-      font-family: Arial, sans-serif;
-    }
+    .chart-axis-label{fill:#94a3b8;font-size:12px;font-weight:700;font-family:Arial,sans-serif}
 
     .chart-area {
       fill: #eef2ff;
@@ -165,20 +151,11 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       stroke-width: 3;
     }
 
-    .chart-score {
-      fill: #3730a3;
-      font-size: 11px;
-      font-weight: 800;
-      font-family: Arial, sans-serif;
-    }
+    .chart-score{fill:#312e81;font-size:16px;font-weight:900;font-family:Arial,sans-serif}
 
-    .chart-name {
-      fill: #64748b;
-      font-size: 10px;
-      font-family: Arial, sans-serif;
-    }
+    .chart-name{fill:#64748b;font-size:13px;font-weight:800;font-family:Arial,sans-serif}
 @media(max-width:850px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-grid{grid-template-columns:1fr}.container{padding-top:28px}.page-heading h1{font-size:27px}}
-@media(max-width:600px){.chart-wrap{height:270px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
+@media(max-width:600px){.chart-wrap{height:285px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
 
   </style>
 </head>
@@ -303,7 +280,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
         </div>
 
         <div class="chart-wrap">
-          <svg id="performanceChart" viewBox="0 0 720 285" role="img"
+          <svg id="performanceChart" viewBox="0 0 1100 360" preserveAspectRatio="none" role="img"
                aria-label="Performance overview chart"></svg>
         </div>
       </div>
@@ -803,16 +780,24 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       const svg = document.getElementById("performanceChart");
       if (!svg) return;
 
-      const width = 900;
-      const height = 330;
-      const left = 58;
-      const right = 28;
-      const top = 36;
-      const bottom = 62;
+      const width = 1100;
+      const height = 360;
+
+      /* Plot पूरे chart के लगभग पूरे width में */
+      const left = 62;
+      const right = 35;
+      const top = 42;
+      const bottom = 65;
 
       const chartWidth = width - left - right;
       const chartHeight = height - top - bottom;
-      const maxValue = 100;
+
+      /*
+        Scores /100 हैं।
+        0–40 focused scale इसलिए रखी गई है ताकि अभी के वास्तविक
+        scores graph में स्पष्ट दिखाई दें।
+      */
+      const maxValue = 40;
       const count = Math.max(tests.length, 1);
 
       const points = tests.map((test, index) => {
@@ -821,33 +806,49 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
           ? left + chartWidth / 2
           : left + (index / (count - 1)) * chartWidth;
 
-        const y = top + chartHeight -
-          (Math.max(0, Math.min(maxValue, test.score)) / maxValue) * chartHeight;
+        const score = Math.max(
+          0,
+          Math.min(maxValue, Number(test.score) || 0)
+        );
+
+        const y =
+          top +
+          chartHeight -
+          (score / maxValue) * chartHeight;
 
         return {
           x,
           y,
-          score: test.score,
-          name: test.id === "joa_free_test_01"
-            ? "Free"
-            : test.id.replace("joa_test_", "")
+          score: Number(test.score) || 0,
+          name:
+            test.id === "joa_free_test_01"
+              ? "Free"
+              : test.id.replace("joa_test_", "")
         };
 
       });
 
-      const grid = [0,20,40,60,80,100].map(v => {
+      /* Horizontal grid lines अब left axis से ही शुरू होंगी */
+      const grid = [0,10,20,30,40].map(v => {
 
-        const y = top + chartHeight -
+        const y =
+          top +
+          chartHeight -
           (v / maxValue) * chartHeight;
 
         return `
-          <line class="chart-grid-line"
-            x1="${left}" y1="${y}"
-            x2="${width-right}" y2="${y}">
+          <line
+            class="chart-grid-line"
+            x1="${left}"
+            y1="${y}"
+            x2="${width - right}"
+            y2="${y}">
           </line>
 
-          <text class="chart-axis-label"
-            x="${left-13}" y="${y+4}"
+          <text
+            class="chart-axis-label"
+            x="${left - 15}"
+            y="${y + 5}"
             text-anchor="end">${v}</text>
         `;
 
@@ -857,11 +858,24 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 
         svg.innerHTML = `
           <defs>
-            <linearGradient id="chartAreaGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#c7d2fe" stop-opacity=".65"/>
-              <stop offset="100%" stop-color="#eef2ff" stop-opacity=".15"/>
+            <linearGradient
+              id="chartAreaGradient"
+              x1="0" y1="0"
+              x2="0" y2="1">
+
+              <stop
+                offset="0%"
+                stop-color="#6366f1"
+                stop-opacity=".20"/>
+
+              <stop
+                offset="100%"
+                stop-color="#eef2ff"
+                stop-opacity=".03"/>
+
             </linearGradient>
           </defs>
+
           ${grid}
         `;
 
@@ -869,45 +883,56 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       }
 
       const linePoints =
-        points.map(p => `${p.x},${p.y}`).join(" ");
+        points
+          .map(p => `${p.x},${p.y}`)
+          .join(" ");
 
       const areaPoints =
         `${left},${top + chartHeight}
          ${linePoints}
-         ${width-right},${top + chartHeight}`;
+         ${width - right},${top + chartHeight}`;
 
       const labels = points.map(p => {
 
-        const scoreY = Math.max(20, p.y - 17);
+        /*
+          बड़े score labels और उनके बीच पर्याप्त spacing।
+          पहले/आखिरी point को भी chart edge से सुरक्षित दूरी।
+        */
+        const scoreY =
+          Math.max(28, p.y - 24);
 
         return `
           <g>
+
             <rect
-              x="${p.x - 21}"
-              y="${scoreY - 17}"
-              width="42"
-              height="26"
-              rx="11"
+              x="${p.x - 25}"
+              y="${scoreY - 19}"
+              width="50"
+              height="30"
+              rx="15"
               fill="#eef2ff"
               stroke="#c7d2fe">
             </rect>
 
-            <text class="chart-score"
+            <text
+              class="chart-score"
               x="${p.x}"
-              y="${scoreY}"
+              y="${scoreY + 1}"
               text-anchor="middle">${p.score}</text>
 
             <circle
               class="chart-point"
               cx="${p.x}"
               cy="${p.y}"
-              r="6">
+              r="7">
             </circle>
 
-            <text class="chart-name"
+            <text
+              class="chart-name"
               x="${p.x}"
-              y="${height-24}"
+              y="${height - 24}"
               text-anchor="middle">${p.name}</text>
+
           </g>
         `;
 
@@ -921,11 +946,13 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
             x1="0" y1="0"
             x2="0" y2="1">
 
-            <stop offset="0%"
+            <stop
+              offset="0%"
               stop-color="#6366f1"
-              stop-opacity=".22"/>
+              stop-opacity=".23"/>
 
-            <stop offset="100%"
+            <stop
+              offset="100%"
               stop-color="#eef2ff"
               stop-opacity=".04"/>
 
