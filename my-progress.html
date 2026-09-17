@@ -22,11 +22,11 @@ body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:linear-gradien
 .page-heading:after{content:"";position:absolute;width:180px;height:180px;right:-65px;top:-85px;border-radius:50%;background:rgba(255,255,255,.1)}
 .page-heading h1{font-size:29px;color:#fff;margin-bottom:3px;position:relative;z-index:1}
 .page-heading p{color:rgba(255,255,255,.82);font-size:14px;position:relative;z-index:1}
-.summary-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px;margin-bottom:28px}
+.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:28px}
 .summary-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 16px;min-width:0;box-shadow:0 5px 16px rgba(31,41,55,.06);position:relative;overflow:hidden;transition:.2s}
 .summary-card:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(31,41,55,.09)}
 .summary-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:#6366f1}
-.summary-card:nth-child(2):before{background:#0ea5e9}.summary-card:nth-child(3):before{background:#10b981}.summary-card:nth-child(4):before{background:#f59e0b}.summary-card:nth-child(5):before{background:#0ea5e9}
+.summary-card:nth-child(2):before{background:#f59e0b}.summary-card:nth-child(3):before{background:#ef4444}.summary-card:nth-child(4):before{background:#0ea5e9}
 .summary-label{font-size:12px;color:#64748b;margin-bottom:7px;font-weight:700;text-transform:uppercase;letter-spacing:.35px}
 .summary-value{font-size:23px;font-weight:800;color:#111827;white-space:nowrap}
 .summary-sub{font-size:11px;color:#94a3b8;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -623,8 +623,6 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
     /* ================= ELEMENTS ================= */
 
     const testsAttemptedEl = document.getElementById("testsAttempted");
-    const totalScoreEl = document.getElementById("totalScore");
-    const averageScoreEl = document.getElementById("averageScore");
     const highestScoreEl = document.getElementById("highestScore");
     const highestTestEl = document.getElementById("highestTest");
 
@@ -854,12 +852,6 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 
       testsAttemptedEl.textContent =
         tests.length;
-
-      totalScoreEl.textContent =
-        `${formatNumber(totalScore)}/${formatNumber(totalMarks)}`;
-
-      averageScoreEl.textContent =
-        `${formatPercentage(average)}%`;
 
       highestScoreEl.textContent =
         `${formatNumber(highest.score)}/${formatNumber(highest.total)}`;
