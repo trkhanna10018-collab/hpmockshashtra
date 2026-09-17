@@ -221,18 +221,30 @@
       background:#f3f4f6;
       color:#6b7280;
     }
-\n    .attempted{\n      background:#dbeafe;\n      color:#1d4ed8;\n    }\n
+
+    .attempted{
+      background:#dbeafe;
+      color:#1d4ed8;
+    }
+
     /* ================= ACTION ================= */
 
     .action-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       border:none;
       padding:9px 15px;
+      min-width:96px;
+      min-height:38px;
       border-radius:8px;
       font-size:13px;
       font-weight:700;
       cursor:pointer;
-      text-decoration:none;
+      text-decoration:none !important;
       white-space:nowrap;
+      transition:all .18s ease;
+      box-sizing:border-box;
     }
 
     .start-btn{
@@ -242,6 +254,8 @@
 
     .start-btn:hover{
       background:#4338ca;
+      transform:translateY(-1px);
+      box-shadow:0 4px 10px rgba(79,70,229,.22);
     }
 
     .locked-btn{
@@ -249,7 +263,18 @@
       color:#9ca3af;
       cursor:not-allowed;
     }
-\n    .attempted-btn{\n      background:#dbeafe;\n      color:#1d4ed8;\n    }\n\n    .attempted-btn:hover{\n      background:#bfdbfe;\n    }\n
+
+    .attempted-btn{
+      background:#dbeafe;
+      color:#1d4ed8;
+    }
+
+    .attempted-btn:hover{
+      background:#bfdbfe;
+      transform:translateY(-1px);
+      box-shadow:0 4px 10px rgba(29,78,216,.12);
+    }
+
     /* ================= ACCESS CHECK ================= */
 
     .access-message{
@@ -577,9 +602,9 @@
             🔒 LOCKED
           </div>
 
-          <div class="action-btn locked-btn" id="test01-action">
+          <a class="action-btn locked-btn" id="test01-action" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -612,9 +637,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test02-action" class="action-btn locked-btn">
+          <a id="test02-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -647,9 +672,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test03-action" class="action-btn locked-btn">
+          <a id="test03-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -674,9 +699,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test04-action" class="action-btn locked-btn">
+          <a id="test04-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -701,9 +726,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test05-action" class="action-btn locked-btn">
+          <a id="test05-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -728,9 +753,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test06-action" class="action-btn locked-btn">
+          <a id="test06-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -755,9 +780,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test07-action" class="action-btn locked-btn">
+          <a id="test07-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -782,9 +807,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test08-action" class="action-btn locked-btn">
+          <a id="test08-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -809,9 +834,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test09-action" class="action-btn locked-btn">
+          <a id="test09-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -836,9 +861,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test10-action" class="action-btn locked-btn">
+          <a id="test10-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -863,9 +888,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test11-action" class="action-btn locked-btn">
+          <a id="test11-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -890,9 +915,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test12-action" class="action-btn locked-btn">
+          <a id="test12-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -917,9 +942,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test13-action" class="action-btn locked-btn">
+          <a id="test13-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -944,9 +969,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test14-action" class="action-btn locked-btn">
+          <a id="test14-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -971,9 +996,9 @@
             🔒 LOCKED
           </div>
 
-          <div id="test15-action" class="action-btn locked-btn">
+          <a id="test15-action" class="action-btn locked-btn" href="#">
             Locked
-          </div>
+          </a>
 
         </div>
 
@@ -1072,7 +1097,7 @@
 
       test.action.className = "action-btn locked-btn";
       test.action.textContent = "Locked";
-      test.action.removeAttribute("href");
+      test.action.href = "#";
       test.action.removeAttribute("target");
       test.action.onclick = (event) => {
         event.preventDefault();
@@ -1088,11 +1113,9 @@
 
       test.action.className = "action-btn start-btn";
       test.action.textContent = "Start Test";
-      test.action.removeAttribute("href");
+      test.action.href = test.page;
       test.action.removeAttribute("target");
-      test.action.onclick = () => {
-        window.location.href = test.page;
-      };
+      test.action.onclick = null;
     }
 
     function showAttempted(test) {
