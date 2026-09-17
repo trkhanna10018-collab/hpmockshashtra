@@ -178,7 +178,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       font-family: Arial, sans-serif;
     }
 @media(max-width:850px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-grid{grid-template-columns:1fr}.container{padding-top:28px}.page-heading h1{font-size:27px}}
-@media(max-width:600px){.chart-wrap{height:220px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
+@media(max-width:600px){.chart-wrap{height:245px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
 
   </style>
 </head>
@@ -803,19 +803,20 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       const svg = document.getElementById("performanceChart");
       if (!svg) return;
 
-      const width = 720;
-      const height = 285;
-      const left = 48;
-      const right = 18;
-      const top = 25;
-      const bottom = 48;
+      const width = 900;
+      const height = 330;
+      const left = 58;
+      const right = 28;
+      const top = 36;
+      const bottom = 62;
+
       const chartWidth = width - left - right;
       const chartHeight = height - top - bottom;
-
       const maxValue = 100;
       const count = Math.max(tests.length, 1);
 
       const points = tests.map((test, index) => {
+
         const x = count === 1
           ? left + chartWidth / 2
           : left + (index / (count - 1)) * chartWidth;
@@ -831,21 +832,39 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
             ? "Free"
             : test.id.replace("joa_test_", "")
         };
+
       });
 
       const grid = [0,20,40,60,80,100].map(v => {
-        const y = top + chartHeight - (v / maxValue) * chartHeight;
 
-        return `<line class="chart-grid-line"
-                  x1="${left}" y1="${y}"
-                  x2="${width-right}" y2="${y}"></line>
-                <text class="chart-axis-label"
-                  x="${left-10}" y="${y+4}"
-                  text-anchor="end">${v}</text>`;
+        const y = top + chartHeight -
+          (v / maxValue) * chartHeight;
+
+        return `
+          <line class="chart-grid-line"
+            x1="${left}" y1="${y}"
+            x2="${width-right}" y2="${y}">
+          </line>
+
+          <text class="chart-axis-label"
+            x="${left-13}" y="${y+4}"
+            text-anchor="end">${v}</text>
+        `;
+
       }).join("");
 
       if (!tests.length) {
-        svg.innerHTML = grid;
+
+        svg.innerHTML = `
+          <defs>
+            <linearGradient id="chartAreaGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c7d2fe" stop-opacity=".65"/>
+              <stop offset="100%" stop-color="#eef2ff" stop-opacity=".15"/>
+            </linearGradient>
+          </defs>
+          ${grid}
+        `;
+
         return;
       }
 
@@ -853,24 +872,97 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
         points.map(p => `${p.x},${p.y}`).join(" ");
 
       const areaPoints =
-        `${left},${top + chartHeight} ${linePoints} ${width-right},${top + chartHeight}`;
+        `${left},${top + chartHeight}
+         ${linePoints}
+         ${width-right},${top + chartHeight}`;
 
-      const labels = points.map(p =>
-        `<text class="chart-score"
-          x="${p.x}" y="${Math.max(16,p.y-10)}"
-          text-anchor="middle">${p.score}</text>
-         <text class="chart-name"
-          x="${p.x}" y="${height-22}"
-          text-anchor="middle">${p.name}</text>
-         <circle class="chart-point"
-          cx="${p.x}" cy="${p.y}" r="5"></circle>`
-      ).join("");
+      const labels = points.map(p => {
+
+        const scoreY = Math.max(20, p.y - 17);
+
+        return `
+          <g>
+            <rect
+              x="${p.x - 17}"
+              y="${scoreY - 15}"
+              width="34"
+              height="22"
+              rx="11"
+              fill="#eef2ff"
+              stroke="#c7d2fe">
+            </rect>
+
+            <text class="chart-score"
+              x="${p.x}"
+              y="${scoreY}"
+              text-anchor="middle">${p.score}</text>
+
+            <circle
+              class="chart-point"
+              cx="${p.x}"
+              cy="${p.y}"
+              r="6">
+            </circle>
+
+            <text class="chart-name"
+              x="${p.x}"
+              y="${height-24}"
+              text-anchor="middle">${p.name}</text>
+          </g>
+        `;
+
+      }).join("");
 
       svg.innerHTML = `
+        <defs>
+
+          <linearGradient
+            id="chartAreaGradient"
+            x1="0" y1="0"
+            x2="0" y2="1">
+
+            <stop offset="0%"
+              stop-color="#6366f1"
+              stop-opacity=".22"/>
+
+            <stop offset="100%"
+              stop-color="#eef2ff"
+              stop-opacity=".04"/>
+
+          </linearGradient>
+
+          <filter
+            id="chartShadow"
+            x="-20%"
+            y="-20%"
+            width="140%"
+            height="140%">
+
+            <feDropShadow
+              dx="0"
+              dy="2"
+              stdDeviation="2"
+              flood-color="#4f46e5"
+              flood-opacity=".18"/>
+
+          </filter>
+
+        </defs>
+
         ${grid}
-        <polygon class="chart-area" points="${areaPoints}"></polygon>
-        <polyline class="chart-line" points="${linePoints}"></polyline>
+
+        <polygon
+          class="chart-area"
+          points="${areaPoints}">
+        </polygon>
+
+        <polyline
+          class="chart-line"
+          points="${linePoints}">
+        </polyline>
+
         ${labels}
+
       `;
     }
 
