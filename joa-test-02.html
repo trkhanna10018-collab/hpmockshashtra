@@ -145,7 +145,7 @@ import { questions } from "./joa-test-02.js";
 
 /* =========================================================
    TEST CONFIG
-   For Test 02, copy this file and change only these values.
+   For Test 03, copy this file and change only these values.
    ========================================================= */
 
 const TEST_ID = "joa_test_02";
@@ -197,6 +197,26 @@ if(!accessSnap.exists() || accessSnap.data().joaitFullSeries !== true){
 showError(
 "Access Required",
 "You do not have access to Mock Test 02 yet."
+);
+return;
+
+}
+
+
+/* Test 01 must be completed before Test 02 */
+const test01AttemptRef = doc(
+db,
+"testAttempts",
+user.uid + "_joa_test_01"
+);
+
+const test01AttemptSnap = await getDoc(test01AttemptRef);
+
+if(!test01AttemptSnap.exists()){
+
+showError(
+"Test 02 Locked",
+"Please complete Mock Test 01 before attempting Mock Test 02."
 );
 return;
 
