@@ -45,10 +45,10 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 .percentage{display:inline-block;font-weight:800;color:#047857;background:#ecfdf5;border:1px solid #bbf7d0;padding:4px 8px;border-radius:999px;min-width:48px;text-align:center}
 
     table { table-layout: fixed; }
-    table th:nth-child(1), table td:nth-child(1) { width: 40%; }
-    table th:nth-child(2), table td:nth-child(2) { width: 20%; }
-    table th:nth-child(3), table td:nth-child(3) { width: 20%; }
-    table th:nth-child(4), table td:nth-child(4) { width: 20%; }
+    table th:nth-child(1), table td:nth-child(1) { width: 25%; }
+    table th:nth-child(2), table td:nth-child(2) { width: 25%; }
+    table th:nth-child(3), table td:nth-child(3) { width: 25%; }
+    table th:nth-child(4), table td:nth-child(4) { width: 25%; }
     table th:nth-child(4), table td:nth-child(4) {
       text-align: right;
     }
@@ -367,98 +367,98 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
 
       {
         id: "joa_free_test_01",
-        name: "JOA IT Free Mock Test",
-        type: "Free Test"
+        name: "Free",
+        type: "Free"
       },
 
       {
         id: "joa_test_01",
-        name: "JOA IT Mock Test 01",
-        type: "Mock Test 01"
+        name: "Test #1",
+        type: "Test #1"
       },
 
       {
         id: "joa_test_02",
-        name: "JOA IT Mock Test 02",
-        type: "Mock Test 02"
+        name: "Test #2",
+        type: "Test #2"
       },
 
       {
         id: "joa_test_03",
-        name: "JOA IT Mock Test 03",
-        type: "Mock Test 03"
+        name: "Test #3",
+        type: "Test #3"
       },
 
       {
         id: "joa_test_04",
-        name: "JOA IT Mock Test 04",
-        type: "Mock Test 04"
+        name: "Test #4",
+        type: "Test #4"
       },
 
       {
         id: "joa_test_05",
-        name: "JOA IT Mock Test 05",
-        type: "Mock Test 05"
+        name: "Test #5",
+        type: "Test #5"
       },
 
       {
         id: "joa_test_06",
-        name: "JOA IT Mock Test 06",
-        type: "Mock Test 06"
+        name: "Test #6",
+        type: "Test #6"
       },
 
       {
         id: "joa_test_07",
-        name: "JOA IT Mock Test 07",
-        type: "Mock Test 07"
+        name: "Test #7",
+        type: "Test #7"
       },
 
       {
         id: "joa_test_08",
-        name: "JOA IT Mock Test 08",
-        type: "Mock Test 08"
+        name: "Test #8",
+        type: "Test #8"
       },
 
       {
         id: "joa_test_09",
-        name: "JOA IT Mock Test 09",
-        type: "Mock Test 09"
+        name: "Test #9",
+        type: "Test #9"
       },
 
       {
         id: "joa_test_10",
-        name: "JOA IT Mock Test 10",
-        type: "Mock Test 10"
+        name: "Test #10",
+        type: "Test #10"
       },
 
       {
         id: "joa_test_11",
-        name: "JOA IT Mock Test 11",
-        type: "Mock Test 11"
+        name: "Test #11",
+        type: "Test #11"
       },
 
       {
         id: "joa_test_12",
-        name: "JOA IT Mock Test 12",
-        type: "Mock Test 12"
+        name: "Test #12",
+        type: "Test #12"
       },
 
       {
         id: "joa_test_13",
-        name: "JOA IT Mock Test 13",
-        type: "Mock Test 13"
+        name: "Test #13",
+        type: "Test #13"
       },
 
       {
         id: "joa_test_14",
-        name: "JOA IT Mock Test 14",
-        type: "Mock Test 14"
+        name: "Test #14",
+        type: "Test #14"
       },
 
       {
         id: "joa_test_15",
-        name: "JOA IT Mock Test 15",
-        type: "Mock Test 15"
+        name: "Test #15",
+        type: "Test #15"
       }
 
     ];
@@ -801,7 +801,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
         0–40 focused scale इसलिए रखी गई है ताकि अभी के वास्तविक
         scores graph में स्पष्ट दिखाई दें।
       */
-      const maxValue = 40;
+      const maxValue = 100;
       const count = Math.max(tests.length, 1);
 
       const points = tests.map((test, index) => {
@@ -833,7 +833,7 @@ tbody tr{transition:.15s}tbody tr:hover{background:#f8faff}
       });
 
       /* Horizontal grid lines अब left axis से ही शुरू होंगी */
-      const grid = [0,10,20,30,40].map(v => {
+      const grid = [0,10,20,30,40,50,60,70,80,90,100].map(v => {
 
         const y =
           top +
