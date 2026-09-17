@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOA IT Mock Test 02 | HPMockShashtra</title>
+
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+body{margin:0;background:#eef4fb;color:#172033}
+.header{height:70px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 28px;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1f2937;font-weight:800;font-size:20px}
+.brand img{width:50px;height:50px;object-fit:contain;border-radius:8px}
+.back{padding:9px 13px;border-radius:8px;background:#f3f4f6;color:#374151;text-decoration:none;font-weight:600;font-size:13px}
+.wrap{max-width:1050px;margin:26px auto;padding:0 16px 50px}
+.notice{background:#fff3cd;border:1px solid #ffe69c;border-left:5px solid #f59e0b;padding:14px 16px;border-radius:10px;margin-bottom:18px;line-height:1.5}
+.notice strong{display:block;margin-bottom:4px}
+.top{background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff;border-radius:16px;padding:24px;margin-bottom:18px;box-shadow:0 8px 25px rgba(67,56,202,.16)}
+.top h1{margin:0 0 8px;font-size:25px}
+.meta{display:flex;gap:10px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.14);padding:8px 12px;border-radius:8px;font-size:13px}
+.test{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #e5e7eb;padding-bottom:15px;margin-bottom:18px}
+.timer{font-size:22px;font-weight:800;color:#b91c1c;background:#fee2e2;padding:8px 13px;border-radius:9px}
+.timer.safe{color:#166534;background:#dcfce7}
+.qno{font-weight:800;color:#4f46e5}
+.question{font-size:18px;font-weight:700;line-height:1.55;margin:10px 0 7px}
+.hindi{font-size:17px;line-height:1.55;color:#374151;margin-bottom:18px}
+.options{display:grid;gap:10px}
+.option{display:flex;gap:10px;align-items:flex-start;border:1px solid #dbe2ea;border-radius:10px;padding:13px;cursor:pointer;transition:.15s}
+.option:hover{background:#f8fafc}
+.option.selected{border-color:#4f46e5;background:#eef2ff}
+.option input{margin-top:3px}
+.controls{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.btn{border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer}
+.primary{background:#4f46e5;color:#fff}
+.secondary{background:#f3f4f6;color:#374151}
+.danger{background:#dc2626;color:#fff}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.progress{height:7px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin:10px 0 18px}
+.progress i{display:block;height:100%;width:1%;background:#4f46e5}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.62);display:flex;align-items:center;justify-content:center;padding:20px;z-index:30}
+.modal-card{background:#fff;border-radius:14px;max-width:480px;width:100%;padding:25px;text-align:center}
+.modal-card h2{margin-top:0}
+.countdown{font-size:64px;font-weight:900;color:#4f46e5;line-height:1;margin:18px 0}
+.hidden{display:none!important}
+.result{text-align:center}
+.score{font-size:48px;font-weight:900;color:#4f46e5;margin:15px}
+.error{text-align:center;color:#b91c1c}
+.error p{color:#374151}
+@media(max-width:600px){
+.header{padding:0 14px}.brand{font-size:17px}.brand img{width:43px;height:43px}
+.top h1{font-size:21px}.test{padding:16px}.bar{align-items:flex-start}
+.timer{font-size:18px}.question{font-size:17px}.controls{flex-direction:column}.btn{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<a class="brand" href="firebase-dashboard.html">
+<img src="logo.png" alt="HPMockShashtra">
+<span>HP<span style="color:#4f46e5">Mock</span>Shashtra</span>
+</a>
+<a class="back" href="joa-series.html">← Test Series</a>
+</header>
+
+<div class="wrap">
+
+<div class="notice">
+<strong>⚠ Test Instructions</strong>
+Once the test starts, the 90-minute timer will continue even if you close this tab, refresh the page, or return later. Do not press the Back button or close the tab. This test can be attempted only once.
+</div>
+
+<div class="top">
+<h1>JOA IT Mock Test 02</h1>
+<div class="meta">
+<span class="pill">100 Questions</span>
+<span class="pill">90 Minutes</span>
+<span class="pill">Hindi + English</span>
+<span class="pill">Paid Test</span>
+<span class="pill">One Attempt Only</span>
+</div>
+</div>
+
+<div id="loading" class="test">Checking your access...</div>
+
+<div id="testArea" class="test hidden">
+<div class="bar">
+<div>
+<div class="qno" id="qno"></div>
+<div id="answeredCount" style="font-size:13px;color:#6b7280;margin-top:4px"></div>
+</div>
+<div class="timer" id="timer">90:00</div>
+</div>
+
+<div class="progress"><i id="progress"></i></div>
+<div class="question" id="questionEn"></div>
+<div class="hindi" id="questionHi"></div>
+<div class="options" id="options"></div>
+
+<div class="controls">
+<button class="btn secondary" id="prevBtn">Previous</button>
+<button class="btn primary" id="nextBtn">Next</button>
+</div>
+</div>
+
+<div id="resultArea" class="test result hidden"></div>
+<div id="errorArea" class="test error hidden"></div>
+
+</div>
+
+<div class="modal hidden" id="startModal">
+
+<div class="modal-card" id="readyBox">
+<h2>Ready to Start?</h2>
+<p><strong>Important:</strong> Once you start Mock Test 02, the 90-minute timer will continue even if you refresh or close the tab.</p>
+<p>This test can be attempted only once.</p>
+<button class="btn primary" id="startBtn">I Understand &amp; Start</button>
+</div>
+
+<div class="modal-card hidden" id="countdownBox">
+<h2>Get Ready!</h2>
+<p>Your test will start in</p>
+<div id="countdown" class="countdown">5</div>
+<p style="margin:0;color:#6b7280">Your 90-minute timer starts after the countdown.</p>
+</div>
+
+</div>
+
+<script type="module">
+
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import {
+doc,
+getDoc,
+setDoc,
+updateDoc,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+import { auth, db } from "./firebase-config.js";
+import { questions } from "./joa-test-02.js";
+
+/* =========================================================
+   TEST CONFIG
+   For Test 03, copy this file and change only these values.
+   ========================================================= */
+
+const TEST_ID = "joa_test_02";
+const SESSION_ID_SUFFIX = "_joa_test_02";
+const TEST_NAME = "JOA IT Mock Test 02";
+const TOTAL_SECONDS = 90 * 60;
+
+/* ========================================================= */
+
+const $ = id => document.getElementById(id);
+
+let user = null;
+let sessionRef = null;
+let session = null;
+let answers = {};
+let current = 0;
+let timerHandle = null;
+let submitting = false;
+let countdownRunning = false;
+
+
+/* =========================
+   AUTH + ACCESS CHECK
+   ========================= */
+
+onAuthStateChanged(auth, async u => {
+
+if(!u){
+location.href = "firebase-login.html";
+return;
+}
+
+user = u;
+
+sessionRef = doc(
+db,
+"testSessions",
+user.uid + SESSION_ID_SUFFIX
+);
+
+try{
+
+/* Check paid/full-series access */
+const accessRef = doc(db,"testAccess",user.uid);
+const accessSnap = await getDoc(accessRef);
+
+if(!accessSnap.exists() || accessSnap.data().joaitFullSeries !== true){
+
+showError(
+"Access Required",
+"You do not have access to Mock Test 02 yet."
+);
+return;
+
+}
+
+
+/* Test 01 must be completed before Test 02 */
+const test01AttemptRef = doc(
+db,
+"testAttempts",
+user.uid + "_joa_test_01"
+);
+
+const test01AttemptSnap = await getDoc(test01AttemptRef);
+
+if(!test01AttemptSnap.exists()){
+
+showError(
+"Test 02 Locked",
+"Please complete Mock Test 01 before attempting Mock Test 02."
+);
+return;
+
+}
+
+
+/* Check if already submitted */
+const attemptRef = doc(
+db,
+"testAttempts",
+user.uid + SESSION_ID_SUFFIX
+);
+
+const attemptSnap = await getDoc(attemptRef);
+
+if(attemptSnap.exists()){
+
+showAlreadyAttempted(attemptSnap.data());
+return;
+
+}
+
+
+/* Check for an unfinished session */
+const sessionSnap = await getDoc(sessionRef);
+
+if(sessionSnap.exists()){
+
+session = sessionSnap.data();
+answers = session.answers || {};
+current = Math.min(
+Number(session.current || 0),
+questions.length - 1
+);
+
+$("loading").classList.add("hidden");
+$("testArea").classList.remove("hidden");
+
+render();
+startClock();
+
+}else{
+
+$("loading").classList.add("hidden");
+$("startModal").classList.remove("hidden");
+
+}
+
+}catch(e){
+
+console.error(e);
+
+showError(
+"Unable to Load Test",
+"Please refresh the page and try again."
+);
+
+}
+
+});
+
+
+/* =========================
+   START + COUNTDOWN
+   ========================= */
+
+$("startBtn").onclick = async () => {
+
+if(countdownRunning) return;
+
+countdownRunning = true;
+$("startBtn").disabled = true;
+
+$("readyBox").classList.add("hidden");
+$("countdownBox").classList.remove("hidden");
+
+for(let n = 5; n >= 1; n--){
+
+$("countdown").textContent = n;
+
+await new Promise(
+resolve => setTimeout(resolve,1000)
+);
+
+}
+
+try{
+
+const snap = await getDoc(sessionRef);
+
+if(snap.exists()){
+
+/* Existing session: resume it */
+session = snap.data();
+answers = session.answers || {};
+current = Number(session.current || 0);
+
+}else{
+
+/* Official timer starts only after countdown */
+await setDoc(sessionRef,{
+uid:user.uid,
+email:user.email || "",
+testId:TEST_ID,
+testName:TEST_NAME,
+startedAt:serverTimestamp(),
+answers:{},
+current:0,
+status:"in_progress"
+});
+
+const fresh = await getDoc(sessionRef);
+session = fresh.data();
+
+}
+
+$("startModal").classList.add("hidden");
+$("countdownBox").classList.add("hidden");
+$("testArea").classList.remove("hidden");
+$("loading").classList.add("hidden");
+
+render();
+startClock();
+
+}catch(e){
+
+console.error(e);
+
+$("countdownBox").classList.add("hidden");
+$("readyBox").classList.remove("hidden");
+$("startBtn").disabled = false;
+countdownRunning = false;
+
+alert("Unable to start the test. Please try again.");
+
+}
+
+};
+
+
+/* =========================
+   RENDER QUESTION
+   ========================= */
+
+function render(){
+
+if(!questions.length){
+
+showError(
+"Question Bank Empty",
+"No questions have been added to joa-test-02.js yet."
+);
+
+return;
+}
+
+const q = questions[current];
+
+$("qno").textContent =
+`Question ${current + 1} of ${questions.length}`;
+
+$("answeredCount").textContent =
+`Answered: ${Object.keys(answers).length} / ${questions.length}`;
+
+$("questionEn").textContent =
+q.en || "[English question will be added here]";
+
+$("questionHi").textContent =
+q.hi || "[Hindi question will be added here]";
+
+$("options").innerHTML =
+["A","B","C","D"].map(k => `
+
+<label class="option ${answers[current] === k ? "selected" : ""}">
+
+<input
+type="radio"
+name="answer"
+value="${k}"
+${answers[current] === k ? "checked" : ""}
+>
+
+<span>
+<strong>${k}.</strong>
+${q[k] || "[Option]"}
+</span>
+
+</label>
+
+`).join("");
+
+document
+.querySelectorAll('input[name="answer"]')
+.forEach(x => x.onchange = saveAnswer);
+
+$("prevBtn").disabled = current === 0;
+
+$("nextBtn").textContent =
+current === questions.length - 1
+? "Submit Test"
+: "Next";
+
+$("progress").style.width =
+((current + 1) / questions.length * 100) + "%";
+
+}
+
+
+/* =========================
+   SAVE ANSWER
+   ========================= */
+
+async function saveAnswer(e){
+
+answers[current] = e.target.value;
+
+document
+.querySelectorAll(".option")
+.forEach(x => x.classList.remove("selected"));
+
+e.target
+.closest(".option")
+.classList.add("selected");
+
+$("answeredCount").textContent =
+`Answered: ${Object.keys(answers).length} / ${questions.length}`;
+
+try{
+
+await updateDoc(sessionRef,{
+answers,
+current,
+updatedAt:serverTimestamp()
+});
+
+}catch(err){
+
+console.error("answer save",err);
+
+}
+
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+$("prevBtn").onclick = () => {
+
+if(current > 0){
+
+current--;
+
+updateDoc(
+sessionRef,
+{
+current,
+updatedAt:serverTimestamp()
+}
+).catch(()=>{});
+
+render();
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+};
+
+
+$("nextBtn").onclick = () => {
+
+if(current < questions.length - 1){
+
+current++;
+
+updateDoc(
+sessionRef,
+{
+current,
+updatedAt:serverTimestamp()
+}
+).catch(()=>{});
+
+render();
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}else{
+
+confirmSubmit();
+
+}
+
+};
+
+
+/* =========================
+   SUBMIT
+   ========================= */
+
+async function confirmSubmit(){
+
+if(submitting) return;
+
+const unanswered =
+questions.length - Object.keys(answers).length;
+
+if(
+unanswered > 0 &&
+!confirm(
+`You have ${unanswered} unanswered question(s). Submit anyway?`
+)
+){
+
+return;
+
+}
+
+submitTest("manual");
+
+}
+
+
+async function submitTest(reason){
+
+if(submitting) return;
+
+submitting = true;
+
+$("nextBtn").disabled = true;
+$("prevBtn").disabled = true;
+
+let score = 0;
+
+questions.forEach((q,i)=>{
+
+if(
+answers[i] &&
+q.ans &&
+answers[i] === q.ans
+){
+
+score++;
+
+}
+
+});
+
+try{
+
+const fresh = await getDoc(sessionRef);
+
+if(!fresh.exists()){
+
+alert("Test session not found.");
+submitting = false;
+return;
+
+}
+
+const s = fresh.data();
+
+const started =
+s.startedAt?.toDate?.().getTime();
+
+if(!started){
+
+alert(
+"Test start time is unavailable. Please contact support."
+);
+
+submitting = false;
+return;
+
+}
+
+const elapsed =
+(Date.now() - started) / 1000;
+
+if(elapsed < TOTAL_SECONDS || reason === "time_up"){
+
+await setDoc(
+doc(
+db,
+"testAttempts",
+user.uid + SESSION_ID_SUFFIX
+),
+{
+uid:user.uid,
+name:user.displayName || "Student",
+email:user.email || "",
+testId:TEST_ID,
+testName:TEST_NAME,
+score,
+total:questions.length,
+percentage:Math.round(
+score / questions.length * 100
+),
+answers,
+startedAt:s.startedAt,
+submittedAt:serverTimestamp(),
+attemptedAt:serverTimestamp(),
+submitReason:reason
+}
+);
+
+await updateDoc(
+sessionRef,
+{
+status:"submitted",
+submittedAt:serverTimestamp()
+}
+);
+
+clearInterval(timerHandle);
+
+showResult(
+score,
+questions.length,
+reason
+);
+
+}else{
+
+alert(
+"Submission blocked: the test is still active."
+);
+
+submitting = false;
+
+}
+
+}catch(e){
+
+console.error(e);
+
+alert(
+"Unable to submit. Please check your internet connection and try again."
+);
+
+submitting = false;
+
+}
+
+}
+
+
+/* =========================
+   TIMER
+   ========================= */
+
+function startClock(){
+
+if(timerHandle)
+clearInterval(timerHandle);
+
+timerHandle = setInterval(
+async () => {
+
+if(!session?.startedAt)
+return;
+
+const started =
+session.startedAt.toDate
+? session.startedAt.toDate().getTime()
+: Date.now();
+
+const elapsed =
+Math.floor((Date.now() - started) / 1000);
+
+const left =
+Math.max(0,TOTAL_SECONDS - elapsed);
+
+const m =
+String(Math.floor(left / 60)).padStart(2,"0");
+
+const s =
+String(left % 60).padStart(2,"0");
+
+$("timer").textContent =
+`${m}:${s}`;
+
+if(left <= 300)
+$("timer").classList.remove("safe");
+else
+$("timer").classList.add("safe");
+
+if(left <= 0){
+
+clearInterval(timerHandle);
+
+await submitTest("time_up");
+
+}
+
+},
+1000
+);
+
+}
+
+
+/* =========================
+   RESULT
+   ========================= */
+
+function showResult(score,total,reason){
+
+$("testArea").classList.add("hidden");
+$("resultArea").classList.remove("hidden");
+
+$("resultArea").innerHTML = `
+
+<h2>Mock Test 02 Completed</h2>
+
+<div class="score">
+${score}/${total}
+</div>
+
+<p>
+Percentage: ${Math.round(score/total*100)}%
+</p>
+
+<p>
+${reason === "time_up"
+? "Time limit reached."
+: "Your test has been submitted."}
+</p>
+
+<br>
+
+<a
+class="btn primary"
+style="display:inline-block;text-decoration:none"
+href="study-mode.html?test=joa_test_02"
+>
+Study Mode
+</a>
+
+<a
+class="btn secondary"
+style="display:inline-block;text-decoration:none;margin-left:8px"
+href="joa-series.html"
+>
+Back to Series
+</a>
+
+`;
+
+}
+
+
+/* =========================
+   ALREADY ATTEMPTED
+   ========================= */
+
+function showAlreadyAttempted(data){
+
+$("loading").classList.add("hidden");
+$("resultArea").classList.remove("hidden");
+
+$("resultArea").innerHTML = `
+
+<h2>You Have Already Attempted This Test</h2>
+
+<div class="score">
+${data.score ?? 0}/${data.total ?? questions.length}
+</div>
+
+<p>
+Percentage: ${data.percentage ?? 0}%
+</p>
+
+<p>
+This mock test can only be attempted once.
+</p>
+
+<br>
+
+<a
+class="btn primary"
+style="display:inline-block;text-decoration:none"
+href="study-mode.html?test=joa_test_02"
+>
+Study Mode
+</a>
+
+<a
+class="btn secondary"
+style="display:inline-block;text-decoration:none;margin-left:8px"
+href="joa-series.html"
+>
+Back to Series
+</a>
+
+`;
+
+}
+
+
+/* =========================
+   ACCESS / ERROR
+   ========================= */
+
+function showError(title,message){
+
+$("loading").classList.add("hidden");
+$("errorArea").classList.remove("hidden");
+
+$("errorArea").innerHTML = `
+
+<h2>${title}</h2>
+
+<p>${message}</p>
+
+<br>
+
+<a
+class="btn secondary"
+href="joa-series.html"
+>
+Back to Series
+</a>
+
+`;
+
+}
+
+
+/* =========================
+   EXIT WARNING
+   ========================= */
+
+window.addEventListener(
+"beforeunload",
+e => {
+
+if(
+session &&
+!submitting &&
+session.status !== "submitted"
+){
+
+e.preventDefault();
+e.returnValue =
+"Your test is in progress. Do not close this tab.";
+
+return e.returnValue;
+
+}
+
+}
+);
+
+
+/* Prevent browser Back during active test */
+
+history.pushState(null,"",location.href);
+
+window.addEventListener(
+"popstate",
+()=>{
+
+if(
+session &&
+!submitting &&
+session.status !== "submitted"
+){
+
+history.pushState(null,"",location.href);
+
+alert(
+"Please do not use the Back button while the test is in progress."
+);
+
+}
+
+}
+);
+
+</script>
+
+</body>
+</html>
