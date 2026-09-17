@@ -1,6 +1,1102 @@
 const questions = [
 
+{
+id:1,
+en:"Which part of an IP address identifies the network?",
+hi:"IP address का कौन-सा भाग नेटवर्क को पहचानता है?",
+A:"Host ID",
+B:"Network ID",
+C:"Port Number",
+D:"Protocol ID",
+ans:"B"
+},
 
+{
+id:2,
+en:"IPv4 addresses are written using:",
+hi:"IPv4 address किस notation में लिखा जाता है?",
+A:"Binary notation",
+B:"Hexadecimal notation",
+C:"Dotted decimal notation",
+D:"Octal notation",
+ans:"C"
+},
+
+{
+id:3,
+en:"How many bits are there in an IPv4 address?",
+hi:"IPv4 address में कुल कितने bits होते हैं?",
+A:"16",
+B:"32",
+C:"64",
+D:"128",
+ans:"B"
+},
+
+{
+id:4,
+en:"How many bits are there in an IPv6 address?",
+hi:"IPv6 address में कुल कितने bits होते हैं?",
+A:"32",
+B:"64",
+C:"128",
+D:"256",
+ans:"C"
+},
+
+{
+id:5,
+en:"Which routing protocol uses hop count as its metric?",
+hi:"कौन-सा routing protocol hop count को metric के रूप में उपयोग करता है?",
+A:"OSPF",
+B:"RIP",
+C:"BGP",
+D:"EIGRP",
+ans:"B"
+},
+
+{
+id:6,
+en:"The maximum hop count allowed in RIP is:",
+hi:"RIP में अधिकतम hop count कितना होता है?",
+A:"10",
+B:"15",
+C:"20",
+D:"30",
+ans:"B"
+},
+
+{
+id:7,
+en:"Which routing protocol uses the shortest path first algorithm?",
+hi:"कौन-सा routing protocol shortest path first algorithm का उपयोग करता है?",
+A:"RIP",
+B:"OSPF",
+C:"BGP",
+D:"IGRP",
+ans:"B"
+},
+
+{
+id:8,
+en:"The IPv4 header contains how many fields approximately?",
+hi:"IPv4 header में लगभग कितने fields होते हैं?",
+A:"8",
+B:"10",
+C:"12",
+D:"14",
+ans:"C"
+},
+
+{
+id:9,
+en:"Which field in IPv4 header specifies how long a packet can remain in the network?",
+hi:"IPv4 header का कौन-सा field यह बताता है कि packet कितनी देर तक network में रह सकता है?",
+A:"TTL",
+B:"Protocol",
+C:"Header Length",
+D:"Version",
+ans:"A"
+},
+
+{
+id:10,
+en:"The IPv4 header size without options is:",
+hi:"IPv4 header का size (without options) कितना होता है?",
+A:"20 bytes",
+B:"24 bytes",
+C:"32 bytes",
+D:"40 bytes",
+ans:"A"
+}, 
+{
+id:11,
+en:"Which IPv4 class provides the largest number of host addresses?",
+hi:"IPv4 की कौन-सी class सबसे अधिक host addresses प्रदान करती है?",
+A:"Class A",
+B:"Class B",
+C:"Class C",
+D:"Class D",
+ans:"A"
+},
+
+{
+id:12,
+en:"Which IPv4 class is reserved for multicast?",
+hi:"IPv4 की कौन-सी class multicast के लिए reserved होती है?",
+A:"Class A",
+B:"Class C",
+C:"Class D",
+D:"Class E",
+ans:"C"
+},
+
+{
+id:13,
+en:"The loopback address in IPv4 is:",
+hi:"IPv4 में loopback address क्या है?",
+A:"127.0.0.1",
+B:"192.168.1.1",
+C:"255.255.255.0",
+D:"10.0.0.1",
+ans:"A"
+},
+
+{
+id:14,
+en:"Which IPv4 address range is reserved for private networks?",
+hi:"IPv4 का कौन-सा address range private networks के लिए reserved है?",
+A:"8.0.0.0 – 8.255.255.255",
+B:"192.168.0.0 – 192.168.255.255",
+C:"150.0.0.0 – 150.255.255.255",
+D:"200.0.0.0 – 200.255.255.255",
+ans:"B"
+},
+
+{
+id:15,
+en:"Which routing protocol is commonly used between autonomous systems?",
+hi:"Autonomous systems के बीच सामान्यतः कौन-सा routing protocol उपयोग होता है?",
+A:"RIP",
+B:"OSPF",
+C:"BGP",
+D:"IGRP",
+ans:"C"
+},
+
+{
+id:16,
+en:"The IPv6 address format is written in:",
+hi:"IPv6 address किस format में लिखा जाता है?",
+A:"Binary",
+B:"Hexadecimal",
+C:"Decimal",
+D:"Octal",
+ans:"B"
+},
+
+{
+id:17,
+en:"Which IPv6 address type is used to communicate with a single interface?",
+hi:"IPv6 में कौन-सा address type एक single interface से communication के लिए उपयोग होता है?",
+A:"Multicast",
+B:"Broadcast",
+C:"Unicast",
+D:"Anycast",
+ans:"C"
+},
+
+{
+id:18,
+en:"IPv6 does not support which addressing type used in IPv4?",
+hi:"IPv6 में IPv4 की कौन-सी addressing type supported नहीं है?",
+A:"Unicast",
+B:"Multicast",
+C:"Broadcast",
+D:"Anycast",
+ans:"C"
+},
+
+{
+id:19,
+en:"Which field identifies the next protocol in the IPv6 header?",
+hi:"IPv6 header में कौन-सा field next protocol को identify करता है?",
+A:"Hop Limit",
+B:"Next Header",
+C:"Payload Length",
+D:"Version",
+ans:"B"
+},
+
+{
+id:20,
+en:"The version field in IPv4 header contains:",
+hi:"IPv4 header में version field क्या दर्शाता है?",
+A:"Protocol type",
+B:"IP version number",
+C:"Packet size",
+D:"Routing type",
+ans:"B"
+}, 
+
+{
+id:21,
+en:"Which protocol is used to discover the MAC address of a device in a network?",
+hi:"Network में किसी device का MAC address जानने के लिए कौन-सा protocol उपयोग होता है?",
+A:"ARP",
+B:"DNS",
+C:"FTP",
+D:"SMTP",
+ans:"A"
+},
+
+{
+id:22,
+en:"Which protocol is used to translate domain names into IP addresses?",
+hi:"Domain name को IP address में बदलने के लिए कौन-सा protocol उपयोग होता है?",
+A:"DNS",
+B:"ARP",
+C:"ICMP",
+D:"DHCP",
+ans:"A"
+},
+
+{
+id:23,
+en:"Which protocol is used to automatically assign IP addresses to devices?",
+hi:"Devices को automatically IP address देने के लिए कौन-सा protocol उपयोग होता है?",
+A:"ARP",
+B:"DHCP",
+C:"FTP",
+D:"SMTP",
+ans:"B"
+},
+
+{
+id:24,
+en:"The subnet mask 255.255.255.0 represents:",
+hi:"Subnet mask 255.255.255.0 किसको दर्शाता है?",
+A:"/16 network",
+B:"/24 network",
+C:"/32 network",
+D:"/8 network",
+ans:"B"
+},
+
+{
+id:25,
+en:"Which field in IPv4 header is used for error checking?",
+hi:"IPv4 header में error checking के लिए कौन-सा field उपयोग होता है?",
+A:"TTL",
+B:"Header Checksum",
+C:"Identification",
+D:"Fragment Offset",
+ans:"B"
+},
+
+{
+id:26,
+en:"ASCII stands for:",
+hi:"ASCII का full form क्या है?",
+A:"American Standard Code for Information Interchange",
+B:"Automatic Standard Code for Information Interface",
+C:"American System Code for Information Interchange",
+D:"Automated Standard Code for Internet Interface",
+ans:"A"
+},
+
+{
+id:27,
+en:"Standard ASCII uses how many bits to represent each character?",
+hi:"Standard ASCII में प्रत्येक character को कितने bits में दर्शाया जाता है?",
+A:"6",
+B:"7",
+C:"8",
+D:"16",
+ans:"B"
+},
+
+{
+id:28,
+en:"Extended ASCII typically uses how many bits?",
+hi:"Extended ASCII सामान्यतः कितने bits का उपयोग करता है?",
+A:"7 bits",
+B:"8 bits",
+C:"16 bits",
+D:"32 bits",
+ans:"B"
+},
+
+{
+id:29,
+en:"How many characters can be represented using standard ASCII?",
+hi:"Standard ASCII से कुल कितने characters represent किए जा सकते हैं?",
+A:"64",
+B:"128",
+C:"256",
+D:"512",
+ans:"B"
+},
+
+{
+id:30,
+en:"EBCDIC stands for:",
+hi:"EBCDIC का full form क्या है?",
+A:"Extended Binary Code for Data Interchange Code",
+B:"Extended Binary Coded Decimal Interchange Code",
+C:"Electronic Binary Code for Data Interchange Code",
+D:"Extended Binary Character Data Interface Code",
+ans:"B"
+}, 
+{
+id:31,
+en:"EBCDIC was mainly developed by:",
+hi:"EBCDIC मुख्यतः किसने विकसित किया था?",
+A:"Microsoft",
+B:"IBM",
+C:"Intel",
+D:"Apple",
+ans:"B"
+},
+
+{
+id:32,
+en:"Which encoding scheme is mainly used in IBM mainframe systems?",
+hi:"IBM mainframe systems में मुख्यतः कौन-सा encoding scheme उपयोग होता है?",
+A:"ASCII",
+B:"Unicode",
+C:"EBCDIC",
+D:"UTF-8",
+ans:"C"
+},
+
+{
+id:33,
+en:"ASCII code for the character ‘A’ in decimal is:",
+hi:"Character ‘A’ का ASCII code (decimal में) क्या है?",
+A:"64",
+B:"65",
+C:"66",
+D:"67",
+ans:"B"
+},
+
+{
+id:34,
+en:"ASCII code for digit ‘0’ starts from decimal:",
+hi:"Digit ‘0’ का ASCII code (decimal में) कहाँ से शुरू होता है?",
+A:"46",
+B:"48",
+C:"50",
+D:"52",
+ans:"B"
+},
+
+{
+id:35,
+en:"Which encoding system supports 256 different characters?",
+hi:"कौन-सा encoding system 256 characters को support करता है?",
+A:"ASCII",
+B:"Extended ASCII",
+C:"EBCDIC",
+D:"Both B and C",
+ans:"D"
+},
+
+{
+id:36,
+en:"What does HTML stand for?",
+hi:"HTML का full form क्या है?",
+A:"Hyperlinks and Text Markup Language",
+B:"Hyper Text Markup Language",
+C:"Hyper Transfer Markup Language",
+D:"High Text Markup Language",
+ans:"B"
+},
+
+{
+id:37,
+en:"XHTML stands for:",
+hi:"XHTML का full form क्या है?",
+A:"Extended Hyper Text Markup Language",
+B:"Extensible Hyper Text Markup Language",
+C:"Extra Hyper Text Markup Language",
+D:"Extended Hyperlink Text Markup Language",
+ans:"B"
+},
+
+{
+id:38,
+en:"Which of the following is a key rule in XHTML?",
+hi:"निम्न में से XHTML का एक मुख्य नियम कौन-सा है?",
+A:"Tags may remain unclosed",
+B:"Tags must be properly closed",
+C:"Uppercase tags are mandatory",
+D:"Attributes are optional",
+ans:"B"
+},
+
+{
+id:39,
+en:"In XHTML, attribute values must be written:",
+hi:"XHTML में attribute values कैसे लिखी जाती हैं?",
+A:"Without quotes",
+B:"In single or double quotes",
+C:"Only in single quotes",
+D:"Only in double quotes",
+ans:"B"
+},
+
+{
+id:40,
+en:"Which tag is used to create a hyperlink in HTML/XHTML?",
+hi:"HTML/XHTML में hyperlink बनाने के लिए कौन-सा tag उपयोग होता है?",
+A:"&lt;link&gt;",
+B:"&lt;a&gt;",
+C:"&lt;href&gt;",
+D:"&lt;url&gt;",
+ans:"B"
+}, 
+
+{
+id:41,
+en:"The TCP/IP model consists of how many layers?",
+hi:"TCP/IP model में कितनी layers होती हैं?",
+A:"3",
+B:"4",
+C:"5",
+D:"7",
+ans:"B"
+},
+
+{
+id:42,
+en:"Which layer of the TCP/IP model corresponds to the Transport layer of the OSI model?",
+hi:"TCP/IP model की कौन-सी layer OSI model की Transport layer के समान होती है?",
+A:"Network Interface Layer",
+B:"Application Layer",
+C:"Transport Layer",
+D:"Internet Layer",
+ans:"C"
+},
+
+{
+id:43,
+en:"Which technique is used in the Data Link Layer for detecting transmission errors?",
+hi:"Data Link Layer में transmission errors detect करने के लिए कौन-सी technique उपयोग होती है?",
+A:"Parity Check",
+B:"Packet Switching",
+C:"Routing",
+D:"Encryption",
+ans:"A"
+},
+
+{
+id:44,
+en:"In error control, which method uses an additional bit to detect errors in transmitted data?",
+hi:"Error control में कौन-सी method extra bit का उपयोग करके error detect करती है?",
+A:"Checksum",
+B:"Parity Bit",
+C:"Cyclic Redundancy Check",
+D:"Hamming Code",
+ans:"B"
+},
+
+{
+id:45,
+en:"CRC in data communication stands for:",
+hi:"Data communication में CRC का full form क्या है?",
+A:"Cyclic Redundancy Check",
+B:"Central Routing Control",
+C:"Cyclic Routing Code",
+D:"Channel Redundancy Code",
+ans:"A"
+},
+
+{
+id:46,
+en:"The 8085 microprocessor has how many address lines?",
+hi:"8085 microprocessor में कितनी address lines होती हैं?",
+A:"8",
+B:"12",
+C:"16",
+D:"20",
+ans:"C"
+},
+
+{
+id:47,
+en:"What is the maximum memory size that can be addressed by the 8085 microprocessor?",
+hi:"8085 microprocessor अधिकतम कितनी memory address कर सकता है?",
+A:"32 KB",
+B:"64 KB",
+C:"128 KB",
+D:"1 MB",
+ans:"B"
+},
+
+{
+id:48,
+en:"The 8086 microprocessor has how many address lines?",
+hi:"8086 microprocessor में कितनी address lines होती हैं?",
+A:"16",
+B:"20",
+C:"24",
+D:"32",
+ans:"B"
+},
+
+{
+id:49,
+en:"What is the maximum memory that can be addressed by the 8086 microprocessor?",
+hi:"8086 microprocessor अधिकतम कितनी memory address कर सकता है?",
+A:"512 KB",
+B:"1 MB",
+C:"2 MB",
+D:"4 MB",
+ans:"B"
+},
+
+{
+id:50,
+en:"In 8085 microprocessor, the accumulator register is represented by:",
+hi:"8085 microprocessor में accumulator register को किससे दर्शाया जाता है?",
+A:"A",
+B:"B",
+C:"C",
+D:"D",
+ans:"A"
+}, 
+
+{
+id:51,
+en:"Which register in 8086 holds the address of the next instruction to be executed?",
+hi:"8086 में अगली instruction का address किस register में होता है?",
+A:"AX",
+B:"BX",
+C:"IP",
+D:"SP",
+ans:"C"
+},
+
+{
+id:52,
+en:"Consider the following processes with burst times:\n\nProcess   Burst Time\nP1 = 4\nP2 = 3\nP3 = 2\n\nUsing FCFS scheduling, what is the average waiting time?",
+hi:"निम्न processes के burst time दिए गए हैं:\n\nProcess   Burst Time\nP1 = 4\nP2 = 3\nP3 = 2\n\nFCFS scheduling का उपयोग करते हुए average waiting time क्या होगा?",
+A:"3",
+B:"4",
+C:"3.67",
+D:"2",
+ans:"C"
+},
+
+{
+id:53,
+en:"Consider the processes with burst times:\n\nProcess   Burst Time\nP1 = 6\nP2 = 8\nP3 = 7\nP4 = 3\n\nUsing SJF (Non-preemptive) scheduling, what is the average waiting time?",
+hi:"निम्न processes के burst time दिए गए हैं:\n\nProcess   Burst Time\nP1 = 6\nP2 = 8\nP3 = 7\nP4 = 3\n\nSJF (Non-preemptive) scheduling का उपयोग करते हुए average waiting time क्या होगा?",
+A:"6.25",
+B:"7.5",
+C:"8",
+D:"5.5",
+ans:"A"
+},
+
+{
+id:54,
+en:"Consider the following processes arriving at time 0:\n\nProcess   Burst Time\nP1 = 5\nP2 = 4\nP3 = 2\n\nUsing Round Robin scheduling with time quantum = 2, which process will finish first?",
+hi:"निम्न processes time 0 पर आते हैं:\n\nProcess   Burst Time\nP1 = 5\nP2 = 4\nP3 = 2\n\nRound Robin (time quantum = 2) में कौन-सा process सबसे पहले finish होगा?",
+A:"P1",
+B:"P2",
+C:"P3",
+D:"P1 and P2",
+ans:"C"
+},
+
+{
+id:55,
+en:"Consider the following processes:\n\nProcess   Burst Time\nP1 = 10\nP2 = 5\nP3 = 8\n\nUsing SJF scheduling, which process will execute first?",
+hi:"निम्न processes दिए गए हैं:\n\nProcess   Burst Time\nP1 = 10\nP2 = 5\nP3 = 8\n\nSJF scheduling में कौन-सा process सबसे पहले execute होगा?",
+A:"P1",
+B:"P2",
+C:"P3",
+D:"None",
+ans:"B"
+}, 
+
+{
+id:56,
+en:"Which SQL command is used to create a new table?",
+hi:"नई table बनाने के लिए कौन-सा SQL command उपयोग होता है?",
+A:"INSERT",
+B:"CREATE",
+C:"SELECT",
+D:"UPDATE",
+ans:"B"
+},
+
+{
+id:57,
+en:"Which SQL command is used to modify the structure of an existing table?",
+hi:"मौजूदा table की structure बदलने के लिए कौन-सा SQL command उपयोग होता है?",
+A:"UPDATE",
+B:"MODIFY",
+C:"ALTER",
+D:"CHANGE",
+ans:"C"
+},
+
+{
+id:58,
+en:"Which SQL command is used to remove a table permanently from the database?",
+hi:"Database से table को permanently हटाने के लिए कौन-सा SQL command उपयोग होता है?",
+A:"DELETE",
+B:"DROP",
+C:"REMOVE",
+D:"ERASE",
+ans:"B"
+},
+
+{
+id:59,
+en:"Which SQL command is used to add records into a table?",
+hi:"Table में records जोड़ने के लिए कौन-सा SQL command उपयोग होता है?",
+A:"ADD",
+B:"INSERT",
+C:"UPDATE",
+D:"APPEND",
+ans:"B"
+},
+
+{
+id:60,
+en:"Which SQL clause is used to filter records in a query?",
+hi:"Query में records को filter करने के लिए कौन-सा SQL clause उपयोग होता है?",
+A:"HAVING",
+B:"WHERE",
+C:"ORDER BY",
+D:"GROUP BY",
+ans:"B"
+},
+
+{
+id:61,
+en:"Which SQL statement is used to change existing data in a table?",
+hi:"Table में existing data बदलने के लिए कौन-सा SQL statement उपयोग होता है?",
+A:"UPDATE",
+B:"MODIFY",
+C:"CHANGE",
+D:"ALTER",
+ans:"A"
+},
+
+{
+id:62,
+en:"Which SQL command removes all rows from a table but keeps the structure?",
+hi:"Table की structure को बनाए रखते हुए सभी rows हटाने के लिए कौन-सा SQL command उपयोग होता है?",
+A:"DELETE",
+B:"TRUNCATE",
+C:"DROP",
+D:"REMOVE",
+ans:"B"
+},
+
+{
+id:63,
+en:"Which command is used to grant privileges to users in SQL?",
+hi:"SQL में users को privileges देने के लिए कौन-सा command उपयोग होता है?",
+A:"GRANT",
+B:"PERMIT",
+C:"ALLOW",
+D:"ACCESS",
+ans:"A"
+},
+
+{
+id:64,
+en:"Which SQL command is used to take back privileges from a user?",
+hi:"User से privileges वापस लेने के लिए कौन-सा SQL command उपयोग होता है?",
+A:"DENY",
+B:"REMOVE",
+C:"REVOKE",
+D:"CANCEL",
+ans:"C"
+},
+
+{
+id:65,
+en:"Which TCL command is used to permanently save changes in a transaction?",
+hi:"Transaction में किए गए changes को permanently save करने के लिए कौन-सा TCL command उपयोग होता है?",
+A:"SAVE",
+B:"COMMIT",
+C:"END",
+D:"FINISH",
+ans:"B"
+},
+
+{
+id:66,
+en:"Which TCL command is used to undo changes made in a transaction?",
+hi:"Transaction में किए गए changes को undo करने के लिए कौन-सा TCL command उपयोग होता है?",
+A:"CANCEL",
+B:"RESET",
+C:"ROLLBACK",
+D:"UNDO",
+ans:"C"
+}, 
+
+{
+id:67,
+en:"Which SQL constraint ensures that a column cannot contain NULL values?",
+hi:"कौन-सा SQL constraint सुनिश्चित करता है कि column में NULL value नहीं हो सकती?",
+A:"UNIQUE",
+B:"NOT NULL",
+C:"CHECK",
+D:"DEFAULT",
+ans:"B"
+},
+
+{
+id:68,
+en:"Which constraint ensures that each value in a column is unique?",
+hi:"कौन-सा constraint सुनिश्चित करता है कि column की हर value unique हो?",
+A:"UNIQUE",
+B:"PRIMARY KEY",
+C:"CHECK",
+D:"FOREIGN KEY",
+ans:"A"
+},
+
+{
+id:69,
+en:"Which constraint is used to maintain referential integrity?",
+hi:"Referential integrity बनाए रखने के लिए कौन-सा constraint उपयोग होता है?",
+A:"PRIMARY KEY",
+B:"UNIQUE",
+C:"FOREIGN KEY",
+D:"CHECK",
+ans:"C"
+},
+
+{
+id:70,
+en:"Which SQL function returns the number of rows in a table?",
+hi:"कौन-सा SQL function table में rows की संख्या लौटाता है?",
+A:"SUM()",
+B:"COUNT()",
+C:"TOTAL()",
+D:"NUMBER()",
+ans:"B"
+},
+
+{
+id:71,
+en:"Kullu Dussehra begins on:",
+hi:"कुल्लू दशहरा कब शुरू होता है?",
+A:"Navami",
+B:"Dussehra Day",
+C:"Diwali",
+D:"Holi",
+ans:"B"
+},
+
+{
+id:72,
+en:"Hamirpur district was created in:",
+hi:"हमीरपुर जिला कब बनाया गया था?",
+A:"1965",
+B:"1972",
+C:"1980",
+D:"1995",
+ans:"B"
+},
+
+{
+id:73,
+en:"Central Potato Research Institute is located at:",
+hi:"केंद्रीय आलू अनुसंधान संस्थान कहाँ स्थित है?",
+A:"Shimla",
+B:"Kufri",
+C:"Solan",
+D:"Mandi",
+ans:"B"
+},
+
+{
+id:74,
+en:"Chamera Hydroelectric Project is located in:",
+hi:"चमेरा जलविद्युत परियोजना कहाँ स्थित है?",
+A:"Kangra",
+B:"Chamba",
+C:"Mandi",
+D:"Kullu",
+ans:"B"
+},
+
+{
+id:75,
+en:"The smallest district of Himachal Pradesh is:",
+hi:"हिमाचल प्रदेश का सबसे छोटा जिला कौन-सा है?",
+A:"Hamirpur",
+B:"Bilaspur",
+C:"Solan",
+D:"Una",
+ans:"B"
+},
+
+{
+id:76,
+en:"Roerich Art Gallery is located at:",
+hi:"रोएरिच आर्ट गैलरी कहाँ स्थित है?",
+A:"Kullu",
+B:"Naggar",
+C:"Manali",
+D:"Shimla",
+ans:"B"
+},
+
+{
+id:77,
+en:"Himachal Pradesh University is located in:",
+hi:"हिमाचल प्रदेश विश्वविद्यालय कहाँ स्थित है?",
+A:"Dharamshala",
+B:"Shimla",
+C:"Solan",
+D:"Mandi",
+ans:"B"
+}, 
+
+{
+id:78,
+en:"First hydroelectric project in Asia was established at:",
+hi:"एशिया का पहला जलविद्युत परियोजना कहाँ स्थापित किया गया था?",
+A:"Jogindernagar",
+B:"Shimla",
+C:"Palampur",
+D:"Chamba",
+ans:"A"
+},
+
+{
+id:79,
+en:"Minjar Fair celebrates harvesting of:",
+hi:"मिंजर मेला किस फसल की कटाई का उत्सव है?",
+A:"Wheat",
+B:"Rice",
+C:"Maize",
+D:"Barley",
+ans:"C"
+},
+
+{
+id:80,
+en:"Laxmi Narayan Temple is located in:",
+hi:"लक्ष्मी नारायण मंदिर कहाँ स्थित है?",
+A:"Chamba",
+B:"Kangra",
+C:"Mandi",
+D:"Kullu",
+ans:"A"
+},
+
+{
+id:81,
+en:"Fagli Festival is celebrated in:",
+hi:"फागली त्योहार कहाँ मनाया जाता है?",
+A:"Kinnaur",
+B:"Lahaul",
+C:"Spiti",
+D:"Chamba",
+ans:"B"
+},
+
+{
+id:82,
+en:"Hidimba Devi Temple was built in:",
+hi:"हिडिंबा देवी मंदिर किस शताब्दी में बना था?",
+A:"14th century",
+B:"15th century",
+C:"16th century",
+D:"17th century",
+ans:"C"
+},
+
+{
+id:83,
+en:"The largest natural lake of Himachal Pradesh is:",
+hi:"हिमाचल प्रदेश की सबसे बड़ी प्राकृतिक झील कौन-सी है?",
+A:"Renuka Lake",
+B:"Rewalsar Lake",
+C:"Khajjiar Lake",
+D:"Dal Lake",
+ans:"A"
+},
+
+{
+id:84,
+en:"River Ravi originates from:",
+hi:"रावी नदी का उद्गम कहाँ से होता है?",
+A:"Rohtang Pass",
+B:"Bara Banghal",
+C:"Kangra Hills",
+D:"Himalayas",
+ans:"D"
+},
+
+{
+id:85,
+en:"Shikari Devi Temple is located in:",
+hi:"शिकारी देवी मंदिर कहाँ स्थित है?",
+A:"Mandi",
+B:"Kangra",
+C:"Kullu",
+D:"Chamba",
+ans:"A"
+},
+
+{
+id:86,
+en:"The state animal of Himachal Pradesh is:",
+hi:"हिमाचल प्रदेश का राज्य पशु कौन-सा है?",
+A:"Snow Leopard",
+B:"Musk Deer",
+C:"Himalayan Black Bear",
+D:"Yak",
+ans:"A"
+},
+
+{
+id:87,
+en:"Fill in the blank: He is taller ______ his brother.",
+hi:"रिक्त स्थान भरें: He is taller ______ his brother.",
+A:"then",
+B:"than",
+C:"from",
+D:"of",
+ans:"B"
+},
+
+{
+id:88,
+en:"Choose the correct passive voice: “They completed the work.”",
+hi:"सही passive voice चुनें: “They completed the work.”",
+A:"The work has completed.",
+B:"The work was completed.",
+C:"The work completed.",
+D:"The work is completed.",
+ans:"B"
+}, 
+
+{
+id:89,
+en:"Choose the correct one word substitution: “A person who cannot read or write.”",
+hi:"एक शब्द में बताइए: “जो व्यक्ति पढ़ या लिख नहीं सकता।”",
+A:"Educated",
+B:"Scholar",
+C:"Illiterate",
+D:"Teacher",
+ans:"C"
+},
+
+{
+id:90,
+en:"Identify the part of speech of the word “Beautiful”.",
+hi:"“Beautiful” शब्द का पद-परिचय बताइए।",
+A:"Verb",
+B:"Adjective",
+C:"Adverb",
+D:"Noun",
+ans:"B"
+},
+
+{
+id:91,
+en:"Fill in the blank: Neither Ram nor his friends ______ present in the meeting.",
+hi:"रिक्त स्थान भरें: Neither Ram nor his friends ______ present in the meeting.",
+A:"was",
+B:"were",
+C:"is",
+D:"be",
+ans:"B"
+},
+
+{
+id:92,
+en:"‘राम ने फल खाया।’ वाक्य में ‘राम’ क्या है?",
+hi:"‘राम ने फल खाया।’ वाक्य में ‘राम’ क्या है?",
+A:"सर्वनाम",
+B:"क्रिया",
+C:"संज्ञा",
+D:"विशेषण",
+ans:"C"
+},
+
+{
+id:93,
+en:"‘बहुत’ शब्द किस प्रकार का विशेषण है?",
+hi:"‘बहुत’ किस प्रकार का विशेषण है?",
+A:"गुणवाचक",
+B:"संख्यावाचक",
+C:"परिमाणवाचक",
+D:"संकेतवाचक",
+ans:"C"
+},
+
+{
+id:94,
+en:"‘राम और श्याम पढ़ रहे हैं।’ वाक्य में ‘और’ क्या है?",
+hi:"‘राम और श्याम पढ़ रहे हैं।’ वाक्य में ‘और’ क्या है?",
+A:"संबंधबोधक",
+B:"समुच्चयबोधक",
+C:"विस्मयादिबोधक",
+D:"निपात",
+ans:"B"
+},
+
+{
+id:95,
+en:"‘धीरे-धीरे’ शब्द किस प्रकार का अव्यय है?",
+hi:"‘धीरे-धीरे’ किस प्रकार का अव्यय है?",
+A:"क्रिया विशेषण",
+B:"निपात",
+C:"समुच्चयबोधक",
+D:"विस्मयादिबोधक",
+ans:"A"
+},
+
+{
+id:96,
+en:"If A is the brother of B, B is the sister of C, and C is the father of D, then how is A related to D?",
+hi:"यदि A, B का भाई है, B, C की बहन है और C, D का पिता है, तो A का D से क्या संबंध है?",
+A:"Uncle",
+B:"Brother",
+C:"Father",
+D:"Grandfather",
+ans:"A"
+},
+
+{
+id:97,
+en:"Find the missing number: 5, 10, 20, 40, ?",
+hi:"श्रृंखला में अगली संख्या ज्ञात करें: 5, 10, 20, 40, ?",
+A:"60",
+B:"70",
+C:"80",
+D:"90",
+ans:"C"
+},
+
+{
+id:98,
+en:"In a certain code language, CAT is written as DBU. How is BAT written in that code?",
+hi:"एक कोड भाषा में CAT को DBU लिखा जाता है, तो BAT को कैसे लिखा जाएगा?",
+A:"CBU",
+B:"DBU",
+C:"DBT",
+D:"CBV",
+ans:"A"
+},
+
+{
+id:99,
+en:"Which country hosted the ICC Men's Cricket World Cup 2023?",
+hi:"ICC पुरुष क्रिकेट विश्व कप 2023 की मेजबानी किस देश ने की?",
+A:"Australia",
+B:"India",
+C:"England",
+D:"South Africa",
+ans:"B"
+},
+
+{
+id:100,
+en:"Which mission successfully landed near the south pole of the Moon in 2023?",
+hi:"2023 में चंद्रमा के दक्षिणी ध्रुव के पास सफलतापूर्वक उतरने वाला मिशन कौन-सा था?",
+A:"Chandrayaan-2",
+B:"Chandrayaan-3",
+C:"Aditya-L1",
+D:"Gaganyaan",
+ans:"B"
+}
 
   // Continue the same format up to Question 100
 
