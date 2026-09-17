@@ -210,9 +210,9 @@ db,
 user.uid + "_joa_test_02"
 );
 
-const test01AttemptSnap = await getDoc(test01AttemptRef);
+const test02AttemptSnap = await getDoc(test01AttemptRef);
 
-if(!test01AttemptSnap.exists()){
+if(!test02AttemptSnap.exists()){
 
 showError(
 "Test 03 Locked",
@@ -801,7 +801,7 @@ This mock test can only be attempted once.
 <a
 class="btn primary"
 style="display:inline-block;text-decoration:none"
-href="study-mode.html?test=joa_test_02"
+href="study-mode.html?test=joa_test_03"
 >
 Study Mode
 </a>
