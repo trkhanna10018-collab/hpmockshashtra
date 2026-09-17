@@ -1,5 +1,1011 @@
 const questions = [
+{
+id:1,
+en:"What is the output of a NAND gate when both inputs are HIGH?",
+hi:"जब NAND gate के दोनों inputs HIGH हों तो output क्या होगा?",
+A:"HIGH",
+B:"LOW",
+C:"Undefined",
+D:"Alternating",
+ans:"B"
+},
+{
+id:2,
+en:"Which logic gate is known as the universal gate?",
+hi:"कौन-सा logic gate universal gate कहलाता है?",
+A:"AND",
+B:"OR",
+C:"NAND",
+D:"XOR",
+ans:"C"
+},
+{
+id:3,
+en:"Which gate produces output HIGH only when inputs are different?",
+hi:"कौन-सा gate तब HIGH output देता है जब inputs अलग-अलग हों?",
+A:"AND",
+B:"XOR",
+C:"OR",
+D:"NOR",
+ans:"B"
+},
+{
+id:4,
+en:"Which combinational circuit converts binary data into a single active output line?",
+hi:"कौन-सा combinational circuit binary data को एक single active output line में बदलता है?",
+A:"Encoder",
+B:"Decoder",
+C:"Multiplexer",
+D:"Demultiplexer",
+ans:"B"
+},
+{
+id:5,
+en:"A circuit that selects one of many inputs and directs it to a single output is:",
+hi:"वह circuit जो कई inputs में से एक को चुनकर single output देता है, क्या कहलाता है?",
+A:"Decoder",
+B:"Multiplexer",
+C:"Encoder",
+D:"Comparator",
+ans:"B"
+},
+{
+id:6,
+en:"Which combinational circuit is used to perform binary addition?",
+hi:"कौन-सा combinational circuit binary addition के लिए उपयोग होता है?",
+A:"Multiplexer",
+B:"Adder",
+C:"Encoder",
+D:"Comparator",
+ans:"B"
+},
+{
+id:7,
+en:"A half adder has how many inputs and outputs respectively?",
+hi:"Half adder में कितने inputs और outputs होते हैं?",
+A:"2 inputs, 2 outputs",
+B:"3 inputs, 2 outputs",
+C:"2 inputs, 1 output",
+D:"3 inputs, 1 output",
+ans:"A"
+},
+{
+id:8,
+en:"A full adder can be implemented using:",
+hi:"Full adder को किससे implement किया जा सकता है?",
+A:"Two half adders",
+B:"Three half adders",
+C:"One XOR gate",
+D:"One OR gate",
+ans:"A"
+},
+{
+id:9,
+en:"Which circuit converts multiple input lines into fewer output lines?",
+hi:"कौन-सा circuit multiple inputs को कम outputs में बदलता है?",
+A:"Decoder",
+B:"Encoder",
+C:"Multiplexer",
+D:"Comparator",
+ans:"B"
+},
+{
+id:10,
+en:"Which device stores binary information using feedback?",
+hi:"कौन-सा device feedback की मदद से binary information store करता है?",
+A:"Multiplexer",
+B:"Flip-Flop",
+C:"Decoder",
+D:"Encoder",
+ans:"B"
+}, 
 
+{
+id:11,
+en:"Which flip-flop is known as a toggle flip-flop?",
+hi:"कौन-सा flip-flop toggle flip-flop के नाम से जाना जाता है?",
+A:"D Flip-Flop",
+B:"JK Flip-Flop",
+C:"T Flip-Flop",
+D:"SR Flip-Flop",
+ans:"C"
+},
+{
+id:12,
+en:"Which flip-flop eliminates the invalid state of SR flip-flop?",
+hi:"कौन-सा flip-flop SR flip-flop की invalid state को समाप्त करता है?",
+A:"D Flip-Flop",
+B:"JK Flip-Flop",
+C:"T Flip-Flop",
+D:"RS Flip-Flop",
+ans:"B"
+},
+{
+id:13,
+en:"In sequential circuits, the output depends on:",
+hi:"Sequential circuits में output किस पर निर्भर करता है?",
+A:"Only current inputs",
+B:"Only previous outputs",
+C:"Current inputs and previous state",
+D:"Power supply",
+ans:"C"
+},
+{
+id:14,
+en:"Which device is used to count pulses in digital systems?",
+hi:"Digital systems में pulses को count करने के लिए कौन-सा device उपयोग होता है?",
+A:"Decoder",
+B:"Counter",
+C:"Encoder",
+D:"Comparator",
+ans:"B"
+},
+{
+id:15,
+en:"Which sequential circuit is used to store data temporarily?",
+hi:"कौन-सा sequential circuit data को अस्थायी रूप से store करता है?",
+A:"Register",
+B:"Decoder",
+C:"Multiplexer",
+D:"Comparator",
+ans:"A"
+},
+{
+id:16,
+en:"What is the decimal equivalent of binary number 110101?",
+hi:"Binary संख्या 110101 का decimal equivalent क्या है?",
+A:"52",
+B:"53",
+C:"54",
+D:"55",
+ans:"B"
+},
+{
+id:17,
+en:"What is the binary equivalent of decimal 45?",
+hi:"Decimal 45 का binary equivalent क्या है?",
+A:"101101",
+B:"101011",
+C:"110101",
+D:"111001",
+ans:"A"
+},
+{
+id:18,
+en:"What is the hexadecimal equivalent of decimal 255?",
+hi:"Decimal 255 का hexadecimal equivalent क्या है?",
+A:"FF",
+B:"FE",
+C:"EF",
+D:"EE",
+ans:"A"
+},
+{
+id:19,
+en:"What is the octal equivalent of decimal number 64?",
+hi:"Decimal 64 का octal equivalent क्या है?",
+A:"100",
+B:"80",
+C:"70",
+D:"110",
+ans:"A"
+},
+{
+id:20,
+en:"BCD representation of decimal number 9 is:",
+hi:"Decimal 9 का BCD representation क्या है?",
+A:"1001",
+B:"1010",
+C:"1111",
+D:"0111",
+ans:"A"
+}, 
+
+{
+id:21,
+en:"What is the 1's complement of binary number 101010?",
+hi:"Binary संख्या 101010 का 1's complement क्या होगा?",
+A:"010101",
+B:"101010",
+C:"111111",
+D:"000000",
+ans:"A"
+},
+{
+id:22,
+en:"What is the 2's complement of binary number 1010?",
+hi:"Binary संख्या 1010 का 2's complement क्या होगा?",
+A:"0110",
+B:"0101",
+C:"0111",
+D:"1001",
+ans:"A"
+},
+{
+id:23,
+en:"Gray code is mainly used to:",
+hi:"Gray code का मुख्य उपयोग किस लिए किया जाता है?",
+A:"Reduce errors in digital systems",
+B:"Increase memory",
+C:"Encrypt data",
+D:"Compress data",
+ans:"A"
+},
+{
+id:24,
+en:"Which code is also known as self-complementing code?",
+hi:"कौन-सा code self-complementing code कहलाता है?",
+A:"Gray Code",
+B:"Excess-3 Code",
+C:"BCD",
+D:"ASCII",
+ans:"B"
+},
+{
+id:25,
+en:"Excess-3 code is obtained by adding which value to a decimal digit?",
+hi:"Excess-3 code प्राप्त करने के लिए decimal digit में क्या जोड़ा जाता है?",
+A:"2",
+B:"3",
+C:"4",
+D:"5",
+ans:"B"
+},
+{
+id:26,
+en:"The Gray code equivalent of binary 1011 is:",
+hi:"Binary 1011 का Gray code equivalent क्या है?",
+A:"1110",
+B:"1111",
+C:"1101",
+D:"1001",
+ans:"A"
+},
+{
+id:27,
+en:"IEEE 754 standard defines floating point numbers using:",
+hi:"IEEE 754 standard में floating point numbers किन भागों से मिलकर बनते हैं?",
+A:"Sign, exponent, mantissa",
+B:"Sign, integer, fraction",
+C:"Exponent, integer, fraction",
+D:"Sign, integer, decimal",
+ans:"A"
+},
+{
+id:28,
+en:"Single precision floating point uses how many bits?",
+hi:"Single precision floating point कितने bits का होता है?",
+A:"16",
+B:"32",
+C:"64",
+D:"128",
+ans:"B"
+},
+{
+id:29,
+en:"Double precision floating point uses how many bits?",
+hi:"Double precision floating point कितने bits का होता है?",
+A:"16",
+B:"32",
+C:"64",
+D:"128",
+ans:"C"
+},
+{
+id:30,
+en:"In IEEE 754 single precision, exponent uses how many bits?",
+hi:"IEEE 754 single precision में exponent के लिए कितने bits होते हैं?",
+A:"5",
+B:"8",
+C:"11",
+D:"16",
+ans:"B"
+}, 
+
+{
+id:31,
+en:"In IEEE 754 double precision, exponent field size is:",
+hi:"IEEE 754 double precision में exponent field का size कितना होता है?",
+A:"8 bits",
+B:"10 bits",
+C:"11 bits",
+D:"12 bits",
+ans:"C"
+},
+{
+id:32,
+en:"In floating point representation, the mantissa represents:",
+hi:"Floating point representation में mantissa क्या दर्शाता है?",
+A:"Fractional part",
+B:"Sign bit",
+C:"Exponent",
+D:"Integer value",
+ans:"A"
+},
+{
+id:33,
+en:"Which combinational circuit compares two binary numbers?",
+hi:"कौन-सा combinational circuit दो binary numbers की तुलना करता है?",
+A:"Comparator",
+B:"Decoder",
+C:"Encoder",
+D:"Multiplexer",
+ans:"A"
+},
+{
+id:34,
+en:"Which logic gate produces LOW output only when all inputs are HIGH?",
+hi:"कौन-सा logic gate केवल तब LOW output देता है जब सभी inputs HIGH हों?",
+A:"NAND",
+B:"AND",
+C:"OR",
+D:"NOR",
+ans:"A"
+},
+{
+id:35,
+en:"The output of an OR gate is LOW when:",
+hi:"OR gate का output कब LOW होता है?",
+A:"All inputs are LOW",
+B:"One input is HIGH",
+C:"All inputs are HIGH",
+D:"Inputs are different",
+ans:"A"
+},
+{
+id:36,
+en:"Which flip-flop is commonly used for data storage in registers?",
+hi:"Registers में data storage के लिए कौन-सा flip-flop उपयोग होता है?",
+A:"D Flip-Flop",
+B:"JK Flip-Flop",
+C:"SR Flip-Flop",
+D:"T Flip-Flop",
+ans:"A"
+},
+{
+id:37,
+en:"A shift register is used for:",
+hi:"Shift register का उपयोग किसके लिए किया जाता है?",
+A:"Data storage",
+B:"Data shifting",
+C:"Data comparison",
+D:"Data encryption",
+ans:"B"
+},
+{
+id:38,
+en:"A ring counter is a type of:",
+hi:"Ring counter किस प्रकार का circuit है?",
+A:"Asynchronous counter",
+B:"Shift register counter",
+C:"Decoder",
+D:"Encoder",
+ans:"B"
+},
+{
+id:39,
+en:"The primary advantage of Gray code over binary code is:",
+hi:"Gray code का binary code पर मुख्य लाभ क्या है?",
+A:"Faster processing",
+B:"Only one bit changes between successive numbers",
+C:"Requires less memory",
+D:"Easier encryption",
+ans:"B"
+},
+{
+id:40,
+en:"Which sequential circuit stores multiple bits of data simultaneously?",
+hi:"कौन-सा sequential circuit एक साथ कई bits store करता है?",
+A:"Register",
+B:"Counter",
+C:"Decoder",
+D:"Encoder",
+ans:"A"
+}, 
+{
+id:41,
+en:"Which of the following is a primitive data type?",
+hi:"निम्न में से कौन-सा primitive data type है?",
+A:"Array",
+B:"Stack",
+C:"Integer",
+D:"Linked List",
+ans:"C"
+},
+{
+id:42,
+en:"Which of the following is a non-primitive linear data structure?",
+hi:"निम्न में से कौन-सा non-primitive linear data structure है?",
+A:"Array",
+B:"Tree",
+C:"Graph",
+D:"Heap",
+ans:"A"
+},
+{
+id:43,
+en:"Which data structure follows the principle LIFO?",
+hi:"कौन-सा data structure LIFO सिद्धांत का पालन करता है?",
+A:"Queue",
+B:"Stack",
+C:"Array",
+D:"Linked List",
+ans:"B"
+},
+{
+id:44,
+en:"Which data structure follows FIFO principle?",
+hi:"कौन-सा data structure FIFO सिद्धांत का पालन करता है?",
+A:"Stack",
+B:"Queue",
+C:"Tree",
+D:"Graph",
+ans:"B"
+},
+{
+id:45,
+en:"In a stack, insertion operation is called:",
+hi:"Stack में insertion operation को क्या कहा जाता है?",
+A:"Enqueue",
+B:"Push",
+C:"Insert",
+D:"Add",
+ans:"B"
+},
+{
+id:46,
+en:"In a queue, deletion operation is called:",
+hi:"Queue में deletion operation को क्या कहा जाता है?",
+A:"Pop",
+B:"Remove",
+C:"Dequeue",
+D:"Delete",
+ans:"C"
+},
+{
+id:47,
+en:"Which data structure uses nodes connected by pointers?",
+hi:"कौन-सा data structure nodes को pointers से जोड़ता है?",
+A:"Array",
+B:"Linked List",
+C:"Stack",
+D:"Queue",
+ans:"B"
+},
+{
+id:48,
+en:"In an array, elements are stored in:",
+hi:"Array में elements कैसे store होते हैं?",
+A:"Random locations",
+B:"Linked nodes",
+C:"Contiguous memory locations",
+D:"Stack memory",
+ans:"C"
+},
+{
+id:49,
+en:"Which of the following is a non-linear data structure?",
+hi:"निम्न में से कौन-सा non-linear data structure है?",
+A:"Stack",
+B:"Queue",
+C:"Tree",
+D:"Array",
+ans:"C"
+},
+{
+id:50,
+en:"A binary tree in which each node has at most two children is called:",
+hi:"ऐसा binary tree जिसमें प्रत्येक node के अधिकतम दो children होते हैं, क्या कहलाता है?",
+A:"AVL Tree",
+B:"Binary Tree",
+C:"Heap Tree",
+D:"Search Tree",
+ans:"B"
+}, 
+
+{
+id:51,
+en:"In a binary tree, the maximum number of children a node can have is:",
+hi:"Binary tree में एक node के अधिकतम कितने children हो सकते हैं?",
+A:"1",
+B:"2",
+C:"3",
+D:"Unlimited",
+ans:"B"
+},
+{
+id:52,
+en:"In tree terminology, a node with no children is called:",
+hi:"Tree terminology में जिस node के कोई children नहीं होते, उसे क्या कहते हैं?",
+A:"Root node",
+B:"Internal node",
+C:"Leaf node",
+D:"Parent node",
+ans:"C"
+},
+{
+id:53,
+en:"The first node of a tree is called:",
+hi:"Tree का पहला node क्या कहलाता है?",
+A:"Parent",
+B:"Root",
+C:"Leaf",
+D:"Child",
+ans:"B"
+},
+{
+id:54,
+en:"In a Binary Search Tree (BST), the left subtree contains:",
+hi:"Binary Search Tree (BST) में left subtree में क्या होता है?",
+A:"Values greater than root",
+B:"Values smaller than root",
+C:"Equal values only",
+D:"Random values",
+ans:"B"
+},
+{
+id:55,
+en:"AVL tree is a:",
+hi:"AVL tree क्या है?",
+A:"Unbalanced binary tree",
+B:"Self-balancing binary search tree",
+C:"Heap tree",
+D:"Complete tree",
+ans:"B"
+},
+{
+id:56,
+en:"Which traversal method visits nodes in the order Root → Left → Right?",
+hi:"कौन-सा traversal method Root → Left → Right क्रम में nodes को visit करता है?",
+A:"Inorder",
+B:"Postorder",
+C:"Preorder",
+D:"Level order",
+ans:"C"
+},
+{
+id:57,
+en:"Inorder traversal of BST gives:",
+hi:"BST का inorder traversal क्या देता है?",
+A:"Sorted order",
+B:"Reverse order",
+C:"Random order",
+D:"Level order",
+ans:"A"
+},
+{
+id:58,
+en:"Which traversal method follows Left → Root → Right?",
+hi:"कौन-सा traversal method Left → Root → Right का पालन करता है?",
+A:"Preorder",
+B:"Inorder",
+C:"Postorder",
+D:"Level order",
+ans:"B"
+},
+{
+id:59,
+en:"Which searching algorithm works best on sorted arrays?",
+hi:"Sorted arrays पर कौन-सा searching algorithm सबसे अच्छा काम करता है?",
+A:"Linear Search",
+B:"Binary Search",
+C:"Sequential Search",
+D:"DFS",
+ans:"B"
+},
+{
+id:60,
+en:"Which sorting algorithm repeatedly compares adjacent elements?",
+hi:"कौन-सा sorting algorithm adjacent elements को बार-बार compare करता है?",
+A:"Selection Sort",
+B:"Bubble Sort",
+C:"Merge Sort",
+D:"Quick Sort",
+ans:"B"
+}, 
+
+{
+id:61,
+en:"A graph is a collection of:",
+hi:"Graph किसका संग्रह होता है?",
+A:"Nodes only",
+B:"Edges only",
+C:"Vertices and edges",
+D:"Trees",
+ans:"C"
+},
+{
+id:62,
+en:"Which graph representation uses a matrix to store edges?",
+hi:"कौन-सा graph representation edges को store करने के लिए matrix का उपयोग करता है?",
+A:"Adjacency Matrix",
+B:"Adjacency List",
+C:"Linked Graph",
+D:"Binary Graph",
+ans:"A"
+},
+{
+id:63,
+en:"Which data type in C is typically used to store a single character?",
+hi:"C में एक character store करने के लिए कौन-सा data type उपयोग होता है?",
+A:"int",
+B:"char",
+C:"float",
+D:"double",
+ans:"B"
+},
+{
+id:64,
+en:"What will be the output of the following expression in C? 10 % 3",
+hi:"C में निम्न expression का output क्या होगा? 10 % 3",
+A:"1",
+B:"2",
+C:"3",
+D:"0",
+ans:"A"
+},
+{
+id:65,
+en:"Which operator is used to find the size of a variable in C?",
+hi:"C में variable का size पता करने के लिए कौन-सा operator उपयोग होता है?",
+A:"length",
+B:"sizeof",
+C:"size",
+D:"lengthof",
+ans:"B"
+},
+{
+id:66,
+en:"Which operator is used to access the address of a variable?",
+hi:"Variable का address प्राप्त करने के लिए कौन-सा operator उपयोग होता है?",
+A:"*",
+B:"&",
+C:"%",
+D:"#",
+ans:"B"
+},
+{
+id:67,
+en:"What will be the value of x after execution? int x = 5; x++;",
+hi:"Execution के बाद x का मान क्या होगा? int x = 5; x++;",
+A:"4",
+B:"5",
+C:"6",
+D:"7",
+ans:"C"
+},
+{
+id:68,
+en:"Which operator is known as the conditional operator in C?",
+hi:"C में conditional operator कौन-सा है?",
+A:"::",
+B:"?:",
+C:"??",
+D:"!=",
+ans:"B"
+},
+{
+id:69,
+en:"Which of the following is a relational operator in C?",
+hi:"निम्न में से कौन-सा C में relational operator है?",
+A:"&&",
+B:"==",
+C:"+",
+D:"%",
+ans:"B"
+},
+{
+id:70,
+en:"What is the result of the expression (5 > 3) in C?",
+hi:"C में expression (5 > 3) का परिणाम क्या होगा?",
+A:"0",
+B:"1",
+C:"5",
+D:"Error",
+ans:"B"
+}, 
+
+{
+id:71,
+en:"Pong Dam reservoir is called:",
+hi:"पोंग डैम जलाशय को क्या कहा जाता है?",
+A:"Govind Sagar",
+B:"Maharana Pratap Sagar",
+C:"Renuka Lake",
+D:"Rewalsar Lake",
+ans:"B"
+},
+{
+id:72,
+en:"Great Himalayan National Park is located in:",
+hi:"ग्रेट हिमालयन नेशनल पार्क कहाँ स्थित है?",
+A:"Kullu",
+B:"Kangra",
+C:"Chamba",
+D:"Shimla",
+ans:"A"
+},
+{
+id:73,
+en:"Bhakra Dam reservoir is known as:",
+hi:"भाखड़ा डैम जलाशय किस नाम से जाना जाता है?",
+A:"Govind Sagar",
+B:"Pong Lake",
+C:"Rewalsar Lake",
+D:"Renuka Lake",
+ans:"A"
+},
+{
+id:74,
+en:"Nati dance belongs to which district?",
+hi:"नाटी नृत्य किस जिले से संबंधित है?",
+A:"Kangra",
+B:"Kullu",
+C:"Chamba",
+D:"Sirmaur",
+ans:"B"
+},
+{
+id:75,
+en:"Sutlej River enters India from:",
+hi:"सतलुज नदी भारत में कहाँ से प्रवेश करती है?",
+A:"Nepal",
+B:"China (Tibet)",
+C:"Bhutan",
+D:"Pakistan",
+ans:"B"
+},
+{
+id:76,
+en:"Renuka Lake is located in:",
+hi:"रेणुका झील कहाँ स्थित है?",
+A:"Shimla",
+B:"Sirmaur",
+C:"Solan",
+D:"Mandi",
+ans:"B"
+},
+{
+id:77,
+en:"First Chief Minister of Himachal Pradesh was:",
+hi:"हिमाचल प्रदेश के प्रथम मुख्यमंत्री कौन थे?",
+A:"Y.S. Parmar",
+B:"Shanta Kumar",
+C:"Ram Lal",
+D:"Virbhadra Singh",
+ans:"A"
+},
+{
+id:78,
+en:"Lahaul valley is drained by which river?",
+hi:"लाहौल घाटी किस नदी द्वारा drained होती है?",
+A:"Ravi",
+B:"Chenab",
+C:"Beas",
+D:"Sutlej",
+ans:"B"
+},
+{
+id:79,
+en:"Election Commission of India headquarters is located in:",
+hi:"भारत निर्वाचन आयोग का मुख्यालय कहाँ स्थित है?",
+A:"Mumbai",
+B:"New Delhi",
+C:"Kolkata",
+D:"Chennai",
+ans:"B"
+},
+{
+id:80,
+en:"Fundamental Rights in Indian Constitution are contained in:",
+hi:"भारतीय संविधान में मौलिक अधिकार किन अनुच्छेदों में हैं?",
+A:"Article 12–35",
+B:"Article 36–51",
+C:"Article 52–78",
+D:"Article 80–100",
+ans:"A"
+}, 
+
+{
+id:81,
+en:"Planning Commission was replaced by:",
+hi:"योजना आयोग को किसने प्रतिस्थापित किया?",
+A:"RBI",
+B:"NITI Aayog",
+C:"Finance Commission",
+D:"National Development Council",
+ans:"B"
+},
+{
+id:82,
+en:"The longest river in India is:",
+hi:"भारत की सबसे लंबी नदी कौन-सी है?",
+A:"Yamuna",
+B:"Brahmaputra",
+C:"Ganga",
+D:"Godavari",
+ans:"C"
+},
+{
+id:83,
+en:"What is the correct type of compound (samas) of the word 'अभिनय'?",
+hi:"'अभिनय' शब्द का सही समास भेद क्या है?",
+A:"द्वंद्व समास",
+B:"कर्मधारय समास",
+C:"तत्पुरुष समास",
+D:"बहुव्रीहि समास",
+ans:"C"
+},
+{
+id:84,
+en:"What is the compound form of 'राजा का पुत्र'?",
+hi:"'राजा का पुत्र' का समास रूप क्या होगा?",
+A:"राजपुत्र",
+B:"पुत्रराज",
+C:"राजकुमार",
+D:"पुत्रराजा",
+ans:"A"
+},
+{
+id:85,
+en:"The word formed by sandhi of 'जल + आशय' is:",
+hi:"'जल + आशय' की संधि से बना शब्द क्या है?",
+A:"जलाशय",
+B:"जलोशय",
+C:"जलेशय",
+D:"जलैशय",
+ans:"A"
+},
+{
+id:86,
+en:"Which prefix is used in the word 'अतिथि'?",
+hi:"'अतिथि' शब्द में कौन-सा उपसर्ग है?",
+A:"अ",
+B:"तिथि",
+C:"अत",
+D:"अति",
+ans:"A"
+},
+{
+id:87,
+en:"Which suffix is used in the word 'विद्यार्थी'?",
+hi:"'विद्यार्थी' शब्द में कौन-सा प्रत्यय लगा है?",
+A:"ई",
+B:"आर्थी",
+C:"थी",
+D:"अर्थी",
+ans:"A"
+},
+{
+id:88,
+en:"One word for 'जो कभी न मरे':",
+hi:"'जो कभी न मरे' के लिए एक शब्द क्या होगा?",
+A:"अमर",
+B:"अमृत",
+C:"अनश्वर",
+D:"अजर",
+ans:"A"
+},
+{
+id:89,
+en:"Fill in the blank: He is good ______ mathematics.",
+hi:"रिक्त स्थान भरें: He is good ______ mathematics.",
+A:"in",
+B:"at",
+C:"on",
+D:"for",
+ans:"B"
+},
+{
+id:90,
+en:"Choose the correct form of the verb: If she ______ harder, she would have passed the exam.",
+hi:"सही verb form चुनें: If she ______ harder, she would have passed the exam.",
+A:"studies",
+B:"studied",
+C:"had studied",
+D:"studying",
+ans:"C"
+}, 
+{
+id:91,
+en:"Identify the part of speech of the word \"quickly\".",
+hi:"\"quickly\" शब्द का part of speech क्या है?",
+A:"Adjective",
+B:"Adverb",
+C:"Noun",
+D:"Verb",
+ans:"B"
+},
+{
+id:92,
+en:"Choose the correct sentence.",
+hi:"सही वाक्य चुनें।",
+A:"I have visited Delhi last year.",
+B:"I visited Delhi last year.",
+C:"I had visit Delhi last year.",
+D:"I visiting Delhi last year.",
+ans:"B"
+},
+{
+id:93,
+en:"Fill in the blank: The news ______ very surprising.",
+hi:"रिक्त स्थान भरें: The news ______ very surprising.",
+A:"are",
+B:"is",
+C:"were",
+D:"have",
+ans:"B"
+},
+{
+id:94,
+en:"Choose the correct one-word substitution for: A person who writes books.",
+hi:"एक शब्द में बताइए: जो व्यक्ति किताबें लिखता है।",
+A:"Writer",
+B:"Author",
+C:"Editor",
+D:"Publisher",
+ans:"B"
+},
+{
+id:95,
+en:"Choose the correct sentence.",
+hi:"सही वाक्य चुनें।",
+A:"She is senior than me.",
+B:"She is senior to me.",
+C:"She is senior from me.",
+D:"She is senior with me.",
+ans:"B"
+},
+{
+id:96,
+en:"If CAT is written as DBU in a certain code, how is DOG written in that code?",
+hi:"यदि CAT को DBU लिखा जाता है, तो DOG को कैसे लिखा जाएगा?",
+A:"EPH",
+B:"CPH",
+C:"FQI",
+D:"DPH",
+ans:"A"
+},
+{
+id:97,
+en:"Find the missing number in the series: 2, 6, 18, 54, ?",
+hi:"श्रृंखला में अगली संख्या ज्ञात करें: 2, 6, 18, 54, ?",
+A:"108",
+B:"162",
+C:"216",
+D:"324",
+ans:"B"
+},
+{
+id:98,
+en:"If in a certain language RED is written as 82, how is BLUE written?",
+hi:"यदि किसी भाषा में RED = 82 है, तो BLUE क्या होगा?",
+A:"40",
+B:"45",
+C:"50",
+D:"55",
+ans:"A"
+},
+{
+id:99,
+en:"Who is the current President of India?",
+hi:"भारत के वर्तमान राष्ट्रपति कौन हैं?",
+A:"Ram Nath Kovind",
+B:"Droupadi Murmu",
+C:"Jagdeep Dhankhar",
+D:"Narendra Modi",
+ans:"B"
+},
+{
+id:100,
+en:"Chandrayaan-3 mission of ISRO landed on which part of the Moon?",
+hi:"ISRO के Chandrayaan-3 मिशन ने चंद्रमा के किस भाग पर लैंड किया?",
+A:"Northern Pole",
+B:"Equatorial Region",
+C:"Southern Polar Region",
+D:"Western Region",
+ans:"C"
+}
 
   // Continue the same format up to Question 100
 
