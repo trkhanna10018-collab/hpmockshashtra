@@ -1,6 +1,1012 @@
 const questions = [
 
+{
+id:1,
+en:"Which aggregate function calculates the average value?",
+hi:"कौन-सा aggregate function average value निकालता है?",
+A:"SUM()",
+B:"AVG()",
+C:"COUNT()",
+D:"MAX()",
+ans:"B"
+},
+{
+id:2,
+en:"Which SQL clause is used with aggregate functions to group rows?",
+hi:"Aggregate functions के साथ rows को group करने के लिए कौन-सा SQL clause उपयोग होता है?",
+A:"ORDER BY",
+B:"GROUP BY",
+C:"WHERE",
+D:"HAVING",
+ans:"B"
+},
+{
+id:3,
+en:"Which SQL join returns only matching rows from both tables?",
+hi:"कौन-सा SQL join दोनों tables से केवल matching rows return करता है?",
+A:"LEFT JOIN",
+B:"RIGHT JOIN",
+C:"INNER JOIN",
+D:"FULL JOIN",
+ans:"C"
+},
+{
+id:4,
+en:"Which SQL join returns all records from the left table and matched records from the right table?",
+hi:"कौन-सा SQL join left table के सभी records और right table के matching records देता है?",
+A:"INNER JOIN",
+B:"LEFT JOIN",
+C:"RIGHT JOIN",
+D:"CROSS JOIN",
+ans:"B"
+},
+{
+id:5,
+en:"Which join returns all records from both tables regardless of matching?",
+hi:"कौन-सा join दोनों tables के सभी records (match हो या न हो) return करता है?",
+A:"INNER JOIN",
+B:"FULL OUTER JOIN",
+C:"LEFT JOIN",
+D:"RIGHT JOIN",
+ans:"B"
+},
+{
+id:6,
+en:"Which relational algebra operation selects rows that satisfy a given condition?",
+hi:"Relational algebra में कौन-सा operation condition के अनुसार rows select करता है?",
+A:"Projection",
+B:"Selection",
+C:"Join",
+D:"Union",
+ans:"B"
+},
+{
+id:7,
+en:"Which relational algebra operation selects specific columns from a table?",
+hi:"Relational algebra में कौन-सा operation specific columns select करता है?",
+A:"Selection",
+B:"Projection",
+C:"Join",
+D:"Division",
+ans:"B"
+},
+{
+id:8,
+en:"Which relational algebra operation combines rows from two relations?",
+hi:"Relational algebra में कौन-सा operation दो relations की rows को combine करता है?",
+A:"Union",
+B:"Join",
+C:"Selection",
+D:"Projection",
+ans:"B"
+},
+{
+id:9,
+en:"Which SQL clause is used to sort the result of a query?",
+hi:"Query के result को sort करने के लिए कौन-सा SQL clause उपयोग होता है?",
+A:"GROUP BY",
+B:"ORDER BY",
+C:"SORT BY",
+D:"ARRANGE BY",
+ans:"B"
+},
+{
+id:10,
+en:"Which key uniquely identifies each record in a relation and is chosen from candidate keys?",
+hi:"कौन-सी key relation में प्रत्येक record को uniquely identify करती है और candidate keys में से चुनी जाती है?",
+A:"Super Key",
+B:"Primary Key",
+C:"Foreign Key",
+D:"Alternate Key",
+ans:"B"
+}, 
 
+{
+id:11,
+en:"A super key is:",
+hi:"Super key क्या होती है?",
+A:"A key that uniquely identifies a tuple in a relation",
+B:"A key used for indexing only",
+C:"A key used for sorting data",
+D:"A key used only in foreign tables",
+ans:"A"
+},
+{
+id:12,
+en:"A candidate key is:",
+hi:"Candidate key क्या होती है?",
+A:"A minimal super key",
+B:"A key with duplicate values",
+C:"A key used only for sorting",
+D:"A key with NULL values",
+ans:"A"
+},
+{
+id:13,
+en:"Which key is used to link two tables together?",
+hi:"दो tables को जोड़ने के लिए कौन-सी key उपयोग होती है?",
+A:"Primary Key",
+B:"Candidate Key",
+C:"Foreign Key",
+D:"Composite Key",
+ans:"C"
+},
+{
+id:14,
+en:"A relation can have how many primary keys?",
+hi:"एक relation में कितनी primary key हो सकती है?",
+A:"One",
+B:"Two",
+C:"Many",
+D:"None",
+ans:"A"
+},
+{
+id:15,
+en:"Which of the following is true about candidate keys?",
+hi:"Candidate keys के बारे में सही कथन कौन-सा है?",
+A:"Only one candidate key can exist",
+B:"A table may have multiple candidate keys",
+C:"Candidate keys can contain duplicate values",
+D:"Candidate keys must always be numeric",
+ans:"B"
+},
+{
+id:16,
+en:"In DBMS, ACID property ensures reliable transaction processing. What does 'A' stand for?",
+hi:"DBMS में ACID property में 'A' का क्या अर्थ है?",
+A:"Accuracy",
+B:"Atomicity",
+C:"Accessibility",
+D:"Availability",
+ans:"B"
+},
+{
+id:17,
+en:"Which ACID property ensures that a transaction changes the database from one valid state to another?",
+hi:"कौन-सी ACID property database को एक valid state से दूसरी valid state में बदलने को सुनिश्चित करती है?",
+A:"Consistency",
+B:"Isolation",
+C:"Atomicity",
+D:"Durability",
+ans:"A"
+},
+{
+id:18,
+en:"Which type of conflict occurs when one transaction reads a data item and another transaction writes the same item?",
+hi:"जब एक transaction data को read करे और दूसरा उसी data को write करे तो कौन-सा conflict होता है?",
+A:"W-W Conflict",
+B:"R-R Conflict",
+C:"R-W Conflict",
+D:"W-R Conflict",
+ans:"C"
+},
+{
+id:19,
+en:"Which conflict occurs when two transactions attempt to write the same data item?",
+hi:"जब दो transactions एक ही data item को write करने की कोशिश करें तो कौन-सा conflict होता है?",
+A:"W-W Conflict",
+B:"R-W Conflict",
+C:"R-R Conflict",
+D:"W-R Conflict",
+ans:"A"
+},
+{
+id:20,
+en:"A schedule is conflict serializable if:",
+hi:"Schedule कब conflict serializable कहलाती है?",
+A:"All transactions execute simultaneously",
+B:"It can be converted into a serial schedule by swapping non-conflicting operations",
+C:"All transactions are committed",
+D:"It contains only read operations",
+ans:"B"
+}, 
+
+{
+id:21,
+en:"Which graph is used to test conflict serializability?",
+hi:"Conflict serializability को test करने के लिए कौन-सा graph उपयोग होता है?",
+A:"Data Flow Graph",
+B:"Precedence Graph",
+C:"Binary Graph",
+D:"Execution Graph",
+ans:"B"
+},
+{
+id:22,
+en:"A schedule is recoverable if:",
+hi:"Schedule recoverable कब कहलाती है?",
+A:"Transactions commit before reading data",
+B:"A transaction commits only after the transaction from which it reads has committed",
+C:"Transactions run simultaneously",
+D:"All transactions abort",
+ans:"B"
+},
+{
+id:23,
+en:"Two Phase Locking (2PL) protocol ensures:",
+hi:"Two Phase Locking (2PL) protocol क्या सुनिश्चित करता है?",
+A:"Deadlock prevention",
+B:"Serializability",
+C:"Parallel execution",
+D:"Faster execution",
+ans:"B"
+},
+{
+id:24,
+en:"In the Timestamp Ordering protocol, transactions are ordered based on:",
+hi:"Timestamp Ordering protocol में transactions किस आधार पर क्रमबद्ध होते हैं?",
+A:"Priority",
+B:"Arrival time",
+C:"Timestamp value",
+D:"Process ID",
+ans:"C"
+},
+{
+id:25,
+en:"In concurrency control, which problem occurs when a transaction reads data that has not yet been committed?",
+hi:"Concurrency control में जब कोई transaction uncommitted data पढ़ता है तो कौन-सी समस्या होती है?",
+A:"Lost Update",
+B:"Dirty Read",
+C:"Phantom Read",
+D:"Deadlock",
+ans:"B"
+},
+{
+id:26,
+en:"Which feature in MS Word is used to quickly copy formatting from one part of the document to another?",
+hi:"MS Word में formatting को जल्दी copy करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Format Brush",
+B:"Format Painter",
+C:"Style Copy",
+D:"Copy Format",
+ans:"B"
+},
+{
+id:27,
+en:"Which shortcut key is used to save a document in MS Word?",
+hi:"MS Word में document save करने की shortcut key क्या है?",
+A:"Ctrl + S",
+B:"Ctrl + D",
+C:"Ctrl + W",
+D:"Ctrl + E",
+ans:"A"
+},
+{
+id:28,
+en:"Which MS Word feature automatically corrects spelling mistakes as you type?",
+hi:"टाइप करते समय spelling mistakes को automatically correct करने वाला feature कौन-सा है?",
+A:"AutoFormat",
+B:"AutoCorrect",
+C:"Spell Check",
+D:"Grammar Check",
+ans:"B"
+},
+{
+id:29,
+en:"Which tab in MS Word contains the option to insert pictures?",
+hi:"MS Word में pictures insert करने का option किस tab में होता है?",
+A:"Home",
+B:"Insert",
+C:"Layout",
+D:"Review",
+ans:"B"
+},
+{
+id:30,
+en:"Which MS Word view shows multiple pages at once for easy navigation?",
+hi:"MS Word का कौन-सा view एक साथ कई pages दिखाता है?",
+A:"Draft View",
+B:"Print Layout",
+C:"Multiple Pages View",
+D:"Web Layout",
+ans:"C"
+}, 
+
+{
+id:31,
+en:"Which feature allows collaboration by adding comments in a document?",
+hi:"Document में comments जोड़कर collaboration करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Review Comments",
+B:"Insert Comment",
+C:"Track Changes",
+D:"Annotation",
+ans:"B"
+},
+{
+id:32,
+en:"Which MS Word feature allows inserting predefined building blocks like cover pages and headers?",
+hi:"Predefined building blocks (cover pages, headers आदि) insert करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Quick Parts",
+B:"Smart Parts",
+C:"Word Blocks",
+D:"Text Blocks",
+ans:"A"
+},
+{
+id:33,
+en:"Which feature allows inserting a reference to a heading or figure in the document?",
+hi:"Document में heading या figure का reference insert करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Bookmark",
+B:"Hyperlink",
+C:"Cross-reference",
+D:"Citation",
+ans:"C"
+},
+{
+id:34,
+en:"Which MS Word option allows changing the orientation of the page?",
+hi:"Page orientation बदलने के लिए MS Word में कौन-सा option उपयोग होता है?",
+A:"Page Layout",
+B:"Orientation",
+C:"Format",
+D:"Page Setup",
+ans:"B"
+},
+{
+id:35,
+en:"Which shortcut key centers the selected text?",
+hi:"Selected text को center करने की shortcut key क्या है?",
+A:"Ctrl + C",
+B:"Ctrl + E",
+C:"Ctrl + R",
+D:"Ctrl + L",
+ans:"B"
+},
+{
+id:36,
+en:"Which MS Word feature allows automatic numbering of headings?",
+hi:"Headings की automatic numbering के लिए कौन-सा feature उपयोग होता है?",
+A:"Outline Numbering",
+B:"Multilevel List",
+C:"Number Format",
+D:"Heading List",
+ans:"B"
+},
+{
+id:37,
+en:"Which tab contains options for inserting shapes and SmartArt?",
+hi:"Shapes और SmartArt insert करने के options किस tab में होते हैं?",
+A:"Home",
+B:"Design",
+C:"Insert",
+D:"Review",
+ans:"C"
+},
+{
+id:38,
+en:"Which feature is used to protect a document with a password?",
+hi:"Document को password से protect करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Document Security",
+B:"Encrypt with Password",
+C:"Secure Mode",
+D:"Lock File",
+ans:"B"
+},
+{
+id:39,
+en:"Which feature is used to apply the same formatting style throughout a document?",
+hi:"पूरे document में एक ही formatting style लागू करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Style Set",
+B:"Template",
+C:"Format Style",
+D:"AutoFormat",
+ans:"A"
+},
+{
+id:40,
+en:"Which option allows splitting a page into two columns?",
+hi:"Page को दो columns में बाँटने के लिए कौन-सा option उपयोग होता है?",
+A:"Layout → Columns",
+B:"Insert → Columns",
+C:"Design → Columns",
+D:"View → Columns",
+ans:"A"
+}, 
+
+{
+id:41,
+en:"Which MS Word tool is used to create diagrams and flowcharts?",
+hi:"MS Word में diagrams और flowcharts बनाने के लिए कौन-सा tool उपयोग होता है?",
+A:"Shapes",
+B:"SmartArt",
+C:"Chart",
+D:"Drawing Tool",
+ans:"A"
+},
+{
+id:42,
+en:"Which feature is used to insert page numbers automatically?",
+hi:"Page numbers को automatically insert करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Header/Footer",
+B:"Page Number",
+C:"Page Setup",
+D:"Insert Page",
+ans:"B"
+},
+{
+id:43,
+en:"Which MS Word option automatically adjusts column width in a table?",
+hi:"Table में column width को automatically adjust करने के लिए कौन-सा option उपयोग होता है?",
+A:"AutoFit",
+B:"AutoWidth",
+C:"Table Adjust",
+D:"Fit Column",
+ans:"A"
+},
+{
+id:44,
+en:"Which feature is used to insert citations for research papers?",
+hi:"Research papers के लिए citations insert करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Citation Tool",
+B:"Reference Manager",
+C:"Insert Citation",
+D:"Bibliography Tool",
+ans:"C"
+},
+{
+id:45,
+en:"Which feature displays document structure based on headings?",
+hi:"Headings के आधार पर document structure दिखाने के लिए कौन-सा feature उपयोग होता है?",
+A:"Navigation Pane",
+B:"Document Map",
+C:"Outline View",
+D:"Structure View",
+ans:"A"
+},
+{
+id:46,
+en:"Which MS Word option allows inserting special symbols?",
+hi:"Special symbols insert करने के लिए कौन-सा option उपयोग होता है?",
+A:"Insert Symbol",
+B:"Symbol Tool",
+C:"Character Map",
+D:"Special Insert",
+ans:"A"
+},
+{
+id:47,
+en:"Which feature helps to merge letters with address lists?",
+hi:"Letters को address list के साथ merge करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Mail Merge",
+B:"Document Merge",
+C:"Letter Combine",
+D:"Address Merge",
+ans:"A"
+},
+{
+id:48,
+en:"Which MS Word option allows inserting watermarks in a document?",
+hi:"Document में watermark insert करने के लिए कौन-सा option उपयोग होता है?",
+A:"Page Layout",
+B:"Design → Watermark",
+C:"Insert → Watermark",
+D:"Format → Watermark",
+ans:"B"
+},
+{
+id:49,
+en:"Which feature allows splitting text into multiple columns?",
+hi:"Text को multiple columns में बाँटने के लिए कौन-सा feature उपयोग होता है?",
+A:"Page Break",
+B:"Columns",
+C:"Section Break",
+D:"Layout Split",
+ans:"B"
+},
+{
+id:50,
+en:"Which MS Word tool is used to highlight important text?",
+hi:"Important text को highlight करने के लिए कौन-सा tool उपयोग होता है?",
+A:"Highlighter",
+B:"Highlight Tool",
+C:"Text Highlight Color",
+D:"Mark Text",
+ans:"C"
+}, 
+
+{
+id:51,
+en:"Which Excel feature automatically adjusts column width to fit the contents?",
+hi:"Excel में column width को contents के अनुसार automatically adjust करने के लिए कौन-सा feature उपयोग होता है?",
+A:"AutoWidth",
+B:"AutoFit",
+C:"AutoAdjust",
+D:"FitCell",
+ans:"B"
+},
+{
+id:52,
+en:"Which function is used to find the highest value in a range?",
+hi:"Range में सबसे बड़ी value निकालने के लिए कौन-सा function उपयोग होता है?",
+A:"TOP()",
+B:"MAX()",
+C:"HIGH()",
+D:"LARGE()",
+ans:"B"
+},
+{
+id:53,
+en:"Which function counts all non-empty cells?",
+hi:"कौन-सा function सभी non-empty cells की गणना करता है?",
+A:"COUNT()",
+B:"COUNTA()",
+C:"COUNTIF()",
+D:"COUNTBLANK()",
+ans:"B"
+},
+{
+id:54,
+en:"What will be the result of the formula =LEN(\"EXCEL\") ?",
+hi:"=LEN(\"EXCEL\") का परिणाम क्या होगा?",
+A:"4",
+B:"5",
+C:"6",
+D:"7",
+ans:"B"
+},
+{
+id:55,
+en:"Which Excel function returns the current date?",
+hi:"वर्तमान तिथि प्राप्त करने के लिए कौन-सा Excel function उपयोग होता है?",
+A:"DATE()",
+B:"NOW()",
+C:"TODAY()",
+D:"CURRENT()",
+ans:"C"
+},
+{
+id:56,
+en:"Which function extracts characters from the middle of a text string?",
+hi:"Text string के बीच से characters निकालने के लिए कौन-सा function उपयोग होता है?",
+A:"MID()",
+B:"LEFT()",
+C:"RIGHT()",
+D:"TEXT()",
+ans:"A"
+},
+{
+id:57,
+en:"What does the formula =LEFT(\"COMPUTER\",4) return?",
+hi:"=LEFT(\"COMPUTER\",4) का परिणाम क्या होगा?",
+A:"COMP",
+B:"PUTER",
+C:"COM",
+D:"OM",
+ans:"A"
+},
+{
+id:58,
+en:"Which Excel feature allows creating charts easily from selected data?",
+hi:"Selected data से आसानी से charts बनाने के लिए कौन-सा feature उपयोग होता है?",
+A:"Quick Chart",
+B:"Chart Wizard",
+C:"Smart Chart",
+D:"Chart Maker",
+ans:"B"
+},
+{
+id:59,
+en:"Which function returns the remainder after division?",
+hi:"Division के बाद remainder देने वाला function कौन-सा है?",
+A:"MOD()",
+B:"REM()",
+C:"DIV()",
+D:"RND()",
+ans:"A"
+},
+{
+id:60,
+en:"Which Excel function converts text to uppercase?",
+hi:"Text को uppercase में बदलने के लिए कौन-सा function उपयोग होता है?",
+A:"UPPER()",
+B:"CAPITAL()",
+C:"UCASE()",
+D:"BIG()",
+ans:"A"
+}, 
+
+{
+id:61,
+en:"Which Excel function returns the smallest value in a range?",
+hi:"Range में सबसे छोटी value निकालने के लिए कौन-सा function उपयोग होता है?",
+A:"SMALL()",
+B:"MIN()",
+C:"LOW()",
+D:"LOWER()",
+ans:"B"
+},
+{
+id:62,
+en:"What will be the output of =POWER(3,2) ?",
+hi:"=POWER(3,2) का output क्या होगा?",
+A:"6",
+B:"9",
+C:"12",
+D:"18",
+ans:"B"
+},
+{
+id:63,
+en:"Which Excel feature freezes rows or columns while scrolling?",
+hi:"Scroll करते समय rows या columns को freeze करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Lock Pane",
+B:"Freeze Panes",
+C:"Fixed Rows",
+D:"Scroll Lock",
+ans:"B"
+},
+{
+id:64,
+en:"Which function joins multiple text strings together?",
+hi:"Multiple text strings को जोड़ने के लिए कौन-सा function उपयोग होता है?",
+A:"JOIN()",
+B:"CONCATENATE()",
+C:"TEXTJOIN()",
+D:"MERGE()",
+ans:"B"
+},
+{
+id:65,
+en:"Which function counts cells meeting a specified condition?",
+hi:"Specified condition को पूरा करने वाले cells की गणना करने के लिए कौन-सा function उपयोग होता है?",
+A:"COUNT()",
+B:"COUNTIF()",
+C:"COUNTA()",
+D:"COUNTBLANK()",
+ans:"B"
+},
+{
+id:66,
+en:"Which Excel function finds the position of a text string within another text?",
+hi:"Text string की position को दूसरे text के अंदर ढूंढने के लिए कौन-सा function उपयोग होता है?",
+A:"SEARCH()",
+B:"FINDPOS()",
+C:"LOCATE()",
+D:"MATCH()",
+ans:"A"
+},
+{
+id:67,
+en:"Which function returns the square root of a number?",
+hi:"Square root निकालने के लिए कौन-सा function उपयोग होता है?",
+A:"ROOT()",
+B:"SQRT()",
+C:"SQUARE()",
+D:"POWER()",
+ans:"B"
+},
+{
+id:68,
+en:"Which Excel function converts text to lowercase?",
+hi:"Text को lowercase में बदलने के लिए कौन-सा function उपयोग होता है?",
+A:"LOWER()",
+B:"SMALL()",
+C:"LCASE()",
+D:"TEXTLOW()",
+ans:"A"
+},
+{
+id:69,
+en:"Which Excel tool removes duplicate records from a dataset?",
+hi:"Dataset से duplicate records हटाने के लिए कौन-सा tool उपयोग होता है?",
+A:"Remove Duplicates",
+B:"Delete Copies",
+C:"Unique Filter",
+D:"Data Cleaner",
+ans:"A"
+},
+{
+id:70,
+en:"Which feature allows applying conditions to format cells automatically?",
+hi:"Cells पर conditions के आधार पर formatting apply करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Conditional Formatting",
+B:"Format Rules",
+C:"Auto Formatting",
+D:"Smart Format",
+ans:"A"
+}, 
+{
+id:71,
+en:"The ancient name of Kangra was:",
+hi:"कांगड़ा का प्राचीन नाम क्या था?",
+A:"Nagarkot",
+B:"Trigarta",
+C:"Kuluta",
+D:"Audumbara",
+ans:"B"
+},
+{
+id:72,
+en:"Kangra Fort was built by which dynasty?",
+hi:"कांगड़ा किला किस वंश द्वारा बनाया गया था?",
+A:"Katoch dynasty",
+B:"Chand dynasty",
+C:"Sen dynasty",
+D:"Pal dynasty",
+ans:"A"
+},
+{
+id:73,
+en:"During British rule the summer capital of India was:",
+hi:"ब्रिटिश शासन के दौरान भारत की ग्रीष्मकालीन राजधानी क्या थी?",
+A:"Shimla",
+B:"Dharamshala",
+C:"Mandi",
+D:"Chamba",
+ans:"A"
+},
+{
+id:74,
+en:"Bhuri Singh Museum is located in:",
+hi:"भूरी सिंह संग्रहालय कहाँ स्थित है?",
+A:"Kangra",
+B:"Chamba",
+C:"Shimla",
+D:"Kullu",
+ans:"B"
+},
+{
+id:75,
+en:"Jwala Ji Temple is located in which district of Himachal Pradesh?",
+hi:"ज्वाला जी मंदिर हिमाचल प्रदेश के किस जिले में स्थित है?",
+A:"Kangra",
+B:"Chamba",
+C:"Kullu",
+D:"Bilaspur",
+ans:"A"
+},
+{
+id:76,
+en:"The largest glacier in Himachal Pradesh is:",
+hi:"हिमाचल प्रदेश का सबसे बड़ा हिमनद कौन-सा है?",
+A:"Bara Shigri Glacier",
+B:"Gangotri Glacier",
+C:"Pindari Glacier",
+D:"Milam Glacier",
+ans:"A"
+},
+{
+id:77,
+en:"The Spiti River is a tributary of:",
+hi:"स्पीति नदी किसकी सहायक नदी है?",
+A:"Ravi",
+B:"Beas",
+C:"Satluj",
+D:"Chenab",
+ans:"C"
+},
+{
+id:78,
+en:"Headquarters of Lahaul-Spiti district is:",
+hi:"लाहौल-स्पीति जिले का मुख्यालय कहाँ है?",
+A:"Keylong",
+B:"Kaza",
+C:"Tabo",
+D:"Udaipur",
+ans:"B"
+},
+{
+id:79,
+en:"Khajjiar meadow is located in:",
+hi:"खज्जियार घास का मैदान कहाँ स्थित है?",
+A:"Chamba district",
+B:"Kangra district",
+C:"Kullu district",
+D:"Mandi district",
+ans:"A"
+},
+{
+id:80,
+en:"Rewalsar Lake is located in:",
+hi:"रेवालीसर झील कहाँ स्थित है?",
+A:"Mandi district",
+B:"Kangra district",
+C:"Chamba district",
+D:"Shimla district",
+ans:"A"
+}, 
+
+{
+id:81,
+en:"The highest peak in the Dhauladhar range is:",
+hi:"धौलाधार श्रेणी की सबसे ऊँची चोटी कौन-सी है?",
+A:"Deo Tibba",
+B:"Hanuman Tibba",
+C:"Indrahar Pass",
+D:"Shrikhand",
+ans:"B"
+},
+{
+id:82,
+en:"Parvati Valley lies in which district?",
+hi:"पार्वती घाटी किस जिले में स्थित है?",
+A:"Shimla",
+B:"Kullu",
+C:"Chamba",
+D:"Kangra",
+ans:"B"
+},
+{
+id:83,
+en:"Traditional cap of Himachal Pradesh is called:",
+hi:"हिमाचल प्रदेश की पारंपरिक टोपी क्या कहलाती है?",
+A:"Pagdi",
+B:"Himachali Cap",
+C:"Turban",
+D:"Safa",
+ans:"B"
+},
+{
+id:84,
+en:"Shoolini Fair is celebrated in:",
+hi:"शूलिनी मेला कहाँ मनाया जाता है?",
+A:"Solan",
+B:"Shimla",
+C:"Mandi",
+D:"Kangra",
+ans:"A"
+},
+{
+id:85,
+en:"Nathpa Jhakri Hydroelectric Project is built on:",
+hi:"नाथपा झाकड़ी जलविद्युत परियोजना किस नदी पर बनी है?",
+A:"Ravi River",
+B:"Chenab River",
+C:"Beas River",
+D:"Satluj River",
+ans:"D"
+},
+{
+id:86,
+en:"Tabo Monastery is located in:",
+hi:"ताबो मठ कहाँ स्थित है?",
+A:"Kinnaur",
+B:"Lahaul",
+C:"Spiti",
+D:"Kullu",
+ans:"C"
+},
+{
+id:87,
+en:"Fill in the blank: She is fond ______ music.",
+hi:"रिक्त स्थान भरें: She is fond ______ music.",
+A:"in",
+B:"of",
+C:"at",
+D:"for",
+ans:"B"
+},
+{
+id:88,
+en:"Choose the correct sentence.",
+hi:"सही वाक्य चुनें।",
+A:"He go to school every day.",
+B:"He goes to school every day.",
+C:"He going to school every day.",
+D:"He gone to school every day.",
+ans:"B"
+},
+{
+id:89,
+en:"Identify the synonym of the word \"Rapid\".",
+hi:"\"Rapid\" शब्द का पर्यायवाची पहचानें।",
+A:"Slow",
+B:"Fast",
+C:"Late",
+D:"Quiet",
+ans:"B"
+},
+{
+id:90,
+en:"Fill in the blank: The train ______ before we reached the station.",
+hi:"रिक्त स्थान भरें: The train ______ before we reached the station.",
+A:"left",
+B:"leaves",
+C:"had left",
+D:"leaving",
+ans:"C"
+}, 
+{
+id:91,
+en:"Choose the correct article: He bought ______ umbrella yesterday.",
+hi:"सही article चुनें: He bought ______ umbrella yesterday.",
+A:"a",
+B:"an",
+C:"the",
+D:"no article",
+ans:"B"
+},
+{
+id:92,
+en:"Identify the antonym of the word \"Ancient\".",
+hi:"\"Ancient\" शब्द का विलोम पहचानें।",
+A:"Old",
+B:"Modern",
+C:"Historic",
+D:"Past",
+ans:"B"
+},
+{
+id:93,
+en:"‘विद्यालय’ शब्द में कौन-सा समास है?",
+hi:"‘विद्यालय’ शब्द में कौन-सा समास है?",
+A:"द्वंद्व समास",
+B:"कर्मधारय समास",
+C:"तत्पुरुष समास",
+D:"बहुव्रीहि समास",
+ans:"C"
+},
+{
+id:94,
+en:"‘अत्यंत’ शब्द में कौन-सा उपसर्ग है?",
+hi:"‘अत्यंत’ शब्द में कौन-सा उपसर्ग है?",
+A:"अ",
+B:"अति",
+C:"अंत",
+D:"अत्य",
+ans:"B"
+},
+{
+id:95,
+en:"‘जो कभी न मरे’ के लिए एक शब्द है:",
+hi:"‘जो कभी न मरे’ के लिए एक शब्द क्या है?",
+A:"अमर",
+B:"अजर",
+C:"अमृत",
+D:"अनश्वर",
+ans:"A"
+},
+{
+id:96,
+en:"‘नदी’ शब्द किस लिंग का है?",
+hi:"‘नदी’ शब्द किस लिंग का है?",
+A:"पुल्लिंग",
+B:"स्त्रीलिंग",
+C:"नपुंसकलिंग",
+D:"उभयलिंग",
+ans:"B"
+},
+{
+id:97,
+en:"Find the next number in the series: 3, 9, 27, 81, ?",
+hi:"श्रृंखला में अगली संख्या ज्ञात करें: 3, 9, 27, 81, ?",
+A:"162",
+B:"243",
+C:"324",
+D:"729",
+ans:"B"
+},
+{
+id:98,
+en:"If BOOK is written as CPPL in a certain code, how is WORD written in that code?",
+hi:"यदि BOOK को CPPL लिखा जाता है, तो WORD को कैसे लिखा जाएगा?",
+A:"XPSE",
+B:"XQSE",
+C:"XPSF",
+D:"XORD",
+ans:"A"
+},
+{
+id:99,
+en:"Find the odd one out:",
+hi:"अलग शब्द पहचानें:",
+A:"Apple",
+B:"Mango",
+C:"Potato",
+D:"Orange",
+ans:"C"
+},
+{
+id:100,
+en:"Who is the current Chief Justice of India (2025)?",
+hi:"भारत के वर्तमान मुख्य न्यायाधीश (2025) कौन हैं?",
+A:"D.Y. Chandrachud",
+B:"Sanjiv Khanna",
+C:"U.U. Lalit",
+D:"N.V. Raman",
+ans:"B"
+}
 
   // Continue the same format up to Question 100
 
