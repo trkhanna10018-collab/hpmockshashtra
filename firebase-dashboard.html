@@ -169,30 +169,27 @@ body{background:#f4f8fd;color:#14264b;min-height:100vh}
 
         <div class="progress-title">
           <h2>Your Progress</h2>
-          <p>Track your preparation at a glance.</p>
+          <p>Track your test progress at a glance.</p>
         </div>
 
         <div class="progress-score">
-          <div class="ring"><span>23%</span></div>
+          <div class="ring" id="progressRing">
+            <span id="progressRingText">0</span>
+          </div>
 
           <div class="score-number">
-            <strong>23 / 100</strong>
-            <span>Current Score</span>
+            <strong id="attemptedTests">0 / 16</strong>
+            <span>Tests Attempted</span>
           </div>
 
           <div class="progress-stat stat-green">
-            <strong>23</strong>
-            <span>Correct</span>
-          </div>
-
-          <div class="progress-stat stat-red">
-            <strong>37</strong>
-            <span>Incorrect</span>
+            <strong id="attemptedCount">0</strong>
+            <span>Tests Attempted</span>
           </div>
 
           <div class="progress-stat stat-gray">
-            <strong>40</strong>
-            <span>Not Attempted</span>
+            <strong id="remainingCount">16</strong>
+            <span>Tests Remaining</span>
           </div>
         </div>
 
@@ -328,6 +325,89 @@ body{background:#f4f8fd;color:#14264b;min-height:100vh}
     const navMenu =
       document.getElementById("navMenu");
 
+    /* ================= PROGRESS ================= */
+
+    const TOTAL_TESTS = 16;
+
+    const TEST_IDS = [
+      "joa_free_test_01",
+      ...Array.from(
+        {length: 15},
+        (_, i) => `joa_test_${String(i + 1).padStart(2, "0")}`
+      )
+    ];
+
+    const progressRing =
+      document.getElementById("progressRing");
+
+    const progressRingText =
+      document.getElementById("progressRingText");
+
+    const attemptedTests =
+      document.getElementById("attemptedTests");
+
+    const attemptedCount =
+      document.getElementById("attemptedCount");
+
+    const remainingCount =
+      document.getElementById("remainingCount");
+
+    async function loadProgress(user){
+
+      let attempted = 0;
+
+      await Promise.all(
+        TEST_IDS.map(async (testId) => {
+
+          try{
+
+            const attemptRef = doc(
+              db,
+              "testAttempts",
+              `${user.uid}_${testId}`
+            );
+
+            const snap = await getDoc(attemptRef);
+
+            if(snap.exists()){
+              attempted++;
+            }
+
+          }catch(error){
+
+            /*
+              A paid-test document may be unreadable for a user
+              who has not purchased the series. Ignore that test
+              and continue checking the others.
+            */
+
+          }
+
+        })
+      );
+
+      const remaining =
+        Math.max(0, TOTAL_TESTS - attempted);
+
+      const percent =
+        Math.round((attempted / TOTAL_TESTS) * 100);
+
+      progressRing.style.background =
+        `conic-gradient(#2f73e8 ${percent}%, #e5ebf4 0)`;
+
+      progressRingText.textContent =
+        attempted;
+
+      attemptedTests.textContent =
+        `${attempted} / ${TOTAL_TESTS}`;
+
+      attemptedCount.textContent =
+        attempted;
+
+      remainingCount.textContent =
+        remaining;
+    }
+
 
     /* ================= MOBILE MENU ================= */
 
@@ -365,6 +445,9 @@ body{background:#f4f8fd;color:#14264b;min-height:100vh}
 
       userEmail.textContent =
         user.email || "";
+
+      /* LOAD TEST PROGRESS */
+      await loadProgress(user);
 
 
       /* SHOW DASHBOARD */
