@@ -1,5 +1,1005 @@
 const questions = [
+{
+id:1,
+en:"Which input device is specifically designed to read characters printed with magnetic ink and is commonly used in banking systems?",
+hi:"कौन-सा input device magnetic ink से छपे अक्षरों को पढ़ने के लिए उपयोग होता है और banking systems में प्रयोग किया जाता है?",
+A:"OCR",
+B:"OMR",
+C:"MICR",
+D:"Barcode Reader",
+ans:"C"
+},
+{
+id:2,
+en:"Which input device is best suited for detecting marked responses (like filled bubbles) on examination sheets with high accuracy?",
+hi:"कौन-सा input device परीक्षा शीट पर भरे गए bubbles को पहचानने के लिए सबसे उपयुक्त है?",
+A:"Scanner",
+B:"OCR",
+C:"OMR",
+D:"MICR",
+ans:"C"
+},
+{
+id:3,
+en:"Which type of plotter uses pens to draw continuous lines on paper and is commonly used for engineering drawings?",
+hi:"कौन-सा plotter continuous lines खींचने के लिए pen का उपयोग करता है और engineering drawings में उपयोग होता है?",
+A:"Inkjet Printer",
+B:"Drum Plotter",
+C:"Laser Printer",
+D:"Dot Matrix Printer",
+ans:"B"
+},
+{
+id:4,
+en:"Which output device is primarily used to display visual content on a large screen for presentations?",
+hi:"कौन-सा output device presentations के लिए बड़े screen पर visual content दिखाने के लिए उपयोग होता है?",
+A:"Plotter",
+B:"Projector",
+C:"Scanner",
+D:"Printer",
+ans:"B"
+},
+{
+id:5,
+en:"In a flatbed plotter, the paper remains stationary while:",
+hi:"Flatbed plotter में paper स्थिर रहता है जबकि:",
+A:"The drum rotates",
+B:"The pen moves across the surface",
+C:"The paper moves back and forth",
+D:"The laser scans the page",
+ans:"B"
+},
+{
+id:6,
+en:"What is thrashing in an operating system?",
+hi:"Operating system में thrashing क्या है?",
+A:"Excessive CPU usage",
+B:"Excessive paging causing low performance",
+C:"Disk failure",
+D:"High memory availability",
+ans:"B"
+},
+{
+id:7,
+en:"Thrashing mainly occurs due to:",
+hi:"Thrashing मुख्यतः किस कारण होता है?",
+A:"Low CPU utilization",
+B:"High degree of multiprogramming",
+C:"Excessive I/O operations",
+D:"Large cache memory",
+ans:"B"
+},
+{
+id:8,
+en:"In paging, memory is divided into:",
+hi:"Paging में memory को किसमें विभाजित किया जाता है?",
+A:"Logical segments",
+B:"Fixed-size blocks called pages",
+C:"Variable-size segments",
+D:"Frames of variable size",
+ans:"B"
+},
+{
+id:9,
+en:"Which memory management technique supports logical division of programs such as functions and modules?",
+hi:"कौन-सी memory management technique programs को logical parts (functions, modules) में विभाजित करती है?",
+A:"Paging",
+B:"Segmentation",
+C:"Swapping",
+D:"Thrashing",
+ans:"B"
+},
+{
+id:10,
+en:"In paging, the physical memory is divided into:",
+hi:"Paging में physical memory को किसमें विभाजित किया जाता है?",
+A:"Segments",
+B:"Pages",
+C:"Frames",
+D:"Blocks",
+ans:"C"
+},
+{
+id:11,
+en:"Which protocol assigns IP?",
+hi:"IP assign करने वाला protocol कौन-सा है?",
+A:"HTTP",
+B:"FTP",
+C:"DHCP",
+D:"SMTP",
+ans:"C"
+},
+{
+id:12,
+en:"Which of the following protocols is used to send emails from a client to a mail server?",
+hi:"कौन-सा protocol client से mail server को email भेजने के लिए उपयोग होता है?",
+A:"POP3",
+B:"IMAP",
+C:"SMTP",
+D:"HTTP",
+ans:"C"
+},
+{
+id:13,
+en:"Which protocol allows users to access and manage emails directly on the mail server without downloading them permanently to the local system?",
+hi:"कौन-सा protocol users को mail server पर ही emails को access और manage करने की सुविधा देता है बिना उन्हें स्थायी रूप से download किए?",
+A:"POP3",
+B:"SMTP",
+C:"IMAP",
+D:"FTP",
+ans:"C"
+},
+{
+id:14,
+en:"A MAC address is primarily associated with which layer of the OSI model?",
+hi:"MAC address OSI model की किस layer से संबंधित है?",
+A:"Network Layer",
+B:"Transport Layer",
+C:"Data Link Layer",
+D:"Physical Layer",
+ans:"C"
+},
+{
+id:15,
+en:"What is the standard length of a MAC address?",
+hi:"MAC address की standard लंबाई कितनी होती है?",
+A:"32 bits",
+B:"48 bits",
+C:"64 bits",
+D:"128 bits",
+ans:"B"
+},
+{
+id:16,
+en:"Which combination best represents Two Factor Authentication (2FA) for secure login?",
+hi:"Secure login के लिए Two Factor Authentication (2FA) का सही संयोजन कौन-सा है?",
+A:"Password + Username",
+B:"Password + Security Question",
+C:"Password + One-Time Password (OTP)",
+D:"Username + Email Address",
+ans:"C"
+},
+{
+id:17,
+en:"A digital signature primarily ensures which of the following in electronic communication?",
+hi:"Electronic communication में digital signature मुख्य रूप से क्या सुनिश्चित करता है?",
+A:"Data compression",
+B:"Data encryption only",
+C:"Authentication and integrity of data",
+D:"Faster data transmission",
+ans:"C"
+},
+{
+id:18,
+en:"In the relational database model, data is stored in the form of:",
+hi:"Relational database model में data किस रूप में संग्रहीत किया जाता है?",
+A:"Trees",
+B:"Tables",
+C:"Graphs",
+D:"Pointers",
+ans:"B"
+},
+{
+id:19,
+en:"In a relational table, what is a column also known as?",
+hi:"Relational table में column को और किस नाम से जाना जाता है?",
+A:"Tuple",
+B:"Record",
+C:"Attribute",
+D:"Domain",
+ans:"C"
+},
+{
+id:20,
+en:"Which of the following ensures that no duplicate values are present in a column of a table?",
+hi:"निम्न में से कौन-सा column में duplicate values को रोकता है?",
+A:"Foreign Key",
+B:"Primary Key",
+C:"Composite Key",
+D:"Alternate Key",
+ans:"B"
+},
+{
+id:21,
+en:"In the hierarchical database model, each child record can have:",
+hi:"Hierarchical database model में प्रत्येक child record के कितने parent हो सकते हैं?",
+A:"Multiple parents",
+B:"Only one parent",
+C:"No parent",
+D:"Unlimited parents",
+ans:"B"
+},
+{
+id:22,
+en:"The hierarchical database model organizes data in which structure?",
+hi:"Hierarchical database model में data किस संरचना में व्यवस्थित होता है?",
+A:"Graph structure",
+B:"Table structure",
+C:"Tree structure",
+D:"Linear structure",
+ans:"C"
+},
+{
+id:23,
+en:"In the network database model, a child record can have:",
+hi:"Network database model में child record के कितने parent हो सकते हैं?",
+A:"Only one parent",
+B:"Multiple parents",
+C:"No parent",
+D:"Only two parents",
+ans:"B"
+},
+{
+id:24,
+en:"The network database model represents data using:",
+hi:"Network database model में data किस रूप में प्रस्तुत किया जाता है?",
+A:"Tables",
+B:"Trees",
+C:"Graph structure",
+D:"Linear lists",
+ans:"C"
+},
+{
+id:25,
+en:"Which Excel function is used to count the number of cells that meet a specific condition?",
+hi:"कौन-सा Excel function किसी विशेष condition को पूरा करने वाले cells की संख्या गिनता है?",
+A:"COUNT",
+B:"COUNTIF",
+C:"SUMIF",
+D:"AVERAGE",
+ans:"B"
+},
+{
+id:26,
+en:"In a worksheet, cells A1:A5 contain values 10, 20, 10, 30, 10. What will be the result of =COUNTIF(A1:A5,10)?",
+hi:"Worksheet में A1:A5 में values 10, 20, 10, 30, 10 हैं। =COUNTIF(A1:A5,10) का परिणाम क्या होगा?",
+A:"2",
+B:"3",
+C:"4",
+D:"5",
+ans:"B"
+},
+{
+id:27,
+en:"In cells B1:B5 values are 5, 10, 15, 10, 20. What will be the result of =SUMIF(B1:B5,10)?",
+hi:"Cells B1:B5 में values 5, 10, 15, 10, 20 हैं। =SUMIF(B1:B5,10) का परिणाम क्या होगा?",
+A:"10",
+B:"20",
+C:"30",
+D:"40",
+ans:"B"
+},
+{
+id:28,
+en:"What is multi-level sorting in MS Excel?",
+hi:"MS Excel में multi-level sorting क्या है?",
+A:"Sorting data in one column only",
+B:"Sorting data using multiple columns sequentially",
+C:"Sorting data randomly",
+D:"Sorting only numerical values",
+ans:"B"
+},
+{
+id:29,
+en:"Which option in Excel is used to add multiple levels while sorting data?",
+hi:"Excel में sorting के दौरान multiple levels जोड़ने के लिए कौन-सा option उपयोग होता है?",
+A:"Filter",
+B:"Add Level",
+C:"Sort Order",
+D:"Custom View",
+ans:"B"
+},
+{
+id:30,
+en:"In multi-level sorting, if data is first sorted by Department and then by Salary, what does it mean?",
+hi:"Multi-level sorting में यदि data पहले Department से और फिर Salary से sort किया जाए, तो इसका क्या अर्थ है?",
+A:"Salary is ignored",
+B:"Data is sorted only by Salary",
+C:"Data is grouped by Department, then sorted by Salary within each group",
+D:"Data is randomly arranged",
+ans:"C"
+},
+{
+id:31,
+en:"Which dialog box is used to perform multi-level sorting in Excel?",
+hi:"Excel में multi-level sorting करने के लिए कौन-सा dialog box उपयोग होता है?",
+A:"Format Cells",
+B:"Sort Dialog Box",
+C:"Data Validation",
+D:"Conditional Formatting",
+ans:"B"
+},
+{
+id:32,
+en:"In Excel, A1 = 10, B1 = 20. The formula =$A$1+B1 is entered in C1 and copied to E3 (where D3 = 40). What will be the result in E3?",
+hi:"Excel में A1 = 10, B1 = 20 है। Formula =$A$1+B1 को C1 में डालकर E3 में copy किया गया (जहाँ D3 = 40)। E3 में क्या परिणाम होगा?",
+A:"30",
+B:"40",
+C:"50",
+D:"60",
+ans:"C"
+},
+{
+id:33,
+en:"Cell A1 = 6, A2 = 8. The formula =A1+$A$2 is entered in B1 and copied to C3 (where B3 = 12). What will be the result in C3?",
+hi:"Cell A1 = 6, A2 = 8 है। Formula =A1+$A$2 को B1 में डालकर C3 में copy किया गया (जहाँ B3 = 12)। C3 में क्या परिणाम होगा?",
+A:"14",
+B:"16",
+C:"18",
+D:"20",
+ans:"D"
+},
+{
+id:34,
+en:"Cell A1 = 3, B1 = 5. The formula =$A$1+$B$1 is entered in C1 and copied to F10. What will be the result in F10?",
+hi:"Cell A1 = 3, B1 = 5 है। Formula =$A$1+$B$1 को C1 में डालकर F10 में copy किया गया। F10 में क्या परिणाम होगा?",
+A:"5",
+B:"6",
+C:"7",
+D:"8",
+ans:"D"
+},
+{
+id:35,
+en:"In Excel, A1:A3 contains values 2, 4, 6. The formula =SUM(A1:A3) is entered in B1 and copied to B2. If A4 = 8, what will be the result in B2?",
+hi:"Excel में A1:A3 में values 2, 4, 6 हैं। Formula =SUM(A1:A3) को B1 में डालकर B2 में copy किया गया। यदि A4 = 8 है, तो B2 में क्या परिणाम होगा?",
+A:"10",
+B:"12",
+C:"14",
+D:"18",
+ans:"D"
+},
+{
+id:36,
+en:"Cell A1 = 5, B1 = 2. The formula =A1^B1 is entered in C1 and copied to D2 (A2 = 3, B2 = 3). What will be the result in D2?",
+hi:"Cell A1 = 5, B1 = 2 है। Formula =A1^B1 को C1 में डालकर D2 में copy किया गया (A2 = 3, B2 = 3)। D2 में क्या परिणाम होगा?",
+A:"9",
+B:"15",
+C:"27",
+D:"25",
+ans:"C"
+},
+{
+id:37,
+en:"In Excel, A1 = 8, A2 = 4. The formula =A1/A2 is entered in B1 and copied to B2 (A3 = 12). What will be the result in B2?",
+hi:"Excel में A1 = 8, A2 = 4 है। Formula =A1/A2 को B1 में डालकर B2 में copy किया गया (A3 = 12)। B2 में क्या परिणाम होगा?",
+A:"2",
+B:"3",
+C:"4",
+D:"6",
+ans:"B"
+},
+{
+id:38,
+en:"In MS Word, which tab is primarily used to access Page Layout settings such as margins and orientation?",
+hi:"MS Word में margins और orientation जैसे Page Layout settings किस tab से access होते हैं?",
+A:"Insert",
+B:"Home",
+C:"Layout",
+D:"Review",
+ans:"C"
+},
+{
+id:39,
+en:"Which option is used to change page orientation from Portrait to Landscape?",
+hi:"Page orientation को Portrait से Landscape में बदलने के लिए कौन-सा option उपयोग होता है?",
+A:"Page Setup → Size",
+B:"Layout → Orientation",
+C:"Insert → Page",
+D:"Design → Format",
+ans:"B"
+},
+{
+id:40,
+en:"What is the default page orientation in MS Word?",
+hi:"MS Word में default page orientation क्या होती है?",
+A:"Landscape",
+B:"Portrait",
+C:"Auto",
+D:"Mixed",
+ans:"B"
+},
+{
+id:41,
+en:"Which feature allows inserting faint text behind the main content of a document?",
+hi:"कौन-सा feature document के मुख्य content के पीछे हल्का (faint) text जोड़ने की अनुमति देता है?",
+A:"Header",
+B:"Footer",
+C:"Watermark",
+D:"Background",
+ans:"C"
+},
+{
+id:42,
+en:"Where is the Watermark option located in MS Word?",
+hi:"MS Word में Watermark option कहाँ स्थित होता है?",
+A:"Home tab",
+B:"Design tab",
+C:"Insert tab",
+D:"Review tab",
+ans:"B"
+},
+{
+id:43,
+en:"What is the purpose of using a watermark like 'Confidential' in a document?",
+hi:"Document में 'Confidential' watermark का उपयोग किस उद्देश्य से किया जाता है?",
+A:"To encrypt the document",
+B:"To indicate document status or classification",
+C:"To change font style",
+D:"To protect from editing",
+ans:"B"
+},
+{
+id:44,
+en:"Which type of watermark allows inserting custom text such as 'Draft'?",
+hi:"कौन-सा watermark प्रकार 'Draft' जैसे custom text जोड़ने की अनुमति देता है?",
+A:"Image Watermark",
+B:"Shape Watermark",
+C:"Text Watermark",
+D:"Layout Watermark",
+ans:"C"
+},
+{
+id:45,
+en:"What is a Section Break in MS Word?",
+hi:"MS Word में Section Break क्या है?",
+A:"A page deletion tool",
+B:"A formatting tool that divides document into sections",
+C:"A spell check feature",
+D:"A printing option",
+ans:"B"
+},
+{
+id:46,
+en:"Which Section Break allows different headers/footers within the same document?",
+hi:"कौन-सा Section Break एक ही document में अलग-अलग headers/footers की अनुमति देता है?",
+A:"Page Break",
+B:"Continuous Section Break",
+C:"Line Break",
+D:"Column Break",
+ans:"B"
+},
+{
+id:47,
+en:"Which type of Section Break starts the new section on the next page?",
+hi:"कौन-सा Section Break नए section को अगले page से शुरू करता है?",
+A:"Continuous",
+B:"Next Page",
+C:"Even Page",
+D:"Odd Page",
+ans:"B"
+},
+{
+id:48,
+en:"Why are Section Breaks used in MS Word?",
+hi:"MS Word में Section Break का उपयोग क्यों किया जाता है?",
+A:"To insert images",
+B:"To apply different formatting to different parts of document",
+C:"To delete text",
+D:"To save file",
+ans:"B"
+},
+{
+id:49,
+en:"Which option is used to remove a watermark from a Word document?",
+hi:"Word document से watermark हटाने के लिए कौन-सा option उपयोग होता है?",
+A:"Delete Background",
+B:"Remove Watermark",
+C:"Clear Format",
+D:"Erase Layout",
+ans:"B"
+},
+{
+id:50,
+en:"In MS Word, a watermark is typically inserted in which part of the document?",
+hi:"MS Word में watermark आमतौर पर document के किस भाग में डाला जाता है?",
+A:"Footer area",
+B:"Header area",
+C:"Margin area",
+D:"Text body",
+ans:"B"
+},
+{
+id:51,
+en:"Which type of watermark allows inserting a picture as a background in a document?",
+hi:"कौन-सा watermark प्रकार document में background के रूप में image जोड़ने की अनुमति देता है?",
+A:"Text Watermark",
+B:"Image Watermark",
+C:"Shape Watermark",
+D:"Layout Watermark",
+ans:"B"
+},
+{
+id:52,
+en:"Which option allows customizing the font, size, and color of a watermark text?",
+hi:"Watermark text का font, size और color customize करने के लिए कौन-सा option उपयोग होता है?",
+A:"Insert Watermark",
+B:"Custom Watermark",
+C:"Edit Background",
+D:"Format Text",
+ans:"B"
+},
+{
+id:53,
+en:"If you apply a watermark in MS Word, it will appear:",
+hi:"यदि MS Word में watermark लगाया जाए, तो वह कहाँ दिखाई देगा?",
+A:"Only on first page",
+B:"Only on selected pages",
+C:"On all pages of the document",
+D:"Only on odd pages",
+ans:"C"
+},
+{
+id:54,
+en:"Which of the following is NOT a common use of watermark in MS Word?",
+hi:"निम्न में से कौन-सा MS Word में watermark का सामान्य उपयोग नहीं है?",
+A:"Indicating document status",
+B:"Branding with logo",
+C:"Encrypting document content",
+D:"Marking as draft or confidential",
+ans:"C"
+},
+{
+id:55,
+en:"Which type of section break allows changing columns without moving to a new page?",
+hi:"कौन-सा section break बिना नया page शुरू किए columns बदलने की अनुमति देता है?",
+A:"Next Page",
+B:"Continuous",
+C:"Even Page",
+D:"Odd Page",
+ans:"B"
+},
+{
+id:56,
+en:"Which section break starts a new section on the next even-numbered page?",
+hi:"कौन-सा section break नए section को अगले even-numbered page से शुरू करता है?",
+A:"Continuous",
+B:"Next Page",
+C:"Even Page",
+D:"Odd Page",
+ans:"C"
+},
+{
+id:57,
+en:"After inserting a section break, which formatting can be applied differently in each section?",
+hi:"Section break लगाने के बाद किस formatting को हर section में अलग-अलग लागू किया जा सकता है?",
+A:"Only font size",
+B:"Only text color",
+C:"Page numbering and headers/footers",
+D:"Only paragraph spacing",
+ans:"C"
+},
+{
+id:58,
+en:"In PowerPoint, which feature controls how one slide changes to the next during a presentation?",
+hi:"PowerPoint में एक slide से दूसरी slide में transition को कौन नियंत्रित करता है?",
+A:"Animation",
+B:"Transition",
+C:"Slide Master",
+D:"Layout",
+ans:"B"
+},
+{
+id:59,
+en:"Which tab in PowerPoint is used to apply animation effects to objects like text or images?",
+hi:"PowerPoint में text या image पर animation लगाने के लिए कौन-सा tab उपयोग होता है?",
+A:"Design",
+B:"Insert",
+C:"Animations",
+D:"Slide Show",
+ans:"C"
+},
+{
+id:60,
+en:"Which of the following best describes the difference between Animation and Transition?",
+hi:"Animation और Transition के बीच सही अंतर क्या है?",
+A:"Animation is for slides, Transition is for objects",
+B:"Animation is for objects, Transition is for slides",
+C:"Both are for text only",
+D:"Both are same",
+ans:"B"
+},
+{
+id:61,
+en:"In PowerPoint, what is the primary purpose of Presenter View?",
+hi:"PowerPoint में Presenter View का मुख्य उद्देश्य क्या है?",
+A:"To edit slides during presentation",
+B:"To display notes, next slide preview, and timing for the presenter",
+C:"To apply animations to slides",
+D:"To print slides",
+ans:"B"
+},
+{
+id:62,
+en:"Which of the following is visible only to the presenter in Presenter View?",
+hi:"Presenter View में निम्न में से क्या केवल presenter को दिखाई देता है?",
+A:"Audience view of slides",
+B:"Slide transitions",
+C:"Speaker notes and next slide preview",
+D:"Slide background",
+ans:"C"
+},
+{
+id:63,
+en:"Which CSS selector is used to select all elements of a specific type, such as all &lt;p&gt; tags?",
+hi:"कौन-सा CSS selector सभी &lt;p&gt; जैसे elements को select करता है?",
+A:"#selector",
+B:".selector",
+C:"Element selector",
+D:"Universal selector",
+ans:"C"
+},
+{
+id:64,
+en:"Which CSS selector is used to select an element with a specific id?",
+hi:"कौन-सा CSS selector किसी specific id वाले element को select करता है?",
+A:".id",
+B:"#id",
+C:"*id",
+D:"element#",
+ans:"B"
+},
+{
+id:65,
+en:"In the CSS Box Model, which property represents the space between the content and the border?",
+hi:"CSS Box Model में content और border के बीच की space को क्या कहते हैं?",
+A:"Margin",
+B:"Padding",
+C:"Border",
+D:"Outline",
+ans:"B"
+},
+{
+id:66,
+en:"Which part of the CSS Box Model is responsible for the outermost space surrounding an element?",
+hi:"CSS Box Model में element के चारों ओर सबसे बाहरी space कौन-सी होती है?",
+A:"Padding",
+B:"Border",
+C:"Margin",
+D:"Content",
+ans:"C"
+},
+{
+id:67,
+en:"Which selector selects all elements on a webpage?",
+hi:"कौन-सा selector webpage के सभी elements को select करता है?",
+A:"#",
+B:".",
+C:"*",
+D:"&",
+ans:"C"
+},
+{
+id:68,
+en:"Which key is commonly used to start a PowerPoint presentation in Presenter View?",
+hi:"PowerPoint presentation शुरू करने के लिए सामान्यतः कौन-सी key उपयोग होती है?",
+A:"F1",
+B:"F5",
+C:"F7",
+D:"F9",
+ans:"B"
+},
+{
+id:69,
+en:"In Presenter View, where are the speaker notes displayed?",
+hi:"Presenter View में speaker notes कहाँ दिखाई देते हैं?",
+A:"On the audience screen",
+B:"On the presenter’s screen only",
+C:"On both screens",
+D:"Nowhere",
+ans:"B"
+},
+{
+id:70,
+en:"Which of the following features helps the presenter track presentation time in Presenter View?",
+hi:"Presenter View में presentation का समय track करने के लिए कौन-सा feature उपयोग होता है?",
+A:"Slide sorter",
+B:"Timer",
+C:"Layout view",
+D:"Design panel",
+ans:"B"
+},
+{
+id:71,
+en:"Choose the correct sentence:",
+hi:"सही वाक्य चुनिए:",
+A:"Either of the boys are ready",
+B:"Either of the boys is ready",
+C:"Either of the boys have ready",
+D:"Either of the boys were ready",
+ans:"B"
+},
+{
+id:72,
+en:"Change into passive voice: She is writing a letter.",
+hi:"Passive voice में बदलें: She is writing a letter.",
+A:"A letter is written by her",
+B:"A letter was written by her",
+C:"A letter is being written by her",
+D:"A letter has been written by her",
+ans:"C"
+},
+{
+id:73,
+en:"Choose the correct sentence:",
+hi:"सही वाक्य चुनिए:",
+A:"A number of students is absent today",
+B:"A number of students are absent today",
+C:"A number of students was absent today",
+D:"A number of students has absent today",
+ans:"B"
+},
+{
+id:74,
+en:"Choose the correct verb: The committee, along with its chairman, ______ decided to postpone the meeting.",
+hi:"सही verb चुनिए: The committee, along with its chairman, ______ decided to postpone the meeting.",
+A:"have",
+B:"are",
+C:"has",
+D:"were",
+ans:"C"
+},
+{
+id:75,
+en:"Identify the prefix in the word 'अविराम':",
+hi:"‘अविराम’ शब्द में उपसर्ग पहचानिए:",
+A:"वि",
+B:"अ",
+C:"अवि",
+D:"अन",
+ans:"C"
+},
+{
+id:76,
+en:"Identify the suffix in the word 'सुगंधित':",
+hi:"‘सुगंधित’ शब्द में प्रत्यय पहचानिए:",
+A:"सु",
+B:"धित",
+C:"गंध",
+D:"इत",
+ans:"D"
+},
+{
+id:77,
+en:"Identify the type of sentence: 'जहाँ चाह वहाँ राह'",
+hi:"‘जहाँ चाह वहाँ राह’ किस प्रकार का वाक्य है?",
+A:"Simple sentence",
+B:"Complex sentence",
+C:"Compound sentence",
+D:"Imperative sentence",
+ans:"C"
+},
+{
+id:78,
+en:"Which of the following is a Tatsam word?",
+hi:"निम्नलिखित में से कौन-सा तत्सम शब्द है?",
+A:"आँख",
+B:"दाँत",
+C:"अग्नि",
+D:"कान",
+ans:"C"
+},
+{
+id:79,
+en:"What is the antonym of 'अल्पज्ञ'?",
+hi:"‘अल्पज्ञ’ का विलोम शब्द क्या है?",
+A:"मूर्ख",
+B:"विद्वान",
+C:"सर्वज्ञ",
+D:"ज्ञानी",
+ans:"C"
+},
+{
+id:80,
+en:"What is the correct meaning of the idiom 'आसमान सिर पर उठाना'?",
+hi:"‘आसमान सिर पर उठाना’ मुहावरे का सही अर्थ क्या है?",
+A:"To aim high",
+B:"To create excessive noise",
+C:"To become very angry",
+D:"To work very fast",
+ans:"B"
+},
 
+{
+id:81,
+en:"Meaning of proverb 'नौ दिन चले अढ़ाई कोस':",
+hi:"‘नौ दिन चले अढ़ाई कोस’ का अर्थ क्या है?",
+A:"Slow progress",
+B:"Fast work",
+C:"Incomplete work",
+D:"Frequent change",
+ans:"A"
+},
+{
+id:82,
+en:"The festival 'Phulaich' (Festival of Flowers) is traditionally celebrated in which region of Himachal Pradesh?",
+hi:"‘Phulaich’ (फूलों का त्योहार) हिमाचल प्रदेश के किस क्षेत्र में पारंपरिक रूप से मनाया जाता है?",
+A:"Kinnaur",
+B:"Chamba",
+C:"Lahaul",
+D:"Kangra",
+ans:"A"
+},
+{
+id:83,
+en:"The festival 'Halda', similar to Diwali and involving lighting of cedar wood torches, is celebrated in:",
+hi:"‘Halda’ त्योहार, जो दीपावली जैसा होता है और जिसमें देवदार की लकड़ी की मशालें जलाई जाती हैं, कहाँ मनाया जाता है?",
+A:"Kullu Valley",
+B:"Spiti Valley",
+C:"Lahaul Valley",
+D:"Sirmaur",
+ans:"C"
+},
+{
+id:84,
+en:"Which part of the Indian Constitution deals with the Directive Principles of State Policy?",
+hi:"भारतीय संविधान का कौन-सा भाग राज्य के नीति निदेशक तत्वों (DPSP) से संबंधित है?",
+A:"Part II",
+B:"Part III",
+C:"Part IV",
+D:"Part V",
+ans:"C"
+},
+{
+id:85,
+en:"Which of the following amendments is known as the 'Mini Constitution' of India?",
+hi:"निम्न में से किस संशोधन को भारत का 'Mini Constitution' कहा जाता है?",
+A:"44th Amendment",
+B:"42nd Amendment",
+C:"52nd Amendment",
+D:"86th Amendment",
+ans:"B"
+},
+{
+id:86,
+en:"Which Article of the Indian Constitution provides for the impeachment of the President?",
+hi:"भारतीय संविधान का कौन-सा अनुच्छेद राष्ट्रपति के महाभियोग से संबंधित है?",
+A:"Article 61",
+B:"Article 72",
+C:"Article 356",
+D:"Article 368",
+ans:"A"
+},
+{
+id:87,
+en:"Which National Park in India is the only habitat of the Asiatic Lion?",
+hi:"भारत में एशियाई शेर का एकमात्र प्राकृतिक आवास कौन-सा राष्ट्रीय उद्यान है?",
+A:"Kaziranga National Park",
+B:"Gir National Park",
+C:"Jim Corbett National Park",
+D:"Bandipur National Park",
+ans:"B"
+},
+{
+id:88,
+en:"Kaziranga National Park is primarily famous for the conservation of:",
+hi:"काजीरंगा राष्ट्रीय उद्यान मुख्यतः किसके संरक्षण के लिए प्रसिद्ध है?",
+A:"Bengal Tiger",
+B:"One-horned Rhinoceros",
+C:"Asiatic Lion",
+D:"Snow Leopard",
+ans:"B"
+},
+{
+id:89,
+en:"Which statement best describes 'Revenue Deficit' in the Indian Budget?",
+hi:"भारतीय बजट में 'Revenue Deficit' का सही अर्थ क्या है?",
+A:"Total expenditure minus capital receipts",
+B:"Revenue expenditure minus revenue receipts",
+C:"Capital expenditure minus capital receipts",
+D:"Total income minus total savings",
+ans:"B"
+},
+{
+id:90,
+en:"Which part of the Union Budget deals with long-term investments such as infrastructure and asset creation?",
+hi:"Union Budget का कौन-सा भाग long-term investments (जैसे infrastructure और assets) से संबंधित होता है?",
+A:"Revenue Budget",
+B:"Capital Budget",
+C:"Fiscal Budget",
+D:"Monetary Budget",
+ans:"B"
+},
+{
+id:91,
+en:"Which body replaced the Planning Commission in India?",
+hi:"भारत में Planning Commission की जगह किस संस्था ने ली?",
+A:"Finance Commission",
+B:"NITI Aayog",
+C:"National Development Council",
+D:"RBI",
+ans:"B"
+},
+{
+id:92,
+en:"Who is the ex-officio Chairperson of NITI Aayog?",
+hi:"NITI Aayog के ex-officio अध्यक्ष कौन होते हैं?",
+A:"President of India",
+B:"Vice President of India",
+C:"Prime Minister",
+D:"Finance Minister",
+ans:"C"
+},
+{
+id:93,
+en:"Which award is considered the highest civilian award in India?",
+hi:"भारत का सर्वोच्च नागरिक सम्मान कौन-सा है?",
+A:"Padma Shri",
+B:"Padma Bhushan",
+C:"Bharat Ratna",
+D:"Padma Vibhushan",
+ans:"C"
+},
+{
+id:94,
+en:"Who appoints the Chief Election Commissioner of India?",
+hi:"भारत के मुख्य चुनाव आयुक्त की नियुक्ति कौन करता है?",
+A:"Prime Minister",
+B:"Parliament",
+C:"President of India",
+D:"Supreme Court",
+ans:"C"
+},
+{
+id:95,
+en:"Which princely state of present-day Himachal Pradesh was ruled by the Bushahr dynasty?",
+hi:"वर्तमान हिमाचल प्रदेश का कौन-सा रियासती राज्य बुशहर वंश द्वारा शासित था?",
+A:"Mandi",
+B:"Chamba",
+C:"Bushahr",
+D:"Sirmaur",
+ans:"C"
+},
+{
+id:96,
+en:"Which movement was launched by Mahatma Gandhi in 1942 demanding an end to British rule in India?",
+hi:"1942 में महात्मा गांधी द्वारा कौन-सा आंदोलन शुरू किया गया था जो अंग्रेजी शासन के अंत की मांग करता था?",
+A:"Non-Cooperation Movement",
+B:"Civil Disobedience Movement",
+C:"Quit India Movement",
+D:"Swadeshi Movement",
+ans:"C"
+},
+{
+id:97,
+en:"Who was the Viceroy of India at the time of Indian independence in 1947?",
+hi:"1947 में भारत की स्वतंत्रता के समय वायसराय कौन था?",
+A:"Lord Wavell",
+B:"Lord Mountbatten",
+C:"Lord Curzon",
+D:"Lord Linlithgow",
+ans:"B"
+},
+{
+id:98,
+en:"The Indian Independence Act was passed by the British Parliament in which year?",
+hi:"भारतीय स्वतंत्रता अधिनियम ब्रिटिश संसद द्वारा किस वर्ष पारित किया गया था?",
+A:"1945",
+B:"1946",
+C:"1947",
+D:"1948",
+ans:"C"
+},
+{
+id:99,
+en:"A, B, C, D, and E are sitting in a row facing north. A is not at any end. B is to the immediate right of A. C is at one end. D is to the left of A but not adjacent to C. Who is sitting at the extreme right end?",
+hi:"A, B, C, D और E एक पंक्ति में उत्तर की ओर मुख करके बैठे हैं। A किसी भी छोर पर नहीं है। B, A के तुरंत दाईं ओर है। C एक छोर पर है। D, A के बाईं ओर है लेकिन C के पास नहीं है। सबसे दाईं ओर कौन बैठा है?",
+A:"B",
+B:"D",
+C:"E",
+D:"C",
+ans:"A"
+},
+{
+id:100,
+en:"Five persons P, Q, R, S, T live on five different floors (1 lowest, 5 highest). P lives above Q. R lives on the top floor. S lives between Q and P. T lives below Q. Who lives on the 2nd floor?",
+hi:"P, Q, R, S, T पाँच अलग-अलग मंजिलों पर रहते हैं (1 सबसे नीचे, 5 सबसे ऊपर)। P, Q के ऊपर रहता है। R सबसे ऊपर (5वीं मंजिल) पर रहता है। S, Q और P के बीच में रहता है। T, Q के नीचे रहता है। दूसरी मंजिल पर कौन रहता है?",
+A:"T",
+B:"Q",
+C:"S",
+D:"P",
+ans:"A"
+}
 
 
 ];
