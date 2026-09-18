@@ -614,7 +614,7 @@
        RESPONSIVE
     =============================== */
 
-    @media(max-width:1050px){
+    @media(min-width:651px) and (max-width:1050px){
 
       body{
         padding:15px;
@@ -625,12 +625,13 @@
       }
 
       .main{
-        grid-template-columns:1fr;
+        grid-template-columns:minmax(0,1.15fr) minmax(340px,0.85fr);
       }
 
       .login-panel{
-        border-left:none;
-        border-top:1px solid #e8eef7;
+        border-left:1px solid #e8eef7;
+        border-top:none;
+        padding:35px 28px;
       }
 
       .info-panel{
@@ -685,6 +686,7 @@
       .main{
         grid-template-columns:58% 42%;
         min-height:620px;
+        width:100%;
       }
 
       .info-panel{
