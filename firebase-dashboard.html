@@ -681,13 +681,13 @@ body{
     import {
       onAuthStateChanged,
       signOut
-    } from "https://www\.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
     import {
       doc,
       getDoc
-    } from "https://www\.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
     import {
@@ -738,7 +738,7 @@ body{
 
       if(!user){
 
-        window\.location.href =
+        window.location.href =
           "firebase-login.html";
 
         return;
@@ -784,7 +784,7 @@ body{
 
           await signOut(auth);
 
-          window\.location.href =
+          window.location.href =
             "firebase-login.html";
 
         }
