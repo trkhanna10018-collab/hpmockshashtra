@@ -1,5 +1,1004 @@
 const questions = [
-
+{
+id:1,
+en:"In MS Word Ribbon, what is the purpose of Tabs such as Home, Insert, and Layout?",
+hi:"MS Word Ribbon में Home, Insert और Layout जैसे Tabs का उद्देश्य क्या है?",
+A:"To store files",
+B:"To organize related commands into categories",
+C:"To display page numbers",
+D:"To edit images",
+ans:"B"
+},
+{
+id:2,
+en:"In the Ribbon interface, a “Group” contains:",
+hi:"Ribbon interface में “Group” क्या contain करता है?",
+A:"Multiple documents",
+B:"Related commands under a tab",
+C:"Different worksheets",
+D:"File storage options",
+ans:"B"
+},
+{
+id:3,
+en:"Which of the following is an example of a command in MS Word?",
+hi:"निम्न में से MS Word में command का उदाहरण कौन सा है?",
+A:"Clipboard",
+B:"Font",
+C:"Bold",
+D:"Home",
+ans:"C"
+},
+{
+id:4,
+en:"The Status Bar in MS Word is used to display:",
+hi:"MS Word में Status Bar किसे दिखाने के लिए उपयोग होती है?",
+A:"Formatting tools",
+B:"File saving options",
+C:"Document information like page number and word count",
+D:"Ribbon tabs",
+ans:"C"
+},
+{
+id:5,
+en:"Which of the following statements is TRUE when you click “Close” in MS Word without saving changes?",
+hi:"यदि आप MS Word में बिना save किए “Close” करते हैं तो क्या होता है?",
+A:"Document is automatically saved",
+B:"Document is deleted permanently",
+C:"You are prompted to save changes before closing",
+D:"Word crashes",
+ans:"C"
+},
+{
+id:6,
+en:"What happens when you use “Save As” on an already saved document and choose a new location?",
+hi:"यदि आप पहले से saved document पर “Save As” करके नया location चुनते हैं तो क्या होता है?",
+A:"The original file is moved to new location",
+B:"A new copy is created at the new location while original remains unchanged",
+C:"The original file is deleted",
+D:"Both files are merged",
+ans:"B"
+},
+{
+id:7,
+en:"What is the purpose of the HTML entity &nbsp;?",
+hi:"HTML entity &nbsp; का उद्देश्य क्या है?",
+A:"To create a line break",
+B:"To insert a non-breaking space",
+C:"To display a tab space",
+D:"To add a paragraph",
+ans:"B"
+},
+{
+id:8,
+en:"Which HTML entity is used to display the less-than symbol (&lt;) on a webpage?",
+hi:"वेबपेज पर less-than (&lt;) चिन्ह दिखाने के लिए कौन सा HTML entity उपयोग होता है?",
+A:"&gt;",
+B:"&lt;",
+C:"&amp;",
+D:"&amp;nbsp;",
+ans:"B"
+},
+{
+id:9,
+en:"Which HTML entity is used to represent the ampersand (&) symbol?",
+hi:"ampersand (&) चिन्ह दिखाने के लिए कौन सा HTML entity उपयोग होता है?",
+A:"&and;",
+B:"&amp;",
+C:"&symbol;",
+D:"&ref;",
+ans:"B"
+},
+{
+id:10,
+en:"In HTML forms, which attribute ensures that a field must be filled before submission?",
+hi:"HTML forms में कौन सा attribute यह सुनिश्चित करता है कि field भरना अनिवार्य हो?",
+A:"validate",
+B:"required",
+C:"pattern",
+D:"mandatory",
+ans:"B"
+}, 
+{
+id:11,
+en:"Which attribute is used to define a regular expression for input validation in HTML?",
+hi:"HTML में input validation के लिए regular expression define करने के लिए कौन सा attribute उपयोग होता है?",
+A:"check",
+B:"format",
+C:"pattern",
+D:"match",
+ans:"C"
+},
+{
+id:12,
+en:"What will happen if a required field is left empty and the form is submitted?",
+hi:"यदि required field खाली छोड़ दी जाए और form submit किया जाए तो क्या होगा?",
+A:"Form will be submitted successfully",
+B:"Browser will ignore the field",
+C:"Form submission will be blocked and validation message shown",
+D:"Page will reload",
+ans:"C"
+},
+{
+id:13,
+en:"In HTML, what is the primary purpose of the alt attribute in the <img> tag?",
+hi:"HTML में <img> tag में alt attribute का मुख्य उद्देश्य क्या है?",
+A:"To style the image",
+B:"To provide alternative text for accessibility and SEO",
+C:"To change image size",
+D:"To link the image",
+ans:"B"
+},
+{
+id:14,
+en:"Which of the following is a semantic HTML element that improves accessibility and SEO?",
+hi:"निम्न में से कौन सा semantic HTML element है जो accessibility और SEO को बेहतर बनाता है?",
+A:"&lt;div&gt;",
+B:"&lt;span&gt;",
+C:"&lt;section&gt;",
+D:"&lt;b&gt;",
+ans:"C"
+},
+{
+id:15,
+en:"Why are semantic HTML elements important for SEO?",
+hi:"Semantic HTML elements SEO के लिए क्यों महत्वपूर्ण हैं?",
+A:"They increase page color",
+B:"They help search engines understand page structure and content",
+C:"They reduce page size",
+D:"They speed up internet",
+ans:"B"
+},
+{
+id:16,
+en:"Which type of CSS has the highest priority when multiple styles are applied to the same element?",
+hi:"जब एक ही element पर कई styles apply हों, तो किस CSS की priority सबसे अधिक होती है?",
+A:"External CSS",
+B:"Internal CSS",
+C:"Inline CSS",
+D:"All have equal priority",
+ans:"C"
+},
+{
+id:17,
+en:"Identify the correct CSS syntax:",
+hi:"सही CSS syntax पहचानिए:",
+A:"selector = {property:value}",
+B:"selector {property: value;}",
+C:"selector (property: value;)",
+D:"{selector: property=value}",
+ans:"B"
+},
+{
+id:18,
+en:"If an external CSS file and an internal CSS style define different styles for the same element, which one will be applied?",
+hi:"यदि external और internal CSS दोनों एक ही element के लिए अलग style define करें, तो कौन सा apply होगा?",
+A:"External CSS",
+B:"Internal CSS",
+C:"Both equally",
+D:"None",
+ans:"B"
+},
+{
+id:19,
+en:"Which CSS selector is used to select all elements on a webpage?",
+hi:"वेबपेज के सभी elements को select करने के लिए कौन सा CSS selector उपयोग होता है?",
+A:"#",
+B:".",
+C:"*",
+D:"&",
+ans:"C"
+},
+{
+id:20,
+en:"Which selector is used to apply the same style to multiple elements separated by commas?",
+hi:"कई elements पर एक ही style लागू करने के लिए comma (,) से अलग किए गए selector को क्या कहते हैं?",
+A:"Descendant Selector",
+B:"Group Selector",
+C:"Universal Selector",
+D:"Child Selector",
+ans:"B"
+}, 
+{
+id:21,
+en:"The selector 'div p' will select:",
+hi:"CSS selector 'div p' क्या select करता है?",
+A:"Only direct children p of div",
+B:"All p elements inside div (at any level)",
+C:"Only first p inside div",
+D:"All div elements",
+ans:"B"
+},
+{
+id:22,
+en:"Which selector selects only direct child elements?",
+hi:"कौन सा selector केवल direct child elements को select करता है?",
+A:"+",
+B:"~",
+C:">",
+D:"*",
+ans:"C"
+},
+{
+id:23,
+en:"The selector 'h1 + p' selects:",
+hi:"CSS selector 'h1 + p' क्या select करता है?",
+A:"All p elements",
+B:"The first p element after h1",
+C:"All p elements inside h1",
+D:"All siblings of h1",
+ans:"B"
+},
+{
+id:24,
+en:"The selector 'h1 ~ p' selects:",
+hi:"CSS selector 'h1 ~ p' क्या select करता है?",
+A:"Only adjacent p",
+B:"All p siblings after h1",
+C:"Only first child",
+D:"All elements before h1",
+ans:"B"
+},
+{
+id:25,
+en:"Which of the following is a valid HEX color code in CSS?",
+hi:"निम्न में से कौन सा CSS में valid HEX color code है?",
+A:"#GGHHII",
+B:"#123ABC",
+C:"rgb(256,0,0)",
+D:"color(red)",
+ans:"B"
+},
+{
+id:26,
+en:"In CSS, which unit is relative to the font size of the parent element?",
+hi:"CSS में कौन सी unit parent element के font size के अनुसार होती है?",
+A:"px",
+B:"%",
+C:"em",
+D:"rem",
+ans:"C"
+},
+{
+id:27,
+en:"Which of the following CSS color functions uses values between 0–255 for each component?",
+hi:"निम्न में से कौन सा CSS color function प्रत्येक component के लिए 0–255 के बीच value लेता है?",
+A:"hex()",
+B:"rgb()",
+C:"hsl()",
+D:"color()",
+ans:"B"
+},
+{
+id:28,
+en:"Which of the following correctly differentiates impact printers from non-impact printers?",
+hi:"Impact और non-impact printers में सही अंतर क्या है?",
+A:"Impact printers are silent, non-impact are noisy",
+B:"Impact printers use physical contact with paper, non-impact do not",
+C:"Impact printers are faster than non-impact printers always",
+D:"Non-impact printers use ribbons",
+ans:"B"
+},
+{
+id:29,
+en:"Which printer is best suited for printing multi-part forms using carbon copies?",
+hi:"Carbon copy वाले multi-part forms print करने के लिए कौन सा printer सबसे उपयुक्त है?",
+A:"Inkjet Printer",
+B:"Laser Printer",
+C:"Thermal Printer",
+D:"Dot Matrix Printer",
+ans:"D"
+},
+{
+id:30,
+en:"Which of the following statements is TRUE about laser printers?",
+hi:"Laser printers के बारे में निम्न में से कौन सा कथन सही है?",
+A:"They use impact mechanism",
+B:"They use liquid ink for printing",
+C:"They use toner and electrostatic process",
+D:"They are slower than dot matrix printers",
+ans:"C"
+}, 
+{
+id:31,
+en:"In IoT architecture, which layer is responsible for collecting data from the environment using sensors?",
+hi:"IoT architecture में कौन सा layer sensors के माध्यम से environment से data collect करता है?",
+A:"Application Layer",
+B:"Network Layer",
+C:"Perception Layer",
+D:"Transport Layer",
+ans:"C"
+},
+{
+id:32,
+en:"Which IoT layer is responsible for transmitting data between devices and servers?",
+hi:"IoT में devices और servers के बीच data transmit करने के लिए कौन सा layer जिम्मेदार है?",
+A:"Perception Layer",
+B:"Network Layer",
+C:"Application Layer",
+D:"Session Layer",
+ans:"B"
+},
+{
+id:33,
+en:"Which layer of IoT architecture provides services directly to the end user?",
+hi:"IoT architecture का कौन सा layer सीधे end user को services प्रदान करता है?",
+A:"Network Layer",
+B:"Perception Layer",
+C:"Application Layer",
+D:"Physical Layer",
+ans:"C"
+},
+{
+id:34,
+en:"Which of the following is an example of a function performed by the Perception Layer?",
+hi:"Perception Layer का कौन सा कार्य है?",
+A:"Data analysis",
+B:"Data transmission",
+C:"Data collection using sensors",
+D:"User interface",
+ans:"C"
+},
+{
+id:35,
+en:"In IoT, which layer uses technologies like Wi-Fi and Bluetooth?",
+hi:"IoT में Wi-Fi और Bluetooth जैसी technologies किस layer में उपयोग होती हैं?",
+A:"Perception Layer",
+B:"Network Layer",
+C:"Application Layer",
+D:"Presentation Layer",
+ans:"B"
+},
+{
+id:36,
+en:"Which of the following correctly differentiates NFC from RFID?",
+hi:"NFC और RFID में सही अंतर क्या है?",
+A:"NFC works at longer distances than RFID",
+B:"RFID requires very short range like NFC",
+C:"NFC is a subset of RFID and works at very short range",
+D:"Both work exactly the same",
+ans:"C"
+},
+{
+id:37,
+en:"Which frequency band is commonly used by NFC technology?",
+hi:"NFC technology में सामान्यतः कौन सा frequency band उपयोग होता है?",
+A:"2.4 GHz",
+B:"13.56 MHz",
+C:"900 MHz",
+D:"5 GHz",
+ans:"B"
+},
+{
+id:38,
+en:"Which of the following is a common application of RFID technology?",
+hi:"RFID technology का सामान्य उपयोग क्या है?",
+A:"Bluetooth file transfer",
+B:"Contactless payment only",
+C:"Inventory tracking and access control",
+D:"Web browsing",
+ans:"C"
+},
+{
+id:39,
+en:"In IoT systems, what is the primary role of cloud computing?",
+hi:"IoT systems में cloud computing का मुख्य कार्य क्या है?",
+A:"To replace sensors",
+B:"To store, process, and analyze large volumes of IoT data",
+C:"To reduce internet usage",
+D:"To control hardware devices directly",
+ans:"B"
+},
+{
+id:40,
+en:"Which cloud function enables users to access IoT devices and data from anywhere?",
+hi:"कौन सा cloud function users को कहीं से भी IoT devices और data access करने की सुविधा देता है?",
+A:"Data encryption",
+B:"Remote access",
+C:"Local storage",
+D:"Caching",
+ans:"B"
+}, 
+{
+id:41,
+en:"In IoT, which cloud feature is mainly used for analyzing sensor data to extract useful insights?",
+hi:"IoT में sensor data से useful insights निकालने के लिए कौन सा cloud feature उपयोग होता है?",
+A:"Data storage",
+B:"Data compression",
+C:"Data analysis",
+D:"Data transmission",
+ans:"C"
+},
+{
+id:42,
+en:"Which of the following best describes DOS as an operating system?",
+hi:"निम्न में से DOS को operating system के रूप में कौन सही दर्शाता है?",
+A:"Multi-user, multitasking GUI OS",
+B:"Single-user, single-tasking CLI OS",
+C:"Distributed OS",
+D:"Real-time OS",
+ans:"B"
+},
+{
+id:43,
+en:"In DOS, what does CLI stand for?",
+hi:"DOS में CLI का पूर्ण रूप क्या है?",
+A:"Computer Level Interface",
+B:"Command Line Interface",
+C:"Central Logic Interface",
+D:"Control Link Interface",
+ans:"B"
+},
+{
+id:44,
+en:"Which of the following is a key limitation of DOS compared to modern operating systems?",
+hi:"Modern OS की तुलना में DOS की मुख्य कमी क्या है?",
+A:"High memory usage",
+B:"Lack of graphical user interface",
+C:"Support for multiple users",
+D:"High processing speed",
+ans:"B"
+},
+{
+id:45,
+en:"Which of the following is an advantage of DOS?",
+hi:"निम्न में से DOS का कौन सा लाभ है?",
+A:"Requires high system resources",
+B:"Supports multitasking",
+C:"Fast performance due to low resource usage",
+D:"Built-in GUI",
+ans:"C"
+},
+{
+id:46,
+en:"In a CLI-based system like DOS, how does a user interact with the system?",
+hi:"DOS जैसे CLI-based system में user system से कैसे interact करता है?",
+A:"Using mouse clicks",
+B:"Using voice commands",
+C:"By typing commands",
+D:"Using touch gestures",
+ans:"C"
+},
+{
+id:47,
+en:"Which of the following types of OS is DOS classified under based on user interface?",
+hi:"User interface के आधार पर DOS किस प्रकार का OS है?",
+A:"GUI-based OS",
+B:"CLI-based OS",
+C:"Distributed OS",
+D:"Network OS",
+ans:"B"
+},
+{
+id:48,
+en:"In DOS, which symbol represents the root directory?",
+hi:"DOS में root directory को कौन सा symbol दर्शाता है?",
+A:"/",
+B:"\\",
+C:":",
+D:"*",
+ans:"B"
+},
+{
+id:49,
+en:"Which of the following is an example of an absolute path in DOS?",
+hi:"निम्न में से DOS में absolute path का उदाहरण कौन सा है?",
+A:"Documents\\File.txt",
+B:"\\Users\\Admin\\File.txt",
+C:"..\\File.txt",
+D:".\\File.txt",
+ans:"B"
+},
+{
+id:50,
+en:"In DOS, what does “..” represent in a directory path?",
+hi:"DOS में directory path में “..” का क्या अर्थ होता है?",
+A:"Current directory",
+B:"Root directory",
+C:"Parent directory",
+D:"Hidden directory",
+ans:"C"
+}, 
+{
+id:51,
+en:"Which of the following is TRUE about a relative path?",
+hi:"Relative path के बारे में कौन सा कथन सही है?",
+A:"It always starts from root directory",
+B:"It is independent of current directory",
+C:"It depends on current working directory",
+D:"It cannot include folder names",
+ans:"C"
+},
+{
+id:52,
+en:"Which command is used to display files and directories in DOS?",
+hi:"DOS में files और directories दिखाने के लिए कौन सा command उपयोग होता है?",
+A:"SHOW",
+B:"LIST",
+C:"DIR",
+D:"VIEW",
+ans:"C"
+},
+{
+id:53,
+en:"In DOS file system, a directory is best defined as:",
+hi:"DOS file system में directory की सही परिभाषा क्या है?",
+A:"A file containing data",
+B:"A container used to organize files",
+C:"A type of hardware",
+D:"A system error",
+ans:"B"
+},
+{
+id:54,
+en:"Which of the following technological advancements primarily defines the Fourth Generation of computers?",
+hi:"निम्न में से कौन सी तकनीक Fourth Generation computers की पहचान है?",
+A:"Vacuum Tubes",
+B:"Transistors",
+C:"Microprocessors",
+D:"Artificial Intelligence",
+ans:"C"
+},
+{
+id:55,
+en:"Which of the following is a key characteristic of Fifth Generation computers?",
+hi:"Fifth Generation computers की मुख्य विशेषता क्या है?",
+A:"Use of assembly language only",
+B:"Focus on artificial intelligence and robotics",
+C:"Use of magnetic drums",
+D:"Limited memory capacity",
+ans:"B"
+},
+{
+id:56,
+en:"Which technology is most closely associated with Fifth Generation computers for problem-solving and decision-making?",
+hi:"Fifth Generation computers में problem-solving और decision-making के लिए कौन सी तकनीक जुड़ी है?",
+A:"Machine language",
+B:"Neural networks",
+C:"Punch cards",
+D:"Vacuum tubes",
+ans:"B"
+},
+{
+id:57,
+en:"Which of the following best describes the Abacus?",
+hi:"Abacus का सही वर्णन क्या है?",
+A:"A mechanical calculator using gears",
+B:"An electronic computing device",
+C:"A manual calculating device using beads on rods",
+D:"A binary computing machine",
+ans:"C"
+},
+{
+id:58,
+en:"Napier’s Bones was primarily used for:",
+hi:"Napier’s Bones का मुख्य उपयोग किस लिए था?",
+A:"Addition and subtraction only",
+B:"Multiplication and division using rods",
+C:"Data storage",
+D:"Programming",
+ans:"B"
+},
+{
+id:59,
+en:"Who invented Napier’s Bones?",
+hi:"Napier’s Bones का आविष्कार किसने किया?",
+A:"Charles Babbage",
+B:"Blaise Pascal",
+C:"John Napier",
+D:"Herman Hollerith",
+ans:"C"
+},
+{
+id:60,
+en:"Which type of error occurs due to violation of programming language rules and is detected at compile time?",
+hi:"Programming language rules के उल्लंघन से कौन सा error होता है जो compile time पर detect होता है?",
+A:"Runtime error",
+B:"Logical error",
+C:"Syntax error",
+D:"Execution error",
+ans:"C"
+}, 
+{
+id:61,
+en:"Which of the following errors is detected only when the program is running?",
+hi:"निम्न में से कौन सा error केवल program run होने पर detect होता है?",
+A:"Syntax error",
+B:"Runtime error",
+C:"Logical error",
+D:"Compilation error",
+ans:"B"
+},
+{
+id:62,
+en:"Which type of error does NOT stop program execution but produces incorrect output?",
+hi:"कौन सा error program को नहीं रोकता लेकिन गलत output देता है?",
+A:"Syntax error",
+B:"Runtime error",
+C:"Logical error",
+D:"Compilation error",
+ans:"C"
+},
+{
+id:63,
+en:"Which function is used to allocate a single block of memory in C without initializing it?",
+hi:"C में बिना initialize किए memory allocate करने के लिए कौन सा function उपयोग होता है?",
+A:"calloc()",
+B:"malloc()",
+C:"realloc()",
+D:"free()",
+ans:"B"
+},
+{
+id:64,
+en:"Which function allocates memory for multiple elements and initializes them to zero?",
+hi:"कौन सा function multiple elements के लिए memory allocate करता है और उन्हें zero से initialize करता है?",
+A:"malloc()",
+B:"calloc()",
+C:"realloc()",
+D:"free()",
+ans:"B"
+},
+{
+id:65,
+en:"Which function is used to release dynamically allocated memory back to the system?",
+hi:"Dynamically allocated memory को system में वापस release करने के लिए कौन सा function उपयोग होता है?",
+A:"delete()",
+B:"release()",
+C:"free()",
+D:"remove()",
+ans:"C"
+},
+{
+id:66,
+en:"Which function is used to resize previously allocated memory?",
+hi:"पहले से allocated memory को resize करने के लिए कौन सा function उपयोग होता है?",
+A:"malloc()",
+B:"calloc()",
+C:"realloc()",
+D:"free()",
+ans:"C"
+},
+{
+id:67,
+en:"What happens if free() is not used after dynamic memory allocation?",
+hi:"यदि dynamic memory allocation के बाद free() का उपयोग नहीं किया जाए तो क्या होगा?",
+A:"Program crashes immediately",
+B:"Memory leak occurs",
+C:"Data is automatically saved",
+D:"Compiler error occurs",
+ans:"B"
+},
+{
+id:68,
+en:"Which of the following relational operators is used to check equality in C?",
+hi:"C में equality check करने के लिए कौन सा relational operator उपयोग होता है?",
+A:"=",
+B:"==",
+C:"!=",
+D:"<=",
+ans:"B"
+},
+{
+id:69,
+en:"What will be the output of the expression: (5 > 3)?",
+hi:"Expression (5 > 3) का output क्या होगा?",
+A:"5",
+B:"3",
+C:"1",
+D:"0",
+ans:"C"
+},
+{
+id:70,
+en:"Which of the following operators checks whether two values are NOT equal?",
+hi:"निम्न में से कौन सा operator दो values के NOT equal होने की जांच करता है?",
+A:"==",
+B:"=",
+C:"!=",
+D:">",
+ans:"C"
+}, 
+{
+id:71,
+en:"If the word 'LAP' is placed in front of a vertical mirror, how will it appear?",
+hi:"यदि शब्द 'LAP' को vertical mirror के सामने रखा जाए तो वह कैसा दिखाई देगा?",
+A:"PAL",
+B:"LAP",
+C:"⅃∀Ԁ (mirror image form)",
+D:"ALP",
+ans:"C"
+},
+{
+id:72,
+en:"Which of the following letters remains unchanged in both mirror image and water image?",
+hi:"निम्न में से कौन सा अक्षर mirror image और water image दोनों में समान रहता है?",
+A:"B",
+B:"O",
+C:"P",
+D:"F",
+ans:"B"
+},
+{
+id:73,
+en:"A square paper is folded once and a hole is punched at the center. After unfolding, how many holes will be visible?",
+hi:"एक वर्गाकार कागज को एक बार मोड़ा जाता है और बीच में छेद किया जाता है। खोलने पर कितने छेद दिखाई देंगे?",
+A:"1",
+B:"2",
+C:"3",
+D:"4",
+ans:"B"
+},
+{
+id:74,
+en:"Choose the correct sentence:",
+hi:"सही वाक्य चुनिए:",
+A:"He is an European citizen",
+B:"He is a European citizen",
+C:"He is the European citizen",
+D:"He is European citizen",
+ans:"B"
+},
+{
+id:75,
+en:"Fill in the blank with correct article: She is ______ honest person.",
+hi:"सही article भरिए: She is ______ honest person.",
+A:"a",
+B:"an",
+C:"the",
+D:"no article",
+ans:"B"
+},
+{
+id:76,
+en:"Identify the correct usage:",
+hi:"सही वाक्य पहचानिए:",
+A:"The gold is a precious metal",
+B:"Gold is a precious metal",
+C:"A gold is precious metal",
+D:"The gold are precious metal",
+ans:"B"
+},
+{
+id:77,
+en:"Identify the type of pronoun in the sentence: 'Those are my books.'",
+hi:"वाक्य 'Those are my books.' में pronoun का प्रकार पहचानिए:",
+A:"Personal Pronoun",
+B:"Demonstrative Pronoun",
+C:"Relative Pronoun",
+D:"Interrogative Pronoun",
+ans:"B"
+},
+{
+id:78,
+en:"In the sentence 'She has completed her work,' the word 'has' is:",
+hi:"वाक्य 'She has completed her work' में 'has' क्या है?",
+A:"Main Verb",
+B:"Auxiliary Verb",
+C:"Adverb",
+D:"Adjective",
+ans:"B"
+},
+{
+id:79,
+en:"Identify the adjective in the sentence: 'He bought a beautiful house.'",
+hi:"वाक्य 'He bought a beautiful house.' में adjective पहचानिए:",
+A:"bought",
+B:"house",
+C:"beautiful",
+D:"he",
+ans:"C"
+},
+{
+id:80,
+en:"Identify the adverb in the sentence: 'She speaks very fluently.'",
+hi:"वाक्य 'She speaks very fluently.' में adverb पहचानिए:",
+A:"speaks",
+B:"very",
+C:"fluently",
+D:"she",
+ans:"C"
+}, 
+{
+id:81,
+en:"Which of the following words uses the prefix 'su' in the sense of 'good/excellent' rather than convenience?",
+hi:"निम्नलिखित में से किस शब्द में ‘सु’ उपसर्ग का प्रयोग “श्रेष्ठ” (good/excellent) अर्थ में हुआ है, न कि केवल “सुविधा” के अर्थ में?",
+A:"सुविधा",
+B:"सुयोग्य",
+C:"सुलभ",
+D:"सुगम",
+ans:"B"
+},
+{
+id:82,
+en:"Choose the correct form of visarga sandhi: 'दुः + ख' = ?",
+hi:"निम्नलिखित में से विसर्ग संधि का सही रूप क्या है? 'दुः + ख' = ?",
+A:"दु:ख",
+B:"दुख",
+C:"दु:ख",
+D:"दुःख",
+ans:"D"
+},
+{
+id:83,
+en:"Identify the correct karak roles in the sentence: 'राम ने चाकू से फल काटा।'",
+hi:"वाक्य 'राम ने चाकू से फल काटा।' में कर्ता, कर्म और करण कारक की सही पहचान कीजिए:",
+A:"राम – कर्म, फल – कर्ता, चाकू – करण",
+B:"राम – कर्ता, फल – कर्म, चाकू – करण",
+C:"राम – करण, फल – कर्ता, चाकू – कर्म",
+D:"राम – कर्ता, फल – करण, चाकू – कर्म",
+ans:"B"
+},
+{
+id:84,
+en:"Which of the following words contains a conjunct consonant?",
+hi:"निम्नलिखित में से किस शब्द में संयुक्त व्यंजन का प्रयोग हुआ है?",
+A:"कमल",
+B:"शक्ति",
+C:"रचना",
+D:"गाना",
+ans:"B"
+},
+{
+id:85,
+en:"Under the Constitution of India, the Governor of Himachal Pradesh is appointed by:",
+hi:"भारतीय संविधान के अनुसार हिमाचल प्रदेश के राज्यपाल की नियुक्ति कौन करता है?",
+A:"Prime Minister",
+B:"Chief Minister",
+C:"President of India",
+D:"Legislative Assembly",
+ans:"C"
+},
+{
+id:86,
+en:"Which of the following correctly describes the role of the Chief Minister in Himachal Pradesh?",
+hi:"हिमाचल प्रदेश में मुख्यमंत्री की भूमिका का सही वर्णन क्या है?",
+A:"Head of State",
+B:"Constitutional head",
+C:"Real executive head of the state",
+D:"Judicial authority",
+ans:"C"
+},
+{
+id:87,
+en:"Who is the administrative head of a district in Himachal Pradesh?",
+hi:"हिमाचल प्रदेश में जिले का प्रशासनिक प्रमुख कौन होता है?",
+A:"Governor",
+B:"Chief Minister",
+C:"District Collector / Deputy Commissioner",
+D:"Speaker",
+ans:"C"
+},
+{
+id:88,
+en:"Which of the following correctly differentiates GDP and GNP?",
+hi:"निम्न में से GDP और GNP के बीच सही अंतर क्या है?",
+A:"GDP includes income earned abroad, GNP does not",
+B:"GNP includes income earned by nationals abroad, GDP does not",
+C:"Both are always equal",
+D:"GDP is always higher than GNP",
+ans:"B"
+},
+{
+id:89,
+en:"Which of the following is a tool of Monetary Policy used by the RBI?",
+hi:"निम्न में से कौन RBI की मौद्रिक नीति का उपकरण है?",
+A:"Government expenditure",
+B:"Taxation",
+C:"Repo Rate",
+D:"Budget deficit",
+ans:"C"
+},
+{
+id:90,
+en:"A sustained increase in general price level of goods and services is known as:",
+hi:"वस्तुओं और सेवाओं के सामान्य मूल्य स्तर में लगातार वृद्धि को क्या कहते हैं?",
+A:"Deflation",
+B:"Inflation",
+C:"Stagflation",
+D:"Recession",
+ans:"B"
+}, 
+{
+id:91,
+en:"Which part of the Indian Constitution contains the Fundamental Rights?",
+hi:"भारतीय संविधान का कौन सा भाग Fundamental Rights को दर्शाता है?",
+A:"Part II",
+B:"Part III",
+C:"Part IV",
+D:"Part V",
+ans:"B"
+},
+{
+id:92,
+en:"Which Article of the Constitution of India deals with the Right to Constitutional Remedies?",
+hi:"भारतीय संविधान का कौन सा अनुच्छेद संवैधानिक उपचार के अधिकार से संबंधित है?",
+A:"Article 19",
+B:"Article 21",
+C:"Article 32",
+D:"Article 44",
+ans:"C"
+},
+{
+id:93,
+en:"Fundamental Duties were added to the Indian Constitution by which amendment?",
+hi:"Fundamental Duties को भारतीय संविधान में किस संशोधन द्वारा जोड़ा गया था?",
+A:"42nd Amendment",
+B:"44th Amendment",
+C:"52nd Amendment",
+D:"86th Amendment",
+ans:"A"
+},
+{
+id:94,
+en:"Which Schedule of the Indian Constitution deals with the allocation of seats in the Rajya Sabha?",
+hi:"भारतीय संविधान की कौन सी अनुसूची राज्यसभा में सीटों के आवंटन से संबंधित है?",
+A:"First Schedule",
+B:"Fourth Schedule",
+C:"Seventh Schedule",
+D:"Ninth Schedule",
+ans:"B"
+},
+{
+id:95,
+en:"Which part of the Constitution contains Directive Principles of State Policy?",
+hi:"संविधान का कौन सा भाग राज्य के नीति निदेशक तत्वों को दर्शाता है?",
+A:"Part II",
+B:"Part III",
+C:"Part IV",
+D:"Part V",
+ans:"C"
+},
+{
+id:96,
+en:"Who among the following Mughal rulers introduced the policy of Sulh-i-Kul (universal tolerance)?",
+hi:"निम्न में से किस मुगल शासक ने सुलह-ए-कुल (सार्वभौमिक सहिष्णुता) की नीति लागू की?",
+A:"Babur",
+B:"Humayun",
+C:"Akbar",
+D:"Aurangzeb",
+ans:"C"
+},
+{
+id:97,
+en:"Which Mughal ruler abolished the Jizya tax and later it was re-imposed by Aurangzeb?",
+hi:"किस मुगल शासक ने जज़िया कर समाप्त किया था जिसे बाद में औरंगज़ेब ने पुनः लागू किया?",
+A:"Babur",
+B:"Akbar",
+C:"Shah Jahan",
+D:"Jahangir",
+ans:"B"
+},
+{
+id:98,
+en:"Which of the following policies of Aurangzeb led to discontent among non-Muslims?",
+hi:"निम्न में से औरंगज़ेब की कौन सी नीति गैर-मुसलमानों में असंतोष का कारण बनी?",
+A:"Sulh-i-Kul",
+B:"Abolition of Jizya",
+C:"Re-imposition of Jizya",
+D:"Din-i-Ilahi",
+ans:"C"
+},
+{
+id:99,
+en:"Which Mughal ruler established the Din-i-Ilahi?",
+hi:"दीन-ए-इलाही की स्थापना किस मुगल शासक ने की?",
+A:"Akbar",
+B:"Jahangir",
+C:"Shah Jahan",
+D:"Aurangzeb",
+ans:"A"
+},
+{
+id:100,
+en:"Which of the following statements is TRUE regarding Akbar’s administration?",
+hi:"अकबर के प्रशासन के संबंध में निम्न में से कौन सा कथन सही है?",
+A:"He ruled without ministers",
+B:"He introduced Mansabdari system",
+C:"He abolished land revenue system",
+D:"He ruled only Delhi",
+ans:"B"
+}
 ];
 
 export { questions };
