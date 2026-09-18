@@ -651,10 +651,12 @@
 
       body{
         padding:0;
+        overflow-x:auto;
       }
 
       .page{
         min-height:100vh;
+        min-width:720px;
         border-radius:0;
       }
 
@@ -675,26 +677,48 @@
         font-size:10px;
       }
 
+      /*
+        Mobile par bhi information aur login ko
+        side-by-side rakha gaya hai.
+        Isliye login neeche nahi jayega.
+      */
+      .main{
+        grid-template-columns:58% 42%;
+        min-height:620px;
+      }
+
       .info-panel{
-        padding:35px 20px;
+        padding:30px 22px;
       }
 
       .info-content h1{
-        font-size:35px;
+        font-size:34px;
         letter-spacing:-1px;
       }
 
       .intro{
-        font-size:15px;
+        font-size:14px;
+        line-height:1.5;
       }
 
       .feature-grid{
         grid-template-columns:repeat(2,1fr);
+        gap:9px;
+      }
+
+      .feature{
+        min-height:105px;
+        padding:13px 8px;
       }
 
       .free-card{
         align-items:flex-start;
         flex-direction:column;
+        padding:18px;
+      }
+
+      .free-card h3{
+        font-size:19px;
       }
 
       .free-btn{
@@ -703,38 +727,93 @@
 
       .series-card{
         align-items:flex-start;
+        padding:18px;
+      }
+
+      .series-card h3{
+        font-size:18px;
+      }
+
+      .series-icon{
+        width:50px;
+        height:50px;
+        font-size:22px;
       }
 
       .practice-strip{
         align-items:flex-start;
         flex-direction:column;
-        gap:11px;
+        gap:9px;
       }
 
+      /*
+        Login panel hamesha right side mein rahega.
+      */
       .login-panel{
-        padding:35px 20px;
+        padding:30px 18px;
+        border-left:1px solid #e8eef7;
+        border-top:none;
+      }
+
+      .login-box{
+        max-width:100%;
       }
 
       .login-top h2{
-        font-size:27px;
+        font-size:25px;
+      }
+
+      .login-top p{
+        font-size:12px;
+      }
+
+      input{
+        padding:12px 11px;
+        font-size:13px;
+      }
+
+      label{
+        font-size:12px;
+      }
+
+      .login-btn{
+        padding:12px;
+        font-size:14px;
+      }
+
+      .create-card{
+        padding:15px 12px;
+      }
+
+      .create-card h3{
+        font-size:15px;
+      }
+
+      .create-card p{
+        font-size:11px;
+      }
+
+      .login-note{
+        font-size:10px;
       }
 
       .footer{
-        padding:18px 20px;
+        padding:16px 20px;
         align-items:flex-start;
-        flex-direction:column;
+        flex-direction:row;
+        min-width:720px;
       }
 
     }
 
     @media(max-width:380px){
 
-      .feature-grid{
-        grid-template-columns:1fr;
+      .info-content h1{
+        font-size:30px;
       }
 
-      .info-content h1{
-        font-size:31px;
+      .feature-grid{
+        grid-template-columns:1fr 1fr;
       }
 
     }
