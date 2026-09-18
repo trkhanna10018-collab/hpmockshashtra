@@ -6,279 +6,67 @@
 <title>JOA IT Mock Test — Study Mode | HPMockShashtra</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  font-family:"Segoe UI",Arial,sans-serif;
-}
-
-body{
-  margin:0;
-  background:#eef4fb;
-  color:#172033;
-}
-
-.header{
-  height:70px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 28px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  color:#1f2937;
-  font-weight:800;
-  font-size:20px;
-}
-
-.brand img{
-  width:50px;
-  height:50px;
-  object-fit:contain;
-  border-radius:8px;
-}
-
-.back{
-  padding:9px 13px;
-  border-radius:8px;
-  background:#f3f4f6;
-  color:#374151;
-  text-decoration:none;
-  font-weight:600;
-  font-size:13px;
-}
-
-.wrap{
-  max-width:900px;
-  margin:26px auto;
-  padding:0 16px 50px;
-}
-
-.top{
-  background:linear-gradient(135deg,#4338ca,#6366f1);
-  color:#fff;
-  border-radius:16px;
-  padding:24px;
-  margin-bottom:18px;
-  box-shadow:0 8px 25px rgba(67,56,202,.16);
-}
-
-.top h1{
-  margin:0 0 7px;
-  font-size:25px;
-}
-
-.top p{
-  margin:0 0 15px;
-  opacity:.92;
-}
-
-.meta{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.pill{
-  background:rgba(255,255,255,.14);
-  padding:8px 12px;
-  border-radius:8px;
-  font-size:13px;
-}
-
-.card{
-  background:#fff;
-  border-radius:14px;
-  padding:22px;
-  box-shadow:0 4px 15px rgba(0,0,0,.06);
-}
-
-.counter{
-  font-weight:800;
-  color:#4f46e5;
-  margin-bottom:18px;
-}
-
-.question{
-  font-size:19px;
-  font-weight:700;
-  line-height:1.55;
-  margin-bottom:7px;
-}
-
-.hindi{
-  font-size:17px;
-  line-height:1.55;
-  color:#374151;
-  margin-bottom:20px;
-}
-
-.options{
-  display:grid;
-  gap:10px;
-}
-
-.option{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  border:1px solid #dbe2ea;
-  border-radius:10px;
-  padding:13px;
-  line-height:1.5;
-  background:#fff;
-}
-
-.option.selected-wrong{
-  border-color:#f97316;
-  background:#fff7ed;
-}
-
-.option.correct{
-  border-color:#16a34a;
-  background:#dcfce7;
-}
-
-.option.correct.selected{
-  border-color:#16a34a;
-  background:#dcfce7;
-}
-
-.option input{
-  margin-top:4px;
-}
-
-.status{
-  margin-top:18px;
-  padding:11px 14px;
-  border-radius:9px;
-  font-weight:800;
-}
-
-.status.correct{
-  color:#166534;
-  background:#dcfce7;
-}
-
-.status.incorrect{
-  color:#b91c1c;
-  background:#fee2e2;
-}
-
-.explanation{
-  margin-top:12px;
-  padding:12px 14px;
-  border-left:4px solid #6366f1;
-  background:#f8fafc;
-  color:#374151;
-  line-height:1.55;
-}
-
-.controls{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  margin-top:22px;
-}
-
-.btn{
-  border:0;
-  border-radius:9px;
-  padding:11px 17px;
-  font-weight:700;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
-}
-
-.primary{
-  background:#4f46e5;
-  color:#fff;
-}
-
-.secondary{
-  background:#f3f4f6;
-  color:#374151;
-}
-
-.primary:disabled,
-.secondary:disabled{
-  opacity:.5;
-  cursor:not-allowed;
-}
-
-.error{
-  text-align:center;
-  color:#b91c1c;
-}
-
-.score{
-  text-align:center;
-  margin-bottom:18px;
-}
-
-.score-number{
-  font-size:42px;
-  font-weight:900;
-  color:#4f46e5;
-}
-
-.score p{
-  margin:4px 0;
-  color:#6b7280;
-}
-
-.hidden{
-  display:none!important;
-}
-
+*{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+body{margin:0;background:#eef4fb;color:#172033}
+.header{height:70px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 34px;box-shadow:0 2px 10px rgba(0,0,0,.07);position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1f2937;font-weight:800;font-size:20px}
+.brand img{width:50px;height:50px;object-fit:contain;border-radius:8px}
+.back{padding:9px 14px;border-radius:8px;background:#f3f4f6;color:#374151;text-decoration:none;font-weight:700;font-size:13px}
+.wrap{max-width:1180px;margin:24px auto;padding:0 18px 50px}
+.top{background:linear-gradient(135deg,#3730a3,#6366f1);color:#fff;border-radius:16px;padding:25px 28px;margin-bottom:16px;box-shadow:0 8px 25px rgba(67,56,202,.15)}
+.top h1{margin:0 0 7px;font-size:25px}
+.top p{margin:0 0 16px;opacity:.92}
+.meta{display:flex;gap:9px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.14);padding:7px 11px;border-radius:8px;font-size:12px;font-weight:700}
+.card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.055)}
+.score{display:grid;grid-template-columns:210px 1fr;align-items:center;gap:24px;margin-bottom:14px}
+.score-main{display:flex;align-items:center;gap:18px}
+.score-ring{width:108px;height:108px;border-radius:50%;background:conic-gradient(#4f46e5 var(--score,0%),#e5e7eb 0);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.score-ring:before{content:"";position:absolute;width:82px;height:82px;border-radius:50%;background:#fff}
+.score-ring span{position:relative;z-index:1;font-weight:900;font-size:21px;color:#172554}
+.score-text strong{display:block;font-size:31px;line-height:1.05;color:#172554}
+.score-text .label{margin-top:5px;color:#6b7280;font-size:14px;font-weight:600}
+.score-text .readonly{margin-top:6px;color:#6b7280;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{border-radius:12px;padding:15px 17px;min-height:84px;display:flex;align-items:center;gap:12px}
+.stat-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;flex-shrink:0}
+.stat strong{display:block;font-size:21px;line-height:1.1}
+.stat span{display:block;margin-top:3px;font-size:13px;font-weight:600}
+.correct-stat{background:#ecfdf3;color:#166534}.correct-stat .stat-icon{background:#c9f5d8;color:#15803d}
+.wrong-stat{background:#fff0f0;color:#b91c1c}.wrong-stat .stat-icon{background:#ffd5d5;color:#dc2626}
+.unattempted-stat{background:#f3f4f6;color:#374151}.unattempted-stat .stat-icon{background:#e0e4ea;color:#6b7280}
+.legend-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.legend{background:#fff;border:1px solid #e5e7eb;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:700;color:#374151}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}.dot.green{background:#16a34a}.dot.red{background:#ef4444}.dot.gray{background:#9ca3af}
+.info{flex:1;min-width:250px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:600}
+.question-card{padding:24px}
+.question-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}
+.counter{font-weight:800;color:#4f46e5;font-size:13px}
+.question-status{padding:7px 12px;border-radius:8px;font-size:12px;font-weight:800}
+.question-status.correct{background:#dcfce7;color:#166534}.question-status.incorrect{background:#fee2e2;color:#b91c1c}.question-status.unattempted{background:#eef0f3;color:#4b5563}
+.question{font-size:20px;font-weight:750;line-height:1.55;margin-bottom:6px}
+.hindi{font-size:17px;line-height:1.55;color:#374151;margin-bottom:20px}
+.options{display:grid;gap:10px}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid #dbe2ea;border-radius:10px;padding:14px;line-height:1.5;background:#fff}
+.option.selected-wrong{border-color:#ef4444;background:#fff1f2}
+.option.correct,.option.correct.selected{border-color:#16a34a;background:#dcfce7}
+.option input{margin-top:4px;accent-color:#4f46e5}
+.answer-box{margin-top:18px;padding:15px 17px;border-radius:10px}
+.answer-box.correct{background:#ecfdf3;color:#166534}.answer-box.incorrect{background:#fff1f2;color:#b91c1c}.answer-box.unattempted{background:#f3f4f6;color:#374151}
+.answer-title{font-weight:900;margin-bottom:6px}.answer-line{margin:4px 0;font-weight:700}
+.explanation{margin-top:12px;padding:13px 15px;border-left:4px solid #6366f1;background:#f8fafc;color:#374151;line-height:1.55;border-radius:0 8px 8px 0}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+.btn{border:0;border-radius:9px;padding:11px 18px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:#4f46e5;color:#fff}.secondary{background:#f3f4f6;color:#374151}
+.primary:disabled,.secondary:disabled{opacity:.5;cursor:not-allowed}
+.page-indicator{font-size:13px;font-weight:800;color:#374151}
+.error{text-align:center;color:#b91c1c}.hidden{display:none!important}
+@media(max-width:800px){.score{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){
-  .header{
-    padding:0 14px;
-  }
-
-  .brand{
-    font-size:17px;
-  }
-
-  .brand img{
-    width:43px;
-    height:43px;
-  }
-
-  .top h1{
-    font-size:21px;
-  }
-
-  .card{
-    padding:16px;
-  }
-
-  .question{
-    font-size:17px;
-  }
-
-  .hindi{
-    font-size:16px;
-  }
-
-  .controls{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
-    text-align:center;
-  }
+.header{padding:0 14px;height:64px}.brand{font-size:17px}.brand img{width:43px;height:43px}.back{padding:8px 10px;font-size:12px}
+.wrap{margin:16px auto;padding:0 12px 35px}.top{padding:20px}.top h1{font-size:21px}.score{padding:18px}.score-main{gap:13px}.score-ring{width:88px;height:88px}.score-ring:before{width:68px;height:68px}.score-text strong{font-size:27px}.stats{grid-template-columns:1fr}
+.legend-row{flex-direction:column}.info{min-width:0}.question-card{padding:17px}.question-head{align-items:flex-start}.question{font-size:18px}.hindi{font-size:16px}
+.controls{flex-direction:column}.btn{width:100%;text-align:center}.page-indicator{order:-1}
 }
 </style>
 </head>
@@ -314,25 +102,53 @@ body{
   <div id="reviewArea" class="hidden">
 
     <div class="card score">
-      <div class="score-number" id="score"></div>
-      <p id="percentage"></p>
-      <p>Read-only review — answers cannot be changed.</p>
+      <div class="score-main">
+        <div class="score-ring" id="scoreRing" style="--score:0%">
+          <span id="scoreRingText">0%</span>
+        </div>
+        <div class="score-text">
+          <strong id="score"></strong>
+          <div class="label" id="percentage"></div>
+          <div class="readonly">Read-only review — answers cannot be changed.</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat correct-stat">
+          <div class="stat-icon">✓</div>
+          <div><strong id="correctCount">0</strong><span>Correct</span></div>
+        </div>
+        <div class="stat wrong-stat">
+          <div class="stat-icon">✕</div>
+          <div><strong id="wrongCount">0</strong><span>Incorrect</span></div>
+        </div>
+        <div class="stat unattempted-stat">
+          <div class="stat-icon">−</div>
+          <div><strong id="unattemptedCount">0</strong><span>Not Attempted</span></div>
+        </div>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="counter" id="counter"></div>
+    <div class="legend-row">
+      <div class="legend"><span class="dot green"></span>Correct answer</div>
+      <div class="legend"><span class="dot red"></span>Your selected answer (wrong)</div>
+      <div class="legend"><span class="dot gray"></span>Not attempted</div>
+      <div class="info">ⓘ Study Mode में आप हर प्रश्न का सही उत्तर देख सकते हैं।</div>
+    </div>
 
+    <div class="card question-card">
+      <div class="question-head">
+        <div class="counter" id="counter"></div>
+        <div id="questionStatus" class="question-status"></div>
+      </div>
       <div class="question" id="questionEn"></div>
       <div class="hindi" id="questionHi"></div>
-
       <div class="options" id="options"></div>
-
-      <div id="status" class="status hidden"></div>
-
+      <div id="answerBox" class="answer-box hidden"></div>
       <div id="explanation" class="explanation hidden"></div>
-
       <div class="controls">
         <button class="btn secondary" id="prevBtn">Previous</button>
+        <div class="page-indicator" id="pageIndicator"></div>
         <button class="btn primary" id="nextBtn">Next</button>
       </div>
     </div>
@@ -505,6 +321,7 @@ onAuthStateChanged(auth, async (u) => {
     $("loading").classList.add("hidden");
     $("reviewArea").classList.remove("hidden");
 
+    updateSummary();
     render();
 
   }catch(e){
@@ -534,99 +351,120 @@ function render(){
   }
 
   const q = questions[current];
-
   const selected = answers[current];
   const correct = q.ans;
+  const attempted = !!selected;
+  const isCorrectAnswer = attempted && selected === correct;
 
-  $("counter").textContent =
-    `Question ${current + 1} of ${questions.length}`;
+  $("counter").textContent = `Question ${current + 1} of ${questions.length}`;
+  $("questionEn").textContent = q.en || "[English question not available]";
+  $("questionHi").textContent = q.hi || "[Hindi question not available]";
 
-  $("questionEn").textContent =
-    q.en || "[English question not available]";
+  const status = $("questionStatus");
+  status.className = "question-status";
 
-  $("questionHi").textContent =
-    q.hi || "[Hindi question not available]";
+  if(!attempted){
+    status.classList.add("unattempted");
+    status.textContent = "− Not Attempted";
+  }else if(isCorrectAnswer){
+    status.classList.add("correct");
+    status.textContent = "✓ Correct";
+  }else{
+    status.classList.add("incorrect");
+    status.textContent = "✕ Incorrect";
+  }
 
-  $("options").innerHTML =
-    ["A","B","C","D"].map(k => {
+  $("options").innerHTML = ["A","B","C","D"].map(k => {
+    const isCorrect = correct === k;
+    const isSelected = selected === k;
+    let className = "option";
 
-      const isCorrect = correct === k;
-      const isSelected = selected === k;
-
-      let className = "option";
-
-      /*
-        Correct answer is ALWAYS green.
-        Wrong selected answer is orange/red.
-        If selected answer is also correct, green wins.
-      */
+    // Only color answers when the question was actually attempted.
+    if(attempted){
       if(isCorrect){
         className += " correct";
         if(isSelected) className += " selected";
       }else if(isSelected){
         className += " selected-wrong";
       }
+    }
 
-      return `
-        <div class="${className}">
-          <input
-            type="radio"
-            disabled
-            ${isSelected ? "checked" : ""}
-          >
+    return `
+      <div class="${className}">
+        <input type="radio" disabled ${isSelected ? "checked" : ""}>
+        <span><strong>${k}.</strong> ${q[k] || "[Option not available]"}</span>
+      </div>
+    `;
+  }).join("");
 
-          <span>
-            <strong>${k}.</strong> ${q[k] || "[Option not available]"}
-          </span>
-        </div>
-      `;
+  const answerBox = $("answerBox");
+  answerBox.className = "answer-box";
 
-    }).join("");
-
-
-  const status = $("status");
-
-  status.classList.remove("hidden");
-  status.classList.remove("correct","incorrect");
-
-  if(selected && selected === correct){
-
-    status.classList.add("correct");
-    status.textContent = "✓ Correct";
-
+  if(!attempted){
+    answerBox.classList.add("unattempted");
+    answerBox.innerHTML = `
+      <div class="answer-title">− Not Attempted</div>
+      <div class="answer-line">You did not attempt this question.</div>
+      <div class="answer-line" style="color:#166534;margin-top:10px;">
+        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
+      </div>
+    `;
+  }else if(isCorrectAnswer){
+    answerBox.classList.add("correct");
+    answerBox.innerHTML = `
+      <div class="answer-title">✓ Correct Answer</div>
+      <div class="answer-line">${correct}. ${q[correct] || "[Answer not available]"}</div>
+    `;
   }else{
-
-    status.classList.add("incorrect");
-    status.textContent = "✗ Incorrect";
-
+    answerBox.classList.add("incorrect");
+    answerBox.innerHTML = `
+      <div class="answer-title">✕ Your Answer (Incorrect)</div>
+      <div class="answer-line">${selected}. ${q[selected] || "[Answer not available]"}</div>
+      <div class="answer-line" style="color:#166534;margin-top:10px;">
+        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
+      </div>
+    `;
   }
-
 
   const explanation = $("explanation");
-
   if(q.explanation){
-
     explanation.classList.remove("hidden");
-    explanation.innerHTML =
-      `<strong>Explanation:</strong> ${q.explanation}`;
-
+    explanation.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
   }else{
-
     explanation.classList.add("hidden");
     explanation.textContent = "";
-
   }
 
-
   $("prevBtn").disabled = current === 0;
-
-  $("nextBtn").textContent =
-    current === questions.length - 1
-      ? "Back to Series"
-      : "Next";
-
+  $("nextBtn").textContent = current === questions.length - 1 ? "Back to Series" : "Next";
+  $("pageIndicator").textContent = `Question ${current + 1} of ${questions.length}`;
 }
 
+function updateSummary(){
+
+  let correctCount = 0;
+  let wrongCount = 0;
+  let unattemptedCount = 0;
+
+  questions.forEach((q,index) => {
+    const selected = answers[index];
+
+    if(!selected) unattemptedCount++;
+    else if(selected === q.ans) correctCount++;
+    else wrongCount++;
+  });
+
+  const total = questions.length;
+  const percentage = total ? Math.round((correctCount / total) * 100) : 0;
+
+  $("correctCount").textContent = correctCount;
+  $("wrongCount").textContent = wrongCount;
+  $("unattemptedCount").textContent = unattemptedCount;
+  $("score").textContent = `${correctCount}/${total}`;
+  $("percentage").textContent = `Your Score: ${percentage}%`;
+  $("scoreRing").style.setProperty("--score", `${percentage}%`);
+  $("scoreRingText").textContent = `${percentage}%`;
+}
 
 $("prevBtn").onclick = () => {
 
