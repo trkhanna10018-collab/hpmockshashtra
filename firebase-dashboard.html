@@ -8,21 +8,19 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
 
 body{
-  background:#f4f7fb;
-  color:#14213d;
+  background:#f5f8fc;
+  color:#17233f;
   min-height:100vh;
 }
 
-/* ================= HEADER ================= */
-
 .header{
-  height:76px;
+  height:74px;
   background:#fff;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 34px;
-  border-bottom:1px solid #e5ebf4;
+  border-bottom:1px solid #e6ebf3;
   position:sticky;
   top:0;
   z-index:1000;
@@ -33,20 +31,12 @@ body{
   align-items:center;
   gap:11px;
   text-decoration:none;
-  color:#12264f;
+  color:#132b58;
 }
 
-.brand img{
-  width:50px;
-  height:50px;
-  object-fit:contain;
-}
+.brand img{width:50px;height:50px;object-fit:contain}
 
-.brand-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
+.brand-text{display:flex;flex-direction:column;line-height:1.08}
 
 .brand-name{
   font-size:21px;
@@ -54,12 +44,12 @@ body{
   letter-spacing:-.3px;
 }
 
-.brand-name span{color:#1f5bd8}
+.brand-name span{color:#2563d9}
 
 .tagline{
   margin-top:4px;
-  font-size:11px;
-  color:#6b7890;
+  font-size:10px;
+  color:#71809a;
   font-weight:600;
 }
 
@@ -72,56 +62,55 @@ body{
 .nav a{
   text-decoration:none;
   color:#34425b;
-  font-size:14px;
-  font-weight:650;
-  padding:10px 13px;
-  border-radius:9px;
+  font-size:13px;
+  font-weight:700;
+  padding:10px 12px;
+  border-radius:8px;
 }
 
 .nav a:hover{
-  background:#f1f5fb;
-  color:#1557c9;
+  background:#f2f6fc;
+  color:#1f5bd8;
 }
 
 .user-area{
   display:flex;
   align-items:center;
-  gap:9px;
+  gap:8px;
   margin-left:10px;
   padding-left:14px;
   border-left:1px solid #e5eaf2;
 }
 
 .user-icon{
-  width:34px;
-  height:34px;
+  width:32px;
+  height:32px;
   border-radius:50%;
-  background:#17356f;
+  background:#18396f;
   color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:16px;
+  font-size:12px;
 }
 
 .user-name{
-  max-width:130px;
+  max-width:125px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  font-size:13px;
+  font-size:12px;
   font-weight:800;
-  color:#243451;
 }
 
 .logout-btn{
-  border:none;
+  border:0;
   background:transparent;
-  color:#667085;
-  font-size:12px;
+  color:#748097;
+  font-size:11px;
   font-weight:700;
   cursor:pointer;
-  padding:6px 2px;
+  padding:5px 2px;
 }
 
 .logout-btn:hover{color:#c62828}
@@ -130,82 +119,135 @@ body{
   display:none;
   border:0;
   background:#f1f5fb;
-  width:42px;
-  height:42px;
-  border-radius:9px;
-  font-size:22px;
+  width:40px;
+  height:40px;
+  border-radius:8px;
+  font-size:21px;
   cursor:pointer;
 }
-
-/* ================= MAIN ================= */
 
 .container{
   width:100%;
   max-width:1180px;
   margin:auto;
-  padding:28px 22px 46px;
+  padding:24px 22px 42px;
 }
 
-/* ================= WELCOME ================= */
-
 .welcome{
-  background:linear-gradient(110deg,#edf4ff,#e1f1ff);
-  border:1px solid #d9e8fb;
-  border-radius:15px;
-  min-height:145px;
-  padding:27px 30px;
+  background:linear-gradient(115deg,#eaf3ff 0%,#e3f1ff 100%);
+  border:1px solid #d7e6f8;
+  border-radius:16px;
+  padding:25px 28px;
+  min-height:132px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:25px;
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 
 .welcome h1{
   color:#102a5c;
   font-size:27px;
   line-height:1.2;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .welcome p{
-  color:#43546f;
-  font-size:14px;
+  color:#52637e;
+  font-size:13px;
   line-height:1.5;
 }
 
 .user-email{
-  margin-top:7px;
-  color:#65748d;
-  font-size:12px;
+  margin-top:6px;
+  color:#71809a;
+  font-size:11px;
 }
 
 .welcome-action{
   flex-shrink:0;
   text-decoration:none;
-  background:#1f5bd8;
+  background:#2563d9;
   color:#fff;
   padding:11px 17px;
-  border-radius:9px;
-  font-size:13px;
+  border-radius:8px;
+  font-size:12px;
   font-weight:800;
-  box-shadow:0 4px 12px rgba(31,91,216,.16);
+  box-shadow:0 4px 12px rgba(37,99,217,.16);
 }
 
-.welcome-action:hover{background:#174bb8}
+.welcome-action:hover{background:#1d4fba}
 
-/* ================= NOTICE TICKER ================= */
+/* TOP PROGRESS */
+.progress-strip{
+  background:#fff;
+  border:1px solid #dfe6f0;
+  border-radius:13px;
+  padding:14px 17px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:14px;
+  box-shadow:0 3px 12px rgba(21,44,78,.035);
+}
 
+.progress-copy{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.progress-icon{
+  width:39px;
+  height:39px;
+  border-radius:9px;
+  background:#edf4ff;
+  color:#2563d9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  flex-shrink:0;
+}
+
+.progress-copy h3{
+  color:#18305a;
+  font-size:14px;
+  margin-bottom:2px;
+}
+
+.progress-copy p{
+  color:#7a879a;
+  font-size:11px;
+}
+
+.progress-button{
+  flex-shrink:0;
+  text-decoration:none;
+  color:#1f5bd8;
+  background:#edf4ff;
+  padding:9px 13px;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.progress-button:hover{background:#e0ebff}
+
+/* NOTICE */
 .notice{
-  height:50px;
+  height:47px;
   display:flex;
   align-items:center;
   background:#fff;
-  border:1px solid #dce5f1;
-  border-radius:10px;
+  border:1px solid #dce5f0;
+  border-radius:9px;
   overflow:hidden;
-  margin-bottom:26px;
-  box-shadow:0 2px 8px rgba(22,43,77,.03);
+  margin-bottom:25px;
+  box-shadow:0 2px 8px rgba(22,43,77,.025);
 }
 
 .notice-label{
@@ -214,11 +256,11 @@ body{
   display:flex;
   align-items:center;
   gap:7px;
-  padding:0 15px;
-  background:#f6f9ff;
+  padding:0 14px;
+  background:#f7faff;
   color:#174caa;
   border-right:1px solid #e2e9f2;
-  font-size:12px;
+  font-size:11px;
   font-weight:850;
   z-index:2;
 }
@@ -237,115 +279,113 @@ body{
 
 .notice-item{
   display:inline-block;
-  padding-right:90px;
-  color:#506078;
-  font-size:12px;
+  padding-right:85px;
+  color:#596980;
+  font-size:11px;
   font-weight:600;
 }
 
-.notice-item strong{color:#1e3558}
+.notice-item strong{color:#1d3559}
 
 @keyframes noticeMove{
   from{transform:translateX(0)}
   to{transform:translateX(-100%)}
 }
 
-/* ================= SECTION ================= */
-
-.section{margin-bottom:28px}
+/* SECTION */
+.section{margin-bottom:25px}
 
 .section-head{
   display:flex;
-  align-items:end;
+  align-items:center;
   justify-content:space-between;
-  gap:12px;
-  margin-bottom:13px;
+  gap:10px;
+  margin-bottom:11px;
 }
 
 .section-title{
-  color:#12264f;
-  font-size:20px;
+  color:#142c55;
+  font-size:19px;
   font-weight:800;
 }
 
 .section-subtitle{
-  color:#7a879b;
-  font-size:12px;
+  color:#7b8799;
+  font-size:11px;
 }
 
-/* ================= RESOURCE CARDS ================= */
-
+/* CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:17px;
+  gap:16px;
 }
 
 .card{
   background:#fff;
-  border:1px solid #e0e7f0;
-  border-radius:14px;
-  padding:21px;
-  box-shadow:0 4px 15px rgba(20,43,76,.045);
+  border:1px solid #dfe6f0;
+  border-radius:13px;
+  padding:20px;
+  box-shadow:0 4px 15px rgba(20,43,76,.04);
   transition:.18s ease;
 }
 
 .card:hover{
   transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(20,43,76,.08);
+  box-shadow:0 8px 22px rgba(20,43,76,.075);
 }
 
 .card-top{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-bottom:14px;
+  margin-bottom:13px;
 }
 
 .card-icon{
-  width:46px;
-  height:46px;
-  border-radius:11px;
-  background:#edf3ff;
-  color:#1955c8;
+  width:43px;
+  height:43px;
+  border-radius:10px;
+  background:#edf4ff;
+  color:#205acb;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
+  font-size:20px;
 }
 
 .badge{
   padding:5px 9px;
-  border-radius:20px;
+  border-radius:18px;
   background:#e9f8ef;
   color:#19713c;
-  font-size:10px;
+  font-size:9px;
   font-weight:850;
 }
 
 .card h3{
-  color:#172b50;
-  font-size:17px;
-  margin-bottom:7px;
+  color:#172d54;
+  font-size:16px;
+  margin-bottom:6px;
 }
 
 .card p{
-  color:#66758c;
-  font-size:13px;
+  color:#68768b;
+  font-size:12px;
   line-height:1.55;
-  min-height:41px;
-  margin-bottom:15px;
+  min-height:38px;
+  margin-bottom:14px;
 }
 
 .card-meta{
   display:flex;
   flex-wrap:wrap;
-  gap:8px 16px;
+  gap:7px 15px;
   border-top:1px solid #edf1f6;
-  padding-top:12px;
-  margin-bottom:14px;
+  padding-top:11px;
+  margin-bottom:13px;
   color:#53647c;
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
 }
 
@@ -357,17 +397,13 @@ body{
   padding:10px 13px;
   text-align:center;
   text-decoration:none;
-  font-size:12px;
+  font-size:11px;
   font-weight:800;
   cursor:pointer;
 }
 
-.btn-primary{
-  background:#1f5bd8;
-  color:#fff;
-}
-
-.btn-primary:hover{background:#174bb8}
+.btn-primary{background:#2563d9;color:#fff}
+.btn-primary:hover{background:#1d4fba}
 
 .coming{
   background:#f1f3f6;
@@ -375,112 +411,101 @@ body{
   cursor:default;
 }
 
-/* ================= QUICK PROGRESS ================= */
-
-.progress-strip{
-  background:#fff;
-  border:1px solid #e0e7f0;
-  border-radius:14px;
-  padding:18px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  box-shadow:0 4px 15px rgba(20,43,76,.04);
-}
-
-.progress-copy h3{
-  color:#172b50;
-  font-size:15px;
-  margin-bottom:4px;
-}
-
-.progress-copy p{
-  color:#718097;
-  font-size:12px;
-}
-
-.progress-button{
-  flex-shrink:0;
-  text-decoration:none;
-  color:#1f5bd8;
-  background:#edf3ff;
-  padding:9px 14px;
-  border-radius:8px;
-  font-size:12px;
-  font-weight:800;
-}
-
-.progress-button:hover{background:#e0eaff}
-
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 .footer{
   border-top:1px solid #e2e7ee;
   background:#fff;
-  text-align:center;
-  padding:18px;
+  padding:17px 20px;
   color:#7b8798;
-  font-size:11px;
+  font-size:10px;
+  text-align:center;
 }
 
-/* ================= LOADING ================= */
+.footer-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:13px;
+  margin-bottom:7px;
+}
 
+.footer-links a{
+  color:#65748b;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:650;
+}
+
+.footer-links a:hover{color:#1f5bd8}
+
+.footer-sep{color:#c2c9d3}
+
+/* LOADING */
 .loading{
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#1f5bd8;
-  font-size:16px;
+  color:#2563d9;
+  font-size:15px;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media(max-width:800px){
   .header{padding:0 15px}
   .brand-name{font-size:18px}
-  .tagline{font-size:10px}
+  .tagline{font-size:9px}
   .brand img{width:44px;height:44px}
   .menu-btn{display:block}
 
   .nav{
     display:none;
     position:absolute;
-    top:76px;
+    top:74px;
     left:0;
     width:100%;
     background:#fff;
     flex-direction:column;
     align-items:stretch;
-    padding:10px 15px 14px;
+    padding:9px 14px 13px;
     border-bottom:1px solid #e5eaf2;
     box-shadow:0 7px 15px rgba(0,0,0,.07);
   }
 
   .nav.show{display:flex}
-  .nav a{text-align:left;width:100%;margin:1px 0}
-  .user-area{border-left:0;border-top:1px solid #edf0f4;margin:7px 0 0;padding:10px 5px 0}
+  .nav a{width:100%;text-align:left}
+  .user-area{
+    border-left:0;
+    border-top:1px solid #edf0f4;
+    margin:6px 0 0;
+    padding:9px 3px 0;
+  }
+
   .logout-btn{margin-left:auto}
 
   .welcome{
     align-items:flex-start;
     flex-direction:column;
-    padding:23px 21px;
+    padding:22px 20px;
   }
 
   .welcome-action{width:100%;text-align:center}
+
+  .progress-strip{
+    align-items:flex-start;
+  }
+
   .grid{grid-template-columns:1fr}
 }
 
 @media(max-width:600px){
-  .container{padding:18px 13px 35px}
-  .welcome h1{font-size:23px}
-  .notice-label{padding:0 11px;font-size:11px}
-  .notice-item{font-size:11px;padding-right:60px}
-  .section-head{align-items:flex-start;flex-direction:column}
-  .progress-strip{align-items:flex-start;flex-direction:column}
+  .container{padding:17px 13px 32px}
+  .welcome h1{font-size:22px}
+  .progress-strip{flex-direction:column}
   .progress-button{width:100%;text-align:center}
+  .notice-label{padding:0 10px;font-size:10px}
+  .notice-item{font-size:10px;padding-right:55px}
+  .section-head{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
@@ -545,6 +570,24 @@ body{
 
         <a href="joa-series.html" class="welcome-action">
           Continue Practice →
+        </a>
+
+      </section>
+
+
+      <!-- MY PROGRESS -->
+      <section class="progress-strip">
+
+        <div class="progress-copy">
+          <div class="progress-icon">▥</div>
+          <div>
+            <h3>My Progress</h3>
+            <p>View your scores, attempted tests and performance overview.</p>
+          </div>
+        </div>
+
+        <a href="my-progress.html" class="progress-button">
+          View My Progress →
         </a>
 
       </section>
@@ -642,35 +685,23 @@ body{
 
         </div>
 
-      </section>
-
-      <!-- QUICK PROGRESS -->
-      <section class="section">
-
-        <div class="section-head">
-          <h2 class="section-title">My Progress</h2>
-        </div>
-
-        <div class="progress-strip">
-
-          <div class="progress-copy">
-            <h3>Track your preparation</h3>
-            <p>View your scores, attempted tests and performance overview.</p>
-          </div>
-
-          <a href="my-progress.html" class="progress-button">
-            View My Progress →
-          </a>
-
-        </div>
-
-      </section>
-
-    </main>
+      </section></main>
 
     <!-- FOOTER -->
     <footer class="footer">
-      © 2026 HPMockShashtra — Competitive Exam Preparation Platform
+
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <span class="footer-sep">|</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-sep">|</span>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+
+      <div>
+        © 2026 HPMockShashtra — Competitive Exam Preparation Platform
+      </div>
+
     </footer>
 
   </div>
