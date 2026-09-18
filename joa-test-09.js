@@ -1,5 +1,4 @@
 const questions = [
-
 {
 id:1,
 en:"Which of the following protocols is used for secure web communication?",
