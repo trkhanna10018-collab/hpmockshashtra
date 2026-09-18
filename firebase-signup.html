@@ -16,257 +16,970 @@
 
     body{
       min-height:100vh;
+      background:#f4f8fd;
+      color:#172554;
+      padding:24px;
+    }
+
+    .page{
+      width:100%;
+      max-width:1420px;
+      min-height:calc(100vh - 48px);
+      margin:auto;
+      background:#ffffff;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 18px 55px rgba(30,64,175,0.12);
       display:flex;
+      flex-direction:column;
+    }
+
+    /* ===============================
+       HEADER
+    =============================== */
+
+    .header{
+      min-height:92px;
+      padding:10px 42px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid #e7eef8;
+      background:#ffffff;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      width:82px;
+      height:82px;
+      object-fit:contain;
+      border-radius:16px;
+    }
+
+    .brand-text h2{
+      color:#172554;
+      font-size:27px;
+      line-height:1.1;
+      letter-spacing:-0.5px;
+    }
+
+    .brand-text h2 span{
+      color:#2563eb;
+    }
+
+    .brand-text p{
+      margin-top:4px;
+      color:#64748b;
+      font-size:12px;
+    }
+
+    .header-tagline{
+      color:#1e3a8a;
+      font-size:14px;
+      font-weight:600;
+      text-align:right;
+    }
+
+    /* ===============================
+       MAIN
+    =============================== */
+
+    .main{
+      display:grid;
+      grid-template-columns:minmax(0,1.18fr) minmax(390px,0.82fr);
+      align-items:stretch;
+    }
+
+    /* ===============================
+       LEFT INFORMATION
+    =============================== */
+
+    .info-panel{
+      position:relative;
+      overflow:hidden;
+      padding:42px 48px 40px;
+      background:
+        radial-gradient(circle at 82% 24%,rgba(147,197,253,0.27),transparent 25%),
+        linear-gradient(135deg,#eff6ff 0%,#f8fbff 62%,#eef5ff 100%);
+    }
+
+    .info-panel::before{
+      content:"";
+      position:absolute;
+      width:390px;
+      height:390px;
+      right:-190px;
+      top:70px;
+      border-radius:50%;
+      background:rgba(191,219,254,0.22);
+    }
+
+    .info-panel::after{
+      content:"";
+      position:absolute;
+      width:240px;
+      height:240px;
+      left:-145px;
+      bottom:-125px;
+      border-radius:50%;
+      background:rgba(219,234,254,0.48);
+    }
+
+    .info-content{
+      position:relative;
+      z-index:2;
+      max-width:730px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:7px 12px;
+      border-radius:30px;
+      background:#dbeafe;
+      color:#1d4ed8;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    .eyebrow-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#2563eb;
+    }
+
+    .info-content h1{
+      max-width:650px;
+      font-size:43px;
+      line-height:1.08;
+      letter-spacing:-1.5px;
+      color:#172554;
+      margin-bottom:14px;
+    }
+
+    .info-content h1 span{
+      color:#2563eb;
+    }
+
+    .intro{
+      max-width:620px;
+      color:#475569;
+      font-size:16px;
+      line-height:1.6;
+      margin-bottom:25px;
+    }
+
+    /* ===============================
+       SMALL FEATURE ROW
+    =============================== */
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:11px;
+      margin-bottom:20px;
+    }
+
+    .feature{
+      min-height:94px;
+      background:rgba(255,255,255,0.86);
+      border:1px solid #dbeafe;
+      border-radius:15px;
+      padding:13px 9px;
+      display:flex;
+      flex-direction:column;
       justify-content:center;
       align-items:center;
-      background:linear-gradient(135deg,#eef2ff,#f5f3ff);
-      padding:20px;
+      text-align:center;
+    }
+
+    .feature-icon{
+      width:32px;
+      height:32px;
+      border-radius:9px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#eff6ff;
+      color:#2563eb;
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    .feature strong{
+      color:#172554;
+      font-size:13px;
+      line-height:1.25;
+    }
+
+    .feature small{
+      color:#64748b;
+      font-size:10px;
+      margin-top:3px;
+    }
+
+    /* ===============================
+       FREE TEST
+    =============================== */
+
+    .free-card{
+      background:#ffffff;
+      border:1px solid #bfdbfe;
+      border-radius:17px;
+      padding:19px 21px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      box-shadow:0 8px 25px rgba(37,99,235,0.06);
+    }
+
+    .free-label{
+      display:inline-block;
+      padding:5px 10px;
+      border-radius:20px;
+      background:#dcfce7;
+      color:#15803d;
+      font-size:10px;
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    .free-card h3{
+      color:#172554;
+      font-size:21px;
+      margin-bottom:4px;
+    }
+
+    .free-card p{
+      color:#64748b;
+      font-size:13px;
+      line-height:1.45;
+      max-width:520px;
+    }
+
+    .free-btn{
+      flex-shrink:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 17px;
+      min-width:145px;
+      border:1px solid #2563eb;
+      border-radius:11px;
+      color:#1d4ed8;
+      background:#ffffff;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:800;
+      transition:.2s;
+    }
+
+    .free-btn:hover{
+      background:#eff6ff;
+      transform:translateY(-1px);
+    }
+
+    /* ===============================
+       LOGIN / SIGNUP PANEL
+    =============================== */
+
+    .signup-panel{
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:34px 38px 38px;
+      background:#f8fafc;
+      border-left:1px solid #e2e8f0;
     }
 
     .signup-box{
       width:100%;
       max-width:440px;
       background:#ffffff;
-      border-radius:24px;
-      padding:35px 30px;
-      box-shadow:0 15px 45px rgba(0,0,0,0.12);
-    }
-
-    .logo{
-      text-align:center;
-      margin-bottom:18px;
-    }
-
-    .logo img{
-      width:90px;
-      height:90px;
-      object-fit:contain;
+      border:1px solid #e2e8f0;
       border-radius:20px;
+      padding:29px 30px 25px;
+      box-shadow:0 12px 32px rgba(15,23,42,0.08);
     }
 
-    h1{
+    .signup-top{
       text-align:center;
-      color:#312e81;
-      font-size:27px;
-      margin-bottom:7px;
+      margin-bottom:20px;
     }
 
-    .subtitle{
-      text-align:center;
-      color:#6b7280;
-      font-size:14px;
-      margin-bottom:28px;
+    .signup-icon{
+      width:50px;
+      height:50px;
+      margin:0 auto 11px;
+      border-radius:15px;
+      background:#eff6ff;
+      border:1px solid #dbeafe;
+      color:#2563eb;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      font-weight:800;
+    }
+
+    .signup-top h2{
+      color:#172554;
+      font-size:28px;
+      margin-bottom:5px;
+    }
+
+    .signup-top p{
+      color:#64748b;
+      font-size:13px;
     }
 
     .form-group{
-      margin-bottom:17px;
+      margin-bottom:14px;
     }
 
     label{
       display:block;
-      font-weight:600;
-      color:#374151;
+      font-weight:700;
+      color:#334155;
       margin-bottom:7px;
-      font-size:14px;
+      font-size:13px;
     }
 
     input{
       width:100%;
-      padding:14px 15px;
-      border:1px solid #d1d5db;
-      border-radius:12px;
-      font-size:15px;
+      padding:12px 13px;
+      border:1px solid #cbd5e1;
+      border-radius:11px;
+      font-size:14px;
+      color:#1e293b;
       outline:none;
-      transition:0.2s;
+      transition:.2s;
+      background:#ffffff;
     }
 
     input:focus{
-      border-color:#6366f1;
-      box-shadow:0 0 0 3px rgba(99,102,241,0.12);
+      border-color:#2563eb;
+      box-shadow:0 0 0 3px rgba(37,99,235,0.10);
     }
 
     .password-note{
-      color:#6b7280;
-      font-size:12px;
-      margin-top:6px;
+      color:#64748b;
+      font-size:11px;
+      margin-top:5px;
     }
 
     .signup-btn{
       width:100%;
       border:none;
-      padding:14px;
-      border-radius:12px;
-      background:linear-gradient(135deg,#4f46e5,#7c3aed);
+      padding:13px;
+      border-radius:11px;
+      background:linear-gradient(135deg,#2563eb,#4f46e5);
       color:white;
-      font-size:16px;
-      font-weight:700;
+      font-size:15px;
+      font-weight:800;
       cursor:pointer;
-      margin-top:5px;
+      margin-top:3px;
+      transition:.2s;
     }
 
     .signup-btn:hover{
-      opacity:0.93;
+      opacity:.94;
+      transform:translateY(-1px);
     }
 
     .signup-btn:disabled{
-      opacity:0.6;
+      opacity:.6;
       cursor:not-allowed;
+      transform:none;
     }
 
     .message{
       display:none;
-      margin-top:18px;
-      padding:12px;
+      margin-top:15px;
+      padding:11px;
       border-radius:10px;
-      font-size:14px;
+      font-size:13px;
       text-align:center;
+      line-height:1.4;
     }
 
     .login{
       text-align:center;
-      margin-top:24px;
-      padding-top:22px;
-      border-top:1px solid #e5e7eb;
-      color:#6b7280;
-      font-size:14px;
-    }
-
-    .login a{
-      color:#4f46e5;
-      font-weight:700;
-      text-decoration:none;
-    }
-
-    .back-home{
-      display:block;
-      text-align:center;
       margin-top:18px;
-      color:#6b7280;
-      text-decoration:none;
+      padding-top:17px;
+      border-top:1px solid #e2e8f0;
+      color:#64748b;
       font-size:13px;
     }
 
-    @media(max-width:480px){
+    .login a{
+      color:#2563eb;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .login a:hover{
+      text-decoration:underline;
+    }
+
+    /* ===============================
+       FOOTER
+    =============================== */
+
+    .footer{
+      min-height:58px;
+      padding:15px 42px;
+      background:#173b76;
+      color:#dbeafe;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      font-size:12px;
+    }
+
+    .footer-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer a{
+      color:#ffffff;
+      text-decoration:none;
+    }
+
+    .footer a:hover{
+      text-decoration:underline;
+    }
+
+    /* ===============================
+       RESPONSIVE
+    =============================== */
+
+    @media(min-width:651px) and (max-width:1050px){
+
+      body{
+        padding:15px;
+      }
+
+      .page{
+        min-height:calc(100vh - 30px);
+      }
+
+      .main{
+        grid-template-columns:minmax(0,1.12fr) minmax(350px,0.88fr);
+      }
+
+      .info-panel{
+        padding:35px 28px;
+      }
+
+      .info-content h1{
+        font-size:38px;
+      }
+
+      .signup-panel{
+        padding:28px 20px 30px;
+        border-left:1px solid #e2e8f0;
+      }
 
       .signup-box{
-        padding:30px 22px;
-        border-radius:20px;
+        padding:26px 22px 23px;
       }
 
-      h1{
+      .header-tagline{
+        display:none;
+      }
+
+    }
+
+    @media(max-width:650px){
+
+      body{
+        padding:0;
+        overflow-x:auto;
+      }
+
+      .page{
+        min-height:100vh;
+        min-width:720px;
+        border-radius:0;
+      }
+
+      .header{
+        min-height:92px;
+        padding:8px 18px;
+      }
+
+      .brand img{
+        width:76px;
+        height:76px;
+      }
+
+      .brand-text h2{
+        font-size:23px;
+      }
+
+      .brand-text p{
+        font-size:10px;
+      }
+
+      .main{
+        grid-template-columns:58% 42%;
+        width:100%;
+      }
+
+      .info-panel{
+        padding:30px 22px;
+      }
+
+      .info-content h1{
+        font-size:34px;
+        letter-spacing:-1px;
+      }
+
+      .intro{
+        font-size:14px;
+        line-height:1.5;
+      }
+
+      .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:9px;
+      }
+
+      .feature{
+        min-height:95px;
+      }
+
+      .free-card{
+        align-items:flex-start;
+        flex-direction:column;
+        padding:17px;
+      }
+
+      .free-btn{
+        width:100%;
+      }
+
+      .signup-panel{
+        padding:28px 16px;
+        border-left:1px solid #e2e8f0;
+        border-top:none;
+        background:#f8fafc;
+      }
+
+      .signup-box{
+        max-width:100%;
+        padding:26px 21px 23px;
+      }
+
+      .signup-top h2{
         font-size:25px;
       }
+
+      input{
+        padding:11px;
+        font-size:13px;
+      }
+
+      label{
+        font-size:12px;
+      }
+
+      .signup-btn{
+        padding:12px;
+        font-size:14px;
+      }
+
+      .footer{
+        min-width:720px;
+        padding:16px 20px;
+        align-items:center;
+        flex-direction:row;
+      }
+
+    }
+
+    @media(max-width:380px){
+
+      .feature-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .info-content h1{
+        font-size:30px;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-  <div class="signup-box">
+  <div class="page">
 
-    <div class="logo">
-      <img src="logo.png" alt="HPMockShashtra Logo">
-    </div>
+    <!-- ===============================
+         HEADER
+    =============================== -->
 
-    <h1>Create Your Account</h1>
+    <header class="header">
 
-    <p class="subtitle">
-      Join HPMockShashtra and start your exam preparation
-    </p>
+      <div class="brand">
 
-    <form id="signupForm">
-
-      <!-- NAME -->
-      <div class="form-group">
-        <label for="name">Full Name</label>
-
-        <input
-          type="text"
-          id="name"
-          placeholder="Enter your full name"
-          required
-          autocomplete="name"
-        >
-      </div>
-
-
-      <!-- EMAIL -->
-      <div class="form-group">
-        <label for="email">Email Address</label>
-
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter your email"
-          required
-          autocomplete="email"
-        >
-      </div>
-
-
-      <!-- PASSWORD -->
-      <div class="form-group">
-        <label for="password">Password</label>
-
-        <input
-          type="password"
-          id="password"
-          placeholder="Create a password"
-          required
-          minlength="6"
-          autocomplete="new-password"
+        <img
+          src="logo.png"
+          alt="HPMockShashtra Logo"
         >
 
-        <div class="password-note">
-          Password must be at least 6 characters.
+        <div class="brand-text">
+
+          <h2>
+            HP<span>Mock</span>Shashtra
+          </h2>
+
+          <p>
+            Prepare Today, Serve Himachal Tomorrow
+          </p>
+
         </div>
+
       </div>
 
-
-      <!-- CONFIRM PASSWORD -->
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-
-        <input
-          type="password"
-          id="confirmPassword"
-          placeholder="Re-enter your password"
-          required
-          minlength="6"
-          autocomplete="new-password"
-        >
+      <div class="header-tagline">
+        Practice&nbsp;&nbsp; | &nbsp;&nbsp;Analyse&nbsp;&nbsp; | &nbsp;&nbsp;Improve
       </div>
 
-
-      <button
-        type="submit"
-        class="signup-btn"
-        id="signupBtn"
-      >
-        Create Account
-      </button>
-
-    </form>
+    </header>
 
 
-    <div class="message" id="message"></div>
+    <main class="main">
+
+      <!-- ===============================
+           INFORMATION PANEL
+      =============================== -->
+
+      <section class="info-panel">
+
+        <div class="info-content">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Himachal Pradesh Competitive Exams
+          </div>
+
+          <h1>
+            Learn Today,
+            <span>Achieve Tomorrow</span>
+          </h1>
+
+          <p class="intro">
+            HPMockShashtra is a practice platform for aspirants
+            preparing for Himachal Pradesh competitive examinations.
+          </p>
 
 
-    <div class="login">
-      Already have an account?
-      <a href="firebase-login.html">Login</a>
-    </div>
+          <div class="feature-grid">
+
+            <div class="feature">
+
+              <div class="feature-icon">✓</div>
+
+              <strong>
+                Mock Test
+                <br>
+                Series
+              </strong>
+
+              <small>
+                Full-length practice
+              </small>
+
+            </div>
 
 
-    <a
-      href="hpmockshashtra-homepage.html"
-      class="back-home"
-    >
-      ← Back to Home
-    </a>
+            <div class="feature">
+
+              <div class="feature-icon">▤</div>
+
+              <strong>
+                Previous Year
+                <br>
+                Papers
+              </strong>
+
+              <small>
+                Real paper practice
+              </small>
+
+            </div>
+
+
+            <div class="feature">
+
+              <div class="feature-icon">↗</div>
+
+              <strong>
+                Performance
+                <br>
+                Tracking
+              </strong>
+
+              <small>
+                Track your progress
+              </small>
+
+            </div>
+
+
+            <div class="feature">
+
+              <div class="feature-icon">A</div>
+
+              <strong>
+                Hindi + English
+                <br>
+                Bilingual
+              </strong>
+
+              <small>
+                Easy to understand
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="free-card">
+
+            <div>
+
+              <span class="free-label">
+                FREE TEST AVAILABLE
+              </span>
+
+              <h3>
+                Try Before You Buy!
+              </h3>
+
+              <p>
+                Create your account and attempt the available
+                free test before purchasing a complete series.
+              </p>
+
+            </div>
+
+
+            <a
+              href="firebase-signup.html"
+              class="free-btn"
+            >
+              Create Account&nbsp; →
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===============================
+           SIGNUP PANEL
+      =============================== -->
+
+      <section class="signup-panel">
+
+        <div class="signup-box">
+
+          <div class="signup-top">
+
+            <div class="signup-icon">
+              +
+            </div>
+
+            <h2>
+              Create Your Account
+            </h2>
+
+            <p>
+              Join HPMockShashtra and start your preparation
+            </p>
+
+          </div>
+
+
+          <form id="signupForm">
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+              <label for="name">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+                autocomplete="name"
+              >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+                autocomplete="email"
+              >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+              <label for="password">
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="password"
+                placeholder="Create a password"
+                required
+                minlength="6"
+                autocomplete="new-password"
+              >
+
+              <div class="password-note">
+                Password must be at least 6 characters.
+              </div>
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+              <label for="confirmPassword">
+                Confirm Password
+              </label>
+
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Re-enter your password"
+                required
+                minlength="6"
+                autocomplete="new-password"
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="signup-btn"
+              id="signupBtn"
+            >
+              Create Account
+            </button>
+
+          </form>
+
+
+          <div
+            class="message"
+            id="message"
+          ></div>
+
+
+          <div class="login">
+
+            Already have an account?
+
+            <a href="firebase-login.html">
+              Login
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+
+    <footer class="footer">
+
+      <div>
+        © 2026 HPMockShashtra. All rights reserved.
+      </div>
+
+      <div class="footer-links">
+
+        <a href="about.html">
+          About
+        </a>
+
+        <span>|</span>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+        <span>|</span>
+
+        <a href="terms.html">
+          Terms &amp; Conditions
+        </a>
+
+      </div>
+
+    </footer>
 
   </div>
 
+
+  <!-- ===============================
+       FIREBASE SIGNUP
+  =============================== -->
 
   <script type="module">
 
@@ -287,184 +1000,246 @@
     } from "./firebase-config.js";
 
 
-    const signupForm = document.getElementById("signupForm");
-    const signupBtn = document.getElementById("signupBtn");
-    const message = document.getElementById("message");
+    const signupForm =
+      document.getElementById("signupForm");
+
+
+    const signupBtn =
+      document.getElementById("signupBtn");
+
+
+    const message =
+      document.getElementById("message");
 
 
     function showMessage(text, type){
 
-      message.textContent = text;
-      message.style.display = "block";
+      message.textContent =
+        text;
+
+      message.style.display =
+        "block";
+
 
       if(type === "success"){
 
-        message.style.background = "#dcfce7";
-        message.style.color = "#166534";
+        message.style.background =
+          "#dcfce7";
+
+        message.style.color =
+          "#166534";
 
       }else{
 
-        message.style.background = "#fee2e2";
-        message.style.color = "#991b1b";
+        message.style.background =
+          "#fee2e2";
+
+        message.style.color =
+          "#991b1b";
 
       }
+
     }
 
 
-    signupForm.addEventListener("submit", async (e) => {
+    signupForm.addEventListener(
+      "submit",
+      async (e) => {
 
-      e.preventDefault();
-
-
-      const name =
-        document.getElementById("name").value.trim();
-
-      const email =
-        document.getElementById("email").value.trim();
-
-      const password =
-        document.getElementById("password").value;
-
-      const confirmPassword =
-        document.getElementById("confirmPassword").value;
+        e.preventDefault();
 
 
-      // CHECK NAME
-      if(name.length < 2){
-
-        showMessage(
-          "Please enter your full name.",
-          "error"
-        );
-
-        return;
-      }
+        const name =
+          document.getElementById("name").value.trim();
 
 
-      // CHECK PASSWORD
-      if(password.length < 6){
-
-        showMessage(
-          "Password must be at least 6 characters.",
-          "error"
-        );
-
-        return;
-      }
+        const email =
+          document.getElementById("email").value.trim();
 
 
-      // CHECK CONFIRM PASSWORD
-      if(password !== confirmPassword){
-
-        showMessage(
-          "Passwords do not match.",
-          "error"
-        );
-
-        return;
-      }
+        const password =
+          document.getElementById("password").value;
 
 
-      signupBtn.disabled = true;
-      signupBtn.textContent = "Creating Account...";
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
 
 
-      try{
+        // CHECK NAME
 
-        // CREATE FIREBASE ACCOUNT
-        const userCredential =
-          await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
+        if(name.length < 2){
+
+          showMessage(
+            "Please enter your full name.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        // CHECK PASSWORD
+
+        if(password.length < 6){
+
+          showMessage(
+            "Password must be at least 6 characters.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        // CHECK CONFIRM PASSWORD
+
+        if(password !== confirmPassword){
+
+          showMessage(
+            "Passwords do not match.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        signupBtn.disabled =
+          true;
+
+        signupBtn.textContent =
+          "Creating Account...";
+
+
+        try{
+
+          // CREATE FIREBASE ACCOUNT
+
+          const userCredential =
+            await createUserWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+
+
+          const user =
+            userCredential.user;
+
+
+          // SAVE NAME IN FIREBASE AUTH PROFILE
+
+          await updateProfile(
+            user,
+            {
+              displayName:name
+            }
           );
 
 
-        const user = userCredential.user;
+          // SAVE USER PROFILE IN FIRESTORE
+
+          await setDoc(
+            doc(db, "users", user.uid),
+            {
+              uid:user.uid,
+              name:name,
+              email:email,
+              createdAt:serverTimestamp(),
+              role:"student"
+            }
+          );
 
 
-        // SAVE NAME IN FIREBASE AUTH PROFILE
-        await updateProfile(user, {
-          displayName: name
-        });
+          showMessage(
+            "Account created successfully! Redirecting...",
+            "success"
+          );
 
 
-        // SAVE USER PROFILE IN FIRESTORE
-        await setDoc(
-          doc(db, "users", user.uid),
-          {
-            uid: user.uid,
-            name: name,
-            email: email,
-            createdAt: serverTimestamp(),
-            role: "student"
+          // GO TO DASHBOARD
+
+          setTimeout(
+            () => {
+
+              window.location.href =
+                "firebase-dashboard.html";
+
+            },
+            1200
+          );
+
+
+        }
+        catch(error){
+
+          let errorMessage =
+            "Unable to create account. Please try again.";
+
+
+          if(
+            error.code ===
+            "auth/email-already-in-use"
+          ){
+
+            errorMessage =
+              "This email is already registered. Please login.";
+
           }
-        );
 
 
-        showMessage(
-          "Account created successfully! Redirecting...",
-          "success"
-        );
+          else if(
+            error.code ===
+            "auth/invalid-email"
+          ){
+
+            errorMessage =
+              "Please enter a valid email address.";
+
+          }
 
 
-        // GO TO DASHBOARD
-        setTimeout(() => {
+          else if(
+            error.code ===
+            "auth/weak-password"
+          ){
 
-          window.location.href =
-            "firebase-dashboard.html";
+            errorMessage =
+              "Password is too weak. Use at least 6 characters.";
 
-        }, 1200);
+          }
 
+
+          else if(
+            error.code ===
+            "auth/network-request-failed"
+          ){
+
+            errorMessage =
+              "Network error. Please check your internet connection.";
+
+          }
+
+
+          showMessage(
+            errorMessage,
+            "error"
+          );
+
+
+          signupBtn.disabled =
+            false;
+
+          signupBtn.textContent =
+            "Create Account";
+
+        }
 
       }
-      catch(error){
-
-        let errorMessage =
-          "Unable to create account. Please try again.";
-
-
-        if(error.code === "auth/email-already-in-use"){
-
-          errorMessage =
-            "This email is already registered. Please login.";
-
-        }
-
-        else if(error.code === "auth/invalid-email"){
-
-          errorMessage =
-            "Please enter a valid email address.";
-
-        }
-
-        else if(error.code === "auth/weak-password"){
-
-          errorMessage =
-            "Password is too weak. Use at least 6 characters.";
-
-        }
-
-        else if(error.code === "auth/network-request-failed"){
-
-          errorMessage =
-            "Network error. Please check your internet connection.";
-
-        }
-
-
-        showMessage(
-          errorMessage,
-          "error"
-        );
-
-
-        signupBtn.disabled = false;
-        signupBtn.textContent = "Create Account";
-
-      }
-
-    });
+    );
 
   </script>
 
