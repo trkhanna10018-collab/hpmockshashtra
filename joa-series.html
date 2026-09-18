@@ -121,7 +121,8 @@
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:12px;
-      margin-top:23px;
+      margin-top:20px;
+      margin-bottom:14px;
     }
 
     .detail{
@@ -304,32 +305,33 @@
     /* ================= PURCHASE BOX ================= */
 
     .purchase{
-      margin-top:25px;
+      margin-top:0;
       background:#fff;
       border:1px solid #e5e7eb;
       border-radius:16px;
-      padding:25px;
+      padding:20px 22px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:25px;
+      gap:22px;
       box-shadow:0 5px 18px rgba(0,0,0,.05);
     }
 
     .purchase h2{
-      font-size:21px;
+      font-size:20px;
       color:#111827;
-      margin-bottom:7px;
+      margin-bottom:6px;
     }
 
     .purchase p{
       color:#6b7280;
-      font-size:14px;
-      line-height:1.5;
+      font-size:13px;
+      line-height:1.45;
+      max-width:620px;
     }
 
     .price{
-      font-size:28px;
+      font-size:26px;
       font-weight:800;
       color:#4338ca;
       white-space:nowrap;
@@ -616,9 +618,8 @@ a.locked,
         <!-- PAYMENT LINK WILL BE ADDED HERE -->
 
         <a
-          href="#"
+          href="payment.html"
           class="buy-btn"
-          onclick="alert('Payment link will be added here.'); return false;"
         >
           Buy Now
         </a>
