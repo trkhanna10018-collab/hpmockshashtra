@@ -1,4 +1,5 @@
 const questions = [
+
 {
 id:1,
 en:"Which of the following protocols is used for secure web communication?",
@@ -1003,7 +1004,6 @@ D:"Paris",
 ans:"C"
 }
 
-  // Continue the same format up to Question 100
 
 ];
 
