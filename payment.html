@@ -1,137 +1,651 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Payment - JOA IT Mock Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment - JOA IT Mock Test | HPMockShashtra</title>
 
 <style>
+*{box-sizing:border-box}
 
 body{
-margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#4f46e5,#7c3aed);
-color:white;
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:#f3f7fc;
+  color:#152956;
 }
 
-/* MAIN CONTAINER */
-.main{
-max-width:500px;
-margin:50px auto;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(15px);
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 20px 50px rgba(0,0,0,0.4);
+/* HEADER */
+.header{
+  height:76px;
+  background:#fff;
+  border-bottom:1px solid #e3eaf3;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 42px;
 }
 
-/* TITLE */
-h1{
-margin-bottom:10px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  text-decoration:none;
+  color:#112b5e;
 }
 
-p{
-opacity:0.9;
+.brand img{
+  width:50px;
+  height:50px;
+  object-fit:contain;
 }
 
-/* QR BOX */
-.qrBox{
-background:white;
-padding:20px;
-border-radius:15px;
-margin:20px 0;
+.brand-name{
+  font-size:21px;
+  font-weight:850;
+  letter-spacing:-.3px;
 }
 
-.qrBox img{
-width:180px;
-border-radius:10px;
+.brand-name span{color:#2863d8}
+
+.tagline{
+  margin-top:3px;
+  font-size:10px;
+  color:#74819a;
+  font-weight:600;
 }
 
-/* PRICE */
-.price{
-font-size:24px;
-font-weight:bold;
-color:#facc15;
-margin-top:10px;
+.back-btn{
+  text-decoration:none;
+  background:#eaf2ff;
+  color:#245bd0;
+  padding:10px 15px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:800;
 }
 
-/* CONTACT BOX */
-.contactBox{
-margin-top:20px;
-padding:15px;
-border-radius:12px;
-background:rgba(0,0,0,0.3);
+.back-btn:hover{background:#dfeaff}
+
+/* PAGE */
+.page{
+  max-width:1180px;
+  margin:auto;
+  padding:28px 24px 40px;
 }
 
-/* BUTTON */
-.callBtn{
-display:inline-block;
-margin-top:15px;
-padding:12px 20px;
-border-radius:10px;
-background:#22c55e;
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
+/* HERO */
+.hero{
+  background:linear-gradient(110deg,#4035d5,#3569e7);
+  color:#fff;
+  border-radius:18px;
+  padding:28px 32px 24px;
+  box-shadow:0 12px 28px rgba(52,73,210,.15);
 }
 
-.callBtn:hover{
-background:#16a34a;
-transform:scale(1.05);
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
 }
 
-/* BACK */
-.back{
-display:inline-block;
-margin-top:20px;
-color:#ddd;
-text-decoration:none;
-font-size:14px;
+.hero h1{
+  margin:0 0 8px;
+  font-size:29px;
 }
 
+.hero p{
+  margin:0;
+  max-width:680px;
+  font-size:14px;
+  line-height:1.55;
+  opacity:.93;
+}
+
+.hero-quote{
+  max-width:190px;
+  text-align:right;
+  font-size:13px;
+  line-height:1.55;
+  font-style:italic;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:24px;
+}
+
+.feature{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.23);
+  border-radius:10px;
+  padding:12px 9px;
+  text-align:center;
+}
+
+.feature strong{
+  display:block;
+  font-size:18px;
+  margin-bottom:3px;
+}
+
+.feature span{
+  font-size:10px;
+  opacity:.9;
+}
+
+/* PAYMENT AREA */
+.payment-card{
+  background:#fff;
+  border:1px solid #dfe7f1;
+  border-radius:17px;
+  margin-top:18px;
+  padding:24px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  box-shadow:0 6px 22px rgba(26,51,91,.05);
+}
+
+.qr-panel{
+  border:1px solid #e2e9f2;
+  background:#fbfdff;
+  border-radius:14px;
+  padding:22px;
+  text-align:center;
+}
+
+.qr-panel h2{
+  margin:0 0 5px;
+  font-size:19px;
+}
+
+.qr-panel p{
+  margin:0 0 16px;
+  color:#66758d;
+  font-size:12px;
+}
+
+.qr-box{
+  background:#fff;
+  border:1px solid #e5eaf1;
+  border-radius:12px;
+  padding:14px;
+  display:inline-block;
+}
+
+.qr-box img{
+  width:215px;
+  height:215px;
+  object-fit:contain;
+  display:block;
+}
+
+.qr-note{
+  margin-top:13px;
+  color:#65748b;
+  font-size:11px;
+}
+
+/* RIGHT SIDE */
+.payment-info{
+  padding:6px 5px;
+}
+
+.amount-label{
+  color:#66758d;
+  font-size:12px;
+  font-weight:700;
+}
+
+.amount{
+  margin-top:4px;
+  font-size:38px;
+  line-height:1;
+  color:#162f69;
+  font-weight:900;
+}
+
+.amount span{
+  font-size:13px;
+  color:#168447;
+  margin-left:6px;
+}
+
+.one-time{
+  margin-top:8px;
+  color:#66758d;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.divider{
+  height:1px;
+  background:#e5eaf1;
+  margin:21px 0;
+}
+
+.payment-info h2{
+  margin:0 0 14px;
+  font-size:19px;
+}
+
+.steps{
+  display:grid;
+  gap:13px;
+}
+
+.step{
+  display:flex;
+  gap:11px;
+  align-items:flex-start;
+}
+
+.step-no{
+  width:30px;
+  height:30px;
+  flex-shrink:0;
+  border-radius:50%;
+  background:#e8f1ff;
+  color:#2560d1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:900;
+}
+
+.step p{
+  margin:3px 0 0;
+  color:#596b85;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.action-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:19px;
+}
+
+.action{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  padding:11px 10px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:850;
+}
+
+.whatsapp{
+  background:#20b85a;
+  color:#fff;
+}
+
+.whatsapp:hover{background:#159447}
+
+.call{
+  background:#fff;
+  border:1px solid #2863d8;
+  color:#245bd0;
+}
+
+.call:hover{background:#f2f6ff}
+
+/* NOTES */
+.notes{
+  margin-top:18px;
+  background:#edf6ff;
+  border:1px solid #cfe4fb;
+  border-radius:15px;
+  padding:19px 22px;
+}
+
+.notes h2{
+  margin:0 0 9px;
+  font-size:17px;
+}
+
+.notes ul{
+  margin:0;
+  padding-left:19px;
+  color:#52647e;
+  font-size:12px;
+  line-height:1.7;
+}
+
+/* TRUST */
+.trust{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  padding:24px 10px 3px;
+  text-align:center;
+}
+
+.trust-item{
+  color:#253c69;
+  font-size:12px;
+  font-weight:750;
+}
+
+.trust-icon{
+  width:42px;
+  height:42px;
+  margin:0 auto 8px;
+  border-radius:50%;
+  background:#edf4ff;
+  color:#2560d1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+/* FOOTER */
+.footer{
+  background:#fff;
+  border-top:1px solid #e1e7ef;
+  padding:18px 25px;
+}
+
+.footer-inner{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  color:#78869b;
+  font-size:10px;
+}
+
+.footer-links{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-links a{
+  color:#65748b;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:650;
+}
+
+.footer-links a:hover{color:#245bd0}
+
+.footer-sep{color:#c3cad5}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  .header{padding:0 16px}
+
+  .brand-name{font-size:18px}
+  .tagline{font-size:9px}
+  .brand img{width:43px;height:43px}
+
+  .page{padding:18px 13px 30px}
+
+  .hero{padding:23px 20px}
+
+  .hero-top{display:block}
+
+  .hero-quote{display:none}
+
+  .hero h1{font-size:24px}
+
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .payment-card{
+    grid-template-columns:1fr;
+    padding:16px;
+  }
+
+  .trust{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media(max-width:480px){
+
+  .features{gap:8px}
+
+  .feature strong{font-size:16px}
+  .feature span{font-size:9px}
+
+  .qr-box img{
+    width:185px;
+    height:185px;
+  }
+
+  .action-buttons{
+    grid-template-columns:1fr;
+  }
+
+  .trust{gap:15px}
+}
 </style>
-
 </head>
 
 <body>
 
-<div class="main">
+<header class="header">
 
-<h1>🔐 Unlock Full Mock Test</h1>
+  <a href="joa-series.html" class="brand">
+    <img src="logo.png" alt="HPMockShashtra">
 
-<p>
-Complete your payment to get full access of all mock tests.
-</p>
+    <div>
+      <div class="brand-name">HP<span>Mock</span>Shashtra</div>
+      <div class="tagline">Prepare Today, Serve Himachal Tomorrow</div>
+    </div>
+  </a>
 
-<div class="price">💰 ₹199 Only</div>
+  <a href="joa-series.html" class="back-btn">
+    ← Back to Test Series
+  </a>
 
-<!-- QR -->
-<div class="qrBox">
-<p style="color:black;">Scan & Pay using UPI</p>
-<img src="qr.png" alt="QR Code">
-</div>
+</header>
 
-<p>After successful payment:</p>
+<main class="page">
 
-<div class="contactBox">
+  <section class="hero">
 
-<p>📞 Call or WhatsApp on below number</p>
+    <div class="hero-top">
 
-<h2>8278847614</h2>
+      <div>
+        <h1>Complete Your Payment</h1>
 
-<p>
-Share your payment screenshot and you will receive your Login ID & Password shortly.
-</p>
+        <p>
+          Get full access to all 15 JOA IT Mock Tests and continue your preparation with structured practice.
+        </p>
+      </div>
 
-</div>
+      <div class="hero-quote">
+        “Prepare today,<br>
+        perform better tomorrow.”
+      </div>
 
-<a href="tel:8278847614" class="callBtn">📞 Call Now</a>
+    </div>
 
-<br>
+    <div class="features">
 
-<a href="index.html" class="back">← Back to Login</a>
+      <div class="feature">
+        <strong>15</strong>
+        <span>Mock Tests</span>
+      </div>
 
-</div>
+      <div class="feature">
+        <strong>100</strong>
+        <span>Questions / Test</span>
+      </div>
+
+      <div class="feature">
+        <strong>90 Min</strong>
+        <span>Duration / Test</span>
+      </div>
+
+      <div class="feature">
+        <strong>Hindi + English</strong>
+        <span>Bilingual</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="payment-card">
+
+    <div class="qr-panel">
+
+      <h2>Scan &amp; Pay using UPI</h2>
+
+      <p>
+        Use Google Pay, PhonePe, Paytm or any supported UPI app.
+      </p>
+
+      <div class="qr-box">
+        <img src="qr.png" alt="UPI Payment QR Code">
+      </div>
+
+      <div class="qr-note">
+        Scan the QR code and complete the one-time payment of ₹99.
+      </div>
+
+    </div>
+
+    <div class="payment-info">
+
+      <div class="amount-label">One-time payment</div>
+
+      <div class="amount">
+        ₹99 <span>Only</span>
+      </div>
+
+      <div class="one-time">
+        One-time payment for access to the complete 15-test JOA IT Mock Test Series.
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>After Payment</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-no">1</div>
+          <p>
+            Make the payment by scanning the QR code.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-no">2</div>
+          <p>
+            After payment, contact us on WhatsApp or by phone and share your payment screenshot for confirmation.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-no">3</div>
+          <p>
+            After payment confirmation, <strong>full test-series access will be activated on your registered HPMockShashtra account.</strong>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="action-buttons">
+
+        <a href="https://wa.me/918278847614" class="action whatsapp">
+          💬 WhatsApp Now
+        </a>
+
+        <a href="tel:8278847614" class="action call">
+          📞 Call Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="notes">
+
+    <h2>Important Notes</h2>
+
+    <ul>
+      <li>This is a one-time payment of ₹99 for access to all 15 JOA IT Mock Tests.</li>
+      <li>After payment, please share your payment screenshot on WhatsApp or confirm the payment by phone.</li>
+      <li>Access will be activated on the <strong>registered account used on HPMockShashtra</strong> after payment confirmation.</li>
+      <li><strong>No new Login ID or Password is required.</strong> Continue using your existing HPMockShashtra account.</li>
+      <li>After activation, the tests will become available according to the test-series access rules.</li>
+    </ul>
+
+  </section>
+
+  <section class="trust">
+
+    <div class="trust-item">
+      <div class="trust-icon">✓</div>
+      Secure Payment
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">⚡</div>
+      Quick Activation
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">☎</div>
+      Support Available
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">★</div>
+      Exam Focused
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="footer-inner">
+
+    <div>
+      © 2026 HPMockShashtra. All rights reserved.
+    </div>
+
+    <div>
+      Prepare Today, Serve Himachal Tomorrow.
+    </div>
+
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <span class="footer-sep">|</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="footer-sep">|</span>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
