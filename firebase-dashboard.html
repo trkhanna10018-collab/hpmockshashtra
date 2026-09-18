@@ -5,507 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard | HPMockShashtra</title>
   <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
+body{background:#f4f8fd;color:#14264b;min-height:100vh}
+.header{height:76px;background:#fff;border-bottom:1px solid #e4ebf5;display:flex;align-items:center;justify-content:space-between;padding:0 42px;position:sticky;top:0;z-index:1000}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#102654}
+.brand img{width:52px;height:52px;object-fit:contain}
+.brand-text{line-height:1.08}
+.brand-name{font-size:22px;font-weight:850;letter-spacing:-.5px}
+.brand-name span{color:#2463dc}
+.tagline{margin-top:4px;font-size:10px;color:#71809a;font-weight:600}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{display:flex;align-items:center;gap:6px;text-decoration:none;color:#34466a;font-size:13px;font-weight:700;padding:10px 13px;border-radius:9px}
+.nav a:hover{background:#edf4ff;color:#1f5bd8}
+.user-area{display:flex;align-items:center;gap:8px;margin-left:8px;padding-left:15px;border-left:1px solid #e2e8f1}
+.user-icon{width:33px;height:33px;border-radius:50%;background:#173b7a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px}
+.user-name{max-width:125px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:800}
+.logout-btn{border:0;background:#fff0f1;color:#c62828;border-radius:8px;padding:8px 11px;font-size:11px;font-weight:800;cursor:pointer}
+.menu-btn{display:none;border:0;background:#edf3fb;width:42px;height:42px;border-radius:9px;font-size:21px;cursor:pointer}
 
-body{
-  background:#f5f8fc;
-  color:#17233f;
-  min-height:100vh;
-}
+.container{max-width:1220px;margin:auto;padding:26px 28px 38px}
+.welcome{min-height:172px;border:1px solid #d7e7fb;border-radius:18px;background:linear-gradient(105deg,#eaf3ff 0%,#dff1ff 100%);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:16px;overflow:hidden}
+.welcome-copy{min-width:0}
+.welcome h1{font-size:29px;line-height:1.2;color:#102b61;margin-bottom:8px}
+.welcome p{font-size:14px;color:#506483;line-height:1.5}
+.user-email{font-size:11px;color:#71809a;margin-top:7px}
+.welcome-art{display:flex;align-items:center;gap:25px;color:#1c4da4;flex-shrink:0}
+.mountain{font-size:70px;line-height:1;opacity:.65}
+.quote{font-size:14px;line-height:1.6;font-style:italic;max-width:170px}
+.welcome-action{display:inline-block;text-decoration:none;background:#3158dc;color:#fff;padding:13px 20px;border-radius:9px;font-size:12px;font-weight:850;box-shadow:0 5px 14px rgba(49,88,220,.18);white-space:nowrap}
+.welcome-action:hover{background:#2447bf}
 
-.header{
-  height:74px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 34px;
-  border-bottom:1px solid #e6ebf3;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
+.notice{height:50px;background:#fff;border:1px solid #dce6f2;border-radius:11px;display:flex;align-items:center;overflow:hidden;margin-bottom:17px;box-shadow:0 3px 10px rgba(25,50,90,.035)}
+.notice-label{height:100%;display:flex;align-items:center;gap:8px;padding:0 17px;background:#f7faff;border-right:1px solid #e2e9f2;color:#2857c7;font-size:12px;font-weight:850;flex-shrink:0;z-index:2}
+.notice-window{flex:1;overflow:hidden;white-space:nowrap}
+.notice-track{display:inline-block;padding-left:100%;animation:noticeMove 25s linear infinite}
+.notice-item{display:inline-block;padding-right:90px;color:#52637c;font-size:12px;font-weight:600}
+.notice-item strong{color:#1d355a}
+@keyframes noticeMove{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  text-decoration:none;
-  color:#132b58;
-}
+.progress{background:#fff;border:1px solid #dce6f2;border-radius:15px;padding:18px 22px;display:flex;align-items:center;gap:24px;margin-bottom:24px;box-shadow:0 4px 14px rgba(25,50,90,.035)}
+.progress-title{width:220px;flex-shrink:0}
+.progress-title h2{font-size:19px;color:#102957;margin-bottom:4px}
+.progress-title p{font-size:11px;color:#74829a}
+.progress-score{display:flex;align-items:center;gap:15px;flex:1}
+.ring{width:84px;height:84px;border-radius:50%;background:conic-gradient(#2f73e8 23%,#e5ebf4 0);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.ring:before{content:"";position:absolute;width:64px;height:64px;border-radius:50%;background:#fff}
+.ring span{position:relative;font-size:19px;font-weight:900;color:#17366f}
+.score-number strong{display:block;font-size:22px;color:#102957}
+.score-number span{font-size:11px;color:#71809a}
+.progress-stat{min-width:128px;border-left:1px solid #e4e9f1;padding-left:18px}
+.progress-stat strong{display:block;font-size:21px}
+.progress-stat span{font-size:11px;color:#6e7c92}
+.stat-green strong{color:#149447}.stat-red strong{color:#e12b35}.stat-gray strong{color:#64748b}
+.progress-button{flex-shrink:0;text-decoration:none;background:#edf4ff;color:#205bd0;padding:11px 15px;border-radius:9px;font-size:11px;font-weight:850}
 
-.brand img{width:50px;height:50px;object-fit:contain}
-
-.brand-text{display:flex;flex-direction:column;line-height:1.08}
-
-.brand-name{
-  font-size:21px;
-  font-weight:850;
-  letter-spacing:-.3px;
-}
-
-.brand-name span{color:#2563d9}
-
-.tagline{
-  margin-top:4px;
-  font-size:10px;
-  color:#71809a;
-  font-weight:600;
-}
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap:4px;
-}
-
-.nav a{
-  text-decoration:none;
-  color:#34425b;
-  font-size:13px;
-  font-weight:700;
-  padding:10px 12px;
-  border-radius:8px;
-}
-
-.nav a:hover{
-  background:#f2f6fc;
-  color:#1f5bd8;
-}
-
-.user-area{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-left:10px;
-  padding-left:14px;
-  border-left:1px solid #e5eaf2;
-}
-
-.user-icon{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  background:#18396f;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-}
-
-.user-name{
-  max-width:125px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  font-size:12px;
-  font-weight:800;
-}
-
-.logout-btn{
-  border:0;
-  background:transparent;
-  color:#748097;
-  font-size:11px;
-  font-weight:700;
-  cursor:pointer;
-  padding:5px 2px;
-}
-
-.logout-btn:hover{color:#c62828}
-
-.menu-btn{
-  display:none;
-  border:0;
-  background:#f1f5fb;
-  width:40px;
-  height:40px;
-  border-radius:8px;
-  font-size:21px;
-  cursor:pointer;
-}
-
-.container{
-  width:100%;
-  max-width:1180px;
-  margin:auto;
-  padding:24px 22px 42px;
-}
-
-.welcome{
-  background:linear-gradient(115deg,#eaf3ff 0%,#e3f1ff 100%);
-  border:1px solid #d7e6f8;
-  border-radius:16px;
-  padding:25px 28px;
-  min-height:132px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-  margin-bottom:14px;
-}
-
-.welcome h1{
-  color:#102a5c;
-  font-size:27px;
-  line-height:1.2;
-  margin-bottom:7px;
-}
-
-.welcome p{
-  color:#52637e;
-  font-size:13px;
-  line-height:1.5;
-}
-
-.user-email{
-  margin-top:6px;
-  color:#71809a;
-  font-size:11px;
-}
-
-.welcome-action{
-  flex-shrink:0;
-  text-decoration:none;
-  background:#2563d9;
-  color:#fff;
-  padding:11px 17px;
-  border-radius:8px;
-  font-size:12px;
-  font-weight:800;
-  box-shadow:0 4px 12px rgba(37,99,217,.16);
-}
-
-.welcome-action:hover{background:#1d4fba}
-
-/* TOP PROGRESS */
-.progress-strip{
-  background:#fff;
-  border:1px solid #dfe6f0;
-  border-radius:13px;
-  padding:14px 17px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  margin-bottom:14px;
-  box-shadow:0 3px 12px rgba(21,44,78,.035);
-}
-
-.progress-copy{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:0;
-}
-
-.progress-icon{
-  width:39px;
-  height:39px;
-  border-radius:9px;
-  background:#edf4ff;
-  color:#2563d9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:18px;
-  flex-shrink:0;
-}
-
-.progress-copy h3{
-  color:#18305a;
-  font-size:14px;
-  margin-bottom:2px;
-}
-
-.progress-copy p{
-  color:#7a879a;
-  font-size:11px;
-}
-
-.progress-button{
-  flex-shrink:0;
-  text-decoration:none;
-  color:#1f5bd8;
-  background:#edf4ff;
-  padding:9px 13px;
-  border-radius:8px;
-  font-size:11px;
-  font-weight:800;
-}
-
-.progress-button:hover{background:#e0ebff}
-
-/* NOTICE */
-.notice{
-  height:47px;
-  display:flex;
-  align-items:center;
-  background:#fff;
-  border:1px solid #dce5f0;
-  border-radius:9px;
-  overflow:hidden;
-  margin-bottom:25px;
-  box-shadow:0 2px 8px rgba(22,43,77,.025);
-}
-
-.notice-label{
-  height:100%;
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  gap:7px;
-  padding:0 14px;
-  background:#f7faff;
-  color:#174caa;
-  border-right:1px solid #e2e9f2;
-  font-size:11px;
-  font-weight:850;
-  z-index:2;
-}
-
-.notice-window{
-  flex:1;
-  overflow:hidden;
-  white-space:nowrap;
-}
-
-.notice-track{
-  display:inline-block;
-  padding-left:100%;
-  animation:noticeMove 25s linear infinite;
-}
-
-.notice-item{
-  display:inline-block;
-  padding-right:85px;
-  color:#596980;
-  font-size:11px;
-  font-weight:600;
-}
-
-.notice-item strong{color:#1d3559}
-
-@keyframes noticeMove{
-  from{transform:translateX(0)}
-  to{transform:translateX(-100%)}
-}
-
-/* SECTION */
 .section{margin-bottom:25px}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:12px}
+.section-title{font-size:20px;color:#102957;font-weight:850}
+.section-subtitle{font-size:11px;color:#7a879c}
 
-.section-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:11px;
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{background:#fff;border:1px solid #dce5f0;border-radius:15px;padding:22px;box-shadow:0 4px 15px rgba(20,43,76,.04);transition:.18s}
+.card:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(20,43,76,.08)}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.card-icon{width:48px;height:48px;border-radius:12px;background:#eaf2ff;color:#2360d2;display:flex;align-items:center;justify-content:center;font-size:23px}
+.card-icon.paper{background:#fff0f2;color:#df3140}
+.badge{padding:6px 10px;border-radius:20px;background:#e6f8ed;color:#167342;font-size:10px;font-weight:850}
+.badge.soon{background:#edf4ff;color:#2b5fc6}
+.card h3{font-size:18px;color:#132b57;margin-bottom:7px}
+.card p{font-size:12px;line-height:1.55;color:#687890;min-height:38px;margin-bottom:16px}
+.card-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid #edf1f6;padding-top:13px;margin-bottom:15px;color:#52637c;font-size:10px;font-weight:750}
+.card-meta span{text-align:left}
+.btn{display:block;width:100%;border:0;border-radius:9px;padding:11px;text-align:center;text-decoration:none;font-size:12px;font-weight:850}
+.btn-primary{background:#3158dc;color:#fff}.btn-primary:hover{background:#2447bf}
+.coming{background:#edf0f5;color:#7a8496}
+
+.footer{background:#fff;border-top:1px solid #e1e7ef;padding:17px 28px;color:#7a8799;font-size:10px}
+.footer-inner{max-width:1220px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.footer-links{display:flex;gap:13px;align-items:center}
+.footer-links a{color:#68768d;text-decoration:none;font-size:11px;font-weight:650}
+.footer-links a:hover{color:#205bd0}
+.footer-sep{color:#c3cad5}
+
+@media(max-width:900px){
+.header{padding:0 18px}.nav{display:none}.menu-btn{display:block}
+.nav.show{display:flex;position:absolute;top:76px;left:0;width:100%;background:#fff;flex-direction:column;align-items:stretch;padding:10px 15px 14px;box-shadow:0 8px 16px rgba(0,0,0,.07)}
+.nav.show a{text-align:left}.user-area{border-left:0;border-top:1px solid #edf0f4;margin:6px 0 0;padding:10px 3px 0}
+.welcome{padding:24px;min-height:150px}.welcome-art{display:none}
+.progress{flex-wrap:wrap}.progress-title{width:100%}.progress-score{flex-wrap:wrap}
 }
-
-.section-title{
-  color:#142c55;
-  font-size:19px;
-  font-weight:800;
-}
-
-.section-subtitle{
-  color:#7b8799;
-  font-size:11px;
-}
-
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-}
-
-.card{
-  background:#fff;
-  border:1px solid #dfe6f0;
-  border-radius:13px;
-  padding:20px;
-  box-shadow:0 4px 15px rgba(20,43,76,.04);
-  transition:.18s ease;
-}
-
-.card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(20,43,76,.075);
-}
-
-.card-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:13px;
-}
-
-.card-icon{
-  width:43px;
-  height:43px;
-  border-radius:10px;
-  background:#edf4ff;
-  color:#205acb;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-}
-
-.badge{
-  padding:5px 9px;
-  border-radius:18px;
-  background:#e9f8ef;
-  color:#19713c;
-  font-size:9px;
-  font-weight:850;
-}
-
-.card h3{
-  color:#172d54;
-  font-size:16px;
-  margin-bottom:6px;
-}
-
-.card p{
-  color:#68768b;
-  font-size:12px;
-  line-height:1.55;
-  min-height:38px;
-  margin-bottom:14px;
-}
-
-.card-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px 15px;
-  border-top:1px solid #edf1f6;
-  padding-top:11px;
-  margin-bottom:13px;
-  color:#53647c;
-  font-size:10px;
-  font-weight:700;
-}
-
-.btn{
-  display:block;
-  width:100%;
-  border:0;
-  border-radius:8px;
-  padding:10px 13px;
-  text-align:center;
-  text-decoration:none;
-  font-size:11px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-.btn-primary{background:#2563d9;color:#fff}
-.btn-primary:hover{background:#1d4fba}
-
-.coming{
-  background:#f1f3f6;
-  color:#7a8494;
-  cursor:default;
-}
-
-/* FOOTER */
-.footer{
-  border-top:1px solid #e2e7ee;
-  background:#fff;
-  padding:17px 20px;
-  color:#7b8798;
-  font-size:10px;
-  text-align:center;
-}
-
-.footer-links{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:13px;
-  margin-bottom:7px;
-}
-
-.footer-links a{
-  color:#65748b;
-  text-decoration:none;
-  font-size:11px;
-  font-weight:650;
-}
-
-.footer-links a:hover{color:#1f5bd8}
-
-.footer-sep{color:#c2c9d3}
-
-/* LOADING */
-.loading{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#2563d9;
-  font-size:15px;
-}
-
-/* MOBILE */
-@media(max-width:800px){
-  .header{padding:0 15px}
-  .brand-name{font-size:18px}
-  .tagline{font-size:9px}
-  .brand img{width:44px;height:44px}
-  .menu-btn{display:block}
-
-  .nav{
-    display:none;
-    position:absolute;
-    top:74px;
-    left:0;
-    width:100%;
-    background:#fff;
-    flex-direction:column;
-    align-items:stretch;
-    padding:9px 14px 13px;
-    border-bottom:1px solid #e5eaf2;
-    box-shadow:0 7px 15px rgba(0,0,0,.07);
-  }
-
-  .nav.show{display:flex}
-  .nav a{width:100%;text-align:left}
-  .user-area{
-    border-left:0;
-    border-top:1px solid #edf0f4;
-    margin:6px 0 0;
-    padding:9px 3px 0;
-  }
-
-  .logout-btn{margin-left:auto}
-
-  .welcome{
-    align-items:flex-start;
-    flex-direction:column;
-    padding:22px 20px;
-  }
-
-  .welcome-action{width:100%;text-align:center}
-
-  .progress-strip{
-    align-items:flex-start;
-  }
-
-  .grid{grid-template-columns:1fr}
-}
-
 @media(max-width:600px){
-  .container{padding:17px 13px 32px}
-  .welcome h1{font-size:22px}
-  .progress-strip{flex-direction:column}
-  .progress-button{width:100%;text-align:center}
-  .notice-label{padding:0 10px;font-size:10px}
-  .notice-item{font-size:10px;padding-right:55px}
-  .section-head{align-items:flex-start;flex-direction:column}
+.container{padding:17px 13px 30px}.brand-name{font-size:18px}.tagline{font-size:9px}.brand img{width:44px;height:44px}
+.welcome h1{font-size:23px}.welcome-action{width:100%;text-align:center}.welcome{flex-direction:column;align-items:flex-start}
+.notice-label{padding:0 10px;font-size:10px}.notice-item{font-size:10px;padding-right:55px}
+.grid{grid-template-columns:1fr}.progress{padding:17px;gap:16px}.progress-score{display:grid;grid-template-columns:1fr 1fr;gap:13px}.progress-stat{border-left:0;border-top:1px solid #e4e9f1;padding:10px 0 0}
+.progress-button{width:100%;text-align:center}.footer-inner{flex-direction:column;text-align:center}
 }
 </style>
 </head>
@@ -518,12 +112,10 @@ body{
 
   <div id="dashboard" style="display:none;">
 
-    <!-- HEADER -->
     <header class="header">
 
       <a href="firebase-dashboard.html" class="brand">
         <img src="logo.png" alt="HPMockShashtra">
-
         <div class="brand-text">
           <div class="brand-name">HP<span>Mock</span>Shashtra</div>
           <div class="tagline">Prepare Today, Serve Himachal Tomorrow</div>
@@ -533,105 +125,93 @@ body{
       <button class="menu-btn" id="menuBtn">☰</button>
 
       <nav class="nav" id="navMenu">
-
-        <a href="firebase-dashboard.html">⌂ &nbsp;Home</a>
-
-        <a href="joa-series.html">▣ &nbsp;Tests</a>
-
-        <a href="my-progress.html">▥ &nbsp;My Progress</a>
+        <a href="firebase-dashboard.html">⌂&nbsp; Home</a>
+        <a href="joa-series.html">▣&nbsp; Tests</a>
+        <a href="my-progress.html">▥&nbsp; My Progress</a>
 
         <div class="user-area">
           <div class="user-icon">●</div>
           <div class="user-name" id="headerUserName">Student</div>
           <button class="logout-btn" id="logoutBtn">Logout</button>
         </div>
-
       </nav>
 
     </header>
 
-    <!-- MAIN -->
     <main class="container">
 
-      <!-- WELCOME -->
       <section class="welcome">
-
-        <div>
+        <div class="welcome-copy">
           <h1>Welcome back, <span id="userName">Student</span>! 👋</h1>
-
-          <p>
-            Continue your preparation and keep improving.
-          </p>
-
-          <div class="user-email" id="userEmail">
-            Loading email...
-          </div>
+          <p>Consistency today, success tomorrow.</p>
+          <div class="user-email" id="userEmail">Loading email...</div>
         </div>
 
-        <a href="joa-series.html" class="welcome-action">
-          Continue Practice →
-        </a>
-
+        <div class="welcome-art">
+          <div class="mountain">⌁</div>
+          <div class="quote">“Prepare.<br>Practice.<br>Progress.<br>Succeed.”</div>
+          <a href="joa-series.html" class="welcome-action">Continue Practice&nbsp; →</a>
+        </div>
       </section>
 
+      <section class="notice">
+        <div class="notice-label">📢&nbsp; Latest Notice</div>
+        <div class="notice-window">
+          <div class="notice-track">
+            <span class="notice-item"><strong>JOA IT Mock Test Series</strong> is now available.</span>
+            <span class="notice-item"><strong>15 full-length mock tests</strong> with 100 questions each in Hindi + English.</span>
+            <span class="notice-item"><strong>Previous Year Question Papers</strong> will be available soon.</span>
+          </div>
+        </div>
+      </section>
 
-      <!-- MY PROGRESS -->
-      <section class="progress-strip">
+      <section class="progress">
 
-        <div class="progress-copy">
-          <div class="progress-icon">▥</div>
-          <div>
-            <h3>My Progress</h3>
-            <p>View your scores, attempted tests and performance overview.</p>
+        <div class="progress-title">
+          <h2>Your Progress</h2>
+          <p>Track your preparation at a glance.</p>
+        </div>
+
+        <div class="progress-score">
+          <div class="ring"><span>23%</span></div>
+
+          <div class="score-number">
+            <strong>23 / 100</strong>
+            <span>Current Score</span>
+          </div>
+
+          <div class="progress-stat stat-green">
+            <strong>23</strong>
+            <span>Correct</span>
+          </div>
+
+          <div class="progress-stat stat-red">
+            <strong>37</strong>
+            <span>Incorrect</span>
+          </div>
+
+          <div class="progress-stat stat-gray">
+            <strong>40</strong>
+            <span>Not Attempted</span>
           </div>
         </div>
 
         <a href="my-progress.html" class="progress-button">
-          View My Progress →
+          View My Progress&nbsp; →
         </a>
 
       </section>
 
-      <!-- NOTICE TICKER -->
-      <section class="notice">
-
-        <div class="notice-label">
-          📢 Latest Notice
-        </div>
-
-        <div class="notice-window">
-          <div class="notice-track">
-
-            <span class="notice-item">
-              <strong>JOA IT Mock Test Series</strong> is available — practice with 15 full-length mock tests.
-            </span>
-
-            <span class="notice-item">
-              <strong>Free Mock Test</strong> is available for practice.
-            </span>
-
-            <span class="notice-item">
-              <strong>Previous Year Question Papers</strong> will be available soon.
-            </span>
-
-          </div>
-        </div>
-
-      </section>
-
-      <!-- STUDY & PRACTICE -->
       <section class="section">
 
         <div class="section-head">
-          <h2 class="section-title">Study & Practice</h2>
-          <div class="section-subtitle">Available resources</div>
+          <h2 class="section-title">Study &amp; Practice</h2>
+          <div class="section-subtitle">Choose a resource and continue your preparation.</div>
         </div>
 
         <div class="grid">
 
-          <!-- JOA IT MOCK TESTS -->
           <div class="card">
-
             <div class="card-top">
               <div class="card-icon">▣</div>
               <div class="badge">Available</div>
@@ -640,7 +220,8 @@ body{
             <h3>JOA IT Mock Test Series</h3>
 
             <p>
-              Full-length JOA IT practice tests with bilingual questions and structured test progression.
+              Access the complete JOA IT Mock Test Series with 15 tests,
+              100 questions per test, and bilingual support.
             </p>
 
             <div class="card-meta">
@@ -650,58 +231,52 @@ body{
             </div>
 
             <a href="joa-series.html" class="btn btn-primary">
-              View Test Series →
+              View Test Series&nbsp; →
             </a>
-
           </div>
 
-          <!-- PREVIOUS YEAR PAPERS -->
           <div class="card">
-
             <div class="card-top">
-              <div class="card-icon">▤</div>
-              <div class="badge" style="background:#f1f3f6;color:#687386;">
-                Coming Soon
-              </div>
+              <div class="card-icon paper">▤</div>
+              <div class="badge soon">Coming Soon</div>
             </div>
 
             <h3>JOA IT Previous Year Papers</h3>
 
             <p>
-              Previous year question papers for focused exam-pattern practice and revision.
+              Practice with previous year question papers to understand
+              the exam pattern and improve your preparation.
             </p>
 
             <div class="card-meta">
               <span>Previous Years</span>
-              <span>PDF</span>
-              <span>Affordable</span>
+              <span>PDF Format</span>
+              <span>Exam Focused</span>
             </div>
 
-            <div class="btn coming">
-              Coming Soon
-            </div>
-
+            <div class="btn coming">Coming Soon</div>
           </div>
 
         </div>
 
-      </section></main>
+      </section>
 
-    <!-- FOOTER -->
+    </main>
+
     <footer class="footer">
+      <div class="footer-inner">
+        <div>© 2026 HPMockShashtra. All rights reserved.</div>
 
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <span class="footer-sep">|</span>
-        <a href="privacy.html">Privacy Policy</a>
-        <span class="footer-sep">|</span>
-        <a href="terms.html">Terms &amp; Conditions</a>
+        <div>Prepare Today, Serve Himachal Tomorrow.</div>
+
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <span class="footer-sep">|</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <span class="footer-sep">|</span>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
       </div>
-
-      <div>
-        © 2026 HPMockShashtra — Competitive Exam Preparation Platform
-      </div>
-
     </footer>
 
   </div>
