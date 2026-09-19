@@ -41,11 +41,12 @@
     }
 
     .hindi {
-        margin-top: 12px;
+        margin-top: 5px;
+        margin-bottom: 18px;
     }
 
     .english {
-        margin-top: 20px;
+        margin-bottom: 5px;
     }
 
     .excel-table {
@@ -70,8 +71,8 @@
     .formula {
         display: inline-block;
         background: #f3f4f6;
-        padding: 4px 8px;
-        border-radius: 5px;
+        padding: 3px 7px;
+        border-radius: 4px;
         font-family: Consolas, monospace;
         font-weight: 600;
     }
@@ -125,9 +126,13 @@
 
     <div class="question-text">
 
-        <!-- Hindi -->
+        <!-- English -->
+        <div class="english">
+            Consider the following data in an MS-Excel worksheet:
+        </div>
+
+        <!-- Hindi Translation -->
         <div class="hindi">
-            <strong>हिंदी:</strong><br>
             MS-Excel वर्कशीट में निम्नलिखित डेटा पर विचार कीजिए:
         </div>
 
@@ -158,24 +163,18 @@
             </tr>
         </table>
 
-        <div class="hindi">
-            सूत्र
-            <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>
-            का मान क्या होगा?
-        </div>
-
-
-        <!-- English -->
-        <div class="english">
-            <strong>English:</strong><br>
-            Consider the following data in an MS-Excel worksheet:
-        </div>
-
+        <!-- English Question -->
         <div class="english">
             What will be the value of the formula
             <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>?
         </div>
 
+        <!-- Hindi Translation -->
+        <div class="hindi">
+            सूत्र
+            <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>
+            का मान क्या होगा?
+        </div>
 
         <!-- Options -->
         <div class="options">
