@@ -15,13 +15,10 @@ body{margin:0;background:#eef4fb;color:#172033}
 .meta{display:flex;gap:9px;flex-wrap:wrap}
 .pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.14);padding:7px 11px;border-radius:8px;font-size:12px;font-weight:700}
 .card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.055)}
-.score{display:flex;align-items:center;gap:24px;margin-bottom:14px;padding:17px 20px}
+.score{display:flex;align-items:center;margin-bottom:14px;padding:14px 18px;min-height:74px}
 .score-main{display:flex;align-items:center;gap:18px}
-.score-ring{width:108px;height:108px;border-radius:50%;background:conic-gradient(#4f46e5 var(--score,0%),#e5e7eb 0);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
-.score-ring:before{content:"";position:absolute;width:82px;height:82px;border-radius:50%;background:#fff}
-.score-ring span{position:relative;z-index:1;font-weight:900;font-size:21px;color:#172554}
-.score-text strong{display:block;font-size:31px;line-height:1.05;color:#172554}
-.score-text .label{margin-top:5px;color:#6b7280;font-size:14px;font-weight:600}
+.score-text strong{display:block;font-size:25px;line-height:1.05;color:#172554}
+.score-text .label{margin-top:4px;color:#6b7280;font-size:12px;font-weight:600}
 .question-card{padding:20px}
 .question-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
 .counter{font-weight:800;color:#4f46e5;font-size:13px}
@@ -70,7 +67,7 @@ body{margin:0;background:#eef4fb;color:#172033}
 @media(max-width:600px){
 .site-footer{margin:0 12px 16px}.footer-inner{padding:15px 17px;flex-direction:column;align-items:flex-start;gap:10px}.footer-links{gap:12px}
 
-.wrap{margin:16px auto;padding:0 12px 35px}.top{padding:20px}.top h1{font-size:21px}.score{padding:15px}.score-main{gap:13px}.score-ring{width:88px;height:88px}.score-ring:before{width:68px;height:68px}.score-text strong{font-size:27px}
+.wrap{margin:16px auto;padding:0 12px 35px}.top{padding:20px}.top h1{font-size:21px}.score{padding:15px}.score-main{gap:0}.score-text strong{font-size:23px}
 .question-card{padding:16px}.question-head{align-items:flex-start}.question{font-size:18px}.hindi{font-size:16px}
 .controls{flex-direction:column}.btn{width:100%;text-align:center}.page-indicator{order:-1}
 }
@@ -101,9 +98,6 @@ body{margin:0;background:#eef4fb;color:#172033}
 
     <div class="card score">
       <div class="score-main">
-        <div class="score-ring" id="scoreRing" style="--score:0%">
-          <span id="scoreRingText">0%</span>
-        </div>
         <div class="score-text">
           <strong id="score"></strong>
           <div class="label" id="percentage"></div>
@@ -422,8 +416,6 @@ function updateSummary(){
 
   $("score").textContent = `${correctCount}/${total}`;
   $("percentage").textContent = `Percentage: ${percentage}%`;
-  $("scoreRing").style.setProperty("--score", `${percentage}%`);
-  $("scoreRingText").textContent = `${percentage}%`;
 }
 
 $("prevBtn").onclick = () => {
