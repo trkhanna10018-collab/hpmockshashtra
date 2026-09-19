@@ -16,8 +16,8 @@ body{font-family:"Segoe UI",Arial,sans-serif;background:#f4f8fd;color:#172554;li
 .heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}
 .heading h1{font-size:29px}.heading p{color:#64748b;font-size:14px}
 .quote{background:#edf5ff;padding:12px 18px;border-radius:10px;color:#526987;font-size:13px}
-.grid3{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px}
-.card{background:#fff;border:1px solid #dfe8f3;border-radius:13px;padding:18px;box-shadow:0 5px 18px #183b6510}
+.top-grid{display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:14px}
+.card{background:#fff;border:1px solid #dfe8f3;border-radius:13px;padding:18px;box-shadow:0 5px 18px rgba(24,59,101,.06)}
 .card h2{font-size:17px;margin-bottom:12px}
 .progress-card{background:#f3f8ff}
 .progress-top{display:flex;justify-content:space-between;align-items:center}
@@ -26,25 +26,25 @@ body{font-family:"Segoe UI",Arial,sans-serif;background:#f4f8fd;color:#172554;li
 .ring:after{content:attr(data-text);width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;font-weight:800}
 .bar{height:8px;background:#dce7f2;border-radius:9px;margin-top:14px;overflow:hidden}.bar span{display:block;height:100%;background:#2877df;border-radius:9px}
 .metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{border:1px solid #e2eaf3;border-radius:9px;padding:11px;text-align:center}.metric b{display:block;font-size:21px}.metric small{color:#64748b}
-.rank{background:#fffaf0;border-color:#f4dfab}.rank-icon{font-size:30px}.lock{font-size:19px;margin-right:7px}.rank-value{font-size:28px;font-weight:900;margin:7px 0}.locked{color:#8a5a00}.rank-note{font-size:12px;color:#6b7280}
+.rank-card{background:#fffaf0;border-color:#f2dda7}
+.rank-line{display:flex;gap:18px;align-items:center}
+.rank-part{flex:1}.rank-label{font-size:11px;color:#6b7280;font-weight:700;text-transform:uppercase}
+.rank-value{font-size:27px;font-weight:900;margin-top:3px}
+.final-lock{color:#8a5a00}.rank-note{font-size:11px;color:#6b7280;margin-top:7px}
+.rank-divider{width:1px;height:65px;background:#ead9af}
 .info{margin:14px 0;background:#edf6ff;border:1px solid #cfe4fb;border-radius:10px;padding:12px 15px;font-size:13px;color:#334e73}
-.analytics{margin-top:14px}.chart{height:300px;margin-top:8px}.chart svg{width:100%;height:100%}
-.section{margin-top:14px;display:grid;grid-template-columns:1fr 310px;gap:14px}
-.table-card{overflow:auto}.table-card h2{padding-bottom:8px}
-table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px 9px;border-bottom:1px solid #edf1f5;text-align:left;white-space:nowrap}th{background:#f4f8fd;color:#334e73}tr:hover{background:#fafcff}
-.ok{color:#16824a;font-weight:700}.locked-t{color:#7b8797}.btn{border:1px solid #6da2ed;background:#fff;color:#1455b8;border-radius:6px;padding:5px 10px;font-size:11px;font-weight:700;text-decoration:none}
-.side .box{padding:16px;border-radius:11px;margin-bottom:12px;border:1px solid #dfe8f3;background:#fff}.side h3{font-size:16px;margin-bottom:10px}.goal{background:#fff4f4!important;border-color:#f2cccc!important}.tips{background:#effaf4!important;border-color:#cdebd8!important}.side li{list-style:none;font-size:12px;margin:9px 0}.side li:before{content:"✓";color:#15935a;font-weight:900;margin-right:8px}
+.analytics{margin-top:14px}.chart{height:320px;margin-top:8px}.chart svg{width:100%;height:100%}
 .footer{text-align:center;padding:20px;color:#718096;font-size:11px}
 .empty{background:#fff;border:1px solid #dfe8f3;border-radius:13px;padding:50px;text-align:center}.empty a{display:inline-block;margin-top:15px;background:#1769d1;color:#fff;padding:9px 15px;border-radius:7px;text-decoration:none}
-@media(max-width:900px){.grid3,.section{grid-template-columns:1fr}.quote{display:none}}
-@media(max-width:600px){.header-in{padding:0 12px}.brand{font-size:17px}.brand img{width:45px;height:45px}.container{padding:20px 12px}.heading h1{font-size:24px}.grid3{gap:10px}.card{padding:14px}.chart{height:250px}}
+@media(max-width:900px){.top-grid{grid-template-columns:1fr}.quote{display:none}}
+@media(max-width:600px){.header-in{padding:0 12px}.brand{font-size:17px}.brand img{width:45px;height:45px}.container{padding:20px 12px}.heading h1{font-size:24px}.card{padding:14px}.chart{height:260px}.rank-line{align-items:flex-start}.rank-divider{height:70px}}
 </style>
 </head>
 <body>
 
 <header class="header">
 <div class="header-in">
-<a class="brand" href="firebase-dashboard.html"><img src="logo.png" alt="Logo">HPMockShashtra</a>
+<a class="brand" href="firebase-dashboard.html"><img src="logo.png" alt="HPMockShashtra Logo">HPMockShashtra</a>
 <a class="back" href="firebase-dashboard.html">← Dashboard</a>
 </div>
 </header>
@@ -56,48 +56,57 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px 9px;
 </div>
 
 <div id="content" style="display:none">
-<div class="grid3">
+<div class="top-grid">
+
 <div class="card progress-card">
-<div class="progress-top"><div><h2>Overall Progress</h2><div class="big" id="attempted">0 / 16</div><div class="muted">Tests Attempted</div></div><div class="ring" id="ring" data-text="0%"></div></div>
+<div class="progress-top">
+<div><h2>Overall Progress</h2><div class="big" id="attempted">0 / 16</div><div class="muted">Tests Attempted</div></div>
+<div class="ring" id="ring" data-text="0%"></div>
+</div>
 <div class="bar"><span id="bar"></span></div>
 </div>
+
 <div class="card">
 <h2>Performance Summary</h2>
 <div class="metrics">
 <div class="metric"><small>Current Average</small><b id="avg">—</b></div>
-<div class="metric"><small>Best Score</small><b id="best">—</b></div>
-<div class="metric"><small>Highest Accuracy</small><b id="highAcc">—</b></div>
+<div class="metric"><small>Highest Score</small><b id="best">—</b></div>
 <div class="metric"><small>Lowest Score</small><b id="low">—</b></div>
-</div>
-</div>
-<div class="card rank">
-<h2>🏆 Final Rank</h2>
-<div id="rankBox"></div>
+<div class="metric"><small>Tests Completed</small><b id="paidCount">0</b></div>
 </div>
 </div>
 
-<div class="info">ⓘ Your Current Average updates after every completed test. Your Final Rank becomes available after Mock Test 15 and continues to update as other completed users change the ranking.</div>
+<div class="card rank-card">
+<h2>🏆 Ranking</h2>
+<div class="rank-line">
+<div class="rank-part">
+<div class="rank-label">Current Rank</div>
+<div class="rank-value" id="currentRank">—</div>
+<div class="rank-note">Approx. ranking based on current average.</div>
+</div>
+<div class="rank-divider"></div>
+<div class="rank-part">
+<div class="rank-label">Final Rank</div>
+<div class="rank-value final-lock" id="finalRank">🔒 Locked</div>
+<div class="rank-note" id="finalNote">Available after Mock Test 15.</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="info">ⓘ Your Current Average updates after every completed mock test. Your Final Rank becomes available after Mock Test 15 and continues to update when other completed users change the ranking.</div>
 
 <div class="card analytics">
-<h2>Performance Overview</h2><div class="muted">Your score across attempted mock tests</div>
-<div class="chart"><svg id="chart" viewBox="0 0 1100 300" preserveAspectRatio="none"></svg></div>
-</div>
-
-<div class="section">
-<div class="card table-card">
-<h2>Test-wise Performance</h2>
-<table><thead><tr><th>#</th><th>Test</th><th>Score</th><th>Percentage</th><th>Status</th><th>Action</th></tr></thead><tbody id="rows"></tbody></table>
-</div>
-<div class="side">
-<div class="box"><h3>📈 Your Journey</h3><ul id="journey"></ul></div>
-<div class="box goal"><h3>🎯 Your Goal</h3><p style="font-size:13px">Complete all 15 Mock Tests and unlock your Final Rank.</p></div>
-<div class="box tips"><h3>💡 Tips for Better Performance</h3><ul><li>Attempt all tests regularly</li><li>Analyse your mistakes</li><li>Focus on weak areas</li><li>Improve time management</li><li>Stay consistent</li></ul></div>
-</div>
+<h2>Performance Overview</h2>
+<div class="muted">Your score across completed mock tests</div>
+<div class="chart"><svg id="chart" viewBox="0 0 1100 320" preserveAspectRatio="none" aria-label="Performance Overview"></svg></div>
 </div>
 </div>
 
 <div id="empty" class="empty" style="display:none">
-<h2>No Test Attempted Yet</h2><p class="muted">Your attempted mock tests will appear here after you complete a test.</p>
+<h2>No Test Attempted Yet</h2>
+<p class="muted">Your attempted mock tests will appear here after you complete a test.</p>
 <a href="joa-series.html">View JOA IT Series</a>
 </div>
 </main>
@@ -116,90 +125,130 @@ const TESTS=[
 
 onAuthStateChanged(auth,async user=>{
 if(!user){location.href="firebase-login.html";return}
-try{await load(user.uid)}catch(e){console.error(e);document.getElementById("empty").style.display="block"}
+try{await loadProgress(user.uid)}catch(e){console.error(e);showEmpty()}
 });
 
-async function load(uid){
-const tests=[];
+async function loadProgress(uid){
+const attempts=[];
+
 for(const [id,name] of TESTS){
 try{
-const s=await getDoc(doc(db,"testAttempts",`${uid}_${id}`));
-if(s.exists()){const d=s.data();tests.push({id,name,score:+d.score||0,total:+d.total||100})}
-}catch(e){console.warn(id,e.code)}
+const snap=await getDoc(doc(db,"testAttempts",`${uid}_${id}`));
+if(snap.exists()){
+const d=snap.data();
+attempts.push({id,name,score:Number(d.score)||0,total:Number(d.total)||100});
 }
-if(!tests.length){document.getElementById("empty").style.display="block";return}
+}catch(e){console.warn("Skipping",id,e.code)}
+}
+
+if(!attempts.length){showEmpty();return}
 document.getElementById("content").style.display="block";
 
-const paid=tests.filter(x=>x.id.startsWith("joa_test_"));
-const sum=paid.reduce((a,x)=>a+x.score,0), marks=paid.reduce((a,x)=>a+x.total,0);
-const avg=marks?sum/marks*100:0;
-const best=paid.length?Math.max(...paid.map(x=>x.score)):0;
-const low=paid.length?Math.min(...paid.map(x=>x.score)):0;
-const acc=paid.length?Math.max(...paid.map(x=>x.total?x.score/x.total*100:0)):0;
-const completed15=tests.some(x=>x.id==="joa_test_15");
+const mockTests=attempts.filter(x=>x.id.startsWith("joa_test_"));
+const totalScore=mockTests.reduce((a,x)=>a+x.score,0);
+const totalMarks=mockTests.reduce((a,x)=>a+x.total,0);
+const average=totalMarks?(totalScore/totalMarks)*100:0;
+const highest=mockTests.length?Math.max(...mockTests.map(x=>x.score)):0;
+const lowest=mockTests.length?Math.min(...mockTests.map(x=>x.score)):0;
+const attemptedCount=attempts.length;
+const progress=Math.round((attemptedCount/16)*100);
+const completed15=attempts.some(x=>x.id==="joa_test_15");
 
-const count=tests.length,pct=Math.round(count/16*100);
-document.getElementById("attempted").textContent=`${count} / 16`;
-document.getElementById("bar").style.width=pct+"%";
-document.getElementById("ring").style.setProperty("--p",pct+"%");
-document.getElementById("ring").setAttribute("data-text",pct+"%");
-document.getElementById("avg").textContent=paid.length?avg.toFixed(1)+"%":"—";
-document.getElementById("best").textContent=paid.length?best+"/100":"—";
-document.getElementById("low").textContent=paid.length?low+"/100":"—";
-document.getElementById("highAcc").textContent=paid.length?acc.toFixed(0)+"%":"—";
+document.getElementById("attempted").textContent=`${attemptedCount} / 16`;
+document.getElementById("bar").style.width=progress+"%";
+document.getElementById("ring").style.setProperty("--p",progress+"%");
+document.getElementById("ring").setAttribute("data-text",progress+"%");
+document.getElementById("paidCount").textContent=mockTests.length;
+document.getElementById("avg").textContent=mockTests.length?average.toFixed(1)+"%":"—";
+document.getElementById("best").textContent=mockTests.length?highest+"/100":"—";
+document.getElementById("low").textContent=mockTests.length?lowest+"/100":"—";
 
-renderRank(uid,completed15,avg);
-renderChart(paid);
-renderRows(tests);
-renderJourney(count,completed15);
+renderChart(attempts);
+await renderRanks(uid,mockTests.length,average,completed15);
 }
 
-async function renderRank(uid,ready,avg){
-const box=document.getElementById("rankBox");
-if(!ready){
-box.innerHTML=`<div class="rank-icon">🔒</div><div class="rank-value locked">Locked</div><div class="rank-note">Complete Mock Test 15 to unlock your Final Rank.</div>`;
-return;
-}
+async function renderRanks(uid,myAttemptCount,myAverage,completed15){
+const current=document.getElementById("currentRank");
+const final=document.getElementById("finalRank");
+const note=document.getElementById("finalNote");
+
+if(!myAttemptCount){
+current.textContent="—";
+}else{
 try{
 const snap=await getDocs(collection(db,"seriesLeaderboard"));
-const list=snap.docs.map(d=>d.data()).filter(x=>x.completed===true&&Number.isFinite(Number(x.average))).sort((a,b)=>Number(b.average)-Number(a.average));
-const me=Number(avg);
-const rank=1+list.filter(x=>Number(x.average)>me).length;
-box.innerHTML=`<div class="rank-icon">🏆</div><div class="rank-value">#${rank}</div><div class="rank-note">Your rank updates dynamically when another completed user moves ahead of you.</div>`;
+const rows=snap.docs.map(d=>d.data())
+.filter(x=>Number(x.attemptedTests)>=myAttemptCount && Number.isFinite(Number(x.average)))
+.sort((a,b)=>Number(b.average)-Number(a.average));
+
+const rank=1+rows.filter(x=>Number(x.average)>myAverage).length;
+current.textContent=`#${rank}`;
 }catch(e){
-box.innerHTML=`<div class="rank-icon">🔒</div><div class="rank-value locked">Pending</div><div class="rank-note">Final rank will appear when ranking data is available.</div>`;
+console.warn("Current rank unavailable:",e.code);
+current.textContent="Updating";
 }
 }
 
-function renderRows(tests){
-const map=new Map(tests.map(x=>[x.id,x]));
-let html="";
-TESTS.forEach(([id,name],i)=>{
-const t=map.get(id);
-if(t)html+=`<tr><td>${i+1}</td><td>${name}</td><td>${t.score}/${t.total}</td><td>${(t.score/t.total*100).toFixed(0)}%</td><td class="ok">✓ Completed</td><td><a class="btn" href="study-mode.html?test=${id}">View Result</a></td></tr>`;
-else html+=`<tr><td>${i+1}</td><td>${name}</td><td>—</td><td>—</td><td class="locked-t">🔒 Locked</td><td><a class="btn" href="joa-series.html">Take Test</a></td></tr>`;
-});
-document.getElementById("rows").innerHTML=html;
+if(!completed15){
+final.textContent="🔒 Locked";
+final.className="rank-value final-lock";
+note.textContent="Available after Mock Test 15.";
+return;
 }
 
-function renderJourney(n,ready){
-document.getElementById("journey").innerHTML=`
-<li>✓ Started your journey</li>
-<li>✓ Completed ${n} test${n===1?"":"s"}</li>
-<li>${n>=10?"✓":"○"} Complete 10 tests</li>
-<li>${ready?"🏆":"○"} ${ready?"Final Rank unlocked":"Complete all 15 Mock Tests"}</li>`;
+try{
+const snap=await getDocs(collection(db,"seriesLeaderboard"));
+const rows=snap.docs.map(d=>d.data())
+.filter(x=>x.completed===true && Number.isFinite(Number(x.average)))
+.sort((a,b)=>Number(b.average)-Number(a.average));
+
+const rank=1+rows.filter(x=>Number(x.average)>myAverage).length;
+final.textContent=`#${rank}`;
+final.className="rank-value";
+note.textContent="Dynamic final rank based on overall average.";
+}catch(e){
+final.textContent="Updating";
+final.className="rank-value";
+note.textContent="Ranking data is being updated.";
+}
 }
 
-function renderChart(tests){
-const svg=document.getElementById("chart"),W=1100,H=300,L=55,R=25,T=25,B=45;
-if(!tests.length){svg.innerHTML="";return}
+function renderChart(attempts){
+const svg=document.getElementById("chart");
+if(!attempts.length){svg.innerHTML="";return}
+
+const W=1100,H=320,L=55,R=25,T=25,B=48;
 const cw=W-L-R,ch=H-T-B;
-const pts=tests.map((t,i)=>({x:tests.length===1?L+cw/2:L+i/(tests.length-1)*cw,y:T+ch-(t.score/t.total)*ch,s:Math.round(t.score/t.total*100),n:t.name.replace("JOA IT Mock Test ","Test ")}));
+
+const points=attempts.map((t,i)=>{
+const x=attempts.length===1?L+cw/2:L+(i/(attempts.length-1))*cw;
+const percentage=t.total?(t.score/t.total)*100:0;
+const y=T+ch-(percentage/100)*ch;
+return{x,y,p:percentage,n:t.id==="joa_free_test_01"?"Free":t.id.replace("joa_test_","Test ")};
+});
+
 let grid="";
-[0,20,40,60,80,100].forEach(v=>{let y=T+ch-v/100*ch;grid+=`<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="#e7edf5"/><text x="${L-10}" y="${y+4}" text-anchor="end" fill="#94a3b8" font-size="11">${v}</text>`});
-const line=pts.map(p=>`${p.x},${p.y}`).join(" ");
-svg.innerHTML=`${grid}<polyline points="${line}" fill="none" stroke="#2877df" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`+
-pts.map(p=>`<circle cx="${p.x}" cy="${p.y}" r="6" fill="#fff" stroke="#2877df" stroke-width="3"/><text x="${p.x}" y="${p.y-12}" text-anchor="middle" fill="#173c78" font-size="13" font-weight="700">${p.s}%</text><text x="${p.x}" y="${H-15}" text-anchor="middle" fill="#64748b" font-size="12">${p.n}</text>`).join("");
+[0,20,40,60,80,100].forEach(v=>{
+const y=T+ch-(v/100)*ch;
+grid+=`<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="#e7edf5"/>
+<text x="${L-10}" y="${y+4}" text-anchor="end" fill="#94a3b8" font-size="11">${v}</text>`;
+});
+
+const line=points.map(p=>`${p.x},${p.y}`).join(" ");
+
+svg.innerHTML=`
+${grid}
+<polyline points="${line}" fill="none" stroke="#2877df" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+${points.map(p=>`
+<circle cx="${p.x}" cy="${p.y}" r="6" fill="#fff" stroke="#2877df" stroke-width="3"/>
+<text x="${p.x}" y="${Math.max(17,p.y-12)}" text-anchor="middle" fill="#173c78" font-size="13" font-weight="700">${p.p.toFixed(0)}%</text>
+<text x="${p.x}" y="${H-15}" text-anchor="middle" fill="#64748b" font-size="12">${p.n}</text>
+`).join("")}`;
+}
+
+function showEmpty(){
+document.getElementById("empty").style.display="block";
+document.getElementById("content").style.display="none";
 }
 </script>
 </body>
