@@ -7,17 +7,17 @@
   <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
 body{background:#f4f8fd;color:#14264b;min-height:100vh}
-.header{height:118px;max-width:1164px;margin:0 auto;background:#fff;border:1px solid #e4ebf5;border-top:0;border-radius:0 0 14px 14px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 16px rgba(25,50,90,.05)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#102654}
+.header{height:118px;max-width:1164px;margin:0 auto;background:#fff;border:1px solid #e4ebf5;border-top:0;border-radius:0 0 14px 14px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 28px 16px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 16px rgba(25,50,90,.05)}
+.brand{display:flex;align-items:flex-end;gap:12px;text-decoration:none;color:#102654}
 .brand img{width:96px;height:96px;object-fit:contain}
 .brand-text{line-height:1.08}
 .brand-name{font-size:22px;font-weight:850;letter-spacing:-.5px}
 .brand-name span{color:#2463dc}
 .tagline{margin-top:4px;font-size:10px;color:#71809a;font-weight:600}
-.nav{display:flex;align-items:center;gap:6px}
+.nav{display:flex;align-items:flex-end;gap:6px}
 .nav a{display:flex;align-items:center;gap:6px;text-decoration:none;color:#34466a;font-size:13px;font-weight:700;padding:10px 13px;border-radius:9px}
 .nav a:hover{background:#edf4ff;color:#1f5bd8}
-.user-area{display:flex;align-items:center;gap:8px;margin-left:8px;padding-left:15px;border-left:1px solid #e2e8f1}
+.user-area{display:flex;align-items:flex-end;gap:8px;margin-left:8px;padding-left:15px;border-left:1px solid #e2e8f1}
 .user-icon{width:33px;height:33px;border-radius:50%;background:#173b7a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px}
 .user-name{max-width:125px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:800}
 .logout-btn{border:0;background:#fff0f1;color:#c62828;border-radius:8px;padding:8px 11px;font-size:11px;font-weight:800;cursor:pointer}
@@ -92,7 +92,7 @@ body{background:#f4f8fd;color:#14264b;min-height:100vh}
 .footer-sep{color:#c3cad5}
 
 @media(max-width:900px){
-.header{margin:0 12px;max-width:none;padding:0 18px;height:82px;border-radius:0 0 12px 12px}.nav{display:none}.menu-btn{display:block}
+.header{margin:0 12px;max-width:none;padding:0 18px 10px;height:82px;border-radius:0 0 12px 12px}.nav{display:none}.menu-btn{display:block}
 .nav.show{display:flex;position:absolute;top:76px;left:0;width:100%;background:#fff;flex-direction:column;align-items:stretch;padding:10px 15px 14px;box-shadow:0 8px 16px rgba(0,0,0,.07)}
 .nav.show a{text-align:left}.user-area{border-left:0;border-top:1px solid #edf0f4;margin:6px 0 0;padding:10px 3px 0}
 .welcome{padding:24px;min-height:150px}.welcome-art{display:none}
