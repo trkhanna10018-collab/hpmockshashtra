@@ -25,7 +25,7 @@
 
     .header{
       height:70px;
-      max-width:1050px;
+      max-width:1010px;
       margin:0 auto;
       background:#fff;
       display:flex;
@@ -368,14 +368,18 @@
     /* ================= FOOTER ================= */
 
     .footer{
-      max-width:1050px;
-      margin:25px auto 0;
+      max-width:1010px;
+      margin:10px auto 0;
       background:linear-gradient(135deg,#174f93,#205fa8);
-      text-align:center;
-      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      text-align:left;
+      padding:16px 24px;
       color:#fff;
       font-size:13px;
-      border-radius:14px 14px 0 0;
+      border-radius:14px;
       box-shadow:0 -2px 12px rgba(23,79,147,.08);
     }
 
@@ -387,7 +391,7 @@
       justify-content:center;
       align-items:center;
       gap:13px;
-      margin-bottom:7px;
+      margin-bottom:0;
     }
 
     .footer-links a{
@@ -465,9 +469,17 @@
       }
 
       .footer{
-        margin:20px 10px 0;
+        margin:10px 10px 0;
+        max-width:none;
         border-radius:12px;
-        padding:16px 14px;
+        padding:15px 14px;
+        flex-direction:column;
+        text-align:center;
+        gap:9px;
+      }
+
+      .footer-links{
+        margin-bottom:0;
       }
 
     }
