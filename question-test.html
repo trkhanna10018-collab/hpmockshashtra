@@ -7,112 +7,101 @@
 <title>Question Preview</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    body {
-        margin: 0;
-        padding: 40px 20px;
-        background: #f4f8fd;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #1f2937;
-    }
+body {
+    margin: 0;
+    padding: 25px 15px;
+    background: #f4f8fd;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+.question-card {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #dbe4ef;
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.question-number {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.question-text {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.hindi {
+    margin-top: 3px;
+    margin-bottom: 12px;
+}
+
+.excel-table {
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+.excel-table th,
+.excel-table td {
+    border: 1px solid #555;
+    padding: 7px 18px;
+    text-align: center;
+}
+
+.excel-table th {
+    background: #f1f5f9;
+    font-weight: 700;
+}
+
+.formula {
+    background: #f3f4f6;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+}
+
+.options {
+    margin-top: 16px;
+}
+
+.option {
+    padding: 7px 10px;
+    margin-bottom: 5px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fafafa;
+}
+
+@media (max-width: 600px) {
 
     .question-card {
-        max-width: 900px;
-        margin: auto;
-        background: #ffffff;
-        border: 1px solid #dbe4ef;
-        border-radius: 12px;
-        padding: 30px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
-
-    .question-number {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 15px;
+        padding: 16px;
     }
 
     .question-text {
-        font-size: 17px;
-        line-height: 1.6;
-    }
-
-    .hindi {
-        margin-top: 5px;
-        margin-bottom: 18px;
-    }
-
-    .english {
-        margin-bottom: 5px;
+        font-size: 14px;
     }
 
     .excel-table {
-        border-collapse: collapse;
-        margin: 22px auto;
-        font-size: 16px;
-        min-width: 500px;
+        font-size: 13px;
     }
 
     .excel-table th,
     .excel-table td {
-        border: 1px solid #555;
-        padding: 10px 25px;
-        text-align: center;
+        padding: 6px 12px;
     }
-
-    .excel-table th {
-        background: #f1f5f9;
-        font-weight: 700;
-    }
-
-    .formula {
-        display: inline-block;
-        background: #f3f4f6;
-        padding: 3px 7px;
-        border-radius: 4px;
-        font-family: Consolas, monospace;
-        font-weight: 600;
-    }
-
-    .options {
-        margin-top: 25px;
-    }
-
-    .option {
-        padding: 10px 14px;
-        margin-bottom: 8px;
-        border: 1px solid #e2e8f0;
-        border-radius: 7px;
-        background: #fafafa;
-    }
-
-    @media (max-width: 600px) {
-
-        body {
-            padding: 20px 10px;
-        }
-
-        .question-card {
-            padding: 20px 15px;
-        }
-
-        .excel-table {
-            min-width: 100%;
-            font-size: 14px;
-        }
-
-        .excel-table th,
-        .excel-table td {
-            padding: 8px 10px;
-        }
-
-        .question-text {
-            font-size: 15px;
-        }
-    }
+}
 </style>
 </head>
 
@@ -120,23 +109,16 @@
 
 <div class="question-card">
 
-    <div class="question-number">
-        Q4.
-    </div>
+    <div class="question-number">Q4.</div>
 
     <div class="question-text">
 
-        <!-- English -->
-        <div class="english">
-            Consider the following data in an MS-Excel worksheet:
-        </div>
+        Consider the following data in an MS-Excel worksheet:
 
-        <!-- Hindi Translation -->
         <div class="hindi">
             MS-Excel वर्कशीट में निम्नलिखित डेटा पर विचार कीजिए:
         </div>
 
-        <!-- Excel Table -->
         <table class="excel-table">
             <tr>
                 <th>A</th>
@@ -145,7 +127,6 @@
                 <th>D</th>
                 <th>E</th>
             </tr>
-
             <tr>
                 <td>7</td>
                 <td>2</td>
@@ -153,7 +134,6 @@
                 <td>8</td>
                 <td>2</td>
             </tr>
-
             <tr>
                 <td>2</td>
                 <td>1</td>
@@ -163,38 +143,19 @@
             </tr>
         </table>
 
-        <!-- English Question -->
-        <div class="english">
-            What will be the value of the formula
-            <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>?
-        </div>
+        What will be the value of the formula
+        <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>?
 
-        <!-- Hindi Translation -->
         <div class="hindi">
-            सूत्र
-            <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>
+            सूत्र <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>
             का मान क्या होगा?
         </div>
 
-        <!-- Options -->
         <div class="options">
-
-            <div class="option">
-                <strong>(A)</strong> 14
-            </div>
-
-            <div class="option">
-                <strong>(B)</strong> 16
-            </div>
-
-            <div class="option">
-                <strong>(C)</strong> 15
-            </div>
-
-            <div class="option">
-                <strong>(D)</strong> 12
-            </div>
-
+            <div class="option"><strong>(A)</strong> 14</div>
+            <div class="option"><strong>(B)</strong> 16</div>
+            <div class="option"><strong>(C)</strong> 15</div>
+            <div class="option"><strong>(D)</strong> 12</div>
         </div>
 
     </div>
