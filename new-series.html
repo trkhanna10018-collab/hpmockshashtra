@@ -95,6 +95,19 @@
       max-width:700px;
     }
 
+    .syllabus-note{
+      display:inline-flex;
+      align-items:center;
+      margin-top:10px;
+      padding:6px 10px;
+      border:1px solid rgba(255,255,255,.34);
+      background:rgba(255,255,255,.10);
+      color:rgba(255,255,255,.97);
+      border-radius:7px;
+      font-size:11px;
+      font-weight:700;
+    }
+
     /* ================= DETAILS ================= */
 
     .details{
@@ -348,7 +361,7 @@
       background:linear-gradient(135deg,#174f93,#205fa8);
       display:flex;
       align-items:center;
-      justify-content:flex-start;
+      justify-content:space-between;
       gap:20px;
       text-align:left;
       padding:22px 24px;
@@ -365,7 +378,7 @@
 
         .footer-links{
       display:flex;
-      justify-content:flex-start;
+      justify-content:flex-end;
       align-items:center;
       gap:13px;
       margin-bottom:0;
@@ -423,6 +436,16 @@
         font-size:11px;
       }
 
+      .series-header h1{
+        font-size:24px;
+        line-height:1.25;
+      }
+
+      .syllabus-note{
+        font-size:10px;
+        line-height:1.4;
+      }
+
       .details{
         grid-template-columns:repeat(2,1fr);
       }
@@ -460,15 +483,16 @@
         min-height:70px;
         border-radius:12px;
         padding:18px 14px;
-        flex-direction:column;
-        align-items:flex-start;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
         text-align:left;
-        gap:9px;
+        gap:12px;
       }
 
       .footer-links{
         margin-bottom:0;
-        justify-content:flex-start;
+        justify-content:flex-end;
         flex-wrap:wrap;
       }
 
@@ -558,13 +582,17 @@ a.locked,
       </div>
 
       <h1>
-        JOA IT Mock Test Series
+        Junior Office Assistant (IT) 2026 Mock Test Series
       </h1>
 
       <p>
         Practice with a complete set of JOA IT mock tests
         designed to help you prepare for the examination.
       </p>
+
+      <div class="syllabus-note">
+        ✓ Based on the latest available syllabus of Himachal Pradesh Rajya Chayan Aayog (HPRCA)
+      </div>
 
 
       <div class="details">
