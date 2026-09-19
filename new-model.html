@@ -121,7 +121,7 @@ body{margin:0;background:#eef4fb;color:#172033}
       <div class="question" id="questionEn"></div>
       <div class="hindi" id="questionHi"></div>
       <div class="options" id="options"></div>
-      <div id="answerBox" class="answer-box hidden"></div>
+      <div id="answerBox" class="answer-box hidden" style="display:none!important"></div>
       <div id="explanation" class="explanation hidden"></div>
       <div class="controls">
         <button class="btn secondary" id="prevBtn">Previous</button>
@@ -368,14 +368,14 @@ function render(){
     const isSelected = selected === k;
     let className = "option";
 
-    // Only color answers when the question was actually attempted.
-    if(attempted){
-      if(isCorrect){
-        className += " correct";
-        if(isSelected) className += " selected";
-      }else if(isSelected){
-        className += " selected-wrong";
-      }
+    // Show answers only through colour:
+    // Correct answer = GREEN
+    // Wrong selected answer = RED
+    if(isCorrect){
+      className += " correct";
+      if(isSelected) className += " selected";
+    }else if(isSelected){
+      className += " selected-wrong";
     }
 
     return `
@@ -386,34 +386,8 @@ function render(){
     `;
   }).join("");
 
-  const answerBox = $("answerBox");
-  answerBox.className = "answer-box";
-
-  if(!attempted){
-    answerBox.classList.add("unattempted");
-    answerBox.innerHTML = `
-      <div class="answer-title">− Not Attempted</div>
-      <div class="answer-line">You did not attempt this question.</div>
-      <div class="answer-line" style="color:#166534;margin-top:10px;">
-        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
-      </div>
-    `;
-  }else if(isCorrectAnswer){
-    answerBox.classList.add("correct");
-    answerBox.innerHTML = `
-      <div class="answer-title">✓ Correct Answer</div>
-      <div class="answer-line">${correct}. ${q[correct] || "[Answer not available]"}</div>
-    `;
-  }else{
-    answerBox.classList.add("incorrect");
-    answerBox.innerHTML = `
-      <div class="answer-title">✕ Your Answer (Incorrect)</div>
-      <div class="answer-line">${selected}. ${q[selected] || "[Answer not available]"}</div>
-      <div class="answer-line" style="color:#166534;margin-top:10px;">
-        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
-      </div>
-    `;
-  }
+  // Answer text box intentionally hidden.
+  // Study Mode uses only GREEN/RED option colours to show the result.
 
   const explanation = $("explanation");
   if(q.explanation){
