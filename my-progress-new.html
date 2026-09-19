@@ -21,10 +21,12 @@ body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:linear-gradien
 .back-btn{text-decoration:none;color:#4338ca;border:1px solid #c7d2fe;background:#eef2ff;padding:9px 15px;border-radius:9px;font-size:13px;font-weight:700;transition:.2s}
 .back-btn:hover{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px)}
 .container{max-width:1100px;margin:0 auto;padding:38px 20px 10px}
-.page-heading{margin-bottom:25px;padding:22px 24px;border-radius:16px;background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff;box-shadow:0 10px 28px rgba(67,56,202,.18);position:relative;overflow:hidden}
+.page-heading{margin-bottom:25px;padding:22px 24px;border-radius:16px;background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff;box-shadow:0 10px 28px rgba(67,56,202,.18);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .page-heading:after{content:"";position:absolute;width:180px;height:180px;right:-65px;top:-85px;border-radius:50%;background:rgba(255,255,255,.1)}
 .page-heading h1{font-size:29px;color:#fff;margin-bottom:3px;position:relative;z-index:1}
 .page-heading p{color:rgba(255,255,255,.82);font-size:14px;position:relative;z-index:1}
+.progress-dashboard-btn{position:relative;z-index:2;text-decoration:none;color:#4338ca;background:#fff;border:1px solid rgba(255,255,255,.7);padding:9px 15px;border-radius:9px;font-size:13px;font-weight:700;white-space:nowrap;transition:.2s}
+.progress-dashboard-btn:hover{background:#f8fafc;transform:translateY(-1px)}
 .summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:28px}
 .summary-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 16px;min-width:0;box-shadow:0 5px 16px rgba(31,41,55,.06);position:relative;overflow:hidden;transition:.2s}
 .summary-card:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(31,41,55,.09)}
@@ -159,31 +161,14 @@ tbody tr:hover{background:#f8faff}
 
     .chart-name{fill:#64748b;font-size:13px;font-weight:800;font-family:Arial,sans-serif}
 @media(max-width:850px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-grid{grid-template-columns:1fr}.container{padding-top:28px}.page-heading h1{font-size:27px}}
-@media(max-width:600px){.chart-wrap{height:285px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
+@media(max-width:600px){.chart-wrap{height:285px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.progress-dashboard-btn{padding:8px 10px;font-size:11px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
 
   </style>
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
 
-  <header class="header">
-
-    <div class="header-inner">
-
-      <a href="firebase-dashboard.html" class="brand">
-        <img src="logo.png" alt="HPMockShashtra Logo">
-        <span class="brand-text">HPMockShashtra</span>
-      </a>
-
-      <a href="firebase-dashboard.html" class="back-btn">
-        ← Dashboard
-      </a>
-
-    </div>
-
-  </header>
 
 
   <!-- ================= MAIN ================= -->
@@ -191,8 +176,14 @@ tbody tr:hover{background:#f8faff}
   <main class="container">
 
     <div class="page-heading">
-      <h1>My Progress</h1>
-      <p>JOA IT Mock Test Series</p>
+      <div>
+        <h1>My Progress</h1>
+        <p>JOA IT Mock Test Series</p>
+      </div>
+
+      <a href="firebase-dashboard.html" class="progress-dashboard-btn">
+        ← Dashboard
+      </a>
     </div>
 
 
