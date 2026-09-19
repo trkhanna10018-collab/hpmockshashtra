@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Question Preview</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px 20px;
+        background: #f4f8fd;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #1f2937;
+    }
+
+    .question-card {
+        max-width: 900px;
+        margin: auto;
+        background: #ffffff;
+        border: 1px solid #dbe4ef;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .question-number {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .question-text {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .hindi {
+        margin-top: 12px;
+    }
+
+    .english {
+        margin-top: 20px;
+    }
+
+    .excel-table {
+        border-collapse: collapse;
+        margin: 22px auto;
+        font-size: 16px;
+        min-width: 500px;
+    }
+
+    .excel-table th,
+    .excel-table td {
+        border: 1px solid #555;
+        padding: 10px 25px;
+        text-align: center;
+    }
+
+    .excel-table th {
+        background: #f1f5f9;
+        font-weight: 700;
+    }
+
+    .formula {
+        display: inline-block;
+        background: #f3f4f6;
+        padding: 4px 8px;
+        border-radius: 5px;
+        font-family: Consolas, monospace;
+        font-weight: 600;
+    }
+
+    .options {
+        margin-top: 25px;
+    }
+
+    .option {
+        padding: 10px 14px;
+        margin-bottom: 8px;
+        border: 1px solid #e2e8f0;
+        border-radius: 7px;
+        background: #fafafa;
+    }
+
+    @media (max-width: 600px) {
+
+        body {
+            padding: 20px 10px;
+        }
+
+        .question-card {
+            padding: 20px 15px;
+        }
+
+        .excel-table {
+            min-width: 100%;
+            font-size: 14px;
+        }
+
+        .excel-table th,
+        .excel-table td {
+            padding: 8px 10px;
+        }
+
+        .question-text {
+            font-size: 15px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="question-card">
+
+    <div class="question-number">
+        Q4.
+    </div>
+
+    <div class="question-text">
+
+        <!-- Hindi -->
+        <div class="hindi">
+            <strong>हिंदी:</strong><br>
+            MS-Excel वर्कशीट में निम्नलिखित डेटा पर विचार कीजिए:
+        </div>
+
+        <!-- Excel Table -->
+        <table class="excel-table">
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>2</td>
+                <td>4</td>
+                <td>8</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>1</td>
+                <td>6</td>
+                <td>1</td>
+                <td>5</td>
+            </tr>
+        </table>
+
+        <div class="hindi">
+            सूत्र
+            <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>
+            का मान क्या होगा?
+        </div>
+
+
+        <!-- English -->
+        <div class="english">
+            <strong>English:</strong><br>
+            Consider the following data in an MS-Excel worksheet:
+        </div>
+
+        <div class="english">
+            What will be the value of the formula
+            <span class="formula">=LARGE(A1:E2,1)+LARGE(A1:E2,2)</span>?
+        </div>
+
+
+        <!-- Options -->
+        <div class="options">
+
+            <div class="option">
+                <strong>(A)</strong> 14
+            </div>
+
+            <div class="option">
+                <strong>(B)</strong> 16
+            </div>
+
+            <div class="option">
+                <strong>(C)</strong> 15
+            </div>
+
+            <div class="option">
+                <strong>(D)</strong> 12
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
