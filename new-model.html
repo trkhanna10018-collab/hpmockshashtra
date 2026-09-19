@@ -107,7 +107,6 @@ body{margin:0;background:#eef4fb;color:#172033}
         <div class="score-text">
           <strong id="score"></strong>
           <div class="label" id="percentage"></div>
-          <div class="readonly">Read-only review — answers cannot be changed.</div>
         </div>
       </div>
 
@@ -447,11 +446,8 @@ function updateSummary(){
   const total = questions.length;
   const percentage = total ? Math.round((correctCount / total) * 100) : 0;
 
-  $("correctCount").textContent = correctCount;
-  $("wrongCount").textContent = wrongCount;
-  $("unattemptedCount").textContent = unattemptedCount;
   $("score").textContent = `${correctCount}/${total}`;
-  $("percentage").textContent = `Your Score: ${percentage}%`;
+  $("percentage").textContent = `Percentage: ${percentage}%`;
   $("scoreRing").style.setProperty("--score", `${percentage}%`);
   $("scoreRingText").textContent = `${percentage}%`;
 }
