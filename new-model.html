@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOA IT Mock Test — Study Mode | HPMockShashtra</title>
+
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+body{margin:0;background:#eef4fb;color:#172033}
+.wrap{max-width:1180px;margin:24px auto;padding:0 18px 50px}
+.top{background:linear-gradient(135deg,#3730a3,#6366f1);color:#fff;border-radius:16px;padding:25px 28px;margin-bottom:16px;box-shadow:0 8px 25px rgba(67,56,202,.15)}
+.top h1{margin:0 0 7px;font-size:25px}
+.top p{margin:0 0 16px;opacity:.92}
+.meta{display:flex;gap:9px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.14);padding:7px 11px;border-radius:8px;font-size:12px;font-weight:700}
+.card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.055)}
+.score{display:flex;align-items:center;gap:24px;margin-bottom:14px;padding:17px 20px}
+.score-main{display:flex;align-items:center;gap:18px}
+.score-ring{width:108px;height:108px;border-radius:50%;background:conic-gradient(#4f46e5 var(--score,0%),#e5e7eb 0);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.score-ring:before{content:"";position:absolute;width:82px;height:82px;border-radius:50%;background:#fff}
+.score-ring span{position:relative;z-index:1;font-weight:900;font-size:21px;color:#172554}
+.score-text strong{display:block;font-size:31px;line-height:1.05;color:#172554}
+.score-text .label{margin-top:5px;color:#6b7280;font-size:14px;font-weight:600}
+.question-card{padding:20px}
+.question-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.counter{font-weight:800;color:#4f46e5;font-size:13px}
+.question-status{padding:7px 12px;border-radius:8px;font-size:12px;font-weight:800}
+.question-status.correct{background:#dcfce7;color:#166534}.question-status.incorrect{background:#fee2e2;color:#b91c1c}.question-status.unattempted{background:#eef0f3;color:#4b5563}
+.question{font-size:18px;font-weight:750;line-height:1.5;margin-bottom:5px}
+.hindi{font-size:16px;line-height:1.5;color:#374151;margin-bottom:15px}
+.options{display:grid;gap:10px}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid #dbe2ea;border-radius:9px;padding:11px 13px;line-height:1.45;background:#fff}
+.option.selected-wrong{border-color:#ef4444;background:#fff1f2}
+.option.correct,.option.correct.selected{border-color:#16a34a;background:#dcfce7}
+.option input{margin-top:4px;accent-color:#4f46e5}
+.answer-box{margin-top:14px;padding:12px 14px;border-radius:9px}
+.answer-box.correct{background:#ecfdf3;color:#166534}.answer-box.incorrect{background:#fff1f2;color:#b91c1c}.answer-box.unattempted{background:#f3f4f6;color:#374151}
+.answer-title{font-weight:900;margin-bottom:6px}.answer-line{margin:4px 0;font-weight:700}
+.explanation{margin-top:12px;padding:13px 15px;border-left:4px solid #6366f1;background:#f8fafc;color:#374151;line-height:1.55;border-radius:0 8px 8px 0}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px}
+.btn{border:0;border-radius:9px;padding:11px 18px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:#4f46e5;color:#fff}.secondary{background:#f3f4f6;color:#374151}
+.primary:disabled,.secondary:disabled{opacity:.5;cursor:not-allowed}
+.page-indicator{font-size:13px;font-weight:800;color:#374151}
+.error{text-align:center;color:#b91c1c}.hidden{display:none!important}
+
+.site-footer{
+  max-width:1180px;
+  margin:0 auto 22px;
+  background:linear-gradient(135deg,#1e3a8a,#4f46e5);
+  color:#fff;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(30,58,138,.18);
+}
+.footer-inner{
+  min-height:72px;
+  padding:17px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.copyright{font-size:12px;font-weight:600}
+.footer-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-links a{color:#fff!important;text-decoration:none;font-size:12px;font-weight:700}
+.footer-links a:hover{text-decoration:underline}
+
+@media(max-width:800px){.score{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){
+.site-footer{margin:0 12px 16px}.footer-inner{padding:15px 17px;flex-direction:column;align-items:flex-start;gap:10px}.footer-links{gap:12px}
+
+.wrap{margin:16px auto;padding:0 12px 35px}.top{padding:20px}.top h1{font-size:21px}.score{padding:15px}.score-main{gap:13px}.score-ring{width:88px;height:88px}.score-ring:before{width:68px;height:68px}.score-text strong{font-size:27px}
+.question-card{padding:16px}.question-head{align-items:flex-start}.question{font-size:18px}.hindi{font-size:16px}
+.controls{flex-direction:column}.btn{width:100%;text-align:center}.page-indicator{order:-1}
+}
+</style>
+</head>
+
+<body>
+
+
+
+<div class="wrap">
+
+  <div class="top">
+    <h1 id="pageTitle">JOA IT Mock Test — Study Mode</h1>
+
+    <div class="meta">
+      <span class="pill">100 Questions</span>
+      <span class="pill">Hindi + English</span>
+      <span class="pill">Study Mode</span>
+    </div>
+  </div>
+
+  <div id="loading" class="card">
+    Loading your attempted test...
+  </div>
+
+  <div id="reviewArea" class="hidden">
+
+    <div class="card score">
+      <div class="score-main">
+        <div class="score-ring" id="scoreRing" style="--score:0%">
+          <span id="scoreRingText">0%</span>
+        </div>
+        <div class="score-text">
+          <strong id="score"></strong>
+          <div class="label" id="percentage"></div>
+          <div class="readonly">Read-only review — answers cannot be changed.</div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="card question-card">
+      <div class="question-head">
+        <div class="counter" id="counter"></div>
+        <div id="questionStatus" class="question-status"></div>
+      </div>
+      <div class="question" id="questionEn"></div>
+      <div class="hindi" id="questionHi"></div>
+      <div class="options" id="options"></div>
+      <div id="answerBox" class="answer-box hidden"></div>
+      <div id="explanation" class="explanation hidden"></div>
+      <div class="controls">
+        <button class="btn secondary" id="prevBtn">Previous</button>
+        <div class="page-indicator" id="pageIndicator"></div>
+        <button class="btn primary" id="nextBtn">Next</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="errorArea" class="card error hidden"></div>
+
+</div>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">© 2026 HPMockShashtra. All Rights Reserved.</div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import { auth, db } from "./firebase-config.js";
+
+const TEST_ID = new URLSearchParams(window.location.search).get("test")
+  || "joa_free_test_01";
+
+const TEST_CONFIG = {
+  joa_free_test_01: {
+    name: "JOA IT Free Mock Test",
+    testPage: "joa-free-test.html",
+    questionBank: "./joa-question-bank.js"
+  },
+  joa_test_01: {
+    name: "JOA IT Mock Test 01",
+    testPage: "joa-test-01.html",
+    questionBank: "./joa-test-01.js"
+  },
+  joa_test_02: {
+    name: "JOA IT Mock Test 02",
+    testPage: "joa-test-02.html",
+    questionBank: "./joa-test-02.js"
+  },
+  joa_test_03: {
+    name: "JOA IT Mock Test 03",
+    testPage: "joa-test-03.html",
+    questionBank: "./joa-test-03.js"
+  },
+  joa_test_04: {
+    name: "JOA IT Mock Test 04",
+    testPage: "joa-test-04.html",
+    questionBank: "./joa-test-04.js"
+  },
+  joa_test_05: {
+    name: "JOA IT Mock Test 05",
+    testPage: "joa-test-05.html",
+    questionBank: "./joa-test-05.js"
+  },
+  joa_test_06: {
+    name: "JOA IT Mock Test 06",
+    testPage: "joa-test-06.html",
+    questionBank: "./joa-test-06.js"
+  },
+  joa_test_07: {
+    name: "JOA IT Mock Test 07",
+    testPage: "joa-test-07.html",
+    questionBank: "./joa-test-07.js"
+  },
+  joa_test_08: {
+    name: "JOA IT Mock Test 08",
+    testPage: "joa-test-08.html",
+    questionBank: "./joa-test-08.js"
+  },
+  joa_test_09: {
+    name: "JOA IT Mock Test 09",
+    testPage: "joa-test-09.html",
+    questionBank: "./joa-test-09.js"
+  },
+  joa_test_10: {
+    name: "JOA IT Mock Test 10",
+    testPage: "joa-test-10.html",
+    questionBank: "./joa-test-10.js"
+  },
+  joa_test_11: {
+    name: "JOA IT Mock Test 11",
+    testPage: "joa-test-11.html",
+    questionBank: "./joa-test-11.js"
+  },
+  joa_test_12: {
+    name: "JOA IT Mock Test 12",
+    testPage: "joa-test-12.html",
+    questionBank: "./joa-test-12.js"
+  },
+  joa_test_13: {
+    name: "JOA IT Mock Test 13",
+    testPage: "joa-test-13.html",
+    questionBank: "./joa-test-13.js"
+  },
+  joa_test_14: {
+    name: "JOA IT Mock Test 14",
+    testPage: "joa-test-14.html",
+    questionBank: "./joa-test-14.js"
+  },
+  joa_test_15: {
+    name: "JOA IT Mock Test 15",
+    testPage: "joa-test-15.html",
+    questionBank: "./joa-test-15.js"
+  }
+};
+
+const config = TEST_CONFIG[TEST_ID];
+
+if (!config) {
+  throw new Error("Invalid test ID.");
+}
+
+const { questions } = await import(config.questionBank);
+const ATTEMPT_ID_SUFFIX = "_" + TEST_ID;
+
+const $ = id => document.getElementById(id);
+
+let user = null;
+let attempt = null;
+let answers = {};
+let current = 0;
+
+$("pageTitle").textContent = `${config.name} — Study Mode`;
+
+onAuthStateChanged(auth, async (u) => {
+
+  if(!u){
+    location.href = "firebase-login.html";
+    return;
+  }
+
+  user = u;
+
+  try{
+
+    const attemptRef = doc(
+      db,
+      "testAttempts",
+      user.uid + ATTEMPT_ID_SUFFIX
+    );
+
+    const snap = await getDoc(attemptRef);
+
+    if(!snap.exists()){
+      $("loading").classList.add("hidden");
+
+      $("errorArea").classList.remove("hidden");
+      $("errorArea").innerHTML = `
+        <h2>No Attempt Found</h2>
+        <p id="noAttemptText">You have not completed this mock test yet.</p>
+        <br>
+        <a class="btn primary" id="goToTest" href="${config.testPage}">Go to Test</a>
+        <a class="btn secondary" href="joa-series.html">Back to Series</a>
+      `;
+
+      return;
+    }
+
+    attempt = snap.data();
+
+    if(attempt.testId !== TEST_ID){
+      throw new Error("Invalid test record for this Study Mode.");
+    }
+
+    answers = attempt.answers || {};
+    current = 0;
+
+    $("score").textContent =
+      `${attempt.score ?? 0}/${attempt.total ?? questions.length}`;
+
+    $("percentage").textContent =
+      `Percentage: ${attempt.percentage ?? 0}%`;
+
+    $("loading").classList.add("hidden");
+    $("reviewArea").classList.remove("hidden");
+
+    updateSummary();
+    render();
+
+  }catch(e){
+
+    console.error(e);
+
+    $("loading").classList.add("hidden");
+    $("errorArea").classList.remove("hidden");
+
+    $("errorArea").innerHTML = `
+      <h2>Unable to Load Study Mode</h2>
+      <p>Please refresh the page and try again.</p>
+      <br>
+      <a class="btn secondary" href="joa-series.html">Back to Series</a>
+    `;
+  }
+
+});
+
+
+function render(){
+
+  if(!questions.length){
+    $("errorArea").classList.remove("hidden");
+    $("errorArea").innerHTML = "<h2>Question bank is empty.</h2>";
+    return;
+  }
+
+  const q = questions[current];
+  const selected = answers[current];
+  const correct = q.ans;
+  const attempted = !!selected;
+  const isCorrectAnswer = attempted && selected === correct;
+
+  $("counter").textContent = `Question ${current + 1} of ${questions.length}`;
+  $("questionEn").textContent = q.en || "[English question not available]";
+  $("questionHi").textContent = q.hi || "[Hindi question not available]";
+
+  const status = $("questionStatus");
+  status.className = "question-status";
+
+  if(!attempted){
+    status.classList.add("unattempted");
+    status.textContent = "− Not Attempted";
+  }else if(isCorrectAnswer){
+    status.classList.add("correct");
+    status.textContent = "✓ Correct";
+  }else{
+    status.classList.add("incorrect");
+    status.textContent = "✕ Incorrect";
+  }
+
+  $("options").innerHTML = ["A","B","C","D"].map(k => {
+    const isCorrect = correct === k;
+    const isSelected = selected === k;
+    let className = "option";
+
+    // Only color answers when the question was actually attempted.
+    if(attempted){
+      if(isCorrect){
+        className += " correct";
+        if(isSelected) className += " selected";
+      }else if(isSelected){
+        className += " selected-wrong";
+      }
+    }
+
+    return `
+      <div class="${className}">
+        <input type="radio" disabled ${isSelected ? "checked" : ""}>
+        <span><strong>${k}.</strong> ${q[k] || "[Option not available]"}</span>
+      </div>
+    `;
+  }).join("");
+
+  const answerBox = $("answerBox");
+  answerBox.className = "answer-box";
+
+  if(!attempted){
+    answerBox.classList.add("unattempted");
+    answerBox.innerHTML = `
+      <div class="answer-title">− Not Attempted</div>
+      <div class="answer-line">You did not attempt this question.</div>
+      <div class="answer-line" style="color:#166534;margin-top:10px;">
+        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
+      </div>
+    `;
+  }else if(isCorrectAnswer){
+    answerBox.classList.add("correct");
+    answerBox.innerHTML = `
+      <div class="answer-title">✓ Correct Answer</div>
+      <div class="answer-line">${correct}. ${q[correct] || "[Answer not available]"}</div>
+    `;
+  }else{
+    answerBox.classList.add("incorrect");
+    answerBox.innerHTML = `
+      <div class="answer-title">✕ Your Answer (Incorrect)</div>
+      <div class="answer-line">${selected}. ${q[selected] || "[Answer not available]"}</div>
+      <div class="answer-line" style="color:#166534;margin-top:10px;">
+        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
+      </div>
+    `;
+  }
+
+  const explanation = $("explanation");
+  if(q.explanation){
+    explanation.classList.remove("hidden");
+    explanation.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
+  }else{
+    explanation.classList.add("hidden");
+    explanation.textContent = "";
+  }
+
+  $("prevBtn").disabled = current === 0;
+  $("nextBtn").textContent = current === questions.length - 1 ? "Back to Series" : "Next";
+  $("pageIndicator").textContent = `Question ${current + 1} of ${questions.length}`;
+}
+
+function updateSummary(){
+
+  let correctCount = 0;
+  let wrongCount = 0;
+  let unattemptedCount = 0;
+
+  questions.forEach((q,index) => {
+    const selected = answers[index];
+
+    if(!selected) unattemptedCount++;
+    else if(selected === q.ans) correctCount++;
+    else wrongCount++;
+  });
+
+  const total = questions.length;
+  const percentage = total ? Math.round((correctCount / total) * 100) : 0;
+
+  $("correctCount").textContent = correctCount;
+  $("wrongCount").textContent = wrongCount;
+  $("unattemptedCount").textContent = unattemptedCount;
+  $("score").textContent = `${correctCount}/${total}`;
+  $("percentage").textContent = `Your Score: ${percentage}%`;
+  $("scoreRing").style.setProperty("--score", `${percentage}%`);
+  $("scoreRingText").textContent = `${percentage}%`;
+}
+
+$("prevBtn").onclick = () => {
+
+  if(current > 0){
+
+    current--;
+    render();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+
+};
+
+
+$("nextBtn").onclick = () => {
+
+  if(current < questions.length - 1){
+
+    current++;
+    render();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }else{
+
+    location.href = "joa-series.html";
+
+  }
+
+};
+
+</script>
+
+</body>
+</html>
