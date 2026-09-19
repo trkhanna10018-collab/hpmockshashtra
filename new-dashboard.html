@@ -7,9 +7,9 @@
   <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
 body{background:#f4f8fd;color:#14264b;min-height:100vh}
-.header{height:176px;max-width:1164px;margin:0 auto;background:#fff;border:1px solid #e4ebf5;border-top:0;border-radius:0 0 14px 14px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 16px rgba(25,50,90,.05)}
+.header{height:118px;max-width:1164px;margin:0 auto;background:#fff;border:1px solid #e4ebf5;border-top:0;border-radius:0 0 14px 14px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 16px rgba(25,50,90,.05)}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#102654}
-.brand img{width:156px;height:156px;object-fit:contain}
+.brand img{width:96px;height:96px;object-fit:contain}
 .brand-text{line-height:1.08}
 .brand-name{font-size:22px;font-weight:850;letter-spacing:-.5px}
 .brand-name span{color:#2463dc}
@@ -57,7 +57,8 @@ body{background:#f4f8fd;color:#14264b;min-height:100vh}
 .progress-stat strong{display:block;font-size:21px}
 .progress-stat span{font-size:11px;color:#6e7c92}
 .stat-green strong{color:#149447}.stat-red strong{color:#e12b35}.stat-gray strong{color:#64748b}
-.progress-button{flex-shrink:0;text-decoration:none;background:#edf4ff;color:#205bd0;padding:11px 15px;border-radius:9px;font-size:11px;font-weight:850}
+.progress-button{flex-shrink:0;text-decoration:none;background:linear-gradient(135deg,#3158dc,#2447bf);color:#fff;padding:12px 18px;border-radius:10px;font-size:11px;font-weight:850;box-shadow:0 5px 14px rgba(49,88,220,.22);border:1px solid rgba(255,255,255,.35);transition:all .2s ease}
+.progress-button:hover{background:linear-gradient(135deg,#2447bf,#1d3fae);transform:translateY(-1px);box-shadow:0 7px 18px rgba(49,88,220,.28)}
 
 .section{margin-bottom:25px}
 .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:12px}
@@ -91,14 +92,14 @@ body{background:#f4f8fd;color:#14264b;min-height:100vh}
 .footer-sep{color:#c3cad5}
 
 @media(max-width:900px){
-.header{margin:0 12px;max-width:none;padding:0 18px;height:100px;border-radius:0 0 12px 12px}.nav{display:none}.menu-btn{display:block}
+.header{margin:0 12px;max-width:none;padding:0 18px;height:82px;border-radius:0 0 12px 12px}.nav{display:none}.menu-btn{display:block}
 .nav.show{display:flex;position:absolute;top:76px;left:0;width:100%;background:#fff;flex-direction:column;align-items:stretch;padding:10px 15px 14px;box-shadow:0 8px 16px rgba(0,0,0,.07)}
 .nav.show a{text-align:left}.user-area{border-left:0;border-top:1px solid #edf0f4;margin:6px 0 0;padding:10px 3px 0}
 .welcome{padding:24px;min-height:150px}.welcome-art{display:none}
 .progress{flex-wrap:wrap}.progress-title{width:100%}.progress-score{flex-wrap:wrap}
 }
 @media(max-width:600px){
-.container{padding:17px 13px 30px}.brand-name{font-size:18px}.tagline{font-size:9px}.brand img{width:78px;height:78px}
+.container{padding:17px 13px 30px}.brand-name{font-size:18px}.tagline{font-size:9px}.brand img{width:62px;height:62px}
 .welcome h1{font-size:23px}.welcome-action{width:100%;text-align:center}.welcome{flex-direction:column;align-items:flex-start}
 .notice-label{padding:0 10px;font-size:10px}.notice-item{font-size:10px;padding-right:55px}
 .grid{grid-template-columns:1fr}.progress{padding:17px;gap:16px}.progress-score{display:grid;grid-template-columns:1fr 1fr;gap:13px}.progress-stat{border-left:0;border-top:1px solid #e4e9f1;padding:10px 0 0}
@@ -153,7 +154,7 @@ body{background:#f4f8fd;color:#14264b;min-height:100vh}
         <div class="welcome-art">
           <div class="mountain">⌁</div>
           <div class="quote">“Prepare.<br>Practice.<br>Progress.<br>Succeed.”</div>
-          <a href="joa-series.html" class="welcome-action">Continue Practice&nbsp; →</a>
+
         </div>
       </section>
 
