@@ -8,64 +8,127 @@
 <style>
 *{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
 body{margin:0;background:#eef4fb;color:#172033}
-.header{height:70px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 34px;box-shadow:0 2px 10px rgba(0,0,0,.07);position:sticky;top:0;z-index:10}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1f2937;font-weight:800;font-size:20px}
-.brand img{width:50px;height:50px;object-fit:contain;border-radius:8px}
-.back{padding:9px 14px;border-radius:8px;background:#f3f4f6;color:#374151;text-decoration:none;font-weight:700;font-size:13px}
-.wrap{max-width:1180px;margin:24px auto;padding:0 18px 50px}
+.wrap{max-width:1180px;margin:24px auto;padding:0 18px 12px}
 .top{background:linear-gradient(135deg,#3730a3,#6366f1);color:#fff;border-radius:16px;padding:25px 28px;margin-bottom:16px;box-shadow:0 8px 25px rgba(67,56,202,.15)}
+.top-content{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.top-info{min-width:0}
+.score-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+  padding:8px 12px 8px 8px;
+  border-radius:13px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.30);
+  box-shadow:0 7px 20px rgba(0,0,0,.14);
+  backdrop-filter:blur(6px);
+}
+.score-ring{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:conic-gradient(#22c55e var(--score,0%),rgba(255,255,255,.22) 0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  flex-shrink:0;
+}
+.score-ring:before{
+  content:"";
+  position:absolute;
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  background:#3730a3;
+}
+.score-ring span{
+  position:relative;
+  z-index:1;
+  font-weight:900;
+  font-size:13px;
+  color:#fff;
+}
+.score-badge-text strong{
+  display:block;
+  font-size:19px;
+  line-height:1.05;
+  color:#fff;
+}
+.score-badge-text span{
+  display:block;
+  margin-top:3px;
+  font-size:10px;
+  color:rgba(255,255,255,.86);
+  font-weight:700;
+}
+
 .top h1{margin:0 0 7px;font-size:25px}
 .top p{margin:0 0 16px;opacity:.92}
 .meta{display:flex;gap:9px;flex-wrap:wrap}
 .pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.14);padding:7px 11px;border-radius:8px;font-size:12px;font-weight:700}
 .card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.055)}
-.score{display:grid;grid-template-columns:210px 1fr;align-items:center;gap:24px;margin-bottom:14px}
+.score{display:flex;align-items:center;margin-bottom:14px;padding:14px 18px;min-height:74px}
 .score-main{display:flex;align-items:center;gap:18px}
-.score-ring{width:108px;height:108px;border-radius:50%;background:conic-gradient(#4f46e5 var(--score,0%),#e5e7eb 0);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
-.score-ring:before{content:"";position:absolute;width:82px;height:82px;border-radius:50%;background:#fff}
-.score-ring span{position:relative;z-index:1;font-weight:900;font-size:21px;color:#172554}
-.score-text strong{display:block;font-size:31px;line-height:1.05;color:#172554}
-.score-text .label{margin-top:5px;color:#6b7280;font-size:14px;font-weight:600}
-.score-text .readonly{margin-top:6px;color:#6b7280;font-size:12px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.stat{border-radius:12px;padding:15px 17px;min-height:84px;display:flex;align-items:center;gap:12px}
-.stat-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;flex-shrink:0}
-.stat strong{display:block;font-size:21px;line-height:1.1}
-.stat span{display:block;margin-top:3px;font-size:13px;font-weight:600}
-.correct-stat{background:#ecfdf3;color:#166534}.correct-stat .stat-icon{background:#c9f5d8;color:#15803d}
-.wrong-stat{background:#fff0f0;color:#b91c1c}.wrong-stat .stat-icon{background:#ffd5d5;color:#dc2626}
-.unattempted-stat{background:#f3f4f6;color:#374151}.unattempted-stat .stat-icon{background:#e0e4ea;color:#6b7280}
-.legend-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.legend{background:#fff;border:1px solid #e5e7eb;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:700;color:#374151}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}.dot.green{background:#16a34a}.dot.red{background:#ef4444}.dot.gray{background:#9ca3af}
-.info{flex:1;min-width:250px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:600}
-.question-card{padding:24px}
-.question-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}
+.score-text strong{display:block;font-size:25px;line-height:1.05;color:#172554}
+.score-text .label{margin-top:4px;color:#6b7280;font-size:12px;font-weight:600}
+.question-card{padding:20px}
+.question-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
 .counter{font-weight:800;color:#4f46e5;font-size:13px}
 .question-status{padding:7px 12px;border-radius:8px;font-size:12px;font-weight:800}
-.question-status.correct{background:#dcfce7;color:#166534}.question-status.incorrect{background:#fee2e2;color:#b91c1c}.question-status.unattempted{background:#eef0f3;color:#4b5563}
-.question{font-size:20px;font-weight:750;line-height:1.55;margin-bottom:6px}
-.hindi{font-size:17px;line-height:1.55;color:#374151;margin-bottom:20px}
+.question-status.correct{background:#dcfce7;color:#166534}.question-status.incorrect{background:#fee2e2;color:#b91c1c}.question-status.unattempted{background:#e5e7eb;color:#4b5563;border:1px solid #d1d5db}
+.question{font-size:18px;font-weight:750;line-height:1.5;margin-bottom:5px}
+.hindi{font-size:16px;line-height:1.5;color:#374151;margin-bottom:15px}
 .options{display:grid;gap:10px}
-.option{display:flex;gap:11px;align-items:flex-start;border:1px solid #dbe2ea;border-radius:10px;padding:14px;line-height:1.5;background:#fff}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid #dbe2ea;border-radius:9px;padding:11px 13px;line-height:1.45;background:#fff}
 .option.selected-wrong{border-color:#ef4444;background:#fff1f2}
 .option.correct,.option.correct.selected{border-color:#16a34a;background:#dcfce7}
 .option input{margin-top:4px;accent-color:#4f46e5}
-.answer-box{margin-top:18px;padding:15px 17px;border-radius:10px}
+.answer-box{margin-top:14px;padding:12px 14px;border-radius:9px}
 .answer-box.correct{background:#ecfdf3;color:#166534}.answer-box.incorrect{background:#fff1f2;color:#b91c1c}.answer-box.unattempted{background:#f3f4f6;color:#374151}
 .answer-title{font-weight:900;margin-bottom:6px}.answer-line{margin:4px 0;font-weight:700}
 .explanation{margin-top:12px;padding:13px 15px;border-left:4px solid #6366f1;background:#f8fafc;color:#374151;line-height:1.55;border-radius:0 8px 8px 0}
-.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px}
 .btn{border:0;border-radius:9px;padding:11px 18px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
 .primary{background:#4f46e5;color:#fff}.secondary{background:#f3f4f6;color:#374151}
 .primary:disabled,.secondary:disabled{opacity:.5;cursor:not-allowed}
 .page-indicator{font-size:13px;font-weight:800;color:#374151}
 .error{text-align:center;color:#b91c1c}.hidden{display:none!important}
+
+.site-footer{
+  width:calc(100% - 36px);
+  margin:0 auto 16px;
+  background:linear-gradient(135deg,#1e3a8a,#4f46e5);
+  color:#fff;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(30,58,138,.18);
+}
+.footer-inner{
+  min-height:58px;
+  padding:13px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.copyright{font-size:12px;font-weight:600}
+.footer-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-links a{color:#fff!important;text-decoration:none;font-size:12px;font-weight:700}
+.footer-links a:hover{text-decoration:underline}
+
 @media(max-width:800px){.score{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){
-.header{padding:0 14px;height:64px}.brand{font-size:17px}.brand img{width:43px;height:43px}.back{padding:8px 10px;font-size:12px}
-.wrap{margin:16px auto;padding:0 12px 35px}.top{padding:20px}.top h1{font-size:21px}.score{padding:18px}.score-main{gap:13px}.score-ring{width:88px;height:88px}.score-ring:before{width:68px;height:68px}.score-text strong{font-size:27px}.stats{grid-template-columns:1fr}
-.legend-row{flex-direction:column}.info{min-width:0}.question-card{padding:17px}.question-head{align-items:flex-start}.question{font-size:18px}.hindi{font-size:16px}
+.site-footer{margin:0 12px 16px}.footer-inner{padding:15px 17px;flex-direction:column;align-items:flex-start;gap:10px}.footer-links{gap:12px}
+
+.wrap{margin:16px auto;padding:0 12px 8px}.top{padding:18px}.top-content{align-items:flex-start;gap:12px}.top h1{font-size:21px}
+.score-badge{padding:6px 8px 6px 6px;gap:7px}
+.score-ring{width:50px;height:50px}
+.score-ring:before{width:37px;height:37px}
+.score-ring span{font-size:11px}
+.score-badge-text strong{font-size:16px}
+.score-badge-text span{font-size:9px}
+.question-card{padding:16px}.question-head{align-items:flex-start}.question{font-size:18px}.hindi{font-size:16px}
 .controls{flex-direction:column}.btn{width:100%;text-align:center}.page-indicator{order:-1}
 }
 </style>
@@ -73,25 +136,31 @@ body{margin:0;background:#eef4fb;color:#172033}
 
 <body>
 
-<header class="header">
-  <a class="brand" href="firebase-dashboard.html">
-    <img src="logo.png" alt="HPMockShashtra">
-    <span>HP<span style="color:#4f46e5">Mock</span>Shashtra</span>
-  </a>
 
-  <a class="back" href="joa-series.html">← Test Series</a>
-</header>
 
 <div class="wrap">
 
   <div class="top">
-    <h1 id="pageTitle">JOA IT Mock Test — Study Mode</h1>
-    <p>Read-only review of your attempted test</p>
+    <div class="top-content">
+      <div class="top-info">
+        <h1 id="pageTitle">JOA IT Mock Test — Study Mode</h1>
 
-    <div class="meta">
-      <span class="pill">100 Questions</span>
-      <span class="pill">Hindi + English</span>
-      <span class="pill">Study Mode</span>
+        <div class="meta">
+          <span class="pill">100 Questions</span>
+          <span class="pill">Hindi + English</span>
+          <span class="pill">Study Mode</span>
+        </div>
+      </div>
+
+      <div class="score-badge" aria-label="Test score">
+        <div class="score-ring" id="scoreRing" style="--score:0%">
+          <span id="scoreRingText">0%</span>
+        </div>
+        <div class="score-badge-text">
+          <strong id="score"></strong>
+          <span id="percentage"></span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -100,43 +169,7 @@ body{margin:0;background:#eef4fb;color:#172033}
   </div>
 
   <div id="reviewArea" class="hidden">
-
-    <div class="card score">
-      <div class="score-main">
-        <div class="score-ring" id="scoreRing" style="--score:0%">
-          <span id="scoreRingText">0%</span>
-        </div>
-        <div class="score-text">
-          <strong id="score"></strong>
-          <div class="label" id="percentage"></div>
-          <div class="readonly">Read-only review — answers cannot be changed.</div>
-        </div>
-      </div>
-
-      <div class="stats">
-        <div class="stat correct-stat">
-          <div class="stat-icon">✓</div>
-          <div><strong id="correctCount">0</strong><span>Correct</span></div>
-        </div>
-        <div class="stat wrong-stat">
-          <div class="stat-icon">✕</div>
-          <div><strong id="wrongCount">0</strong><span>Incorrect</span></div>
-        </div>
-        <div class="stat unattempted-stat">
-          <div class="stat-icon">−</div>
-          <div><strong id="unattemptedCount">0</strong><span>Not Attempted</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="legend-row">
-      <div class="legend"><span class="dot green"></span>Correct answer</div>
-      <div class="legend"><span class="dot red"></span>Your selected answer (wrong)</div>
-      <div class="legend"><span class="dot gray"></span>Not attempted</div>
-      <div class="info">ⓘ In Study Mode, you can view the correct answer to every question.</div>
-    </div>
-
-    <div class="card question-card">
+<div class="card question-card">
       <div class="question-head">
         <div class="counter" id="counter"></div>
         <div id="questionStatus" class="question-status"></div>
@@ -144,7 +177,7 @@ body{margin:0;background:#eef4fb;color:#172033}
       <div class="question" id="questionEn"></div>
       <div class="hindi" id="questionHi"></div>
       <div class="options" id="options"></div>
-      <div id="answerBox" class="answer-box hidden"></div>
+      <div id="answerBox" class="answer-box hidden" style="display:none!important"></div>
       <div id="explanation" class="explanation hidden"></div>
       <div class="controls">
         <button class="btn secondary" id="prevBtn">Previous</button>
@@ -158,6 +191,18 @@ body{margin:0;background:#eef4fb;color:#172033}
   <div id="errorArea" class="card error hidden"></div>
 
 </div>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">© 2026 HPMockShashtra. All Rights Reserved.</div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
 
 <script type="module">
 
@@ -379,14 +424,14 @@ function render(){
     const isSelected = selected === k;
     let className = "option";
 
-    // Only color answers when the question was actually attempted.
-    if(attempted){
-      if(isCorrect){
-        className += " correct";
-        if(isSelected) className += " selected";
-      }else if(isSelected){
-        className += " selected-wrong";
-      }
+    // Show answers only through colour:
+    // Correct answer = GREEN
+    // Wrong selected answer = RED
+    if(isCorrect){
+      className += " correct";
+      if(isSelected) className += " selected";
+    }else if(isSelected){
+      className += " selected-wrong";
     }
 
     return `
@@ -397,34 +442,8 @@ function render(){
     `;
   }).join("");
 
-  const answerBox = $("answerBox");
-  answerBox.className = "answer-box";
-
-  if(!attempted){
-    answerBox.classList.add("unattempted");
-    answerBox.innerHTML = `
-      <div class="answer-title">− Not Attempted</div>
-      <div class="answer-line">You did not attempt this question.</div>
-      <div class="answer-line" style="color:#166534;margin-top:10px;">
-        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
-      </div>
-    `;
-  }else if(isCorrectAnswer){
-    answerBox.classList.add("correct");
-    answerBox.innerHTML = `
-      <div class="answer-title">✓ Correct Answer</div>
-      <div class="answer-line">${correct}. ${q[correct] || "[Answer not available]"}</div>
-    `;
-  }else{
-    answerBox.classList.add("incorrect");
-    answerBox.innerHTML = `
-      <div class="answer-title">✕ Your Answer (Incorrect)</div>
-      <div class="answer-line">${selected}. ${q[selected] || "[Answer not available]"}</div>
-      <div class="answer-line" style="color:#166534;margin-top:10px;">
-        ✓ Correct Answer: ${correct}. ${q[correct] || "[Answer not available]"}
-      </div>
-    `;
-  }
+  // Answer text box intentionally hidden.
+  // Study Mode uses only GREEN/RED option colours to show the result.
 
   const explanation = $("explanation");
   if(q.explanation){
@@ -457,13 +476,8 @@ function updateSummary(){
   const total = questions.length;
   const percentage = total ? Math.round((correctCount / total) * 100) : 0;
 
-  $("correctCount").textContent = correctCount;
-  $("wrongCount").textContent = wrongCount;
-  $("unattemptedCount").textContent = unattemptedCount;
   $("score").textContent = `${correctCount}/${total}`;
-  $("percentage").textContent = `Your Score: ${percentage}%`;
-  $("scoreRing").style.setProperty("--score", `${percentage}%`);
-  $("scoreRingText").textContent = `${percentage}%`;
+  $("percentage").textContent = `Percentage: ${percentage}%`;
 }
 
 $("prevBtn").onclick = () => {
