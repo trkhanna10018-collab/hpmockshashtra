@@ -20,67 +20,13 @@
       color:#1f2937;
       min-height:100vh;
     }
-
-    /* ================= HEADER ================= */
-
-    .header{
-      height:70px;
-      background:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 28px;
-      box-shadow:0 2px 10px rgba(0,0,0,.08);
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      text-decoration:none;
-      color:#111827;
-    }
-
-    .brand img{
-      width:42px;
-      height:42px;
-      object-fit:contain;
-      border-radius:8px;
-    }
-
-    .brand-name{
-      font-size:20px;
-      font-weight:800;
-    }
-
-    .brand-name span{
-      color:#4f46e5;
-    }
-
-    .back-btn{
-      text-decoration:none;
-      background:#f3f4f6;
-      color:#374151;
-      padding:10px 15px;
-      border-radius:8px;
-      font-size:14px;
-      font-weight:700;
-    }
-
-    .back-btn:hover{
-      background:#e5e7eb;
-    }
-
-    /* ================= MAIN ================= */
+/* ================= MAIN ================= */
 
     .container{
       width:100%;
       max-width:1050px;
       margin:auto;
-      padding:30px 20px 50px;
+      padding:30px 20px 14px;
     }
 
     /* ================= HERO ================= */
@@ -89,9 +35,16 @@
       background:linear-gradient(135deg,#4338ca,#6366f1);
       color:#fff;
       border-radius:18px;
-      padding:30px;
+      padding:24px;
       margin-bottom:25px;
       box-shadow:0 10px 28px rgba(67,56,202,.18);
+    }
+
+    .series-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
     }
 
     .series-label{
@@ -113,6 +66,21 @@
       opacity:.92;
       line-height:1.6;
       max-width:700px;
+    }
+
+    .syllabus-note{
+      display:inline-flex;
+      align-items:center;
+      margin-top:12px;
+      padding:9px 14px;
+      background:#fff3a6;
+      border:1px solid #ffe066;
+      color:#5a4300;
+      border-radius:9px;
+      font-size:12px;
+      font-weight:850;
+      box-shadow:0 5px 14px rgba(255,224,102,.24);
+      letter-spacing:.05px;
     }
 
     /* ================= DETAILS ================= */
@@ -157,21 +125,21 @@
     .test-list{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:14px;
+      gap:10px;
     }
 
     .test-item{
       background:#fff;
       border:1px solid #e5e7eb;
-      border-radius:14px;
-      padding:16px;
-      min-height:190px;
+      border-radius:11px;
+      padding:11px;
+      min-height:148px;
       display:flex;
       flex-direction:column;
       align-items:stretch;
       justify-content:flex-start;
-      gap:12px;
-      box-shadow:0 3px 12px rgba(0,0,0,.035);
+      gap:7px;
+      box-shadow:0 3px 10px rgba(0,0,0,.035);
       transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
     }
 
@@ -184,13 +152,13 @@
     .test-info{
       display:flex;
       align-items:center;
-      gap:11px;
+      gap:8px;
       min-width:0;
     }
 
     .test-number{
-      width:42px;
-      height:42px;
+      width:34px;
+      height:34px;
       border-radius:9px;
       background:#eef2ff;
       color:#4338ca;
@@ -198,14 +166,14 @@
       align-items:center;
       justify-content:center;
       font-weight:800;
-      font-size:13px;
+      font-size:11px;
       flex-shrink:0;
     }
 
     .test-name{
       font-weight:700;
       color:#111827;
-      margin-bottom:3px;
+      margin-bottom:2px;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -222,9 +190,9 @@
       display:inline-flex;
       align-items:center;
       align-self:flex-start;
-      font-size:11px;
+      font-size:10px;
       font-weight:800;
-      padding:6px 9px;
+      padding:4px 7px;
       border-radius:20px;
       white-space:nowrap;
     }
@@ -251,12 +219,12 @@
       align-items:center;
       justify-content:center;
       border:none;
-      padding:10px 13px;
+      padding:7px 10px;
       width:100%;
       min-width:0;
-      min-height:38px;
-      border-radius:8px;
-      font-size:13px;
+      min-height:32px;
+      border-radius:7px;
+      font-size:11px;
       font-weight:700;
       cursor:pointer;
       text-decoration:none !important;
@@ -363,39 +331,48 @@
     /* ================= FOOTER ================= */
 
     .footer{
-      border-top:1px solid #e5e7eb;
-      background:#fff;
-      text-align:center;
-      padding:22px;
-      color:#6b7280;
+      max-width:1010px;
+      margin:8px auto 0;
+      background:linear-gradient(135deg,#174f93,#205fa8);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      text-align:left;
+      padding:22px 24px;
+      min-height:70px;
+      box-sizing:border-box;
+      color:#fff;
       font-size:13px;
-      margin-top:25px;
+      border-radius:14px;
+      box-shadow:0 -2px 12px rgba(23,79,147,.08);
     }
 
 
     /* ================= FOOTER LINKS ================= */
 
-    .footer-links{
+        .footer-links{
       display:flex;
-      justify-content:center;
+      justify-content:flex-end;
       align-items:center;
       gap:13px;
-      margin-bottom:7px;
+      margin-bottom:0;
     }
 
     .footer-links a{
-      color:#65748b;
+      color:#fff !important;
       text-decoration:none;
       font-size:11px;
-      font-weight:650;
+      font-weight:700;
     }
 
     .footer-links a:hover{
-      color:#1f5bd8;
+      color:#fff !important;
+      text-decoration:underline;
     }
 
     .footer-sep{
-      color:#c2c9d3;
+      color:rgba(255,255,255,.75);
     }
 
 
@@ -410,7 +387,10 @@
     @media(max-width:800px){
 
       .header{
+        margin:0 10px;
+        max-width:none;
         padding:0 15px;
+        border-radius:0 0 12px 12px;
       }
 
       .brand-name{
@@ -420,6 +400,21 @@
       .brand img{
         width:37px;
         height:37px;
+      }
+
+      .series-top{
+        align-items:flex-start;
+      }
+
+      .series-header h1{
+        font-size:24px;
+        line-height:1.25;
+      }
+
+      .syllabus-note{
+        font-size:10px;
+        line-height:1.4;
+        padding:8px 10px;
       }
 
       .details{
@@ -451,6 +446,25 @@
 
       .payment-note{
         text-align:center;
+      }
+
+      .footer{
+        margin:10px 10px 0;
+        max-width:none;
+        min-height:70px;
+        border-radius:12px;
+        padding:18px 14px;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        text-align:left;
+        gap:12px;
+      }
+
+      .footer-links{
+        margin-bottom:0;
+        justify-content:flex-end;
+        flex-wrap:wrap;
       }
 
     }
@@ -519,31 +533,7 @@ a.locked,
 
 
   <!-- HEADER -->
-
-  <header class="header">
-
-    <a href="firebase-dashboard.html" class="brand">
-
-      <img src="logo.png" alt="HPMockShashtra">
-
-      <div class="brand-name">
-        HP<span>Mock</span>Shashtra
-      </div>
-
-    </a>
-
-
-    <a
-      href="firebase-dashboard.html"
-      class="back-btn"
-    >
-      ← Dashboard
-    </a>
-
-  </header>
-
-
-  <!-- MAIN -->
+<!-- MAIN -->
 
   <main class="container">
 
@@ -552,18 +542,24 @@ a.locked,
 
     <section class="series-header">
 
-      <div class="series-label">
-        JOA IT Examination
+      <div class="series-top">
+        <div class="series-label">
+          JOA IT Examination
+        </div>
       </div>
 
       <h1>
-        JOA IT Mock Test Series
+        Junior Office Assistant (IT) 2026 Mock Test Series
       </h1>
 
       <p>
         Practice with a complete set of JOA IT mock tests
         designed to help you prepare for the examination.
       </p>
+
+      <div class="syllabus-note">
+        ✓ Based on the latest available syllabus of Himachal Pradesh Rajya Chayan Aayog (HPRCA)
+      </div>
 
 
       <div class="details">
@@ -1122,16 +1118,16 @@ a.locked,
 
   <footer class="footer">
 
+      <div>
+        © 2026 HPMockShashtra — Competitive Exam Preparation Platform
+      </div>
+
       <div class="footer-links">
         <a href="about.html">About</a>
         <span class="footer-sep">|</span>
         <a href="privacy.html">Privacy Policy</a>
         <span class="footer-sep">|</span>
         <a href="terms.html">Terms &amp; Conditions</a>
-      </div>
-
-      <div>
-        © 2026 HPMockShashtra — Competitive Exam Preparation Platform
       </div>
 
     </footer>
