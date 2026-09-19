@@ -20,66 +20,7 @@
       color:#1f2937;
       min-height:100vh;
     }
-
-    /* ================= HEADER ================= */
-
-    .header{
-      height:70px;
-      max-width:1010px;
-      margin:0 auto;
-      background:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 20px;
-      border:1px solid #e5e7eb;
-      border-top:0;
-      border-radius:0 0 14px 14px;
-      box-shadow:0 4px 14px rgba(25,50,90,.06);
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      text-decoration:none;
-      color:#111827;
-    }
-
-    .brand img{
-      width:42px;
-      height:42px;
-      object-fit:contain;
-      border-radius:8px;
-    }
-
-    .brand-name{
-      font-size:20px;
-      font-weight:800;
-    }
-
-    .brand-name span{
-      color:#4f46e5;
-    }
-
-    .back-btn{
-      text-decoration:none;
-      background:#f3f4f6;
-      color:#374151;
-      padding:10px 15px;
-      border-radius:8px;
-      font-size:14px;
-      font-weight:700;
-    }
-
-    .back-btn:hover{
-      background:#e5e7eb;
-    }
-
-    /* ================= MAIN ================= */
+/* ================= MAIN ================= */
 
     .container{
       width:100%;
@@ -94,9 +35,43 @@
       background:linear-gradient(135deg,#4338ca,#6366f1);
       color:#fff;
       border-radius:18px;
-      padding:30px;
+      padding:24px;
       margin-bottom:25px;
       box-shadow:0 10px 28px rgba(67,56,202,.18);
+    }
+
+    .series-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .hero-dashboard-btn{
+      flex-shrink:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#fff;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.75);
+      padding:9px 15px;
+      border-radius:9px;
+      font-size:12px;
+      font-weight:800;
+      box-shadow:0 4px 12px rgba(20,30,100,.18);
+      backdrop-filter:blur(4px);
+      transition:.2s ease;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-dashboard-btn:hover{
+      background:#fff;
+      color:#4338ca;
+      transform:translateY(-1px);
+      box-shadow:0 6px 16px rgba(20,30,100,.22);
     }
 
     .series-label{
@@ -437,6 +412,15 @@
         height:37px;
       }
 
+      .series-top{
+        align-items:flex-start;
+      }
+
+      .hero-dashboard-btn{
+        padding:8px 11px;
+        font-size:11px;
+      }
+
       .details{
         grid-template-columns:repeat(2,1fr);
       }
@@ -548,31 +532,7 @@ a.locked,
 
 
   <!-- HEADER -->
-
-  <header class="header">
-
-    <a href="firebase-dashboard.html" class="brand">
-
-      <img src="logo.png" alt="HPMockShashtra">
-
-      <div class="brand-name">
-        HP<span>Mock</span>Shashtra
-      </div>
-
-    </a>
-
-
-    <a
-      href="firebase-dashboard.html"
-      class="back-btn"
-    >
-      ← Dashboard
-    </a>
-
-  </header>
-
-
-  <!-- MAIN -->
+<!-- MAIN -->
 
   <main class="container">
 
@@ -581,8 +541,14 @@ a.locked,
 
     <section class="series-header">
 
-      <div class="series-label">
-        JOA IT Examination
+      <div class="series-top">
+        <div class="series-label">
+          JOA IT Examination
+        </div>
+
+        <a href="firebase-dashboard.html" class="hero-dashboard-btn">
+          ← Dashboard
+        </a>
       </div>
 
       <h1>
