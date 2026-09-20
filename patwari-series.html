@@ -573,7 +573,7 @@ body{
     </div>
 
 
-    <!-- PURCHASE BOX -->
+    <!-- ================= PURCHASE BOX ================= -->
 
     <div
       class="purchase-box"
@@ -608,7 +608,7 @@ body{
   </div>
 
 
-  <!-- DETAILS -->
+  <!-- ================= DETAILS ================= -->
 
   <div class="details">
 
@@ -1393,30 +1393,28 @@ function showAttempted(test){
 }
 
 
-/* ================= AUTH ================= */
+/* ================= AUTHENTICATION ================= */
 
 onAuthStateChanged(
   auth,
   async (user) => {
 
+
     /*
-      USER NOT LOGGED IN
+      IMPORTANT:
+
+      बिना Login के Patwari Series
+      page बिल्कुल नहीं खुलेगा।
+
+      User को सीधे login.html
+      पर भेज दिया जाएगा।
     */
 
     if(!user){
 
-      showFreeAvailable();
-
-      TESTS.forEach(
-        showLocked
+      window.location.replace(
+        "login.html"
       );
-
-      /*
-        Purchase box visible
-      */
-
-      purchaseBox.style.display =
-        "block";
 
       return;
 
@@ -1425,9 +1423,9 @@ onAuthStateChanged(
 
     try{
 
-      /*
-        FREE TEST CHECK
-      */
+      /* ==========================
+         FREE TEST CHECK
+      ========================== */
 
       try{
 
@@ -1444,6 +1442,7 @@ onAuthStateChanged(
           await getDoc(
             freeAttemptRef
           );
+
 
         if(
           freeAttemptSnap.exists()
@@ -1471,12 +1470,9 @@ onAuthStateChanged(
       }
 
 
-      /*
-        PATWARI ACCESS ONLY
-
-        JOA ACCESS DOES NOT
-        GIVE PATWARI ACCESS.
-      */
+      /* ==========================
+         PATWARI ACCESS ONLY
+      ========================== */
 
       const accessRef =
         doc(
@@ -1485,11 +1481,20 @@ onAuthStateChanged(
           user.uid
         );
 
+
       const accessSnap =
         await getDoc(
           accessRef
         );
 
+
+      /*
+        केवल Patwari का access
+        check होगा।
+
+        joaitFullSeries का यहां
+        कोई उपयोग नहीं है।
+      */
 
       const hasPatwariAccess =
         accessSnap.exists() &&
@@ -1497,14 +1502,16 @@ onAuthStateChanged(
           .patwariFullSeries === true;
 
 
-      /*
-        PURCHASE BOX
-
-        Hide only when Patwari
-        series access is active.
-      */
+      /* ==========================
+         PURCHASE BOX
+      ========================== */
 
       if(hasPatwariAccess){
+
+        /*
+          Patwari खरीदी हुई है,
+          इसलिए Buy Now box हट जाएगा।
+        */
 
         purchaseBox.style.display =
           "none";
@@ -1512,19 +1519,26 @@ onAuthStateChanged(
       }
       else{
 
+        /*
+          Patwari access नहीं है,
+          इसलिए Purchase box दिखेगा।
+        */
+
         purchaseBox.style.display =
           "block";
 
       }
 
 
-      /*
-        NO PATWARI ACCESS
-
-        ALL PAID TESTS LOCKED.
-      */
+      /* ==========================
+         NO PATWARI ACCESS
+      ========================== */
 
       if(!hasPatwariAccess){
+
+        /*
+          सभी paid tests locked।
+        */
 
         TESTS.forEach(
           showLocked
@@ -1535,11 +1549,9 @@ onAuthStateChanged(
       }
 
 
-      /*
-        PATWARI ACCESS ACTIVE
-
-        CHECK ALL ATTEMPTS.
-      */
+      /* ==========================
+         PATWARI ACCESS ACTIVE
+      ========================== */
 
       const attempts = [];
 
@@ -1559,10 +1571,12 @@ onAuthStateChanged(
               test.testId
             );
 
+
           const attemptSnap =
             await getDoc(
               attemptRef
             );
+
 
           attempts.push(
             attemptSnap.exists()
@@ -1583,9 +1597,9 @@ onAuthStateChanged(
       }
 
 
-      /*
-        FIND FIRST UNATTEMPTED TEST
-      */
+      /* ==========================
+         FIRST UNATTEMPTED
+      ========================== */
 
       const firstUnattempted =
         attempts.findIndex(
@@ -1593,12 +1607,16 @@ onAuthStateChanged(
         );
 
 
-      /*
-        SEQUENTIAL UNLOCKING
-      */
+      /* ==========================
+         SEQUENTIAL UNLOCKING
+      ========================== */
 
       TESTS.forEach(
         (test,index) => {
+
+          /*
+            Already attempted
+          */
 
           if(
             attempts[index]
@@ -1608,6 +1626,11 @@ onAuthStateChanged(
 
           }
 
+          /*
+            First unattempted test
+            becomes available.
+          */
+
           else if(
             index === firstUnattempted
           ){
@@ -1615,6 +1638,10 @@ onAuthStateChanged(
             showUnlocked(test);
 
           }
+
+          /*
+            Remaining tests remain locked.
+          */
 
           else{
 
@@ -1624,6 +1651,7 @@ onAuthStateChanged(
 
         }
       );
+
 
     }
     catch(error){
@@ -1635,7 +1663,8 @@ onAuthStateChanged(
 
 
       /*
-        SECURITY FALLBACK
+        Security fallback:
+        सभी paid tests locked।
       */
 
       TESTS.forEach(
