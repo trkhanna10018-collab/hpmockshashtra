@@ -25,14 +25,28 @@ body{
   margin:28px auto 0;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   background:linear-gradient(135deg,#4338ca,#6366f1);
   color:#fff;
   border-radius:14px;
-  padding:22px 16px 26px;
+  padding:20px 16px;
   box-shadow:0 10px 28px rgba(67,56,202,.18);
+}
+
+.hero-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.hero-left{
+  flex:1;
+  min-width:0;
 }
 
 .hero-label{
@@ -59,37 +73,95 @@ body{
 .syllabus-note{
   display:inline-flex;
   align-items:center;
-  margin-top:1px;
-  padding:9px 14px;
+  padding:8px 13px;
   background:#fff3a6;
   border:1px solid #ffe066;
   color:#5a4300;
-  border-radius:9px;
-  font-size:11px;
+  border-radius:8px;
+  font-size:10px;
   font-weight:850;
   box-shadow:0 5px 14px rgba(255,224,102,.24);
-  letter-spacing:.05px;
 }
+
+/* =========================
+   PURCHASE BOX
+========================= */
+
+.purchase-box{
+  width:205px;
+  flex-shrink:0;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.30);
+  border-radius:11px;
+  padding:13px;
+  text-align:center;
+}
+
+.purchase-title{
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:4px;
+}
+
+.purchase-subtitle{
+  font-size:8px;
+  line-height:1.4;
+  opacity:.85;
+  margin-bottom:8px;
+}
+
+.purchase-price{
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:7px;
+}
+
+.buy-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#16a34a;
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  padding:8px 20px;
+  border-radius:7px;
+  transition:.2s;
+}
+
+.buy-btn:hover{
+  background:#15803d;
+}
+
+.purchase-note{
+  display:block;
+  margin-top:6px;
+  font-size:7px;
+  opacity:.75;
+}
+
+/* =========================
+   STATS
+========================= */
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
-  margin-top:13px;
+  margin-top:15px;
 }
 
 .stat{
   border:1px solid rgba(255,255,255,.28);
   background:rgba(255,255,255,.10);
   border-radius:8px;
-  padding:10px 6px;
+  padding:9px 6px;
   text-align:center;
 }
 
 .stat strong{
   display:block;
   font-size:13px;
-  margin-bottom:5px;
+  margin-bottom:4px;
 }
 
 .stat span{
@@ -98,11 +170,13 @@ body{
   opacity:.9;
 }
 
-/* INFO SECTION */
+/* =========================
+   INFORMATION
+========================= */
 
 .info-grid{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:10px;
   margin-top:12px;
 }
@@ -111,12 +185,13 @@ body{
   background:#fff;
   border:1px solid #dce5f0;
   border-radius:10px;
-  padding:15px;
+  padding:14px;
   box-shadow:0 4px 12px rgba(15,23,42,.05);
+  min-height:125px;
 }
 
 .info-card h3{
-  margin:0 0 10px;
+  margin:0 0 9px;
   color:#111827;
   font-size:13px;
 }
@@ -126,7 +201,7 @@ body{
   justify-content:space-between;
   gap:10px;
   padding:5px 0;
-  font-size:11px;
+  font-size:10px;
   border-bottom:1px solid #f0f3f7;
 }
 
@@ -143,12 +218,14 @@ body{
   text-align:right;
 }
 
-/* SUBJECTS */
+/* =========================
+   SUBJECTS
+========================= */
 
 .subjects{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:4px 18px;
+  gap:5px 20px;
 }
 
 .subject{
@@ -157,72 +234,12 @@ body{
   padding:3px 0;
 }
 
-/* PAYMENT */
-
-.payment-card{
-  margin-top:16px;
-  background:#fff;
-  border:1px solid #dce5f0;
-  border-radius:11px;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  box-shadow:0 4px 12px rgba(15,23,42,.05);
-}
-
-.payment-text h2{
-  margin:0 0 5px;
-  font-size:14px;
-  color:#111827;
-}
-
-.payment-text p{
-  margin:0;
-  font-size:10px;
-  color:#64748b;
-}
-
-.payment-action{
-  min-width:105px;
-  text-align:right;
-}
-
-.price{
-  font-size:17px;
-  font-weight:900;
-  color:#4338ca;
-  margin-bottom:5px;
-}
-
-.buy-btn{
-  display:inline-block;
-  text-decoration:none;
-  background:#16a34a;
-  color:#fff;
-  font-size:11px;
-  font-weight:800;
-  padding:8px 15px;
-  border-radius:7px;
-  transition:.2s;
-}
-
-.buy-btn:hover{
-  background:#15803d;
-}
-
-.payment-note{
-  display:block;
-  margin-top:6px;
-  font-size:8px;
-  color:#94a3b8;
-}
-
-/* MOCK TESTS */
+/* =========================
+   TEST SECTION
+========================= */
 
 .section-title{
-  margin:19px 0 9px;
+  margin:18px 0 9px;
   font-size:15px;
   font-weight:850;
   color:#111827;
@@ -259,13 +276,13 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:9px;
+  font-size:8px;
   font-weight:900;
   flex-shrink:0;
 }
 
 .test-name{
-  font-size:11px;
+  font-size:10px;
   font-weight:850;
   color:#111827;
 }
@@ -334,7 +351,9 @@ body{
   border-color:#bfdbfe;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .site-footer{
   width:100%;
@@ -372,7 +391,9 @@ body{
   text-decoration:underline;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:850px){
 
@@ -390,11 +411,21 @@ body{
   }
 
   .hero{
-    padding:18px 13px 20px;
+    padding:17px 13px;
+  }
+
+  .hero-content{
+    flex-direction:column;
+    align-items:stretch;
+    gap:14px;
   }
 
   .hero h1{
     font-size:19px;
+  }
+
+  .purchase-box{
+    width:100%;
   }
 
   .stats{
@@ -403,16 +434,6 @@ body{
 
   .info-grid{
     grid-template-columns:1fr;
-  }
-
-  .payment-card{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .payment-action{
-    width:100%;
-    text-align:left;
   }
 
   .tests-grid{
@@ -436,7 +457,9 @@ body{
 
 }
 
-/* LOADING */
+/* =========================
+   LOADING
+========================= */
 
 .loading{
   color:#64748b;
@@ -451,25 +474,68 @@ body{
 
 <div class="page">
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <section class="hero">
 
-    <div class="hero-label">
-      HP PATWARI EXAMINATION
+    <div class="hero-content">
+
+      <div class="hero-left">
+
+        <div class="hero-label">
+          HP PATWARI EXAMINATION
+        </div>
+
+        <h1>
+          HP Patwari 2026 Mock Test Series
+        </h1>
+
+        <p>
+          Practice with a complete set of HP Patwari mock tests designed to help you prepare for the examination.
+        </p>
+
+        <div class="syllabus-note">
+          ✓ Based on the latest available syllabus for HP Patwari Examination
+        </div>
+
+      </div>
+
+
+      <!-- PURCHASE BOX -->
+
+      <div id="purchaseBox" class="purchase-box">
+
+        <div class="purchase-title">
+          Unlock Full Series
+        </div>
+
+        <div class="purchase-subtitle">
+          Get access to all 10 paid HP Patwari mock tests.
+        </div>
+
+        <div class="purchase-price">
+          ₹99
+        </div>
+
+        <a
+          href="patwari-payment.html"
+          class="buy-btn"
+        >
+          Buy Now
+        </a>
+
+        <span class="purchase-note">
+          Manual access verification
+        </span>
+
+      </div>
+
     </div>
 
-    <h1>
-      HP Patwari 2026 Mock Test Series
-    </h1>
 
-    <p>
-      Practice with a complete set of HP Patwari mock tests designed to help you prepare for the examination.
-    </p>
-
-    <div class="syllabus-note">
-      ✓ Based on the latest available syllabus for HP Patwari Examination
-    </div>
+    <!-- STATS -->
 
     <div class="stats">
 
@@ -498,13 +564,19 @@ body{
   </section>
 
 
-  <!-- EXAM INFORMATION -->
+  <!-- =========================
+       EXAM INFORMATION
+  ========================== -->
 
   <div class="info-grid">
 
+    <!-- EXAM DETAILS -->
+
     <div class="info-card">
 
-      <h3>Exam Details</h3>
+      <h3>
+        Exam Details
+      </h3>
 
       <div class="info-row">
         <span>Total Questions</span>
@@ -524,48 +596,55 @@ body{
     </div>
 
 
-    <div class="info-card">
-
-      <h3>Exam Pattern</h3>
-
-      <div class="info-row">
-        <span>Part-A</span>
-        <strong>85 Questions</strong>
-      </div>
-
-      <div class="info-row">
-        <span>Part-B</span>
-        <strong>35 Questions</strong>
-      </div>
-
-      <div class="info-row">
-        <span>Total</span>
-        <strong>120 Questions</strong>
-      </div>
-
-    </div>
-
+    <!-- SUBJECTS -->
 
     <div class="info-card">
 
-      <h3>Subjects Covered</h3>
+      <h3>
+        Subjects Covered
+      </h3>
 
       <div class="subjects">
 
-        <div class="subject">Social Science</div>
-        <div class="subject">Mathematics</div>
+        <div class="subject">
+          Social Science
+        </div>
 
-        <div class="subject">Science</div>
-        <div class="subject">English</div>
+        <div class="subject">
+          Mathematics
+        </div>
 
-        <div class="subject">Hindi</div>
-        <div class="subject">Computer / IT</div>
+        <div class="subject">
+          Science
+        </div>
 
-        <div class="subject">General Knowledge</div>
-        <div class="subject">Current Affairs</div>
+        <div class="subject">
+          English
+        </div>
 
-        <div class="subject">Everyday Science</div>
-        <div class="subject">Logical Reasoning</div>
+        <div class="subject">
+          Hindi
+        </div>
+
+        <div class="subject">
+          Computer / IT
+        </div>
+
+        <div class="subject">
+          General Knowledge
+        </div>
+
+        <div class="subject">
+          Current Affairs
+        </div>
+
+        <div class="subject">
+          Everyday Science
+        </div>
+
+        <div class="subject">
+          Logical Reasoning
+        </div>
 
       </div>
 
@@ -574,42 +653,9 @@ body{
   </div>
 
 
-  <!-- PAYMENT -->
-
-  <section class="payment-card">
-
-    <div class="payment-text">
-
-      <h2>
-        Unlock the Full HP Patwari Series
-      </h2>
-
-      <p>
-        Get access to all 10 paid HP Patwari mock tests after completing the payment and access verification.
-      </p>
-
-    </div>
-
-    <div class="payment-action">
-
-      <div class="price">
-        ₹99
-      </div>
-
-      <a href="patwari-payment.html" class="buy-btn">
-        Buy Now
-      </a>
-
-      <span class="payment-note">
-        Manual access verification
-      </span>
-
-    </div>
-
-  </section>
-
-
-  <!-- TESTS -->
+  <!-- =========================
+       MOCK TESTS
+  ========================== -->
 
   <h2 class="section-title">
     Mock Tests
@@ -624,7 +670,9 @@ body{
   </div>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer class="site-footer">
 
@@ -653,7 +701,9 @@ body{
 </div>
 
 
-<!-- FIREBASE -->
+<!-- =========================
+     FIREBASE
+========================= -->
 
 <script type="module">
 
@@ -669,9 +719,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
-/* ---------------------------------------------------
-   PATWARI TEST CONFIGURATION
---------------------------------------------------- */
+/* ==========================================
+   PATWARI PAID TESTS
+========================================== */
 
 const TESTS = [
 
@@ -738,20 +788,21 @@ const TESTS = [
 ];
 
 
-/* ---------------------------------------------------
-   HTML ELEMENT
---------------------------------------------------- */
+const testsGrid =
+  document.getElementById("testsGrid");
 
-const testsGrid = document.getElementById("testsGrid");
+const purchaseBox =
+  document.getElementById("purchaseBox");
 
 
-/* ---------------------------------------------------
-   CREATE FREE TEST CARD
---------------------------------------------------- */
+/* ==========================================
+   FREE TEST
+========================================== */
 
 function createFreeTest(){
 
-  const card = document.createElement("div");
+  const card =
+    document.createElement("div");
 
   card.className = "test-card";
 
@@ -787,9 +838,9 @@ function createFreeTest(){
 }
 
 
-/* ---------------------------------------------------
-   CREATE PAID TEST CARD
---------------------------------------------------- */
+/* ==========================================
+   PAID TEST CARD
+========================================== */
 
 function createPaidTest(
   test,
@@ -798,123 +849,169 @@ function createPaidTest(
   attempted
 ){
 
-  const card = document.createElement("div");
+  const card =
+    document.createElement("div");
 
   card.className = "test-card";
 
 
-  const top = document.createElement("div");
+  const top =
+    document.createElement("div");
 
   top.className = "test-top";
 
 
-  const number = document.createElement("div");
+  const number =
+    document.createElement("div");
 
   number.className = "test-number";
 
-  number.textContent = test.number;
+  number.textContent =
+    test.number;
 
 
-  const name = document.createElement("div");
+  const name =
+    document.createElement("div");
 
   name.className = "test-name";
 
-  name.textContent = "Mock Test " + test.number;
+  name.textContent =
+    "Mock Test " + test.number;
 
 
   top.appendChild(number);
-
   top.appendChild(name);
-
 
   card.appendChild(top);
 
 
-  const badge = document.createElement("div");
+  const badge =
+    document.createElement("div");
 
   badge.className = "badge";
 
 
-  const action = document.createElement("a");
+  const action =
+    document.createElement("a");
 
-  action.className = "action-btn";
+  action.className =
+    "action-btn";
 
 
-  /*
-    Paid access is required.
-
-    IMPORTANT:
-    joaitFullSeries is NOT checked here.
-
-    Only:
-    patwariFullSeries === true
-  */
-
+  /* ----------------------------------------
+     NO PATWARI ACCESS
+  ---------------------------------------- */
 
   if(!hasAccess){
 
-    badge.classList.add("locked-badge");
+    badge.classList.add(
+      "locked-badge"
+    );
 
-    badge.textContent = "🔒 LOCKED";
+    badge.textContent =
+      "🔒 LOCKED";
 
 
-    action.classList.add("locked-btn");
+    action.classList.add(
+      "locked-btn"
+    );
 
-    action.textContent = "Locked";
+    action.textContent =
+      "Locked";
 
-    action.removeAttribute("href");
+    action.removeAttribute(
+      "href"
+    );
 
-    action.removeAttribute("target");
+  }
+
+
+  /* ----------------------------------------
+     PREVIOUS TEST NOT COMPLETED
+  ---------------------------------------- */
+
+  else if(
+    !previousCompleted &&
+    test.number !== "01"
+  ){
+
+    badge.classList.add(
+      "locked-badge"
+    );
+
+    badge.textContent =
+      "🔒 LOCKED";
+
+
+    action.classList.add(
+      "locked-btn"
+    );
+
+    action.textContent =
+      "Complete Previous Test";
+
+    action.removeAttribute(
+      "href"
+    );
 
   }
 
 
-  else if(!previousCompleted && test.number !== "01"){
-
-    badge.classList.add("locked-badge");
-
-    badge.textContent = "🔒 LOCKED";
-
-
-    action.classList.add("locked-btn");
-
-    action.textContent = "Complete Previous Test";
-
-    action.removeAttribute("href");
-
-  }
-
+  /* ----------------------------------------
+     ALREADY ATTEMPTED
+  ---------------------------------------- */
 
   else if(attempted){
 
-    badge.classList.add("attempted-badge");
+    badge.classList.add(
+      "attempted-badge"
+    );
 
-    badge.textContent = "✓ ATTEMPTED";
+    badge.textContent =
+      "✓ ATTEMPTED";
 
 
-    action.classList.add("attempted-btn");
+    action.classList.add(
+      "attempted-btn"
+    );
 
-    action.textContent = "Study Mode";
+    action.textContent =
+      "Study Mode";
+
 
     action.href =
       "study-mode.html?test=" +
-      encodeURIComponent(test.testId);
+      encodeURIComponent(
+        test.testId
+      );
 
   }
 
 
+  /* ----------------------------------------
+     UNLOCKED
+  ---------------------------------------- */
+
   else{
 
-    badge.classList.add("unlocked-badge");
+    badge.classList.add(
+      "unlocked-badge"
+    );
 
-    badge.textContent = "✓ UNLOCKED";
+    badge.textContent =
+      "✓ UNLOCKED";
 
 
-    action.classList.add("start-btn");
+    action.classList.add(
+      "start-btn"
+    );
 
-    action.textContent = "Start Test";
+    action.textContent =
+      "Start Test";
 
-    action.href = test.file;
+
+    action.href =
+      test.file;
 
   }
 
@@ -928,192 +1025,234 @@ function createPaidTest(
 }
 
 
-/* ---------------------------------------------------
+/* ==========================================
    AUTHENTICATION
---------------------------------------------------- */
+========================================== */
 
-onAuthStateChanged(auth, async (user) => {
+onAuthStateChanged(
+  auth,
+  async (user) => {
 
-  testsGrid.innerHTML = "";
-
-
-  /*
-    FREE TEST IS ALWAYS SHOWN
-  */
-
-  createFreeTest();
+    testsGrid.innerHTML = "";
 
 
-  /*
-    USER MUST BE LOGGED IN
-  */
+    /*
+      FREE TEST ALWAYS AVAILABLE
+    */
 
-  if(!user){
+    createFreeTest();
 
-    TESTS.forEach((test, index) => {
 
-      createPaidTest(
-        test,
-        false,
-        false,
-        false
+    /*
+      NOT LOGGED IN
+
+      Paid tests remain locked.
+      Purchase option remains visible.
+    */
+
+    if(!user){
+
+      TESTS.forEach(
+        (test) => {
+
+          createPaidTest(
+            test,
+            false,
+            false,
+            false
+          );
+
+        }
       );
 
-    });
+      return;
 
-    return;
-
-  }
+    }
 
 
-  try{
+    try{
 
-    /*
-      ONLY PATWARI ACCESS IS CHECKED.
+      /*
+        ONLY PATWARI ACCESS IS CHECKED.
 
-      Example:
+        JOA ACCESS DOES NOT
+        GIVE PATWARI ACCESS.
+      */
 
-      joaitFullSeries: true
-      patwariFullSeries: false
-
-      = Patwari remains LOCKED.
-    */
-
-    const accessRef = doc(
-      db,
-      "testAccess",
-      user.uid
-    );
+      const accessRef =
+        doc(
+          db,
+          "testAccess",
+          user.uid
+        );
 
 
-    const accessSnap =
-      await getDoc(accessRef);
+      const accessSnap =
+        await getDoc(
+          accessRef
+        );
 
 
-    const hasAccess =
-      accessSnap.exists() &&
-      accessSnap.data().patwariFullSeries === true;
-
-
-    /*
-      Sequential unlocking
-
-      Test 01:
-      available immediately after full Patwari access.
-
-      Test 02:
-      requires Test 01 attempted.
-
-      Test 03:
-      requires Test 02 attempted.
-
-      and so on.
-    */
-
-
-    let previousCompleted = true;
-
-
-    for(let i = 0; i < TESTS.length; i++){
-
-      const test = TESTS[i];
+      const hasPatwariAccess =
+        accessSnap.exists() &&
+        accessSnap.data()
+          .patwariFullSeries === true;
 
 
       /*
-        Test 01 has no previous test.
+        IF PATWARI SERIES HAS
+        ALREADY BEEN PURCHASED,
+
+        HIDE THE PURCHASE BOX.
       */
 
-      if(i > 0){
+      if(hasPatwariAccess){
 
-        const previousTest =
-          TESTS[i - 1];
+        purchaseBox.style.display =
+          "none";
 
+      }
+      else{
 
-        const previousAttemptRef =
-          doc(
-            db,
-            "testAttempts",
-            user.uid + "_" +
-            previousTest.testId
-          );
-
-
-        const previousAttemptSnap =
-          await getDoc(
-            previousAttemptRef
-          );
-
-
-        previousCompleted =
-          previousAttemptSnap.exists();
+        purchaseBox.style.display =
+          "block";
 
       }
 
 
       /*
-        Check whether current test
-        has already been attempted.
+        SEQUENTIAL UNLOCKING
       */
 
-      const attemptRef =
-        doc(
-          db,
-          "testAttempts",
-          user.uid + "_" +
-          test.testId
+      for(
+        let i = 0;
+        i < TESTS.length;
+        i++
+      ){
+
+        const test =
+          TESTS[i];
+
+
+        let previousCompleted =
+          true;
+
+
+        /*
+          Test 02 requires Test 01.
+
+          Test 03 requires Test 02.
+
+          And so on.
+        */
+
+        if(i > 0){
+
+          const previousTest =
+            TESTS[i - 1];
+
+
+          const previousAttemptRef =
+            doc(
+              db,
+              "testAttempts",
+              user.uid +
+              "_" +
+              previousTest.testId
+            );
+
+
+          const previousAttemptSnap =
+            await getDoc(
+              previousAttemptRef
+            );
+
+
+          previousCompleted =
+            previousAttemptSnap.exists();
+
+        }
+
+
+        /*
+          CHECK CURRENT TEST
+          ATTEMPT
+        */
+
+        const attemptRef =
+          doc(
+            db,
+            "testAttempts",
+            user.uid +
+            "_" +
+            test.testId
+          );
+
+
+        const attemptSnap =
+          await getDoc(
+            attemptRef
+          );
+
+
+        const attempted =
+          attemptSnap.exists();
+
+
+        createPaidTest(
+          test,
+          hasPatwariAccess,
+          previousCompleted,
+          attempted
         );
 
+      }
 
-      const attemptSnap =
-        await getDoc(attemptRef);
+    }
+
+    catch(error){
+
+      console.error(
+        "Patwari series error:",
+        error
+      );
 
 
-      const attempted =
-        attemptSnap.exists();
+      /*
+        SECURITY FALLBACK
+
+        If Firebase access cannot
+        be verified, paid tests
+        remain locked.
+      */
+
+      purchaseBox.style.display =
+        "block";
 
 
-      createPaidTest(
-        test,
-        hasAccess,
-        previousCompleted,
-        attempted
+      testsGrid.innerHTML = "";
+
+
+      createFreeTest();
+
+
+      TESTS.forEach(
+        (test) => {
+
+          createPaidTest(
+            test,
+            false,
+            false,
+            false
+          );
+
+        }
       );
 
     }
 
   }
-
-  catch(error){
-
-    console.error(
-      "Patwari series error:",
-      error
-    );
-
-    /*
-      If access cannot be checked,
-      keep all paid tests locked.
-    */
-
-    testsGrid.innerHTML = "";
-
-    createFreeTest();
-
-
-    TESTS.forEach((test) => {
-
-      createPaidTest(
-        test,
-        false,
-        false,
-        false
-      );
-
-    });
-
-  }
-
-});
+);
 
 </script>
 
