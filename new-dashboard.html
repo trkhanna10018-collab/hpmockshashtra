@@ -532,6 +532,25 @@
       background:#2447bf
     }
 
+    .card-actions{
+      display:flex;
+      flex-direction:column;
+      gap:8px
+    }
+
+    .btn-progress{
+      background:#eef4ff;
+      color:#2857c7;
+      border:1px solid #cbdcff;
+      transition:.18s
+    }
+
+    .btn-progress:hover{
+      background:#e3edff;
+      color:#1f4fb8;
+      border-color:#b9cdf8
+    }
+
     .coming{
       background:#edf0f5;
       color:#7a8496
@@ -802,10 +821,6 @@
           ▣&nbsp; Tests
         </a>
 
-        <a href="my-progress.html">
-          ▥&nbsp; My Progress
-        </a>
-
         <div class="user-area">
 
           <div class="user-icon">
@@ -900,77 +915,6 @@
       </section>
 
 
-      <!-- PROGRESS -->
-      <section class="progress">
-
-        <div class="progress-title">
-
-          <h2>
-            Your Progress
-          </h2>
-
-          <p>
-            Track your test progress at a glance.
-          </p>
-
-        </div>
-
-
-        <div class="progress-score">
-
-          <div class="ring" id="progressRing">
-            <span id="progressRingText">0</span>
-          </div>
-
-
-          <div class="score-number">
-
-            <strong id="attemptedTests">
-              0 / 16
-            </strong>
-
-            <span>
-              Tests Attempted
-            </span>
-
-          </div>
-
-
-          <div class="progress-stat stat-green">
-
-            <strong id="attemptedCount">
-              0
-            </strong>
-
-            <span>
-              Tests Attempted
-            </span>
-
-          </div>
-
-
-          <div class="progress-stat stat-gray">
-
-            <strong id="remainingCount">
-              16
-            </strong>
-
-            <span>
-              Tests Remaining
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <a href="my-progress.html" class="progress-button">
-          View My Progress&nbsp; →
-        </a>
-
-      </section>
-
-
       <!-- STUDY & PRACTICE -->
       <section class="section">
 
@@ -1034,9 +978,15 @@
             </div>
 
 
-            <a href="joa-series.html" class="btn btn-primary">
-              View Test Series&nbsp; →
-            </a>
+            <div class="card-actions">
+              <a href="joa-series.html" class="btn btn-primary">
+                View Test Series&nbsp; →
+              </a>
+
+              <a href="my-progress.html" class="btn btn-progress">
+                ▥&nbsp; My JOA Progress&nbsp; →
+              </a>
+            </div>
 
           </div>
 
@@ -1085,9 +1035,15 @@
             </div>
 
 
-            <a href="patwari-series.html" class="btn btn-primary">
-              View Test Series&nbsp; →
-            </a>
+            <div class="card-actions">
+              <a href="patwari-series.html" class="btn btn-primary">
+                View Test Series&nbsp; →
+              </a>
+
+              <a href="patwari-progress.html" class="btn btn-progress">
+                ▥&nbsp; My Patwari Progress&nbsp; →
+              </a>
+            </div>
 
           </div>
 
@@ -1192,119 +1148,6 @@
 
     const navMenu =
       document.getElementById("navMenu");
-
-
-    /* ================= PROGRESS ================= */
-
-    const TOTAL_TESTS = 16;
-
-
-    const TEST_IDS = [
-
-      "joa_free_test_01",
-
-      ...Array.from(
-        {length: 15},
-        (_, i) =>
-          `joa_test_${String(i + 1).padStart(2, "0")}`
-      )
-
-    ];
-
-
-    const progressRing =
-      document.getElementById("progressRing");
-
-
-    const progressRingText =
-      document.getElementById("progressRingText");
-
-
-    const attemptedTests =
-      document.getElementById("attemptedTests");
-
-
-    const attemptedCount =
-      document.getElementById("attemptedCount");
-
-
-    const remainingCount =
-      document.getElementById("remainingCount");
-
-
-    async function loadProgress(user){
-
-      let attempted = 0;
-
-
-      await Promise.all(
-
-        TEST_IDS.map(async (testId) => {
-
-          try{
-
-            const attemptRef = doc(
-              db,
-              "testAttempts",
-              `${user.uid}_${testId}`
-            );
-
-
-            const snap =
-              await getDoc(attemptRef);
-
-
-            if(snap.exists()){
-
-              attempted++;
-
-            }
-
-          }catch(error){
-
-            /*
-              A paid-test document may be unreadable for a user
-              who has not purchased the series. Ignore that test
-              and continue checking the others.
-            */
-
-          }
-
-        })
-
-      );
-
-
-      const remaining =
-        Math.max(0, TOTAL_TESTS - attempted);
-
-
-      const percent =
-        Math.round(
-          (attempted / TOTAL_TESTS) * 100
-        );
-
-
-      progressRing.style.background =
-        `conic-gradient(#2f73e8 ${percent}%, #e5ebf4 0)`;
-
-
-      progressRingText.textContent =
-        attempted;
-
-
-      attemptedTests.textContent =
-        `${attempted} / ${TOTAL_TESTS}`;
-
-
-      attemptedCount.textContent =
-        attempted;
-
-
-      remainingCount.textContent =
-        remaining;
-
-    }
 
 
     /* ================= MOBILE MENU ================= */
