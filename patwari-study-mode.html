@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP Patwari Mock Test — Study Mode | HPMockShashtra</title>
+
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+body{margin:0;background:#eef4fb;color:#172033}
+.wrap{max-width:1180px;margin:24px auto;padding:0 18px 12px}
+.top{background:linear-gradient(135deg,#3730a3,#6366f1);color:#fff;border-radius:16px;padding:25px 28px;margin-bottom:16px;box-shadow:0 8px 25px rgba(67,56,202,.15)}
+.top-content{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.top-info{min-width:0}
+.top-summary{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px;
+  flex-shrink:0;
+}
+.mini-stat{
+  width:68px;
+  min-height:70px;
+  padding:7px 5px 6px;
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+  backdrop-filter:blur(6px);
+}
+.mini-ring{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.92);
+  font-size:12px;
+  font-weight:900;
+}
+.mini-stat small{
+  font-size:8px;
+  line-height:1;
+  font-weight:800;
+  text-align:center;
+  white-space:nowrap;
+}
+.correct-mini{background:rgba(34,197,94,.20);color:#dcffe7}
+.correct-mini .mini-ring{color:#15803d}
+.wrong-mini{background:rgba(239,68,68,.20);color:#ffe3e3}
+.wrong-mini .mini-ring{color:#dc2626}
+.unattempted-mini{background:rgba(156,163,175,.20);color:#f3f4f6}
+.unattempted-mini .mini-ring{color:#4b5563}
+.score-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+  padding:8px 12px 8px 8px;
+  border-radius:13px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.30);
+  box-shadow:0 7px 20px rgba(0,0,0,.14);
+  backdrop-filter:blur(6px);
+}
+.score-ring{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:conic-gradient(#22c55e var(--score,0%),rgba(255,255,255,.22) 0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  flex-shrink:0;
+}
+.score-ring:before{
+  content:"";
+  position:absolute;
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  background:#3730a3;
+}
+.score-ring span{
+  position:relative;
+  z-index:1;
+  font-weight:900;
+  font-size:13px;
+  color:#fff;
+}
+.score-badge-text strong{
+  display:block;
+  font-size:19px;
+  line-height:1.05;
+  color:#fff;
+}
+.score-badge-text span{
+  display:block;
+  margin-top:3px;
+  font-size:10px;
+  color:rgba(255,255,255,.86);
+  font-weight:700;
+}
+
+.top h1{margin:0 0 7px;font-size:25px}
+.top p{margin:0 0 16px;opacity:.92}
+.meta{display:flex;gap:9px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.14);padding:7px 11px;border-radius:8px;font-size:12px;font-weight:700}
+.card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.055)}
+.score{display:flex;align-items:center;margin-bottom:14px;padding:14px 18px;min-height:74px}
+.score-main{display:flex;align-items:center;gap:18px}
+.score-text strong{display:block;font-size:25px;line-height:1.05;color:#172554}
+.score-text .label{margin-top:4px;color:#6b7280;font-size:12px;font-weight:600}
+.question-card{padding:20px}
+.question-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.counter{font-weight:800;color:#4f46e5;font-size:13px}
+.question-status{padding:7px 12px;border-radius:8px;font-size:12px;font-weight:800}
+.question-status.correct{background:#dcfce7;color:#166534}.question-status.incorrect{background:#fee2e2;color:#b91c1c}.question-status.unattempted{background:#e5e7eb;color:#4b5563;border:1px solid #d1d5db}
+.question{font-size:18px;font-weight:750;line-height:1.5;margin-bottom:5px}
+.hindi{font-size:16px;line-height:1.5;color:#374151;margin-bottom:15px}
+.options{display:grid;gap:10px}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid #dbe2ea;border-radius:9px;padding:11px 13px;line-height:1.45;background:#fff}
+.option.selected-wrong{border-color:#ef4444;background:#fff1f2}
+.option.correct,.option.correct.selected{border-color:#16a34a;background:#dcfce7}
+.option input{margin-top:4px;accent-color:#4f46e5}
+.answer-box{margin-top:14px;padding:12px 14px;border-radius:9px}
+.answer-box.correct{background:#ecfdf3;color:#166534}.answer-box.incorrect{background:#fff1f2;color:#b91c1c}.answer-box.unattempted{background:#f3f4f6;color:#374151}
+.answer-title{font-weight:900;margin-bottom:6px}.answer-line{margin:4px 0;font-weight:700}
+.explanation{margin-top:12px;padding:13px 15px;border-left:4px solid #6366f1;background:#f8fafc;color:#374151;line-height:1.55;border-radius:0 8px 8px 0}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px}
+.btn{border:0;border-radius:9px;padding:11px 18px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:#4f46e5;color:#fff}.secondary{background:#f3f4f6;color:#374151}
+.primary:disabled,.secondary:disabled{opacity:.5;cursor:not-allowed}
+.page-indicator{font-size:13px;font-weight:800;color:#374151}
+.error{text-align:center;color:#b91c1c}.hidden{display:none!important}
+
+.site-footer{
+  width:calc(100% - 36px);
+  max-width:1144px;
+  margin:0 auto 16px;
+  background:linear-gradient(135deg,#1e3a8a,#4f46e5);
+  color:#fff;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(30,58,138,.18);
+}
+.footer-inner{
+  min-height:58px;
+  padding:13px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.copyright{font-size:12px;font-weight:600}
+.footer-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-links a{color:#fff!important;text-decoration:none;font-size:12px;font-weight:700}
+.footer-links a:hover{text-decoration:underline}
+
+@media(max-width:800px){.score{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){
+.site-footer{margin:0 12px 16px;width:calc(100% - 24px);max-width:none}
+.footer-inner{padding:15px 17px;flex-direction:column;align-items:flex-start;gap:10px}
+.footer-links{gap:12px}
+
+.wrap{margin:16px auto;padding:0 12px 8px}
+.top{padding:18px}
+.top-content{flex-direction:column;align-items:stretch;gap:14px}
+.top-info{width:100%}
+.top h1{font-size:21px;line-height:1.25}
+.top-summary{width:100%;justify-content:space-between;gap:5px;flex-wrap:nowrap}
+.mini-stat{width:54px;min-height:61px;padding:5px 3px}
+.mini-ring{width:31px;height:31px;font-size:10px}
+.mini-stat small{font-size:7px}
+.score-badge{padding:6px 8px 6px 6px;gap:7px}
+.score-ring{width:50px;height:50px}
+.score-ring:before{width:37px;height:37px}
+.score-ring span{font-size:11px}
+.score-badge-text strong{font-size:16px}
+.score-badge-text span{font-size:9px}
+.question-card{padding:16px}.question-head{align-items:flex-start}.question{font-size:18px}.hindi{font-size:16px}
+.controls{flex-direction:column}.btn{width:100%;text-align:center}.page-indicator{order:-1}
+}
+</style>
+</head>
+
+<body>
+
+
+
+<div class="wrap">
+
+  <div class="top">
+    <div class="top-content">
+      <div class="top-info">
+        <h1 id="pageTitle">HP Patwari Mock Test — Study Mode</h1>
+
+        <div class="meta">
+          <span class="pill">120 Questions</span>
+          <span class="pill">Hindi + English</span>
+          <span class="pill">Study Mode</span>
+        </div>
+      </div>
+
+      <div class="top-summary">
+        <div class="mini-stat correct-mini">
+          <div class="mini-ring"><span id="correctCount">0</span></div>
+          <small>Correct</small>
+        </div>
+
+        <div class="mini-stat wrong-mini">
+          <div class="mini-ring"><span id="wrongCount">0</span></div>
+          <small>Wrong</small>
+        </div>
+
+        <div class="mini-stat unattempted-mini">
+          <div class="mini-ring"><span id="unattemptedCount">0</span></div>
+          <small>Not Attempted</small>
+        </div>
+
+        <div class="score-badge" aria-label="Test score">
+          <div class="score-ring" id="scoreRing" style="--score:0%">
+            <span id="scoreRingText">0%</span>
+          </div>
+          <div class="score-badge-text">
+            <strong id="score"></strong>
+            <span id="percentage"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading" class="card">
+    Loading your attempted test...
+  </div>
+
+  <div id="reviewArea" class="hidden">
+<div class="card question-card">
+      <div class="question-head">
+        <div class="counter" id="counter"></div>
+        <div id="questionStatus" class="question-status"></div>
+      </div>
+      <div class="question" id="questionEn"></div>
+      <div class="hindi" id="questionHi"></div>
+      <div class="options" id="options"></div>
+      <div id="answerBox" class="answer-box hidden" style="display:none!important"></div>
+      <div id="explanation" class="explanation hidden"></div>
+      <div class="controls">
+        <button class="btn secondary" id="prevBtn">Previous</button>
+        <div class="page-indicator" id="pageIndicator"></div>
+        <button class="btn primary" id="nextBtn">Next</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="errorArea" class="card error hidden"></div>
+
+</div>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">© 2026 HPMockShashtra. All Rights Reserved.</div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import { auth, db } from "./firebase-config.js";
+
+const TEST_ID = new URLSearchParams(window.location.search).get("test")
+  || "patwari_free_test_01";
+
+const TEST_CONFIG = {
+  patwari_free_test_01: {
+    name: "HP Patwari Free Mock Test",
+    testPage: "patwari-free-test.html",
+    questionBank: "./patwari-question-bank.js"
+  },
+  joa_test_01: {
+    name: "JOA IT Mock Test 01",
+    testPage: "joa-test-01.html",
+    questionBank: "./joa-test-01.js"
+  },
+  joa_test_02: {
+    name: "JOA IT Mock Test 02",
+    testPage: "joa-test-02.html",
+    questionBank: "./joa-test-02.js"
+  },
+  joa_test_03: {
+    name: "JOA IT Mock Test 03",
+    testPage: "joa-test-03.html",
+    questionBank: "./joa-test-03.js"
+  },
+  joa_test_04: {
+    name: "JOA IT Mock Test 04",
+    testPage: "joa-test-04.html",
+    questionBank: "./joa-test-04.js"
+  },
+  joa_test_05: {
+    name: "JOA IT Mock Test 05",
+    testPage: "joa-test-05.html",
+    questionBank: "./joa-test-05.js"
+  },
+  joa_test_06: {
+    name: "JOA IT Mock Test 06",
+    testPage: "joa-test-06.html",
+    questionBank: "./joa-test-06.js"
+  },
+  joa_test_07: {
+    name: "JOA IT Mock Test 07",
+    testPage: "joa-test-07.html",
+    questionBank: "./joa-test-07.js"
+  },
+  joa_test_08: {
+    name: "JOA IT Mock Test 08",
+    testPage: "joa-test-08.html",
+    questionBank: "./joa-test-08.js"
+  },
+  joa_test_09: {
+    name: "JOA IT Mock Test 09",
+    testPage: "joa-test-09.html",
+    questionBank: "./joa-test-09.js"
+  },
+  joa_test_10: {
+    name: "JOA IT Mock Test 10",
+    testPage: "joa-test-10.html",
+    questionBank: "./joa-test-10.js"
+  },
+  joa_test_11: {
+    name: "JOA IT Mock Test 11",
+    testPage: "joa-test-11.html",
+    questionBank: "./joa-test-11.js"
+  },
+  joa_test_12: {
+    name: "JOA IT Mock Test 12",
+    testPage: "joa-test-12.html",
+    questionBank: "./joa-test-12.js"
+  },
+  joa_test_13: {
+    name: "JOA IT Mock Test 13",
+    testPage: "joa-test-13.html",
+    questionBank: "./joa-test-13.js"
+  },
+  joa_test_14: {
+    name: "JOA IT Mock Test 14",
+    testPage: "joa-test-14.html",
+    questionBank: "./joa-test-14.js"
+  },
+  joa_test_15: {
+    name: "JOA IT Mock Test 15",
+    testPage: "joa-test-15.html",
+    questionBank: "./joa-test-15.js"
+  }
+};
+
+const config = TEST_CONFIG[TEST_ID];
+
+if (!config) {
+  throw new Error("Invalid test ID.");
+}
+
+const { questions } = await import(config.questionBank);
+const ATTEMPT_ID_SUFFIX = "_" + TEST_ID;
+
+const $ = id => document.getElementById(id);
+
+let user = null;
+let attempt = null;
+let answers = {};
+let current = 0;
+
+$("pageTitle").textContent = `${config.name} — Study Mode`;
+
+onAuthStateChanged(auth, async (u) => {
+
+  if(!u){
+    location.href = "firebase-login.html";
+    return;
+  }
+
+  user = u;
+
+  try{
+
+    const attemptRef = doc(
+      db,
+      "testAttempts",
+      user.uid + ATTEMPT_ID_SUFFIX
+    );
+
+    const snap = await getDoc(attemptRef);
+
+    if(!snap.exists()){
+      $("loading").classList.add("hidden");
+
+      $("errorArea").classList.remove("hidden");
+      $("errorArea").innerHTML = `
+        <h2>No Attempt Found</h2>
+        <p id="noAttemptText">You have not completed this mock test yet.</p>
+        <br>
+        <a class="btn primary" id="goToTest" href="${config.testPage}">Go to Test</a>
+        <a class="btn secondary" href="patwari-series.html">Back to Series</a>
+      `;
+
+      return;
+    }
+
+    attempt = snap.data();
+
+    if(attempt.testId !== TEST_ID){
+      throw new Error("Invalid test record for this Study Mode.");
+    }
+
+    answers = attempt.answers || {};
+    current = 0;
+
+    $("score").textContent =
+      `${attempt.score ?? 0}/${attempt.total ?? questions.length}`;
+
+    $("percentage").textContent =
+      `Percentage: ${attempt.percentage ?? 0}%`;
+
+    $("loading").classList.add("hidden");
+    $("reviewArea").classList.remove("hidden");
+
+    updateSummary();
+    render();
+
+  }catch(e){
+
+    console.error(e);
+
+    $("loading").classList.add("hidden");
+    $("errorArea").classList.remove("hidden");
+
+    $("errorArea").innerHTML = `
+      <h2>Unable to Load Study Mode</h2>
+      <p>Please refresh the page and try again.</p>
+      <br>
+      <a class="btn secondary" href="patwari-series.html">Back to Series</a>
+    `;
+  }
+
+});
+
+
+function render(){
+
+  if(!questions.length){
+    $("errorArea").classList.remove("hidden");
+    $("errorArea").innerHTML = "<h2>Question bank is empty.</h2>";
+    return;
+  }
+
+  const q = questions[current];
+  const selected = answers[current];
+  const correct = q.ans;
+  const attempted = !!selected;
+  const isCorrectAnswer = attempted && selected === correct;
+
+  $("counter").textContent = `Question ${current + 1} of ${questions.length}`;
+  $("questionEn").textContent = q.en || "[English question not available]";
+  $("questionHi").textContent = q.hi || "[Hindi question not available]";
+
+  const status = $("questionStatus");
+  status.className = "question-status";
+
+  if(!attempted){
+    status.classList.add("unattempted");
+    status.textContent = "− Not Attempted";
+  }else if(isCorrectAnswer){
+    status.classList.add("correct");
+    status.textContent = "✓ Correct";
+  }else{
+    status.classList.add("incorrect");
+    status.textContent = "✕ Incorrect";
+  }
+
+  $("options").innerHTML = ["A","B","C","D"].map(k => {
+    const isCorrect = correct === k;
+    const isSelected = selected === k;
+    let className = "option";
+
+    // Show answers only through colour:
+    // Correct answer = GREEN
+    // Wrong selected answer = RED
+    if(isCorrect){
+      className += " correct";
+      if(isSelected) className += " selected";
+    }else if(isSelected){
+      className += " selected-wrong";
+    }
+
+    return `
+      <div class="${className}">
+        <input type="radio" disabled ${isSelected ? "checked" : ""}>
+        <span><strong>${k}.</strong> ${q[k] || "[Option not available]"}</span>
+      </div>
+    `;
+  }).join("");
+
+  // Answer text box intentionally hidden.
+  // Study Mode uses only GREEN/RED option colours to show the result.
+
+  const explanation = $("explanation");
+  if(q.explanation){
+    explanation.classList.remove("hidden");
+    explanation.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
+  }else{
+    explanation.classList.add("hidden");
+    explanation.textContent = "";
+  }
+
+  $("prevBtn").disabled = current === 0;
+  $("nextBtn").textContent = current === questions.length - 1 ? "Back to Series" : "Next";
+  $("pageIndicator").textContent = `Question ${current + 1} of ${questions.length}`;
+}
+
+function updateSummary(){
+
+  let correctCount = 0;
+  let wrongCount = 0;
+  let unattemptedCount = 0;
+
+  questions.forEach((q,index) => {
+    const selected = answers[index];
+
+    if(!selected) unattemptedCount++;
+    else if(selected === q.ans) correctCount++;
+    else wrongCount++;
+  });
+
+  const total = questions.length;
+  const percentage = total ? Math.round((correctCount / total) * 100) : 0;
+
+  $("correctCount").textContent = correctCount;
+  $("wrongCount").textContent = wrongCount;
+  $("unattemptedCount").textContent = unattemptedCount;
+
+  $("score").textContent = `${correctCount}/${total}`;
+  $("percentage").textContent = `Percentage: ${percentage}%`;
+  $("scoreRing").style.setProperty("--score", `${percentage}%`);
+  $("scoreRingText").textContent = `${percentage}%`;
+}
+
+$("prevBtn").onclick = () => {
+
+  if(current > 0){
+
+    current--;
+    render();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+
+};
+
+
+$("nextBtn").onclick = () => {
+
+  if(current < questions.length - 1){
+
+    current++;
+    render();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }else{
+
+    location.href = "patwari-series.html";
+
+  }
+
+};
+
+</script>
+
+</body>
+</html>
