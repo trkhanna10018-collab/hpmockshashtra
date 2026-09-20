@@ -1,5 +1,4 @@
 const questions = [
-
 {
 id:1,
 en:"Which of the following best explains why the transition from hunting and gathering to settled food production is considered a major turning point in early human societies?",
@@ -148,13 +147,13 @@ ans:"C"
 
 {
 id:15,
-en:"Which European trading company was the first to establish a permanent trading presence in India among the major European companies that arrived during the Age of European commercial expansion?",
-hi:"यूरोपीय व्यापारिक विस्तार के युग में भारत आने वाली प्रमुख यूरोपीय व्यापारिक कंपनियों में से किसने भारत में सबसे पहले स्थायी व्यापारिक उपस्थिति स्थापित की?",
-A:"English East India Company",
-B:"Dutch East India Company",
-C:"Portuguese Estado da Índia",
-D:"French East India Company",
-ans:"C"
+en:"Which European power established the Estado da Índia to administer its territories and activities in India and the Indian Ocean?",
+hi:"किस यूरोपीय शक्ति ने भारत और हिंद महासागर क्षेत्र में अपने क्षेत्रों और गतिविधियों के प्रशासन के लिए Estado da Índia की स्थापना की?",
+A:"The Portuguese",
+B:"The Dutch",
+C:"The French",
+D:"The English",
+ans:"A"
 },
 {
 id:16,
@@ -201,12 +200,12 @@ ans:"B"
 
 {
 id:20,
-en:"Which event is most closely associated with Hitler's appointment as Chancellor of Germany in 1933?",
-hi:"1933 में हिटलर की जर्मनी के चांसलर के रूप में नियुक्ति से निम्नलिखित में से कौन-सी घटना सबसे अधिक संबंधित है?",
-A:"The Munich Agreement",
-B:"The Treaty of Versailles",
-C:"The Reichstag Fire",
-D:"The March on Rome",
+en:"In which year was Adolf Hitler appointed Chancellor of Germany?",
+hi:"एडॉल्फ हिटलर को जर्मनी का चांसलर किस वर्ष नियुक्त किया गया था?",
+A:"1929",
+B:"1931",
+C:"1933",
+D:"1935",
 ans:"C"
 },
 {
@@ -432,12 +431,12 @@ ans:"A"
 },
 {
 id:42,
-en:"A mixture contains a large quantity of rice grains and a few visibly different pieces of stones. Which method would be most appropriate as the first step for separating the stones?",
-hi:"एक मिश्रण में बड़ी मात्रा में चावल के दाने और कुछ स्पष्ट रूप से अलग दिखाई देने वाले पत्थर के टुकड़े हैं। पत्थरों को अलग करने के लिए पहला कदम कौन-सी विधि सबसे उपयुक्त होगी?",
-A:"Evaporation",
-B:"Filtration",
-C:"Hand picking",
-D:"Sedimentation",
+en:"Which method is commonly used to separate iron filings from a mixture of iron filings and sand?",
+hi:"लोहे के बुरादे और रेत के मिश्रण से लोहे के बुरादे को अलग करने के लिए सामान्यतः किस विधि का प्रयोग किया जाता है?",
+A:"Filtration",
+B:"Evaporation",
+C:"Using a magnet",
+D:"Hand picking",
 ans:"C"
 },
 
@@ -454,12 +453,12 @@ ans:"A"
 
 {
 id:44,
-en:"A plant is short in height and has a green, tender stem that can be easily bent. It does not develop a hard, woody stem. On the basis of these characteristics, how should it generally be classified?",
-hi:"एक पौधा ऊँचाई में छोटा है और उसका हरा, कोमल तना आसानी से मुड़ जाता है। उसमें कठोर, लकड़ी जैसा तना विकसित नहीं होता। इन विशेषताओं के आधार पर इसे सामान्यतः किस रूप में वर्गीकृत किया जाना चाहिए?",
-A:"Tree",
-B:"Herb",
-C:"Shrub",
-D:"Climber",
+en:"Which of the following plants is commonly classified as a shrub?",
+hi:"निम्नलिखित में से किस पौधे को सामान्यतः झाड़ी (Shrub) के रूप में वर्गीकृत किया जाता है?",
+A:"Mango",
+B:"Rose",
+C:"Wheat",
+D:"Grass",
 ans:"B"
 },
 {
@@ -1272,7 +1271,7 @@ A:"6:00",
 B:"9:00",
 C:"12:00",
 D:"3:30",
-ans:"A"
+ans:"D"
 }
 
 ];
