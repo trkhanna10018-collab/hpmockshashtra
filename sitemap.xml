@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://hpmockshashtra.in/firebase-login.html</loc>
-  </url>
+    <url>
+        <loc>https://hpmockshashtra.in/homepage.html</loc>
+    </url>
 
-  <url>
-    <loc>https://hpmockshashtra.in/firebase-signup.html</loc>
-  </url>
+    <url>
+        <loc>https://hpmockshashtra.in/joa-series.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hpmockshashtra.in/patwari-series.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hpmockshashtra.in/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hpmockshashtra.in/privacy.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hpmockshashtra.in/terms.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hpmockshashtra.in/firebase-login.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hpmockshashtra.in/firebase-signup.html</loc>
+    </url>
 
 </urlset>
