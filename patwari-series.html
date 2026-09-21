@@ -1403,18 +1403,25 @@ onAuthStateChanged(
     /*
       IMPORTANT:
 
-      बिना Login के Patwari Series
-      page बिल्कुल नहीं खुलेगा।
-
-      User को सीधे login.html
-      पर भेज दिया जाएगा।
+      Patwari Series page बिना Login के भी खुलेगा।
+      बिना Login के Free Test के लिए Login जरूरी होगा।
+      सभी paid tests locked रहेंगे।
     */
 
     if(!user){
 
-      window.location.replace(
-        "login.html"
-      );
+      /* Free Test पर click करने पर Login page खुलेगा। */
+      if(freeTestAction){
+        freeTestAction.href = "firebase-login.html";
+      }
+
+      /* बिना Login के सभी paid tests locked रहेंगे। */
+      TESTS.forEach(showLocked);
+
+      /* Purchase box public visitor को दिखाई देगा। */
+      if(purchaseBox){
+        purchaseBox.style.display = "block";
+      }
 
       return;
 
