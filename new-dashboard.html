@@ -575,77 +575,76 @@
       color:#7a8496
     }
 
+    /* =========================
+       FOOTER — same as homepage.html
+    ========================= */
+
     .footer{
-      max-width:1164px;
-      margin:14px auto 0;
-      background:linear-gradient(135deg,#061226,#0d1d3d);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:16px 16px 0 0;
-      color:#fff;
-      padding:17px 24px;
-      overflow:hidden;
-      box-shadow:0 7px 22px rgba(10,24,50,.16)
+      background:#020817;
+      color:#cbd5e1;
     }
 
     .footer-inner{
-      max-width:none;
+      width:min(1000px,calc(100% - 28px));
       margin:auto;
+    }
+
+    .footer-top{
+      padding:42px 0 30px;
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr 1fr;
+      gap:35px;
+    }
+
+    .footer h3,.footer h4{
+      color:#fff;
+      margin-bottom:10px;
+    }
+
+    .footer h3{font-size:17px}
+    .footer h4{font-size:13px}
+
+    .footer p{
+      font-size:11px;
+      color:#94a3b8;
+      max-width:270px;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:7px;
+    }
+
+    .footer-links a,.footer-links span{
+      font-size:11px;
+      color:#cbd5e1;
+    }
+
+    .footer-links a:hover{
+      color:#fff;
+    }
+
+    .footer-bottom{
+      min-height:54px;
+      border-top:1px solid #1e293b;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px
+      gap:15px;
+      padding:13px 0;
+      font-size:10px;
+      color:#94a3b8;
     }
 
-    .footer-inner > div:first-child{
-      color:#fff;
-      font-size:11px;
-      font-weight:650
-    }
-
-    .footer-links{
+    .footer-bottom-links{
       display:flex;
       align-items:center;
-      gap:10px
+      justify-content:flex-end;
+      gap:16px;
     }
 
-    .footer-links a{
-      color:#fff !important;
-      text-decoration:none;
-      font-size:11px;
-      font-weight:700;
-      opacity:1;
-      transition:.18s ease
-    }
-
-    .footer-links a:hover{
-      color:#fff !important;
-      text-decoration:underline;
-      opacity:1
-    }
-
-    .footer-sep{
-      color:rgba(255,255,255,.8) !important
-    }
-
-    .footer-links{
-      display:flex;
-      gap:13px;
-      align-items:center
-    }
-
-    .footer-links a{
-      color:#68768d;
-      text-decoration:none;
-      font-size:11px;
-      font-weight:650
-    }
-
-    .footer-links a:hover{
-      color:#205bd0
-    }
-
-    .footer-sep{
-      color:#c3cad5
+    .footer-bottom a{
+      color:#cbd5e1;
     }
 
     @media(max-width:900px){
@@ -782,22 +781,23 @@
         text-align:center
       }
 
-      .footer{
-        margin:10px 12px 0;
-        border-radius:12px;
-        padding:15px 14px
-      }
-
       .footer-inner{
-        flex-direction:column;
-        text-align:center;
-        gap:9px
+        width:calc(100% - 24px);
       }
 
-      .footer-links{
-        gap:7px;
+      .footer-top{
+        grid-template-columns:1fr;
+        gap:24px;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .footer-bottom-links{
+        justify-content:flex-start;
         flex-wrap:wrap;
-        justify-content:center
       }
     }
   </style>
@@ -1079,41 +1079,60 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- FOOTER — same as homepage.html -->
     <footer class="footer">
 
       <div class="footer-inner">
 
-        <div>
-          © 2026 HPMockShashtra. All rights reserved.
+        <div class="footer-top">
+
+          <div>
+            <h3>HPMockShashtra</h3>
+            <p>
+              A practice platform for Himachal Pradesh competitive exam aspirants
+              with mock tests, bilingual practice and performance tracking.
+            </p>
+          </div>
+
+          <div>
+            <h4>Mock Tests</h4>
+            <div class="footer-links">
+              <a href="joa-series.html">JOA (IT) Mock Tests</a>
+              <a href="patwari-series.html">HP Patwari Mock Tests</a>
+              <a href="#free-tests">Free Test Access</a>
+              <a href="#mock-tests">Test Series</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Account</h4>
+            <div class="footer-links">
+              <a href="firebase-login.html">Login</a>
+              <a href="firebase-signup.html">Create Account</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Information</h4>
+            <div class="footer-links">
+              <a href="about.html">About</a>
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+          </div>
+
         </div>
 
-        <div class="footer-links">
+        <div class="footer-bottom">
+          <div>© 2026 HPMockShashtra. All rights reserved.</div>
 
-          <a href="about.html">
-            About
-          </a>
-
-          <span class="footer-sep">
-            |
-          </span>
-
-          <a href="privacy.html">
-            Privacy Policy
-          </a>
-
-          <span class="footer-sep">
-            |
-          </span>
-
-          <a href="terms.html">
-            Terms &amp; Conditions
-          </a>
-
+          <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+          </div>
         </div>
 
       </div>
-
     </footer>
 
   </div>
