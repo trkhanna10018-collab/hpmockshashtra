@@ -157,8 +157,85 @@
        HERO
     ========================= */
 
-    .hero{
+    .hero-topbar{
+      width:min(1000px, calc(100% - 32px));
+      margin:0 auto;
+      min-height:86px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      border-radius:0 0 16px 16px;
+      background:linear-gradient(135deg,rgba(15,47,95,.90),rgba(37,99,235,.82),rgba(79,70,229,.78));
+      border:1px solid rgba(255,255,255,.28);
+      box-shadow:0 12px 30px rgba(15,23,42,.20);
       position:relative;
+      z-index:5;
+    }
+
+    .hero-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:#fff;
+    }
+
+    .hero-brand img{
+      width:72px;
+      height:72px;
+      object-fit:contain;
+      background:rgba(255,255,255,.96);
+      border-radius:12px;
+      padding:4px;
+    }
+
+    .hero-brand-text strong{
+      display:block;
+      font-size:22px;
+      line-height:1.05;
+      color:#fff;
+    }
+
+    .hero-brand-text span{
+      display:block;
+      margin-top:4px;
+      font-size:10px;
+      color:#dbeafe;
+      letter-spacing:.25px;
+    }
+
+    .hero-top-actions{
+      display:flex;
+      align-items:center;
+      gap:9px;
+    }
+
+    .hero-login,
+    .hero-join{
+      min-height:38px;
+      padding:0 16px;
+      border-radius:9px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .hero-login{
+      color:#fff;
+      border:1px solid rgba(255,255,255,.65);
+      background:rgba(255,255,255,.10);
+    }
+
+    .hero-join{
+      color:#1d4ed8;
+      background:#fff;
+      border:1px solid #fff;
+    }
+
+
       background:
         linear-gradient(90deg,rgba(238,246,255,.20),rgba(248,251,255,.12)),
         url("homepage-bg.jpg") center/cover no-repeat;
@@ -675,6 +752,37 @@
     }
 
     @media(max-width:700px){
+      .hero-topbar{
+        width:100%;
+        min-height:76px;
+        padding:8px 12px;
+        border-radius:0 0 13px 13px;
+      }
+
+      .hero-brand img{
+        width:58px;
+        height:58px;
+      }
+
+      .hero-brand-text strong{
+        font-size:18px;
+      }
+
+      .hero-brand-text span{
+        font-size:8px;
+      }
+
+      .hero-top-actions{
+        gap:6px;
+      }
+
+      .hero-login,
+      .hero-join{
+        min-height:34px;
+        padding:0 10px;
+        font-size:10px;
+      }
+
       .container{
         width:min(100% - 24px,1000px);
       }
@@ -801,41 +909,25 @@
 <body>
 
   <!-- =========================
-       HEADER
-  ========================= -->
-
-  <header class="site-header">
-    <div class="container header-inner">
-
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="HPMockShashtra Logo">
-        <div class="brand-text">
-          <h1>HP<span>Mock</span>Shashtra</h1>
-          <small>Prepare Today, Serve Tomorrow</small>
-        </div>
-      </a>
-
-      <nav class="main-nav">
-        <a href="#mock-tests">Mock Tests</a>
-        <a href="#free-tests">Free Tests</a>
-        <a href="about.html">About</a>
-        <a href="#resources">Resources</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="firebase-login.html" class="btn btn-outline">Login</a>
-        <a href="firebase-signup.html" class="btn btn-primary">Join Free</a>
-      </div>
-
-    </div>
-  </header>
-
-
-  <!-- =========================
        HERO
   ========================= -->
 
   <section class="hero">
+      <div class="hero-topbar">
+        <a href="homepage.html" class="hero-brand">
+          <img src="logo.png" alt="HPMockShashtra Logo">
+          <div class="hero-brand-text">
+            <strong>HPMockShashtra</strong>
+            <span>Prepare Today, Serve Tomorrow</span>
+          </div>
+        </a>
+
+        <div class="hero-top-actions">
+          <a href="firebase-login.html" class="hero-login">Login</a>
+          <a href="firebase-signup.html" class="hero-join">Join Free</a>
+        </div>
+      </div>
+
     <div class="container hero-inner">
 
       <div>
