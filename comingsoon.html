@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP Patwari Mock Test Series | Coming Soon</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  color:#102a56;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(65,105,225,.15),transparent 32%),
+    radial-gradient(circle at 85% 75%,rgba(110,75,220,.13),transparent 34%),
+    linear-gradient(135deg,#eef6ff,#f7f8ff 52%,#f0edff);
+}
+
+a{
+  text-decoration:none;
+}
+
+.page{
+  width:min(1100px,calc(100% - 28px));
+  margin:auto;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:70px 20px 45px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 15px;
+  border-radius:999px;
+  background:rgba(49,91,232,.1);
+  color:#2455ba;
+  font-size:12px;
+  font-weight:800;
+}
+
+.hero h1{
+  margin:20px auto 12px;
+  max-width:850px;
+  font-size:clamp(38px,6vw,68px);
+  line-height:1.03;
+  letter-spacing:-2px;
+  color:#102e67;
+}
+
+.hero h1 span{
+  color:#315be8;
+}
+
+.hero-subtitle{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.7;
+  color:#64748b;
+}
+
+/* COMING SOON CARD */
+.coming-card{
+  position:relative;
+  overflow:hidden;
+  width:min(820px,100%);
+  margin:28px auto 0;
+  padding:44px 35px;
+  border-radius:28px;
+  background:linear-gradient(
+    135deg,
+    rgba(20,55,110,.97),
+    rgba(52,76,145,.95)
+  );
+  color:#fff;
+  box-shadow:0 25px 60px rgba(20,50,100,.22);
+}
+
+.coming-card:before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  right:-110px;
+  top:-130px;
+  border-radius:50%;
+  background:rgba(104,132,255,.22);
+}
+
+.icon-circle{
+  position:relative;
+  z-index:1;
+  width:82px;
+  height:82px;
+  margin:0 auto 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.25);
+  font-size:39px;
+}
+
+.coming-card h2,
+.coming-card p,
+.status{
+  position:relative;
+  z-index:1;
+}
+
+.coming-card h2{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.coming-card p{
+  max-width:650px;
+  margin:auto;
+  color:#dbe7ff;
+  font-size:16px;
+  line-height:1.7;
+}
+
+.status{
+  display:inline-flex;
+  margin-top:22px;
+  padding:8px 15px;
+  border-radius:999px;
+  background:rgba(255,255,255,.13);
+  font-size:12px;
+  font-weight:800;
+}
+
+/* FREE TEST */
+.free-test{
+  width:min(820px,100%);
+  margin:20px auto 0;
+  padding:25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  background:rgba(255,255,255,.78);
+  border:1px solid #d5e1f5;
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(36,65,110,.07);
+}
+
+.free-left{
+  text-align:left;
+}
+
+.free-label{
+  display:inline-block;
+  margin-bottom:7px;
+  color:#168447;
+  font-size:11px;
+  font-weight:900;
+}
+
+.free-test h3{
+  font-size:20px;
+  color:#17386f;
+  margin-bottom:5px;
+}
+
+.free-test p{
+  color:#718096;
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:800;
+  transition:.2s;
+  white-space:nowrap;
+}
+
+.btn-primary{
+  background:#315be8;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(49,91,232,.22);
+}
+
+.btn-primary:hover{
+  background:#254bd0;
+  transform:translateY(-1px);
+}
+
+/* INFO */
+.info-grid{
+  width:min(820px,100%);
+  margin:20px auto 60px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.info-box{
+  padding:22px 18px;
+  text-align:center;
+  border-radius:18px;
+  background:rgba(255,255,255,.68);
+  border:1px solid #d7e3f5;
+}
+
+.info-number{
+  font-size:24px;
+  font-weight:800;
+  color:#2856bd;
+}
+
+.info-title{
+  margin-top:4px;
+  font-size:12px;
+  color:#718096;
+}
+
+/* FOOTER */
+.footer{
+  background:#020817;
+  color:#cbd5e1;
+}
+
+.footer-inner{
+  width:min(1000px,calc(100% - 28px));
+  margin:auto;
+}
+
+.footer-top{
+  padding:38px 0 28px;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:65px;
+}
+
+.footer h3,
+.footer h4{
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.footer h3{
+  font-size:17px;
+}
+
+.footer h4{
+  font-size:13px;
+}
+
+.footer p{
+  font-size:11px;
+  color:#94a3b8;
+  max-width:300px;
+  line-height:1.6;
+}
+
+.footer-links{
+  display:grid;
+  gap:7px;
+}
+
+.footer-links a,
+.footer-bottom a{
+  font-size:11px;
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  min-height:54px;
+  border-top:1px solid #1e293b;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:13px 0;
+  font-size:10px;
+  color:#94a3b8;
+}
+
+.footer-bottom-links{
+  display:flex;
+  gap:16px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  .page{
+    width:calc(100% - 18px);
+  }
+
+  .hero{
+    padding:55px 5px 30px;
+  }
+
+  .hero h1{
+    font-size:39px;
+    letter-spacing:-1px;
+  }
+
+  .hero-subtitle{
+    font-size:15px;
+  }
+
+  .coming-card{
+    padding:35px 20px;
+    border-radius:23px;
+  }
+
+  .icon-circle{
+    width:68px;
+    height:68px;
+    font-size:32px;
+  }
+
+  .coming-card h2{
+    font-size:26px;
+  }
+
+  .coming-card p{
+    font-size:14px;
+  }
+
+  .free-test{
+    flex-direction:column;
+    align-items:stretch;
+    text-align:center;
+    padding:22px 18px;
+  }
+
+  .free-left{
+    text-align:center;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+    margin-bottom:45px;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:32px 0 25px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-bottom-links{
+    flex-wrap:wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<main>
+
+<section class="hero">
+
+<div class="badge">
+📚 HP PATWARI MOCK TEST SERIES
+</div>
+
+<h1>
+Your <span>Patwari Preparation</span><br>
+Starts Here
+</h1>
+
+<p class="hero-subtitle">
+The complete HP Patwari Mock Test Series is currently being prepared.
+The full series will be available soon with structured, exam-focused practice.
+</p>
+
+
+<div class="coming-card">
+
+<div class="icon-circle">
+⏳
+</div>
+
+<h2>
+Full Patwari Series Coming Soon
+</h2>
+
+<p>
+We are working on the complete HP Patwari mock-test series.
+The full series will be launched soon with multiple full-length
+tests and detailed practice for your preparation.
+</p>
+
+<div class="status">
+FULL SERIES — COMING SOON
+</div>
+
+</div>
+
+
+<div class="free-test">
+
+<div class="free-left">
+
+<div class="free-label">
+✓ AVAILABLE NOW
+</div>
+
+<h3>
+HP Patwari Free Mock Test
+</h3>
+
+<p>
+You don't have to wait. The free Patwari mock test is already
+available and you can attempt it now.
+</p>
+
+</div>
+
+<a href="patwari-free-test.html" class="btn btn-primary">
+Attempt Free Test →
+</a>
+
+</div>
+
+
+<div class="info-grid">
+
+<div class="info-box">
+<div class="info-number">11</div>
+<div class="info-title">Tests planned</div>
+</div>
+
+<div class="info-box">
+<div class="info-number">120</div>
+<div class="info-title">Questions / Test</div>
+</div>
+
+<div class="info-box">
+<div class="info-number">90 Min</div>
+<div class="info-title">Time / Test</div>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+<div class="footer-top">
+
+<div>
+<h3>HPMockShashtra</h3>
+
+<p>
+A practice platform for Himachal Pradesh competitive exam
+aspirants with mock tests, bilingual practice and performance tracking.
+</p>
+</div>
+
+
+<div>
+
+<h4>Mock Tests</h4>
+
+<div class="footer-links">
+
+<a href="joa-series.html">
+JOA (IT) Mock Tests
+</a>
+
+<a href="patwari-series.html">
+HP Patwari Mock Tests
+</a>
+
+<a href="homepage.html">
+All Mock Tests
+</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<h4>Information</h4>
+
+<div class="footer-links">
+
+<a href="about.html">
+About
+</a>
+
+<a href="privacy.html">
+Privacy Policy
+</a>
+
+<a href="terms.html">
+Terms &amp; Conditions
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div>
+© 2026 HPMockShashtra. All rights reserved.
+</div>
+
+<div class="footer-bottom-links">
+
+<a href="privacy.html">
+Privacy Policy
+</a>
+
+<a href="terms.html">
+Terms &amp; Conditions
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
