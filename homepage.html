@@ -376,13 +376,18 @@ img{display:block;max-width:100%}
   position:relative;
   overflow:hidden;
   background:#081426;
+  min-height:420px;
 }
 .promo-bg-img{
   display:block;
   width:100%;
-  height:auto;
-  position:relative;
+  height:100%;
+  min-height:420px;
+  position:absolute;
+  inset:0;
   z-index:1;
+  object-fit:cover;
+  object-position:center center;
 }
 .promo::after{
   content:"";
@@ -608,9 +613,35 @@ img{display:block;max-width:100%}
   .price-row{align-items:flex-start;flex-direction:column}
   .card-buttons{width:100%}
   .card-btn{flex:1}
-  .promo-inner{flex-direction:column;justify-content:center}
+  .promo{
+    min-height:620px;
+  }
+  .promo-bg-img{
+    min-height:620px;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+  }
+  .promo-inner{
+    position:relative;
+    inset:auto;
+    min-height:620px;
+    padding:48px 0;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+  }
+  .promo-copy{
+    width:100%;
+    max-width:100%;
+  }
   .promo-copy h2{font-size:29px}
-  .promo-panel{width:100%;max-width:360px}
+  .promo-copy p{font-size:13px;max-width:100%}
+  .promo-panel{
+    width:100%;
+    max-width:360px;
+    margin-top:6px;
+  }
   .cta-box{flex-direction:column;align-items:flex-start;padding:24px}
   .cta-box a{width:100%}
   .footer-bottom{flex-direction:column;align-items:flex-start}
