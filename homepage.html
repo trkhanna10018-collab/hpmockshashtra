@@ -45,13 +45,15 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:#ffffff;
-      border-bottom:1px solid #e6edf7;
-      box-shadow:0 4px 16px rgba(15,23,42,.05);
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border-bottom:1px solid #dbe7f5;
+      box-shadow:0 6px 22px rgba(15,23,42,.08);
     }
 
     .header-inner{
-      min-height:74px;
+      min-height:104px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -61,18 +63,18 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:14px;
       color:#172554;
     }
 
     .brand img{
-      width:64px;
-      height:64px;
+      width:128px;
+      height:88px;
       object-fit:contain;
     }
 
     .brand-text h1{
-      font-size:22px;
+      font-size:27px;
       line-height:1;
     }
 
@@ -82,7 +84,8 @@
 
     .brand-text small{
       color:#64748b;
-      font-size:10px;
+      font-size:11px;
+      font-weight:600;
     }
 
     .main-nav{
@@ -200,23 +203,27 @@
     }
 
     .hero-note{
-      background:#ffffff;
-      border:1px solid #dbeafe;
+      background:linear-gradient(145deg,rgba(15,43,82,.84),rgba(37,75,125,.68));
+      border:1px solid rgba(255,255,255,.38);
       border-radius:22px;
-      padding:26px;
-      box-shadow:0 18px 38px rgba(37,99,235,.08);
+      padding:28px;
+      box-shadow:0 18px 42px rgba(15,23,42,.20);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      color:#fff;
     }
 
     .hero-note h3{
       font-size:22px;
-      margin-bottom:10px;
+      margin-bottom:12px;
+      color:#fff;
     }
 
     .hero-note ul{
       list-style:none;
       display:grid;
       gap:12px;
-      color:#475569;
+      color:#f8fbff;
       font-size:14px;
     }
 
@@ -232,9 +239,10 @@
     ========================= */
 
     .features{
-      padding:26px 0;
-      background:#fff;
-      border-bottom:1px solid #e8eef7;
+      padding:30px 0;
+      background:linear-gradient(135deg,#eef6ff 0%,#f7fbff 48%,#eef2ff 100%);
+      border-top:1px solid rgba(219,231,245,.85);
+      border-bottom:1px solid #dce8f5;
     }
 
     .feature-grid{
@@ -244,8 +252,8 @@
     }
 
     .feature-card{
-      background:#f8fbff;
-      border:1px solid #e4ecf7;
+      background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(239,246,255,.78));
+      border:1px solid rgba(191,219,254,.75);
       border-radius:15px;
       padding:18px 14px;
       text-align:center;
@@ -282,6 +290,7 @@
 
     .section{
       padding:56px 0;
+      background:linear-gradient(135deg,#f4f8ff 0%,#edf5ff 52%,#f7f4ff 100%);
     }
 
     .section-heading{
@@ -319,11 +328,11 @@
     }
 
     .series-card{
-      background:#fff;
-      border:1px solid #dfe8f5;
+      background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(246,250,255,.94));
+      border:1px solid #d5e4f5;
       border-radius:20px;
       overflow:hidden;
-      box-shadow:0 12px 30px rgba(15,23,42,.06);
+      box-shadow:0 12px 30px rgba(30,64,175,.08);
       display:flex;
       flex-direction:column;
     }
@@ -460,7 +469,8 @@
     ========================= */
 
     .quick-section{
-      padding:6px 0 56px;
+      padding:12px 0 56px;
+      background:linear-gradient(135deg,#eef5ff 0%,#f8fbff 50%,#f1f0ff 100%);
     }
 
     .quick-grid{
@@ -470,8 +480,8 @@
     }
 
     .quick-card{
-      background:#fff;
-      border:1px solid #e0e8f3;
+      background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(241,247,255,.88));
+      border:1px solid rgba(203,219,238,.9);
       border-radius:16px;
       padding:20px;
       color:#172554;
@@ -512,7 +522,9 @@
     .cta-box{
       max-width:980px;
       margin:auto;
-      background:linear-gradient(135deg,#173b76,#2f5bd7);
+      background:
+        radial-gradient(circle at 85% 50%,rgba(147,197,253,.24),transparent 32%),
+        linear-gradient(135deg,#173b76,#2f5bd7);
       color:#fff;
       border-radius:22px;
       padding:34px;
@@ -638,16 +650,20 @@
       }
 
       .header-inner{
-        min-height:70px;
+        min-height:82px;
+      }
+
+      .brand{
+        gap:8px;
       }
 
       .brand img{
-        width:52px;
-        height:52px;
+        width:76px;
+        height:64px;
       }
 
       .brand-text h1{
-        font-size:18px;
+        font-size:19px;
       }
 
       .brand-text small{
@@ -754,7 +770,7 @@
         <img src="logo.png" alt="HPMockShashtra Logo">
         <div class="brand-text">
           <h1>HP<span>Mock</span>Shashtra</h1>
-          <small>Prepare Today, Serve Himachal Tomorrow</small>
+          <small>Prepare Today, Serve Tomorrow</small>
         </div>
       </a>
 
