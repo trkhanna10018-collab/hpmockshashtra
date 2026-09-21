@@ -562,6 +562,18 @@ img{display:block;max-width:100%}
   .promo-inner{align-items:flex-start}
 }
 @media(max-width:620px){
+  /* Keep the full hero content visible on mobile instead of clipping it */
+  .hero{
+    min-height:820px;
+  }
+  .hero-bg-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+  }
   .hero-inner{padding-top:10px}
   .topbar{
     min-height:68px;
@@ -577,7 +589,13 @@ img{display:block;max-width:100%}
   .hero-copy{font-size:13px}
   .hero-glass{padding:20px}
   .feature-grid,.series-grid,.quick-grid,.footer-top{grid-template-columns:1fr}
-  .series-image{height:auto;aspect-ratio:16/9}
+  .series-image{
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    object-position:center;
+  }
   .price-row{align-items:flex-start;flex-direction:column}
   .card-buttons{width:100%}
   .card-btn{flex:1}
