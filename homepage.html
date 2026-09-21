@@ -30,28 +30,33 @@ img{display:block;max-width:100%}
 ========================= */
 .hero{
   position:relative;
-  min-height:690px;
-  background-image:url("homepage-bg.jpg");
-  background-position:center center;
-  background-size:cover;
-  background-repeat:no-repeat;
   overflow:hidden;
+  background:#0b1730;
 }
-.hero::before{
+.hero-bg-img{
+  display:block;
+  width:100%;
+  height:auto;
+  position:relative;
+  z-index:1;
+}
+.hero::after{
   content:"";
   position:absolute;
   inset:0;
+  z-index:2;
   background:linear-gradient(
     90deg,
-    rgba(255,255,255,.08) 0%,
-    rgba(255,255,255,.02) 48%,
-    rgba(0,20,50,.05) 100%
+    rgba(255,255,255,.10) 0%,
+    rgba(255,255,255,.03) 48%,
+    rgba(0,20,50,.08) 100%
   );
   pointer-events:none;
 }
 .hero-inner{
-  position:relative;
-  z-index:2;
+  position:absolute;
+  inset:0;
+  z-index:3;
   width:min(var(--content),calc(100% - 28px));
   margin:auto;
   padding:18px 0 54px;
@@ -363,24 +368,28 @@ img{display:block;max-width:100%}
 ========================= */
 .promo{
   position:relative;
-  min-height:370px;
-  background-image:url("homepage-bg-2.jpg");
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  display:flex;
-  align-items:center;
   overflow:hidden;
+  background:#081426;
 }
-.promo::before{
+.promo-bg-img{
+  display:block;
+  width:100%;
+  height:auto;
+  position:relative;
+  z-index:1;
+}
+.promo::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,rgba(2,15,35,.40),rgba(2,15,35,.12) 55%,rgba(2,15,35,.22));
+  z-index:2;
+  background:linear-gradient(90deg,rgba(2,15,35,.34),rgba(2,15,35,.10) 55%,rgba(2,15,35,.20));
+  pointer-events:none;
 }
 .promo-inner{
-  position:relative;
-  z-index:2;
+  position:absolute;
+  inset:0;
+  z-index:3;
   width:min(var(--content),calc(100% - 28px));
   margin:auto;
   display:flex;
@@ -544,14 +553,12 @@ img{display:block;max-width:100%}
   .hero-content{grid-template-columns:1fr .7fr;gap:25px}
 }
 @media(max-width:800px){
-  .hero{min-height:auto}
   .topbar{min-height:72px}
   .nav{display:none}
   .hero-content{grid-template-columns:1fr;padding-top:48px}
   .hero-glass{max-width:620px}
   .feature-grid,.quick-grid{grid-template-columns:repeat(2,1fr)}
   .footer-top{grid-template-columns:repeat(2,1fr)}
-  .promo{min-height:420px}
   .promo-inner{align-items:flex-start}
 }
 @media(max-width:620px){
@@ -574,7 +581,6 @@ img{display:block;max-width:100%}
   .price-row{align-items:flex-start;flex-direction:column}
   .card-buttons{width:100%}
   .card-btn{flex:1}
-  .promo{min-height:470px}
   .promo-inner{flex-direction:column;justify-content:center}
   .promo-copy h2{font-size:29px}
   .promo-panel{width:100%;max-width:360px}
@@ -592,6 +598,7 @@ img{display:block;max-width:100%}
      HERO WITH FIRST IMAGE
 ========================= -->
 <section class="hero" id="home">
+  <img src="homepage-bg.jpg" alt="HPMockShashtra study workspace" class="hero-bg-img">
   <div class="hero-inner">
 
     <div class="topbar">
@@ -784,6 +791,7 @@ img{display:block;max-width:100%}
      SECOND BACKGROUND IMAGE
 ========================= -->
 <section class="promo">
+  <img src="homepage-bg-2.jpg" alt="Focused study practice" class="promo-bg-img">
   <div class="promo-inner">
 
     <div class="promo-copy">
