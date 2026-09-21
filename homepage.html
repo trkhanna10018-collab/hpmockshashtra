@@ -159,17 +159,19 @@
 
     .hero-topbar{
       width:min(1000px, calc(100% - 32px));
-      margin:0 auto;
-      min-height:86px;
-      padding:10px 16px;
+      margin:10px auto 0;
+      min-height:78px;
+      padding:8px 12px 8px 16px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
-      border-radius:0 0 16px 16px;
-      background:linear-gradient(135deg,rgba(15,47,95,.90),rgba(37,99,235,.82),rgba(79,70,229,.78));
-      border:1px solid rgba(255,255,255,.28);
-      box-shadow:0 12px 30px rgba(15,23,42,.20);
+      gap:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(255,255,255,.72);
+      box-shadow:0 12px 30px rgba(15,23,42,.18);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
       position:relative;
       z-index:5;
     }
@@ -177,38 +179,59 @@
     .hero-brand{
       display:flex;
       align-items:center;
-      gap:12px;
-      color:#fff;
+      gap:10px;
+      color:#172554;
+      flex-shrink:0;
     }
 
     .hero-brand img{
-      width:72px;
-      height:72px;
+      width:62px;
+      height:62px;
       object-fit:contain;
-      background:rgba(255,255,255,.96);
-      border-radius:12px;
-      padding:4px;
+      background:#fff;
+      border-radius:11px;
+      padding:3px;
     }
 
     .hero-brand-text strong{
       display:block;
-      font-size:22px;
+      font-size:20px;
       line-height:1.05;
-      color:#fff;
+      color:#172554;
     }
 
     .hero-brand-text span{
       display:block;
       margin-top:4px;
-      font-size:10px;
-      color:#dbeafe;
+      font-size:9px;
+      color:#64748b;
       letter-spacing:.25px;
+    }
+
+    .hero-nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:17px;
+      margin-left:auto;
+    }
+
+    .hero-nav a{
+      color:#334155;
+      font-size:11px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .hero-nav a:hover{
+      color:#2563eb;
     }
 
     .hero-top-actions{
       display:flex;
       align-items:center;
-      gap:9px;
+      gap:8px;
+      flex-shrink:0;
     }
 
     .hero-login,
@@ -224,15 +247,16 @@
     }
 
     .hero-login{
-      color:#fff;
-      border:1px solid rgba(255,255,255,.65);
-      background:rgba(255,255,255,.10);
+      color:#1d4ed8;
+      border:1px solid #bfdbfe;
+      background:#fff;
     }
 
     .hero-join{
-      color:#1d4ed8;
-      background:#fff;
-      border:1px solid #fff;
+      color:#fff;
+      background:linear-gradient(135deg,#2563eb,#4f46e5);
+      border:1px solid transparent;
+      box-shadow:0 6px 14px rgba(37,99,235,.18);
     }
 
 
@@ -559,6 +583,77 @@
     }
 
     /* =========================
+       SECOND IMAGE PROMO
+    ========================= */
+
+    .image-promo{
+      width:100%;
+      min-height:300px;
+      padding:58px 0;
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(2,6,23,.82),rgba(15,23,42,.46),rgba(2,6,23,.24)),
+        url("homepage-bg-2.jpg") center/cover no-repeat;
+      color:#fff;
+    }
+
+    .image-promo-inner{
+      width:min(1000px, calc(100% - 32px));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .image-promo-content{
+      max-width:600px;
+    }
+
+    .image-promo-tag{
+      display:inline-block;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color:#bfdbfe;
+      margin-bottom:8px;
+    }
+
+    .image-promo h2{
+      font-size:34px;
+      line-height:1.12;
+      margin-bottom:10px;
+    }
+
+    .image-promo p{
+      color:#e2e8f0;
+      font-size:14px;
+      max-width:590px;
+      margin-bottom:18px;
+    }
+
+    .image-promo-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .image-promo-actions .btn-light{
+      background:#fff;
+      color:#1d4ed8;
+      border-color:#fff;
+    }
+
+    .image-promo-actions .btn-glass{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      border-color:rgba(255,255,255,.45);
+      backdrop-filter:blur(8px);
+    }
+
+    /* =========================
        QUICK LINKS
     ========================= */
 
@@ -759,6 +854,10 @@
         border-radius:0 0 13px 13px;
       }
 
+      .hero-nav{
+        display:none;
+      }
+
       .hero-brand img{
         width:58px;
         height:58px;
@@ -864,6 +963,23 @@
         object-fit:contain;
       }
 
+      .image-promo{
+        min-height:360px;
+        padding:46px 0;
+      }
+
+      .image-promo h2{
+        font-size:28px;
+      }
+
+      .image-promo-inner{
+        width:min(100% - 24px,1000px);
+      }
+
+      .image-promo-actions .btn{
+        width:100%;
+      }
+
       .series-title{
         font-size:21px;
       }
@@ -921,6 +1037,13 @@
             <span>Prepare Today, Serve Tomorrow</span>
           </div>
         </a>
+
+        <nav class="hero-nav">
+          <a href="#mock-tests">Mock Tests</a>
+          <a href="#free-tests">Free Tests</a>
+          <a href="#resources">Resources</a>
+          <a href="about.html">About</a>
+        </nav>
 
         <div class="hero-top-actions">
           <a href="firebase-login.html" class="hero-login">Login</a>
@@ -1142,6 +1265,29 @@
 
       </div>
 
+    </div>
+  </section>
+
+
+  <!-- =========================
+       SECOND BACKGROUND IMAGE
+  ========================= -->
+
+  <section class="image-promo">
+    <div class="image-promo-inner">
+      <div class="image-promo-content">
+        <div class="image-promo-tag">Focused Practice • Better Preparation</div>
+        <h2>Master Your Exams with Focused Practice</h2>
+        <p>
+          Practice with structured mock tests, analyse your performance and
+          improve your preparation for Himachal Pradesh competitive exams.
+        </p>
+
+        <div class="image-promo-actions">
+          <a href="firebase-signup.html" class="btn btn-light">Start Learning Today →</a>
+          <a href="#mock-tests" class="btn btn-glass">Explore Mock Tests →</a>
+        </div>
+      </div>
     </div>
   </section>
 
