@@ -1,1254 +1,1226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Create Account | HPMockShashtra</title>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:"Segoe UI", Arial, sans-serif;
-    }
-
-    body{
-      min-height:100vh;
-      background:#f4f8fd;
-      color:#172554;
-      padding:24px;
-    }
-
-    .page{
-      width:100%;
-      max-width:1420px;
-      min-height:calc(100vh - 48px);
-      margin:auto;
-      background:#ffffff;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 18px 55px rgba(30,64,175,0.12);
-      display:flex;
-      flex-direction:column;
-    }
-
-    /* ===============================
-       HEADER
-    =============================== */
-
-    .header{
-      min-height:92px;
-      padding:10px 42px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      border-bottom:1px solid #e7eef8;
-      background:#ffffff;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .brand img{
-      width:82px;
-      height:82px;
-      object-fit:contain;
-      border-radius:16px;
-    }
-
-    .brand-text h2{
-      color:#172554;
-      font-size:27px;
-      line-height:1.1;
-      letter-spacing:-0.5px;
-    }
-
-    .brand-text h2 span{
-      color:#2563eb;
-    }
-
-    .brand-text p{
-      margin-top:4px;
-      color:#64748b;
-      font-size:12px;
-    }
-
-    .header-tagline{
-      color:#1e3a8a;
-      font-size:14px;
-      font-weight:600;
-      text-align:right;
-    }
-
-    /* ===============================
-       MAIN
-    =============================== */
-
-    .main{
-      display:grid;
-      grid-template-columns:minmax(0,1.18fr) minmax(390px,0.82fr);
-      align-items:stretch;
-    }
-
-    /* ===============================
-       LEFT INFORMATION
-    =============================== */
-
-    .info-panel{
-      position:relative;
-      overflow:hidden;
-      padding:42px 48px 40px;
-      background:
-        radial-gradient(circle at 82% 24%,rgba(147,197,253,0.27),transparent 25%),
-        linear-gradient(135deg,#eff6ff 0%,#f8fbff 62%,#eef5ff 100%);
-    }
-
-    .info-panel::before{
-      content:"";
-      position:absolute;
-      width:390px;
-      height:390px;
-      right:-190px;
-      top:70px;
-      border-radius:50%;
-      background:rgba(191,219,254,0.22);
-    }
-
-    .info-panel::after{
-      content:"";
-      position:absolute;
-      width:240px;
-      height:240px;
-      left:-145px;
-      bottom:-125px;
-      border-radius:50%;
-      background:rgba(219,234,254,0.48);
-    }
-
-    .info-content{
-      position:relative;
-      z-index:2;
-      max-width:730px;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-      padding:7px 12px;
-      border-radius:30px;
-      background:#dbeafe;
-      color:#1d4ed8;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.35px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-    }
-
-    .eyebrow-dot{
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:#2563eb;
-    }
-
-    .info-content h1{
-      max-width:650px;
-      font-size:43px;
-      line-height:1.08;
-      letter-spacing:-1.5px;
-      color:#172554;
-      margin-bottom:14px;
-    }
-
-    .info-content h1 span{
-      color:#2563eb;
-    }
-
-    .intro{
-      max-width:620px;
-      color:#475569;
-      font-size:16px;
-      line-height:1.6;
-      margin-bottom:25px;
-    }
-
-    /* ===============================
-       SMALL FEATURE ROW
-    =============================== */
-
-    .feature-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:11px;
-      margin-bottom:20px;
-    }
-
-    .feature{
-      min-height:94px;
-      background:rgba(255,255,255,0.86);
-      border:1px solid #dbeafe;
-      border-radius:15px;
-      padding:13px 9px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
-
-    .feature-icon{
-      width:32px;
-      height:32px;
-      border-radius:9px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#eff6ff;
-      color:#2563eb;
-      font-size:16px;
-      font-weight:800;
-      margin-bottom:7px;
-    }
-
-    .feature strong{
-      color:#172554;
-      font-size:13px;
-      line-height:1.25;
-    }
-
-    .feature small{
-      color:#64748b;
-      font-size:10px;
-      margin-top:3px;
-    }
-
-    /* ===============================
-       FREE TEST
-    =============================== */
-
-    .free-card{
-      background:#ffffff;
-      border:1px solid #bfdbfe;
-      border-radius:17px;
-      padding:19px 21px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      box-shadow:0 8px 25px rgba(37,99,235,0.06);
-    }
-
-    .free-label{
-      display:inline-block;
-      padding:5px 10px;
-      border-radius:20px;
-      background:#dcfce7;
-      color:#15803d;
-      font-size:10px;
-      font-weight:800;
-      margin-bottom:7px;
-    }
-
-    .free-card h3{
-      color:#172554;
-      font-size:21px;
-      margin-bottom:4px;
-    }
-
-    .free-card p{
-      color:#64748b;
-      font-size:13px;
-      line-height:1.45;
-      max-width:520px;
-    }
-
-    .free-btn{
-      flex-shrink:0;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:11px 17px;
-      min-width:145px;
-      border:1px solid #2563eb;
-      border-radius:11px;
-      color:#1d4ed8;
-      background:#ffffff;
-      text-decoration:none;
-      font-size:13px;
-      font-weight:800;
-      transition:.2s;
-    }
-
-    .free-btn:hover{
-      background:#eff6ff;
-      transform:translateY(-1px);
-    }
-
-    .free-info-tag{
-      flex-shrink:0;
-      color:#1d4ed8;
-      font-size:12px;
-      font-weight:700;
-      text-align:right;
-      line-height:1.4;
-      max-width:170px;
-    }
-
-    /* ===============================
-       LOGIN / SIGNUP PANEL
-    =============================== */
-
-    .signup-panel{
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:34px 38px 38px;
-      background:#f8fafc;
-      border-left:1px solid #e2e8f0;
-    }
-
-    .signup-box{
-      width:100%;
-      max-width:440px;
-      background:#ffffff;
-      border:1px solid #e2e8f0;
-      border-radius:20px;
-      padding:29px 30px 25px;
-      box-shadow:0 12px 32px rgba(15,23,42,0.08);
-    }
-
-    .signup-top{
-      text-align:center;
-      margin-bottom:20px;
-    }
-
-    .signup-icon{
-      width:50px;
-      height:50px;
-      margin:0 auto 11px;
-      border-radius:15px;
-      background:#eff6ff;
-      border:1px solid #dbeafe;
-      color:#2563eb;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      font-weight:800;
-    }
-
-    .signup-top h2{
-      color:#172554;
-      font-size:28px;
-      margin-bottom:5px;
-    }
-
-    .signup-top p{
-      color:#64748b;
-      font-size:13px;
-    }
-
-    .form-group{
-      margin-bottom:14px;
-    }
-
-    label{
-      display:block;
-      font-weight:700;
-      color:#334155;
-      margin-bottom:7px;
-      font-size:13px;
-    }
-
-    input{
-      width:100%;
-      padding:12px 13px;
-      border:1px solid #cbd5e1;
-      border-radius:11px;
-      font-size:14px;
-      color:#1e293b;
-      outline:none;
-      transition:.2s;
-      background:#ffffff;
-    }
-
-    input:focus{
-      border-color:#2563eb;
-      box-shadow:0 0 0 3px rgba(37,99,235,0.10);
-    }
-
-    .password-note{
-      color:#64748b;
-      font-size:11px;
-      margin-top:5px;
-    }
-
-    .signup-btn{
-      width:100%;
-      border:none;
-      padding:13px;
-      border-radius:11px;
-      background:linear-gradient(135deg,#2563eb,#4f46e5);
-      color:white;
-      font-size:15px;
-      font-weight:800;
-      cursor:pointer;
-      margin-top:3px;
-      transition:.2s;
-    }
-
-    .signup-btn:hover{
-      opacity:.94;
-      transform:translateY(-1px);
-    }
-
-    .signup-btn:disabled{
-      opacity:.6;
-      cursor:not-allowed;
-      transform:none;
-    }
-
-    .message{
-      display:none;
-      margin-top:15px;
-      padding:11px;
-      border-radius:10px;
-      font-size:13px;
-      text-align:center;
-      line-height:1.4;
-    }
-
-    .login{
-      text-align:center;
-      margin-top:18px;
-      padding-top:17px;
-      border-top:1px solid #e2e8f0;
-      color:#64748b;
-      font-size:13px;
-    }
-
-    .login a{
-      color:#2563eb;
-      font-weight:800;
-      text-decoration:none;
-    }
-
-    .login a:hover{
-      text-decoration:underline;
-    }
-
-    /* ===============================
-       FOOTER
-    =============================== */
-
-    .footer{
-      min-height:58px;
-      padding:15px 42px;
-      background:#173b76;
-      color:#dbeafe;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      font-size:12px;
-    }
-
-    .footer-links{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .footer a{
-      color:#ffffff;
-      text-decoration:none;
-    }
-
-    .footer a:hover{
-      text-decoration:underline;
-    }
-
-    /* ===============================
-       RESPONSIVE
-    =============================== */
-
-    @media(min-width:651px) and (max-width:1050px){
-
-      body{
-        padding:15px;
-      }
-
-      .page{
-        min-height:calc(100vh - 30px);
-      }
-
-      .main{
-        grid-template-columns:minmax(0,1.12fr) minmax(350px,0.88fr);
-      }
-
-      .info-panel{
-        padding:35px 28px;
-      }
-
-      .info-content h1{
-        font-size:38px;
-      }
-
-      .signup-panel{
-        padding:28px 20px 30px;
-        border-left:1px solid #e2e8f0;
-      }
-
-      .signup-box{
-        padding:26px 22px 23px;
-      }
-
-      .header-tagline{
-        display:none;
-      }
-
-    }
-
-    @media(max-width:650px){
-
-      body{
-        padding:0;
-        overflow-x:auto;
-      }
-
-      .page{
-        min-height:100vh;
-        min-width:720px;
-        border-radius:0;
-      }
-
-      .header{
-        min-height:92px;
-        padding:8px 18px;
-      }
-
-      .brand img{
-        width:76px;
-        height:76px;
-      }
-
-      .brand-text h2{
-        font-size:23px;
-      }
-
-      .brand-text p{
-        font-size:10px;
-      }
-
-      .main{
-        grid-template-columns:58% 42%;
-        width:100%;
-      }
-
-      .info-panel{
-        padding:30px 22px;
-      }
-
-      .info-content h1{
-        font-size:34px;
-        letter-spacing:-1px;
-      }
-
-      .intro{
-        font-size:14px;
-        line-height:1.5;
-      }
-
-      .feature-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:9px;
-      }
-
-      .feature{
-        min-height:95px;
-      }
-
-      .free-card{
-        align-items:flex-start;
-        flex-direction:column;
-        padding:17px;
-      }
-
-      .free-btn{
-        width:100%;
-      }
-
-      .signup-panel{
-        padding:28px 16px;
-        border-left:1px solid #e2e8f0;
-        border-top:none;
-        background:#f8fafc;
-      }
-
-      .signup-box{
-        max-width:100%;
-        padding:26px 21px 23px;
-      }
-
-      .signup-top h2{
-        font-size:25px;
-      }
-
-      input{
-        padding:11px;
-        font-size:13px;
-      }
-
-      label{
-        font-size:12px;
-      }
-
-      .signup-btn{
-        padding:12px;
-        font-size:14px;
-      }
-
-      .footer{
-        min-width:720px;
-        padding:16px 20px;
-        align-items:center;
-        flex-direction:row;
-      }
-
-    }
-
-    @media(max-width:380px){
-
-      .feature-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .info-content h1{
-        font-size:30px;
-      }
-
-    }
-  </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Account | HPMockShashtra</title>
+
+<style>
+
+/* ==================================================
+   RESET
+================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:"Segoe UI",Arial,sans-serif;
+
+  background:#f4f7fb;
+
+  color:#172554;
+
+  overflow-x:hidden;
+}
+
+
+/* ==================================================
+   PAGE
+================================================== */
+
+.page{
+  min-height:100vh;
+
+  display:flex;
+
+  flex-direction:column;
+}
+
+
+/* ==================================================
+   MAIN
+================================================== */
+
+.main{
+  flex:1;
+
+  width:100%;
+
+  min-height:calc(100vh - 250px);
+
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:center;
+
+  padding:55px 20px 65px;
+}
+
+
+/* ==================================================
+   SIGNUP BOX
+================================================== */
+
+.signup-box{
+  width:100%;
+
+  max-width:440px;
+
+  padding:32px;
+
+  background:#ffffff;
+
+  border:1px solid #dbe3ee;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 12px 35px rgba(15,23,42,.09);
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo{
+  width:72px;
+
+  height:72px;
+
+  display:block;
+
+  object-fit:contain;
+
+  margin:0 auto 12px;
+}
+
+
+/* ==================================================
+   SIGNUP HEADING
+================================================== */
+
+.signup-top{
+  text-align:center;
+
+  margin-bottom:24px;
+}
+
+
+.signup-top h1{
+  margin:0 0 6px;
+
+  color:#172554;
+
+  font-size:27px;
+
+  line-height:1.2;
+}
+
+
+.signup-top h1 span{
+  color:#2563eb;
+}
+
+
+.signup-top p{
+  color:#64748b;
+
+  font-size:12px;
+
+  line-height:1.5;
+}
+
+
+/* ==================================================
+   FORM
+================================================== */
+
+.form-group{
+  margin-bottom:15px;
+}
+
+
+.form-group label{
+  display:block;
+
+  margin-bottom:7px;
+
+  color:#334155;
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+
+.form-group input{
+  width:100%;
+
+  height:44px;
+
+  padding:0 13px;
+
+  border:1px solid #cbd5e1;
+
+  border-radius:10px;
+
+  outline:none;
+
+  background:#ffffff;
+
+  color:#1e293b;
+
+  font-family:inherit;
+
+  font-size:13px;
+
+  transition:.2s;
+}
+
+
+.form-group input::placeholder{
+  color:#94a3b8;
+}
+
+
+.form-group input:focus{
+  border-color:#2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37,99,235,.10);
+}
+
+
+.password-note{
+  margin-top:5px;
+
+  color:#94a3b8;
+
+  font-size:10px;
+}
+
+
+/* ==================================================
+   CREATE ACCOUNT BUTTON
+================================================== */
+
+.signup-btn{
+  width:100%;
+
+  height:46px;
+
+  margin-top:4px;
+
+  border:0;
+
+  border-radius:10px;
+
+  background:#2563eb;
+
+  color:#ffffff;
+
+  font-family:inherit;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+
+.signup-btn:hover{
+  background:#1d4ed8;
+
+  box-shadow:
+    0 6px 16px rgba(37,99,235,.20);
+}
+
+
+.signup-btn:active{
+  transform:translateY(1px);
+}
+
+
+.signup-btn:disabled{
+  opacity:.65;
+
+  cursor:not-allowed;
+
+  box-shadow:none;
+}
+
+
+/* ==================================================
+   MESSAGE
+================================================== */
+
+.message{
+  display:none;
+
+  margin-top:14px;
+
+  padding:11px 12px;
+
+  border-radius:9px;
+
+  font-size:11px;
+
+  line-height:1.5;
+
+  text-align:center;
+}
+
+
+/* ==================================================
+   LOGIN
+================================================== */
+
+.login{
+  margin-top:20px;
+
+  padding-top:18px;
+
+  border-top:1px solid #e2e8f0;
+
+  color:#64748b;
+
+  font-size:11px;
+
+  text-align:center;
+}
+
+
+.login a{
+  color:#2563eb;
+
+  font-weight:700;
+
+  text-decoration:none;
+}
+
+
+.login a:hover{
+  text-decoration:underline;
+}
+
+
+/* ==================================================
+   DASHBOARD STYLE FOOTER
+================================================== */
+
+.footer{
+  width:100%;
+
+  background:#020817;
+}
+
+
+.footer-inner{
+  width:100%;
+
+  max-width:1180px;
+
+  margin:auto;
+
+  padding:0 24px;
+}
+
+
+.footer-top{
+  display:grid;
+
+  grid-template-columns:1.5fr 1fr 1fr;
+
+  gap:45px;
+
+  padding:38px 0 30px;
+}
+
+
+.footer h3{
+  margin:0 0 9px;
+
+  color:#ffffff;
+
+  font-size:18px;
+}
+
+
+.footer h4{
+  margin:0 0 11px;
+
+  color:#ffffff;
+
+  font-size:12px;
+}
+
+
+.footer p{
+  max-width:290px;
+
+  margin:0;
+
+  color:#94a3b8;
+
+  font-size:11px;
+
+  line-height:1.7;
+}
+
+
+.footer-links{
+  display:grid;
+
+  gap:8px;
+}
+
+
+.footer-links a{
+  color:#cbd5e1;
+
+  font-size:11px;
+
+  text-decoration:none;
+}
+
+
+.footer-links a:hover{
+  color:#ffffff;
+}
+
+
+.footer-bottom{
+  min-height:54px;
+
+  padding:13px 0;
+
+  border-top:1px solid #1e293b;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  color:#94a3b8;
+
+  font-size:10px;
+}
+
+
+.footer-bottom-links{
+  display:flex;
+
+  align-items:center;
+
+  gap:17px;
+}
+
+
+.footer-bottom a{
+  color:#cbd5e1;
+
+  text-decoration:none;
+}
+
+
+.footer-bottom a:hover{
+  color:#ffffff;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:800px){
+
+  .main{
+    padding-top:45px;
+
+    padding-bottom:50px;
+  }
+
+
+  .signup-box{
+    max-width:430px;
+  }
+
+
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:600px){
+
+  .main{
+    min-height:auto;
+
+    padding:30px 14px 40px;
+
+    align-items:flex-start;
+  }
+
+
+  .signup-box{
+    width:100%;
+
+    max-width:430px;
+
+    padding:27px 20px;
+
+    border-radius:17px;
+  }
+
+
+  .logo{
+    width:64px;
+
+    height:64px;
+
+    margin-bottom:10px;
+  }
+
+
+  .signup-top{
+    margin-bottom:21px;
+  }
+
+
+  .signup-top h1{
+    font-size:24px;
+  }
+
+
+  .signup-top p{
+    font-size:11px;
+  }
+
+
+  .form-group{
+    margin-bottom:14px;
+  }
+
+
+  .form-group label{
+    font-size:11px;
+  }
+
+
+  .form-group input{
+    height:45px;
+
+    font-size:16px;
+  }
+
+
+  .signup-btn{
+    height:45px;
+
+    font-size:13px;
+  }
+
+
+  .login{
+    font-size:11px;
+  }
+
+
+  /* FOOTER */
+
+  .footer-inner{
+    width:100%;
+
+    padding:0 16px;
+  }
+
+
+  .footer-top{
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+    padding:30px 0 25px;
+  }
+
+
+  .footer p{
+    max-width:100%;
+  }
+
+
+  .footer-bottom{
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    justify-content:flex-start;
+
+    gap:10px;
+
+    padding:13px 0 17px;
+  }
+
+
+  .footer-bottom-links{
+    flex-wrap:wrap;
+
+    gap:12px;
+  }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media(max-width:380px){
+
+  .main{
+    padding:22px 10px 32px;
+  }
+
+
+  .signup-box{
+    padding:24px 16px;
+  }
+
+
+  .logo{
+    width:58px;
+
+    height:58px;
+  }
+
+
+  .signup-top h1{
+    font-size:22px;
+  }
+
+
+  .form-group input{
+    height:44px;
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <div class="page">
 
-    <!-- ===============================
-         HEADER
-    =============================== -->
+<div class="page">
 
-    <header class="header">
 
-      <div class="brand">
+  <!-- ==================================================
+       MAIN
+  ================================================== -->
 
-        <img
-          src="logo.png"
-          alt="HPMockShashtra Logo"
+  <main class="main">
+
+
+    <!-- ==================================================
+         SIGNUP BOX
+    ================================================== -->
+
+    <div class="signup-box">
+
+
+      <img
+        src="logo.png"
+        alt="HPMockShashtra"
+        class="logo"
+      >
+
+
+      <div class="signup-top">
+
+        <h1>
+          Create Your <span>Account</span>
+        </h1>
+
+        <p>
+          Join HPMockShashtra and start your preparation
+        </p>
+
+      </div>
+
+
+      <form id="signupForm">
+
+
+        <!-- FULL NAME -->
+
+        <div class="form-group">
+
+          <label for="name">
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            required
+            autocomplete="name"
+          >
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label for="email">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+          >
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+          <label for="password">
+            Password
+          </label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Create a password"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          >
+
+          <div class="password-note">
+            Password must be at least 6 characters.
+          </div>
+
+        </div>
+
+
+        <!-- CONFIRM PASSWORD -->
+
+        <div class="form-group">
+
+          <label for="confirmPassword">
+            Confirm Password
+          </label>
+
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Re-enter your password"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          >
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+          type="submit"
+          class="signup-btn"
+          id="signupBtn"
         >
+          Create Account
+        </button>
 
-        <div class="brand-text">
 
-          <h2>
-            HP<span>Mock</span>Shashtra
-          </h2>
+      </form>
+
+
+      <!-- MESSAGE -->
+
+      <div
+        class="message"
+        id="message"
+      ></div>
+
+
+      <!-- LOGIN -->
+
+      <div class="login">
+
+        Already have an account?
+
+        <a href="firebase-login.html">
+          Login
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+  </main>
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+
+      <div class="footer-top">
+
+
+        <!-- BRAND -->
+
+        <div>
+
+          <h3>
+            HPMockShashtra
+          </h3>
 
           <p>
-            Prepare Today, Serve Himachal Tomorrow
+            A practice platform for Himachal Pradesh competitive exam
+            aspirants with mock tests, bilingual practice and performance tracking.
           </p>
 
         </div>
 
-      </div>
 
-      <div class="header-tagline">
-        Practice&nbsp;&nbsp; | &nbsp;&nbsp;Analyse&nbsp;&nbsp; | &nbsp;&nbsp;Improve
-      </div>
+        <!-- MOCK TESTS -->
 
-    </header>
+        <div>
 
+          <h4>
+            Mock Tests
+          </h4>
 
-    <main class="main">
+          <div class="footer-links">
 
-      <!-- ===============================
-           INFORMATION PANEL
-      =============================== -->
+            <a href="joa-series.html">
+              JOA (IT) Mock Tests
+            </a>
 
-      <section class="info-panel">
+            <a href="patwari-series.html">
+              HP Patwari Mock Tests
+            </a>
 
-        <div class="info-content">
+            <a href="firebase-dashboard.html">
+              Free Test Access
+            </a>
 
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Himachal Pradesh Competitive Exams
-          </div>
-
-          <h1>
-            Learn Today,
-            <span>Achieve Tomorrow</span>
-          </h1>
-
-          <p class="intro">
-            HPMockShashtra is a practice platform for aspirants
-            preparing for Himachal Pradesh competitive examinations.
-          </p>
-
-
-          <div class="feature-grid">
-
-            <div class="feature">
-
-              <div class="feature-icon">✓</div>
-
-              <strong>
-                Mock Test
-                <br>
-                Series
-              </strong>
-
-              <small>
-                Full-length practice
-              </small>
-
-            </div>
-
-
-            <div class="feature">
-
-              <div class="feature-icon">▤</div>
-
-              <strong>
-                Previous Year
-                <br>
-                Papers
-              </strong>
-
-              <small>
-                Real paper practice
-              </small>
-
-            </div>
-
-
-            <div class="feature">
-
-              <div class="feature-icon">↗</div>
-
-              <strong>
-                Performance
-                <br>
-                Tracking
-              </strong>
-
-              <small>
-                Track your progress
-              </small>
-
-            </div>
-
-
-            <div class="feature">
-
-              <div class="feature-icon">A</div>
-
-              <strong>
-                Hindi + English
-                <br>
-                Bilingual
-              </strong>
-
-              <small>
-                Easy to understand
-              </small>
-
-            </div>
-
-          </div>
-
-
-          <div class="free-card">
-
-            <div>
-
-              <span class="free-label">
-                FREE TEST AVAILABLE
-              </span>
-
-              <h3>
-                Try Before You Buy!
-              </h3>
-
-              <p>
-                Create your account and attempt the available
-                free test before purchasing a complete series.
-              </p>
-
-            </div>
-
-
-            <div class="free-info-tag">
-              Free test available after account creation
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- ===============================
-           SIGNUP PANEL
-      =============================== -->
-
-      <section class="signup-panel">
-
-        <div class="signup-box">
-
-          <div class="signup-top">
-
-            <div class="signup-icon">
-              +
-            </div>
-
-            <h2>
-              Create Your Account
-            </h2>
-
-            <p>
-              Join HPMockShashtra and start your preparation
-            </p>
-
-          </div>
-
-
-          <form id="signupForm">
-
-            <!-- NAME -->
-
-            <div class="form-group">
-
-              <label for="name">
-                Full Name
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                placeholder="Enter your full name"
-                required
-                autocomplete="name"
-              >
-
-            </div>
-
-
-            <!-- EMAIL -->
-
-            <div class="form-group">
-
-              <label for="email">
-                Email Address
-              </label>
-
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-                autocomplete="email"
-              >
-
-            </div>
-
-
-            <!-- PASSWORD -->
-
-            <div class="form-group">
-
-              <label for="password">
-                Password
-              </label>
-
-              <input
-                type="password"
-                id="password"
-                placeholder="Create a password"
-                required
-                minlength="6"
-                autocomplete="new-password"
-              >
-
-              <div class="password-note">
-                Password must be at least 6 characters.
-              </div>
-
-            </div>
-
-
-            <!-- CONFIRM PASSWORD -->
-
-            <div class="form-group">
-
-              <label for="confirmPassword">
-                Confirm Password
-              </label>
-
-              <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Re-enter your password"
-                required
-                minlength="6"
-                autocomplete="new-password"
-              >
-
-            </div>
-
-
-            <button
-              type="submit"
-              class="signup-btn"
-              id="signupBtn"
-            >
-              Create Account
-            </button>
-
-          </form>
-
-
-          <div
-            class="message"
-            id="message"
-          ></div>
-
-
-          <div class="login">
-
-            Already have an account?
-
-            <a href="firebase-login.html">
-              Login
+            <a href="firebase-dashboard.html">
+              Test Series
             </a>
 
           </div>
 
         </div>
 
-      </section>
 
-    </main>
+        <!-- INFORMATION -->
 
+        <div>
 
-    <!-- ===============================
-         FOOTER
-    =============================== -->
+          <h4>
+            Information
+          </h4>
 
-    <footer class="footer">
+          <div class="footer-links">
 
-      <div>
-        © 2026 HPMockShashtra. All rights reserved.
-      </div>
+            <a href="about.html">
+              About
+            </a>
 
-      <div class="footer-links">
+            <a href="privacy.html">
+              Privacy Policy
+            </a>
 
-        <a href="about.html">
-          About
-        </a>
+            <a href="terms.html">
+              Terms &amp; Conditions
+            </a>
 
-        <span>|</span>
+          </div>
 
-        <a href="privacy.html">
-          Privacy Policy
-        </a>
+        </div>
 
-        <span>|</span>
-
-        <a href="terms.html">
-          Terms &amp; Conditions
-        </a>
 
       </div>
 
-    </footer>
 
-  </div>
+      <!-- FOOTER BOTTOM -->
 
+      <div class="footer-bottom">
 
-  <!-- ===============================
-       FIREBASE SIGNUP
-  =============================== -->
-
-  <script type="module">
-
-    import {
-      createUserWithEmailAndPassword,
-      updateProfile
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
-    import {
-      doc,
-      setDoc,
-      serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-    import {
-      auth,
-      db
-    } from "./firebase-config.js";
+        <div>
+          © 2026 HPMockShashtra. All rights reserved.
+        </div>
 
 
-    const signupForm =
-      document.getElementById("signupForm");
+        <div class="footer-bottom-links">
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+
+          <a href="terms.html">
+            Terms &amp; Conditions
+          </a>
+
+        </div>
+
+      </div>
 
 
-    const signupBtn =
-      document.getElementById("signupBtn");
+    </div>
+
+  </footer>
 
 
-    const message =
-      document.getElementById("message");
+</div>
 
 
-    function showMessage(text, type){
+<!-- ==================================================
+     FIREBASE SIGNUP
+================================================== -->
 
-      message.textContent =
-        text;
+<script type="module">
 
-      message.style.display =
-        "block";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
-      if(type === "success"){
+import {
+  doc,
+  setDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-        message.style.background =
-          "#dcfce7";
 
-        message.style.color =
-          "#166534";
+import {
+  auth,
+  db
+} from "./firebase-config.js";
 
-      }else{
 
-        message.style.background =
-          "#fee2e2";
+const signupForm =
+  document.getElementById("signupForm");
 
-        message.style.color =
-          "#991b1b";
 
-      }
+const signupBtn =
+  document.getElementById("signupBtn");
+
+
+const message =
+  document.getElementById("message");
+
+
+/* ==================================================
+   MESSAGE FUNCTION
+================================================== */
+
+function showMessage(text,type){
+
+  message.textContent =
+    text;
+
+  message.style.display =
+    "block";
+
+
+  if(type === "success"){
+
+    message.style.background =
+      "#dcfce7";
+
+    message.style.color =
+      "#166534";
+
+  }else{
+
+    message.style.background =
+      "#fee2e2";
+
+    message.style.color =
+      "#991b1b";
+
+  }
+
+}
+
+
+/* ==================================================
+   SIGNUP
+================================================== */
+
+signupForm.addEventListener(
+  "submit",
+  async (e) => {
+
+    e.preventDefault();
+
+
+    const name =
+      document
+      .getElementById("name")
+      .value
+      .trim();
+
+
+    const email =
+      document
+      .getElementById("email")
+      .value
+      .trim();
+
+
+    const password =
+      document
+      .getElementById("password")
+      .value;
+
+
+    const confirmPassword =
+      document
+      .getElementById("confirmPassword")
+      .value;
+
+
+    /* NAME */
+
+    if(name.length < 2){
+
+      showMessage(
+        "Please enter your full name.",
+        "error"
+      );
+
+      return;
 
     }
 
 
-    signupForm.addEventListener(
-      "submit",
-      async (e) => {
+    /* PASSWORD */
 
-        e.preventDefault();
+    if(password.length < 6){
 
+      showMessage(
+        "Password must be at least 6 characters.",
+        "error"
+      );
 
-        const name =
-          document.getElementById("name").value.trim();
+      return;
 
-
-        const email =
-          document.getElementById("email").value.trim();
-
-
-        const password =
-          document.getElementById("password").value;
+    }
 
 
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
+    /* CONFIRM PASSWORD */
+
+    if(password !== confirmPassword){
+
+      showMessage(
+        "Passwords do not match.",
+        "error"
+      );
+
+      return;
+
+    }
 
 
-        // CHECK NAME
+    signupBtn.disabled =
+      true;
 
-        if(name.length < 2){
 
-          showMessage(
-            "Please enter your full name.",
-            "error"
-          );
+    signupBtn.textContent =
+      "Creating Account...";
 
-          return;
 
+    try{
+
+
+      /* CREATE FIREBASE ACCOUNT */
+
+      const userCredential =
+        await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+
+      const user =
+        userCredential.user;
+
+
+      /* UPDATE DISPLAY NAME */
+
+      await updateProfile(
+        user,
+        {
+          displayName:name
         }
+      );
 
 
-        // CHECK PASSWORD
+      /* SAVE USER PROFILE */
 
-        if(password.length < 6){
-
-          showMessage(
-            "Password must be at least 6 characters.",
-            "error"
-          );
-
-          return;
-
+      await setDoc(
+        doc(
+          db,
+          "users",
+          user.uid
+        ),
+        {
+          uid:user.uid,
+          name:name,
+          email:email,
+          createdAt:serverTimestamp(),
+          role:"student"
         }
+      );
 
 
-        // CHECK CONFIRM PASSWORD
-
-        if(password !== confirmPassword){
-
-          showMessage(
-            "Passwords do not match.",
-            "error"
-          );
-
-          return;
-
-        }
+      showMessage(
+        "Account created successfully! Redirecting...",
+        "success"
+      );
 
 
-        signupBtn.disabled =
-          true;
+      setTimeout(
+        () => {
 
-        signupBtn.textContent =
-          "Creating Account...";
+          window.location.href =
+            "firebase-dashboard.html";
 
-
-        try{
-
-          // CREATE FIREBASE ACCOUNT
-
-          const userCredential =
-            await createUserWithEmailAndPassword(
-              auth,
-              email,
-              password
-            );
+        },
+        1200
+      );
 
 
-          const user =
-            userCredential.user;
+    }
+
+    catch(error){
 
 
-          // SAVE NAME IN FIREBASE AUTH PROFILE
-
-          await updateProfile(
-            user,
-            {
-              displayName:name
-            }
-          );
+      let errorMessage =
+        "Unable to create account. Please try again.";
 
 
-          // SAVE USER PROFILE IN FIRESTORE
+      if(
+        error.code ===
+        "auth/email-already-in-use"
+      ){
 
-          await setDoc(
-            doc(db, "users", user.uid),
-            {
-              uid:user.uid,
-              name:name,
-              email:email,
-              createdAt:serverTimestamp(),
-              role:"student"
-            }
-          );
-
-
-          showMessage(
-            "Account created successfully! Redirecting...",
-            "success"
-          );
-
-
-          // GO TO DASHBOARD
-
-          setTimeout(
-            () => {
-
-              window.location.href =
-                "firebase-dashboard.html";
-
-            },
-            1200
-          );
-
-
-        }
-        catch(error){
-
-          let errorMessage =
-            "Unable to create account. Please try again.";
-
-
-          if(
-            error.code ===
-            "auth/email-already-in-use"
-          ){
-
-            errorMessage =
-              "This email is already registered. Please login.";
-
-          }
-
-
-          else if(
-            error.code ===
-            "auth/invalid-email"
-          ){
-
-            errorMessage =
-              "Please enter a valid email address.";
-
-          }
-
-
-          else if(
-            error.code ===
-            "auth/weak-password"
-          ){
-
-            errorMessage =
-              "Password is too weak. Use at least 6 characters.";
-
-          }
-
-
-          else if(
-            error.code ===
-            "auth/network-request-failed"
-          ){
-
-            errorMessage =
-              "Network error. Please check your internet connection.";
-
-          }
-
-
-          showMessage(
-            errorMessage,
-            "error"
-          );
-
-
-          signupBtn.disabled =
-            false;
-
-          signupBtn.textContent =
-            "Create Account";
-
-        }
+        errorMessage =
+          "This email is already registered. Please login.";
 
       }
-    );
 
-  </script>
+
+      else if(
+        error.code ===
+        "auth/invalid-email"
+      ){
+
+        errorMessage =
+          "Please enter a valid email address.";
+
+      }
+
+
+      else if(
+        error.code ===
+        "auth/weak-password"
+      ){
+
+        errorMessage =
+          "Password is too weak. Use at least 6 characters.";
+
+      }
+
+
+      else if(
+        error.code ===
+        "auth/network-request-failed"
+      ){
+
+        errorMessage =
+          "Network error. Please check your internet connection.";
+
+      }
+
+
+      showMessage(
+        errorMessage,
+        "error"
+      );
+
+
+      signupBtn.disabled =
+        false;
+
+
+      signupBtn.textContent =
+        "Create Account";
+
+    }
+
+  }
+);
+
+</script>
+
 
 </body>
+
 </html>
