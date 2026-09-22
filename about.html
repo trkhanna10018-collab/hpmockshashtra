@@ -11,53 +11,390 @@ content="width=device-width, initial-scale=1.0">
 <title>About - HPMockShashtra</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:#f4f8fd;color:#162b55}
-.header{height:74px;background:#fff;border-bottom:1px solid #e3eaf3;display:flex;align-items:center;justify-content:space-between;padding:0 42px}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#112b5e}
-.brand img{width:49px;height:49px;object-fit:contain}
-.brand-name{font-size:21px;font-weight:850;letter-spacing:-.3px}
-.brand-name span{color:#2863d8}
-.tagline{margin-top:3px;font-size:10px;color:#74819a;font-weight:600}
-.back-btn{background:#eaf2ff;color:#245bd0;text-decoration:none;padding:10px 15px;border-radius:9px;font-size:12px;font-weight:800}
-.back-btn:hover{background:#dfeaff}
-.page{max-width:1050px;margin:auto;padding:28px 24px 42px}
-.hero{background:linear-gradient(110deg,#4035d5,#3569e7);color:#fff;border-radius:17px;padding:30px 32px;box-shadow:0 10px 25px rgba(52,73,210,.14);margin-bottom:17px}
-.hero h1{margin:0 0 8px;font-size:29px}
-.hero p{margin:0;max-width:780px;font-size:13px;line-height:1.6;opacity:.94}
-.content{background:#fff;border:1px solid #dfe7f1;border-radius:16px;padding:26px;box-shadow:0 5px 20px rgba(26,51,91,.045)}
-.section{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid #e7edf4}
-.section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
-.section h2{margin:0 0 8px;font-size:19px;color:#162f69}
-.section p{margin:0;color:#596b85;font-size:12px;line-height:1.7}
-.features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
-.feature{border:1px solid #e0e8f1;background:#fbfdff;border-radius:11px;padding:15px}
-.feature h3{margin:0 0 5px;font-size:14px;color:#17366f}
-.feature p{font-size:11px;line-height:1.55}
-.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:14px}
-.approach-box{background:#edf4ff;border:1px solid #d6e5fb;border-radius:10px;padding:14px;text-align:center}
-.approach-box strong{display:block;color:#245bd0;font-size:14px;margin-bottom:4px}
-.approach-box span{color:#687890;font-size:10px}
-.contact{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px}
-.contact-card{background:#fbfdff;border:1px solid #e0e8f1;border-radius:11px;padding:15px;text-decoration:none}
-.contact-card:hover{background:#f3f7ff}
-.contact-card span{display:block;color:#7a879a;font-size:10px;margin-bottom:4px}
-.contact-card strong{color:#1c3d78;font-size:13px;word-break:break-word}
-.goal{background:#eef6ff;border:1px solid #cfe3fb;border-radius:12px;padding:18px;text-align:center}
-.goal p{margin:0 0 7px}
-.goal strong{color:#17366f;font-size:16px}
-.footer{background:#fff;border-top:1px solid #e1e7ef;padding:17px 24px}
-.footer-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#78869b;font-size:10px}
-.footer-links{display:flex;align-items:center;gap:11px}
-.footer-links a{color:#65748b;text-decoration:none;font-size:11px;font-weight:650}
-.footer-links a:hover{color:#245bd0}
-.footer-sep{color:#c3cad5}
-@media(max-width:700px){
-.header{padding:0 15px}.brand img{width:43px;height:43px}.brand-name{font-size:18px}.tagline{font-size:9px}
-.page{padding:17px 13px 30px}.hero{padding:23px 20px}.hero h1{font-size:24px}.content{padding:20px}
-.features,.contact{grid-template-columns:1fr}.approach{grid-template-columns:1fr}
-.footer-inner{flex-direction:column;text-align:center}
+
+*{
+  box-sizing:border-box;
 }
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:#f4f7fb;
+  color:#162b55;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+  max-width:1100px;
+  margin:auto;
+  padding:28px 22px 45px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#315be8,#4b46e8);
+  color:#fff;
+  border-radius:20px;
+  padding:38px 38px;
+  box-shadow:0 12px 30px rgba(49,91,232,.18);
+  margin-bottom:20px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+  right:-90px;
+  top:-110px;
+}
+
+.hero h1{
+  position:relative;
+  z-index:1;
+  margin:0 0 10px;
+  font-size:32px;
+  letter-spacing:-.4px;
+}
+
+.hero p{
+  position:relative;
+  z-index:1;
+  margin:0;
+  max-width:760px;
+  font-size:13px;
+  line-height:1.75;
+  color:#e8edff;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+  background:#fff;
+  border:1px solid #e1e8f1;
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 5px 22px rgba(26,51,91,.05);
+}
+
+.section{
+  padding-bottom:27px;
+  margin-bottom:27px;
+  border-bottom:1px solid #e9eef5;
+}
+
+.section:last-child{
+  padding-bottom:0;
+  margin-bottom:0;
+  border-bottom:0;
+}
+
+.section h2{
+  margin:0 0 9px;
+  font-size:20px;
+  color:#17346e;
+}
+
+.section > p{
+  margin:0;
+  color:#5f6f87;
+  font-size:13px;
+  line-height:1.75;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:17px;
+}
+
+.feature{
+  border:1px solid #e1e8f1;
+  background:#fbfdff;
+  border-radius:13px;
+  padding:18px;
+  transition:.2s;
+}
+
+.feature:hover{
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(20,45,90,.06);
+}
+
+.feature h3{
+  margin:0 0 6px;
+  font-size:14px;
+  color:#17366f;
+}
+
+.feature p{
+  margin:0;
+  font-size:11px;
+  line-height:1.6;
+  color:#687890;
+}
+
+
+/* =========================
+   APPROACH
+========================= */
+
+.approach{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+  margin-top:17px;
+}
+
+.approach-box{
+  background:#edf4ff;
+  border:1px solid #d6e5fb;
+  border-radius:12px;
+  padding:18px;
+  text-align:center;
+}
+
+.approach-box strong{
+  display:block;
+  color:#245bd0;
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.approach-box span{
+  color:#687890;
+  font-size:11px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+  margin-top:17px;
+}
+
+.contact-card{
+  background:#fbfdff;
+  border:1px solid #e0e8f1;
+  border-radius:12px;
+  padding:17px;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.contact-card:hover{
+  background:#f3f7ff;
+  transform:translateY(-1px);
+}
+
+.contact-card span{
+  display:block;
+  color:#7a879a;
+  font-size:10px;
+  margin-bottom:5px;
+}
+
+.contact-card strong{
+  color:#1c3d78;
+  font-size:13px;
+  word-break:break-word;
+}
+
+
+/* =========================
+   GOAL
+========================= */
+
+.goal{
+  background:linear-gradient(135deg,#eef6ff,#f6f9ff);
+  border:1px solid #d6e6fa;
+  border-radius:14px;
+  padding:22px;
+  text-align:center;
+}
+
+.goal p{
+  margin:0 0 9px;
+  color:#5f6f87;
+  font-size:12px;
+  line-height:1.7;
+}
+
+.goal strong{
+  color:#17366f;
+  font-size:16px;
+}
+
+
+/* =========================
+   FOOTER
+   Dashboard Style
+========================= */
+
+.footer{
+  background:#020817;
+  margin-top:30px;
+}
+
+.footer-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:0 24px;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:45px;
+  padding:38px 0 30px;
+}
+
+.footer h3{
+  margin:0 0 9px;
+  color:#fff;
+  font-size:18px;
+}
+
+.footer h4{
+  margin:0 0 11px;
+  color:#fff;
+  font-size:12px;
+}
+
+.footer p{
+  margin:0;
+  font-size:11px;
+  color:#94a3b8;
+  max-width:290px;
+  line-height:1.7;
+}
+
+.footer-links{
+  display:grid;
+  gap:8px;
+}
+
+.footer-links a{
+  font-size:11px;
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  min-height:54px;
+  border-top:1px solid #1e293b;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:13px 0;
+  font-size:10px;
+  color:#94a3b8;
+}
+
+.footer-bottom-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:16px;
+}
+
+.footer-bottom a{
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+.footer-bottom a:hover{
+  color:#fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+  .page{
+    padding:16px 13px 30px;
+  }
+
+  .hero{
+    padding:27px 21px;
+    border-radius:16px;
+  }
+
+  .hero h1{
+    font-size:25px;
+  }
+
+  .hero p{
+    font-size:12px;
+  }
+
+  .content{
+    padding:21px;
+  }
+
+  .features,
+  .contact,
+  .approach{
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner{
+    width:calc(100% - 24px);
+    padding:0;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:25px;
+    padding:30px 0 25px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-bottom-links{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+
+}
+
 </style>
 
 </head>
@@ -65,173 +402,391 @@ body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:#f4f8fd;color:#
 
 <body>
 
-<header class="header">
-
-  <a href="firebase-dashboard.html" class="brand">
-    <img src="logo.png" alt="HPMockShashtra">
-    <div>
-      <div class="brand-name">HP<span>Mock</span>Shashtra</div>
-      <div class="tagline">Prepare Today, Serve Himachal Tomorrow</div>
-    </div>
-  </a>
-
-  <a href="firebase-dashboard.html" class="back-btn">
-    ← Back to Dashboard
-  </a>
-
-</header>
 
 <main class="page">
 
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <section class="hero">
+
     <h1>About HPMockShashtra</h1>
+
     <p>
-      HPMockShashtra is an online practice platform designed to help aspirants
-      prepare for competitive examinations through mock tests, previous year
-      question papers, and structured practice resources.
+      HPMockShashtra is an online practice platform focused on helping aspirants
+      prepare for competitive examinations in Himachal Pradesh through structured
+      mock tests, previous year questions, bilingual practice and useful study resources.
     </p>
+
   </section>
+
+
+  <!-- =========================
+       CONTENT
+  ========================= -->
 
   <section class="content">
 
-    <div class="section">
-      <h2>Our Purpose</h2>
-      <p>
-        Our aim is to provide a simple and organized platform where aspirants
-        can practice regularly, assess their preparation, identify areas for
-        improvement, and build confidence for their examinations.
-      </p>
-    </div>
+
+    <!-- PURPOSE -->
 
     <div class="section">
+
+      <h2>Our Purpose</h2>
+
+      <p>
+        Our aim is to provide a simple, affordable and organized platform where
+        aspirants can practice regularly, evaluate their preparation, identify areas
+        for improvement and build confidence before appearing in competitive examinations.
+      </p>
+
+    </div>
+
+
+    <!-- WHAT WE OFFER -->
+
+    <div class="section">
+
       <h2>What We Offer</h2>
 
       <div class="features">
 
+
         <div class="feature">
+
           <h3>Mock Test Series</h3>
-          <p>Full-length practice tests designed for exam-oriented preparation.</p>
+
+          <p>
+            Full-length practice tests designed to help aspirants prepare in an
+            exam-oriented environment.
+          </p>
+
         </div>
 
-        <div class="feature">
-          <h3>Previous Year Question Papers</h3>
-          <p>Resources to understand question patterns and practice previous examination questions.</p>
-        </div>
 
         <div class="feature">
+
+          <h3>Previous Year Questions</h3>
+
+          <p>
+            Practice resources that help aspirants understand examination patterns
+            and commonly asked question types.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
           <h3>Performance Tracking</h3>
-          <p>Track attempted tests and monitor your preparation progress.</p>
+
+          <p>
+            Track attempted tests, scores and preparation progress through your account.
+          </p>
+
         </div>
 
+
         <div class="feature">
+
           <h3>Study Mode</h3>
-          <p>Review answers, identify mistakes, and understand correct answers after a test.</p>
+
+          <p>
+            Review answers after completing a test and identify mistakes for better learning.
+          </p>
+
         </div>
 
+
         <div class="feature">
+
           <h3>Hindi + English Support</h3>
-          <p>Bilingual content for convenient and accessible preparation.</p>
+
+          <p>
+            Bilingual questions and practice resources for convenient preparation.
+          </p>
+
         </div>
+
+
+        <div class="feature">
+
+          <h3>HP Focused Preparation</h3>
+
+          <p>
+            Preparation resources focused primarily on competitive examinations
+            relevant to Himachal Pradesh aspirants.
+          </p>
+
+        </div>
+
 
       </div>
+
     </div>
 
+
+    <!-- APPROACH -->
+
     <div class="section">
+
       <h2>Our Approach</h2>
-      <p>Effective preparation is built through three simple steps:</p>
+
+      <p>
+        Effective preparation is built through three simple steps:
+      </p>
+
 
       <div class="approach">
 
+
         <div class="approach-box">
+
           <strong>Practice</strong>
-          <span>Attempt tests regularly.</span>
+
+          <span>
+            Attempt tests and questions regularly.
+          </span>
+
         </div>
 
+
         <div class="approach-box">
+
           <strong>Analyse</strong>
-          <span>Understand your performance.</span>
+
+          <span>
+            Review your performance and identify weaknesses.
+          </span>
+
         </div>
 
+
         <div class="approach-box">
+
           <strong>Improve</strong>
-          <span>Learn from your mistakes.</span>
+
+          <span>
+            Learn from mistakes and improve consistently.
+          </span>
+
         </div>
+
 
       </div>
+
     </div>
 
+
+    <!-- BEGINNING -->
+
     <div class="section">
+
       <h2>Our Beginning</h2>
+
       <p>
-        HPMockShashtra has been started with a focus on providing preparation
-        resources for competitive examinations in Himachal Pradesh. More
-        examinations, question papers, and study resources may be added over time.
+        HPMockShashtra was started with the idea of creating a simple and practical
+        preparation platform for aspirants preparing for competitive examinations
+        in Himachal Pradesh. The platform will continue to grow with additional
+        mock tests, practice resources and examination-related material over time.
       </p>
+
     </div>
 
+
+    <!-- CONTACT -->
+
     <div class="section">
+
       <h2>Contact Us</h2>
-      <p>For queries regarding tests, payments, account access, or other support, feel free to contact us.</p>
+
+      <p>
+        For queries related to tests, payments, account access or other support,
+        you can contact us through the options below.
+      </p>
+
 
       <div class="contact">
 
+
         <a href="tel:8278847614" class="contact-card">
+
           <span>Phone</span>
-          <strong>8278847614</strong>
+
+          <strong>
+            8278847614
+          </strong>
+
         </a>
+
 
         <a href="https://wa.me/918278847614" class="contact-card">
+
           <span>WhatsApp</span>
-          <strong>8278847614</strong>
+
+          <strong>
+            8278847614
+          </strong>
+
         </a>
+
 
         <a href="mailto:trkhanna10018@gmail.com" class="contact-card">
+
           <span>Email</span>
-          <strong>trkhanna10018@gmail.com</strong>
+
+          <strong>
+            trkhanna10018@gmail.com
+          </strong>
+
         </a>
 
+
       </div>
+
     </div>
 
+
+    <!-- GOAL -->
+
     <div class="section">
+
       <div class="goal">
+
         <p>
           Our goal is to provide affordable and practical preparation resources
-          that help aspirants prepare better, practice consistently, and move
+          that help aspirants prepare better, practice consistently and move
           closer to their examination goals.
         </p>
 
-        <strong>Prepare Today, Serve Himachal Tomorrow.</strong>
+        <strong>
+          Prepare Today, Serve Himachal Tomorrow.
+        </strong>
+
       </div>
+
     </div>
+
 
   </section>
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
 
   <div class="footer-inner">
 
-    <div>
-      © 2026 HPMockShashtra. All rights reserved.
+
+    <div class="footer-top">
+
+
+      <!-- BRAND -->
+
+      <div>
+
+        <h3>HPMockShashtra</h3>
+
+        <p>
+          A practice platform for Himachal Pradesh competitive exam aspirants
+          with mock tests, bilingual practice and performance tracking.
+        </p>
+
+      </div>
+
+
+      <!-- MOCK TESTS -->
+
+      <div>
+
+        <h4>Mock Tests</h4>
+
+        <div class="footer-links">
+
+          <a href="joa-series.html">
+            JOA (IT) Mock Tests
+          </a>
+
+          <a href="patwari-series.html">
+            HP Patwari Mock Tests
+          </a>
+
+          <a href="firebase-dashboard.html">
+            Free Test Access
+          </a>
+
+          <a href="firebase-dashboard.html">
+            Test Series
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- INFORMATION -->
+
+      <div>
+
+        <h4>Information</h4>
+
+        <div class="footer-links">
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+
+          <a href="terms.html">
+            Terms &amp; Conditions
+          </a>
+
+        </div>
+
+      </div>
+
+
     </div>
 
-    <div>
-      Prepare Today, Serve Himachal Tomorrow.
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <div>
+        © 2026 HPMockShashtra. All rights reserved.
+      </div>
+
+
+      <div class="footer-bottom-links">
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms &amp; Conditions
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="footer-links">
-      <a href="about.html">About</a>
-      <span class="footer-sep">|</span>
-      <a href="privacy.html">Privacy Policy</a>
-      <span class="footer-sep">|</span>
-      <a href="terms.html">Terms &amp; Conditions</a>
-    </div>
 
   </div>
 
 </footer>
 
+
 </body>
+
 </html>
