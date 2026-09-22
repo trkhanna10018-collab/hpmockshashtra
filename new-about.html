@@ -55,11 +55,13 @@ body{
 
   z-index:20;
 
-  background:rgba(2,8,23,.35);
+  background:rgba(2,8,23,.40);
 
-  border-bottom:1px solid rgba(255,255,255,.12);
+  border-bottom:1px solid rgba(255,255,255,.16);
 
   backdrop-filter:blur(8px);
+
+  -webkit-backdrop-filter:blur(8px);
 }
 
 
@@ -68,7 +70,7 @@ body{
 
   margin:auto;
 
-  min-height:64px;
+  min-height:76px;
 
   padding:0 24px;
 
@@ -91,30 +93,35 @@ body{
 
   align-items:center;
 
-  gap:10px;
+  gap:13px;
 
   color:#ffffff;
 
   text-decoration:none;
 
-  font-size:17px;
+  font-size:18px;
 
   font-weight:700;
 
   white-space:nowrap;
 
-  text-shadow:0 2px 5px rgba(0,0,0,.7);
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.8);
 }
 
 
 .brand img{
-  width:34px;
+  width:68px;
 
-  height:34px;
+  height:68px;
 
   object-fit:contain;
 
   border-radius:50%;
+
+  filter:drop-shadow(
+    0 3px 6px rgba(0,0,0,.35)
+  );
 }
 
 
@@ -123,7 +130,7 @@ body{
 
   align-items:center;
 
-  gap:28px;
+  gap:30px;
 }
 
 
@@ -134,13 +141,16 @@ body{
 
   text-decoration:none;
 
-  font-size:12px;
+  font-size:13px;
 
-  font-weight:500;
+  font-weight:600;
 
-  padding:22px 0;
+  padding:27px 0;
 
-  text-shadow:0 2px 5px rgba(0,0,0,.7);
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.8);
+
+  transition:.2s;
 }
 
 
@@ -149,12 +159,7 @@ body{
 }
 
 
-.nav-links a.active{
-  color:#ffffff;
-}
-
-
-.nav-links a.active::after{
+.nav-links a::after{
   content:"";
 
   position:absolute;
@@ -163,28 +168,39 @@ body{
 
   right:0;
 
-  bottom:15px;
+  bottom:18px;
 
   height:2px;
 
   background:#ffd43b;
 
+  transform:scaleX(0);
+
+  transition:.2s;
+
   border-radius:2px;
 }
 
 
-.login-btn{
+.nav-links a:hover::after{
+  transform:scaleX(1);
+}
+
+
+/* ==================================================
+   CREATE ACCOUNT BUTTON
+================================================== */
+
+.create-btn{
   display:inline-flex;
 
   align-items:center;
 
   justify-content:center;
 
-  min-width:63px;
+  padding:10px 18px;
 
-  padding:9px 17px;
-
-  border-radius:6px;
+  border-radius:7px;
 
   background:#1677ee;
 
@@ -194,23 +210,28 @@ body{
 
   font-size:12px;
 
-  font-weight:600;
+  font-weight:700;
 
-  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  white-space:nowrap;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.25);
 
   text-shadow:none !important;
+
+  transition:.2s;
 }
 
 
-.login-btn:hover{
+.create-btn:hover{
   background:#0d6bdc;
 
-  color:#ffffff !important;
+  transform:translateY(-1px);
 }
 
 
 /* ==================================================
-   MAIN PAGE
+   MAIN
 ================================================== */
 
 .main{
@@ -218,7 +239,7 @@ body{
 
   min-height:100vh;
 
-  padding-bottom:55px;
+  padding-bottom:40px;
 }
 
 
@@ -229,11 +250,11 @@ body{
 .hero{
   max-width:1180px;
 
-  min-height:470px;
+  min-height:430px;
 
   margin:auto;
 
-  padding:80px 24px 55px;
+  padding:68px 24px 30px;
 
   display:flex;
 
@@ -247,7 +268,7 @@ body{
 
 
 .hero-small{
-  margin-bottom:14px;
+  margin-bottom:12px;
 
   color:#ffffff;
 
@@ -260,12 +281,13 @@ body{
   text-transform:uppercase;
 
   text-shadow:
-    0 2px 7px rgba(0,0,0,.95);
+    0 2px 7px rgba(0,0,0,.95),
+    0 0 10px rgba(0,0,0,.5);
 }
 
 
 .hero h1{
-  margin:0 0 18px;
+  margin:0 0 16px;
 
   color:#ffffff;
 
@@ -276,12 +298,13 @@ body{
   letter-spacing:-1.2px;
 
   text-shadow:
-    0 3px 9px rgba(0,0,0,.95);
+    0 3px 9px rgba(0,0,0,.95),
+    0 0 15px rgba(0,0,0,.5);
 }
 
 
 .hero h1 span{
-  display:block;
+  display:inline;
 
   color:#ffd43b;
 
@@ -302,12 +325,13 @@ body{
   line-height:1.65;
 
   text-shadow:
-    0 2px 7px rgba(0,0,0,.95);
+    0 2px 7px rgba(0,0,0,.95),
+    0 0 10px rgba(0,0,0,.5);
 }
 
 
 /* ==================================================
-   HERO BUTTONS / TAGS
+   HERO TAGS
 ================================================== */
 
 .hero-tags{
@@ -315,22 +339,22 @@ body{
 
   flex-wrap:wrap;
 
-  gap:12px;
+  gap:10px;
 
-  margin-top:24px;
+  margin-top:22px;
 }
 
 
 .hero-tags a{
   padding:8px 16px;
 
-  border:1px solid rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.82);
 
   border-radius:25px;
 
   color:#ffffff;
 
-  background:rgba(0,0,0,.16);
+  background:rgba(0,0,0,.24);
 
   text-decoration:none;
 
@@ -339,18 +363,21 @@ body{
   font-weight:600;
 
   transition:.2s;
+
+  text-shadow:
+    0 1px 4px rgba(0,0,0,.8);
 }
 
 
 .hero-tags a:hover{
-  background:rgba(255,255,255,.16);
+  background:rgba(255,255,255,.18);
 
   border-color:#ffffff;
 }
 
 
 /* ==================================================
-   CONTENT WRAPPER
+   CONTENT
 ================================================== */
 
 .content{
@@ -363,11 +390,11 @@ body{
 
 
 /* ==================================================
-   SECTION
+   SECTIONS
 ================================================== */
 
 .section{
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 
@@ -390,7 +417,7 @@ body{
 
   display:block;
 
-  width:30px;
+  width:32px;
 
   height:3px;
 
@@ -419,27 +446,28 @@ body{
 
 
 /* ==================================================
-   GLASS CARDS
+   STRONGER GLASS CARDS
 ================================================== */
 
 .glass{
-  background:rgba(25,35,48,.48);
+  background:rgba(12,25,43,.68);
 
-  border:1px solid rgba(255,255,255,.20);
+  border:1px solid rgba(255,255,255,.34);
 
-  border-radius:13px;
+  border-radius:14px;
 
   box-shadow:
-    0 8px 25px rgba(0,0,0,.16);
+    0 8px 25px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.12);
 
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(9px);
 
-  -webkit-backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(9px);
 }
 
 
 /* ==================================================
-   VISION / FOCUS
+   PURPOSE / VISION
 ================================================== */
 
 .intro-grid{
@@ -447,32 +475,35 @@ body{
 
   grid-template-columns:1fr 1fr;
 
-  gap:18px;
+  gap:16px;
 
-  margin-top:18px;
+  margin-top:16px;
 }
 
 
 .intro-card{
-  padding:22px;
+  padding:21px;
 
-  min-height:120px;
+  min-height:118px;
 }
 
 
 .intro-card h3{
   margin:0 0 8px;
 
-  color:#ffffff;
+  color:#ffd43b;
 
   font-size:15px;
+
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.7);
 }
 
 
 .intro-card p{
   margin:0;
 
-  color:#e9edf3;
+  color:#edf2f7;
 
   font-size:11px;
 
@@ -491,12 +522,12 @@ body{
 
   gap:14px;
 
-  margin-top:18px;
+  margin-top:16px;
 }
 
 
 .feature{
-  min-height:130px;
+  min-height:128px;
 
   padding:19px;
 }
@@ -505,16 +536,19 @@ body{
 .feature h3{
   margin:0 0 8px;
 
-  color:#ffffff;
+  color:#ffd43b;
 
   font-size:14px;
+
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.7);
 }
 
 
 .feature p{
   margin:0;
 
-  color:#e5e9ef;
+  color:#e7edf4;
 
   font-size:11px;
 
@@ -523,13 +557,35 @@ body{
 
 
 /* ==================================================
+   APPROACH
+================================================== */
+
+.approach-box{
+  margin-top:15px;
+
+  padding:21px;
+}
+
+
+/* ==================================================
    BEGINNING
 ================================================== */
 
 .beginning{
-  padding:24px;
+  margin-top:15px;
 
-  margin-top:18px;
+  padding:22px;
+}
+
+
+.beginning p{
+  margin:0;
+
+  color:#e7edf4;
+
+  font-size:12px;
+
+  line-height:1.75;
 }
 
 
@@ -544,7 +600,7 @@ body{
 
   gap:14px;
 
-  margin-top:18px;
+  margin-top:16px;
 }
 
 
@@ -562,7 +618,7 @@ body{
 
 
 .contact-card:hover{
-  background:rgba(255,255,255,.15);
+  background:rgba(24,53,84,.78);
 
   transform:translateY(-2px);
 }
@@ -607,7 +663,7 @@ body{
 
   padding:20px 24px;
 
-  margin-top:18px;
+  margin-top:15px;
 }
 
 
@@ -631,6 +687,9 @@ body{
   color:#ffffff;
 
   font-size:21px;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.3);
 }
 
 
@@ -782,44 +841,51 @@ body{
 
 
 /* ==================================================
-   MOBILE NAV
+   MOBILE
 ================================================== */
 
 @media(max-width:850px){
 
   .nav-inner{
-    min-height:60px;
+    min-height:74px;
 
-    padding:0 15px;
+    padding:0 18px;
+  }
+
+
+  .brand img{
+    width:58px;
+
+    height:58px;
   }
 
 
   .nav-links{
-    gap:16px;
+    gap:17px;
   }
 
 
   .nav-links a{
-    font-size:10px;
+    font-size:11px;
   }
 
 
-  .login-btn{
-    min-width:55px;
+  .create-btn{
+    padding:9px 13px;
 
-    padding:8px 12px;
+    font-size:11px;
   }
 
 
   .hero{
-    min-height:500px;
+    min-height:410px;
 
-    padding:65px 20px 45px;
+    padding:55px 20px 25px;
   }
 
 
   .hero h1{
-    font-size:43px;
+    font-size:44px;
   }
 
 
@@ -838,13 +904,13 @@ body{
 @media(max-width:650px){
 
   .nav-inner{
+    min-height:auto;
+
     flex-wrap:wrap;
 
-    padding-top:12px;
+    padding:10px 15px;
 
-    padding-bottom:12px;
-
-    gap:10px;
+    gap:8px;
   }
 
 
@@ -854,9 +920,9 @@ body{
 
 
   .brand img{
-    width:30px;
+    width:52px;
 
-    height:30px;
+    height:52px;
   }
 
 
@@ -867,11 +933,11 @@ body{
 
     justify-content:center;
 
-    gap:19px;
+    gap:22px;
+
+    padding-top:3px;
 
     overflow-x:auto;
-
-    padding-top:4px;
   }
 
 
@@ -879,44 +945,43 @@ body{
     padding:7px 0;
 
     white-space:nowrap;
+
+    font-size:10px;
   }
 
 
-  .nav-links a.active::after{
+  .nav-links a::after{
     bottom:0;
   }
 
 
-  .login-btn{
+  .create-btn{
     margin-left:auto;
+
+    padding:8px 12px;
+
+    font-size:10px;
   }
 
 
   .hero{
-    min-height:570px;
+    min-height:430px;
 
-    padding:60px 20px 45px;
+    padding:50px 18px 25px;
 
     align-items:flex-start;
-
-    background-position:center top;
-  }
-
-
-  .hero-content{
-    max-width:100%;
   }
 
 
   .hero-small{
-    font-size:10px;
+    font-size:9px;
 
-    letter-spacing:1.8px;
+    letter-spacing:1.6px;
   }
 
 
   .hero h1{
-    font-size:38px;
+    font-size:37px;
 
     line-height:1.08;
   }
@@ -930,7 +995,9 @@ body{
 
 
   .hero-tags{
-    gap:8px;
+    gap:7px;
+
+    margin-top:19px;
   }
 
 
@@ -1018,52 +1085,47 @@ body{
   <div class="nav-inner">
 
 
-    <a href="homepage.html" class="brand">
+    <!-- LOGO -->
+
+    <a
+      href="homepage.html"
+      class="brand"
+    >
 
       <img
         src="logo.png"
         alt="HPMockShashtra"
       >
 
-      <span>HPMockShashtra</span>
+      <span>
+        HPMockShashtra
+      </span>
 
     </a>
 
 
+    <!-- NAVIGATION LINKS -->
+
     <nav class="nav-links">
 
-      <a href="homepage.html">
-        Home
-      </a>
-
       <a href="joa-series.html">
-        Mock Tests
+        JOA (IT)
       </a>
 
-      <a href="joa-series.html">
-        Test Series
-      </a>
-
-      <a href="joa-series.html">
-        Previous Year
-      </a>
-
-      <a href="about.html" class="active">
-        About
-      </a>
-
-      <a href="mailto:trkhanna10018@gmail.com">
-        Contact
+      <a href="patwari-series.html">
+        Patwari
       </a>
 
     </nav>
 
 
+    <!-- CREATE ACCOUNT -->
+
     <a
-      href="firebase-login.html"
-      class="login-btn"
+      href="firebase-signup.html"
+      class="create-btn"
     >
-      Login
+      Create Account
     </a>
 
 
@@ -1086,6 +1148,7 @@ body{
   <section class="hero">
 
     <div class="hero-content">
+
 
       <div class="hero-small">
         About HPMockShashtra
@@ -1125,6 +1188,7 @@ body{
 
       </div>
 
+
     </div>
 
   </section>
@@ -1139,7 +1203,10 @@ body{
 
     <!-- PURPOSE -->
 
-    <section class="section" id="purpose">
+    <section
+      class="section"
+      id="purpose"
+    >
 
       <h2 class="section-title">
         Our Purpose
@@ -1192,7 +1259,10 @@ body{
 
     <!-- WHAT WE OFFER -->
 
-    <section class="section" id="offers">
+    <section
+      class="section"
+      id="offers"
+    >
 
       <h2 class="section-title">
         What We Offer
@@ -1293,18 +1363,25 @@ body{
 
     <!-- APPROACH -->
 
-    <section class="section" id="approach">
+    <section
+      class="section"
+      id="approach"
+    >
 
       <h2 class="section-title">
         Our Approach
       </h2>
 
 
-      <p class="section-text">
-        We believe that regular practice, careful analysis of performance
-        and continuous improvement are the key elements of effective
-        examination preparation.
-      </p>
+      <div class="glass approach-box">
+
+        <p class="section-text">
+          We believe that regular practice, careful analysis of performance
+          and continuous improvement are the key elements of effective
+          examination preparation.
+        </p>
+
+      </div>
 
     </section>
 
@@ -1320,7 +1397,7 @@ body{
 
       <div class="glass beginning">
 
-        <p class="section-text">
+        <p>
           HPMockShashtra was started with the idea of creating a simple and
           practical preparation platform for aspirants preparing for competitive
           examinations in Himachal Pradesh. The platform will continue to grow
@@ -1407,7 +1484,10 @@ body{
 
     <!-- GOAL -->
 
-    <section class="section" id="goal">
+    <section
+      class="section"
+      id="goal"
+    >
 
       <div class="glass goal">
 
@@ -1470,25 +1550,21 @@ body{
       <div>
 
         <h4>
-          Quick Links
+          Mock Tests
         </h4>
 
         <div class="footer-links">
 
-          <a href="homepage.html">
-            Home
+          <a href="joa-series.html">
+            JOA (IT) Mock Tests
           </a>
 
-          <a href="joa-series.html">
-            Mock Tests
+          <a href="patwari-series.html">
+            HP Patwari Mock Tests
           </a>
 
           <a href="joa-series.html">
             Test Series
-          </a>
-
-          <a href="about.html">
-            About
           </a>
 
         </div>
@@ -1499,10 +1575,14 @@ body{
       <div>
 
         <h4>
-          Legal
+          Information
         </h4>
 
         <div class="footer-links">
+
+          <a href="about.html">
+            About
+          </a>
 
           <a href="privacy.html">
             Privacy Policy
