@@ -11,440 +11,755 @@
 
 <style>
 
+/* ==================================================
+   RESET
+================================================== */
+
 *{
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
+
   font-family:"Segoe UI",Arial,sans-serif;
-  background:#f4f7fb;
-  color:#162b55;
+
+  background:#f5f8fc;
+
+  color:#172b4d;
+
+  line-height:1.6;
 }
 
 
-/* =========================
-   PAGE
-========================= */
+/* ==================================================
+   TOP BRAND AREA
+================================================== */
 
-.page{
+.brand-area{
   max-width:1100px;
+
   margin:auto;
-  padding:28px 22px 45px;
-}
 
+  padding:55px 24px 38px;
 
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(135deg,#315be8,#4b46e8);
-  color:#fff;
-  border-radius:20px;
-  padding:38px 38px 42px;
-  box-shadow:0 12px 30px rgba(49,91,232,.18);
-  margin-bottom:20px;
   text-align:center;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  width:280px;
-  height:280px;
-  border-radius:50%;
-  background:rgba(255,255,255,.07);
-  right:-100px;
-  top:-120px;
-}
 
-.hero::before{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:rgba(255,255,255,.05);
-  left:-70px;
-  bottom:-90px;
+.brand-title{
+  margin:0;
+
+  color:#12346b;
+
+  font-size:34px;
+
+  font-weight:800;
+
+  letter-spacing:-.7px;
 }
 
 
-/* =========================
-   LOGO
-========================= */
+.brand-line{
+  width:45px;
 
-.hero-logo{
-  position:relative;
-  z-index:2;
+  height:3px;
 
-  width:115px;
-  height:115px;
+  margin:13px auto 15px;
 
-  object-fit:contain;
+  background:#1769d2;
 
-  display:block;
-  margin:0 auto 18px;
-
-  background:#fff;
-  border-radius:22px;
-
-  padding:8px;
-
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.18);
+  border-radius:5px;
 }
 
 
-/* =========================
-   HERO TEXT
-========================= */
-
-.hero h1{
-  position:relative;
-  z-index:2;
-
-  margin:0 0 10px;
-
-  font-size:32px;
-  letter-spacing:-.4px;
-}
-
-.hero p{
-  position:relative;
-  z-index:2;
+.brand-subtitle{
+  max-width:650px;
 
   margin:0 auto;
 
-  max-width:760px;
+  color:#66758b;
 
   font-size:13px;
-  line-height:1.75;
 
-  color:#e8edff;
+  line-height:1.7;
 }
 
 
-/* =========================
-   CONTENT
-========================= */
+/* ==================================================
+   MAIN
+================================================== */
 
-.content{
-  background:#fff;
-  border:1px solid #e1e8f1;
+.main{
+  max-width:1100px;
+
+  margin:auto;
+
+  padding:0 24px 55px;
+}
+
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.intro{
+  background:#ffffff;
+
+  border:1px solid #dce5f0;
+
   border-radius:18px;
+
   padding:30px;
-  box-shadow:0 5px 22px rgba(26,51,91,.05);
+
+  margin-bottom:20px;
+
+  box-shadow:
+    0 6px 22px rgba(28,55,95,.06);
 }
+
+
+.intro h1{
+  margin:0 0 12px;
+
+  color:#173d78;
+
+  font-size:27px;
+
+  line-height:1.2;
+}
+
+
+.intro h1 span{
+  color:#1769d2;
+}
+
+
+.intro p{
+  max-width:850px;
+
+  margin:0;
+
+  color:#63738a;
+
+  font-size:13px;
+
+  line-height:1.8;
+}
+
+
+/* ==================================================
+   SECTION
+================================================== */
 
 .section{
-  padding-bottom:27px;
-  margin-bottom:27px;
-  border-bottom:1px solid #e9eef5;
+  margin-bottom:20px;
+
+  background:#ffffff;
+
+  border:1px solid #dce5f0;
+
+  border-radius:18px;
+
+  padding:28px;
+
+  box-shadow:
+    0 6px 22px rgba(28,55,95,.06);
 }
 
-.section:last-child{
-  padding-bottom:0;
-  margin-bottom:0;
-  border-bottom:0;
+
+.section-heading{
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:10px;
 }
+
+
+.section-mark{
+  width:5px;
+
+  height:25px;
+
+  border-radius:5px;
+
+  background:#1769d2;
+
+  flex:0 0 5px;
+}
+
 
 .section h2{
-  margin:0 0 9px;
-  font-size:20px;
-  color:#17346e;
+  margin:0;
+
+  color:#173d78;
+
+  font-size:21px;
+
+  line-height:1.2;
 }
+
 
 .section > p{
   margin:0;
-  color:#5f6f87;
+
+  color:#64748b;
+
   font-size:13px;
-  line-height:1.75;
+
+  line-height:1.8;
 }
 
 
-/* =========================
-   FEATURES
-========================= */
+/* ==================================================
+   PURPOSE CARDS
+================================================== */
 
-.features{
+.purpose-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-top:17px;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:16px;
+
+  margin-top:20px;
 }
 
-.feature{
-  border:1px solid #e1e8f1;
-  background:#fbfdff;
-  border-radius:13px;
-  padding:18px;
+
+.purpose-card{
+  padding:22px;
+
+  background:#f7faff;
+
+  border:1px solid #cfdff2;
+
+  border-radius:14px;
+
+  box-shadow:
+    0 4px 13px rgba(31,69,115,.05);
+}
+
+
+.purpose-card h3{
+  margin:0 0 8px;
+
+  color:#16427e;
+
+  font-size:15px;
+}
+
+
+.purpose-card p{
+  margin:0;
+
+  color:#687990;
+
+  font-size:11px;
+
+  line-height:1.7;
+}
+
+
+/* ==================================================
+   OFFER GRID
+================================================== */
+
+.offer-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:15px;
+
+  margin-top:20px;
+}
+
+
+.offer-card{
+  min-height:145px;
+
+  padding:20px;
+
+  background:#f9fbfe;
+
+  border:1px solid #d5e1ef;
+
+  border-radius:14px;
+
+  box-shadow:
+    0 4px 14px rgba(31,69,115,.05);
+
   transition:.2s;
 }
 
-.feature:hover{
-  transform:translateY(-2px);
-  box-shadow:0 7px 18px rgba(20,45,90,.06);
+
+.offer-card:hover{
+  transform:translateY(-3px);
+
+  border-color:#b9cee7;
+
+  box-shadow:
+    0 8px 20px rgba(31,69,115,.09);
 }
 
-.feature h3{
-  margin:0 0 6px;
+
+.offer-number{
+  width:30px;
+
+  height:30px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  margin-bottom:12px;
+
+  border-radius:8px;
+
+  background:#eaf3ff;
+
+  color:#1769d2;
+
+  font-size:12px;
+
+  font-weight:800;
+}
+
+
+.offer-card h3{
+  margin:0 0 7px;
+
+  color:#173d78;
+
   font-size:14px;
-  color:#17366f;
 }
 
-.feature p{
+
+.offer-card p{
   margin:0;
+
+  color:#6b7b91;
+
   font-size:11px;
-  line-height:1.6;
-  color:#687890;
+
+  line-height:1.65;
 }
 
 
-/* =========================
+/* ==================================================
    APPROACH
-========================= */
-
-.approach{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:13px;
-  margin-top:17px;
-}
+================================================== */
 
 .approach-box{
-  background:#edf4ff;
-  border:1px solid #d6e5fb;
-  border-radius:12px;
-  padding:18px;
-  text-align:center;
-}
+  margin-top:18px;
 
-.approach-box strong{
-  display:block;
-  color:#245bd0;
-  font-size:15px;
-  margin-bottom:5px;
-}
+  padding:21px 23px;
 
-.approach-box span{
-  color:#687890;
-  font-size:11px;
+  background:#f5f9ff;
+
+  border:1px solid #cfdff2;
+
+  border-radius:14px;
 }
 
 
-/* =========================
+.approach-box p{
+  margin:0;
+
+  color:#5f7188;
+
+  font-size:12px;
+
+  line-height:1.8;
+}
+
+
+/* ==================================================
+   BEGINNING
+================================================== */
+
+.beginning-box{
+  margin-top:18px;
+
+  padding:21px 23px;
+
+  background:#fbfcfe;
+
+  border:1px solid #d7e1ec;
+
+  border-radius:14px;
+}
+
+
+.beginning-box p{
+  margin:0;
+
+  color:#65758b;
+
+  font-size:12px;
+
+  line-height:1.8;
+}
+
+
+/* ==================================================
    CONTACT
-========================= */
+================================================== */
 
-.contact{
+.contact-grid{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
-  gap:13px;
-  margin-top:17px;
+
+  gap:14px;
+
+  margin-top:20px;
 }
+
 
 .contact-card{
-  background:#fbfdff;
-  border:1px solid #e0e8f1;
-  border-radius:12px;
-  padding:17px;
+  padding:19px;
+
+  background:#f8faff;
+
+  border:1px solid #d5e1ef;
+
+  border-radius:13px;
+
   text-decoration:none;
+
   transition:.2s;
 }
 
+
 .contact-card:hover{
-  background:#f3f7ff;
-  transform:translateY(-1px);
+  transform:translateY(-2px);
+
+  background:#f3f8ff;
+
+  border-color:#bcd2eb;
 }
 
-.contact-card span{
+
+.contact-label{
   display:block;
-  color:#7a879a;
-  font-size:10px;
+
   margin-bottom:5px;
+
+  color:#7b899b;
+
+  font-size:10px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.6px;
 }
 
-.contact-card strong{
-  color:#1c3d78;
+
+.contact-value{
+  display:block;
+
+  color:#17447f;
+
   font-size:13px;
+
+  font-weight:700;
+
   word-break:break-word;
 }
 
 
-/* =========================
+/* ==================================================
    GOAL
-========================= */
+================================================== */
 
 .goal{
-  background:linear-gradient(135deg,#eef6ff,#f6f9ff);
-  border:1px solid #d6e6fa;
-  border-radius:14px;
-  padding:22px;
   text-align:center;
+
+  padding:27px;
+
+  background:#eef6ff;
+
+  border:1px solid #c9def5;
+
+  border-radius:15px;
 }
+
+
+.goal-title{
+  margin:0 0 8px;
+
+  color:#173d78;
+
+  font-size:18px;
+
+  font-weight:700;
+}
+
 
 .goal p{
-  margin:0 0 9px;
-  color:#5f6f87;
+  max-width:750px;
+
+  margin:0 auto;
+
+  color:#61738a;
+
   font-size:12px;
-  line-height:1.7;
+
+  line-height:1.75;
 }
+
 
 .goal strong{
-  color:#17366f;
-  font-size:16px;
+  display:block;
+
+  margin-top:12px;
+
+  color:#1769d2;
+
+  font-size:14px;
 }
 
 
-/* =========================
+/* ==================================================
    FOOTER
-========================= */
+================================================== */
 
 .footer{
   background:#020817;
-  margin-top:30px;
+
+  margin-top:0;
 }
+
 
 .footer-inner{
   max-width:1180px;
+
   margin:auto;
+
   padding:0 24px;
 }
 
+
 .footer-top{
   display:grid;
+
   grid-template-columns:1.5fr 1fr 1fr;
+
   gap:45px;
+
   padding:38px 0 30px;
 }
 
+
 .footer h3{
   margin:0 0 9px;
-  color:#fff;
+
+  color:#ffffff;
+
   font-size:18px;
 }
 
+
 .footer h4{
   margin:0 0 11px;
-  color:#fff;
+
+  color:#ffffff;
+
   font-size:12px;
 }
 
+
 .footer p{
+  max-width:300px;
+
   margin:0;
-  font-size:11px;
+
   color:#94a3b8;
-  max-width:290px;
+
+  font-size:11px;
+
   line-height:1.7;
 }
 
+
 .footer-links{
   display:grid;
+
   gap:8px;
 }
 
+
 .footer-links a{
-  font-size:11px;
   color:#cbd5e1;
+
+  font-size:11px;
+
   text-decoration:none;
 }
 
+
 .footer-links a:hover{
-  color:#fff;
+  color:#ffffff;
 }
+
 
 .footer-bottom{
   min-height:54px;
-  border-top:1px solid #1e293b;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
+
   padding:13px 0;
-  font-size:10px;
+
+  border-top:1px solid #1e293b;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+
   color:#94a3b8;
+
+  font-size:10px;
 }
+
 
 .footer-bottom-links{
   display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:16px;
+
+  gap:17px;
 }
+
 
 .footer-bottom a{
   color:#cbd5e1;
+
   text-decoration:none;
 }
 
+
 .footer-bottom a:hover{
-  color:#fff;
+  color:#ffffff;
 }
 
 
-/* =========================
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
-  .page{
-    padding:16px 13px 30px;
+  .brand-area{
+    padding:42px 20px 30px;
   }
 
-  .hero{
-    padding:27px 21px 32px;
-    border-radius:16px;
+
+  .brand-title{
+    font-size:30px;
   }
 
-  .hero-logo{
-    width:100px;
-    height:100px;
-    border-radius:20px;
-    margin-bottom:16px;
+
+  .main{
+    padding:0 15px 40px;
   }
 
-  .hero h1{
-    font-size:25px;
+
+  .offer-grid{
+    grid-template-columns:1fr 1fr;
   }
 
-  .hero p{
+
+  .contact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .brand-area{
+    padding:35px 18px 25px;
+  }
+
+
+  .brand-title{
+    font-size:27px;
+  }
+
+
+  .brand-subtitle{
     font-size:12px;
   }
 
-  .content{
-    padding:21px;
+
+  .intro,
+  .section{
+    padding:22px;
+
+    border-radius:15px;
   }
 
-  .features,
-  .contact,
-  .approach{
+
+  .intro h1{
+    font-size:23px;
+  }
+
+
+  .purpose-grid,
+  .offer-grid,
+  .contact-grid{
     grid-template-columns:1fr;
   }
+
+
+  .offer-card{
+    min-height:auto;
+  }
+
 
   .footer-inner{
     width:calc(100% - 24px);
+
     padding:0;
   }
 
+
   .footer-top{
     grid-template-columns:1fr;
+
     gap:25px;
+
     padding:30px 0 25px;
   }
 
+
   .footer-bottom{
     flex-direction:column;
+
     align-items:flex-start;
   }
 
+
   .footer-bottom-links{
-    justify-content:flex-start;
     flex-wrap:wrap;
+
+    gap:12px;
   }
 
 }
@@ -457,295 +772,407 @@ body{
 <body>
 
 
-<main class="page">
+<!-- ==================================================
+     BRAND
+================================================== -->
+
+<div class="brand-area">
+
+  <h1 class="brand-title">
+    HPMockShashtra
+  </h1>
+
+  <div class="brand-line"></div>
+
+  <p class="brand-subtitle">
+    A simple and practical preparation platform for Himachal Pradesh
+    competitive examination aspirants.
+  </p>
+
+</div>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
+<!-- ==================================================
+     MAIN CONTENT
+================================================== -->
 
-  <section class="hero">
+<main class="main">
 
-    <!-- LOGO -->
-    <img
-      src="logo.png"
-      alt="HPMockShashtra Logo"
-      class="hero-logo"
-    >
 
-    <h1>About HPMockShashtra</h1>
+  <!-- INTRODUCTION -->
+
+  <section class="intro">
+
+    <h1>
+      A Better Way to <span>Prepare</span>
+    </h1>
 
     <p>
-      HPMockShashtra is an online practice platform focused on helping aspirants
-      prepare for competitive examinations in Himachal Pradesh through structured
-      mock tests, previous year questions, bilingual practice and useful study resources.
+      HPMockShashtra is an online practice platform designed to help
+      aspirants prepare for competitive examinations through mock tests,
+      previous year questions and structured learning resources.
     </p>
 
   </section>
 
 
-  <!-- =========================
-       CONTENT
-  ========================= -->
+  <!-- PURPOSE -->
 
-  <section class="content">
+  <section class="section">
 
+    <div class="section-heading">
 
-    <!-- PURPOSE -->
+      <div class="section-mark"></div>
 
-    <div class="section">
-
-      <h2>Our Purpose</h2>
-
-      <p>
-        Our aim is to provide a simple, affordable and organized platform where
-        aspirants can practice regularly, evaluate their preparation, identify areas
-        for improvement and build confidence before appearing in competitive examinations.
-      </p>
+      <h2>
+        Our Purpose
+      </h2>
 
     </div>
 
 
-    <!-- WHAT WE OFFER -->
+    <p>
+      Our aim is to provide a simple, affordable and organized platform
+      where aspirants can practice regularly, evaluate their preparation,
+      identify areas for improvement and build confidence before appearing
+      in competitive examinations.
+    </p>
 
-    <div class="section">
 
-      <h2>What We Offer</h2>
+    <div class="purpose-grid">
 
-      <div class="features">
 
+      <div class="purpose-card">
 
-        <div class="feature">
-
-          <h3>Mock Test Series</h3>
-
-          <p>
-            Full-length practice tests designed to help aspirants prepare in an
-            exam-oriented environment.
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <h3>Previous Year Questions</h3>
-
-          <p>
-            Practice resources that help aspirants understand examination patterns
-            and commonly asked question types.
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <h3>Performance Tracking</h3>
-
-          <p>
-            Track attempted tests, scores and preparation progress through your account.
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <h3>Study Mode</h3>
-
-          <p>
-            Review answers after completing a test and identify mistakes for better learning.
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <h3>Hindi + English Support</h3>
-
-          <p>
-            Bilingual questions and practice resources for convenient preparation.
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <h3>HP Focused Preparation</h3>
-
-          <p>
-            Preparation resources focused primarily on competitive examinations
-            relevant to Himachal Pradesh aspirants.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- APPROACH -->
-
-    <div class="section">
-
-      <h2>Our Approach</h2>
-
-      <p>
-        Effective preparation is built through three simple steps:
-      </p>
-
-
-      <div class="approach">
-
-
-        <div class="approach-box">
-
-          <strong>Practice</strong>
-
-          <span>
-            Attempt tests and questions regularly.
-          </span>
-
-        </div>
-
-
-        <div class="approach-box">
-
-          <strong>Analyse</strong>
-
-          <span>
-            Review your performance and identify weaknesses.
-          </span>
-
-        </div>
-
-
-        <div class="approach-box">
-
-          <strong>Improve</strong>
-
-          <span>
-            Learn from mistakes and improve consistently.
-          </span>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- BEGINNING -->
-
-    <div class="section">
-
-      <h2>Our Beginning</h2>
-
-      <p>
-        HPMockShashtra was started with the idea of creating a simple and practical
-        preparation platform for aspirants preparing for competitive examinations
-        in Himachal Pradesh. The platform will continue to grow with additional
-        mock tests, practice resources and examination-related material over time.
-      </p>
-
-    </div>
-
-
-    <!-- CONTACT -->
-
-    <div class="section">
-
-      <h2>Contact Us</h2>
-
-      <p>
-        For queries related to tests, payments, account access or other support,
-        you can contact us through the options below.
-      </p>
-
-
-      <div class="contact">
-
-
-        <a href="tel:8278847614" class="contact-card">
-
-          <span>Phone</span>
-
-          <strong>
-            8278847614
-          </strong>
-
-        </a>
-
-
-        <a
-          href="https://wa.me/918278847614"
-          class="contact-card"
-          target="_blank"
-        >
-
-          <span>WhatsApp</span>
-
-          <strong>
-            8278847614
-          </strong>
-
-        </a>
-
-
-        <a
-          href="mailto:trkhanna10018@gmail.com"
-          class="contact-card"
-        >
-
-          <span>Email</span>
-
-          <strong>
-            trkhanna10018@gmail.com
-          </strong>
-
-        </a>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- GOAL -->
-
-    <div class="section">
-
-      <div class="goal">
+        <h3>
+          Our Vision
+        </h3>
 
         <p>
-          Our goal is to provide affordable and practical preparation resources
-          that help aspirants prepare better, practice consistently and move
-          closer to their examination goals.
+          To build a useful and accessible preparation platform for
+          aspirants preparing for competitive examinations in Himachal Pradesh.
         </p>
 
-        <strong>
-          Prepare Today, Serve Himachal Tomorrow.
-        </strong>
+      </div>
+
+
+      <div class="purpose-card">
+
+        <h3>
+          Our Focus
+        </h3>
+
+        <p>
+          Quality mock tests, practical practice resources, bilingual
+          preparation and a simple learning experience.
+        </p>
 
       </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- WHAT WE OFFER -->
+
+  <section class="section">
+
+    <div class="section-heading">
+
+      <div class="section-mark"></div>
+
+      <h2>
+        What We Offer
+      </h2>
 
     </div>
 
 
+    <div class="offer-grid">
+
+
+      <div class="offer-card">
+
+        <div class="offer-number">
+          01
+        </div>
+
+        <h3>
+          Mock Test Series
+        </h3>
+
+        <p>
+          Full-length practice tests designed to help aspirants prepare
+          in an exam-oriented environment.
+        </p>
+
+      </div>
+
+
+      <div class="offer-card">
+
+        <div class="offer-number">
+          02
+        </div>
+
+        <h3>
+          Previous Year Questions
+        </h3>
+
+        <p>
+          Practice resources that help aspirants understand examination
+          patterns and commonly asked question types.
+        </p>
+
+      </div>
+
+
+      <div class="offer-card">
+
+        <div class="offer-number">
+          03
+        </div>
+
+        <h3>
+          Performance Tracking
+        </h3>
+
+        <p>
+          Track attempted tests, scores and preparation progress through
+          your account.
+        </p>
+
+      </div>
+
+
+      <div class="offer-card">
+
+        <div class="offer-number">
+          04
+        </div>
+
+        <h3>
+          Study Mode
+        </h3>
+
+        <p>
+          Review answers after completing a test and identify mistakes
+          for better learning.
+        </p>
+
+      </div>
+
+
+      <div class="offer-card">
+
+        <div class="offer-number">
+          05
+        </div>
+
+        <h3>
+          Hindi + English Support
+        </h3>
+
+        <p>
+          Bilingual questions and practice resources for convenient
+          preparation.
+        </p>
+
+      </div>
+
+
+      <div class="offer-card">
+
+        <div class="offer-number">
+          06
+        </div>
+
+        <h3>
+          HP Focused Preparation
+        </h3>
+
+        <p>
+          Preparation resources focused primarily on competitive
+          examinations relevant to Himachal Pradesh aspirants.
+        </p>
+
+      </div>
+
+
+    </div>
+
   </section>
+
+
+  <!-- APPROACH -->
+
+  <section class="section">
+
+    <div class="section-heading">
+
+      <div class="section-mark"></div>
+
+      <h2>
+        Our Approach
+      </h2>
+
+    </div>
+
+
+    <div class="approach-box">
+
+      <p>
+        We believe that regular practice, careful analysis of performance
+        and continuous improvement are the key elements of effective
+        examination preparation.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- BEGINNING -->
+
+  <section class="section">
+
+    <div class="section-heading">
+
+      <div class="section-mark"></div>
+
+      <h2>
+        Our Beginning
+      </h2>
+
+    </div>
+
+
+    <div class="beginning-box">
+
+      <p>
+        HPMockShashtra was started with the idea of creating a simple and
+        practical preparation platform for aspirants preparing for competitive
+        examinations in Himachal Pradesh. The platform will continue to grow
+        with additional mock tests, practice resources and examination-related
+        material over time.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="section">
+
+    <div class="section-heading">
+
+      <div class="section-mark"></div>
+
+      <h2>
+        Contact Us
+      </h2>
+
+    </div>
+
+
+    <p>
+      For queries related to tests, payments, account access or other
+      support, you can contact us through the options below.
+    </p>
+
+
+    <div class="contact-grid">
+
+
+      <a
+        href="tel:8278847614"
+        class="contact-card"
+      >
+
+        <span class="contact-label">
+          Phone
+        </span>
+
+        <span class="contact-value">
+          8278847614
+        </span>
+
+      </a>
+
+
+      <a
+        href="https://wa.me/918278847614"
+        class="contact-card"
+        target="_blank"
+      >
+
+        <span class="contact-label">
+          WhatsApp
+        </span>
+
+        <span class="contact-value">
+          8278847614
+        </span>
+
+      </a>
+
+
+      <a
+        href="mailto:trkhanna10018@gmail.com"
+        class="contact-card"
+      >
+
+        <span class="contact-label">
+          Email
+        </span>
+
+        <span class="contact-value">
+          trkhanna10018@gmail.com
+        </span>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- GOAL -->
+
+  <section class="section">
+
+    <div class="goal">
+
+      <div class="goal-title">
+        Our Goal
+      </div>
+
+      <p>
+        Our goal is to provide affordable and practical preparation
+        resources that help aspirants prepare better, practice consistently
+        and move closer to their examination goals.
+      </p>
+
+      <strong>
+        Prepare Today, Serve Himachal Tomorrow.
+      </strong>
+
+    </div>
+
+  </section>
+
 
 </main>
 
 
-<!-- =========================
+<!-- ==================================================
      FOOTER
-========================= -->
+================================================== -->
 
 <footer class="footer">
 
@@ -755,25 +1182,25 @@ body{
     <div class="footer-top">
 
 
-      <!-- BRAND -->
-
       <div>
 
-        <h3>HPMockShashtra</h3>
+        <h3>
+          HPMockShashtra
+        </h3>
 
         <p>
-          A practice platform for Himachal Pradesh competitive exam aspirants
-          with mock tests, bilingual practice and performance tracking.
+          A practice platform for Himachal Pradesh competitive exam
+          aspirants with mock tests, bilingual practice and performance tracking.
         </p>
 
       </div>
 
 
-      <!-- MOCK TESTS -->
-
       <div>
 
-        <h4>Mock Tests</h4>
+        <h4>
+          Mock Tests
+        </h4>
 
         <div class="footer-links">
 
@@ -785,11 +1212,7 @@ body{
             HP Patwari Mock Tests
           </a>
 
-          <a href="firebase-dashboard.html">
-            Free Test Access
-          </a>
-
-          <a href="firebase-dashboard.html">
+          <a href="joa-series.html">
             Test Series
           </a>
 
@@ -798,11 +1221,11 @@ body{
       </div>
 
 
-      <!-- INFORMATION -->
-
       <div>
 
-        <h4>Information</h4>
+        <h4>
+          Information
+        </h4>
 
         <div class="footer-links">
 
@@ -826,13 +1249,12 @@ body{
     </div>
 
 
-    <!-- FOOTER BOTTOM -->
-
     <div class="footer-bottom">
 
       <div>
         © 2026 HPMockShashtra. All rights reserved.
       </div>
+
 
       <div class="footer-bottom-links">
 
