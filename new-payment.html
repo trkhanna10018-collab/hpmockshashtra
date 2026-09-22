@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment | HPMockShashtra</title>
+
+<style>
+
+/* ==================================================
+   RESET
+================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+
+  font-family:"Segoe UI",Arial,sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(49,91,232,.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(100,75,220,.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #eef6ff,
+      #f7f8ff 55%,
+      #f0edff
+    );
+
+  color:#152956;
+
+  min-height:100vh;
+}
+
+
+a{
+  text-decoration:none;
+}
+
+
+/* ==================================================
+   PAGE
+================================================== */
+
+.page{
+  max-width:1180px;
+
+  margin:auto;
+
+  padding:38px 24px 45px;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(32,67,139,.97),
+      rgba(49,91,232,.94),
+      rgba(82,73,218,.92)
+    );
+
+  color:#fff;
+
+  border-radius:22px;
+
+  padding:34px 36px 28px;
+
+  box-shadow:
+    0 18px 45px rgba(39,70,145,.20);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+
+.hero:before{
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  right:-120px;
+  top:-160px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.10);
+}
+
+
+.hero:after{
+  content:"";
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  left:-130px;
+  bottom:-150px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.07);
+}
+
+
+.hero-top{
+
+  position:relative;
+
+  z-index:1;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+  align-items:center;
+}
+
+
+.hero h1{
+
+  margin:0 0 9px;
+
+  font-size:32px;
+
+  letter-spacing:-.7px;
+}
+
+
+.hero p{
+
+  margin:0;
+
+  max-width:700px;
+
+  font-size:14px;
+
+  line-height:1.65;
+
+  color:#e8efff;
+}
+
+
+.hero-quote{
+
+  max-width:210px;
+
+  text-align:right;
+
+  font-size:13px;
+
+  line-height:1.6;
+
+  font-style:italic;
+
+  color:#e4ebff;
+}
+
+
+/* ==================================================
+   FEATURES
+================================================== */
+
+.features{
+
+  position:relative;
+
+  z-index:1;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:12px;
+
+  margin-top:25px;
+}
+
+
+.feature{
+
+  background:
+    rgba(255,255,255,.12);
+
+  border:
+    1px solid rgba(255,255,255,.22);
+
+  border-radius:12px;
+
+  padding:14px 9px;
+
+  text-align:center;
+
+  backdrop-filter:blur(5px);
+}
+
+
+.feature strong{
+
+  display:block;
+
+  font-size:15px;
+
+  margin-bottom:4px;
+}
+
+
+.feature span{
+
+  font-size:10px;
+
+  color:#e2eaff;
+}
+
+
+/* ==================================================
+   PAYMENT AREA
+================================================== */
+
+.payment-card{
+
+  background:
+    rgba(255,255,255,.88);
+
+  border:
+    1px solid #dbe5f2;
+
+  border-radius:20px;
+
+  margin-top:20px;
+
+  padding:25px;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:25px;
+
+  box-shadow:
+    0 12px 35px rgba(26,51,91,.07);
+
+  backdrop-filter:blur(8px);
+}
+
+
+/* ==================================================
+   QR PANEL
+================================================== */
+
+.qr-panel{
+
+  border:
+    1px solid #dfe8f3;
+
+  background:
+    rgba(248,251,255,.90);
+
+  border-radius:16px;
+
+  padding:24px;
+
+  text-align:center;
+}
+
+
+.qr-panel h2{
+
+  margin:0 0 6px;
+
+  font-size:20px;
+
+  color:#17366f;
+}
+
+
+.qr-panel p{
+
+  margin:0 0 17px;
+
+  color:#66758d;
+
+  font-size:12px;
+
+  line-height:1.5;
+}
+
+
+.qr-box{
+
+  background:#fff;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius:13px;
+
+  padding:14px;
+
+  display:inline-block;
+
+  box-shadow:
+    0 5px 18px rgba(25,50,90,.05);
+}
+
+
+.qr-box img{
+
+  width:215px;
+
+  height:215px;
+
+  object-fit:contain;
+
+  display:block;
+}
+
+
+.qr-note{
+
+  margin-top:14px;
+
+  color:#65748b;
+
+  font-size:11px;
+
+  line-height:1.5;
+}
+
+
+/* ==================================================
+   PAYMENT INFORMATION
+================================================== */
+
+.payment-info{
+
+  padding:6px 5px;
+}
+
+
+.payment-label{
+
+  color:#66758d;
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+
+.payment-title{
+
+  margin-top:6px;
+
+  font-size:29px;
+
+  line-height:1.15;
+
+  color:#162f69;
+
+  font-weight:900;
+}
+
+
+.payment-subtitle{
+
+  margin-top:9px;
+
+  color:#66758d;
+
+  font-size:12px;
+
+  line-height:1.6;
+}
+
+
+.divider{
+
+  height:1px;
+
+  background:#e4eaf2;
+
+  margin:21px 0;
+}
+
+
+.payment-info h2{
+
+  margin:0 0 15px;
+
+  font-size:19px;
+
+  color:#17366f;
+}
+
+
+/* ==================================================
+   STEPS
+================================================== */
+
+.steps{
+
+  display:grid;
+
+  gap:14px;
+}
+
+
+.step{
+
+  display:flex;
+
+  gap:11px;
+
+  align-items:flex-start;
+}
+
+
+.step-no{
+
+  width:31px;
+
+  height:31px;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  background:#e8f1ff;
+
+  color:#2560d1;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:12px;
+
+  font-weight:900;
+}
+
+
+.step p{
+
+  margin:3px 0 0;
+
+  color:#596b85;
+
+  font-size:12px;
+
+  line-height:1.55;
+}
+
+
+.step strong{
+
+  color:#17366f;
+}
+
+
+/* ==================================================
+   ACTION BUTTONS
+================================================== */
+
+.action-buttons{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:10px;
+
+  margin-top:20px;
+}
+
+
+.action{
+
+  display:block;
+
+  text-align:center;
+
+  padding:12px 10px;
+
+  border-radius:10px;
+
+  font-size:12px;
+
+  font-weight:850;
+
+  transition:.2s;
+}
+
+
+.whatsapp{
+
+  background:#20b85a;
+
+  color:#fff;
+}
+
+
+.whatsapp:hover{
+
+  background:#159447;
+
+  transform:translateY(-1px);
+}
+
+
+.call{
+
+  background:#fff;
+
+  border:
+    1px solid #2863d8;
+
+  color:#245bd0;
+}
+
+
+.call:hover{
+
+  background:#f2f6ff;
+}
+
+
+/* ==================================================
+   NOTES
+================================================== */
+
+.notes{
+
+  margin-top:19px;
+
+  background:
+    rgba(237,246,255,.85);
+
+  border:
+    1px solid #cfe2f8;
+
+  border-radius:17px;
+
+  padding:20px 23px;
+}
+
+
+.notes h2{
+
+  margin:0 0 10px;
+
+  font-size:18px;
+
+  color:#17366f;
+}
+
+
+.notes ul{
+
+  margin:0;
+
+  padding-left:20px;
+
+  color:#52647e;
+
+  font-size:12px;
+
+  line-height:1.8;
+}
+
+
+.notes li{
+
+  margin-bottom:2px;
+}
+
+
+.notes strong{
+
+  color:#17366f;
+}
+
+
+/* ==================================================
+   TRUST
+================================================== */
+
+.trust{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:18px;
+
+  padding:26px 10px 4px;
+
+  text-align:center;
+}
+
+
+.trust-item{
+
+  color:#253c69;
+
+  font-size:12px;
+
+  font-weight:750;
+}
+
+
+.trust-icon{
+
+  width:43px;
+
+  height:43px;
+
+  margin:0 auto 8px;
+
+  border-radius:50%;
+
+  background:#edf4ff;
+
+  color:#2560d1;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:18px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer{
+
+  background:#020817;
+
+  color:#cbd5e1;
+
+  margin-top:0;
+}
+
+
+.footer-inner{
+
+  max-width:1000px;
+
+  margin:auto;
+
+  padding:0 24px;
+}
+
+
+.footer-top{
+
+  padding:40px 0 30px;
+
+  display:grid;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr;
+
+  gap:60px;
+}
+
+
+.footer h3,
+.footer h4{
+
+  color:#fff;
+
+  margin:0 0 12px;
+}
+
+
+.footer h3{
+
+  font-size:17px;
+}
+
+
+.footer h4{
+
+  font-size:13px;
+}
+
+
+.footer p{
+
+  margin:0;
+
+  max-width:310px;
+
+  color:#94a3b8;
+
+  font-size:11px;
+
+  line-height:1.7;
+}
+
+
+.footer-links{
+
+  display:grid;
+
+  gap:8px;
+}
+
+
+.footer-links a{
+
+  color:#cbd5e1;
+
+  font-size:11px;
+
+  text-decoration:none;
+}
+
+
+.footer-links a:hover{
+
+  color:#fff;
+}
+
+
+.footer-bottom{
+
+  border-top:
+    1px solid #1e293b;
+
+  min-height:54px;
+
+  padding:14px 0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  color:#94a3b8;
+
+  font-size:10px;
+}
+
+
+.footer-bottom-links{
+
+  display:flex;
+
+  gap:17px;
+}
+
+
+.footer-bottom-links a{
+
+  color:#cbd5e1;
+
+  font-size:10px;
+
+  text-decoration:none;
+}
+
+
+.footer-bottom-links a:hover{
+
+  color:#fff;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:800px){
+
+  .page{
+
+    padding:
+      20px
+      13px
+      32px;
+  }
+
+
+  .hero{
+
+    padding:
+      26px
+      20px;
+
+    border-radius:19px;
+  }
+
+
+  .hero-top{
+
+    display:block;
+  }
+
+
+  .hero h1{
+
+    font-size:26px;
+  }
+
+
+  .hero p{
+
+    font-size:13px;
+  }
+
+
+  .hero-quote{
+
+    display:none;
+  }
+
+
+  .features{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:8px;
+  }
+
+
+  .feature{
+
+    padding:
+      12px
+      7px;
+  }
+
+
+  .feature strong{
+
+    font-size:14px;
+  }
+
+
+  .payment-card{
+
+    grid-template-columns:1fr;
+
+    padding:16px;
+
+    gap:17px;
+  }
+
+
+  .qr-panel{
+
+    padding:
+      20px
+      14px;
+  }
+
+
+  .qr-box img{
+
+    width:190px;
+
+    height:190px;
+  }
+
+
+  .trust{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:17px;
+  }
+
+
+  .footer-top{
+
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+    padding:
+      32px
+      0
+      26px;
+  }
+
+
+  .footer-bottom{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:9px;
+  }
+
+
+  .footer-bottom-links{
+
+    flex-wrap:wrap;
+  }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media(max-width:480px){
+
+  .features{
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+
+  .payment-title{
+
+    font-size:25px;
+  }
+
+
+  .action-buttons{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .trust{
+
+    gap:14px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="page">
+
+
+  <!-- ==================================================
+       PAYMENT HERO
+  ================================================== -->
+
+  <section class="hero">
+
+
+    <div class="hero-top">
+
+
+      <div>
+
+        <h1>
+          Complete Your Payment
+        </h1>
+
+
+        <p>
+
+          Get access to your selected HPMockShashtra mock test series
+          and continue your preparation with structured,
+          exam-focused practice.
+
+        </p>
+
+      </div>
+
+
+      <div class="hero-quote">
+
+        “Prepare today,<br>
+        perform better tomorrow.”
+
+      </div>
+
+
+    </div>
+
+
+    <!-- FEATURES -->
+
+    <div class="features">
+
+
+      <div class="feature">
+
+        <strong>
+          Full Series
+        </strong>
+
+        <span>
+          Structured Mock Tests
+        </span>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          Bilingual
+        </strong>
+
+        <span>
+          Hindi + English
+        </span>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          Exam Focused
+        </strong>
+
+        <span>
+          Practice Questions
+        </span>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>
+          Quick Access
+        </strong>
+
+        <span>
+          After Confirmation
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- ==================================================
+       PAYMENT CARD
+  ================================================== -->
+
+  <section class="payment-card">
+
+
+    <!-- QR -->
+
+    <div class="qr-panel">
+
+
+      <h2>
+        Scan &amp; Pay using UPI
+      </h2>
+
+
+      <p>
+
+        Use Google Pay, PhonePe, Paytm or any supported UPI app.
+
+      </p>
+
+
+      <div class="qr-box">
+
+        <img
+          src="qr.png"
+          alt="UPI Payment QR Code"
+        >
+
+      </div>
+
+
+      <div class="qr-note">
+
+        Scan the QR code and complete the payment
+        for the selected mock test series.
+
+      </div>
+
+
+    </div>
+
+
+    <!-- PAYMENT INFORMATION -->
+
+    <div class="payment-info">
+
+
+      <div class="payment-label">
+
+        MOCK TEST SERIES PAYMENT
+
+      </div>
+
+
+      <div class="payment-title">
+
+        Secure Your Series Access
+
+      </div>
+
+
+      <div class="payment-subtitle">
+
+        Complete the payment using the QR code.
+        After payment confirmation, access will be activated
+        on your registered HPMockShashtra account.
+
+      </div>
+
+
+      <div class="divider"></div>
+
+
+      <h2>
+        After Payment
+      </h2>
+
+
+      <!-- STEPS -->
+
+      <div class="steps">
+
+
+        <!-- STEP 1 -->
+
+        <div class="step">
+
+          <div class="step-no">
+            1
+          </div>
+
+
+          <p>
+
+            Scan the QR code and complete the payment
+            using your preferred UPI application.
+
+          </p>
+
+        </div>
+
+
+        <!-- STEP 2 -->
+
+        <div class="step">
+
+          <div class="step-no">
+            2
+          </div>
+
+
+          <p>
+
+            After payment, send us your
+            <strong>
+              payment screenshot, registered email ID and full name
+            </strong>
+            on WhatsApp for payment verification and account activation.
+
+          </p>
+
+        </div>
+
+
+        <!-- STEP 3 -->
+
+        <div class="step">
+
+          <div class="step-no">
+            3
+          </div>
+
+
+          <p>
+
+            After payment confirmation,
+            <strong>
+              access to the selected mock test series
+              will be activated on your registered account.
+            </strong>
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ACTION BUTTONS -->
+
+      <div class="action-buttons">
+
+
+        <a
+          href="https://wa.me/918278847614?text=Hello%20HPMockShashtra%2C%20I%20have%20completed%20the%20payment.%0A%0AName%3A%20%0ARegistered%20Email%20ID%3A%20%0A%0AI%20am%20sharing%20the%20payment%20screenshot%20for%20verification."
+          class="action whatsapp"
+          target="_blank"
+        >
+
+          💬 WhatsApp Now
+
+        </a>
+
+
+        <a
+          href="tel:8278847614"
+          class="action call"
+        >
+
+          📞 Call Now
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- ==================================================
+       IMPORTANT NOTES
+  ================================================== -->
+
+  <section class="notes">
+
+
+    <h2>
+      Important Notes
+    </h2>
+
+
+    <ul>
+
+
+      <li>
+
+        Payment is made for access to the selected
+        HPMockShashtra mock test series.
+
+      </li>
+
+
+      <li>
+
+        After payment, please send your
+        <strong>
+          payment screenshot, registered email ID and full name
+        </strong>
+        on WhatsApp for payment verification and account activation.
+
+      </li>
+
+
+      <li>
+
+        Please make sure that the email ID you share is the
+        <strong>
+          same email ID used for your HPMockShashtra account.
+        </strong>
+
+      </li>
+
+
+      <li>
+
+        Access will be activated on the
+        <strong>
+          registered HPMockShashtra account
+        </strong>
+        after payment confirmation.
+
+      </li>
+
+
+      <li>
+
+        <strong>
+          No new Login ID or Password is required.
+        </strong>
+
+        Continue using your existing HPMockShashtra account.
+
+      </li>
+
+
+      <li>
+
+        Test availability will follow the access rules
+        applicable to the selected series.
+
+      </li>
+
+
+    </ul>
+
+
+  </section>
+
+
+  <!-- ==================================================
+       TRUST
+  ================================================== -->
+
+  <section class="trust">
+
+
+    <div class="trust-item">
+
+      <div class="trust-icon">
+        ✓
+      </div>
+
+      Secure Payment
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <div class="trust-icon">
+        ⚡
+      </div>
+
+      Quick Activation
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <div class="trust-icon">
+        ☎
+      </div>
+
+      Support Available
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <div class="trust-icon">
+        ★
+      </div>
+
+      Exam Focused
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="footer">
+
+
+  <div class="footer-inner">
+
+
+    <div class="footer-top">
+
+
+      <!-- BRAND -->
+
+      <div>
+
+        <h3>
+          HPMockShashtra
+        </h3>
+
+
+        <p>
+
+          A practice platform for Himachal Pradesh
+          competitive exam aspirants with mock tests,
+          bilingual practice and performance tracking.
+
+        </p>
+
+      </div>
+
+
+      <!-- MOCK TESTS -->
+
+      <div>
+
+        <h4>
+          Mock Tests
+        </h4>
+
+
+        <div class="footer-links">
+
+
+          <a href="joa-series.html">
+
+            JOA (IT) Mock Tests
+
+          </a>
+
+
+          <a href="patwari-series.html">
+
+            HP Patwari Mock Tests
+
+          </a>
+
+
+          <a href="homepage.html">
+
+            Free Test Access
+
+          </a>
+
+
+          <a href="joa-series.html">
+
+            Test Series
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- INFORMATION -->
+
+      <div>
+
+        <h4>
+          Information
+        </h4>
+
+
+        <div class="footer-links">
+
+
+          <a href="about.html">
+
+            About
+
+          </a>
+
+
+          <a href="privacy.html">
+
+            Privacy Policy
+
+          </a>
+
+
+          <a href="terms.html">
+
+            Terms &amp; Conditions
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+
+      <div>
+
+        © 2026 HPMockShashtra. All rights reserved.
+
+      </div>
+
+
+      <div class="footer-bottom-links">
+
+
+        <a href="privacy.html">
+
+          Privacy Policy
+
+        </a>
+
+
+        <a href="terms.html">
+
+          Terms &amp; Conditions
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</footer>
+
+
+</body>
+
+</html>
