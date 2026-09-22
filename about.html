@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>About - HPMockShashtra</title>
 
@@ -45,37 +44,86 @@ body{
   background:linear-gradient(135deg,#315be8,#4b46e8);
   color:#fff;
   border-radius:20px;
-  padding:38px 38px;
+  padding:38px 38px 42px;
   box-shadow:0 12px 30px rgba(49,91,232,.18);
   margin-bottom:20px;
+  text-align:center;
 }
 
 .hero::after{
   content:"";
   position:absolute;
-  width:260px;
-  height:260px;
+  width:280px;
+  height:280px;
   border-radius:50%;
   background:rgba(255,255,255,.07);
-  right:-90px;
-  top:-110px;
+  right:-100px;
+  top:-120px;
 }
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.05);
+  left:-70px;
+  bottom:-90px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.hero-logo{
+  position:relative;
+  z-index:2;
+
+  width:115px;
+  height:115px;
+
+  object-fit:contain;
+
+  display:block;
+  margin:0 auto 18px;
+
+  background:#fff;
+  border-radius:22px;
+
+  padding:8px;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.18);
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
 
 .hero h1{
   position:relative;
-  z-index:1;
+  z-index:2;
+
   margin:0 0 10px;
+
   font-size:32px;
   letter-spacing:-.4px;
 }
 
 .hero p{
   position:relative;
-  z-index:1;
-  margin:0;
+  z-index:2;
+
+  margin:0 auto;
+
   max-width:760px;
+
   font-size:13px;
   line-height:1.75;
+
   color:#e8edff;
 }
 
@@ -254,7 +302,6 @@ body{
 
 /* =========================
    FOOTER
-   Dashboard Style
 ========================= */
 
 .footer{
@@ -350,8 +397,15 @@ body{
   }
 
   .hero{
-    padding:27px 21px;
+    padding:27px 21px 32px;
     border-radius:16px;
+  }
+
+  .hero-logo{
+    width:100px;
+    height:100px;
+    border-radius:20px;
+    margin-bottom:16px;
   }
 
   .hero h1{
@@ -411,6 +465,13 @@ body{
   ========================= -->
 
   <section class="hero">
+
+    <!-- LOGO -->
+    <img
+      src="logo.png"
+      alt="HPMockShashtra Logo"
+      class="hero-logo"
+    >
 
     <h1>About HPMockShashtra</h1>
 
@@ -622,7 +683,11 @@ body{
         </a>
 
 
-        <a href="https://wa.me/918278847614" class="contact-card">
+        <a
+          href="https://wa.me/918278847614"
+          class="contact-card"
+          target="_blank"
+        >
 
           <span>WhatsApp</span>
 
@@ -633,7 +698,10 @@ body{
         </a>
 
 
-        <a href="mailto:trkhanna10018@gmail.com" class="contact-card">
+        <a
+          href="mailto:trkhanna10018@gmail.com"
+          class="contact-card"
+        >
 
           <span>Email</span>
 
@@ -765,7 +833,6 @@ body{
       <div>
         © 2026 HPMockShashtra. All rights reserved.
       </div>
-
 
       <div class="footer-bottom-links">
 
