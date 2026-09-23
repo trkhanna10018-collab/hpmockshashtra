@@ -17,7 +17,7 @@
 .free-section,.promo-grid,.sample-wrap{max-width:1360px;margin:0 auto 15px;padding:0 10px}.section-head{background:#fff;border:1px solid var(--line);padding:15px 17px;border-radius:9px 9px 0 0}.section-head h2{margin:0 0 4px}.section-head p{margin:0;color:#68798e;font-size:11px}.free-subjects{background:#fff;border:1px solid var(--line);border-top:0;padding:13px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;border-radius:0 0 9px 9px}.free-subject{border:1px solid #dce7f1;border-radius:7px;padding:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}.free-subject-name{font-weight:700;font-size:11px}.free-subject small{display:block;color:var(--green);margin-top:3px}.free-subject a{background:var(--blue);color:#fff;border-radius:5px;padding:6px 8px;font-size:9px;font-weight:800}
 .promo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.promo{position:relative;overflow:hidden;border-radius:11px;padding:20px;background:#fff;border:1px solid #dce7f1;box-shadow:0 8px 28px #0f274a14}.promo:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:var(--green)}.promo:nth-child(2):before{background:var(--blue)}.promo:nth-child(3):before{background:var(--purple)}.promo:nth-child(1){background:linear-gradient(145deg,#f1fff8,#fff)}.promo:nth-child(2){background:linear-gradient(145deg,#eff8ff,#fff)}.promo:nth-child(3){background:linear-gradient(145deg,#eef8ff,#fff)}.promo:nth-child(4){background:linear-gradient(145deg,#fff1ff,#fff)}.ms-pack:before{background:#0b76d1!important}.promo h3{margin:0;font-size:15px}.sub{font-size:10px;color:#65768b;margin:4px 0 11px}.promo ul{padding-left:19px;font-size:11px;line-height:1.85}.price{font-size:28px;font-weight:900}.old{text-decoration:line-through;color:#94a3b8;font-size:11px}.sample-wrap{display:grid;grid-template-columns:1.7fr 1fr;gap:10px}.sample,.testimonial{border:1px solid var(--line);border-radius:9px;background:#fff;padding:16px}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.opt{border:1px solid #dce5ef;padding:8px;border-radius:6px;font-size:11px}.correct{background:#e2f8ea;border-color:#a6e4bc;font-weight:800}.answer{margin-top:10px;padding:10px;background:#e2f8ea;color:#08723e;font-size:11px;border-radius:6px}.testimonial{display:flex;gap:12px;align-items:center}.person{width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#d5deea;font-size:25px}
 .footer{background:#020817;color:#d6e1ee;margin-top:22px}.footer-inner{max-width:1180px;margin:auto;padding:0 24px}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:45px;padding:38px 0 30px}.footer h3,.footer h4{color:#fff;margin:0 0 8px}.footer h3{font-size:18px}.footer h4{font-size:12px}.footer p{font-size:11px;color:#94a3b8;max-width:290px;line-height:1.55}.footer-links{display:flex;flex-direction:column;gap:7px}.footer-links a{color:#cbd5e1;font-size:11px}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid #1e293b;padding:15px 0;display:flex;justify-content:space-between;font-size:10px;color:#64748b}.footer-bottom-links{display:flex;gap:18px}
-@media(max-width:1150px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(3,1fr)}.free-subjects{grid-template-columns:repeat(4,1fr)}.stats-inner{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1150px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(4,1fr)}.free-subjects{grid-template-columns:repeat(4,1fr)}.stats-inner{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
 .topbar{top:8px;left:8px;right:8px;max-width:calc(100vw - 16px);margin:0;border-radius:18px}
 .nav{flex-wrap:wrap;padding:8px 10px;gap:8px;overflow:hidden}
@@ -62,6 +62,22 @@
 .header-links a{font-size:10px;padding:7px 10px}
 .hero{margin-top:134px}
 }
+
+.access-status{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:7px 12px;
+  border-radius:7px;
+  font-size:10px;
+  font-weight:900;
+  width:100%;
+  box-sizing:border-box;
+}
+.free-status{background:#e3f8ec;color:#087c4f;border:1px solid #b8ebce}
+.purchased-status{display:flex;align-items:center;justify-content:center;width:100%;min-height:32px;padding:7px 10px;border-radius:7px;background:#e3f8ec;color:#087c4f;border:1px solid #b8ebce;font-size:10px;font-weight:900}
+
 </style>
 </head>
 <body>
@@ -74,11 +90,9 @@
 </a>
 <div class="header-links">
 <a href="homepage.html">Home</a>
-<a href="#computer-subjects">Computer Subjects</a>
 <a href="#paid-courses">Paid Courses</a>
 <a href="my-purchase.html">My Purchases</a>
 <a href="master-progress.html">Master Progress</a>
-<a href="#computer-subjects" id="headerSearchBtn">⌕ Search</a>
 </div>
 <div class="header-user" id="headerUser" style="display:none">
   <span class="avatar" id="headerAvatar">U</span>
@@ -151,21 +165,21 @@
 </div>
 <div class="grid" id="grid">
 
-<div class="subject" data-name="Computer Fundamentals"><div class="icon">💻</div><h3>Computer Fundamentals</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-fundamentals-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS Word"><div class="icon">📘</div><h3>MS Word</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-word-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS Excel"><div class="icon">📗</div><h3>MS Excel</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-excel-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS PowerPoint"><div class="icon">📙</div><h3>MS PowerPoint</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-powerpoint-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS Access"><div class="icon">🗃️</div><h3>MS Access</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-access-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="DBMS SQL"><div class="icon">🛢️</div><h3>DBMS &amp; SQL</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="dbms-sql-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="Computer Networking"><div class="icon">🔗</div><h3>Computer Networking</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-networking-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="Cyber Security"><div class="icon">🛡️</div><h3>Cyber Security</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="cyber-security-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="C Programming"><div class="icon">💻</div><h3>C Programming</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="c-programming-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="HTML"><div class="icon">🌐</div><h3>HTML</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="html-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="CSS CSS3"><div class="icon">🎨</div><h3>CSS / CSS3</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="css-css3-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="Cloud Computing"><div class="icon">☁️</div><h3>Cloud Computing</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="cloud-computing-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="Data Structure"><div class="icon">🌳</div><h3>Data Structure</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="data-structure-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="Computer Organisation Architecture"><div class="icon">🖥️</div><h3>Computer Organisation &amp; Architecture</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-organisation-architecture-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
-<div class="subject" data-name="Operating System"><div class="icon">⚙️</div><h3>Operating System</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="operating-system-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="Computer Fundamentals" data-purchase-key="computer-fundamentals"><div class="icon">💻</div><h3>Computer Fundamentals</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-fundamentals-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS Word" data-purchase-key="ms-word"><div class="icon">📘</div><h3>MS Word</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-word-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS Excel" data-purchase-key="ms-excel"><div class="icon">📗</div><h3>MS Excel</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-excel-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS PowerPoint" data-purchase-key="ms-powerpoint"><div class="icon">📙</div><h3>MS PowerPoint</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-powerpoint-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS Access" data-purchase-key="ms-access"><div class="icon">🗃️</div><h3>MS Access</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-access-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="DBMS SQL" data-purchase-key="dbms-sql"><div class="icon">🛢️</div><h3>DBMS &amp; SQL</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="dbms-sql-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="Computer Networking" data-purchase-key="computer-networking"><div class="icon">🔗</div><h3>Computer Networking</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-networking-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="Cyber Security" data-purchase-key="cyber-security"><div class="icon">🛡️</div><h3>Cyber Security</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="cyber-security-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="C Programming" data-purchase-key="c-programming"><div class="icon">💻</div><h3>C Programming</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="c-programming-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="HTML" data-purchase-key="html"><div class="icon">🌐</div><h3>HTML</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="html-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="CSS CSS3" data-purchase-key="css-css3"><div class="icon">🎨</div><h3>CSS / CSS3</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="css-css3-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="Cloud Computing" data-purchase-key="cloud-computing"><div class="icon">☁️</div><h3>Cloud Computing</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="cloud-computing-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="Data Structure" data-purchase-key="data-structure"><div class="icon">🌳</div><h3>Data Structure</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="data-structure-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="Computer Organisation Architecture" data-purchase-key="computer-organisation-architecture"><div class="icon">🖥️</div><h3>Computer Organisation &amp; Architecture</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-organisation-architecture-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
+<div class="subject" data-name="Operating System" data-purchase-key="operating-system"><div class="icon">⚙️</div><h3>Operating System</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="operating-system-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html">Buy ₹49</a></div></div>
 <div class="subject master-card" data-name="Full Computer Master"><div class="icon">📚</div><h3>Full Computer Master</h3><div class="counts">15 Subjects | 6,000+ Questions</div><span class="badge-master">Complete Preparation</span><div class="actions2"><a class="free" href="#paid-courses">View Master</a><a class="buy" href="payment.html">Buy ₹349</a></div></div>
 
 </div>
@@ -177,7 +191,7 @@
 
 
 <section class="promo-grid" id="paid-courses">
-<div class="promo"><h3>🎁 Free Chapter Tests</h3><div class="sub">हर subject को खरीदने से पहले practice करें</div><ul><li><b>15 Computer Subjects</b></li><li><b>25 Questions</b> per subject</li><li>Exam-oriented questions</li><li>Instant result</li><li>Free chapter access</li></ul><a class="btn" style="background:#079b65;color:#fff" href="#free-tests">Start Free Tests →</a></div>
+<div class="promo"><h3>🎁 Free Chapter Tests</h3><div class="sub">हर subject को खरीदने से पहले practice करें</div><ul><li><b>15 Computer Subjects</b></li><li><b>25 Questions</b> per subject</li><li>Exam-oriented questions</li><li>Instant result</li><li>Free chapter access</li></ul><div class="access-status free-status">✓ Free Access Included</div></div>
 <div class="promo"><h3>📄 Premium – Individual Subject</h3><div class="sub">सिर्फ वही subject खरीदें जिसकी जरूरत है</div><ul><li><b>15 subjects</b> में से कोई भी</li><li><b>400 Questions</b> per subject</li><li>Chapter-wise practice</li><li>Performance tracking</li><li><b>Retry Wrong Questions</b> — गलत प्रश्न दोबारा attempt करें</li><li>Detailed Analysis</li><li><b>12 Months</b> validity</li></ul><div><span class="price">₹49</span> <span class="old">₹99</span></div><br><a class="btn primary" href="payment.html">Buy Individual Subject →</a></div>
 <div class="promo ms-pack">
 <h3>▣ MS Office Complete Pack</h3>
@@ -194,9 +208,9 @@
 <li><b>12 Months</b> validity</li>
 </ul>
 <div><span class="price" style="color:#0b76d1">₹99</span></div><br>
-<a class="btn primary" href="payment.html">Get MS Office Pack →</a>
+<a class="btn primary pack-buy" data-pack="ms-office" href="payment.html">Get MS Office Pack →</a>
 </div>
-<div class="promo"><h3>♛ Complete JOA (IT) Computer Pack</h3><div class="sub">सभी 15 subjects एक साथ</div><ul><li><b>All 15 Computer Subjects</b></li><li><b>6,000 Questions</b> — 400 × 15</li><li>Chapter-wise + full mock tests</li><li>Performance analytics</li><li><b>Retry Wrong Questions</b> — गलत प्रश्न दोबारा attempt करें</li><li>Detailed Analysis</li><li><b>12 Months</b> validity</li></ul><div><span class="price" style="color:#a018a9">₹349</span> <span class="old">₹499</span></div><br><a class="btn" style="background:#a018a9;color:#fff" href="payment.html">Get Complete Pack →</a></div>
+<div class="promo"><h3>♛ Complete JOA (IT) Computer Pack</h3><div class="sub">सभी 15 subjects एक साथ</div><ul><li><b>All 15 Computer Subjects</b></li><li><b>6,000 Questions</b> — 400 × 15</li><li>Chapter-wise + full mock tests</li><li>Performance analytics</li><li><b>Retry Wrong Questions</b> — गलत प्रश्न दोबारा attempt करें</li><li>Detailed Analysis</li><li><b>12 Months</b> validity</li></ul><div><span class="price" style="color:#a018a9">₹349</span> <span class="old">₹499</span></div><br><a class="btn pack-buy complete-pack-buy" data-pack="complete" style="background:#a018a9;color:#fff" href="payment.html">Get Complete Pack →</a></div>
 </section>
 
 <section class="info-strip">
@@ -216,7 +230,7 @@
 
 <footer class="footer"><div class="footer-inner"><div class="footer-top">
 <div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div>
-<div><h4>Mock Tests</h4><div class="footer-links"><a href="joa-series.html">JOA (IT) Mock Tests</a><a href="patwari-series.html">HP Patwari Mock Tests</a><a href="#free-tests">Free Test Access</a><a href="#paid-courses">Paid Courses</a></div></div>
+<div><h4>Mock Tests</h4><div class="footer-links"><a href="joa-series.html">JOA (IT) Mock Tests</a><a href="joa-computer-master.html">JOA (IT) Computer Master</a><a href="patwari-series.html">HP Patwari Mock Tests</a><a href="#free-tests">Free Test Access</a><a href="#paid-courses">Paid Courses</a></div></div>
 <div><h4>Information</h4><div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div>
 </div><div class="footer-bottom"><span>© 2026 HPMockShashtra. All rights reserved.</span><span>JOA (IT) Computer Master</span></div></div></footer>
 
@@ -281,46 +295,126 @@ onAuthStateChanged(auth, async (user) => {
 });
 </script>
 
-<script>
-(function(){
-  const searchBtn = document.getElementById('headerSearchBtn');
-  const grid = document.getElementById('grid');
-  if (!searchBtn || !grid) return;
 
-  const oldBox = document.getElementById('headerSearchBox');
-  if (oldBox) return;
 
-  const box = document.createElement('div');
-  box.id = 'headerSearchBox';
-  box.className = 'header-search-box';
-  box.innerHTML = '<input id="headerSearchInput" type="search" placeholder="Search computer subjects or topics..."><button type="button" id="closeHeaderSearch">×</button>';
-  document.querySelector('.topbar').appendChild(box);
+<script type="module">
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-  const input = document.getElementById('headerSearchInput');
-  const close = document.getElementById('closeHeaderSearch');
+const purchaseFirebaseConfig = {
+  apiKey: "AIzaSyBqHKXxQzFOEkp450RqG3vEktF9iQeCGiI",
+  authDomain: "hpmockshashtra.firebaseapp.com",
+  projectId: "hpmockshashtra",
+  storageBucket: "hpmockshashtra.firebasestorage.app",
+  messagingSenderId: "591547064527",
+  appId: "1:591547064527:web:cc2edfa5f077dc30e717ba"
+};
 
-  searchBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    box.classList.toggle('show');
-    if (box.classList.contains('show')) {
-      input.focus();
-      document.getElementById('computer-subjects').scrollIntoView({behavior:'smooth', block:'start'});
-    }
+const purchaseApp = getApps().length ? getApps()[0] : initializeApp(purchaseFirebaseConfig);
+const purchaseAuth = getAuth(purchaseApp);
+const purchaseDb = getFirestore(purchaseApp);
+
+const allComputerSubjects = [
+  "computer-fundamentals","ms-word","ms-excel","ms-powerpoint","ms-access",
+  "dbms-sql","computer-networking","cyber-security","c-programming","html",
+  "css-css3","cloud-computing","data-structure",
+  "computer-organisation-architecture","operating-system"
+];
+
+function normalizeList(value) {
+  if (Array.isArray(value)) return value.map(String);
+  if (value && typeof value === "object") return Object.keys(value).filter(k => value[k]).map(String);
+  return [];
+}
+
+function hasValue(obj, keys) {
+  return keys.some(k => obj && obj[k] === true);
+}
+
+function getPurchasedSubjects(data) {
+  let list = [];
+  ["purchasedSubjects","computerSubjects","subjects","individualSubjects"].forEach(k => {
+    list = list.concat(normalizeList(data?.[k]));
   });
+  return [...new Set(list)];
+}
 
-  input.addEventListener('input', function(){
-    const q = input.value.toLowerCase().trim();
-    document.querySelectorAll('.subject').forEach(function(card){
-      card.style.display = (!q || (card.dataset.name || '').toLowerCase().includes(q)) ? '' : 'none';
+function isSubjectPurchased(data, key) {
+  // Complete JOA Computer Master.
+  if (
+    hasValue(data, ["joaComputerMaster","computerMaster","joaItComputerMaster","joaitComputerMaster","fullComputerMaster"])
+    || data?.joaComputerMasterAccess === true
+    || data?.computerMasterAccess === true
+  ) return true;
+
+  // MS Office bundle.
+  if (
+    hasValue(data, ["msOfficePack","msOfficeCompletePack","officePack"])
+    || data?.msOfficePackAccess === true
+  ) {
+    if (["ms-word","ms-excel","ms-powerpoint","ms-access"].includes(key)) return true;
+  }
+
+  // Individual subject purchase.
+  return getPurchasedSubjects(data).includes(key);
+}
+
+async function loadPurchaseState(user) {
+  if (!user) return;
+
+  try {
+    const snap = await getDoc(doc(purchaseDb, "testAccess", user.uid));
+    if (!snap.exists()) return;
+
+    const data = snap.data() || {};
+    const complete = (
+      hasValue(data, ["joaComputerMaster","computerMaster","joaItComputerMaster","joaitComputerMaster","fullComputerMaster"])
+      || data?.joaComputerMasterAccess === true
+      || data?.computerMasterAccess === true
+    );
+
+    document.querySelectorAll(".subject").forEach(card => {
+      const key = card.dataset.purchaseKey;
+      if (!key || (!complete && !isSubjectPurchased(data, key))) return;
+
+      const buy = card.querySelector(".subject-buy");
+      if (buy) {
+        const status = document.createElement("div");
+        status.className = "purchased-status";
+        status.textContent = "✓ Purchased";
+        buy.replaceWith(status);
+      }
     });
-  });
 
-  close.addEventListener('click', function(){
-    input.value = '';
-    document.querySelectorAll('.subject').forEach(function(card){ card.style.display = ''; });
-    box.classList.remove('show');
-  });
-})();
+    document.querySelectorAll(".pack-buy[data-pack='ms-office']").forEach(btn => {
+      if (
+        hasValue(data, ["msOfficePack","msOfficeCompletePack","officePack"])
+        || data?.msOfficePackAccess === true
+        || complete
+      ) {
+        const status = document.createElement("div");
+        status.className = "purchased-status";
+        status.textContent = "✓ MS Office Pack Purchased";
+        btn.replaceWith(status);
+      }
+    });
+
+    document.querySelectorAll(".complete-pack-buy[data-pack='complete']").forEach(btn => {
+      if (complete) {
+        const status = document.createElement("div");
+        status.className = "purchased-status";
+        status.textContent = "✓ Complete Pack Purchased";
+        btn.replaceWith(status);
+      }
+    });
+  } catch (err) {
+    console.warn("Purchase status could not be loaded:", err);
+  }
+}
+
+onAuthStateChanged(purchaseAuth, loadPurchaseState);
 </script>
+
 </body>
 </html>
