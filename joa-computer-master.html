@@ -8,7 +8,7 @@
 :root{--blue:#087df5;--navy:#071426;--text:#10213d;--line:#dce7f2;--green:#079b65;--purple:#a018a9}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#f6f9fd}a{text-decoration:none;color:inherit}
 .topbar{position:sticky;top:0;z-index:99;background:rgba(5,18,35,.97);backdrop-filter:blur(14px);border-bottom:1px solid #ffffff20;color:#fff}
-.nav{max-width:1400px;min-height:66px;margin:auto;padding:8px 22px;display:flex;align-items:center;gap:18px}.brand{display:flex;align-items:center;gap:10px;margin-right:auto}.logo{width:43px;height:43px}.logo svg{width:43px;height:43px}.brand-title{font-weight:800;font-size:20px;color:#65c9ff}.brand-title span{color:#fff}.tagline{font-size:9px;color:#aebdce}.header-links{display:flex;gap:5px}.header-links a{font-size:13px;font-weight:600;padding:9px 12px;border-radius:7px;color:#dce7f3}.header-links a:hover,.header-links a.active{background:#087df538;color:#fff}.header-user{display:flex;align-items:center;gap:7px;font-size:12px}.avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#d49a70;border:2px solid #fff;color:#17304a;font-weight:800}.login{border:1px solid #ffffff2e;background:#ffffff0d;color:#fff;padding:8px 11px;border-radius:7px;font-size:11px}
+.nav{max-width:1400px;min-height:66px;margin:auto;padding:8px 22px;display:flex;align-items:center;gap:18px}.brand{display:flex;align-items:center;gap:10px;margin-right:auto}.logo{width:43px;height:43px;display:flex;align-items:center;justify-content:center;flex:none}.logo img{width:43px;height:43px;object-fit:contain;border-radius:6px;display:block}.brand-title{font-weight:800;font-size:20px;color:#65c9ff}.brand-title span{color:#fff}.tagline{font-size:9px;color:#aebdce}.header-links{display:flex;gap:5px}.header-links a{font-size:13px;font-weight:600;padding:9px 12px;border-radius:7px;color:#dce7f3}.header-links a:hover,.header-links a.active{background:#087df538;color:#fff}.header-user{display:flex;align-items:center;gap:7px;font-size:12px}.avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#d49a70;border:2px solid #fff;color:#17304a;font-weight:800}.login{border:1px solid #ffffff2e;background:#ffffff0d;color:#fff;padding:8px 11px;border-radius:7px;font-size:11px}
 .hero{min-height:350px;color:#fff;background:radial-gradient(circle at 75% 30%,#00aefb2d,transparent 32%),linear-gradient(105deg,#030a13,#081a2d 52%,#0b2035)}.hero-inner{max-width:1400px;min-height:350px;margin:auto;padding:30px 24px;display:flex;align-items:center}.hero-copy{width:56%}.badge{display:inline-block;background:#ffd20a;color:#111;font-weight:800;padding:8px 14px;border-radius:6px;margin-bottom:10px}.hero h1{font-size:45px;line-height:1.02;margin:0 0 10px}.blue{color:#1db6ff}.hero p{font-size:16px}.features{display:flex;gap:18px;flex-wrap:wrap;font-weight:700;margin:15px 0 20px}.actions{display:flex;gap:13px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 21px;border-radius:7px;font-weight:800}.primary{background:var(--blue);color:#fff}.outline{border:1px solid #ffd21c;color:#fff}.hero-image{width:44%;height:285px;display:flex;align-items:center;justify-content:center}.hero-image img{width:100%;height:100%;object-fit:contain;border-radius:12px}.placeholder{width:100%;height:270px;border:1px dashed #ffffff55;border-radius:12px;display:grid;place-items:center;text-align:center;color:#b7c7d9;background:#ffffff06}.placeholder b{display:block;color:#fff;margin-bottom:7px}
 .stats{max-width:1360px;margin:auto;padding:0 10px}.stats-inner{background:#fff;border:1px solid #dce8f4;border-radius:9px;box-shadow:0 8px 28px #0f274a14;display:grid;grid-template-columns:repeat(6,1fr)}.stat{padding:13px;display:flex;gap:10px;align-items:center;border-right:1px solid #e1eaf4}.stat:last-child{border:0}.stat i{font-style:normal;font-size:23px}.stat strong,.stat small{display:block}.stat small{color:#53657c;font-size:10px}
 .layout{max-width:1360px;margin:13px auto;padding:0 10px;display:grid;grid-template-columns:1fr 220px;gap:10px}.card,.right{background:#fff;border:1px solid var(--line);border-radius:9px}.main-title{display:flex;justify-content:space-between;align-items:center;padding:15px 16px 10px}.main-title h2{margin:0;font-size:21px}.search{width:250px;border:1px solid var(--line);border-radius:8px;padding:8px 11px}
@@ -27,7 +27,7 @@
 <header class="topbar">
 <nav class="nav">
 <a class="brand" href="homepage.html">
-<div class="logo"><svg viewBox="0 0 100 100"><path d="M7 76 37 26l17 28 14-21 25 43H7Z" fill="#f8fbff"/><path d="m26 76 28-50 13 28-13 13-8-14-11 23H26Z" fill="#087df5"/><path d="m54 76 14-43 25 43H54Z" fill="#39b8ff"/></svg></div>
+<div class="logo"><img src="logo.jpg" alt="HPMockShashtra Logo"></div>
 <div><div class="brand-title">HPMock<span>Shashtra</span></div><div class="tagline">Practice Today, Succeed Tomorrow</div></div>
 </a>
 <div class="header-links">
@@ -37,8 +37,11 @@
 <a href="joa-series.html">JOA (IT)</a>
 <a href="patwari-series.html">Patwari</a>
 </div>
-<a class="header-user" href="firebase-dashboard.html"><span class="avatar">S</span><span>Student⌄</span></a>
-<a class="login" href="firebase-login.html">Login</a>
+<a class="header-user" id="headerUser" href="firebase-dashboard.html" style="display:none">
+  <span class="avatar" id="headerAvatar">U</span>
+  <span id="headerUserName">User</span>
+</a>
+<a class="login" id="loginLink" href="firebase-login.html">Login</a>
 </nav>
 </header>
 
@@ -51,10 +54,10 @@
 <div class="actions"><a class="btn primary" href="#free-tests">Start Free Tests →</a><a class="btn outline" href="#paid-courses">Explore Premium</a></div>
 </div>
 <div class="hero-image">
-<div class="placeholder"><div><b>YOUR HERO IMAGE</b>Upload your image as <strong>joa-computer-master.jpg</strong><br><small>नीचे code में इसी नाम से image लगाई गई है।</small></div></div>
-<!-- अपनी image रखने के बाद ऊपर placeholder हटाकर यह रखें:
-<img src="joa-computer-master.jpg" alt="JOA IT Computer Master">
--->
+<img src="joa-computer-master.jpg" alt="JOA IT Computer Master" onerror="this.style.display='none';document.getElementById('heroFallback').style.display='grid';">
+<div class="placeholder" id="heroFallback" style="display:none">
+  <div><b>Image not found</b>Please upload <strong>joa-computer-master.jpg</strong> in the same folder as this HTML file.</div>
+</div>
 </div>
 </div></section>
 
@@ -99,7 +102,7 @@
 <div class="barrow"><span>MS Excel</span><div class="bar"><span style="width:76%"></span></div><b>76%</b></div>
 <div class="barrow"><span>Networking</span><div class="bar"><span style="width:82%"></span></div><b>82%</b></div>
 <div class="barrow"><span>DBMS</span><div class="bar"><span style="width:71%"></span></div><b>71%</b></div>
-<a class="btn primary" style="width:100%;font-size:11px;margin-top:8px" href="my-progress.html">View Detailed Report</a>
+<button class="btn primary" type="button" style="width:100%;font-size:11px;margin-top:8px;opacity:.65;cursor:not-allowed" disabled title="Computer Master progress page will be available after purchase">View Detailed Report</button>
 <div class="divider"></div><b>Quick Actions</b>
 <p><a href="#free-tests">▶ Free Chapter Tests</a></p><p><a href="joa-series.html">▣ Full Mock Tests</a></p><p><a href="payment.html">▣ My Purchases</a></p>
 </aside>
@@ -148,6 +151,60 @@ function filterSubjects(){
  const q=(document.getElementById('search').value||'').toLowerCase().trim();
  document.querySelectorAll('.subject').forEach(x=>x.style.display=(!q||(x.dataset.name||'').toLowerCase().includes(q))?'':'none');
 }
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBqHKXxQzFOEkp450RqG3vEktF9iQeCGiI",
+  authDomain: "hpmockshashtra.firebaseapp.com",
+  projectId: "hpmockshashtra",
+  storageBucket: "hpmockshashtra.firebasestorage.app",
+  messagingSenderId: "591547064527",
+  appId: "1:591547064527:web:cc2edfa5f077dc30e717ba"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const headerUser = document.getElementById("headerUser");
+const headerUserName = document.getElementById("headerUserName");
+const headerAvatar = document.getElementById("headerAvatar");
+const loginLink = document.getElementById("loginLink");
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    headerUser.style.display = "none";
+    loginLink.style.display = "inline-flex";
+    return;
+  }
+
+  let name = user.displayName || "";
+
+  if (!name) {
+    try {
+      const snap = await getDoc(doc(db, "users", user.uid));
+      if (snap.exists()) {
+        name = snap.data().name || "";
+      }
+    } catch (e) {
+      console.warn("Could not load user name:", e);
+    }
+  }
+
+  if (!name) {
+    name = (user.email || "User").split("@")[0];
+  }
+
+  headerUserName.textContent = name;
+  headerAvatar.textContent = name.trim().charAt(0).toUpperCase() || "U";
+  headerUser.style.display = "flex";
+  loginLink.style.display = "none";
+});
 </script>
 </body>
 </html>
