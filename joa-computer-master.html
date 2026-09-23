@@ -32,6 +32,13 @@
   .layout{padding:0 8px}
   .free-section{padding:0 8px}
 }
+
+.header-search-box{display:none;position:absolute;right:18px;top:calc(100% + 8px);width:310px;background:#fff;border:1px solid #d9e5f1;border-radius:10px;padding:8px;box-shadow:0 12px 30px rgba(12,40,70,.20);gap:6px}
+.header-search-box.show{display:flex}
+.header-search-box input{flex:1;min-width:0;border:1px solid #d8e3ef;border-radius:7px;padding:9px 10px;font-size:11px;outline:none}
+.header-search-box input:focus{border-color:#087df5}
+.header-search-box button{border:0;background:#eef5fc;color:#17345d;border-radius:7px;width:32px;font-size:18px;cursor:pointer}
+@media(max-width:800px){.header-search-box{position:fixed;top:110px;left:10px;right:10px;width:auto}.header-links{gap:3px}.header-links a{padding:9px 10px}}
 </style>
 </head>
 <body>
@@ -44,8 +51,11 @@
 </a>
 <div class="header-links">
 <a href="homepage.html">Home</a>
+<a href="#computer-subjects">Computer Subjects</a>
 <a href="#paid-courses">Paid Courses</a>
 <a href="my-purchase.html">My Purchases</a>
+<a href="master-progress.html">Master Progress</a>
+<a href="#computer-subjects" id="headerSearchBtn">⌕ Search</a>
 </div>
 <div class="header-user" id="headerUser" style="display:none">
   <span class="avatar" id="headerAvatar">U</span>
@@ -109,8 +119,13 @@
 </section>
 
 <div class="layout">
-<main class="card">
-<div class="main-title"><div><h2>Computer Subjects</h2><div class="title-note">Free test: 25 questions &nbsp;•&nbsp; Premium: 400 questions per subject</div></div><div class="title-actions"><a class="master-progress-link" href="master-progress.html">Master Progress →</a><input class="search" id="search" placeholder="⌕ Search subjects or topics..." oninput="filterSubjects()"></div></div>
+<main class="card" id="computer-subjects">
+<div class="main-title">
+<div>
+<h2>Computer Subjects</h2>
+<div class="title-note">Free test: 25 questions &nbsp;•&nbsp; Premium: 400 questions per subject</div>
+</div>
+</div>
 <div class="grid" id="grid">
 
 <div class="subject" data-name="Computer Fundamentals"><div class="icon">💻</div><h3>Computer Fundamentals</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-fundamentals-free.html">Free 25 Questions</a><a class="buy" href="payment.html">Buy ₹49</a></div></div>
@@ -241,6 +256,48 @@ onAuthStateChanged(auth, async (user) => {
   headerUser.style.display = "flex";
   loginLink.style.display = "none";
 });
+</script>
+
+<script>
+(function(){
+  const searchBtn = document.getElementById('headerSearchBtn');
+  const grid = document.getElementById('grid');
+  if (!searchBtn || !grid) return;
+
+  const oldBox = document.getElementById('headerSearchBox');
+  if (oldBox) return;
+
+  const box = document.createElement('div');
+  box.id = 'headerSearchBox';
+  box.className = 'header-search-box';
+  box.innerHTML = '<input id="headerSearchInput" type="search" placeholder="Search computer subjects or topics..."><button type="button" id="closeHeaderSearch">×</button>';
+  document.querySelector('.topbar').appendChild(box);
+
+  const input = document.getElementById('headerSearchInput');
+  const close = document.getElementById('closeHeaderSearch');
+
+  searchBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    box.classList.toggle('show');
+    if (box.classList.contains('show')) {
+      input.focus();
+      document.getElementById('computer-subjects').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
+  input.addEventListener('input', function(){
+    const q = input.value.toLowerCase().trim();
+    document.querySelectorAll('.subject').forEach(function(card){
+      card.style.display = (!q || (card.dataset.name || '').toLowerCase().includes(q)) ? '' : 'none';
+    });
+  });
+
+  close.addEventListener('click', function(){
+    input.value = '';
+    document.querySelectorAll('.subject').forEach(function(card){ card.style.display = ''; });
+    box.classList.remove('show');
+  });
+})();
 </script>
 </body>
 </html>
