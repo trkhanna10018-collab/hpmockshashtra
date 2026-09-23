@@ -8,18 +8,23 @@
 :root{--blue:#087df5;--navy:#071426;--text:#10213d;--line:#dce7f2;--green:#079b65;--purple:#a018a9}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#f6f9fd}a{text-decoration:none;color:inherit}
 .topbar{position:sticky;top:0;z-index:99;background:rgba(5,18,35,.97);backdrop-filter:blur(14px);border-bottom:1px solid #ffffff20;color:#fff}
-.nav{max-width:1400px;min-height:66px;margin:auto;padding:8px 22px;display:flex;align-items:center;gap:18px}.brand{display:flex;align-items:center;gap:10px;margin-right:auto}.logo{width:43px;height:43px;display:flex;align-items:center;justify-content:center;flex:none}.logo img{width:43px;height:43px;object-fit:contain;border-radius:6px;display:block}.brand-title{font-weight:800;font-size:20px;color:#65c9ff}.brand-title span{color:#fff}.tagline{font-size:9px;color:#aebdce}.header-links{display:flex;gap:5px}.header-links a{font-size:13px;font-weight:600;padding:9px 12px;border-radius:7px;color:#dce7f3}.header-links a:hover,.header-links a.active{background:#087df538;color:#fff}.header-user{display:flex;align-items:center;gap:7px;font-size:12px}.avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#d49a70;border:2px solid #fff;color:#17304a;font-weight:800}.login{border:1px solid #ffffff2e;background:#ffffff0d;color:#fff;padding:8px 11px;border-radius:7px;font-size:11px}
-.hero{min-height:350px;color:#fff;background:radial-gradient(circle at 75% 30%,#00aefb2d,transparent 32%),linear-gradient(105deg,#030a13,#081a2d 52%,#0b2035)}.hero-inner{max-width:1400px;min-height:350px;margin:auto;padding:30px 24px;display:flex;align-items:center}.hero-copy{width:56%}.badge{display:inline-block;background:#ffd20a;color:#111;font-weight:800;padding:8px 14px;border-radius:6px;margin-bottom:10px}.hero h1{font-size:45px;line-height:1.02;margin:0 0 10px}.blue{color:#1db6ff}.hero p{font-size:16px}.features{display:flex;gap:18px;flex-wrap:wrap;font-weight:700;margin:15px 0 20px}.actions{display:flex;gap:13px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 21px;border-radius:7px;font-weight:800}.primary{background:var(--blue);color:#fff}.outline{border:1px solid #ffd21c;color:#fff}.hero-image{width:44%;height:285px;display:flex;align-items:center;justify-content:center}.hero-image img{width:100%;height:100%;object-fit:contain;border-radius:12px}.placeholder{width:100%;height:270px;border:1px dashed #ffffff55;border-radius:12px;display:grid;place-items:center;text-align:center;color:#b7c7d9;background:#ffffff06}.placeholder b{display:block;color:#fff;margin-bottom:7px}
-.stats{max-width:1360px;margin:auto;padding:0 10px}.stats-inner{background:#fff;border:1px solid #dce8f4;border-radius:9px;box-shadow:0 8px 28px #0f274a14;display:grid;grid-template-columns:repeat(6,1fr)}.stat{padding:13px;display:flex;gap:10px;align-items:center;border-right:1px solid #e1eaf4}.stat:last-child{border:0}.stat i{font-style:normal;font-size:23px}.stat strong,.stat small{display:block}.stat small{color:#53657c;font-size:10px}
-.layout{max-width:1360px;margin:13px auto;padding:0 10px;display:grid;grid-template-columns:1fr 220px;gap:10px}.card,.right{background:#fff;border:1px solid var(--line);border-radius:9px}.main-title{display:flex;justify-content:space-between;align-items:center;padding:15px 16px 10px}.main-title h2{margin:0;font-size:21px}.search{width:250px;border:1px solid var(--line);border-radius:8px;padding:8px 11px}
+.nav{max-width:1400px;min-height:66px;margin:auto;padding:8px 22px;display:flex;align-items:center;gap:18px}.brand{display:flex;align-items:center;gap:10px;margin-right:auto}.logo{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex:none}.logo img{width:48px;height:48px;object-fit:contain;border-radius:7px;display:block}.brand-title{font-weight:800;font-size:20px;color:#65c9ff}.brand-title span{color:#fff}.tagline{font-size:9px;color:#aebdce}.header-links{display:flex;gap:5px}.header-links a{font-size:13px;font-weight:600;padding:9px 12px;border-radius:7px;color:#dce7f3}.header-links a:hover,.header-links a.active{background:#087df538;color:#fff}.header-user{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;white-space:nowrap}.avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#d49a70;border:2px solid #fff;color:#17304a;font-weight:800}.login{border:1px solid #ffffff2e;background:#ffffff0d;color:#fff;padding:8px 11px;border-radius:7px;font-size:11px}
+.hero{position:relative;overflow:hidden;min-height:355px;background:linear-gradient(135deg,#eef8ff 0%,#ffffff 48%,#f4f0ff 100%);color:var(--text);border-bottom:1px solid #dce8f4}.hero-inner{max-width:1400px;min-height:355px;margin:auto;padding:34px 24px;display:flex;align-items:center;position:relative;z-index:2}.hero-copy{width:56%;position:relative;z-index:2}.badge{display:inline-block;background:#e2f2ff;color:#0769c9;font-weight:800;padding:8px 14px;border-radius:20px;margin-bottom:12px;font-size:12px;border:1px solid #c8e5fb}.hero h1{font-size:48px;line-height:1.02;margin:0 0 10px;font-weight:900}.blue{color:#087df5}.hero-subtitle{font-size:16px;line-height:1.6;color:#50657c;max-width:650px;margin:0 0 18px}.hero-mini-grid{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 21px}.hero-mini-grid div{background:#fff;border:1px solid #dce8f4;border-radius:10px;padding:10px 14px;box-shadow:0 6px 18px #1a5b8a0b;min-width:130px}.hero-mini-grid b{display:block;font-size:18px;color:#0c2340}.hero-mini-grid span{font-size:10px;color:#718197}.actions{display:flex;gap:13px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 21px;border-radius:7px;font-weight:800}.primary{background:#087df5;color:#fff;box-shadow:0 8px 18px #087df533}.hero-outline{border:1px solid #087df5;color:#087df5;background:#fff}.hero-outline:hover{background:#087df5;color:#fff}.hero-visual{width:44%;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.visual-card{width:min(470px,100%);height:245px;border-radius:18px;background:#0b1d34;box-shadow:0 22px 50px #0b1d3433;transform:rotate(1.5deg);overflow:hidden;border:1px solid #ffffff33}.visual-top{height:35px;background:#102945;display:flex;align-items:center;padding:0 14px;gap:6px}.dot{width:8px;height:8px;border-radius:50%}.blue-dot{background:#39b8ff}.green-dot{background:#21d19b}.yellow-dot{background:#ffd24d}.visual-label{font-size:9px;color:#a9c0d8;margin-left:8px}.visual-screen{padding:18px 20px;color:#fff}.screen-title{font-size:19px;font-weight:800;margin-bottom:14px}.screen-line{height:31px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff18;font-size:10px}.screen-line b{color:#66d1ff;font-size:9px}.screen-progress{height:8px;background:#233a54;border-radius:20px;margin-top:15px}.screen-progress span{display:block;width:76%;height:100%;background:linear-gradient(90deg,#087df5,#18c49c);border-radius:20px}.visual-screen small{display:block;color:#8ea6bd;margin-top:8px;font-size:9px}.floating-card{position:absolute;background:#fff;border:1px solid #dce8f4;border-radius:10px;padding:9px 12px;font-size:10px;font-weight:800;box-shadow:0 10px 25px #173a5a18}.fc-one{left:2%;top:18%}.fc-two{right:0;top:31%;color:#8a0e92}.fc-three{right:7%;bottom:2%;color:#087df5}.hero-shape{position:absolute;border-radius:50%;filter:blur(1px);opacity:.7}.shape-one{width:280px;height:280px;background:#a9ddff55;right:-80px;top:-120px}.shape-two{width:190px;height:190px;background:#d9b7ff55;right:35%;bottom:-120px}
+.stats{max-width:1360px;margin:auto;padding:0 10px}.stats-inner{background:#fff;border:1px solid #dce8f4;border-radius:9px;box-shadow:0 8px 28px #0f274a14;display:grid;grid-template-columns:repeat(6,1fr)}.stat{padding:13px;display:flex;gap:10px;align-items:center;border-right:1px solid #e1eaf4}.stat:last-child{border:0}.stat i{font-style:normal;font-size:23px}.stat strong,.stat small{display:block}.stat strong{font-size:13px}.stat small{color:#53657c;font-size:9px}
+.layout{max-width:1360px;margin:13px auto;padding:0 10px;display:block}.card,.right{background:#fff;border:1px solid var(--line);border-radius:9px}.main-title{display:flex;justify-content:space-between;align-items:center;padding:15px 16px 10px}.main-title h2{margin:0;font-size:21px}.title-note{font-size:10px;color:#718197;margin-top:4px}.title-actions{display:flex;align-items:center;gap:10px}.master-progress-link{font-size:10px;font-weight:800;color:#087df5;background:#eef7ff;border:1px solid #cfe7fb;padding:8px 10px;border-radius:7px}.master-progress-link:hover{background:#087df5;color:#fff}.search{width:250px;border:1px solid var(--line);border-radius:8px;padding:8px 11px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 11px 17px}.subject{border:1px solid #dfe8f1;border-radius:9px;padding:14px 9px 11px;text-align:center;background:#fff}.subject:hover{box-shadow:0 8px 20px #145aa014;transform:translateY(-2px)}.icon{height:48px;display:grid;place-items:center;font-size:34px}.subject h3{font-size:12px;min-height:29px;margin:7px 0 5px}.counts{font-size:10px;color:#68798e;margin-bottom:8px}.badge-free{display:inline-block;background:#dff7ea;color:#087c4f;padding:4px 7px;border-radius:20px;font-size:9px;font-weight:800;margin-bottom:7px}.actions2{display:grid;gap:6px}.actions2 a{padding:7px 3px;border-radius:5px;font-size:10px;font-weight:800}.free{background:var(--blue);color:#fff}.buy{border:1px solid var(--purple);color:#8a0e92}.buy:hover{background:var(--purple);color:#fff}
 .right{padding:13px}.progress-title{font-weight:800}.percent{float:right}.progress{height:10px;background:#e7eef6;border-radius:20px;margin:8px 0 14px;overflow:hidden}.progress span{display:block;width:72%;height:100%;background:#18c49c}.metric{display:flex;justify-content:space-between;font-size:11px;padding:6px 0}.divider{height:1px;background:#e6edf5;margin:12px 0}.barrow{display:grid;grid-template-columns:62px 1fr 30px;gap:6px;align-items:center;font-size:10px;margin:9px 0}.bar{height:7px;background:#e8eef5;border-radius:10px}.bar span{display:block;height:100%;background:#1877d4;border-radius:10px}
 .free-section,.promo-grid,.sample-wrap{max-width:1360px;margin:0 auto 15px;padding:0 10px}.section-head{background:#fff;border:1px solid var(--line);padding:15px 17px;border-radius:9px 9px 0 0}.section-head h2{margin:0 0 4px}.section-head p{margin:0;color:#68798e;font-size:11px}.free-subjects{background:#fff;border:1px solid var(--line);border-top:0;padding:13px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;border-radius:0 0 9px 9px}.free-subject{border:1px solid #dce7f1;border-radius:7px;padding:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}.free-subject-name{font-weight:700;font-size:11px}.free-subject small{display:block;color:var(--green);margin-top:3px}.free-subject a{background:var(--blue);color:#fff;border-radius:5px;padding:6px 8px;font-size:9px;font-weight:800}
 .promo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}.promo{position:relative;overflow:hidden;border-radius:11px;padding:20px;background:#fff;border:1px solid #dce7f1;box-shadow:0 8px 28px #0f274a14}.promo:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:var(--green)}.promo:nth-child(2):before{background:var(--blue)}.promo:nth-child(3):before{background:var(--purple)}.promo:nth-child(1){background:linear-gradient(145deg,#f1fff8,#fff)}.promo:nth-child(2){background:linear-gradient(145deg,#eff8ff,#fff)}.promo:nth-child(3){background:linear-gradient(145deg,#fff1ff,#fff)}.promo h3{margin:0;font-size:15px}.sub{font-size:10px;color:#65768b;margin:4px 0 11px}.promo ul{padding-left:19px;font-size:11px;line-height:1.85}.price{font-size:28px;font-weight:900}.old{text-decoration:line-through;color:#94a3b8;font-size:11px}.sample-wrap{display:grid;grid-template-columns:1.7fr 1fr;gap:10px}.sample,.testimonial{border:1px solid var(--line);border-radius:9px;background:#fff;padding:16px}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.opt{border:1px solid #dce5ef;padding:8px;border-radius:6px;font-size:11px}.correct{background:#e2f8ea;border-color:#a6e4bc;font-weight:800}.answer{margin-top:10px;padding:10px;background:#e2f8ea;color:#08723e;font-size:11px;border-radius:6px}.testimonial{display:flex;gap:12px;align-items:center}.person{width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#d5deea;font-size:25px}
 .footer{background:#020817;color:#d6e1ee;margin-top:22px}.footer-inner{max-width:1180px;margin:auto;padding:0 24px}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:45px;padding:38px 0 30px}.footer h3,.footer h4{color:#fff;margin:0 0 8px}.footer h3{font-size:18px}.footer h4{font-size:12px}.footer p{font-size:11px;color:#94a3b8;max-width:290px;line-height:1.55}.footer-links{display:flex;flex-direction:column;gap:7px}.footer-links a{color:#cbd5e1;font-size:11px}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid #1e293b;padding:15px 0;display:flex;justify-content:space-between;font-size:10px;color:#64748b}.footer-bottom-links{display:flex;gap:18px}
-@media(max-width:1150px){.layout{grid-template-columns:1fr}.right{display:none}.grid{grid-template-columns:repeat(3,1fr)}.free-subjects{grid-template-columns:repeat(4,1fr)}.stats-inner{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:800px){.nav{flex-wrap:wrap;padding:8px 12px}.brand{margin-right:auto}.header-links{order:3;width:100%;overflow:auto}.header-links a{white-space:nowrap}.hero{min-height:570px}.hero-inner{display:block;padding:26px 16px}.hero-copy,.hero-image{width:100%}.hero h1{font-size:36px}.hero-image{height:245px}.stats-inner{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.free-subjects{grid-template-columns:repeat(2,1fr)}.promo-grid,.sample-wrap{grid-template-columns:1fr;padding:0 8px}.options{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr;gap:25px}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
-@media(max-width:500px){.header-user{display:none}.hero h1{font-size:31px}.actions{flex-direction:column}.btn{width:100%}.grid{gap:7px}.subject{padding:12px 6px}.free-subjects{grid-template-columns:1fr}.options{grid-template-columns:1fr}.footer-inner{padding:0 16px}}
+@media(max-width:1150px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(3,1fr)}.free-subjects{grid-template-columns:repeat(4,1fr)}.stats-inner{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.nav{flex-wrap:wrap;padding:8px 12px}.brand{margin-right:auto}.header-links{order:3;width:100%;overflow:auto}.header-links a{white-space:nowrap}.hero{min-height:650px}.hero-inner{display:block;padding:26px 16px}.hero-copy,.hero-visual{width:100%}.hero h1{font-size:36px}.hero-visual{height:285px;margin-top:12px}.visual-card{height:225px}.fc-one{left:0}.fc-two{right:0}.stats-inner{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.free-subjects{grid-template-columns:repeat(2,1fr)}.promo-grid{grid-template-columns:1fr;padding:0 8px}.info-strip{grid-template-columns:1fr;padding:0 8px}.footer-top{grid-template-columns:1fr;gap:25px}.footer-bottom{flex-direction:column;gap:10px;text-align:center}.main-title{align-items:flex-start}.title-actions{width:100%;flex-wrap:wrap}.search{flex:1;min-width:190px}}
+@media(max-width:500px){.hero h1{font-size:31px}.hero-subtitle{font-size:13px}.hero-mini-grid div{min-width:0;flex:1}.actions{flex-direction:column}.btn{width:100%}.grid{gap:7px}.subject{padding:12px 6px}.free-subjects{grid-template-columns:1fr}.footer-inner{padding:0 16px}.title-actions{display:block}.master-progress-link{display:inline-block;margin-bottom:8px}.search{width:100%}}
+
+.info-strip{max-width:1360px;margin:0 auto 18px;padding:0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.info-box{background:#fff;border:1px solid #dce7f1;border-radius:10px;padding:14px;display:flex;gap:11px;align-items:center;box-shadow:0 5px 18px #123b5b0a}
+.info-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#eef7ff;font-size:20px;flex:none}
+.info-box b{display:block;font-size:12px;margin-bottom:3px}.info-box small{font-size:10px;color:#697b90;line-height:1.45}
 </style>
 </head>
 <body>
@@ -27,52 +32,79 @@
 <header class="topbar">
 <nav class="nav">
 <a class="brand" href="homepage.html">
-<div class="logo"><img src="logo.jpg" alt="HPMockShashtra Logo"></div>
+<div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div>
 <div><div class="brand-title">HPMock<span>Shashtra</span></div><div class="tagline">Practice Today, Succeed Tomorrow</div></div>
 </a>
 <div class="header-links">
 <a href="homepage.html">Home</a>
 <a href="#free-tests">Free Tests</a>
 <a href="#paid-courses">Paid Courses</a>
-<a href="joa-series.html">JOA (IT)</a>
-<a href="patwari-series.html">Patwari</a>
+<a href="my-purchase.html">My Purchases</a>
 </div>
-<a class="header-user" id="headerUser" href="firebase-dashboard.html" style="display:none">
+<div class="header-user" id="headerUser" style="display:none">
   <span class="avatar" id="headerAvatar">U</span>
   <span id="headerUserName">User</span>
-</a>
+</div>
 <a class="login" id="loginLink" href="firebase-login.html">Login</a>
 </nav>
 </header>
 
-<section class="hero"><div class="hero-inner">
-<div class="hero-copy">
-<div class="badge">Your One-Stop Platform for</div>
-<h1>JOA (IT) <span class="blue">Computer Master</span></h1>
-<p>Complete Computer Question Bank | Practice | Mock Tests | Track Progress</p>
-<div class="features"><span>✓ 15 Subjects</span><span>▤ 6,000 Premium MCQs</span><span>◉ Chapter-wise Tests</span><span>▥ Performance Tracking</span><span>💡 Detailed Explanations</span></div>
-<div class="actions"><a class="btn primary" href="#free-tests">Start Free Tests →</a><a class="btn outline" href="#paid-courses">Explore Premium</a></div>
-</div>
-<div class="hero-image">
-<img src="joa-computer-master.jpg" alt="JOA IT Computer Master" onerror="this.style.display='none';document.getElementById('heroFallback').style.display='grid';">
-<div class="placeholder" id="heroFallback" style="display:none">
-  <div><b>Image not found</b>Please upload <strong>joa-computer-master.jpg</strong> in the same folder as this HTML file.</div>
-</div>
-</div>
-</div></section>
+<section class="hero">
+  <div class="hero-shape shape-one"></div>
+  <div class="hero-shape shape-two"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="badge">JOA (IT) Computer Preparation</div>
+      <h1>Computer <span class="blue">Master</span></h1>
+      <p class="hero-subtitle">Chapter-wise practice, free tests and premium question banks — designed specifically for JOA (IT) aspirants.</p>
 
-<section class="stats"><div class="stats-inner">
-<div class="stat"><i>🎓</i><div><strong>15</strong><small>Computer Subjects</small></div></div>
-<div class="stat"><i>📄</i><div><strong>6,000+</strong><small>Premium MCQs</small></div></div>
-<div class="stat"><i>✓</i><div><strong>15</strong><small>Free Chapter Tests</small></div></div>
-<div class="stat"><i>◷</i><div><strong>400</strong><small>Questions / Subject</small></div></div>
-<div class="stat"><i>▥</i><div><strong>12 Months</strong><small>Premium Validity</small></div></div>
-<div class="stat"><i>👥</i><div><strong>JOA (IT)</strong><small>Exam Focused</small></div></div>
-</div></section>
+      <div class="hero-mini-grid">
+        <div><b>15</b><span>Computer Subjects</span></div>
+        <div><b>375</b><span>Free Questions</span></div>
+        <div><b>6,000+</b><span>Premium Questions</span></div>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="#free-tests">Start Free Tests →</a>
+        <a class="btn hero-outline" href="#paid-courses">Explore Premium</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-card main-card">
+        <div class="visual-top"><span class="dot blue-dot"></span><span class="dot green-dot"></span><span class="dot yellow-dot"></span><span class="visual-label">JOA (IT) • Computer Master</span></div>
+        <div class="visual-screen">
+          <div class="screen-title">Build Your Computer Score</div>
+          <div class="screen-line"><span>Computer Fundamentals</span><b>25 Free</b></div>
+          <div class="screen-line"><span>MS Word</span><b>25 Free</b></div>
+          <div class="screen-line"><span>MS Excel</span><b>25 Free</b></div>
+          <div class="screen-line"><span>DBMS &amp; SQL</span><b>400 Premium</b></div>
+          <div class="screen-line"><span>Networking</span><b>400 Premium</b></div>
+          <div class="screen-progress"><span></span></div>
+          <small>Practice • Learn • Improve</small>
+        </div>
+      </div>
+      <div class="floating-card fc-one">✓ 25 Free Questions</div>
+      <div class="floating-card fc-two">₹49 Individual</div>
+      <div class="floating-card fc-three">₹349 Complete Pack</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat"><i>🎯</i><div><strong>15 Subjects</strong><small>Complete Computer Coverage</small></div></div>
+    <div class="stat"><i>✓</i><div><strong>25 Questions</strong><small>Free Test per Subject</small></div></div>
+    <div class="stat"><i>📚</i><div><strong>400 Questions</strong><small>Premium per Subject</small></div></div>
+    <div class="stat"><i>💰</i><div><strong>₹49</strong><small>Individual Subject</small></div></div>
+    <div class="stat"><i>♛</i><div><strong>₹349</strong><small>Complete Computer Pack</small></div></div>
+    <div class="stat"><i>◷</i><div><strong>12 Months</strong><small>Premium Validity</small></div></div>
+  </div>
+</section>
 
 <div class="layout">
 <main class="card">
-<div class="main-title"><h2>Computer Subjects</h2><input class="search" id="search" placeholder="⌕ Search subjects or topics..." oninput="filterSubjects()"></div>
+<div class="main-title"><div><h2>Computer Subjects</h2><div class="title-note">Free test: 25 questions &nbsp;•&nbsp; Premium: 400 questions per subject</div></div><div class="title-actions"><a class="master-progress-link" href="master-progress.html">Master Progress →</a><input class="search" id="search" placeholder="⌕ Search subjects or topics..." oninput="filterSubjects()"></div></div>
 <div class="grid" id="grid">
 
 <div class="subject" data-name="Computer Fundamentals"><div class="icon">💻</div><h3>Computer Fundamentals</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-fundamentals-free.html">Free 25 Questions</a><a class="buy" href="computer-fundamentals.html">Buy ₹49</a></div></div>
@@ -94,18 +126,7 @@
 </div>
 </main>
 
-<aside class="right">
-<div class="progress-title">My Progress <span class="percent">72%</span></div><div class="progress"><span></span></div>
-<div class="metric"><span>Questions Attempted</span><b>4,820</b></div><div class="metric"><span>Correct Answers</span><b>3,921</b></div><div class="metric"><span>Accuracy</span><b>81.3%</b></div><div class="metric"><span>Tests Completed</span><b>156</b></div><div class="metric"><span>Best Score</span><b>24/25</b></div>
-<div class="divider"></div><b>Subject Performance</b>
-<div class="barrow"><span>MS Word</span><div class="bar"><span style="width:88%"></span></div><b>88%</b></div>
-<div class="barrow"><span>MS Excel</span><div class="bar"><span style="width:76%"></span></div><b>76%</b></div>
-<div class="barrow"><span>Networking</span><div class="bar"><span style="width:82%"></span></div><b>82%</b></div>
-<div class="barrow"><span>DBMS</span><div class="bar"><span style="width:71%"></span></div><b>71%</b></div>
-<button class="btn primary" type="button" style="width:100%;font-size:11px;margin-top:8px;opacity:.65;cursor:not-allowed" disabled title="Computer Master progress page will be available after purchase">View Detailed Report</button>
-<div class="divider"></div><b>Quick Actions</b>
-<p><a href="#free-tests">▶ Free Chapter Tests</a></p><p><a href="joa-series.html">▣ Full Mock Tests</a></p><p><a href="payment.html">▣ My Purchases</a></p>
-</aside>
+
 </div>
 
 <section class="free-section" id="free-tests">
@@ -135,9 +156,19 @@
 <div class="promo"><h3>♛ Complete JOA (IT) Computer Pack</h3><div class="sub">सभी 15 subjects एक साथ</div><ul><li><b>All 15 Computer Subjects</b></li><li><b>6,000 Questions</b> — 400 × 15</li><li>Chapter-wise + full mock tests</li><li>Unlimited attempts</li><li>Detailed explanations</li><li>Performance analytics</li><li><b>12 Months</b> validity</li></ul><div><span class="price" style="color:#a018a9">₹349</span> <span class="old">₹499</span></div><br><a class="btn" style="background:#a018a9;color:#fff" href="payment.html">Get Complete Pack →</a></div>
 </section>
 
-<section class="sample-wrap">
-<div class="sample"><b>🔵 Sample Question (Free)</b><p>Q. In MS Excel, which function is used to count cells that contain numbers only?</p><div class="options"><div class="opt">A) COUNTA</div><div class="opt correct">✓ B) COUNT</div><div class="opt">C) COUNTIF</div><div class="opt">D) COUNTBLANK</div></div><div class="answer"><b>✓ Correct Answer: B) COUNT</b><br>COUNT counts cells containing numbers.</div></div>
-<div class="testimonial"><div class="person">👨🏻</div><div><i>“HPMockShashtra ने मेरी JOA(IT) preparation को आसान बना दिया। Chapter-wise tests और progress tracking बहुत helpful है।”</i><small>— JOA (IT) Aspirant, HP</small></div></div>
+<section class="info-strip">
+  <div class="info-box">
+    <span class="info-icon">🎁</span>
+    <div><b>Free first</b><small>हर subject के 25 questions पहले practice करें।</small></div>
+  </div>
+  <div class="info-box">
+    <span class="info-icon">📘</span>
+    <div><b>Choose what you need</b><small>Individual subject ₹49 में खरीदें या पूरा pack लें।</small></div>
+  </div>
+  <div class="info-box">
+    <span class="info-icon">♛</span>
+    <div><b>Complete preparation</b><small>Complete Pack में सभी 15 subjects और 6,000 questions।</small></div>
+  </div>
 </section>
 
 <footer class="footer"><div class="footer-inner"><div class="footer-top">
