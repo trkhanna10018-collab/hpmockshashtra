@@ -55,6 +55,54 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
   box-shadow:0 12px 38px rgba(26,51,91,.07);padding:24px
 }
 .card h2{font-size:18px;margin-bottom:5px}.sub{font-size:11px;color:var(--muted);line-height:1.55}
+
+
+.payment-summary{
+  margin-top:17px;
+  border:1px solid #dbe7f5;
+  background:#f8fbff;
+  border-radius:14px;
+  padding:14px;
+}
+.summary-title{
+  font-size:13px;
+  font-weight:900;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+  padding:7px 0;
+  border-bottom:1px solid #e8eef6;
+  font-size:11px;
+}
+.summary-row span{color:var(--muted)}
+.summary-row strong{text-align:right;color:var(--ink);font-size:11px}
+.summary-total{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-top:10px;
+  padding:11px 12px;
+  border-radius:10px;
+  background:#eef4ff;
+  color:var(--ink);
+  font-size:12px;
+  font-weight:900;
+}
+.summary-total strong{
+  color:var(--blue);
+  font-size:20px;
+}
+.account-title{
+  font-size:13px;
+  font-weight:900;
+  margin-bottom:6px;
+}
 .account{
   margin-top:17px;border:1px solid #dce7f5;background:#f8fbff;border-radius:14px;padding:14px;
   font-size:12px;line-height:1.8
@@ -168,12 +216,23 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
     </div>
   </div>
 
+  <div class="payment-summary" id="paymentSummary">
+    <div class="summary-title">Payment Summary</div>
+    <div class="summary-row"><span>You are purchasing</span><strong id="summaryProduct">Loading...</strong></div>
+    <div class="summary-row"><span>Plan</span><strong id="summaryPlan">—</strong></div>
+    <div class="summary-row"><span>Questions</span><strong id="summaryQuestions">—</strong></div>
+    <div class="summary-row"><span>Validity</span><strong id="summaryValidity">—</strong></div>
+    <div class="summary-total"><span>Amount to Pay</span><strong id="summaryAmount">₹—</strong></div>
+  </div>
+
   <div class="account">
+    <div class="account-title">Your Account</div>
     <div class="account-row"><span>Name</span><span id="userName">Checking...</span></div>
     <div class="account-row"><span>Registered Email</span><span id="userEmail">Checking...</span></div>
     <div class="account-row"><span>UID</span><span id="userUid">Checking...</span></div>
   </div>
-  <div id="adminPreview" class="admin-preview" style="display:none">
+
+  <div id="adminPreview" class="admin-preview" style="display:none !important">
     <div class="admin-title">Access Details</div>
     <pre id="adminText"></pre>
   </div>
@@ -239,6 +298,31 @@ const product = PRODUCTS[productKey];
 
 const $ = id => document.getElementById(id);
 
+function productPlan(p){
+  if(!p) return "—";
+  if(p.kind === "course") return "Individual Subject";
+  if(p.kind === "pack" && p.id === "ms-office") return "MS Office Pack";
+  if(p.kind === "pack" && p.id === "computer-master") return "JOA IT Maha Pack";
+  if(p.kind === "legacy") return "Full Series";
+  return "—";
+}
+
+function productQuestions(p){
+  if(!p) return "—";
+  if(p.kind === "course") return "400 Premium Questions";
+  if(p.id === "ms-office") return "1,600 Premium Questions";
+  if(p.id === "computer-master") return "6,000 Premium Questions";
+  return "—";
+}
+
+function productDetails(p){
+  if(!p) return "";
+  if(p.id === "ms-office") return "Word + Excel + PowerPoint + Access";
+  if(p.id === "computer-master") return "All 15 Computer Subjects";
+  if(p.kind === "course") return "1 Computer Subject";
+  return p.validity;
+}
+
 // Keep the payment page in a neutral loading state until Firebase
 // finishes restoring the signed-in account.
 $("userName").textContent = "Checking account...";
@@ -252,12 +336,23 @@ if (!product) {
   $("productMeta").textContent = "Please return to the product page and click Buy Now.";
   $("productPrice").textContent = "—";
   $("amount").textContent = "—";
+  $("summaryProduct").textContent = "Product Not Selected";
+  $("summaryPlan").textContent = "—";
+  $("summaryQuestions").textContent = "—";
+  $("summaryValidity").textContent = "—";
+  $("summaryAmount").textContent = "₹—";
   $("whatsappBtn").style.display = "none";
 } else {
   $("productName").textContent = product.name;
   $("productMeta").textContent = `₹${product.price} • ${product.validity}`;
   $("productPrice").textContent = `₹${product.price}`;
   $("amount").textContent = `₹${product.price}`;
+
+  $("summaryProduct").textContent = product.name;
+  $("summaryPlan").textContent = productPlan(product);
+  $("summaryQuestions").textContent = productQuestions(product);
+  $("summaryValidity").textContent = product.validity;
+  $("summaryAmount").textContent = `₹${product.price}`;
 }
 
 function accessInstruction(user, displayName) {
@@ -296,6 +391,10 @@ Registered Email: ${user.email || ""}
 UID: ${user.uid}
 
 Product: ${product.name}
+Plan: ${productPlan(product)}
+Details: ${productDetails(product)}
+Questions: ${productQuestions(product)}
+Validity: ${product.validity}
 Amount: ₹${product.price}
 
 Payment screenshot attached.
@@ -344,7 +443,7 @@ function startPaymentAuth() {
   $("loginBtn").onclick = async e => { e.preventDefault(); await signOut(auth); location.reload(); };
 
   if (product) {
-    adminPreview.style.display = "block";
+    adminText.textContent = accessInstruction(user, displayName);
     const message = encodeURIComponent(buildWhatsAppMessage(user, displayName));
     $("whatsappBtn").href = `https://wa.me/918278847614?text=${message}`;
     $("status").style.display = "block";
