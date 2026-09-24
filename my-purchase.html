@@ -8,564 +8,394 @@
 
 <style>
 :root{
-  --bg:#07111f;
-  --bg2:#0b1728;
-  --panel:#101e31;
-  --panel2:#13243a;
-  --line:rgba(148,163,184,.16);
-  --text:#f4f8ff;
-  --muted:#9fb0c6;
-  --blue:#55a8ff;
-  --blue2:#2f7ff0;
-  --cyan:#4dd9e8;
-  --green:#45d49a;
-  --gold:#f2c56b;
-  --danger:#ff7c8b;
-  --shadow:0 20px 55px rgba(0,0,0,.28);
+  --bg:#f5f8fc;
+  --panel:#ffffff;
+  --nav:#071321;
+  --nav2:#0b1b2d;
+  --text:#15253a;
+  --muted:#718198;
+  --line:#e3e9f1;
+  --blue:#1769d2;
+  --blue2:#0b9b67;
+  --green:#0b9b67;
+  --green-bg:#e7f8ef;
+  --shadow:0 10px 30px rgba(17,39,67,.08);
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:var(--text);
-  background:
-    radial-gradient(circle at 12% 0%,rgba(47,127,240,.14),transparent 28%),
-    radial-gradient(circle at 88% 8%,rgba(77,217,232,.09),transparent 24%),
-    linear-gradient(180deg,var(--bg),#081422 55%,#06101c);
-  min-height:100vh;
+  background:linear-gradient(180deg,#eef4fa 0,#f7f9fc 240px,#f5f8fc 100%);
 }
 a{text-decoration:none;color:inherit}
 button{font:inherit}
 
-.site-header{
+/* JOA Maha Pack inspired header */
+.topbar{
   position:sticky;
-  top:0;
+  top:8px;
   z-index:1000;
-  border-bottom:1px solid rgba(148,163,184,.12);
-  background:rgba(7,17,31,.88);
-  backdrop-filter:blur(18px);
+  width:min(1180px,calc(100% - 28px));
+  margin:8px auto 0;
+  border:1px solid rgba(17,47,80,.16);
+  border-radius:14px;
+  background:rgba(7,19,33,.97);
+  box-shadow:0 10px 28px rgba(9,26,45,.16);
 }
-.header-inner{
-  width:min(1180px,calc(100% - 34px));
-  min-height:76px;
-  margin:auto;
+.nav{
+  min-height:68px;
   display:flex;
   align-items:center;
-  gap:28px;
+  gap:16px;
+  padding:8px 12px;
 }
 .brand{
   display:flex;
   align-items:center;
-  gap:11px;
+  gap:10px;
   min-width:max-content;
 }
-.brand img{
-  width:46px;
-  height:46px;
+.logo,.logo img{
+  width:44px;
+  height:44px;
+}
+.logo img{
+  display:block;
   object-fit:contain;
-  border-radius:12px;
 }
-.brand-name{
-  font-size:20px;
-  font-weight:850;
-  letter-spacing:-.6px;
+.brand-title{
+  font-size:19px;
+  font-weight:900;
+  letter-spacing:-.65px;
+  line-height:1;
 }
-.brand-name span{color:var(--blue)}
+.brand-hp{color:#fff}
+.brand-mock{color:#67b6ff}
+.brand-shashtra{color:#fff}
 .tagline{
-  margin-top:2px;
-  font-size:9px;
-  color:#8396ad;
-  letter-spacing:.35px;
+  margin-top:4px;
+  color:#8295aa;
+  font-size:8px;
+  letter-spacing:.3px;
 }
-.nav{
+.header-links{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-left:auto;
+}
+.header-links a,
+.back-btn,
+.login{
+  border:1px solid rgba(142,171,204,.22);
+  border-radius:8px;
+  color:#b9c9da;
+  background:rgba(255,255,255,.035);
+  font-size:10px;
+  font-weight:800;
+  padding:8px 11px;
+  transition:.2s ease;
+}
+.header-links a:hover,
+.back-btn:hover,
+.login:hover{
+  color:#fff;
+  border-color:rgba(91,169,255,.55);
+  background:rgba(53,124,208,.14);
+}
+.header-links a.active{
+  color:#fff;
+  border-color:rgba(91,169,255,.55);
+  background:rgba(53,124,208,.17);
+}
+.header-user{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid rgba(142,171,204,.18);
+  border-radius:9px;
+  padding:5px 8px 5px 6px;
+  background:rgba(255,255,255,.035);
+  color:#dce8f5;
+  font-size:10px;
+  font-weight:750;
+}
+.avatar{
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  border-radius:7px;
+  color:#fff;
+  background:linear-gradient(135deg,#267fe4,#54c8e0);
+  font-size:10px;
+  font-weight:900;
+}
+.logout-btn{
+  border:0;
+  background:transparent;
+  color:#71869d;
+  padding:2px 1px;
+  cursor:pointer;
+  font-size:9px;
+}
+.logout-btn:hover{color:#fff}
+
+/* Main */
+.main{
+  width:min(1080px,calc(100% - 34px));
+  margin:0 auto;
+  padding:30px 0 55px;
+}
+.page-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:18px;
+  padding:17px 20px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+.page-head h1{
+  margin:0;
+  font-size:25px;
+  letter-spacing:-.8px;
+}
+.page-head h1 span{color:var(--blue)}
+.page-head p{
+  margin:5px 0 0;
+  color:var(--muted);
+  font-size:10px;
+}
+.account-info{
   display:flex;
   align-items:center;
   gap:8px;
-  margin-left:auto;
+  flex-wrap:wrap;
+  justify-content:flex-end;
 }
-.nav a{
-  padding:9px 13px;
-  border:1px solid transparent;
-  border-radius:10px;
-  color:#aebed1;
-  font-size:12px;
-  transition:.2s ease;
-}
-.nav a:hover{
-  color:#fff;
-  border-color:rgba(85,168,255,.28);
-  background:rgba(85,168,255,.07);
-}
-.nav a.active{
-  color:#fff;
-  border-color:rgba(85,168,255,.34);
-  background:rgba(85,168,255,.10);
-}
-.user-pill{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  margin-left:7px;
+.account-chip{
   padding:7px 10px;
   border:1px solid var(--line);
-  border-radius:12px;
-  background:rgba(255,255,255,.035);
+  border-radius:8px;
+  background:#f8fafc;
+  color:#66788f;
+  font-size:9px;
 }
-.avatar{
-  width:30px;
-  height:30px;
+.account-chip strong{color:#263a52}
+
+.section-title{
+  margin:25px 0 9px;
+  font-size:16px;
+  letter-spacing:-.2px;
+}
+.section-subtitle{
+  margin:0 0 12px;
+  color:#7c8da2;
+  font-size:9px;
+}
+
+/* Purchase table */
+.table-wrap{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.purchase-table{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+.purchase-table th{
+  padding:12px 14px;
+  background:#f3f7fb;
+  border-bottom:1px solid var(--line);
+  color:#63768e;
+  text-align:left;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.55px;
+  text-transform:uppercase;
+}
+.purchase-table td{
+  padding:13px 14px;
+  border-bottom:1px solid #edf1f5;
+  color:#40536b;
+  font-size:10px;
+  vertical-align:middle;
+}
+.purchase-table tr:last-child td{border-bottom:0}
+.purchase-table tbody tr:hover{background:#fbfdff}
+.product-cell{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.product-icon{
+  width:31px;
+  height:31px;
+  flex:0 0 31px;
   display:grid;
   place-items:center;
-  border-radius:9px;
-  background:linear-gradient(135deg,#2f7ff0,#4dd9e8);
-  color:white;
-  font-size:12px;
-  font-weight:800;
+  border-radius:8px;
+  background:#edf5ff;
+  border:1px solid #d9e9fb;
+  color:#1c72d4;
+  font-size:10px;
+  font-weight:900;
 }
-.user-name{
-  max-width:115px;
+.product-name{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  font-size:11px;
-  color:#d9e5f3;
-}
-.logout{
-  border:0;
-  background:transparent;
-  color:#8194aa;
-  cursor:pointer;
-  font-size:11px;
-  padding:4px;
-}
-.logout:hover{color:#fff}
-
-.main{
-  width:min(1180px,calc(100% - 34px));
-  margin:0 auto;
-  padding:42px 0 64px;
-}
-
-/* Hero */
-.hero{
-  position:relative;
-  overflow:hidden;
-  min-height:235px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:34px 38px;
-  background:
-    linear-gradient(115deg,rgba(17,36,58,.98),rgba(11,27,46,.94)),
-    radial-gradient(circle at 82% 25%,rgba(77,217,232,.18),transparent 28%);
-  box-shadow:var(--shadow);
-}
-.hero:before{
-  content:"";
-  position:absolute;
-  width:280px;
-  height:280px;
-  right:-85px;
-  top:-120px;
-  border:1px solid rgba(77,217,232,.15);
-  border-radius:50%;
-}
-.hero:after{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  right:10px;
-  top:-65px;
-  border:1px solid rgba(85,168,255,.12);
-  border-radius:50%;
-}
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  color:#89c8ff;
+  color:#1a2c43;
   font-size:10px;
-  font-weight:750;
-  letter-spacing:1.1px;
-  text-transform:uppercase;
-}
-.eyebrow i{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 14px rgba(77,217,232,.75);
-}
-.hero h1{
-  margin:11px 0 8px;
-  font-size:38px;
-  line-height:1.08;
-  letter-spacing:-1.4px;
-}
-.hero h1 span{
-  background:linear-gradient(90deg,#62b5ff,#54dbe8);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.hero p{
-  margin:0;
-  max-width:650px;
-  color:#9eb1c8;
-  font-size:13px;
-  line-height:1.7;
-}
-.profile-line{
-  margin-top:20px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-}
-.profile-chip{
-  padding:8px 11px;
-  border:1px solid rgba(148,163,184,.14);
-  border-radius:9px;
-  background:rgba(255,255,255,.035);
-  color:#b7c6d8;
-  font-size:10px;
-}
-.profile-chip strong{color:#eef6ff}
-
-/* Summary */
-.summary{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin:18px 0 34px;
-}
-.summary-card{
-  min-height:92px;
-  padding:17px 18px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:rgba(16,30,49,.82);
-}
-.summary-card .label{
-  color:#879bb2;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.7px;
-}
-.summary-card strong{
-  display:block;
-  margin-top:5px;
-  font-size:25px;
-  letter-spacing:-.6px;
-}
-.summary-card small{
-  color:#71859c;
-  font-size:10px;
-}
-
-/* Section */
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:20px;
-  margin-bottom:15px;
-}
-.section-title{
-  margin:0;
-  font-size:21px;
-  letter-spacing:-.5px;
-}
-.section-subtitle{
-  color:#7f92aa;
-  font-size:11px;
-}
-.section-line{
-  height:1px;
-  background:linear-gradient(90deg,rgba(85,168,255,.45),rgba(148,163,184,.07),transparent);
-  margin-bottom:18px;
-}
-
-/* Purchase cards */
-.purchase-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-}
-.purchase-card{
-  position:relative;
-  padding:20px;
-  border:1px solid rgba(148,163,184,.15);
-  border-radius:18px;
-  background:
-    linear-gradient(145deg,rgba(18,35,56,.95),rgba(11,24,40,.96));
-  box-shadow:0 12px 35px rgba(0,0,0,.14);
-  overflow:hidden;
-  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
-}
-.purchase-card:hover{
-  transform:translateY(-2px);
-  border-color:rgba(85,168,255,.28);
-  box-shadow:0 18px 42px rgba(0,0,0,.23);
-}
-.purchase-card:before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
-  height:2px;
-  background:linear-gradient(90deg,#2f7ff0,#4dd9e8);
-  opacity:.85;
-}
-.card-top{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  align-items:flex-start;
-}
-.product-icon{
-  width:46px;
-  height:46px;
-  flex:0 0 46px;
-  display:grid;
-  place-items:center;
-  border-radius:13px;
-  background:linear-gradient(145deg,rgba(47,127,240,.18),rgba(77,217,232,.08));
-  border:1px solid rgba(85,168,255,.19);
-  color:#73bdff;
-  font-size:19px;
-}
-.product-info{
-  flex:1;
-  min-width:0;
-}
-.product-type{
-  display:inline-block;
-  margin-bottom:6px;
-  color:#7fbfff;
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:.9px;
-  text-transform:uppercase;
-}
-.product-name{
-  margin:0;
-  font-size:16px;
-  line-height:1.25;
+  font-weight:850;
 }
 .product-desc{
-  margin:5px 0 0;
-  color:#8296ad;
-  font-size:10px;
-  line-height:1.5;
+  margin-top:2px;
+  color:#8a9aae;
+  font-size:8px;
 }
-.status{
-  flex:0 0 auto;
-  padding:6px 8px;
-  border:1px solid rgba(69,212,154,.2);
-  border-radius:8px;
-  color:#70e0b1;
-  background:rgba(69,212,154,.07);
-  font-size:9px;
+.type-badge{
+  display:inline-block;
+  padding:5px 7px;
+  border-radius:6px;
+  background:#f3f6fa;
+  border:1px solid #e4eaf1;
+  color:#6c7d91;
+  font-size:8px;
   font-weight:800;
 }
-.status.expired{
-  color:#ff9ba6;
-  border-color:rgba(255,124,139,.2);
-  background:rgba(255,124,139,.06);
-}
-.details{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-top:18px;
-}
-.detail{
-  padding:10px 11px;
-  border:1px solid rgba(148,163,184,.1);
-  border-radius:10px;
-  background:rgba(255,255,255,.025);
-}
-.detail span{
-  display:block;
-  color:#70859d;
-  font-size:9px;
-  margin-bottom:3px;
-}
-.detail strong{
-  font-size:11px;
-  color:#dce8f6;
-}
-.detail strong.valid{color:#6ee0af}
-.detail strong.expired{color:#ff9aa5}
-.card-actions{
-  display:flex;
-  gap:8px;
-  margin-top:15px;
-}
-.action{
+.active-badge{
   display:inline-flex;
   align-items:center;
-  justify-content:center;
-  min-height:37px;
-  padding:0 13px;
-  border-radius:10px;
-  border:1px solid rgba(85,168,255,.23);
-  background:rgba(85,168,255,.08);
-  color:#cde8ff;
-  font-size:10px;
-  font-weight:750;
-  transition:.2s;
+  gap:5px;
+  padding:5px 8px;
+  border-radius:6px;
+  background:var(--green-bg);
+  border:1px solid #bfe9d1;
+  color:#087b50;
+  font-size:8px;
+  font-weight:900;
 }
-.action:hover{
-  background:rgba(85,168,255,.16);
-  border-color:rgba(85,168,255,.42);
+.active-dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#0b9b67;
 }
-.action.secondary{
-  border-color:rgba(148,163,184,.14);
-  background:rgba(255,255,255,.035);
-  color:#a9bacd;
+.date{
+  color:#40536b;
+  font-weight:700;
 }
-.action.buy{
-  border-color:rgba(242,197,107,.23);
-  background:rgba(242,197,107,.07);
-  color:#f4d48d;
+.valid{
+  color:#087b50;
+  font-weight:850;
 }
 
 /* Empty */
 .empty{
   display:none;
-  padding:45px 25px;
+  margin-top:14px;
+  padding:35px 20px;
   text-align:center;
-  border:1px dashed rgba(148,163,184,.2);
-  border-radius:18px;
-  background:rgba(255,255,255,.018);
+  border:1px dashed #cbd6e3;
+  border-radius:14px;
+  background:#fff;
 }
 .empty-icon{
-  width:54px;
-  height:54px;
-  margin:0 auto 12px;
-  display:grid;
-  place-items:center;
-  border-radius:16px;
-  background:rgba(85,168,255,.08);
-  border:1px solid rgba(85,168,255,.15);
-  color:#73bdff;
-  font-size:22px;
+  width:45px;height:45px;margin:0 auto 10px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#edf5ff;color:#2576d2;
 }
-.empty h3{margin:0 0 6px;font-size:17px}
-.empty p{margin:0 auto 17px;color:#8194aa;font-size:11px;max-width:430px;line-height:1.6}
+.empty h3{margin:0 0 5px;font-size:15px}
+.empty p{margin:0 auto 14px;color:#7b8da1;font-size:9px}
 .explore{
   display:inline-flex;
-  min-height:39px;
-  align-items:center;
-  padding:0 16px;
-  border-radius:10px;
-  background:linear-gradient(135deg,#2f7ff0,#2769cf);
-  color:white;
-  font-size:10px;
-  font-weight:800;
+  padding:8px 12px;
+  border-radius:7px;
+  background:#1769d2;
+  color:#fff;
+  font-size:9px;
+  font-weight:850;
 }
 
 /* Footer */
 .footer{
-  border-top:1px solid rgba(148,163,184,.11);
-  background:#06101c;
+  border-top:1px solid #dfe6ee;
+  background:#fff;
 }
 .footer-inner{
-  width:min(1180px,calc(100% - 34px));
+  width:min(1080px,calc(100% - 34px));
   margin:auto;
-  padding:27px 0;
+  padding:24px 0;
 }
 .footer-top{
   display:grid;
   grid-template-columns:1.4fr 1fr 1fr;
-  gap:35px;
+  gap:30px;
 }
-.footer h3,.footer h4{margin:0 0 8px}
-.footer h3{font-size:16px}
-.footer h4{font-size:11px;color:#b7c8da}
+.footer h3,.footer h4{margin:0 0 7px}
+.footer h3{font-size:14px}
+.footer h4{font-size:10px}
 .footer p{
-  max-width:410px;
+  max-width:390px;
   margin:0;
-  color:#71859c;
-  font-size:10px;
-  line-height:1.7;
+  color:#7b8da1;
+  font-size:9px;
+  line-height:1.6;
 }
-.footer-links{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-.footer-links a{
-  color:#71859c;
-  font-size:10px;
-}
-.footer-links a:hover{color:#cfe7ff}
+.footer-links{display:flex;flex-direction:column;gap:5px}
+.footer-links a{color:#718399;font-size:9px}
+.footer-links a:hover{color:#1769d2}
 .footer-bottom{
   display:flex;
   justify-content:space-between;
-  gap:15px;
-  padding-top:18px;
-  margin-top:20px;
-  border-top:1px solid rgba(148,163,184,.08);
-  color:#586b81;
-  font-size:9px;
+  gap:10px;
+  padding-top:14px;
+  margin-top:15px;
+  border-top:1px solid #edf1f5;
+  color:#8796a8;
+  font-size:8px;
 }
 
-/* Loading / auth */
 .loading-screen{
   min-height:100vh;
   display:grid;
   place-items:center;
-  color:#91a4ba;
-  font-size:12px;
+  color:#718399;
+  font-size:11px;
 }
 .hidden{display:none!important}
 
-/* Responsive */
 @media(max-width:900px){
-  .nav a:nth-child(1),
-  .nav a:nth-child(2){display:none}
-  .purchase-grid{grid-template-columns:1fr}
+  .header-links a:nth-child(2){display:none}
   .footer-top{grid-template-columns:1fr 1fr}
 }
-@media(max-width:680px){
-  .header-inner,.main,.footer-inner{width:min(100% - 22px,1180px)}
-  .site-header{position:relative}
-  .header-inner{min-height:68px;gap:10px}
-  .brand img{width:40px;height:40px}
-  .brand-name{font-size:17px}
-  .tagline{font-size:8px}
-  .nav{gap:3px}
-  .nav a{padding:8px 7px;font-size:9px}
-  .nav a:nth-child(3){display:none}
-  .user-pill{padding:5px 7px;margin-left:2px}
-  .user-name{display:none}
-  .logout{font-size:9px}
-  .main{padding:23px 0 42px}
-  .hero{padding:25px 21px;border-radius:19px}
-  .hero h1{font-size:29px}
-  .hero p{font-size:11px;line-height:1.65}
-  .summary{grid-template-columns:1fr 1fr;margin-bottom:28px}
-  .summary-card{min-height:82px;padding:13px}
-  .summary-card strong{font-size:21px}
-  .section-head{align-items:flex-start;flex-direction:column;gap:4px}
-  .purchase-card{padding:16px}
-  .details{grid-template-columns:1fr 1fr}
+@media(max-width:650px){
+  .topbar{top:5px;margin-top:5px}
+  .nav{min-height:62px;padding:6px 8px;gap:7px}
+  .logo,.logo img{width:39px;height:39px}
+  .brand-title{font-size:16px}
+  .tagline{display:none}
+  .header-links{display:none}
+  .header-user{margin-left:auto}
+  .main{width:calc(100% - 22px);padding-top:20px}
+  .page-head{align-items:flex-start;flex-direction:column;padding:15px}
+  .account-info{justify-content:flex-start}
+  .table-wrap{overflow-x:auto}
+  .purchase-table{min-width:680px}
   .footer-top{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column}
-}
-@media(max-width:430px){
-  .nav a{display:none!important}
-  .nav{margin-left:auto}
-  .user-pill{border:0;background:transparent}
-  .summary{gap:8px}
-  .summary-card strong{font-size:19px}
-  .product-name{font-size:14px}
-  .status{font-size:8px}
+  .footer-inner{width:calc(100% - 22px)}
 }
 </style>
 </head>
@@ -578,87 +408,76 @@ button{font:inherit}
 
 <div id="page" class="hidden">
 
-<header class="site-header">
-  <div class="header-inner">
+<header class="topbar">
+  <nav class="nav">
 
-    <a href="homepage.html" class="brand">
-      <img src="logo.png" alt="HPMockShashtra Logo">
+    <a class="brand" href="joa-mahapack.html">
+      <div class="logo">
+        <img src="logo.png" alt="HPMockShashtra Logo">
+      </div>
       <div>
-        <div class="brand-name">HP<span>Mock</span>Shashtra</div>
-        <div class="tagline">Prepare Today, Serve Himachal Tomorrow</div>
+        <div class="brand-title">
+          <span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span>
+        </div>
+        <div class="tagline">Prepare Today, Serve Tomorrow</div>
       </div>
     </a>
 
-    <nav class="nav">
-      <a href="homepage.html">Home</a>
-      <a href="joa-mahapack.html">Courses</a>
-      <a href="my-purchases.html" class="active">My Purchases</a>
-    </nav>
-
-    <div class="user-pill">
-      <div class="avatar" id="avatar">U</div>
-      <div class="user-name" id="headerName">Student</div>
-      <button class="logout" id="logoutBtn">Logout</button>
+    <div class="header-links">
+      <a href="joa-mahapack.html">Paid Courses</a>
+      <a href="my-purchase.html" class="active">My Purchases</a>
+      <a href="master-progress.html">Master Progress</a>
     </div>
 
-  </div>
+    <div class="header-user">
+      <span class="avatar" id="headerAvatar">U</span>
+      <span id="headerUserName">User</span>
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+
+    <a class="back-btn" href="joa-mahapack.html">← Back</a>
+
+  </nav>
 </header>
 
 <main class="main">
 
-  <section class="hero">
-    <div class="eyebrow"><i></i> Student Account</div>
-    <h1>My <span>Purchases</span></h1>
-    <p>
-      आपके account से जुड़े courses और premium packs एक ही जगह।
-      Validity देखें और जहाँ से preparation छोड़ी थी, वहीं से आगे बढ़ें।
-    </p>
+  <section class="page-head">
+    <div>
+      <h1>My <span>Purchases</span></h1>
+      <p>Your currently active courses and premium packs.</p>
+    </div>
 
-    <div class="profile-line">
-      <div class="profile-chip">Name: <strong id="profileName">—</strong></div>
-      <div class="profile-chip">Email: <strong id="profileEmail">—</strong></div>
+    <div class="account-info">
+      <div class="account-chip">Name: <strong id="profileName">—</strong></div>
+      <div class="account-chip">Email: <strong id="profileEmail">—</strong></div>
     </div>
   </section>
 
-  <section class="summary">
-    <div class="summary-card">
-      <div class="label">Total Purchases</div>
-      <strong id="totalPurchases">0</strong>
-      <small>आपके account में उपलब्ध</small>
-    </div>
-    <div class="summary-card">
-      <div class="label">Active Access</div>
-      <strong id="activePurchases">0</strong>
-      <small>अभी valid purchases</small>
-    </div>
-    <div class="summary-card">
-      <div class="label">Expiring Soon</div>
-      <strong id="expiringPurchases">0</strong>
-      <small>अगले 30 दिनों में</small>
-    </div>
-  </section>
+  <h2 class="section-title">Active Purchases</h2>
+  <p class="section-subtitle">Only currently valid purchases are shown here. Expired purchases are automatically hidden.</p>
 
-  <section>
-    <div class="section-head">
-      <div>
-        <h2 class="section-title">Your Courses &amp; Packs</h2>
-      </div>
-      <div class="section-subtitle">Purchase history &amp; current validity</div>
-    </div>
-    <div class="section-line"></div>
+  <div id="tableWrap" class="table-wrap">
+    <table class="purchase-table">
+      <thead>
+        <tr>
+          <th style="width:34%">Product</th>
+          <th style="width:18%">Type</th>
+          <th style="width:17%">Purchased On</th>
+          <th style="width:19%">Valid Till</th>
+          <th style="width:12%">Status</th>
+        </tr>
+      </thead>
+      <tbody id="purchaseTableBody"></tbody>
+    </table>
+  </div>
 
-    <div id="purchaseGrid" class="purchase-grid"></div>
-
-    <div id="emptyState" class="empty">
-      <div class="empty-icon">▣</div>
-      <h3>No purchases yet</h3>
-      <p>
-        अभी आपके account में कोई premium course या pack active नहीं है।
-        Computer preparation शुरू करने के लिए courses देखें।
-      </p>
-      <a class="explore" href="joa-mahapack.html">Explore Computer Courses →</a>
-    </div>
-  </section>
+  <div id="emptyState" class="empty">
+    <div class="empty-icon">▣</div>
+    <h3>No active purchases</h3>
+    <p>No currently valid course or premium pack is available in your account.</p>
+    <a class="explore" href="joa-mahapack.html">Explore Courses →</a>
+  </div>
 
 </main>
 
@@ -667,10 +486,7 @@ button{font:inherit}
     <div class="footer-top">
       <div>
         <h3>HPMockShashtra</h3>
-        <p>
-          A practice platform for Himachal Pradesh competitive exam aspirants
-          with mock tests, bilingual practice and performance tracking.
-        </p>
+        <p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p>
       </div>
 
       <div>
@@ -701,7 +517,6 @@ button{font:inherit}
 </footer>
 
 </div>
-
 <script type="module">
 import { auth, db } from "./firebase-config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
@@ -711,123 +526,72 @@ const $ = id => document.getElementById(id);
 
 const PRODUCTS = {
   "computer-fundamentals": {
-    name:"Computer Fundamentals",
-    type:"Individual Subject",
-    icon:"⌘",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"Computer Fundamentals", type:"Individual Subject", icon:"⌘",
+    desc:"400 premium questions"
   },
   "ms-word": {
-    name:"MS Word",
-    type:"Individual Subject",
-    icon:"W",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"MS Word", type:"Individual Subject", icon:"W",
+    desc:"400 premium questions"
   },
   "ms-excel": {
-    name:"MS Excel",
-    type:"Individual Subject",
-    icon:"X",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"MS Excel", type:"Individual Subject", icon:"X",
+    desc:"400 premium questions"
   },
   "ms-powerpoint": {
-    name:"MS PowerPoint",
-    type:"Individual Subject",
-    icon:"P",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"MS PowerPoint", type:"Individual Subject", icon:"P",
+    desc:"400 premium questions"
   },
   "ms-access": {
-    name:"MS Access",
-    type:"Individual Subject",
-    icon:"A",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"MS Access", type:"Individual Subject", icon:"A",
+    desc:"400 premium questions"
   },
   "dbms-sql": {
-    name:"DBMS & SQL",
-    type:"Individual Subject",
-    icon:"DB",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"DBMS & SQL", type:"Individual Subject", icon:"DB",
+    desc:"400 premium questions"
   },
   "computer-networking": {
-    name:"Computer Networking",
-    type:"Individual Subject",
-    icon:"↔",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"Computer Networking", type:"Individual Subject", icon:"↔",
+    desc:"400 premium questions"
   },
   "cyber-security": {
-    name:"Cyber Security",
-    type:"Individual Subject",
-    icon:"⌾",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"Cyber Security", type:"Individual Subject", icon:"⌾",
+    desc:"400 premium questions"
   },
   "c-programming": {
-    name:"C Programming",
-    type:"Individual Subject",
-    icon:"C",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"C Programming", type:"Individual Subject", icon:"C",
+    desc:"400 premium questions"
   },
   "html": {
-    name:"HTML",
-    type:"Individual Subject",
-    icon:"<>",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"HTML", type:"Individual Subject", icon:"<>",
+    desc:"400 premium questions"
   },
   "css-css3": {
-    name:"CSS/CSS3",
-    type:"Individual Subject",
-    icon:"#",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"CSS/CSS3", type:"Individual Subject", icon:"#",
+    desc:"400 premium questions"
   },
   "cloud-computing": {
-    name:"Cloud Computing",
-    type:"Individual Subject",
-    icon:"☁",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"Cloud Computing", type:"Individual Subject", icon:"☁",
+    desc:"400 premium questions"
   },
   "data-structure": {
-    name:"Data Structure",
-    type:"Individual Subject",
-    icon:"⌘",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"Data Structure", type:"Individual Subject", icon:"⌘",
+    desc:"400 premium questions"
   },
   "computer-organisation": {
-    name:"Computer Organisation & Architecture",
-    type:"Individual Subject",
-    icon:"▦",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"Computer Organisation & Architecture", type:"Individual Subject", icon:"▦",
+    desc:"400 premium questions"
   },
   "operating-system": {
-    name:"Operating System",
-    type:"Individual Subject",
-    icon:"OS",
-    desc:"400 premium questions • 6 months validity",
-    link:"joa-mahapack.html"
+    name:"Operating System", type:"Individual Subject", icon:"OS",
+    desc:"400 premium questions"
   },
   "ms-office": {
-    name:"MS Office Pack",
-    type:"Premium Pack",
-    icon:"▤",
-    desc:"Word • Excel • PowerPoint • Access • 1,600 questions",
-    link:"joa-mahapack.html"
+    name:"MS Office Pack", type:"Premium Pack", icon:"▤",
+    desc:"Word • Excel • PowerPoint • Access"
   },
   "computer-master": {
-    name:"JOA IT Maha Pack",
-    type:"Maha Pack",
-    icon:"♛",
-    desc:"All 15 subjects • 6,000 premium questions",
-    link:"joa-mahapack.html"
+    name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
+    desc:"All 15 computer subjects"
   }
 };
 
@@ -848,10 +612,10 @@ function formatDate(value){
   });
 }
 
-function daysLeft(value){
-  const d = toDate(value);
-  if(!d) return null;
-  return Math.ceil((d.getTime() - Date.now()) / 86400000);
+function escapeHtml(value){
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[c]));
 }
 
 function initial(name){
@@ -859,152 +623,88 @@ function initial(name){
   return n ? n.charAt(0).toUpperCase() : "U";
 }
 
-function escapeHtml(value){
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-  }[c]));
-}
+function addRow(product, value){
+  const expiry = toDate(value?.expiresAt);
 
-function makeCard(product, expiresAt, purchasedAt){
-  const expiry = toDate(expiresAt);
-  const active = expiry && expiry.getTime() > Date.now();
-  const days = daysLeft(expiresAt);
-  const soon = active && days !== null && days <= 30;
+  // Only current/active purchases are shown.
+  // Legacy full-series access has no expiry field, so it is treated as active.
+  const active = expiry ? expiry.getTime() > Date.now() : true;
+  if(!active) return false;
 
-  let statusText = active ? "ACTIVE" : "EXPIRED";
-  let validityText = active ? formatDate(expiresAt) : `Expired ${formatDate(expiresAt)}`;
+  const row = document.createElement("tr");
 
-  if(active && soon){
-    statusText = "EXPIRING SOON";
-  }
-
-  const productId = Object.keys(PRODUCTS).find(key => PRODUCTS[key] === product);
-
-  const card = document.createElement("article");
-  card.className = "purchase-card";
-
-  card.innerHTML = `
-    <div class="card-top">
-      <div class="product-icon">${escapeHtml(product.icon)}</div>
-      <div class="product-info">
-        <div class="product-type">${escapeHtml(product.type)}</div>
-        <h3 class="product-name">${escapeHtml(product.name)}</h3>
-        <p class="product-desc">${escapeHtml(product.desc)}</p>
+  row.innerHTML = `
+    <td>
+      <div class="product-cell">
+        <div class="product-icon">${escapeHtml(product.icon)}</div>
+        <div>
+          <div class="product-name">${escapeHtml(product.name)}</div>
+          <div class="product-desc">${escapeHtml(product.desc)}</div>
+        </div>
       </div>
-      <div class="status ${active ? "" : "expired"}">${statusText}</div>
-    </div>
-
-    <div class="details">
-      <div class="detail">
-        <span>Purchased On</span>
-        <strong>${escapeHtml(formatDate(purchasedAt))}</strong>
-      </div>
-      <div class="detail">
-        <span>Valid Till</span>
-        <strong class="${active ? "valid" : "expired"}">${escapeHtml(validityText)}</strong>
-      </div>
-    </div>
-
-    <div class="card-actions">
-      ${
-        active
-        ? `<a class="action" href="${escapeHtml(product.link)}">Open Course →</a>`
-        : `<a class="action buy" href="payment.html?product=${encodeURIComponent(productId || "")}">Renew / Buy →</a>`
-      }
-      <a class="action secondary" href="joa-mahapack.html">View Courses</a>
-    </div>
+    </td>
+    <td><span class="type-badge">${escapeHtml(product.type)}</span></td>
+    <td><span class="date">${escapeHtml(formatDate(value?.purchasedAt))}</span></td>
+    <td><span class="valid">${expiry ? escapeHtml(formatDate(value.expiresAt)) : "Full Series"}</span></td>
+    <td><span class="active-badge"><span class="active-dot"></span>Active</span></td>
   `;
 
-  return {card, active, soon};
-}
-
-function addLegacyPurchases(data, list){
-  if(data?.joaitFullSeries === true){
-    list.push({
-      product:{
-        name:"JOA (IT) Full Series",
-        type:"Mock Test Series",
-        icon:"J",
-        desc:"15 mock tests • 100 questions each • Full Series access",
-        link:"joa-series.html"
-      },
-      purchasedAt:null,
-      expiresAt:null,
-      legacy:true
-    });
-  }
-
-  if(data?.patwariFullSeries === true){
-    list.push({
-      product:{
-        name:"HP Patwari Full Series",
-        type:"Mock Test Series",
-        icon:"P",
-        desc:"Full Patwari mock test series access",
-        link:"patwari-series.html"
-      },
-      purchasedAt:null,
-      expiresAt:null,
-      legacy:true
-    });
-  }
+  $("purchaseTableBody").appendChild(row);
+  return true;
 }
 
 function render(data){
-  const items = [];
+  const tbody = $("purchaseTableBody");
+  tbody.innerHTML = "";
+  let count = 0;
+
   const courses = data?.computerAccess?.courses || {};
   const packs = data?.computerAccess?.packs || {};
 
   Object.entries(courses).forEach(([id,value])=>{
     const product = PRODUCTS[id];
-    if(product && value) items.push({
-      product,
-      purchasedAt:value.purchasedAt,
-      expiresAt:value.expiresAt
-    });
+    if(product && value && addRow(product,value)) count++;
   });
 
   Object.entries(packs).forEach(([id,value])=>{
     const product = PRODUCTS[id];
-    if(product && value) items.push({
-      product,
-      purchasedAt:value.purchasedAt,
-      expiresAt:value.expiresAt
-    });
+    if(product && value && addRow(product,value)) count++;
   });
 
-  addLegacyPurchases(data, items);
+  // Legacy JOA / Patwari access remains visible because it is a current
+  // Full Series access flag and does not have an expiry timestamp.
+  if(data?.joaitFullSeries === true){
+    if(addRow({
+      name:"JOA (IT) Full Series",
+      type:"Mock Test Series",
+      icon:"J",
+      desc:"15 mock tests • Full Series access"
+    },{})) count++;
+  }
 
-  const grid = $("purchaseGrid");
-  grid.innerHTML = "";
+  if(data?.patwariFullSeries === true){
+    if(addRow({
+      name:"HP Patwari Full Series",
+      type:"Mock Test Series",
+      icon:"P",
+      desc:"Full Series access"
+    },{})) count++;
+  }
 
-  let activeCount = 0;
-  let soonCount = 0;
-
-  items.forEach(item=>{
-    const result = makeCard(item.product,item.expiresAt,item.purchasedAt);
-    grid.appendChild(result.card);
-    if(result.active) activeCount++;
-    if(result.soon) soonCount++;
-  });
-
-  $("totalPurchases").textContent = items.length;
-  $("activePurchases").textContent = activeCount;
-  $("expiringPurchases").textContent = soonCount;
-
-  $("emptyState").style.display = items.length ? "none" : "block";
+  $("tableWrap").style.display = count ? "block" : "none";
+  $("emptyState").style.display = count ? "none" : "block";
 }
 
 onAuthStateChanged(auth, async user => {
   if(!user){
-    window.location.href = "firebase-login.html?redirect=my-purchases.html";
+    window.location.href = "firebase-login.html?redirect=my-purchase.html";
     return;
   }
 
   const displayName = user.displayName || user.email?.split("@")[0] || "Student";
 
-  $("headerName").textContent = displayName;
-  $("avatar").textContent = initial(displayName);
+  $("headerUserName").textContent = displayName;
+  $("headerAvatar").textContent = initial(displayName);
   $("profileName").textContent = displayName;
   $("profileEmail").textContent = user.email || "—";
 
@@ -1012,7 +712,7 @@ onAuthStateChanged(auth, async user => {
     const snap = await getDoc(doc(db,"testAccess",user.uid));
     render(snap.exists() ? snap.data() : {});
   }catch(error){
-    console.error("My Purchases error:",error);
+    console.error("My Purchase error:",error);
     render({});
   }
 
@@ -1029,6 +729,5 @@ $("logoutBtn").addEventListener("click", async ()=>{
   }
 });
 </script>
-
 </body>
 </html>
