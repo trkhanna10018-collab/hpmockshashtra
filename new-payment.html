@@ -89,7 +89,7 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
 .note{
   margin-top:10px;text-align:center;color:var(--muted);font-size:10px;line-height:1.5
 }
-.status{
+.admin-preview{margin-top:14px;border:1px solid #dbe5f1;background:#f8fbff;border-radius:14px;padding:14px}.admin-title{font-size:12px;font-weight:900;margin-bottom:8px}.admin-preview pre{margin:0;white-space:pre-wrap;word-break:break-word;font:10px/1.55 Consolas,monospace;color:#334155;background:#fff;border:1px solid #e5eaf1;border-radius:10px;padding:11px}.status{
   margin-top:12px;padding:11px 13px;border-radius:11px;background:#fff7ed;
   border:1px solid #fed7aa;color:#9a3412;font-size:11px;display:none
 }
@@ -171,6 +171,11 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
   <div class="account">
     <div class="account-row"><span>Name</span><span id="userName">Checking...</span></div>
     <div class="account-row"><span>Registered Email</span><span id="userEmail">Checking...</span></div>
+    <div class="account-row"><span>UID</span><span id="userUid">Checking...</span></div>
+  </div>
+  <div id="adminPreview" class="admin-preview" style="display:none">
+    <div class="admin-title">Access Details</div>
+    <pre id="adminText"></pre>
   </div>
 
   <a id="whatsappBtn" class="whatsapp" href="#" target="_blank">💬 Send Payment on WhatsApp</a>
@@ -190,7 +195,7 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
 
 <script type="module">
 import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -240,6 +245,8 @@ const productKey = new URLSearchParams(location.search).get("product");
 const product = PRODUCTS[productKey];
 
 const $ = id => document.getElementById(id);
+const adminPreview = $("adminPreview");
+const adminText = $("adminText");
 
 if (!product) {
   $("productName").textContent = "Product Not Selected";
@@ -249,7 +256,7 @@ if (!product) {
   $("whatsappBtn").style.display = "none";
 } else {
   $("productName").textContent = product.name;
-  $("productMeta").textContent = product.validity;
+  $("productMeta").textContent = `₹${product.price} • ${product.validity}`;
   $("productPrice").textContent = `₹${product.price}`;
   $("amount").textContent = `₹${product.price}`;
 }
@@ -299,11 +306,13 @@ ${accessInstruction(user, displayName)}`;
 
 onAuthStateChanged(auth, async user => {
   if (!user) {
+    $("loginBtn").textContent = "Login";
     $("userName").textContent = "Please Login";
     $("userEmail").textContent = "Login required";
     $("whatsappBtn").href = "firebase-login.html";
     $("whatsappBtn").target = "_self";
     $("whatsappBtn").textContent = "🔐 Login to Continue";
+    adminPreview.style.display = "none";
     $("status").style.display = "block";
     $("status").textContent = "Please login first. Your registered details will appear here automatically.";
     return;
@@ -326,8 +335,13 @@ onAuthStateChanged(auth, async user => {
 
   $("userName").textContent = displayName;
   $("userEmail").textContent = user.email || "";
+  $("userUid").textContent = user.uid;
+  $("loginBtn").textContent = "Logout";
+  $("loginBtn").href = "#";
+  $("loginBtn").onclick = async e => { e.preventDefault(); await signOut(auth); location.reload(); };
 
   if (product) {
+    adminPreview.style.display = "block";
     const message = encodeURIComponent(buildWhatsAppMessage(user, displayName));
     $("whatsappBtn").href = `https://wa.me/918278847614?text=${message}`;
     $("status").style.display = "block";
