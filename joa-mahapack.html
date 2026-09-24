@@ -35,6 +35,10 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
     box-shadow:0 4px 14px rgba(0,0,0,.18),inset 0 0 14px rgba(90,150,255,.06);
   }
   .mobile-menu-btn:active{transform:scale(.96)}
+  .brand{min-width:0;overflow:hidden}
+  .brand-title{font-size:14px;max-width:122px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .header-user{flex:0 0 auto;max-width:92px;min-width:0}
+  #headerUserName{display:block;max-width:52px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .mobile-menu{
     position:absolute;
     top:calc(100% + 8px);
@@ -92,7 +96,6 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
 <div class="header-user" id="headerUser" style="display:none"><span class="avatar" id="headerAvatar">U</span><span id="headerUserName">User</span></div>
 <a class="login" id="loginLink" href="firebase-login.html">Login</a>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="homepage.html">Home</a>
   <a href="#pricing">Paid Courses</a>
   <a href="my-purchase.html">My Purchases</a>
   <a href="master-progress.html">Master Progress</a>
