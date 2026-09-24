@@ -9,17 +9,17 @@
 <style>
 :root{
   --bg:#f5f8fc;
-  --panel:#ffffff;
   --nav:#071321;
-  --nav2:#0b1b2d;
-  --text:#15253a;
-  --muted:#718198;
-  --line:#e3e9f1;
+  --nav-border:rgba(142,171,204,.20);
+  --text:#17283d;
+  --muted:#728399;
+  --line:#e1e8f0;
   --blue:#1769d2;
-  --blue2:#0b9b67;
   --green:#0b9b67;
-  --green-bg:#e7f8ef;
-  --shadow:0 10px 30px rgba(17,39,67,.08);
+  --green-bg:#e5f7ee;
+  --red:#d95363;
+  --red-bg:#fff0f2;
+  --shadow:0 12px 34px rgba(16,39,66,.08);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -27,28 +27,28 @@ body{
   margin:0;
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:var(--text);
-  background:linear-gradient(180deg,#eef4fa 0,#f7f9fc 240px,#f5f8fc 100%);
+  background:linear-gradient(180deg,#edf4fa 0,#f7f9fc 230px,#f5f8fc 100%);
 }
 a{text-decoration:none;color:inherit}
 button{font:inherit}
 
-/* JOA Maha Pack inspired header */
+/* Header — same visual language as JOA IT Maha Pack */
 .topbar{
   position:sticky;
-  top:8px;
+  top:7px;
   z-index:1000;
   width:min(1180px,calc(100% - 28px));
-  margin:8px auto 0;
-  border:1px solid rgba(17,47,80,.16);
+  margin:7px auto 0;
+  border:1px solid var(--nav-border);
   border-radius:14px;
-  background:rgba(7,19,33,.97);
+  background:rgba(7,19,33,.98);
   box-shadow:0 10px 28px rgba(9,26,45,.16);
 }
 .nav{
   min-height:68px;
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:14px;
   padding:8px 12px;
 }
 .brand{
@@ -57,23 +57,16 @@ button{font:inherit}
   gap:10px;
   min-width:max-content;
 }
-.logo,.logo img{
-  width:44px;
-  height:44px;
-}
-.logo img{
-  display:block;
-  object-fit:contain;
-}
+.logo,.logo img{width:44px;height:44px}
+.logo img{display:block;object-fit:contain}
 .brand-title{
   font-size:19px;
   font-weight:900;
   letter-spacing:-.65px;
   line-height:1;
 }
-.brand-hp{color:#fff}
+.brand-hp,.brand-shashtra{color:#fff}
 .brand-mock{color:#67b6ff}
-.brand-shashtra{color:#fff}
 .tagline{
   margin-top:4px;
   color:#8295aa;
@@ -86,9 +79,7 @@ button{font:inherit}
   gap:7px;
   margin-left:auto;
 }
-.header-links a,
-.back-btn,
-.login{
+.header-links a,.back-btn{
   border:1px solid rgba(142,171,204,.22);
   border-radius:8px;
   color:#b9c9da;
@@ -96,20 +87,14 @@ button{font:inherit}
   font-size:10px;
   font-weight:800;
   padding:8px 11px;
-  transition:.2s ease;
+  transition:.2s;
 }
-.header-links a:hover,
-.back-btn:hover,
-.login:hover{
+.header-links a:hover,.header-links a.active,.back-btn:hover{
   color:#fff;
   border-color:rgba(91,169,255,.55);
-  background:rgba(53,124,208,.14);
+  background:rgba(53,124,208,.16);
 }
-.header-links a.active{
-  color:#fff;
-  border-color:rgba(91,169,255,.55);
-  background:rgba(53,124,208,.17);
-}
+.header-links a.active{background:rgba(53,124,208,.19)}
 .header-user{
   display:flex;
   align-items:center;
@@ -123,41 +108,35 @@ button{font:inherit}
   font-weight:750;
 }
 .avatar{
-  width:27px;
-  height:27px;
-  display:grid;
-  place-items:center;
+  width:27px;height:27px;
+  display:grid;place-items:center;
   border-radius:7px;
   color:#fff;
   background:linear-gradient(135deg,#267fe4,#54c8e0);
-  font-size:10px;
-  font-weight:900;
+  font-size:10px;font-weight:900;
 }
 .logout-btn{
-  border:0;
-  background:transparent;
-  color:#71869d;
-  padding:2px 1px;
-  cursor:pointer;
-  font-size:9px;
+  border:0;background:transparent;
+  color:#71869d;cursor:pointer;
+  padding:2px 1px;font-size:9px;
 }
 .logout-btn:hover{color:#fff}
 
-/* Main */
+/* Page */
 .main{
-  width:min(1080px,calc(100% - 34px));
+  width:min(1120px,calc(100% - 34px));
   margin:0 auto;
-  padding:30px 0 55px;
+  padding:28px 0 55px;
 }
 .page-head{
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content:space-between;
   gap:18px;
-  padding:17px 20px;
+  padding:18px 20px;
   border:1px solid var(--line);
   border-radius:14px;
-  background:var(--panel);
+  background:#fff;
   box-shadow:var(--shadow);
 }
 .page-head h1{
@@ -173,10 +152,9 @@ button{font:inherit}
 }
 .account-info{
   display:flex;
-  align-items:center;
-  gap:8px;
   flex-wrap:wrap;
   justify-content:flex-end;
+  gap:7px;
 }
 .account-chip{
   padding:7px 10px;
@@ -188,24 +166,31 @@ button{font:inherit}
 }
 .account-chip strong{color:#263a52}
 
-.section-title{
-  margin:25px 0 9px;
-  font-size:16px;
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:15px;
+  margin:23px 0 9px;
+}
+.section-head h2{
+  margin:0;
+  font-size:17px;
   letter-spacing:-.2px;
 }
-.section-subtitle{
-  margin:0 0 12px;
-  color:#7c8da2;
+.section-head p{
+  margin:4px 0 0;
+  color:#7b8da2;
   font-size:9px;
 }
 
-/* Purchase table */
-.table-wrap{
-  overflow:hidden;
+/* Table */
+.table-shell{
   border:1px solid var(--line);
   border-radius:14px;
   background:#fff;
   box-shadow:var(--shadow);
+  overflow:hidden;
 }
 .purchase-table{
   width:100%;
@@ -216,7 +201,7 @@ button{font:inherit}
   padding:12px 14px;
   background:#f3f7fb;
   border-bottom:1px solid var(--line);
-  color:#63768e;
+  color:#65778e;
   text-align:left;
   font-size:9px;
   font-weight:900;
@@ -224,88 +209,99 @@ button{font:inherit}
   text-transform:uppercase;
 }
 .purchase-table td{
-  padding:13px 14px;
+  padding:12px 14px;
   border-bottom:1px solid #edf1f5;
-  color:#40536b;
+  color:#45586f;
   font-size:10px;
   vertical-align:middle;
 }
-.purchase-table tr:last-child td{border-bottom:0}
+.purchase-table tbody tr:last-child td{border-bottom:0}
 .purchase-table tbody tr:hover{background:#fbfdff}
 .product-cell{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:9px;
   min-width:0;
 }
 .product-icon{
-  width:31px;
-  height:31px;
-  flex:0 0 31px;
-  display:grid;
-  place-items:center;
+  width:32px;height:32px;
+  flex:0 0 32px;
+  display:grid;place-items:center;
   border-radius:8px;
   background:#edf5ff;
   border:1px solid #d9e9fb;
   color:#1c72d4;
-  font-size:10px;
-  font-weight:900;
+  font-size:10px;font-weight:900;
 }
 .product-name{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  color:#1a2c43;
+  color:#1b2d43;
   font-size:10px;
   font-weight:850;
+  line-height:1.25;
 }
 .product-desc{
   margin-top:2px;
-  color:#8a9aae;
+  color:#8998aa;
   font-size:8px;
 }
 .type-badge{
   display:inline-block;
   padding:5px 7px;
+  border:1px solid #e2e8ef;
   border-radius:6px;
-  background:#f3f6fa;
-  border:1px solid #e4eaf1;
+  background:#f5f7fa;
   color:#6c7d91;
   font-size:8px;
   font-weight:800;
 }
-.active-badge{
+.date{font-weight:700;color:#43566c}
+.valid{font-weight:850}
+.valid.active{color:#087b50}
+.valid.expired{color:#c94e5e}
+.status-badge{
   display:inline-flex;
   align-items:center;
   gap:5px;
   padding:5px 8px;
   border-radius:6px;
-  background:var(--green-bg);
-  border:1px solid #bfe9d1;
-  color:#087b50;
   font-size:8px;
   font-weight:900;
 }
-.active-dot{
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#0b9b67;
-}
-.date{
-  color:#40536b;
-  font-weight:700;
-}
-.valid{
-  color:#087b50;
+.status-dot{width:5px;height:5px;border-radius:50%}
+.status-badge.active{color:#087b50;background:var(--green-bg);border:1px solid #bfe9d1}
+.status-badge.active .status-dot{background:#0b9b67}
+.status-badge.expired{color:#c94e5e;background:var(--red-bg);border:1px solid #f3c7ce}
+.status-badge.expired .status-dot{background:#d95363}
+.action-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:64px;
+  padding:7px 10px;
+  border-radius:7px;
+  font-size:9px;
   font-weight:850;
+  transition:.2s;
 }
+.start-btn{
+  color:#fff;
+  background:#0b9b67;
+  border:1px solid #0b9b67;
+  box-shadow:0 3px 8px rgba(11,155,103,.12);
+}
+.start-btn:hover{background:#07875a}
+.renew-btn{
+  color:#b24a58;
+  background:#fff3f4;
+  border:1px solid #f0c7cd;
+}
+.renew-btn:hover{background:#ffe8eb}
 
 /* Empty */
 .empty{
   display:none;
   margin-top:14px;
-  padding:35px 20px;
+  padding:38px 20px;
   text-align:center;
   border:1px dashed #cbd6e3;
   border-radius:14px;
@@ -320,13 +316,9 @@ button{font:inherit}
 .empty h3{margin:0 0 5px;font-size:15px}
 .empty p{margin:0 auto 14px;color:#7b8da1;font-size:9px}
 .explore{
-  display:inline-flex;
-  padding:8px 12px;
-  border-radius:7px;
-  background:#1769d2;
-  color:#fff;
-  font-size:9px;
-  font-weight:850;
+  display:inline-flex;padding:8px 12px;
+  border-radius:7px;background:#1769d2;color:#fff;
+  font-size:9px;font-weight:850;
 }
 
 /* Footer */
@@ -335,7 +327,7 @@ button{font:inherit}
   background:#fff;
 }
 .footer-inner{
-  width:min(1080px,calc(100% - 34px));
+  width:min(1120px,calc(100% - 34px));
   margin:auto;
   padding:24px 0;
 }
@@ -348,24 +340,17 @@ button{font:inherit}
 .footer h3{font-size:14px}
 .footer h4{font-size:10px}
 .footer p{
-  max-width:390px;
-  margin:0;
-  color:#7b8da1;
-  font-size:9px;
-  line-height:1.6;
+  max-width:390px;margin:0;
+  color:#7b8da1;font-size:9px;line-height:1.6;
 }
 .footer-links{display:flex;flex-direction:column;gap:5px}
 .footer-links a{color:#718399;font-size:9px}
 .footer-links a:hover{color:#1769d2}
 .footer-bottom{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding-top:14px;
-  margin-top:15px;
+  display:flex;justify-content:space-between;
+  gap:10px;padding-top:14px;margin-top:15px;
   border-top:1px solid #edf1f5;
-  color:#8796a8;
-  font-size:8px;
+  color:#8796a8;font-size:8px;
 }
 
 .loading-screen{
@@ -377,11 +362,8 @@ button{font:inherit}
 }
 .hidden{display:none!important}
 
-@media(max-width:900px){
-  .header-links a:nth-child(2){display:none}
-  .footer-top{grid-template-columns:1fr 1fr}
-}
-@media(max-width:650px){
+/* Mobile: preserve table feel without clipping the page */
+@media(max-width:720px){
   .topbar{top:5px;margin-top:5px}
   .nav{min-height:62px;padding:6px 8px;gap:7px}
   .logo,.logo img{width:39px;height:39px}
@@ -389,32 +371,76 @@ button{font:inherit}
   .tagline{display:none}
   .header-links{display:none}
   .header-user{margin-left:auto}
+  .back-btn{padding:8px 10px}
   .main{width:calc(100% - 22px);padding-top:20px}
   .page-head{align-items:flex-start;flex-direction:column;padding:15px}
   .account-info{justify-content:flex-start}
-  .table-wrap{overflow-x:auto}
-  .purchase-table{min-width:680px}
+  .section-head{align-items:flex-start;flex-direction:column;gap:3px}
+
+  .table-shell{overflow:visible}
+  .purchase-table,
+  .purchase-table tbody,
+  .purchase-table tr,
+  .purchase-table td{display:block;width:100%}
+  .purchase-table thead{display:none}
+  .purchase-table tbody tr{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    padding:10px 12px;
+    border-bottom:1px solid #e8edf3;
+  }
+  .purchase-table tbody tr:last-child{border-bottom:0}
+  .purchase-table td{
+    border:0;
+    padding:7px 5px;
+    min-width:0;
+  }
+  .purchase-table td:first-child{grid-column:1 / -1;padding-bottom:9px}
+  .purchase-table td:nth-child(2)::before,
+  .purchase-table td:nth-child(3)::before,
+  .purchase-table td:nth-child(4)::before,
+  .purchase-table td:nth-child(5)::before,
+  .purchase-table td:nth-child(6)::before{
+    display:block;
+    margin-bottom:3px;
+    color:#91a0b1;
+    font-size:7px;
+    font-weight:900;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+  }
+  .purchase-table td:nth-child(2)::before{content:"Type"}
+  .purchase-table td:nth-child(3)::before{content:"Purchased On"}
+  .purchase-table td:nth-child(4)::before{content:"Valid Till"}
+  .purchase-table td:nth-child(5)::before{content:"Status"}
+  .purchase-table td:nth-child(6)::before{content:"Action"}
+  .purchase-table td:nth-child(5),
+  .purchase-table td:nth-child(6){padding-top:8px}
+  .product-name{font-size:10px}
+  .product-desc{font-size:8px}
   .footer-top{grid-template-columns:1fr}
   .footer-inner{width:calc(100% - 22px)}
+}
+@media(max-width:420px){
+  .header-user{padding-right:5px}
+  .header-user #headerUserName{max-width:65px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .logout-btn{font-size:8px}
+  .back-btn{font-size:9px;padding:7px 8px}
 }
 </style>
 </head>
 
 <body>
 
-<div id="loadingScreen" class="loading-screen">
-  Loading your purchases...
-</div>
+<div id="loadingScreen" class="loading-screen">Loading your purchases...</div>
 
 <div id="page" class="hidden">
 
 <header class="topbar">
   <nav class="nav">
-
     <a class="brand" href="joa-mahapack.html">
-      <div class="logo">
-        <img src="logo.png" alt="HPMockShashtra Logo">
-      </div>
+      <div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div>
       <div>
         <div class="brand-title">
           <span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span>
@@ -436,7 +462,6 @@ button{font:inherit}
     </div>
 
     <a class="back-btn" href="joa-mahapack.html">← Back</a>
-
   </nav>
 </header>
 
@@ -445,27 +470,31 @@ button{font:inherit}
   <section class="page-head">
     <div>
       <h1>My <span>Purchases</span></h1>
-      <p>Your currently active courses and premium packs.</p>
+      <p>Courses and premium access linked to your account.</p>
     </div>
-
     <div class="account-info">
       <div class="account-chip">Name: <strong id="profileName">—</strong></div>
       <div class="account-chip">Email: <strong id="profileEmail">—</strong></div>
     </div>
   </section>
 
-  <h2 class="section-title">Active Purchases</h2>
-  <p class="section-subtitle">Only currently valid purchases are shown here. Expired purchases are automatically hidden.</p>
+  <section class="section-head">
+    <div>
+      <h2>Purchase Details</h2>
+      <p>Active and expired purchases are listed below.</p>
+    </div>
+  </section>
 
-  <div id="tableWrap" class="table-wrap">
+  <div id="tableShell" class="table-shell">
     <table class="purchase-table">
       <thead>
         <tr>
-          <th style="width:34%">Product</th>
-          <th style="width:18%">Type</th>
-          <th style="width:17%">Purchased On</th>
-          <th style="width:19%">Valid Till</th>
-          <th style="width:12%">Status</th>
+          <th style="width:31%">Product</th>
+          <th style="width:15%">Type</th>
+          <th style="width:14%">Purchased On</th>
+          <th style="width:15%">Valid Till</th>
+          <th style="width:11%">Status</th>
+          <th style="width:14%">Action</th>
         </tr>
       </thead>
       <tbody id="purchaseTableBody"></tbody>
@@ -474,8 +503,8 @@ button{font:inherit}
 
   <div id="emptyState" class="empty">
     <div class="empty-icon">▣</div>
-    <h3>No active purchases</h3>
-    <p>No currently valid course or premium pack is available in your account.</p>
+    <h3>No purchases found</h3>
+    <p>Your account does not have any purchase records yet.</p>
     <a class="explore" href="joa-mahapack.html">Explore Courses →</a>
   </div>
 
@@ -488,7 +517,6 @@ button{font:inherit}
         <h3>HPMockShashtra</h3>
         <p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p>
       </div>
-
       <div>
         <h4>Preparation</h4>
         <div class="footer-links">
@@ -498,7 +526,6 @@ button{font:inherit}
           <a href="my-progress.html">My Progress</a>
         </div>
       </div>
-
       <div>
         <h4>Information</h4>
         <div class="footer-links">
@@ -508,7 +535,6 @@ button{font:inherit}
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <span>© 2026 HPMockShashtra. All rights reserved.</span>
       <span>My Purchases</span>
@@ -527,71 +553,71 @@ const $ = id => document.getElementById(id);
 const PRODUCTS = {
   "computer-fundamentals": {
     name:"Computer Fundamentals", type:"Individual Subject", icon:"⌘",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-computer-fundamentals.html"
   },
   "ms-word": {
     name:"MS Word", type:"Individual Subject", icon:"W",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-ms-word.html"
   },
   "ms-excel": {
     name:"MS Excel", type:"Individual Subject", icon:"X",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-ms-excel.html"
   },
   "ms-powerpoint": {
     name:"MS PowerPoint", type:"Individual Subject", icon:"P",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-ms-powerpoint.html"
   },
   "ms-access": {
-    name:"MS Access", type:"Individual Subject", icon:"A",
-    desc:"400 premium questions"
+    name:"MS Access", type:"Individual Subject", icon:"▤",
+    desc:"400 premium questions", start:"paid-ms-access.html"
   },
   "dbms-sql": {
     name:"DBMS & SQL", type:"Individual Subject", icon:"DB",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-dbms-sql.html"
   },
   "computer-networking": {
     name:"Computer Networking", type:"Individual Subject", icon:"↔",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-computer-networking.html"
   },
   "cyber-security": {
     name:"Cyber Security", type:"Individual Subject", icon:"⌾",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-cyber-security.html"
   },
   "c-programming": {
     name:"C Programming", type:"Individual Subject", icon:"C",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-c-programming.html"
   },
   "html": {
     name:"HTML", type:"Individual Subject", icon:"<>",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-html.html"
   },
   "css-css3": {
     name:"CSS/CSS3", type:"Individual Subject", icon:"#",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-css-css3.html"
   },
   "cloud-computing": {
     name:"Cloud Computing", type:"Individual Subject", icon:"☁",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-cloud-computing.html"
   },
   "data-structure": {
     name:"Data Structure", type:"Individual Subject", icon:"⌘",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-data-structure.html"
   },
   "computer-organisation": {
     name:"Computer Organisation & Architecture", type:"Individual Subject", icon:"▦",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-computer-organisation.html"
   },
   "operating-system": {
     name:"Operating System", type:"Individual Subject", icon:"OS",
-    desc:"400 premium questions"
+    desc:"400 premium questions", start:"paid-operating-system.html"
   },
   "ms-office": {
     name:"MS Office Pack", type:"Premium Pack", icon:"▤",
-    desc:"Word • Excel • PowerPoint • Access"
+    desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
     name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
-    desc:"All 15 computer subjects"
+    desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
 
@@ -606,9 +632,7 @@ function formatDate(value){
   const d = toDate(value);
   if(!d) return "—";
   return d.toLocaleDateString("en-IN",{
-    day:"2-digit",
-    month:"short",
-    year:"numeric"
+    day:"2-digit",month:"short",year:"numeric"
   });
 }
 
@@ -619,21 +643,20 @@ function escapeHtml(value){
 }
 
 function initial(name){
-  const n = (name || "User").trim();
+  const n=(name||"User").trim();
   return n ? n.charAt(0).toUpperCase() : "U";
 }
 
-function addRow(product, value){
-  const expiry = toDate(value?.expiresAt);
+function addRow(product,value,paymentProduct){
+  const expiry=toDate(value?.expiresAt);
+  const active=expiry ? expiry.getTime()>Date.now() : true;
 
-  // Only current/active purchases are shown.
-  // Legacy full-series access has no expiry field, so it is treated as active.
-  const active = expiry ? expiry.getTime() > Date.now() : true;
-  if(!active) return false;
+  const renew=`payment.html?product=${encodeURIComponent(paymentProduct)}`;
+  const start=product.start || "joa-mahapack.html";
 
-  const row = document.createElement("tr");
+  const row=document.createElement("tr");
 
-  row.innerHTML = `
+  row.innerHTML=`
     <td>
       <div class="product-cell">
         <div class="product-icon">${escapeHtml(product.icon)}</div>
@@ -645,72 +668,91 @@ function addRow(product, value){
     </td>
     <td><span class="type-badge">${escapeHtml(product.type)}</span></td>
     <td><span class="date">${escapeHtml(formatDate(value?.purchasedAt))}</span></td>
-    <td><span class="valid">${expiry ? escapeHtml(formatDate(value.expiresAt)) : "Full Series"}</span></td>
-    <td><span class="active-badge"><span class="active-dot"></span>Active</span></td>
+    <td><span class="valid ${active?"active":"expired"}">${expiry ? escapeHtml(formatDate(value.expiresAt)) : "Full Series"}</span></td>
+    <td>
+      <span class="status-badge ${active?"active":"expired"}">
+        <span class="status-dot"></span>${active?"Active":"Expired"}
+      </span>
+    </td>
+    <td>
+      ${
+        active
+        ? `<a class="action-btn start-btn" href="${escapeHtml(start)}">Start →</a>`
+        : `<a class="action-btn renew-btn" href="${escapeHtml(renew)}">Renew →</a>`
+      }
+    </td>
   `;
 
   $("purchaseTableBody").appendChild(row);
-  return true;
 }
 
 function render(data){
-  const tbody = $("purchaseTableBody");
-  tbody.innerHTML = "";
-  let count = 0;
+  const tbody=$("purchaseTableBody");
+  tbody.innerHTML="";
+  let count=0;
 
-  const courses = data?.computerAccess?.courses || {};
-  const packs = data?.computerAccess?.packs || {};
+  const courses=data?.computerAccess?.courses || {};
+  const packs=data?.computerAccess?.packs || {};
 
   Object.entries(courses).forEach(([id,value])=>{
-    const product = PRODUCTS[id];
-    if(product && value && addRow(product,value)) count++;
+    const product=PRODUCTS[id];
+    if(product && value){
+      addRow(product,value,id);
+      count++;
+    }
   });
 
   Object.entries(packs).forEach(([id,value])=>{
-    const product = PRODUCTS[id];
-    if(product && value && addRow(product,value)) count++;
+    const product=PRODUCTS[id];
+    if(product && value){
+      addRow(product,value,id);
+      count++;
+    }
   });
 
-  // Legacy JOA / Patwari access remains visible because it is a current
-  // Full Series access flag and does not have an expiry timestamp.
+  // Legacy access flags.
   if(data?.joaitFullSeries === true){
-    if(addRow({
+    addRow({
       name:"JOA (IT) Full Series",
       type:"Mock Test Series",
       icon:"J",
-      desc:"15 mock tests • Full Series access"
-    },{})) count++;
+      desc:"15 mock tests • Full Series access",
+      start:"joa-series.html"
+    },{}, "joa");
+    count++;
   }
 
   if(data?.patwariFullSeries === true){
-    if(addRow({
+    addRow({
       name:"HP Patwari Full Series",
       type:"Mock Test Series",
       icon:"P",
-      desc:"Full Series access"
-    },{})) count++;
+      desc:"Full Series access",
+      start:"patwari-series.html"
+    },{}, "patwari");
+    count++;
   }
 
-  $("tableWrap").style.display = count ? "block" : "none";
-  $("emptyState").style.display = count ? "none" : "block";
+  $("tableShell").style.display=count ? "block" : "none";
+  $("emptyState").style.display=count ? "none" : "block";
 }
 
-onAuthStateChanged(auth, async user => {
+onAuthStateChanged(auth,async user=>{
   if(!user){
-    window.location.href = "firebase-login.html?redirect=my-purchase.html";
+    window.location.href="firebase-login.html?redirect=my-purchase.html";
     return;
   }
 
-  const displayName = user.displayName || user.email?.split("@")[0] || "Student";
+  const displayName=user.displayName || user.email?.split("@")[0] || "Student";
 
-  $("headerUserName").textContent = displayName;
-  $("headerAvatar").textContent = initial(displayName);
-  $("profileName").textContent = displayName;
-  $("profileEmail").textContent = user.email || "—";
+  $("headerUserName").textContent=displayName;
+  $("headerAvatar").textContent=initial(displayName);
+  $("profileName").textContent=displayName;
+  $("profileEmail").textContent=user.email || "—";
 
   try{
-    const snap = await getDoc(doc(db,"testAccess",user.uid));
-    render(snap.exists() ? snap.data() : {});
+    const snap=await getDoc(doc(db,"testAccess",user.uid));
+    render(snap.exists()?snap.data():{});
   }catch(error){
     console.error("My Purchase error:",error);
     render({});
@@ -720,10 +762,10 @@ onAuthStateChanged(auth, async user => {
   $("page").classList.remove("hidden");
 });
 
-$("logoutBtn").addEventListener("click", async ()=>{
+$("logoutBtn").addEventListener("click",async()=>{
   try{
     await signOut(auth);
-    window.location.href = "firebase-login.html";
+    window.location.href="firebase-login.html";
   }catch(error){
     console.error(error);
   }
