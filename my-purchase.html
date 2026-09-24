@@ -261,6 +261,10 @@ button,input{font:inherit}
 }
 .hidden{display:none!important}
 
+/* Mobile menu is only visible on small screens */
+.mobile-menu-btn{display:none}
+.mobile-menu{display:none}
+
 /* Mobile */
 @media(max-width:1100px){
   .header-links a{font-size:10px;padding:8px 10px}
@@ -275,13 +279,44 @@ button,input{font:inherit}
 }
 @media(max-width:620px){
   .topbar{top:6px}
-  .nav{min-height:64px;padding:7px 10px}
-  .logo,.logo img{width:40px;height:40px}
-  .brand-title{font-size:16px}
+  .nav{min-height:64px;padding:7px 8px;gap:7px;position:relative}
+  .mobile-menu-btn{
+    display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;
+    border:1px solid rgba(126,176,255,.38);border-radius:10px;
+    background:rgba(255,255,255,.07);color:#fff;font-size:22px;line-height:1;
+    cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18),inset 0 0 14px rgba(90,150,255,.06);
+  }
+  .brand{min-width:0;flex:1;overflow:hidden;gap:7px;margin-right:0}
+  .logo,.logo img{width:40px;height:40px;flex:0 0 40px}
+  .brand-title{font-size:14px;max-width:125px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .tagline{display:none}
   .header-links{display:none}
-  .header-user{margin-left:auto}
-  .back-btn{font-size:9px;padding:8px 9px}
+  .header-user{
+    margin-left:0;flex:0 0 auto;max-width:116px;min-width:0;
+    padding:4px 5px;gap:5px;
+  }
+  .avatar{width:32px;height:32px;flex:0 0 32px}
+  .header-user #headerUserName{
+    display:block;max-width:52px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .logout-btn{font-size:8px}
+  .mobile-menu{
+    display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;
+    padding:8px;border:1px solid rgba(180,140,255,.38);border-radius:14px;
+    background:linear-gradient(135deg,rgba(11,27,58,.98),rgba(47,27,82,.98));
+    backdrop-filter:blur(22px) saturate(150%);
+    box-shadow:0 18px 45px #0009,0 0 28px rgba(137,92,255,.14);z-index:10000;
+  }
+  .mobile-menu.open{display:grid;gap:6px}
+  .mobile-menu a{
+    display:flex;align-items:center;min-height:42px;padding:10px 12px;
+    border:1px solid rgba(126,176,255,.22);border-radius:10px;
+    background:rgba(255,255,255,.06);color:#e8efff;font-size:11px;font-weight:800;
+  }
+  .mobile-menu a.active,.mobile-menu a:hover{
+    background:linear-gradient(135deg,rgba(34,150,255,.30),rgba(155,108,255,.28));
+    border-color:rgba(105,190,255,.60);color:#fff;
+  }
   .main{padding-top:86px}
   .page-head{min-height:0;padding:25px 17px;border-radius:17px}
   .page-head h1{font-size:31px}
@@ -329,6 +364,7 @@ button,input{font:inherit}
 
 <header class="topbar">
   <nav class="nav">
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     <a class="brand" href="joa-mahapack.html">
       <div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div>
       <div>
@@ -351,7 +387,11 @@ button,input{font:inherit}
       <button class="logout-btn" id="logoutBtn">Logout</button>
     </div>
 
-    <a class="back-btn" href="joa-mahapack.html">← Back</a>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="joa-mahapack.html">Paid Courses</a>
+      <a href="my-purchase.html" class="active">My Purchases</a>
+      <a href="master-progress.html">Master Progress</a>
+    </div>
   </nav>
 </header>
 
@@ -578,50 +618,64 @@ function addRow(product,value,paymentProduct){
 function render(data){
   const tbody=$("purchaseTableBody");
   tbody.innerHTML="";
-  let count=0;
+
+  const items=[];
 
   const courses=data?.computerAccess?.courses || {};
   const packs=data?.computerAccess?.packs || {};
 
   Object.entries(courses).forEach(([id,value])=>{
     const product=PRODUCTS[id];
-    if(product && value){
-      addRow(product,value,id);
-      count++;
-    }
+    if(product && value) items.push({product,value,paymentProduct:id});
   });
 
   Object.entries(packs).forEach(([id,value])=>{
     const product=PRODUCTS[id];
-    if(product && value){
-      addRow(product,value,id);
-      count++;
-    }
+    if(product && value) items.push({product,value,paymentProduct:id});
   });
 
   // Legacy access flags.
   if(data?.joaitFullSeries === true){
-    addRow({
-      name:"JOA (IT) Full Series",
-      type:"Mock Test Series",
-      icon:"J",
-      desc:"15 mock tests • Full Series access",
-      start:"joa-series.html"
-    },{}, "joa");
-    count++;
+    items.push({
+      product:{
+        name:"JOA (IT) Full Series",
+        type:"Mock Test Series",
+        icon:"J",
+        desc:"15 mock tests • Full Series access",
+        start:"joa-series.html"
+      },
+      value:{},
+      paymentProduct:"joa"
+    });
   }
 
   if(data?.patwariFullSeries === true){
-    addRow({
-      name:"HP Patwari Full Series",
-      type:"Mock Test Series",
-      icon:"P",
-      desc:"Full Series access",
-      start:"patwari-series.html"
-    },{}, "patwari");
-    count++;
+    items.push({
+      product:{
+        name:"HP Patwari Full Series",
+        type:"Mock Test Series",
+        icon:"P",
+        desc:"Full Series access",
+        start:"patwari-series.html"
+      },
+      value:{},
+      paymentProduct:"patwari"
+    });
   }
 
+  // Active purchases first, expired purchases afterward.
+  items.sort((a,b)=>{
+    const aExpiry=toDate(a.value?.expiresAt);
+    const bExpiry=toDate(b.value?.expiresAt);
+    const aActive=!aExpiry || aExpiry.getTime()>Date.now();
+    const bActive=!bExpiry || bExpiry.getTime()>Date.now();
+    if(aActive!==bActive) return aActive ? -1 : 1;
+    return (a.product.name||"").localeCompare(b.product.name||"");
+  });
+
+  items.forEach(item=>addRow(item.product,item.value,item.paymentProduct));
+
+  const count=items.length;
   $("tableShell").style.display=count ? "block" : "none";
   $("emptyState").style.display=count ? "none" : "block";
 }
@@ -650,6 +704,23 @@ onAuthStateChanged(auth,async user=>{
   $("loadingScreen").classList.add("hidden");
   $("page").classList.remove("hidden");
 });
+
+const mobileMenuBtn=$("mobileMenuBtn");
+const mobileMenu=$("mobileMenu");
+if(mobileMenuBtn && mobileMenu){
+  mobileMenuBtn.addEventListener("click",()=>{
+    const open=mobileMenu.classList.toggle("open");
+    mobileMenuBtn.setAttribute("aria-expanded",open?"true":"false");
+    mobileMenuBtn.textContent=open?"✕":"☰";
+  });
+  mobileMenu.querySelectorAll("a").forEach(a=>{
+    a.addEventListener("click",()=>{
+      mobileMenu.classList.remove("open");
+      mobileMenuBtn.setAttribute("aria-expanded","false");
+      mobileMenuBtn.textContent="☰";
+    });
+  });
+}
 
 $("logoutBtn").addEventListener("click",async()=>{
   try{
