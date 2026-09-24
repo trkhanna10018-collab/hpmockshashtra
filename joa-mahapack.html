@@ -5,451 +5,113 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>JOA IT Maha Pack | HPMockShashtra</title>
 <style>
-:root{--blue:#087df5;--navy:#071426;--text:#10213d;--line:#dce7f2;--green:#079b65;--purple:#a018a9}
-*{box-sizing:border-box}html{scroll-behavior:smooth;width:100%;overflow-x:hidden}body{margin:0;width:100%;min-width:0;max-width:100%;overflow-x:hidden;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#f6f9fd}a{text-decoration:none;color:inherit}img{max-width:100%}
-.topbar{position:fixed;top:10px;left:12px;right:12px;width:auto;max-width:calc(100vw - 24px);z-index:9999;background:rgba(5,18,35,.97);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.22);color:#fff;border-radius:16px;margin:10px 12px 0}
-.nav{width:100%;max-width:1400px;min-height:76px;margin:auto;padding:9px 18px;display:flex;align-items:center;gap:18px;min-width:0;overflow:hidden}.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0;flex-shrink:0}.logo{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex:none}.logo img{width:48px;height:48px;object-fit:contain;border-radius:7px;display:block}.brand-title{font-weight:800;font-size:20px;color:#f8fafc}.brand-title .brand-hp{color:#f8fafc}.brand-title .brand-mock{color:#2563eb}.brand-title .brand-shashtra{color:#f8fafc}.tagline{font-size:9px;color:#aebdce}.header-links{display:flex;gap:5px;min-width:0}.header-links a{font-size:13px;font-weight:700;padding:10px 13px;border-radius:9px;color:#dce7f3}.header-links a:hover,.header-links a.active{background:#087df538;color:#fff}.header-user{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;white-space:nowrap;color:#fff}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#d9a173;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.18);color:#17304a;font-weight:800}.login{border:1px solid #ffffff55;background:#ffffff0d;color:#fff;padding:9px 14px;border-radius:10px;font-size:11px;font-weight:800}
-.hero{position:relative;overflow:hidden;min-height:355px;margin-top:108px;background:linear-gradient(135deg,#eef8ff 0%,#ffffff 48%,#f4f0ff 100%);color:var(--text);border-bottom:1px solid #dce8f4}.hero-inner{max-width:1400px;min-height:355px;margin:auto;padding:34px 24px;display:flex;align-items:center;position:relative;z-index:2}.hero-copy{width:56%;position:relative;z-index:2}.badge{display:inline-block;background:#e2f2ff;color:#0769c9;font-weight:800;padding:8px 14px;border-radius:20px;margin-bottom:12px;font-size:12px;border:1px solid #c8e5fb}.hero h1{font-size:48px;line-height:1.02;margin:0 0 10px;font-weight:900}.blue{color:#087df5}.hero-subtitle{font-size:16px;line-height:1.6;color:#50657c;max-width:650px;margin:0 0 18px}.hero-mini-grid{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 21px}.hero-mini-grid div{background:#fff;border:1px solid #dce8f4;border-radius:10px;padding:10px 14px;box-shadow:0 6px 18px #1a5b8a0b;min-width:130px}.hero-mini-grid b{display:block;font-size:18px;color:#0c2340}.hero-mini-grid span{font-size:10px;color:#718197}.actions{display:flex;gap:13px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 21px;border-radius:7px;font-weight:800}.primary{background:#087df5;color:#fff;box-shadow:0 8px 18px #087df533}.hero-outline{border:1px solid #087df5;color:#087df5;background:#fff}.hero-outline:hover{background:#087df5;color:#fff}.hero-visual{width:44%;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.visual-card{width:min(470px,100%);height:245px;border-radius:18px;background:#0b1d34;box-shadow:0 22px 50px #0b1d3433;transform:rotate(1.5deg);overflow:hidden;border:1px solid #ffffff33}.visual-top{height:35px;background:#102945;display:flex;align-items:center;padding:0 14px;gap:6px}.dot{width:8px;height:8px;border-radius:50%}.blue-dot{background:#39b8ff}.green-dot{background:#21d19b}.yellow-dot{background:#ffd24d}.visual-label{font-size:9px;color:#a9c0d8;margin-left:8px}.visual-screen{padding:18px 20px;color:#fff}.screen-title{font-size:19px;font-weight:800;margin-bottom:14px}.screen-line{height:31px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff18;font-size:10px}.screen-line b{color:#66d1ff;font-size:9px}.screen-progress{height:8px;background:#233a54;border-radius:20px;margin-top:15px}.screen-progress span{display:block;width:76%;height:100%;background:linear-gradient(90deg,#087df5,#18c49c);border-radius:20px}.visual-screen small{display:block;color:#8ea6bd;margin-top:8px;font-size:9px}.floating-card{position:absolute;background:#fff;border:1px solid #dce8f4;border-radius:10px;padding:9px 12px;font-size:10px;font-weight:800;box-shadow:0 10px 25px #173a5a18}.fc-one{left:2%;top:18%}.fc-two{right:0;top:31%;color:#8a0e92}.fc-three{right:7%;bottom:2%;color:#087df5}.hero-shape{position:absolute;border-radius:50%;filter:blur(1px);opacity:.7}.shape-one{width:280px;height:280px;background:#a9ddff55;right:-80px;top:-120px}.shape-two{width:190px;height:190px;background:#d9b7ff55;right:35%;bottom:-120px}
-.stats{max-width:1360px;margin:auto;padding:0 10px}.stats-inner{background:#fff;border:1px solid #dce8f4;border-radius:9px;box-shadow:0 8px 28px #0f274a14;display:grid;grid-template-columns:repeat(6,1fr)}.stat{padding:13px;display:flex;gap:10px;align-items:center;border-right:1px solid #e1eaf4}.stat:last-child{border:0}.stat i{font-style:normal;font-size:23px}.stat strong,.stat small{display:block}.stat strong{font-size:13px}.stat small{color:#53657c;font-size:9px}
-.layout{max-width:1360px;margin:13px auto;padding:0 10px;display:block}.card,.right{background:#fff;border:1px solid var(--line);border-radius:9px}.main-title{display:flex;justify-content:space-between;align-items:center;padding:15px 16px 10px}.main-title h2{margin:0;font-size:21px}.title-note{font-size:10px;color:#718197;margin-top:4px}.title-actions{display:flex;align-items:center;gap:10px}.master-progress-link{font-size:10px;font-weight:800;color:#087df5;background:#eef7ff;border:1px solid #cfe7fb;padding:8px 10px;border-radius:7px}.master-progress-link:hover{background:#087df5;color:#fff}.search{width:250px;border:1px solid var(--line);border-radius:8px;padding:8px 11px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 11px 17px}.subject{border:1px solid #dfe8f1;border-radius:9px;padding:14px 9px 11px;text-align:center;background:#fff}.subject:hover{box-shadow:0 8px 20px #145aa014;transform:translateY(-2px)}.icon{height:48px;display:grid;place-items:center;font-size:34px}.subject h3{font-size:12px;min-height:29px;margin:7px 0 5px}.counts{font-size:10px;color:#68798e;margin-bottom:8px}.badge-free{display:inline-block;background:#dff7ea;color:#087c4f;padding:4px 7px;border-radius:20px;font-size:9px;font-weight:800;margin-bottom:7px}.badge-master{display:inline-block;background:#f1e8ff;color:#7c3aed;padding:4px 7px;border-radius:20px;font-size:9px;font-weight:800;margin-bottom:7px}.master-card{background:linear-gradient(180deg,#fff 0%,#faf7ff 100%)}.actions2{display:grid;gap:6px}.actions2 a{padding:7px 3px;border-radius:5px;font-size:10px;font-weight:800}.free{background:var(--blue);color:#fff}.buy{border:1px solid var(--purple);color:#8a0e92}.buy:hover{background:var(--purple);color:#fff}
-.right{padding:13px}.progress-title{font-weight:800}.percent{float:right}.progress{height:10px;background:#e7eef6;border-radius:20px;margin:8px 0 14px;overflow:hidden}.progress span{display:block;width:72%;height:100%;background:#18c49c}.metric{display:flex;justify-content:space-between;font-size:11px;padding:6px 0}.divider{height:1px;background:#e6edf5;margin:12px 0}.barrow{display:grid;grid-template-columns:62px 1fr 30px;gap:6px;align-items:center;font-size:10px;margin:9px 0}.bar{height:7px;background:#e8eef5;border-radius:10px}.bar span{display:block;height:100%;background:#1877d4;border-radius:10px}
-.free-section,.promo-grid,.sample-wrap{max-width:1360px;margin:0 auto 15px;padding:0 10px}.section-head{background:#fff;border:1px solid var(--line);padding:15px 17px;border-radius:9px 9px 0 0}.section-head h2{margin:0 0 4px}.section-head p{margin:0;color:#68798e;font-size:11px}.free-subjects{background:#fff;border:1px solid var(--line);border-top:0;padding:13px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;border-radius:0 0 9px 9px}.free-subject{border:1px solid #dce7f1;border-radius:7px;padding:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}.free-subject-name{font-weight:700;font-size:11px}.free-subject small{display:block;color:var(--green);margin-top:3px}.free-subject a{background:var(--blue);color:#fff;border-radius:5px;padding:6px 8px;font-size:9px;font-weight:800}
-.promo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.promo{position:relative;overflow:hidden;border-radius:11px;padding:20px;background:#fff;border:1px solid #dce7f1;box-shadow:0 8px 28px #0f274a14}.promo:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:var(--green)}.promo:nth-child(2):before{background:var(--blue)}.promo:nth-child(3):before{background:var(--purple)}.promo:nth-child(1){background:linear-gradient(145deg,#f1fff8,#fff)}.promo:nth-child(2){background:linear-gradient(145deg,#eff8ff,#fff)}.promo:nth-child(3){background:linear-gradient(145deg,#eef8ff,#fff)}.promo:nth-child(4){background:linear-gradient(145deg,#fff1ff,#fff)}.ms-pack:before{background:#0b76d1!important}.promo h3{margin:0;font-size:15px}.sub{font-size:10px;color:#65768b;margin:4px 0 11px}.promo ul{padding-left:19px;font-size:11px;line-height:1.85}.price{font-size:28px;font-weight:900}.old{text-decoration:line-through;color:#94a3b8;font-size:11px}.sample-wrap{display:grid;grid-template-columns:1.7fr 1fr;gap:10px}.sample,.testimonial{border:1px solid var(--line);border-radius:9px;background:#fff;padding:16px}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.opt{border:1px solid #dce5ef;padding:8px;border-radius:6px;font-size:11px}.correct{background:#e2f8ea;border-color:#a6e4bc;font-weight:800}.answer{margin-top:10px;padding:10px;background:#e2f8ea;color:#08723e;font-size:11px;border-radius:6px}.testimonial{display:flex;gap:12px;align-items:center}.person{width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#d5deea;font-size:25px}
-.footer{background:#020817;color:#d6e1ee;margin-top:22px}.footer-inner{max-width:1180px;margin:auto;padding:0 24px}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:45px;padding:38px 0 30px}.footer h3,.footer h4{color:#fff;margin:0 0 8px}.footer h3{font-size:18px}.footer h4{font-size:12px}.footer p{font-size:11px;color:#94a3b8;max-width:290px;line-height:1.55}.footer-links{display:flex;flex-direction:column;gap:7px}.footer-links a{color:#cbd5e1;font-size:11px}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid #1e293b;padding:15px 0;display:flex;justify-content:space-between;font-size:10px;color:#64748b}.footer-bottom-links{display:flex;gap:18px}
-@media(max-width:1150px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(4,1fr)}.free-subjects{grid-template-columns:repeat(4,1fr)}.stats-inner{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:800px){
-.topbar{top:8px;left:8px;right:8px;max-width:calc(100vw - 16px);margin:0;border-radius:18px}
-.nav{flex-wrap:wrap;padding:8px 10px;gap:8px;overflow:hidden}
-.brand{margin-right:auto;min-width:0;max-width:calc(100% - 105px)}
-.brand-title{font-size:18px;white-space:nowrap}
-.tagline{font-size:8px;white-space:nowrap}
-.logo{width:42px;height:42px}.logo img{width:42px;height:42px}
-.header-user{font-size:11px;max-width:95px;overflow:hidden}
-.header-user #headerUserName{max-width:52px;overflow:hidden;text-overflow:ellipsis}
-.header-links{order:3;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap;padding:8px 2px 5px;border-top:1px solid rgba(255,255,255,.12);scrollbar-width:none;display:flex;gap:6px}
-.header-links::-webkit-scrollbar{display:none}
-.header-links a{font-size:11px;padding:8px 11px;flex:0 0 auto}
-.hero{margin-top:138px}.header-links a{white-space:nowrap}.hero{min-height:650px}.hero-inner{display:block;width:100%;padding:26px 16px}.hero-copy,.hero-visual{width:100%;min-width:0}.hero h1{font-size:36px}.hero-visual{height:285px;margin-top:12px}.visual-card{height:225px;max-width:100%}.fc-one{left:0}.fc-two{right:0}.stats-inner{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.free-subjects{grid-template-columns:repeat(2,1fr)}.promo-grid{grid-template-columns:1fr 1fr;padding:0 8px}.info-strip{grid-template-columns:1fr;padding:0 8px}.footer-top{grid-template-columns:1fr;gap:25px}.footer-bottom{flex-direction:column;gap:10px;text-align:center}.main-title{align-items:flex-start}.title-actions{width:100%;flex-wrap:wrap}.search{flex:1;min-width:190px}}
-@media(max-width:500px){.hero h1{font-size:31px}.hero-subtitle{font-size:13px}.hero-mini-grid div{min-width:0;flex:1}.actions{flex-direction:column}.btn{width:100%}.promo-grid{grid-template-columns:1fr}.grid{gap:7px}.subject{padding:12px 6px}.free-subjects{grid-template-columns:1fr}.footer-inner{padding:0 16px}.title-actions{display:block}.master-progress-link{display:inline-block;margin-bottom:8px}.search{width:100%}}
-
-.info-strip{max-width:1360px;margin:0 auto 18px;padding:0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.info-box{background:#fff;border:1px solid #dce7f1;border-radius:10px;padding:14px;display:flex;gap:11px;align-items:center;box-shadow:0 5px 18px #123b5b0a}
-.info-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#eef7ff;font-size:20px;flex:none}
-.info-box b{display:block;font-size:12px;margin-bottom:3px}.info-box small{font-size:10px;color:#697b90;line-height:1.45}
-
-@media(max-width:800px){
-  .topbar,.hero,.stats,.layout,.free-section,.promo-grid,.info-strip,.footer{width:100%;max-width:100%;overflow-x:hidden}
-  .stats{padding:0 8px}
-  .layout{padding:0 8px}
-  .free-section{padding:0 8px}
-}
-
-.header-search-box{display:none;position:absolute;right:18px;top:calc(100% + 8px);width:310px;background:#fff;border:1px solid #d9e5f1;border-radius:10px;padding:8px;box-shadow:0 12px 30px rgba(12,40,70,.20);gap:6px}
-.header-search-box.show{display:flex}
-.header-search-box input{flex:1;min-width:0;border:1px solid #d8e3ef;border-radius:7px;padding:9px 10px;font-size:11px;outline:none}
-.header-search-box input:focus{border-color:#087df5}
-.header-search-box button{border:0;background:#eef5fc;color:#17345d;border-radius:7px;width:32px;font-size:18px;cursor:pointer}
-@media(max-width:800px){.header-search-box{position:fixed;top:110px;left:10px;right:10px;width:auto}.header-links{gap:3px}.header-links a{padding:9px 10px}}
-
-@media(max-width:500px){
-.topbar{left:6px;right:6px;max-width:calc(100vw - 12px)}
-.nav{padding:7px 9px}
-.brand-title{font-size:17px}
-.logo,.logo img{width:39px;height:39px}
-.header-user{max-width:82px;padding-right:7px}
-.header-user #headerUserName{max-width:42px}
-.header-links a{font-size:10px;padding:7px 10px}
-.hero{margin-top:134px}
-}
-
-.access-status{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:32px;
-  padding:7px 12px;
-  border-radius:7px;
-  font-size:10px;
-  font-weight:900;
-  width:100%;
-  box-sizing:border-box;
-}
-.free-status{background:#e3f8ec;color:#087c4f;border:1px solid #b8ebce}
-.purchased-status{display:flex;align-items:center;justify-content:center;width:100%;min-height:32px;padding:7px 10px;border-radius:7px;background:#e3f8ec;color:#087c4f;border:1px solid #b8ebce;font-size:10px;font-weight:900}
-
-
-.paid-start{
-  display:flex;align-items:center;justify-content:center;width:100%;min-height:32px;
-  padding:7px 10px;border-radius:7px;background:#0b9b67;color:#fff;
-  font-size:10px;font-weight:900;text-align:center;text-decoration:none;
-  box-shadow:0 4px 10px rgba(11,155,103,.16)
-}
-.paid-start:hover{background:#07865a}
-
-
-/* ===== PREMIUM PROFESSIONAL REDESIGN ===== */
 :root{
-  --premium-ink:#081426;
-  --premium-navy:#0a1730;
-  --premium-blue:#4da3ff;
-  --premium-cyan:#63e6ff;
-  --premium-violet:#9b7bff;
-  --premium-bg:#f5f8fc;
-  --premium-border:#e4eaf2;
+  --bg:#050b1b;--bg2:#08142c;--panel:#0d1b37;--panel2:#102344;
+  --line:rgba(121,177,255,.22);--text:#f7fbff;--muted:#9db0cb;
+  --blue:#2296ff;--cyan:#58e5ff;--violet:#9b6cff;--pink:#e85cff;
+  --green:#27d99a;--orange:#ffad3d;--red:#ff5c6c;
 }
-body{
-  background:
-    radial-gradient(circle at 8% 16%,rgba(77,163,255,.08),transparent 24%),
-    radial-gradient(circle at 92% 36%,rgba(155,123,255,.07),transparent 25%),
-    #f5f8fc;
-}
-.topbar{
-  background:rgba(6,17,34,.88);
-  border:1px solid rgba(255,255,255,.13);
-  box-shadow:0 18px 50px rgba(4,14,30,.28);
-  backdrop-filter:blur(20px) saturate(145%);
-}
-.nav{min-height:72px}
-.header-links a{transition:.2s ease}
-.header-links a:hover,.header-links a.active{background:rgba(77,163,255,.14);box-shadow:inset 0 0 0 1px rgba(77,163,255,.12)}
-.login{background:linear-gradient(135deg,#fff,#eaf4ff);color:#0a2342;border:0;box-shadow:0 7px 20px rgba(0,0,0,.16)}
-
-.hero{
-  min-height:470px;
-  margin-top:108px;
-  color:#fff;
-  border:0;
-  background:
-    radial-gradient(circle at 76% 28%,rgba(77,163,255,.25),transparent 24%),
-    radial-gradient(circle at 92% 80%,rgba(155,123,255,.22),transparent 28%),
-    linear-gradient(135deg,#061226 0%,#0a1931 48%,#10182f 100%);
-}
-.hero:before{
-  content:"";position:absolute;inset:0;opacity:.22;pointer-events:none;
-  background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
-  background-size:42px 42px;
-  mask-image:linear-gradient(to bottom,black,transparent 92%);
-}
-.hero:after{
-  content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-170px;top:-230px;
-  border:1px solid rgba(99,230,255,.15);box-shadow:0 0 90px rgba(77,163,255,.12),inset 0 0 90px rgba(155,123,255,.08);
-  pointer-events:none;
-}
-.hero-inner{min-height:470px;padding:54px 30px}
-.hero-copy{width:54%}
-.badge{
-  color:#aee7ff;background:rgba(77,163,255,.10);border:1px solid rgba(99,230,255,.24);
-  box-shadow:inset 0 0 25px rgba(77,163,255,.06);letter-spacing:.3px
-}
-.hero h1{font-size:56px;letter-spacing:-1.8px;text-shadow:0 8px 30px rgba(0,0,0,.22)}
-.blue{color:#66c7ff}
-.hero-subtitle{color:#b8c8dc;max-width:670px;font-size:16px}
-.hero-mini-grid{gap:10px}
-.hero-mini-grid div{
-  background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);color:#fff;
-  box-shadow:0 12px 30px rgba(0,0,0,.13);backdrop-filter:blur(12px)
-}
-.hero-mini-grid b{color:#fff}.hero-mini-grid span{color:#9eb0c5}
-.btn{border-radius:10px;transition:transform .2s,box-shadow .2s,background .2s}.btn:hover{transform:translateY(-2px)}
-.primary{background:linear-gradient(135deg,#168cff,#4da3ff);box-shadow:0 12px 28px rgba(22,140,255,.30)}
-.hero-outline{color:#fff;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px)}
-.hero-outline:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35)}
-.hero-visual{width:46%;height:340px}
-.visual-card{
-  width:min(500px,100%);height:272px;border-radius:20px;background:linear-gradient(145deg,#0f2949,#081526);
-  border:1px solid rgba(255,255,255,.15);box-shadow:0 35px 80px rgba(0,0,0,.42),0 0 55px rgba(77,163,255,.10);
-  transform:rotate(1deg)
-}
-.visual-top{background:rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.07)}
-.visual-screen{padding:20px 22px}.screen-title{font-size:20px}.screen-line{height:34px;color:#dbe8f7}.screen-line b{color:#6edcff}.screen-progress{background:#1b3553}.screen-progress span{background:linear-gradient(90deg,#38a4ff,#6ce7d4)}
-.floating-card{
-  background:rgba(255,255,255,.93);border:1px solid rgba(255,255,255,.8);border-radius:12px;
-  box-shadow:0 16px 35px rgba(0,0,0,.22);padding:10px 14px;font-size:10px
-}
-.fc-two{color:#8a4cff}.fc-three{color:#087df5}
-.hero-shape{filter:blur(3px);opacity:.35}.shape-one{background:#36a9ff55}.shape-two{background:#9b7bff55}
-
-.stats{position:relative;z-index:5;margin-top:-34px}
-.stats-inner{
-  background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.95);border-radius:16px;
-  box-shadow:0 20px 55px rgba(10,31,58,.13);backdrop-filter:blur(16px);overflow:hidden
-}
-.stat{padding:17px 14px;border-right:1px solid #e8edf4}.stat i{font-size:22px}.stat strong{font-size:13px;color:#0c1e36}.stat small{color:#718096}
-
-.layout{margin-top:18px}
-.card,.right,.section-head,.free-subjects,.sample,.testimonial,.info-box{
-  border:1px solid var(--premium-border);box-shadow:0 12px 35px rgba(15,39,74,.055)
-}
-.card{border-radius:16px;overflow:hidden;background:rgba(255,255,255,.96)}
-.main-title{padding:20px 20px 15px}.main-title h2{font-size:23px;letter-spacing:-.3px}.title-note{font-size:11px}
-.search{border-radius:10px;padding:10px 12px;box-shadow:inset 0 1px 2px rgba(0,0,0,.03)}
-.grid{gap:13px;padding:2px 15px 20px}
-.subject{
-  position:relative;border:1px solid #e2e8f0;border-radius:14px;padding:17px 11px 12px;
-  background:linear-gradient(180deg,#fff 0%,#fbfdff 100%);box-shadow:0 7px 20px rgba(15,39,74,.045);
-  transition:transform .22s,box-shadow .22s,border-color .22s
-}
-.subject:after{content:"";position:absolute;left:14px;right:14px;top:0;height:2px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#5bb7ff,#a78bfa);opacity:.55}
-.subject:hover{box-shadow:0 16px 35px rgba(15,39,74,.11);transform:translateY(-4px);border-color:#cbdbea}
-.icon{height:56px;width:56px;margin:0 auto;border-radius:16px;background:linear-gradient(145deg,#edf7ff,#f3efff);box-shadow:inset 0 0 0 1px #e2eaf4;display:grid;place-items:center;font-size:30px}
-.subject h3{font-size:13px;line-height:1.3;min-height:34px;margin:10px 0 5px;color:#10243f}.counts{font-size:10px;color:#738197}
-.badge-free,.badge-master{border-radius:999px;font-size:9px;padding:5px 8px}.badge-free{background:#ecfbf4;color:#087c4f;border:1px solid #ccefe0}.badge-master{background:#f3efff;color:#7041cf;border:1px solid #e4d9ff}
-.actions2{gap:7px}.actions2 a{padding:9px 4px;border-radius:8px;font-size:10px;transition:.18s}.free{background:linear-gradient(135deg,#087df5,#2b9dff);box-shadow:0 6px 14px rgba(8,125,245,.16)}.buy{border:1px solid #9b7bff;color:#7448cf;background:#faf8ff}.buy:hover{background:#8b5cf6;border-color:#8b5cf6;color:#fff}
-.master-card{background:linear-gradient(145deg,#fbf9ff,#f4f8ff);border-color:#ddd4fa}
-
-.promo-grid{gap:14px;margin-top:18px}.promo{
-  border-radius:16px;padding:22px;background:linear-gradient(145deg,#fff,#f8fbff);
-  border:1px solid #e2e8f0;box-shadow:0 14px 35px rgba(15,39,74,.07);transition:transform .2s,box-shadow .2s
-}.promo:hover{transform:translateY(-3px);box-shadow:0 20px 45px rgba(15,39,74,.11)}
-.promo:before{height:4px}.promo h3{font-size:16px}.sub{font-size:10px;color:#718096}.promo ul{line-height:1.95;color:#34465d}.price{font-size:30px;letter-spacing:-.5px}.promo .primary{min-width:190px}
-.ms-pack{background:linear-gradient(145deg,#f2f8ff,#fff)}
-
-.info-strip{gap:13px;margin-top:18px}.info-box{border-radius:14px;padding:16px;background:rgba(255,255,255,.92)}.info-icon{border-radius:12px;background:linear-gradient(145deg,#eef7ff,#f4efff);box-shadow:inset 0 0 0 1px #e1eaf4}
-.footer{margin-top:35px;background:linear-gradient(145deg,#030914,#08172b);border-top:1px solid rgba(255,255,255,.08)}
-.footer-top{padding:45px 0 34px}.footer h3{font-size:19px}.footer h4{font-size:13px}.footer-bottom{border-color:rgba(255,255,255,.08)}
-
-@media(max-width:800px){
-  .hero{margin-top:138px;min-height:690px}.hero-inner{min-height:690px;padding:34px 18px}.hero-copy,.hero-visual{width:100%}.hero h1{font-size:41px}.hero-visual{height:310px;margin-top:18px}.stats{margin-top:-24px}.stats-inner{border-radius:14px}.grid{gap:9px;padding:2px 10px 15px}.subject{border-radius:12px}.promo{padding:18px;border-radius:14px}
-}
-@media(max-width:500px){
-  .hero{min-height:675px}.hero-inner{min-height:675px}.hero h1{font-size:34px;letter-spacing:-1px}.hero-subtitle{font-size:13px}.hero-mini-grid div{padding:9px 10px}.visual-card{height:235px}.visual-screen{padding:16px}.screen-title{font-size:17px}.screen-line{height:29px}.floating-card{padding:8px 10px}.fc-one{top:10%}.fc-two{top:24%}.fc-three{bottom:0}.stats{margin-top:-20px}.stat{padding:14px 9px}.stat strong{font-size:11px}.stat small{font-size:8px}.grid{grid-template-columns:repeat(2,1fr);gap:8px}.subject{padding:14px 6px 10px}.icon{width:48px;height:48px;border-radius:14px;font-size:26px}.subject h3{font-size:11px}.counts{font-size:9px}.promo-grid{padding:0 8px}.info-strip{padding:0 8px}
-}
-
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;overflow-x:hidden;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#061027}a{text-decoration:none;color:inherit}button,input{font:inherit}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(circle at 10% 20%,#087dff18,transparent 28%),radial-gradient(circle at 90% 55%,#9b6cff18,transparent 30%),linear-gradient(135deg,#030817,#07132b 48%,#090c22)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px}
+.topbar{position:fixed;top:10px;left:50%;transform:translateX(-50%);width:min(1400px,calc(100vw - 32px));z-index:9999;border:1px solid rgba(118,181,255,.25);background:rgba(7,18,42,.78);backdrop-filter:blur(22px) saturate(150%);box-shadow:0 18px 55px #0008;border-radius:18px}
+.nav{min-height:72px;padding:8px 16px;display:flex;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0}.logo,.logo img{width:48px;height:48px}.logo img{object-fit:contain;border-radius:9px}.brand-title{font-weight:900;font-size:20px;white-space:nowrap}.brand-hp{color:#fff}.brand-mock{color:#39a9ff}.brand-shashtra{color:#fff}.tagline{font-size:8px;color:#93a7c2}.header-links{display:flex;gap:3px}.header-links a{font-size:12px;font-weight:800;color:#c5d2e6;padding:10px 12px;border-radius:10px}.header-links a:hover,.header-links a.active{color:#fff;background:#168cff1c;box-shadow:inset 0 0 0 1px #42a8ff22}.header-user{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;white-space:nowrap}.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ffd19c,#ff8b58);color:#18304e;border:2px solid #fff;box-shadow:0 5px 18px #0005}.login{padding:9px 13px;border-radius:10px;background:linear-gradient(135deg,#fff,#dceeff);color:#102b4d;font-size:11px;font-weight:900}
+.hero{position:relative;overflow:hidden;margin-top:102px;min-height:470px;background:radial-gradient(circle at 72% 45%,#168cff2e,transparent 26%),radial-gradient(circle at 91% 74%,#a35dff25,transparent 27%),linear-gradient(135deg,#041025,#081936 48%,#10132e)}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#64c8ff88 1px,transparent 1px);background-size:20px 20px;mask-image:linear-gradient(90deg,transparent 42%,#000 70%,transparent);opacity:.18}.hero:after{content:"";position:absolute;width:680px;height:680px;right:-270px;top:-310px;border-radius:50%;border:1px solid #64c8ff22;box-shadow:0 0 100px #168cff14,inset 0 0 100px #9b6cff0d}.hero-inner{width:min(1400px,100%);min-height:470px;margin:auto;padding:52px 28px;display:flex;align-items:center;gap:28px;position:relative;z-index:2}.hero-copy{width:53%}.badge{display:inline-flex;padding:8px 14px;border-radius:999px;color:#8fe8ff;background:#168cff12;border:1px solid #54d7ff4a;font-size:11px;font-weight:900;letter-spacing:.2px;box-shadow:inset 0 0 25px #168cff10}.hero h1{font-size:58px;line-height:1.02;letter-spacing:-2px;margin:15px 0 12px;font-weight:950}.blue{background:linear-gradient(90deg,#58d8ff,#4c8cff,#a56cff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-subtitle{max-width:690px;color:#b7c7dc;font-size:16px;line-height:1.6;margin:0 0 20px}.hero-mini-grid{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}.hero-mini-grid div{min-width:140px;padding:12px 14px;border-radius:13px;border:1px solid #7abaff22;background:#ffffff09;box-shadow:inset 0 0 24px #168cff08,0 10px 28px #0003;backdrop-filter:blur(10px)}.hero-mini-grid b{display:block;font-size:19px}.hero-mini-grid span{display:block;color:#8fa5c0;font-size:9px;margin-top:3px}.actions{display:flex;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 20px;border-radius:11px;font-size:12px;font-weight:900;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{color:#fff;background:linear-gradient(135deg,#0d8cff,#386cff,#9858ff);box-shadow:0 13px 30px #168cff33}.hero-outline{border:1px solid #7db9ff55;background:#ffffff08;color:#fff}.hero-outline:hover{background:#ffffff14}
+.hero-visual{width:47%;height:355px;position:relative;display:grid;place-items:center}.visual-card{width:min(540px,100%);height:285px;border-radius:22px;background:linear-gradient(145deg,#0e284c,#071426);border:1px solid #8fc9ff2e;box-shadow:0 35px 80px #0009,0 0 60px #168cff18;transform:rotate(1deg);overflow:hidden}.visual-top{height:38px;display:flex;align-items:center;gap:6px;padding:0 15px;background:#ffffff08;border-bottom:1px solid #ffffff0d}.dot{width:8px;height:8px;border-radius:50%}.blue-dot{background:#3bc8ff}.green-dot{background:#27d99a}.yellow-dot{background:#ffd15c}.visual-label{font-size:8px;color:#9cb0c8;margin-left:7px}.visual-screen{padding:19px 22px}.screen-title{font-size:19px;font-weight:900;margin-bottom:13px}.screen-line{height:34px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff10;color:#d6e3f4;font-size:9px}.screen-line b{font-size:8px;color:#61d9ff}.screen-progress{height:8px;background:#17304e;border-radius:99px;margin-top:16px;overflow:hidden}.screen-progress span{display:block;width:77%;height:100%;background:linear-gradient(90deg,#19a5ff,#42e5d0);box-shadow:0 0 18px #19a5ff88}.visual-screen small{display:block;color:#718aa8;margin-top:8px;font-size:8px}.floating-card{position:absolute;padding:10px 13px;border-radius:12px;background:#f9fcff;color:#152b48;border:1px solid #fff;box-shadow:0 16px 38px #0007;font-size:9px;font-weight:900}.fc-one{left:0;top:17%}.fc-two{right:-2px;top:28%;color:#7542d5}.fc-three{right:6%;bottom:3%;color:#087df5}.hero-orb{position:absolute;border-radius:50%;filter:blur(2px)}.orb1{width:230px;height:230px;background:#168cff18;right:15%;bottom:-150px}.orb2{width:160px;height:160px;background:#b45cff16;right:34%;top:-95px}
+.stats{position:relative;z-index:10;width:min(1380px,calc(100% - 28px));margin:-28px auto 0}.stats-inner{display:grid;grid-template-columns:repeat(6,1fr);overflow:hidden;border:1px solid #fff2;background:rgba(238,247,255,.94);border-radius:16px;box-shadow:0 20px 55px #0005;backdrop-filter:blur(18px)}.stat{min-height:70px;padding:12px 13px;display:flex;align-items:center;gap:9px;color:#112744;border-right:1px solid #17304e12}.stat:last-child{border:0}.stat i{font-style:normal;font-size:21px}.stat strong{display:block;font-size:12px}.stat small{display:block;color:#657a95;font-size:8px;margin-top:2px}
+.page{width:min(1400px,calc(100% - 28px));margin:22px auto 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}.section-head h2{margin:0;font-size:25px;letter-spacing:-.4px}.section-head p{margin:4px 0 0;color:#8fa5c1;font-size:10px}.search{width:260px;border:1px solid #74b8ff33;background:#ffffff08;color:#fff;border-radius:12px;padding:11px 13px;outline:0;box-shadow:inset 0 0 20px #168cff08}.search::placeholder{color:#7890ad}.search:focus{border-color:#4caeff88;box-shadow:0 0 0 3px #168cff12}
+.subject-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.subject{position:relative;min-height:235px;padding:16px;border-radius:16px;background:linear-gradient(145deg,#0d1d3a,#09172e);border:1px solid #6baeff22;box-shadow:0 14px 35px #0005;transition:.22s;overflow:hidden}.subject:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 0%,#168cff12,transparent 40%);pointer-events:none}.subject:hover{transform:translateY(-5px);border-color:#5eb7ff55;box-shadow:0 22px 45px #0008,0 0 30px #168cff10}.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:26px;background:linear-gradient(145deg,#263c70,#15274a);border:1px solid #83c4ff25;box-shadow:inset 0 0 20px #168cff0d}.subject h3{font-size:13px;line-height:1.3;margin:12px 0 5px;min-height:34px;color:#f4f8ff}.counts{color:#8298b5;font-size:9px}.badge-free{display:inline-block;margin:9px 0 10px;padding:5px 8px;border-radius:999px;background:#19d89a18;color:#42e7b1;border:1px solid #2ce0ad33;font-size:8px;font-weight:900}.actions2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:2px}.actions2 a,.access-status,.paid-start,.purchased-status{min-height:35px;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:9px;font-weight:900;text-align:center}.free{background:linear-gradient(135deg,#078fff,#4a6dff);color:#fff;box-shadow:0 7px 18px #168cff25}.buy{background:#ffffff08;border:1px solid #a76dff66;color:#cbaeff}.buy:hover{background:#8c5cff;color:#fff}.master-card{display:none}
+.pricing{margin-top:28px}.pricing-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:13px}.pricing-title h2{margin:0;font-size:25px}.pricing-title p{margin:0;color:#8da2bd;font-size:10px}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.price-card{position:relative;padding:20px;border-radius:17px;border:1px solid #6baeff24;background:linear-gradient(145deg,#0d1d3b,#09162e);box-shadow:0 16px 40px #0006;overflow:hidden}.price-card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-70px;top:-80px;background:#168cff13}.price-card.office:after{background:#9b6cff15}.price-card.master:after{background:#ff5c9d14}.price-card.master{border-color:#a970ff44;background:linear-gradient(145deg,#15173e,#0b1731)}.price-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.price-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:12px;background:#168cff17;border:1px solid #5db8ff33;font-size:22px}.office .price-icon{background:#9b6cff17;border-color:#b58aff33}.master .price-icon{background:#ff5c9d16;border-color:#ff7ab333}.price-card h3{margin:0;font-size:16px}.price-card .sub{margin:4px 0 12px;color:#8da2bd;font-size:9px}.price-card ul{margin:0;padding-left:18px;color:#a9bad0;font-size:10px;line-height:1.8}.price{font-size:31px;font-weight:950;margin:14px 0 3px}.old{text-decoration:line-through;color:#667994;font-size:10px}.price-card .btn{width:100%;margin-top:10px}.office .btn{background:linear-gradient(135deg,#754bff,#b04dff)}.master .btn{background:linear-gradient(135deg,#e8449b,#ff6a65)}
+.info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 30px}.info-box{display:flex;gap:10px;align-items:center;padding:15px;border-radius:14px;background:#ffffff08;border:1px solid #6baeff1c}.info-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:#168cff12;font-size:18px}.info-box b{display:block;font-size:11px}.info-box small{display:block;color:#849ab6;font-size:8px;margin-top:3px}
+.footer{background:linear-gradient(145deg,#020711,#07152c);border-top:1px solid #6baeff16;margin-top:35px}.footer-inner{width:min(1400px,calc(100% - 28px));margin:auto}.footer-top{padding:42px 0 30px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}.footer h3{margin:0 0 7px;font-size:18px}.footer h4{margin:0 0 9px;font-size:12px}.footer p{max-width:450px;color:#8095b1;font-size:10px;line-height:1.7}.footer-links{display:grid;gap:7px}.footer-links a{font-size:10px;color:#91a5be}.footer-links a:hover{color:#55c7ff}.footer-bottom{padding:14px 0;border-top:1px solid #ffffff0c;display:flex;justify-content:space-between;color:#657a96;font-size:9px}
+.access-status{grid-column:1/-1;background:#17d79a15;color:#42e7b1;border:1px solid #2ce0ad38}.purchased-status{width:100%;padding:6px;background:#17d79a15;color:#42e7b1;border:1px solid #2ce0ad38;line-height:1.35}.purchased-status small{font-size:8px;color:#9debd2}.paid-start{background:linear-gradient(135deg,#10b981,#19d99b);color:#031b14;box-shadow:0 7px 18px #18d99b22}.paid-start:hover{filter:brightness(1.08)}
+@media(max-width:1100px){.hero-copy{width:55%}.hero-visual{width:45%}.hero h1{font-size:48px}.subject-grid{grid-template-columns:repeat(4,1fr)}.stats-inner{grid-template-columns:repeat(3,1fr)}.stat:nth-child(3){border-right:0}.stat:nth-child(n+4){border-top:1px solid #17304e12}.price-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.topbar{width:calc(100vw - 18px)}.nav{min-height:64px}.header-links a{font-size:10px;padding:8px}.hero{margin-top:94px;min-height:760px}.hero-inner{min-height:760px;padding:40px 18px;display:block}.hero-copy,.hero-visual{width:100%}.hero h1{font-size:43px}.hero-visual{height:330px;margin-top:20px}.section-head,.pricing-title{align-items:flex-start;flex-direction:column}.search{width:100%}.subject-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:1fr}.info-strip{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}.stats{margin-top:-20px}}
+@media(max-width:560px){.topbar{top:6px}.brand-title{font-size:16px}.tagline{display:none}.logo,.logo img{width:40px;height:40px}.header-links{display:none}.header-user{margin-left:auto}.hero{margin-top:82px;min-height:700px}.hero-inner{min-height:700px;padding:34px 15px}.hero h1{font-size:35px;letter-spacing:-1.2px}.hero-subtitle{font-size:13px}.hero-mini-grid div{min-width:105px;padding:10px}.hero-mini-grid b{font-size:16px}.hero-mini-grid span{font-size:8px}.actions{flex-direction:column}.actions .btn{width:100%}.hero-visual{height:290px}.visual-card{height:225px}.visual-screen{padding:14px 16px}.screen-title{font-size:15px}.screen-line{height:27px;font-size:8px}.floating-card{font-size:8px;padding:8px 9px}.fc-one{left:-4px;top:9%}.fc-two{right:-4px;top:23%}.fc-three{right:2%;bottom:0}.stats{width:calc(100% - 18px)}.stats-inner{grid-template-columns:repeat(2,1fr)}.stat{padding:11px 9px}.stat:nth-child(even){border-right:0}.page{width:calc(100% - 18px)}.subject-grid{gap:8px}.subject{min-height:235px;padding:13px 9px}.subject h3{font-size:11px}.actions2 a{font-size:8px}.price-card{padding:17px}.footer-inner{width:calc(100% - 18px)}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:6px}}
 </style>
 </head>
 <body>
-
 <header class="topbar">
 <nav class="nav">
-<a class="brand" href="homepage.html">
-<div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div>
-<div><div class="brand-title"><span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div>
-</a>
-<div class="header-links">
-<a href="homepage.html">Home</a>
-<a href="#paid-courses">Paid Courses</a>
-<a href="my-purchase.html">My Purchases</a>
-<a href="master-progress.html">Master Progress</a>
-</div>
-<div class="header-user" id="headerUser" style="display:none">
-  <span class="avatar" id="headerAvatar">U</span>
-  <span id="headerUserName">User</span>
-</div>
+<a class="brand" href="homepage.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div><div><div class="brand-title"><span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
+<div class="header-links"><a href="homepage.html">Home</a><a href="#pricing">Paid Courses</a><a href="my-purchase.html">My Purchases</a><a href="master-progress.html">Master Progress</a></div>
+<div class="header-user" id="headerUser" style="display:none"><span class="avatar" id="headerAvatar">U</span><span id="headerUserName">User</span></div>
 <a class="login" id="loginLink" href="firebase-login.html">Login</a>
-</nav>
-</header>
+</nav></header>
 
 <section class="hero">
-  <div class="hero-shape shape-one"></div>
-  <div class="hero-shape shape-two"></div>
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="badge">JOA (IT) Computer Preparation</div>
-      <h1>JOA IT <span class="blue">Maha Pack</span></h1>
-      <p class="hero-subtitle">Chapter-wise practice, free tests and premium question banks — designed specifically for JOA (IT) aspirants.</p>
-
-      <div class="hero-mini-grid">
-        <div><b>15</b><span>Computer Subjects</span></div>
-        <div><b>375</b><span>Free Questions</span></div>
-        <div><b>6,000+</b><span>Premium Questions</span></div>
-      </div>
-
-      <div class="actions">
-        <a class="btn primary" href="#paid-courses">View Subjects →</a>
-        <a class="btn hero-outline" href="#paid-courses">Explore Premium</a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="visual-card main-card">
-        <div class="visual-top"><span class="dot blue-dot"></span><span class="dot green-dot"></span><span class="dot yellow-dot"></span><span class="visual-label">JOA (IT) • Maha Pack</span></div>
-        <div class="visual-screen">
-          <div class="screen-title">Build Your Computer Score</div>
-          <div class="screen-line"><span>Computer Fundamentals</span><b>25 Free</b></div>
-          <div class="screen-line"><span>MS Word</span><b>25 Free</b></div>
-          <div class="screen-line"><span>MS Excel</span><b>25 Free</b></div>
-          <div class="screen-line"><span>DBMS &amp; SQL</span><b>400 Premium</b></div>
-          <div class="screen-line"><span>Networking</span><b>400 Premium</b></div>
-          <div class="screen-progress"><span></span></div>
-          <small>Practice • Learn • Improve</small>
-        </div>
-      </div>
-      <div class="floating-card fc-one">✓ 25 Free Questions</div>
-      <div class="floating-card fc-two">₹49 Individual</div>
-      <div class="floating-card fc-three">₹349 JOA IT Maha Pack</div>
-    </div>
-  </div>
-</section>
-
-<section class="stats">
-  <div class="stats-inner">
-    <div class="stat"><i>🎯</i><div><strong>15 Subjects</strong><small>Complete Computer Coverage</small></div></div>
-    <div class="stat"><i>✓</i><div><strong>25 Questions</strong><small>Free Test per Subject</small></div></div>
-    <div class="stat"><i>📚</i><div><strong>400 Questions</strong><small>Premium per Subject</small></div></div>
-    <div class="stat"><i>💰</i><div><strong>₹49</strong><small>Individual Subject</small></div></div>
-    <div class="stat"><i>♛</i><div><strong>₹349</strong><small>JOA IT Maha Pack</small></div></div>
-    <div class="stat"><i>◷</i><div><strong>6 Months</strong><small>Premium Validity</small></div></div>
-  </div>
-</section>
-
-<div class="layout">
-<main class="card" id="computer-subjects">
-<div class="main-title">
-<div>
-<h2>Computer Subjects</h2>
-<div class="title-note">Free test: 25 questions &nbsp;•&nbsp; Premium: 400 questions per subject</div>
+<div class="hero-orb orb1"></div><div class="hero-orb orb2"></div>
+<div class="hero-inner">
+<div class="hero-copy">
+<div class="badge">◉ JOA (IT) Computer Preparation</div>
+<h1>JOA IT <span class="blue">Maha Pack</span></h1>
+<p class="hero-subtitle">Complete computer preparation with structured practice, free tests and premium 400-question tests — specially designed for JOA (IT) aspirants.</p>
+<div class="hero-mini-grid"><div><b>15</b><span>Computer Subjects</span></div><div><b>6,000+</b><span>Total Questions</span></div><div><b>400</b><span>Questions per Subject</span></div><div><b>6 Months</b><span>Premium Validity</span></div></div>
+<div class="actions"><a class="btn primary" href="#computer-subjects">▦ &nbsp;View All Subjects →</a><a class="btn hero-outline" href="#pricing">♛ &nbsp;Explore Premium</a></div>
 </div>
-</div>
-<div class="grid" id="grid">
+<div class="hero-visual">
+<div class="visual-card"><div class="visual-top"><span class="dot blue-dot"></span><span class="dot green-dot"></span><span class="dot yellow-dot"></span><span class="visual-label">HPMockShashtra • JOA IT Maha Pack</span></div><div class="visual-screen"><div class="screen-title">Computer Fundamentals</div><div class="screen-line"><span>Question Progress</span><b>284 / 400</b></div><div class="screen-progress"><span></span></div><div class="screen-line"><span>Accuracy</span><b>78%</b></div><div class="screen-line"><span>Correct Answers</span><b>221</b></div><div class="screen-line"><span>Premium Access</span><b>6 Months</b></div><small>Practice • Learn • Improve</small></div></div>
+<div class="floating-card fc-one">▣ &nbsp;15 Computer Subjects</div><div class="floating-card fc-two">₹49 &nbsp; Individual</div><div class="floating-card fc-three">₹349 &nbsp; JOA IT Maha Pack</div>
+</div></div></section>
 
-<div class="subject" data-name="Computer Fundamentals" data-purchase-key="computer-fundamentals" data-paid-page="paid-computer-fundamentals.html"><div class="icon">💻</div><h3>Computer Fundamentals</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-fundamentals-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=computer-fundamentals">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS Word" data-purchase-key="ms-word" data-paid-page="paid-ms-word.html"><div class="icon">📘</div><h3>MS Word</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-word-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=ms-word">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS Excel" data-purchase-key="ms-excel" data-paid-page="paid-ms-excel.html"><div class="icon">📗</div><h3>MS Excel</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-excel-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=ms-excel">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS PowerPoint" data-purchase-key="ms-powerpoint" data-paid-page="paid-ms-powerpoint.html"><div class="icon">📙</div><h3>MS PowerPoint</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-powerpoint-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=ms-powerpoint">Buy ₹49</a></div></div>
-<div class="subject" data-name="MS Access" data-purchase-key="ms-access" data-paid-page="paid-ms-access.html"><div class="icon">🗃️</div><h3>MS Access</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="ms-access-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=ms-access">Buy ₹49</a></div></div>
-<div class="subject" data-name="DBMS SQL" data-purchase-key="dbms-sql" data-paid-page="paid-dbms-sql.html"><div class="icon">🛢️</div><h3>DBMS &amp; SQL</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="dbms-sql-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=dbms-sql">Buy ₹49</a></div></div>
-<div class="subject" data-name="Computer Networking" data-purchase-key="computer-networking" data-paid-page="paid-computer-networking.html"><div class="icon">🔗</div><h3>Computer Networking</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-networking-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=computer-networking">Buy ₹49</a></div></div>
-<div class="subject" data-name="Cyber Security" data-purchase-key="cyber-security" data-paid-page="paid-cyber-security.html"><div class="icon">🛡️</div><h3>Cyber Security</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="cyber-security-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=cyber-security">Buy ₹49</a></div></div>
-<div class="subject" data-name="C Programming" data-purchase-key="c-programming" data-paid-page="paid-c-programming.html"><div class="icon">💻</div><h3>C Programming</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="c-programming-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=c-programming">Buy ₹49</a></div></div>
-<div class="subject" data-name="HTML" data-purchase-key="html" data-paid-page="paid-html.html"><div class="icon">🌐</div><h3>HTML</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="html-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=html">Buy ₹49</a></div></div>
-<div class="subject" data-name="CSS CSS3" data-purchase-key="css-css3" data-paid-page="paid-css-css3.html"><div class="icon">🎨</div><h3>CSS / CSS3</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="css-css3-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=css-css3">Buy ₹49</a></div></div>
-<div class="subject" data-name="Cloud Computing" data-purchase-key="cloud-computing" data-paid-page="paid-cloud-computing.html"><div class="icon">☁️</div><h3>Cloud Computing</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="cloud-computing-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=cloud-computing">Buy ₹49</a></div></div>
-<div class="subject" data-name="Data Structure" data-purchase-key="data-structure" data-paid-page="paid-data-structure.html"><div class="icon">🌳</div><h3>Data Structure</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="data-structure-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=data-structure">Buy ₹49</a></div></div>
-<div class="subject" data-name="Computer Organisation Architecture" data-purchase-key="computer-organisation-architecture" data-paid-page="paid-computer-organisation-architecture.html"><div class="icon">🖥️</div><h3>Computer Organisation &amp; Architecture</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="computer-organisation-architecture-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=computer-organisation-architecture">Buy ₹49</a></div></div>
-<div class="subject" data-name="Operating System" data-purchase-key="operating-system" data-paid-page="paid-operating-system.html"><div class="icon">⚙️</div><h3>Operating System</h3><div class="counts">Free 25 | Premium 400 Questions</div><span class="badge-free">Free Test Available</span><div class="actions2"><a class="free" href="operating-system-free.html">Free 25 Questions</a><a class="buy subject-buy" href="payment.html?product=operating-system">Buy ₹49</a></div></div>
-<div class="subject master-card" data-name="Full Computer Master"><div class="icon">📚</div><h3>JOA IT Maha Pack</h3><div class="counts">15 Subjects | 6,000+ Questions</div><span class="badge-master">Complete Preparation</span><div class="actions2"><a class="free" href="#paid-courses">View Master</a><a class="buy" href="payment.html">Buy ₹349</a></div></div>
+<section class="stats"><div class="stats-inner"><div class="stat"><i>▦</i><div><strong>15 Subjects</strong><small>Complete Computer Coverage</small></div></div><div class="stat"><i>✓</i><div><strong>25 Questions</strong><small>Free Test per Subject</small></div></div><div class="stat"><i>▤</i><div><strong>400 Questions</strong><small>Premium per Subject</small></div></div><div class="stat"><i>₹</i><div><strong>₹49</strong><small>Individual Subject</small></div></div><div class="stat"><i>♛</i><div><strong>₹349</strong><small>JOA IT Maha Pack</small></div></div><div class="stat"><i>◷</i><div><strong>6 Months</strong><small>Premium Validity</small></div></div></div></section>
 
-</div>
+<main class="page">
+<section id="computer-subjects">
+<div class="section-head"><div><h2>▦ &nbsp;Computer Subjects</h2><p>Free test: 25 questions • Premium test: 400 questions per subject</p></div><input class="search" id="search" oninput="filterSubjects()" placeholder="Search subject..."></div>
+<div class="subject-grid" id="grid">
+<div class="subject" data-name="Computer Fundamentals" data-purchase-key="computer-fundamentals" data-paid-page="paid-computer-fundamentals.html"><div class="icon">💻</div><h3>Computer Fundamentals</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="computer-fundamentals-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=computer-fundamentals">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS Word" data-purchase-key="ms-word" data-paid-page="paid-ms-word.html"><div class="icon">W</div><h3>MS Word</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="ms-word-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=ms-word">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS Excel" data-purchase-key="ms-excel" data-paid-page="paid-ms-excel.html"><div class="icon">X</div><h3>MS Excel</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="ms-excel-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=ms-excel">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS PowerPoint" data-purchase-key="ms-powerpoint" data-paid-page="paid-ms-powerpoint.html"><div class="icon">P</div><h3>MS PowerPoint</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="ms-powerpoint-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=ms-powerpoint">Buy ₹49</a></div></div>
+<div class="subject" data-name="MS Access" data-purchase-key="ms-access" data-paid-page="paid-ms-access.html"><div class="icon">▤</div><h3>MS Access</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="ms-access-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=ms-access">Buy ₹49</a></div></div>
+<div class="subject" data-name="DBMS SQL" data-purchase-key="dbms-sql" data-paid-page="paid-dbms-sql.html"><div class="icon">▱</div><h3>DBMS &amp; SQL</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="dbms-sql-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=dbms-sql">Buy ₹49</a></div></div>
+<div class="subject" data-name="Computer Networking" data-purchase-key="computer-networking" data-paid-page="paid-computer-networking.html"><div class="icon">⌁</div><h3>Computer Networking</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="computer-networking-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=computer-networking">Buy ₹49</a></div></div>
+<div class="subject" data-name="Cyber Security" data-purchase-key="cyber-security" data-paid-page="paid-cyber-security.html"><div class="icon">♢</div><h3>Cyber Security</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="cyber-security-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=cyber-security">Buy ₹49</a></div></div>
+<div class="subject" data-name="C Programming" data-purchase-key="c-programming" data-paid-page="paid-c-programming.html"><div class="icon">&lt;/&gt;</div><h3>C Programming</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="c-programming-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=c-programming">Buy ₹49</a></div></div>
+<div class="subject" data-name="HTML" data-purchase-key="html" data-paid-page="paid-html.html"><div class="icon">H</div><h3>HTML</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="html-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=html">Buy ₹49</a></div></div>
+<div class="subject" data-name="CSS CSS3" data-purchase-key="css-css3" data-paid-page="paid-css-css3.html"><div class="icon">C</div><h3>CSS / CSS3</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="css-css3-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=css-css3">Buy ₹49</a></div></div>
+<div class="subject" data-name="Cloud Computing" data-purchase-key="cloud-computing" data-paid-page="paid-cloud-computing.html"><div class="icon">☁</div><h3>Cloud Computing</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="cloud-computing-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=cloud-computing">Buy ₹49</a></div></div>
+<div class="subject" data-name="Data Structure" data-purchase-key="data-structure" data-paid-page="paid-data-structure.html"><div class="icon">⌘</div><h3>Data Structure</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="data-structure-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=data-structure">Buy ₹49</a></div></div>
+<div class="subject" data-name="Computer Organisation Architecture" data-purchase-key="computer-organisation-architecture" data-paid-page="paid-computer-organisation-architecture.html"><div class="icon">▣</div><h3>Computer Organisation &amp; Architecture</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="computer-organisation-architecture-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=computer-organisation-architecture">Buy ₹49</a></div></div>
+<div class="subject" data-name="Operating System" data-purchase-key="operating-system" data-paid-page="paid-operating-system.html"><div class="icon">⚙</div><h3>Operating System</h3><div class="counts">25 Free Q • 400 Paid Q</div><span class="badge-free">● Free Test</span><div class="actions2"><a class="free" href="operating-system-free.html">Free Test</a><a class="buy subject-buy" href="payment.html?product=operating-system">Buy ₹49</a></div></div>
+</div></section>
+
+<section class="pricing" id="pricing"><div class="pricing-title"><div><h2>♛ &nbsp;Premium Plans</h2><p>Choose individual preparation or unlock a complete computer package.</p></div></div>
+<div class="price-grid">
+<div class="price-card"><div class="price-top"><div><h3>Individual Subject</h3><div class="sub">Any 1 computer subject • 400 questions</div></div><div class="price-icon">▤</div></div><ul><li>1 selected subject</li><li>400 premium questions</li><li>Performance tracking</li><li>Detailed analysis</li><li>6 months validity</li></ul><div><span class="price">₹49</span> <span class="old">₹99</span></div><a class="btn primary individual-buy" href="payment.html">Buy Individual Subject →</a></div>
+<div class="price-card office"><div class="price-top"><div><h3>MS Office Pack</h3><div class="sub">Word • Excel • PowerPoint • Access</div></div><div class="price-icon">▦</div></div><ul><li>4 MS Office subjects</li><li><b>1,600 questions</b> — 400 × 4</li><li>Performance tracking</li><li>Detailed analysis</li><li>6 months validity</li></ul><div><span class="price">₹149</span></div><a class="btn pack-buy" data-pack="ms-office" href="payment.html?product=ms-office">Get MS Office Pack →</a></div>
+<div class="price-card master"><div class="price-top"><div><h3>JOA IT Maha Pack</h3><div class="sub">All 15 computer subjects • 6,000 questions</div></div><div class="price-icon">♛</div></div><ul><li>All 15 computer subjects</li><li><b>6,000 questions</b> — 400 × 15</li><li>Performance analytics</li><li>Detailed analysis</li><li>6 months validity</li></ul><div><span class="price">₹349</span> <span class="old">₹499</span></div><a class="btn pack-buy complete-pack-buy" data-pack="computer-master" href="payment.html?product=computer-master">Get Maha Pack →</a></div>
+</div></section>
+
+<section class="info-strip"><div class="info-box"><span class="info-icon">✓</span><div><b>Free first</b><small>हर subject के 25 questions पहले practice करें।</small></div></div><div class="info-box"><span class="info-icon">▤</span><div><b>Choose what you need</b><small>Individual ₹49, MS Office ₹149 या पूरा Maha Pack ₹349।</small></div></div><div class="info-box"><span class="info-icon">♛</span><div><b>Complete preparation</b><small>15 subjects, 6,000 premium questions और 6 months validity.</small></div></div></section>
 </main>
 
-
-</div>
-
-
-
-<section class="promo-grid" id="paid-courses">
-<div class="promo"><h3>🎁 Free Chapter Tests</h3><div class="sub">हर subject को खरीदने से पहले practice करें</div><ul><li><b>15 Computer Subjects</b></li><li><b>25 Questions</b> per subject</li><li>Exam-oriented questions</li><li>Instant result</li><li>Free chapter access</li></ul><div class="access-status free-status">✓ Free Access Included</div></div>
-<div class="promo"><h3>📄 Premium – Individual Subject</h3><div class="sub">सिर्फ वही subject खरीदें जिसकी जरूरत है</div><ul><li><b>15 subjects</b> में से कोई भी</li><li><b>400 Questions</b> per subject</li><li>Chapter-wise practice</li><li>Performance tracking</li><li>Detailed Analysis</li><li><b>6 Months</b> validity</li></ul><div><span class="price">₹49</span> <span class="old">₹99</span></div><br><a class="btn primary" href="payment.html">Buy Individual Subject →</a></div>
-<div class="promo ms-pack">
-<h3>▣ MS Office Complete Pack</h3>
-<div class="sub">MS Office के चारों प्रमुख subjects एक साथ</div>
-<ul>
-<li><b>MS Word</b></li>
-<li><b>MS Excel</b></li>
-<li><b>MS PowerPoint</b></li>
-<li><b>MS Access</b></li>
-<li>कुल <b>1,600 Questions</b> — 400 × 4</li>
-
-
-<li>Performance tracking</li><li>Detailed Analysis</li>
-<li><b>6 Months</b> validity</li>
-</ul>
-<div><span class="price" style="color:#0b76d1">₹149</span></div><br>
-<a class="btn primary pack-buy" data-pack="ms-office" href="payment.html?product=ms-office">Get MS Office Pack →</a>
-</div>
-<div class="promo"><h3>♛ JOA IT Maha Pack</h3><div class="sub">सभी 15 subjects एक साथ</div><ul><li><b>All 15 Computer Subjects</b></li><li><b>6,000 Questions</b> — 400 × 15</li><li>Chapter-wise + full mock tests</li><li>Performance analytics</li><li>Detailed Analysis</li><li><b>6 Months</b> validity</li></ul><div><span class="price" style="color:#a018a9">₹349</span> <span class="old">₹499</span></div><br><a class="btn pack-buy complete-pack-buy" data-pack="computer-master" style="background:#a018a9;color:#fff" href="payment.html?product=computer-master">Get JOA IT Maha Pack →</a></div>
-</section>
-
-<section class="info-strip">
-  <div class="info-box">
-    <span class="info-icon">🎁</span>
-    <div><b>Free first</b><small>हर subject के 25 questions पहले practice करें।</small></div>
-  </div>
-  <div class="info-box">
-    <span class="info-icon">📘</span>
-    <div><b>Choose what you need</b><small>Individual subject ₹49 में खरीदें या पूरा pack लें।</small></div>
-  </div>
-  <div class="info-box">
-    <span class="info-icon">♛</span>
-    <div><b>Complete preparation</b><small>Complete Pack में सभी 15 subjects और 6,000 questions।</small></div>
-  </div>
-</section>
-
-<footer class="footer"><div class="footer-inner"><div class="footer-top">
-<div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div>
-<div><h4>Mock Tests</h4><div class="footer-links"><a href="joa-series.html">JOA (IT) Mock Tests</a><a href="joa-mahapack.html">JOA (IT) Computer Master</a><a href="patwari-series.html">HP Patwari Mock Tests</a><a href="#free-tests">Free Test Access</a><a href="#paid-courses">Paid Courses</a></div></div>
-<div><h4>Information</h4><div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div>
-</div><div class="footer-bottom"><span>© 2026 HPMockShashtra. All rights reserved.</span><span>JOA IT Maha Pack</span></div></div></footer>
+<footer class="footer"><div class="footer-inner"><div class="footer-top"><div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div><div><h4>Mock Tests</h4><div class="footer-links"><a href="joa-series.html">JOA (IT) Mock Tests</a><a href="joa-mahapack.html">JOA IT Maha Pack</a><a href="patwari-series.html">HP Patwari Mock Tests</a><a href="#computer-subjects">Free Test Access</a><a href="#pricing">Paid Courses</a></div></div><div><h4>Information</h4><div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div></div><div class="footer-bottom"><span>© 2026 HPMockShashtra. All rights reserved.</span><span>JOA IT Maha Pack</span></div></div></footer>
 
 <script>
-function filterSubjects(){
- const q=(document.getElementById('search').value||'').toLowerCase().trim();
- document.querySelectorAll('.subject').forEach(x=>x.style.display=(!q||(x.dataset.name||'').toLowerCase().includes(q))?'':'none');
-}
+function filterSubjects(){const q=(document.getElementById('search').value||'').toLowerCase().trim();document.querySelectorAll('.subject').forEach(x=>x.style.display=(!q||(x.dataset.name||'').toLowerCase().includes(q))?'':'none');}
 </script>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBqHKXxQzFOEkp450RqG3vEktF9iQeCGiI",
-  authDomain: "hpmockshashtra.firebaseapp.com",
-  projectId: "hpmockshashtra",
-  storageBucket: "hpmockshashtra.firebasestorage.app",
-  messagingSenderId: "591547064527",
-  appId: "1:591547064527:web:cc2edfa5f077dc30e717ba"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-const headerUser = document.getElementById("headerUser");
-const headerUserName = document.getElementById("headerUserName");
-const headerAvatar = document.getElementById("headerAvatar");
-const loginLink = document.getElementById("loginLink");
-
-onAuthStateChanged(auth, async (user) => {
-  if (!user) {
-    headerUser.style.display = "none";
-    loginLink.style.display = "inline-flex";
-    return;
-  }
-
-  let name = user.displayName || "";
-
-  if (!name) {
-    try {
-      const snap = await getDoc(doc(db, "users", user.uid));
-      if (snap.exists()) {
-        name = snap.data().name || "";
-      }
-    } catch (e) {
-      console.warn("Could not load user name:", e);
-    }
-  }
-
-  if (!name) {
-    name = (user.email || "User").split("@")[0];
-  }
-
-  headerUserName.textContent = name;
-  headerAvatar.textContent = name.trim().charAt(0).toUpperCase() || "U";
-  headerUser.style.display = "flex";
-  loginLink.style.display = "none";
-});
-</script>
-
-
-
 <script type="module">
 import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-const config={apiKey:"AIzaSyBqHKXxQzFOEkp450RqG3vEktF9iQeCGiI",authDomain:"hpmockshashtra.firebaseapp.com",projectId:"hpmockshashtra",storageBucket:"hpmockshashtra.firebasestorage.app",messagingSenderId:"591547064527",appId:"1:591547064527:web:cc2edfa5f077dc30e717ba"};
-const app=getApps().length?getApps()[0]:initializeApp(config),auth=getAuth(app),db=getFirestore(app);
-const office=["ms-word","ms-excel","ms-powerpoint","ms-access"];
-function date(v){if(!v)return null;if(v.toDate)return v.toDate();const d=new Date(v);return isNaN(d)?null:d}
-function active(v){const d=date(v?.expiresAt);return d&&d.getTime()>Date.now()}
-function fmt(v){const d=date(v);return d?d.toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"}):""}
-function access(data,key){const c=data?.computerAccess?.courses?.[key];if(active(c))return c;const p=data?.computerAccess?.packs?.["ms-office"];if(office.includes(key)&&active(p))return p;const m=data?.computerAccess?.packs?.["computer-master"];return active(m)?m:null}
-function mark(card,a){const b=card.querySelector(".subject-buy");if(b){const x=document.createElement("div");x.className="purchased-status";x.innerHTML=`✓ Active<br><small>Valid till ${fmt(a.expiresAt)}</small>`;b.replaceWith(x)}const f=card.querySelector("a[href*='free']"),page=card.dataset.paidPage;if(f&&page){const x=document.createElement("a");x.className="paid-start";x.href=page;x.textContent="Start Paid Test →";f.replaceWith(x)}}
-async function load(user){if(!user)return;try{const snap=await getDoc(doc(db,"testAccess",user.uid));if(!snap.exists())return;const data=snap.data()||{};document.querySelectorAll(".subject[data-purchase-key]").forEach(c=>{const a=access(data,c.dataset.purchaseKey);if(a)mark(c,a)});const m=data?.computerAccess?.packs?.["ms-office"];document.querySelectorAll(".pack-buy[data-pack='ms-office']").forEach(b=>{if(active(m)){const x=document.createElement("div");x.className="purchased-status";x.innerHTML=`✓ MS Office Pack Active<br><small>Valid till ${fmt(m.expiresAt)}</small>`;b.replaceWith(x)}});const cm=data?.computerAccess?.packs?.["computer-master"];document.querySelectorAll(".complete-pack-buy[data-pack='computer-master']").forEach(b=>{if(active(cm)){const x=document.createElement("div");x.className="purchased-status";x.innerHTML=`✓ JOA IT Maha Pack Active<br><small>Valid till ${fmt(cm.expiresAt)}</small>`;b.replaceWith(x)}})}catch(e){console.warn("Purchase status could not be loaded:",e)}}
-onAuthStateChanged(auth,load);
-</script>
 
+/* EXISTING FIREBASE CONFIG — KEPT INTACT */
+const firebaseConfig={apiKey:"AIzaSyBqHKXxQzFOEkp450RqG3vEktF9iQeCGiI",authDomain:"hpmockshashtra.firebaseapp.com",projectId:"hpmockshashtra",storageBucket:"hpmockshashtra.firebasestorage.app",messagingSenderId:"591547064527",appId:"1:591547064527:web:cc2edfa5f077dc30e717ba"};
+const app=getApps().length?getApps()[0]:initializeApp(firebaseConfig);const auth=getAuth(app);const db=getFirestore(app);
+
+const headerUser=document.getElementById('headerUser'),headerUserName=document.getElementById('headerUserName'),headerAvatar=document.getElementById('headerAvatar'),loginLink=document.getElementById('loginLink');
+const office=['ms-word','ms-excel','ms-powerpoint','ms-access'];
+function toDate(v){if(!v)return null;if(v.toDate)return v.toDate();const d=new Date(v);return Number.isNaN(d.getTime())?null:d}
+function active(v){const d=toDate(v?.expiresAt);return !!(d&&d.getTime()>Date.now())}
+function fmt(v){const d=toDate(v);return d?d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}):''}
+function access(data,key){const course=data?.computerAccess?.courses?.[key];if(active(course))return course;const pack=data?.computerAccess?.packs?.['ms-office'];if(office.includes(key)&&active(pack))return pack;const master=data?.computerAccess?.packs?.['computer-master'];return active(master)?master:null}
+function markSubject(card,a){const buy=card.querySelector('.subject-buy');if(buy){const x=document.createElement('div');x.className='purchased-status';x.innerHTML=`✓ Active<br><small>Valid till ${fmt(a.expiresAt)}</small>`;buy.replaceWith(x)}const free=card.querySelector("a[href*='free']"),page=card.dataset.paidPage;if(free&&page){const x=document.createElement('a');x.className='paid-start';x.href=page;x.textContent='Start Paid Test →';free.replaceWith(x)}}
+async function loadAccess(user){if(!user)return;try{const snap=await getDoc(doc(db,'testAccess',user.uid));if(!snap.exists())return;const data=snap.data()||{};document.querySelectorAll('.subject[data-purchase-key]').forEach(card=>{const a=access(data,card.dataset.purchaseKey);if(a)markSubject(card,a)});const officePack=data?.computerAccess?.packs?.['ms-office'];document.querySelectorAll(".pack-buy[data-pack='ms-office']").forEach(b=>{if(active(officePack)){const x=document.createElement('div');x.className='purchased-status';x.innerHTML=`✓ MS Office Pack Active<br><small>Valid till ${fmt(officePack.expiresAt)}</small>`;b.replaceWith(x)}});const master=data?.computerAccess?.packs?.['computer-master'];document.querySelectorAll(".complete-pack-buy[data-pack='computer-master']").forEach(b=>{if(active(master)){const x=document.createElement('div');x.className='purchased-status';x.innerHTML=`✓ JOA IT Maha Pack Active<br><small>Valid till ${fmt(master.expiresAt)}</small>`;b.replaceWith(x)}})}catch(e){console.warn('Purchase status could not be loaded:',e)}}
+
+onAuthStateChanged(auth,async user=>{if(!user){headerUser.style.display='none';loginLink.style.display='inline-flex';return}let name=user.displayName||'';if(!name){try{const snap=await getDoc(doc(db,'users',user.uid));if(snap.exists())name=snap.data().name||''}catch(e){console.warn('Could not load user name:',e)}}if(!name)name=(user.email||'User').split('@')[0];headerUserName.textContent=name;headerAvatar.textContent=name.trim().charAt(0).toUpperCase()||'U';headerUser.style.display='flex';loginLink.style.display='none';await loadAccess(user)});
+</script>
 </body>
 </html>
