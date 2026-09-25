@@ -41,6 +41,25 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 .inline-stats .ok strong{color:#3ce0aa}.inline-stats .bad strong{color:#ff7284}
 .result{display:none!important}
 @media(max-width:700px){.question-card{padding:20px}.question{font-size:17px}.question .hi{font-size:14px}.options{grid-template-columns:1fr}.option{min-height:56px}.inline-result-top{align-items:flex-start}.inline-score{font-size:30px}.inline-stats{grid-template-columns:repeat(2,1fr)}}
+
+.review-wrap{margin-top:18px;padding-top:16px;border-top:1px solid rgba(126,176,255,.16)}
+.review-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.review-title-row strong{font-size:11px;display:block;color:#f5f8ff}
+.review-title-row span{font-size:8px;color:#91a6be;display:block;margin-top:3px}
+.review-next{border:1px solid rgba(126,176,255,.22);background:#0c2040;color:#dce8f6;border-radius:8px;padding:8px 12px;font-size:9px;font-weight:800;cursor:pointer}
+.review-next:hover{border-color:#35aaff;background:#102b50}
+.review-next:disabled{opacity:.35;cursor:not-allowed}
+.review-list{display:block}
+.review-item{padding:13px 14px;margin-top:9px;border:1px solid rgba(126,176,255,.13);border-radius:11px;background:rgba(255,255,255,.025)}
+.review-q{font-size:11px;font-weight:850;line-height:1.5}
+.review-q-hi{display:block;color:#c7d7e9;font-size:10px;margin-top:4px;font-weight:650}
+.review-options{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.review-option{padding:9px 10px;border:1px solid rgba(126,176,255,.16);border-radius:8px;background:#0b1f3d;color:#cfdced;font-size:9px;line-height:1.35}
+.review-option.correct{border-color:#12c98b;background:rgba(18,201,139,.13);color:#dffff2}
+.review-option.wrong{border-color:#ff6075;background:rgba(255,96,117,.13);color:#ffe1e5}
+.review-option .review-letter{display:inline-grid;place-items:center;width:19px;height:19px;margin-right:5px;border-radius:5px;background:rgba(255,255,255,.06);font-size:7px;font-weight:900}
+.review-explanation{margin-top:9px;padding:9px 10px;border-left:3px solid #12c98b;background:rgba(18,201,139,.045);color:#bdd6ca;font-size:9px;line-height:1.55}
+@media(max-width:600px){.review-title-row{align-items:flex-start}.review-next{white-space:nowrap}.review-options{grid-template-columns:1fr}}
 </style></head><body>
 <header class="topbar"><nav class="nav">
 <a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
@@ -66,6 +85,13 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
     <div><strong id="statAttempted">0</strong><span>Attempted</span></div>
     <div class="ok"><strong id="statCorrect">0</strong><span>Correct</span></div>
     <div class="bad"><strong id="statWrong">0</strong><span>Wrong</span></div>
+  </div>
+  <div class="review-wrap" id="reviewWrap">
+    <div class="review-title-row">
+      <div><strong>Answer Review</strong><span id="reviewPage">Questions 1–10</span></div>
+      <button class="review-next" id="reviewNext">Next 10 →</button>
+    </div>
+    <div class="review-list" id="review"></div>
   </div>
 </div>
 </div>
@@ -101,6 +127,7 @@ let sessionRef=null;
 let resultRef=null;
 let state={current:0,answers:{},submitted:false,startedAt:null,completedAt:null};
 const PAGE_SIZE=10;
+let reviewPageIndex=0;
 
 function date(v){if(!v)return null;if(v.toDate)return v.toDate();const d=new Date(v);return Number.isNaN(d.getTime())?null:d}
 function active(v){const d=date(v?.expiresAt);return !!(d&&d.getTime()>Date.now())}
@@ -145,7 +172,52 @@ const total=QUESTIONS.length,attempted=Object.keys(state.answers).length;
 $('score').textContent=Math.round(correct/total*100)+'%';$('resultMeta').textContent='Your answers and final result are saved to your account.';
 $('statTotal').textContent=total;$('statAttempted').textContent=attempted;$('statCorrect').textContent=correct;$('statWrong').textContent=total-correct;
 $('progressBar').style.width='100%';$('progressText').textContent=`${total} / ${total}`;$('totalLabel').textContent='Practice Completed';
+reviewPageIndex=0;
+renderReview();
 }
+
+function renderReview(){
+  const total=QUESTIONS.length;
+  const start=reviewPageIndex*PAGE_SIZE;
+  const end=Math.min(start+PAGE_SIZE,total);
+  $('reviewPage').textContent=`Questions ${start+1}–${end} of ${total}`;
+  $('reviewNext').disabled=end>=total;
+  $('reviewNext').textContent=end>=total?'Review Complete':'Next 10 →';
+
+  $('review').innerHTML=QUESTIONS.slice(start,end).map((q,offset)=>{
+    const i=start+offset;
+    const selected=state.answers[i];
+    const selectedText=selected===undefined?'Not answered':q.options[selected];
+
+    const opts=q.options.map((o,j)=>{
+      let cls='review-option';
+      if(j===q.answer) cls+=' correct';
+      if(selected!==undefined && j===selected && selected!==q.answer) cls+=' wrong';
+      const label=String.fromCharCode(65+j);
+      return `<div class="${cls}"><span class="review-letter">${label}</span>${esc(o)}</div>`;
+    }).join('');
+
+    const result=selected===q.answer
+      ? '<span style="color:#3ce0aa;font-weight:800">✓ Correct</span>'
+      : '<span style="color:#ff7284;font-weight:800">✕ Incorrect</span>';
+
+    return `<div class="review-item">
+      <div class="review-q">Q${i+1}. ${esc(q.en||'')}<span class="review-q-hi">${esc(q.hi||'')}</span></div>
+      <div style="margin-top:6px;font-size:8px">${result} &nbsp; Your answer: ${esc(selectedText)}</div>
+      <div class="review-options">${opts}</div>
+      <div class="review-explanation"><strong>Explanation:</strong> ${esc(q.explanation||'')}</div>
+    </div>`;
+  }).join('');
+}
+
+$('reviewNext').onclick=()=>{
+  if((reviewPageIndex+1)*PAGE_SIZE<QUESTIONS.length){
+    reviewPageIndex++;
+    renderReview();
+    $('reviewWrap').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+};
+
 $('nextBtn').onclick=next;
 $('logoutBtn').onclick=async()=>{await signOut(auth);location.href='firebase-login.html'};
 
