@@ -212,11 +212,50 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
   .review-title-row{align-items:flex-start}
   .review-next{white-space:nowrap}
 }
+
+<style>
+/* Focused practice layout: no site header/title, question-first UI */
+.topbar{display:none!important}
+.wrap{width:min(900px,calc(100% - 28px));margin:22px auto 50px}
+.practice-toolbar{width:100%;min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:14px;padding:9px 12px;border:1px solid rgba(126,176,255,.22);border-radius:15px;background:linear-gradient(110deg,rgba(9,25,50,.96),rgba(31,24,67,.94));box-shadow:0 12px 32px rgba(0,0,0,.24)}
+.quit-btn{border:1px solid rgba(126,176,255,.26);border-radius:10px;padding:10px 14px;background:rgba(255,255,255,.045);color:#cbd9ea;font-size:10px;font-weight:850;cursor:pointer;white-space:nowrap}
+.quit-btn:hover{border-color:rgba(80,177,255,.55);background:rgba(38,139,255,.10);color:#fff}
+.live-stats{position:static!important;display:flex;align-items:center;gap:9px}
+.live-stat{min-width:53px;text-align:center}
+.live-circle{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;margin:auto;border:1px solid rgba(126,176,255,.32);font-size:9px;font-weight:950;box-shadow:0 5px 16px rgba(0,0,0,.22)}
+.live-circle.attempted{color:#67c9ff;border-color:#2699df;background:linear-gradient(145deg,rgba(29,125,184,.34),rgba(12,52,86,.58))}
+.live-circle.correct{color:#53efb7;border-color:#20c792;background:linear-gradient(145deg,rgba(17,164,116,.34),rgba(7,67,57,.62))}
+.live-circle.wrong{color:#ff8798;border-color:#ef5e73;background:linear-gradient(145deg,rgba(190,49,75,.34),rgba(79,24,43,.64))}
+.live-circle.score{color:#c1a2ff;border-color:#9167e9;background:linear-gradient(145deg,rgba(108,72,190,.36),rgba(48,30,92,.64))}
+.live-stat small{display:block;margin-top:4px;color:#91a6be;font-size:6.5px;font-weight:850;letter-spacing:.15px}
+.question-card{width:100%;max-width:none;margin:0;padding:28px 30px;background:linear-gradient(145deg,rgba(10,30,59,.98),rgba(11,27,52,.98));border-color:rgba(92,160,231,.25)}
+.question{font-size:17px;line-height:1.5}
+.options{gap:10px}
+.option{min-height:54px;background:linear-gradient(110deg,#10294e,#0c2345);border-color:rgba(106,170,236,.22)}
+.option:hover:not(:disabled){background:linear-gradient(110deg,rgba(25,139,225,.26),rgba(111,74,190,.20))}
+.cloud-status{display:none}
+@media(max-width:600px){
+  .wrap{width:calc(100% - 18px);margin:12px auto 35px}
+  .practice-toolbar{min-height:0;padding:10px 9px;border-radius:14px;gap:7px}
+  .quit-btn{padding:9px 9px;font-size:8px}
+  .live-stats{gap:4px}
+  .live-stat{min-width:42px}
+  .live-circle{width:36px;height:36px;font-size:8px}
+  .live-stat small{font-size:5.5px}
+  .question-card{padding:20px 15px;border-radius:15px}
+  .question{font-size:15px}
+  .question .hi{font-size:13px}
+  .options{grid-template-columns:1fr;gap:9px}
+  .option{min-height:56px;font-size:10px}
+}
+@media(max-width:390px){
+  .quit-btn{font-size:7.5px;padding:8px 7px}
+  .live-stat{min-width:37px}
+  .live-circle{width:33px;height:33px;font-size:7px}
+}
+</style>
 </style></head><body>
-<header class="topbar"><nav class="nav">
-<a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
-<div class="nav-right"><span class="nav-pill">Computer Fundamentals</span><div class="user"><span class="avatar" id="avatar">U</span><span class="user-name" id="userName">User</span><button class="logout" id="logoutBtn">Logout</button></div></div>
-</nav></header>
+
 
 <div class="practice-modal" id="practiceModal">
   <div class="practice-modal-card">
@@ -239,17 +278,15 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 
 
 <section id="exam" style="display:none">
-<div class="exam-head">
-<div class="live-stats">
-  <div class="live-stat"><span class="live-circle attempted" id="liveAttempted">0/0</span><small>Attempted</small></div>
-  <div class="live-stat"><span class="live-circle correct" id="liveCorrect">0</span><small>Correct</small></div>
-  <div class="live-stat"><span class="live-circle wrong" id="liveWrong">0</span><small>Wrong</small></div>
-  <div class="live-stat"><span class="live-circle score" id="liveScore">0%</span><small>Score</small></div>
+<div class="practice-toolbar">
+  <button class="quit-btn" id="quitBtn" type="button">← Quit Practice</button>
+  <div class="live-stats">
+    <div class="live-stat"><span class="live-circle attempted" id="liveAttempted">0/0</span><small>Attempted</small></div>
+    <div class="live-stat"><span class="live-circle correct" id="liveCorrect">0</span><small>Correct</small></div>
+    <div class="live-stat"><span class="live-circle wrong" id="liveWrong">0</span><small>Wrong</small></div>
+    <div class="live-stat"><span class="live-circle score" id="liveScore">0%</span><small>Score</small></div>
+  </div>
 </div>
-<div class="eyebrow">Study & Practice • Computer Fundamentals</div>
-<h1 class="exam-title">Computer Fundamentals</h1>
-<p class="exam-sub"><span class="resume-note"><span class="resume-hi">आप जब चाहें अभ्यास रोक सकते हैं और बाद में यहीं से उसी जगह से जारी रख सकते हैं।</span><span class="resume-en">You can pause your practice anytime and continue later from exactly where you left off.</span></span></p>
-<div class="cloud-status"><span class="dot" id="cloudDot"></span><span id="cloudStatus">Progress saved to your account</span></div>
 <div class="practice-result-inline result-only" id="inlineResult" style="display:none">
   <div class="inline-result-top">
     <div>
@@ -325,6 +362,7 @@ function deferPractice(){
 }
 $('startBtn').onclick=startPractice;
 $('laterBtn').onclick=deferPractice;
+$('quitBtn').onclick=()=>{location.href='joa-mahapack.html'};
 
 function render(){
 if(state.submitted){showResult();return}
