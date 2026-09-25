@@ -254,6 +254,94 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 }
 .quit-practice,#quitPracticeBtn{display:none!important}
 </style>
+
+<style>
+/* Final completed-practice UI */
+.practice-result-inline{
+  margin-top:0!important;
+  padding:34px 20px 30px!important;
+  border-top:0!important;
+  text-align:center!important;
+  width:100%!important;
+}
+.practice-result-inline .inline-result-top{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:4px!important;
+  width:100%!important;
+  text-align:center!important;
+}
+.practice-result-inline .inline-result-top>div{
+  width:auto!important;
+  max-width:100%!important;
+}
+.practice-result-inline .eyebrow{
+  font-size:9px!important;
+  letter-spacing:1.2px!important;
+  color:#66c8ff!important;
+}
+.practice-result-inline .inline-result-title{
+  margin:7px 0 0!important;
+  font-size:22px!important;
+  line-height:1.25!important;
+  color:#f5f8ff!important;
+}
+.practice-result-inline .inline-result-sub{
+  margin-top:7px!important;
+  color:#91a6be!important;
+  font-size:9px!important;
+}
+.practice-result-inline .final-score{
+  margin:15px 0 0!important;
+  font-size:54px!important;
+  line-height:1!important;
+  font-weight:950!important;
+  color:#f5f8ff!important;
+  background:linear-gradient(90deg,#38baff,#9b65ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.practice-result-inline .final-score span{
+  font-size:12px!important;
+  color:#9eb0c8!important;
+  -webkit-text-fill-color:#9eb0c8!important;
+}
+.practice-result-inline .review-actions{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  margin-top:22px!important;
+}
+.practice-result-inline .review-link{
+  min-width:165px;
+  text-align:center;
+  padding:12px 20px!important;
+  border-radius:11px!important;
+  box-shadow:0 8px 24px rgba(22,142,255,.18);
+}
+@media(max-width:600px){
+  .practice-result-inline{
+    padding:28px 14px 24px!important;
+  }
+  .practice-result-inline .inline-result-title{
+    font-size:18px!important;
+  }
+  .practice-result-inline .final-score{
+    font-size:46px!important;
+  }
+  .practice-result-inline .review-actions{
+    margin-top:18px!important;
+  }
+  .practice-result-inline .review-link{
+    width:100%;
+    max-width:240px;
+  }
+}
+</style>
+
 </head><body>
 <header class="topbar"><nav class="nav">
 <a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
