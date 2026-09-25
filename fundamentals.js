@@ -2,68 +2,132 @@
 // answer: 0 = A, 1 = B, 2 = C, 3 = D
 
 export const QUESTIONS = [
-  {
-    en: "What is the full form of CPU?",
-    hi: "CPU का पूरा नाम क्या है?",
-    options: [
-      "Central Processing Unit",
-      "Central Program Unit",
-      "Computer Processing Utility",
-      "Control Processing Unit"
-    ],
-    answer: 0,
-    explanation: "CPU का पूरा नाम Central Processing Unit है। यह कंप्यूटर की मुख्य processing unit है, जो instructions को process करती है। Processing का अर्थ दिए गए instructions के अनुसार data पर काम करना है। Unit का अर्थ किसी system का ऐसा भाग है जो एक निर्धारित कार्य करता है।"
-  },
+ {
+  en: "Which statement most accurately defines a computer in terms of its fundamental operation?",
+  hi: "कंप्यूटर के मूलभूत कार्य के संदर्भ में निम्नलिखित में से कौन-सा कथन कंप्यूटर को सबसे सटीक रूप से परिभाषित करता है?",
+  options: [
+    "A machine that can independently understand and make decisions without predefined instructions",
+    "An electronic programmable device that accepts data as input, processes it according to a set of instructions, and produces output",
+    "A mechanical device designed exclusively for performing arithmetic calculations",
+    "A communication device that converts all forms of information directly into human language"
+  ],
+  answer: 1,
+  explanation: "Computer एक electronic programmable device है, जो data को input के रूप में स्वीकार करता है, दिए गए instructions के अनुसार उसे process करता है और output प्रदान करता है। Electronic का अर्थ electronic circuits पर आधारित होना है। Programmable का अर्थ है कि कंप्यूटर को अलग-अलग कार्य करने के लिए instructions के अलग-अलग sets दिए जा सकते हैं। Input वह data है जो कंप्यूटर को दिया जाता है। Processing का अर्थ instructions के अनुसार data पर कार्य करना है। Output processing के बाद प्राप्त result होता है।"
+},
 
-  {
-    en: "Which of the following is an input device?",
-    hi: "निम्नलिखित में से कौन-सा एक Input Device है?",
-    options: [
-      "Monitor",
-      "Printer",
-      "Keyboard",
-      "Speaker"
-    ],
-    answer: 2,
-    explanation: "Keyboard एक Input Device है। Input का अर्थ कंप्यूटर को data या instructions देना है। Device का अर्थ hardware का ऐसा उपकरण है जो कोई विशेष कार्य करता है। Keyboard की सहायता से हम letters, numbers और commands कंप्यूटर में enter करते हैं।"
-  },
+{
+  en: "Which sequence best represents the basic Input-Process-Output (IPO) model of a computer?",
+  hi: "निम्नलिखित में से कौन-सा क्रम कंप्यूटर के मूल Input-Process-Output (IPO) मॉडल को सबसे अच्छी तरह दर्शाता है?",
+  options: [
+    "Input → Processing → Output",
+    "Processing → Input → Output",
+    "Output → Input → Processing",
+    "Input → Output → Processing"
+  ],
+  answer: 0,
+  explanation: "IPO model कंप्यूटर के मूल कार्य-चक्र को दर्शाता है। Input का अर्थ कंप्यूटर को data या instructions देना है। Processing का अर्थ दिए गए data पर instructions के अनुसार कार्य करना है। Output processing के बाद प्राप्त परिणाम है। IPO का पूरा नाम Input-Process-Output है।"
+},
 
-  {
-    en: "Which type of memory is volatile?",
-    hi: "निम्नलिखित में से कौन-सी memory volatile होती है?",
-    options: [
-      "ROM",
-      "RAM",
-      "Hard Disk",
-      "SSD"
-    ],
-    answer: 1,
-    explanation: "RAM एक volatile memory है। Memory का अर्थ कंप्यूटर में data और instructions को store करने की जगह है। Volatile का अर्थ ऐसी memory है जिसमें बिजली की supply बंद होने पर stored data सामान्यतः समाप्त हो जाता है। RAM का उपयोग वर्तमान में चल रहे programs और data को temporarily रखने के लिए किया जाता है।"
-  },
+{
+  en: "Which characteristic most fundamentally distinguishes a general-purpose computer from a device designed to perform only a fixed set of calculations?",
+  hi: "निम्नलिखित में से कौन-सी विशेषता general-purpose computer को केवल निश्चित प्रकार की गणनाएँ करने वाले device से सबसे मूल रूप से अलग करती है?",
+  options: [
+    "It performs operations at high speed",
+    "It can store data and results",
+    "It can be programmed to perform different tasks by executing different sets of instructions",
+    "It uses electronic components for processing"
+  ],
+  answer: 2,
+  explanation: "General-purpose computer को अलग-अलग कार्यों के लिए program किया जा सकता है। Programmable का अर्थ है कि कंप्यूटर को instructions के अलग-अलग sets देकर विभिन्न कार्य करवाए जा सकते हैं। General-purpose का अर्थ है कि device केवल एक निश्चित कार्य तक सीमित न होकर अनेक प्रकार के कार्य कर सकता है। Instruction एक ऐसा आदेश या निर्देश है जो कंप्यूटर को बताता है कि उसे क्या कार्य करना है।"
+},
 
-  {
-    en: "Which number system is used internally by digital computers?",
-    hi: "Digital computers आंतरिक रूप से किस number system का उपयोग करते हैं?",
-    options: [
-      "Decimal",
-      "Octal",
-      "Binary",
-      "Hexadecimal"
-    ],
-    answer: 2,
-    explanation: "Digital computers internally Binary Number System का उपयोग करते हैं। Number System का अर्थ numbers को represent करने की एक व्यवस्थित पद्धति है। Binary में केवल दो digits होते हैं: 0 और 1। Digital computers इन्हीं दो states के आधार पर information को process और represent करते हैं।"
-  },
+{
+  en: "Why is a computer generally described as a programmable data-processing machine rather than an independent thinking machine?",
+  hi: "कंप्यूटर को सामान्यतः independent thinking machine के बजाय programmable data-processing machine क्यों कहा जाता है?",
+  options: [
+    "Because a computer cannot store data permanently",
+    "Because a computer processes data according to instructions provided to it",
+    "Because a computer can perform only mathematical calculations",
+    "Because a computer cannot produce output without a printer"
+  ],
+  answer: 1,
+  explanation: "Computer अपने कार्यों को दिए गए instructions के अनुसार करता है। Programmable का अर्थ है कि कंप्यूटर को instructions या programs के माध्यम से विभिन्न कार्य करने के लिए निर्देशित किया जा सकता है। Data से तात्पर्य raw facts and figures से है, जबकि Processing का अर्थ data पर निर्धारित instructions के अनुसार कार्य करना है।"
+},
 
-  {
-    en: "Which device is commonly used to produce a hard copy of a document?",
-    hi: "किस device का उपयोग document की hard copy निकालने के लिए किया जाता है?",
-    options: [
-      "Scanner",
-      "Printer",
-      "Keyboard",
-      "Microphone"
-    ],
-    answer: 1,
-    explanation: "Printer एक Output Device है, जिसका उपयोग digital document या image को paper पर print करके उसकी hard copy बनाने के लिए किया जाता है। Output का अर्थ कंप्यूटर द्वारा processed information का result है। Hard Copy का अर्थ digital information का physical form है, जैसे कागज पर printed document। Document ऐसी सामग्री होती है जिसमें text, images या अन्य information दर्ज होती है।"
-  }
+{
+  en: "Which of the following correctly represents the four main functions of a computer?",
+  hi: "निम्नलिखित में से कौन-सा कंप्यूटर के चार मुख्य कार्यों को सही रूप से दर्शाता है?",
+  options: [
+    "Input, Processing, Output and Storage",
+    "Input, Calculation, Printing and Communication",
+    "Reading, Writing, Printing and Scanning",
+    "Data Entry, Typing, Processing and Networking"
+  ],
+  answer: 0,
+  explanation: "कंप्यूटर के चार मुख्य कार्य Input, Processing, Output और Storage हैं। Input का अर्थ data या instructions को कंप्यूटर में प्रवेश कराना है। Processing का अर्थ data पर instructions के अनुसार कार्य करना है। Output processing के बाद प्राप्त result है। Storage का अर्थ data, instructions और results को भविष्य में उपयोग के लिए सुरक्षित रखना है।"
+},
+{
+  en: "Which statement correctly distinguishes data from information?",
+  hi: "निम्नलिखित में से कौन-सा कथन Data और Information के बीच अंतर को सही रूप से स्पष्ट करता है?",
+  options: [
+    "Data is always meaningful, whereas information is always meaningless",
+    "Data consists of raw facts, while information is processed and meaningful data",
+    "Data and information are exactly the same in all contexts",
+    "Information is collected first and data is produced after processing"
+  ],
+  answer: 1,
+  explanation: "Data में raw facts and figures होते हैं, जबकि Information वह processed data है जिसका अर्थ स्पष्ट हो और जो उपयोगी हो। Raw का अर्थ बिना processing या interpretation के होता है। Data उदाहरण के रूप में 72, 85 और 68 जैसे अलग-अलग marks हो सकते हैं। जब इन marks को process करके average या अन्य meaningful result प्राप्त किया जाता है, तो वह Information कहलाती है।"
+},
+
+{
+  en: "In a basic computer working cycle, what normally happens immediately after the computer receives input data?",
+  hi: "कंप्यूटर के basic working cycle में input data प्राप्त करने के तुरंत बाद सामान्यतः क्या होता है?",
+  options: [
+    "The data is automatically deleted",
+    "The processed result is displayed",
+    "The input data is processed according to the given instructions",
+    "The computer shuts down after storing the input"
+  ],
+  answer: 2,
+  explanation: "Input प्राप्त होने के बाद computer दिए गए instructions के अनुसार उस data को process करता है। Input का अर्थ computer को data या instructions देना है। Processing का अर्थ दिए गए instructions के आधार पर data पर आवश्यक operations करना है। Instructions वे commands या directions हैं जो computer को बताते हैं कि data पर कौन-सा कार्य करना है। Processing के बाद result को output के रूप में प्राप्त किया जाता है।"
+},
+
+{
+  en: "A student enters the marks 72, 85, 68 and 75 into a computer. The computer calculates their average and displays 75. Which option correctly identifies the stages involved?",
+  hi: "एक विद्यार्थी कंप्यूटर में 72, 85, 68 और 75 अंक दर्ज करता है। कंप्यूटर उनका average निकालता है और 75 प्रदर्शित करता है। निम्नलिखित में से कौन-सा विकल्प इसमें शामिल stages को सही रूप से पहचानता है?",
+  options: [
+    "72, 85, 68, 75 = Information; 75 = Data",
+    "Entered marks = Input/Data; calculation = Processing; 75 = Output/Information",
+    "Entered marks = Output; calculation = Storage; 75 = Input",
+    "Entered marks = Processing; calculation = Input; 75 = Storage"
+  ],
+  answer: 1,
+  explanation: "Entered marks computer को दिए गए Input/Data हैं। उनका average निकालने की प्रक्रिया Processing है और प्राप्त 75 computer का Output/Information है। Input वह data है जो computer को दिया जाता है। Processing में data पर calculations या अन्य operations किए जाते हैं। Output processing के बाद प्राप्त result होता है। Information processed data है जो meaningful और उपयोगी होता है।"
+},
+
+{
+  en: "A computer is asked to perform the same large-scale calculation repeatedly. Which combination of characteristics most directly explains why it can continue producing consistent results without becoming tired or losing concentration?",
+  hi: "कंप्यूटर को एक ही large-scale calculation बार-बार करने के लिए कहा जाता है। कौन-सी विशेषताओं का combination सबसे सीधे यह समझाता है कि वह बिना थके या concentration खोए लगातार consistent results दे सकता है?",
+  options: [
+    "Versatility and reliability",
+    "Diligence and accuracy",
+    "Speed and versatility",
+    "Reliability and storage capacity"
+  ],
+  answer: 1,
+  explanation: "Diligence और Accuracy कंप्यूटर की ऐसी characteristics हैं जो उसे repetitive tasks को बिना थके लगातार करने और सही instructions तथा data मिलने पर consistent results देने में सक्षम बनाती हैं। Diligence का अर्थ बिना थके लंबे समय तक लगातार कार्य करने की क्षमता है। Accuracy का अर्थ दिए गए instructions और data के आधार पर सही result प्रदान करने की क्षमता है। Computer में human-like fatigue या concentration loss नहीं होता।"
+},
+
+{
+  en: "A computer processes millions of records rapidly, but its results are incorrect because the instructions or input data contain errors. Which conclusion best reflects the relationship between speed and accuracy?",
+  hi: "एक कंप्यूटर लाखों records को बहुत तेजी से process करता है, लेकिन उसके results incorrect हैं क्योंकि instructions या input data में errors हैं। निम्नलिखित में से कौन-सा निष्कर्ष Speed और Accuracy के बीच संबंध को सबसे अच्छी तरह दर्शाता है?",
+  options: [
+    "High processing speed guarantees accurate results",
+    "Accuracy depends only on the processing speed of the computer",
+    "A computer can be fast while still producing incorrect results if the input or instructions are erroneous",
+    "Accuracy and speed are two names for the same characteristic"
+  ],
+  answer: 2,
+  explanation: "Computer की high processing speed अपने आप accurate results की guarantee नहीं देती। यदि input data या instructions में errors हैं, तो computer तेज गति से भी incorrect result produce कर सकता है। Speed का अर्थ किसी कार्य को पूरा करने की तेजी है, जबकि Accuracy का अर्थ सही result देने की क्षमता है। Input data वह data है जो computer को processing के लिए दिया जाता है और Instructions वे directions हैं जिनके अनुसार computer कार्य करता है।"
+}
 ];
