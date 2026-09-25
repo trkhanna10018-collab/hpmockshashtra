@@ -4,7 +4,7 @@
 *{box-sizing:border-box}
 body{margin:0;color:var(--t);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 15%,rgba(93,61,180,.18),transparent 30%),radial-gradient(circle at 10% 70%,rgba(0,130,255,.12),transparent 28%),#061326;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:38px 38px}
-.topbar{position:sticky;top:8px;z-index:20;width:min(1120px,calc(100% - 24px));margin:8px auto 0;border:1px solid rgba(126,176,255,.32);border-radius:16px;background:linear-gradient(110deg,rgba(7,20,42,.96),rgba(37,21,70,.92));box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.topbar{position:sticky;top:8px;z-index:20;width:min(1080px,calc(100% - 24px));margin:8px auto 0;border:1px solid rgba(126,176,255,.32);border-radius:16px;background:linear-gradient(110deg,rgba(7,20,42,.96),rgba(37,21,70,.92));box-shadow:0 12px 40px rgba(0,0,0,.35)}
 .nav{min-height:64px;padding:8px 12px;display:flex;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:9px;min-width:0;text-decoration:none;color:#fff}.logo,.logo img{width:42px;height:42px}.logo img{display:block;object-fit:contain}.brand-title{font-size:18px;font-weight:900;letter-spacing:-.6px;white-space:nowrap}.hp,.sh{color:#fff}.mock{color:#37b8ff}.tagline{font-size:7px;color:#8ea2bd;margin-top:3px}.nav-right{margin-left:auto;display:flex;align-items:center;gap:8px}.nav-pill,.user{border:1px solid rgba(126,176,255,.22);border-radius:9px;background:rgba(255,255,255,.045)}.nav-pill{padding:8px 10px;font-size:9px;font-weight:800;color:#cbd9ea}.user{display:flex;align-items:center;gap:6px;padding:4px 8px 4px 5px}.avatar{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,#2497ff,#9a5cff);font-size:10px;font-weight:900}.user-name{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;font-weight:800}.logout{border:0;background:none;color:#879ab3;font-size:8px;cursor:pointer}
 .wrap{width:min(1080px,calc(100% - 24px));margin:25px auto 50px}.exam-head,.question-card,.result{border:1px solid var(--line);border-radius:16px;background:rgba(12,29,57,.94);box-shadow:0 15px 40px rgba(0,0,0,.22)}.exam-head{padding:18px 20px;background:linear-gradient(135deg,rgba(13,34,66,.94),rgba(24,23,62,.88))}
 .eyebrow{font-size:9px;color:#66c8ff;font-weight:900;letter-spacing:1px;text-transform:uppercase}.exam-title{margin:5px 0 2px;font-size:25px}.exam-sub{margin:0;color:var(--m);font-size:10px}.cloud-status{margin-top:10px;display:flex;align-items:center;gap:7px;color:#8fa5bd;font-size:9px}.dot{width:7px;height:7px;border-radius:50%;background:#12c98b;box-shadow:0 0 10px rgba(18,201,139,.55)}.dot.saving{background:#ffd166}.dot.error{background:#ff6075}
@@ -177,6 +177,41 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
   .modal-actions{flex-direction:row;gap:8px}
   .modal-actions .modal-btn{width:auto;flex:1}
 }
+
+/* Final practice result / review navigation */
+.progress-row{display:none!important}
+.practice-result-inline{margin-top:18px;padding:16px 0 0;border-top:1px solid rgba(126,176,255,.16)}
+.inline-result-top{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.inline-result-title{font-size:16px;font-weight:900;margin-top:3px}
+.inline-result-sub{font-size:9px;color:#9eb0c8;margin-top:4px}
+.final-score{font-size:30px;font-weight:950;color:#f5f8ff;white-space:nowrap}
+.final-score span{font-size:10px;color:#9eb0c8;font-weight:700;margin-left:4px}
+.review-wrap{margin-top:18px;padding-top:16px;border-top:1px solid rgba(126,176,255,.16)}
+.review-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.review-title-row strong{font-size:11px;display:block;color:#f5f8ff}
+.review-title-row span{font-size:8px;color:#91a6be;display:block;margin-top:3px}
+.review-next{border:1px solid rgba(126,176,255,.22);background:#0c2040;color:#dce8f6;border-radius:8px;padding:8px 12px;font-size:9px;font-weight:800;cursor:pointer}
+.review-list{width:100%}
+.review-item{padding:13px 14px;margin-top:9px;border:1px solid rgba(126,176,255,.13);border-radius:11px;background:rgba(255,255,255,.025)}
+.review-options{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.review-option{padding:9px 10px;border:1px solid rgba(126,176,255,.16);border-radius:8px;background:#0b1f3d;color:#cfdced;font-size:9px;line-height:1.35}
+.review-option.correct{border-color:#12c98b;background:rgba(18,201,139,.13);color:#dffff2}
+.review-option.wrong{border-color:#ff6075;background:rgba(255,96,117,.13);color:#ffe1e5}
+.review-option .review-letter{display:inline-grid;place-items:center;width:19px;height:19px;margin-right:5px;border-radius:5px;background:rgba(255,255,255,.06);font-size:7px;font-weight:900}
+.review-explanation{margin-top:9px;padding:9px 10px;border-left:3px solid #12c98b;background:rgba(18,201,139,.045);color:#bdd6ca;font-size:9px;line-height:1.55}
+.review-actions{display:flex;justify-content:center;margin-top:14px}
+.review-link{border:0;border-radius:10px;padding:11px 18px;font-size:10px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(100deg,#168eff,#8a54f6);text-decoration:none}
+.result-only{margin-top:0}
+@media(max-width:700px){
+  .topbar{width:calc(100% - 18px)}
+  .inline-result-top{align-items:flex-start}
+  .final-score{font-size:25px}
+  .review-options{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .review-title-row{align-items:flex-start}
+  .review-next{white-space:nowrap}
+}
 </style></head><body>
 <header class="topbar"><nav class="nav">
 <a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
@@ -193,7 +228,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
       Your progress is saved to your account, and when you return later, you can continue from exactly where you left off.
     </div>
     <div class="modal-actions">
-      <button class="modal-btn modal-later" id="laterBtn">बाद में करूँगा</button>
+      <button class="modal-btn modal-later" id="laterBtn">Do It Later</button>
       <button class="modal-btn modal-start" id="startBtn">Start Practice →</button>
     </div>
   </div>
@@ -215,20 +250,18 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 <h1 class="exam-title">Computer Fundamentals</h1>
 <p class="exam-sub"><span class="resume-note"><span class="resume-hi">आप जब चाहें अभ्यास रोक सकते हैं और बाद में यहीं से उसी जगह से जारी रख सकते हैं।</span><span class="resume-en">You can pause your practice anytime and continue later from exactly where you left off.</span></span></p>
 <div class="cloud-status"><span class="dot" id="cloudDot"></span><span id="cloudStatus">Progress saved to your account</span></div>
-<div class="progress-row"><div class="progress"><span id="progressBar"></span></div><div class="progress-text" id="progressText">0 / 0</div></div>
-<div class="practice-result-inline" id="inlineResult" style="display:none">
+<div class="practice-result-inline result-only" id="inlineResult" style="display:none">
   <div class="inline-result-top">
-    <div><div class="eyebrow">Practice Completed</div><div class="inline-result-title">Answer Review</div></div>
-    
-  </div>
-  <div class="review-wrap" id="reviewWrap">
-    <div class="review-title-row">
-      <div><strong>Answer Review</strong><span id="reviewPage">Questions 1–10</span></div>
-      <button class="review-next" id="reviewNext">Next 10 →</button>
+    <div>
+      <div class="eyebrow">Practice Completed</div>
+      <div class="inline-result-title">Computer Fundamentals Practice Completed</div>
+      <div class="inline-result-sub">Your practice result has been saved to your account.</div>
     </div>
-    <div class="review-list" id="review"></div>
+    <div class="final-score" id="finalScore">0 / 0</div>
   </div>
-</div>
+  <div class="review-actions">
+    <a class="review-link" id="reviewPracticeBtn" href="mahapack-study.html?test=computer_fundamentals_01">Review Practice →</a>
+  </div>
 </div>
 <section class="question-card" id="questionCard">
 <div class="q-number" id="qNumber"></div>
@@ -261,8 +294,6 @@ let userName='';
 let sessionRef=null;
 let resultRef=null;
 let state={current:0,answers:{},submitted:false,startedAt:null,completedAt:null};
-const PAGE_SIZE=10;
-let reviewPageIndex=0;
 
 function date(v){if(!v)return null;if(v.toDate)return v.toDate();const d=new Date(v);return Number.isNaN(d.getTime())?null:d}
 function active(v){const d=date(v?.expiresAt);return !!(d&&d.getTime()>Date.now())}
@@ -299,13 +330,11 @@ function render(){
 if(state.submitted){showResult();return}
 const q=QUESTIONS[state.current],selected=state.answers[state.current],total=QUESTIONS.length;
 $('qNumber').textContent=`Question ${state.current+1} of ${total}`;
-$('progressBar').style.width=`${(Object.keys(state.answers).length/total)*100}%`;
 const attemptedNow=Object.keys(state.answers).length;
 let correctNow=0;
 Object.keys(state.answers).forEach(k=>{const i=Number(k);if(QUESTIONS[i]&&state.answers[i]===QUESTIONS[i].answer)correctNow++});
 const wrongNow=attemptedNow-correctNow;
 const scoreNow=attemptedNow?Math.round(correctNow/attemptedNow*100):0;
-$('progressText').textContent=`${attemptedNow} / ${total}`;
 $('liveAttempted').textContent=`${attemptedNow}/${total}`;
 $('liveCorrect').textContent=correctNow;
 $('liveWrong').textContent=wrongNow;
@@ -331,60 +360,20 @@ let correct=0;QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++
 await setDoc(resultRef,{uid,testId:TEST_ID,questionCount:QUESTIONS.length,attempted:Object.keys(state.answers).length,correct,wrong:QUESTIONS.length-correct,percentage:Math.round(correct/QUESTIONS.length*100),answers:state.answers,status:'completed',completedAt:serverTimestamp()})
 }
 function showResult(){
-$('questionCard').style.display='none';$('inlineResult').style.display='block';
-let correct=0;QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++});
-const total=QUESTIONS.length,attempted=Object.keys(state.answers).length;
-if($('score'))$('score').textContent=Math.round(correct/total*100)+'%';if($('resultMeta'))$('resultMeta').textContent='Your answers and final result are saved to your account.';
-$('liveAttempted').textContent=`${attempted}/${total}`;
-$('liveCorrect').textContent=correct;
-$('liveWrong').textContent=total-correct;
-$('liveScore').textContent=`${Math.round(correct/total*100)}%`;
-$('progressBar').style.width='100%';$('progressText').textContent=`${total} / ${total}`;
-reviewPageIndex=0;
-renderReview();
-}
-
-function renderReview(){
+  $('questionCard').style.display='none';
+  $('inlineResult').style.display='block';
+  let correct=0;
+  QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++});
   const total=QUESTIONS.length;
-  const start=reviewPageIndex*PAGE_SIZE;
-  const end=Math.min(start+PAGE_SIZE,total);
-  $('reviewPage').textContent=`Questions ${start+1}–${end} of ${total}`;
-  $('reviewNext').disabled=end>=total;
-  $('reviewNext').textContent=end>=total?'Review Complete':'Next 10 →';
-
-  $('review').innerHTML=QUESTIONS.slice(start,end).map((q,offset)=>{
-    const i=start+offset;
-    const selected=state.answers[i];
-    const selectedText=selected===undefined?'Not answered':q.options[selected];
-
-    const opts=q.options.map((o,j)=>{
-      let cls='review-option';
-      if(j===q.answer) cls+=' correct';
-      if(selected!==undefined && j===selected && selected!==q.answer) cls+=' wrong';
-      const label=String.fromCharCode(65+j);
-      return `<div class="${cls}"><span class="review-letter">${label}</span>${esc(o)}</div>`;
-    }).join('');
-
-    const result=selected===q.answer
-      ? '<span style="color:#3ce0aa;font-weight:800">✓ Correct</span>'
-      : '<span style="color:#ff7284;font-weight:800">✕ Incorrect</span>';
-
-    return `<div class="review-item">
-      <div class="review-q">Q${i+1}. ${esc(q.en||'')}<span class="review-q-hi">${esc(q.hi||'')}</span></div>
-      <div style="margin-top:6px;font-size:8px">${result} &nbsp; Your answer: ${esc(selectedText)}</div>
-      <div class="review-options">${opts}</div>
-      <div class="review-explanation"><strong>Explanation:</strong> ${esc(q.explanation||'')}</div>
-    </div>`;
-  }).join('');
+  const attempted=Object.keys(state.answers).length;
+  const wrong=attempted-correct;
+  const percentage=total?Math.round(correct/total*100):0;
+  $('finalScore').textContent=`${correct} / ${total}`;
+  $('liveAttempted').textContent=`${attempted}/${total}`;
+  $('liveCorrect').textContent=correct;
+  $('liveWrong').textContent=wrong;
+  $('liveScore').textContent=`${percentage}%`;
 }
-
-$('reviewNext').onclick=()=>{
-  if((reviewPageIndex+1)*PAGE_SIZE<QUESTIONS.length){
-    reviewPageIndex++;
-    renderReview();
-    $('reviewWrap').scrollIntoView({behavior:'smooth',block:'start'});
-  }
-};
 
 $('nextBtn').onclick=next;
 $('logoutBtn').onclick=async()=>{await signOut(auth);location.href='firebase-login.html'};
