@@ -127,14 +127,72 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
   .live-stats{gap:4px}
   .live-circle{width:34px;height:34px}
 }
+
+/* Progress and resume-message polish */
+.exam-sub{margin-top:7px}
+.resume-note{display:inline-block;padding:8px 11px;border-left:3px solid #42b8ff;border-radius:7px;background:linear-gradient(90deg,rgba(42,164,255,.13),rgba(139,92,246,.08));color:#d9ecff;font-weight:700;line-height:1.55}
+.resume-hi,.resume-en{display:block}
+.resume-en{margin-top:2px;color:#9fc2df;font-size:8.5px;font-weight:600}
+.progress-row{display:block;margin-top:14px}
+.progress{width:100%}
+.progress-text{display:block;text-align:right;margin-top:5px;font-size:9px}
+.question-card{width:100%;max-width:none;margin-left:0;margin-right:0}
+#exam{width:100%}
+
+/* Start / resume modal */
+.practice-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(2,8,20,.72);backdrop-filter:blur(7px)}
+.practice-modal-card{width:min(520px,100%);border:1px solid rgba(93,171,255,.35);border-radius:18px;padding:25px;background:linear-gradient(145deg,#0c2040,#19163f);box-shadow:0 25px 80px rgba(0,0,0,.55)}
+.modal-badge{display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(42,164,255,.12);border:1px solid rgba(42,164,255,.28);color:#65c5ff;font-size:8px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+.practice-modal-card h2{margin:10px 0 7px;font-size:22px}
+.modal-lead{color:#d8e6f5;font-size:11px;line-height:1.6;margin:0 0 10px}
+.modal-points{margin:12px 0;padding:12px 14px;border-radius:11px;background:rgba(255,255,255,.035);border:1px solid rgba(126,176,255,.14);color:#a9bdd3;font-size:9px;line-height:1.7}
+.modal-points b{color:#f0f6ff}
+.modal-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:16px}
+.modal-btn{border-radius:9px;padding:10px 16px;font-size:9px;font-weight:900;cursor:pointer}
+.modal-start{border:0;color:#fff;background:linear-gradient(100deg,#168eff,#8a54f6)}
+.modal-later{border:1px solid rgba(126,176,255,.22);color:#cbd9ea;background:#0b1f3d}
+.start-later-card{display:none;margin-top:14px;padding:22px;border:1px solid rgba(126,176,255,.22);border-radius:15px;background:rgba(12,29,57,.95);text-align:center}
+.start-later-card h3{margin:0 0 6px;font-size:16px}.start-later-card p{margin:0 0 13px;color:#94a9c1;font-size:9px}
+@media(max-width:600px){
+ .resume-note{display:block;font-size:9px}
+ .resume-en{font-size:8px}
+ .practice-modal{padding:14px}
+ .practice-modal-card{padding:20px;border-radius:15px}
+ .practice-modal-card h2{font-size:19px}
+ .modal-actions{flex-direction:column-reverse}
+ .modal-btn{width:100%}
+}
 </style></head><body>
 <header class="topbar"><nav class="nav">
 <a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
 <div class="nav-right"><span class="nav-pill">Computer Fundamentals</span><div class="user"><span class="avatar" id="avatar">U</span><span class="user-name" id="userName">User</span><button class="logout" id="logoutBtn">Logout</button></div></div>
 </nav></header>
+
+<div class="practice-modal" id="practiceModal">
+  <div class="practice-modal-card">
+    <span class="modal-badge">Study & Practice</span>
+    <h2>Start Computer Fundamentals Practice</h2>
+    <p class="modal-lead">इस practice में कुल <b id="modalTotal">400</b> questions हैं। आपको सारे questions एक साथ पूरा करने की जरूरत नहीं है।</p>
+    <div class="modal-points">
+      <b>आप कभी भी practice रोक सकते हैं।</b><br>
+      आपका progress अपने account में save रहेगा और अगली बार आप <b>उसी question से</b> practice जारी कर सकेंगे जहाँ आपने छोड़ा था।<br><br>
+      <span style="color:#9fc2df">You can pause anytime and continue later from exactly where you left off.</span>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn modal-later" id="laterBtn">बाद में करूँगा</button>
+      <button class="modal-btn modal-start" id="startBtn">Start Practice →</button>
+    </div>
+  </div>
+</div>
 <main class="wrap">
 <div id="loading" class="loading">Checking your premium access...</div>
 <div id="accessBox" class="access-box"><h2>Premium Access Required</h2><p>Your Computer Fundamentals premium access is not active.</p><a class="buy-btn" href="payment.html?product=computer-fundamentals">Buy Access →</a></div>
+<div class="start-later-card" id="startLaterCard">
+  <h3>Practice is ready whenever you are</h3>
+  <p>जब आप तैयार हों, यहीं से Computer Fundamentals practice शुरू करें।</p>
+  <button class="modal-btn modal-start" id="startLaterBtn">Start Practice →</button>
+</div>
+
 <section id="exam" style="display:none">
 <div class="exam-head">
 <div class="live-stats">
@@ -145,7 +203,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 </div>
 <div class="eyebrow">Study & Practice • Computer Fundamentals</div>
 <h1 class="exam-title">Computer Fundamentals</h1>
-<p class="exam-sub"><span id="totalLabel">Practice Questions</span> • आप जब चाहें अभ्यास रोक सकते हैं और बाद में यहीं से जारी रख सकते हैं।<br><span class="en-note">You can pause your practice anytime and continue later from where you left off.</span></p>
+<p class="exam-sub"><span class="resume-note"><span class="resume-hi">आप जब चाहें अभ्यास रोक सकते हैं और बाद में यहीं से उसी जगह से जारी रख सकते हैं।</span><span class="resume-en">You can pause your practice anytime and continue later from exactly where you left off.</span></span></p>
 <div class="cloud-status"><span class="dot" id="cloudDot"></span><span id="cloudStatus">Progress saved to your account</span></div>
 <div class="progress-row"><div class="progress"><span id="progressBar"></span></div><div class="progress-text" id="progressText">0 / 0</div></div>
 <div class="practice-result-inline" id="inlineResult" style="display:none">
@@ -206,6 +264,30 @@ function stateFromDoc(data){state={current:Math.max(0,Math.min(Number(data?.curr
 async function loadCloudState(){const snap=await getDoc(sessionRef);if(snap.exists())stateFromDoc(snap.data());else{state={current:0,answers:{},submitted:false,startedAt:null,completedAt:null};await saveCloudState(true)}}
 async function saveCloudState(firstSave=false){setCloudStatus('saving','Saving progress...');try{const payload={uid,testId:TEST_ID,current:state.current,answers:state.answers,status:'in_progress',questionCount:QUESTIONS.length,updatedAt:serverTimestamp()};if(firstSave&&!state.startedAt)payload.startedAt=serverTimestamp();await setDoc(sessionRef,payload,{merge:true});setCloudStatus('ok','Progress saved to your account');return true}catch(e){console.error(e);setCloudStatus('error','Could not save progress. Please try again.');return false}}
 async function saveAnswer(index){state.answers[state.current]=index;const ok=await saveCloudState(false);if(ok)render()}
+
+function openPracticeModal(){
+  $('modalTotal').textContent=QUESTIONS.length;
+  $('practiceModal').style.display='flex';
+}
+function closePracticeModal(){
+  $('practiceModal').style.display='none';
+}
+function startPractice(){
+  closePracticeModal();
+  $('startLaterCard').style.display='none';
+  $('questionCard').style.display='block';
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function deferPractice(){
+  closePracticeModal();
+  $('questionCard').style.display='none';
+  $('startLaterCard').style.display='block';
+}
+$('startBtn').onclick=startPractice;
+$('laterBtn').onclick=deferPractice;
+$('startLaterBtn').onclick=startPractice;
+
 function render(){
 if(state.submitted){showResult();return}
 const q=QUESTIONS[state.current],selected=state.answers[state.current],total=QUESTIONS.length;
@@ -221,7 +303,7 @@ $('liveAttempted').textContent=`${attemptedNow}/${total}`;
 $('liveCorrect').textContent=correctNow;
 $('liveWrong').textContent=wrongNow;
 $('liveScore').textContent=`${scoreNow}%`;
-$('totalLabel').textContent=`${total} Practice Questions`;
+
 $('questionText').innerHTML=`<span>${esc(q.en||'')}</span><span class="hi">${esc(q.hi||'')}</span>`;
 const box=$('options');box.innerHTML='';
 q.options.forEach((o,i)=>{const b=document.createElement('button');let cls='option';if(selected!==undefined){if(i===q.answer)cls+=' reveal-correct';if(i===selected&&selected===q.answer)cls+=' correct';if(i===selected&&selected!==q.answer)cls+=' incorrect'}b.className=cls;b.disabled=selected!==undefined;b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${esc(o)}</span>`;b.onclick=()=>saveAnswer(i);box.appendChild(b)});
@@ -250,7 +332,7 @@ $('liveAttempted').textContent=`${attempted}/${total}`;
 $('liveCorrect').textContent=correct;
 $('liveWrong').textContent=total-correct;
 $('liveScore').textContent=`${Math.round(correct/total*100)}%`;
-$('progressBar').style.width='100%';$('progressText').textContent=`${total} / ${total}`;$('totalLabel').textContent='Practice Completed';
+$('progressBar').style.width='100%';$('progressText').textContent=`${total} / ${total}`;
 reviewPageIndex=0;
 renderReview();
 }
@@ -333,6 +415,7 @@ onAuthStateChanged(auth,async user=>{
     $('exam').style.display='block';
 
     if(state.submitted)showResult();
+    else if(Object.keys(state.answers).length===0)openPracticeModal();
     else render();
   }catch(e){
     console.error(e);
