@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Mode | HPMockShashtra</title>
+
+<style>
+:root{
+  --bg:#061326;
+  --panel:#0c1d39;
+  --panel2:#102747;
+  --line:rgba(126,176,255,.20);
+  --text:#f5f8ff;
+  --muted:#9eb0c8;
+  --blue:#2296ff;
+  --violet:#8b5cf6;
+  --green:#12c98b;
+  --red:#ff6075;
+  --gold:#ffd166;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  background:
+    radial-gradient(circle at 80% 8%,rgba(93,61,180,.20),transparent 30%),
+    radial-gradient(circle at 8% 75%,rgba(0,130,255,.13),transparent 28%),
+    var(--bg);
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.16;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:38px 38px;
+}
+.hidden{display:none!important}
+
+.wrap{
+  width:min(1120px,calc(100% - 28px));
+  margin:22px auto 40px;
+  position:relative;
+  z-index:1;
+}
+
+/* Header */
+.study-header{
+  border:1px solid rgba(126,176,255,.28);
+  border-radius:18px;
+  padding:20px 22px;
+  background:linear-gradient(120deg,rgba(9,29,57,.96),rgba(34,22,70,.94));
+  box-shadow:0 16px 45px rgba(0,0,0,.28);
+  margin-bottom:14px;
+}
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand-area{min-width:0}
+.kicker{
+  color:#66c8ff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+.title{
+  margin:6px 0 3px;
+  font-size:26px;
+  line-height:1.2;
+  letter-spacing:-.5px;
+}
+.subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:10px;
+}
+.summary{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-shrink:0;
+}
+.stat{
+  min-width:70px;
+  height:68px;
+  padding:7px 6px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  background:rgba(255,255,255,.045);
+}
+.stat-number{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.90);
+  font-size:11px;
+  font-weight:950;
+}
+.stat-label{
+  font-size:7px;
+  font-weight:800;
+  color:#aebed1;
+  white-space:nowrap;
+}
+.stat.correct .stat-number{color:#087f57}
+.stat.correct{border-color:rgba(18,201,139,.32)}
+.stat.wrong .stat-number{color:#c72f49}
+.stat.wrong{border-color:rgba(255,96,117,.32)}
+.stat.unattempted .stat-number{color:#53657c}
+.stat.unattempted{border-color:rgba(156,163,175,.24)}
+.score-box{
+  height:68px;
+  min-width:128px;
+  padding:7px 11px;
+  border:1px solid rgba(139,92,246,.35);
+  border-radius:12px;
+  background:rgba(139,92,246,.10);
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.score-ring{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  position:relative;
+  background:conic-gradient(var(--green) var(--score,0%),rgba(255,255,255,.12) 0);
+}
+.score-ring:before{
+  content:"";
+  position:absolute;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#15183d;
+}
+.score-ring span{position:relative;font-size:9px;font-weight:950}
+.score-text strong{display:block;font-size:16px}
+.score-text small{display:block;margin-top:3px;color:var(--muted);font-size:7px;font-weight:700}
+
+/* Main */
+.loading,.error-box{
+  padding:45px 20px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(12,29,57,.94);
+  text-align:center;
+  color:var(--muted);
+  box-shadow:0 15px 40px rgba(0,0,0,.20);
+}
+.error-box h2{margin:0 0 8px;color:var(--text);font-size:20px}
+.error-box p{margin:0 0 16px;font-size:10px}
+.top-actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.page-info{
+  color:#aebed1;
+  font-size:9px;
+  font-weight:800;
+}
+.nav-btn{
+  border:1px solid rgba(126,176,255,.22);
+  background:#0c2040;
+  color:#dce8f6;
+  border-radius:9px;
+  padding:9px 14px;
+  font-size:9px;
+  font-weight:850;
+  cursor:pointer;
+}
+.nav-btn:hover:not(:disabled){
+  border-color:#35aaff;
+  background:#102b50;
+}
+.nav-btn:disabled{opacity:.35;cursor:not-allowed}
+
+.question-list{
+  display:grid;
+  gap:12px;
+}
+.question-card{
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:rgba(12,29,57,.94);
+  box-shadow:0 12px 32px rgba(0,0,0,.18);
+  padding:18px 20px;
+}
+.question-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+.q-no{
+  color:#66c8ff;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.7px;
+}
+.status{
+  padding:5px 9px;
+  border-radius:7px;
+  font-size:8px;
+  font-weight:900;
+}
+.status.correct{background:rgba(18,201,139,.13);color:#4de3b0;border:1px solid rgba(18,201,139,.25)}
+.status.wrong{background:rgba(255,96,117,.13);color:#ff8293;border:1px solid rgba(255,96,117,.25)}
+.status.unattempted{background:rgba(156,163,175,.10);color:#aab8ca;border:1px solid rgba(156,163,175,.18)}
+
+.question-en{
+  font-size:16px;
+  line-height:1.5;
+  font-weight:850;
+  color:#f5f8ff;
+}
+.question-hi{
+  margin-top:5px;
+  font-size:13px;
+  line-height:1.55;
+  font-weight:650;
+  color:#c7d7e9;
+}
+.options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:13px;
+}
+.option{
+  min-width:0;
+  padding:10px 11px;
+  border:1px solid rgba(126,176,255,.16);
+  border-radius:9px;
+  background:#0b1f3d;
+  color:#cfdced;
+  font-size:9px;
+  line-height:1.5;
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+}
+.option.correct{
+  border-color:rgba(18,201,139,.75);
+  background:rgba(18,201,139,.12);
+  color:#dffff2;
+}
+.option.wrong{
+  border-color:rgba(255,96,117,.75);
+  background:rgba(255,96,117,.12);
+  color:#ffe1e5;
+}
+.option-letter{
+  flex:0 0 21px;
+  width:21px;
+  height:21px;
+  border-radius:5px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.06);
+  color:#9fc9ee;
+  font-size:7px;
+  font-weight:950;
+}
+.option-text{
+  min-width:0;
+  flex:1;
+}
+.option-en{
+  display:block;
+  color:inherit;
+  font-weight:750;
+}
+.option-hi{
+  display:block;
+  margin-top:3px;
+  color:#9eb4cb;
+  font-size:8px;
+  font-weight:600;
+  line-height:1.45;
+}
+.option.correct .option-hi{color:#a9ddca}
+.option.wrong .option-hi{color:#e2aeb6}
+
+.explanation{
+  margin-top:11px;
+  padding:11px 13px;
+  border-left:3px solid var(--green);
+  border-radius:0 9px 9px 0;
+  background:rgba(18,201,139,.045);
+  color:#bdd6ca;
+  font-size:9px;
+  line-height:1.65;
+}
+.explanation strong{
+  display:block;
+  color:#4de3b0;
+  font-size:8px;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  margin-top:18px;
+  color:#71859f;
+  font-size:8px;
+}
+.footer a{color:#8fa8c5;text-decoration:none;margin:0 7px}
+
+/* Responsive */
+@media(max-width:850px){
+  .header-row{flex-direction:column;align-items:stretch}
+  .summary{justify-content:flex-start;flex-wrap:wrap}
+}
+@media(max-width:600px){
+  .wrap{width:calc(100% - 18px);margin-top:12px}
+  .study-header{padding:17px 15px}
+  .title{font-size:21px}
+  .summary{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stat{min-width:0;height:60px}
+  .score-box{grid-column:1/-1;justify-content:center;height:60px}
+  .score-ring{width:42px;height:42px}
+  .score-ring:before{width:32px;height:32px}
+  .top-actions{margin-bottom:10px}
+  .nav-btn{padding:9px 11px}
+  .question-card{padding:15px}
+  .question-en{font-size:15px}
+  .question-hi{font-size:12px}
+  .options{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <header class="study-header">
+    <div class="header-row">
+      <div class="brand-area">
+        <div class="kicker">Study Mode • Practice Review</div>
+        <h1 class="title" id="pageTitle">Computer Fundamentals</h1>
+        <p class="subtitle">Review your completed practice — correct and incorrect answers with explanations.</p>
+      </div>
+
+      <div class="summary">
+        <div class="stat correct">
+          <div class="stat-number" id="correctCount">0</div>
+          <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat wrong">
+          <div class="stat-number" id="wrongCount">0</div>
+          <div class="stat-label">Wrong</div>
+        </div>
+        <div class="stat unattempted">
+          <div class="stat-number" id="unattemptedCount">0</div>
+          <div class="stat-label">Not Attempted</div>
+        </div>
+        <div class="score-box">
+          <div class="score-ring" id="scoreRing" style="--score:0%">
+            <span id="scoreRingText">0%</span>
+          </div>
+          <div class="score-text">
+            <strong id="score">0 / 0</strong>
+            <small id="percentage">Score</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="loading" class="loading">Loading your practice review...</div>
+
+  <section id="reviewArea" class="hidden">
+    <div class="top-actions">
+      <button class="nav-btn" id="prevPage">← Previous 10</button>
+      <div class="page-info" id="pageInfo">Questions 1–10</div>
+      <button class="nav-btn" id="nextPage">Next 10 →</button>
+    </div>
+
+    <div class="question-list" id="questionList"></div>
+
+    <div class="top-actions" style="margin-top:12px">
+      <button class="nav-btn" id="prevPageBottom">← Previous 10</button>
+      <div class="page-info" id="pageInfoBottom">Questions 1–10</div>
+      <button class="nav-btn" id="nextPageBottom">Next 10 →</button>
+    </div>
+  </section>
+
+  <div id="errorArea" class="error-box hidden"></div>
+
+  <div class="footer">
+    © 2026 HPMockShashtra •
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </div>
+
+</main>
+
+<script type="module">
+import {auth,db} from './firebase-config.js';
+import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+import {doc,getDoc} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
+import {QUESTIONS} from './fundamentals.js';
+
+const $=id=>document.getElementById(id);
+
+const params=new URLSearchParams(location.search);
+const TEST_ID=params.get('test') || 'computer_fundamentals_01';
+
+const TEST_CONFIG={
+  computer_fundamentals_01:{
+    name:'Computer Fundamentals',
+    practicePage:'paid-computer-fundamentals.html'
+  }
+};
+
+const config=TEST_CONFIG[TEST_ID];
+
+let answers={};
+let currentPage=0;
+const PAGE_SIZE=10;
+
+function esc(v){
+  return String(v??'').replace(/[&<>"']/g,c=>({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#039;'
+  }[c]));
+}
+
+function normalizeAnswers(a){
+  const out={};
+  if(a&&typeof a==='object'){
+    Object.keys(a).forEach(k=>{
+      const n=Number(a[k]);
+      if(Number.isInteger(n))out[k]=n;
+    });
+  }
+  return out;
+}
+
+function updateSummary(){
+  let correct=0,wrong=0,unattempted=0;
+
+  QUESTIONS.forEach((q,i)=>{
+    const selected=answers[i];
+
+    if(selected===undefined){
+      unattempted++;
+    }else if(Number(selected)===Number(q.answer)){
+      correct++;
+    }else{
+      wrong++;
+    }
+  });
+
+  const total=QUESTIONS.length;
+  const percentage=total?Math.round(correct/total*100):0;
+
+  $('correctCount').textContent=correct;
+  $('wrongCount').textContent=wrong;
+  $('unattemptedCount').textContent=unattempted;
+  $('score').textContent=`${correct} / ${total}`;
+  $('percentage').textContent=`${percentage}% Score`;
+  $('scoreRing').style.setProperty('--score',`${percentage}%`);
+  $('scoreRingText').textContent=`${percentage}%`;
+}
+
+function renderPage(){
+  const total=QUESTIONS.length;
+  const start=currentPage*PAGE_SIZE;
+  const end=Math.min(start+PAGE_SIZE,total);
+
+  $('pageInfo').textContent=`Questions ${start+1}–${end} of ${total}`;
+  $('pageInfoBottom').textContent=`Questions ${start+1}–${end} of ${total}`;
+
+  $('prevPage').disabled=currentPage===0;
+  $('prevPageBottom').disabled=currentPage===0;
+
+  const lastPage=Math.max(0,Math.ceil(total/PAGE_SIZE)-1);
+  $('nextPage').disabled=currentPage>=lastPage;
+  $('nextPageBottom').disabled=currentPage>=lastPage;
+
+  const list=$('questionList');
+  list.innerHTML='';
+
+  for(let i=start;i<end;i++){
+    const q=QUESTIONS[i];
+    const selected=answers[i];
+    const attempted=selected!==undefined;
+    const isCorrect=attempted && Number(selected)===Number(q.answer);
+
+    const card=document.createElement('article');
+    card.className='question-card';
+
+    let statusClass='unattempted';
+    let statusText='Not Attempted';
+
+    if(isCorrect){
+      statusClass='correct';
+      statusText='✓ Correct';
+    }else if(attempted){
+      statusClass='wrong';
+      statusText='✕ Incorrect';
+    }
+
+    let optionsHtml='';
+
+    q.options.forEach((o,j)=>{
+      const optionEn=typeof o==='object'?(o.en||''):o;
+      const optionHi=typeof o==='object'?(o.hi||''):'';
+
+      const isCorrectOption=j===Number(q.answer);
+      const isWrongSelected=attempted && Number(selected)===j && !isCorrectOption;
+
+      let cls='option';
+      if(isCorrectOption)cls+=' correct';
+      else if(isWrongSelected)cls+=' wrong';
+
+      optionsHtml+=`
+        <div class="${cls}">
+          <span class="option-letter">${String.fromCharCode(65+j)}</span>
+          <span class="option-text">
+            <span class="option-en">${esc(optionEn)}</span>
+            ${optionHi?`<span class="option-hi">${esc(optionHi)}</span>`:''}
+          </span>
+        </div>
+      `;
+    });
+
+    card.innerHTML=`
+      <div class="question-head">
+        <div class="q-no">QUESTION ${i+1}</div>
+        <div class="status ${statusClass}">${statusText}</div>
+      </div>
+
+      <div class="question-en">${esc(q.en||'')}</div>
+      <div class="question-hi">${esc(q.hi||'')}</div>
+
+      <div class="options">${optionsHtml}</div>
+
+      <div class="explanation">
+        <strong>Explanation</strong>
+        ${esc(q.explanation||'Explanation is not available for this question.')}
+      </div>
+    `;
+
+    list.appendChild(card);
+  }
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showError(title,message,buttonText,buttonHref){
+  $('loading').classList.add('hidden');
+  $('reviewArea').classList.add('hidden');
+  $('errorArea').classList.remove('hidden');
+
+  $('errorArea').innerHTML=`
+    <h2>${esc(title)}</h2>
+    <p>${esc(message)}</p>
+    ${buttonText?`<a class="nav-btn" style="display:inline-block;text-decoration:none" href="${esc(buttonHref||'#')}">${esc(buttonText)}</a>`:''}
+  `;
+}
+
+function goPage(delta){
+  const totalPages=Math.ceil(QUESTIONS.length/PAGE_SIZE);
+  currentPage=Math.max(0,Math.min(currentPage+delta,totalPages-1));
+  renderPage();
+}
+
+$('prevPage').onclick=()=>goPage(-1);
+$('nextPage').onclick=()=>goPage(1);
+$('prevPageBottom').onclick=()=>goPage(-1);
+$('nextPageBottom').onclick=()=>goPage(1);
+
+onAuthStateChanged(auth,async user=>{
+  if(!user){
+    location.href='firebase-login.html';
+    return;
+  }
+
+  try{
+    if(!config){
+      throw new Error('Invalid test ID.');
+    }
+
+    $('pageTitle').textContent=`${config.name} — Study Mode`;
+
+    if(!QUESTIONS.length){
+      showError(
+        'Question Bank Empty',
+        'No questions are available for this practice.',
+        'Back to Practice',
+        config.practicePage
+      );
+      return;
+    }
+
+    const attemptRef=doc(
+      db,
+      'testAttempts',
+      user.uid+'_'+TEST_ID
+    );
+
+    const snap=await getDoc(attemptRef);
+
+    if(!snap.exists()){
+      showError(
+        'No Practice Found',
+        'You have not completed this practice yet. Complete the practice first to open its review.',
+        'Go to Practice',
+        config.practicePage
+      );
+      return;
+    }
+
+    const attempt=snap.data();
+
+    if(attempt.testId!==TEST_ID){
+      throw new Error('Invalid practice record.');
+    }
+
+    answers=normalizeAnswers(attempt.answers);
+
+    updateSummary();
+
+    $('loading').classList.add('hidden');
+    $('reviewArea').classList.remove('hidden');
+
+    renderPage();
+
+  }catch(e){
+    console.error(e);
+
+    showError(
+      'Unable to Load Study Mode',
+      'Please refresh the page and try again.',
+      'Back to Practice',
+      config?.practicePage || 'paid-computer-fundamentals.html'
+    );
+  }
+});
+</script>
+</body>
+</html>
