@@ -235,7 +235,25 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
   .live-stat{min-width:41px}
   .live-circle{width:36px;height:36px}
 }
-</style></head><body>
+</style>
+<style>
+/* v6: final alignment polish — keep all existing practice/session logic unchanged */
+.exam-head{padding-right:22px!important}
+.exam-sub{display:none!important}
+.question-card{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+.practice-result-inline{text-align:center!important;width:100%!important}
+.practice-result-inline .inline-result-top{display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+.practice-result-inline .inline-result-top>div{width:100%!important}
+.practice-result-inline .final-score{margin-top:12px!important}
+.practice-result-inline .review-actions{justify-content:center!important}
+@media(max-width:700px){
+  .exam-head{padding:70px 14px 17px!important}
+  .question-card{width:100%!important}
+  .practice-result-inline .inline-result-top{display:block!important}
+  .practice-result-inline .final-score{margin-top:12px!important}
+}
+</style>
+</head><body>
 <header class="topbar"><nav class="nav">
 <a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
 <div class="nav-right"><span class="nav-pill">Computer Fundamentals</span><div class="user"><span class="avatar" id="avatar">U</span><span class="user-name" id="userName">User</span><button class="logout" id="logoutBtn">Logout</button></div></div>
@@ -272,7 +290,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 </div>
 <div class="eyebrow">Study & Practice • Computer Fundamentals</div>
 <h1 class="exam-title">Computer Fundamentals</h1>
-<p class="exam-sub"><span class="resume-note"><span class="resume-hi">आप जब चाहें अभ्यास रोक सकते हैं और बाद में यहीं से उसी जगह से जारी रख सकते हैं।</span><span class="resume-en">You can pause your practice anytime and continue later from exactly where you left off.</span></span></p>
+<p class="exam-sub"></p>
 <div class="cloud-status"><span class="dot" id="cloudDot"></span><span id="cloudStatus">Progress saved to your account</span></div>
 <div class="practice-result-inline result-only" id="inlineResult" style="display:none">
   <div class="inline-result-top">
