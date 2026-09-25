@@ -297,7 +297,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
     <div>
       <div class="eyebrow">Practice Completed</div>
       <div class="inline-result-title">Computer Fundamentals Practice Completed</div>
-      <div class="inline-result-sub">Your practice result has been saved to your account.</div>
+      <div class="inline-result-sub"></div>
     </div>
     <div class="final-score" id="finalScore">0 / 0</div>
   </div>
@@ -388,7 +388,7 @@ q.options.forEach((o,i)=>{const b=document.createElement('button');let cls='opti
 const exp=$('explanation');
 if(selected!==undefined){exp.style.display='block';exp.innerHTML=`<strong>Explanation</strong>${esc(q.explanation||'Explanation will be added with the final question bank.')}`;$('questionStatus').textContent=selected===q.answer?'✓ Correct answer':'✕ Incorrect — correct answer is highlighted';$('questionStatus').className='question-status done'}
 else{exp.style.display='none';exp.innerHTML='';$('questionStatus').textContent='Select one option';$('questionStatus').className='question-status'}
-$('nextBtn').disabled=selected===undefined;$('nextBtn').textContent=state.current===total-1?'Finish Practice →':'Next Question →';$('saveNote').textContent=selected===undefined?'Select an answer to continue.':'Answer saved to your account.';
+$('nextBtn').disabled=selected===undefined;$('nextBtn').textContent=state.current===total-1?'Finish Practice →':'Next Question →';$('saveNote').textContent=selected===undefined?'Select an answer to continue.':'';
 }
 async function next(){
 if(state.answers[state.current]===undefined)return;
