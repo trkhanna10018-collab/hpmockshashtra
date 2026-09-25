@@ -1,30 +1,21 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Computer Fundamentals | HPMockShashtra</title>
 <style>
-:root{--bg:#061326;--p:#0c1d39;--p2:#102646;--line:rgba(100,170,255,.22);--t:#f5f8ff;--m:#9eb0c8;--b:#2296ff;--v:#8b5cf6;--g:#12c98b;--r:#ff6075}
+:root{--bg:#061326;--p:#0c1d39;--line:rgba(100,170,255,.22);--t:#f5f8ff;--m:#9eb0c8;--b:#2296ff;--v:#8b5cf6;--g:#12c98b;--r:#ff6075}
 *{box-sizing:border-box}
 body{margin:0;color:var(--t);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 15%,rgba(93,61,180,.18),transparent 30%),radial-gradient(circle at 10% 70%,rgba(0,130,255,.12),transparent 28%),#061326;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:38px 38px}
 .topbar{position:sticky;top:8px;z-index:20;width:min(1120px,calc(100% - 24px));margin:8px auto 0;border:1px solid rgba(126,176,255,.32);border-radius:16px;background:linear-gradient(110deg,rgba(7,20,42,.96),rgba(37,21,70,.92));box-shadow:0 12px 40px rgba(0,0,0,.35)}
-.nav{min-height:64px;padding:8px 12px;display:flex;align-items:center;gap:12px}
-.brand{display:flex;align-items:center;gap:9px;min-width:0;text-decoration:none;color:#fff}.logo,.logo img{width:42px;height:42px}.logo img{display:block;object-fit:contain}
-.brand-title{font-size:18px;font-weight:900;letter-spacing:-.6px;white-space:nowrap}.hp,.sh{color:#fff}.mock{color:#37b8ff}.tagline{font-size:7px;color:#8ea2bd;margin-top:3px}
-.nav-right{margin-left:auto;display:flex;align-items:center;gap:8px}.nav-pill,.user{border:1px solid rgba(126,176,255,.22);border-radius:9px;background:rgba(255,255,255,.045)}
-.nav-pill{padding:8px 10px;font-size:9px;font-weight:800;color:#cbd9ea}.user{display:flex;align-items:center;gap:6px;padding:4px 8px 4px 5px}.avatar{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,#2497ff,#9a5cff);font-size:10px;font-weight:900}.user-name{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;font-weight:800}.logout{border:0;background:none;color:#879ab3;font-size:8px;cursor:pointer}
-.wrap{width:min(960px,calc(100% - 24px));margin:25px auto 50px}
-.exam-head,.question-card,.result{border:1px solid var(--line);border-radius:16px;background:rgba(12,29,57,.94);box-shadow:0 15px 40px rgba(0,0,0,.22)}
-.exam-head{padding:18px 20px;background:linear-gradient(135deg,rgba(13,34,66,.94),rgba(24,23,62,.88))}
-.eyebrow{font-size:9px;color:#66c8ff;font-weight:900;letter-spacing:1px;text-transform:uppercase}.exam-title{margin:5px 0 2px;font-size:25px}.exam-sub{margin:0;color:var(--m);font-size:10px}
-.cloud-status{margin-top:10px;display:flex;align-items:center;gap:7px;color:#8fa5bd;font-size:9px}.dot{width:7px;height:7px;border-radius:50%;background:#12c98b;box-shadow:0 0 10px rgba(18,201,139,.55)}.dot.saving{background:#ffd166;box-shadow:0 0 10px rgba(255,209,102,.45)}.dot.error{background:#ff6075;box-shadow:0 0 10px rgba(255,96,117,.45)}
-.progress-row{margin-top:15px;display:flex;align-items:center;gap:12px}.progress{height:7px;flex:1;background:#07162c;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--b),var(--v));transition:.25s}.progress-text{font-size:9px;font-weight:900;color:#b9c9dc;white-space:nowrap}
-.question-card{margin-top:14px;padding:24px}.q-number{font-size:9px;color:#61bdff;font-weight:900;letter-spacing:.8px}.question{margin:9px 0 18px;font-size:18px;line-height:1.45;font-weight:800}.question .hi{display:block;margin-top:7px;color:#d7e4f4;font-size:15px;font-weight:650}
-.options{display:grid;gap:9px}.option{width:100%;padding:13px 14px;text-align:left;cursor:pointer;color:#dce8f6;background:#0c2040;border:1px solid rgba(126,176,255,.19);border-radius:11px;font-size:11px;font-weight:700;display:flex;align-items:flex-start}
-.option:hover:not(:disabled){border-color:#35aaff;background:linear-gradient(100deg,rgba(24,143,255,.22),rgba(127,85,240,.18))}.option:disabled{cursor:default}.letter{display:inline-grid;place-items:center;flex:0 0 24px;width:24px;height:24px;margin-right:9px;border-radius:7px;background:rgba(255,255,255,.06);font-size:9px;color:#9fc9ee}
-.option.correct,.option.reveal-correct{border-color:#12c98b!important;background:rgba(18,201,139,.14)!important;color:#dffff2}.option.incorrect{border-color:#ff6075!important;background:rgba(255,96,117,.14)!important;color:#ffe1e5}
-.explanation{margin-top:15px;padding:13px 15px;border:1px solid rgba(18,201,139,.22);border-radius:10px;background:rgba(18,201,139,.06);color:#cdebdc;font-size:10px;line-height:1.65;display:none}.explanation strong{display:block;color:#4de3b0;margin-bottom:4px;font-size:9px;text-transform:uppercase;letter-spacing:.7px}
-.actions{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:10px}.save-note{font-size:8px;color:#8095ae}.next-btn,.buy-btn{border:0;border-radius:10px;padding:11px 17px;font-size:10px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(100deg,#168eff,#8a54f6)}.next-btn:disabled{opacity:.4;cursor:not-allowed}
-.result{display:none;margin-top:14px;padding:28px;text-align:center}.score{font-size:40px;font-weight:950;background:linear-gradient(90deg,#38baff,#9b65ff);-webkit-background-clip:text;color:transparent}.result h2{margin:5px 0}.result p{color:var(--m);font-size:10px}.review{margin-top:18px;text-align:left;border-top:1px solid rgba(255,255,255,.08);padding-top:15px}.review-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:10px;line-height:1.6}.correct-text{color:#3ce0aa}.wrong-text{color:#ff7284}.review-exp{display:block;margin-top:5px;color:#a9c7ba}
+.nav{min-height:64px;padding:8px 12px;display:flex;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:9px;min-width:0;text-decoration:none;color:#fff}.logo,.logo img{width:42px;height:42px}.logo img{display:block;object-fit:contain}.brand-title{font-size:18px;font-weight:900;letter-spacing:-.6px;white-space:nowrap}.hp,.sh{color:#fff}.mock{color:#37b8ff}.tagline{font-size:7px;color:#8ea2bd;margin-top:3px}.nav-right{margin-left:auto;display:flex;align-items:center;gap:8px}.nav-pill,.user{border:1px solid rgba(126,176,255,.22);border-radius:9px;background:rgba(255,255,255,.045)}.nav-pill{padding:8px 10px;font-size:9px;font-weight:800;color:#cbd9ea}.user{display:flex;align-items:center;gap:6px;padding:4px 8px 4px 5px}.avatar{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,#2497ff,#9a5cff);font-size:10px;font-weight:900}.user-name{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;font-weight:800}.logout{border:0;background:none;color:#879ab3;font-size:8px;cursor:pointer}
+.wrap{width:min(1080px,calc(100% - 24px));margin:25px auto 50px}.exam-head,.question-card,.result{border:1px solid var(--line);border-radius:16px;background:rgba(12,29,57,.94);box-shadow:0 15px 40px rgba(0,0,0,.22)}.exam-head{padding:18px 20px;background:linear-gradient(135deg,rgba(13,34,66,.94),rgba(24,23,62,.88))}
+.eyebrow{font-size:9px;color:#66c8ff;font-weight:900;letter-spacing:1px;text-transform:uppercase}.exam-title{margin:5px 0 2px;font-size:25px}.exam-sub{margin:0;color:var(--m);font-size:10px}.cloud-status{margin-top:10px;display:flex;align-items:center;gap:7px;color:#8fa5bd;font-size:9px}.dot{width:7px;height:7px;border-radius:50%;background:#12c98b;box-shadow:0 0 10px rgba(18,201,139,.55)}.dot.saving{background:#ffd166}.dot.error{background:#ff6075}
+.progress-row{margin-top:15px;display:flex;align-items:center;gap:12px}.progress{height:7px;flex:1;background:#07162c;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--b),var(--v));transition:.25s}.progress-text{font-size:9px;font-weight:900;color:#b9c9dc;white-space:nowrap}.page-info{margin-top:12px;display:flex;justify-content:space-between;align-items:center;color:#8fa5bd;font-size:9px}.page-badge{padding:5px 9px;border:1px solid rgba(126,176,255,.18);border-radius:999px;background:rgba(255,255,255,.035);font-weight:800;color:#c7d7e9}
+.question-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.question-card{padding:18px}.q-number{font-size:9px;color:#61bdff;font-weight:900;letter-spacing:.8px}.question{margin:8px 0 14px;font-size:15px;line-height:1.45;font-weight:800}.question .hi{display:block;margin-top:6px;color:#d7e4f4;font-size:13px;font-weight:650}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.option{width:100%;min-height:50px;padding:9px 10px;text-align:left;cursor:pointer;color:#dce8f6;background:#0c2040;border:1px solid rgba(126,176,255,.19);border-radius:10px;font-size:10px;font-weight:700;display:flex;align-items:flex-start;line-height:1.35}.option:hover:not(:disabled){border-color:#35aaff;background:linear-gradient(100deg,rgba(24,143,255,.22),rgba(127,85,240,.18))}.option:disabled{cursor:default}.letter{display:inline-grid;place-items:center;flex:0 0 22px;width:22px;height:22px;margin-right:7px;border-radius:6px;background:rgba(255,255,255,.06);font-size:8px;color:#9fc9ee}.option.correct,.option.reveal-correct{border-color:#12c98b!important;background:rgba(18,201,139,.14)!important;color:#dffff2}.option.incorrect{border-color:#ff6075!important;background:rgba(255,96,117,.14)!important;color:#ffe1e5}
+.explanation{margin-top:10px;padding:10px 11px;border:1px solid rgba(18,201,139,.22);border-radius:9px;background:rgba(18,201,139,.06);color:#cdebdc;font-size:9px;line-height:1.55}.explanation strong{display:block;color:#4de3b0;margin-bottom:3px;font-size:8px;text-transform:uppercase;letter-spacing:.7px}.question-status{margin-top:8px;font-size:8px;color:#8297af}.question-status.done{color:#4de3b0;font-weight:800}
+.page-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px;padding:13px 15px;border:1px solid rgba(126,176,255,.15);border-radius:12px;background:rgba(8,22,43,.7)}.save-note{font-size:8px;color:#8095ae}.next-btn,.buy-btn{border:0;border-radius:10px;padding:11px 18px;font-size:10px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(100deg,#168eff,#8a54f6)}.next-btn:disabled{opacity:.4;cursor:not-allowed}
+.result{display:none;margin-top:14px;padding:22px}.result-head{text-align:center;padding:18px 10px 20px;border-bottom:1px solid rgba(255,255,255,.08)}.score{font-size:48px;line-height:1;font-weight:950;margin:10px 0 4px;background:linear-gradient(90deg,#38baff,#9b65ff);-webkit-background-clip:text;color:transparent}.result-title{font-size:22px;margin:4px 0}.result-sub{color:var(--m);font-size:9px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:16px}.stat{padding:11px 8px;border:1px solid rgba(126,176,255,.16);border-radius:10px;background:rgba(255,255,255,.035)}.stat strong{display:block;font-size:16px}.stat span{font-size:8px;color:#91a6be}.stat.correct strong{color:#3ce0aa}.stat.wrong strong{color:#ff7284}.review-head{display:flex;justify-content:space-between;align-items:center;margin:18px 0 8px}.review-head h3{margin:0;font-size:12px}.review-page{font-size:8px;color:#91a6be}.review-item{padding:13px;border:1px solid rgba(126,176,255,.12);border-radius:10px;background:rgba(255,255,255,.025);margin-top:8px;font-size:9px;line-height:1.55}.review-item strong{font-size:10px}.correct-text{color:#3ce0aa}.wrong-text{color:#ff7284}.review-exp{display:block;margin-top:5px;color:#a9c7ba}.review-actions{display:flex;justify-content:center;gap:8px;margin-top:13px}.review-btn{border:1px solid rgba(126,176,255,.2);background:#0c2040;color:#cfe0f3;border-radius:8px;padding:8px 12px;font-size:9px;font-weight:800;cursor:pointer}.review-btn:disabled{opacity:.35;cursor:not-allowed}
 .access-box{display:none;margin-top:20px;padding:25px;text-align:center;border:1px solid rgba(255,96,117,.3);border-radius:15px;background:rgba(255,60,90,.07)}.access-box h2{margin:0 0 7px;font-size:18px}.access-box p{color:#aebbd0;font-size:10px}.loading{padding:70px;text-align:center;color:#9db0c8;font-size:11px}
-@media(max-width:600px){.topbar{top:5px}.nav{padding:7px 9px}.logo,.logo img{width:38px;height:38px}.brand-title{font-size:14px;max-width:145px;overflow:hidden;text-overflow:ellipsis}.tagline,.nav-pill{display:none}.user{max-width:118px}.user-name{max-width:58px}.wrap{margin-top:18px}.exam-title{font-size:21px}.question-card{padding:17px}.question{font-size:16px}.question .hi{font-size:14px}.actions{align-items:flex-end;flex-direction:column}.next-btn{width:100%}}
+@media(max-width:760px){.question-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.topbar{top:5px}.nav{padding:7px 9px}.logo,.logo img{width:38px;height:38px}.brand-title{font-size:14px;max-width:145px;overflow:hidden;text-overflow:ellipsis}.tagline,.nav-pill{display:none}.user{max-width:118px}.user-name{max-width:58px}.wrap{margin-top:18px}.exam-title{font-size:21px}.question-card{padding:15px}.question{font-size:14px}.question .hi{font-size:12px}.options{grid-template-columns:1fr}.page-actions{flex-direction:column;align-items:stretch}.next-btn{width:100%}.result{padding:15px}}
 </style></head><body>
 <header class="topbar"><nav class="nav">
 <a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
@@ -41,20 +32,31 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 <div class="cloud-status"><span class="dot" id="cloudDot"></span><span id="cloudStatus">Progress saved to your account</span></div>
 <div class="progress-row"><div class="progress"><span id="progressBar"></span></div><div class="progress-text" id="progressText">0 / 0</div></div>
 </div>
-<section class="question-card" id="questionCard">
-<div class="q-number" id="qNumber"></div>
-<div class="question" id="questionText"></div>
-<div class="options" id="options"></div>
-<div class="explanation" id="explanation"></div>
-<div class="actions"><div class="save-note" id="saveNote">Your answer is saved online automatically.</div><button class="next-btn" id="nextBtn" disabled>Next Question →</button></div>
-</section>
+<div id="questionGrid" class="question-grid"></div>
+<div class="page-actions" id="pageActions">
+<div class="save-note" id="saveNote">Answer all 10 questions to continue.</div>
+<button class="next-btn" id="nextBtn" disabled>Next 10 Questions →</button>
+</div>
 <section class="result" id="result">
+<div class="result-head">
 <div class="eyebrow">Practice Completed</div>
 <div class="score" id="score">0%</div>
-<h2 id="scoreText">Practice Complete</h2>
-<p id="resultMeta"></p>
-<div class="review" id="review"></div>
-</section>
+<h2 class="result-title" id="scoreText">Practice Complete</h2>
+<p class="result-sub" id="resultMeta"></p>
+<div class="stats">
+<div class="stat"><strong id="statTotal">0</strong><span>Total Questions</span></div>
+<div class="stat"><strong id="statAttempted">0</strong><span>Attempted</span></div>
+<div class="stat correct"><strong id="statCorrect">0</strong><span>Correct</span></div>
+<div class="stat wrong"><strong id="statWrong">0</strong><span>Wrong</span></div>
+</div>
+</div>
+<div class="review-head"><h3>Answer Review</h3><span class="review-page" id="reviewPage"></span></div>
+<div id="review"></div>
+<div class="review-actions">
+<button class="review-btn" id="reviewPrev">← Previous 10</button>
+<button class="review-btn" id="reviewNext">Next 10 →</button>
+</div>
+</section></section>
 </section>
 </main>
 <script type="module">
@@ -74,189 +76,51 @@ let userName='';
 let sessionRef=null;
 let resultRef=null;
 let state={current:0,answers:{},submitted:false,startedAt:null,completedAt:null};
+const PAGE_SIZE=10;
+let reviewPageIndex=0;
 
-function date(v){
-  if(!v)return null;
-  if(v.toDate)return v.toDate();
-  const d=new Date(v);
-  return Number.isNaN(d.getTime())?null:d;
-}
-function active(v){
-  const d=date(v?.expiresAt);
-  return !!(d&&d.getTime()>Date.now());
-}
-function esc(v){
-  return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-}
-function access(d){
-  const c=d?.computerAccess?.courses?.[ID];
-  if(active(c))return c;
-  const m=d?.computerAccess?.packs?.['computer-master'];
-  if(active(m))return m;
-  return null;
-}
-function setCloudStatus(type,text){
-  $('cloudStatus').textContent=text;
-  $('cloudDot').className='dot'+(type==='saving'?' saving':type==='error'?' error':'');
-}
-function normalizeAnswers(a){
-  const out={};
-  if(a&&typeof a==='object'){
-    Object.keys(a).forEach(k=>{
-      const n=Number(a[k]);
-      if(Number.isInteger(n))out[k]=n;
-    });
-  }
-  return out;
-}
-function safeCurrent(v){
-  const n=Number(v);
-  return Number.isInteger(n)&&n>=0&&n<QUESTIONS.length?n:0;
-}
-function stateFromDoc(data){
-  state={
-    current:safeCurrent(data?.current),
-    answers:normalizeAnswers(data?.answers),
-    submitted:data?.submitted===true,
-    startedAt:data?.startedAt||null,
-    completedAt:data?.completedAt||null
-  };
-}
-async function loadCloudState(){
-  const snap=await getDoc(sessionRef);
-  if(snap.exists()){
-    stateFromDoc(snap.data());
-  }else{
-    state={current:0,answers:{},submitted:false,startedAt:null,completedAt:null};
-    await saveCloudState(true);
-  }
-}
-async function saveCloudState(firstSave=false){
-  setCloudStatus('saving','Saving progress...');
-  try{
-    const payload={
-      uid,
-      testId:TEST_ID,
-      current:state.current,
-      answers:state.answers,
-      status:'in_progress',
-      questionCount:QUESTIONS.length,
-      updatedAt:serverTimestamp()
-    };
-    if(firstSave && !state.startedAt)payload.startedAt=serverTimestamp();
-    await setDoc(sessionRef,payload,{merge:true});
-    setCloudStatus('ok','Progress saved to your account');
-    return true;
-  }catch(e){
-    console.error(e);
-    setCloudStatus('error','Could not save progress. Please try again.');
-    return false;
-  }
-}
-async function saveAnswer(index){
-  state.answers[state.current]=index;
-  const ok=await saveCloudState(false);
-  if(ok)render();
-}
-function render(){
-  if(state.submitted){showResult();return;}
-  const q=QUESTIONS[state.current];
-  if(!q)return;
-  const total=QUESTIONS.length;
-  const selected=state.answers[state.current];
-
-  $('qNumber').textContent=`Question ${state.current+1} of ${total}`;
-  $('progressBar').style.width=`${(Object.keys(state.answers).length/total)*100}%`;
-  $('progressText').textContent=`${Object.keys(state.answers).length} / ${total}`;
-  $('totalLabel').textContent=`${total} Practice Questions`;
-  $('questionText').innerHTML=`<span>${esc(q.en||'')}</span><span class="hi">${esc(q.hi||'')}</span>`;
-
-  const box=$('options');
-  box.innerHTML='';
-  q.options.forEach((o,i)=>{
-    const b=document.createElement('button');
-    let cls='option';
-    if(selected!==undefined){
-      if(i===q.answer)cls+=' reveal-correct';
-      if(i===selected&&selected===q.answer)cls+=' correct';
-      if(i===selected&&selected!==q.answer)cls+=' incorrect';
-    }
-    b.className=cls;
-    b.disabled=selected!==undefined;
-    b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${esc(o)}</span>`;
-    b.onclick=()=>saveAnswer(i);
-    box.appendChild(b);
-  });
-
-  const exp=$('explanation');
-  if(selected!==undefined){
-    exp.style.display='block';
-    exp.innerHTML=`<strong>Explanation</strong>${esc(q.explanation||'Explanation will be added with the final question bank.')}`;
-  }else{
-    exp.style.display='none';
-    exp.innerHTML='';
-  }
-
-  $('nextBtn').textContent=state.current===total-1?'Finish Practice →':'Next Question →';
-  $('nextBtn').disabled=selected===undefined;
-  $('saveNote').textContent=selected===undefined?'Select an answer to continue.':'Answer saved to your account.';
-}
+function date(v){if(!v)return null;if(v.toDate)return v.toDate();const d=new Date(v);return Number.isNaN(d.getTime())?null:d}
+function active(v){const d=date(v?.expiresAt);return !!(d&&d.getTime()>Date.now())}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function access(d){const c=d?.computerAccess?.courses?.[ID];if(active(c))return c;const m=d?.computerAccess?.packs?.['computer-master'];if(active(m))return m;return null}
+function setCloudStatus(type,text){$('cloudStatus').textContent=text;$('cloudDot').className='dot'+(type==='saving'?' saving':type==='error'?' error':'')}
+function normalizeAnswers(a){const out={};if(a&&typeof a==='object')Object.keys(a).forEach(k=>{const n=Number(a[k]);if(Number.isInteger(n))out[k]=n});return out}
+function safeCurrent(v){const n=Number(v);if(!Number.isInteger(n)||n<0)return 0;return Math.min(Math.floor(n/PAGE_SIZE)*PAGE_SIZE,Math.max(0,QUESTIONS.length-1))}
+function stateFromDoc(data){state={current:safeCurrent(data?.current),answers:normalizeAnswers(data?.answers),submitted:data?.submitted===true,startedAt:data?.startedAt||null,completedAt:data?.completedAt||null}}
+async function loadCloudState(){const snap=await getDoc(sessionRef);if(snap.exists())stateFromDoc(snap.data());else{state={current:0,answers:{},submitted:false,startedAt:null,completedAt:null};await saveCloudState(true)}}
+async function saveCloudState(firstSave=false){setCloudStatus('saving','Saving progress...');try{const payload={uid,testId:TEST_ID,current:state.current,answers:state.answers,status:'in_progress',questionCount:QUESTIONS.length,updatedAt:serverTimestamp()};if(firstSave&&!state.startedAt)payload.startedAt=serverTimestamp();await setDoc(sessionRef,payload,{merge:true});setCloudStatus('ok','Progress saved to your account');return true}catch(e){console.error(e);setCloudStatus('error','Could not save progress. Please try again.');return false}}
+async function saveAnswer(questionIndex,index){state.answers[questionIndex]=index;const ok=await saveCloudState(false);if(ok)renderPage()}
+function renderPage(){
+if(state.submitted){showResult();return}
+const total=QUESTIONS.length,start=Math.min(Math.floor(state.current/PAGE_SIZE)*PAGE_SIZE,total),end=Math.min(start+PAGE_SIZE,total);
+const answered=Object.keys(state.answers).length,pageAnswered=Array.from({length:end-start},(_,n)=>start+n).filter(i=>state.answers[i]!==undefined).length;
+const pageNo=Math.floor(start/PAGE_SIZE)+1,pageCount=Math.ceil(total/PAGE_SIZE);
+$('questionGrid').style.display='grid';$('pageActions').style.display='flex';
+document.getElementById('pageInfo')?.remove();
+const info=document.createElement('div');info.id='pageInfo';info.className='page-info';info.innerHTML=`<span>Showing questions ${start+1}–${end}</span><span class="page-badge">Page ${pageNo} of ${pageCount}</span>`;$('exam').insertBefore(info,$('questionGrid'));
+$('questionGrid').innerHTML='';
+for(let idx=start;idx<end;idx++){
+const q=QUESTIONS[idx],selected=state.answers[idx],card=document.createElement('article');card.className='question-card';
+const options=q.options.map((o,i)=>{let cls='option';if(selected!==undefined){if(i===q.answer)cls+=' reveal-correct';if(i===selected&&selected===q.answer)cls+=' correct';if(i===selected&&selected!==q.answer)cls+=' incorrect'}return `<button class="${cls}" data-q="${idx}" data-option="${i}" ${selected!==undefined?'disabled':''}><span class="letter">${String.fromCharCode(65+i)}</span><span>${esc(o)}</span></button>`}).join('');
+const explanation=selected!==undefined?`<div class="explanation"><strong>Explanation</strong>${esc(q.explanation||'Explanation will be added with the final question bank.')}</div>`:'';
+card.innerHTML=`<div class="q-number">Question ${idx+1} of ${total}</div><div class="question"><span>${esc(q.en||'')}</span><span class="hi">${esc(q.hi||'')}</span></div><div class="options">${options}</div>${explanation}<div class="question-status ${selected!==undefined?'done':''}">${selected!==undefined?'✓ Answer saved':'Select one option'}</div>`;
+$('questionGrid').appendChild(card)}
+$('questionGrid').querySelectorAll('.option:not(:disabled)').forEach(btn=>btn.addEventListener('click',()=>saveAnswer(Number(btn.dataset.q),Number(btn.dataset.option))));
+$('progressBar').style.width=`${(answered/total)*100}%`;$('progressText').textContent=`${answered} / ${total}`;$('totalLabel').textContent=`${total} Practice Questions`;
+const completePage=pageAnswered===end-start,lastPage=end>=total;$('nextBtn').disabled=!completePage;$('nextBtn').textContent=lastPage?'Finish Practice →':'Next 10 Questions →';$('saveNote').textContent=completePage?(lastPage?'All questions answered. Finish your practice.':'All 10 answered. Continue to the next 10 questions.'):`${pageAnswered} / ${end-start} answered on this page.`}
 async function next(){
-  if(state.answers[state.current]===undefined)return;
-  if(state.current<QUESTIONS.length-1){
-    state.current++;
-    const ok=await saveCloudState(false);
-    if(ok){render();scrollTo({top:0,behavior:'smooth'});}
-    return;
-  }
-  if(Object.keys(state.answers).length!==QUESTIONS.length){
-    alert('Please answer all questions before finishing practice.');
-    return;
-  }
-  const ok=await saveCloudState(false);
-  if(!ok)return;
-  state.submitted=true;
-  state.completedAt=new Date().toISOString();
-  try{await saveResult();}catch(e){state.submitted=false;console.error(e);alert('Final result save नहीं हो पाया। Please try again.');return;}
-  showResult();
-}
-async function saveResult(){
-  let correct=0;
-  QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++;});
-  try{
-    await setDoc(resultRef,{
-      uid,
-      testId:TEST_ID,
-      questionCount:QUESTIONS.length,
-      attempted:Object.keys(state.answers).length,
-      correct,
-      wrong:QUESTIONS.length-correct,
-      percentage:Math.round(correct/QUESTIONS.length*100),
-      answers:state.answers,
-      status:'completed',
-      completedAt:serverTimestamp()
-    });
-  }catch(e){
-    console.error(e);
-    setCloudStatus('error','Practice completed, but result could not be saved.');
-    throw e;
-  }
-}
-function showResult(){
-  $('questionCard').style.display='none';
-  $('result').style.display='block';
-  let correct=0;
-  QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++;});
-  $('score').textContent=Math.round(correct/QUESTIONS.length*100)+'%';
-  $('scoreText').textContent=`${correct} / ${QUESTIONS.length} Correct`;
-  $('resultMeta').textContent='Practice completed. Your answers and result are saved to your account.';
-  $('review').innerHTML=QUESTIONS.map((q,i)=>{
-    const ok=state.answers[i]===q.answer;
-    const your=state.answers[i]===undefined?'Not answered':q.options[state.answers[i]];
-    return `<div class="review-item"><strong>Q${i+1}. ${esc(q.en)}</strong><br><span class="${ok?'correct-text':'wrong-text'}">${ok?'✓ Correct':'✕ Incorrect'}</span><br>Your answer: ${esc(your)}<br>Correct answer: ${esc(q.options[q.answer])}<span class="review-exp"><b>Explanation:</b> ${esc(q.explanation||'')}</span></div>`;
-  }).join('');
-}
+const total=QUESTIONS.length,start=Math.min(Math.floor(state.current/PAGE_SIZE)*PAGE_SIZE,total),end=Math.min(start+PAGE_SIZE,total),pageAnswered=Array.from({length:end-start},(_,n)=>start+n).filter(i=>state.answers[i]!==undefined).length;
+if(pageAnswered!==end-start)return;
+if(end<total){state.current=end;const ok=await saveCloudState(false);if(ok){renderPage();scrollTo({top:0,behavior:'smooth'})}return}
+const ok=await saveCloudState(false);if(!ok)return;
+try{await saveResult()}catch(e){console.error(e);alert('Final result save नहीं हो पाया। Please try again.');return}
+state.submitted=true;state.completedAt=new Date().toISOString();showResult()}
+async function saveResult(){let correct=0;QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++});await setDoc(resultRef,{uid,testId:TEST_ID,questionCount:QUESTIONS.length,attempted:Object.keys(state.answers).length,correct,wrong:QUESTIONS.length-correct,percentage:Math.round(correct/QUESTIONS.length*100),answers:state.answers,status:'completed',completedAt:serverTimestamp()})}
+function renderReview(){const total=QUESTIONS.length,start=reviewPageIndex*PAGE_SIZE,end=Math.min(start+PAGE_SIZE,total);$('review').innerHTML=QUESTIONS.slice(start,end).map((q,offset)=>{const i=start+offset,ok=state.answers[i]===q.answer,your=state.answers[i]===undefined?'Not answered':q.options[state.answers[i]];return `<div class="review-item"><strong>Q${i+1}. ${esc(q.en)}</strong><br><span class="${ok?'correct-text':'wrong-text'}">${ok?'✓ Correct':'✕ Incorrect'}</span><br>Your answer: ${esc(your)}<br>Correct answer: ${esc(q.options[q.answer])}<span class="review-exp"><b>Explanation:</b> ${esc(q.explanation||'')}</span></div>`}).join('');$('reviewPage').textContent=`${start+1}–${end} of ${total}`;$('reviewPrev').disabled=reviewPageIndex===0;$('reviewNext').disabled=end>=total}
+function showResult(){$('questionGrid').style.display='none';$('pageActions').style.display='none';document.getElementById('pageInfo')?.remove();$('result').style.display='block';let correct=0;QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++});const total=QUESTIONS.length;$('score').textContent=Math.round(correct/total*100)+'%';$('scoreText').textContent='Practice Complete';$('resultMeta').textContent='Your answers and final result are saved to your account.';$('statTotal').textContent=total;$('statAttempted').textContent=Object.keys(state.answers).length;$('statCorrect').textContent=correct;$('statWrong').textContent=total-correct;reviewPageIndex=0;renderReview()}
 $('nextBtn').onclick=next;
+$('reviewPrev').onclick=()=>{if(reviewPageIndex>0){reviewPageIndex--;renderReview();scrollTo({top:$('result').offsetTop-20,behavior:'smooth'})}};
+$('reviewNext').onclick=()=>{if((reviewPageIndex+1)*PAGE_SIZE<QUESTIONS.length){reviewPageIndex++;renderReview();scrollTo({top:$('result').offsetTop-20,behavior:'smooth'})}};
 $('logoutBtn').onclick=async()=>{await signOut(auth);location.href='firebase-login.html'};
 
 onAuthStateChanged(auth,async user=>{
@@ -292,7 +156,7 @@ onAuthStateChanged(auth,async user=>{
     $('exam').style.display='block';
 
     if(state.submitted)showResult();
-    else render();
+    else renderPage();
   }catch(e){
     console.error(e);
     $('loading').textContent='Unable to load your practice progress. Please refresh and try again.';
