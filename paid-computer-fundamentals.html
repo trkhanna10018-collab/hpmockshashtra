@@ -151,8 +151,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 .modal-btn{border-radius:9px;padding:10px 16px;font-size:9px;font-weight:900;cursor:pointer}
 .modal-start{border:0;color:#fff;background:linear-gradient(100deg,#168eff,#8a54f6)}
 .modal-later{border:1px solid rgba(126,176,255,.22);color:#cbd9ea;background:#0b1f3d}
-.start-later-card{display:none;margin-top:14px;padding:22px;border:1px solid rgba(126,176,255,.22);border-radius:15px;background:rgba(12,29,57,.95);text-align:center}
-.start-later-card h3{margin:0 0 6px;font-size:16px}.start-later-card p{margin:0 0 13px;color:#94a9c1;font-size:9px}
+
 @media(max-width:600px){
  .resume-note{display:block;font-size:9px}
  .resume-en{font-size:8px}
@@ -161,6 +160,22 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
  .practice-modal-card h2{font-size:19px}
  .modal-actions{flex-direction:column-reverse}
  .modal-btn{width:100%}
+}
+
+/* v3 layout polish */
+.progress-row{display:none!important}
+.exam-head{width:100%;max-width:none}
+.live-stats{right:24px;top:18px}
+.exam-head{padding-right:230px}
+.question-card{width:100%;max-width:none;margin-left:0;margin-right:0}
+.modal-actions{justify-content:space-between;align-items:center}
+.modal-later{order:1}
+.modal-start{order:2}
+@media(max-width:700px){
+  .exam-head{padding-right:16px;padding-top:74px}
+  .live-stats{left:16px;right:auto;top:12px}
+  .modal-actions{flex-direction:row;gap:8px}
+  .modal-actions .modal-btn{width:auto;flex:1}
 }
 </style></head><body>
 <header class="topbar"><nav class="nav">
@@ -172,11 +187,10 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
   <div class="practice-modal-card">
     <span class="modal-badge">Study & Practice</span>
     <h2>Start Computer Fundamentals Practice</h2>
-    <p class="modal-lead">इस practice में कुल <b id="modalTotal">400</b> questions हैं। आपको सारे questions एक साथ पूरा करने की जरूरत नहीं है।</p>
+    <p class="modal-lead">This practice contains <b id="modalTotal">400</b> questions. You do not need to complete all questions in one sitting.</p>
     <div class="modal-points">
-      <b>आप कभी भी practice रोक सकते हैं।</b><br>
-      आपका progress अपने account में save रहेगा और अगली बार आप <b>उसी question से</b> practice जारी कर सकेंगे जहाँ आपने छोड़ा था।<br><br>
-      <span style="color:#9fc2df">You can pause anytime and continue later from exactly where you left off.</span>
+      <b>You can pause your practice anytime.</b><br>
+      Your progress is saved to your account, and when you return later, you can continue from exactly where you left off.
     </div>
     <div class="modal-actions">
       <button class="modal-btn modal-later" id="laterBtn">बाद में करूँगा</button>
@@ -187,11 +201,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 <main class="wrap">
 <div id="loading" class="loading">Checking your premium access...</div>
 <div id="accessBox" class="access-box"><h2>Premium Access Required</h2><p>Your Computer Fundamentals premium access is not active.</p><a class="buy-btn" href="payment.html?product=computer-fundamentals">Buy Access →</a></div>
-<div class="start-later-card" id="startLaterCard">
-  <h3>Practice is ready whenever you are</h3>
-  <p>जब आप तैयार हों, यहीं से Computer Fundamentals practice शुरू करें।</p>
-  <button class="modal-btn modal-start" id="startLaterBtn">Start Practice →</button>
-</div>
+
 
 <section id="exam" style="display:none">
 <div class="exam-head">
@@ -274,19 +284,16 @@ function closePracticeModal(){
 }
 function startPractice(){
   closePracticeModal();
-  $('startLaterCard').style.display='none';
   $('questionCard').style.display='block';
   render();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function deferPractice(){
   closePracticeModal();
-  $('questionCard').style.display='none';
-  $('startLaterCard').style.display='block';
+  location.href='joa-mahapack.html';
 }
 $('startBtn').onclick=startPractice;
 $('laterBtn').onclick=deferPractice;
-$('startLaterBtn').onclick=startPractice;
 
 function render(){
 if(state.submitted){showResult();return}
