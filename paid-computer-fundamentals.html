@@ -24,7 +24,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 .question{font-size:20px;line-height:1.55;margin:12px 0 22px;max-width:820px}
 .question .hi{font-size:16px;line-height:1.55;margin-top:9px}
 .options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.option{min-height:62px;padding:12px 14px;font-size:11px;line-height:1.5;border-radius:12px}
+.option{min-height:62px;padding:12px 14px;font-size:11px;line-height:1.5;border-radius:12px}.option-text{display:block;min-width:0}.option-en{display:inline}.option-hi{display:inline;margin-left:8px;color:#9fc2df;font-weight:600}
 .letter{width:26px;height:26px;flex-basis:26px;border-radius:7px;font-size:9px}
 .explanation{margin-top:16px;padding:15px 17px;font-size:10px;line-height:1.75;border-radius:11px}
 .question-status{margin-top:10px;font-size:9px;color:#8095ae}
@@ -473,7 +473,7 @@ $('liveScore').textContent=`${scoreNow}%`;
 
 $('questionText').innerHTML=`<span>${esc(q.en||'')}</span><span class="hi">${esc(q.hi||'')}</span>`;
 const box=$('options');box.innerHTML='';
-q.options.forEach((o,i)=>{const b=document.createElement('button');let cls='option';if(selected!==undefined){if(i===q.answer)cls+=' reveal-correct';if(i===selected&&selected===q.answer)cls+=' correct';if(i===selected&&selected!==q.answer)cls+=' incorrect'}b.className=cls;b.disabled=selected!==undefined;b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${esc(o)}</span>`;b.onclick=()=>saveAnswer(i);box.appendChild(b)});
+q.options.forEach((o,i)=>{const b=document.createElement('button');let cls='option';if(selected!==undefined){if(i===q.answer)cls+=' reveal-correct';if(i===selected&&selected===q.answer)cls+=' correct';if(i===selected&&selected!==q.answer)cls+=' incorrect'}b.className=cls;b.disabled=selected!==undefined;const optionEn=typeof o==="object"?(o.en||""):o;const optionHi=typeof o==="object"?(o.hi||""):"";b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span class="option-text"><span class="option-en">${esc(optionEn)}</span>${optionHi?`<span class="option-hi">${esc(optionHi)}</span>`:""}</span>`;b.onclick=()=>saveAnswer(i);box.appendChild(b)});
 const exp=$('explanation');
 if(selected!==undefined){exp.style.display='block';exp.innerHTML=`<strong>Explanation</strong>${esc(q.explanation||'Explanation will be added with the final question bank.')}`;$('questionStatus').textContent=selected===q.answer?'✓ Correct answer':'✕ Incorrect — correct answer is highlighted';$('questionStatus').className='question-status done'}
 else{exp.style.display='none';exp.innerHTML='';$('questionStatus').textContent='Select one option';$('questionStatus').className='question-status'}
