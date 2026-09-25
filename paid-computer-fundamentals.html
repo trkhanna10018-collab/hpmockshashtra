@@ -77,6 +77,56 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
   .live-stat{min-width:45px}
   .question-card{padding:20px}
 }
+
+/* Final alignment + readability polish */
+.exam-head{width:100%;max-width:none}
+.exam-sub{line-height:1.7;padding-right:4px}
+.en-note{color:#8299b4}
+.practice-result-inline{width:100%}
+.inline-result-top{width:100%;display:block!important}
+.inline-result-title{margin-top:3px}
+.review-wrap{width:100%;max-width:none}
+.review-list{width:100%}
+.review-item{width:100%;max-width:none}
+.review-options{width:100%}
+.review-explanation{width:100%}
+
+/* Keep the main content visually aligned on desktop */
+.wrap{width:min(1080px,calc(100% - 24px))}
+.question-card{width:100%;max-width:none}
+.question{max-width:900px}
+
+/* Mobile */
+@media(max-width:700px){
+  .wrap{width:calc(100% - 18px);margin-top:15px}
+  .exam-head{padding:74px 16px 17px}
+  .exam-sub{font-size:9px;line-height:1.65}
+  .en-note{font-size:8px}
+  .live-stats{left:16px;top:12px;gap:6px}
+  .live-stat{min-width:43px}
+  .live-circle{width:36px;height:36px;font-size:9px}
+  .live-stat small{font-size:6.5px}
+  .question-card{padding:18px 15px;margin-top:12px}
+  .question{font-size:17px;line-height:1.5}
+  .question .hi{font-size:14px}
+  .options{grid-template-columns:1fr}
+  .option{min-height:55px;font-size:10px}
+  .page-actions{padding:11px}
+  .next-btn{width:100%}
+  .review-title-row{align-items:flex-start}
+  .review-item{padding:12px}
+  .review-options{grid-template-columns:1fr}
+  .review-option{font-size:9px}
+}
+
+/* Very small phones */
+@media(max-width:390px){
+  .brand-title{max-width:115px}
+  .user-name{max-width:45px}
+  .exam-title{font-size:20px}
+  .live-stats{gap:4px}
+  .live-circle{width:34px;height:34px}
+}
 </style></head><body>
 <header class="topbar"><nav class="nav">
 <a class="brand" href="joa-mahapack.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
@@ -95,13 +145,13 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 </div>
 <div class="eyebrow">Study & Practice • Computer Fundamentals</div>
 <h1 class="exam-title">Computer Fundamentals</h1>
-<p class="exam-sub"><span id="totalLabel">Practice Questions</span> • No time limit • Your progress is saved to your account</p>
+<p class="exam-sub"><span id="totalLabel">Practice Questions</span> • आप जब चाहें अभ्यास रोक सकते हैं और बाद में यहीं से जारी रख सकते हैं।<br><span class="en-note">You can pause your practice anytime and continue later from where you left off.</span></p>
 <div class="cloud-status"><span class="dot" id="cloudDot"></span><span id="cloudStatus">Progress saved to your account</span></div>
 <div class="progress-row"><div class="progress"><span id="progressBar"></span></div><div class="progress-text" id="progressText">0 / 0</div></div>
 <div class="practice-result-inline" id="inlineResult" style="display:none">
   <div class="inline-result-top">
-    <div><div class="eyebrow">Practice Completed</div><div class="inline-result-title">Practice Completed • Answer Review</div><div class="inline-result-sub" id="resultMeta">Your answers and final result are saved to your account.</div></div>
-    <div class="inline-score" id="score">0%</div>
+    <div><div class="eyebrow">Practice Completed</div><div class="inline-result-title">Answer Review</div></div>
+    
   </div>
   <div class="review-wrap" id="reviewWrap">
     <div class="review-title-row">
@@ -195,7 +245,7 @@ function showResult(){
 $('questionCard').style.display='none';$('inlineResult').style.display='block';
 let correct=0;QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++});
 const total=QUESTIONS.length,attempted=Object.keys(state.answers).length;
-$('score').textContent=Math.round(correct/total*100)+'%';$('resultMeta').textContent='Your answers and final result are saved to your account.';
+if($('score'))$('score').textContent=Math.round(correct/total*100)+'%';if($('resultMeta'))$('resultMeta').textContent='Your answers and final result are saved to your account.';
 $('liveAttempted').textContent=`${attempted}/${total}`;
 $('liveCorrect').textContent=correct;
 $('liveWrong').textContent=total-correct;
