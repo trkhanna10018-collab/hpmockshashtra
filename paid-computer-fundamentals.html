@@ -48,7 +48,10 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 <div class="explanation" id="explanation"></div>
 <div class="actions"><div class="save-note" id="saveNote">Your answer is saved online automatically.</div><button class="next-btn" id="nextBtn" disabled>Next Question →</button></div>
 </section>
-<section cl<script type="module">
+</section>
+</section>
+</main>
+<script type="module">
 import {auth,db} from './firebase-config.js';
 import {onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
 import {doc,getDoc,setDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
