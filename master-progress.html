@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master Progress | HPMockShashtra</title>
+
+<style>
+:root{
+  --bg:#061326;
+  --panel:#0c1d39;
+  --panel2:#0b1a33;
+  --line:rgba(100,170,255,.20);
+  --text:#f5f8ff;
+  --muted:#91a6be;
+  --blue:#2296ff;
+  --violet:#8b5cf6;
+  --green:#12c98b;
+  --red:#ff6075;
+  --yellow:#ffd166;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 82% 8%,rgba(93,61,180,.20),transparent 30%),
+    radial-gradient(circle at 8% 65%,rgba(0,130,255,.12),transparent 28%),
+    #061326;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:38px 38px;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.topbar{
+  position:sticky;top:8px;z-index:50;
+  width:min(1120px,calc(100% - 24px));
+  margin:8px auto 0;
+  border:1px solid rgba(126,176,255,.30);
+  border-radius:16px;
+  background:linear-gradient(110deg,rgba(7,20,42,.96),rgba(37,21,70,.92));
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  backdrop-filter:blur(12px);
+}
+.nav{
+  min-height:64px;padding:8px 12px;
+  display:flex;align-items:center;gap:12px;
+}
+.brand{display:flex;align-items:center;gap:9px;min-width:0}
+.logo,.logo img{width:42px;height:42px}
+.logo img{display:block;object-fit:contain}
+.brand-title{font-size:18px;font-weight:900;letter-spacing:-.6px;white-space:nowrap}
+.hp,.sh{color:#fff}.mock{color:#37b8ff}
+.tagline{font-size:7px;color:#8ea2bd;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:7px;margin-left:auto}
+.nav-link{
+  padding:8px 10px;border:1px solid transparent;border-radius:9px;
+  color:#aebed2;font-size:9px;font-weight:850;
+}
+.nav-link:hover,.nav-link.active{
+  border-color:rgba(126,176,255,.20);
+  background:rgba(255,255,255,.045);
+  color:#fff;
+}
+.user{
+  display:flex;align-items:center;gap:6px;
+  padding:4px 8px 4px 5px;
+  border:1px solid rgba(126,176,255,.22);
+  border-radius:9px;background:rgba(255,255,255,.045);
+}
+.avatar{
+  width:28px;height:28px;border-radius:8px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#2497ff,#9a5cff);
+  font-size:10px;font-weight:900;
+}
+.user-name{max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;font-weight:800}
+.logout{border:0;background:none;color:#879ab3;font-size:8px;cursor:pointer}
+.menu-btn{
+  display:none;border:1px solid rgba(126,176,255,.20);background:rgba(255,255,255,.04);
+  color:#dce8f6;border-radius:8px;width:36px;height:36px;cursor:pointer;
+}
+
+.wrap{width:min(1120px,calc(100% - 24px));margin:24px auto 55px}
+.loading{
+  padding:80px 20px;text-align:center;color:#9db0c8;font-size:12px;
+}
+.error-box{
+  display:none;padding:25px;text-align:center;
+  border:1px solid rgba(255,96,117,.28);border-radius:16px;
+  background:rgba(255,60,90,.07);color:#ffdfe4;
+}
+.dashboard{display:none}
+.hero{
+  position:relative;overflow:hidden;
+  border:1px solid var(--line);border-radius:20px;
+  padding:25px 28px;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(139,92,246,.20),transparent 28%),
+    linear-gradient(135deg,rgba(13,34,66,.96),rgba(24,23,62,.90));
+  box-shadow:0 18px 50px rgba(0,0,0,.24);
+}
+.hero:after{
+  content:"";position:absolute;width:190px;height:190px;border-radius:50%;
+  right:-75px;bottom:-95px;background:rgba(34,150,255,.10);filter:blur(2px);
+}
+.hero-eyebrow{
+  font-size:9px;color:#66c8ff;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;
+}
+.hero h1{margin:7px 0 4px;font-size:27px;letter-spacing:-.5px}
+.hero p{margin:0;color:#9eb0c8;font-size:10px;line-height:1.6}
+.hero-grid{
+  margin-top:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;
+}
+.overall-box{
+  display:flex;align-items:center;gap:22px;
+  padding:18px;border:1px solid rgba(126,176,255,.15);border-radius:15px;
+  background:rgba(5,17,35,.42);
+}
+.ring{
+  --progress:0%;
+  width:126px;height:126px;flex:0 0 126px;border-radius:50%;
+  display:grid;place-items:center;
+  background:conic-gradient(#35aaff var(--progress),rgba(126,176,255,.12) 0);
+  position:relative;
+}
+.ring:before{
+  content:"";position:absolute;inset:9px;border-radius:50%;background:#0a1b34;
+}
+.ring-content{position:relative;text-align:center}
+.ring-value{font-size:25px;font-weight:950}
+.ring-label{display:block;margin-top:2px;color:#8fa5bd;font-size:7px;font-weight:800;text-transform:uppercase}
+.overall-copy h2{margin:0 0 7px;font-size:16px}
+.overall-copy p{margin:0;color:#91a6be;font-size:9px;line-height:1.65}
+.stats-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:9px;
+}
+.stat-card{
+  padding:14px;border:1px solid rgba(126,176,255,.15);border-radius:13px;
+  background:rgba(255,255,255,.035);
+}
+.stat-card strong{display:block;font-size:20px;line-height:1.1}
+.stat-card span{display:block;margin-top:5px;color:#91a6be;font-size:8px;font-weight:750}
+.stat-card.green strong{color:#3ce0aa}
+.stat-card.red strong{color:#ff7284}
+.stat-card.blue strong{color:#66c8ff}
+.stat-card.violet strong{color:#b894ff}
+
+.section{margin-top:18px}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:10px;
+}
+.section-title{margin:0;font-size:16px}
+.section-sub{margin:4px 0 0;color:#8299b4;font-size:9px}
+.section-link{font-size:8px;color:#66c8ff;font-weight:850}
+
+.resume-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.resume-card{
+  padding:14px;border:1px solid rgba(126,176,255,.15);border-radius:13px;
+  background:rgba(12,29,57,.90);
+}
+.resume-top{display:flex;justify-content:space-between;gap:8px}
+.resume-name{font-size:10px;font-weight:900}
+.resume-status{font-size:7px;color:#4de3b0;font-weight:850}
+.resume-meta{margin-top:6px;color:#91a6be;font-size:8px}
+.mini-bar{height:5px;margin:10px 0 9px;background:#07162c;border-radius:99px;overflow:hidden}
+.mini-bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#168eff,#8a54f6)}
+.resume-bottom{display:flex;align-items:center;justify-content:space-between}
+.resume-bottom strong{font-size:9px}
+.resume-btn{
+  border:1px solid rgba(126,176,255,.22);background:#0c2040;color:#dce8f6;
+  border-radius:8px;padding:7px 9px;font-size:8px;font-weight:850;
+}
+.resume-btn:hover{border-color:#35aaff;background:#102b50}
+
+.subject-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.subject-card{
+  position:relative;padding:15px;border:1px solid rgba(126,176,255,.15);border-radius:14px;
+  background:rgba(12,29,57,.90);transition:.18s;
+}
+.subject-card:hover{transform:translateY(-2px);border-color:rgba(53,170,255,.36)}
+.subject-card.locked{opacity:.72}
+.subject-head{display:flex;align-items:flex-start;gap:10px}
+.subject-icon{
+  width:35px;height:35px;flex:0 0 35px;border-radius:10px;
+  display:grid;place-items:center;background:linear-gradient(135deg,rgba(34,150,255,.18),rgba(139,92,246,.18));
+  border:1px solid rgba(126,176,255,.15);font-size:14px;
+}
+.subject-info{min-width:0;flex:1}
+.subject-name{font-size:10px;font-weight:900;line-height:1.35}
+.subject-count{margin-top:3px;color:#8299b4;font-size:7.5px}
+.percent{font-size:14px;font-weight:950;color:#66c8ff}
+.subject-bar{height:6px;margin-top:13px;background:#07162c;border-radius:99px;overflow:hidden}
+.subject-bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#168eff,#8a54f6)}
+.subject-foot{display:flex;justify-content:space-between;align-items:center;margin-top:9px}
+.accuracy{font-size:7.5px;color:#91a6be}
+.accuracy b{color:#dce8f6}
+.subject-action{
+  border:0;background:none;color:#66c8ff;font-size:8px;font-weight:900;cursor:pointer;padding:0;
+}
+.locked-badge{
+  display:inline-block;margin-top:11px;padding:5px 7px;border-radius:7px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(126,176,255,.14);
+  color:#9eb0c8;font-size:7px;font-weight:850;
+}
+
+.analysis-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:10px}
+.panel{
+  padding:16px;border:1px solid rgba(126,176,255,.15);border-radius:14px;
+  background:rgba(12,29,57,.90);
+}
+.panel-title{font-size:11px;font-weight:900;margin:0}
+.panel-sub{font-size:8px;color:#8299b4;margin-top:4px}
+.accuracy-list{margin-top:15px;display:grid;gap:10px}
+.accuracy-row{display:grid;grid-template-columns:145px 1fr 42px;align-items:center;gap:9px}
+.accuracy-name{font-size:8px;color:#cbd9ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.accuracy-track{height:7px;background:#07162c;border-radius:99px;overflow:hidden}
+.accuracy-track span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#168eff,#8a54f6)}
+.accuracy-value{text-align:right;font-size:8px;font-weight:900;color:#dce8f6}
+.focus-list{margin-top:14px;display:grid;gap:8px}
+.focus-item{
+  padding:10px;border:1px solid rgba(126,176,255,.12);border-radius:10px;
+  background:rgba(255,255,255,.025);
+}
+.focus-top{display:flex;justify-content:space-between;gap:8px}
+.focus-name{font-size:9px;font-weight:850}
+.focus-accuracy{font-size:8px;color:#ff9baa;font-weight:900}
+.focus-note{margin-top:4px;font-size:7.5px;color:#8299b4}
+.focus-btn{display:inline-block;margin-top:7px;color:#66c8ff;font-size:7.5px;font-weight:900}
+
+.activity-list{display:grid;gap:8px}
+.activity{
+  display:flex;align-items:center;gap:11px;padding:11px;
+  border:1px solid rgba(126,176,255,.12);border-radius:10px;background:rgba(255,255,255,.025);
+}
+.activity-icon{
+  width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
+  background:rgba(34,150,255,.10);color:#66c8ff;font-size:12px;
+}
+.activity-main{flex:1;min-width:0}
+.activity-name{font-size:9px;font-weight:900}
+.activity-detail{margin-top:3px;font-size:7.5px;color:#8299b4}
+.activity-score{font-size:9px;font-weight:900;color:#3ce0aa}
+.activity-date{font-size:7px;color:#71859c;margin-top:2px;text-align:right}
+
+.milestones{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.milestone{
+  padding:14px 10px;text-align:center;border:1px solid rgba(126,176,255,.13);
+  border-radius:11px;background:rgba(255,255,255,.025);
+}
+.milestone-icon{font-size:20px}
+.milestone-title{margin-top:7px;font-size:8px;font-weight:900}
+.milestone-count{margin-top:3px;font-size:7px;color:#8299b4}
+.milestone.done{border-color:rgba(18,201,139,.28);background:rgba(18,201,139,.05)}
+.milestone.done .milestone-title{color:#4de3b0}
+.milestone.locked{opacity:.55}
+
+.empty{
+  padding:20px;text-align:center;border:1px dashed rgba(126,176,255,.18);
+  border-radius:12px;color:#8299b4;font-size:9px;
+}
+
+.footer{text-align:center;margin-top:28px;color:#60758d;font-size:7px}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .menu-btn{display:block;margin-left:auto}
+  .user{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .resume-grid{grid-template-columns:1fr 1fr}
+  .subject-grid{grid-template-columns:1fr 1fr}
+  .analysis-grid{grid-template-columns:1fr}
+  .milestones{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .topbar{top:5px;width:calc(100% - 16px)}
+  .nav{min-height:58px;padding:7px 9px}
+  .logo,.logo img{width:38px;height:38px}
+  .brand-title{font-size:14px}
+  .tagline{display:none}
+  .wrap{width:calc(100% - 16px);margin-top:17px}
+  .hero{padding:20px 16px}
+  .hero h1{font-size:22px}
+  .hero-grid{margin-top:16px}
+  .overall-box{flex-direction:column;text-align:center}
+  .ring{width:112px;height:112px;flex-basis:112px}
+  .stats-grid{width:100%}
+  .resume-grid,.subject-grid{grid-template-columns:1fr}
+  .accuracy-row{grid-template-columns:105px 1fr 38px}
+  .milestones{grid-template-columns:1fr 1fr}
+  .activity{align-items:flex-start}
+  .mobile-menu{
+    display:none;position:absolute;top:62px;left:0;right:0;
+    padding:8px;border:1px solid rgba(126,176,255,.22);border-radius:12px;
+    background:#0b1b34;box-shadow:0 15px 40px rgba(0,0,0,.35);
+  }
+  .mobile-menu.open{display:grid}
+  .mobile-menu a,.mobile-menu button{
+    padding:10px;border:0;background:none;text-align:left;color:#cbd9ea;
+    border-radius:8px;font-size:9px;font-weight:850;
+  }
+  .mobile-menu a.active{background:rgba(255,255,255,.05);color:#fff}
+  .mobile-menu button{cursor:pointer}
+}
+@media(min-width:601px){.mobile-menu{display:none!important}}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="joa-mahapack.html">
+      <div class="logo"><img src="logo.png" alt="HPMockShashtra"></div>
+      <div>
+        <div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div>
+        <div class="tagline">Prepare Today, Serve Tomorrow</div>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
+      <a class="nav-link" href="my-purchase.html">My Purchases</a>
+      <a class="nav-link active" href="master-progress.html">Master Progress</a>
+    </div>
+
+    <div class="user">
+      <span class="avatar" id="avatar">U</span>
+      <span class="user-name" id="userName">User</span>
+      <button class="logout" id="logoutBtn">Logout</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="joa-mahapack.html">Paid Courses</a>
+      <a href="my-purchase.html">My Purchases</a>
+      <a class="active" href="master-progress.html">Master Progress</a>
+      <button id="mobileLogout">Logout</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div id="loading" class="loading">Loading your master progress...</div>
+
+  <div id="errorBox" class="error-box">
+    <strong>Unable to load your progress</strong>
+    <div style="margin-top:6px;font-size:9px;color:#b9c7d8">Please refresh the page and try again.</div>
+  </div>
+
+  <div class="dashboard" id="dashboard">
+
+    <section class="hero">
+      <div class="hero-eyebrow">Computer Preparation Dashboard</div>
+      <h1>Master Progress</h1>
+      <p>Track your preparation across all Computer subjects in one place.</p>
+
+      <div class="hero-grid">
+
+        <div class="overall-box">
+          <div class="ring" id="overallRing">
+            <div class="ring-content">
+              <div class="ring-value" id="overallPercent">0%</div>
+              <span class="ring-label">Overall Progress</span>
+            </div>
+          </div>
+          <div class="overall-copy">
+            <h2 id="overallTitle">Keep going!</h2>
+            <p id="overallText">Your Computer preparation journey starts here. Every attempted question moves you forward.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card blue"><strong id="totalAttempted">0</strong><span>Questions Attempted</span></div>
+          <div class="stat-card green"><strong id="totalCorrect">0</strong><span>Correct Answers</span></div>
+          <div class="stat-card red"><strong id="totalWrong">0</strong><span>Wrong Answers</span></div>
+          <div class="stat-card violet"><strong id="overallAccuracy">0%</strong><span>Overall Accuracy</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="resumeSection">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Continue Practice</h2>
+          <p class="section-sub">Pick up exactly where you left off.</p>
+        </div>
+      </div>
+      <div class="resume-grid" id="resumeGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Subject Progress</h2>
+          <p class="section-sub">Your progress across the 15 Computer subjects.</p>
+        </div>
+      </div>
+      <div class="subject-grid" id="subjectGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Performance Analysis</h2>
+          <p class="section-sub">Subject-wise accuracy based on your answered questions.</p>
+        </div>
+      </div>
+
+      <div class="analysis-grid">
+        <div class="panel">
+          <h3 class="panel-title">Accuracy by Subject</h3>
+          <div class="panel-sub">Higher accuracy means more correct answers among attempted questions.</div>
+          <div class="accuracy-list" id="accuracyList"></div>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title">Focus Areas</h3>
+          <div class="panel-sub">Subjects where more practice may help.</div>
+          <div class="focus-list" id="focusList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Recent Activity</h2>
+          <p class="section-sub">Your latest practice activity.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="activity-list" id="activityList"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Milestones</h2>
+          <p class="section-sub">Keep building your Computer preparation.</p>
+        </div>
+      </div>
+      <div class="milestones" id="milestones"></div>
+    </section>
+
+    <div class="footer">HPMockShashtra • Computer Master Progress</div>
+  </div>
+</main>
+
+<script type="module">
+import {auth,db} from './firebase-config.js';
+import {onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+import {doc,getDoc} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
+
+const $=id=>document.getElementById(id);
+
+const SUBJECTS=[
+  {id:'computer_fundamentals_01',name:'Computer Fundamentals',course:'computer-fundamentals',file:'paid-computer-fundamentals.html',icon:'💻'},
+  {id:'ms_word_01',name:'MS Word',course:'ms-word',file:'paid-ms-word.html',icon:'📝',pack:'ms-office'},
+  {id:'ms_excel_01',name:'MS Excel',course:'ms-excel',file:'paid-ms-excel.html',icon:'📊',pack:'ms-office'},
+  {id:'ms_powerpoint_01',name:'MS PowerPoint',course:'ms-powerpoint',file:'paid-ms-powerpoint.html',icon:'📽️',pack:'ms-office'},
+  {id:'ms_access_01',name:'MS Access',course:'ms-access',file:'paid-ms-access.html',icon:'🗃️',pack:'ms-office'},
+  {id:'dbms_sql_01',name:'DBMS & SQL',course:'dbms-sql',file:'paid-dbms-sql.html',icon:'🗄️'},
+  {id:'computer_networking_01',name:'Computer Networking',course:'computer-networking',file:'paid-computer-networking.html',icon:'🌐'},
+  {id:'cyber_security_01',name:'Cyber Security',course:'cyber-security',file:'paid-cyber-security.html',icon:'🔐'},
+  {id:'c_programming_01',name:'C Programming',course:'c-programming',file:'paid-c-programming.html',icon:'💻'},
+  {id:'html_01',name:'HTML',course:'html',file:'paid-html.html',icon:'🌎'},
+  {id:'css_css3_01',name:'CSS / CSS3',course:'css-css3',file:'paid-css-css3.html',icon:'🎨'},
+  {id:'cloud_computing_01',name:'Cloud Computing',course:'cloud-computing',file:'paid-cloud-computing.html',icon:'☁️'},
+  {id:'data_structure_01',name:'Data Structure',course:'data-structure',file:'paid-data-structure.html',icon:'🌳'},
+  {id:'computer_organisation_01',name:'Computer Organisation & Architecture',course:'computer-organisation',file:'paid-computer-organisation.html',icon:'⚙️'},
+  {id:'operating_system_01',name:'Operating System',course:'operating-system',file:'paid-operating-system.html',icon:'🖥️'}
+];
+
+const DEFAULT_COUNT=400;
+
+function date(v){
+  if(!v)return null;
+  if(v.toDate)return v.toDate();
+  const d=new Date(v);
+  return Number.isNaN(d.getTime())?null:d;
+}
+function active(v){
+  const d=date(v?.expiresAt);
+  return !!(d&&d.getTime()>Date.now());
+}
+function normalizeAnswers(a){
+  const out={};
+  if(a&&typeof a==='object'){
+    Object.keys(a).forEach(k=>{
+      const v=a[k];
+      if(v===0||v==="0")out[k]="A";
+      else if(v===1||v==="1")out[k]="B";
+      else if(v===2||v==="2")out[k]="C";
+      else if(v===3||v==="3")out[k]="D";
+      else{
+        const x=String(v??"").trim().toUpperCase();
+        if(["A","B","C","D"].includes(x))out[k]=x;
+      }
+    });
+  }
+  return out;
+}
+function pct(n,d){
+  return d?Math.round((n/d)*100):0;
+}
+function fmt(n){return Number(n||0).toLocaleString('en-IN')}
+function escapeHtml(v){
+  return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+}
+function timeAgo(d){
+  if(!d)return '';
+  const diff=Math.max(0,Date.now()-d.getTime());
+  const mins=Math.floor(diff/60000);
+  if(mins<1)return 'Just now';
+  if(mins<60)return `${mins} min ago`;
+  const hrs=Math.floor(mins/60);
+  if(hrs<24)return `${hrs} hr${hrs>1?'s':''} ago`;
+  const days=Math.floor(hrs/24);
+  if(days<30)return `${days} day${days>1?'s':''} ago`;
+  return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+}
+
+function hasAccess(subject,accessData){
+  const course=accessData?.courses?.[subject.course];
+  if(active(course))return true;
+  if(active(accessData?.packs?.['computer-master']))return true;
+  if(subject.pack && active(accessData?.packs?.[subject.pack]))return true;
+  return false;
+}
+
+function buildData(subject,session,result){
+  let answers={};
+  let completed=false;
+  let current=0;
+  let updatedAt=null;
+  let completedAt=null;
+  let questionCount=DEFAULT_COUNT;
+
+  if(result){
+    answers=normalizeAnswers(result.answers);
+    completed=result.status==='completed';
+    current=Math.max(0,questionCount-1);
+    updatedAt=date(result.completedAt)||null;
+    completedAt=date(result.completedAt)||null;
+    questionCount=Number(result.questionCount)||DEFAULT_COUNT;
+  }else if(session){
+    answers=normalizeAnswers(session.answers);
+    current=Math.max(0,Math.min(Number(session.current)||0,DEFAULT_COUNT-1));
+    updatedAt=date(session.updatedAt)||null;
+    questionCount=Number(session.questionCount)||DEFAULT_COUNT;
+  }
+
+  const attempted=Object.keys(answers).length;
+  const correct=Number(result?.correct ?? 0);
+  const wrong=Number(result?.wrong ?? 0);
+  const accuracy=result ? pct(correct,attempted) : 0;
+
+  return {
+    ...subject,answers,completed,current,updatedAt,completedAt,questionCount,
+    attempted,correct,wrong,accuracy,
+    progress:pct(attempted,questionCount),
+    inProgress:attempted>0 && !completed
+  };
+}
+
+function practiceUrl(s){
+  return `${s.file}?test=${encodeURIComponent(s.id)}`;
+}
+
+async function loadSubject(uid,subject){
+  const sessionRef=doc(db,'testSessions',`${uid}_${subject.id}`);
+  const resultRef=doc(db,'testAttempts',`${uid}_${subject.id}`);
+  const [ss,rs]=await Promise.all([getDoc(sessionRef),getDoc(resultRef)]);
+  const session=ss.exists()?ss.data():null;
+  const result=rs.exists()?rs.data():null;
+  return buildData(subject,session,result);
+}
+
+function renderOverall(data){
+  const available=data.filter(x=>x.unlocked);
+  const totalQuestions=available.reduce((s,x)=>s+x.questionCount,0);
+  const attempted=available.reduce((s,x)=>s+x.attempted,0);
+  const correct=available.reduce((s,x)=>s+x.correct,0);
+  const wrong=available.reduce((s,x)=>s+x.wrong,0);
+  const progress=pct(attempted,totalQuestions);
+  const accuracy=pct(correct,attempted);
+
+  $('overallPercent').textContent=`${progress}%`;
+  $('overallRing').style.setProperty('--progress',`${progress}%`);
+  $('totalAttempted').textContent=fmt(attempted);
+  $('totalCorrect').textContent=fmt(correct);
+  $('totalWrong').textContent=fmt(wrong);
+  $('overallAccuracy').textContent=`${accuracy}%`;
+
+  if(attempted===0){
+    $('overallTitle').textContent='Your journey starts here';
+    $('overallText').textContent=`You have access to ${available.length} Computer subject${available.length===1?'':'s'}. Start practicing and your progress will appear here.`;
+  }else if(progress>=100){
+    $('overallTitle').textContent='Computer Master complete!';
+    $('overallText').textContent='You have completed the available Computer practice questions. Keep reviewing to strengthen retention.';
+  }else{
+    $('overallTitle').textContent='Keep building your preparation';
+    $('overallText').textContent=`You have attempted ${fmt(attempted)} of ${fmt(totalQuestions)} available questions. Continue practicing to move your progress forward.`;
+  }
+}
+
+function renderResume(data){
+  const list=data.filter(x=>x.unlocked&&x.inProgress).sort((a,b)=>(b.updatedAt?.getTime()||0)-(a.updatedAt?.getTime()||0)).slice(0,3);
+  if(!list.length){
+    $('resumeGrid').innerHTML='<div class="empty" style="grid-column:1/-1">No practice is currently in progress. Start any unlocked subject below.</div>';
+    return;
+  }
+  $('resumeGrid').innerHTML=list.map(s=>{
+    const next=Math.min(s.current+1,s.questionCount);
+    return `<div class="resume-card">
+      <div class="resume-top"><span class="resume-name">${escapeHtml(s.name)}</span><span class="resume-status">IN PROGRESS</span></div>
+      <div class="resume-meta">Question ${next} of ${s.questionCount} • ${s.progress}% completed</div>
+      <div class="mini-bar"><span style="width:${s.progress}%"></span></div>
+      <div class="resume-bottom"><strong>${s.accuracy}% accuracy</strong><a class="resume-btn" href="${practiceUrl(s)}">Continue →</a></div>
+    </div>`;
+  }).join('');
+}
+
+function renderSubjects(data){
+  $('subjectGrid').innerHTML=data.map(s=>{
+    if(!s.unlocked){
+      return `<div class="subject-card locked">
+        <div class="subject-head">
+          <div class="subject-icon">${s.icon}</div>
+          <div class="subject-info"><div class="subject-name">${escapeHtml(s.name)}</div><div class="subject-count">${DEFAULT_COUNT} Questions</div></div>
+          <div class="percent">🔒</div>
+        </div>
+        <span class="locked-badge">Locked • Unlock from Paid Courses</span>
+      </div>`;
+    }
+    const status=s.completed?'Completed':s.inProgress?'In Progress':'Not Started';
+    const action=s.completed?'Review →':s.inProgress?'Continue →':'Start →';
+    return `<div class="subject-card">
+      <div class="subject-head">
+        <div class="subject-icon">${s.icon}</div>
+        <div class="subject-info"><div class="subject-name">${escapeHtml(s.name)}</div><div class="subject-count">${s.attempted} / ${s.questionCount} Questions</div></div>
+        <div class="percent">${s.progress}%</div>
+      </div>
+      <div class="subject-bar"><span style="width:${s.progress}%"></span></div>
+      <div class="subject-foot">
+        <span class="accuracy">Accuracy: <b>${s.attempted?`${s.accuracy}%`:'—'}</b> • ${status}</span>
+        <a class="subject-action" href="${practiceUrl(s)}">${action}</a>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderAccuracy(data){
+  const rows=data.filter(x=>x.unlocked&&x.attempted>0).sort((a,b)=>b.accuracy-a.accuracy);
+  if(!rows.length){
+    $('accuracyList').innerHTML='<div class="empty">Accuracy data will appear after you attempt questions.</div>';
+    return;
+  }
+  $('accuracyList').innerHTML=rows.map(s=>`
+    <div class="accuracy-row">
+      <div class="accuracy-name">${escapeHtml(s.name)}</div>
+      <div class="accuracy-track"><span style="width:${s.accuracy}%"></span></div>
+      <div class="accuracy-value">${s.accuracy}%</div>
+    </div>
+  `).join('');
+}
+
+function renderFocus(data){
+  const rows=data.filter(x=>x.unlocked&&x.attempted>0).sort((a,b)=>a.accuracy-b.accuracy).slice(0,3);
+  if(!rows.length){
+    $('focusList').innerHTML='<div class="empty">Attempt a few questions to identify your focus areas.</div>';
+    return;
+  }
+  $('focusList').innerHTML=rows.map(s=>`
+    <div class="focus-item">
+      <div class="focus-top"><span class="focus-name">${escapeHtml(s.name)}</span><span class="focus-accuracy">${s.accuracy}%</span></div>
+      <div class="focus-note">${s.attempted} questions attempted • ${s.correct} correct</div>
+      <a class="focus-btn" href="${practiceUrl(s)}">Practice this subject →</a>
+    </div>
+  `).join('');
+}
+
+function renderActivity(data){
+  const rows=data.filter(x=>x.unlocked&&x.attempted>0).sort((a,b)=>(b.updatedAt?.getTime()||0)-(a.updatedAt?.getTime()||0)).slice(0,5);
+  if(!rows.length){
+    $('activityList').innerHTML='<div class="empty">Your recent practice activity will appear here.</div>';
+    return;
+  }
+  $('activityList').innerHTML=rows.map(s=>{
+    const score=s.completed?`${s.correct}/${s.questionCount}`:`${s.attempted}/${s.questionCount}`;
+    const detail=s.completed?`Practice completed • ${s.accuracy}% accuracy`:`Practice in progress • ${s.progress}% completed`;
+    return `<a class="activity" href="${practiceUrl(s)}">
+      <div class="activity-icon">${s.icon}</div>
+      <div class="activity-main"><div class="activity-name">${escapeHtml(s.name)}</div><div class="activity-detail">${detail}</div></div>
+      <div><div class="activity-score">${score}</div><div class="activity-date">${timeAgo(s.updatedAt)}</div></div>
+    </a>`;
+  }).join('');
+}
+
+function renderMilestones(data){
+  const attempted=data.filter(x=>x.unlocked).reduce((s,x)=>s+x.attempted,0);
+  const milestones=[
+    {n:100,label:'100 Questions',icon:'🏁'},
+    {n:500,label:'500 Questions',icon:'🎯'},
+    {n:1000,label:'1,000 Questions',icon:'🔥'},
+    {n:2500,label:'2,500 Questions',icon:'🚀'},
+    {n:5000,label:'5,000 Questions',icon:'🏆'},
+    {n:6000,label:'6,000 Questions',icon:'👑'}
+  ];
+  $('milestones').innerHTML=milestones.map(m=>{
+    const done=attempted>=m.n;
+    return `<div class="milestone ${done?'done':'locked'}"><div class="milestone-icon">${m.icon}</div><div class="milestone-title">${m.label}</div><div class="milestone-count">${done?'Completed':'Locked'}</div></div>`;
+  }).join('');
+}
+
+async function init(user){
+  const accessSnap=await getDoc(doc(db,'testAccess',user.uid));
+  const accessData=accessSnap.exists()?accessSnap.data()?.computerAccess||{}:{};
+
+  const data=await Promise.all(SUBJECTS.map(async subject=>{
+    const base=await loadSubject(user.uid,subject);
+    return {...base,unlocked:hasAccess(subject,accessData)};
+  }));
+
+  renderOverall(data);
+  renderResume(data);
+  renderSubjects(data);
+  renderAccuracy(data);
+  renderFocus(data);
+  renderActivity(data);
+  renderMilestones(data);
+
+  $('loading').style.display='none';
+  $('dashboard').style.display='block';
+}
+
+$('menuBtn').onclick=()=>$('mobileMenu').classList.toggle('open');
+
+$('logoutBtn').onclick=async()=>{
+  await signOut(auth);
+  location.href='firebase-login.html';
+};
+$('mobileLogout').onclick=async()=>{
+  await signOut(auth);
+  location.href='firebase-login.html';
+};
+
+onAuthStateChanged(auth,async user=>{
+  if(!user){
+    location.href='firebase-login.html?redirect=master-progress.html';
+    return;
+  }
+
+  const name=user.displayName||user.email?.split('@')[0]||'User';
+  $('userName').textContent=name;
+  $('avatar').textContent=name[0].toUpperCase();
+
+  try{
+    await init(user);
+  }catch(e){
+    console.error(e);
+    $('loading').style.display='none';
+    $('errorBox').style.display='block';
+  }
+});
+</script>
+</body>
+</html>
