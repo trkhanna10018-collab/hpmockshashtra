@@ -3854,8 +3854,8 @@ export const QUESTIONS = [
 
 // Question 132
 {
-  en: "Consider the following statements:\n\n1. An instruction is a command that directs the computer to perform an operation.\n2. A program consists of a logically arranged sequence of instructions.\n3. Software refers only to a single instruction given to the CPU.\n4. Programs enable hardware to perform useful tasks.\n\nWhich of the above statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें:\n\n1. Instruction एक command है जो computer को कोई operation perform करने के लिए निर्देशित करती है।\n2. Program logically arranged instructions का एक sequence होता है।\n3. Software केवल CPU को दिए गए एक single instruction को कहा जाता है।\n4. Programs hardware को useful tasks perform करने में सक्षम बनाते हैं।\n\nउपरोक्त में से कौन-से कथन सही हैं?",
+  en: "Consider the following statements:\n1. An instruction is a command that directs the computer to perform an operation.\n2. A program consists of a logically arranged sequence of instructions.\n3. Software refers only to a single instruction given to the CPU.\n4. Programs enable hardware to perform useful tasks.\n Which of the above statements are correct?",
+  hi: "निम्नलिखित कथनों पर विचार करें:\n1. Instruction एक command है जो computer को कोई operation perform करने के लिए निर्देशित करती है।\n2. Program logically arranged instructions का एक sequence होता है।\n3. Software केवल CPU को दिए गए एक single instruction को कहा जाता है।\n4. Programs hardware को useful tasks perform करने में सक्षम बनाते हैं। \n उपरोक्त में से कौन-से कथन सही हैं?",
 
   options: [
     {
@@ -5014,8 +5014,8 @@ export const QUESTIONS = [
 
 // Question 172
 {
-  en: "Consider the following statements: \n1. HDD generally contains moving mechanical components. \n2. SSD stores data using flash memory. \n3. USB flash drives are portable storage devices. \n4. SSDs require spinning magnetic platters to read and write data. Which statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें: \n1. HDD में सामान्यतः गतिशील यांत्रिक भाग होते हैं। \n2. SSD फ्लैश मेमोरी का उपयोग करके डेटा स्टोर करता है। \n3. USB फ्लैश ड्राइव पोर्टेबल स्टोरेज डिवाइस होते हैं। \n4. SSD को डेटा पढ़ने और लिखने के लिए घूमने वाले चुंबकीय प्लेटर्स की आवश्यकता होती है। कौन-से कथन सही हैं?",
+  en: "Consider the following statements: \n1. HDD generally contains moving mechanical components. \n2. SSD stores data using flash memory. \n3. USB flash drives are portable storage devices. \n4. SSDs require spinning magnetic platters to read and write data. \nWhich statements are correct?",
+  hi: "निम्नलिखित कथनों पर विचार करें: \n1. HDD में सामान्यतः गतिशील यांत्रिक भाग होते हैं। \n2. SSD फ्लैश मेमोरी का उपयोग करके डेटा स्टोर करता है। \n3. USB फ्लैश ड्राइव पोर्टेबल स्टोरेज डिवाइस होते हैं। \n4. SSD को डेटा पढ़ने और लिखने के लिए घूमने वाले चुंबकीय प्लेटर्स की आवश्यकता होती है। \nकौन-से कथन सही हैं?",
 
   options: [
     {
@@ -5217,8 +5217,8 @@ export const QUESTIONS = [
 
 // Question 179
 {
-  en: "Consider the following statements about the CPU: \n1. It executes instructions supplied by computer programs. \n2. It performs arithmetic and logical operations. \n3. It coordinates the execution of various operations within the computer. \n4. It is primarily used for permanently storing files. Which statements are correct?",
-  hi: "CPU के बारे में निम्नलिखित कथनों पर विचार करें: \n1. यह कंप्यूटर प्रोग्राम द्वारा दिए गए निर्देशों को निष्पादित करता है। \n2. यह अंकगणितीय और तार्किक ऑपरेशन करता है। \n3. यह कंप्यूटर के भीतर विभिन्न कार्यों के निष्पादन का समन्वय करता है। \n4. इसका मुख्य उपयोग फाइलों को स्थायी रूप से स्टोर करना है। कौन-से कथन सही हैं?",
+  en: "Consider the following statements about the CPU: \n1. It executes instructions supplied by computer programs. \n2. It performs arithmetic and logical operations. \n3. It coordinates the execution of various operations within the computer. \n4. It is primarily used for permanently storing files. \nWhich statements are correct?",
+  hi: "CPU के बारे में निम्नलिखित कथनों पर विचार करें: \n1. यह कंप्यूटर प्रोग्राम द्वारा दिए गए निर्देशों को निष्पादित करता है। \n2. यह अंकगणितीय और तार्किक ऑपरेशन करता है। \n3. यह कंप्यूटर के भीतर विभिन्न कार्यों के निष्पादन का समन्वय करता है। \n4. इसका मुख्य उपयोग फाइलों को स्थायी रूप से स्टोर करना है। \nकौन-से कथन सही हैं?",
 
   options: [
     {
@@ -5478,8 +5478,8 @@ export const QUESTIONS = [
 
 // Question 188
 {
-  en: "Consider the following statements: \n1. ALU performs arithmetic and logical operations. \n2. Control Unit coordinates and controls the execution of instructions. \n3. Registers provide very fast temporary storage within the CPU. \n4. Registers are primarily used for permanently storing user files. Which statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें: \n1. ALU अंकगणितीय और तार्किक ऑपरेशन करता है। \n2. कंट्रोल यूनिट निर्देशों के निष्पादन का समन्वय और नियंत्रण करती है। \n3. रजिस्टर CPU के भीतर बहुत तेज अस्थायी स्टोरेज प्रदान करते हैं। \n4. रजिस्टर मुख्य रूप से उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करने के लिए उपयोग किए जाते हैं। कौन-से कथन सही हैं?",
+  en: "Consider the following statements: \n1. ALU performs arithmetic and logical operations. \n2. Control Unit coordinates and controls the execution of instructions. \n3. Registers provide very fast temporary storage within the CPU. \n4. Registers are primarily used for permanently storing user files. \nWhich statements are correct?",
+  hi: "निम्नलिखित कथनों पर विचार करें: \n1. ALU अंकगणितीय और तार्किक ऑपरेशन करता है। \n2. कंट्रोल यूनिट निर्देशों के निष्पादन का समन्वय और नियंत्रण करती है। \n3. रजिस्टर CPU के भीतर बहुत तेज अस्थायी स्टोरेज प्रदान करते हैं। \n4. रजिस्टर मुख्य रूप से उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करने के लिए उपयोग किए जाते हैं। \nकौन-से कथन सही हैं?",
 
   options: [
     {
@@ -5564,8 +5564,8 @@ export const QUESTIONS = [
 },
 // Question 191
 {
-  en: "Consider the following functions: \n1. Performing comparison and logical operations \n2. Directing the sequence of instruction execution \n3. Holding intermediate values during processing \n4. Permanently storing user files. Which functions are correctly associated with ALU, Control Unit and Registers?",
-  hi: "निम्नलिखित कार्यों पर विचार करें: \n1. तुलना और तार्किक ऑपरेशन करना \n2. निर्देशों के निष्पादन के क्रम को निर्देशित करना \n3. प्रोसेसिंग के दौरान मध्यवर्ती मानों को रखना \n4. उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करना। ALU, कंट्रोल यूनिट और रजिस्टर के साथ कौन-से कार्य सही रूप से जुड़े हैं?",
+  en: "Consider the following functions: \n1. Performing comparison and logical operations \n2. Directing the sequence of instruction execution \n3. Holding intermediate values during processing \n4. Permanently storing user files. \n Which functions are correctly associated with ALU, Control Unit and Registers?",
+  hi: "निम्नलिखित कार्यों पर विचार करें: \n1. तुलना और तार्किक ऑपरेशन करना \n2. निर्देशों के निष्पादन के क्रम को निर्देशित करना \n3. प्रोसेसिंग के दौरान मध्यवर्ती मानों को रखना \n4. उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करना। \n ALU, कंट्रोल यूनिट और रजिस्टर के साथ कौन-से कार्य सही रूप से जुड़े हैं?",
 
   options: [
     {
