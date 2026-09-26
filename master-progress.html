@@ -41,54 +41,59 @@ body:before{
 a{text-decoration:none;color:inherit}
 button{font:inherit}
 .topbar{
-  position:sticky;top:8px;z-index:50;
-  width:min(1120px,calc(100% - 28px));
-  margin:22px auto 0;
-  border:1px solid rgba(126,176,255,.30);
+  position:fixed;top:10px;left:50%;transform:translateX(-50%);
+  width:min(1400px,calc(100vw - 32px));z-index:9999;
+  border:1px solid rgba(180,140,255,.38);
   border-radius:18px;
-  background:linear-gradient(135deg,rgba(13,34,66,.94),rgba(24,23,62,.88));
-  box-shadow:0 12px 40px rgba(0,0,0,.35);
-  backdrop-filter:blur(12px);
+  background:linear-gradient(135deg,rgba(11,27,58,.96),rgba(47,27,82,.96));
+  backdrop-filter:blur(22px) saturate(150%);
+  box-shadow:0 18px 55px #0008,0 0 30px rgba(137,92,255,.12);
 }
 .nav{
-  min-height:64px;padding:8px 12px;
+  min-height:72px;padding:8px 16px;
   display:flex;align-items:center;gap:12px;
 }
-.brand{display:flex;align-items:center;gap:9px;min-width:0}
-.logo,.logo img{width:42px;height:42px}
-.logo img{display:block;object-fit:contain}
-.brand-title{font-size:18px;font-weight:900;letter-spacing:-.6px;white-space:nowrap}
-.hp,.sh{color:#fff}.mock{color:#37b8ff}
-.tagline{font-size:7px;color:#8ea2bd;margin-top:3px}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0}
+.logo,.logo img{width:48px;height:48px}
+.logo img{display:block;object-fit:contain;border-radius:9px}
+.brand-title{font-size:20px;font-weight:900;letter-spacing:-.6px;white-space:nowrap}
+.hp,.sh{color:#fff}.mock{color:#39a9ff}
+.tagline{font-size:8px;color:#93a7c2;margin-top:2px}
 .nav-links{display:flex;align-items:center;gap:7px;margin-left:auto}
 .nav-link{
-  padding:8px 10px;border:1px solid transparent;border-radius:9px;
-  color:#aebed2;font-size:9px;font-weight:850;
+  padding:9px 13px;border:1px solid rgba(126,176,255,.28);border-radius:10px;
+  color:#e2eaff;font-size:12px;font-weight:800;
+  background:rgba(255,255,255,.07);
+  box-shadow:0 4px 14px rgba(0,0,0,.18),inset 0 0 14px rgba(90,150,255,.06);
+  transition:.2s;
 }
 .nav-link:hover,.nav-link.active{
-  border-color:rgba(126,176,255,.20);
-  background:rgba(255,255,255,.045);
+  border-color:rgba(105,190,255,.65);
+  background:linear-gradient(135deg,rgba(34,150,255,.30),rgba(155,108,255,.28));
   color:#fff;
+  box-shadow:0 0 18px rgba(50,160,255,.18),inset 0 0 14px rgba(120,180,255,.10);
 }
 .user{
-  display:flex;align-items:center;gap:6px;
-  padding:4px 8px 4px 5px;
-  border:1px solid rgba(126,176,255,.22);
-  border-radius:9px;background:rgba(255,255,255,.045);
+  display:flex;align-items:center;gap:7px;
+  padding:5px 8px;
+  border:1px solid rgba(126,176,255,.18);
+  border-radius:10px;background:#ffffff07;
+  font-size:11px;font-weight:800;white-space:nowrap;
 }
 .avatar{
-  width:28px;height:28px;border-radius:8px;display:grid;place-items:center;
-  background:linear-gradient(135deg,#2497ff,#9a5cff);
-  font-size:10px;font-weight:900;
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(145deg,#ffd19c,#ff8b58);color:#18304e;
+  border:2px solid #fff;box-shadow:0 5px 18px #0005;
+  font-size:11px;font-weight:900;
 }
-.user-name{max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;font-weight:800}
-.logout{border:0;background:none;color:#879ab3;font-size:8px;cursor:pointer}
+.user-name{max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:800}
+.logout{border:0;background:transparent;color:#91a5be;font-size:9px;font-weight:800;cursor:pointer}
 .menu-btn{
-  display:none;border:1px solid rgba(126,176,255,.20);background:rgba(255,255,255,.04);
-  color:#dce8f6;border-radius:8px;width:36px;height:36px;cursor:pointer;
+  display:none;border:1px solid rgba(126,176,255,.38);background:rgba(255,255,255,.07);
+  color:#fff;border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:22px;
 }
 
-.wrap{width:min(1120px,calc(100% - 24px));margin:24px auto 55px}
+.wrap{width:min(1400px,calc(100% - 28px));margin:0 auto 55px;padding-top:112px}
 .loading{
   padding:80px 20px;text-align:center;color:#9db0c8;font-size:12px;
 }
@@ -203,71 +208,93 @@ button{font:inherit}
 .accuracy{font-size:7.5px;color:#91a6be}
 .accuracy b{color:#dce8f6}
 .subject-action{
-  border:0;background:none;color:#66c8ff;font-size:8px;font-weight:900;cursor:pointer;padding:0;
+  display:inline-flex;align-items:center;justify-content:center;min-width:72px;
+  padding:7px 10px;border-radius:8px;
+  border:1px solid rgba(102,200,255,.30);
+  background:rgba(34,150,255,.10);color:#66c8ff;font-size:8px;font-weight:900;
 }
+.subject-action:hover{background:rgba(34,150,255,.18);border-color:#66c8ff}
+
 .locked-badge{
   display:inline-block;margin-top:11px;padding:5px 7px;border-radius:7px;
   background:rgba(255,255,255,.04);border:1px solid rgba(126,176,255,.14);
   color:#9eb0c8;font-size:7px;font-weight:850;
 }
 
-.analysis-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:10px}
-.panel{
-  padding:16px;border:1px solid rgba(126,176,255,.15);border-radius:14px;
-  background:rgba(12,29,57,.90);
-}
-.panel-title{font-size:11px;font-weight:900;margin:0}
-.panel-sub{font-size:8px;color:#8299b4;margin-top:4px}
-.accuracy-list{margin-top:15px;display:grid;gap:10px}
-.accuracy-row{display:grid;grid-template-columns:145px 1fr 42px;align-items:center;gap:9px}
-.accuracy-name{font-size:8px;color:#cbd9ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.accuracy-track{height:7px;background:#07162c;border-radius:99px;overflow:hidden}
-.accuracy-track span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#168eff,#8a54f6)}
-.accuracy-value{text-align:right;font-size:8px;font-weight:900;color:#dce8f6}
-.focus-list{margin-top:14px;display:grid;gap:8px}
-.focus-item{
-  padding:10px;border:1px solid rgba(126,176,255,.12);border-radius:10px;
-  background:rgba(255,255,255,.025);
-}
-.focus-top{display:flex;justify-content:space-between;gap:8px}
-.focus-name{font-size:9px;font-weight:850}
-.focus-accuracy{font-size:8px;color:#ff9baa;font-weight:900}
-.focus-note{margin-top:4px;font-size:7.5px;color:#8299b4}
-.focus-btn{display:inline-block;margin-top:7px;color:#66c8ff;font-size:7.5px;font-weight:900}
 
-.activity-list{display:grid;gap:8px}
-.activity{
-  display:flex;align-items:center;gap:11px;padding:11px;
-  border:1px solid rgba(126,176,255,.12);border-radius:10px;background:rgba(255,255,255,.025);
+.milestones{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+  padding:14px;border:1px solid rgba(126,176,255,.30);
+  border-radius:17px;
+  background:linear-gradient(145deg,rgba(11,28,57,.96),rgba(28,20,58,.94));
+  box-shadow:0 18px 45px rgba(0,0,0,.30),inset 0 0 35px rgba(90,130,255,.05);
 }
-.activity-icon{
-  width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
-  background:rgba(34,150,255,.10);color:#66c8ff;font-size:12px;
-}
-.activity-main{flex:1;min-width:0}
-.activity-name{font-size:9px;font-weight:900}
-.activity-detail{margin-top:3px;font-size:7.5px;color:#8299b4}
-.activity-score{font-size:9px;font-weight:900;color:#3ce0aa}
-.activity-date{font-size:7px;color:#71859c;margin-top:2px;text-align:right}
-
-.milestones{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .milestone{
-  padding:14px 10px;text-align:center;border:1px solid rgba(126,176,255,.13);
-  border-radius:11px;background:rgba(255,255,255,.025);
+  position:relative;min-height:112px;padding:15px 10px;text-align:center;
+  border:1px solid rgba(126,176,255,.25);
+  border-radius:13px;
+  background:linear-gradient(145deg,rgba(17,39,75,.95),rgba(20,27,59,.95));
+  box-shadow:0 8px 20px rgba(0,0,0,.20);
+  overflow:hidden;
 }
-.milestone-icon{font-size:20px}
-.milestone-title{margin-top:7px;font-size:8px;font-weight:900}
-.milestone-count{margin-top:3px;font-size:7px;color:#8299b4}
-.milestone.done{border-color:rgba(18,201,139,.28);background:rgba(18,201,139,.05)}
-.milestone.done .milestone-title{color:#4de3b0}
-.milestone.locked{opacity:.55}
+.milestone:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 0%,rgba(90,180,255,.12),transparent 55%);
+}
+.milestone-icon{position:relative;z-index:1;font-size:26px;line-height:1}
+.milestone-title{position:relative;z-index:1;margin-top:9px;font-size:9px;font-weight:900;color:#e8f2ff}
+.milestone-count{position:relative;z-index:1;margin-top:5px;font-size:8px;color:#8ea6c2}
+.milestone.done{
+  border-color:rgba(39,217,154,.75);
+  background:linear-gradient(145deg,rgba(12,67,67,.98),rgba(19,48,65,.98));
+  box-shadow:0 0 0 1px rgba(39,217,154,.12),0 10px 28px rgba(39,217,154,.16);
+}
+.milestone.done .milestone-title{color:#69f2c1}
+.milestone.done .milestone-count{color:#b9ffe5}
+.milestone.locked{opacity:.78}
+.milestone.locked .milestone-title{color:#c2d0e0}
+
+.buy-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:72px;padding:7px 10px;border-radius:8px;
+  background:linear-gradient(135deg,#ffad3d,#ff7b54);
+  border:1px solid rgba(255,205,130,.55);
+  color:#241304;font-size:8px;font-weight:950;
+  box-shadow:0 7px 18px rgba(255,130,60,.16);
+}
+.buy-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.review-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:72px;padding:7px 10px;border-radius:8px;
+  background:linear-gradient(135deg,#9b6cff,#5f8cff);
+  border:1px solid rgba(190,170,255,.55);
+  color:#fff;font-size:8px;font-weight:950;
+  box-shadow:0 7px 18px rgba(120,100,255,.18);
+}
+.review-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
 
 .empty{
   padding:20px;text-align:center;border:1px dashed rgba(126,176,255,.18);
   border-radius:12px;color:#8299b4;font-size:9px;
 }
 
-.footer{text-align:center;margin-top:28px;color:#60758d;font-size:7px}
+.footer{
+  background:linear-gradient(145deg,#020711,#07152c);
+  border-top:1px solid #6baeff16;margin-top:28px;
+}
+.footer-inner{width:min(1400px,calc(100% - 28px));margin:auto}
+.footer-top{padding:38px 0 27px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
+.footer h3{margin:0 0 7px;font-size:18px}
+.footer h4{margin:0 0 9px;font-size:12px}
+.footer p{max-width:450px;color:#8095b1;font-size:10px;line-height:1.7}
+.footer-links{display:grid;gap:7px}
+.footer-links a{font-size:10px;color:#91a5be}
+.footer-links a:hover{color:#55c7ff}
+.footer-bottom{
+  padding:14px 0;border-top:1px solid #ffffff0c;
+  display:flex;justify-content:space-between;color:#657a96;font-size:9px;
+}
 
 @media(max-width:900px){
   .nav-links{display:none}
@@ -276,16 +303,17 @@ button{font:inherit}
   .hero-grid{grid-template-columns:1fr}
   .resume-grid{grid-template-columns:1fr 1fr}
   .subject-grid{grid-template-columns:1fr 1fr}
-  .analysis-grid{grid-template-columns:1fr}
   .milestones{grid-template-columns:repeat(3,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-  .topbar{top:5px;width:calc(100% - 16px)}
-  .nav{min-height:58px;padding:7px 9px}
-  .logo,.logo img{width:38px;height:38px}
-  .brand-title{font-size:14px}
+  .topbar{top:6px;width:calc(100vw - 18px)}
+  .nav{min-height:64px;padding:7px 8px;position:relative}
+  .logo,.logo img{width:40px;height:40px;flex:0 0 40px}
+  .brand-title{font-size:14px;max-width:125px;overflow:hidden;text-overflow:ellipsis}
   .tagline{display:none}
-  .wrap{width:calc(100% - 16px);margin-top:17px}
+  .brand{gap:7px;flex:1;overflow:hidden;margin-right:0}
+  .wrap{width:calc(100% - 18px);margin:0 auto 40px;padding-top:86px}
   .hero{padding:20px 16px}
   .hero h1{font-size:22px}
   .hero-grid{margin-top:16px}
@@ -301,13 +329,16 @@ button{font:inherit}
     padding:8px;border:1px solid rgba(126,176,255,.22);border-radius:12px;
     background:#0b1b34;box-shadow:0 15px 40px rgba(0,0,0,.35);
   }
-  .mobile-menu.open{display:grid}
+  .mobile-menu.open{display:grid;gap:6px}
   .mobile-menu a,.mobile-menu button{
-    padding:10px;border:0;background:none;text-align:left;color:#cbd9ea;
+    padding:10px;border:1px solid rgba(126,176,255,.18);background:rgba(255,255,255,.04);text-align:left;color:#cbd9ea;
     border-radius:8px;font-size:9px;font-weight:850;
   }
-  .mobile-menu a.active{background:rgba(255,255,255,.05);color:#fff}
+  .mobile-menu a.active{background:linear-gradient(135deg,rgba(34,150,255,.30),rgba(155,108,255,.28));color:#fff}
   .mobile-menu button{cursor:pointer}
+  .footer-inner{width:calc(100% - 18px)}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:6px}
 }
 @media(min-width:601px){.mobile-menu{display:none!important}}
 
@@ -319,19 +350,37 @@ button{font:inherit}
 .empty{font-size:10px}
 @media(max-width:600px){.topbar{top:5px;width:calc(100% - 18px);margin-top:12px}.wrap{width:calc(100% - 18px);margin-top:14px}.hero{padding:18px 16px}.hero h1{font-size:22px}.section-title{font-size:16px}}
 
-.subject-action.buy-action{color:#ffd166!important;background:rgba(255,209,102,.08)!important;border:1px solid rgba(255,209,102,.25)!important;padding:7px 9px!important;border-radius:8px!important}.subject-action.buy-action:hover{color:#fff!important;background:rgba(255,209,102,.14)!important;border-color:rgba(255,209,102,.55)!important}
-.subject-action.review-action{color:#4de3b0!important;background:rgba(18,201,139,.08)!important;border:1px solid rgba(18,201,139,.24)!important;padding:7px 9px!important;border-radius:8px!important}.subject-action.review-action:hover{color:#fff!important;background:rgba(18,201,139,.14)!important;border-color:rgba(18,201,139,.55)!important}
-.milestone.done{box-shadow:0 0 22px rgba(18,201,139,.10)}
-.celebration-overlay{position:fixed;inset:0;z-index:99999;pointer-events:none;overflow:hidden}.celebration-message{position:absolute;left:50%;top:18%;transform:translateX(-50%);min-width:260px;padding:16px 22px;text-align:center;border-radius:16px;border:1px solid rgba(126,220,255,.38);background:linear-gradient(135deg,rgba(11,27,58,.96),rgba(47,27,82,.96));box-shadow:0 18px 55px #0009,0 0 35px rgba(100,170,255,.18);animation:milestonePop .65s ease-out both}.celebration-message strong{display:block;font-size:18px;color:#fff}.celebration-message span{display:block;margin-top:5px;color:#9edfff;font-size:10px;font-weight:800}.celebration-spark{font-size:25px;margin-bottom:2px}.celebration-piece{position:absolute;top:-40px;animation:flowerFall 3.6s cubic-bezier(.18,.72,.32,1) var(--delay) forwards}@keyframes flowerFall{0%{transform:translate3d(0,0,0) rotate(0deg);opacity:0}10%{opacity:1}100%{transform:translate3d(var(--drift),110vh,0) rotate(var(--rotate));opacity:.05}}@keyframes milestonePop{0%{opacity:0;transform:translate(-50%,-18px) scale(.88)}70%{opacity:1;transform:translate(-50%,0) scale(1.04)}100%{opacity:1;transform:translate(-50%,0) scale(1)}}@media(prefers-reduced-motion:reduce){.celebration-piece{animation:none;display:none}.celebration-message{animation:none}}
 
-/* Final header/footer match with my-purchase.html */
-.topbar{position:fixed!important;top:10px!important;left:50%!important;transform:translateX(-50%)!important;width:min(1400px,calc(100vw - 32px))!important;z-index:9999!important;border:1px solid rgba(180,140,255,.38)!important;background:linear-gradient(135deg,rgba(11,27,58,.96),rgba(47,27,82,.96))!important;backdrop-filter:blur(22px) saturate(150%)!important;box-shadow:0 18px 55px #0008,0 0 30px rgba(137,92,255,.12)!important;border-radius:18px!important}
-.nav{min-height:72px!important;padding:8px 16px!important;display:flex!important;align-items:center!important;gap:12px!important}.brand{display:flex!important;align-items:center!important;gap:10px!important;margin-right:auto!important;min-width:0!important}.logo,.logo img{width:48px!important;height:48px!important}.logo img{object-fit:contain!important;border-radius:9px!important}.brand-title{font-weight:900!important;font-size:20px!important;white-space:nowrap!important}.tagline{font-size:8px!important;color:#93a7c2!important}.nav-links{display:flex!important;gap:7px!important}.nav-link{font-size:12px!important;font-weight:800!important;color:#e2eaff!important;padding:9px 13px!important;border-radius:10px!important;border:1px solid rgba(126,176,255,.28)!important;background:rgba(255,255,255,.07)!important;box-shadow:0 4px 14px rgba(0,0,0,.18),inset 0 0 14px rgba(90,150,255,.06)!important}.nav-link:hover,.nav-link.active{color:#fff!important;background:linear-gradient(135deg,rgba(34,150,255,.30),rgba(155,108,255,.28))!important;border-color:rgba(105,190,255,.65)!important}.user{display:flex!important;align-items:center!important;gap:7px!important;font-size:11px!important;font-weight:800!important;white-space:nowrap!important;padding:5px 8px!important;border:1px solid rgba(126,176,255,.18)!important;border-radius:10px!important;background:#ffffff07!important}.avatar{width:34px!important;height:34px!important;border-radius:50%!important;background:linear-gradient(145deg,#ffd19c,#ff8b58)!important;color:#18304e!important;border:2px solid #fff!important}.logout{border:0!important;background:transparent!important;color:#91a5be!important;font-size:9px!important;font-weight:800!important;cursor:pointer!important;padding:2px 0!important}.menu-btn{display:none;border:1px solid rgba(126,176,255,.38);background:rgba(255,255,255,.07);color:#fff;border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:20px}
-.footer{background:linear-gradient(145deg,#020711,#07152c)!important;border-top:1px solid #6baeff16!important;margin-top:35px!important}.footer-inner{width:min(1400px,calc(100% - 28px))!important;margin:auto!important}.footer-top{padding:38px 0 27px!important;display:grid!important;grid-template-columns:1.4fr 1fr 1fr!important;gap:35px!important}.footer h3{margin:0 0 7px!important;font-size:18px!important}.footer h4{margin:0 0 9px!important;font-size:12px!important}.footer p{max-width:450px!important;color:#8095b1!important;font-size:10px!important;line-height:1.7!important}.footer-links{display:grid!important;gap:7px!important}.footer-links a{font-size:10px!important;color:#91a5be!important}.footer-bottom{padding:14px 0!important;border-top:1px solid #ffffff0c!important;display:flex!important;justify-content:space-between!important;color:#657a96!important;font-size:9px!important}
-@media(max-width:1100px){.nav-link{font-size:10px!important;padding:8px 10px!important}}
-@media(max-width:820px){.topbar{width:calc(100vw - 18px)!important}.nav-link{font-size:9px!important;padding:8px!important}.footer-top{grid-template-columns:1fr 1fr!important}}
-@media(max-width:600px){.topbar{top:6px!important;width:calc(100vw - 18px)!important}.nav{min-height:64px!important;padding:7px 8px!important;gap:7px!important;position:relative!important}.menu-btn{display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;height:40px!important}.brand{min-width:0!important;flex:1!important;overflow:hidden!important;gap:7px!important;margin-right:0!important}.logo,.logo img{width:40px!important;height:40px!important;flex:0 0 40px!important}.brand-title{font-size:14px!important;max-width:125px!important;overflow:hidden!important;text-overflow:ellipsis!important}.tagline{display:none!important}.nav-links{display:none!important}.user{margin-left:0!important;flex:0 0 auto!important;max-width:116px!important;min-width:0!important;padding:4px 5px!important;gap:5px!important}.avatar{width:32px!important;height:32px!important;flex:0 0 32px!important}.user-name{display:block!important;max-width:52px!important}.logout{font-size:8px!important}.mobile-menu{display:none!important;position:absolute!important;top:calc(100% + 8px)!important;left:0!important;right:0!important;padding:8px!important;border:1px solid rgba(180,140,255,.38)!important;border-radius:14px!important;background:linear-gradient(135deg,rgba(11,27,58,.98),rgba(47,27,82,.98))!important;box-shadow:0 18px 45px #0009!important;z-index:10000!important}.mobile-menu.open{display:grid!important;gap:6px!important}.mobile-menu a,.mobile-menu button{display:flex!important;align-items:center!important;min-height:42px!important;padding:10px 12px!important;border:1px solid rgba(126,176,255,.22)!important;border-radius:10px!important;background:rgba(255,255,255,.06)!important;color:#e8efff!important;font-size:11px!important;font-weight:800!important;text-align:left!important}.mobile-menu a.active,.mobile-menu a:hover{background:linear-gradient(135deg,rgba(34,150,255,.30),rgba(155,108,255,.28))!important;border-color:rgba(105,190,255,.60)!important;color:#fff!important}.footer-inner{width:calc(100% - 18px)!important}.footer-top{grid-template-columns:1fr!important}.footer-bottom{flex-direction:column!important;gap:6px!important}}
-@media(min-width:601px){.mobile-menu{display:none!important}}
+.celebration{
+  position:fixed;inset:0;z-index:100000;pointer-events:none;overflow:hidden;
+  background:radial-gradient(circle at 50% 35%,rgba(80,150,255,.10),transparent 35%);
+}
+.celebration-message{
+  position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);
+  padding:22px 30px;text-align:center;border-radius:18px;
+  border:1px solid rgba(126,210,255,.55);
+  background:linear-gradient(145deg,rgba(7,25,53,.96),rgba(43,22,72,.96));
+  box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 35px rgba(96,150,255,.28);
+  animation:milestonePop .55s ease-out;
+}
+.celebration-stars{font-size:24px}
+.celebration-title{margin-top:7px;font-size:20px;font-weight:950;color:#fff}
+.celebration-sub{margin-top:5px;font-size:10px;font-weight:800;color:#8fe9ff}
+.confetti{
+  position:absolute;top:-40px;
+  animation:flowerFall linear forwards;
+}
+@keyframes flowerFall{
+  0%{transform:translate3d(0,-50px,0) rotate(0deg);opacity:0}
+  8%{opacity:1}
+  100%{transform:translate3d(40px,110vh,0) rotate(620deg);opacity:.95}
+}
+@keyframes milestonePop{
+  0%{transform:translate(-50%,-50%) scale(.65);opacity:0}
+  70%{transform:translate(-50%,-50%) scale(1.05)}
+  100%{transform:translate(-50%,-50%) scale(1);opacity:1}
+}
+
 </style>
 </head>
 
@@ -339,27 +388,35 @@ button{font:inherit}
 
 <header class="topbar">
   <nav class="nav">
-    <a class="brand" href="homepage.html">
-      <div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div>
+    <a class="brand" href="joa-mahapack.html">
+      <div class="logo"><img src="logo.png" alt="HPMockShashtra"></div>
       <div>
         <div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div>
         <div class="tagline">Prepare Today, Serve Tomorrow</div>
       </div>
     </a>
+
     <div class="nav-links">
-      <a class="nav-link" href="homepage.html">Home</a>
+      <a class="nav-link" href="joa-mahapack.html">Home</a>
       <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
       <a class="nav-link" href="my-purchase.html">My Purchases</a>
       <a class="nav-link active" href="master-progress.html">Master Progress</a>
     </div>
-    <div class="user"><span class="avatar" id="avatar">U</span><span class="user-name" id="userName">User</span><button class="logout" id="logoutBtn">Logout</button></div>
-    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <div class="user">
+      <span class="avatar" id="avatar">U</span>
+      <span class="user-name" id="userName">User</span>
+      <button class="logout" id="logoutBtn">Logout</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
     <div class="mobile-menu" id="mobileMenu">
-      <a href="homepage.html">Home</a>
+      <a href="joa-mahapack.html">Home</a>
       <a href="joa-mahapack.html">Paid Courses</a>
       <a href="my-purchase.html">My Purchases</a>
       <a class="active" href="master-progress.html">Master Progress</a>
-      <button id="mobileLogout" type="button">Logout</button>
+      <button id="mobileLogout">Logout</button>
     </div>
   </nav>
 </header>
@@ -424,8 +481,7 @@ button{font:inherit}
       </div>
       <div class="subject-grid" id="subjectGrid"></div>
     </section>
-
-    <section class="section">
+<section class="section">
       <div class="section-head">
         <div>
           <h2 class="section-title">Milestones</h2>
@@ -433,16 +489,36 @@ button{font:inherit}
         </div>
       </div>
       <div class="milestones" id="milestones"></div>
-    </section>
-
-<footer class="footer">
+    </section> 
+    <footer class="footer">
       <div class="footer-inner">
         <div class="footer-top">
-          <div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div>
-          <div><h4>Preparation</h4><div class="footer-links"><a href="joa-series.html">JOA (IT) Mock Tests</a><a href="joa-mahapack.html">JOA IT Maha Pack</a><a href="patwari-series.html">HP Patwari Mock Tests</a><a href="my-progress.html">My Progress</a></div></div>
-          <div><h4>Information</h4><div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div>
+          <div>
+            <h3>HPMockShashtra</h3>
+            <p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p>
+          </div>
+          <div>
+            <h4>Preparation</h4>
+            <div class="footer-links">
+              <a href="joa-series.html">JOA (IT) Mock Tests</a>
+              <a href="joa-mahapack.html">JOA IT Maha Pack</a>
+              <a href="patwari-series.html">HP Patwari Mock Tests</a>
+              <a href="my-progress.html">My Progress</a>
+            </div>
+          </div>
+          <div>
+            <h4>Information</h4>
+            <div class="footer-links">
+              <a href="about.html">About</a>
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+          </div>
         </div>
-        <div class="footer-bottom"><span>© 2026 HPMockShashtra. All rights reserved.</span><span>Master Progress</span></div>
+        <div class="footer-bottom">
+          <span>© 2026 HPMockShashtra. All rights reserved.</span>
+          <span>Master Progress</span>
+        </div>
       </div>
     </footer>
   </div>
@@ -632,50 +708,101 @@ function renderResume(data){
 function renderSubjects(data){
   $('subjectGrid').innerHTML=data.map(s=>{
     if(!s.unlocked){
-      const buyUrl=`payment.html?product=${encodeURIComponent(s.course)}`;
       return `<div class="subject-card locked">
-        <div class="subject-head"><div class="subject-icon">${s.icon}</div><div class="subject-info"><div class="subject-name">${escapeHtml(s.name)}</div><div class="subject-count">${DEFAULT_COUNT} Questions</div></div><div class="percent">🔒</div></div>
-        <div class="subject-foot" style="margin-top:13px"><span class="accuracy">Premium Subject</span><a class="subject-action buy-action" href="${buyUrl}">Buy ₹49 →</a></div>
+        <div class="subject-head">
+          <div class="subject-icon">${s.icon}</div>
+          <div class="subject-info">
+            <div class="subject-name">${escapeHtml(s.name)}</div>
+            <div class="subject-count">${DEFAULT_COUNT} Questions</div>
+          </div>
+          <div class="percent">🔒</div>
+        </div>
+        <div class="subject-foot">
+          <span class="accuracy">Premium Subject</span>
+          <a class="buy-btn" href="payment.html?product=${encodeURIComponent(s.course)}">Buy ₹49 →</a>
+        </div>
       </div>`;
     }
-    const status=s.completed?'Completed':s.inProgress?'In Progress':'Not Started';
-    let action='Start →',href=practiceUrl(s),cls='';
-    if(s.completed){action='Review →';href=`mahapack-study.html?test=${encodeURIComponent(s.id)}`;cls='review-action';}
-    else if(s.inProgress){action='Continue →';}
-    return `<div class="subject-card"><div class="subject-head"><div class="subject-icon">${s.icon}</div><div class="subject-info"><div class="subject-name">${escapeHtml(s.name)}</div><div class="subject-count">${s.attempted} / ${s.questionCount} Questions</div></div><div class="percent">${s.progress}%</div></div><div class="subject-bar"><span style="width:${s.progress}%"></span></div><div class="subject-foot"><span class="accuracy">Accuracy: <b>${s.attempted?`${s.accuracy}%`:'—'}</b> • ${status}</span><a class="subject-action ${cls}" href="${href}">${action}</a></div></div>`;
+    const action=s.completed?'Review →':s.inProgress?'Continue →':'Start →';
+    const href=s.completed
+      ? `mahapack-study.html?test=${encodeURIComponent(s.id)}`
+      : practiceUrl(s);
+    const cls=s.completed?'review-btn':'subject-action';
+    return `<div class="subject-card">
+      <div class="subject-head">
+        <div class="subject-icon">${s.icon}</div>
+        <div class="subject-info">
+          <div class="subject-name">${escapeHtml(s.name)}</div>
+          <div class="subject-count">${s.attempted} / ${s.questionCount} Questions</div>
+        </div>
+        <div class="percent">${s.progress}%</div>
+      </div>
+      <div class="subject-bar"><span style="width:${s.progress}%"></span></div>
+      <div class="subject-foot">
+        <span class="accuracy">Accuracy: <b>${s.attempted?`${s.accuracy}%`:'—'}</b> • ${s.completed?'Completed':s.inProgress?'In Progress':'Not Started'}</span>
+        <a class="${cls}" href="${href}">${action}</a>
+      </div>
+    </div>`;
   }).join('');
 }
 
+function celebrateMilestone(m){
+  const key=`hpmockshashtra_milestone_${m.n}`;
+  if(localStorage.getItem(key)) return;
+  localStorage.setItem(key,'1');
+
+  const layer=document.createElement('div');
+  layer.className='celebration';
+  layer.innerHTML=`
+    <div class="celebration-message">
+      <div class="celebration-stars">✨ 🎉 ✨</div>
+      <div class="celebration-title">Milestone Unlocked!</div>
+      <div class="celebration-sub">${escapeHtml(m.label)} completed</div>
+    </div>`;
+  document.body.appendChild(layer);
+
+  const symbols=['🌸','🌼','🌺','💮','✨','🎉','⭐','🌷'];
+  for(let i=0;i<65;i++){
+    const f=document.createElement('span');
+    f.className='confetti';
+    f.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    f.style.left=`${Math.random()*100}vw`;
+    f.style.animationDelay=`${Math.random()*0.8}s`;
+    f.style.animationDuration=`${2.6+Math.random()*2.2}s`;
+    f.style.fontSize=`${14+Math.random()*12}px`;
+    layer.appendChild(f);
+  }
+  setTimeout(()=>layer.remove(),5200);
+}
+
 function renderMilestones(data){
-  const attempted=data.filter(x=>x.unlocked).reduce((s,x)=>s+x.attempted,0);
+  const attempted=data.filter(x=>x.unlocked).reduce((sum,x)=>sum+x.attempted,0);
   const milestones=[
-    {n:20,label:'First 20 Questions',icon:'🌱'},
+    {n:20,label:'20 Questions',icon:'🌱'},
     {n:100,label:'100 Questions',icon:'🏁'},
+    {n:250,label:'250 Questions',icon:'⭐'},
     {n:500,label:'500 Questions',icon:'🎯'},
     {n:1000,label:'1,000 Questions',icon:'🔥'},
+    {n:1500,label:'1,500 Questions',icon:'⚡'},
     {n:2500,label:'2,500 Questions',icon:'🚀'},
+    {n:3500,label:'3,500 Questions',icon:'💎'},
     {n:5000,label:'5,000 Questions',icon:'🏆'},
     {n:6000,label:'6,000 Questions',icon:'👑'}
   ];
-  $('milestones').innerHTML=milestones.map(m=>{const done=attempted>=m.n;return `<div class="milestone ${done?'done':'locked'}" data-milestone="${m.n}"><div class="milestone-icon">${m.icon}</div><div class="milestone-title">${m.label}</div><div class="milestone-count">${done?'✓ Completed':'Locked'}</div></div>`;}).join('');
-  return milestones.filter(m=>attempted>=m.n).map(m=>m.n);
-}
 
-function celebrateMilestones(uid,completedMilestones){
-  if(!completedMilestones.length)return;
-  const key=`hpmockshashtra_milestones_${uid}`;
-  let seen=[];try{seen=JSON.parse(localStorage.getItem(key)||'[]');}catch(e){seen=[];}
-  const fresh=completedMilestones.filter(n=>!seen.includes(n));
-  if(!fresh.length)return;
-  try{localStorage.setItem(key,JSON.stringify([...new Set([...seen,...fresh])]));}catch(e){}
-  const overlay=document.createElement('div');overlay.className='celebration-overlay';
-  overlay.innerHTML=`<div class="celebration-message"><div class="celebration-spark">✨</div><strong>Milestone Unlocked!</strong><span>${fresh.length===1?`${fresh[0].toLocaleString('en-IN')} questions completed!`:`${fresh.length} milestones completed!`}</span></div>`;
-  document.body.appendChild(overlay);
-  const symbols=['🌸','🌼','🌺','🌷','✨','🎉','💙','💜'];
-  for(let i=0;i<75;i++){
-    const piece=document.createElement('span');piece.className='celebration-piece';piece.textContent=symbols[Math.floor(Math.random()*symbols.length)];piece.style.left=`${Math.random()*100}vw`;piece.style.setProperty('--delay',`${Math.random()*0.8}s`);piece.style.setProperty('--drift',`${(Math.random()*2-1)*180}px`);piece.style.setProperty('--rotate',`${Math.random()*720-360}deg`);piece.style.fontSize=`${12+Math.random()*14}px`;overlay.appendChild(piece);
+  $('milestones').innerHTML=milestones.map(m=>{
+    const done=attempted>=m.n;
+    return `<div class="milestone ${done?'done':'locked'}">
+      <div class="milestone-icon">${m.icon}</div>
+      <div class="milestone-title">${m.label}</div>
+      <div class="milestone-count">${done?'✓ Completed':'Locked'}</div>
+    </div>`;
+  }).join('');
+
+  const newlyCompleted=milestones.filter(m=>attempted>=m.n && !localStorage.getItem(`hpmockshashtra_milestone_${m.n}`));
+  if(newlyCompleted.length){
+    celebrateMilestone(newlyCompleted[newlyCompleted.length-1]);
   }
-  setTimeout(()=>overlay.remove(),4200);
 }
 
 async function init(user){
@@ -694,15 +821,13 @@ async function init(user){
   renderOverall(data);
   renderResume(data);
   renderSubjects(data);
-  const completedMilestones=renderMilestones(data);
-  celebrateMilestones(user.uid,completedMilestones);
+  renderMilestones(data);
 
   $('loading').style.display='none';
   $('dashboard').style.display='block';
 }
 
-$('menuBtn').onclick=()=>{const menu=$('mobileMenu');const open=menu.classList.toggle('open');$('menuBtn').setAttribute('aria-expanded',open?'true':'false');$('menuBtn').textContent=open?'✕':'☰';};
-document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>{$('mobileMenu').classList.remove('open');$('menuBtn').setAttribute('aria-expanded','false');$('menuBtn').textContent='☰';}));
+$('menuBtn').onclick=()=>$('mobileMenu').classList.toggle('open');
 
 $('logoutBtn').onclick=async()=>{
   await signOut(auth);
