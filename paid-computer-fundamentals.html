@@ -29,7 +29,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 .explanation{margin-top:16px;padding:15px 17px;font-size:10px;line-height:1.75;border-radius:11px}
 .question-status{margin-top:10px;font-size:9px;color:#8095ae}
 .question-status.done{color:#4de3b0}
-.page-actions{margin-top:20px}
+.page-actions{margin-top:20px}.page-actions>div:last-child{display:flex;gap:8px;align-items:center}.page-actions .next-btn{white-space:nowrap}
 .practice-result-inline{margin-top:18px;padding:15px 0 0;border-top:1px solid rgba(126,176,255,.16)}
 .inline-result-top{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .inline-result-title{font-size:16px;font-weight:900;margin-top:3px}
@@ -112,7 +112,8 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
   .options{grid-template-columns:1fr}
   .option{min-height:55px;font-size:10px}
   .page-actions{padding:11px}
-  .next-btn{width:100%}
+  .page-actions>div:last-child{display:flex;gap:8px}
+  .page-actions .next-btn{width:auto;flex:1}
   .review-title-row{align-items:flex-start}
   .review-item{padding:12px}
   .review-options{grid-template-columns:1fr}
@@ -401,8 +402,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 <div class="explanation" id="explanation"></div>
 <div class="question-status" id="questionStatus">Select one option</div>
 <div class="page-actions" id="pageActions">
-<div class="save-note" id="saveNote">Your answer is saved automatically.</div>
-<button class="next-btn" id="nextBtn" disabled>Next Question →</button>
+<div class="save-note" id="saveNote">Your answer is saved automatically.</div><div style="display:flex;gap:8px;align-items:center"><button class="next-btn" id="prevBtn" style="background:#0c2040;border:1px solid rgba(126,176,255,.22);">← Previous</button><button class="next-btn" id="nextBtn">Next Question →</button></div>
 </div>
 </section>
 </section>
@@ -477,14 +477,19 @@ q.options.forEach((o,i)=>{const b=document.createElement('button');const optionL
 const exp=$('explanation');
 if(selected!==undefined){exp.style.display='block';exp.innerHTML=`<strong>Explanation</strong>${esc(q.explanation||'Explanation will be added with the final question bank.')}`;$('questionStatus').textContent=selected===q.answer?'✓ Correct answer':'✕ Incorrect — correct answer is highlighted';$('questionStatus').className='question-status done'}
 else{exp.style.display='none';exp.innerHTML='';$('questionStatus').textContent='Select one option';$('questionStatus').className='question-status'}
-$('nextBtn').disabled=selected===undefined;$('nextBtn').textContent=state.current===total-1?'Finish Practice →':'Next Question →';$('saveNote').textContent=selected===undefined?'Select an answer to continue.':'';
+$('prevBtn').disabled=state.current===0;$('nextBtn').disabled=false;$('nextBtn').textContent=state.current===total-1?'Finish Practice →':'Next Question →';$('saveNote').textContent=selected===undefined?'You can move ahead and return later to attempt this question.':'';
 }
 async function next(){
-if(state.answers[state.current]===undefined)return;
 if(state.current<QUESTIONS.length-1){state.current++;const ok=await saveCloudState(false);if(ok){render();scrollTo({top:document.querySelector('.question-card').offsetTop-20,behavior:'smooth'})}return}
 const ok=await saveCloudState(false);if(!ok)return;
 try{await saveResult()}catch(e){console.error(e);alert('Final result save नहीं हो पाया। Please try again.');return}
 state.submitted=true;state.completedAt=new Date().toISOString();showResult()
+}
+async function previous(){
+if(state.current<=0)return;
+state.current--;
+const ok=await saveCloudState(false);
+if(ok){render();scrollTo({top:document.querySelector('.question-card').offsetTop-20,behavior:'smooth'})}
 }
 async function saveResult(){
 let correct=0;QUESTIONS.forEach((q,i)=>{if(state.answers[i]===q.answer)correct++});
@@ -506,6 +511,7 @@ function showResult(){
   $('liveScore').textContent=`${percentage}%`;
 }
 
+$('prevBtn').onclick=previous;
 $('nextBtn').onclick=next;
 $('logoutBtn').onclick=async()=>{await signOut(auth);location.href='firebase-login.html'};
 
