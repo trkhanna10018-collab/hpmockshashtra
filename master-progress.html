@@ -42,11 +42,11 @@ a{text-decoration:none;color:inherit}
 button{font:inherit}
 .topbar{
   position:sticky;top:8px;z-index:50;
-  width:min(1120px,calc(100% - 24px));
-  margin:8px auto 0;
+  width:min(1120px,calc(100% - 28px));
+  margin:22px auto 0;
   border:1px solid rgba(126,176,255,.30);
-  border-radius:16px;
-  background:linear-gradient(110deg,rgba(7,20,42,.96),rgba(37,21,70,.92));
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(13,34,66,.94),rgba(24,23,62,.88));
   box-shadow:0 12px 40px rgba(0,0,0,.35);
   backdrop-filter:blur(12px);
 }
@@ -100,8 +100,8 @@ button{font:inherit}
 .dashboard{display:none}
 .hero{
   position:relative;overflow:hidden;
-  border:1px solid var(--line);border-radius:20px;
-  padding:25px 28px;
+  border:1px solid var(--line);border-radius:18px;
+  padding:22px 24px;
   background:
     radial-gradient(circle at 90% 20%,rgba(139,92,246,.20),transparent 28%),
     linear-gradient(135deg,rgba(13,34,66,.96),rgba(24,23,62,.90));
@@ -114,15 +114,15 @@ button{font:inherit}
 .hero-eyebrow{
   font-size:9px;color:#66c8ff;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;
 }
-.hero h1{margin:7px 0 4px;font-size:27px;letter-spacing:-.5px}
-.hero p{margin:0;color:#9eb0c8;font-size:10px;line-height:1.6}
+.hero h1{margin:7px 0 5px;font-size:26px;letter-spacing:-.5px}
+.hero p{margin:0;color:#9eb0c8;font-size:11px;line-height:1.6}
 .hero-grid{
   margin-top:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;
 }
 .overall-box{
   display:flex;align-items:center;gap:22px;
   padding:18px;border:1px solid rgba(126,176,255,.15);border-radius:15px;
-  background:rgba(5,17,35,.42);
+  background:rgba(12,29,57,.72);
 }
 .ring{
   --progress:0%;
@@ -157,8 +157,8 @@ button{font:inherit}
 .section-head{
   display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:10px;
 }
-.section-title{margin:0;font-size:16px}
-.section-sub{margin:4px 0 0;color:#8299b4;font-size:9px}
+.section-title{margin:0;font-size:17px}
+.section-sub{margin:5px 0 0;color:#8299b4;font-size:10px}
 .section-link{font-size:8px;color:#66c8ff;font-weight:850}
 
 .resume-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -167,7 +167,7 @@ button{font:inherit}
   background:rgba(12,29,57,.90);
 }
 .resume-top{display:flex;justify-content:space-between;gap:8px}
-.resume-name{font-size:10px;font-weight:900}
+.resume-name{font-size:11px;font-weight:900}
 .resume-status{font-size:7px;color:#4de3b0;font-weight:850}
 .resume-meta{margin-top:6px;color:#91a6be;font-size:8px}
 .mini-bar{height:5px;margin:10px 0 9px;background:#07162c;border-radius:99px;overflow:hidden}
@@ -194,7 +194,7 @@ button{font:inherit}
   border:1px solid rgba(126,176,255,.15);font-size:14px;
 }
 .subject-info{min-width:0;flex:1}
-.subject-name{font-size:10px;font-weight:900;line-height:1.35}
+.subject-name{font-size:11px;font-weight:900;line-height:1.35}
 .subject-count{margin-top:3px;color:#8299b4;font-size:7.5px}
 .percent{font-size:14px;font-weight:950;color:#66c8ff}
 .subject-bar{height:6px;margin-top:13px;background:#07162c;border-radius:99px;overflow:hidden}
@@ -310,6 +310,14 @@ button{font:inherit}
   .mobile-menu button{cursor:pointer}
 }
 @media(min-width:601px){.mobile-menu{display:none!important}}
+
+/* Match the paid Study Mode visual language */
+.study-like{border:1px solid rgba(126,176,255,.28);border-radius:18px;background:linear-gradient(135deg,rgba(13,34,66,.94),rgba(24,23,62,.88));box-shadow:0 15px 40px rgba(0,0,0,.22)}
+.stat-card,.resume-card,.subject-card,.panel,.milestone{background:rgba(12,29,57,.94);border-color:rgba(100,170,255,.22)}
+.stat-card,.resume-card,.subject-card,.panel,.milestone{box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.resume-btn,.subject-action{font-size:9px}
+.empty{font-size:10px}
+@media(max-width:600px){.topbar{top:5px;width:calc(100% - 18px);margin-top:12px}.wrap{width:calc(100% - 18px);margin-top:14px}.hero{padding:18px 16px}.hero h1{font-size:22px}.section-title{font-size:16px}}
 </style>
 </head>
 
@@ -350,7 +358,7 @@ button{font:inherit}
 
 <main class="wrap">
 
-  <div id="loading" class="loading">Loading your master progress...</div>
+  <div id="loading" class="loading">Loading your Computer progress...</div>
 
   <div id="errorBox" class="error-box">
     <strong>Unable to load your progress</strong>
@@ -359,7 +367,7 @@ button{font:inherit}
 
   <div class="dashboard" id="dashboard">
 
-    <section class="hero">
+    <section class="hero study-like">
       <div class="hero-eyebrow">Computer Preparation Dashboard</div>
       <h1>Master Progress</h1>
       <p>Track your preparation across all Computer subjects in one place.</p>
@@ -580,12 +588,18 @@ function practiceUrl(s){
 }
 
 async function loadSubject(uid,subject){
-  const sessionRef=doc(db,'testSessions',`${uid}_${subject.id}`);
-  const resultRef=doc(db,'testAttempts',`${uid}_${subject.id}`);
-  const [ss,rs]=await Promise.all([getDoc(sessionRef),getDoc(resultRef)]);
-  const session=ss.exists()?ss.data():null;
-  const result=rs.exists()?rs.data():null;
-  return buildData(subject,session,result);
+  const base=buildData(subject,null,null);
+  try{
+    const sessionRef=doc(db,'testSessions',`${uid}_${subject.id}`);
+    const resultRef=doc(db,'testAttempts',`${uid}_${subject.id}`);
+    const [ss,rs]=await Promise.all([getDoc(sessionRef),getDoc(resultRef)]);
+    const session=ss.exists()?ss.data():null;
+    const result=rs.exists()?rs.data():null;
+    return buildData(subject,session,result);
+  }catch(e){
+    console.warn('Progress read skipped for',subject.id,e);
+    return {...base,readError:true};
+  }
 }
 
 function renderOverall(data){
@@ -726,12 +740,16 @@ function renderMilestones(data){
 }
 
 async function init(user){
+  // Read access first. Only unlocked subjects need progress documents.
+  // This keeps the dashboard compatible with restrictive Firestore rules for locked subjects.
   const accessSnap=await getDoc(doc(db,'testAccess',user.uid));
   const accessData=accessSnap.exists()?accessSnap.data()?.computerAccess||{}:{};
 
   const data=await Promise.all(SUBJECTS.map(async subject=>{
+    const unlocked=hasAccess(subject,accessData);
+    if(!unlocked)return {...buildData(subject,null,null),unlocked:false};
     const base=await loadSubject(user.uid,subject);
-    return {...base,unlocked:hasAccess(subject,accessData)};
+    return {...base,unlocked:true};
   }));
 
   renderOverall(data);
@@ -773,6 +791,7 @@ onAuthStateChanged(auth,async user=>{
     console.error(e);
     $('loading').style.display='none';
     $('errorBox').style.display='block';
+    $('errorBox').innerHTML='<strong>Unable to load your progress</strong><div style="margin-top:6px;font-size:9px;color:#b9c7d8">Please refresh the page and try again.</div>';
   }
 });
 </script>
