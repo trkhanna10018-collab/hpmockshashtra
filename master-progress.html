@@ -467,20 +467,20 @@ const $=id=>document.getElementById(id);
 
 const SUBJECTS=[
   {id:'computer_fundamentals_01',name:'Computer Fundamentals',course:'computer-fundamentals',file:'paid-computer-fundamentals.html',icon:'💻'},
-  {id:'ms_word_01',name:'MS Word',course:'ms-word',file:'paid-ms-word.html',icon:'📝',pack:'ms-office'},
-  {id:'ms_excel_01',name:'MS Excel',course:'ms-excel',file:'paid-ms-excel.html',icon:'📊',pack:'ms-office'},
-  {id:'ms_powerpoint_01',name:'MS PowerPoint',course:'ms-powerpoint',file:'paid-ms-powerpoint.html',icon:'📽️',pack:'ms-office'},
-  {id:'ms_access_01',name:'MS Access',course:'ms-access',file:'paid-ms-access.html',icon:'🗃️',pack:'ms-office'},
-  {id:'dbms_sql_01',name:'DBMS & SQL',course:'dbms-sql',file:'paid-dbms-sql.html',icon:'🗄️'},
-  {id:'computer_networking_01',name:'Computer Networking',course:'computer-networking',file:'paid-computer-networking.html',icon:'🌐'},
-  {id:'cyber_security_01',name:'Cyber Security',course:'cyber-security',file:'paid-cyber-security.html',icon:'🔐'},
-  {id:'c_programming_01',name:'C Programming',course:'c-programming',file:'paid-c-programming.html',icon:'💻'},
-  {id:'html_01',name:'HTML',course:'html',file:'paid-html.html',icon:'🌎'},
-  {id:'css_css3_01',name:'CSS / CSS3',course:'css-css3',file:'paid-css-css3.html',icon:'🎨'},
-  {id:'cloud_computing_01',name:'Cloud Computing',course:'cloud-computing',file:'paid-cloud-computing.html',icon:'☁️'},
-  {id:'data_structure_01',name:'Data Structure',course:'data-structure',file:'paid-data-structure.html',icon:'🌳'},
-  {id:'computer_organisation_01',name:'Computer Organisation & Architecture',course:'computer-organisation',file:'paid-computer-organisation.html',icon:'⚙️'},
-  {id:'operating_system_01',name:'Operating System',course:'operating-system',file:'paid-operating-system.html',icon:'🖥️'}
+  {id:'ms_word_01',name:'MS Word',course:'ms-word',file:'paid-ms-word.html',icon:'W',pack:'ms-office'},
+  {id:'ms_excel_01',name:'MS Excel',course:'ms-excel',file:'paid-ms-excel.html',icon:'X',pack:'ms-office'},
+  {id:'ms_powerpoint_01',name:'MS PowerPoint',course:'ms-powerpoint',file:'paid-ms-powerpoint.html',icon:'P',pack:'ms-office'},
+  {id:'ms_access_01',name:'MS Access',course:'ms-access',file:'paid-ms-access.html',icon:'▤',pack:'ms-office'},
+  {id:'dbms_sql_01',name:'DBMS & SQL',course:'dbms-sql',file:'paid-dbms-sql.html',icon:'▱'},
+  {id:'computer_networking_01',name:'Computer Networking',course:'computer-networking',file:'paid-computer-networking.html',icon:'⌁'},
+  {id:'cyber_security_01',name:'Cyber Security',course:'cyber-security',file:'paid-cyber-security.html',icon:'♢'},
+  {id:'c_programming_01',name:'C Programming',course:'c-programming',file:'paid-c-programming.html',icon:'</>'},
+  {id:'html_01',name:'HTML',course:'html',file:'paid-html.html',icon:'H'},
+  {id:'css_css3_01',name:'CSS / CSS3',course:'css-css3',file:'paid-css-css3.html',icon:'C'},
+  {id:'cloud_computing_01',name:'Cloud Computing',course:'cloud-computing',file:'paid-cloud-computing.html',icon:'☁'},
+  {id:'data_structure_01',name:'Data Structure',course:'data-structure',file:'paid-data-structure.html',icon:'⌘'},
+  {id:'computer_organisation_01',name:'Computer Organisation & Architecture',course:'computer-organisation',file:'paid-computer-organisation-architecture.html',icon:'▣',accessAliases:['computer-organisation-architecture']},
+  {id:'operating_system_01',name:'Operating System',course:'operating-system',file:'paid-operating-system.html',icon:'⚙'}
 ];
 
 const DEFAULT_COUNT=400;
@@ -533,8 +533,8 @@ function timeAgo(d){
 }
 
 function hasAccess(subject,accessData){
-  const course=accessData?.courses?.[subject.course];
-  if(active(course))return true;
+  const keys=[subject.course,...(subject.accessAliases||[])];
+  if(keys.some(k=>active(accessData?.courses?.[k])))return true;
   if(active(accessData?.packs?.['computer-master']))return true;
   if(subject.pack && active(accessData?.packs?.[subject.pack]))return true;
   return false;
