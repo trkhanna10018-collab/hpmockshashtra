@@ -4289,8 +4289,8 @@ export const QUESTIONS = [
 
 // Question 147
 {
-  en: "Consider the following operations: 1. Entering employee salary details through a keyboard 2. Calculating total salary 3. Displaying the calculated salary on the monitor 4. Saving the result for future use. Which sequence correctly identifies the first three stages of the basic Input-Process-Output cycle?",
-  hi: "निम्नलिखित कार्यों पर विचार करें: 1. कीबोर्ड के माध्यम से कर्मचारी के वेतन का विवरण दर्ज करना 2. कुल वेतन की गणना करना 3. गणना किए गए वेतन को मॉनिटर पर प्रदर्शित करना 4. भविष्य में उपयोग के लिए परिणाम सहेजना। कौन-सा क्रम मूल Input-Process-Output चक्र के पहले तीन चरणों को सही रूप से दर्शाता है?",
+  en: "Consider the following operations: \n1. Entering employee salary details through a keyboard \n2. Calculating total salary \n3. Displaying the calculated salary on the monitor \n4. Saving the result for future use. Which sequence correctly identifies the first three stages of the basic Input-Process-Output cycle?",
+  hi: "निम्नलिखित कार्यों पर विचार करें: \n1. कीबोर्ड के माध्यम से कर्मचारी के वेतन का विवरण दर्ज करना \n2. कुल वेतन की गणना करना \n3. गणना किए गए वेतन को मॉनिटर पर प्रदर्शित करना \n4. भविष्य में उपयोग के लिए परिणाम सहेजना। कौन-सा क्रम मूल Input-Process-Output चक्र के पहले तीन चरणों को सही रूप से दर्शाता है?",
 
   options: [
     {
@@ -4434,8 +4434,8 @@ export const QUESTIONS = [
 
 // Question 152
 {
-  en: "Consider the following sequence of operations: 1. Data is entered through an input device. 2. The CPU processes the data according to instructions. 3. The processed result is presented to the user. 4. The result is retained for future reference. Which option correctly identifies the four stages?",
-  hi: "निम्नलिखित कार्यों के क्रम पर विचार करें: 1. इनपुट डिवाइस के माध्यम से डेटा दर्ज किया जाता है। 2. CPU निर्देशों के अनुसार डेटा को प्रोसेस करता है। 3. प्रोसेस किया गया परिणाम उपयोगकर्ता के सामने प्रस्तुत किया जाता है। 4. परिणाम को भविष्य के संदर्भ के लिए सुरक्षित रखा जाता है। कौन-सा विकल्प इन चार चरणों की सही पहचान करता है?",
+  en: "Consider the following sequence of operations: \n1. Data is entered through an input device. \n2. The CPU processes the data according to instructions. \n3. The processed result is presented to the user. \n4. The result is retained for future reference. Which option correctly identifies the four stages?",
+  hi: "निम्नलिखित कार्यों के क्रम पर विचार करें: \n1. इनपुट डिवाइस के माध्यम से डेटा दर्ज किया जाता है। \n2. CPU निर्देशों के अनुसार डेटा को प्रोसेस करता है। \n3. प्रोसेस किया गया परिणाम उपयोगकर्ता के सामने प्रस्तुत किया जाता है। \n4. परिणाम को भविष्य के संदर्भ के लिए सुरक्षित रखा जाता है। कौन-सा विकल्प इन चार चरणों की सही पहचान करता है?",
 
   options: [
     {
@@ -5014,8 +5014,8 @@ export const QUESTIONS = [
 
 // Question 172
 {
-  en: "Consider the following statements: 1. HDD generally contains moving mechanical components. 2. SSD stores data using flash memory. 3. USB flash drives are portable storage devices. 4. SSDs require spinning magnetic platters to read and write data. Which statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें: 1. HDD में सामान्यतः गतिशील यांत्रिक भाग होते हैं। 2. SSD फ्लैश मेमोरी का उपयोग करके डेटा स्टोर करता है। 3. USB फ्लैश ड्राइव पोर्टेबल स्टोरेज डिवाइस होते हैं। 4. SSD को डेटा पढ़ने और लिखने के लिए घूमने वाले चुंबकीय प्लेटर्स की आवश्यकता होती है। कौन-से कथन सही हैं?",
+  en: "Consider the following statements: \n1. HDD generally contains moving mechanical components. \n2. SSD stores data using flash memory. \n3. USB flash drives are portable storage devices. \n4. SSDs require spinning magnetic platters to read and write data. Which statements are correct?",
+  hi: "निम्नलिखित कथनों पर विचार करें: \n1. HDD में सामान्यतः गतिशील यांत्रिक भाग होते हैं। \n2. SSD फ्लैश मेमोरी का उपयोग करके डेटा स्टोर करता है। \n3. USB फ्लैश ड्राइव पोर्टेबल स्टोरेज डिवाइस होते हैं। \n4. SSD को डेटा पढ़ने और लिखने के लिए घूमने वाले चुंबकीय प्लेटर्स की आवश्यकता होती है। कौन-से कथन सही हैं?",
 
   options: [
     {
@@ -5217,8 +5217,8 @@ export const QUESTIONS = [
 
 // Question 179
 {
-  en: "Consider the following statements about the CPU: 1. It executes instructions supplied by computer programs. 2. It performs arithmetic and logical operations. 3. It coordinates the execution of various operations within the computer. 4. It is primarily used for permanently storing files. Which statements are correct?",
-  hi: "CPU के बारे में निम्नलिखित कथनों पर विचार करें: 1. यह कंप्यूटर प्रोग्राम द्वारा दिए गए निर्देशों को निष्पादित करता है। 2. यह अंकगणितीय और तार्किक ऑपरेशन करता है। 3. यह कंप्यूटर के भीतर विभिन्न कार्यों के निष्पादन का समन्वय करता है। 4. इसका मुख्य उपयोग फाइलों को स्थायी रूप से स्टोर करना है। कौन-से कथन सही हैं?",
+  en: "Consider the following statements about the CPU: \n1. It executes instructions supplied by computer programs. \n2. It performs arithmetic and logical operations. \n3. It coordinates the execution of various operations within the computer. \n4. It is primarily used for permanently storing files. Which statements are correct?",
+  hi: "CPU के बारे में निम्नलिखित कथनों पर विचार करें: \n1. यह कंप्यूटर प्रोग्राम द्वारा दिए गए निर्देशों को निष्पादित करता है। \n2. यह अंकगणितीय और तार्किक ऑपरेशन करता है। \n3. यह कंप्यूटर के भीतर विभिन्न कार्यों के निष्पादन का समन्वय करता है। \n4. इसका मुख्य उपयोग फाइलों को स्थायी रूप से स्टोर करना है। कौन-से कथन सही हैं?",
 
   options: [
     {
@@ -5478,8 +5478,8 @@ export const QUESTIONS = [
 
 // Question 188
 {
-  en: "Consider the following statements: 1. ALU performs arithmetic and logical operations. 2. Control Unit coordinates and controls the execution of instructions. 3. Registers provide very fast temporary storage within the CPU. 4. Registers are primarily used for permanently storing user files. Which statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें: 1. ALU अंकगणितीय और तार्किक ऑपरेशन करता है। 2. कंट्रोल यूनिट निर्देशों के निष्पादन का समन्वय और नियंत्रण करती है। 3. रजिस्टर CPU के भीतर बहुत तेज अस्थायी स्टोरेज प्रदान करते हैं। 4. रजिस्टर मुख्य रूप से उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करने के लिए उपयोग किए जाते हैं। कौन-से कथन सही हैं?",
+  en: "Consider the following statements: \n1. ALU performs arithmetic and logical operations. \n2. Control Unit coordinates and controls the execution of instructions. \n3. Registers provide very fast temporary storage within the CPU. \n4. Registers are primarily used for permanently storing user files. Which statements are correct?",
+  hi: "निम्नलिखित कथनों पर विचार करें: \n1. ALU अंकगणितीय और तार्किक ऑपरेशन करता है। \n2. कंट्रोल यूनिट निर्देशों के निष्पादन का समन्वय और नियंत्रण करती है। \n3. रजिस्टर CPU के भीतर बहुत तेज अस्थायी स्टोरेज प्रदान करते हैं। \n4. रजिस्टर मुख्य रूप से उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करने के लिए उपयोग किए जाते हैं। कौन-से कथन सही हैं?",
 
   options: [
     {
@@ -5564,8 +5564,8 @@ export const QUESTIONS = [
 },
 // Question 191
 {
-  en: "Consider the following functions: 1. Performing comparison and logical operations 2. Directing the sequence of instruction execution 3. Holding intermediate values during processing 4. Permanently storing user files. Which functions are correctly associated with ALU, Control Unit and Registers?",
-  hi: "निम्नलिखित कार्यों पर विचार करें: 1. तुलना और तार्किक ऑपरेशन करना 2. निर्देशों के निष्पादन के क्रम को निर्देशित करना 3. प्रोसेसिंग के दौरान मध्यवर्ती मानों को रखना 4. उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करना। ALU, कंट्रोल यूनिट और रजिस्टर के साथ कौन-से कार्य सही रूप से जुड़े हैं?",
+  en: "Consider the following functions: \n1. Performing comparison and logical operations \n2. Directing the sequence of instruction execution \n3. Holding intermediate values during processing \n4. Permanently storing user files. Which functions are correctly associated with ALU, Control Unit and Registers?",
+  hi: "निम्नलिखित कार्यों पर विचार करें: \n1. तुलना और तार्किक ऑपरेशन करना \n2. निर्देशों के निष्पादन के क्रम को निर्देशित करना \n3. प्रोसेसिंग के दौरान मध्यवर्ती मानों को रखना \n4. उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करना। ALU, कंट्रोल यूनिट और रजिस्टर के साथ कौन-से कार्य सही रूप से जुड़े हैं?",
 
   options: [
     {
@@ -6862,8 +6862,8 @@ export const QUESTIONS = [
 },
 // Question 236
 {
-  en: "Consider the following statements:\n\n1. RAM is a type of primary memory.\n2. ROM is a type of primary memory.\n3. RAM is generally used for temporary working data and programs currently in use.\n4. ROM is generally non-volatile.\n\nWhich statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार कीजिए:\n\n1. RAM primary memory का एक प्रकार है।\n2. ROM primary memory का एक प्रकार है।\n3. RAM का सामान्यतः temporary working data और currently used programs के लिए उपयोग होता है।\n4. ROM सामान्यतः non-volatile होती है।\n\nकौन-से कथन सही हैं?",
+  en: "Consider the following statements:\n1. RAM is a type of primary memory.\n2. ROM is a type of primary memory.\n3. RAM is generally used for temporary working data and programs currently in use.\n4. ROM is generally non-volatile.\nWhich statements are correct?",
+  hi: "निम्नलिखित कथनों पर विचार कीजिए:\n1. RAM primary memory का एक प्रकार है।\n2. ROM primary memory का एक प्रकार है।\n3. RAM का सामान्यतः temporary working data और currently used programs के लिए उपयोग होता है।\n4. ROM सामान्यतः non-volatile होती है।\nकौन-से कथन सही हैं?",
 
   options: [
     {
@@ -7324,8 +7324,8 @@ export const QUESTIONS = [
 
 // Question 252
 {
-  en: "Consider the following statements about RAM:\n\n1. RAM is a type of primary memory.\n2. RAM is generally volatile.\n3. RAM is used to hold data and programs currently required by the CPU.\n4. RAM permanently retains its contents after power is removed.\n\nWhich statements are correct?",
-  hi: "RAM के बारे में निम्नलिखित कथनों पर विचार कीजिए:\n\n1. RAM primary memory का एक प्रकार है।\n2. RAM सामान्यतः volatile होती है।\n3. RAM का उपयोग CPU द्वारा वर्तमान में आवश्यक data और programs को hold करने के लिए होता है।\n4. Power हटने के बाद RAM अपने contents को permanently retain करती है।\n\nकौन-से कथन सही हैं?",
+  en: "Consider the following statements about RAM:\n1. RAM is a type of primary memory.\n2. RAM is generally volatile.\n3. RAM is used to hold data and programs currently required by the CPU.\n4. RAM permanently retains its contents after power is removed. \nWhich statements are correct?",
+  hi: "RAM के बारे में निम्नलिखित कथनों पर विचार कीजिए:\n1. RAM primary memory का एक प्रकार है।\n2. RAM सामान्यतः volatile होती है।\n3. RAM का उपयोग CPU द्वारा वर्तमान में आवश्यक data और programs को hold करने के लिए होता है।\n4. Power हटने के बाद RAM अपने contents को permanently retain करती है। \nकौन-से कथन सही हैं?",
 
   options: [
     {
@@ -7556,8 +7556,8 @@ export const QUESTIONS = [
 
 // Question 260
 {
-  en: "Consider the following statements about ROM:\n\n1. ROM is a type of primary memory.\n2. ROM is generally non-volatile.\n3. Its stored contents are retained when power is removed.\n4. It is primarily used as temporary working memory for currently running programs.\n\nWhich statements are correct?",
-  hi: "ROM के बारे में निम्नलिखित कथनों पर विचार कीजिए:\n\n1. ROM primary memory का एक प्रकार है।\n2. ROM सामान्यतः non-volatile होती है।\n3. Power हटने पर इसके stored contents retain रहते हैं।\n4. इसका primary use currently running programs के लिए temporary working memory के रूप में होता है।\n\nकौन-से कथन सही हैं?",
+  en: "Consider the following statements about ROM:\n1. ROM is a type of primary memory.\n2. ROM is generally non-volatile.\n3. Its stored contents are retained when power is removed.\n4. It is primarily used as temporary working memory for currently running programs.\nWhich statements are correct?",
+  hi: "ROM के बारे में निम्नलिखित कथनों पर विचार कीजिए:\n1. ROM primary memory का एक प्रकार है।\n2. ROM सामान्यतः non-volatile होती है।\n3. Power हटने पर इसके stored contents retain रहते हैं।\n4. इसका primary use currently running programs के लिए temporary working memory के रूप में होता है। \nकौन-से कथन सही हैं?",
 
   options: [
     {
@@ -9405,8 +9405,8 @@ export const QUESTIONS = [
 
 // Question 324
 {
-  en: "Consider the following statements:\n\n1. CPU is responsible for executing instructions and processing data.\n2. ALU performs arithmetic and logical operations.\n3. CU coordinates and controls instruction execution.\n4. RAM is generally volatile, while ROM is generally non-volatile.\n5. Hardware refers to the physical components of a computer.\n\nWhich option is correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें:\n\n1. CPU निर्देशों को निष्पादित करने और डेटा को प्रोसेस करने के लिए जिम्मेदार है।\n2. ALU अंकगणितीय और तार्किक ऑपरेशन करता है।\n3. CU निर्देशों के निष्पादन का समन्वय और नियंत्रण करता है।\n4. RAM सामान्यतः volatile होती है, जबकि ROM सामान्यतः non-volatile होती है।\n5. हार्डवेयर कंप्यूटर के भौतिक घटकों को संदर्भित करता है।\n\nकौन-सा विकल्प सही है?",
+  en: "Consider the following statements:\n1. CPU is responsible for executing instructions and processing data.\n2. ALU performs arithmetic and logical operations.\n3. CU coordinates and controls instruction execution.\n4. RAM is generally volatile, while ROM is generally non-volatile.\n5. Hardware refers to the physical components of a computer.\nWhich option is correct?",
+  hi: "निम्नलिखित कथनों पर विचार करें:\n1. CPU निर्देशों को निष्पादित करने और डेटा को प्रोसेस करने के लिए जिम्मेदार है।\n2. ALU अंकगणितीय और तार्किक ऑपरेशन करता है।\n3. CU निर्देशों के निष्पादन का समन्वय और नियंत्रण करता है।\n4. RAM सामान्यतः volatile होती है, जबकि ROM सामान्यतः non-volatile होती है।\n5. हार्डवेयर कंप्यूटर के भौतिक घटकों को संदर्भित करता है।\nकौन-सा विकल्प सही है?",
 
   options: [
     {
