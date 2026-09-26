@@ -4434,8 +4434,8 @@ export const QUESTIONS = [
 
 // Question 152
 {
-  en: "Consider the following sequence of operations: \n1. Data is entered through an input device. \n2. The CPU processes the data according to instructions. \n3. The processed result is presented to the user. \n4. The result is retained for future reference. Which option correctly identifies the four stages?",
-  hi: "निम्नलिखित कार्यों के क्रम पर विचार करें: \n1. इनपुट डिवाइस के माध्यम से डेटा दर्ज किया जाता है। \n2. CPU निर्देशों के अनुसार डेटा को प्रोसेस करता है। \n3. प्रोसेस किया गया परिणाम उपयोगकर्ता के सामने प्रस्तुत किया जाता है। \n4. परिणाम को भविष्य के संदर्भ के लिए सुरक्षित रखा जाता है। कौन-सा विकल्प इन चार चरणों की सही पहचान करता है?",
+  en: "Consider the following sequence of operations: \n1. Data is entered through an input device. \n2. The CPU processes the data according to instructions. \n3. The processed result is presented to the user. \n4. The result is retained for future reference. \nWhich option correctly identifies the four stages?",
+  hi: "निम्नलिखित कार्यों के क्रम पर विचार करें: \n1. इनपुट डिवाइस के माध्यम से डेटा दर्ज किया जाता है। \n2. CPU निर्देशों के अनुसार डेटा को प्रोसेस करता है। \n3. प्रोसेस किया गया परिणाम उपयोगकर्ता के सामने प्रस्तुत किया जाता है। \n4. परिणाम को भविष्य के संदर्भ के लिए सुरक्षित रखा जाता है। \nकौन-सा विकल्प इन चार चरणों की सही पहचान करता है?",
 
   options: [
     {
