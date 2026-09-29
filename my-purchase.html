@@ -174,10 +174,13 @@ button,input{font:inherit}
 
 .product-cell{display:flex;align-items:center;gap:10px;min-width:0}
 .product-icon{
-  width:37px;height:37px;flex:0 0 37px;display:grid;place-items:center;
-  border-radius:11px;background:linear-gradient(145deg,#263c70,#15274a);
-  border:1px solid #83c4ff25;box-shadow:inset 0 0 20px #168cff0d;
-  color:#aee9ff;font-size:11px;font-weight:950;
+   width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;
+   border-radius:14px;background:linear-gradient(145deg,#263c70,#15274a);
+   border:1px solid #83c4ff38;box-shadow:inset 0 0 20px #168cff10,0 8px 20px #0003;
+   color:#aee9ff;font-size:11px;font-weight:950;overflow:hidden;
+}
+.product-icon img{
+   width:100%;height:100%;display:block;object-fit:contain;border-radius:12px;
 }
 .product-name{color:#f2f7ff;font-size:10px;font-weight:900;line-height:1.3}
 .product-desc{margin-top:3px;color:#7188a5;font-size:8px}
@@ -353,6 +356,28 @@ button,input{font:inherit}
   .header-user #headerUserName{max-width:62px;overflow:hidden;text-overflow:ellipsis}
   .logout-btn{font-size:8px}
 }
+
+/* JOA IT Maha Pack visual language — UI only */
+body{background:#0a1730}
+body:before{
+  background:
+    radial-gradient(circle at 10% 20%,#087dff18,transparent 28%),
+    radial-gradient(circle at 90% 55%,#9b6cff18,transparent 30%),
+    linear-gradient(135deg,#07142d,#0b1d3d 48%,#111633);
+}
+.topbar{background:linear-gradient(135deg,rgba(18,40,78,.96),rgba(55,35,92,.96))}
+.page-head{
+  background:
+    radial-gradient(circle at 78% 35%,#168cff22,transparent 28%),
+    radial-gradient(circle at 92% 80%,#a35dff20,transparent 27%),
+    linear-gradient(135deg,#07142d,#0b1d3d 48%,#111633);
+}
+.table-shell{background:linear-gradient(145deg,#12294d,#0d2040)}
+.purchase-table tbody tr:hover{background:#168cff10}
+.footer{background:linear-gradient(145deg,#061125,#0b1f3b)}
+.product-name{font-size:11px}
+.product-desc{font-size:8.5px}
+
 </style>
 </head>
 
@@ -482,70 +507,87 @@ const $ = id => document.getElementById(id);
 const PRODUCTS = {
   "computer-fundamentals": {
     name:"Computer Fundamentals", type:"Individual Subject", icon:"⌘",
+    image:"mahapack/computer-fundamentals.png",
     desc:"400 premium questions", start:"paid-computer-fundamentals.html"
   },
   "ms-word": {
     name:"MS Word", type:"Individual Subject", icon:"W",
+    image:"mahapack/ms-word.png",
     desc:"400 premium questions", start:"paid-ms-word.html"
   },
   "ms-excel": {
     name:"MS Excel", type:"Individual Subject", icon:"X",
+    image:"mahapack/ms-excel.png",
     desc:"400 premium questions", start:"paid-ms-excel.html"
   },
   "ms-powerpoint": {
     name:"MS PowerPoint", type:"Individual Subject", icon:"P",
+    image:"mahapack/ms-powerpoint.png",
     desc:"400 premium questions", start:"paid-ms-powerpoint.html"
   },
   "ms-access": {
     name:"MS Access", type:"Individual Subject", icon:"▤",
+    image:"mahapack/ms-access.png",
     desc:"400 premium questions", start:"paid-ms-access.html"
   },
   "dbms-sql": {
     name:"DBMS & SQL", type:"Individual Subject", icon:"DB",
+    image:"mahapack/dbms-sql.png",
     desc:"400 premium questions", start:"paid-dbms-sql.html"
   },
   "computer-networking": {
     name:"Computer Networking", type:"Individual Subject", icon:"↔",
+    image:"mahapack/computer-networking.png",
     desc:"400 premium questions", start:"paid-computer-networking.html"
   },
   "cyber-security": {
     name:"Cyber Security", type:"Individual Subject", icon:"⌾",
+    image:"mahapack/cyber-security.png",
     desc:"400 premium questions", start:"paid-cyber-security.html"
   },
   "c-programming": {
     name:"C Programming", type:"Individual Subject", icon:"C",
+    image:"mahapack/c-programming.png",
     desc:"400 premium questions", start:"paid-c-programming.html"
   },
   "html": {
     name:"HTML", type:"Individual Subject", icon:"<>",
+    image:"mahapack/html.png",
     desc:"400 premium questions", start:"paid-html.html"
   },
   "css-css3": {
     name:"CSS/CSS3", type:"Individual Subject", icon:"#",
+    image:"mahapack/css-css3.png",
     desc:"400 premium questions", start:"paid-css-css3.html"
   },
   "cloud-computing": {
     name:"Cloud Computing", type:"Individual Subject", icon:"☁",
+    image:"mahapack/cloud-computing.png",
     desc:"400 premium questions", start:"paid-cloud-computing.html"
   },
   "data-structure": {
     name:"Data Structure", type:"Individual Subject", icon:"⌘",
+    image:"mahapack/data-structure.png",
     desc:"400 premium questions", start:"paid-data-structure.html"
   },
   "computer-organisation": {
     name:"Computer Organisation & Architecture", type:"Individual Subject", icon:"▦",
+    image:"mahapack/computer-organisation-architecture.png",
     desc:"400 premium questions", start:"paid-computer-organisation.html"
   },
   "operating-system": {
     name:"Operating System", type:"Individual Subject", icon:"OS",
+    image:"mahapack/operating-system.png",
     desc:"400 premium questions", start:"paid-operating-system.html"
   },
   "ms-office": {
     name:"MS Office Pack", type:"Premium Pack", icon:"▤",
+    image:"mahapack/ms-office.png",
     desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
     name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
+    image:"mahapack/computer-master.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
@@ -588,7 +630,7 @@ function addRow(product,value,paymentProduct){
   row.innerHTML=`
     <td>
       <div class="product-cell">
-        <div class="product-icon">${escapeHtml(product.icon)}</div>
+        <div class="product-icon">${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}">` : escapeHtml(product.icon)}</div>
         <div>
           <div class="product-name">${escapeHtml(product.name)}</div>
           <div class="product-desc">${escapeHtml(product.desc)}</div>
