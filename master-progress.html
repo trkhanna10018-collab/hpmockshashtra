@@ -397,6 +397,36 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
 .milestone{background:linear-gradient(145deg,#15345c,#0c2040)}
 .footer{background:linear-gradient(145deg,#061125,#0b1f3b)}
 
+
+/* ===== 5 HIGHLIGHTED MILESTONES ===== */
+.milestone-section{margin-top:24px}
+.milestone-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.milestone-card{
+  position:relative;overflow:hidden;min-height:126px;padding:16px 10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;border-radius:16px;
+  background:linear-gradient(145deg,#12294d,#0d2040);
+  border:1px solid rgba(121,177,255,.28);
+  box-shadow:0 14px 35px #0005;
+}
+.milestone-card:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 0%,rgba(34,150,255,.16),transparent 58%);
+}
+.milestone-card.done{
+  border-color:rgba(39,217,154,.72);
+  box-shadow:0 0 0 1px rgba(39,217,154,.14),0 16px 38px rgba(0,0,0,.55),0 0 28px rgba(39,217,154,.13);
+}
+.milestone-card.done:before{
+  background:radial-gradient(circle at 50% 0%,rgba(39,217,154,.22),transparent 60%);
+}
+.milestone-number{position:relative;font-size:25px;line-height:1;font-weight:950;color:#fff}
+.milestone-label{position:relative;margin-top:7px;color:#9db0cb;font-size:9px;font-weight:800}
+.milestone-status{position:relative;margin-top:10px;padding:5px 9px;border-radius:999px;font-size:8px;font-weight:900;color:#8298b5;background:rgba(255,255,255,.06);border:1px solid rgba(126,176,255,.16)}
+.milestone-card.done .milestone-status{color:#69f2c1;background:rgba(39,217,154,.10);border-color:rgba(39,217,154,.38)}
+@media(max-width:900px){.milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.milestone-card{min-height:112px;padding:13px 7px}.milestone-number{font-size:22px}}
+
 </style>
 </head>
 
@@ -497,6 +527,17 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
       </div>
       <div class="subject-grid" id="subjectGrid"></div>
     </section>
+
+<section class="milestone-section" id="milestoneSection">
+  <div class="section-head">
+    <div>
+      <h2>🏆 Milestones</h2>
+      <p>Complete questions across your purchased subjects and reach these milestones.</p>
+    </div>
+  </div>
+  <div class="milestone-grid" id="milestoneGrid"></div>
+</section>
+
 <section class="section">
       <div class="section-head">
         <div>
@@ -723,6 +764,7 @@ function renderResume(data){
 
 function renderSubjects(data){
   const purchased=data.filter(s=>s.unlocked);
+  window.__masterPurchasedSubjects=purchased;
 
   if(!purchased.length){
     $('subjectGrid').innerHTML='<div class="empty" style="grid-column:1/-1">No premium Computer product purchased yet.</div>';
@@ -753,6 +795,7 @@ function renderSubjects(data){
     </div>`;
   }).join('');
 }
+  renderMasterMilestones();
 
 function celebrateMilestone(m){
   const key=`hpmockshashtra_milestone_${m.n}`;
@@ -782,30 +825,7 @@ function celebrateMilestone(m){
   }
   setTimeout(()=>layer.remove(),5200);
 }
-
-function renderMilestones(data){
-  const attempted=data.filter(x=>x.unlocked).reduce((sum,x)=>sum+x.attempted,0);
-  const milestones=[
-    {n:20,label:'20 Questions',icon:'🌱'},
-    {n:100,label:'100 Questions',icon:'🏁'},
-    {n:250,label:'250 Questions',icon:'⭐'},
-    {n:500,label:'500 Questions',icon:'🎯'},
-    {n:1000,label:'1,000 Questions',icon:'🔥'},
-    {n:1500,label:'1,500 Questions',icon:'⚡'},
-    {n:2500,label:'2,500 Questions',icon:'🚀'},
-    {n:3500,label:'3,500 Questions',icon:'💎'},
-    {n:5000,label:'5,000 Questions',icon:'🏆'},
-    {n:6000,label:'6,000 Questions',icon:'👑'}
-  ];
-
-  $('milestones').innerHTML=milestones.map(m=>{
-    const done=attempted>=m.n;
-    return `<div class="milestone ${done?'done':'locked'}">
-      <div class="milestone-icon">${m.icon}</div>
-      <div class="milestone-title">${m.label}</div>
-      <div class="milestone-count">${done?'✓ Completed':'Locked'}</div>
-    </div>`;
-  }).join('');
+).join('');
 
   const newlyCompleted=milestones.filter(m=>attempted>=m.n && !localStorage.getItem(`hpmockshashtra_milestone_${m.n}`));
   if(newlyCompleted.length){
@@ -829,7 +849,6 @@ async function init(user){
   renderOverall(data);
   renderResume(data);
   renderSubjects(data);
-  renderMilestones(data);
 
   $('loading').style.display='none';
   $('dashboard').style.display='block';
@@ -865,6 +884,28 @@ onAuthStateChanged(auth,async user=>{
     $('errorBox').innerHTML='<strong>Unable to load your progress</strong><div style="margin-top:6px;font-size:9px;color:#b9c7d8">Please refresh the page and try again.</div>';
   }
 });
+
+/* ===== EXACTLY 5 MILESTONES ===== */
+const MASTER_MILESTONES=[100,2500,3500,5000,6000];
+
+function renderMasterMilestones(){
+  const grid=document.getElementById('milestoneGrid');
+  if(!grid)return;
+
+  // Use the already calculated purchased-subject data.
+  const purchased=Array.isArray(window.__masterPurchasedSubjects)?window.__masterPurchasedSubjects:[];
+  const completedQuestions=purchased.reduce((sum,s)=>sum+Number(s.attempted||0),0);
+
+  grid.innerHTML=MASTER_MILESTONES.map(m=>{
+    const done=completedQuestions>=m;
+    return `<div class="milestone-card ${done?'done':''}">
+      <div class="milestone-number">${m.toLocaleString('en-IN')}</div>
+      <div class="milestone-label">Questions Completed</div>
+      <div class="milestone-status">${done?'✓ Completed':'Target'}</div>
+    </div>`;
+  }).join('');
+}
+
 </script>
 </body>
 </html>
