@@ -7,17 +7,10 @@
 
 <style>
 :root{
-  --bg:#061326;
-  --panel:#0c1d39;
-  --panel2:#0b1a33;
-  --line:rgba(100,170,255,.20);
-  --text:#f5f8ff;
-  --muted:#91a6be;
-  --blue:#2296ff;
-  --violet:#8b5cf6;
-  --green:#12c98b;
-  --red:#ff6075;
-  --yellow:#ffd166;
+  --bg:#050b1b;--bg2:#08142c;--panel:#0d1b37;--panel2:#102344;
+  --line:rgba(121,177,255,.22);--text:#f7fbff;--muted:#9db0cb;
+  --blue:#2296ff;--cyan:#58e5ff;--violet:#9b6cff;--pink:#e85cff;
+  --green:#27d99a;--orange:#ffad3d;--red:#ff5c6c;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -381,6 +374,29 @@ button{font:inherit}
   100%{transform:translate(-50%,-50%) scale(1);opacity:1}
 }
 
+
+/* ===== Exact JOA IT Maha Pack visual language ===== */
+body{background:#0a1730}
+body:before{opacity:1;background:radial-gradient(circle at 10% 20%,#087dff18,transparent 28%),radial-gradient(circle at 90% 55%,#9b6cff18,transparent 30%),linear-gradient(135deg,#07142d,#0b1d3d 48%,#111633);background-size:auto}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px}
+.topbar{border:1px solid rgba(180,140,255,.38);background:linear-gradient(135deg,rgba(18,40,78,.96),rgba(55,35,92,.96));box-shadow:0 18px 55px #0008,0 0 30px rgba(137,92,255,.12)}
+.hero{background:radial-gradient(circle at 72% 45%,#168cff20,transparent 28%),radial-gradient(circle at 91% 74%,#a35dff18,transparent 30%),linear-gradient(135deg,#0a1a35,#10264a 48%,#181b3b);border-color:#6baeff22}
+.overall-box,.resume-card,.subject-card{background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid #6baeff22;box-shadow:0 14px 35px #0005}
+.stat-card{background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid #6baeff22;box-shadow:0 10px 28px #0004}
+.subject-card{min-height:190px;padding:16px;border-radius:16px;overflow:hidden}
+.subject-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 0%,#168cff12,transparent 40%);pointer-events:none}
+.subject-card:hover{transform:translateY(-5px);border-color:#5eb7ff55;box-shadow:0 22px 45px #0008,0 0 30px #168cff10}
+.subject-icon{width:48px;height:48px;flex:0 0 48px;border-radius:14px;background:linear-gradient(145deg,#263c70,#15274a);border:1px solid #83c4ff25;box-shadow:inset 0 0 20px #168cff0d;overflow:hidden}
+.subject-icon img{width:100%;height:100%;object-fit:contain;border-radius:12px;display:block}
+.subject-name{font-size:13px;line-height:1.3;color:#f4f8ff}
+.subject-count{font-size:9px;color:#8298b5}
+.percent{font-size:15px}
+.subject-action{background:linear-gradient(135deg,#0ea5e9,#10b981);color:#021a16;border:1px solid rgba(102,255,215,.50);box-shadow:0 8px 22px rgba(16,185,129,.24),0 0 14px rgba(14,165,233,.12)}
+.resume-btn{background:linear-gradient(135deg,#0d8cff,#386cff,#9858ff);color:#fff;border:0}
+.milestones{background:linear-gradient(145deg,#12294d,#0d2040);border-color:#6baeff22}
+.milestone{background:linear-gradient(145deg,#15345c,#0c2040)}
+.footer{background:linear-gradient(145deg,#061125,#0b1f3b)}
+
 </style>
 </head>
 
@@ -388,7 +404,7 @@ button{font:inherit}
 
 <header class="topbar">
   <nav class="nav">
-    <a class="brand" href="joa-mahapack.html">
+    <a class="brand" href="homepage.html">
       <div class="logo"><img src="logo.png" alt="HPMockShashtra"></div>
       <div>
         <div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div>
@@ -397,7 +413,7 @@ button{font:inherit}
     </a>
 
     <div class="nav-links">
-      <a class="nav-link" href="joa-mahapack.html">Home</a>
+      <a class="nav-link" href="homepage.html">Home</a>
       <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
       <a class="nav-link" href="my-purchase.html">My Purchases</a>
       <a class="nav-link active" href="master-progress.html">Master Progress</a>
@@ -412,7 +428,7 @@ button{font:inherit}
     <button class="menu-btn" id="menuBtn">☰</button>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="joa-mahapack.html">Home</a>
+      <a href="homepage.html">Home</a>
       <a href="joa-mahapack.html">Paid Courses</a>
       <a href="my-purchase.html">My Purchases</a>
       <a class="active" href="master-progress.html">Master Progress</a>
@@ -532,21 +548,21 @@ import {doc,getDoc} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-fi
 const $=id=>document.getElementById(id);
 
 const SUBJECTS=[
-  {id:'computer_fundamentals_01',name:'Computer Fundamentals',course:'computer-fundamentals',file:'paid-computer-fundamentals.html',icon:'💻'},
-  {id:'ms_word_01',name:'MS Word',course:'ms-word',file:'paid-ms-word.html',icon:'W',pack:'ms-office'},
-  {id:'ms_excel_01',name:'MS Excel',course:'ms-excel',file:'paid-ms-excel.html',icon:'X',pack:'ms-office'},
-  {id:'ms_powerpoint_01',name:'MS PowerPoint',course:'ms-powerpoint',file:'paid-ms-powerpoint.html',icon:'P',pack:'ms-office'},
-  {id:'ms_access_01',name:'MS Access',course:'ms-access',file:'paid-ms-access.html',icon:'▤',pack:'ms-office'},
-  {id:'dbms_sql_01',name:'DBMS & SQL',course:'dbms-sql',file:'paid-dbms-sql.html',icon:'▱'},
-  {id:'computer_networking_01',name:'Computer Networking',course:'computer-networking',file:'paid-computer-networking.html',icon:'⌁'},
-  {id:'cyber_security_01',name:'Cyber Security',course:'cyber-security',file:'paid-cyber-security.html',icon:'♢'},
-  {id:'c_programming_01',name:'C Programming',course:'c-programming',file:'paid-c-programming.html',icon:'</>'},
-  {id:'html_01',name:'HTML',course:'html',file:'paid-html.html',icon:'H'},
-  {id:'css_css3_01',name:'CSS / CSS3',course:'css-css3',file:'paid-css-css3.html',icon:'C'},
-  {id:'cloud_computing_01',name:'Cloud Computing',course:'cloud-computing',file:'paid-cloud-computing.html',icon:'☁'},
-  {id:'data_structure_01',name:'Data Structure',course:'data-structure',file:'paid-data-structure.html',icon:'⌘'},
-  {id:'computer_organisation_01',name:'Computer Organisation & Architecture',course:'computer-organisation',file:'paid-computer-organisation-architecture.html',icon:'▣',accessAliases:['computer-organisation-architecture']},
-  {id:'operating_system_01',name:'Operating System',course:'operating-system',file:'paid-operating-system.html',icon:'⚙'}
+  {id:'computer_fundamentals_01',name:'Computer Fundamentals',course:'computer-fundamentals',file:'paid-computer-fundamentals.html',image:'mahapack/computer-fundamentals.png',icon:'💻'},
+  {id:'ms_word_01',name:'MS Word',course:'ms-word',file:'paid-ms-word.html',image:'mahapack/ms-word.png',icon:'W',pack:'ms-office'},
+  {id:'ms_excel_01',name:'MS Excel',course:'ms-excel',file:'paid-ms-excel.html',image:'mahapack/ms-excel.png',icon:'X',pack:'ms-office'},
+  {id:'ms_powerpoint_01',name:'MS PowerPoint',course:'ms-powerpoint',file:'paid-ms-powerpoint.html',image:'mahapack/ms-powerpoint.png',icon:'P',pack:'ms-office'},
+  {id:'ms_access_01',name:'MS Access',course:'ms-access',file:'paid-ms-access.html',image:'mahapack/ms-access.png',icon:'▤',pack:'ms-office'},
+  {id:'dbms_sql_01',name:'DBMS & SQL',course:'dbms-sql',file:'paid-dbms-sql.html',image:'mahapack/dbms-sql.png',icon:'▱'},
+  {id:'computer_networking_01',name:'Computer Networking',course:'computer-networking',file:'paid-computer-networking.html',image:'mahapack/computer-networking.png',icon:'⌁'},
+  {id:'cyber_security_01',name:'Cyber Security',course:'cyber-security',file:'paid-cyber-security.html',image:'mahapack/cyber-security.png',icon:'♢'},
+  {id:'c_programming_01',name:'C Programming',course:'c-programming',file:'paid-c-programming.html',image:'mahapack/c-programming.png',icon:'</>'},
+  {id:'html_01',name:'HTML',course:'html',file:'paid-html.html',image:'mahapack/html.png',icon:'H'},
+  {id:'css_css3_01',name:'CSS / CSS3',course:'css-css3',file:'paid-css-css3.html',image:'mahapack/css-css3.png',icon:'C'},
+  {id:'cloud_computing_01',name:'Cloud Computing',course:'cloud-computing',file:'paid-cloud-computing.html',image:'mahapack/cloud-computing.png',icon:'☁'},
+  {id:'data_structure_01',name:'Data Structure',course:'data-structure',file:'paid-data-structure.html',image:'mahapack/data-structure.png',icon:'⌘'},
+  {id:'computer_organisation_01',name:'Computer Organisation & Architecture',course:'computer-organisation',file:'paid-computer-organisation-architecture.html',image:'mahapack/computer-organisation-architecture.png',icon:'▣',accessAliases:['computer-organisation-architecture']},
+  {id:'operating_system_01',name:'Operating System',course:'operating-system',file:'paid-operating-system.html',image:'mahapack/operating-system.png',icon:'⚙'}
 ];
 
 const DEFAULT_COUNT=400;
@@ -706,31 +722,23 @@ function renderResume(data){
 }
 
 function renderSubjects(data){
-  $('subjectGrid').innerHTML=data.map(s=>{
-    if(!s.unlocked){
-      return `<div class="subject-card locked">
-        <div class="subject-head">
-          <div class="subject-icon">${s.icon}</div>
-          <div class="subject-info">
-            <div class="subject-name">${escapeHtml(s.name)}</div>
-            <div class="subject-count">${DEFAULT_COUNT} Questions</div>
-          </div>
-          <div class="percent">🔒</div>
-        </div>
-        <div class="subject-foot">
-          <span class="accuracy">Premium Subject</span>
-          <a class="buy-btn" href="payment.html?product=${encodeURIComponent(s.course)}">Buy ₹49 →</a>
-        </div>
-      </div>`;
-    }
+  const purchased=data.filter(s=>s.unlocked);
+
+  if(!purchased.length){
+    $('subjectGrid').innerHTML='<div class="empty" style="grid-column:1/-1">No premium Computer product purchased yet.</div>';
+    return;
+  }
+
+  $('subjectGrid').innerHTML=purchased.map(s=>{
     const action=s.completed?'Review →':s.inProgress?'Continue →':'Start →';
     const href=s.completed
       ? `mahapack-study.html?test=${encodeURIComponent(s.id)}`
       : practiceUrl(s);
     const cls=s.completed?'review-btn':'subject-action';
+
     return `<div class="subject-card">
       <div class="subject-head">
-        <div class="subject-icon">${s.icon}</div>
+        <div class="subject-icon"><img src="${escapeHtml(s.image)}" alt="${escapeHtml(s.name)}"></div>
         <div class="subject-info">
           <div class="subject-name">${escapeHtml(s.name)}</div>
           <div class="subject-count">${s.attempted} / ${s.questionCount} Questions</div>
