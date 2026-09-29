@@ -71,48 +71,6 @@ tbody tr:hover{background:#f8faff}
 }
 
 
-    /* ================= JOA IT MILESTONES ================= */
-    .milestone-section{margin-top:20px}
-    .section-title-row{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:12px}
-    .section-title-row h2{font-size:18px;color:#111827}
-    .section-title-row p{font-size:11px;color:#94a3b8;margin-top:2px}
-    .milestone-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-    .milestone-card{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:15px 11px;text-align:center;min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 18px rgba(31,41,55,.07)}
-    .milestone-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(67,56,202,.05),rgba(99,102,241,.03));pointer-events:none}
-    .milestone-card.done{border-color:#f59e0b;box-shadow:0 0 0 1px rgba(245,158,11,.16),0 9px 24px rgba(245,158,11,.10)}
-    .milestone-number{font-size:20px;font-weight:900;color:#111827;position:relative}
-    .milestone-label{font-size:11px;color:#64748b;margin-top:3px;position:relative}
-    .milestone-status{font-size:10px;font-weight:800;margin-top:9px;color:#94a3b8;position:relative}
-    .milestone-card.done .milestone-status{color:#d97706}
-    @media(max-width:850px){.milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:600px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-title-row h2{font-size:17px}}
-
-
-    const JOA_MILESTONES = [100,2500,3500,5000,6000];
-
-    function renderMilestones(tests){
-      const grid = document.getElementById("milestoneGrid");
-      if(!grid) return;
-
-      // Count completed/attempted questions from the same testAttempt documents.
-      // If attempted count is unavailable, fall back to the test score/total only for
-      // the existing JOA result documents.
-      const totalQuestions = tests.reduce((sum,test) => {
-        const attempted = Number(test.attemptedQuestions ?? 0);
-        return sum + (attempted > 0 ? attempted : 0);
-      }, 0);
-
-      grid.innerHTML = JOA_MILESTONES.map(m => {
-        const done = totalQuestions >= m;
-        return `
-          <div class="milestone-card ${done ? "done" : ""}">
-            <div class="milestone-number">${m.toLocaleString("en-IN")}</div>
-            <div class="milestone-label">Questions Completed</div>
-            <div class="milestone-status">${done ? "✓ Completed" : "Locked"}</div>
-          </div>`;
-      }).join("");
-    }
-
     /* ================= PERFORMANCE ANALYTICS ================= */
 
     .analytics-grid {
@@ -257,21 +215,7 @@ tbody tr:hover{background:#f8faff}
       </div>
 
     </div>
-
-
-
-    <!-- ================= JOA IT MILESTONES ================= -->
-    <section class="milestone-section" id="milestoneSection">
-      <div class="section-title-row">
-        <div>
-          <h2>JOA IT Milestones</h2>
-          <p>Complete questions across your JOA IT tests and reach these milestones.</p>
-        </div>
-      </div>
-      <div id="milestoneGrid" class="milestone-grid"></div>
-    </section>
-
-    <!-- ================= PERFORMANCE ANALYTICS ================= -->
+<!-- ================= PERFORMANCE ANALYTICS ================= -->
 
     <section class="analytics-grid" id="analyticsSection">
 
@@ -304,7 +248,7 @@ tbody tr:hover{background:#f8faff}
         </div>
 
         <div class="state-text">
-          Your attempted HP Patwari mock tests will automatically appear here after you complete a test.
+          Your attempted HP JOA IT mock tests will automatically appear here after you complete a test.
         </div>
 
         <a href="joa-series.html" class="state-btn">
@@ -374,16 +318,103 @@ tbody tr:hover{background:#f8faff}
     /* ================= TEST CONFIGURATION ================= */
 
     const TESTS = [
+
       {
         id: "joa_free_test_01",
         name: "Free",
         type: "Free"
       },
-      ...Array.from({length:15}, (_,i) => ({
-        id: `joa_test_${String(i+1).padStart(2,"0")}`,
-        name: `Test #${i+1}`,
-        type: `Test #${i+1}`
-      }))
+
+      {
+        id: "joa_test_01",
+        name: "Test #1",
+        type: "Test #1"
+      },
+
+      {
+        id: "joa_test_02",
+        name: "Test #2",
+        type: "Test #2"
+      },
+
+      {
+        id: "joa_test_03",
+        name: "Test #3",
+        type: "Test #3"
+      },
+
+      {
+        id: "joa_test_04",
+        name: "Test #4",
+        type: "Test #4"
+      },
+
+      {
+        id: "joa_test_05",
+        name: "Test #5",
+        type: "Test #5"
+      },
+
+      {
+        id: "joa_test_06",
+        name: "Test #6",
+        type: "Test #6"
+      },
+
+      {
+        id: "joa_test_07",
+        name: "Test #7",
+        type: "Test #7"
+      },
+
+      {
+        id: "joa_test_08",
+        name: "Test #8",
+        type: "Test #8"
+      },
+
+      {
+        id: "joa_test_09",
+        name: "Test #9",
+        type: "Test #9"
+      },
+
+      {
+        id: "joa_test_10",
+        name: "Test #10",
+        type: "Test #10"
+      },
+
+      {
+        id: "joa_test_11",
+        name: "Test #11",
+        type: "Test #11"
+      },
+
+      {
+        id: "joa_test_12",
+        name: "Test #12",
+        type: "Test #12"
+      },
+
+      {
+        id: "joa_test_13",
+        name: "Test #13",
+        type: "Test #13"
+      },
+
+      {
+        id: "joa_test_14",
+        name: "Test #14",
+        type: "Test #14"
+      },
+
+      {
+        id: "joa_test_15",
+        name: "Test #15",
+        type: "Test #15"
+      }
+
     ];
 
 
@@ -445,11 +476,15 @@ const noAttempts =
 
         try {
 
-          const attemptRef =
-            doc(db, "testAttempts", attemptId);
+          let snapshot =
+            await getDoc(doc(db, "testAttempts", attemptId));
 
-          const snapshot =
-            await getDoc(attemptRef);
+          // Backward compatibility for any older JOA documents using
+          // joa_test_1, joa_test_2 ... instead of joa_test_01, joa_test_02 ...
+          if (!snapshot.exists() && /^joa_test_\\d{2}$/.test(test.id)) {
+            const oldId = `${uid}_joa_test_${Number(test.id.replace("joa_test_", ""))}`;
+            snapshot = await getDoc(doc(db, "testAttempts", oldId));
+          }
 
           if (!snapshot.exists()) {
             continue;
@@ -625,49 +660,6 @@ renderPerformanceAnalytics(tests);
 
     }
 
-
-
-    /* ================= JOA IT MILESTONES ================= */
-    .milestone-section{margin-top:20px}
-    .section-title-row{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:12px}
-    .section-title-row h2{font-size:18px;color:#111827}
-    .section-title-row p{font-size:11px;color:#94a3b8;margin-top:2px}
-    .milestone-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-    .milestone-card{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:15px 11px;text-align:center;min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 18px rgba(31,41,55,.07)}
-    .milestone-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(67,56,202,.05),rgba(99,102,241,.03));pointer-events:none}
-    .milestone-card.done{border-color:#f59e0b;box-shadow:0 0 0 1px rgba(245,158,11,.16),0 9px 24px rgba(245,158,11,.10)}
-    .milestone-number{font-size:20px;font-weight:900;color:#111827;position:relative}
-    .milestone-label{font-size:11px;color:#64748b;margin-top:3px;position:relative}
-    .milestone-status{font-size:10px;font-weight:800;margin-top:9px;color:#94a3b8;position:relative}
-    .milestone-card.done .milestone-status{color:#d97706}
-    @media(max-width:850px){.milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:600px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-title-row h2{font-size:17px}}
-
-
-    const JOA_MILESTONES = [100,2500,3500,5000,6000];
-
-    function renderMilestones(tests){
-      const grid = document.getElementById("milestoneGrid");
-      if(!grid) return;
-
-      // Count completed/attempted questions from the same testAttempt documents.
-      // If attempted count is unavailable, fall back to the test score/total only for
-      // the existing JOA result documents.
-      const totalQuestions = tests.reduce((sum,test) => {
-        const attempted = Number(test.attemptedQuestions ?? 0);
-        return sum + (attempted > 0 ? attempted : 0);
-      }, 0);
-
-      grid.innerHTML = JOA_MILESTONES.map(m => {
-        const done = totalQuestions >= m;
-        return `
-          <div class="milestone-card ${done ? "done" : ""}">
-            <div class="milestone-number">${m.toLocaleString("en-IN")}</div>
-            <div class="milestone-label">Questions Completed</div>
-            <div class="milestone-status">${done ? "✓ Completed" : "Locked"}</div>
-          </div>`;
-      }).join("");
-    }
 
     /* ================= PERFORMANCE ANALYTICS ================= */
 
@@ -899,7 +891,6 @@ renderPerformanceAnalytics(tests);
 
       noAttempts.style.display = "block";
 
-      renderMilestones([]);
     }
 
 
