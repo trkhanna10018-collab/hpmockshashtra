@@ -4,36 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My Progress — HPMockShashtra</title>
+  <title>JOA IT Progress — HPMockShashtra</title>
 
   <style>
 
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:#0a1730;color:#eaf2ff;line-height:1.5;min-height:100vh;position:relative}
-body:before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#07142d,#0b1d3d 48%,#111633)}
+body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#f4f7ff,#eef3fb 50%,#f8faff);color:#1f2937;line-height:1.5;min-height:100vh}
 .header{background:transparent;border:0;position:sticky;top:0;z-index:100;box-shadow:none;padding:0}
-.header-inner{max-width:1060px;margin:auto;height:82px;padding:0 22px;background:linear-gradient(135deg,rgba(18,40,78,.96),rgba(55,35,92,.96));border-radius:0 0 14px 14px;border:1px solid rgba(255,255,255,.08);border-top:0;box-shadow:0 8px 24px rgba(0,0,0,.20);display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
-.brand img{width:50px;height:50px;object-fit:contain;border-radius:10px}
+.header-inner{max-width:1060px;margin:auto;height:128px;padding:0 24px;background:rgba(255,255,255,.98);border-radius:0 0 14px 14px;border:1px solid #e4e9f2;border-top:0;box-shadow:0 4px 18px rgba(31,41,55,.07);display:flex;align-items:center;justify-content:space-between}
+.brand{gap:16px}
+.brand img{width:120px;height:120px;object-fit:contain;border-radius:14px}
+.brand-text{font-size:24px;font-weight:800;letter-spacing:-.4px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#111827}
+.brand img{width:52px;height:52px;object-fit:contain;border-radius:10px}
 .brand-text{font-size:20px;font-weight:800;letter-spacing:-.3px}
-.back-btn{text-decoration:none;color:#dbeafe;border:1px solid rgba(147,197,253,.35);background:rgba(59,130,246,.14);padding:9px 15px;border-radius:9px;font-size:13px;font-weight:700;transition:.2s}
-.back-btn:hover{background:rgba(59,130,246,.24);border-color:rgba(147,197,253,.55);transform:translateY(-1px)}
-.container{max-width:1100px;margin:0 auto;padding:34px 20px 10px}
-.page-heading{margin-bottom:25px;padding:22px 24px;border-radius:16px;background:linear-gradient(135deg,#163764,#4b327d);color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.22);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid rgba(255,255,255,.08)}
+.back-btn{text-decoration:none;color:#4338ca;border:1px solid #c7d2fe;background:#eef2ff;padding:9px 15px;border-radius:9px;font-size:13px;font-weight:700;transition:.2s}
+.back-btn:hover{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px)}
+.container{max-width:1100px;margin:0 auto;padding:38px 20px 10px}
+.page-heading{margin-bottom:25px;padding:22px 24px;border-radius:16px;background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff;box-shadow:0 10px 28px rgba(67,56,202,.18);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .page-heading:after{content:"";position:absolute;width:180px;height:180px;right:-65px;top:-85px;border-radius:50%;background:rgba(255,255,255,.1)}
 .page-heading h1{font-size:29px;color:#fff;margin-bottom:3px;position:relative;z-index:1}
 .page-heading p{color:rgba(255,255,255,.82);font-size:14px;position:relative;z-index:1}
 .progress-dashboard-btn{position:relative;z-index:2;text-decoration:none;color:#4338ca;background:#fff;border:1px solid rgba(255,255,255,.7);padding:9px 15px;border-radius:9px;font-size:13px;font-weight:700;white-space:nowrap;transition:.2s}
 .progress-dashboard-btn:hover{background:#f8fafc;transform:translateY(-1px)}
 .summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:28px}
-.summary-card{background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid rgba(147,197,253,.12);border-radius:14px;padding:18px 16px;min-width:0;box-shadow:0 7px 20px rgba(0,0,0,.18);position:relative;overflow:hidden;transition:.2s}
+.summary-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 16px;min-width:0;box-shadow:0 5px 16px rgba(31,41,55,.06);position:relative;overflow:hidden;transition:.2s}
 .summary-card:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(31,41,55,.09)}
 .summary-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:#6366f1}
 .summary-card:nth-child(2):before{background:#f59e0b}.summary-card:nth-child(3):before{background:#ef4444}.summary-card:nth-child(4):before{background:#0ea5e9}
-.summary-label{font-size:12px;color:#9fb4d2;margin-bottom:7px;font-weight:700;text-transform:uppercase;letter-spacing:.35px}
-.summary-value{font-size:23px;font-weight:800;color:#fff;white-space:nowrap}
-.summary-sub{font-size:11px;color:#8ea6c5;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-tbody tr:hover{background:rgba(22,140,255,.08)}
+.summary-label{font-size:12px;color:#64748b;margin-bottom:7px;font-weight:700;text-transform:uppercase;letter-spacing:.35px}
+.summary-value{font-size:23px;font-weight:800;color:#111827;white-space:nowrap}
+.summary-sub{font-size:11px;color:#94a3b8;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+tbody tr:hover{background:#f8faff}
 
 
     table { table-layout: fixed; }
@@ -48,11 +50,12 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
       vertical-align: middle;
     }
 
-.state-box{background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid rgba(147,197,253,.12);border-radius:15px;padding:55px 25px;text-align:center;box-shadow:0 6px 20px rgba(31,41,55,.06)}
-.state-title{font-size:20px;font-weight:800;color:#fff;margin-bottom:7px}.state-text{color:#9fb4d2;font-size:14px;max-width:500px;margin:auto}
+.state-box{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:55px 25px;text-align:center;box-shadow:0 6px 20px rgba(31,41,55,.06)}
+.state-title{font-size:20px;font-weight:800;color:#111827;margin-bottom:7px}.state-text{color:#64748b;font-size:14px;max-width:500px;margin:auto}
 .state-btn{display:inline-block;margin-top:20px;padding:10px 17px;background:#4f46e5;color:#fff;text-decoration:none;border-radius:8px;font-size:13px;font-weight:700;transition:.2s}.state-btn:hover{background:#4338ca;transform:translateY(-1px)}
-.loading{color:#9fb4d2;font-size:14px}.error{color:#b91c1c}
-.footer{background:linear-gradient(145deg,#061125,#0b1f3b);color:#dbeafe;margin:10px auto 0;width:100%;max-width:1060px;border-radius:14px;overflow:hidden;border:1px solid rgba(147,197,253,.10)}
+.loading{color:#64748b;font-size:14px}.error{color:#b91c1c}
+.footer{background:#174f93;color:#fff;margin:10px auto 0;width:100%;max-width:1060px;border-radius:14px;overflow:hidden}
+.footer-inner{max-width:none;padding:19px 30px;font-size:13px}
 .footer-inner{max-width:1100px;margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:13px}
 .footer-links{display:flex;align-items:center;gap:8px}
 .footer-links a{color:#fff;text-decoration:none}
@@ -68,35 +71,47 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
 }
 
 
-    /* ================= SUBJECT PROGRESS ================= */
-    .subject-section,.milestone-section{margin-top:20px}
+    /* ================= JOA IT MILESTONES ================= */
+    .milestone-section{margin-top:20px}
     .section-title-row{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:12px}
-    .section-title-row h2{font-size:18px;color:#fff}
-    .section-title-row p{font-size:11px;color:#8ea6c5;margin-top:2px}
-    .subject-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .subject-card{background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid rgba(147,197,253,.12);border-radius:14px;padding:15px;box-shadow:0 7px 20px rgba(0,0,0,.18)}
-    .subject-top{display:flex;align-items:center;gap:12px}
-    .subject-img{width:52px;height:52px;flex:0 0 52px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(147,197,253,.15);display:grid;place-items:center;overflow:hidden}
-    .subject-img img{width:100%;height:100%;object-fit:contain;padding:5px}
-    .subject-name{font-size:14px;font-weight:800;color:#fff}
-    .subject-meta{font-size:10px;color:#8ea6c5;margin-top:2px}
-    .subject-progress-track{height:7px;background:rgba(255,255,255,.09);border-radius:999px;overflow:hidden;margin-top:13px}
-    .subject-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#3b82f6,#8b5cf6)}
-    .subject-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px;font-size:11px;color:#b7c8df}
-    .subject-action{padding:7px 11px;border-radius:8px;text-decoration:none;color:#fff;background:#2563eb;font-size:11px;font-weight:800}
-    .subject-action:hover{background:#1d4ed8}
-    .subject-loading{grid-column:1/-1;color:#8ea6c5;background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid rgba(147,197,253,.12);border-radius:14px;padding:20px;text-align:center}
-    /* ================= MILESTONES ================= */
+    .section-title-row h2{font-size:18px;color:#111827}
+    .section-title-row p{font-size:11px;color:#94a3b8;margin-top:2px}
     .milestone-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-    .milestone-card{position:relative;background:linear-gradient(145deg,#162f57,#0d2040);border:1px solid rgba(147,197,253,.18);border-radius:13px;padding:15px 11px;text-align:center;min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 7px 20px rgba(0,0,0,.18)}
-    .milestone-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(139,92,246,.08));pointer-events:none}
-    .milestone-card.done{border-color:#fbbf24;box-shadow:0 0 0 1px rgba(251,191,36,.18),0 9px 26px rgba(251,191,36,.10)}
-    .milestone-number{font-size:20px;font-weight:900;color:#fff;position:relative}
-    .milestone-label{font-size:11px;color:#9fb4d2;margin-top:3px;position:relative}
+    .milestone-card{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:15px 11px;text-align:center;min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 18px rgba(31,41,55,.07)}
+    .milestone-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(67,56,202,.05),rgba(99,102,241,.03));pointer-events:none}
+    .milestone-card.done{border-color:#f59e0b;box-shadow:0 0 0 1px rgba(245,158,11,.16),0 9px 24px rgba(245,158,11,.10)}
+    .milestone-number{font-size:20px;font-weight:900;color:#111827;position:relative}
+    .milestone-label{font-size:11px;color:#64748b;margin-top:3px;position:relative}
     .milestone-status{font-size:10px;font-weight:800;margin-top:9px;color:#94a3b8;position:relative}
-    .milestone-card.done .milestone-status{color:#fbbf24}
-    @media(max-width:850px){.subject-grid{grid-template-columns:1fr}.milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:600px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-title-row h2{font-size:17px}.subject-card{padding:13px}}
+    .milestone-card.done .milestone-status{color:#d97706}
+    @media(max-width:850px){.milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:600px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-title-row h2{font-size:17px}}
+
+
+    const JOA_MILESTONES = [100,2500,3500,5000,6000];
+
+    function renderMilestones(tests){
+      const grid = document.getElementById("milestoneGrid");
+      if(!grid) return;
+
+      // Count completed/attempted questions from the same testAttempt documents.
+      // If attempted count is unavailable, fall back to the test score/total only for
+      // the existing JOA result documents.
+      const totalQuestions = tests.reduce((sum,test) => {
+        const attempted = Number(test.attemptedQuestions ?? 0);
+        return sum + (attempted > 0 ? attempted : 0);
+      }, 0);
+
+      grid.innerHTML = JOA_MILESTONES.map(m => {
+        const done = totalQuestions >= m;
+        return `
+          <div class="milestone-card ${done ? "done" : ""}">
+            <div class="milestone-number">${m.toLocaleString("en-IN")}</div>
+            <div class="milestone-label">Questions Completed</div>
+            <div class="milestone-status">${done ? "✓ Completed" : "Locked"}</div>
+          </div>`;
+      }).join("");
+    }
 
     /* ================= PERFORMANCE ANALYTICS ================= */
 
@@ -108,10 +123,10 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
     }
 
     .analytics-card {
-      background: linear-gradient(145deg,#12294d,#0d2040);
-      border: 1px solid rgba(147,197,253,.12);
+      background: #fff;
+      border: 1px solid #e2e8f0;
       border-radius: 15px;
-      box-shadow: 0 7px 20px rgba(0,0,0,.18);
+      box-shadow: 0 6px 20px rgba(31,41,55,.07);
       padding: 19px;
       min-width: 0;
     }
@@ -119,7 +134,7 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
     .analytics-title{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
 
     .analytics-title h2 {
-      color: #fff;
+      color: #111827;
       font-size: 17px;
       margin-bottom: 2px;
     }
@@ -137,19 +152,19 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
       place-items: center;
       border-radius: 10px;
       color: #4f46e5;
-      background: rgba(99,102,241,.16);
+      background: #eef2ff;
       font-weight: 900;
       font-size: 18px;
     }
 
     .analytics-icon.blue {
       color: #0284c7;
-      background: rgba(14,165,233,.14);
+      background: #e0f2fe;
     }
 
     .analytics-icon.gold {
       color: #d97706;
-      background: rgba(245,158,11,.14);
+      background: #fef3c7;
     }
 
     .chart-wrap{width:100%;height:360px;overflow:hidden;margin-top:8px}
@@ -161,19 +176,19 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
     }
 
     .chart-grid-line {
-      stroke: rgba(159,180,210,.18);
+      stroke: #e8edf5;
       stroke-width: 1;
     }
 
-    .chart-axis-label{fill:#8ea6c5;font-size:12px;font-weight:700;font-family:Arial,sans-serif}
+    .chart-axis-label{fill:#94a3b8;font-size:12px;font-weight:700;font-family:Arial,sans-serif}
 
     .chart-area {
-      fill: rgba(99,102,241,.14);
+      fill: #eef2ff;
     }
 
     .chart-line {
       fill: none;
-      stroke: #93c5fd;
+      stroke: #4f46e5;
       stroke-width: 3;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -181,15 +196,15 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
 
     .chart-point {
       fill: #fff;
-      stroke: #93c5fd;
+      stroke: #4f46e5;
       stroke-width: 3;
     }
 
-    .chart-score{fill:#e0e7ff;font-size:16px;font-weight:900;font-family:Arial,sans-serif}
+    .chart-score{fill:#312e81;font-size:16px;font-weight:900;font-family:Arial,sans-serif}
 
     .chart-name{fill:#64748b;font-size:13px;font-weight:800;font-family:Arial,sans-serif}
 @media(max-width:850px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-grid{grid-template-columns:1fr}.container{padding-top:28px}.page-heading h1{font-size:27px}}
-@media(max-width:600px){.chart-wrap{height:285px}.header-inner{height:70px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.progress-dashboard-btn{padding:8px 10px;font-size:11px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
+@media(max-width:600px){.chart-wrap{height:285px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.progress-dashboard-btn{padding:8px 10px;font-size:11px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
 
   </style>
 </head>
@@ -205,12 +220,12 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
 
     <div class="page-heading">
       <div>
-        <h1>My Progress</h1>
+        <h1>JOA IT Progress</h1>
         <p>JOA IT Mock Test Series</p>
       </div>
 
-      <a href="firebase-dashboard.html" class="progress-dashboard-btn">
-        ← Dashboard
+      <a href="homepage.html" class="progress-dashboard-btn">
+        ← Home
       </a>
     </div>
 
@@ -245,25 +260,12 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
 
 
 
-    <!-- ================= SUBJECT PROGRESS ================= -->
-    <section class="subject-section" id="subjectSection">
-      <div class="section-title-row">
-        <div>
-          <h2>Subject Progress</h2>
-          <p>Only your purchased Computer courses are shown here.</p>
-        </div>
-      </div>
-      <div id="subjectProgress" class="subject-grid">
-        <div class="subject-loading">Loading purchased courses…</div>
-      </div>
-    </section>
-
-    <!-- ================= MILESTONES ================= -->
+    <!-- ================= JOA IT MILESTONES ================= -->
     <section class="milestone-section" id="milestoneSection">
       <div class="section-title-row">
         <div>
-          <h2>Milestones</h2>
-          <p>Complete questions across your purchased courses and unlock each milestone.</p>
+          <h2>JOA IT Milestones</h2>
+          <p>Complete questions across your JOA IT tests and reach these milestones.</p>
         </div>
       </div>
       <div id="milestoneGrid" class="milestone-grid"></div>
@@ -302,7 +304,7 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
         </div>
 
         <div class="state-text">
-          Your attempted mock tests will automatically appear here after you complete a test.
+          Your attempted HP Patwari mock tests will automatically appear here after you complete a test.
         </div>
 
         <a href="joa-series.html" class="state-btn">
@@ -372,223 +374,17 @@ tbody tr:hover{background:rgba(22,140,255,.08)}
     /* ================= TEST CONFIGURATION ================= */
 
     const TESTS = [
-
       {
         id: "joa_free_test_01",
         name: "Free",
         type: "Free"
       },
-
-      {
-        id: "joa_test_01",
-        name: "Test #1",
-        type: "Test #1"
-      },
-
-      {
-        id: "joa_test_02",
-        name: "Test #2",
-        type: "Test #2"
-      },
-
-      {
-        id: "joa_test_03",
-        name: "Test #3",
-        type: "Test #3"
-      },
-
-      {
-        id: "joa_test_04",
-        name: "Test #4",
-        type: "Test #4"
-      },
-
-      {
-        id: "joa_test_05",
-        name: "Test #5",
-        type: "Test #5"
-      },
-
-      {
-        id: "joa_test_06",
-        name: "Test #6",
-        type: "Test #6"
-      },
-
-      {
-        id: "joa_test_07",
-        name: "Test #7",
-        type: "Test #7"
-      },
-
-      {
-        id: "joa_test_08",
-        name: "Test #8",
-        type: "Test #8"
-      },
-
-      {
-        id: "joa_test_09",
-        name: "Test #9",
-        type: "Test #9"
-      },
-
-      {
-        id: "joa_test_10",
-        name: "Test #10",
-        type: "Test #10"
-      },
-
-      {
-        id: "joa_test_11",
-        name: "Test #11",
-        type: "Test #11"
-      },
-
-      {
-        id: "joa_test_12",
-        name: "Test #12",
-        type: "Test #12"
-      },
-
-      {
-        id: "joa_test_13",
-        name: "Test #13",
-        type: "Test #13"
-      },
-
-      {
-        id: "joa_test_14",
-        name: "Test #14",
-        type: "Test #14"
-      },
-
-      {
-        id: "joa_test_15",
-        name: "Test #15",
-        type: "Test #15"
-      }
-
+      ...Array.from({length:15}, (_,i) => ({
+        id: `joa_test_${String(i+1).padStart(2,"0")}`,
+        name: `Test #${i+1}`,
+        type: `Test #${i+1}`
+      }))
     ];
-
-
-
-    /* ================= COMPUTER PRODUCTS ================= */
-    const PRODUCTS = [
-      {id:"computer-fundamentals", name:"Computer Fundamentals", image:"mahapack/computer-fundamentals.png", testId:"computer_fundamentals_01", page:"paid-computer-fundamentals.html"},
-      {id:"ms-word", name:"MS Word", image:"mahapack/ms-word.png", testId:"ms_word_01", page:"paid-ms-word.html"},
-      {id:"ms-excel", name:"MS Excel", image:"mahapack/ms-excel.png", testId:"ms_excel_01", page:"paid-ms-excel.html"},
-      {id:"ms-powerpoint", name:"MS PowerPoint", image:"mahapack/ms-powerpoint.png", testId:"ms_powerpoint_01", page:"paid-ms-powerpoint.html"},
-      {id:"ms-access", name:"MS Access", image:"mahapack/ms-access.png", testId:"ms_access_01", page:"paid-ms-access.html"},
-      {id:"dbms-sql", name:"DBMS & SQL", image:"mahapack/dbms-sql.png", testId:"dbms_sql_01", page:"paid-dbms-sql.html"},
-      {id:"computer-networking", name:"Computer Networking", image:"mahapack/computer-networking.png", testId:"computer_networking_01", page:"paid-computer-networking.html"},
-      {id:"cyber-security", name:"Cyber Security", image:"mahapack/cyber-security.png", testId:"cyber_security_01", page:"paid-cyber-security.html"},
-      {id:"c-programming", name:"C Programming", image:"mahapack/c-programming.png", testId:"c_programming_01", page:"paid-c-programming.html"},
-      {id:"html", name:"HTML", image:"mahapack/html.png", testId:"html_01", page:"paid-html.html"},
-      {id:"css-css3", name:"CSS / CSS3", image:"mahapack/css-css3.png", testId:"css_css3_01", page:"paid-css-css3.html"},
-      {id:"cloud-computing", name:"Cloud Computing", image:"mahapack/cloud-computing.png", testId:"cloud_computing_01", page:"paid-cloud-computing.html"},
-      {id:"data-structure", name:"Data Structure", image:"mahapack/data-structure.png", testId:"data_structure_01", page:"paid-data-structure.html"},
-      {id:"computer-organisation", name:"Computer Organisation & Architecture", image:"mahapack/computer-organisation-architecture.png", testId:"computer_organisation_01", page:"paid-computer-organisation-architecture.html"},
-      {id:"operating-system", name:"Operating System", image:"mahapack/operating-system.png", testId:"operating_system_01", page:"paid-operating-system.html"}
-    ];
-
-    const MILESTONES = [100,2500,3500,5000,6000];
-
-    function hasActivePurchase(entry){
-      return entry && entry.expiresAt && typeof entry.expiresAt.toMillis === "function"
-        ? entry.expiresAt.toMillis() > Date.now()
-        : false;
-    }
-
-    function renderMilestones(totalQuestions){
-      const grid = document.getElementById("milestoneGrid");
-      if(!grid) return;
-      grid.innerHTML = MILESTONES.map((m,i)=>{
-        const done = totalQuestions >= m;
-        const next = !done ? MILESTONES.find(x=>x>totalQuestions) : null;
-        return `
-          <div class="milestone-card ${done ? "done" : ""}">
-            <div class="milestone-number">${m.toLocaleString("en-IN")}</div>
-            <div class="milestone-label">Questions Completed</div>
-            <div class="milestone-status">${done ? "✓ Completed" : (next===m ? "Next Milestone" : "Locked")}</div>
-          </div>`;
-      }).join("");
-    }
-
-    async function loadComputerProgress(uid, accessData){
-      const grid = document.getElementById("subjectProgress");
-      if(!grid) return;
-
-      const courses = accessData?.computerAccess?.courses || {};
-      const packs = accessData?.computerAccess?.packs || {};
-
-      const msOfficeActive = hasActivePurchase(packs["ms-office"]);
-      const masterActive = hasActivePurchase(packs["computer-master"]);
-
-      const purchased = PRODUCTS.filter(p=>{
-        return hasActivePurchase(courses[p.id])
-          || (msOfficeActive && ["ms-word","ms-excel","ms-powerpoint","ms-access"].includes(p.id))
-          || masterActive;
-      });
-
-      if(!purchased.length){
-        grid.innerHTML = `<div class="subject-loading">No Computer course purchased yet. Your purchased course progress will appear here.</div>`;
-        renderMilestones(0);
-        return;
-      }
-
-      const progress = [];
-      let totalCompleted = 0;
-
-      for(const p of purchased){
-        let completed = 0, total = 400, score = 0;
-
-        try{
-          const ref = doc(db,"testAttempts",`${uid}_${p.testId}`);
-          const snap = await getDoc(ref);
-          if(snap.exists()){
-            const d = snap.data();
-            total = Number(d.total ?? 400);
-            if(Array.isArray(d.answers)){
-              completed = d.answers.filter(a=>a!==null && a!==undefined && a!=="").length;
-            } else {
-              completed = Number(d.attempted ?? d.completed ?? d.questionsCompleted ?? 0);
-            }
-            score = Number(d.score ?? 0);
-          }
-        }catch(e){
-          console.warn(`Skipping progress for ${p.id}:`, e?.code || e);
-        }
-
-        completed = Math.max(0, Math.min(completed,total));
-        totalCompleted += completed;
-        progress.push({...p,completed,total,score});
-      }
-
-      grid.innerHTML = progress.map(p=>{
-        const percent = p.total ? Math.min(100,(p.completed/p.total)*100) : 0;
-        const action = p.completed >= p.total
-          ? `<a class="subject-action" href="mahapack-study.html?test=${encodeURIComponent(p.testId)}">Review</a>`
-          : `<a class="subject-action" href="${p.page}">Continue</a>`;
-        return `
-          <div class="subject-card">
-            <div class="subject-top">
-              <div class="subject-img"><img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}"></div>
-              <div>
-                <div class="subject-name">${escapeHTML(p.name)}</div>
-                <div class="subject-meta">${p.completed.toLocaleString("en-IN")} / ${p.total.toLocaleString("en-IN")} questions completed</div>
-              </div>
-            </div>
-            <div class="subject-progress-track"><div class="subject-progress-fill" style="width:${percent}%"></div></div>
-            <div class="subject-bottom">
-              <span>${percent.toFixed(0)}% complete${p.score ? ` • Score ${p.score}` : ""}</span>
-              ${action}
-            </div>
-          </div>`;
-      }).join("");
-
-      renderMilestones(totalCompleted);
-    }
 
 
     /* ================= ELEMENTS ================= */
@@ -621,13 +417,6 @@ const noAttempts =
       }
 
       await loadProgress(user.uid);
-
-      try{
-        const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
-        await loadComputerProgress(user.uid, accessSnap.exists() ? accessSnap.data() : {});
-      }catch(error){
-        console.warn("Unable to load Computer purchase/progress:", error);
-      }
 
     });
 
@@ -678,7 +467,7 @@ const noAttempts =
 
             score: Number(data.score ?? 0),
 
-            total: Number(data.total ?? 100)
+            total: Number(data.total ?? 120)
 
           });
 
@@ -838,35 +627,47 @@ renderPerformanceAnalytics(tests);
 
 
 
-    /* ================= SUBJECT PROGRESS ================= */
-    .subject-section,.milestone-section{margin-top:20px}
+    /* ================= JOA IT MILESTONES ================= */
+    .milestone-section{margin-top:20px}
     .section-title-row{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:12px}
-    .section-title-row h2{font-size:18px;color:#fff}
-    .section-title-row p{font-size:11px;color:#8ea6c5;margin-top:2px}
-    .subject-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .subject-card{background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid rgba(147,197,253,.12);border-radius:14px;padding:15px;box-shadow:0 7px 20px rgba(0,0,0,.18)}
-    .subject-top{display:flex;align-items:center;gap:12px}
-    .subject-img{width:52px;height:52px;flex:0 0 52px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(147,197,253,.15);display:grid;place-items:center;overflow:hidden}
-    .subject-img img{width:100%;height:100%;object-fit:contain;padding:5px}
-    .subject-name{font-size:14px;font-weight:800;color:#fff}
-    .subject-meta{font-size:10px;color:#8ea6c5;margin-top:2px}
-    .subject-progress-track{height:7px;background:rgba(255,255,255,.09);border-radius:999px;overflow:hidden;margin-top:13px}
-    .subject-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#3b82f6,#8b5cf6)}
-    .subject-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px;font-size:11px;color:#b7c8df}
-    .subject-action{padding:7px 11px;border-radius:8px;text-decoration:none;color:#fff;background:#2563eb;font-size:11px;font-weight:800}
-    .subject-action:hover{background:#1d4ed8}
-    .subject-loading{grid-column:1/-1;color:#8ea6c5;background:linear-gradient(145deg,#12294d,#0d2040);border:1px solid rgba(147,197,253,.12);border-radius:14px;padding:20px;text-align:center}
-    /* ================= MILESTONES ================= */
+    .section-title-row h2{font-size:18px;color:#111827}
+    .section-title-row p{font-size:11px;color:#94a3b8;margin-top:2px}
     .milestone-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-    .milestone-card{position:relative;background:linear-gradient(145deg,#162f57,#0d2040);border:1px solid rgba(147,197,253,.18);border-radius:13px;padding:15px 11px;text-align:center;min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 7px 20px rgba(0,0,0,.18)}
-    .milestone-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(139,92,246,.08));pointer-events:none}
-    .milestone-card.done{border-color:#fbbf24;box-shadow:0 0 0 1px rgba(251,191,36,.18),0 9px 26px rgba(251,191,36,.10)}
-    .milestone-number{font-size:20px;font-weight:900;color:#fff;position:relative}
-    .milestone-label{font-size:11px;color:#9fb4d2;margin-top:3px;position:relative}
+    .milestone-card{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:15px 11px;text-align:center;min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 18px rgba(31,41,55,.07)}
+    .milestone-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(67,56,202,.05),rgba(99,102,241,.03));pointer-events:none}
+    .milestone-card.done{border-color:#f59e0b;box-shadow:0 0 0 1px rgba(245,158,11,.16),0 9px 24px rgba(245,158,11,.10)}
+    .milestone-number{font-size:20px;font-weight:900;color:#111827;position:relative}
+    .milestone-label{font-size:11px;color:#64748b;margin-top:3px;position:relative}
     .milestone-status{font-size:10px;font-weight:800;margin-top:9px;color:#94a3b8;position:relative}
-    .milestone-card.done .milestone-status{color:#fbbf24}
-    @media(max-width:850px){.subject-grid{grid-template-columns:1fr}.milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:600px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-title-row h2{font-size:17px}.subject-card{padding:13px}}
+    .milestone-card.done .milestone-status{color:#d97706}
+    @media(max-width:850px){.milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:600px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-title-row h2{font-size:17px}}
+
+
+    const JOA_MILESTONES = [100,2500,3500,5000,6000];
+
+    function renderMilestones(tests){
+      const grid = document.getElementById("milestoneGrid");
+      if(!grid) return;
+
+      // Count completed/attempted questions from the same testAttempt documents.
+      // If attempted count is unavailable, fall back to the test score/total only for
+      // the existing JOA result documents.
+      const totalQuestions = tests.reduce((sum,test) => {
+        const attempted = Number(test.attemptedQuestions ?? 0);
+        return sum + (attempted > 0 ? attempted : 0);
+      }, 0);
+
+      grid.innerHTML = JOA_MILESTONES.map(m => {
+        const done = totalQuestions >= m;
+        return `
+          <div class="milestone-card ${done ? "done" : ""}">
+            <div class="milestone-number">${m.toLocaleString("en-IN")}</div>
+            <div class="milestone-label">Questions Completed</div>
+            <div class="milestone-status">${done ? "✓ Completed" : "Locked"}</div>
+          </div>`;
+      }).join("");
+    }
 
     /* ================= PERFORMANCE ANALYTICS ================= */
 
@@ -888,7 +689,7 @@ renderPerformanceAnalytics(tests);
       const chartHeight = height - top - bottom;
 
       /*
-        Scores /100 हैं।
+        Percentage scale 0–100% है।
         0–40 focused scale इसलिए रखी गई है ताकि अभी के वास्तविक
         scores graph में स्पष्ट दिखाई दें।
       */
@@ -903,7 +704,7 @@ renderPerformanceAnalytics(tests);
 
         const score = Math.max(
           0,
-          Math.min(maxValue, Number(test.score) || 0)
+          Math.min(maxValue, test.total > 0 ? (Number(test.score) / Number(test.total)) * 100 : 0)
         );
 
         const y =
@@ -915,6 +716,7 @@ renderPerformanceAnalytics(tests);
           x,
           y,
           score: Number(test.score) || 0,
+          percentage: test.total > 0 ? ((Number(test.score) / Number(test.total)) * 100) : 0,
           name:
             test.id === "joa_free_test_01"
               ? "Free"
@@ -1005,15 +807,15 @@ renderPerformanceAnalytics(tests);
               width="50"
               height="30"
               rx="15"
-              fill="rgba(99,102,241,.16)"
-              stroke="rgba(147,197,253,.35)">
+              fill="#eef2ff"
+              stroke="#c7d2fe">
             </rect>
 
             <text
               class="chart-score"
               x="${p.x}"
               y="${scoreY + 1}"
-              text-anchor="middle">${p.score}</text>
+              text-anchor="middle">${Number(p.percentage.toFixed(1))}%</text>
 
             <circle
               class="chart-point"
@@ -1093,11 +895,11 @@ renderPerformanceAnalytics(tests);
 
     function showNoAttempts() {
 
-
       errorState.style.display = "none";
 
       noAttempts.style.display = "block";
 
+      renderMilestones([]);
     }
 
 
