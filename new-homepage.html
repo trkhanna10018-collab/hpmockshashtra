@@ -77,9 +77,9 @@ img{display:block;max-width:100%}
   align-items:center;
   justify-content:space-between;
   gap:18px;
-  border:1px solid rgba(147,197,253,.28);
+  border:1px solid rgba(255,255,255,.14);
   border-radius:18px;
-  background:linear-gradient(135deg,rgba(24,48,86,.94),rgba(54,44,91,.94));
+  background:linear-gradient(135deg,rgba(24,48,86,.70),rgba(54,44,91,.70));
   backdrop-filter:blur(9px);
   -webkit-backdrop-filter:blur(9px);
   box-shadow:0 12px 30px rgba(0,0,0,.24);
@@ -314,8 +314,8 @@ img{display:block;max-width:100%}
 .series-image{
   width:100%;
   height:auto;
-  aspect-ratio:16/9;
-  object-fit:cover;
+  aspect-ratio:auto;
+  object-fit:contain;
   object-position:center;
   background:#edf4fb;
   display:block;
@@ -683,8 +683,8 @@ img{display:block;max-width:100%}
   .series-image{
     width:100%;
     height:auto;
-    aspect-ratio:16/9;
-    object-fit:cover;
+    aspect-ratio:auto;
+    object-fit:contain;
     object-position:center;
     background:#edf4fb;
     display:block;
@@ -727,8 +727,8 @@ img{display:block;max-width:100%}
   .footer-bottom-links{justify-content:flex-start;flex-wrap:wrap}
 }
 /* JOA IT MAHA PACK + LOGIN STATE */
-.maha-btn{min-height:38px;padding:0 15px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;background:rgba(255,255,255,.08);border:0;box-shadow:none;white-space:nowrap}
-.maha-btn:hover{transform:translateY(-1px)}
+.maha-btn{min-height:38px;padding:0 15px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;background:transparent;border:0;box-shadow:none;white-space:nowrap}
+.maha-btn:hover{color:#58b6ff;transform:none}
 .user-area{display:flex;align-items:center;gap:7px}
 .user-round{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#fff;font-size:11px;font-weight:900;border:1px solid rgba(255,255,255,.28);flex:0 0 34px}
 .user-name{color:#f2f7ff;font-size:10px;font-weight:800;max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
