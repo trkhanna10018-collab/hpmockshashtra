@@ -215,37 +215,35 @@ button{font:inherit}
 }
 
 
-.milestones{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
-  padding:14px;border:1px solid rgba(126,176,255,.30);
-  border-radius:17px;
-  background:linear-gradient(145deg,rgba(11,28,57,.96),rgba(28,20,58,.94));
-  box-shadow:0 18px 45px rgba(0,0,0,.30),inset 0 0 35px rgba(90,130,255,.05);
+ .milestones{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;
+  padding:11px;border:1px solid rgba(126,176,255,.30);
+  border-radius:15px;background:linear-gradient(145deg,rgba(11,28,57,.96),rgba(28,20,58,.94));
+  box-shadow:0 14px 35px rgba(0,0,0,.25),inset 0 0 28px rgba(90,130,255,.05);
 }
 .milestone{
-  position:relative;min-height:112px;padding:15px 10px;text-align:center;
-  border:1px solid rgba(126,176,255,.25);
-  border-radius:13px;
-  background:linear-gradient(145deg,rgba(17,39,75,.95),rgba(20,27,59,.95));
-  box-shadow:0 8px 20px rgba(0,0,0,.20);
-  overflow:hidden;
+  position:relative;min-height:82px;padding:9px 6px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:1px solid rgba(88,190,255,.60);border-radius:11px;
+  background:linear-gradient(145deg,rgba(24,66,105,.98),rgba(45,35,91,.98));
+  box-shadow:0 6px 18px rgba(0,0,0,.22),0 0 12px rgba(72,170,255,.08);overflow:hidden;
 }
 .milestone:after{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 50% 0%,rgba(90,180,255,.12),transparent 55%);
+  background:radial-gradient(circle at 50% 0%,rgba(88,229,255,.18),transparent 58%);
 }
-.milestone-icon{position:relative;z-index:1;font-size:26px;line-height:1}
-.milestone-title{position:relative;z-index:1;margin-top:9px;font-size:9px;font-weight:900;color:#e8f2ff}
-.milestone-count{position:relative;z-index:1;margin-top:5px;font-size:8px;color:#8ea6c2}
+.milestone-icon{position:relative;z-index:1;font-size:18px;line-height:1}
+.milestone-title{position:relative;z-index:1;margin-top:5px;font-size:9px;font-weight:900;color:#f4fbff}
+.milestone-count{position:relative;z-index:1;margin-top:3px;font-size:7.5px;color:#b8d8f2;font-weight:800}
 .milestone.done{
-  border-color:rgba(39,217,154,.75);
-  background:linear-gradient(145deg,rgba(12,67,67,.98),rgba(19,48,65,.98));
-  box-shadow:0 0 0 1px rgba(39,217,154,.12),0 10px 28px rgba(39,217,154,.16);
+  border-color:rgba(39,217,154,.85);
+  background:linear-gradient(145deg,rgba(10,91,79,.98),rgba(18,63,69,.98));
+  box-shadow:0 0 0 1px rgba(39,217,154,.14),0 8px 22px rgba(39,217,154,.14);
 }
 .milestone.done .milestone-title{color:#69f2c1}
-.milestone.done .milestone-count{color:#b9ffe5}
-.milestone.locked{opacity:.78}
-.milestone.locked .milestone-title{color:#c2d0e0}
+.milestone.done .milestone-count{color:#c9ffec}
+.milestone.locked{opacity:.95}
+.milestone.locked .milestone-title{color:#e8f2ff}
 
 .buy-btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -315,7 +313,7 @@ button{font:inherit}
   .stats-grid{width:100%}
   .resume-grid,.subject-grid{grid-template-columns:1fr}
   .accuracy-row{grid-template-columns:105px 1fr 38px}
-  .milestones{grid-template-columns:1fr 1fr}
+  .milestones{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:9px}.milestone{min-height:74px;padding:8px 5px}.milestone-icon{font-size:16px}.milestone-title{font-size:8.5px}.milestone-count{font-size:7px}
   .activity{align-items:flex-start}
   .mobile-menu{
     display:none;position:absolute;top:62px;left:0;right:0;
@@ -786,12 +784,7 @@ function celebrateMilestone(m){
 function renderMilestones(data){
   const attempted=data.filter(x=>x.unlocked).reduce((sum,x)=>sum+x.attempted,0);
   const milestones=[
-    {n:20,label:'20 Questions',icon:'🌱'},
     {n:100,label:'100 Questions',icon:'🏁'},
-    {n:250,label:'250 Questions',icon:'⭐'},
-    {n:500,label:'500 Questions',icon:'🎯'},
-    {n:1000,label:'1,000 Questions',icon:'🔥'},
-    {n:1500,label:'1,500 Questions',icon:'⚡'},
     {n:2500,label:'2,500 Questions',icon:'🚀'},
     {n:3500,label:'3,500 Questions',icon:'💎'},
     {n:5000,label:'5,000 Questions',icon:'🏆'},
