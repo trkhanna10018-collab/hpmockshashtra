@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HPMockShashtra | Himachal Pradesh Mock Test Series</title>
+<title>Himachal Pradesh Competitive Exam Preparation | HPMockShashtra</title>
+<meta name="description" content="HPMockShashtra is a Himachal Pradesh competitive exam preparation platform for JOA IT, HP Patwari, Computer and IT subjects, bilingual mock tests, Study Mode and progress tracking.">
+<meta name="keywords" content="Himachal Pradesh competitive exam preparation, HP competitive exams, HPMockShashtra, HP Mock Shashtra, Himachal Pradesh mock tests, JOA IT, HP Patwari, Computer mock tests">
 
 <style>
 :root{--bg:#07142d;--bg2:#0b1d3d;--panel:#12294d;--panel2:#0d2040;--line:rgba(126,176,255,.22);--text:#f6f9ff;--muted:#93a8c3;--blue:#1597ff;--cyan:#58e5ff;--violet:#9b6cff;--green:#27d99a;--orange:#ffad3d;--content:1180px}
@@ -30,6 +32,144 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
 @media(max-width:1000px){.nav{gap:5px}.hero-content{grid-template-columns:1fr .72fr;gap:25px}.feature-grid,.quick-grid{grid-template-columns:repeat(2,1fr)}.series-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}}
 @media(max-width:800px){.nav{display:none}.menu-btn{display:block;margin-left:auto}.hero{min-height:800px}.hero-content{grid-template-columns:1fr;padding-top:55px}.hero-glass{max-width:620px}.series-grid{grid-template-columns:1fr 1fr}.promo-inner{align-items:flex-start;padding-top:60px;padding-bottom:60px}.promo{min-height:610px}.promo-inner{min-height:610px}.footer-top{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.topbar{top:6px;width:calc(100% - 14px);min-height:62px;padding:6px 7px}.brand img{width:40px;height:40px}.brand-name{font-size:14px}.brand-tagline{display:none}.actions{display:none}.hero{min-height:860px}.hero-inner{width:calc(100% - 18px);padding-top:83px}.hero-content{padding-top:34px}.hero h1{font-size:38px;letter-spacing:-1.3px}.hero-copy{font-size:12px}.hero-buttons{margin-top:18px}.hero-glass{padding:18px}.feature-grid,.series-grid,.quick-grid,.pricing-grid,.steps,.footer-top{grid-template-columns:1fr}.series-image{height:155px}.price-row{align-items:flex-start;flex-direction:column}.card-buttons{width:100%}.card-btn{flex:1}.pack-strip{flex-direction:column;align-items:flex-start}.promo-inner{width:calc(100% - 18px);flex-direction:column;justify-content:center}.promo-copy h2{font-size:29px}.promo-panel{width:100%;max-width:360px}.cta-box{flex-direction:column;align-items:flex-start;padding:23px}.cta-box a{width:100%}.footer-inner{width:calc(100% - 18px)}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-bottom-links{flex-wrap:wrap}.mobile-menu{position:absolute;top:59px;left:0;right:0;padding:8px;border:1px solid rgba(126,176,255,.22);border-radius:12px;background:#0b1b34;box-shadow:0 15px 40px rgba(0,0,0,.35)}.mobile-menu.open{display:grid;gap:6px}.mobile-menu a,.mobile-menu button{padding:10px;border:1px solid rgba(126,176,255,.18);background:rgba(255,255,255,.04);text-align:left;color:#cbd9ea;border-radius:8px;font-size:9px;font-weight:850}.mobile-menu button{cursor:pointer}.logged-user{display:none!important}}
+
+/* ===== Homepage visual language — aligned with HPMockShashtra premium UI ===== */
+.hero{
+  min-height:720px;
+  background:#07142d;
+}
+.hero-bg-img{
+  object-fit:contain;
+  object-position:center center;
+  background:#07142d;
+  opacity:1;
+}
+.hero:after{
+  display:none;
+}
+.hero-inner{
+  padding-top:105px;
+}
+.hero-content{
+  gap:55px;
+  padding-top:88px;
+}
+.hero h1{
+  max-width:760px;
+  font-size:56px;
+  line-height:1.03;
+  text-shadow:0 4px 22px rgba(0,0,0,.72);
+}
+.hero-copy{
+  color:#f1f6ff;
+  text-shadow:0 2px 12px rgba(0,0,0,.85);
+}
+.eyebrow{
+  background:rgba(7,20,45,.20);
+  backdrop-filter:blur(3px);
+}
+.hero-glass{
+  background:rgba(8,25,51,.28);
+  border:1px solid rgba(255,255,255,.34);
+  backdrop-filter:blur(3px);
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+}
+.hero-glass h2,
+.hero-glass ul{
+  text-shadow:0 2px 10px rgba(0,0,0,.9);
+}
+.hero-glass li::before{
+  background:rgba(39,217,154,.18);
+}
+
+/* Circular logged-in identity */
+.logged-user{
+  display:none;
+  align-items:center;
+  gap:7px;
+  padding:3px 7px 3px 3px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+  background:rgba(8,25,51,.48);
+  backdrop-filter:blur(5px);
+  color:#fff;
+}
+.logged-user .avatar{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  font-size:11px;
+  background:linear-gradient(145deg,#ffd19c,#ff8b58);
+  box-shadow:0 0 0 2px rgba(255,255,255,.8),0 5px 16px rgba(255,135,80,.22);
+}
+.user-name{
+  max-width:110px;
+  font-size:10px;
+}
+
+/* Course cards: cleaner and more highlighted */
+.series-card{
+  border-color:rgba(126,176,255,.30);
+  background:linear-gradient(145deg,rgba(18,41,77,.98),rgba(9,29,59,.98));
+}
+.series-card:nth-child(3){
+  border-color:rgba(155,108,255,.55);
+  box-shadow:0 18px 42px rgba(0,0,0,.28),0 0 30px rgba(155,108,255,.10);
+}
+.series-image{
+  height:155px;
+  object-fit:contain;
+  object-position:center;
+  background:#eef4f8;
+  padding:4px 10px;
+}
+.series-image.placeholder{
+  object-fit:contain;
+  padding:8px 18px;
+  background:linear-gradient(145deg,#172f55,#101f3d);
+}
+.card-buttons{
+  justify-content:flex-end;
+}
+.card-outline{
+  min-width:105px;
+}
+.card-primary{
+  display:none !important;
+}
+
+/* Promo photo: show the actual image cleanly */
+.promo-bg-img{
+  object-fit:contain;
+  object-position:center center;
+  background:#081426;
+  opacity:1;
+}
+.promo:after{
+  display:none;
+}
+.promo-copy h2,
+.promo-copy p,
+.promo-copy small{
+  text-shadow:0 2px 12px rgba(0,0,0,.85);
+}
+.promo-panel{
+  background:rgba(8,25,51,.28);
+  border-color:rgba(255,255,255,.30);
+  backdrop-filter:blur(3px);
+}
+
+/* Stronger visual hierarchy */
+.section .heading h2{
+  font-size:32px;
+}
+.feature,
+.quick-card,
+.price-card,
+.step{
+  border-color:rgba(126,176,255,.24);
+}
+
 </style>
 </head>
 
@@ -43,7 +183,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
         <div><div class="brand-name">HP<span>Mock</span>Shashtra</div><span class="brand-tagline">Prepare Today, Serve Tomorrow</span></div>
       </a>
       <nav class="nav">
-        <a href="homepage.html">Home</a><a href="#mock-tests">Test Series</a><a href="joa-mahapack.html">Paid Courses</a><a href="#resources">Resources</a><a href="about.html">About</a>
+        <a href="homepage.html">Home</a><a href="#mock-tests">Test Series</a><a href="joa-mahapack.html">Paid Courses</a><a href="#resources">How It Works</a><a href="about.html">About</a>
       </nav>
       <div class="actions">
         <a href="firebase-login.html" class="login-btn" id="loginBtn">Login</a>
@@ -53,7 +193,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
       </div>
       <button class="menu-btn" id="menuBtn" type="button">☰</button>
       <div class="mobile-menu" id="mobileMenu">
-        <a href="homepage.html">Home</a><a href="#mock-tests">Test Series</a><a href="joa-mahapack.html">Paid Courses</a><a href="#resources">Resources</a><a href="about.html">About</a>
+        <a href="homepage.html">Home</a><a href="#mock-tests">Test Series</a><a href="joa-mahapack.html">Paid Courses</a><a href="#resources">How It Works</a><a href="about.html">About</a>
         <a href="firebase-login.html" id="mobileLogin">Login</a><a href="firebase-signup.html" id="mobileJoin">Join Free</a>
         <button id="mobileLogout" type="button" style="display:none">Logout</button>
       </div>
@@ -62,13 +202,13 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
     <div class="hero-content">
       <div>
         <div class="eyebrow">HIMACHAL PRADESH COMPETITIVE EXAM PREPARATION</div>
-        <h1>Prepare Smarter.<br>Practice <span>Better.</span></h1>
-        <p class="hero-copy">Bilingual mock tests, structured practice, Study Mode and progress tracking — all in one place for Himachal Pradesh competitive exam preparation.</p>
+        <h1>Himachal Pradesh<br>Competitive Exam <span>Preparation.</span></h1>
+        <p class="hero-copy">HPMockShashtra — Himachal Pradesh competitive exam preparation with bilingual mock tests, focused IT & Computer practice, Study Mode and progress tracking — all in one place.</p>
         <div class="hero-buttons"><a href="#mock-tests" class="primary-btn">Explore Test Series →</a><a href="firebase-signup.html" class="secondary-btn" id="heroFreeBtn">Create Free Account</a></div>
       </div>
       <div class="hero-glass">
         <div class="mini-label">HPMOCKSHASHTRA PLATFORM</div><h2>Everything in one place</h2>
-        <ul><li>Full-length mock test series</li><li>Hindi + English bilingual questions</li><li>Question-by-question practice</li><li>Study Mode with explanations</li><li>Progress and performance tracking</li><li>Computer preparation across 15 subjects</li></ul>
+        <ul><li>Himachal Pradesh Mock Test Series</li><li>Computer / IT Complete Preparation</li><li>Hindi + English bilingual questions</li><li>Question-by-question practice</li><li>Study Mode with explanations</li><li>Progress and performance tracking</li><li>All HP Competitive Exams</li></ul>
       </div>
     </div>
   </div>
@@ -87,9 +227,9 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
 <section class="section" id="mock-tests"><div class="content">
   <div class="heading"><div class="tag">Explore</div><h2>Choose Your Preparation</h2><p>Mock test series and Computer preparation are available from one platform.</p></div>
   <div class="series-grid">
-    <article class="series-card"><img src="joa-banner.jpg" alt="JOA IT Mock Test Series" class="series-image"><div class="series-body"><div class="badges"><span class="badge badge-live">AVAILABLE NOW</span><span class="badge badge-blue">FREE TEST AVAILABLE</span></div><h3 class="series-title">JOA (IT) Mock Test Series</h3><p class="series-description">Full-length Junior Office Assistant (IT) mock tests with bilingual questions and performance analysis.</p><div class="meta"><div class="meta-box"><strong>16</strong><span>Total Tests</span></div><div class="meta-box"><strong>100</strong><span>Questions/Test</span></div><div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div></div><div class="price-row"><div class="price"><small>Complete Series</small><strong>₹99</strong><span class="free">Free Test Available</span></div><div class="card-buttons"><a href="joa-series.html" class="card-btn card-outline">View Details</a><a href="payment.html" class="card-btn card-primary">Buy Now</a></div></div></div></article>
-    <article class="series-card"><img src="patwari-banner.jpg" alt="HP Patwari Mock Test Series" class="series-image"><div class="series-body"><div class="badges"><span class="badge badge-live">AVAILABLE NOW</span><span class="badge badge-blue">FREE TEST AVAILABLE</span></div><h3 class="series-title">HP Patwari Mock Test Series</h3><p class="series-description">Structured HP Patwari mock-test practice with Himachal GK, general studies, Hindi, English and computer-based preparation.</p><div class="meta"><div class="meta-box"><strong>11</strong><span>Total Tests</span></div><div class="meta-box"><strong>120</strong><span>Questions/Test</span></div><div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div></div><div class="price-row"><div class="price"><small>Complete Series</small><strong>₹149</strong><span class="free">Free Test Available</span></div><div class="card-buttons"><a href="patwari-series.html" class="card-btn card-outline">View Details</a><a href="comingsoon.html" class="card-btn card-primary">Buy Now</a></div></div></div></article>
-    <article class="series-card"><img src="joa-mahapack-banner.jpg" alt="JOA IT Maha Pack" class="series-image placeholder"><div class="series-body"><div class="badges"><span class="badge badge-live">15 SUBJECTS</span><span class="badge badge-blue">6 MONTHS</span></div><h3 class="series-title">JOA IT Maha Pack</h3><p class="series-description">Complete Computer preparation with 15 subjects, structured practice, Study Mode and progress tracking.</p><div class="meta"><div class="meta-box"><strong>15</strong><span>Subjects</span></div><div class="meta-box"><strong>6,000+</strong><span>Questions</span></div><div class="meta-box"><strong>6 Months</strong><span>Access</span></div></div><div class="price-row"><div class="price"><small>Complete Pack</small><strong>₹399</strong><span class="free">Computer Preparation</span></div><div class="card-buttons"><a href="joa-mahapack.html" class="card-btn card-outline">View Details</a><a href="payment.html" class="card-btn card-primary">Buy Now</a></div></div></div></article>
+    <article class="series-card"><img src="joa-banner.jpg" alt="JOA IT Mock Test Series" class="series-image"><div class="series-body"><div class="badges"><span class="badge badge-live">AVAILABLE NOW</span><span class="badge badge-blue">FREE TEST AVAILABLE</span></div><h3 class="series-title">JOA (IT) Mock Test Series</h3><p class="series-description">16 full-length JOA (IT) mock tests with bilingual questions, computer-focused preparation and performance analysis.</p><div class="meta"><div class="meta-box"><strong>16</strong><span>Total Tests</span></div><div class="meta-box"><strong>100</strong><span>Questions/Test</span></div><div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div></div><div class="price-row"><div class="price"><small>Complete Series</small><strong>₹99</strong><span class="free">Free Test Available</span></div><div class="card-buttons"><a href="joa-series.html" class="card-btn card-outline">View Details</a></div></div></div></article>
+    <article class="series-card"><img src="patwari-banner.jpg" alt="HP Patwari Mock Test Series" class="series-image"><div class="series-body"><div class="badges"><span class="badge badge-live">AVAILABLE NOW</span><span class="badge badge-blue">FREE TEST AVAILABLE</span></div><h3 class="series-title">HP Patwari Mock Test Series</h3><p class="series-description">11 HP Patwari mock tests covering Himachal GK, General Studies, Hindi, English and Computer-based preparation.</p><div class="meta"><div class="meta-box"><strong>11</strong><span>Total Tests</span></div><div class="meta-box"><strong>120</strong><span>Questions/Test</span></div><div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div></div><div class="price-row"><div class="price"><small>Complete Series</small><strong>₹149</strong><span class="free">Free Test Available</span></div><div class="card-buttons"><a href="patwari-series.html" class="card-btn card-outline">View Details</a></div></div></div></article>
+    <article class="series-card"><img src="joa-mahapack-banner.jpg" alt="JOA IT Maha Pack" class="series-image placeholder"><div class="series-body"><div class="badges"><span class="badge badge-live">15 SUBJECTS</span><span class="badge badge-blue">6 MONTHS</span></div><h3 class="series-title">JOA IT Maha Pack</h3><p class="series-description">15 Computer / IT subjects with 6,000+ questions, structured practice, Study Mode and progress tracking.</p><div class="meta"><div class="meta-box"><strong>15</strong><span>Subjects</span></div><div class="meta-box"><strong>6,000+</strong><span>Questions</span></div><div class="meta-box"><strong>6 Months</strong><span>Access</span></div></div><div class="price-row"><div class="price"><small>Complete Pack</small><strong>₹399</strong><span class="free">Computer Preparation</span></div><div class="card-buttons"><a href="joa-mahapack.html" class="card-btn card-outline">View Details</a></div></div></div></article>
   </div>
 </div></section>
 
@@ -112,26 +252,81 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
 <script type="module">
 import {auth} from './firebase-config.js';
 import {onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+
 const $=id=>document.getElementById(id);
+
 function showLoggedIn(user){
-  const name=user.displayName||user.email?.split('@')[0]||'User';
-  $('loginBtn').style.display='inline-flex';$('loginBtn').textContent=name;$('loginBtn').href='#';$('loginBtn').onclick=e=>e.preventDefault();
-  $('joinBtn').style.display='inline-flex';$('joinBtn').textContent='Logout';$('joinBtn').classList.add('logout-state');$('joinBtn').href='#';$('joinBtn').onclick=async e=>{e.preventDefault();await signOut(auth);location.reload()};
-  $('loggedUser').style.display='none';$('logoutBtn').style.display='none';
-  $('mobileLogin').style.display='block';$('mobileLogin').textContent=name;$('mobileLogin').href='#';$('mobileLogin').onclick=e=>e.preventDefault();
-  $('mobileJoin').style.display='block';$('mobileJoin').textContent='Logout';$('mobileJoin').classList.add('logout-state');$('mobileJoin').href='#';$('mobileJoin').onclick=async e=>{e.preventDefault();await signOut(auth);location.reload()};
+  const name=user.displayName || user.email?.split('@')[0] || 'User';
+  const initial=(name.trim().charAt(0)||'U').toUpperCase();
+
+  $('loginBtn').style.display='none';
+
+  $('joinBtn').style.display='inline-flex';
+  $('joinBtn').textContent='Logout';
+  $('joinBtn').classList.add('logout-state');
+  $('joinBtn').href='#';
+  $('joinBtn').onclick=async e=>{
+    e.preventDefault();
+    await signOut(auth);
+    location.reload();
+  };
+
+  $('loggedUser').style.display='flex';
+  $('avatar').textContent=initial;
+  $('userName').textContent=name;
+
+  $('mobileLogin').style.display='block';
+  $('mobileLogin').textContent=name;
+  $('mobileLogin').href='#';
+  $('mobileLogin').onclick=e=>e.preventDefault();
+
+  $('mobileJoin').style.display='block';
+  $('mobileJoin').textContent='Logout';
+  $('mobileJoin').classList.add('logout-state');
+  $('mobileJoin').href='#';
+  $('mobileJoin').onclick=async e=>{
+    e.preventDefault();
+    await signOut(auth);
+    location.reload();
+  };
+
   $('mobileLogout').style.display='none';
 }
+
 function showLoggedOut(){
-  $('loginBtn').style.display='inline-flex';$('loginBtn').textContent='Login';$('loginBtn').href='firebase-login.html';$('loginBtn').onclick=null;
-  $('joinBtn').style.display='inline-flex';$('joinBtn').textContent='Join Free';$('joinBtn').classList.remove('logout-state');$('joinBtn').href='firebase-signup.html';$('joinBtn').onclick=null;
-  $('loggedUser').style.display='none';$('logoutBtn').style.display='none';
-  $('mobileLogin').style.display='block';$('mobileLogin').textContent='Login';$('mobileLogin').href='firebase-login.html';$('mobileLogin').onclick=null;
-  $('mobileJoin').style.display='block';$('mobileJoin').textContent='Join Free';$('mobileJoin').classList.remove('logout-state');$('mobileJoin').href='firebase-signup.html';$('mobileJoin').onclick=null;
+  $('loginBtn').style.display='inline-flex';
+  $('loginBtn').textContent='Login';
+  $('loginBtn').href='firebase-login.html';
+  $('loginBtn').onclick=null;
+
+  $('joinBtn').style.display='inline-flex';
+  $('joinBtn').textContent='Join Free';
+  $('joinBtn').classList.remove('logout-state');
+  $('joinBtn').href='firebase-signup.html';
+  $('joinBtn').onclick=null;
+
+  $('loggedUser').style.display='none';
+
+  $('mobileLogin').style.display='block';
+  $('mobileLogin').textContent='Login';
+  $('mobileLogin').href='firebase-login.html';
+  $('mobileLogin').onclick=null;
+
+  $('mobileJoin').style.display='block';
+  $('mobileJoin').textContent='Join Free';
+  $('mobileJoin').classList.remove('logout-state');
+  $('mobileJoin').href='firebase-signup.html';
+  $('mobileJoin').onclick=null;
+
   $('mobileLogout').style.display='none';
 }
+
 $('menuBtn').onclick=()=>$('mobileMenu').classList.toggle('open');
-onAuthStateChanged(auth,user=>user?showLoggedIn(user):showLoggedOut());
+
+onAuthStateChanged(auth,user=>{
+  if(user) showLoggedIn(user);
+  else showLoggedOut();
+});
 </script>
 </body>
 </html>
