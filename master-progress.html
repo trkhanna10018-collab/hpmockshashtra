@@ -138,7 +138,7 @@ button{font:inherit}
 .overall-copy h2{margin:0 0 7px;font-size:16px}
 .overall-copy p{margin:0;color:#91a6be;font-size:9px;line-height:1.65}
 .stats-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:9px;
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;
 }
 .stat-card{
   padding:14px;border:1px solid rgba(126,176,255,.15);border-radius:13px;
@@ -215,35 +215,37 @@ button{font:inherit}
 }
 
 
- .milestones{
-  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;
-  padding:11px;border:1px solid rgba(126,176,255,.30);
-  border-radius:15px;background:linear-gradient(145deg,rgba(11,28,57,.96),rgba(28,20,58,.94));
-  box-shadow:0 14px 35px rgba(0,0,0,.25),inset 0 0 28px rgba(90,130,255,.05);
+.milestones{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+  padding:14px;border:1px solid rgba(126,176,255,.30);
+  border-radius:17px;
+  background:linear-gradient(145deg,rgba(11,28,57,.96),rgba(28,20,58,.94));
+  box-shadow:0 18px 45px rgba(0,0,0,.30),inset 0 0 35px rgba(90,130,255,.05);
 }
 .milestone{
-  position:relative;min-height:82px;padding:9px 6px;text-align:center;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  border:1px solid rgba(88,190,255,.60);border-radius:11px;
-  background:linear-gradient(145deg,rgba(24,66,105,.98),rgba(45,35,91,.98));
-  box-shadow:0 6px 18px rgba(0,0,0,.22),0 0 12px rgba(72,170,255,.08);overflow:hidden;
+  position:relative;min-height:112px;padding:15px 10px;text-align:center;
+  border:1px solid rgba(126,176,255,.25);
+  border-radius:13px;
+  background:linear-gradient(145deg,rgba(17,39,75,.95),rgba(20,27,59,.95));
+  box-shadow:0 8px 20px rgba(0,0,0,.20);
+  overflow:hidden;
 }
 .milestone:after{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 50% 0%,rgba(88,229,255,.18),transparent 58%);
+  background:radial-gradient(circle at 50% 0%,rgba(90,180,255,.12),transparent 55%);
 }
-.milestone-icon{position:relative;z-index:1;font-size:18px;line-height:1}
-.milestone-title{position:relative;z-index:1;margin-top:5px;font-size:9px;font-weight:900;color:#f4fbff}
-.milestone-count{position:relative;z-index:1;margin-top:3px;font-size:7.5px;color:#b8d8f2;font-weight:800}
+.milestone-icon{position:relative;z-index:1;font-size:26px;line-height:1}
+.milestone-title{position:relative;z-index:1;margin-top:9px;font-size:9px;font-weight:900;color:#e8f2ff}
+.milestone-count{position:relative;z-index:1;margin-top:5px;font-size:8px;color:#8ea6c2}
 .milestone.done{
-  border-color:rgba(39,217,154,.85);
-  background:linear-gradient(145deg,rgba(10,91,79,.98),rgba(18,63,69,.98));
-  box-shadow:0 0 0 1px rgba(39,217,154,.14),0 8px 22px rgba(39,217,154,.14);
+  border-color:rgba(39,217,154,.75);
+  background:linear-gradient(145deg,rgba(12,67,67,.98),rgba(19,48,65,.98));
+  box-shadow:0 0 0 1px rgba(39,217,154,.12),0 10px 28px rgba(39,217,154,.16);
 }
 .milestone.done .milestone-title{color:#69f2c1}
-.milestone.done .milestone-count{color:#c9ffec}
-.milestone.locked{opacity:.95}
-.milestone.locked .milestone-title{color:#e8f2ff}
+.milestone.done .milestone-count{color:#b9ffe5}
+.milestone.locked{opacity:.78}
+.milestone.locked .milestone-title{color:#c2d0e0}
 
 .buy-btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -310,10 +312,10 @@ button{font:inherit}
   .hero-grid{margin-top:16px}
   .overall-box{flex-direction:column;text-align:center}
   .ring{width:112px;height:112px;flex-basis:112px}
-  .stats-grid{width:100%}
+  .stats-grid{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
   .resume-grid,.subject-grid{grid-template-columns:1fr}
   .accuracy-row{grid-template-columns:105px 1fr 38px}
-  .milestones{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:9px}.milestone{min-height:74px;padding:8px 5px}.milestone-icon{font-size:16px}.milestone-title{font-size:8.5px}.milestone-count{font-size:7px}
+  .milestones{grid-template-columns:1fr 1fr}
   .activity{align-items:flex-start}
   .mobile-menu{
     display:none;position:absolute;top:62px;left:0;right:0;
@@ -470,7 +472,8 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
           <div class="stat-card blue"><strong id="totalAttempted">0</strong><span>Questions Attempted</span></div>
           <div class="stat-card green"><strong id="totalCorrect">0</strong><span>Correct Answers</span></div>
           <div class="stat-card red"><strong id="totalWrong">0</strong><span>Wrong Answers</span></div>
-          <div class="stat-card violet"><strong id="overallAccuracy">0%</strong><span>Overall Accuracy</span></div>
+          <div class="stat-card violet"><strong id="totalNotAttempted">0</strong><span>Not Attempted</span></div>
+          <div class="stat-card blue"><strong id="overallAccuracy">0%</strong><span>Overall Accuracy</span></div>
         </div>
 
       </div>
@@ -643,9 +646,31 @@ function buildData(subject,session,result){
   }
 
   const attempted=Object.keys(answers).length;
-  const correct=Number(result?.correct ?? 0);
-  const wrong=Number(result?.wrong ?? 0);
-  const accuracy=result ? pct(correct,attempted) : 0;
+
+  let correct=Number(result?.correct ?? 0);
+  let wrong=Number(result?.wrong ?? 0);
+
+  // If a subject is still in progress, its final testAttempts document does not
+  // exist yet. For Computer Fundamentals we can calculate the live score from
+  // the exact same question bank used by paid-computer-fundamentals.html.
+  if(!result && attempted>0 && subject.id==='computer_fundamentals_01'){
+    try{
+      const module=await import('./fundamentals.js');
+      const questions=Array.isArray(module.QUESTIONS)?module.QUESTIONS:[];
+      correct=Object.keys(answers).reduce((sum,k)=>{
+        const i=Number(k);
+        if(questions[i] && String(answers[k]).toUpperCase()===String(questions[i].answer).toUpperCase()) return sum+1;
+        return sum;
+      },0);
+      wrong=attempted-correct;
+    }catch(e){
+      console.warn('Live accuracy calculation skipped for',subject.id,e);
+      correct=0;
+      wrong=0;
+    }
+  }
+
+  const accuracy=attempted ? pct(correct,attempted) : 0;
 
   return {
     ...subject,answers,completed,current,updatedAt,completedAt,questionCount,
@@ -680,6 +705,7 @@ function renderOverall(data){
   const attempted=available.reduce((s,x)=>s+x.attempted,0);
   const correct=available.reduce((s,x)=>s+x.correct,0);
   const wrong=available.reduce((s,x)=>s+x.wrong,0);
+  const notAttempted=Math.max(0,totalQuestions-attempted);
   const progress=pct(attempted,totalQuestions);
   const accuracy=pct(correct,attempted);
 
@@ -688,6 +714,7 @@ function renderOverall(data){
   $('totalAttempted').textContent=fmt(attempted);
   $('totalCorrect').textContent=fmt(correct);
   $('totalWrong').textContent=fmt(wrong);
+  $('totalNotAttempted').textContent=fmt(notAttempted);
   $('overallAccuracy').textContent=`${accuracy}%`;
 
   if(attempted===0){
@@ -739,13 +766,13 @@ function renderSubjects(data){
         <div class="subject-icon"><img src="${escapeHtml(s.image)}" alt="${escapeHtml(s.name)}"></div>
         <div class="subject-info">
           <div class="subject-name">${escapeHtml(s.name)}</div>
-          <div class="subject-count">${s.attempted} / ${s.questionCount} Questions</div>
+          <div class="subject-count">${s.attempted} / ${s.questionCount} Questions • ${Math.max(0,s.questionCount-s.attempted)} Not Attempted</div>
         </div>
         <div class="percent">${s.progress}%</div>
       </div>
       <div class="subject-bar"><span style="width:${s.progress}%"></span></div>
       <div class="subject-foot">
-        <span class="accuracy">Accuracy: <b>${s.attempted?`${s.accuracy}%`:'—'}</b> • ${s.completed?'Completed':s.inProgress?'In Progress':'Not Started'}</span>
+        <span class="accuracy">Correct: <b>${s.correct}</b> • Wrong: <b>${s.wrong}</b> • Accuracy: <b>${s.attempted?`${s.accuracy}%`:'—'}</b> • ${s.completed?'Completed':s.inProgress?'In Progress':'Not Started'}</span>
         <a class="${cls}" href="${href}">${action}</a>
       </div>
     </div>`;
@@ -784,7 +811,12 @@ function celebrateMilestone(m){
 function renderMilestones(data){
   const attempted=data.filter(x=>x.unlocked).reduce((sum,x)=>sum+x.attempted,0);
   const milestones=[
+    {n:20,label:'20 Questions',icon:'🌱'},
     {n:100,label:'100 Questions',icon:'🏁'},
+    {n:250,label:'250 Questions',icon:'⭐'},
+    {n:500,label:'500 Questions',icon:'🎯'},
+    {n:1000,label:'1,000 Questions',icon:'🔥'},
+    {n:1500,label:'1,500 Questions',icon:'⚡'},
     {n:2500,label:'2,500 Questions',icon:'🚀'},
     {n:3500,label:'3,500 Questions',icon:'💎'},
     {n:5000,label:'5,000 Questions',icon:'🏆'},
