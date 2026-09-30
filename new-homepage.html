@@ -305,8 +305,8 @@ img{display:block;max-width:100%}
 }
 .series-card{
   overflow:hidden;
-  background:rgba(255,255,255,.78);
-  border:1px solid rgba(207,222,244,.95);
+  background:linear-gradient(145deg,#dfe9f5,#e9eef7);
+  border:1px solid rgba(188,205,227,.98);
   border-radius:18px;
   box-shadow:0 12px 28px rgba(20,55,105,.08);
   backdrop-filter:blur(5px);
@@ -355,10 +355,10 @@ img{display:block;max-width:100%}
 .price small{display:block;font-size:9px;color:#64748b}
 .price strong{font-size:24px}
 .free{display:block;color:#16a34a;font-size:9px;font-weight:900}
-.card-buttons{display:flex;gap:7px}
+.card-buttons{display:flex;gap:7px;flex-wrap:wrap}
 .card-btn{
   min-height:36px;
-  padding:0 13px;
+  padding:0 12px;
   border-radius:8px;
   display:inline-flex;
   align-items:center;
@@ -367,6 +367,7 @@ img{display:block;max-width:100%}
   font-weight:900;
 }
 .card-outline{border:1px solid #9dbcf0;color:#1d4ed8;background:rgba(255,255,255,.72)}
+.card-progress{border:1px solid #a8b7d3;color:#334d78;background:rgba(255,255,255,.86)}
 .card-primary{color:#fff;background:linear-gradient(135deg,#2563eb,#5546e8)}
 
 /* =========================
@@ -612,7 +613,7 @@ img{display:block;max-width:100%}
    }
   .price-row{align-items:flex-start;flex-direction:column}
   .card-buttons{width:100%}
-  .card-btn{flex:1}
+  .card-btn{flex:1;min-width:0;padding-left:8px;padding-right:8px}
   .promo{
     min-height:620px;
   }
@@ -648,7 +649,7 @@ img{display:block;max-width:100%}
   .footer-bottom-links{justify-content:flex-start;flex-wrap:wrap}
 }
 /* JOA IT MAHA PACK + LOGIN STATE */
-.maha-btn{min-height:38px;padding:0 14px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;background:linear-gradient(135deg,#0ea5e9,#5546e8);border:1px solid rgba(147,197,253,.30);box-shadow:0 6px 14px rgba(37,99,235,.18);white-space:nowrap}
+.maha-btn{min-height:38px;padding:0 15px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.24);box-shadow:none;white-space:nowrap}
 .maha-btn:hover{transform:translateY(-1px)}
 .user-area{display:flex;align-items:center;gap:7px}
 .user-round{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#fff;font-size:11px;font-weight:900;border:1px solid rgba(255,255,255,.28);flex:0 0 34px}
@@ -811,7 +812,8 @@ img{display:block;max-width:100%}
 
             <div class="card-buttons">
               <a href="joa-series.html" class="card-btn card-outline">View Details</a>
-              <a href="payment.html" class="card-btn card-primary">Buy Now</a>
+              <a href="my-progress.html" class="card-btn card-progress">My Progress</a>
+              <a href="payment.html?product=joa" class="card-btn card-primary">Buy Now</a>
             </div>
           </div>
         </div>
@@ -850,7 +852,8 @@ img{display:block;max-width:100%}
 
             <div class="card-buttons">
               <a href="patwari-series.html" class="card-btn card-outline">View Details</a>
-              <a href="comingsoon.html" class="card-btn card-primary">Buy Now</a>
+              <a href="patwari-progress.html" class="card-btn card-progress">My Progress</a>
+              <a href="payment.html?product=patwari" class="card-btn card-primary">Buy Now</a>
             </div>
           </div>
         </div>
@@ -862,7 +865,7 @@ img{display:block;max-width:100%}
         <div class="series-body">
           <div class="badges">
             <span class="badge badge-live">JOA IT MAHA PACK</span>
-            <span class="badge badge-live">6000+ QUESTIONS</span>
+            <span class="badge badge-live">6000 QUESTIONS</span>
           </div>
           <h3 class="series-title">JOA IT Maha Pack</h3>
           <p class="series-description">
@@ -871,7 +874,7 @@ img{display:block;max-width:100%}
           </p>
           <div class="meta">
             <div class="meta-box"><strong>15</strong><span>Subjects</span></div>
-            <div class="meta-box"><strong>6000+</strong><span>Questions</span></div>
+            <div class="meta-box"><strong>6000</strong><span>Questions</span></div>
             <div class="meta-box"><strong>6 Months</strong><span>Validity</span></div>
           </div>
           <div class="price-row">
@@ -882,7 +885,8 @@ img{display:block;max-width:100%}
             </div>
             <div class="card-buttons">
               <a href="joa-mahapack.html" class="card-btn card-outline">View Details</a>
-              <a href="payment.html" class="card-btn card-primary">Buy Now</a>
+              <a href="master-progress.html" class="card-btn card-progress">Master Progress</a>
+              <a href="payment.html?product=computer-master" class="card-btn card-primary">Buy Now</a>
             </div>
           </div>
         </div>
