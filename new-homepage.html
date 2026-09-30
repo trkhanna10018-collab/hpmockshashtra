@@ -79,7 +79,7 @@ img{display:block;max-width:100%}
   gap:18px;
   border:1px solid rgba(147,197,253,.28);
   border-radius:18px;
-  background:linear-gradient(135deg,rgba(12,31,62,.96),rgba(42,31,74,.96));
+  background:linear-gradient(135deg,rgba(24,48,86,.94),rgba(54,44,91,.94));
   backdrop-filter:blur(9px);
   -webkit-backdrop-filter:blur(9px);
   box-shadow:0 12px 30px rgba(0,0,0,.24);
@@ -100,7 +100,7 @@ img{display:block;max-width:100%}
   font-size:21px;
   font-weight:900;
   line-height:1.05;
-  color:#15336d;
+  color:#fff;
 }
 .brand-name span{color:#2563eb}
 .brand-tagline{
@@ -313,10 +313,12 @@ img{display:block;max-width:100%}
 }
 .series-image{
   width:100%;
-  height:220px;
-  object-fit:contain;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:cover;
   object-position:center;
   background:#edf4fb;
+  display:block;
 }
 .series-body{padding:18px}
 .badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
@@ -366,7 +368,7 @@ img{display:block;max-width:100%}
   font-size:10px;
   font-weight:900;
 }
-.card-outline{border:1px solid #9dbcf0;color:#1d4ed8;background:rgba(255,255,255,.72)}
+.card-outline{border:1px solid #9dbcf0;color:#000;background:rgba(255,255,255,.72)}
 .card-progress{border:1px solid #a8b7d3;color:#334d78;background:rgba(255,255,255,.86)}
 .card-primary{color:#fff;background:linear-gradient(135deg,#2563eb,#5546e8)}
 
@@ -557,6 +559,55 @@ img{display:block;max-width:100%}
 .footer-bottom a{color:#cbd5e1}
 
 /* =========================
+   MOBILE MENU
+========================= */
+.hamburger-btn{
+  display:none;
+  position:absolute;
+  top:18px;
+  right:16px;
+  width:42px;
+  height:42px;
+  padding:9px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:rgba(255,255,255,.10);
+  cursor:pointer;
+  z-index:40;
+}
+.hamburger-btn span{
+  display:block;
+  height:2px;
+  margin:5px 0;
+  border-radius:2px;
+  background:#fff;
+}
+.mobile-menu{
+  display:none;
+}
+.mobile-user-area{
+  padding-top:6px;
+  border-top:1px solid rgba(255,255,255,.14);
+}
+.mobile-user-name{
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  padding:9px 0;
+}
+.mobile-user-area button{
+  width:100%;
+  min-height:36px;
+  border:1px solid rgba(255,130,142,.35);
+  border-radius:8px;
+  background:rgba(255,92,108,.12);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 @media(max-width:1000px){
@@ -568,6 +619,33 @@ img{display:block;max-width:100%}
   .hero-inner{padding-top:102px}
   .topbar{min-height:72px;top:14px}
   .nav{display:none}
+  .actions{padding-right:50px}
+  .actions .maha-btn,
+  .actions .login-btn,
+  .actions .join-btn,
+  .actions .user-area{display:none !important}
+  .hamburger-btn{display:block}
+  .mobile-menu{
+    position:absolute;
+    top:96px;
+    right:0;
+    left:0;
+    padding:12px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:15px;
+    background:linear-gradient(135deg,rgba(24,48,86,.98),rgba(54,44,91,.98));
+    box-shadow:0 16px 35px rgba(0,0,0,.28);
+    z-index:35;
+  }
+  .mobile-menu.open{display:grid;gap:4px}
+  .mobile-menu>a{
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    padding:10px 11px;
+    border-radius:8px;
+  }
+  .mobile-menu>a:hover{background:rgba(255,255,255,.10)}
   .hero-content{grid-template-columns:1fr;padding-top:48px}
   .hero-glass{max-width:620px}
   .feature-grid,.quick-grid{grid-template-columns:repeat(2,1fr)}
@@ -606,11 +684,11 @@ img{display:block;max-width:100%}
     width:100%;
     height:auto;
     aspect-ratio:16/9;
-     object-fit:contain;
-     object-position:center;
-     background:#edf4fb;
-     display:block;
-   }
+    object-fit:cover;
+    object-position:center;
+    background:#edf4fb;
+    display:block;
+  }
   .price-row{align-items:flex-start;flex-direction:column}
   .card-buttons{width:100%}
   .card-btn{flex:1;min-width:0;padding-left:8px;padding-right:8px}
@@ -649,14 +727,13 @@ img{display:block;max-width:100%}
   .footer-bottom-links{justify-content:flex-start;flex-wrap:wrap}
 }
 /* JOA IT MAHA PACK + LOGIN STATE */
-.maha-btn{min-height:38px;padding:0 15px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.24);box-shadow:none;white-space:nowrap}
+.maha-btn{min-height:38px;padding:0 15px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;background:rgba(255,255,255,.08);border:0;box-shadow:none;white-space:nowrap}
 .maha-btn:hover{transform:translateY(-1px)}
 .user-area{display:flex;align-items:center;gap:7px}
 .user-round{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#fff;font-size:11px;font-weight:900;border:1px solid rgba(255,255,255,.28);flex:0 0 34px}
 .user-name{color:#f2f7ff;font-size:10px;font-weight:800;max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .logout-btn{min-height:34px;padding:0 10px;border-radius:8px;color:#fff;background:rgba(255,92,108,.12);border:1px solid rgba(255,130,142,.35);font-size:9px;font-weight:900;cursor:pointer}
 .logout-btn:hover{background:rgba(255,92,108,.22)}
-@media(max-width:800px){.maha-btn{display:none}.user-name{display:none}}
 @media(max-width:620px){.actions{gap:5px}.user-round{width:31px;height:31px;flex-basis:31px}.logout-btn{min-height:31px;padding:0 8px}}
 </style>
 </head>
@@ -695,6 +772,24 @@ img{display:block;max-width:100%}
           <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
         </div>
         <a href="firebase-signup.html" class="join-btn" id="joinBtn">Join Free</a>
+      </div>
+    </div>
+
+    <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#mock-tests">Mock Tests</a>
+      <a href="#free-tests">Free Tests</a>
+      <a href="#resources">Resources</a>
+      <a href="about.html">About</a>
+      <a href="joa-mahapack.html">JOA IT Maha Pack</a>
+      <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
+      <a href="firebase-signup.html" id="mobileJoinBtn">Join Free</a>
+      <div class="mobile-user-area" id="mobileUserArea" style="display:none">
+        <div class="mobile-user-name" id="mobileUserName">User</div>
+        <button type="button" id="mobileLogoutBtn">Logout</button>
       </div>
     </div>
 
@@ -886,7 +981,6 @@ img{display:block;max-width:100%}
             <div class="card-buttons">
               <a href="joa-mahapack.html" class="card-btn card-outline">View Details</a>
               <a href="master-progress.html" class="card-btn card-progress">Master Progress</a>
-              <a href="payment.html?product=computer-master" class="card-btn card-primary">Buy Now</a>
             </div>
           </div>
         </div>
@@ -1046,19 +1140,89 @@ img{display:block;max-width:100%}
 </footer>
 
 <script type="module">
-import { auth } from "./firebase-config.js";
+import { auth, db } from "./firebase-config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-const loginBtn=document.getElementById("loginBtn"),joinBtn=document.getElementById("joinBtn"),userArea=document.getElementById("userArea"),userNameRound=document.getElementById("userNameRound"),userNameText=document.getElementById("userNameText"),logoutBtn=document.getElementById("logoutBtn");
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const loginBtn=document.getElementById("loginBtn"),
+      joinBtn=document.getElementById("joinBtn"),
+      userArea=document.getElementById("userArea"),
+      userNameRound=document.getElementById("userNameRound"),
+      userNameText=document.getElementById("userNameText"),
+      logoutBtn=document.getElementById("logoutBtn"),
+      hamburgerBtn=document.getElementById("hamburgerBtn"),
+      mobileMenu=document.getElementById("mobileMenu"),
+      mobileLoginBtn=document.getElementById("mobileLoginBtn"),
+      mobileJoinBtn=document.getElementById("mobileJoinBtn"),
+      mobileUserArea=document.getElementById("mobileUserArea"),
+      mobileUserName=document.getElementById("mobileUserName"),
+      mobileLogoutBtn=document.getElementById("mobileLogoutBtn");
+
+hamburgerBtn?.addEventListener("click",()=>{
+  const open=mobileMenu.classList.toggle("open");
+  hamburgerBtn.setAttribute("aria-expanded",open?"true":"false");
+});
+
+mobileMenu?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
+
+async function updatePurchasedButtons(user){
+  const joaBuy=document.querySelector('a[href="payment.html?product=joa"]');
+  const patwariBuy=document.querySelector('a[href="payment.html?product=patwari"]');
+
+  if(!joaBuy && !patwariBuy) return;
+
+  if(!user){
+    if(joaBuy) joaBuy.style.display="inline-flex";
+    if(patwariBuy) patwariBuy.style.display="inline-flex";
+    return;
+  }
+
+  try{
+    const snap=await getDoc(doc(db,"testAccess",user.uid));
+    const data=snap.exists()?snap.data():{};
+    if(data.joaitFullSeries===true && joaBuy) joaBuy.style.display="none";
+    if(data.patwariFullSeries===true && patwariBuy) patwariBuy.style.display="none";
+  }catch(e){
+    console.warn("Could not check purchased series:",e);
+  }
+}
+
 onAuthStateChanged(auth,user=>{
   if(user){
-    loginBtn.style.display="none"; joinBtn.style.display="none"; userArea.style.display="flex";
+    loginBtn.style.display="none";
+    joinBtn.style.display="none";
+    userArea.style.display="flex";
+
     const name=user.displayName||user.email?.split("@")[0]||"User";
-    userNameText.textContent=name; userNameRound.textContent=name.trim().charAt(0).toUpperCase();
+    userNameText.textContent=name;
+    userNameRound.textContent=name.trim().charAt(0).toUpperCase();
+
+    mobileLoginBtn.style.display="none";
+    mobileJoinBtn.style.display="none";
+    mobileUserArea.style.display="block";
+    mobileUserName.textContent=name;
   }else{
-    loginBtn.style.display="inline-flex"; joinBtn.style.display="inline-flex"; userArea.style.display="none";
+    loginBtn.style.display="inline-flex";
+    joinBtn.style.display="inline-flex";
+    userArea.style.display="none";
+
+    mobileLoginBtn.style.display="block";
+    mobileJoinBtn.style.display="block";
+    mobileUserArea.style.display="none";
   }
+
+  updatePurchasedButtons(user);
 });
-logoutBtn.addEventListener("click",async()=>{try{await signOut(auth);window.location.reload()}catch(e){console.error("Logout failed:",e)}});
+
+logoutBtn.addEventListener("click",async()=>{
+  try{await signOut(auth);window.location.reload()}
+  catch(e){console.error("Logout failed:",e)}
+});
+
+mobileLogoutBtn?.addEventListener("click",async()=>{
+  try{await signOut(auth);window.location.reload()}
+  catch(e){console.error("Logout failed:",e)}
+});
 </script>
 </body>
 </html>
