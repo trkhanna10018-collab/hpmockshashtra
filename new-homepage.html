@@ -379,10 +379,15 @@ img{display:block;max-width:100%}
   font-size:10px;
   font-weight:900;
 }
-.card-outline{border:1px solid #9dbcf0;color:#000;background:rgba(255,255,255,.72)}
-.card-progress{border:1px solid #a8b7d3;color:#334d78;background:rgba(255,255,255,.86)}
-.card-primary{color:#fff;background:linear-gradient(135deg,#2563eb,#5546e8)}
-.card-free{border:1px solid #86efac;color:#166534;background:#dcfce7}
+.card-outline,
+.card-progress,
+.card-primary,
+.card-free{
+  color:#fff;
+  border:1px solid transparent;
+  background:linear-gradient(135deg,#2563eb,#5546e8);
+  box-shadow:0 6px 14px rgba(37,99,235,.16);
+}
 
 /* =========================
    SECOND BACKGROUND IMAGE
