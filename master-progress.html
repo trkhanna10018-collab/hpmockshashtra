@@ -623,7 +623,7 @@ function hasAccess(subject,accessData){
   return false;
 }
 
-function buildData(subject,session,result){
+async function buildData(subject,session,result){
   let answers={};
   let completed=false;
   let current=0;
@@ -685,14 +685,14 @@ function practiceUrl(s){
 }
 
 async function loadSubject(uid,subject){
-  const base=buildData(subject,null,null);
+  const base=await buildData(subject,null,null);
   try{
     const sessionRef=doc(db,'testSessions',`${uid}_${subject.id}`);
     const resultRef=doc(db,'testAttempts',`${uid}_${subject.id}`);
     const [ss,rs]=await Promise.all([getDoc(sessionRef),getDoc(resultRef)]);
     const session=ss.exists()?ss.data():null;
     const result=rs.exists()?rs.data():null;
-    return buildData(subject,session,result);
+    return await buildData(subject,session,result);
   }catch(e){
     console.warn('Progress read skipped for',subject.id,e);
     return {...base,readError:true};
@@ -811,12 +811,7 @@ function celebrateMilestone(m){
 function renderMilestones(data){
   const attempted=data.filter(x=>x.unlocked).reduce((sum,x)=>sum+x.attempted,0);
   const milestones=[
-    {n:20,label:'20 Questions',icon:'🌱'},
     {n:100,label:'100 Questions',icon:'🏁'},
-    {n:250,label:'250 Questions',icon:'⭐'},
-    {n:500,label:'500 Questions',icon:'🎯'},
-    {n:1000,label:'1,000 Questions',icon:'🔥'},
-    {n:1500,label:'1,500 Questions',icon:'⚡'},
     {n:2500,label:'2,500 Questions',icon:'🚀'},
     {n:3500,label:'3,500 Questions',icon:'💎'},
     {n:5000,label:'5,000 Questions',icon:'🏆'},
@@ -846,7 +841,7 @@ async function init(user){
 
   const data=await Promise.all(SUBJECTS.map(async subject=>{
     const unlocked=hasAccess(subject,accessData);
-    if(!unlocked)return {...buildData(subject,null,null),unlocked:false};
+    if(!unlocked)return {...(await buildData(subject,null,null)),unlocked:false};
     const base=await loadSubject(user.uid,subject);
     return {...base,unlocked:true};
   }));
