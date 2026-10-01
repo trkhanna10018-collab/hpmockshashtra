@@ -386,52 +386,247 @@ body{
 }
 
 
-/* ================= FOOTER ================= */
-
+/* ================= HOMEPAGE-STYLE FOOTER ================= */
 .footer{
-  max-width:1010px;
-  margin:8px auto 0;
-  background:linear-gradient(135deg,#174f93,#205fa8);
+  background:#020817;
+  color:#cbd5e1;
+  max-width:none;
+  margin:48px 0 0;
+  border-radius:0;
+  box-shadow:none;
+  padding:0;
+}
+.footer-inner{
+  width:min(1000px,calc(100% - 28px));
+  margin:auto;
+}
+.footer-top{
+  padding:38px 0 28px;
+  display:grid;
+  grid-template-columns:1.35fr 1fr 1fr 1fr;
+  gap:30px;
+}
+.footer h3,.footer h4{color:#fff;margin-bottom:10px}
+.footer h3{font-size:17px}
+.footer h4{font-size:13px}
+.footer p{font-size:11px;color:#94a3b8;max-width:270px}
+.footer-links{display:grid;gap:7px}
+.footer-links a,.footer-links span{font-size:11px;color:#cbd5e1}
+.footer-links a:hover{color:#fff;text-decoration:none}
+.footer-bottom{
+  min-height:54px;
+  border-top:1px solid #1e293b;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  text-align:left;
-  padding:22px 24px;
-  min-height:70px;
-  box-sizing:border-box;
-  color:#fff;
-  font-size:13px;
-  border-radius:14px;
-  box-shadow:0 -2px 12px rgba(23,79,147,.08);
+  gap:15px;
+  padding:13px 0;
+  font-size:10px;
+  color:#94a3b8;
 }
-
-.footer-links{
+.footer-bottom-links{
   display:flex;
-  justify-content:flex-end;
   align-items:center;
-  gap:13px;
-  margin-bottom:0;
+  justify-content:flex-end;
+  gap:16px;
 }
+.footer-bottom a{color:#cbd5e1}
 
-.footer-links a{
-  color:#fff !important;
-  text-decoration:none;
-  font-size:11px;
+/* ================= HOMEPAGE-STYLE HEADER ================= */
+.topbar{
+  position:sticky;
+  top:12px;
+  z-index:50;
+  width:min(1000px,calc(100% - 28px));
+  min-height:70px;
+  margin:12px auto 0;
+  padding:8px 12px 8px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(239,245,255,.88));
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 10px 28px rgba(20,55,105,.10);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.brand img{
+  width:54px;
+  height:54px;
+  object-fit:contain;
+  border-radius:11px;
+}
+.brand-name{
+  font-size:19px;
+  font-weight:900;
+  line-height:1.05;
+  color:#12234f;
+}
+.brand-name span{color:#2563eb}
+.brand-tagline{
+  display:block;
+  margin-top:3px;
+  font-size:9px;
+  color:#64748b;
   font-weight:700;
 }
-
-.footer-links a:hover{
-  color:#fff !important;
-  text-decoration:underline;
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:17px;
+  margin-left:auto;
+}
+.nav a{
+  font-size:10px;
+  font-weight:800;
+  color:#334d78;
+}
+.nav a:hover{color:#2563eb}
+.header-actions{
+  display:flex;
+  gap:7px;
+  align-items:center;
+}
+.header-btn{
+  min-height:34px;
+  padding:0 12px;
+  border-radius:9px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.header-outline{
+  color:#1d4ed8;
+  border:1px solid #9ebcf2;
+  background:#fff;
+}
+.header-primary{
+  color:#fff;
+  background:linear-gradient(135deg,#2563eb,#5546e8);
+  box-shadow:0 6px 14px rgba(37,99,235,.18);
+}
+.header-user{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.user-round{
+  width:31px;height:31px;border-radius:50%;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,#2563eb,#8b5cf6);
+  color:#fff;font-size:10px;font-weight:900;
+}
+.user-name{
+  color:#334d78;font-size:9px;font-weight:800;
+  max-width:90px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.header-logout{
+  min-height:31px;padding:0 9px;border-radius:8px;
+  color:#b42336;background:#fff1f2;border:1px solid #fecdd3;
+  font-size:9px;font-weight:900;cursor:pointer;
+}
+.mobile-menu-btn{
+  display:none;
+  width:38px;height:38px;
+  border:1px solid #d5e1f1;
+  border-radius:9px;
+  background:#fff;color:#1d4ed8;
+  font-size:18px;cursor:pointer;
+}
+.mobile-menu{
+  display:none;
 }
 
-.footer-sep{
-  color:rgba(255,255,255,.75);
+/* Homepage-style page background */
+body{
+  background:linear-gradient(115deg,#edf6ff,#f9fbff 50%,#f1edff);
+}
+.container{
+  padding-top:26px;
+}
+.series-header{
+  box-shadow:0 14px 32px rgba(37,70,140,.15);
+}
+.info-card,.test-item{
+  box-shadow:0 8px 20px rgba(20,55,105,.06);
+}
+.section-title{
+  color:#12275a;
 }
 
+@media(max-width:900px){
+  .nav{gap:10px}
+  .header-btn{padding:0 9px}
+}
+@media(max-width:800px){
+  .topbar{
+    min-height:64px;
+    top:8px;
+    margin-top:8px;
+    border-radius:14px;
+  }
+  .brand img{width:48px;height:48px}
+  .brand-name{font-size:17px}
+  .brand-tagline{font-size:8px}
+  .nav,.header-actions{display:none}
+  .mobile-menu-btn{display:block}
+  .mobile-menu{
+    position:absolute;
+    top:70px;
+    right:0;
+    left:0;
+    padding:10px;
+    border:1px solid #d5e1f1;
+    border-radius:14px;
+    background:linear-gradient(135deg,#fff,#f1f5ff);
+    box-shadow:0 16px 35px rgba(20,55,105,.14);
+  }
+  .mobile-menu.open{display:grid;gap:3px}
+  .mobile-menu a{
+    color:#334d78;
+    font-size:11px;
+    font-weight:800;
+    padding:9px 10px;
+    border-radius:8px;
+  }
+  .mobile-menu a:hover{background:#edf4ff;color:#2563eb}
+  .footer-top{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .topbar{
+    width:calc(100% - 18px);
+    padding:7px 9px;
+  }
+  .container{
+    width:100%;
+    padding:20px 14px 20px;
+  }
+  .footer-inner{width:calc(100% - 28px)}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .footer-bottom-links{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+}
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE MENU SCRIPT HOOK ================= */
+
 
 @media(max-width:800px){
 
@@ -541,6 +736,50 @@ body{
 
 
 <body>
+
+<!-- ================= HOMEPAGE-STYLE HEADER ================= -->
+<header class="topbar">
+  <a href="../homepage.html" class="brand">
+    <img src="../logo.png" alt="HPMockShashtra Logo">
+    <div>
+      <div class="brand-name">HP<span>Mock</span>Shashtra</div>
+      <span class="brand-tagline">Prepare Today, Serve Tomorrow</span>
+    </div>
+  </a>
+
+  <nav class="nav">
+    <a href="../homepage.html">Home</a>
+    <a href="../joa-series.html">JOA (IT)</a>
+    <a href="patwari-series.html">Patwari</a>
+    <a href="../about.html">About</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="../mahapack/joa-mahapack.html" class="header-btn header-outline">JOA IT Maha Pack</a>
+    <a href="../firebase-login.html" class="header-btn header-primary" id="headerLogin">Login</a>
+    <div class="header-user" id="headerUser" style="display:none">
+      <span class="user-round" id="headerUserRound">U</span>
+      <span class="user-name" id="headerUserName">User</span>
+      <button type="button" class="header-logout" id="headerLogout">Logout</button>
+    </div>
+  </div>
+
+  <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../homepage.html">Home</a>
+    <a href="../joa-series.html">JOA (IT)</a>
+    <a href="patwari-series.html">Patwari</a>
+    <a href="../mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
+    <a href="../about.html">About</a>
+    <a href="../firebase-login.html" id="mobileHeaderLogin">Login</a>
+    <div id="mobileHeaderUser" style="display:none">
+      <a href="#" id="mobileHeaderUserName">User</a>
+      <a href="#" id="mobileHeaderLogout">Logout</a>
+    </div>
+  </div>
+</header>
+
 
 <main class="container">
 
@@ -1124,38 +1363,53 @@ body{
 </main>
 
 
-<!-- ================= FOOTER ================= -->
 
+<!-- ================= HOMEPAGE-STYLE FOOTER ================= -->
 <footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <h3>HPMockShashtra</h3>
+        <p>Competitive exam preparation platform with mock tests, bilingual practice and performance tracking.</p>
+      </div>
 
-  <div>
-    © 2026 HPMockShashtra — Competitive Exam Preparation Platform
+      <div>
+        <h4>Mock Tests</h4>
+        <div class="footer-links">
+          <a href="../joa-series.html">JOA (IT) Mock Tests</a>
+          <a href="patwari-series.html">HP Patwari Mock Tests</a>
+          <a href="patwari-free-test.html">Free Patwari Test</a>
+          <a href="patwari-progress.html">Patwari Progress</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Access</h4>
+        <div class="footer-links">
+          <a href="../mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
+          <a href="../firebase-login.html">Student Login</a>
+          <a href="../firebase-signup.html">Create Account</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <div class="footer-links">
+          <a href="../about.html">About</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 HPMockShashtra. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
   </div>
-
-  <div class="footer-links">
-
-    <a href="../about.html">
-      About
-    </a>
-
-    <span class="footer-sep">
-      |
-    </span>
-
-    <a href="../privacy.html">
-      Privacy Policy
-    </a>
-
-    <span class="footer-sep">
-      |
-    </span>
-
-    <a href="../terms.html">
-      Terms &amp; Conditions
-    </a>
-
-  </div>
-
 </footer>
 
 
@@ -1687,6 +1941,49 @@ onAuthStateChanged(
   }
 );
 
+</script>
+
+
+<script type="module">
+import { auth } from "../firebase-config.js";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+mobileMenuBtn?.addEventListener("click",()=>{
+  mobileMenu.classList.toggle("open");
+});
+mobileMenu?.querySelectorAll("a").forEach(a=>{
+  a.addEventListener("click",()=>mobileMenu.classList.remove("open"));
+});
+
+const headerLogin = document.getElementById("headerLogin");
+const headerUser = document.getElementById("headerUser");
+const headerUserRound = document.getElementById("headerUserRound");
+const headerUserName = document.getElementById("headerUserName");
+const headerLogout = document.getElementById("headerLogout");
+
+onAuthStateChanged(auth,(user)=>{
+  if(user){
+    headerLogin.style.display="none";
+    headerUser.style.display="flex";
+    const name=user.displayName || user.email?.split("@")[0] || "User";
+    headerUserName.textContent=name;
+    headerUserRound.textContent=name.trim().charAt(0).toUpperCase();
+  }else{
+    headerLogin.style.display="inline-flex";
+    headerUser.style.display="none";
+  }
+});
+
+headerLogout?.addEventListener("click",async()=>{
+  try{
+    await signOut(auth);
+    window.location.reload();
+  }catch(e){
+    console.error("Logout failed:",e);
+  }
+});
 </script>
 
 </body>
