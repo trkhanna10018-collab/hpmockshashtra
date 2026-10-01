@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -167,32 +166,22 @@ img{display:block;max-width:100%}
   font-weight:900;
   margin-bottom:15px;
 }
-.hero-content > div:first-child{
-  max-width:700px;
-  padding:18px 20px 20px;
-  border-radius:18px;
-  background:linear-gradient(90deg,rgba(5,24,55,.62),rgba(5,24,55,.34),rgba(5,24,55,0));
-  text-shadow:0 3px 12px rgba(0,0,0,.48);
-}
 .hero h1{
   max-width:700px;
   font-size:51px;
   line-height:1.05;
   letter-spacing:-1.7px;
-  color:#fff;
-  text-shadow:0 3px 14px rgba(0,0,0,.62);
+  color:#10265b;
+  text-shadow:0 2px 12px rgba(255,255,255,.45);
 }
-.hero h1 span{
-  color:#60a5fa;
-  text-shadow:0 3px 14px rgba(0,0,0,.58);
-}
+.hero h1 span{color:#2563eb}
 .hero-copy{
   max-width:660px;
   margin-top:16px;
-  color:#f8fbff;
+  color:#102b58;
   font-size:16px;
   font-weight:700;
-  text-shadow:0 2px 9px rgba(0,0,0,.72);
+  text-shadow:0 1px 6px rgba(255,255,255,.72);
 }
 .hero-buttons{
   display:flex;
@@ -379,15 +368,9 @@ img{display:block;max-width:100%}
   font-size:10px;
   font-weight:900;
 }
-.card-outline,
-.card-progress,
-.card-primary,
-.card-free{
-  color:#fff;
-  border:1px solid transparent;
-  background:linear-gradient(135deg,#2563eb,#5546e8);
-  box-shadow:0 6px 14px rgba(37,99,235,.16);
-}
+.card-outline{border:1px solid #9dbcf0;color:#000;background:rgba(255,255,255,.72)}
+.card-progress{border:1px solid #a8b7d3;color:#334d78;background:rgba(255,255,255,.86)}
+.card-primary{color:#fff;background:linear-gradient(135deg,#2563eb,#5546e8)}
 
 /* =========================
    SECOND BACKGROUND IMAGE
@@ -670,10 +653,9 @@ img{display:block;max-width:100%}
   .promo-inner{align-items:flex-start}
 }
 @media(max-width:620px){
-  /* Let the hero grow naturally so every hero element remains visible on phones */
+  /* Keep the full hero content visible on mobile instead of clipping it */
   .hero{
-    min-height:0;
-    overflow:hidden;
+    min-height:820px;
   }
   .hero-bg-img{
     position:absolute;
@@ -683,13 +665,7 @@ img{display:block;max-width:100%}
     object-fit:cover;
     object-position:center center;
   }
-  .hero-inner{
-    position:relative;
-    inset:auto;
-    width:100%;
-    min-height:0;
-    padding:96px 14px 42px;
-  }
+  .hero-inner{padding-top:10px}
   .topbar{
     min-height:68px;
     padding:7px 9px;
@@ -699,23 +675,10 @@ img{display:block;max-width:100%}
   .brand-name{font-size:18px}
   .brand-tagline{font-size:8px}
   .login-btn,.join-btn{min-height:34px;padding:0 10px;font-size:9px}
-  .hero-content{
-    padding-top:30px;
-    gap:28px;
-    align-items:start;
-  }
-  .hero-content > div:first-child{
-    padding:14px 15px 18px;
-    border-radius:15px;
-    background:linear-gradient(90deg,rgba(5,24,55,.64),rgba(5,24,55,.30),rgba(5,24,55,0));
-  }
+  .hero-content{padding-top:38px}
   .hero h1{font-size:36px;letter-spacing:-1px}
   .hero-copy{font-size:13px}
-  .hero-glass{
-    padding:20px;
-    width:100%;
-    margin-bottom:0;
-  }
+  .hero-glass{padding:20px}
   .feature-grid,.series-grid,.quick-grid,.footer-top{grid-template-columns:1fr}
   .series-image{
     width:100%;
@@ -773,7 +736,6 @@ img{display:block;max-width:100%}
 .logout-btn:hover{background:rgba(255,92,108,.22)}
 @media(max-width:620px){.actions{gap:5px}.user-round{width:31px;height:31px;flex-basis:31px}.logout-btn{min-height:31px;padding:0 8px}}
 </style>
-
 </head>
 
 <body>
@@ -781,300 +743,332 @@ img{display:block;max-width:100%}
 <!-- =========================
      HERO WITH FIRST IMAGE
 ========================= -->
-
 <section class="hero" id="home">
   <img src="mahapack/homepage-bg.jpg" alt="HPMockShashtra study workspace" class="hero-bg-img">
   <div class="hero-inner">
 
-<div class="topbar">
-  <a href="homepage.html" class="brand">
-    <img src="logo.png" alt="HPMockShashtra Logo">
-    <div>
-      <div class="brand-name">HP<span>Mock</span>Shashtra</div>
-      <span class="brand-tagline">Prepare Today, Serve Tomorrow</span>
+    <div class="topbar">
+      <a href="homepage.html" class="brand">
+        <img src="logo.png" alt="HPMockShashtra Logo">
+        <div>
+          <div class="brand-name">HP<span>Mock</span>Shashtra</div>
+          <span class="brand-tagline">Prepare Today, Serve Tomorrow</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#mock-tests">Mock Tests</a>
+        <a href="#free-tests">Free Tests</a>
+        <a href="#resources">Resources</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="actions">
+        <a href="mahapack/joa-mahapack.html" class="maha-btn">JOA IT Maha Pack</a>
+        <a href="firebase-login.html" class="login-btn" id="loginBtn">Login</a>
+        <div class="user-area" id="userArea" style="display:none">
+          <span class="user-round" id="userNameRound">U</span>
+          <span class="user-name" id="userNameText">User</span>
+          <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+        <a href="firebase-signup.html" class="join-btn" id="joinBtn">Join Free</a>
+      </div>
     </div>
-  </a>
 
-  <nav class="nav">
-    <a href="#mock-tests">Mock Tests</a>
-    <a href="#free-tests">Free Tests</a>
-    <a href="#resources">Resources</a>
-    <a href="about.html">About</a>
-  </nav>
+    <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
-  <div class="actions">
-    <a href="mahapack/joa-mahapack.html" class="maha-btn">JOA IT Maha Pack</a>
-    <a href="firebase-login.html" class="login-btn" id="loginBtn">Login</a>
-    <div class="user-area" id="userArea" style="display:none">
-      <span class="user-round" id="userNameRound">U</span>
-      <span class="user-name" id="userNameText">User</span>
-      <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#mock-tests">Mock Tests</a>
+      <a href="#free-tests">Free Tests</a>
+      <a href="#resources">Resources</a>
+      <a href="about.html">About</a>
+      <a href="mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
+      <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
+      <a href="firebase-signup.html" id="mobileJoinBtn">Join Free</a>
+      <div class="mobile-user-area" id="mobileUserArea" style="display:none">
+        <div class="mobile-user-name" id="mobileUserName">User</div>
+        <button type="button" id="mobileLogoutBtn">Logout</button>
+      </div>
     </div>
-    <a href="firebase-signup.html" class="join-btn" id="joinBtn">Join Free</a>
-  </div>
-</div>
 
-<button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow">HIMACHAL PRADESH COMPETITIVE EXAMS</div>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#mock-tests">Mock Tests</a>
-  <a href="#free-tests">Free Tests</a>
-  <a href="#resources">Resources</a>
-  <a href="about.html">About</a>
-  <a href="mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
-  <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
-  <a href="firebase-signup.html" id="mobileJoinBtn">Join Free</a>
-  <div class="mobile-user-area" id="mobileUserArea" style="display:none">
-    <div class="mobile-user-name" id="mobileUserName">User</div>
-    <button type="button" id="mobileLogoutBtn">Logout</button>
-  </div>
-</div>
+        <h1>Practice Smarter with <span>HPMockShashtra</span></h1>
 
-<div class="hero-content">
-  <div>
-    <div class="eyebrow">HIMACHAL PRADESH COMPETITIVE EXAMS</div>
+        <p class="hero-copy">
+          Full-length mock tests, bilingual practice, performance analysis and
+          exam-focused preparation for Himachal Pradesh competitive exams.
+        </p>
 
-    <h1>Practice Smarter with <span>HPMockShashtra</span></h1>
+        <div class="hero-buttons">
+          <a href="#mock-tests" class="primary-btn">Explore Mock Tests →</a>
+          <a href="firebase-signup.html" class="secondary-btn">Create Free Account</a>
+        </div>
+      </div>
 
-    <p class="hero-copy">
-      Full-length mock tests, bilingual practice, performance analysis and
-      exam-focused preparation for Himachal Pradesh competitive exams.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#mock-tests" class="primary-btn">Explore Mock Tests →</a>
-      <a href="firebase-signup.html" class="secondary-btn">Create Free Account</a>
+      <div class="hero-glass">
+        <h2>Everything in one place</h2>
+        <ul>
+          <li>Full-length mock test series</li>
+          <li>Previous year practice</li>
+          <li>Hindi + English bilingual questions</li>
+          <li>Free test available</li>
+          <li>Study Mode after completed tests</li>
+          <li>Progress and performance tracking</li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-  <div class="hero-glass">
-    <h2>Everything in one place</h2>
-    <ul>
-      <li>Full-length mock test series</li>
-      <li>Previous year practice</li>
-      <li>Hindi + English bilingual questions</li>
-      <li>Free test available</li>
-      <li>Study Mode after completed tests</li>
-      <li>Progress and performance tracking</li>
-    </ul>
-  </div>
-</div>
 
   </div>
 </section>
+
 
 <!-- =========================
      FEATURES
 ========================= -->
-
 <section class="features">
   <div class="content feature-grid">
 
-<div class="feature">
-  <div class="feature-icon">✓</div>
-  <strong>Mock Test Series</strong>
-  <small>Full-length practice</small>
-</div>
+    <div class="feature">
+      <div class="feature-icon">✓</div>
+      <strong>Mock Test Series</strong>
+      <small>Full-length practice</small>
+    </div>
 
-<div class="feature">
-  <div class="feature-icon">▤</div>
-  <strong>Previous Year Practice</strong>
-  <small>Exam-focused questions</small>
-</div>
+    <div class="feature">
+      <div class="feature-icon">▤</div>
+      <strong>Previous Year Practice</strong>
+      <small>Exam-focused questions</small>
+    </div>
 
-<div class="feature">
-  <div class="feature-icon">↗</div>
-  <strong>Performance Tracking</strong>
-  <small>Know your progress</small>
-</div>
+    <div class="feature">
+      <div class="feature-icon">↗</div>
+      <strong>Performance Tracking</strong>
+      <small>Know your progress</small>
+    </div>
 
-<div class="feature">
-  <div class="feature-icon">A</div>
-  <strong>Hindi + English</strong>
-  <small>Bilingual preparation</small>
-</div>
+    <div class="feature">
+      <div class="feature-icon">A</div>
+      <strong>Hindi + English</strong>
+      <small>Bilingual preparation</small>
+    </div>
 
   </div>
 </section>
+
 
 <!-- =========================
      SERIES
 ========================= -->
-
 <section class="series-section" id="mock-tests">
   <div class="content">
 
-<div class="heading">
-  <div class="tag">Mock Test Series</div>
-  <h2>Choose Your Exam</h2>
-  <p>Test information, price and free access details are shown clearly before you open a series.</p>
-</div>
-
-<div class="series-grid">
-
-  <!-- JOA -->
-  <article class="series-card">
-    <img src="joa-banner.jpg" alt="JOA IT Mock Test Series" class="series-image">
-
-    <div class="series-body">
-      <div class="badges">
-        <span class="badge badge-live">AVAILABLE NOW</span>
-        <span class="badge badge-live">FREE TEST AVAILABLE</span>
-      </div>
-
-      <div class="price-row">
-        <div class="price">
-          <small>Complete Series</small>
-          <strong>₹99</strong>
-          <span class="free">Free Test Available</span>
-        </div>
-
-        <div class="card-buttons">
-          <a href="joa-series.html" class="card-btn card-outline">View Details</a>
-          <a href="my-progress.html" class="card-btn card-progress">My Progress</a>
-          <a href="payment.html?product=joa" class="card-btn card-primary">Buy Now</a>
-        </div>
-      </div>
+    <div class="heading">
+      <div class="tag">Mock Test Series</div>
+      <h2>Choose Your Exam</h2>
+      <p>Test information, price and free access details are shown clearly before you open a series.</p>
     </div>
-  </article>
 
+    <div class="series-grid">
 
-  <!-- PATWARI -->
-  <article class="series-card">
-    <img src="patwari-banner.jpg" alt="HP Patwari Mock Test Series" class="series-image">
+      <!-- JOA -->
+      <article class="series-card">
+        <img src="joa-banner.jpg" alt="JOA IT Mock Test Series" class="series-image">
 
-    <div class="series-body">
-      <div class="badges">
-        <span class="badge badge-live">AVAILABLE NOW</span>
-        <span class="badge badge-live">FREE TEST AVAILABLE</span>
-      </div>
+        <div class="series-body">
+          <div class="badges">
+            <span class="badge badge-live">AVAILABLE NOW</span>
+            <span class="badge badge-live">FREE TEST AVAILABLE</span>
+          </div>
 
-      <div class="price-row">
-        <div class="price">
-          <small>Complete Series</small>
-          <strong>₹149</strong>
-          <span class="free">Free Test Available</span>
+          <h3 class="series-title">JOA (IT) Mock Test Series</h3>
+
+          <p class="series-description">
+            Full-length Junior Office Assistant (IT) mock tests with bilingual
+            questions and performance analysis.
+          </p>
+
+          <div class="meta">
+            <div class="meta-box"><strong>16</strong><span>Total Tests</span></div>
+            <div class="meta-box"><strong>100</strong><span>Questions/Test</span></div>
+            <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
+          </div>
+
+          <div class="price-row">
+            <div class="price">
+              <small>Complete Series</small>
+              <strong>₹99</strong>
+              <span class="free">Free Test Available</span>
+            </div>
+
+            <div class="card-buttons">
+              <a href="joa-series.html" class="card-btn card-outline">View Details</a>
+              <a href="my-progress.html" class="card-btn card-progress">My Progress</a>
+              <a href="payment.html?product=joa" class="card-btn card-primary">Buy Now</a>
+            </div>
+          </div>
         </div>
+      </article>
 
-        <div class="card-buttons">
-          <a href="patwari-series.html" class="card-btn card-outline">View Details</a>
-          <a href="patwari-progress.html" class="card-btn card-progress">My Progress</a>
-          <a href="payment.html?product=patwari" class="card-btn card-primary">Buy Now</a>
+
+      <!-- PATWARI -->
+      <article class="series-card">
+        <img src="patwari/patwari-banner.jpg" alt="HP Patwari Mock Test Series" class="series-image">
+
+        <div class="series-body">
+          <div class="badges">
+            <span class="badge badge-live">AVAILABLE NOW</span>
+            <span class="badge badge-live">FREE TEST AVAILABLE</span>
+          </div>
+
+          <h3 class="series-title">HP Patwari Mock Test Series</h3>
+
+          <p class="series-description">
+            Structured HP Patwari mock-test practice with Himachal GK,
+            general studies, Hindi, English and computer-based preparation.
+          </p>
+
+          <div class="meta">
+            <div class="meta-box"><strong>11</strong><span>Total Tests</span></div>
+            <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
+            <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
+          </div>
+
+          <div class="price-row">
+            <div class="price">
+              <small>Complete Series</small>
+              <strong>₹149</strong>
+              <span class="free">Free Test Available</span>
+            </div>
+
+            <div class="card-buttons">
+              <a href="patwari/patwari-series.html" class="card-btn card-outline">View Details</a>
+              <a href="patwari/patwari-progress.html" class="card-btn card-progress">My Progress</a>
+              <a href="payment.html?product=patwari" class="card-btn card-primary">Buy Now</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
+
+      <!-- JOA IT MAHA PACK -->
+      <article class="series-card">
+        <img src="mahapack/joa-mahapack-banner.jpg" alt="JOA IT Maha Pack" class="series-image">
+        <div class="series-body">
+          <div class="badges">
+            <span class="badge badge-live">JOA IT MAHA PACK</span>
+            <span class="badge badge-live">6000 QUESTIONS</span>
+          </div>
+          <h3 class="series-title">JOA IT Maha Pack</h3>
+          <p class="series-description">
+            Complete Computer preparation with 15 Computer subjects,
+            bilingual practice and performance tracking.
+          </p>
+          <div class="meta">
+            <div class="meta-box"><strong>15</strong><span>Subjects</span></div>
+            <div class="meta-box"><strong>6000</strong><span>Questions</span></div>
+            <div class="meta-box"><strong>6 Months</strong><span>Validity</span></div>
+          </div>
+          <div class="price-row">
+            <div class="price">
+              <small>Complete Pack</small>
+              <strong>₹399</strong>
+              <span class="free">15 Computer Subjects</span>
+            </div>
+            <div class="card-buttons">
+              <a href="mahapack/joa-mahapack.html" class="card-btn card-outline">View Details</a>
+              <a href="mahapack/master-progress.html" class="card-btn card-progress">Master Progress</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
-  </article>
-
-  <!-- JOA IT MAHA PACK -->
-  <article class="series-card">
-    <img src="mahapack/joa-mahapack-banner.jpg" alt="JOA IT Maha Pack" class="series-image">
-    <div class="series-body">
-      <div class="badges">
-        <span class="badge badge-live">JOA IT MAHA PACK</span>
-        <span class="badge badge-live">6000 QUESTIONS</span>
-      </div>
-      <div class="price-row">
-        <div class="price">
-          <small>Complete Pack</small>
-          <strong>₹399</strong>
-          <span class="free">15 Computer Subjects</span>
-        </div>
-        <div class="card-buttons">
-          <a href="mahapack/joa-mahapack.html" class="card-btn card-outline">View Details</a>
-          <a href="mahapack/free-mahapack.html" class="card-btn card-free">Free Test</a>
-          <a href="mahapack/master-progress.html" class="card-btn card-progress">Master Progress</a>
-        </div>
-      </div>
-    </div>
-  </article>
-
-</div>
-
   </div>
 </section>
+
 
 <!-- =========================
      SECOND BACKGROUND IMAGE
 ========================= -->
-
 <section class="promo">
   <img src="mahapack/homepage-bg-2.jpg" alt="Focused study practice" class="promo-bg-img">
   <div class="promo-inner">
 
-<div class="promo-copy">
-  <small>FOCUSED PRACTICE • BETTER PREPARATION</small>
-  <h2>Master Your Exams with Focused Practice</h2>
-  <p>
-    Practice with structured mock tests, analyse your performance and
-    improve your preparation for Himachal Pradesh competitive exams.
-  </p>
+    <div class="promo-copy">
+      <small>FOCUSED PRACTICE • BETTER PREPARATION</small>
+      <h2>Master Your Exams with Focused Practice</h2>
+      <p>
+        Practice with structured mock tests, analyse your performance and
+        improve your preparation for Himachal Pradesh competitive exams.
+      </p>
 
-  <div class="promo-buttons">
-    <a href="firebase-signup.html">Start Learning Today →</a>
-    <a href="#mock-tests">Explore Mock Tests →</a>
-  </div>
-</div>
+      <div class="promo-buttons">
+        <a href="firebase-signup.html">Start Learning Today →</a>
+        <a href="#mock-tests">Explore Mock Tests →</a>
+      </div>
+    </div>
 
-<div class="promo-panel">
-  <div>✓ Learn</div>
-  <div>✓ Practice</div>
-  <div>✓ Analyse</div>
-  <div>✓ Improve</div>
-</div>
+    <div class="promo-panel">
+      <div>✓ Learn</div>
+      <div>✓ Practice</div>
+      <div>✓ Analyse</div>
+      <div>✓ Improve</div>
+    </div>
 
   </div>
 </section>
+
 
 <!-- =========================
      QUICK LINKS
 ========================= -->
-
 <section class="quick" id="resources">
   <div class="content">
 
-<div class="heading">
-  <div class="tag">Quick Access</div>
-  <h2>Useful Links</h2>
-  <p>Important areas of HPMockShashtra can be opened directly from here.</p>
-</div>
+    <div class="heading">
+      <div class="tag">Quick Access</div>
+      <h2>Useful Links</h2>
+      <p>Important areas of HPMockShashtra can be opened directly from here.</p>
+    </div>
 
-<div class="quick-grid">
+    <div class="quick-grid">
 
-  <a href="joa-series.html" class="quick-card">
-    <h3>JOA (IT) Series</h3>
-    <p>See all available JOA mock tests and series details.</p>
-    <span>Open Series →</span>
-  </a>
+      <a href="joa-series.html" class="quick-card">
+        <h3>JOA (IT) Series</h3>
+        <p>See all available JOA mock tests and series details.</p>
+        <span>Open Series →</span>
+      </a>
 
-  <a href="patwari-series.html" class="quick-card">
-    <h3>Patwari Series</h3>
-    <p>See all available Patwari mock tests and series details.</p>
-    <span>Open Series →</span>
-  </a>
+      <a href="patwari/patwari-series.html" class="quick-card">
+        <h3>Patwari Series</h3>
+        <p>See all available Patwari mock tests and series details.</p>
+        <span>Open Series →</span>
+      </a>
 
-  <a href="firebase-signup.html" class="quick-card" id="free-tests">
-    <h3>Free Test Access</h3>
-    <p>Create an account and start with the available free tests.</p>
-    <span>Register Free →</span>
-  </a>
+      <a href="firebase-signup.html" class="quick-card" id="free-tests">
+        <h3>Free Test Access</h3>
+        <p>Create an account and start with the available free tests.</p>
+        <span>Register Free →</span>
+      </a>
 
-  <a href="firebase-login.html" class="quick-card">
-    <h3>Student Login</h3>
-    <p>Access your dashboard, attempts, results and available tests.</p>
-    <span>Login →</span>
-  </a>
+      <a href="firebase-login.html" class="quick-card">
+        <h3>Student Login</h3>
+        <p>Access your dashboard, attempts, results and available tests.</p>
+        <span>Login →</span>
+      </a>
 
-</div>
-
+    </div>
   </div>
 </section>
+
 
 <!-- =========================
      CTA
 ========================= -->
-
 <section class="cta">
   <div class="cta-box">
     <div>
@@ -1082,66 +1076,65 @@ img{display:block;max-width:100%}
       <p>Create your free account and explore the available mock tests.</p>
     </div>
 
-<a href="firebase-signup.html">Create Free Account</a>
-
+    <a href="firebase-signup.html">Create Free Account</a>
   </div>
 </section>
+
 
 <!-- =========================
      FOOTER
 ========================= -->
-
 <footer class="footer">
 
   <div class="footer-inner">
 
-<div class="footer-top">
+    <div class="footer-top">
 
-  <div>
-    <h3>HPMockShashtra</h3>
-    <p>
-      A practice platform for Himachal Pradesh competitive exam aspirants
-      with mock tests, bilingual practice and performance tracking.
-    </p>
-  </div>
+      <div>
+        <h3>HPMockShashtra</h3>
+        <p>
+          A practice platform for Himachal Pradesh competitive exam aspirants
+          with mock tests, bilingual practice and performance tracking.
+        </p>
+      </div>
 
-  <div>
-    <h4>Mock Tests</h4>
-    <div class="footer-links">
-      <a href="joa-series.html">JOA (IT) Mock Tests</a>
-      <a href="patwari-series.html">HP Patwari Mock Tests</a>
-      <a href="#free-tests">Free Test Access</a>
-      <a href="#mock-tests">Test Series</a>
+      <div>
+        <h4>Mock Tests</h4>
+        <div class="footer-links">
+          <a href="joa-series.html">JOA (IT) Mock Tests</a>
+          <a href="patwari/patwari-series.html">HP Patwari Mock Tests</a>
+          <a href="#free-tests">Free Test Access</a>
+          <a href="#mock-tests">Test Series</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Account</h4>
+        <div class="footer-links">
+          <a href="firebase-login.html">Login</a>
+          <a href="firebase-signup.html">Create Account</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+
     </div>
-  </div>
 
-  <div>
-    <h4>Account</h4>
-    <div class="footer-links">
-      <a href="firebase-login.html">Login</a>
-      <a href="firebase-signup.html">Create Account</a>
+    <div class="footer-bottom">
+      <div>© 2026 HPMockShashtra. All rights reserved.</div>
+
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
     </div>
-  </div>
-
-  <div>
-    <h4>Information</h4>
-    <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer-bottom">
-  <div>© 2026 HPMockShashtra. All rights reserved.</div>
-
-  <div class="footer-bottom-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms &amp; Conditions</a>
-  </div>
-</div>
 
   </div>
 </footer>
@@ -1231,6 +1224,5 @@ mobileLogoutBtn?.addEventListener("click",async()=>{
   catch(e){console.error("Logout failed:",e)}
 });
 </script>
-
 </body>
 </html>
