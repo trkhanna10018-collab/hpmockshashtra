@@ -53,24 +53,24 @@ img{display:block;max-width:100%}
 .mobile-menu{display:none}
 
 /* ================= PAGE ================= */
-.container{width:100%;margin:0;padding:120px 0 44px}
+.container{width:100%;margin:0;padding:0 0 44px}
 
 /* Compact homepage-style hero */
 .series-header{
-  position:relative;overflow:hidden;color:#fff;border-radius:0;padding:26px;
+  position:relative;overflow:hidden;color:#fff;border-radius:0;padding:150px 0 34px;
   margin-bottom:20px;box-shadow:0 14px 32px rgba(20,55,105,.16);
   background:url("../mahapack/homepage-bg.jpg") center/cover no-repeat;
   min-height:390px;
 }
 .series-top{display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(1000px,calc(100% - 28px));margin:0 auto}
-.series-label{font-size:10px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;color:#bfdbfe;margin-bottom:6px}
+.series-label{font-size:10px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;color:#fff;margin-bottom:6px;text-shadow:0 2px 6px rgba(0,0,0,.8)}
 .series-header h1{font-size:32px;line-height:1.12;letter-spacing:-.6px;margin-bottom:7px;text-shadow:0 2px 7px rgba(0,0,0,.45)}
 .series-header p{max-width:650px;color:#fff;font-size:13px;font-weight:700;line-height:1.55;text-shadow:0 2px 6px rgba(0,0,0,.45)}
 .syllabus-note{display:inline-flex;margin-top:10px;padding:7px 11px;border-radius:999px;background:rgba(219,234,254,.96);border:1px solid #bfdbfe;color:#174ea6;font-size:10px;font-weight:900}
 .details{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px auto 0;width:min(1000px,calc(100% - 28px))}
-.detail{padding:10px;border-radius:11px;text-align:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18)}
+.detail{padding:10px;border-radius:11px;text-align:center;background:rgba(10,35,65,.28);border:1px solid rgba(255,255,255,.35)}
 .detail strong{display:block;font-size:17px;line-height:1.1;margin-bottom:2px}
-.detail span{font-size:10px;color:#dbeafe}
+.detail span{font-size:10px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7)}
 
 /* Purchase CTA */
 .purchase{
@@ -120,7 +120,7 @@ img{display:block;max-width:100%}
 .start-btn:hover{background:linear-gradient(135deg,#1d4ed8,#4f46e5);transform:translateY(-1px)}
 .locked-btn{background:#eef1f6!important;color:#64748b!important;border:1px solid #d7dce5!important;cursor:not-allowed!important}
 .attempted-btn{background:#dbeafe;color:#1d4ed8}
-.test-item:not(.free-test-card)>.status{display:none}
+.test-item:not(.free-test-card)>.status{display:none !important}
 
 /* Footer */
 .footer{background:#0f2b52;color:#dbeafe;margin:0;padding:30px 0 18px}
@@ -146,8 +146,8 @@ img{display:block;max-width:100%}
   .mobile-menu>a:hover,.mobile-user-area button:hover{background:rgba(255,255,255,.10)}
   .mobile-user-area{display:grid;gap:3px}
   .mobile-user-name{padding:8px 10px;color:#a9bfdf;font-size:10px;font-weight:800}
-  .container{padding-top:108px}
-  .series-header{padding:21px}
+  .container{padding-top:0}
+  .series-header{padding:120px 0 24px}
   .series-header h1{font-size:27px}
   .details{grid-template-columns:repeat(2,1fr)}
   .exam-details{grid-template-columns:1fr}
@@ -163,8 +163,8 @@ img{display:block;max-width:100%}
   .brand-name{font-size:17px}
   .brand-tagline{font-size:8px}
   .hamburger-btn{top:11px;right:10px}
-  .container{width:100%;padding:96px 0 32px}
-  .series-header{padding:19px}
+  .container{width:100%;padding:0 0 32px}
+  .series-header{padding:105px 0 22px}
   .series-header h1{font-size:24px}
   .series-header p{font-size:11px}
   .details{grid-template-columns:1fr 1fr}
@@ -254,7 +254,10 @@ img{display:block;max-width:100%}
     <div class="detail"><strong>Hindi + English</strong><span>Language</span></div>
   </div>
 
-  <section class="purchase" id="purchase-section">
+  
+</section>
+
+<section class="purchase" id="purchase-section">
     <div>
       <h2>Unlock the Full HP Patwari Series</h2>
       <p>Get access to all 10 HP Patwari mock tests, including full-length practice tests in Hindi and English.</p>
@@ -266,7 +269,6 @@ img{display:block;max-width:100%}
       <div class="access-message" id="access-message">Checking access...</div>
     </div>
   </section>
-</section>
 
 <div class="exam-details">
   <div class="detail-section">
@@ -444,7 +446,7 @@ img{display:block;max-width:100%}
 import { auth, db } from "../firebase-config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 
 const loginBtn = document.getElementById("loginBtn");
 const joinBtn = document.getElementById("joinBtn");
@@ -546,7 +548,7 @@ const accessMessage = document.getElementById("access-message");
       if (!test.status || !test.action) return;
 
       test.status.className = "status free";
-      test.status.textContent = "✓ UNLOCKED";
+      test.status.textContent = "";
 
       test.action.className = "action-btn start-btn";
       test.action.textContent = "Start Test";
@@ -564,7 +566,7 @@ const accessMessage = document.getElementById("access-message");
       test.action.className = "action-btn attempted-btn";
       test.action.textContent = "📖 Study Mode";
       test.action.removeAttribute("target");
-      test.action.href = `study-mode.html?test=${test.testId}`;
+      test.action.href = `patwari-study-mode.html?test=${test.testId}`;
       test.action.onclick = null;
     }
 
@@ -602,8 +604,9 @@ const accessMessage = document.getElementById("access-message");
         if (!accessSnap.exists() || accessSnap.data().patwariFullSeries !== true) {
           TESTS.forEach(showLocked);
           purchaseSection.hidden = false;
+          purchaseSection.hidden = false;
           purchaseSection.style.display = "flex";
-          accessMessage.textContent = "Full HP Patwari Series is locked. Purchase access to unlock the series.";
+          accessMessage.textContent = "Purchase access to unlock the series. Purchase access to unlock the series.";
           return;
         }
 
