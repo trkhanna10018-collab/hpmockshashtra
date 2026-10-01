@@ -34,8 +34,8 @@ body{margin:0;background:#eef4fb;color:#172033}
 <body>
 
 <header class="header">
-<a class="brand" href="firebase-dashboard.html">
-<img src="logo.png" alt="HPMockShashtra">
+<a class="brand" href="../firebase-dashboard.html">
+<img src="../logo.png" alt="HPMockShashtra">
 <span>HP<span style="color:#4f46e5">Mock</span>Shashtra</span>
 </a>
 <a class="back" href="patwari-series.html">← Test Series</a>
@@ -107,7 +107,7 @@ Once the test starts, the 90-minute timer will continue even if you close this t
 
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-import { auth, db } from "./firebase-config.js";
+import { auth, db } from "../firebase-config.js";
 import { questions } from "./patwari-question-bank.js";
 
 const TEST_ID="patwari_free_test_01";
