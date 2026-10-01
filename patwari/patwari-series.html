@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HP Patwari 2026 Mock Test Series | HPMockShashtra</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+  background:#f4f6f9;
+  color:#1f2937;
+  min-height:100vh;
+}
+
+/* ================= MAIN ================= */
+
+.container{
+  width:100%;
+  max-width:1050px;
+  margin:auto;
+  padding:30px 20px 14px;
+}
+
+
+/* ================= HERO ================= */
+
+.series-header{
+  background:linear-gradient(135deg,#4338ca,#6366f1);
+  color:#fff;
+  border-radius:18px;
+  padding:24px;
+  margin-bottom:20px;
+  box-shadow:0 10px 28px rgba(67,56,202,.18);
+}
+
+.series-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+
+/* ================= HERO LEFT ================= */
+
+.hero-left{
+  flex:1;
+  min-width:0;
+}
+
+.series-label{
+  font-size:13px;
+  font-weight:700;
+  opacity:.85;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  margin-bottom:8px;
+}
+
+.series-header h1{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.series-header p{
+  font-size:15px;
+  opacity:.92;
+  line-height:1.6;
+  max-width:700px;
+}
+
+.syllabus-note{
+  display:inline-flex;
+  align-items:center;
+  margin-top:12px;
+  padding:9px 14px;
+  background:#fff3a6;
+  border:1px solid #ffe066;
+  color:#5a4300;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:850;
+  box-shadow:0 5px 14px rgba(255,224,102,.24);
+  letter-spacing:.05px;
+}
+
+
+/* ================= PURCHASE BOX ================= */
+
+.purchase-box{
+  width:205px;
+  flex-shrink:0;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.30);
+  border-radius:11px;
+  padding:13px;
+  text-align:center;
+}
+
+.purchase-title{
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+.purchase-subtitle{
+  font-size:9px;
+  line-height:1.4;
+  opacity:.85;
+  margin-bottom:8px;
+}
+
+.purchase-price{
+  font-size:24px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.buy-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#16a34a;
+  color:#fff;
+  padding:8px 22px;
+  border-radius:7px;
+  font-weight:800;
+  font-size:11px;
+  white-space:nowrap;
+}
+
+.buy-btn:hover{
+  background:#15803d;
+}
+
+.payment-note{
+  margin-top:7px;
+  font-size:8px;
+  color:rgba(255,255,255,.75);
+}
+
+
+/* ================= DETAILS ================= */
+
+.details{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:20px;
+  margin-bottom:0;
+}
+
+.detail{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;
+  padding:13px;
+  text-align:center;
+}
+
+.detail strong{
+  display:block;
+  font-size:17px;
+  margin-bottom:3px;
+}
+
+.detail span{
+  font-size:12px;
+  opacity:.85;
+}
+
+
+/* ================= CONTENT ================= */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.info-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:11px;
+  padding:14px;
+  box-shadow:0 3px 10px rgba(0,0,0,.035);
+  min-height:125px;
+}
+
+.info-card h3{
+  font-size:13px;
+  color:#111827;
+  margin-bottom:9px;
+}
+
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:5px 0;
+  border-bottom:1px solid #f0f2f5;
+  font-size:10px;
+}
+
+.info-row:last-child{
+  border-bottom:none;
+}
+
+.info-row span{
+  color:#6b7280;
+}
+
+.info-row strong{
+  color:#0f3fae;
+  text-align:right;
+}
+
+.subjects{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5px 20px;
+}
+
+.subject{
+  font-size:10px;
+  color:#334155;
+  padding:3px 0;
+}
+
+
+/* ================= TEST LIST ================= */
+
+.section-title{
+  font-size:21px;
+  color:#111827;
+  margin-bottom:15px;
+}
+
+.test-list{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+
+.test-item{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:11px;
+  padding:11px;
+  min-height:148px;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:flex-start;
+  gap:7px;
+  box-shadow:0 3px 10px rgba(0,0,0,.035);
+  transition:transform .18s ease,
+              box-shadow .18s ease,
+              border-color .18s ease;
+}
+
+.test-item:hover{
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(0,0,0,.07);
+  border-color:#d7dcf5;
+}
+
+.test-info{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+
+.test-number{
+  width:34px;
+  height:34px;
+  border-radius:9px;
+  background:#eef2ff;
+  color:#4338ca;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:11px;
+  flex-shrink:0;
+}
+
+.test-name{
+  font-weight:700;
+  color:#111827;
+  margin-bottom:2px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+
+/* ================= STATUS ================= */
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  align-self:flex-start;
+  font-size:10px;
+  font-weight:800;
+  padding:4px 7px;
+  border-radius:20px;
+  white-space:nowrap;
+}
+
+.free{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.locked{
+  background:#f3f4f6;
+  color:#6b7280;
+}
+
+.attempted{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+
+/* ================= ACTION ================= */
+
+.action-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  padding:7px 10px;
+  width:100%;
+  min-width:0;
+  min-height:32px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:700;
+  cursor:pointer;
+  text-decoration:none !important;
+  white-space:nowrap;
+  transition:all .18s ease;
+}
+
+.start-btn{
+  background:#4f46e5;
+  color:#fff;
+}
+
+.start-btn:hover{
+  background:#4338ca;
+  transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(79,70,229,.22);
+}
+
+.locked-btn{
+  background:#eef1f6 !important;
+  color:#6b7280 !important;
+  border:1px solid #d7dce5 !important;
+  opacity:1 !important;
+  font-weight:700 !important;
+  cursor:not-allowed !important;
+}
+
+.attempted-btn{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+.attempted-btn:hover{
+  background:#bfdbfe;
+  transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(29,78,216,.12);
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+  max-width:1010px;
+  margin:8px auto 0;
+  background:linear-gradient(135deg,#174f93,#205fa8);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  text-align:left;
+  padding:22px 24px;
+  min-height:70px;
+  box-sizing:border-box;
+  color:#fff;
+  font-size:13px;
+  border-radius:14px;
+  box-shadow:0 -2px 12px rgba(23,79,147,.08);
+}
+
+.footer-links{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:13px;
+  margin-bottom:0;
+}
+
+.footer-links a{
+  color:#fff !important;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+}
+
+.footer-links a:hover{
+  color:#fff !important;
+  text-decoration:underline;
+}
+
+.footer-sep{
+  color:rgba(255,255,255,.75);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+  .series-top{
+    align-items:flex-start;
+  }
+
+  .series-header h1{
+    font-size:24px;
+    line-height:1.25;
+  }
+
+  .syllabus-note{
+    font-size:10px;
+    line-height:1.4;
+    padding:8px 10px;
+  }
+
+  .details{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .test-list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .test-item{
+    min-height:180px;
+  }
+
+  .series-top{
+    flex-direction:column;
+  }
+
+  .purchase-box{
+    width:100%;
+  }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:550px){
+
+  .container{
+    padding:20px 14px 40px;
+  }
+
+  .series-header{
+    padding:23px 20px;
+  }
+
+  .series-header h1{
+    font-size:24px;
+  }
+
+  .details{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .test-list{
+    grid-template-columns:1fr;
+  }
+
+  .test-item{
+    padding:14px;
+    min-height:auto;
+  }
+
+  .test-info{
+    gap:10px;
+  }
+
+  .action-btn{
+    padding:8px 11px;
+    font-size:12px;
+  }
+
+  .footer{
+    margin:10px 10px 0;
+    max-width:none;
+    min-height:70px;
+    border-radius:12px;
+    padding:18px 14px;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    text-align:left;
+    gap:12px;
+  }
+
+  .footer-links{
+    margin-bottom:0;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="container">
+
+
+<!-- ================= HERO ================= -->
+
+<section class="series-header">
+
+  <div class="series-top">
+
+    <div class="hero-left">
+
+      <div class="series-label">
+        HP Patwari Examination
+      </div>
+
+      <h1>
+        HP Patwari 2026 Mock Test Series
+      </h1>
+
+      <p>
+        Practice with a complete set of HP Patwari mock tests
+        designed to help you prepare for the examination.
+      </p>
+
+      <div class="syllabus-note">
+        ✓ Based on the latest available syllabus for HP Patwari Examination
+      </div>
+
+    </div>
+
+
+    <!-- ================= PURCHASE BOX ================= -->
+
+    <div
+      class="purchase-box"
+      id="purchase-box"
+    >
+
+      <div class="purchase-title">
+        Unlock Full Series
+      </div>
+
+      <div class="purchase-subtitle">
+        Get access to all 10 paid HP Patwari mock tests.
+      </div>
+
+      <div class="purchase-price">
+        ₹149
+      </div>
+
+      <a
+        href="comingsoon.html"
+        class="buy-btn"
+      >
+        Buy Now
+      </a>
+
+      <div class="payment-note">
+        Manual access verification
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= DETAILS ================= -->
+
+  <div class="details">
+
+    <div class="detail">
+      <strong>11</strong>
+      <span>Mock Tests</span>
+    </div>
+
+    <div class="detail">
+      <strong>120</strong>
+      <span>Questions / Test</span>
+    </div>
+
+    <div class="detail">
+      <strong>90 Min</strong>
+      <span>Duration</span>
+    </div>
+
+    <div class="detail">
+      <strong>Hindi + English</strong>
+      <span>Language</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= INFORMATION ================= -->
+
+<div class="info-grid">
+
+
+  <!-- EXAM DETAILS -->
+
+  <div class="info-card">
+
+    <h3>
+      Exam Details
+    </h3>
+
+    <div class="info-row">
+      <span>Total Questions</span>
+      <strong>120</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Maximum Marks</span>
+      <strong>120</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Time Allowed</span>
+      <strong>1 Hour 30 Minutes</strong>
+    </div>
+
+  </div>
+
+
+  <!-- SUBJECTS -->
+
+  <div class="info-card">
+
+    <h3>
+      Subjects Covered
+    </h3>
+
+    <div class="subjects">
+
+      <div class="subject">
+        Social Science
+      </div>
+
+      <div class="subject">
+        Mathematics
+      </div>
+
+      <div class="subject">
+        Science
+      </div>
+
+      <div class="subject">
+        English
+      </div>
+
+      <div class="subject">
+        Hindi
+      </div>
+
+      <div class="subject">
+        Computer / IT
+      </div>
+
+      <div class="subject">
+        General Knowledge
+      </div>
+
+      <div class="subject">
+        Current Affairs
+      </div>
+
+      <div class="subject">
+        Everyday Science
+      </div>
+
+      <div class="subject">
+        Logical Reasoning
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= TEST LIST ================= -->
+
+<section>
+
+  <h2 class="section-title">
+    Mock Tests
+  </h2>
+
+
+  <div class="test-list">
+
+
+    <!-- FREE TEST -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          FREE
+        </div>
+
+        <div>
+
+          <div class="test-name">
+            Free Mock Test
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="free-test-status"
+        class="status free"
+      >
+        FREE
+      </div>
+
+
+      <a
+        id="free-test-action"
+        href="patwari-free-test.html"
+        class="action-btn start-btn"
+      >
+        Start Test
+      </a>
+
+    </div>
+
+
+    <!-- TEST 01 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          01
+        </div>
+
+        <div class="test-name">
+          Mock Test 01
+        </div>
+
+      </div>
+
+      <div
+        id="test01-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test01-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 02 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          02
+        </div>
+
+        <div class="test-name">
+          Mock Test 02
+        </div>
+
+      </div>
+
+      <div
+        id="test02-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test02-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 03 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          03
+        </div>
+
+        <div class="test-name">
+          Mock Test 03
+        </div>
+
+      </div>
+
+      <div
+        id="test03-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test03-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 04 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          04
+        </div>
+
+        <div class="test-name">
+          Mock Test 04
+        </div>
+
+      </div>
+
+      <div
+        id="test04-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test04-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 05 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          05
+        </div>
+
+        <div class="test-name">
+          Mock Test 05
+        </div>
+
+      </div>
+
+      <div
+        id="test05-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test05-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 06 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          06
+        </div>
+
+        <div class="test-name">
+          Mock Test 06
+        </div>
+
+      </div>
+
+      <div
+        id="test06-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test06-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 07 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          07
+        </div>
+
+        <div class="test-name">
+          Mock Test 07
+        </div>
+
+      </div>
+
+      <div
+        id="test07-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test07-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 08 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          08
+        </div>
+
+        <div class="test-name">
+          Mock Test 08
+        </div>
+
+      </div>
+
+      <div
+        id="test08-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test08-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 09 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          09
+        </div>
+
+        <div class="test-name">
+          Mock Test 09
+        </div>
+
+      </div>
+
+      <div
+        id="test09-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test09-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+    <!-- TEST 10 -->
+
+    <div class="test-item">
+
+      <div class="test-info">
+
+        <div class="test-number">
+          10
+        </div>
+
+        <div class="test-name">
+          Mock Test 10
+        </div>
+
+      </div>
+
+      <div
+        id="test10-status"
+        class="status locked"
+      >
+        🔒 LOCKED
+      </div>
+
+      <a
+        id="test10-action"
+        class="action-btn locked-btn"
+        href="#"
+      >
+        Locked
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div>
+    © 2026 HPMockShashtra — Competitive Exam Preparation Platform
+  </div>
+
+  <div class="footer-links">
+
+    <a href="about.html">
+      About
+    </a>
+
+    <span class="footer-sep">
+      |
+    </span>
+
+    <a href="privacy.html">
+      Privacy Policy
+    </a>
+
+    <span class="footer-sep">
+      |
+    </span>
+
+    <a href="terms.html">
+      Terms &amp; Conditions
+    </a>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= FIREBASE ================= -->
+
+<script type="module">
+
+import { auth, db }
+from "./firebase-config.js";
+
+import {
+  onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+  doc,
+  getDoc
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+/* ================= TEST CONFIG ================= */
+
+const TESTS = Array.from(
+  { length:10 },
+  (_,i) => {
+
+    const n =
+      String(i + 1).padStart(2,"0");
+
+    return {
+
+      number:n,
+
+      testId:
+        `patwari_test_${n}`,
+
+      status:
+        document.getElementById(
+          `test${n}-status`
+        ),
+
+      action:
+        document.getElementById(
+          `test${n}-action`
+        ),
+
+      page:
+        `patwari-test-${n}.html`
+
+    };
+
+  }
+);
+
+
+const purchaseBox =
+  document.getElementById(
+    "purchase-box"
+  );
+
+
+const freeTestStatus =
+  document.getElementById(
+    "free-test-status"
+  );
+
+
+const freeTestAction =
+  document.getElementById(
+    "free-test-action"
+  );
+
+
+const FREE_TEST_ID =
+  "patwari_free_test_01";
+
+
+/* ================= FREE TEST ================= */
+
+function showFreeAttempted(){
+
+  if(
+    !freeTestStatus ||
+    !freeTestAction
+  ){
+    return;
+  }
+
+  freeTestStatus.className =
+    "status attempted";
+
+  freeTestStatus.textContent =
+    "✓ ATTEMPTED";
+
+  freeTestAction.className =
+    "action-btn attempted-btn";
+
+  freeTestAction.textContent =
+    "📖 Study Mode";
+
+  freeTestAction.href =
+    `patwari-study-mode.html?test=${FREE_TEST_ID}`;
+
+}
+
+
+/* ================= FREE AVAILABLE ================= */
+
+function showFreeAvailable(){
+
+  if(
+    !freeTestStatus ||
+    !freeTestAction
+  ){
+    return;
+  }
+
+  freeTestStatus.className =
+    "status free";
+
+  freeTestStatus.textContent =
+    "FREE";
+
+  freeTestAction.className =
+    "action-btn start-btn";
+
+  freeTestAction.textContent =
+    "Start Test";
+
+  freeTestAction.href =
+    "patwari-free-test.html";
+
+}
+
+
+/* ================= LOCKED ================= */
+
+function showLocked(test){
+
+  if(
+    !test.status ||
+    !test.action
+  ){
+    return;
+  }
+
+  test.status.className =
+    "status locked";
+
+  test.status.textContent =
+    "🔒 LOCKED";
+
+  test.action.className =
+    "action-btn locked-btn";
+
+  test.action.textContent =
+    "Locked";
+
+  test.action.href =
+    "#";
+
+  test.action.onclick =
+    (event) => {
+
+      event.preventDefault();
+
+    };
+
+}
+
+
+/* ================= UNLOCKED ================= */
+
+function showUnlocked(test){
+
+  if(
+    !test.status ||
+    !test.action
+  ){
+    return;
+  }
+
+  test.status.className =
+    "status free";
+
+  test.status.textContent =
+    "✓ UNLOCKED";
+
+  test.action.className =
+    "action-btn start-btn";
+
+  test.action.textContent =
+    "Start Test";
+
+  test.action.href =
+    test.page;
+
+  test.action.onclick =
+    null;
+
+}
+
+
+/* ================= ATTEMPTED ================= */
+
+function showAttempted(test){
+
+  if(
+    !test.status ||
+    !test.action
+  ){
+    return;
+  }
+
+  test.status.className =
+    "status attempted";
+
+  test.status.textContent =
+    "✓ ATTEMPTED";
+
+  test.action.className =
+    "action-btn attempted-btn";
+
+  test.action.textContent =
+    "📖 Study Mode";
+
+  test.action.href =
+    `patwari-study-mode.html?test=${test.testId}`;
+
+  test.action.onclick =
+    null;
+
+}
+
+
+/* ================= AUTHENTICATION ================= */
+
+onAuthStateChanged(
+  auth,
+  async (user) => {
+
+
+    /*
+      IMPORTANT:
+
+      Patwari Series page बिना Login के भी खुलेगा।
+      बिना Login के Free Test के लिए Login जरूरी होगा।
+      सभी paid tests locked रहेंगे।
+    */
+
+    if(!user){
+
+      /* Free Test पर click करने पर Login page खुलेगा। */
+      if(freeTestAction){
+        freeTestAction.href = "firebase-login.html";
+      }
+
+      /* बिना Login के सभी paid tests locked रहेंगे। */
+      TESTS.forEach(showLocked);
+
+      /* Purchase box public visitor को दिखाई देगा। */
+      if(purchaseBox){
+        purchaseBox.style.display = "block";
+      }
+
+      return;
+
+    }
+
+
+    try{
+
+      /* ==========================
+         FREE TEST CHECK
+      ========================== */
+
+      try{
+
+        const freeAttemptRef =
+          doc(
+            db,
+            "testAttempts",
+            user.uid +
+            "_" +
+            FREE_TEST_ID
+          );
+
+        const freeAttemptSnap =
+          await getDoc(
+            freeAttemptRef
+          );
+
+
+        if(
+          freeAttemptSnap.exists()
+        ){
+
+          showFreeAttempted();
+
+        }
+        else{
+
+          showFreeAvailable();
+
+        }
+
+      }
+      catch(error){
+
+        console.error(
+          "Free test check failed:",
+          error
+        );
+
+        showFreeAvailable();
+
+      }
+
+
+      /* ==========================
+         PATWARI ACCESS ONLY
+      ========================== */
+
+      const accessRef =
+        doc(
+          db,
+          "testAccess",
+          user.uid
+        );
+
+
+      const accessSnap =
+        await getDoc(
+          accessRef
+        );
+
+
+      /*
+        केवल Patwari का access
+        check होगा।
+
+        joaitFullSeries का यहां
+        कोई उपयोग नहीं है।
+      */
+
+      const hasPatwariAccess =
+        accessSnap.exists() &&
+        accessSnap.data()
+          .patwariFullSeries === true;
+
+
+      /* ==========================
+         PURCHASE BOX
+      ========================== */
+
+      if(hasPatwariAccess){
+
+        /*
+          Patwari खरीदी हुई है,
+          इसलिए Buy Now box हट जाएगा।
+        */
+
+        purchaseBox.style.display =
+          "none";
+
+      }
+      else{
+
+        /*
+          Patwari access नहीं है,
+          इसलिए Purchase box दिखेगा।
+        */
+
+        purchaseBox.style.display =
+          "block";
+
+      }
+
+
+      /* ==========================
+         NO PATWARI ACCESS
+      ========================== */
+
+      if(!hasPatwariAccess){
+
+        /*
+          सभी paid tests locked।
+        */
+
+        TESTS.forEach(
+          showLocked
+        );
+
+        return;
+
+      }
+
+
+      /* ==========================
+         PATWARI ACCESS ACTIVE
+      ========================== */
+
+      const attempts = [];
+
+
+      for(
+        const test of TESTS
+      ){
+
+        try{
+
+          const attemptRef =
+            doc(
+              db,
+              "testAttempts",
+              user.uid +
+              "_" +
+              test.testId
+            );
+
+
+          const attemptSnap =
+            await getDoc(
+              attemptRef
+            );
+
+
+          attempts.push(
+            attemptSnap.exists()
+          );
+
+        }
+        catch(error){
+
+          console.error(
+            `Attempt check failed for ${test.testId}:`,
+            error
+          );
+
+          attempts.push(false);
+
+        }
+
+      }
+
+
+      /* ==========================
+         FIRST UNATTEMPTED
+      ========================== */
+
+      const firstUnattempted =
+        attempts.findIndex(
+          done => !done
+        );
+
+
+      /* ==========================
+         SEQUENTIAL UNLOCKING
+      ========================== */
+
+      TESTS.forEach(
+        (test,index) => {
+
+          /*
+            Already attempted
+          */
+
+          if(
+            attempts[index]
+          ){
+
+            showAttempted(test);
+
+          }
+
+          /*
+            First unattempted test
+            becomes available.
+          */
+
+          else if(
+            index === firstUnattempted
+          ){
+
+            showUnlocked(test);
+
+          }
+
+          /*
+            Remaining tests remain locked.
+          */
+
+          else{
+
+            showLocked(test);
+
+          }
+
+        }
+      );
+
+
+    }
+    catch(error){
+
+      console.error(
+        "Patwari access check failed:",
+        error
+      );
+
+
+      /*
+        Security fallback:
+        सभी paid tests locked।
+      */
+
+      TESTS.forEach(
+        showLocked
+      );
+
+
+      purchaseBox.style.display =
+        "block";
+
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>
