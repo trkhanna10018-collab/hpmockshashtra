@@ -493,7 +493,7 @@ body:before{display:block!important;content:"";position:fixed;inset:0;pointer-ev
 import {auth,db} from './firebase-config.js';
 import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
 import {doc,getDoc} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
-import {QUESTIONS} from './fundamentals.js';
+let QUESTIONS=[];
 
 const $=id=>document.getElementById(id);
 
@@ -503,7 +503,78 @@ const TEST_ID=params.get('test') || 'computer_fundamentals_01';
 const TEST_CONFIG={
   computer_fundamentals_01:{
     name:'Computer Fundamentals',
-    practicePage:'paid-computer-fundamentals.html'
+    practicePage:'paid-computer-fundamentals.html',
+    questionFile:'./fundamentals.js'
+  },
+  ms_word_01:{
+    name:'MS Word',
+    practicePage:'paid-ms-word.html',
+    questionFile:'./ms-word.js'
+  },
+  ms_excel_01:{
+    name:'MS Excel',
+    practicePage:'paid-ms-excel.html',
+    questionFile:'./ms-excel.js'
+  },
+  ms_powerpoint_01:{
+    name:'MS PowerPoint',
+    practicePage:'paid-ms-powerpoint.html',
+    questionFile:'./ms-powerpoint.js'
+  },
+  ms_access_01:{
+    name:'MS Access',
+    practicePage:'paid-ms-access.html',
+    questionFile:'./ms-access.js'
+  },
+  dbms_sql_01:{
+    name:'DBMS & SQL',
+    practicePage:'paid-dbms-sql.html',
+    questionFile:'./dbms-sql.js'
+  },
+  computer_networking_01:{
+    name:'Computer Networking',
+    practicePage:'paid-computer-networking.html',
+    questionFile:'./computer-networking.js'
+  },
+  cyber_security_01:{
+    name:'Cyber Security',
+    practicePage:'paid-cyber-security.html',
+    questionFile:'./cyber-security.js'
+  },
+  c_programming_01:{
+    name:'C Programming',
+    practicePage:'paid-c-programming.html',
+    questionFile:'./c-programming.js'
+  },
+  html_01:{
+    name:'HTML',
+    practicePage:'paid-html.html',
+    questionFile:'./html.js'
+  },
+  css_css3_01:{
+    name:'CSS/CSS3',
+    practicePage:'paid-css-css3.html',
+    questionFile:'./css-css3.js'
+  },
+  cloud_computing_01:{
+    name:'Cloud Computing',
+    practicePage:'paid-cloud-computing.html',
+    questionFile:'./cloud-computing.js'
+  },
+  data_structure_01:{
+    name:'Data Structure',
+    practicePage:'paid-data-structure.html',
+    questionFile:'./data-structure.js'
+  },
+  computer_organisation_01:{
+    name:'Computer Organisation & Architecture',
+    practicePage:'paid-computer-organisation-architecture.html',
+    questionFile:'./computer-organisation.js'
+  },
+  operating_system_01:{
+    name:'Operating System',
+    practicePage:'paid-operating-system.html',
+    questionFile:'./operating-system.js'
   }
 };
 
@@ -690,6 +761,9 @@ onAuthStateChanged(auth,async user=>{
     }
 
     $('pageTitle').textContent=`${config.name} — Study Mode`;
+
+    const questionModule=await import(config.questionFile);
+    QUESTIONS=Array.isArray(questionModule.QUESTIONS)?questionModule.QUESTIONS:[];
 
     if(!QUESTIONS.length){
       showError(
