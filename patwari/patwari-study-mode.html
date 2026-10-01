@@ -270,9 +270,9 @@ body{margin:0;background:#eef4fb;color:#172033}
   <div class="footer-inner">
     <div class="copyright">© 2026 HPMockShashtra. All Rights Reserved.</div>
     <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms &amp; Conditions</a>
     </div>
   </div>
 </footer>
@@ -281,7 +281,7 @@ body{margin:0;background:#eef4fb;color:#172033}
 
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-import { auth, db } from "./firebase-config.js";
+import { auth, db } from "../firebase-config.js";
 
 const TEST_ID = new URLSearchParams(window.location.search).get("test")
   || "patwari_free_test_01";
@@ -390,7 +390,7 @@ $("pageTitle").textContent = `${config.name} — Study Mode`;
 onAuthStateChanged(auth, async (u) => {
 
   if(!u){
-    location.href = "firebase-login.html";
+    location.href = "../firebase-login.html";
     return;
   }
 
