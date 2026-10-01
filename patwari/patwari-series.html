@@ -88,7 +88,7 @@ img{display:block;max-width:100%}
 .access-message{font-size:9px;color:#64748b;width:100%;text-align:right}
 
 /* Information cards */
-.exam-details{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 auto 20px;width:min(1000px,calc(100% - 28px))}
+.exam-details{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 auto 20px;width:min(1000px,calc(100% - 28px))}
 .detail-section{background:rgba(255,255,255,.78);border:1px solid #d7e3f4;border-radius:14px;padding:14px;box-shadow:0 8px 20px rgba(20,55,105,.05)}
 .detail-section h3{margin-bottom:9px;color:#2563eb;font-size:10px;font-weight:900;letter-spacing:.4px}
 .detail-row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid #edf2f7;font-size:11px}
@@ -248,7 +248,7 @@ img{display:block;max-width:100%}
   </div>
 
   <div class="details">
-    <div class="detail"><strong>10</strong><span>Paid Tests</span></div>
+    <div class="detail"><strong>9</strong><span>Paid Tests</span></div>
     <div class="detail"><strong>120</strong><span>Questions / Test</span></div>
     <div class="detail"><strong>90 Min</strong><span>Duration</span></div>
     <div class="detail"><strong>Hindi + English</strong><span>Language</span></div>
@@ -260,13 +260,11 @@ img{display:block;max-width:100%}
 <section class="purchase" id="purchase-section">
     <div>
       <h2>Unlock the Full HP Patwari Series</h2>
-      <p>Get access to all 10 HP Patwari mock tests, including full-length practice tests in Hindi and English.</p>
+      <p>Get access to all 9 HP Patwari mock tests, including full-length practice tests in Hindi and English.</p>
     </div>
     <div class="purchase-right">
       <div class="price">₹149</div>
       <a href="../payment.html?product=patwari" class="buy-btn">Buy Now</a>
-      <div class="payment-note">Secure payment • Manual access verification</div>
-      <div class="access-message" id="access-message">Checking access...</div>
     </div>
   </section>
 
@@ -276,14 +274,7 @@ img{display:block;max-width:100%}
     <div class="detail-row"><span>Total Questions</span><strong>120</strong></div>
     <div class="detail-row"><span>Maximum Marks</span><strong>120</strong></div>
     <div class="detail-row"><span>Time Allowed</span><strong>1 Hour 30 Minutes</strong></div>
-  </div>
-  <div class="detail-section">
-    <h3>EXAM PATTERN</h3>
-    <div class="detail-line">Part-A : 85 Questions</div>
-    <div class="detail-line">Part-B : 35 Questions</div>
-    <div class="detail-line"><strong>Total : 120 Questions</strong></div>
-  </div>
-  <div class="detail-section">
+  </div><div class="detail-section">
     <h3>SUBJECTS COVERED</h3>
     <div class="subjects-grid">
       <div>Social Science</div><div>Mathematics</div><div>Science</div><div>English</div>
@@ -386,15 +377,6 @@ img{display:block;max-width:100%}
 </div>
 
 
-<div class="test-item">
-  <div class="test-info">
-    <div class="test-name">Test #10</div>
-  </div>
-  <div id="test10-status" class="status locked">🔒 LOCKED</div>
-  <a id="test10-action" href="#" class="action-btn locked-btn">Locked</a>
-</div>
-
-  </div>
 </section>
 
 </main>
@@ -573,7 +555,7 @@ const accessMessage = document.getElementById("access-message");
     function showLoginRequired() {
       TESTS.forEach(showLocked);
       purchaseSection.style.display = "flex";
-      accessMessage.textContent = "Please log in to check your paid access.";
+      
     }
 
     onAuthStateChanged(auth, async (user) => {
@@ -648,17 +630,15 @@ const accessMessage = document.getElementById("access-message");
         const completedCount = attempts.filter(Boolean).length;
 
         if (completedCount === 10) {
-          accessMessage.textContent = "All 10 HP Patwari mock tests have been attempted.";
+          
         } else {
-          accessMessage.textContent =
-            `${completedCount} of 10 mock tests attempted. Complete each test to unlock the next one.`;
         }
 
       } catch (error) {
         console.error("Access check failed:", error);
         TESTS.forEach(showLocked);
         purchaseSection.style.display = "flex";
-        accessMessage.textContent = "Unable to verify access. Please refresh the page.";
+        
       }
     });
 </script>
