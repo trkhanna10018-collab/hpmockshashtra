@@ -29,20 +29,19 @@ img{display:block;max-width:100%}
 
 /* ================= HOMEPAGE-STYLE FULL-WIDTH HEADER ================= */
 .header{
-  position:sticky;
-  top:0;
+  position:relative;
   z-index:1000;
-  width:100%;
+  width:calc(100% - 36px);
   min-height:78px;
+  margin:18px auto 0;
   padding:8px 28px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:18px;
   background:linear-gradient(135deg,rgba(24,48,86,.92),rgba(54,44,91,.92));
-  border:0;
-  border-bottom:1px solid rgba(255,255,255,.16);
-  border-radius:0 0 18px 18px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:18px;
   box-shadow:0 10px 28px rgba(0,0,0,.20);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
@@ -374,7 +373,7 @@ img{display:block;max-width:100%}
 }
 @media(max-width:620px){
   body{background-attachment:scroll}
-  .header{min-height:68px;padding:7px 12px;border-radius:0 0 14px 14px}
+  .header{width:calc(100% - 18px);min-height:68px;margin:10px auto 0;padding:7px 12px;border-radius:14px}
   .brand img{width:50px;height:50px}
   .brand-name{font-size:18px}
   .tagline{font-size:8px}
@@ -427,7 +426,7 @@ img{display:block;max-width:100%}
 
       <nav class="nav" id="navMenu">
         <a href="joa-series.html">▣&nbsp; JOA (IT)</a>
-        <a href="new-joa-series.html">✦&nbsp; New JOA IT</a>
+        <a href="joa/new-joa-series.html">✦&nbsp; New JOA IT</a>
         <a href="patwari/patwari-series.html">▤&nbsp; Patwari</a>
         <a href="mahapack/joa-mahapack.html">◆&nbsp; MahaPack</a>
 
@@ -514,7 +513,7 @@ img{display:block;max-width:100%}
           <!-- NEW JOA IT — ACCESS: testAccess/{uid}.joaAccess -->
           <article class="card card-new" id="new-joa">
             <!-- JPG BANNER PLACEHOLDER: replace this block with the New JOA JPG when supplied -->
-            <div class="new-series-image" aria-label="New JOA IT banner placeholder">NEW JOA IT</div>
+            <img src="joa/joa-banner.jpg" alt="New JOA IT Mock Test Series" class="series-image new-joa-banner">
 
             <div class="series-body">
               <div class="badges">
@@ -535,7 +534,7 @@ img{display:block;max-width:100%}
                   <span class="free">Free Test Available</span>
                 </div>
                 <div class="card-buttons">
-                  <a href="new-joa-series.html" class="card-btn card-outline">View Details</a>
+                  <a href="joa/new-joa-series.html" class="card-btn card-outline">View Details</a>
                   <a href="payment.html?product=joa-new" id="newJoaBuyBtn" class="card-btn card-primary">Buy Now</a>
                 </div>
               </div>
@@ -628,7 +627,7 @@ img{display:block;max-width:100%}
             <h4>Mock Tests</h4>
             <div class="footer-links">
               <a href="joa-series.html">JOA (IT) Mock Tests</a>
-              <a href="#new-joa">New JOA IT Mock Tests</a>
+              <a href="joa/new-joa-series.html">New JOA IT Mock Tests</a>
               <a href="patwari/patwari-series.html">HP Patwari Mock Tests</a>
               <a href="mahapack/joa-mahapack.html">JOA IT MahaPack</a>
               <a href="#free-tests">Free Test Access</a>
