@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP Patwari Test 02 | HPMockShashtra</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
+body{background:#eef4fb;color:#12234f;min-height:100vh}
+button{font:inherit}
+ .exam-toolbar{width:min(720px,calc(100% - 24px));margin:12px auto 14px;display:grid;grid-template-columns:190px 150px 160px;align-items:center;gap:10px;justify-content:center}
+.timerbar{width:190px;height:54px;margin:0;padding:8px 14px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(135deg,#b91c1c,#dc2626);box-shadow:0 7px 18px rgba(127,29,29,.16);color:#fff}
+.timer-inner{display:flex;align-items:center;gap:10px}.timer-label{font-size:9px;font-weight:900;letter-spacing:.7px;color:#fee2e2}.timer{font-size:22px;font-weight:950;letter-spacing:1.2px;min-width:74px;text-align:center}
+.container{width:min(1000px,calc(100% - 24px));margin:0 auto 40px}
+.status-cards{display:contents}.status-card{width:100%;height:54px;min-height:54px;background:#fff;border:1px solid #dbe5f0;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 5px 14px rgba(20,55,105,.05)}
+.status-card.attempted{grid-column:2;grid-row:1;justify-self:center}.status-card.unattempted{grid-column:3;grid-row:1;justify-self:center}
+.status-circle{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:950}.status-card.attempted .status-circle{background:#dcfce7;color:#166534;border:3px solid #a7f3d0}.status-card.unattempted .status-circle{background:#fff7ed;color:#c2410c;border:3px solid #fed7aa}
+.status-label{font-size:8px;font-weight:900;color:#475569;text-transform:uppercase;letter-spacing:.35px;line-height:1.2}
+.question-card{background:#fff;border:1px solid #d5e1ef;border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(20,55,105,.07)}
+.q-number{font-size:10px;color:#2563eb;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
+.question-en{font-size:17px;font-weight:800;line-height:1.5;color:#12275a}
+.question-hi{font-size:15px;font-weight:700;line-height:1.55;color:#475569;margin-top:8px;padding-bottom:15px;border-bottom:1px solid #e7edf5}
+.options{display:grid;gap:9px;margin-top:16px}
+.option{width:100%;padding:13px 15px;text-align:left;border:1px solid #d6e0eb;border-radius:12px;background:#fff;color:#253b5e;cursor:pointer;display:flex;gap:11px;align-items:flex-start;transition:border-color .15s,background .15s,box-shadow .15s}
+.option:hover{border-color:#8db1e4;background:#f7fbff}.option.selected{border:2px solid #2563eb;background:#e8f1ff;box-shadow:0 0 0 1px rgba(37,99,235,.12),0 5px 14px rgba(37,99,235,.10);color:#0f2f67}.option.selected .option-en{color:#0f2f67}.option.selected .option-hi{color:#36577f}
+.option-letter{width:27px;height:27px;flex:0 0 27px;border-radius:50%;display:grid;place-items:center;background:#e7edf4;color:#334155;font-size:11px;font-weight:900}.option.selected .option-letter{background:#2563eb;color:#fff;box-shadow:0 2px 7px rgba(37,99,235,.28)}
+.option-en{font-size:12px;font-weight:800}.option-hi{font-size:11px;color:#64748b;margin-top:3px;font-weight:600}
+.explanation{display:none;margin-top:15px;padding:11px 13px;border-radius:10px;background:#f1f8ff;border:1px solid #d4e7fa;color:#334155;font-size:11px;line-height:1.5}
+.navigation{display:flex;justify-content:space-between;gap:10px;margin-top:15px}
+.nav-btn,.submit-btn{min-height:40px;padding:0 18px;border:0;border-radius:9px;font-size:11px;font-weight:900;cursor:pointer}
+.nav-btn{background:#e7eef8;color:#1e3a62}.nav-btn.primary{background:linear-gradient(135deg,#2563eb,#5546e8);color:#fff}.submit-btn{background:linear-gradient(135deg,#15803d,#166534);color:#fff}
+.nav-btn:disabled{opacity:.45;cursor:not-allowed}
+.instructions-overlay{position:fixed;inset:0;z-index:100;background:rgba(8,15,30,.94);display:none;align-items:center;justify-content:center;padding:16px}
+.instructions-modal{width:min(560px,100%);background:#fff;border-radius:18px;padding:22px;box-shadow:0 25px 70px rgba(0,0,0,.35)}
+.instructions-modal h2{font-size:21px;color:#102d63}.instructions-modal p{font-size:11px;color:#64748b;margin:5px 0 12px}
+.instructions-list{padding-left:19px;color:#334155;font-size:11px;line-height:1.7}
+.countdown{text-align:center;margin:15px 0 10px;padding:13px;border-radius:12px;background:#f4f8ff;border:1px solid #d5e1ef}
+.countdown-label{font-size:10px;color:#64748b;font-weight:800}.countdown-number{font-size:34px;font-weight:900;color:#2563eb}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.cancel-btn,.start-confirm-btn{min-height:38px;padding:0 16px;border-radius:9px;font-size:10px;font-weight:900;cursor:pointer}
+.cancel-btn{border:1px solid #d5e1ef;background:#fff;color:#475569}.start-confirm-btn{border:0;background:linear-gradient(135deg,#2563eb,#5546e8);color:#fff}
+.lock-screen{display:none;text-align:center;background:#fff;border:1px solid #d5e1ef;border-radius:16px;padding:26px 20px;box-shadow:0 8px 22px rgba(20,55,105,.07);max-width:560px;margin:24px auto}.lock-screen h2{color:#102d63;font-size:20px}.lock-screen p{color:#64748b;font-size:12px;margin-top:7px}.review-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:16px;min-height:40px;padding:0 20px;border:0;border-radius:9px;background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-size:11px;font-weight:900;cursor:pointer;box-shadow:0 6px 16px rgba(37,99,235,.18)}
+.review-btn:hover{filter:brightness(1.04)}
+.loading{text-align:center;padding:35px;color:#64748b;font-weight:800}
+@media(max-width:650px){
+ .exam-toolbar{width:calc(100% - 14px);grid-template-columns:1.15fr 1fr 1fr;gap:5px;margin:8px auto 10px}
+ .timerbar{width:100%;height:48px;padding:6px 6px;border-radius:10px}
+ .timer-inner{gap:4px}.timer{font-size:17px;min-width:52px}.timer-label{font-size:7px}
+ .status-card{width:100%;height:48px;min-height:48px;border-radius:10px;gap:4px}
+ .status-circle{width:31px;height:31px;font-size:11px;border-width:3px!important}.status-label{font-size:7px;letter-spacing:.2px}
+ .container{width:calc(100% - 14px);margin-top:0}
+ .question-card{padding:16px}.question-en{font-size:15px}.question-hi{font-size:13px}
+ .navigation{position:sticky;bottom:8px;background:rgba(238,244,251,.95);padding:7px;border-radius:10px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="exam-toolbar">
+  <div class="timerbar">
+    <div class="timer-inner">
+      <span class="timer-label">TIME LEFT</span>
+      <span class="timer" id="timer">90:00</span>
+    </div>
+  </div>
+
+  <div class="status-card attempted">
+    <div class="status-circle" id="attemptedCount">0</div>
+    <div class="status-label">Attempted</div>
+  </div>
+
+  <div class="status-card unattempted">
+    <div class="status-circle" id="unattemptedCount">120</div>
+    <div class="status-label">Not Attempted</div>
+  </div>
+</div>
+
+<main class="container">
+  <div id="loading" class="loading">Loading test...</div>
+
+  <section id="testArea" style="display:none">
+    <div id="questionCard" class="question-card"></div>
+
+    <div class="navigation">
+      <button class="nav-btn" id="prevBtn">← Previous</button>
+      <button class="nav-btn primary" id="nextBtn">Next →</button>
+      <button class="submit-btn" id="submitBtn">Submit Test</button>
+    </div>
+  </section>
+
+  <section id="lockScreen" class="lock-screen">
+    <h2 id="lockTitle">Test Not Available</h2>
+    <p id="lockMessage">This test cannot be opened right now.</p>
+    <button class="review-btn" id="reviewBtn" style="display:none">Review Test</button>
+  </section>
+</main>
+
+<div class="instructions-overlay" id="instructionsOverlay">
+  <div class="instructions-modal">
+    <h2>Test Instructions</h2>
+    <p>Before starting, please read the instructions carefully.</p>
+    <ol class="instructions-list">
+      <li>This test contains 120 questions.</li>
+      <li>Total time allowed is 90 minutes.</li>
+      <li>Questions are bilingual: English and Hindi.</li>
+      <li>You can move between questions using Previous and Next.</li>
+      <li>Once a question has been answered, its answer cannot be changed.</li>
+      <li>The test timer is saved on the server and continues independently of logout, tab changes or reopening the test.</li>
+      <li>Click <b>Cancel Test</b> if you do not want to start.</li>
+    </ol>
+    <div class="countdown">
+      <div class="countdown-label">TEST WILL START IN</div>
+      <div class="countdown-number" id="startCountdown">5</div>
+    </div>
+    <div class="modal-actions">
+      <button class="cancel-btn" id="cancelStartBtn">Cancel Test</button>
+      <button class="start-confirm-btn" id="startConfirmBtn">Start Test</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { auth, db } from "../firebase-config.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import {
+  doc,getDoc,setDoc,updateDoc,serverTimestamp,Timestamp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+/*
+  REUSABLE TEST ENGINE
+  Copy this HTML for future tests without changing the core code.
+
+  patwari-free-01.html -> patwari_free_01 + ./patwari-free-01.js
+  patwari-test-02.html -> patwari_test_02 + ./patwari-test-02.js
+  patwari-test-03.html -> patwari_test_03 + ./patwari-test-03.js
+*/
+const fileBase = location.pathname.split("/").pop().replace(/\.html$/i,"");
+const testNumberMatch = fileBase.match(/(?:free-|test-)(\d+)$/i);
+const number = testNumberMatch ? String(parseInt(testNumberMatch[1],10)).padStart(2,"0") : "01";
+const isFree = /^patwari-free-01$/i.test(fileBase);
+const TEST_ID = isFree ? "patwari_free_01" : `patwari_test_${number}`;
+const QUESTION_JS = `./${fileBase}.js`;
+
+const TOTAL_TIME_SECONDS = 90 * 60;
+const EXPECTED_QUESTIONS = 120;
+
+let questions = [];
+let currentUser = null;
+let sessionRef = null;
+let attemptRef = null;
+let sessionData = null;
+let answers = {};
+let currentIndex = 0;
+let countdownInterval = null;
+let timerInterval = null;
+let starting = false;
+let submitting = false;
+let allowNavigation = false;
+
+const loading = document.getElementById("loading");
+const testArea = document.getElementById("testArea");
+const lockScreen = document.getElementById("lockScreen");
+const lockMessage = document.getElementById("lockMessage");
+const lockTitle = document.getElementById("lockTitle");
+const reviewBtn = document.getElementById("reviewBtn");
+const examToolbar = document.querySelector(".exam-toolbar");
+const questionCard = document.getElementById("questionCard");
+const timerEl = document.getElementById("timer");
+const attemptedCount = document.getElementById("attemptedCount");
+const unattemptedCount = document.getElementById("unattemptedCount");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const submitBtn = document.getElementById("submitBtn");
+const overlay = document.getElementById("instructionsOverlay");
+const startCountdown = document.getElementById("startCountdown");
+const startConfirmBtn = document.getElementById("startConfirmBtn");
+const cancelStartBtn = document.getElementById("cancelStartBtn");
+
+function showLock(message){
+  loading.style.display="none";
+  testArea.style.display="none";
+  lockScreen.style.display="block";
+  examToolbar.style.display="none";
+  lockTitle.textContent="Test Not Available";
+  lockMessage.textContent=message;
+  reviewBtn.style.display="none";
+}
+
+function showSubmittedResult(correct){
+  loading.style.display="none";
+  testArea.style.display="none";
+  lockScreen.style.display="block";
+  lockTitle.textContent="Test Submitted Successfully";
+  lockMessage.textContent=`Your Score: ${correct}/${questions.length}`;
+  reviewBtn.style.display="inline-flex";
+  examToolbar.style.display="none";
+}
+
+function showTest(){
+  loading.style.display="none";
+  lockScreen.style.display="none";
+  testArea.style.display="block";
+  examToolbar.style.display="grid";
+}
+
+function pathRefs(uid){
+  return {
+    session: doc(
+      db,
+      "users",
+      uid,
+      "patwariSessions",
+      TEST_ID
+    ),
+
+    attempt: doc(
+      db,
+      "users",
+      uid,
+      "patwariAttempts",
+      TEST_ID
+    ),
+
+    previous:
+      TEST_ID === "patwari_free_01"
+        ? null
+        : doc(
+            db,
+            "users",
+            uid,
+            "patwariAttempts",
+            number === "02"
+              ? "patwari_free_01"
+              : `patwari_test_${String(
+                  parseInt(number) - 1
+                ).padStart(2, "0")}`
+          )
+  };
+}
+
+async function importQuestions(){
+  const module = await import(QUESTION_JS);
+  questions = Array.isArray(module.questions) ? module.questions : [];
+  if(!questions.length) throw new Error(`No questions found in ${QUESTION_JS}`);
+}
+
+function validateQuestions(){
+  if(questions.length !== EXPECTED_QUESTIONS){
+    throw new Error(`Expected ${EXPECTED_QUESTIONS} questions, but ${questions.length} were found.`);
+  }
+  for(let i=0;i<questions.length;i++){
+    const q=questions[i];
+    if(!q || typeof q.en!=="string" || typeof q.hi!=="string" || !Array.isArray(q.options) || q.options.length!==4 || !["A","B","C","D"].includes(q.answer)){
+      throw new Error(`Invalid question structure at question ${i+1}.`);
+    }
+    for(const opt of q.options){
+      if(!opt || typeof opt.en!=="string" || typeof opt.hi!=="string") throw new Error(`Invalid option structure at question ${i+1}.`);
+    }
+  }
+}
+
+function remainingSeconds(){
+  if(!sessionData?.startedAt) return TOTAL_TIME_SECONDS;
+  const startMs = sessionData.startedAt.toMillis();
+  return Math.max(0, TOTAL_TIME_SECONDS - Math.floor((Date.now()-startMs)/1000));
+}
+
+function renderTimer(){
+  const sec=remainingSeconds();
+  const m=Math.floor(sec/60).toString().padStart(2,"0");
+  const s=(sec%60).toString().padStart(2,"0");
+  timerEl.textContent=`${m}:${s}`;
+  if(sec<=0 && sessionData?.status==="in_progress") submitTest(true);
+}
+
+function startTimer(){
+  clearInterval(timerInterval);
+  renderTimer();
+  timerInterval=setInterval(renderTimer,1000);
+}
+
+function stopTimer(){clearInterval(timerInterval);timerInterval=null}
+
+function renderQuestion(){
+  const q=questions[currentIndex];
+  const selected=answers[currentIndex];
+  const labels=["A","B","C","D"];
+
+  questionCard.innerHTML=`
+    <div class="q-number">Question ${currentIndex+1}</div>
+    <div class="question-en">${escapeHtml(q.en)}</div>
+    <div class="question-hi">${escapeHtml(q.hi)}</div>
+    <div class="options">
+      ${q.options.map((o,i)=>`
+        <button type="button" class="option ${selected===labels[i]?"selected":""}" data-answer="${labels[i]}">
+          <span class="option-letter">${labels[i]}</span>
+          <span>
+            <div class="option-en">${escapeHtml(o.en)}</div>
+            <div class="option-hi">${escapeHtml(o.hi)}</div>
+          </span>
+        </button>`).join("")}
+    </div>
+    <div class="explanation" id="explanation">${escapeHtml(q.explanation||"")}</div>
+  `;
+
+  questionCard.querySelectorAll(".option").forEach(btn=>{
+    btn.addEventListener("click",()=>selectAnswer(btn.dataset.answer));
+  });
+
+  updateNavigation();
+}
+
+function escapeHtml(value){
+  return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+
+async function selectAnswer(letter){
+  if(sessionData?.status!=="in_progress") return;
+
+  // Once answered, it cannot be changed.
+  if(Object.prototype.hasOwnProperty.call(answers,currentIndex)) return;
+
+  answers[currentIndex]=letter;
+  sessionData.answers={...answers};
+  await updateDoc(sessionRef,{answers:sessionData.answers,currentIndex,updatedAt:serverTimestamp()});
+  renderQuestion();
+  updateProgress();
+}
+
+function updateProgress(){
+  const answered=Object.keys(answers).length;
+  attemptedCount.textContent=answered;
+  unattemptedCount.textContent=Math.max(0,questions.length-answered);
+}
+
+function updateNavigation(){
+  prevBtn.disabled=currentIndex===0;
+  nextBtn.disabled=currentIndex===questions.length-1;
+  submitBtn.style.display=currentIndex===questions.length-1?"inline-flex":"none";
+}
+
+prevBtn.addEventListener("click",()=>{
+  if(currentIndex>0){currentIndex--;renderQuestion();updateProgress();}
+});
+
+nextBtn.addEventListener("click",()=>{
+  if(currentIndex<questions.length-1){currentIndex++;renderQuestion();updateProgress();}
+});
+
+submitBtn.addEventListener("click",()=>submitTest(false));
+reviewBtn.addEventListener("click",()=>{
+  allowNavigation=true;
+  window.location.href=`./patwari-study-mode.html?test=${encodeURIComponent(TEST_ID)}`;
+});
+
+async function createSession(){
+  const refs=pathRefs(currentUser.uid);
+  sessionRef=refs.session;
+  attemptRef=refs.attempt;
+
+  const snap=await getDoc(sessionRef);
+  if(snap.exists()){
+    sessionData=snap.data();
+    answers=sessionData.answers||{};
+    currentIndex=Math.min(sessionData.currentIndex||0,questions.length-1);
+
+    if(sessionData.status==="submitted"){
+      showLock("This test has already been attempted. You cannot attempt it again.");
+      return false;
+    }
+
+    if(sessionData.status==="in_progress"){
+      /*
+       * Valid started session must have startedAt.
+       * If it is missing, show the instruction popup again
+       * instead of starting a broken timer.
+       */
+      if(sessionData.startedAt){
+        showTest();
+        renderQuestion();
+        updateProgress();
+        startTimer();
+        return true;
+      }
+
+      currentIndex = 0;
+      answers = {};
+
+      sessionData = {
+        uid: currentUser.uid,
+        testId: TEST_ID,
+        status: "in_progress",
+        answers: {},
+        currentIndex: 0
+      };
+
+      return "needs_start";
+    }
+  }
+
+  const attemptSnap=await getDoc(attemptRef);
+  if(attemptSnap.exists()){
+    showLock("This test has already been attempted. You cannot attempt it again.");
+    return false;
+  }
+
+  currentIndex=0;answers={};
+  sessionData={uid:currentUser.uid,testId:TEST_ID,status:"in_progress",answers:{},currentIndex:0};
+  return "needs_start";
+}
+
+async function beginTest(){
+  if(starting) return;
+  starting=true;
+  startConfirmBtn.disabled=true;
+  cancelStartBtn.disabled=true;
+
+  let count=5;
+  startCountdown.textContent=count;
+
+  countdownInterval=setInterval(async()=>{
+    count--;
+    startCountdown.textContent=count;
+    if(count<=0){
+      clearInterval(countdownInterval);
+      countdownInterval=null;
+      try{
+        const now=Timestamp.now();
+        sessionData.startedAt=now;
+        sessionData.status="in_progress";
+        sessionData.updatedAt=now;
+        await setDoc(sessionRef,sessionData,{merge:true});
+        overlay.style.display="none";
+        showTest();
+        renderQuestion();updateProgress();startTimer();
+      }catch(e){
+        console.error(e);
+        alert("Test could not be started. Please try again.");
+      }finally{
+        starting=false;
+        startConfirmBtn.disabled=false;
+        cancelStartBtn.disabled=false;
+      }
+    }
+  },1000);
+}
+
+startConfirmBtn.addEventListener("click",beginTest);
+
+cancelStartBtn.addEventListener("click",()=>{
+  clearInterval(countdownInterval);
+  countdownInterval=null;
+  starting=false;
+  window.location.href="../patwari/patwari-series.html";
+});
+
+async function submitTest(auto=false){
+  if(submitting || !sessionData || sessionData.status!=="in_progress") return;
+  submitting=true;
+
+  const answered=Object.keys(answers).length;
+  const correct=questions.reduce((score,q,i)=>score+(answers[i]===q.answer?1:0),0);
+  const attemptedAt=serverTimestamp();
+
+  try{
+    await setDoc(attemptRef,{
+      uid:currentUser.uid,
+      testId:TEST_ID,
+      answers:{...answers},
+      totalQuestions:questions.length,
+      answered,
+      correct,
+      wrong:answered-correct,
+      unattempted:questions.length-answered,
+      score:correct,
+      percentage:(correct/questions.length)*100,
+      attemptedAt,
+      submittedAutomatically:auto
+    });
+
+    await updateDoc(sessionRef,{status:"submitted",submittedAt:attemptedAt,updatedAt:attemptedAt});
+    sessionData.status="submitted";
+    allowNavigation=true;
+    stopTimer();
+    window.location.href=`./patwari-study-mode.html?test=${encodeURIComponent(TEST_ID)}`;
+  }catch(e){
+    console.error(e);
+    alert("Submission failed. Please check your connection and try again.");
+    submitting=false;
+  }
+}
+
+async function checkAccessAndLoad(user){
+  if(!user){showLock("Please login to attempt this test.");return;}
+
+  currentUser=user;
+  const refs=pathRefs(user.uid);
+  sessionRef=refs.session;
+  attemptRef=refs.attempt;
+
+  try{
+    const attemptSnap=await getDoc(attemptRef);
+    if(attemptSnap.exists()){
+      const attemptData=attemptSnap.data() || {};
+      const savedScore = Number.isFinite(Number(attemptData.score))
+        ? Number(attemptData.score)
+        : Number(attemptData.correct || 0);
+      showSubmittedResult(savedScore);
+      return;
+    }
+
+    if(!isFree){
+      const accessSnap=await getDoc(doc(db,"testAccess",user.uid));
+      const access=accessSnap.exists()?accessSnap.data().patwariAccess:null;
+      if(!access?.expiresAt || access.expiresAt.toMillis()<=Date.now()){
+        showLock("Your Patwari access is not active. Please purchase the Patwari series.");
+        return;
+      }
+
+      const previousRef=refs.previous;
+      if(previousRef){
+        const previousSnap=await getDoc(previousRef);
+        if(!previousSnap.exists()){
+          showLock("Complete the previous test first to unlock this test.");
+          return;
+        }
+      }
+    }
+
+    const state=await createSession();
+    if(state==="needs_start"){
+      loading.style.display="none";
+      testArea.style.display="none";
+      lockScreen.style.display="none";
+      overlay.style.display="flex";
+    }
+  }catch(e){
+    console.error(e);
+    showLock("The test could not be loaded. Please refresh and try again.");
+  }
+}
+
+window.addEventListener("beforeunload",e=>{
+  if(sessionData?.status==="in_progress" && !allowNavigation){
+    e.preventDefault();e.returnValue="";
+  }
+}); 
+
+document.addEventListener("visibilitychange",()=>{
+  if(!document.hidden && sessionData?.status==="in_progress"){
+    renderTimer();
+  }
+});
+
+onAuthStateChanged(auth,async user=>{
+  try{
+    await importQuestions();
+    validateQuestions();
+    await checkAccessAndLoad(user);
+  }catch(e){
+    console.error(e);
+    showLock(e.message||"Question bank could not be loaded.");
+  }
+});
+</script>
+</body>
+</html>
