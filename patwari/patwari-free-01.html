@@ -517,7 +517,7 @@ window.addEventListener("beforeunload",e=>{
   if(sessionData?.status==="in_progress"){
     e.preventDefault();e.returnValue="";
   }
-});
+}); 
 
 document.addEventListener("visibilitychange",()=>{
   if(!document.hidden && sessionData?.status==="in_progress"){
