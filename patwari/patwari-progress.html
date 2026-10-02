@@ -599,6 +599,64 @@ main.container{
   }
 }
 
+
+/* =========================================================
+   MOBILE FOOTER ALIGNMENT
+   Homepage footer is left-aligned on small screens.
+   ========================================================= */
+
+@media(max-width:620px){
+
+  .footer > .container{
+    text-align:left !important;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr !important;
+    text-align:left !important;
+    justify-items:stretch !important;
+  }
+
+  .footer-top > div{
+    text-align:left !important;
+    align-items:flex-start !important;
+  }
+
+  .footer h3,
+  .footer h4,
+  .footer p{
+    text-align:left !important;
+  }
+
+  .footer-links{
+    display:grid !important;
+    justify-items:start !important;
+    text-align:left !important;
+  }
+
+  .footer-links a{
+    text-align:left !important;
+  }
+
+  .footer-bottom{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    text-align:left !important;
+  }
+
+  .footer-bottom-links{
+    justify-content:flex-start !important;
+    align-items:flex-start !important;
+    text-align:left !important;
+    flex-wrap:wrap;
+  }
+
+  .footer-bottom-links a{
+    text-align:left !important;
+  }
+}
+
 </style>
 </head>
 
