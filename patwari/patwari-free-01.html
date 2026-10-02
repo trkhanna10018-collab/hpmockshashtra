@@ -8,7 +8,7 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
 body{background:#eef4fb;color:#12234f;min-height:100vh}
 button{font:inherit}
-.timerbar{width:calc(100% - 24px);margin:10px auto 0;min-height:62px;padding:10px 18px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg,#b91c1c,#ef4444);box-shadow:0 10px 28px rgba(127,29,29,.22);color:#fff}
+.timerbar{width:250px;min-height:58px;margin:12px auto 10px;padding:9px 16px;display:flex;align-items:center;justify-content:center;border-radius:15px;background:linear-gradient(135deg,#b91c1c,#ef4444);box-shadow:0 8px 20px rgba(127,29,29,.18);color:#fff}
 .timer-inner{display:flex;align-items:center;gap:12px}
 .timer-label{font-size:10px;font-weight:900;letter-spacing:.8px;color:#fee2e2}
 .timer{font-size:24px;font-weight:950;letter-spacing:1.5px;min-width:82px;text-align:center}
@@ -43,12 +43,14 @@ button{font:inherit}
 .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
 .cancel-btn,.start-confirm-btn{min-height:38px;padding:0 16px;border-radius:9px;font-size:10px;font-weight:900;cursor:pointer}
 .cancel-btn{border:1px solid #d5e1ef;background:#fff;color:#475569}.start-confirm-btn{border:0;background:linear-gradient(135deg,#2563eb,#5546e8);color:#fff}
-.lock-screen{display:none;text-align:center;background:#fff;border:1px solid #d5e1ef;border-radius:16px;padding:40px 20px;box-shadow:0 8px 22px rgba(20,55,105,.07)}
+.lock-screen{display:none;text-align:center;background:#fff;border:1px solid #d5e1ef;border-radius:18px;padding:32px 20px;box-shadow:0 8px 22px rgba(20,55,105,.07)}
 .lock-screen h2{color:#102d63;font-size:22px}.lock-screen p{color:#64748b;font-size:12px;margin-top:7px}
+.review-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;min-height:42px;padding:0 22px;border:0;border-radius:10px;background:linear-gradient(135deg,#2563eb,#5546e8);color:#fff;font-size:11px;font-weight:900;cursor:pointer;box-shadow:0 7px 18px rgba(37,99,235,.18)}
+.review-btn:hover{filter:brightness(1.04)}
 .loading{text-align:center;padding:35px;color:#64748b;font-weight:800}
 @media(max-width:650px){
- .timerbar{width:calc(100% - 12px);min-height:56px;padding:8px 12px}
- .timer{font-size:21px;min-width:72px}.timer-label{font-size:9px}
+ .timerbar{width:220px;min-height:52px;padding:7px 12px;margin-top:10px}
+ .timer{font-size:20px;min-width:68px}.timer-label{font-size:9px}
  .container{width:calc(100% - 14px);margin-top:10px}
  .status-cards{gap:9px}.status-card{width:calc(50% - 5px);min-height:78px;border-radius:15px}
  .status-circle{width:46px;height:46px;font-size:15px}.status-label{font-size:9px}
@@ -92,8 +94,9 @@ button{font:inherit}
   </section>
 
   <section id="lockScreen" class="lock-screen">
-    <h2>Test Not Available</h2>
+    <h2 id="lockTitle">Test Not Available</h2>
     <p id="lockMessage">This test cannot be opened right now.</p>
+    <button class="review-btn" id="reviewBtn" style="display:none">Review Test</button>
   </section>
 </main>
 
@@ -162,6 +165,9 @@ const loading = document.getElementById("loading");
 const testArea = document.getElementById("testArea");
 const lockScreen = document.getElementById("lockScreen");
 const lockMessage = document.getElementById("lockMessage");
+const lockTitle = document.getElementById("lockTitle");
+const reviewBtn = document.getElementById("reviewBtn");
+const timerBar = document.querySelector(".timerbar");
 const questionCard = document.getElementById("questionCard");
 const timerEl = document.getElementById("timer");
 const attemptedCount = document.getElementById("attemptedCount");
@@ -178,7 +184,19 @@ function showLock(message){
   loading.style.display="none";
   testArea.style.display="none";
   lockScreen.style.display="block";
+  lockTitle.textContent="Test Not Available";
   lockMessage.textContent=message;
+  reviewBtn.style.display="none";
+}
+
+function showSubmittedResult(correct){
+  loading.style.display="none";
+  testArea.style.display="none";
+  lockScreen.style.display="block";
+  lockTitle.textContent="Test Submitted Successfully";
+  lockMessage.textContent=`Your Score: ${correct}/${questions.length}`;
+  reviewBtn.style.display="inline-flex";
+  timerBar.style.display="none";
 }
 
 function showTest(){
@@ -330,6 +348,9 @@ nextBtn.addEventListener("click",()=>{
 });
 
 submitBtn.addEventListener("click",()=>submitTest(false));
+reviewBtn.addEventListener("click",()=>{
+  window.location.href="./patwari-study-mode.html";
+});
 
 async function createSession(){
   const refs=pathRefs(currentUser.uid);
@@ -458,7 +479,7 @@ async function submitTest(auto=false){
 
     await updateDoc(sessionRef,{status:"submitted",submittedAt:attemptedAt,updatedAt:attemptedAt});
     stopTimer();
-    showLock(`Test submitted successfully. Score: ${correct}/${questions.length}.`);
+    showSubmittedResult(correct);
   }catch(e){
     console.error(e);
     alert("Submission failed. Please check your connection and try again.");
