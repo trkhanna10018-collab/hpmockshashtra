@@ -657,6 +657,96 @@ main.container{
   }
 }
 
+
+/* =========================================================
+   FOOTER — ALIGN WITH THE FULL-WIDTH PROGRESS CONTAINER
+   Desktop and mobile
+   ========================================================= */
+
+/* The progress content starts at 28px on desktop,
+   so the footer content uses the same left/right edges. */
+.footer > .container,
+.footer-inner{
+  width:calc(100% - 56px) !important;
+  max-width:none !important;
+  margin:0 auto !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.footer-top{
+  width:100%;
+  grid-template-columns:1.55fr 1fr 1fr 1fr !important;
+  gap:40px;
+}
+
+.footer-bottom{
+  width:100%;
+}
+
+/* Keep footer text naturally left aligned. */
+.footer,
+.footer *{
+  text-align:left;
+}
+
+.footer-bottom{
+  align-items:center;
+}
+
+.footer-bottom-links{
+  justify-content:flex-end;
+  margin-left:auto;
+}
+
+/* Mobile: same left/right edges as the mobile progress content. */
+@media(max-width:620px){
+
+  .footer > .container,
+  .footer-inner{
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+    margin:0 auto !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .footer-top{
+    width:100%;
+    grid-template-columns:1fr !important;
+    gap:24px;
+  }
+
+  .footer-top > div{
+    width:100%;
+  }
+
+  .footer h3,
+  .footer h4,
+  .footer p,
+  .footer-links,
+  .footer-links a{
+    text-align:left !important;
+  }
+
+  .footer-bottom{
+    width:100%;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    gap:9px;
+  }
+
+  .footer-bottom-links{
+    width:100%;
+    margin-left:0;
+    justify-content:flex-start !important;
+    align-items:flex-start !important;
+    flex-wrap:wrap;
+    gap:13px;
+  }
+}
+
 </style>
 </head>
 
