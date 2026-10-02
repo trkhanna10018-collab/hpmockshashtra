@@ -185,11 +185,38 @@ function showTest(){
 }
 
 function pathRefs(uid){
-  const base = `users/${uid}/patwari`;
   return {
-    session: doc(db,base,"sessions",TEST_ID),
-    attempt: doc(db,base,"attempts",TEST_ID),
-    previous: TEST_ID==="patwari_free_01" ? null : doc(db,base,"attempts",`patwari_test_${String(parseInt(number)-1).padStart(2,"0")}`)
+    session: doc(
+      db,
+      "users",
+      uid,
+      "patwari",
+      "sessions",
+      TEST_ID
+    ),
+
+    attempt: doc(
+      db,
+      "users",
+      uid,
+      "patwari",
+      "attempts",
+      TEST_ID
+    ),
+
+    previous:
+      TEST_ID === "patwari_free_01"
+        ? null
+        : doc(
+            db,
+            "users",
+            uid,
+            "patwari",
+            "attempts",
+            `patwari_test_${String(
+              parseInt(number) - 1
+            ).padStart(2, "0")}`
+          )
   };
 }
 
@@ -322,9 +349,31 @@ async function createSession(){
     }
 
     if(sessionData.status==="in_progress"){
-      showTest();
-      renderQuestion();updateProgress();startTimer();
-      return true;
+      /*
+       * Valid started session must have startedAt.
+       * If it is missing, show the instruction popup again
+       * instead of starting a broken timer.
+       */
+      if(sessionData.startedAt){
+        showTest();
+        renderQuestion();
+        updateProgress();
+        startTimer();
+        return true;
+      }
+
+      currentIndex = 0;
+      answers = {};
+
+      sessionData = {
+        uid: currentUser.uid,
+        testId: TEST_ID,
+        status: "in_progress",
+        answers: {},
+        currentIndex: 0
+      };
+
+      return "needs_start";
     }
   }
 
