@@ -165,73 +165,6 @@ tbody tr:hover{background:#f8faff}
 @media(max-width:600px){.chart-wrap{height:285px}.header-inner{height:65px;padding:0 14px}.brand img{width:45px;height:45px}.brand-text{font-size:17px}.back-btn{padding:8px 11px;font-size:12px}.container{padding:22px 13px 45px}.page-heading{padding:19px 18px;border-radius:13px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.progress-dashboard-btn{padding:8px 10px;font-size:11px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-card{padding:15px;border-radius:11px}.summary-value{font-size:20px}.summary-label{font-size:10px}.section-header{padding:15px}.section-header h2{font-size:17px}th,td{padding:12px 13px}.totals{justify-content:flex-start;gap:20px;padding:16px}.total-item{min-width:115px}}
 
   
-/* ================= PERFORMANCE INSIGHTS ================= */
-
-.insights-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:15px;
-  margin-top:18px;
-}
-
-.insight-card{
-  background:#fff;
-  border:1px solid #e2e8f0;
-  border-radius:15px;
-  padding:17px 18px;
-  display:flex;
-  align-items:center;
-  gap:13px;
-  box-shadow:0 6px 20px rgba(31,41,55,.055);
-}
-
-.insight-icon{
-  width:40px;
-  height:40px;
-  border-radius:12px;
-  display:grid;
-  place-items:center;
-  background:#eef2ff;
-  color:#4f46e5;
-  font-size:15px;
-  font-weight:900;
-}
-
-.insight-icon.blue{
-  background:#e0f2fe;
-  color:#0284c7;
-}
-
-.insight-icon.gold{
-  background:#fef3c7;
-  color:#d97706;
-}
-
-.insight-card span{
-  display:block;
-  color:#64748b;
-  font-size:11px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.3px;
-}
-
-.insight-card strong{
-  display:block;
-  color:#111827;
-  font-size:21px;
-  font-weight:850;
-  margin-top:2px;
-}
-
-@media(max-width:650px){
-  .insights-grid{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-}
-
-
 /* ================= HOMEPAGE STYLE FOOTER ================= */
 
 .footer{
@@ -423,6 +356,164 @@ tbody tr:hover{background:#f8faff}
   }
 }
 
+
+/* =========================================================
+   FINAL PATWARI PROGRESS — EDGE TO EDGE
+   No site/header navigation; only the compact progress hero.
+   ========================================================= */
+
+html,body{
+  width:100%;
+  min-width:100%;
+}
+
+body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
+
+/* Use the whole browser width. */
+main.container{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:28px 28px 48px !important;
+}
+
+/* Progress hero spans the complete page width. */
+.page-heading{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 0 20px !important;
+}
+
+/* All progress sections span the available width. */
+.summary-grid,
+.analytics-grid,
+.analytics-card,
+.chart-wrap,
+.no-attempts,
+.error-box{
+  width:100% !important;
+  max-width:none !important;
+}
+
+/* Homepage-style footer, full browser width. */
+.footer{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  border-radius:0 !important;
+  background:#020817 !important;
+  box-shadow:none !important;
+}
+
+.footer > .container{
+  width:100%;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.footer-top{
+  padding:42px 0 30px;
+  display:grid;
+  grid-template-columns:1.35fr 1fr 1fr 1fr;
+  gap:35px;
+}
+
+.footer h3,
+.footer h4{
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.footer h3{font-size:17px}
+.footer h4{font-size:13px}
+
+.footer p{
+  font-size:11px;
+  color:#94a3b8;
+  max-width:300px;
+}
+
+.footer-links{
+  display:grid;
+  gap:7px;
+}
+
+.footer-links a{
+  font-size:11px;
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+.footer-links a:hover{color:#fff}
+
+.footer-bottom{
+  min-height:54px;
+  border-top:1px solid #1e293b;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:13px 0;
+  font-size:10px;
+  color:#94a3b8;
+}
+
+.footer-bottom-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:16px;
+}
+
+.footer-bottom a{
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+/* Desktop: cards remain compact but use full width. */
+@media(min-width:1200px){
+  main.container{
+    padding-left:40px !important;
+    padding-right:40px !important;
+  }
+}
+
+@media(max-width:800px){
+  main.container{
+    padding:20px 14px 38px !important;
+  }
+
+  .footer-top{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:620px){
+  main.container{
+    padding:16px 12px 32px !important;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-bottom-links{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+}
+
 </style>
 </head>
 
@@ -495,37 +586,6 @@ tbody tr:hover{background:#f8faff}
 
     </section>
 </div>
-
-    <!-- ================= PERFORMANCE INSIGHTS ================= -->
-
-    <section class="insights-grid" id="insightsSection">
-
-      <div class="insight-card">
-        <div class="insight-icon">%</div>
-        <div>
-          <span>Average Score</span>
-          <strong id="averageScore">—</strong>
-        </div>
-      </div>
-
-      <div class="insight-card">
-        <div class="insight-icon blue">✓</div>
-        <div>
-          <span>Average Accuracy</span>
-          <strong id="averageAccuracy">—</strong>
-        </div>
-      </div>
-
-      <div class="insight-card">
-        <div class="insight-icon gold">Q</div>
-        <div>
-          <span>Questions Attempted</span>
-          <strong id="questionsAttempted">—</strong>
-        </div>
-      </div>
-
-    </section>
-
     <!-- NO ATTEMPTS -->
 
     <div id="noAttempts" style="display:none;">
@@ -727,15 +787,6 @@ const noAttempts =
     const errorMessage =
       document.getElementById("errorMessage");
 
-    const averageScoreEl =
-      document.getElementById("averageScore");
-
-    const averageAccuracyEl =
-      document.getElementById("averageAccuracy");
-
-    const questionsAttemptedEl =
-      document.getElementById("questionsAttempted");
-
 
     /* ================= AUTH ================= */
 
@@ -914,14 +965,6 @@ const noAttempts =
         totalMarks > 0
           ? (totalScore / totalMarks) * 100
           : 0;
-
-      const totalQuestions =
-        tests.reduce(
-          (sum, test) => sum + Number(test.total || 0),
-          0
-        );
-
-      const averageAccuracy = average;
 
 
       const highest =
