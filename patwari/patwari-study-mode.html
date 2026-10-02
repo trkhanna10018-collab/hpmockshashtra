@@ -290,8 +290,6 @@ let attempt = null;
 let answers = {};
 let current = 0;
 
-$("pageTitle").textContent = `${config.name} — Study Mode`;
-
 onAuthStateChanged(auth, async (u) => {
 
   if(!u){
