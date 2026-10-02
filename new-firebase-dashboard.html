@@ -159,68 +159,61 @@ img{display:block;max-width:100%}
 }
 .welcome{
   width:100%;
-  min-height:178px;
-  padding:30px 38px;
-  margin-bottom:16px;
+  min-height:170px;
+  padding:30px 40px;
+  margin-bottom:18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:28px;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,.42);
+  border:1px solid rgba(177,197,224,.95);
   border-radius:20px;
-  background:rgba(255,255,255,.18);
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
-  box-shadow:0 12px 30px rgba(20,55,105,.10);
+  background:linear-gradient(135deg,rgba(248,251,255,.96),rgba(235,243,255,.94));
+  box-shadow:0 14px 32px rgba(20,55,105,.14);
 }
 .welcome-copy{min-width:0}
 .welcome h1{
-  font-size:31px;
+  font-size:32px;
   line-height:1.2;
-  color:#102b61;
-  margin-bottom:8px;
-  letter-spacing:-.4px;
+  color:#122d63;
+  margin-bottom:7px;
+  letter-spacing:-.5px;
+  font-weight:900;
 }
-.welcome h1 span{color:#1f55c9}
-.welcome p{font-size:14px;color:#405777;line-height:1.5}
-.user-email{font-size:11px;color:#60738f;margin-top:7px}
-.welcome-art{display:flex;align-items:center;gap:20px;flex-shrink:0}
-.mountain{font-size:65px;line-height:1;color:#1f55a7;opacity:.58}
-.quote{font-size:13px;line-height:1.65;font-style:italic;color:#173f80;max-width:170px}
-
-.notice{
-  width:100%;
-  min-height:50px;
+.welcome h1 span{color:#2459c9}
+.welcome p{
+  font-size:14px;
+  color:#435b7d;
+  line-height:1.5;
+  font-weight:600;
+}
+.user-email{
+  font-size:11px;
+  color:#647894;
+  margin-top:8px;
+  font-weight:600;
+}
+.welcome-art{
   display:flex;
   align-items:center;
-  overflow:hidden;
-  margin-bottom:18px;
-  border:1px solid rgba(255,255,255,.48);
-  border-radius:11px;
-  background:rgba(255,255,255,.22);
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
-  box-shadow:0 5px 16px rgba(25,50,90,.06);
-}
-.notice-label{
-  height:50px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:0 17px;
+  gap:20px;
   flex-shrink:0;
-  color:#174ea6;
-  background:rgba(255,255,255,.48);
-  border-right:1px solid rgba(255,255,255,.45);
-  font-size:12px;
-  font-weight:850;
 }
-.notice-window{flex:1;overflow:hidden;white-space:nowrap}
-.notice-track{display:inline-block;padding-left:100%;animation:noticeMove 25s linear infinite}
-.notice-item{display:inline-block;padding-right:90px;color:#405777;font-size:12px;font-weight:600}
-.notice-item strong{color:#173b7a}
-@keyframes noticeMove{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.mountain{
+  font-size:65px;
+  line-height:1;
+  color:#245aa8;
+  opacity:.72;
+}
+.quote{
+  font-size:13px;
+  line-height:1.65;
+  font-style:italic;
+  color:#234b88;
+  max-width:170px;
+  font-weight:700;
+}
 
 /* ================= EXAM SERIES ================= */
 .section{
@@ -347,6 +340,8 @@ img{display:block;max-width:100%}
 /* ================= MOBILE ================= */
 @media(max-width:900px){
   .header{padding:8px 18px}
+  .brand{min-width:0}
+  .menu-btn{flex:0 0 42px}
   .nav{display:none}
   .menu-btn{display:block}
   .nav.show{
@@ -373,24 +368,98 @@ img{display:block;max-width:100%}
 }
 @media(max-width:620px){
   body{background-attachment:scroll}
-  .header{width:calc(100% - 18px);min-height:68px;margin:10px auto 0;padding:7px 12px;border-radius:14px}
-  .brand img{width:50px;height:50px}
-  .brand-name{font-size:18px}
-  .tagline{font-size:8px}
+
+  .header{
+    width:calc(100% - 16px);
+    min-height:68px;
+    margin:10px auto 0;
+    padding:7px 10px;
+    border-radius:14px;
+    gap:8px;
+    overflow:visible;
+  }
+
+  .brand{
+    flex:1 1 auto;
+    min-width:0;
+    gap:8px;
+  }
+
+  .brand img{
+    width:46px;
+    height:46px;
+    flex:0 0 46px;
+  }
+
+  .brand-text{
+    min-width:0;
+    overflow:hidden;
+  }
+
+  .brand-name{
+    font-size:16px;
+    line-height:1.05;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .tagline{
+    font-size:7px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .menu-btn{
+    display:grid;
+    place-items:center;
+    flex:0 0 40px;
+    width:40px;
+    height:40px;
+    font-size:19px;
+  }
+
+  .nav.show{
+    top:70px;
+    left:0;
+    width:100%;
+  }
+
   .container{padding:17px 12px 28px}
-  .welcome{padding:22px 18px;align-items:flex-start}
-  .welcome h1{font-size:24px}
-  .welcome p{font-size:12px}
-  .user-email{font-size:10px}
-  .notice-label{padding:0 10px;font-size:10px}
-  .notice-item{font-size:10px;padding-right:55px}
+
+  .welcome{
+    padding:22px 18px;
+    min-height:145px;
+    align-items:flex-start;
+    background:linear-gradient(135deg,rgba(248,251,255,.97),rgba(235,243,255,.95));
+  }
+
+  .welcome h1{
+    font-size:23px;
+    line-height:1.25;
+  }
+
+  .welcome p{
+    font-size:12px;
+    line-height:1.45;
+  }
+
+  .user-email{
+    font-size:10px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
   .section{padding:38px 0 34px}
   .section-title{font-size:27px}
   .section-subtitle{font-size:11px;padding:0 12px}
   .grid{grid-template-columns:1fr;gap:16px}
   .new-series-image{min-height:150px;font-size:21px}
   .new-series-image::after{font-size:8px;margin-left:7px}
-  .series-body{padding:16px}
+  .series-image{height:220px;object-fit:cover}
+  .series-body{padding:12px 14px 13px}
   .series-title{font-size:18px}
   .price-row{align-items:flex-start;flex-direction:column}
   .card-buttons{width:100%;justify-content:stretch}
@@ -456,18 +525,6 @@ img{display:block;max-width:100%}
         </div>
       </section>
 
-
-      <!-- ================= NOTICE ================= -->
-      <section class="notice">
-        <div class="notice-label">📢&nbsp; Latest Notice</div>
-        <div class="notice-window">
-          <div class="notice-track">
-            <span class="notice-item"><strong>New JOA IT Mock Test Series</strong> is now available.</span>
-            <span class="notice-item"><strong>120 questions</strong> with 90 minutes for the New JOA IT tests.</span>
-            <span class="notice-item"><strong>HP Patwari Mock Test Series</strong> is now available with 120 questions.</span>
-          </div>
-        </div>
-      </section>
 
 
       <!-- ================= MOCK TEST SERIES ================= -->
