@@ -3,13 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Leaderboard | HPMockShashtra</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
 
 <style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root{
   --blue:#1677ff;
   --blue-dark:#0754bd;
@@ -17,10 +27,12 @@
   --orange:#f27b21;
   --purple:#7445df;
   --gold:#f5b400;
+
   --bg:#eef5fc;
   --text:#10233f;
   --muted:#64748b;
   --border:#dce7f3;
+
   --content:1160px;
 }
 
@@ -39,19 +51,22 @@ body{
   background:var(--bg);
 }
 
-/* =========================
-   HERO / HEADER
-========================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
   position:relative;
   min-height:470px;
+
   background:
     linear-gradient(
       rgba(5,28,58,.58),
       rgba(5,28,58,.58)
     ),
-    url("./leaderboard-bg.jpg") center/cover no-repeat;
+    url("./leaderboard.jpg") center/cover no-repeat;
+
   color:white;
   overflow:hidden;
 }
@@ -60,20 +75,31 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(2,18,42,.05),
-    rgba(2,18,42,.25)
-  );
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(2,18,42,.04),
+      rgba(2,18,42,.28)
+    );
+
   pointer-events:none;
 }
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .nav{
   position:relative;
   z-index:5;
+
   width:min(var(--content),calc(100% - 32px));
   margin:auto;
+
   height:78px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -82,7 +108,8 @@ body{
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
+
   text-decoration:none;
   color:white;
 }
@@ -90,6 +117,7 @@ body{
 .brand-logo{
   width:58px;
   height:58px;
+
   object-fit:contain;
 }
 
@@ -109,26 +137,34 @@ body{
 
 .brand-tagline{
   margin-top:7px;
-  font-size:12px;
+
+  font-size:11px;
   font-weight:600;
-  letter-spacing:1.2px;
+
+  letter-spacing:1px;
+
   opacity:.9;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
 }
 
 .nav-links a{
   color:white;
   text-decoration:none;
-  padding:11px 14px;
+
+  padding:11px 13px;
+
   border-radius:8px;
-  font-size:13px;
+
+  font-size:12px;
   font-weight:600;
-  opacity:.94;
+
+  opacity:.95;
+
   transition:.2s;
 }
 
@@ -137,63 +173,93 @@ body{
 }
 
 .nav-links a.active{
-  color:#69b0ff;
-  background:rgba(255,255,255,.08);
-  box-shadow:inset 0 -3px 0 #36a0ff;
+  color:#67b0ff;
+
+  background:rgba(255,255,255,.09);
+
+  box-shadow:
+    inset 0 -3px 0 #36a0ff;
 }
 
 .login-btn{
   border:0;
+
   background:white;
   color:#1265d8;
-  padding:12px 18px;
+
+  padding:11px 17px;
+
   border-radius:9px;
+
   font-weight:800;
+  font-size:12px;
+
   cursor:pointer;
-  font-size:13px;
-  box-shadow:0 5px 18px rgba(0,0,0,.14);
+
+  box-shadow:
+    0 5px 18px rgba(0,0,0,.14);
 }
 
 .mobile-menu{
   display:none;
+
   border:0;
+
   background:rgba(255,255,255,.14);
+
   color:white;
+
   border-radius:8px;
-  padding:10px 12px;
-  font-size:20px;
+
+  padding:9px 11px;
+
+  font-size:19px;
 }
 
-/* =========================
+
+/* =========================================================
    HERO TITLE
-========================= */
+========================================================= */
 
 .hero-content{
   position:relative;
   z-index:3;
+
   width:min(var(--content),calc(100% - 32px));
+
   margin:8px auto 0;
+
   text-align:center;
 }
 
 .hero-title{
   display:flex;
+
   align-items:center;
   justify-content:center;
-  gap:13px;
+
+  gap:12px;
+
   margin:20px 0 2px;
 }
 
 .hero-title .trophy{
-  font-size:57px;
-  filter:drop-shadow(0 5px 4px rgba(0,0,0,.25));
+  font-size:55px;
+
+  filter:
+    drop-shadow(
+      0 5px 4px rgba(0,0,0,.25)
+    );
 }
 
 .hero-title h1{
   margin:0;
+
   font-size:48px;
   line-height:1.05;
+
   font-weight:800;
+
   letter-spacing:-2px;
 }
 
@@ -203,93 +269,144 @@ body{
 
 .hero-subtitle{
   margin:10px 0 14px;
-  font-size:17px;
+
+  font-size:16px;
+
   font-weight:500;
 }
 
 .hero-pill{
   display:inline-block;
+
   background:rgba(18,91,178,.8);
-  border:1px solid rgba(255,255,255,.2);
+
+  border:
+    1px solid rgba(255,255,255,.2);
+
   padding:8px 16px;
+
   border-radius:20px;
-  font-size:13px;
+
+  font-size:12px;
   font-weight:700;
 }
 
-/* =========================
+
+/* =========================================================
    MAIN
-========================= */
+========================================================= */
 
 .main{
   position:relative;
   z-index:10;
+
   width:min(var(--content),calc(100% - 32px));
+
   margin:-225px auto 50px;
 }
 
-/* =========================
-   TOP 3 EXAM CARDS
-========================= */
+
+/* =========================================================
+   EXAM CARDS
+========================================================= */
 
 .exam-cards{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:12px;
 }
 
 .exam-card{
   background:white;
+
   border-radius:14px;
+
   overflow:hidden;
-  box-shadow:0 7px 24px rgba(15,45,80,.13);
-  border:1px solid rgba(255,255,255,.7);
+
+  box-shadow:
+    0 7px 24px rgba(15,45,80,.13);
+
+  border:
+    1px solid rgba(255,255,255,.7);
 }
 
 .exam-card-head{
   padding:14px 16px 12px;
+
   color:white;
 }
 
 .exam-card.joa .exam-card-head{
-  background:linear-gradient(135deg,#0879ee,#1476d8);
+  background:
+    linear-gradient(
+      135deg,
+      #0879ee,
+      #1476d8
+    );
 }
 
 .exam-card.patwari .exam-card-head{
-  background:linear-gradient(135deg,#16a960,#42bf73);
+  background:
+    linear-gradient(
+      135deg,
+      #16a960,
+      #42bf73
+    );
 }
 
 .exam-card.police .exam-card-head{
-  background:linear-gradient(135deg,#f36c17,#fa9340);
+  background:
+    linear-gradient(
+      135deg,
+      #f36c17,
+      #fa9340
+    );
 }
 
 .exam-card.jbt .exam-card-head{
-  background:linear-gradient(135deg,#713ce0,#925eea);
+  background:
+    linear-gradient(
+      135deg,
+      #713ce0,
+      #925eea
+    );
 }
 
 .exam-name{
-  font-size:18px;
+  font-size:17px;
   font-weight:800;
 }
 
 .exam-top-text{
   margin-top:3px;
-  font-size:12px;
+
+  font-size:11px;
   font-weight:600;
+
   opacity:.95;
 }
 
 .top-list{
-  padding:9px 14px 8px;
+  padding:8px 13px;
 }
 
 .top-row{
   display:grid;
-  grid-template-columns:35px 1fr auto;
+
+  grid-template-columns:
+    34px 1fr auto;
+
   align-items:center;
+
   gap:7px;
-  min-height:57px;
-  border-bottom:1px solid #edf1f5;
+
+  min-height:55px;
+
+  border-bottom:
+    1px solid #edf1f5;
 }
 
 .top-row:last-child{
@@ -297,27 +414,36 @@ body{
 }
 
 .medal{
-  font-size:25px;
+  font-size:24px;
+
   text-align:center;
 }
 
 .student-name{
-  font-size:12px;
+  font-size:11px;
+
   font-weight:800;
+
   color:#1a2c44;
+
   white-space:nowrap;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
 }
 
 .student-rank{
   margin-top:3px;
+
   font-size:9px;
+
   color:#78889b;
 }
 
 .student-score{
-  font-size:13px;
+  font-size:12px;
+
   font-weight:800;
 }
 
@@ -339,14 +465,25 @@ body{
 
 .view-exam{
   margin:5px 12px 12px;
-  width:calc(100% - 24px);
+
+  width:
+    calc(100% - 24px);
+
   padding:9px 10px;
+
   border-radius:20px;
-  border:1px solid #bdd7f5;
+
+  border:
+    1px solid #bdd7f5;
+
   background:#f6faff;
+
   color:#1268cf;
-  font-size:11px;
+
+  font-size:10px;
+
   font-weight:800;
+
   cursor:pointer;
 }
 
@@ -365,33 +502,57 @@ body{
   border-color:#d3c0fa;
 }
 
-/* =========================
-   USER RANK BAR
-========================= */
+
+/* =========================================================
+   USER RANK
+========================================================= */
 
 .user-rank-card{
   margin-top:14px;
+
   background:white;
-  border:1px solid var(--border);
+
+  border:
+    1px solid var(--border);
+
   border-radius:14px;
+
   min-height:90px;
+
   padding:15px 18px;
+
   display:flex;
+
   align-items:center;
+
   gap:20px;
-  box-shadow:0 5px 18px rgba(15,45,80,.07);
+
+  box-shadow:
+    0 5px 18px rgba(15,45,80,.07);
 }
 
 .user-avatar{
   width:52px;
   height:52px;
+
   border-radius:50%;
-  background:linear-gradient(135deg,#227bf1,#0d58bf);
+
+  background:
+    linear-gradient(
+      135deg,
+      #227bf1,
+      #0d58bf
+    );
+
   color:white;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
-  font-size:27px;
+
+  font-size:26px;
+
   flex:none;
 }
 
@@ -400,38 +561,38 @@ body{
 }
 
 .user-rank-label{
-  font-size:13px;
+  font-size:12px;
   font-weight:800;
 }
 
 .user-rank-number{
   margin-top:3px;
-  font-size:27px;
-  font-weight:800;
-}
 
-.rank-up{
-  color:#16a765;
-  font-size:12px;
+  font-size:26px;
   font-weight:800;
-  margin-left:5px;
 }
 
 .rank-divider{
   width:1px;
   height:50px;
+
   background:#dce5ef;
 }
 
 .rank-exams{
   flex:1;
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
 }
 
 .rank-exam{
   text-align:center;
-  border-right:1px solid #dce5ef;
+
+  border-right:
+    1px solid #dce5ef;
 }
 
 .rank-exam:last-child{
@@ -439,41 +600,64 @@ body{
 }
 
 .rank-exam-name{
-  font-size:11px;
+  font-size:10px;
   font-weight:800;
+}
+
+.rank-exam-name span{
+  font-weight:500;
+  color:#65758a;
 }
 
 .rank-exam-value{
   margin-top:5px;
-  font-size:21px;
+
+  font-size:20px;
+
   font-weight:800;
 }
 
-/* =========================
+
+/* =========================================================
    LOGIN NOTICE
-========================= */
+========================================================= */
 
 .login-notice{
   margin-top:14px;
+
   background:#fffdf5;
-  border:1px solid #f3d77b;
+
+  border:
+    1px solid #f3d77b;
+
   border-radius:13px;
+
   min-height:77px;
+
   padding:13px 17px;
+
   display:flex;
+
   align-items:center;
+
   gap:15px;
 }
 
 .notice-icon{
-  width:43px;
-  height:43px;
+  width:42px;
+  height:42px;
+
   border-radius:50%;
+
   background:#fff1bd;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
-  font-size:22px;
+
+  font-size:21px;
+
   flex:none;
 }
 
@@ -482,50 +666,77 @@ body{
 }
 
 .notice-title{
-  font-size:13px;
+  font-size:12px;
   font-weight:800;
 }
 
 .notice-text{
   margin-top:5px;
-  font-size:11px;
+
+  font-size:10px;
+
   color:#65748a;
 }
 
 .notice-button{
   border:0;
+
   background:#1976ed;
+
   color:white;
-  padding:12px 17px;
+
+  padding:11px 16px;
+
   border-radius:8px;
-  font-size:12px;
+
+  font-size:11px;
+
   font-weight:800;
+
   cursor:pointer;
+
   white-space:nowrap;
 }
 
-/* =========================
-   FILTERS
-========================= */
+
+/* =========================================================
+   FILTER
+========================================================= */
 
 .filter-card{
   margin-top:12px;
+
   background:white;
-  border:1px solid var(--border);
+
+  border:
+    1px solid var(--border);
+
   border-radius:13px;
+
   padding:12px 20px;
+
   display:grid;
-  grid-template-columns:1fr 1fr 1.25fr;
+
+  grid-template-columns:
+    1fr 1fr 1.25fr;
+
   gap:20px;
+
   align-items:end;
-  box-shadow:0 4px 15px rgba(15,45,80,.05);
+
+  box-shadow:
+    0 4px 15px rgba(15,45,80,.05);
 }
 
 .filter-field label{
   display:block;
+
   margin-bottom:6px;
+
   font-size:10px;
+
   font-weight:800;
+
   color:#263c59;
 }
 
@@ -535,108 +746,164 @@ body{
 
 .filter-field select{
   width:100%;
+
   height:38px;
-  border:1px solid #d3e0ed;
+
+  border:
+    1px solid #d3e0ed;
+
   border-radius:8px;
+
   background:#f7faff;
-  padding:0 35px 0 12px;
-  font-size:12px;
+
+  padding:
+    0 35px 0 12px;
+
+  font-size:11px;
+
   font-weight:700;
+
   color:#29405c;
+
   appearance:none;
+
   outline:none;
 }
 
 .filter-field select:focus{
   border-color:#5da0ec;
-  box-shadow:0 0 0 3px rgba(33,119,238,.1);
+
+  box-shadow:
+    0 0 0 3px rgba(33,119,238,.1);
+}
+
+.filter-field select:disabled{
+  opacity:.72;
+
+  cursor:not-allowed;
 }
 
 .select-arrow{
   position:absolute;
+
   right:12px;
   top:50%;
-  transform:translateY(-50%);
+
+  transform:
+    translateY(-50%);
+
   pointer-events:none;
+
   color:#667a91;
 }
 
-.filter-locked select{
-  opacity:.72;
-  cursor:not-allowed;
-}
-
 .filter-message{
-  height:38px;
+  min-height:38px;
+
   display:flex;
+
   align-items:center;
+
   gap:8px;
+
   color:#3e5470;
-  font-size:11px;
+
+  font-size:10px;
+
   font-weight:700;
 }
 
 .filter-message small{
   display:block;
+
   margin-top:2px;
+
   color:#1768c7;
-  font-size:10px;
+
+  font-size:9px;
 }
 
-/* =========================
-   LEADERBOARD TABLE
-========================= */
+
+/* =========================================================
+   LEADERBOARD
+========================================================= */
 
 .board-card{
   margin-top:12px;
+
   background:white;
-  border:1px solid var(--border);
+
+  border:
+    1px solid var(--border);
+
   border-radius:13px;
+
   padding:12px;
-  box-shadow:0 5px 18px rgba(15,45,80,.06);
+
+  box-shadow:
+    0 5px 18px rgba(15,45,80,.06);
+
   overflow:hidden;
 }
 
 .board-header{
   display:flex;
+
   align-items:center;
+
   gap:9px;
-  padding:2px 8px 11px;
+
+  padding:
+    2px 8px 11px;
 }
 
 .board-icon{
   width:27px;
   height:27px;
+
   border-radius:6px;
+
   background:#19a765;
+
   color:white;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
-  font-size:16px;
+
+  font-size:15px;
 }
 
 .board-title{
-  font-size:17px;
+  font-size:16px;
   font-weight:800;
 }
 
 .board-subtitle{
   margin-left:auto;
+
   color:#728399;
-  font-size:10px;
+
+  font-size:9px;
+
   font-weight:600;
 }
 
 .table-wrap{
   overflow-x:auto;
-  border:1px solid #dce6f1;
+
+  border:
+    1px solid #dce6f1;
+
   border-radius:10px;
 }
 
 table{
   width:100%;
+
   min-width:850px;
+
   border-collapse:collapse;
 }
 
@@ -646,18 +913,28 @@ thead{
 
 th{
   padding:9px 10px;
-  font-size:10px;
+
+  font-size:9px;
+
   color:#314865;
+
   font-weight:800;
+
   white-space:nowrap;
+
   text-align:left;
 }
 
 td{
   padding:8px 10px;
-  border-top:1px solid #e3ebf4;
-  font-size:11px;
+
+  border-top:
+    1px solid #e3ebf4;
+
+  font-size:10px;
+
   font-weight:600;
+
   white-space:nowrap;
 }
 
@@ -667,38 +944,29 @@ tbody tr:hover{
 
 .rank-cell{
   width:55px;
+
   text-align:center;
 }
 
 .rank-badge{
   width:25px;
   height:25px;
+
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
+
   border-radius:50%;
+
   background:#f3f7fb;
-  border:1px solid #dce7f2;
-  font-size:11px;
+
+  border:
+    1px solid #dce7f2;
+
+  font-size:10px;
+
   font-weight:800;
-}
-
-.rank-badge.gold{
-  background:#fff0bf;
-  border-color:#ffd35d;
-  color:#9a6900;
-}
-
-.rank-badge.silver{
-  background:#edf1f5;
-  border-color:#c8d2dc;
-  color:#596b7e;
-}
-
-.rank-badge.bronze{
-  background:#ffeadb;
-  border-color:#f1b68b;
-  color:#9a531e;
 }
 
 .name-cell{
@@ -711,13 +979,17 @@ tbody tr:hover{
 
 .you-label{
   margin-left:5px;
+
   color:#1976ed;
-  font-size:9px;
+
+  font-size:8px;
+
   font-weight:800;
 }
 
 .percent{
   font-weight:800;
+
   color:#117d4a;
 }
 
@@ -725,75 +997,112 @@ tbody tr:hover{
   font-weight:800;
 }
 
+
+/* =========================================================
+   STATUS
+========================================================= */
+
 .loading{
   text-align:center;
-  padding:35px;
+
+  padding:30px;
+
   color:#708198;
+
+  font-size:11px;
 }
 
 .empty{
   text-align:center;
-  padding:35px;
+
+  padding:30px;
+
   color:#718197;
-  font-size:12px;
+
+  font-size:11px;
 }
 
 .error{
   text-align:center;
+
   padding:25px;
+
   color:#c23b3b;
-  font-size:12px;
+
+  font-size:11px;
 }
 
-/* =========================
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer{
   background:#020817;
+
   color:#cbd5e1;
+
   margin-top:0;
 }
 
 .footer-inner{
-  width:min(var(--content),calc(100% - 28px));
+  width:
+    min(
+      var(--content),
+      calc(100% - 28px)
+    );
+
   margin:auto;
 }
 
 .footer-top{
   padding:38px 0 28px;
+
   display:grid;
-  grid-template-columns:1.55fr 1fr 1fr 1fr;
+
+  grid-template-columns:
+    1.55fr 1fr 1fr 1fr;
+
   gap:40px;
 }
 
 .footer h3{
   margin:0 0 11px;
+
   color:white;
+
   font-size:18px;
 }
 
 .footer h4{
   margin:0 0 11px;
+
   color:white;
+
   font-size:13px;
 }
 
 .footer p{
   margin:0;
+
   line-height:1.6;
+
   font-size:11px;
 }
 
 .footer-links{
   display:flex;
+
   flex-direction:column;
+
   gap:7px;
 }
 
 .footer-links a{
   color:#aebdd0;
+
   text-decoration:none;
+
   font-size:11px;
 }
 
@@ -802,11 +1111,17 @@ tbody tr:hover{
 }
 
 .footer-bottom{
-  border-top:1px solid #1b293d;
+  border-top:
+    1px solid #1b293d;
+
   min-height:58px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:15px;
 }
 
@@ -816,44 +1131,65 @@ tbody tr:hover{
 
 .footer-bottom-links{
   display:flex;
+
   gap:16px;
 }
 
 .footer-bottom-links a{
   color:#aebdd0;
+
   text-decoration:none;
+
   font-size:10px;
 }
 
-/* =========================
+
+/* =========================================================
    TOAST
-========================= */
+========================================================= */
 
 .toast{
   position:fixed;
+
   right:20px;
   bottom:20px;
+
   z-index:100;
+
   background:#10233f;
+
   color:white;
+
   padding:12px 16px;
+
   border-radius:9px;
-  font-size:12px;
+
+  font-size:11px;
+
   font-weight:700;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-  transform:translateY(120px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+  transform:
+    translateY(120px);
+
   opacity:0;
+
   transition:.25s;
 }
 
 .toast.show{
-  transform:translateY(0);
+  transform:
+    translateY(0);
+
   opacity:1;
 }
 
-/* =========================
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:950px){
 
@@ -874,7 +1210,8 @@ tbody tr:hover{
   }
 
   .exam-cards{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .main{
@@ -882,17 +1219,15 @@ tbody tr:hover{
   }
 
   .filter-card{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .filter-message{
     grid-column:1/-1;
   }
-
-  .rank-exams{
-    grid-template-columns:repeat(4,1fr);
-  }
 }
+
 
 @media(max-width:620px){
 
@@ -911,6 +1246,7 @@ tbody tr:hover{
 
   .brand-tagline{
     font-size:8px;
+
     margin-top:4px;
   }
 
@@ -931,47 +1267,45 @@ tbody tr:hover{
   }
 
   .hero-title .trophy{
-    font-size:40px;
+    font-size:38px;
   }
 
   .hero-title h1{
-    font-size:31px;
-    letter-spacing:-1.2px;
+    font-size:30px;
+
+    letter-spacing:-1px;
   }
 
   .hero-subtitle{
-    font-size:12px;
+    font-size:11px;
   }
 
   .hero-pill{
-    font-size:10px;
+    font-size:9px;
   }
 
   .main{
-    width:calc(100% - 20px);
+    width:
+      calc(100% - 20px);
+
     margin-top:-280px;
   }
 
   .exam-cards{
     grid-template-columns:1fr;
+
     gap:10px;
   }
 
-  .exam-card{
-    border-radius:12px;
-  }
-
-  .top-list{
-    padding:7px 12px;
-  }
-
   .top-row{
-    min-height:49px;
+    min-height:48px;
   }
 
   .user-rank-card{
     flex-wrap:wrap;
+
     gap:11px;
+
     padding:13px;
   }
 
@@ -985,12 +1319,16 @@ tbody tr:hover{
 
   .rank-exams{
     width:100%;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+      repeat(2,1fr);
+
     row-gap:12px;
   }
 
   .rank-exam{
-    border-right:1px solid #dce5ef;
+    border-right:
+      1px solid #dce5ef;
   }
 
   .rank-exam:nth-child(2){
@@ -999,17 +1337,21 @@ tbody tr:hover{
 
   .rank-exam:nth-child(3),
   .rank-exam:nth-child(4){
-    border-top:1px solid #e2e9f1;
+    border-top:
+      1px solid #e2e9f1;
+
     padding-top:10px;
   }
 
   .login-notice{
     align-items:flex-start;
+
     flex-wrap:wrap;
   }
 
   .notice-content{
-    min-width:calc(100% - 60px);
+    min-width:
+      calc(100% - 60px);
   }
 
   .notice-button{
@@ -1018,11 +1360,13 @@ tbody tr:hover{
 
   .filter-card{
     grid-template-columns:1fr;
+
     gap:11px;
   }
 
   .filter-message{
     grid-column:auto;
+
     height:auto;
   }
 
@@ -1031,7 +1375,8 @@ tbody tr:hover{
   }
 
   .board-header{
-    padding:5px 5px 10px;
+    padding:
+      5px 5px 10px;
   }
 
   .board-title{
@@ -1043,77 +1388,137 @@ tbody tr:hover{
   }
 
   .footer-inner{
-    width:calc(100% - 24px);
+    width:
+      calc(100% - 24px);
   }
 
   .footer-top{
     grid-template-columns:1fr;
+
     gap:24px;
   }
 
   .footer-bottom{
     flex-direction:column;
+
     align-items:flex-start;
+
     justify-content:flex-start;
+
     padding:15px 0;
   }
 
   .footer-bottom-links{
     flex-wrap:wrap;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
+
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <section class="hero">
 
   <nav class="nav">
 
-    <a href="../homepage.html" class="brand">
-      <img src="../logo.png" class="brand-logo" alt="HPMockShashtra">
+    <a href="./homepage.html" class="brand">
+
+      <img
+        src="./logo.png"
+        class="brand-logo"
+        alt="HPMockShashtra"
+      >
+
       <div class="brand-text">
+
         <div class="brand-name">
           HPMock<span>Shashtra</span>
         </div>
+
         <div class="brand-tagline">
           PRACTICE • PREPARE • PROGRESS
         </div>
+
       </div>
+
     </a>
 
+
     <div class="nav-links">
-      <a href="../homepage.html">⌂ &nbsp;Home</a>
-      <a href="../homepage.html#mock-tests">▣ &nbsp;Mock Tests</a>
-      <a href="./leaderboard.html" class="active">🏆 &nbsp;Leaderboard</a>
-      <a href="../study-mode.html">▣ &nbsp;Study Material</a>
-      <button class="login-btn" id="navLoginBtn">
+
+      <a href="./homepage.html">
+        ⌂ &nbsp;Home
+      </a>
+
+      <a href="./homepage.html#mock-tests">
+        ▣ &nbsp;Mock Tests
+      </a>
+
+      <a
+        href="./leaderboard.html"
+        class="active"
+      >
+        🏆 &nbsp;Leaderboard
+      </a>
+
+      <a href="./study-mode.html">
+        ▣ &nbsp;Study Material
+      </a>
+
+      <button
+        class="login-btn"
+        id="navLoginBtn"
+      >
         👤 Login / Register
       </button>
+
     </div>
 
-    <button class="mobile-menu" id="mobileLoginBtn">☰</button>
+
+    <button
+      class="mobile-menu"
+      id="mobileLoginBtn"
+    >
+      ☰
+    </button>
 
   </nav>
+
 
   <div class="hero-content">
 
     <div class="hero-title">
-      <span class="trophy">🏆</span>
-      <h1>Overall <span>Leaderboard</span></h1>
+
+      <span class="trophy">
+        🏆
+      </span>
+
+      <h1>
+        Overall <span>Leaderboard</span>
+      </h1>
+
     </div>
+
 
     <div class="hero-subtitle">
       Top Performers Across All Exams on HPMockShashtra
     </div>
 
+
     <div class="hero-pill">
-      Practice Hard &nbsp;•&nbsp; Compete Fair &nbsp;•&nbsp; Be the Next Topper
+      Practice Hard
+      &nbsp;•&nbsp;
+      Compete Fair
+      &nbsp;•&nbsp;
+      Be the Next Topper
     </div>
 
   </div>
@@ -1121,145 +1526,107 @@ tbody tr:hover{
 </section>
 
 
-<!-- =========================
+
+<!-- =========================================================
      MAIN
-========================= -->
+========================================================= -->
 
 <main class="main">
 
-  <!-- TOP 3 CARDS -->
+
+  <!-- =======================================================
+       EXAM TOP 3
+  ======================================================== -->
 
   <section class="exam-cards">
 
-    <div class="exam-card joa" id="joaCard">
+
+    <!-- JOA -->
+
+    <div class="exam-card joa">
+
       <div class="exam-card-head">
-        <div class="exam-name">💻 JOA (IT)</div>
-        <div class="exam-top-text">Top 3 (Overall)</div>
+
+        <div class="exam-name">
+          💻 JOA (IT)
+        </div>
+
+        <div class="exam-top-text">
+          Top 3 (Overall)
+        </div>
+
       </div>
 
-      <div class="top-list" id="joaTop3">
-        <div class="loading">Loading...</div>
+
+      <div
+        class="top-list"
+        id="joaTop3"
+      >
+        <div class="loading">
+          Loading...
+        </div>
       </div>
 
-      <button class="view-exam" data-exam="joa">
+
+      <button
+        class="view-exam"
+        data-exam="joa"
+      >
         View JOA Leaderboard →
       </button>
+
     </div>
 
 
-    <div class="exam-card patwari" id="patwariCard">
+
+    <!-- PATWARI -->
+
+    <div class="exam-card patwari">
+
       <div class="exam-card-head">
-        <div class="exam-name">📄 Patwari</div>
-        <div class="exam-top-text">Top 3 (Overall)</div>
+
+        <div class="exam-name">
+          📄 Patwari
+        </div>
+
+        <div class="exam-top-text">
+          Top 3 (Overall)
+        </div>
+
       </div>
 
-      <div class="top-list" id="patwariTop3">
-        <div class="loading">Loading...</div>
+
+      <div
+        class="top-list"
+        id="patwariTop3"
+      >
+        <div class="loading">
+          Loading...
+        </div>
       </div>
 
-      <button class="view-exam" data-exam="patwari">
+
+      <button
+        class="view-exam"
+        data-exam="patwari"
+      >
         View Patwari Leaderboard →
       </button>
+
     </div>
 
 
-    <div class="exam-card police" id="policeCard">
+
+    <!-- POLICE -->
+
+    <div class="exam-card police">
+
       <div class="exam-card-head">
-        <div class="exam-name">🛡️ Police</div>
-        <div class="exam-top-text">Top 3 (Overall)</div>
-      </div>
 
-      <div class="top-list" id="policeTop3">
-        <div class="loading">Loading...</div>
-      </div>
+        <div class="exam-name">
+          🛡️ Police
+        </div>
 
-      <button class="view-exam" data-exam="police">
-        View Police Leaderboard →
-      </button>
-    </div>
-
-
-    <div class="exam-card jbt" id="jbtCard">
-      <div class="exam-card-head">
-        <div class="exam-name">📚 JBT</div>
-        <div class="exam-top-text">Top 3 (Overall)</div>
-      </div>
-
-      <div class="top-list" id="jbtTop3">
-        <div class="loading">Loading...</div>
-      </div>
-
-      <button class="view-exam" data-exam="jbt">
-        View JBT Leaderboard →
-      </button>
-    </div>
-
-  </section>
-
-
-  <!-- USER RANK -->
-
-  <section class="user-rank-card">
-
-    <div class="user-avatar">
-      👤
-    </div>
-
-    <div class="user-rank-main">
-
-      <div class="user-rank-label">
-        Your Overall Rank
-      </div>
-
-      <div class="user-rank-number" id="overallRank">
-        —
-      </div>
-
-    </div>
-
-    <div class="rank-divider"></div>
-
-    <div class="rank-exams">
-
-      <div class="rank-exam">
-        <div class="rank-exam-name">JOA <span>(Best Rank)</span></div>
-        <div class="rank-exam-value" id="joaUserRank">—</div>
-      </div>
-
-      <div class="rank-exam">
-        <div class="rank-exam-name">Patwari <span>(Best Rank)</span></div>
-        <div class="rank-exam-value" id="patwariUserRank">—</div>
-      </div>
-
-      <div class="rank-exam">
-        <div class="rank-exam-name">Police <span>(Best Rank)</span></div>
-        <div class="rank-exam-value" id="policeUserRank">—</div>
-      </div>
-
-      <div class="rank-exam">
-        <div class="rank-exam-name">JBT <span>(Best Rank)</span></div>
-        <div class="rank-exam-value" id="jbtUserRank">—</div>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- LOGIN NOTICE -->
-
-  <section class="login-notice" id="loginNotice">
-
-    <div class="notice-icon">
-      🔒
-    </div>
-
-    <div class="notice-content">
-
-      <div class="notice-title">
-        Login to use filters and view detailed test-wise leaderboards
-      </div>
-
-      <div class="notice-text">
-        You can still see overall top performers above.
-        Register now to explore test-
+        <div class="exam-top-text">
+          Top 3 (Overall)
+  </div>
