@@ -37,111 +37,353 @@ body{margin:0;background:#eef4fb;color:#172033;min-height:100vh;display:flex;fle
 .page-indicator{font-size:13px;font-weight:800;color:#374151}
 .error{text-align:center;color:#b91c1c}.hidden{display:none!important}
 
-.summary-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:12px;
-  margin-bottom:14px;
+.loading-card{
+  text-align:center;
+  color:#475569;
+  padding:32px 20px;
 }
-.summary-card{
-  background:#fff;
-  border:1px solid #dbe4ef;
-  border-radius:14px;
-  min-height:82px;
-  padding:12px 14px;
+
+.study-hero{
+  position:relative;
+  overflow:hidden;
   display:flex;
   align-items:center;
-  gap:11px;
-  box-shadow:0 4px 14px rgba(15,23,42,.045);
+  justify-content:space-between;
+  gap:22px;
+  margin-bottom:16px;
+  padding:22px 28px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#3f36a8 0%,#5148cf 55%,#625bf0 100%);
+  color:#fff;
+  box-shadow:0 10px 28px rgba(49,46,129,.16);
 }
-.summary-card strong{
-  display:block;
-  color:#172554;
-  font-size:13px;
-  line-height:1.25;
+.study-hero::after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  right:-115px;
+  top:-150px;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
 }
-.summary-card span{
-  display:block;
-  color:#64748b;
-  font-size:10px;
-  font-weight:700;
-  margin-top:3px;
+.study-hero-left{
+  min-width:0;
+  position:relative;
+  z-index:1;
+  flex:1 1 auto;
 }
-.summary-circle{
-  width:44px;
-  height:44px;
+.study-hero h1{
+  margin:0 0 12px;
+  color:#fff;
+  font-size:26px;
+  line-height:1.18;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+.study-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.study-meta span{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.23);
+  border-radius:9px;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+}
+.study-summary{
+  display:grid;
+  grid-template-columns:68px 68px 82px 1fr;
+  align-items:stretch;
+  gap:8px;
+  position:relative;
+  z-index:1;
+  flex:0 0 360px;
+}
+.mini-result,
+.accuracy-result{
+  min-height:76px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:13px;
+  background:rgba(255,255,255,.11);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.mini-result{
+  flex-direction:column;
+  gap:5px;
+}
+.mini-circle{
+  width:36px;
+  height:36px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  flex:0 0 44px;
-  font-size:16px;
+  background:#f8fafc;
+  font-size:13px;
   font-weight:900;
 }
-.correct-card .summary-circle{background:#dcfce7;color:#15803d;border:3px solid #bbf7d0}
-.wrong-card .summary-circle{background:#fee2e2;color:#dc2626;border:3px solid #fecaca}
-.unattempted-card .summary-circle{background:#fff7ed;color:#ea580c;border:3px solid #fed7aa}
+.correct-result .mini-circle{color:#15803d}
+.wrong-result .mini-circle{color:#dc2626}
+.unanswered-result .mini-circle{color:#475569}
+.mini-label{
+  color:#fff;
+  font-size:8px;
+  font-weight:800;
+  line-height:1.1;
+}
+.accuracy-result{
+  justify-content:flex-start;
+  gap:10px;
+  padding:9px 12px;
+  text-align:left;
+}
 .accuracy-ring{
-  width:44px;
-  height:44px;
+  width:52px;
+  height:52px;
   border-radius:50%;
-  background:conic-gradient(#4f46e5 var(--score,0%),#e5e7eb 0);
+  background:conic-gradient(#22c55e var(--score,0%),rgba(255,255,255,.28) 0);
   display:flex;
   align-items:center;
   justify-content:center;
-  flex:0 0 44px;
+  flex:0 0 52px;
   position:relative;
 }
 .accuracy-ring::before{
   content:"";
   position:absolute;
-  width:34px;
-  height:34px;
+  width:39px;
+  height:39px;
   border-radius:50%;
-  background:#fff;
+  background:#423ab0;
 }
 .accuracy-ring span{
   position:relative;
   z-index:1;
-  color:#312e81;
-  font-size:10px;
+  color:#fff;
+  font-size:12px;
   font-weight:900;
   margin:0;
 }
-.score-strip{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:14px;
-  padding:14px 18px;
-}
-.score-strip > div:last-child{text-align:right}
-.score-strip-label{
+.accuracy-details strong{
   display:block;
-  color:#64748b;
+  color:#fff;
+  font-size:22px;
+  line-height:1.05;
+  font-weight:900;
+}
+.accuracy-details span{
+  display:block;
+  color:rgba(255,255,255,.9);
   font-size:10px;
+  font-weight:700;
+  margin-top:4px;
+}
+
+.question-card{
+  padding:22px;
+}
+.question-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.counter{
   font-weight:800;
-  letter-spacing:.05em;
-  margin-bottom:3px;
+  color:#4f46e5;
+  font-size:13px;
 }
-.score-strip strong{
-  color:#172554;
-  font-size:15px;
+.question-status{
+  padding:7px 12px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:800;
+}
+.question-status.correct{background:#dcfce7;color:#166534}
+.question-status.incorrect{background:#fee2e2;color:#b91c1c}
+.question-status.unattempted{
+  background:#e5e7eb;
+  color:#4b5563;
+  border:1px solid #d1d5db;
+}
+.question{
+  font-size:18px;
+  font-weight:750;
+  line-height:1.5;
+  margin-bottom:5px;
+}
+.hindi{
+  font-size:16px;
+  line-height:1.5;
+  color:#374151;
+  margin-bottom:15px;
+}
+.options{
+  display:grid;
+  gap:10px;
+}
+.option{
+  display:flex;
+  gap:11px;
+  align-items:flex-start;
+  border:1px solid #dbe2ea;
+  border-radius:9px;
+  padding:11px 13px;
+  line-height:1.45;
+  background:#fff;
+}
+.option.selected-wrong{
+  border-color:#ef4444;
+  background:#fff1f2;
+}
+.option.correct,
+.option.correct.selected{
+  border-color:#16a34a;
+  background:#dcfce7;
+}
+.option input{
+  margin-top:4px;
+  accent-color:#4f46e5;
+}
+.explanation{
+  margin-top:14px;
+  padding:13px 15px;
+  border-left:4px solid #6366f1;
+  background:#f8fafc;
+  color:#374151;
+  line-height:1.55;
+  border-radius:0 8px 8px 0;
+}
+.controls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-top:16px;
+}
+.btn{
+  border:0;
+  border-radius:9px;
+  padding:11px 18px;
+  font-weight:750;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+}
+.primary{background:#4f46e5;color:#fff}
+.secondary{background:#f3f4f6;color:#374151}
+.primary:disabled,
+.secondary:disabled{opacity:.5;cursor:not-allowed}
+.page-indicator{
+  font-size:13px;
+  font-weight:800;
+  color:#374151;
+}
+.error{
+  text-align:center;
+  color:#b91c1c;
+  padding:30px 20px;
+}
+.hidden{display:none!important}
+
+@media(max-width:1000px){
+  .study-hero{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .study-summary{
+    width:100%;
+    flex:0 0 auto;
+    grid-template-columns:68px 68px 82px 1fr;
+  }
 }
 
-@media(max-width:800px){
-  .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
 @media(max-width:600px){
-  .summary-grid{grid-template-columns:1fr 1fr;gap:9px}
-  .summary-card{padding:10px;min-height:72px}
-  .summary-circle,.accuracy-ring{width:38px;height:38px;flex-basis:38px}
-  .accuracy-ring::before{width:29px;height:29px}
-  .score-strip{align-items:flex-start}
-  .score-strip > div:last-child{text-align:right}
+  .wrap{
+    padding:14px 10px 22px;
+  }
+  .study-hero{
+    padding:18px 15px;
+    gap:14px;
+    border-radius:17px;
+  }
+  .study-hero h1{
+    font-size:21px;
+    line-height:1.2;
+    margin-bottom:10px;
+  }
+  .study-meta{
+    gap:6px;
+  }
+  .study-meta span{
+    padding:6px 9px;
+    font-size:9px;
+  }
+  .study-summary{
+    gap:6px;
+    grid-template-columns:repeat(3,minmax(0,1fr)) 1.5fr;
+  }
+  .mini-result,
+  .accuracy-result{
+    min-height:72px;
+    border-radius:11px;
+  }
+  .mini-circle{
+    width:31px;
+    height:31px;
+    font-size:11px;
+  }
+  .mini-label{
+    font-size:7px;
+  }
+  .accuracy-result{
+    padding:7px;
+    gap:6px;
+  }
+  .accuracy-ring{
+    width:43px;
+    height:43px;
+    flex-basis:43px;
+  }
+  .accuracy-ring::before{
+    width:32px;
+    height:32px;
+  }
+  .accuracy-ring span{
+    font-size:10px;
+  }
+  .accuracy-details strong{
+    font-size:16px;
+  }
+  .accuracy-details span{
+    font-size:7px;
+    white-space:nowrap;
+  }
+  .question-card{
+    padding:17px 14px;
+  }
+  .question{
+    font-size:16px;
+  }
+  .hindi{
+    font-size:14px;
+  }
+  .option{
+    padding:10px 11px;
+    font-size:13px;
+  }
 }
-
 .site-footer{
   width:100%;
   margin:0;
@@ -201,56 +443,47 @@ body{margin:0;background:#eef4fb;color:#172033;min-height:100vh;display:flex;fle
 
 <div class="wrap">
 
-    <div id="loading" class="card">
+  <div id="loading" class="card loading-card">
     Loading your attempted test...
   </div>
 
   <div id="reviewArea" class="hidden">
 
-    <section class="summary-grid">
-      <div class="summary-card correct-card">
-        <div class="summary-circle" id="correctCount">0</div>
-        <div>
-          <strong>Correct</strong>
-          <span>Correct Answers</span>
+    <section class="study-hero">
+      <div class="study-hero-left">
+        <h1 id="studyTestTitle">HP Patwari Free Mock Test — Study Mode</h1>
+        <div class="study-meta">
+          <span>120 Questions</span>
+          <span>Hindi + English</span>
+          <span>Study Mode</span>
         </div>
       </div>
 
-      <div class="summary-card wrong-card">
-        <div class="summary-circle" id="wrongCount">0</div>
-        <div>
-          <strong>Wrong</strong>
-          <span>Wrong Answers</span>
+      <div class="study-summary">
+        <div class="mini-result correct-result">
+          <div class="mini-circle" id="correctCount">0</div>
+          <div class="mini-label">Correct</div>
         </div>
-      </div>
 
-      <div class="summary-card unattempted-card">
-        <div class="summary-circle" id="unattemptedCount">0</div>
-        <div>
-          <strong>Not Attempted</strong>
-          <span>Unanswered</span>
+        <div class="mini-result wrong-result">
+          <div class="mini-circle" id="wrongCount">0</div>
+          <div class="mini-label">Wrong</div>
         </div>
-      </div>
 
-      <div class="summary-card accuracy-card">
-        <div class="accuracy-ring" id="scoreRing">
-          <span id="scoreRingText">0%</span>
+        <div class="mini-result unanswered-result">
+          <div class="mini-circle" id="unattemptedCount">0</div>
+          <div class="mini-label">Not Attempted</div>
         </div>
-        <div>
-          <strong>Accuracy</strong>
-          <span id="percentage">Percentage: 0%</span>
-        </div>
-      </div>
-    </section>
 
-    <section class="score-strip card">
-      <div>
-        <span class="score-strip-label">YOUR SCORE</span>
-        <strong id="score">0/0</strong>
-      </div>
-      <div>
-        <span class="score-strip-label">TEST</span>
-        <strong>${config.name}</strong>
+        <div class="accuracy-result">
+          <div class="accuracy-ring" id="scoreRing">
+            <span id="scoreRingText">0%</span>
+          </div>
+          <div class="accuracy-details">
+            <strong id="score">0/120</strong>
+            <span id="percentage">Percentage: 0%</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -259,11 +492,14 @@ body{margin:0;background:#eef4fb;color:#172033;min-height:100vh;display:flex;fle
         <div class="counter" id="counter"></div>
         <div id="questionStatus" class="question-status"></div>
       </div>
+
       <div class="question" id="questionEn"></div>
       <div class="hindi" id="questionHi"></div>
+
       <div class="options" id="options"></div>
-      <div id="answerBox" class="answer-box hidden" style="display:none!important"></div>
+
       <div id="explanation" class="explanation hidden"></div>
+
       <div class="controls">
         <button class="btn secondary" id="prevBtn">Previous</button>
         <div class="page-indicator" id="pageIndicator"></div>
@@ -437,6 +673,8 @@ const questions = rawQuestions.map(normalizeQuestion).filter(q =>
 );
 
 const $ = id => document.getElementById(id);
+
+$("studyTestTitle").textContent = `${config.name} — Study Mode`;
 
 let user = null;
 let attempt = null;
