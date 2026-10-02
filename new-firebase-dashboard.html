@@ -256,9 +256,9 @@ img{display:block;max-width:100%}
 .card:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(20,55,105,.14)}
 .series-image{
   width:100%;
-  height:auto;
+  height:300px;
   aspect-ratio:auto;
-  object-fit:contain;
+  object-fit:cover;
   object-position:center;
   background:#edf4fb;
   display:block;
@@ -458,17 +458,63 @@ img{display:block;max-width:100%}
   .grid{grid-template-columns:1fr;gap:16px}
   .new-series-image{min-height:150px;font-size:21px}
   .new-series-image::after{font-size:8px;margin-left:7px}
-  .series-image{height:220px;object-fit:cover}
+  /* Mobile: show the complete banner without cropping */
+  .series-image{
+    width:100%;
+    height:auto;
+    aspect-ratio:auto;
+    object-fit:contain;
+    object-position:center;
+    background:#edf4fb;
+  }
   .series-body{padding:12px 14px 13px}
   .series-title{font-size:18px}
   .price-row{align-items:flex-start;flex-direction:column}
   .card-buttons{width:100%;justify-content:stretch}
   .card-btn{flex:1;min-width:0;padding-left:8px;padding-right:8px}
-  .footer{margin:0 -12px -28px}
-  .footer-inner{width:calc(100% - 24px)}
-  .footer-top{grid-template-columns:1fr;gap:24px}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
-  .footer-bottom-links{justify-content:flex-start;flex-wrap:wrap}
+  .footer{
+    margin:0 -12px -28px;
+    width:calc(100% + 24px);
+    overflow:hidden;
+  }
+  .footer-inner{
+    width:100%;
+    padding:0 16px;
+  }
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding-left:0;
+    padding-right:0;
+  }
+  .footer p{
+    max-width:100%;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  .footer-links{
+    width:100%;
+  }
+  .footer-links a{
+    display:block;
+    max-width:100%;
+    overflow-wrap:anywhere;
+  }
+  .footer-bottom{
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .footer-bottom-links{
+    width:100%;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    gap:12px 18px;
+  }
+  .footer-bottom-links a{
+    white-space:nowrap;
+  }
 }
 </style>
 </head>
