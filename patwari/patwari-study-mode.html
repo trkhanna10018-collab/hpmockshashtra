@@ -37,6 +37,111 @@ body{margin:0;background:#eef4fb;color:#172033;min-height:100vh;display:flex;fle
 .page-indicator{font-size:13px;font-weight:800;color:#374151}
 .error{text-align:center;color:#b91c1c}.hidden{display:none!important}
 
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-bottom:14px;
+}
+.summary-card{
+  background:#fff;
+  border:1px solid #dbe4ef;
+  border-radius:14px;
+  min-height:82px;
+  padding:12px 14px;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  box-shadow:0 4px 14px rgba(15,23,42,.045);
+}
+.summary-card strong{
+  display:block;
+  color:#172554;
+  font-size:13px;
+  line-height:1.25;
+}
+.summary-card span{
+  display:block;
+  color:#64748b;
+  font-size:10px;
+  font-weight:700;
+  margin-top:3px;
+}
+.summary-circle{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 44px;
+  font-size:16px;
+  font-weight:900;
+}
+.correct-card .summary-circle{background:#dcfce7;color:#15803d;border:3px solid #bbf7d0}
+.wrong-card .summary-circle{background:#fee2e2;color:#dc2626;border:3px solid #fecaca}
+.unattempted-card .summary-circle{background:#fff7ed;color:#ea580c;border:3px solid #fed7aa}
+.accuracy-ring{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:conic-gradient(#4f46e5 var(--score,0%),#e5e7eb 0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 44px;
+  position:relative;
+}
+.accuracy-ring::before{
+  content:"";
+  position:absolute;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#fff;
+}
+.accuracy-ring span{
+  position:relative;
+  z-index:1;
+  color:#312e81;
+  font-size:10px;
+  font-weight:900;
+  margin:0;
+}
+.score-strip{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:14px;
+  padding:14px 18px;
+}
+.score-strip > div:last-child{text-align:right}
+.score-strip-label{
+  display:block;
+  color:#64748b;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.05em;
+  margin-bottom:3px;
+}
+.score-strip strong{
+  color:#172554;
+  font-size:15px;
+}
+
+@media(max-width:800px){
+  .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .summary-grid{grid-template-columns:1fr 1fr;gap:9px}
+  .summary-card{padding:10px;min-height:72px}
+  .summary-circle,.accuracy-ring{width:38px;height:38px;flex-basis:38px}
+  .accuracy-ring::before{width:29px;height:29px}
+  .score-strip{align-items:flex-start}
+  .score-strip > div:last-child{text-align:right}
+}
+
 .site-footer{
   width:100%;
   margin:0;
@@ -101,7 +206,55 @@ body{margin:0;background:#eef4fb;color:#172033;min-height:100vh;display:flex;fle
   </div>
 
   <div id="reviewArea" class="hidden">
-<div class="card question-card">
+
+    <section class="summary-grid">
+      <div class="summary-card correct-card">
+        <div class="summary-circle" id="correctCount">0</div>
+        <div>
+          <strong>Correct</strong>
+          <span>Correct Answers</span>
+        </div>
+      </div>
+
+      <div class="summary-card wrong-card">
+        <div class="summary-circle" id="wrongCount">0</div>
+        <div>
+          <strong>Wrong</strong>
+          <span>Wrong Answers</span>
+        </div>
+      </div>
+
+      <div class="summary-card unattempted-card">
+        <div class="summary-circle" id="unattemptedCount">0</div>
+        <div>
+          <strong>Not Attempted</strong>
+          <span>Unanswered</span>
+        </div>
+      </div>
+
+      <div class="summary-card accuracy-card">
+        <div class="accuracy-ring" id="scoreRing">
+          <span id="scoreRingText">0%</span>
+        </div>
+        <div>
+          <strong>Accuracy</strong>
+          <span id="percentage">Percentage: 0%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="score-strip card">
+      <div>
+        <span class="score-strip-label">YOUR SCORE</span>
+        <strong id="score">0/0</strong>
+      </div>
+      <div>
+        <span class="score-strip-label">TEST</span>
+        <strong>${config.name}</strong>
+      </div>
+    </section>
+
+    <div class="card question-card">
       <div class="question-head">
         <div class="counter" id="counter"></div>
         <div id="questionStatus" class="question-status"></div>
@@ -290,6 +443,7 @@ let attempt = null;
 let answers = {};
 let current = 0;
 
+
 onAuthStateChanged(auth, async (u) => {
 
   if(!u){
@@ -302,46 +456,20 @@ onAuthStateChanged(auth, async (u) => {
   try{
 
     /*
-      New structure:
-      users/{uid}/patwari/attempts/{testId}
-
-      Legacy/older deployed test:
+      Current Patwari test engine stores submitted attempts at:
       users/{uid}/patwariAttempts/{testId}
 
-      Try the new structure first. If the currently deployed rules/page
-      still use the older structure, fall back to it so Study Mode can
-      read an already-submitted attempt.
+      This is a valid Firestore document path (4 segments).
     */
-    let snap = null;
+    const attemptRef = doc(
+      db,
+      "users",
+      user.uid,
+      "patwariAttempts",
+      TEST_ID
+    );
 
-    try{
-      const newAttemptRef = doc(
-        db,
-        "users",
-        user.uid,
-        "patwari",
-        "attempts",
-        TEST_ID
-      );
-      snap = await getDoc(newAttemptRef);
-    }catch(newPathError){
-      console.warn("New Patwari attempt path could not be read:", newPathError);
-    }
-
-    if(!snap || !snap.exists()){
-      try{
-        const legacyAttemptRef = doc(
-          db,
-          "users",
-          user.uid,
-          "patwariAttempts",
-          TEST_ID
-        );
-        snap = await getDoc(legacyAttemptRef);
-      }catch(legacyPathError){
-        console.warn("Legacy Patwari attempt path could not be read:", legacyPathError);
-      }
-    }
+    const snap = await getDoc(attemptRef);
 
     if(!snap || !snap.exists()){
       $("loading").classList.add("hidden");
