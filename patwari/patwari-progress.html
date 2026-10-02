@@ -514,6 +514,91 @@ main.container{
   }
 }
 
+
+/* ================= LOGIN-TO-TRACK PROGRESS ================= */
+
+.login-prompt{
+  min-height:360px;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px 20px;
+}
+
+.login-prompt-icon{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  margin-bottom:12px;
+  background:#eef2ff;
+  color:#4f46e5;
+  font-size:20px;
+  font-weight:900;
+}
+
+.login-prompt h3{
+  margin:0;
+  color:#172554;
+  font-size:18px;
+  font-weight:850;
+}
+
+.login-prompt p{
+  max-width:450px;
+  margin:7px auto 17px;
+  color:#64748b;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.login-prompt-btn{
+  min-height:39px;
+  padding:0 17px;
+  border-radius:9px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  background:linear-gradient(135deg,#2563eb,#5546e8);
+  box-shadow:0 7px 16px rgba(37,99,235,.20);
+  font-size:11px;
+  font-weight:900;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.login-prompt-btn:hover{
+  transform:translateY(-1px);
+}
+
+.chart-wrap.logged-out{
+  min-height:360px;
+}
+
+.chart-wrap.logged-out #performanceChart{
+  display:none;
+}
+
+@media(max-width:600px){
+  .login-prompt{
+    min-height:285px;
+    padding:24px 15px;
+  }
+
+  .login-prompt h3{
+    font-size:16px;
+  }
+
+  .login-prompt p{
+    font-size:11px;
+  }
+}
+
 </style>
 </head>
 
@@ -578,9 +663,26 @@ main.container{
           <span class="analytics-icon">↗</span>
         </div>
 
-        <div class="chart-wrap">
+        <div class="chart-wrap" id="chartWrap">
+
+          <div class="login-prompt" id="loginPrompt" style="display:none;">
+            <div class="login-prompt-icon">↗</div>
+
+            <h3>Login to Track Your Progress</h3>
+
+            <p>
+              Sign in to view your test attempts, scores and performance
+              across the Patwari mock test series.
+            </p>
+
+            <a href="../firebase-login.html" class="login-prompt-btn">
+              Login to View Progress →
+            </a>
+          </div>
+
           <svg id="performanceChart" viewBox="0 0 1100 360" preserveAspectRatio="none" role="img"
                aria-label="Performance overview chart"></svg>
+
         </div>
       </div>
 
@@ -787,6 +889,12 @@ const noAttempts =
     const errorMessage =
       document.getElementById("errorMessage");
 
+    const loginPrompt =
+      document.getElementById("loginPrompt");
+
+    const chartWrap =
+      document.getElementById("chartWrap");
+
 
     /* ================= AUTH ================= */
 
@@ -794,9 +902,29 @@ const noAttempts =
 
       if (!user) {
 
-        window.location.href = "firebase-login.html";
+        /*
+          Progress page remains public.
+          Logged-out users see the page and a professional
+          login prompt instead of being redirected.
+        */
+
+        if (loginPrompt) {
+          loginPrompt.style.display = "flex";
+        }
+
+        if (chartWrap) {
+          chartWrap.classList.add("logged-out");
+        }
 
         return;
+      }
+
+      if (loginPrompt) {
+        loginPrompt.style.display = "none";
+      }
+
+      if (chartWrap) {
+        chartWrap.classList.remove("logged-out");
       }
 
       await loadProgress(user.uid);
