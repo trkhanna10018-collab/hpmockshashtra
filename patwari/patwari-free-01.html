@@ -481,7 +481,7 @@ async function submitTest(auto=false){
     sessionData.status="submitted";
     allowNavigation=true;
     stopTimer();
-    showSubmittedResult(correct);
+    window.location.href="./patwari-study-mode.html";
   }catch(e){
     console.error(e);
     alert("Submission failed. Please check your connection and try again.");
