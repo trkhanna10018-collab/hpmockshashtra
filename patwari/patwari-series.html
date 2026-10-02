@@ -940,7 +940,7 @@ onAuthStateChanged(auth, updateHeader);
       freeTestStatus.textContent = "✓ ATTEMPTED";
 
       freeTestAction.className = "action-btn attempted-btn";
-      freeTestAction.textContent = "📖 Study Mode";
+      freeTestAction.textContent = "Review Test";
       freeTestAction.removeAttribute("target");
       freeTestAction.href = `patwari-study-mode.html?test=${FREE_TEST_ID}`;
       freeTestAction.onclick = null;
@@ -1019,7 +1019,7 @@ onAuthStateChanged(auth, updateHeader);
       test.status.textContent = "✓ ATTEMPTED";
 
       test.action.className = "action-btn attempted-btn";
-      test.action.textContent = "📖 Study Mode";
+      test.action.textContent = "Review Test";
       test.action.removeAttribute("target");
       test.action.href = `patwari-study-mode.html?test=${test.testId}`;
       test.action.onclick = null;
