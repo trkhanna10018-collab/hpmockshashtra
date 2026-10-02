@@ -7,9 +7,9 @@
 
 <style>
 *{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
-body{margin:0;background:#eef4fb;color:#172033}
-.wrap{max-width:1180px;margin:24px auto;padding:0 18px 12px}
-.top{background:linear-gradient(135deg,#3730a3,#6366f1);color:#fff;border-radius:16px;padding:25px 28px;margin-bottom:16px;box-shadow:0 8px 25px rgba(67,56,202,.15)}
+body{margin:0;background:#f4f6f9;color:#1f2937;min-height:100vh;display:flex;flex-direction:column}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:24px 24px 18px;flex:1}
+.top{background:#fff;color:#172033;border:1px solid #e5e7eb;border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 5px 18px rgba(15,23,42,.06)}
 .top-content{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .top-info{min-width:0}
 .top-summary{
@@ -86,7 +86,7 @@ body{margin:0;background:#eef4fb;color:#172033}
   width:43px;
   height:43px;
   border-radius:50%;
-  background:#3730a3;
+  background:#fff;
 }
 .score-ring span{
   position:relative;
@@ -109,10 +109,10 @@ body{margin:0;background:#eef4fb;color:#172033}
   font-weight:700;
 }
 
-.top h1{margin:0 0 7px;font-size:25px}
-.top p{margin:0 0 16px;opacity:.92}
+.top h1{margin:0 0 7px;font-size:24px;color:#111827}
+.top p{margin:0 0 16px;color:#64748b}
 .meta{display:flex;gap:9px;flex-wrap:wrap}
-.pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.14);padding:7px 11px;border-radius:8px;font-size:12px;font-weight:700}
+.pill{background:#f1f5f9;border:1px solid #e2e8f0;color:#475569;padding:7px 11px;border-radius:8px;font-size:12px;font-weight:700}
 .card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.055)}
 .score{display:flex;align-items:center;margin-bottom:14px;padding:14px 18px;min-height:74px}
 .score-main{display:flex;align-items:center;gap:18px}
@@ -142,7 +142,7 @@ body{margin:0;background:#eef4fb;color:#172033}
 .error{text-align:center;color:#b91c1c}.hidden{display:none!important}
 
 .site-footer{
-  width:calc(100% - 36px);
+  width:calc(100% - 48px);
   max-width:1144px;
   margin:0 auto 16px;
   background:linear-gradient(135deg,#1e3a8a,#4f46e5);
@@ -169,7 +169,7 @@ body{margin:0;background:#eef4fb;color:#172033}
 .footer-inner{padding:15px 17px;flex-direction:column;align-items:flex-start;gap:10px}
 .footer-links{gap:12px}
 
-.wrap{margin:16px auto;padding:0 12px 8px}
+.wrap{margin:0 auto;padding:16px 12px 12px;width:100%}
 .top{padding:18px}
 .top-content{flex-direction:column;align-items:stretch;gap:14px}
 .top-info{width:100%}
@@ -187,10 +187,52 @@ body{margin:0;background:#eef4fb;color:#172033}
 .question-card{padding:16px}.question-head{align-items:flex-start}.question{font-size:18px}.hindi{font-size:16px}
 .controls{flex-direction:column}.btn{width:100%;text-align:center}.page-indicator{order:-1}
 }
+
+/* ================= HOMEPAGE STYLE HEADER ================= */
+.topbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);border-bottom:1px solid #e5e7eb;box-shadow:0 4px 18px rgba(15,23,42,.07);backdrop-filter:blur(10px)}
+.navbar{max-width:1240px;margin:auto;min-height:72px;padding:10px 24px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#111827;flex-shrink:0}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand-name{font-size:19px;font-weight:900;line-height:1.05;color:#111827}.brand-name span{color:#4f46e5}
+.brand-tagline{display:block;margin-top:3px;font-size:9px;color:#64748b;font-weight:700;letter-spacing:.2px}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:22px}.nav-links a{color:#334155;text-decoration:none;font-size:12px;font-weight:700}.nav-links a:hover{color:#4338ca}
+.header-actions{display:flex;align-items:center;gap:9px}.maha-btn,.login-btn,.join-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;white-space:nowrap;font-size:11px;font-weight:800;border-radius:8px;padding:9px 13px}.maha-btn{color:#4338ca;border:1px solid #c7d2fe;background:#eef2ff}.login-btn{background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff}.join-btn{background:#fff;color:#4338ca;border:1px solid #c7d2fe}
+.user-area{display:flex;align-items:center;gap:7px}.user-round{width:30px;height:30px;border-radius:50%;background:#eef2ff;color:#4338ca;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px}.user-name{font-size:11px;font-weight:800;color:#334155;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.logout-btn{border:1px solid #e2e8f0;background:#fff;border-radius:8px;padding:8px 10px;font-size:11px;font-weight:800;color:#475569;cursor:pointer}
+.hamburger-btn{display:none;border:1px solid #e2e8f0;background:#fff;border-radius:8px;width:40px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:4px}.hamburger-btn span{display:block;width:18px;height:2px;background:#334155;border-radius:2px}
+.mobile-menu{display:none}
+@media(max-width:900px){.navbar{padding:8px 14px;min-height:64px;gap:12px}.brand img{width:42px;height:42px}.brand-name{font-size:17px}.brand-tagline{font-size:8px}.nav-links,.maha-btn{display:none}.header-actions{margin-left:auto}.header-actions .join-btn{display:none}.hamburger-btn{display:flex}.mobile-menu{position:absolute;left:12px;right:12px;top:68px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,.12);padding:12px;flex-direction:column;gap:4px}.mobile-menu a,.mobile-menu button{display:block;padding:11px 10px;text-decoration:none;color:#334155;font-size:12px;font-weight:800;border:0;background:transparent;text-align:left;border-radius:8px}.mobile-menu a:hover,.mobile-menu button:hover{background:#f8fafc}.mobile-menu.open{display:flex}}
+
 </style>
 </head>
 
 <body>
+
+<header class="topbar">
+  <div class="navbar">
+    <a href="../homepage.html" class="brand">
+      <img src="../logo.png" alt="HPMockShashtra Logo">
+      <div><div class="brand-name">HP<span>Mock</span>Shashtra</div><span class="brand-tagline">Prepare Today, Serve Tomorrow</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../homepage.html">Mock Tests</a>
+      <a href="../homepage.html#resources">Free Tests</a>
+      <a href="../about.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../mahapack/joa-mahapack.html" class="maha-btn">JOA IT Maha Pack</a>
+      <a href="../firebase-login.html" class="login-btn" id="loginBtn">Login</a>
+      <div class="user-area" id="userArea" style="display:none"><span class="user-round" id="userNameRound">U</span><span class="user-name" id="userNameText">User</span><button type="button" class="logout-btn" id="logoutBtn">Logout</button></div>
+      <a href="../firebase-signup.html" class="join-btn" id="joinBtn">Join Free</a>
+      <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../homepage.html">Mock Tests</a><a href="../homepage.html#resources">Free Tests</a><a href="../about.html">Resources</a><a href="../about.html">About</a><a href="../mahapack/joa-mahapack.html">JOA IT Maha Pack</a><a href="../firebase-login.html" id="mobileLoginBtn">Login</a><a href="../firebase-signup.html" id="mobileJoinBtn">Join Free</a>
+      <div id="mobileUserArea" style="display:none"><div id="mobileUserName"></div><button type="button" id="mobileLogoutBtn">Logout</button></div>
+    </div>
+  </div>
+</header>
+
 
 
 
@@ -279,7 +321,7 @@ body{margin:0;background:#eef4fb;color:#172033}
 
 <script type="module">
 
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 import { auth, db } from "../firebase-config.js";
 
@@ -385,7 +427,19 @@ onAuthStateChanged(auth, async (u) => {
       TEST_ID
     );
 
-    const snap = await getDoc(attemptRef);
+    let snap = await getDoc(attemptRef);
+
+    /* Backward compatibility for attempts created by an older deployed test page.
+       New tests always use users/{uid}/patwari/attempts/{testId}. */
+    if(!snap.exists()){
+      try{
+        const legacyRef = doc(db,"users",user.uid,"patwariAttempts",TEST_ID);
+        const legacySnap = await getDoc(legacyRef);
+        if(legacySnap.exists()) snap = legacySnap;
+      }catch(legacyError){
+        console.warn("Legacy attempt lookup skipped:", legacyError);
+      }
+    }
 
     if(!snap.exists()){
       $("loading").classList.add("hidden");
@@ -401,10 +455,7 @@ onAuthStateChanged(auth, async (u) => {
     }
 
     attempt = snap.data();
-
-    if(attempt.testId !== TEST_ID){
-      throw new Error("Invalid test record for this Study Mode.");
-    }
+    /* Older attempt documents may not have testId; the document path already identifies the test. */
 
     answers = attempt.answers || {};
     current = 0;
@@ -438,8 +489,8 @@ function render(){
   }
 
   const q = questions[current];
-  const selected = answers[current];
-  const correct = q.answer;
+  const selected = answers[current] ?? answers[String(current)] ?? "";
+  const correct = q.answer || q.ans || "";
   const attempted = !!selected;
   const isCorrectAnswer = attempted && selected === correct;
 
@@ -464,7 +515,7 @@ function render(){
   const labels = ["A","B","C","D"];
 
   $("options").innerHTML = labels.map((label,index) => {
-    const option = q.options?.[index] || {en:"",hi:""};
+    const option = q.options?.[index] || {en:q[label] || "",hi:""};
     const isCorrect = correct === label;
     const isSelected = selected === label;
     let className = "option";
@@ -522,7 +573,7 @@ function updateSummary(){
     const selected = answers[index];
 
     if(!selected) unattemptedCount++;
-    else if(selected === q.answer) correctCount++;
+    else if(selected === (q.answer || q.ans)) correctCount++;
     else wrongCount++;
   });
 
@@ -555,6 +606,28 @@ $("nextBtn").onclick = () => {
     location.href = "patwari-series.html";
   }
 };
+
+
+/* Homepage-style header behaviour */
+const hamburgerBtn=document.getElementById("hamburgerBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+hamburgerBtn?.addEventListener("click",()=>mobileMenu?.classList.toggle("open"));
+function updateHeader(user){
+  const loginBtn=document.getElementById("loginBtn"), joinBtn=document.getElementById("joinBtn"), userArea=document.getElementById("userArea"), userNameText=document.getElementById("userNameText"), userNameRound=document.getElementById("userNameRound");
+  const mobileLogin=document.getElementById("mobileLoginBtn"), mobileJoin=document.getElementById("mobileJoinBtn"), mobileUser=document.getElementById("mobileUserArea"), mobileName=document.getElementById("mobileUserName");
+  if(user){
+    const name=user.displayName || user.email?.split("@")[0] || "User";
+    if(loginBtn) loginBtn.style.display="none"; if(joinBtn) joinBtn.style.display="none"; if(userArea) userArea.style.display="flex";
+    if(userNameText) userNameText.textContent=name; if(userNameRound) userNameRound.textContent=name.charAt(0).toUpperCase();
+    if(mobileLogin) mobileLogin.style.display="none"; if(mobileJoin) mobileJoin.style.display="none"; if(mobileUser) mobileUser.style.display="block"; if(mobileName) mobileName.textContent=name;
+  }else{
+    if(loginBtn) loginBtn.style.display="inline-flex"; if(joinBtn) joinBtn.style.display="inline-flex"; if(userArea) userArea.style.display="none";
+    if(mobileLogin) mobileLogin.style.display="block"; if(mobileJoin) mobileJoin.style.display="block"; if(mobileUser) mobileUser.style.display="none";
+  }
+}
+document.getElementById("logoutBtn")?.addEventListener("click",()=>signOut(auth));
+document.getElementById("mobileLogoutBtn")?.addEventListener("click",()=>signOut(auth));
+onAuthStateChanged(auth, updateHeader);
 
 </script>
 
