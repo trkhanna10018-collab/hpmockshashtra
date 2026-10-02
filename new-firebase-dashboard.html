@@ -853,6 +853,287 @@
         flex-wrap:wrap;
       }
     }
+
+    /* =========================
+       HOMEPAGE-MATCHED DASHBOARD UI
+       Existing Firebase/auth logic is intentionally untouched.
+    ========================= */
+    body{
+      background:
+        linear-gradient(135deg,rgba(238,244,251,.92),rgba(247,250,255,.90) 48%,rgba(241,237,255,.92)),
+        url("mahapack/homepage-bg-2.jpg") center/cover fixed no-repeat;
+      color:#12234f;
+    }
+
+    .container{
+      max-width:1000px;
+      padding:34px 0 18px;
+    }
+
+    .welcome{
+      min-height:190px;
+      border:1px solid rgba(188,205,227,.78);
+      border-radius:20px;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.78),rgba(239,246,255,.68) 52%,rgba(242,238,255,.70));
+      backdrop-filter:blur(7px);
+      -webkit-backdrop-filter:blur(7px);
+      padding:30px 34px;
+      margin-bottom:17px;
+      box-shadow:0 12px 28px rgba(20,55,105,.08);
+    }
+
+    .notice,
+    .progress{
+      background:rgba(255,255,255,.82);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .section{
+      padding:48px 0 45px;
+      margin-bottom:0;
+      background:linear-gradient(115deg,rgba(237,246,255,.82),rgba(247,250,255,.80) 48%,rgba(241,237,255,.82));
+      border-radius:22px;
+    }
+
+    .section-head{
+      display:block;
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    .section-title{
+      font-size:30px;
+      color:#12275a;
+      margin-top:4px;
+    }
+
+    .section-subtitle{
+      font-size:13px;
+      color:#64748b;
+      margin-top:6px;
+    }
+
+    .section-head::before{
+      content:"MOCK TEST SERIES";
+      display:block;
+      color:#2563eb;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+
+    .grid{
+      width:min(1000px,100%);
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      overflow:hidden;
+      padding:0;
+      background:linear-gradient(145deg,rgba(223,233,245,.96),rgba(233,238,247,.94));
+      border:1px solid rgba(188,205,227,.98);
+      border-radius:18px;
+      box-shadow:0 12px 28px rgba(20,55,105,.08);
+      backdrop-filter:blur(5px);
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 15px 30px rgba(20,55,105,.11);
+    }
+
+    .series-image{
+      width:100%;
+      height:auto;
+      aspect-ratio:auto;
+      object-fit:contain;
+      object-position:center;
+      background:#edf4fb;
+      display:block;
+    }
+
+    .new-series-image{
+      width:100%;
+      min-height:150px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        linear-gradient(135deg,#dbeafe,#eef4ff 55%,#eeeaff);
+      color:#3158dc;
+      font-size:24px;
+      font-weight:900;
+      letter-spacing:.5px;
+    }
+
+    .series-body{
+      padding:18px;
+    }
+
+    .badges{
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
+    }
+
+    .series-title{
+      font-size:20px;
+      margin-bottom:6px;
+      color:#12234f;
+    }
+
+    .series-description{
+      font-size:12px;
+      color:#64748b;
+      min-height:38px;
+      line-height:1.5;
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:8px;
+      margin:15px 0;
+    }
+
+    .meta-box{
+      text-align:center;
+      padding:9px 5px;
+      border-radius:10px;
+      background:rgba(244,248,253,.90);
+      border:1px solid #e2eaf4;
+    }
+
+    .meta-box strong{
+      display:block;
+      font-size:13px;
+    }
+
+    .meta-box span{
+      font-size:9px;
+      color:#64748b;
+    }
+
+    .price-row{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:12px;
+      border-top:1px solid #e5ebf3;
+      padding-top:14px;
+    }
+
+    .price small{
+      display:block;
+      font-size:9px;
+      color:#64748b;
+    }
+
+    .price strong{
+      font-size:24px;
+    }
+
+    .free{
+      display:block;
+      color:#16a34a;
+      font-size:9px;
+      font-weight:900;
+    }
+
+    .card-buttons{
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .card-btn{
+      min-height:36px;
+      padding:0 12px;
+      border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      font-weight:900;
+      text-decoration:none;
+    }
+
+    .card-outline{
+      border:1px solid #9dbcf0;
+      color:#000;
+      background:rgba(255,255,255,.72);
+    }
+
+    .card-progress{
+      border:1px solid #a8b7d3;
+      color:#334d78;
+      background:rgba(255,255,255,.86);
+    }
+
+    .card-primary{
+      color:#fff;
+      background:linear-gradient(135deg,#2563eb,#5546e8);
+    }
+
+    .card-new{
+      border-color:#b9c9f4;
+    }
+
+    .badge-live{
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:9px;
+      font-weight:900;
+      background:#dcfce7;
+      color:#15803d;
+    }
+
+    .badge-new{
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:9px;
+      font-weight:900;
+      background:#fff0d9;
+      color:#b65b00;
+    }
+
+    @media(max-width:620px){
+      .container{
+        padding:20px 13px 30px;
+      }
+      .section{
+        padding:38px 0 30px;
+      }
+      .section-title{
+        font-size:27px;
+      }
+      .grid{
+        grid-template-columns:1fr;
+      }
+      .price-row{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+      .card-buttons{
+        width:100%;
+        justify-content:stretch;
+      }
+      .card-btn{
+        flex:1;
+        min-width:0;
+        padding-left:8px;
+        padding-right:8px;
+      }
+    }
+
   </style>
 </head>
 
@@ -894,8 +1175,12 @@
           ✦&nbsp; New JOA IT
         </a>
 
-        <a href="patwari-series.html">
+        <a href="patwari/patwari-series.html">
           ▤&nbsp; Patwari
+        </a>
+
+        <a href="mahapack/joa-mahapack.html">
+          ◆&nbsp; MahaPack
         </a>
 
         <div class="user-area">
@@ -992,251 +1277,198 @@
       </section>
 
 
-      <!-- STUDY & PRACTICE -->
-      <section class="section">
+      <!-- MOCK TEST SERIES — homepage matched -->
+      <section class="section" id="mock-tests">
 
         <div class="section-head">
-
-          <h2 class="section-title">
-            Study &amp; Practice
-          </h2>
-
+          <h2 class="section-title">Choose Your Exam</h2>
           <div class="section-subtitle">
-            Choose a resource and continue your preparation.
+            Test information, price and access details are shown clearly before you open a series.
           </div>
-
         </div>
-
 
         <div class="grid">
 
+          <!-- EXISTING / OLD JOA — KEEP LINK AND SYSTEM SAME -->
+          <article class="card">
 
-          <!-- JOA CARD -->
-          <div class="card">
+            <img src="joa-banner.jpg"
+                 alt="JOA IT Mock Test Series"
+                 class="series-image">
 
-            <div class="card-top">
+            <div class="series-body">
 
-              <div class="card-icon">
-                ▣
+              <div class="badges">
+                <span class="badge-live">AVAILABLE NOW</span>
+                <span class="badge-live">FREE TEST AVAILABLE</span>
               </div>
 
-              <div class="badge">
-                Available
+              <h3 class="series-title">JOA (IT) Mock Test Series</h3>
+
+              <p class="series-description">
+                Full-length Junior Office Assistant (IT) mock tests with bilingual
+                questions and performance analysis.
+              </p>
+
+              <div class="meta">
+                <div class="meta-box"><strong>16</strong><span>Total Tests</span></div>
+                <div class="meta-box"><strong>100</strong><span>Questions/Test</span></div>
+                <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
               </div>
 
-            </div>
+              <div class="price-row">
+                <div class="price">
+                  <small>Complete Series</small>
+                  <strong>₹99</strong>
+                  <span class="free">Free Test Available</span>
+                </div>
 
-
-            <h3>
-              JOA IT Mock Test Series
-            </h3>
-
-
-            <p>
-              Access the complete JOA IT Mock Test Series with 15 tests,
-              100 questions per test, and bilingual support.
-            </p>
-
-
-            <div class="card-meta">
-
-              <span>
-                15 Tests
-              </span>
-
-              <span>
-                100 Questions/Test
-              </span>
-
-              <span>
-                Hindi + English
-              </span>
-
-            </div>
-
-
-            <div class="card-actions">
-              <a href="joa-series.html" class="btn btn-primary">
-                View Test Series&nbsp; →
-              </a>
-
-              <a href="my-progress.html" class="btn btn-progress">
-                ▥&nbsp; My JOA Progress&nbsp; →
-              </a>
-            </div>
-
-          </div>
-
-
-          <!-- HP PATWARI CARD -->
-          <div class="card">
-
-            <div class="card-top">
-
-              <div class="card-icon paper">
-                ▤
-              </div>
-
-              <div class="badge soon">
-                Available
+                <div class="card-buttons">
+                  <a href="joa-series.html" class="card-btn card-outline">View Details</a>
+                  <a href="my-progress.html" class="card-btn card-progress">My Progress</a>
+                  <a href="payment.html?product=joa" class="card-btn card-primary">Buy Now</a>
+                </div>
               </div>
 
             </div>
+          </article>
 
 
-            <h3>
-              HP Patwari Mock Test Series
-            </h3>
+          <!-- NEW JOA IT -->
+          <article class="card card-new" id="new-joa">
 
-
-            <p>
-              Practice the complete HP Patwari Mock Test Series with
-              11 tests, 120 questions per test, 90-minute duration, and bilingual support.
-            </p>
-
-
-            <div class="card-meta">
-
-              <span>
-                11 Tests
-              </span>
-
-              <span>
-                120 Questions/Test
-              </span>
-
-              <span>
-                Hindi + English
-              </span>
-
+            <!-- Future New JOA banner can be placed here -->
+            <div class="new-series-image">
+              NEW JOA IT
             </div>
 
+            <div class="series-body">
 
-            <div class="card-actions">
-              <a href="patwari-series.html" class="btn btn-primary">
-                View Test Series&nbsp; →
-              </a>
-
-              <a href="patwari-progress.html" class="btn btn-progress">
-                ▥&nbsp; My Patwari Progress&nbsp; →
-              </a>
-            </div>
-
-          </div>
-
-
-          <!-- NEW JOA IT CARD -->
-          <div class="card new-card" id="new-joa">
-
-            <div class="card-top">
-
-              <div class="card-icon">
-                ✦
+              <div class="badges">
+                <span class="badge-new">NEW</span>
+                <span class="badge-live">FREE TEST AVAILABLE</span>
               </div>
 
-              <div class="badge new">
-                NEW
+              <h3 class="series-title">JOA IT Mock Test Series — New</h3>
+
+              <p class="series-description">
+                New JOA IT mock-test series with 120 questions per test,
+                90-minute duration and Hindi + English support.
+              </p>
+
+              <div class="meta">
+                <div class="meta-box"><strong>10</strong><span>Total Tests</span></div>
+                <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
+                <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
+              </div>
+
+              <div class="price-row">
+                <div class="price">
+                  <small>Complete Series</small>
+                  <strong>—</strong>
+                  <span class="free">New Series</span>
+                </div>
+
+                <div class="card-buttons">
+                  <a href="#new-joa" class="card-btn card-outline">View Details</a>
+                  <span class="card-btn card-primary" style="opacity:.65;cursor:default;">Buy Now</span>
+                </div>
               </div>
 
             </div>
+          </article>
 
 
-            <h3>
-              JOA IT Mock Test Series — New
-            </h3>
+          <!-- PATWARI -->
+          <article class="card">
 
+            <img src="patwari/patwari-banner.jpg"
+                 alt="HP Patwari Mock Test Series"
+                 class="series-image">
 
-            <p>
-              New JOA IT practice series with 10 tests, 120 questions per test,
-              90-minute duration, and Hindi + English support.
-            </p>
+            <div class="series-body">
 
-
-            <div class="card-meta">
-
-              <span>
-                10 Tests
-              </span>
-
-              <span>
-                120 Questions/Test
-              </span>
-
-              <span>
-                90 Minutes
-              </span>
-
-            </div>
-
-
-            <div class="card-actions">
-              <div class="btn coming">
-                New Series&nbsp; — Coming Soon
-              </div>
-            </div>
-
-          </div>
-
-
-          <!-- JOA IT MAHAPACK CARD -->
-          <div class="card maha-card">
-
-            <div class="card-top">
-
-              <div class="card-icon">
-                ◆
+              <div class="badges">
+                <span class="badge-live">AVAILABLE NOW</span>
+                <span class="badge-live">FREE TEST AVAILABLE</span>
               </div>
 
-              <div class="badge">
-                Available
+              <h3 class="series-title">HP Patwari Mock Test Series</h3>
+
+              <p class="series-description">
+                Structured HP Patwari mock-test practice with Himachal GK,
+                general studies, Hindi, English and computer-based preparation.
+              </p>
+
+              <div class="meta">
+                <div class="meta-box"><strong>11</strong><span>Total Tests</span></div>
+                <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
+                <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
+              </div>
+
+              <div class="price-row">
+                <div class="price">
+                  <small>Complete Series</small>
+                  <strong>₹149</strong>
+                  <span class="free">Free Test Available</span>
+                </div>
+
+                <div class="card-buttons">
+                  <a href="patwari/patwari-series.html" class="card-btn card-outline">View Details</a>
+                  <a href="patwari/patwari-progress.html" class="card-btn card-progress">My Progress</a>
+                  <a href="payment.html?product=patwari" class="card-btn card-primary">Buy Now</a>
+                </div>
               </div>
 
             </div>
+          </article>
 
 
-            <h3>
-              JOA IT MahaPack
-            </h3>
+          <!-- JOA IT MAHA PACK -->
+          <article class="card">
 
+            <img src="mahapack/joa-mahapack-banner.jpg"
+                 alt="JOA IT Maha Pack"
+                 class="series-image">
 
-            <p>
-              Complete computer preparation pack with 15 subjects,
-              6000+ questions, study resources, and 6-month access.
-            </p>
+            <div class="series-body">
 
+              <div class="badges">
+                <span class="badge-live">JOA IT MAHA PACK</span>
+                <span class="badge-live">6000 QUESTIONS</span>
+              </div>
 
-            <div class="card-meta">
+              <h3 class="series-title">JOA IT Maha Pack</h3>
 
-              <span>
-                15 Subjects
-              </span>
+              <p class="series-description">
+                Complete Computer preparation with 15 Computer subjects,
+                bilingual practice and performance tracking.
+              </p>
 
-              <span>
-                6000+ Questions
-              </span>
+              <div class="meta">
+                <div class="meta-box"><strong>15</strong><span>Subjects</span></div>
+                <div class="meta-box"><strong>6000</strong><span>Questions</span></div>
+                <div class="meta-box"><strong>6 Months</strong><span>Validity</span></div>
+              </div>
 
-              <span>
-                6 Months
-              </span>
+              <div class="price-row">
+                <div class="price">
+                  <small>Complete Pack</small>
+                  <strong>₹399</strong>
+                  <span class="free">15 Computer Subjects</span>
+                </div>
+
+                <div class="card-buttons">
+                  <a href="mahapack/joa-mahapack.html" class="card-btn card-outline">View Details</a>
+                  <a href="mahapack/master-progress.html" class="card-btn card-progress">Master Progress</a>
+                  <a href="payment.html?product=computer-master" class="card-btn card-primary">Buy Now</a>
+                </div>
+              </div>
 
             </div>
-
-
-            <div class="card-actions">
-              <a href="mahapack/joa-mahapack.html" class="btn btn-primary">
-                Open MahaPack&nbsp; →
-              </a>
-
-              <a href="mahapack/master-progress.html" class="btn btn-progress">
-                ▥&nbsp; My MahaPack Progress&nbsp; →
-              </a>
-            </div>
-
-          </div>
-
+          </article>
 
         </div>
-
       </section>
 
     </main>
@@ -1262,7 +1494,7 @@
             <div class="footer-links">
               <a href="joa-series.html">JOA (IT) Mock Tests</a>
               <a href="#new-joa">New JOA IT Mock Tests</a>
-              <a href="patwari-series.html">HP Patwari Mock Tests</a>
+              <a href="patwari/patwari-series.html">HP Patwari Mock Tests</a>
               <a href="mahapack/joa-mahapack.html">JOA IT MahaPack</a>
               <a href="#free-tests">Free Test Access</a>
               <a href="#mock-tests">Test Series</a>
