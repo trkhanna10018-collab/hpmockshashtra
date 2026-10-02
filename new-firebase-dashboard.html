@@ -6,1199 +6,436 @@
   <title>Dashboard | HPMockShashtra</title>
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
-
-    body{
-      background:
-        linear-gradient(135deg,#eef6ff 0%,#f8fbff 52%,#f2efff 100%);  
-      color:#14264b;
-      min-height:100vh
-    }
-
-    .header{
-      height:96px;
-      max-width:1164px;
-      margin:0 auto;
-      background:rgba(255,255,255,.88);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      border:1px solid rgba(214,226,244,.95);
-      border-top:0;
-      border-radius:0 0 18px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 24px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow:0 8px 24px rgba(27,58,105,.09)
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:#102654
-    }
-
-    .brand img{
-      width:72px;
-      height:72px;
-      object-fit:contain;
-      border-radius:12px
-    }
-
-    .brand-text{
-      line-height:1.08
-    }
-
-    .brand-name{
-      font-size:22px;
-      font-weight:850;
-      letter-spacing:-.5px
-    }
-
-    .brand-name span{
-      color:#2463dc
-    }
-
-    .tagline{
-      margin-top:4px;
-      font-size:10px;
-      color:#71809a;
-      font-weight:600
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:6px
-    }
-
-    .nav a{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      text-decoration:none;
-      color:#34466a;
-      font-size:12px;
-      font-weight:800;
-      padding:10px 13px;
-      border-radius:10px;
-      transition:.18s ease
-    }
-
-    .nav a:hover{
-      background:#edf4ff;
-      color:#1f5bd8
-    }
-
-    .nav .homepage-link{
-      color:#fff;
-      background:linear-gradient(135deg,#2563eb,#5546e8);
-      box-shadow:0 6px 15px rgba(37,99,235,.18)
-    }
-
-    .nav .homepage-link:hover{
-      color:#fff;
-      background:linear-gradient(135deg,#1f55d2,#4838d4)
-    }
-
-    .user-area{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      margin-left:8px;
-      padding-left:15px;
-      border-left:1px solid #e2e8f1
-    }
-
-    .user-icon{
-      width:33px;
-      height:33px;
-      border-radius:50%;
-      background:#173b7a;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:12px
-    }
-
-    .user-name{
-      max-width:125px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      font-size:12px;
-      font-weight:800
-    }
-
-    .logout-btn{
-      border:0;
-      background:#fff0f1;
-      color:#c62828;
-      border-radius:8px;
-      padding:8px 11px;
-      font-size:11px;
-      font-weight:800;
-      cursor:pointer
-    }
-
-    .menu-btn{
-      display:none;
-      border:0;
-      background:#edf3fb;
-      width:42px;
-      height:42px;
-      border-radius:9px;
-      font-size:21px;
-      cursor:pointer
-    }
-
-    .container{
-      max-width:1164px;
-      margin:auto;
-      padding:28px 0 12px
-    }
-
-    .welcome{
-      min-height:172px;
-      border:1px solid rgba(202,219,244,.95);
-      border-radius:20px;
-      background:
-        radial-gradient(circle at 88% 18%,rgba(147,197,253,.30),transparent 26%),
-        linear-gradient(135deg,rgba(229,241,255,.92),rgba(245,248,255,.88) 55%,rgba(239,234,255,.88));
-      padding:30px 34px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:28px;
-      margin-bottom:16px;
-      overflow:hidden;
-      box-shadow:0 10px 28px rgba(31,73,125,.07)
-    }
-
-    .welcome-copy{
-      min-width:0
-    }
-
-    .welcome h1{
-      font-size:29px;
-      line-height:1.2;
-      color:#102b61;
-      margin-bottom:8px
-    }
-
-    .welcome p{
-      font-size:14px;
-      color:#506483;
-      line-height:1.5
-    }
-
-    .user-email{
-      font-size:11px;
-      color:#71809a;
-      margin-top:7px
-    }
-
-    .welcome-art{
-      display:flex;
-      align-items:center;
-      gap:25px;
-      color:#1c4da4;
-      flex-shrink:0
-    }
-
-    .mountain{
-      font-size:70px;
-      line-height:1;
-      opacity:.65
-    }
-
-    .quote{
-      font-size:14px;
-      line-height:1.6;
-      font-style:italic;
-      max-width:170px
-    }
-
-    .welcome-action{
-      display:inline-block;
-      text-decoration:none;
-      background:#3158dc;
-      color:#fff;
-      padding:13px 20px;
-      border-radius:9px;
-      font-size:12px;
-      font-weight:850;
-      box-shadow:0 5px 14px rgba(49,88,220,.18);
-      white-space:nowrap
-    }
-
-    .welcome-action:hover{
-      background:#2447bf
-    }
-
-    .notice{
-      height:50px;
-      background:rgba(255,255,255,.88);
-      border:1px solid #dce6f2;
-      border-radius:11px;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      margin-bottom:17px;
-      box-shadow:0 3px 10px rgba(25,50,90,.035)
-    }
-
-    .notice-label{
-      height:100%;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      padding:0 17px;
-      background:#f7faff;
-      border-right:1px solid #e2e9f2;
-      color:#2857c7;
-      font-size:12px;
-      font-weight:850;
-      flex-shrink:0;
-      z-index:2
-    }
-
-    .notice-window{
-      flex:1;
-      overflow:hidden;
-      white-space:nowrap
-    }
-
-    .notice-track{
-      display:inline-block;
-      padding-left:100%;
-      animation:noticeMove 25s linear infinite
-    }
-
-    .notice-item{
-      display:inline-block;
-      padding-right:90px;
-      color:#52637c;
-      font-size:12px;
-      font-weight:600
-    }
-
-    .notice-item strong{
-      color:#1d355a
-    }
-
-    @keyframes noticeMove{
-      from{transform:translateX(0)}
-      to{transform:translateX(-100%)}
-    }
-
-    .progress{
-      background:rgba(255,255,255,.88);
-      border:1px solid #dce6f2;
-      border-radius:15px;
-      padding:18px 22px;
-      display:flex;
-      align-items:center;
-      gap:24px;
-      margin-bottom:24px;
-      box-shadow:0 4px 14px rgba(25,50,90,.035)
-    }
-
-    .progress-title{
-      width:220px;
-      flex-shrink:0
-    }
-
-    .progress-title h2{
-      font-size:19px;
-      color:#102957;
-      margin-bottom:4px
-    }
-
-    .progress-title p{
-      font-size:11px;
-      color:#74829a
-    }
-
-    .progress-score{
-      display:flex;
-      align-items:center;
-      gap:15px;
-      flex:1
-    }
-
-    .ring{
-      width:84px;
-      height:84px;
-      border-radius:50%;
-      background:conic-gradient(#2f73e8 23%,#e5ebf4 0);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      flex-shrink:0
-    }
-
-    .ring:before{
-      content:"";
-      position:absolute;
-      width:64px;
-      height:64px;
-      border-radius:50%;
-      background:#fff
-    }
-
-    .ring span{
-      position:relative;
-      font-size:19px;
-      font-weight:900;
-      color:#17366f
-    }
-
-    .score-number strong{
-      display:block;
-      font-size:22px;
-      color:#102957
-    }
-
-    .score-number span{
-      font-size:11px;
-      color:#71809a
-    }
-
-    .progress-stat{
-      min-width:128px;
-      border-left:1px solid #e4e9f1;
-      padding-left:18px
-    }
-
-    .progress-stat strong{
-      display:block;
-      font-size:21px
-    }
-
-    .progress-stat span{
-      font-size:11px;
-      color:#6e7c92
-    }
-
-    .stat-green strong{
-      color:#149447
-    }
-
-    .stat-red strong{
-      color:#e12b35
-    }
-
-    .stat-gray strong{
-      color:#64748b
-    }
-
-    .progress-button{
-      flex-shrink:0;
-      text-decoration:none;
-      background:linear-gradient(135deg,#3158dc,#2447bf);
-      color:#fff;
-      padding:12px 18px;
-      border-radius:10px;
-      font-size:11px;
-      font-weight:850;
-      box-shadow:0 5px 14px rgba(49,88,220,.22);
-      border:1px solid rgba(255,255,255,.35);
-      transition:all .2s ease
-    }
-
-    .progress-button:hover{
-      background:linear-gradient(135deg,#2447bf,#1d3fae);
-      transform:translateY(-1px);
-      box-shadow:0 7px 18px rgba(49,88,220,.28)
-    }
-
-    .section{
-      margin-bottom:25px
-    }
-
-    .section-head{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      margin-bottom:12px
-    }
-
-    .section-title{
-      font-size:20px;
-      color:#102957;
-      font-weight:850
-    }
-
-    .section-subtitle{
-      font-size:11px;
-      color:#7a879c
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px
-    }
-
-    .card{
-      background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(247,250,255,.92));
-      border:1px solid #dce5f0;
-      border-radius:18px;
-      padding:22px;
-      box-shadow:0 8px 22px rgba(20,43,76,.06);
-      transition:.18s
-    }
-
-    .card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 9px 24px rgba(20,43,76,.08)
-    }
-
-    .card-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:16px
-    }
-
-    .card-icon{
-      width:48px;
-      height:48px;
-      border-radius:12px;
-      background:#eaf2ff;
-      color:#2360d2;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:23px
-    }
-
-    .card-icon.paper{
-      background:#eaf2ff;
-      color:#2360d2
-    }
-
-    .badge{
-      padding:6px 10px;
-      border-radius:20px;
-      background:#e6f8ed;
-      color:#167342;
-      font-size:10px;
-      font-weight:850
-    }
-
-    .badge.soon{
-      background:#e6f8ed;
-      color:#167342
-    }
-
-    .badge.new{
-      background:#fff0d9;
-      color:#b65b00
-    }
-
-    .card.new-card{
-      border-color:#cfdcff;
-      background:
-        linear-gradient(145deg,rgba(255,255,255,.98),rgba(244,248,255,.95));
-    }
-
-    .card.new-card .card-icon{
-      background:#eef4ff;
-      color:#3158dc;
-    }
-
-    .card.maha-card .card-icon{
-      background:#f1ecff;
-      color:#6b46c1;
-    }
-
-    .card h3{
-      font-size:18px;
-      color:#132b57;
-      margin-bottom:7px
-    }
-
-    .card p{
-      font-size:12px;
-      line-height:1.55;
-      color:#687890;
-      min-height:38px;
-      margin-bottom:16px
-    }
-
-    .card-meta{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:8px;
-      border-top:1px solid #edf1f6;
-      padding-top:13px;
-      margin-bottom:15px;
-      color:#52637c;
-      font-size:10px;
-      font-weight:750
-    }
-
-    .card-meta span{
-      text-align:left
-    }
-
-    .btn{
-      display:block;
-      width:100%;
-      border:0;
-      border-radius:9px;
-      padding:11px;
-      text-align:center;
-      text-decoration:none;
-      font-size:12px;
-      font-weight:850
-    }
-
-    .btn-primary{
-      background:#3158dc;
-      color:#fff
-    }
-
-    .btn-primary:hover{
-      background:#2447bf
-    }
-
-    .card-actions{
-      display:flex;
-      flex-direction:column;
-      gap:8px
-    }
-
-    .btn-progress{
-      background:#eef4ff;
-      color:#2857c7;
-      border:1px solid #cbdcff;
-      transition:.18s
-    }
-
-    .btn-progress:hover{
-      background:#e3edff;
-      color:#1f4fb8;
-      border-color:#b9cdf8
-    }
-
-    .coming{
-      background:#edf0f5;
-      color:#7a8496
-    }
-
-    /* =========================
-       FOOTER — same as homepage.html
-    ========================= */
-
-    .footer{
-      background:#020817;
-      color:#cbd5e1;
-    }
-
-    .footer-inner{
-      width:min(1000px,calc(100% - 28px));
-      margin:auto;
-    }
-
-    .footer-top{
-      padding:42px 0 30px;
-      display:grid;
-      grid-template-columns:1.5fr 1fr 1fr;
-      gap:70px;
-      align-items:start;
-    }
-
-    .footer h3,.footer h4{
-      color:#fff;
-      margin-bottom:10px;
-    }
-
-    .footer h3{font-size:17px}
-    .footer h4{font-size:13px}
-
-    .footer p{
-      font-size:11px;
-      color:#94a3b8;
-      max-width:270px;
-    }
-
-    .footer-links{
-      display:grid;
-      gap:7px;
-    }
-
-    .footer-links a,.footer-links span{
-      font-size:11px;
-      color:#cbd5e1;
-      text-decoration:none;
-    }
-
-    .footer-links a:hover{
-      color:#fff;
-      text-decoration:none;
-    }
-
-    .footer-bottom{
-      min-height:54px;
-      border-top:1px solid #1e293b;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:15px;
-      padding:13px 0;
-      font-size:10px;
-      color:#94a3b8;
-    }
-
-    .footer-bottom-links{
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      gap:16px;
-    }
-
-    .footer-bottom a{
-      color:#cbd5e1;
-      text-decoration:none;
-    }
-
-    .footer-bottom a:hover{
-      color:#fff;
-      text-decoration:none;
-    }
-
-    
-    /* Header series buttons — homepage-style highlight */
-    .dash-series-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:40px;
-      padding:0 18px;
-      border-radius:11px;
-      background:linear-gradient(135deg,#315be8,#4b46e8);
-      color:#fff !important;
-      font-weight:800;
-      text-decoration:none !important;
-      box-shadow:0 7px 18px rgba(49,91,232,.20);
-      transition:transform .18s ease,box-shadow .18s ease;
-    }
-
-    .dash-series-btn:hover{
-      color:#fff !important;
-      transform:translateY(-1px);
-      box-shadow:0 9px 22px rgba(49,91,232,.27);
-    }
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  color:#12234f;
+  line-height:1.5;
+  background:#dfeaf5 url("mahapack/homepage-bg-2.jpg") center top/cover fixed no-repeat;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+.loading{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  color:#173b7a;
+  font-size:14px;
+  font-weight:800;
+  background:#eef4fb;
+}
+
+/* ================= HOMEPAGE-STYLE FULL-WIDTH HEADER ================= */
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
+  min-height:78px;
+  padding:8px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  background:linear-gradient(135deg,rgba(24,48,86,.92),rgba(54,44,91,.92));
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  border-radius:0 0 18px 18px;
+  box-shadow:0 10px 28px rgba(0,0,0,.20);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:0;
+  flex-shrink:0;
+}
+.brand img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  border-radius:12px;
+}
+.brand-text{min-width:0}
+.brand-name{
+  font-size:21px;
+  font-weight:900;
+  line-height:1.05;
+  color:#fff;
+  white-space:nowrap;
+}
+.brand-name span{color:#58a6ff}
+.tagline{
+  display:block;
+  margin-top:3px;
+  font-size:9px;
+  color:#b8cae5;
+  font-weight:600;
+  letter-spacing:.15px;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  margin-left:auto;
+}
+.nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:38px;
+  padding:0 12px;
+  border-radius:9px;
+  color:#dbe8fb;
+  font-size:11px;
+  font-weight:800;
+  transition:.18s ease;
+}
+.nav a:hover{background:rgba(255,255,255,.10);color:#fff}
+.nav a.active{background:rgba(255,255,255,.12);color:#fff}
+.user-area{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left:7px;
+  padding-left:13px;
+  border-left:1px solid rgba(255,255,255,.18);
+}
+.user-icon,.user-round{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  flex:0 0 34px;
+  background:linear-gradient(135deg,#2563eb,#8b5cf6);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.25);
+}
+.user-name{
+  max-width:120px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#f2f7ff;
+  font-size:10px;
+  font-weight:800;
+}
+.logout-btn{
+  min-height:34px;
+  padding:0 10px;
+  border-radius:8px;
+  color:#fff;
+  background:rgba(255,92,108,.12);
+  border:1px solid rgba(255,130,142,.35);
+  font-size:9px;
+  font-weight:900;
+  cursor:pointer;
+}
+.logout-btn:hover{background:rgba(255,92,108,.22)}
+.menu-btn{
+  display:none;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  font-size:21px;
+  cursor:pointer;
+}
+
+/* ================= FULL-WIDTH PAGE ================= */
+.container{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:28px 28px 34px;
+}
+.welcome{
+  width:100%;
+  min-height:178px;
+  padding:30px 38px;
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:20px;
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  box-shadow:0 12px 30px rgba(20,55,105,.10);
+}
+.welcome-copy{min-width:0}
+.welcome h1{
+  font-size:31px;
+  line-height:1.2;
+  color:#102b61;
+  margin-bottom:8px;
+  letter-spacing:-.4px;
+}
+.welcome h1 span{color:#1f55c9}
+.welcome p{font-size:14px;color:#405777;line-height:1.5}
+.user-email{font-size:11px;color:#60738f;margin-top:7px}
+.welcome-art{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.mountain{font-size:65px;line-height:1;color:#1f55a7;opacity:.58}
+.quote{font-size:13px;line-height:1.65;font-style:italic;color:#173f80;max-width:170px}
+
+.notice{
+  width:100%;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  margin-bottom:18px;
+  border:1px solid rgba(255,255,255,.48);
+  border-radius:11px;
+  background:rgba(255,255,255,.22);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  box-shadow:0 5px 16px rgba(25,50,90,.06);
+}
+.notice-label{
+  height:50px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0 17px;
+  flex-shrink:0;
+  color:#174ea6;
+  background:rgba(255,255,255,.48);
+  border-right:1px solid rgba(255,255,255,.45);
+  font-size:12px;
+  font-weight:850;
+}
+.notice-window{flex:1;overflow:hidden;white-space:nowrap}
+.notice-track{display:inline-block;padding-left:100%;animation:noticeMove 25s linear infinite}
+.notice-item{display:inline-block;padding-right:90px;color:#405777;font-size:12px;font-weight:600}
+.notice-item strong{color:#173b7a}
+@keyframes noticeMove{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* ================= EXAM SERIES ================= */
+.section{
+  width:100%;
+  padding:48px 0 52px;
+  margin:0;
+  border-radius:22px;
+  background:rgba(238,246,255,.18);
+}
+.section-head{text-align:center;max-width:760px;margin:0 auto 25px}
+.section-title{font-size:31px;color:#12275a;font-weight:900}
+.section-subtitle{font-size:13px;color:#506483;margin-top:6px}
+.section-head::before{
+  content:"MOCK TEST SERIES";
+  display:block;
+  color:#2563eb;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+.grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+.card{
+  overflow:hidden;
+  min-width:0;
+  background:rgba(246,250,255,.90);
+  border:1px solid rgba(188,205,227,.92);
+  border-radius:18px;
+  box-shadow:0 12px 28px rgba(20,55,105,.10);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+  transition:.18s ease;
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(20,55,105,.14)}
+.series-image{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  background:#edf4fb;
+  display:block;
+}
+.new-series-image{
+  width:100%;
+  aspect-ratio:16/6.2;
+  min-height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#dbeafe,#eef4ff 55%,#eeeaff);
+  border-bottom:1px solid #d6e2f2;
+  color:#3158dc;
+  font-size:26px;
+  font-weight:900;
+  letter-spacing:.6px;
+}
+.new-series-image::after{
+  content:"JPG BANNER SPACE";
+  margin-left:10px;
+  padding:7px 10px;
+  border:1px dashed #7b9be0;
+  border-radius:7px;
+  font-size:9px;
+  font-weight:900;
+  color:#5c73a8;
+}
+.series-body{padding:19px}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
+.badge-live,.badge-new{
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:9px;
+  font-weight:900;
+}
+.badge-live{background:#dcfce7;color:#15803d}
+.badge-new{background:#fff0d9;color:#b65b00}
+.series-title{font-size:20px;margin-bottom:6px;color:#12234f}
+.series-description{font-size:12px;color:#64748b;min-height:38px;line-height:1.5}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}
+.meta-box{text-align:center;padding:9px 5px;border-radius:10px;background:rgba(244,248,253,.94);border:1px solid #e2eaf4}
+.meta-box strong{display:block;font-size:13px}
+.meta-box span{font-size:9px;color:#64748b}
+.price-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;border-top:1px solid #e5ebf3;padding-top:14px}
+.price small{display:block;font-size:9px;color:#64748b}
+.price strong{font-size:24px;color:#132b57}
+.free{display:block;color:#16a34a;font-size:9px;font-weight:900}
+.card-buttons{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.card-btn{
+  min-height:36px;
+  padding:0 12px;
+  border-radius:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.card-outline{border:1px solid #9dbcf0;color:#173b7a;background:rgba(255,255,255,.82)}
+.card-outline:hover{background:#fff}
+.card-progress{border:1px solid #a8b7d3;color:#334d78;background:rgba(255,255,255,.88)}
+.card-primary{border:0;color:#fff;background:linear-gradient(135deg,#2563eb,#5546e8)}
+.card-primary:hover{transform:translateY(-1px)}
+.card-new{border-color:#b9c9f4}
+
+/* ================= FOOTER ================= */
+.footer{background:#020817;color:#cbd5e1;margin:0 -28px -34px}
+.footer-inner{width:min(1180px,calc(100% - 40px));margin:auto}
+.footer-top{padding:42px 0 30px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:55px;align-items:start}
+.footer h3,.footer h4{color:#fff;margin-bottom:10px}.footer h3{font-size:17px}.footer h4{font-size:13px}
+.footer p{font-size:11px;color:#94a3b8;max-width:320px}
+.footer-links{display:grid;gap:7px}.footer-links a{font-size:11px;color:#cbd5e1}.footer-links a:hover{color:#fff}
+.footer-bottom{min-height:54px;border-top:1px solid #1e293b;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:13px 0;font-size:10px;color:#94a3b8}
+.footer-bottom-links{display:flex;align-items:center;justify-content:flex-end;gap:16px}.footer-bottom a{color:#cbd5e1}
+
+/* ================= MOBILE ================= */
 @media(max-width:900px){
-
-      .header{
-        margin:0 12px;
-        max-width:none;
-        padding:0 16px;
-        height:78px;
-        border-radius:0 0 14px 14px
-      }
-
-      .nav{
-        display:none
-      }
-
-      .menu-btn{
-        display:block
-      }
-
-      .nav.show{
-        display:flex;
-        position:absolute;
-        top:76px;
-        left:0;
-        width:100%;
-        background:#fff;
-        flex-direction:column;
-        align-items:stretch;
-        padding:10px 15px 14px;
-        box-shadow:0 8px 16px rgba(0,0,0,.07)
-      }
-
-      .nav.show a{
-        text-align:left
-      }
-
-      .user-area{
-        border-left:0;
-        border-top:1px solid #edf0f4;
-        margin:6px 0 0;
-        padding:10px 3px 0
-      }
-
-      .welcome{
-        padding:24px;
-        min-height:150px
-      }
-
-      .welcome-art{
-        display:none
-      }
-
-      .progress{
-        flex-wrap:wrap
-      }
-
-      .progress-title{
-        width:100%
-      }
-
-      .progress-score{
-        flex-wrap:wrap
-      }
-    }
-
-    @media(max-width:600px){
-
-      .container{
-        padding:17px 13px 30px;
-        max-width:none
-      }
-
-      .brand-name{
-        font-size:18px
-      }
-
-      .tagline{
-        font-size:9px
-      }
-
-      .brand img{
-        width:62px;
-        height:62px
-      }
-
-      .welcome h1{
-        font-size:23px
-      }
-
-      .welcome-action{
-        width:100%;
-        text-align:center
-      }
-
-      .welcome{
-        flex-direction:column;
-        align-items:flex-start
-      }
-
-      .notice-label{
-        padding:0 10px;
-        font-size:10px
-      }
-
-      .notice-item{
-        font-size:10px;
-        padding-right:55px
-      }
-
-      .grid{
-        grid-template-columns:1fr
-      }
-
-      .progress{
-        padding:17px;
-        gap:16px
-      }
-
-      .progress-score{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:13px
-      }
-
-      .progress-stat{
-        border-left:0;
-        border-top:1px solid #e4e9f1;
-        padding:10px 0 0
-      }
-
-      .progress-button{
-        width:100%;
-        text-align:center
-      }
-
-      .footer-inner{
-        width:calc(100% - 24px);
-      }
-
-      .footer-top{
-        grid-template-columns:1fr;
-        gap:24px;
-      }
-
-      .footer-bottom{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .footer-bottom-links{
-        justify-content:flex-start;
-        flex-wrap:wrap;
-      }
-    }
-
-    /* =========================
-       HOMEPAGE-MATCHED DASHBOARD UI
-       Existing Firebase/auth logic is intentionally untouched.
-    ========================= */
-    body{
-      background:
-        linear-gradient(135deg,rgba(238,244,251,.92),rgba(247,250,255,.90) 48%,rgba(241,237,255,.92)),
-        url("mahapack/homepage-bg-2.jpg") center/cover fixed no-repeat;
-      color:#12234f;
-    }
-
-    .container{
-      max-width:1000px;
-      padding:34px 0 18px;
-    }
-
-    .welcome{
-      min-height:190px;
-      border:1px solid rgba(188,205,227,.78);
-      border-radius:20px;
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.78),rgba(239,246,255,.68) 52%,rgba(242,238,255,.70));
-      backdrop-filter:blur(7px);
-      -webkit-backdrop-filter:blur(7px);
-      padding:30px 34px;
-      margin-bottom:17px;
-      box-shadow:0 12px 28px rgba(20,55,105,.08);
-    }
-
-    .notice,
-    .progress{
-      background:rgba(255,255,255,.82);
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
-    }
-
-    .section{
-      padding:48px 0 45px;
-      margin-bottom:0;
-      background:linear-gradient(115deg,rgba(237,246,255,.82),rgba(247,250,255,.80) 48%,rgba(241,237,255,.82));
-      border-radius:22px;
-    }
-
-    .section-head{
-      display:block;
-      text-align:center;
-      margin-bottom:25px;
-    }
-
-    .section-title{
-      font-size:30px;
-      color:#12275a;
-      margin-top:4px;
-    }
-
-    .section-subtitle{
-      font-size:13px;
-      color:#64748b;
-      margin-top:6px;
-    }
-
-    .section-head::before{
-      content:"MOCK TEST SERIES";
-      display:block;
-      color:#2563eb;
-      font-size:10px;
-      font-weight:900;
-      letter-spacing:.7px;
-      text-transform:uppercase;
-    }
-
-    .grid{
-      width:min(1000px,100%);
-      margin:auto;
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
-    }
-
-    .card{
-      overflow:hidden;
-      padding:0;
-      background:linear-gradient(145deg,rgba(223,233,245,.96),rgba(233,238,247,.94));
-      border:1px solid rgba(188,205,227,.98);
-      border-radius:18px;
-      box-shadow:0 12px 28px rgba(20,55,105,.08);
-      backdrop-filter:blur(5px);
-    }
-
-    .card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 15px 30px rgba(20,55,105,.11);
-    }
-
-    .series-image{
-      width:100%;
-      height:auto;
-      aspect-ratio:auto;
-      object-fit:contain;
-      object-position:center;
-      background:#edf4fb;
-      display:block;
-    }
-
-    .new-series-image{
-      width:100%;
-      min-height:150px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:
-        linear-gradient(135deg,#dbeafe,#eef4ff 55%,#eeeaff);
-      color:#3158dc;
-      font-size:24px;
-      font-weight:900;
-      letter-spacing:.5px;
-    }
-
-    .series-body{
-      padding:18px;
-    }
-
-    .badges{
-      display:flex;
-      gap:7px;
-      flex-wrap:wrap;
-      margin-bottom:8px;
-    }
-
-    .series-title{
-      font-size:20px;
-      margin-bottom:6px;
-      color:#12234f;
-    }
-
-    .series-description{
-      font-size:12px;
-      color:#64748b;
-      min-height:38px;
-      line-height:1.5;
-    }
-
-    .meta{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:8px;
-      margin:15px 0;
-    }
-
-    .meta-box{
-      text-align:center;
-      padding:9px 5px;
-      border-radius:10px;
-      background:rgba(244,248,253,.90);
-      border:1px solid #e2eaf4;
-    }
-
-    .meta-box strong{
-      display:block;
-      font-size:13px;
-    }
-
-    .meta-box span{
-      font-size:9px;
-      color:#64748b;
-    }
-
-    .price-row{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:12px;
-      border-top:1px solid #e5ebf3;
-      padding-top:14px;
-    }
-
-    .price small{
-      display:block;
-      font-size:9px;
-      color:#64748b;
-    }
-
-    .price strong{
-      font-size:24px;
-    }
-
-    .free{
-      display:block;
-      color:#16a34a;
-      font-size:9px;
-      font-weight:900;
-    }
-
-    .card-buttons{
-      display:flex;
-      gap:7px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .card-btn{
-      min-height:36px;
-      padding:0 12px;
-      border-radius:8px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size:10px;
-      font-weight:900;
-      text-decoration:none;
-    }
-
-    .card-outline{
-      border:1px solid #9dbcf0;
-      color:#000;
-      background:rgba(255,255,255,.72);
-    }
-
-    .card-progress{
-      border:1px solid #a8b7d3;
-      color:#334d78;
-      background:rgba(255,255,255,.86);
-    }
-
-    .card-primary{
-      color:#fff;
-      background:linear-gradient(135deg,#2563eb,#5546e8);
-    }
-
-    .card-new{
-      border-color:#b9c9f4;
-    }
-
-    .badge-live{
-      padding:4px 8px;
-      border-radius:999px;
-      font-size:9px;
-      font-weight:900;
-      background:#dcfce7;
-      color:#15803d;
-    }
-
-    .badge-new{
-      padding:4px 8px;
-      border-radius:999px;
-      font-size:9px;
-      font-weight:900;
-      background:#fff0d9;
-      color:#b65b00;
-    }
-
-    @media(max-width:620px){
-      .container{
-        padding:20px 13px 30px;
-      }
-      .section{
-        padding:38px 0 30px;
-      }
-      .section-title{
-        font-size:27px;
-      }
-      .grid{
-        grid-template-columns:1fr;
-      }
-      .price-row{
-        align-items:flex-start;
-        flex-direction:column;
-      }
-      .card-buttons{
-        width:100%;
-        justify-content:stretch;
-      }
-      .card-btn{
-        flex:1;
-        min-width:0;
-        padding-left:8px;
-        padding-right:8px;
-      }
-    }
-
-  </style>
+  .header{padding:8px 18px}
+  .nav{display:none}
+  .menu-btn{display:block}
+  .nav.show{
+    display:flex;
+    position:absolute;
+    top:78px;
+    left:0;
+    width:100%;
+    padding:10px 16px 14px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:3px;
+    background:linear-gradient(135deg,rgba(24,48,86,.98),rgba(54,44,91,.98));
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    box-shadow:0 14px 25px rgba(0,0,0,.20);
+  }
+  .nav.show a{justify-content:flex-start}
+  .nav.show .user-area{margin:5px 0 0;padding:10px 3px 0;border-left:0;border-top:1px solid rgba(255,255,255,.16)}
+  .welcome{padding:26px;min-height:160px}
+  .welcome-art{display:none}
+  .container{padding:24px 18px 28px}
+  .footer{margin:0 -18px -28px}
+}
+@media(max-width:620px){
+  body{background-attachment:scroll}
+  .header{min-height:68px;padding:7px 12px;border-radius:0 0 14px 14px}
+  .brand img{width:50px;height:50px}
+  .brand-name{font-size:18px}
+  .tagline{font-size:8px}
+  .container{padding:17px 12px 28px}
+  .welcome{padding:22px 18px;align-items:flex-start}
+  .welcome h1{font-size:24px}
+  .welcome p{font-size:12px}
+  .user-email{font-size:10px}
+  .notice-label{padding:0 10px;font-size:10px}
+  .notice-item{font-size:10px;padding-right:55px}
+  .section{padding:38px 0 34px}
+  .section-title{font-size:27px}
+  .section-subtitle{font-size:11px;padding:0 12px}
+  .grid{grid-template-columns:1fr;gap:16px}
+  .new-series-image{min-height:150px;font-size:21px}
+  .new-series-image::after{font-size:8px;margin-left:7px}
+  .series-body{padding:16px}
+  .series-title{font-size:18px}
+  .price-row{align-items:flex-start;flex-direction:column}
+  .card-buttons{width:100%;justify-content:stretch}
+  .card-btn{flex:1;min-width:0;padding-left:8px;padding-right:8px}
+  .footer{margin:0 -12px -28px}
+  .footer-inner{width:calc(100% - 24px)}
+  .footer-top{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .footer-bottom-links{justify-content:flex-start;flex-wrap:wrap}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- LOADING -->
-  <div class="loading" id="loading">
-    Loading your dashboard...
-  </div>
+  <!-- LOGIN GUARD: dashboard remains hidden until Firebase confirms a signed-in user -->
+  <div class="loading" id="loading">Checking your account...</div>
 
-  <!-- DASHBOARD -->
   <div id="dashboard" style="display:none;">
 
+    <!-- ================= FULL-WIDTH HEADER ================= -->
     <header class="header">
 
       <a href="firebase-dashboard.html" class="brand">
-        <img src="logo.png" alt="HPMockShashtra">
-
+        <img src="logo.png" alt="HPMockShashtra Logo">
         <div class="brand-text">
-          <div class="brand-name">
-            HP<span>Mock</span>Shashtra
-          </div>
-
-          <div class="tagline">
-            Prepare Today, Serve Tomorrow
-          </div>
+          <div class="brand-name">HP<span>Mock</span>Shashtra</div>
+          <span class="tagline">Prepare Today, Serve Tomorrow</span>
         </div>
       </a>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
 
       <nav class="nav" id="navMenu">
-
-        <a href="joa-series.html">
-          ▣&nbsp; JOA (IT)
-        </a>
-
-        <a href="#new-joa">
-          ✦&nbsp; New JOA IT
-        </a>
-
-        <a href="patwari/patwari-series.html">
-          ▤&nbsp; Patwari
-        </a>
-
-        <a href="mahapack/joa-mahapack.html">
-          ◆&nbsp; MahaPack
-        </a>
+        <a href="joa-series.html">▣&nbsp; JOA (IT)</a>
+        <a href="new-joa-series.html">✦&nbsp; New JOA IT</a>
+        <a href="patwari/patwari-series.html">▤&nbsp; Patwari</a>
+        <a href="mahapack/joa-mahapack.html">◆&nbsp; MahaPack</a>
 
         <div class="user-area">
-
-          <div class="user-icon">
-            ●
-          </div>
-
-          <div class="user-name" id="headerUserName">
-            Student
-          </div>
-
-          <button class="logout-btn" id="logoutBtn">
-            Logout
-          </button>
-
+          <div class="user-icon" id="headerUserInitial">U</div>
+          <div class="user-name" id="headerUserName">Student</div>
+          <button class="logout-btn" id="logoutBtn" type="button">Logout</button>
         </div>
-
       </nav>
 
     </header>
@@ -1206,265 +443,164 @@
 
     <main class="container">
 
-      <!-- WELCOME -->
+      <!-- ================= WELCOME ================= -->
       <section class="welcome">
-
         <div class="welcome-copy">
-
-          <h1>
-            Welcome back,
-            <span id="userName">Student</span>! 👋
-          </h1>
-
-          <p>
-            Consistency today, success tomorrow.
-          </p>
-
-          <div class="user-email" id="userEmail">
-            Loading email...
-          </div>
-
+          <h1>Welcome back, <span id="userName">Student</span> 👋</h1>
+          <p>Ready for your next practice session?</p>
+          <div class="user-email" id="userEmail">Loading email...</div>
         </div>
 
-        <div class="welcome-art">
-
-          <div class="mountain">
-            ⌁
-          </div>
-
-          <div class="quote">
-            “Prepare.<br>
-            Practice.<br>
-            Progress.<br>
-            Succeed.”
-          </div>
-
+        <div class="welcome-art" aria-hidden="true">
+          <div class="mountain">⌁</div>
+          <div class="quote">“Prepare.<br>Practice.<br>Progress.<br>Succeed.”</div>
         </div>
-
       </section>
 
 
-      <!-- NOTICE -->
+      <!-- ================= NOTICE ================= -->
       <section class="notice">
-
-        <div class="notice-label">
-          📢&nbsp; Latest Notice
-        </div>
-
+        <div class="notice-label">📢&nbsp; Latest Notice</div>
         <div class="notice-window">
-
           <div class="notice-track">
-
-            <span class="notice-item">
-              <strong>JOA IT Mock Test Series</strong>
-              is now available.
-            </span>
-
-            <span class="notice-item">
-              <strong>15 full-length mock tests</strong>
-              with 100 questions each in Hindi + English.
-            </span>
-
-            <span class="notice-item">
-              <strong>HP Patwari Mock Test Series</strong>
-              is now available with 11 tests.
-            </span>
-
+            <span class="notice-item"><strong>New JOA IT Mock Test Series</strong> is now available.</span>
+            <span class="notice-item"><strong>120 questions</strong> with 90 minutes for the New JOA IT tests.</span>
+            <span class="notice-item"><strong>HP Patwari Mock Test Series</strong> is now available with 120 questions.</span>
           </div>
-
         </div>
-
       </section>
 
 
-      <!-- MOCK TEST SERIES — homepage matched -->
+      <!-- ================= MOCK TEST SERIES ================= -->
       <section class="section" id="mock-tests">
-
         <div class="section-head">
           <h2 class="section-title">Choose Your Exam</h2>
-          <div class="section-subtitle">
-            Test information, price and access details are shown clearly before you open a series.
-          </div>
+          <div class="section-subtitle">Test information, price and access details are shown clearly before you open a series.</div>
         </div>
 
         <div class="grid">
 
-          <!-- EXISTING / OLD JOA — KEEP LINK AND SYSTEM SAME -->
+          <!-- OLD JOA — EXISTING SYSTEM / LINKS PRESERVED -->
           <article class="card">
-
-            <img src="joa-banner.jpg"
-                 alt="JOA IT Mock Test Series"
-                 class="series-image">
-
+            <img src="joa-banner.jpg" alt="JOA IT Mock Test Series" class="series-image">
             <div class="series-body">
-
               <div class="badges">
                 <span class="badge-live">AVAILABLE NOW</span>
                 <span class="badge-live">FREE TEST AVAILABLE</span>
               </div>
-
               <h3 class="series-title">JOA (IT) Mock Test Series</h3>
-
-              <p class="series-description">
-                Full-length Junior Office Assistant (IT) mock tests with bilingual
-                questions and performance analysis.
-              </p>
-
+              <p class="series-description">Full-length Junior Office Assistant (IT) mock tests with bilingual questions and performance analysis.</p>
               <div class="meta">
                 <div class="meta-box"><strong>16</strong><span>Total Tests</span></div>
                 <div class="meta-box"><strong>100</strong><span>Questions/Test</span></div>
                 <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
               </div>
-
               <div class="price-row">
                 <div class="price">
                   <small>Complete Series</small>
                   <strong>₹99</strong>
                   <span class="free">Free Test Available</span>
                 </div>
-
                 <div class="card-buttons">
                   <a href="joa-series.html" class="card-btn card-outline">View Details</a>
                   <a href="my-progress.html" class="card-btn card-progress">My Progress</a>
                   <a href="payment.html?product=joa" class="card-btn card-primary">Buy Now</a>
                 </div>
               </div>
-
             </div>
           </article>
 
 
-          <!-- NEW JOA IT -->
+          <!-- NEW JOA IT — ACCESS: testAccess/{uid}.joaAccess -->
           <article class="card card-new" id="new-joa">
-
-            <!-- Future New JOA banner can be placed here -->
-            <div class="new-series-image">
-              NEW JOA IT
-            </div>
+            <!-- JPG BANNER PLACEHOLDER: replace this block with the New JOA JPG when supplied -->
+            <div class="new-series-image" aria-label="New JOA IT banner placeholder">NEW JOA IT</div>
 
             <div class="series-body">
-
               <div class="badges">
                 <span class="badge-new">NEW</span>
                 <span class="badge-live">FREE TEST AVAILABLE</span>
               </div>
-
               <h3 class="series-title">JOA IT Mock Test Series — New</h3>
-
-              <p class="series-description">
-                New JOA IT mock-test series with 120 questions per test,
-                90-minute duration and Hindi + English support.
-              </p>
-
+              <p class="series-description">New JOA IT mock-test series with 120 questions per test, 90-minute duration and Hindi + English support.</p>
               <div class="meta">
                 <div class="meta-box"><strong>10</strong><span>Total Tests</span></div>
                 <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
                 <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
               </div>
-
-              <div class="price-row">
-                <div class="price">
-                  <small>Complete Series</small>
-                  <strong>—</strong>
-                  <span class="free">New Series</span>
-                </div>
-
-                <div class="card-buttons">
-                  <a href="#new-joa" class="card-btn card-outline">View Details</a>
-                  <span class="card-btn card-primary" style="opacity:.65;cursor:default;">Buy Now</span>
-                </div>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- PATWARI -->
-          <article class="card">
-
-            <img src="patwari/patwari-banner.jpg"
-                 alt="HP Patwari Mock Test Series"
-                 class="series-image">
-
-            <div class="series-body">
-
-              <div class="badges">
-                <span class="badge-live">AVAILABLE NOW</span>
-                <span class="badge-live">FREE TEST AVAILABLE</span>
-              </div>
-
-              <h3 class="series-title">HP Patwari Mock Test Series</h3>
-
-              <p class="series-description">
-                Structured HP Patwari mock-test practice with Himachal GK,
-                general studies, Hindi, English and computer-based preparation.
-              </p>
-
-              <div class="meta">
-                <div class="meta-box"><strong>11</strong><span>Total Tests</span></div>
-                <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
-                <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
-              </div>
-
               <div class="price-row">
                 <div class="price">
                   <small>Complete Series</small>
                   <strong>₹149</strong>
                   <span class="free">Free Test Available</span>
                 </div>
+                <div class="card-buttons">
+                  <a href="new-joa-series.html" class="card-btn card-outline">View Details</a>
+                  <a href="payment.html?product=joa-new" id="newJoaBuyBtn" class="card-btn card-primary">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </article>
 
+
+          <!-- PATWARI — EXISTING SYSTEM / LINKS PRESERVED -->
+          <article class="card">
+            <img src="patwari/patwari-banner.jpg" alt="HP Patwari Mock Test Series" class="series-image">
+            <div class="series-body">
+              <div class="badges">
+                <span class="badge-live">AVAILABLE NOW</span>
+                <span class="badge-live">FREE TEST AVAILABLE</span>
+              </div>
+              <h3 class="series-title">HP Patwari Mock Test Series</h3>
+              <p class="series-description">Structured HP Patwari mock-test practice with Himachal GK, general studies, Hindi, English and computer-based preparation.</p>
+              <div class="meta">
+                <div class="meta-box"><strong>11</strong><span>Total Tests</span></div>
+                <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
+                <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
+              </div>
+              <div class="price-row">
+                <div class="price">
+                  <small>Complete Series</small>
+                  <strong>₹149</strong>
+                  <span class="free">Free Test Available</span>
+                </div>
                 <div class="card-buttons">
                   <a href="patwari/patwari-series.html" class="card-btn card-outline">View Details</a>
                   <a href="patwari/patwari-progress.html" class="card-btn card-progress">My Progress</a>
                   <a href="payment.html?product=patwari" class="card-btn card-primary">Buy Now</a>
                 </div>
               </div>
-
             </div>
           </article>
 
 
-          <!-- JOA IT MAHA PACK -->
+          <!-- JOA IT MAHA PACK — NO LEADERBOARD -->
           <article class="card">
-
-            <img src="mahapack/joa-mahapack-banner.jpg"
-                 alt="JOA IT Maha Pack"
-                 class="series-image">
-
+            <img src="mahapack/joa-mahapack-banner.jpg" alt="JOA IT Maha Pack" class="series-image">
             <div class="series-body">
-
               <div class="badges">
                 <span class="badge-live">JOA IT MAHA PACK</span>
                 <span class="badge-live">6000 QUESTIONS</span>
               </div>
-
               <h3 class="series-title">JOA IT Maha Pack</h3>
-
-              <p class="series-description">
-                Complete Computer preparation with 15 Computer subjects,
-                bilingual practice and performance tracking.
-              </p>
-
+              <p class="series-description">Complete Computer preparation with 15 Computer subjects, bilingual practice and performance tracking.</p>
               <div class="meta">
                 <div class="meta-box"><strong>15</strong><span>Subjects</span></div>
                 <div class="meta-box"><strong>6000</strong><span>Questions</span></div>
                 <div class="meta-box"><strong>6 Months</strong><span>Validity</span></div>
               </div>
-
               <div class="price-row">
                 <div class="price">
                   <small>Complete Pack</small>
                   <strong>₹399</strong>
                   <span class="free">15 Computer Subjects</span>
                 </div>
-
                 <div class="card-buttons">
                   <a href="mahapack/joa-mahapack.html" class="card-btn card-outline">View Details</a>
                   <a href="mahapack/master-progress.html" class="card-btn card-progress">Master Progress</a>
                   <a href="payment.html?product=computer-master" class="card-btn card-primary">Buy Now</a>
                 </div>
               </div>
-
             </div>
           </article>
 
@@ -1472,7 +608,6 @@
       </section>
 
     </main>
-
 
     <!-- FOOTER — same as homepage.html -->
     <footer class="footer">
@@ -1529,140 +664,99 @@
 
   <!-- FIREBASE -->
   <script type="module">
+    import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+    import { auth, db } from "./firebase-config.js";
 
-    import {
-      onAuthStateChanged,
-      signOut
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
-
-    import {
-      doc,
-      getDoc
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-
-    import {
-      auth,
-      db
-    } from "./firebase-config.js";
-
-
-    /* ================= ELEMENTS ================= */
-
-    const loading =
-      document.getElementById("loading");
-
-
-    const dashboard =
-      document.getElementById("dashboard");
-
-
-    const userName =
-      document.getElementById("userName");
-
-
-    const userEmail =
-      document.getElementById("userEmail");
-
-
-    const headerUserName =
-      document.getElementById("headerUserName");
-
-
-    const logoutBtn =
-      document.getElementById("logoutBtn");
-
-
-    const menuBtn =
-      document.getElementById("menuBtn");
-
-
-    const navMenu =
-      document.getElementById("navMenu");
-
-
-    /* ================= MOBILE MENU ================= */
+    const loading = document.getElementById("loading");
+    const dashboard = document.getElementById("dashboard");
+    const userName = document.getElementById("userName");
+    const userEmail = document.getElementById("userEmail");
+    const headerUserName = document.getElementById("headerUserName");
+    const headerUserInitial = document.getElementById("headerUserInitial");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+    const newJoaBuyBtn = document.getElementById("newJoaBuyBtn");
 
     menuBtn.addEventListener("click", () => {
-
       navMenu.classList.toggle("show");
-
     });
 
+    function professionalName(user){
+      const raw = (user.displayName || "").trim();
+      if(raw && !/^(student|user)$/i.test(raw)){
+        return raw.replace(/\s+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+      }
 
-    /* ================= AUTHENTICATION ================= */
+      const emailName = (user.email || "").split("@")[0].trim();
+      if(!emailName) return "Student";
+
+      const cleaned = emailName.replace(/[._-]+/g," ").replace(/\d+$/g,"").trim();
+      if(!cleaned) return "Student";
+      return cleaned.replace(/\s+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+    }
+
+    function initialFor(name){
+      const first = (name || "Student").trim().charAt(0);
+      return first ? first.toUpperCase() : "U";
+    }
+
+    function isActiveAccess(access){
+      if(!access || !access.expiresAt) return false;
+      if(typeof access.expiresAt.toMillis === "function"){
+        return access.expiresAt.toMillis() > Date.now();
+      }
+      const date = new Date(access.expiresAt);
+      return !Number.isNaN(date.getTime()) && date.getTime() > Date.now();
+    }
+
+    async function updateNewJoaPurchaseButton(user){
+      if(!newJoaBuyBtn || !user) return;
+
+      try{
+        const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
+        const data = accessSnap.exists() ? accessSnap.data() : {};
+        const hasActiveJoaAccess = isActiveAccess(data.joaAccess);
+
+        // Active New JOA purchasers do not see Buy Now.
+        newJoaBuyBtn.style.display = hasActiveJoaAccess ? "none" : "inline-flex";
+      }catch(error){
+        console.warn("Could not check New JOA access:", error);
+        // Keep Buy Now visible if the access check cannot be completed.
+        newJoaBuyBtn.style.display = "inline-flex";
+      }
+    }
 
     onAuthStateChanged(auth, async (user) => {
-
+      // This page is private. No logged-in user = immediately return to login.
       if(!user){
-
-        window.location.href =
-          "firebase-login.html";
-
+        window.location.replace("firebase-login.html");
         return;
-
       }
 
+      const displayName = professionalName(user);
+      const initial = initialFor(displayName);
 
-      /* USER NAME */
+      userName.textContent = displayName;
+      headerUserName.textContent = displayName;
+      headerUserInitial.textContent = initial;
+      userEmail.textContent = user.email || "";
 
-      const displayName =
-        user.displayName || "Student";
+      loading.style.display = "none";
+      dashboard.style.display = "block";
 
-
-      userName.textContent =
-        displayName;
-
-
-      headerUserName.textContent =
-        displayName;
-
-
-      /* USER EMAIL */
-
-      userEmail.textContent =
-        user.email || "";
-
-
-      /* SHOW DASHBOARD */
-
-      loading.style.display =
-        "none";
-
-
-      dashboard.style.display =
-        "block";
-
+      await updateNewJoaPurchaseButton(user);
     });
 
-
-    /* ================= LOGOUT ================= */
-
-    logoutBtn.addEventListener(
-      "click",
-      async () => {
-
-        try{
-
-          await signOut(auth);
-
-          window.location.href =
-            "firebase-login.html";
-
-        }
-
-        catch(error){
-
-          alert(
-            "Unable to logout. Please try again."
-          );
-
-        }
-
+    logoutBtn.addEventListener("click", async () => {
+      try{
+        await signOut(auth);
+        window.location.replace("firebase-login.html");
+      }catch(error){
+        alert("Unable to logout. Please try again.");
       }
-    );
-
+    });
   </script>
 
 </body>
