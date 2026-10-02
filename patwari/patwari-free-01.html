@@ -532,4 +532,310 @@ async function submitTest(auto=false){
     (correct/questions.length)*100;
 
   const attemptedAt=
-    serverT
+    serverTimestamp();
+
+  try{
+
+    /* =====================================================
+       SAVE EXISTING PERSONAL ATTEMPT
+    ===================================================== */
+
+    await setDoc(
+      attemptRef,
+      {
+        uid:currentUser.uid,
+        testId:TEST_ID,
+        answers:{...answers},
+
+        totalQuestions:questions.length,
+
+        answered,
+        correct,
+        wrong:answered-correct,
+        unattempted:questions.length-answered,
+
+        score:correct,
+        percentage,
+
+        attemptedAt,
+
+        submittedAutomatically:auto
+      }
+    );
+
+
+    /* =====================================================
+       SAVE LEADERBOARD ENTRY
+
+       Structure:
+       leaderboards/patwari/{TEST_ID}/entries/{uid}
+
+       Ranking:
+       1. Score / percentage descending
+       2. Earlier attemptedAt on equal score
+
+       No timeTaken field.
+    ===================================================== */
+
+    const leaderboardRef=
+      doc(
+        db,
+        "leaderboards",
+        "patwari",
+        TEST_ID,
+        "entries",
+        currentUser.uid
+      );
+
+
+    const studentName=
+      currentUser.displayName &&
+      currentUser.displayName.trim()
+        ? currentUser.displayName.trim()
+        : "Student";
+
+
+    await setDoc(
+      leaderboardRef,
+      {
+        uid:currentUser.uid,
+        name:studentName,
+        testId:TEST_ID,
+        score:correct,
+        percentage,
+        totalQuestions:questions.length,
+        attemptedAt
+      },
+      {merge:true}
+    );
+
+
+    /* =====================================================
+       MARK SESSION AS SUBMITTED
+    ===================================================== */
+
+    await updateDoc(
+      sessionRef,
+      {
+        status:"submitted",
+        submittedAt:attemptedAt,
+        updatedAt:attemptedAt
+      }
+    );
+
+
+    sessionData.status="submitted";
+
+    allowNavigation=true;
+
+    stopTimer();
+
+
+    /* =====================================================
+       OPEN STUDY MODE
+    ===================================================== */
+
+    window.location.href=
+      `./patwari-study-mode.html?test=${encodeURIComponent(TEST_ID)}`;
+
+  }catch(e){
+
+    console.error(
+      "Submission / Leaderboard Error:",
+      e
+    );
+
+    alert(
+      "Submission failed. Please check your connection and try again."
+    );
+
+    submitting=false;
+
+  }
+}
+
+
+async function checkAccessAndLoad(user){
+
+  if(!user){
+    showLock("Please login to attempt this test.");
+    return;
+  }
+
+  currentUser=user;
+
+  const refs=
+    pathRefs(user.uid);
+
+  sessionRef=
+    refs.session;
+
+  attemptRef=
+    refs.attempt;
+
+  try{
+
+    const attemptSnap=
+      await getDoc(attemptRef);
+
+    if(attemptSnap.exists()){
+
+      const attemptData=
+        attemptSnap.data() || {};
+
+      const savedScore =
+        Number.isFinite(
+          Number(attemptData.score)
+        )
+          ? Number(attemptData.score)
+          : Number(
+              attemptData.correct || 0
+            );
+
+      showSubmittedResult(
+        savedScore
+      );
+
+      return;
+    }
+
+
+    if(!isFree){
+
+      const accessSnap=
+        await getDoc(
+          doc(
+            db,
+            "testAccess",
+            user.uid
+          )
+        );
+
+      const access=
+        accessSnap.exists()
+          ? accessSnap.data().patwariAccess
+          : null;
+
+      if(
+        !access?.expiresAt ||
+        access.expiresAt.toMillis()<=Date.now()
+      ){
+
+        showLock(
+          "Your Patwari access is not active. Please purchase the Patwari series."
+        );
+
+        return;
+      }
+
+
+      const previousRef=
+        refs.previous;
+
+      if(previousRef){
+
+        const previousSnap=
+          await getDoc(
+            previousRef
+          );
+
+        if(!previousSnap.exists()){
+
+          showLock(
+            "Complete the previous test first to unlock this test."
+          );
+
+          return;
+        }
+
+      }
+
+    }
+
+
+    const state=
+      await createSession();
+
+    if(state==="needs_start"){
+
+      loading.style.display="none";
+      testArea.style.display="none";
+      lockScreen.style.display="none";
+      overlay.style.display="flex";
+
+    }
+
+  }catch(e){
+
+    console.error(e);
+
+    showLock(
+      "The test could not be loaded. Please refresh and try again."
+    );
+
+  }
+
+}
+
+window.addEventListener(
+  "beforeunload",
+  e=>{
+
+    if(
+      sessionData?.status==="in_progress" &&
+      !allowNavigation
+    ){
+
+      e.preventDefault();
+      e.returnValue="";
+
+    }
+
+  }
+);
+
+document.addEventListener(
+  "visibilitychange",
+  ()=>{
+
+    if(
+      !document.hidden &&
+      sessionData?.status==="in_progress"
+    ){
+
+      renderTimer();
+
+    }
+
+  }
+);
+
+onAuthStateChanged(
+  auth,
+  async user=>{
+
+    try{
+
+      await importQuestions();
+
+      validateQuestions();
+
+      await checkAccessAndLoad(user);
+
+    }catch(e){
+
+      console.error(e);
+
+      showLock(
+        e.message ||
+        "Question bank could not be loaded."
+      );
+
+    }
+
+  }
+);
+
+</script>
+</body>
+</html>
