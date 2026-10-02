@@ -164,7 +164,7 @@ const lockScreen = document.getElementById("lockScreen");
 const lockMessage = document.getElementById("lockMessage");
 const lockTitle = document.getElementById("lockTitle");
 const reviewBtn = document.getElementById("reviewBtn");
-const timerBar = document.querySelector(".timerbar");
+const examToolbar = document.querySelector(".exam-toolbar");
 const questionCard = document.getElementById("questionCard");
 const timerEl = document.getElementById("timer");
 const attemptedCount = document.getElementById("attemptedCount");
@@ -181,7 +181,7 @@ function showLock(message){
   loading.style.display="none";
   testArea.style.display="none";
   lockScreen.style.display="block";
-  timerBar.style.display="none";
+  examToolbar.style.display="none";
   lockTitle.textContent="Test Not Available";
   lockMessage.textContent=message;
   reviewBtn.style.display="none";
@@ -194,14 +194,14 @@ function showSubmittedResult(correct){
   lockTitle.textContent="Test Submitted Successfully";
   lockMessage.textContent=`Your Score: ${correct}/${questions.length}`;
   reviewBtn.style.display="inline-flex";
-  timerBar.style.display="none";
+  examToolbar.style.display="none";
 }
 
 function showTest(){
   loading.style.display="none";
   lockScreen.style.display="none";
   testArea.style.display="block";
-  timerBar.style.display="flex";
+  examToolbar.style.display="grid";
 }
 
 function pathRefs(uid){
