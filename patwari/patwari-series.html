@@ -152,7 +152,7 @@ width:min(1000px,calc(100% - 28px));max-width:1000px;margin:22px auto 14px;}
 .action-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:29px;border:0;border-radius:7px;font-size:9px;font-weight:900;cursor:pointer;text-decoration:none;transition:.18s ease}
 .start-btn{background:linear-gradient(135deg,#2563eb,#5546e8);color:#fff}
 .start-btn:hover{background:linear-gradient(135deg,#1d4ed8,#4f46e5);transform:translateY(-1px)}
-.locked-btn{background:#eef1f6!important;color:#64748b!important;border:1px solid #d7dce5!important;cursor:not-allowed!important}
+.locked-btn{background:linear-gradient(135deg,#4b3a08,#6f560d)!important;color:#f7e7a6!important;border:1px solid #8f7220!important;cursor:default!important;pointer-events:none!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 2px 5px rgba(70,50,0,.18)!important}
 .attempted-btn{background:#dbeafe;color:#1d4ed8}
 .test-item:not(.free-test-card)>.status{display:none !important}
 
@@ -752,7 +752,7 @@ body{
     <div class="test-name">Test #2</div>
   </div>
   <div id="test02-status" class="status locked">🔒 LOCKED</div>
-  <a id="test02-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test02-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -761,7 +761,7 @@ body{
     <div class="test-name">Test #3</div>
   </div>
   <div id="test03-status" class="status locked">🔒 LOCKED</div>
-  <a id="test03-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test03-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -770,7 +770,7 @@ body{
     <div class="test-name">Test #4</div>
   </div>
   <div id="test04-status" class="status locked">🔒 LOCKED</div>
-  <a id="test04-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test04-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -779,7 +779,7 @@ body{
     <div class="test-name">Test #5</div>
   </div>
   <div id="test05-status" class="status locked">🔒 LOCKED</div>
-  <a id="test05-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test05-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -788,7 +788,7 @@ body{
     <div class="test-name">Test #6</div>
   </div>
   <div id="test06-status" class="status locked">🔒 LOCKED</div>
-  <a id="test06-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test06-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -797,7 +797,7 @@ body{
     <div class="test-name">Test #7</div>
   </div>
   <div id="test07-status" class="status locked">🔒 LOCKED</div>
-  <a id="test07-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test07-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -806,7 +806,7 @@ body{
     <div class="test-name">Test #8</div>
   </div>
   <div id="test08-status" class="status locked">🔒 LOCKED</div>
-  <a id="test08-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test08-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -815,7 +815,7 @@ body{
     <div class="test-name">Test #9</div>
   </div>
   <div id="test09-status" class="status locked">🔒 LOCKED</div>
-  <a id="test09-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test09-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
 
@@ -824,7 +824,7 @@ body{
     <div class="test-name">Test #10</div>
   </div>
   <div id="test10-status" class="status locked">🔒 LOCKED</div>
-  <a id="test10-action" href="#" class="action-btn locked-btn">Locked</a>
+  <a id="test10-action" href="#" class="action-btn locked-btn">🔒 Locked</a>
 </div>
 
   </div>
@@ -844,7 +844,7 @@ body{
         <div class="footer-links">
           <a href="../joa-series.html">JOA (IT) Mock Tests</a>
           <a href="patwari-series.html">HP Patwari Mock Tests</a>
-          <a href="patwari-free-test.html">Free Patwari Test</a>
+          <a href="patwari-free-01.html">Free Patwari Test</a>
           <a href="patwari-progress.html">Patwari Progress</a>
         </div>
       </div>
@@ -958,7 +958,7 @@ onAuthStateChanged(auth, updateHeader);
       /* Registered user goes directly to the Patwari Free Test.
          Logged-out visitor is sent to Login first. */
       freeTestAction.href = isLoggedIn
-        ? "patwari-free-test.html"
+        ? "patwari-free-01.html"
         : "../firebase-login.html";
 
       freeTestAction.removeAttribute("target");
@@ -980,7 +980,7 @@ onAuthStateChanged(auth, updateHeader);
       event.preventDefault();
 
       if (auth.currentUser) {
-        window.location.href = "patwari-free-test.html";
+        window.location.href = "patwari-free-01.html";
       } else {
         window.location.href = "../firebase-login.html";
       }
@@ -993,13 +993,10 @@ onAuthStateChanged(auth, updateHeader);
       test.status.textContent = "🔒 LOCKED";
 
       test.action.className = "action-btn locked-btn";
-      test.action.textContent = "Locked";
+      test.action.textContent = "🔒 Locked";
       test.action.href = "#";
       test.action.removeAttribute("target");
-      test.action.onclick = (event) => {
-        event.preventDefault();
-        alert(`Complete the previous mock test first to unlock Mock Test ${test.number}.`);
-      };
+      test.action.onclick = null;
     }
 
     function showUnlocked(test) {
