@@ -8,17 +8,17 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
 body{background:#eef4fb;color:#12234f;min-height:100vh}
 button{font:inherit}
-.topbar{position:sticky;top:0;z-index:50;width:calc(100% - 24px);margin:10px auto 0;padding:10px 16px;min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-radius:16px;background:linear-gradient(135deg,#183056,#362c5b);box-shadow:0 10px 28px rgba(0,0,0,.18)}
-.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
-.brand img{width:48px;height:48px;object-fit:contain;border-radius:10px}
-.brand-name{font-size:19px;font-weight:900}.brand-name span{color:#58b6ff}.brand-tagline{display:block;font-size:9px;color:#b8c9e1;font-weight:600}
-.timer-box{display:flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(255,255,255,.18);border-radius:11px;background:rgba(255,255,255,.08);color:#fff}
-.timer-label{font-size:9px;font-weight:800;color:#b8c9e1}.timer{font-size:19px;font-weight:900;letter-spacing:1px;min-width:70px;text-align:center}
-.container{width:min(1100px,calc(100% - 24px));margin:18px auto 40px}
-.exam-head{background:#fff;border:1px solid #d5e1ef;border-radius:16px;padding:17px 20px;box-shadow:0 8px 22px rgba(20,55,105,.07);margin-bottom:14px}
-.exam-head h1{font-size:22px;color:#102d63}.exam-head p{font-size:11px;color:#64748b;margin-top:3px;font-weight:600}
-.progress-wrap{margin-top:12px}.progress-meta{display:flex;justify-content:space-between;font-size:10px;font-weight:800;color:#64748b;margin-bottom:5px}
-.progress{height:7px;background:#e5edf7;border-radius:99px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#5546e8);transition:.2s}
+.timerbar{width:calc(100% - 24px);margin:10px auto 0;min-height:62px;padding:10px 18px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg,#b91c1c,#ef4444);box-shadow:0 10px 28px rgba(127,29,29,.22);color:#fff}
+.timer-inner{display:flex;align-items:center;gap:12px}
+.timer-label{font-size:10px;font-weight:900;letter-spacing:.8px;color:#fee2e2}
+.timer{font-size:24px;font-weight:950;letter-spacing:1.5px;min-width:82px;text-align:center}
+.container{width:min(1000px,calc(100% - 24px));margin:16px auto 40px}
+.status-cards{display:flex;justify-content:center;gap:14px;margin:0 0 14px}
+.status-card{width:180px;min-height:88px;background:#fff;border:1px solid #d5e1ef;border-radius:18px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 8px 22px rgba(20,55,105,.07)}
+.status-circle{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:950}
+.status-card.attempted .status-circle{background:#dcfce7;color:#166534;border:4px solid #bbf7d0}
+.status-card.unattempted .status-circle{background:#fff7ed;color:#c2410c;border:4px solid #fed7aa}
+.status-label{font-size:10px;font-weight:900;color:#475569;text-transform:uppercase;letter-spacing:.5px;line-height:1.35}
 .question-card{background:#fff;border:1px solid #d5e1ef;border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(20,55,105,.07)}
 .q-number{font-size:10px;color:#2563eb;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
 .question-en{font-size:17px;font-weight:800;line-height:1.5;color:#12275a}
@@ -34,7 +34,7 @@ button{font:inherit}
 .nav-btn,.submit-btn{min-height:40px;padding:0 18px;border:0;border-radius:9px;font-size:11px;font-weight:900;cursor:pointer}
 .nav-btn{background:#e7eef8;color:#1e3a62}.nav-btn.primary{background:linear-gradient(135deg,#2563eb,#5546e8);color:#fff}.submit-btn{background:linear-gradient(135deg,#15803d,#166534);color:#fff}
 .nav-btn:disabled{opacity:.45;cursor:not-allowed}
-.instructions-overlay{position:fixed;inset:0;z-index:100;background:rgba(5,16,34,.72);display:none;align-items:center;justify-content:center;padding:16px}
+.instructions-overlay{position:fixed;inset:0;z-index:100;background:rgba(8,15,30,.94);display:none;align-items:center;justify-content:center;padding:16px}
 .instructions-modal{width:min(560px,100%);background:#fff;border-radius:18px;padding:22px;box-shadow:0 25px 70px rgba(0,0,0,.35)}
 .instructions-modal h2{font-size:21px;color:#102d63}.instructions-modal p{font-size:11px;color:#64748b;margin:5px 0 12px}
 .instructions-list{padding-left:19px;color:#334155;font-size:11px;line-height:1.7}
@@ -47,39 +47,43 @@ button{font:inherit}
 .lock-screen h2{color:#102d63;font-size:22px}.lock-screen p{color:#64748b;font-size:12px;margin-top:7px}
 .loading{text-align:center;padding:35px;color:#64748b;font-weight:800}
 @media(max-width:650px){
- .topbar{width:calc(100% - 12px);padding:8px 10px}.brand img{width:40px;height:40px}.brand-name{font-size:16px}.brand-tagline{font-size:8px}
- .timer-box{padding:7px 9px}.timer{font-size:16px;min-width:62px}
- .container{width:calc(100% - 14px);margin-top:10px}.question-card{padding:16px}.question-en{font-size:15px}.question-hi{font-size:13px}
+ .timerbar{width:calc(100% - 12px);min-height:56px;padding:8px 12px}
+ .timer{font-size:21px;min-width:72px}.timer-label{font-size:9px}
+ .container{width:calc(100% - 14px);margin-top:10px}
+ .status-cards{gap:9px}.status-card{width:calc(50% - 5px);min-height:78px;border-radius:15px}
+ .status-circle{width:46px;height:46px;font-size:15px}.status-label{font-size:9px}
+ .question-card{padding:16px}.question-en{font-size:15px}.question-hi{font-size:13px}
  .navigation{position:sticky;bottom:8px;background:rgba(238,244,251,.95);padding:7px;border-radius:10px}
 }
 </style>
 </head>
 <body>
 
-<header class="topbar">
-  <a href="../patwari/patwari-series.html" class="brand">
-    <img src="../logo.png" alt="HPMockShashtra">
-    <div><div class="brand-name">HP<span>Mock</span>Shashtra</div><span class="brand-tagline">HP Patwari Mock Test</span></div>
-  </a>
-  <div class="timer-box">
+
+<div class="timerbar">
+  <div class="timer-inner">
     <span class="timer-label">TIME LEFT</span>
     <span class="timer" id="timer">90:00</span>
   </div>
-</header>
+</div>
 
 <main class="container">
   <div id="loading" class="loading">Loading test...</div>
 
   <section id="testArea" style="display:none">
-    <div class="exam-head">
-      <h1 id="testTitle">HP Patwari Mock Test</h1>
-      <p>120 Questions • 90 Minutes • Hindi + English</p>
-      <div class="progress-wrap">
-        <div class="progress-meta"><span id="progressText">Question 1 of 120</span><span id="answeredText">0 Answered</span></div>
-        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="status-cards">
+      <div class="status-card attempted">
+        <div class="status-circle" id="attemptedCount">0</div>
+        <div class="status-label">Attempted</div>
+      </div>
+      <div class="status-card unattempted">
+        <div class="status-circle" id="unattemptedCount">120</div>
+        <div class="status-label">Not Attempted</div>
       </div>
     </div>
+
     <div id="questionCard" class="question-card"></div>
+
     <div class="navigation">
       <button class="nav-btn" id="prevBtn">← Previous</button>
       <button class="nav-btn primary" id="nextBtn">Next →</button>
@@ -160,9 +164,8 @@ const lockScreen = document.getElementById("lockScreen");
 const lockMessage = document.getElementById("lockMessage");
 const questionCard = document.getElementById("questionCard");
 const timerEl = document.getElementById("timer");
-const progressText = document.getElementById("progressText");
-const answeredText = document.getElementById("answeredText");
-const progressBar = document.getElementById("progressBar");
+const attemptedCount = document.getElementById("attemptedCount");
+const unattemptedCount = document.getElementById("unattemptedCount");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const submitBtn = document.getElementById("submitBtn");
@@ -249,7 +252,7 @@ function renderTimer(){
   const m=Math.floor(sec/60).toString().padStart(2,"0");
   const s=(sec%60).toString().padStart(2,"0");
   timerEl.textContent=`${m}:${s}`;
-  if(sec<=0 && sessionData?.status==="in_progress") autoSubmit();
+  if(sec<=0 && sessionData?.status==="in_progress") submitTest(true);
 }
 
 function startTimer(){
@@ -308,9 +311,8 @@ async function selectAnswer(letter){
 
 function updateProgress(){
   const answered=Object.keys(answers).length;
-  progressText.textContent=`Question ${currentIndex+1} of ${questions.length}`;
-  answeredText.textContent=`${answered} Answered`;
-  progressBar.style.width=`${(answered/questions.length)*100}%`;
+  attemptedCount.textContent=answered;
+  unattemptedCount.textContent=Math.max(0,questions.length-answered);
 }
 
 function updateNavigation(){
@@ -424,11 +426,10 @@ async function beginTest(){
 startConfirmBtn.addEventListener("click",beginTest);
 
 cancelStartBtn.addEventListener("click",()=>{
-  clearInterval(countdownInterval);countdownInterval=null;
+  clearInterval(countdownInterval);
+  countdownInterval=null;
   starting=false;
-  overlay.style.display="none";
-  startConfirmBtn.disabled=false;
-  cancelStartBtn.disabled=false;
+  window.location.href="../patwari/patwari-series.html";
 });
 
 async function submitTest(auto=false){
@@ -500,8 +501,9 @@ async function checkAccessAndLoad(user){
 
     const state=await createSession();
     if(state==="needs_start"){
-      showTest();
-      renderQuestion();updateProgress();
+      loading.style.display="none";
+      testArea.style.display="none";
+      lockScreen.style.display="none";
       overlay.style.display="flex";
     }
   }catch(e){
