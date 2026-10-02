@@ -347,6 +347,7 @@ nextBtn.addEventListener("click",()=>{
 });
 
 submitBtn.addEventListener("click",()=>submitTest(false));
+
 reviewBtn.addEventListener("click",()=>{
   allowNavigation=true;
   window.location.href="./patwari-study-mode.html";
@@ -358,10 +359,15 @@ async function createSession(){
   attemptRef=refs.attempt;
 
   const snap=await getDoc(sessionRef);
+
   if(snap.exists()){
+
     sessionData=snap.data();
     answers=sessionData.answers||{};
-    currentIndex=Math.min(sessionData.currentIndex||0,questions.length-1);
+    currentIndex=Math.min(
+      sessionData.currentIndex||0,
+      questions.length-1
+    );
 
     if(sessionData.status==="submitted"){
       showLock("This test has already been attempted. You cannot attempt it again.");
@@ -369,11 +375,13 @@ async function createSession(){
     }
 
     if(sessionData.status==="in_progress"){
+
       /*
        * Valid started session must have startedAt.
        * If it is missing, show the instruction popup again
        * instead of starting a broken timer.
        */
+
       if(sessionData.startedAt){
         showTest();
         renderQuestion();
@@ -398,18 +406,29 @@ async function createSession(){
   }
 
   const attemptSnap=await getDoc(attemptRef);
+
   if(attemptSnap.exists()){
     showLock("This test has already been attempted. You cannot attempt it again.");
     return false;
   }
 
-  currentIndex=0;answers={};
-  sessionData={uid:currentUser.uid,testId:TEST_ID,status:"in_progress",answers:{},currentIndex:0};
+  currentIndex=0;
+  answers={};
+
+  sessionData={
+    uid:currentUser.uid,
+    testId:TEST_ID,
+    status:"in_progress",
+    answers:{},
+    currentIndex:0
+  };
+
   return "needs_start";
 }
 
 async function beginTest(){
   if(starting) return;
+
   starting=true;
   startConfirmBtn.disabled=true;
   cancelStartBtn.disabled=true;
@@ -420,147 +439,97 @@ async function beginTest(){
   countdownInterval=setInterval(async()=>{
     count--;
     startCountdown.textContent=count;
+
     if(count<=0){
+
       clearInterval(countdownInterval);
       countdownInterval=null;
+
       try{
+
         const now=Timestamp.now();
+
         sessionData.startedAt=now;
         sessionData.status="in_progress";
         sessionData.updatedAt=now;
-        await setDoc(sessionRef,sessionData,{merge:true});
+
+        await setDoc(
+          sessionRef,
+          sessionData,
+          {merge:true}
+        );
+
         overlay.style.display="none";
+
         showTest();
-        renderQuestion();updateProgress();startTimer();
+
+        renderQuestion();
+        updateProgress();
+        startTimer();
+
       }catch(e){
+
         console.error(e);
-        alert("Test could not be started. Please try again.");
+
+        alert(
+          "Test could not be started. Please try again."
+        );
+
       }finally{
+
         starting=false;
         startConfirmBtn.disabled=false;
         cancelStartBtn.disabled=false;
+
       }
+
     }
+
   },1000);
 }
 
-startConfirmBtn.addEventListener("click",beginTest);
+startConfirmBtn.addEventListener(
+  "click",
+  beginTest
+);
 
-cancelStartBtn.addEventListener("click",()=>{
-  clearInterval(countdownInterval);
-  countdownInterval=null;
-  starting=false;
-  window.location.href="../patwari/patwari-series.html";
-});
+cancelStartBtn.addEventListener(
+  "click",
+  ()=>{
+    clearInterval(countdownInterval);
+    countdownInterval=null;
+    starting=false;
+    window.location.href="../patwari/patwari-series.html";
+  }
+);
+
+
+/* =========================================================
+   SUBMIT TEST + LEADERBOARD
+========================================================= */
 
 async function submitTest(auto=false){
-  if(submitting || !sessionData || sessionData.status!=="in_progress") return;
+
+  if(
+    submitting ||
+    !sessionData ||
+    sessionData.status!=="in_progress"
+  ) return;
+
   submitting=true;
 
-  const answered=Object.keys(answers).length;
-  const correct=questions.reduce((score,q,i)=>score+(answers[i]===q.answer?1:0),0);
-  const attemptedAt=serverTimestamp();
+  const answered=
+    Object.keys(answers).length;
 
-  try{
-    await setDoc(attemptRef,{
-      uid:currentUser.uid,
-      testId:TEST_ID,
-      answers:{...answers},
-      totalQuestions:questions.length,
-      answered,
-      correct,
-      wrong:answered-correct,
-      unattempted:questions.length-answered,
-      score:correct,
-      percentage:(correct/questions.length)*100,
-      attemptedAt,
-      submittedAutomatically:auto
-    });
+  const correct=
+    questions.reduce(
+      (score,q,i)=>
+        score+(answers[i]===q.answer?1:0),
+      0
+    );
 
-    await updateDoc(sessionRef,{status:"submitted",submittedAt:attemptedAt,updatedAt:attemptedAt});
-    sessionData.status="submitted";
-    allowNavigation=true;
-    stopTimer();
-    window.location.href="./patwari-study-mode.html";
-  }catch(e){
-    console.error(e);
-    alert("Submission failed. Please check your connection and try again.");
-    submitting=false;
-  }
-}
+  const percentage=
+    (correct/questions.length)*100;
 
-async function checkAccessAndLoad(user){
-  if(!user){showLock("Please login to attempt this test.");return;}
-
-  currentUser=user;
-  const refs=pathRefs(user.uid);
-  sessionRef=refs.session;
-  attemptRef=refs.attempt;
-
-  try{
-    const attemptSnap=await getDoc(attemptRef);
-    if(attemptSnap.exists()){
-      const attemptData=attemptSnap.data() || {};
-      const savedScore = Number.isFinite(Number(attemptData.score))
-        ? Number(attemptData.score)
-        : Number(attemptData.correct || 0);
-      showSubmittedResult(savedScore);
-      return;
-    }
-
-    if(!isFree){
-      const accessSnap=await getDoc(doc(db,"testAccess",user.uid));
-      const access=accessSnap.exists()?accessSnap.data().patwariAccess:null;
-      if(!access?.expiresAt || access.expiresAt.toMillis()<=Date.now()){
-        showLock("Your Patwari access is not active. Please purchase the Patwari series.");
-        return;
-      }
-
-      const previousRef=refs.previous;
-      if(previousRef){
-        const previousSnap=await getDoc(previousRef);
-        if(!previousSnap.exists()){
-          showLock("Complete the previous test first to unlock this test.");
-          return;
-        }
-      }
-    }
-
-    const state=await createSession();
-    if(state==="needs_start"){
-      loading.style.display="none";
-      testArea.style.display="none";
-      lockScreen.style.display="none";
-      overlay.style.display="flex";
-    }
-  }catch(e){
-    console.error(e);
-    showLock("The test could not be loaded. Please refresh and try again.");
-  }
-}
-
-window.addEventListener("beforeunload",e=>{
-  if(sessionData?.status==="in_progress" && !allowNavigation){
-    e.preventDefault();e.returnValue="";
-  }
-}); 
-
-document.addEventListener("visibilitychange",()=>{
-  if(!document.hidden && sessionData?.status==="in_progress"){
-    renderTimer();
-  }
-});
-
-onAuthStateChanged(auth,async user=>{
-  try{
-    await importQuestions();
-    validateQuestions();
-    await checkAccessAndLoad(user);
-  }catch(e){
-    console.error(e);
-    showLock(e.message||"Question bank could not be loaded.");
-  }
-});
-</script>
-</body>
-</html>
+  const attemptedAt=
+    serverT
