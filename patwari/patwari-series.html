@@ -1041,7 +1041,7 @@ onAuthStateChanged(auth, updateHeader);
       try {
         /* Free Test status is independent of paid access. */
         try {
-          const freeAttemptRef = doc(db, "users", user.uid, "patwari", "attempts", FREE_TEST_ID);
+          const freeAttemptRef = doc(db, "users", user.uid, "patwariAttempts", FREE_TEST_ID);
           const freeAttemptSnap = await getDoc(freeAttemptRef);
           if (freeAttemptSnap.exists()) {
             showFreeAttempted();
@@ -1094,7 +1094,7 @@ onAuthStateChanged(auth, updateHeader);
 
         for (const test of TESTS) {
           try {
-            const attemptRef = doc(db, "users", user.uid, "patwari", "attempts", test.testId);
+            const attemptRef = doc(db, "users", user.uid, "patwariAttempts", test.testId);
             const attemptSnap = await getDoc(attemptRef);
             attempts.push(attemptSnap.exists());
           } catch (error) {
