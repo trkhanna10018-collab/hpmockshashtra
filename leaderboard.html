@@ -6,38 +6,15 @@
 
 <title>Leaderboard | HPMockShashtra</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-  rel="stylesheet"
->
+<meta name="description"
+      content="HPMockShashtra JOA and Patwari mock test leaderboard. View top performers and test-wise rankings.">
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root{
-  --blue:#1677ff;
-  --blue-dark:#0754bd;
-  --green:#16a765;
-  --orange:#f27b21;
-  --purple:#7445df;
-  --gold:#f5b400;
-
-  --bg:#eef5fc;
-  --text:#10233f;
-  --muted:#64748b;
-  --border:#dce7f3;
-
-  --content:1160px;
-}
-
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
@@ -45,1153 +22,843 @@ html{
 }
 
 body{
-  margin:0;
-  font-family:Inter,Arial,sans-serif;
-  color:var(--text);
-  background:var(--bg);
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+  line-height:1.5;
 }
 
+button,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
+  min-height:430px;
   position:relative;
-  min-height:470px;
+  overflow:hidden;
 
   background:
     linear-gradient(
-      rgba(5,28,58,.58),
-      rgba(5,28,58,.58)
+      180deg,
+      rgba(4,20,42,.72) 0%,
+      rgba(5,35,70,.55) 45%,
+      rgba(3,17,35,.82) 100%
     ),
     url("./leaderboard.jpg") center/cover no-repeat;
 
-  color:white;
-  overflow:hidden;
+  color:#fff;
 }
 
 .hero::after{
   content:"";
   position:absolute;
-  inset:0;
+  left:0;
+  right:0;
+  bottom:0;
+  height:110px;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(2,18,42,.04),
-      rgba(2,18,42,.28)
+      transparent,
+      rgba(244,247,251,1)
     );
 
   pointer-events:none;
 }
 
-
 /* =========================================================
-   NAVIGATION
+   NAV
 ========================================================= */
 
 .nav{
-  position:relative;
-  z-index:5;
+  width:calc(100% - 56px);
+  max-width:1250px;
+  margin:0 auto;
 
-  width:min(var(--content),calc(100% - 32px));
-  margin:auto;
-
-  height:78px;
+  min-height:82px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
+
+  position:relative;
+  z-index:10;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:10px;
-
-  text-decoration:none;
-  color:white;
+  gap:12px;
 }
 
 .brand-logo{
-  width:58px;
-  height:58px;
-
+  width:48px;
+  height:48px;
   object-fit:contain;
 }
 
 .brand-text{
-  line-height:1.05;
+  display:flex;
+  flex-direction:column;
 }
 
 .brand-name{
-  font-size:27px;
+  font-size:22px;
   font-weight:800;
-  letter-spacing:-1px;
+  letter-spacing:.2px;
 }
 
 .brand-name span{
-  color:#62a9ff;
+  color:#ffd54f;
 }
 
 .brand-tagline{
-  margin-top:7px;
-
-  font-size:11px;
-  font-weight:600;
-
-  letter-spacing:1px;
-
-  opacity:.9;
+  font-size:9px;
+  letter-spacing:2px;
+  opacity:.85;
+  margin-top:2px;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:8px;
 }
 
-.nav-links a{
-  color:white;
-  text-decoration:none;
+.nav-links a,
+.login-btn{
+  border:0;
+  background:transparent;
+  color:#fff;
 
-  padding:11px 13px;
-
+  padding:10px 13px;
   border-radius:8px;
 
-  font-size:12px;
+  font-size:14px;
   font-weight:600;
 
-  opacity:.95;
-
-  transition:.2s;
+  transition:.2s ease;
 }
 
-.nav-links a:hover{
-  background:rgba(255,255,255,.12);
-}
-
+.nav-links a:hover,
 .nav-links a.active{
-  color:#67b0ff;
-
-  background:rgba(255,255,255,.09);
-
-  box-shadow:
-    inset 0 -3px 0 #36a0ff;
+  background:rgba(255,255,255,.13);
 }
 
 .login-btn{
-  border:0;
+  margin-left:5px;
+  background:#f5c542;
+  color:#142033;
+}
 
-  background:white;
-  color:#1265d8;
-
-  padding:11px 17px;
-
-  border-radius:9px;
-
-  font-weight:800;
-  font-size:12px;
-
-  cursor:pointer;
-
-  box-shadow:
-    0 5px 18px rgba(0,0,0,.14);
+.login-btn:hover{
+  background:#ffd75c;
+  transform:translateY(-1px);
 }
 
 .mobile-menu{
   display:none;
 
   border:0;
+  background:rgba(255,255,255,.12);
+  color:#fff;
 
-  background:rgba(255,255,255,.14);
-
-  color:white;
+  width:42px;
+  height:42px;
 
   border-radius:8px;
 
-  padding:9px 11px;
-
-  font-size:19px;
+  font-size:20px;
 }
 
-
 /* =========================================================
-   HERO TITLE
+   HERO CONTENT
 ========================================================= */
 
 .hero-content{
+  width:calc(100% - 56px);
+  max-width:1100px;
+  margin:0 auto;
+
   position:relative;
-  z-index:3;
+  z-index:5;
 
-  width:min(var(--content),calc(100% - 32px));
-
-  margin:8px auto 0;
-
+  padding-top:80px;
   text-align:center;
 }
 
 .hero-title{
   display:flex;
-
   align-items:center;
   justify-content:center;
-
-  gap:12px;
-
-  margin:20px 0 2px;
+  gap:14px;
 }
 
-.hero-title .trophy{
-  font-size:55px;
-
-  filter:
-    drop-shadow(
-      0 5px 4px rgba(0,0,0,.25)
-    );
+.trophy{
+  font-size:50px;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,.25));
 }
 
 .hero-title h1{
-  margin:0;
-
   font-size:48px;
-  line-height:1.05;
-
+  line-height:1.1;
   font-weight:800;
-
-  letter-spacing:-2px;
+  letter-spacing:-1px;
 }
 
 .hero-title h1 span{
-  color:#ffc62c;
+  color:#ffd54f;
 }
 
 .hero-subtitle{
-  margin:10px 0 14px;
-
-  font-size:16px;
-
-  font-weight:500;
+  margin-top:18px;
+  font-size:18px;
+  color:#e6eef9;
 }
 
 .hero-pill{
   display:inline-block;
 
-  background:rgba(18,91,178,.8);
+  margin-top:25px;
 
-  border:
-    1px solid rgba(255,255,255,.2);
+  padding:9px 18px;
 
-  padding:8px 16px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:30px;
 
-  border-radius:20px;
+  background:rgba(255,255,255,.09);
 
-  font-size:12px;
-  font-weight:700;
+  font-size:13px;
+  color:#fff;
+
+  backdrop-filter:blur(6px);
 }
-
 
 /* =========================================================
    MAIN
 ========================================================= */
 
 .main{
+  width:calc(100% - 56px);
+  max-width:1250px;
+
+  margin:-45px auto 60px;
+
   position:relative;
-  z-index:10;
-
-  width:min(var(--content),calc(100% - 32px));
-
-  margin:-225px auto 50px;
+  z-index:20;
 }
 
-
 /* =========================================================
-   EXAM CARDS
+   TOP 3 CARDS
 ========================================================= */
 
 .exam-cards{
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:12px;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
 
 .exam-card{
-  background:white;
+  background:#fff;
 
-  border-radius:14px;
+  border-radius:18px;
 
-  overflow:hidden;
+  padding:22px;
 
   box-shadow:
-    0 7px 24px rgba(15,45,80,.13);
+    0 10px 30px rgba(18,38,63,.09);
 
-  border:
-    1px solid rgba(255,255,255,.7);
+  border:1px solid #e5eaf1;
+}
+
+.exam-card.joa{
+  border-top:4px solid #2764d9;
+}
+
+.exam-card.patwari{
+  border-top:4px solid #7b4ed8;
 }
 
 .exam-card-head{
-  padding:14px 16px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-  color:white;
-}
-
-.exam-card.joa .exam-card-head{
-  background:
-    linear-gradient(
-      135deg,
-      #0879ee,
-      #1476d8
-    );
-}
-
-.exam-card.patwari .exam-card-head{
-  background:
-    linear-gradient(
-      135deg,
-      #16a960,
-      #42bf73
-    );
-}
-
-.exam-card.police .exam-card-head{
-  background:
-    linear-gradient(
-      135deg,
-      #f36c17,
-      #fa9340
-    );
-}
-
-.exam-card.jbt .exam-card-head{
-  background:
-    linear-gradient(
-      135deg,
-      #713ce0,
-      #925eea
-    );
+  margin-bottom:16px;
 }
 
 .exam-name{
-  font-size:17px;
+  font-size:19px;
   font-weight:800;
 }
 
 .exam-top-text{
-  margin-top:3px;
-
-  font-size:11px;
-  font-weight:600;
-
-  opacity:.95;
+  font-size:12px;
+  color:#68748a;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.5px;
 }
 
 .top-list{
-  padding:8px 13px;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
 }
 
 .top-row{
   display:grid;
-
-  grid-template-columns:
-    34px 1fr auto;
-
+  grid-template-columns:42px 1fr auto;
   align-items:center;
+  gap:10px;
 
-  gap:7px;
+  min-height:48px;
 
-  min-height:55px;
+  padding:8px 10px;
 
-  border-bottom:
-    1px solid #edf1f5;
+  background:#f7f9fc;
+  border-radius:10px;
 }
 
-.top-row:last-child{
-  border-bottom:0;
-}
+.top-rank{
+  width:34px;
+  height:34px;
 
-.medal{
-  font-size:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  text-align:center;
-}
+  border-radius:50%;
 
-.student-name{
-  font-size:11px;
+  background:#e9eef6;
 
+  font-size:13px;
   font-weight:800;
+}
 
-  color:#1a2c44;
+.top-rank.first{
+  background:#fff0b5;
+}
+
+.top-rank.second{
+  background:#e5e8ec;
+}
+
+.top-rank.third{
+  background:#f1dfcf;
+}
+
+.top-name{
+  font-size:14px;
+  font-weight:700;
 
   white-space:nowrap;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
 }
 
-.student-rank{
-  margin-top:3px;
+.top-score{
+  text-align:right;
 
-  font-size:9px;
-
-  color:#78889b;
-}
-
-.student-score{
-  font-size:12px;
-
+  font-size:14px;
   font-weight:800;
+
+  color:#1f3d72;
 }
 
-.exam-card.joa .student-score{
-  color:#1268cf;
+.top-score small{
+  display:block;
+  color:#718096;
+  font-size:11px;
+  font-weight:600;
 }
 
-.exam-card.patwari .student-score{
-  color:#0b8d4e;
-}
+.loading,
+.empty{
+  padding:15px;
+  text-align:center;
 
-.exam-card.police .student-score{
-  color:#dc5810;
-}
+  color:#788397;
+  font-size:13px;
 
-.exam-card.jbt .student-score{
-  color:#6934ce;
+  background:#f7f9fc;
+  border-radius:10px;
 }
 
 .view-exam{
-  margin:5px 12px 12px;
+  width:100%;
 
-  width:
-    calc(100% - 24px);
+  margin-top:15px;
 
-  padding:9px 10px;
+  border:0;
+  border-radius:9px;
 
-  border-radius:20px;
+  padding:10px 13px;
 
-  border:
-    1px solid #bdd7f5;
+  background:#edf2fa;
+  color:#1c4d9b;
 
-  background:#f6faff;
+  font-size:13px;
+  font-weight:700;
 
-  color:#1268cf;
-
-  font-size:10px;
-
-  font-weight:800;
-
-  cursor:pointer;
+  transition:.2s;
 }
 
-.exam-card.patwari .view-exam{
-  color:#087d48;
-  border-color:#a7e4c4;
+.view-exam:hover{
+  background:#dfe9f8;
 }
-
-.exam-card.police .view-exam{
-  color:#d35b16;
-  border-color:#f4cfb2;
-}
-
-.exam-card.jbt .view-exam{
-  color:#6b39d4;
-  border-color:#d3c0fa;
-}
-
 
 /* =========================================================
    USER RANK
 ========================================================= */
 
 .user-rank-card{
-  margin-top:14px;
+  margin-top:22px;
 
-  background:white;
+  background:#14243b;
+  color:#fff;
 
-  border:
-    1px solid var(--border);
+  border-radius:17px;
 
-  border-radius:14px;
-
-  min-height:90px;
-
-  padding:15px 18px;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:20px;
+  padding:20px 22px;
 
   box-shadow:
-    0 5px 18px rgba(15,45,80,.07);
+    0 10px 30px rgba(18,38,63,.12);
 }
 
-.user-avatar{
-  width:52px;
-  height:52px;
-
-  border-radius:50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #227bf1,
-      #0d58bf
-    );
-
-  color:white;
-
+.user-rank-head{
   display:flex;
-
   align-items:center;
-  justify-content:center;
+  justify-content:space-between;
 
-  font-size:26px;
-
-  flex:none;
+  margin-bottom:15px;
 }
 
-.user-rank-main{
-  min-width:220px;
+.user-rank-title{
+  font-size:18px;
+  font-weight:800;
 }
 
-.user-rank-label{
+.user-rank-note{
   font-size:12px;
-  font-weight:800;
+  color:#aebbd0;
 }
 
-.user-rank-number{
-  margin-top:3px;
-
-  font-size:26px;
-  font-weight:800;
-}
-
-.rank-divider{
-  width:1px;
-  height:50px;
-
-  background:#dce5ef;
-}
-
-.rank-exams{
-  flex:1;
-
+.rank-grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
+  grid-template-columns:1fr 1fr 1fr;
+  gap:14px;
 }
 
-.rank-exam{
-  text-align:center;
+.rank-box{
+  background:rgba(255,255,255,.07);
 
-  border-right:
-    1px solid #dce5ef;
+  border:1px solid rgba(255,255,255,.09);
+
+  border-radius:11px;
+
+  padding:14px;
 }
 
-.rank-exam:last-child{
-  border-right:0;
+.rank-label{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+
+  color:#aebbd0;
 }
 
-.rank-exam-name{
-  font-size:10px;
-  font-weight:800;
-}
-
-.rank-exam-name span{
-  font-weight:500;
-  color:#65758a;
-}
-
-.rank-exam-value{
+.rank-value{
   margin-top:5px;
 
-  font-size:20px;
-
+  font-size:23px;
   font-weight:800;
 }
 
+.rank-sub{
+  margin-top:2px;
+
+  font-size:11px;
+  color:#aebbd0;
+}
 
 /* =========================================================
    LOGIN NOTICE
 ========================================================= */
 
 .login-notice{
-  margin-top:14px;
+  margin-top:22px;
 
-  background:#fffdf5;
+  background:#fff8e1;
 
-  border:
-    1px solid #f3d77b;
+  border:1px solid #f3df91;
 
-  border-radius:13px;
+  border-radius:12px;
 
-  min-height:77px;
-
-  padding:13px 17px;
+  padding:13px 16px;
 
   display:flex;
-
   align-items:center;
+  justify-content:space-between;
 
   gap:15px;
 }
 
-.notice-icon{
-  width:42px;
-  height:42px;
-
-  border-radius:50%;
-
-  background:#fff1bd;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  font-size:21px;
-
-  flex:none;
+.login-notice-text{
+  font-size:13px;
+  color:#66551d;
 }
 
-.notice-content{
-  flex:1;
+.login-notice-text strong{
+  color:#4d3e0e;
 }
 
-.notice-title{
-  font-size:12px;
-  font-weight:800;
-}
+.notice-login{
+  flex-shrink:0;
 
-.notice-text{
-  margin-top:5px;
-
-  font-size:10px;
-
-  color:#65748a;
-}
-
-.notice-button{
   border:0;
-
-  background:#1976ed;
-
-  color:white;
-
-  padding:11px 16px;
-
   border-radius:8px;
 
-  font-size:11px;
+  padding:9px 15px;
 
-  font-weight:800;
+  background:#e0ae1b;
+  color:#fff;
 
-  cursor:pointer;
-
-  white-space:nowrap;
+  font-size:12px;
+  font-weight:700;
 }
 
-
 /* =========================================================
-   FILTER
+   FILTER CARD
 ========================================================= */
 
 .filter-card{
-  margin-top:12px;
+  margin-top:22px;
 
-  background:white;
+  background:#fff;
 
-  border:
-    1px solid var(--border);
+  border:1px solid #e3e8ef;
 
-  border-radius:13px;
+  border-radius:16px;
 
-  padding:12px 20px;
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr 1.25fr;
-
-  gap:20px;
-
-  align-items:end;
+  padding:20px;
 
   box-shadow:
-    0 4px 15px rgba(15,45,80,.05);
+    0 8px 25px rgba(18,38,63,.06);
+}
+
+.filter-title{
+  font-size:18px;
+  font-weight:800;
+
+  margin-bottom:15px;
+}
+
+.filter-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.filter-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
 
 .filter-field label{
-  display:block;
-
-  margin-bottom:6px;
-
-  font-size:10px;
-
-  font-weight:800;
-
-  color:#263c59;
-}
-
-.select-wrap{
-  position:relative;
+  font-size:12px;
+  font-weight:700;
+  color:#596579;
 }
 
 .filter-field select{
   width:100%;
 
-  height:38px;
+  border:1px solid #d8dfe9;
 
-  border:
-    1px solid #d3e0ed;
+  border-radius:9px;
 
-  border-radius:8px;
+  background:#fff;
 
-  background:#f7faff;
+  padding:11px 12px;
 
-  padding:
-    0 35px 0 12px;
-
-  font-size:11px;
-
-  font-weight:700;
-
-  color:#29405c;
-
-  appearance:none;
+  color:#1d2a3c;
 
   outline:none;
 }
 
 .filter-field select:focus{
-  border-color:#5da0ec;
-
-  box-shadow:
-    0 0 0 3px rgba(33,119,238,.1);
+  border-color:#497bd5;
+  box-shadow:0 0 0 3px rgba(73,123,213,.10);
 }
 
 .filter-field select:disabled{
-  opacity:.72;
-
+  background:#f0f2f5;
+  color:#9aa3b1;
   cursor:not-allowed;
 }
 
-.select-arrow{
-  position:absolute;
+.filter-login-note{
+  margin-top:10px;
 
-  right:12px;
-  top:50%;
-
-  transform:
-    translateY(-50%);
-
-  pointer-events:none;
-
-  color:#667a91;
+  font-size:12px;
+  color:#7c8797;
 }
-
-.filter-message{
-  min-height:38px;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:8px;
-
-  color:#3e5470;
-
-  font-size:10px;
-
-  font-weight:700;
-}
-
-.filter-message small{
-  display:block;
-
-  margin-top:2px;
-
-  color:#1768c7;
-
-  font-size:9px;
-}
-
 
 /* =========================================================
-   LEADERBOARD
+   LEADERBOARD TABLE
 ========================================================= */
 
 .board-card{
-  margin-top:12px;
+  margin-top:22px;
 
-  background:white;
+  background:#fff;
 
-  border:
-    1px solid var(--border);
+  border:1px solid #e3e8ef;
 
-  border-radius:13px;
-
-  padding:12px;
-
-  box-shadow:
-    0 5px 18px rgba(15,45,80,.06);
+  border-radius:16px;
 
   overflow:hidden;
+
+  box-shadow:
+    0 8px 25px rgba(18,38,63,.06);
 }
 
-.board-header{
-  display:flex;
+.board-head{
+  padding:19px 20px;
 
-  align-items:center;
-
-  gap:9px;
-
-  padding:
-    2px 8px 11px;
-}
-
-.board-icon{
-  width:27px;
-  height:27px;
-
-  border-radius:6px;
-
-  background:#19a765;
-
-  color:white;
+  border-bottom:1px solid #e8edf3;
 
   display:flex;
-
   align-items:center;
-  justify-content:center;
+  justify-content:space-between;
 
-  font-size:15px;
+  gap:15px;
 }
 
 .board-title{
-  font-size:16px;
+  font-size:19px;
   font-weight:800;
 }
 
 .board-subtitle{
-  margin-left:auto;
+  margin-top:2px;
 
-  color:#728399;
+  font-size:12px;
+  color:#788397;
+}
 
-  font-size:9px;
+.selected-rank{
+  flex-shrink:0;
 
-  font-weight:600;
+  padding:8px 12px;
+
+  border-radius:8px;
+
+  background:#edf3ff;
+  color:#2457a4;
+
+  font-size:12px;
+  font-weight:800;
 }
 
 .table-wrap{
-  overflow-x:auto;
-
-  border:
-    1px solid #dce6f1;
-
-  border-radius:10px;
-}
-
-table{
   width:100%;
+  overflow-x:auto;
+}
 
-  min-width:850px;
-
+.leaderboard-table{
+  width:100%;
   border-collapse:collapse;
+
+  min-width:650px;
 }
 
-thead{
-  background:#f1f6fc;
-}
+.leaderboard-table th{
+  padding:12px 15px;
 
-th{
-  padding:9px 10px;
+  background:#f6f8fb;
 
-  font-size:9px;
+  color:#68748a;
 
-  color:#314865;
-
-  font-weight:800;
-
-  white-space:nowrap;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
 
   text-align:left;
+
+  border-bottom:1px solid #e5eaf0;
 }
 
-td{
-  padding:8px 10px;
+.leaderboard-table td{
+  padding:13px 15px;
 
-  border-top:
-    1px solid #e3ebf4;
+  font-size:13px;
 
-  font-size:10px;
-
-  font-weight:600;
-
-  white-space:nowrap;
+  border-bottom:1px solid #edf0f4;
 }
 
-tbody tr:hover{
-  background:#f8fbff;
+.leaderboard-table tr:last-child td{
+  border-bottom:0;
+}
+
+.leaderboard-table tr.current-user{
+  background:#f1f6ff;
 }
 
 .rank-cell{
-  width:55px;
+  width:70px;
+  font-weight:800;
+}
+
+.medal{
+  font-size:18px;
+}
+
+.student-cell{
+  font-weight:700;
+}
+
+.score-cell{
+  font-weight:800;
+}
+
+.percent-cell{
+  font-weight:700;
+  color:#315f9e;
+}
+
+.date-cell{
+  color:#758094;
+  font-size:12px;
+}
+
+.no-data{
+  padding:35px 20px;
 
   text-align:center;
+
+  color:#788397;
+
+  font-size:14px;
 }
-
-.rank-badge{
-  width:25px;
-  height:25px;
-
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  border-radius:50%;
-
-  background:#f3f7fb;
-
-  border:
-    1px solid #dce7f2;
-
-  font-size:10px;
-
-  font-weight:800;
-}
-
-.name-cell{
-  font-weight:800;
-}
-
-.you-row{
-  background:#eef7ff !important;
-}
-
-.you-label{
-  margin-left:5px;
-
-  color:#1976ed;
-
-  font-size:8px;
-
-  font-weight:800;
-}
-
-.percent{
-  font-weight:800;
-
-  color:#117d4a;
-}
-
-.score{
-  font-weight:800;
-}
-
-
-/* =========================================================
-   STATUS
-========================================================= */
-
-.loading{
-  text-align:center;
-
-  padding:30px;
-
-  color:#708198;
-
-  font-size:11px;
-}
-
-.empty{
-  text-align:center;
-
-  padding:30px;
-
-  color:#718197;
-
-  font-size:11px;
-}
-
-.error{
-  text-align:center;
-
-  padding:25px;
-
-  color:#c23b3b;
-
-  font-size:11px;
-}
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .footer{
-  background:#020817;
+  background:#101b2d;
+  color:#dce4ef;
 
-  color:#cbd5e1;
-
-  margin-top:0;
+  padding:42px 0 18px;
 }
 
+.footer > .container,
 .footer-inner{
-  width:
-    min(
-      var(--content),
-      calc(100% - 28px)
-    );
+  width:calc(100% - 56px) !important;
+  max-width:1250px !important;
 
-  margin:auto;
+  margin:0 auto !important;
+
+  padding-left:0 !important;
+  padding-right:0 !important;
 }
 
 .footer-top{
-  padding:38px 0 28px;
+  width:100%;
 
   display:grid;
 
-  grid-template-columns:
-    1.55fr 1fr 1fr 1fr;
+  grid-template-columns:1.55fr 1fr 1fr 1fr;
 
   gap:40px;
 }
 
 .footer h3{
-  margin:0 0 11px;
-
-  color:white;
-
+  color:#fff;
   font-size:18px;
+  margin-bottom:10px;
 }
 
 .footer h4{
-  margin:0 0 11px;
-
-  color:white;
-
-  font-size:13px;
+  color:#fff;
+  font-size:14px;
+  margin-bottom:10px;
 }
 
 .footer p{
-  margin:0;
-
-  line-height:1.6;
-
-  font-size:11px;
+  font-size:12px;
+  line-height:1.7;
+  color:#aebbd0;
 }
 
 .footer-links{
   display:flex;
-
   flex-direction:column;
-
   gap:7px;
 }
 
 .footer-links a{
-  color:#aebdd0;
-
-  text-decoration:none;
-
-  font-size:11px;
+  font-size:12px;
+  color:#aebbd0;
 }
 
 .footer-links a:hover{
-  color:white;
+  color:#fff;
 }
 
 .footer-bottom{
-  border-top:
-    1px solid #1b293d;
+  width:100%;
 
-  min-height:58px;
+  margin-top:30px;
+  padding-top:17px;
+
+  border-top:1px solid rgba(255,255,255,.08);
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
   gap:15px;
 }
 
 .footer-bottom p{
-  font-size:10px;
+  font-size:11px;
 }
 
 .footer-bottom-links{
   display:flex;
-
-  gap:16px;
+  justify-content:flex-end;
+  gap:15px;
 }
 
 .footer-bottom-links a{
-  color:#aebdd0;
-
-  text-decoration:none;
-
-  font-size:10px;
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-.toast{
-  position:fixed;
-
-  right:20px;
-  bottom:20px;
-
-  z-index:100;
-
-  background:#10233f;
-
-  color:white;
-
-  padding:12px 16px;
-
-  border-radius:9px;
-
   font-size:11px;
-
-  font-weight:700;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.25);
-
-  transform:
-    translateY(120px);
-
-  opacity:0;
-
-  transition:.25s;
+  color:#aebbd0;
 }
-
-.toast.show{
-  transform:
-    translateY(0);
-
-  opacity:1;
-}
-
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE
 ========================================================= */
 
-@media(max-width:950px){
+@media(max-width:900px){
 
   .nav-links{
     display:none;
@@ -1202,214 +869,213 @@ tbody tr:hover{
   }
 
   .hero{
-    min-height:500px;
+    min-height:400px;
+  }
+
+  .hero-content{
+    padding-top:70px;
   }
 
   .hero-title h1{
     font-size:39px;
   }
 
-  .exam-cards{
-    grid-template-columns:
-      repeat(2,1fr);
+  .trophy{
+    font-size:42px;
   }
 
-  .main{
-    margin-top:-245px;
+  .rank-grid{
+    grid-template-columns:1fr 1fr 1fr;
   }
 
-  .filter-card{
-    grid-template-columns:
-      1fr 1fr;
+  .footer-top{
+    grid-template-columns:1.4fr 1fr 1fr;
   }
 
-  .filter-message{
-    grid-column:1/-1;
-  }
 }
 
-
-@media(max-width:620px){
-
-  .nav{
-    height:68px;
-  }
-
-  .brand-logo{
-    width:45px;
-    height:45px;
-  }
-
-  .brand-name{
-    font-size:20px;
-  }
-
-  .brand-tagline{
-    font-size:8px;
-
-    margin-top:4px;
-  }
-
-  .login-btn{
-    display:none;
-  }
+@media(max-width:700px){
 
   .hero{
-    min-height:575px;
+    min-height:390px;
   }
 
-  .hero-content{
-    margin-top:15px;
+  .nav,
+  .hero-content,
+  .main{
+    width:calc(100% - 24px);
   }
 
   .hero-title{
-    gap:7px;
-  }
-
-  .hero-title .trophy{
-    font-size:38px;
+    gap:9px;
   }
 
   .hero-title h1{
-    font-size:30px;
+    font-size:31px;
+  }
 
-    letter-spacing:-1px;
+  .trophy{
+    font-size:34px;
   }
 
   .hero-subtitle{
-    font-size:11px;
+    font-size:15px;
   }
 
   .hero-pill{
-    font-size:9px;
+    font-size:11px;
   }
 
   .main{
-    width:
-      calc(100% - 20px);
-
-    margin-top:-280px;
+    margin-top:-35px;
   }
 
   .exam-cards{
     grid-template-columns:1fr;
-
-    gap:10px;
   }
 
-  .top-row{
-    min-height:48px;
+  .filter-grid{
+    grid-template-columns:1fr;
   }
 
-  .user-rank-card{
-    flex-wrap:wrap;
-
-    gap:11px;
-
-    padding:13px;
-  }
-
-  .user-rank-main{
-    min-width:0;
-  }
-
-  .rank-divider{
-    display:none;
-  }
-
-  .rank-exams{
-    width:100%;
-
-    grid-template-columns:
-      repeat(2,1fr);
-
-    row-gap:12px;
-  }
-
-  .rank-exam{
-    border-right:
-      1px solid #dce5ef;
-  }
-
-  .rank-exam:nth-child(2){
-    border-right:0;
-  }
-
-  .rank-exam:nth-child(3),
-  .rank-exam:nth-child(4){
-    border-top:
-      1px solid #e2e9f1;
-
-    padding-top:10px;
+  .rank-grid{
+    grid-template-columns:1fr 1fr;
   }
 
   .login-notice{
     align-items:flex-start;
-
-    flex-wrap:wrap;
+    flex-direction:column;
   }
 
-  .notice-content{
-    min-width:
-      calc(100% - 60px);
-  }
-
-  .notice-button{
+  .notice-login{
     width:100%;
   }
 
-  .filter-card{
-    grid-template-columns:1fr;
-
-    gap:11px;
+  .board-head{
+    align-items:flex-start;
+    flex-direction:column;
   }
 
-  .filter-message{
-    grid-column:auto;
-
-    height:auto;
+  .selected-rank{
+    width:100%;
+    text-align:center;
   }
 
-  .board-card{
-    padding:8px;
-  }
-
-  .board-header{
-    padding:
-      5px 5px 10px;
-  }
-
-  .board-title{
-    font-size:14px;
-  }
-
-  .board-subtitle{
-    display:none;
-  }
-
+  .footer > .container,
   .footer-inner{
-    width:
-      calc(100% - 24px);
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
   }
 
   .footer-top{
-    grid-template-columns:1fr;
-
+    width:100%;
+    grid-template-columns:1fr !important;
     gap:24px;
   }
 
+  .footer-top > div{
+    width:100%;
+  }
+
+  .footer h3,
+  .footer h4,
+  .footer p,
+  .footer-links,
+  .footer-links a{
+    text-align:left !important;
+  }
+
   .footer-bottom{
-    flex-direction:column;
+    width:100%;
 
-    align-items:flex-start;
+    flex-direction:column !important;
 
-    justify-content:flex-start;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
 
-    padding:15px 0;
+    gap:9px;
   }
 
   .footer-bottom-links{
+    width:100%;
+
+    margin-left:0;
+
+    justify-content:flex-start !important;
+    align-items:flex-start !important;
+
     flex-wrap:wrap;
+
+    gap:13px;
+  }
+
+}
+
+@media(max-width:430px){
+
+  .brand-name{
+    font-size:19px;
+  }
+
+  .brand-tagline{
+    font-size:8px;
+  }
+
+  .brand-logo{
+    width:42px;
+    height:42px;
+  }
+
+  .hero-title h1{
+    font-size:27px;
+  }
+
+  .trophy{
+    font-size:29px;
+  }
+
+  .rank-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =========================================================
+   DISABLED FILTER VISUAL
+========================================================= */
+
+.filters-locked{
+  position:relative;
+}
+
+.filters-locked::after{
+  content:"Login required to use filters";
+
+  position:absolute;
+
+  right:20px;
+  bottom:20px;
+
+  font-size:11px;
+  color:#8a6d1b;
+
+  background:#fff7d6;
+
+  border:1px solid #ead891;
+
+  padding:5px 8px;
+
+  border-radius:6px;
+
+  pointer-events:none;
+}
+
+@media(max-width:700px){
+
+  .filters-locked::after{
+    position:static;
+    display:inline-block;
+    margin-top:10px;
   }
 
 }
@@ -1419,7 +1085,6 @@ tbody tr:hover{
 
 
 <body>
-
 
 <!-- =========================================================
      HERO
@@ -1486,6 +1151,7 @@ tbody tr:hover{
     <button
       class="mobile-menu"
       id="mobileLoginBtn"
+      aria-label="Login"
     >
       ☰
     </button>
@@ -1509,7 +1175,7 @@ tbody tr:hover{
 
 
     <div class="hero-subtitle">
-      Top Performers Across All Exams on HPMockShashtra
+      Top Performers in JOA (IT) &amp; Patwari Mock Test Series
     </div>
 
 
@@ -1526,7 +1192,6 @@ tbody tr:hover{
 </section>
 
 
-
 <!-- =========================================================
      MAIN
 ========================================================= -->
@@ -1535,7 +1200,7 @@ tbody tr:hover{
 
 
   <!-- =======================================================
-       EXAM TOP 3
+       TOP 3
   ======================================================== -->
 
   <section class="exam-cards">
@@ -1562,9 +1227,11 @@ tbody tr:hover{
         class="top-list"
         id="joaTop3"
       >
+
         <div class="loading">
           Loading...
         </div>
+
       </div>
 
 
@@ -1576,7 +1243,6 @@ tbody tr:hover{
       </button>
 
     </div>
-
 
 
     <!-- PATWARI -->
@@ -1600,9 +1266,11 @@ tbody tr:hover{
         class="top-list"
         id="patwariTop3"
       >
+
         <div class="loading">
           Loading...
         </div>
+
       </div>
 
 
@@ -1615,18 +1283,154 @@ tbody tr:hover{
 
     </div>
 
+  </section>
 
 
-    <!-- POLICE -->
+  <!-- =======================================================
+       CURRENT USER RANK
+  ======================================================== -->
 
-    <div class="exam-card police">
+  <section class="user-rank-card">
 
-      <div class="exam-card-head">
+    <div class="user-rank-head">
 
-        <div class="exam-name">
-          🛡️ Police
+      <div class="user-rank-title">
+        👤 Your Ranking
+      </div>
+
+      <div
+        class="user-rank-note"
+        id="userRankNote"
+      >
+        Login to view your ranking
+      </div>
+
+    </div>
+
+
+    <div class="rank-grid">
+
+      <div class="rank-box">
+
+        <div class="rank-label">
+          JOA Overall Rank
         </div>
 
-        <div class="exam-top-text">
-          Top 3 (Overall)
-  </div>
+        <div
+          class="rank-value"
+          id="joaUserRank"
+        >
+          —
+        </div>
+
+        <div class="rank-sub">
+          Best score based
+        </div>
+
+      </div>
+
+
+      <div class="rank-box">
+
+        <div class="rank-label">
+          Patwari Overall Rank
+        </div>
+
+        <div
+          class="rank-value"
+          id="patwariUserRank"
+        >
+          —
+        </div>
+
+        <div class="rank-sub">
+          Best score based
+        </div>
+
+      </div>
+
+
+      <div class="rank-box">
+
+        <div class="rank-label">
+          Selected Test Rank
+        </div>
+
+        <div
+          class="rank-value"
+          id="selectedUserRank"
+        >
+          —
+        </div>
+
+        <div
+          class="rank-sub"
+          id="selectedRankSub"
+        >
+          Select a test
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       LOGIN NOTICE
+  ======================================================== -->
+
+  <section
+    class="login-notice"
+    id="loginNotice"
+  >
+
+    <div class="login-notice-text">
+
+      <strong>Login to use leaderboard filters.</strong>
+
+      You can still view the public leaderboard without logging in.
+
+    </div>
+
+
+    <button
+      class="notice-login"
+      id="noticeLoginBtn"
+    >
+      Login / Register
+    </button>
+
+  </section>
+
+
+  <!-- =======================================================
+       FILTERS
+  ======================================================== -->
+
+  <section
+    class="filter-card filters-locked"
+    id="filterCard"
+  >
+
+    <div class="filter-title">
+      🔎 Leaderboard Filters
+    </div>
+
+
+    <div class="filter-grid">
+
+      <div class="filter-field">
+
+        <label for="examFilter">
+          Exam
+        </label>
+
+        <select
+          id="examFilter"
+          disabled
+        >
+
+          <option value="joa">
+            JOA 
