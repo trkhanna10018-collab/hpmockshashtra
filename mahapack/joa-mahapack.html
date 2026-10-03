@@ -26,10 +26,10 @@ display:flex;
 align-items:center;
 border:1px solid rgba(185,155,255,.48);
 border-radius:17px;
-background:linear-gradient(135deg,rgba(18,40,78,.58),rgba(55,35,92,.58));
-backdrop-filter:blur(22px) saturate(150%);
--webkit-backdrop-filter:blur(22px) saturate(150%);
-box-shadow:0 16px 45px rgba(0,0,0,.35),0 0 24px rgba(110,90,220,.16)
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(24px) saturate(140%);
+-webkit-backdrop-filter:blur(24px) saturate(140%);
+box-shadow:none
 }
 
 .nav{
@@ -283,43 +283,6 @@ color:#172554
 
 .blue{
 color:#2563eb
-}
-
-.hero-subtitle{
-max-width:650px;
-color:#64748b;
-font-size:14px;
-line-height:1.65;
-margin-bottom:18px
-}
-
-.hero-mini-grid{
-display:flex;
-gap:9px;
-flex-wrap:wrap;
-margin-bottom:20px
-}
-
-.hero-mini-grid div{
-min-width:125px;
-padding:10px 12px;
-background:#fff;
-border:1px solid #dbe7f5;
-border-radius:11px;
-box-shadow:0 5px 16px rgba(15,23,42,.05)
-}
-
-.hero-mini-grid b{
-display:block;
-font-size:17px;
-color:#172554
-}
-
-.hero-mini-grid span{
-display:block;
-color:#64748b;
-font-size:8px;
-margin-top:2px
 }
 
 .actions{
@@ -786,18 +749,20 @@ font-size:11px
 
 .plans-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
+grid-template-columns:repeat(4,1fr);
+gap:16px
 }
+
 
 .plan-card{
 position:relative;
-padding:22px;
-border-radius:16px;
-background:#fff;
-border:1px solid #dbe7f5;
-box-shadow:0 10px 28px rgba(15,23,42,.07);
-overflow:hidden
+overflow:hidden;
+border:1px solid rgba(148,163,184,.22);
+border-radius:18px;
+padding:20px;
+background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(247,250,255,.98));
+box-shadow:0 12px 30px rgba(15,23,42,.08),inset 0 1px 0 rgba(255,255,255,.9);
+transition:transform .22s,box-shadow .22s,border-color .22s
 }
 
 .plan-card.featured{
@@ -1185,14 +1150,6 @@ width:calc(100% - 24px)
 font-size:34px
 }
 
-.hero-subtitle{
-font-size:12px
-}
-
-.hero-mini-grid div{
-min-width:105px
-}
-
 .actions{
 flex-direction:column
 }
@@ -1250,6 +1207,10 @@ font-size:7px
 grid-template-columns:1fr
 }
 
+.plans-grid{
+grid-template-columns:1fr
+}
+
 .subject{
 min-height:225px
 }
@@ -1268,6 +1229,90 @@ font-size:9px
 }
 
 }
+
+.plan-card{
+position:relative;
+overflow:hidden;
+border:1px solid rgba(148,163,184,.22);
+border-radius:18px;
+padding:20px;
+background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(247,250,255,.98));
+box-shadow:0 12px 30px rgba(15,23,42,.08),inset 0 1px 0 rgba(255,255,255,.9);
+transition:transform .22s,box-shadow .22s,border-color .22s
+}
+
+.plan-card:before{
+content:"";
+position:absolute;
+inset:0;
+pointer-events:none;
+background:linear-gradient(135deg,rgba(255,255,255,.55),transparent 45%,rgba(99,102,241,.04))
+}
+
+.plan-card:hover{
+transform:translateY(-4px);
+box-shadow:0 18px 38px rgba(15,23,42,.12),0 0 24px rgba(59,130,246,.08);
+border-color:rgba(96,165,250,.35)
+}
+
+.plan-card.free-plan{
+background:linear-gradient(145deg,#f8fffd,#effcf8);
+border-color:rgba(45,212,191,.28)
+}
+
+.plan-card.featured{
+background:linear-gradient(145deg,#ffffff,#f7f7ff);
+border-color:rgba(99,102,241,.22)
+}
+
+.plan-card.maha{
+background:linear-gradient(145deg,#101a3c,#1c1745 55%,#2b1850);
+border-color:rgba(103,232,249,.34);
+color:#fff;
+box-shadow:0 16px 38px rgba(20,24,65,.22),0 0 28px rgba(99,102,241,.12)
+}
+
+.plan-card.maha h3,
+.plan-card.maha .plan-price,
+.plan-card.maha .plan-validity,
+.plan-card.maha .plan-note{
+color:#fff
+}
+
+.plan-btn{
+position:relative;
+z-index:1;
+display:flex;
+align-items:center;
+justify-content:center;
+width:100%;
+min-height:40px;
+margin-top:16px;
+padding:0 14px;
+border-radius:10px;
+font-size:10px;
+font-weight:950;
+color:#fff;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+border:1px solid rgba(99,102,241,.25);
+box-shadow:0 8px 18px rgba(37,99,235,.16);
+transition:.2s
+}
+
+.plan-btn:hover{
+transform:translateY(-1px);
+filter:brightness(1.04)
+}
+
+.plan-card.free-plan .plan-btn{
+background:linear-gradient(135deg,#0f9f83,#0ea5a5)
+}
+
+.plan-card.maha .plan-btn{
+background:linear-gradient(135deg,#22d3ee,#6366f1);
+box-shadow:0 8px 20px rgba(34,211,238,.16)
+}
+
 </style>
 </head>
 
@@ -1338,34 +1383,6 @@ href="mahapack-plans.html"
 <h1>
 JOA IT <span class="blue">Maha Pack</span>
 </h1>
-
-<p class="hero-subtitle">
-Complete computer preparation with structured practice, free tests and premium 400-question tests — specially designed for JOA (IT) aspirants.
-</p>
-
-<div class="hero-mini-grid">
-
-<div>
-<b>15</b>
-<span>Computer Subjects</span>
-</div>
-
-<div>
-<b>6,000+</b>
-<span>Total Questions</span>
-</div>
-
-<div>
-<b>400</b>
-<span>Questions per Subject</span>
-</div>
-
-<div>
-<b>6 Months</b>
-<span>Premium Validity</span>
-</div>
-
-</div>
 
 <div class="actions">
 
@@ -2212,7 +2229,7 @@ Buy ₹59
 <li>Premium subject access for 3 months</li>
 </ul>
 <div class="plan-note">One subject • 400 premium questions • 3-month access.</div>
-<a class="plan-btn" href="mahapack-plans.html">View Premium Plans →</a>
+<a class="plan-btn" href="#premium-plans">View Premium Plans →</a>
 </div>
 
 <div class="plan-card featured">
@@ -2231,7 +2248,7 @@ Buy ₹59
 <li>1,600 questions total</li>
 </ul>
 <div class="plan-note">4 MS Office subjects • 400 questions per subject • 5-month access.</div>
-<a class="plan-btn" href="mahapack-plans.html">View Premium Plans →</a>
+<a class="plan-btn" href="../payment.html?product=ms-office">Buy MS Office Pack →</a>
 </div>
 
 <div class="plan-card maha">
@@ -2250,7 +2267,7 @@ Buy ₹59
 <li>Complete premium computer preparation</li>
 </ul>
 <div class="plan-note">15 subjects • 400 questions each • 6,000 questions • 6-month access.</div>
-<a class="plan-btn" href="mahapack-plans.html">Explore MahaPack →</a>
+<a class="plan-btn" href="../payment.html?product=computer-master">Buy MahaPack →</a>
 </div>
 
 </div>
