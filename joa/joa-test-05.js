@@ -7,7 +7,7 @@ const questions = [
   options: [
     {
       en: "A spreadsheet application used for numerical calculations",
-      hi: "एक spreadsheet application जिसका उपयोग numerical calculations के लिए किया जाता है"
+      hi: "एक spreadsheet application जिसका उपयोग numerical calculations के लिए किया जाता है" 
     },
     {
       en: "A word processing application used to create and edit documents",
