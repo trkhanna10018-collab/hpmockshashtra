@@ -2247,14 +2247,14 @@ year:'numeric'
 function access(data,key){
 
 const course=
-data?.computerAccess?.courses?.[key];
+data?.mahapackAccess?.courses?.[key];
 
 if(active(course))
 return course;
 
 
 const pack=
-data?.computerAccess?.packs?.['ms-office'];
+data?.mahapackAccess?.packs?.['ms-office'];
 
 if(
 office.includes(key)&&
@@ -2264,7 +2264,7 @@ return pack;
 
 
 const master=
-data?.computerAccess?.packs?.['computer-master'];
+data?.mahapackAccess?.packs?.['computer-master'];
 
 return active(master)
 ?master
@@ -2361,7 +2361,7 @@ markSubject(card,a);
 /* Kept for compatibility with existing purchase data */
 
 const officePack=
-data?.computerAccess?.packs?.['ms-office'];
+data?.mahapackAccess?.packs?.['ms-office'];
 
 document
 .querySelectorAll(
@@ -2388,7 +2388,7 @@ b.replaceWith(x);
 
 
 const master=
-data?.computerAccess?.packs?.['computer-master'];
+data?.mahapackAccess?.packs?.['computer-master'];
 
 document
 .querySelectorAll(
