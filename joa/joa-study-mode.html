@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP JOA (IT) Mock Test — Study Mode | HPMockShashtra</title>
+
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+body{margin:0;background:#eef4fb;color:#172033;min-height:100vh;display:flex;flex-direction:column}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:24px 18px 28px;flex:1}
+.card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.055)}
+.score{display:flex;align-items:center;margin-bottom:14px;padding:14px 18px;min-height:74px}
+.score-main{display:flex;align-items:center;gap:18px}
+.score-text strong{display:block;font-size:25px;line-height:1.05;color:#172554}
+.score-text .label{margin-top:4px;color:#6b7280;font-size:12px;font-weight:600}
+.question-card{padding:20px}
+.question-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.counter{font-weight:800;color:#4f46e5;font-size:13px}
+.question-status{padding:7px 12px;border-radius:8px;font-size:12px;font-weight:800}
+.question-status.correct{background:#dcfce7;color:#166534}.question-status.incorrect{background:#fee2e2;color:#b91c1c}.question-status.unattempted{background:#e5e7eb;color:#4b5563;border:1px solid #d1d5db}
+.question{font-size:18px;font-weight:750;line-height:1.5;margin-bottom:5px}
+.hindi{font-size:16px;line-height:1.5;color:#374151;margin-bottom:15px}
+.options{display:grid;gap:10px}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid #dbe2ea;border-radius:9px;padding:11px 13px;line-height:1.45;background:#fff}
+.option.selected-wrong{border-color:#ef4444;background:#fff1f2}
+.option.correct,.option.correct.selected{border-color:#16a34a;background:#dcfce7}
+.option input{margin-top:4px;accent-color:#4f46e5}
+.answer-box{margin-top:14px;padding:12px 14px;border-radius:9px}
+.answer-box.correct{background:#ecfdf3;color:#166534}.answer-box.incorrect{background:#fff1f2;color:#b91c1c}.answer-box.unattempted{background:#f3f4f6;color:#374151}
+.answer-title{font-weight:900;margin-bottom:6px}.answer-line{margin:4px 0;font-weight:700}
+.explanation{margin-top:12px;padding:13px 15px;border-left:4px solid #6366f1;background:#f8fafc;color:#374151;line-height:1.55;border-radius:0 8px 8px 0}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px}
+.btn{border:0;border-radius:9px;padding:11px 18px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:#4f46e5;color:#fff}.secondary{background:#f3f4f6;color:#374151}
+.primary:disabled,.secondary:disabled{opacity:.5;cursor:not-allowed}
+.page-indicator{font-size:13px;font-weight:800;color:#374151}
+.error{text-align:center;color:#b91c1c}.hidden{display:none!important}
+
+.loading-card{
+  text-align:center;
+  color:#475569;
+  padding:32px 20px;
+}
+
+.study-hero{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  margin-bottom:16px;
+  padding:22px 28px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#3f36a8 0%,#5148cf 55%,#625bf0 100%);
+  color:#fff;
+  box-shadow:0 10px 28px rgba(49,46,129,.16);
+}
+.study-hero::after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  right:-115px;
+  top:-150px;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+}
+.study-hero-left{
+  min-width:0;
+  position:relative;
+  z-index:1;
+  flex:1 1 auto;
+}
+.study-hero h1{
+  margin:0 0 12px;
+  color:#fff;
+  font-size:26px;
+  line-height:1.18;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+.study-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.study-meta span{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.23);
+  border-radius:9px;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+}
+.study-summary{
+  display:grid;
+  grid-template-columns:68px 68px 82px 1fr;
+  align-items:stretch;
+  gap:8px;
+  position:relative;
+  z-index:1;
+  flex:0 0 360px;
+}
+.mini-result,
+.accuracy-result{
+  min-height:76px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:13px;
+  background:rgba(255,255,255,.11);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.mini-result{
+  flex-direction:column;
+  gap:5px;
+}
+.mini-circle{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f8fafc;
+  font-size:13px;
+  font-weight:900;
+}
+.correct-result .mini-circle{color:#15803d}
+.wrong-result .mini-circle{color:#dc2626}
+.unanswered-result .mini-circle{color:#475569}
+.mini-label{
+  color:#fff;
+  font-size:8px;
+  font-weight:800;
+  line-height:1.1;
+}
+.accuracy-result{
+  justify-content:flex-start;
+  gap:10px;
+  padding:9px 12px;
+  text-align:left;
+}
+.accuracy-ring{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:conic-gradient(#22c55e var(--score,0%),rgba(255,255,255,.28) 0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 52px;
+  position:relative;
+}
+.accuracy-ring::before{
+  content:"";
+  position:absolute;
+  width:39px;
+  height:39px;
+  border-radius:50%;
+  background:#423ab0;
+}
+.accuracy-ring span{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  margin:0;
+}
+.accuracy-details strong{
+  display:block;
+  color:#fff;
+  font-size:22px;
+  line-height:1.05;
+  font-weight:900;
+}
+.accuracy-details span{
+  display:block;
+  color:rgba(255,255,255,.9);
+  font-size:10px;
+  font-weight:700;
+  margin-top:4px;
+}
+
+.question-card{
+  padding:22px;
+}
+.question-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.counter{
+  font-weight:800;
+  color:#4f46e5;
+  font-size:13px;
+}
+.question-status{
+  padding:7px 12px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:800;
+}
+.question-status.correct{background:#dcfce7;color:#166534}
+.question-status.incorrect{background:#fee2e2;color:#b91c1c}
+.question-status.unattempted{
+  background:#e5e7eb;
+  color:#4b5563;
+  border:1px solid #d1d5db;
+}
+.question{
+  font-size:18px;
+  font-weight:750;
+  line-height:1.5;
+  margin-bottom:5px;
+}
+.hindi{
+  font-size:16px;
+  line-height:1.5;
+  color:#374151;
+  margin-bottom:15px;
+}
+.options{
+  display:grid;
+  gap:10px;
+}
+.option{
+  display:flex;
+  gap:11px;
+  align-items:flex-start;
+  border:1px solid #dbe2ea;
+  border-radius:9px;
+  padding:11px 13px;
+  line-height:1.45;
+  background:#fff;
+}
+.option.selected-wrong{
+  border-color:#ef4444;
+  background:#fff1f2;
+}
+.option.correct,
+.option.correct.selected{
+  border-color:#16a34a;
+  background:#dcfce7;
+}
+.option input{
+  margin-top:4px;
+  accent-color:#4f46e5;
+}
+.explanation{
+  margin-top:14px;
+  padding:13px 15px;
+  border-left:4px solid #6366f1;
+  background:#f8fafc;
+  color:#374151;
+  line-height:1.55;
+  border-radius:0 8px 8px 0;
+}
+.controls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-top:16px;
+}
+.btn{
+  border:0;
+  border-radius:9px;
+  padding:11px 18px;
+  font-weight:750;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+}
+.primary{background:#4f46e5;color:#fff}
+.secondary{background:#f3f4f6;color:#374151}
+.primary:disabled,
+.secondary:disabled{opacity:.5;cursor:not-allowed}
+.page-indicator{
+  font-size:13px;
+  font-weight:800;
+  color:#374151;
+}
+.error{
+  text-align:center;
+  color:#b91c1c;
+  padding:30px 20px;
+}
+.hidden{display:none!important}
+
+@media(max-width:1000px){
+  .study-hero{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .study-summary{
+    width:100%;
+    flex:0 0 auto;
+    grid-template-columns:68px 68px 82px 1fr;
+  }
+}
+
+@media(max-width:600px){
+  .wrap{
+    padding:14px 10px 22px;
+  }
+  .study-hero{
+    padding:18px 15px;
+    gap:14px;
+    border-radius:17px;
+  }
+  .study-hero h1{
+    font-size:21px;
+    line-height:1.2;
+    margin-bottom:10px;
+  }
+  .study-meta{
+    gap:6px;
+  }
+  .study-meta span{
+    padding:6px 9px;
+    font-size:9px;
+  }
+  .study-summary{
+    gap:6px;
+    grid-template-columns:repeat(3,minmax(0,1fr)) 1.5fr;
+  }
+  .mini-result,
+  .accuracy-result{
+    min-height:72px;
+    border-radius:11px;
+  }
+  .mini-circle{
+    width:31px;
+    height:31px;
+    font-size:11px;
+  }
+  .mini-label{
+    font-size:7px;
+  }
+  .accuracy-result{
+    padding:7px;
+    gap:6px;
+  }
+  .accuracy-ring{
+    width:43px;
+    height:43px;
+    flex-basis:43px;
+  }
+  .accuracy-ring::before{
+    width:32px;
+    height:32px;
+  }
+  .accuracy-ring span{
+    font-size:10px;
+  }
+  .accuracy-details strong{
+    font-size:16px;
+  }
+  .accuracy-details span{
+    font-size:7px;
+    white-space:nowrap;
+  }
+  .question-card{
+    padding:17px 14px;
+  }
+  .question{
+    font-size:16px;
+  }
+  .hindi{
+    font-size:14px;
+  }
+  .option{
+    padding:10px 11px;
+    font-size:13px;
+  }
+}
+.site-footer{
+  width:100%;
+  margin:0;
+  background:linear-gradient(145deg,#061125,#0b1f3b);
+  color:#fff;
+  border-top:1px solid rgba(107,174,255,.12);
+}
+.footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:34px 18px 18px;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.7fr 1fr 1fr 1fr;
+  gap:34px;
+  padding-bottom:28px;
+}
+.footer-top h3{margin:0 0 9px;font-size:20px}
+.footer-top h4{margin:0 0 12px;font-size:14px;color:#fff}
+.footer-top p{margin:0;max-width:420px;color:#9db0c9;font-size:12px;line-height:1.6}
+.footer-links{display:flex;flex-direction:column;gap:9px}
+.footer-links a,.footer-bottom-links a{
+  color:#b9c7d8!important;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+}
+.footer-links a:hover,.footer-bottom-links a:hover{color:#fff!important}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.10);
+  padding-top:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  color:#8298b5;
+  font-size:11px;
+}
+.footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap}
+
+@media(max-width:800px){
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+}
+
+@media(max-width:520px){
+  .footer-inner{
+    padding:28px 14px 16px;
+  }
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="study-hero">
+    <div class="study-hero-left">
+      <h1 id="studyTestTitle">HP JOA (IT) Free Mock Test — Study Mode</h1>
+
+      <div class="study-meta">
+        <span>120 Questions</span>
+        <span>Hindi + English</span>
+        <span>Study Mode</span>
+      </div>
+    </div>
+
+    <div class="study-summary">
+
+      <div class="mini-result correct-result">
+        <div class="mini-circle" id="correctCount">0</div>
+        <div class="mini-label">CORRECT</div>
+      </div>
+
+      <div class="mini-result wrong-result">
+        <div class="mini-circle" id="wrongCount">0</div>
+        <div class="mini-label">WRONG</div>
+      </div>
+
+      <div class="mini-result unanswered-result">
+        <div class="mini-circle" id="unattemptedCount">0</div>
+        <div class="mini-label">UNATTEMPTED</div>
+      </div>
+
+      <div class="accuracy-result">
+        <div class="accuracy-ring" id="scoreRing">
+          <span id="scoreRingText">0%</span>
+        </div>
+
+        <div class="accuracy-details">
+          <strong id="score">0/0</strong>
+          <span id="percentage">Percentage: 0%</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="loading" class="card loading-card">
+    Loading Study Mode...
+  </div>
+
+
+  <div id="reviewArea" class="hidden">
+
+    <div class="card question-card">
+
+      <div class="question-head">
+        <div class="counter" id="counter">Question 1 of 120</div>
+        <div class="question-status" id="questionStatus"></div>
+      </div>
+
+      <div class="question" id="questionEn"></div>
+      <div class="hindi" id="questionHi"></div>
+
+      <div class="options" id="options"></div>
+
+      <div class="explanation hidden" id="explanation"></div>
+
+      <div class="controls">
+        <button class="btn secondary" id="prevBtn">Previous</button>
+
+        <div class="page-indicator" id="pageIndicator"></div>
+
+        <button class="btn primary" id="nextBtn">Next</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="errorArea" class="card error hidden"></div>
+
+</div>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div>
+        <h3>HPMockShashtra</h3>
+        <p>
+          A practice platform for Himachal Pradesh competitive exam aspirants
+          with mock tests, bilingual practice and performance tracking.
+        </p>
+      </div>
+
+      <div>
+        <h4>Mock Tests</h4>
+        <div class="footer-links">
+          <a href="./new-joa-series.html">JOA (IT) Mock Tests</a>
+          <a href="../firebase-signup.html">Free Test Access</a>
+          <a href="new-joa-series.html">HP Patwari Mock Tests</a>
+          <a href="../payment.html?product=joa">JOA (IT) Series Payment</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Account</h4>
+        <div class="footer-links">
+          <a href="../firebase-login.html">Login</a>
+          <a href="../firebase-signup.html">Create Account</a>
+          <a href="../firebase-dashboard.html">Dashboard</a>
+          <a href="../my-progress.html">My Progress</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <div class="footer-links">
+          <a href="../about.html">About</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 HPMockShashtra. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import { auth, db } from "../firebase-config.js";
+
+/* =========================================================
+   COMMON JOA (IT) STUDY MODE
+   URL example:
+   joa-study-mode.html?test=joa_free_01
+   joa-study-mode.html?test=joa_test_02
+   ========================================================= */
+
+const TEST_ID = new URLSearchParams(window.location.search).get("test")
+  || "joa_free_01";
+
+const TEST_CONFIG = {
+  joa_free_01: {
+    name: "HP JOA (IT) Free Mock Test",
+    testPage: "joa-free-01.html",
+    questionBank: "./joa-free-01.js"
+  },
+  joa_test_02: {
+    name: "HP JOA (IT) Mock Test 02",
+    testPage: "joa-test-02.html",
+    questionBank: "./joa-test-02.js"
+  },
+  joa_test_03: {
+    name: "HP JOA (IT) Mock Test 03",
+    testPage: "joa-test-03.html",
+    questionBank: "./joa-test-03.js"
+  },
+  joa_test_04: {
+    name: "HP JOA (IT) Mock Test 04",
+    testPage: "joa-test-04.html",
+    questionBank: "./joa-test-04.js"
+  },
+  joa_test_05: {
+    name: "HP JOA (IT) Mock Test 05",
+    testPage: "joa-test-05.html",
+    questionBank: "./joa-test-05.js"
+  },
+  joa_test_06: {
+    name: "HP JOA (IT) Mock Test 06",
+    testPage: "joa-test-06.html",
+    questionBank: "./joa-test-06.js"
+  },
+  joa_test_07: {
+    name: "HP JOA (IT) Mock Test 07",
+    testPage: "joa-test-07.html",
+    questionBank: "./joa-test-07.js"
+  },
+  joa_test_08: {
+    name: "HP JOA (IT) Mock Test 08",
+    testPage: "joa-test-08.html",
+    questionBank: "./joa-test-08.js"
+  },
+  joa_test_09: {
+    name: "HP JOA (IT) Mock Test 09",
+    testPage: "joa-test-09.html",
+    questionBank: "./joa-test-09.js"
+  },
+  joa_test_10: {
+    name: "HP JOA (IT) Mock Test 10",
+    testPage: "joa-test-10.html",
+    questionBank: "./joa-test-10.js"
+  }
+};
+
+const config = TEST_CONFIG[TEST_ID];
+
+if(!config){
+  throw new Error("Invalid JOA (IT) test ID.");
+}
+
+const module = await import(config.questionBank);
+const rawQuestions = Array.isArray(module.questions) ? module.questions : [];
+
+function normalizeQuestion(q){
+  const labels = ["A","B","C","D"];
+  const options = Array.isArray(q?.options)
+    ? q.options.map(o => ({
+        en: o?.en ?? "",
+        hi: o?.hi ?? ""
+      }))
+    : labels.map(label => ({
+        en: q?.[label] ?? "",
+        hi: q?.[label + "_hi"] ?? ""
+      }));
+
+  const answer = String(q?.answer ?? q?.ans ?? "").trim().toUpperCase();
+
+  return {
+    en: q?.en ?? "",
+    hi: q?.hi ?? "",
+    options,
+    answer,
+    explanation: q?.explanation ?? q?.explain ?? ""
+  };
+}
+
+const questions = rawQuestions.map(normalizeQuestion).filter(q =>
+  q.en || q.hi || q.options.some(o => o.en || o.hi)
+);
+
+const $ = id => document.getElementById(id);
+
+$("studyTestTitle").textContent = `${config.name} — Study Mode`;
+
+let user = null;
+let attempt = null;
+let answers = {};
+let current = 0;
+
+
+onAuthStateChanged(auth, async (u) => {
+
+  if(!u){
+    location.href = "../firebase-login.html";
+    return;
+  }
+
+  user = u;
+
+  try{
+
+    /*
+      Current JOA test engine stores submitted attempts at:
+      users/{uid}/joaAttempts/{testId}
+
+      This is a valid Firestore document path (4 segments).
+    */
+    const attemptRef = doc(
+      db,
+      "users",
+      user.uid,
+      "joaAttempts",
+      TEST_ID
+    );
+
+    const snap = await getDoc(attemptRef);
+
+    if(!snap || !snap.exists()){
+      $("loading").classList.add("hidden");
+      $("errorArea").classList.remove("hidden");
+      $("errorArea").innerHTML = `
+        <h2>No Attempt Found</h2>
+        <p>You have not completed this mock test yet.</p>
+        <br>
+        <a class="btn primary" href="${config.testPage}">Go to Test</a>
+        <a class="btn secondary" href="new-joa-series.html">Back to Series</a>
+      `;
+      return;
+    }
+
+    attempt = snap.data();
+
+    if(attempt.testId !== TEST_ID){
+      throw new Error("Invalid test record for this Study Mode.");
+    }
+
+    answers = attempt.answers || {};
+    current = 0;
+
+    $("loading").classList.add("hidden");
+    $("reviewArea").classList.remove("hidden");
+
+    updateSummary();
+    render();
+
+  }catch(e){
+    console.error(e);
+    $("loading").classList.add("hidden");
+    $("errorArea").classList.remove("hidden");
+    $("errorArea").innerHTML = `
+      <h2>Unable to Load Study Mode</h2>
+      <p>The saved attempt or question bank could not be loaded.</p>
+      <br>
+      <a class="btn secondary" href="new-joa-series.html">Back to Series</a>
+    `;
+  }
+
+});
+
+function render(){
+
+  if(!questions.length){
+    $("errorArea").classList.remove("hidden");
+    $("errorArea").innerHTML = "<h2>Question bank is empty.</h2>";
+    return;
+  }
+
+  const q = questions[current];
+  const selected = answers[current];
+  const correct = q.answer;
+  const attempted = !!selected;
+  const isCorrectAnswer = attempted && selected === correct;
+
+  $("counter").textContent = `Question ${current + 1} of ${questions.length}`;
+  $("questionEn").textContent = q.en || "[English question not available]";
+  $("questionHi").textContent = q.hi || "[Hindi question not available]";
+
+  const status = $("questionStatus");
+  status.className = "question-status";
+
+  if(!attempted){
+    status.classList.add("unattempted");
+    status.textContent = "− Not Attempted";
+  }else if(isCorrectAnswer){
+    status.classList.add("correct");
+    status.textContent = "✓ Correct";
+  }else{
+    status.classList.add("incorrect");
+    status.textContent = "✕ Incorrect";
+  }
+
+  const labels = ["A","B","C","D"];
+
+  $("options").innerHTML = labels.map((label,index) => {
+    const option = q.options?.[index] || {en:"",hi:""};
+    const isCorrect = correct === label;
+    const isSelected = selected === label;
+    let className = "option";
+
+    if(isCorrect){
+      className += " correct";
+      if(isSelected) className += " selected";
+    }else if(isSelected){
+      className += " selected-wrong";
+    }
+
+    return `
+      <div class="${className}">
+        <input type="radio" disabled ${isSelected ? "checked" : ""}>
+        <span>
+          <strong>${label}.</strong>
+          ${escapeHtml(option.en)}
+          <div style="color:#64748b;margin-top:3px;font-size:.92em">${escapeHtml(option.hi)}</div>
+        </span>
+      </div>
+    `;
+  }).join("");
+
+  const explanation = $("explanation");
+  if(q.explanation){
+    explanation.classList.remove("hidden");
+    explanation.innerHTML = `<strong>Explanation:</strong> ${escapeHtml(q.explanation)}`;
+  }else{
+    explanation.classList.add("hidden");
+    explanation.textContent = "";
+  }
+
+  $("prevBtn").disabled = current === 0;
+  $("nextBtn").textContent = current === questions.length - 1 ? "Back to Series" : "Next";
+  $("pageIndicator").textContent = `Question ${current + 1} of ${questions.length}`;
+}
+
+function escapeHtml(value){
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
+  }[c]));
+}
+
+function updateSummary(){
+
+  let correctCount = 0;
+  let wrongCount = 0;
+  let unattemptedCount = 0;
+
+  questions.forEach((q,index) => {
+    const selected = answers[index];
+
+    if(!selected) unattemptedCount++;
+    else if(selected === q.answer) correctCount++;
+    else wrongCount++;
+  });
+
+  const total = questions.length;
+  const percentage = total ? Math.round((correctCount / total) * 100) : 0;
+
+  $("correctCount").textContent = correctCount;
+  $("wrongCount").textContent = wrongCount;
+  $("unattemptedCount").textContent = unattemptedCount;
+  $("score").textContent = `${correctCount}/${total}`;
+  $("percentage").textContent = `Percentage: ${percentage}%`;
+  $("scoreRing").style.setProperty("--score", `${percentage}%`);
+  $("scoreRingText").textContent = `${percentage}%`;
+}
+
+$("prevBtn").onclick = () => {
+  if(current > 0){
+    current--;
+    render();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+};
+
+$("nextBtn").onclick = () => {
+  if(current < questions.length - 1){
+    current++;
+    render();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }else{
+    location.href = "new-joa-series.html";
+  }
+};
+
+</script>
+
+</body>
+</html>
