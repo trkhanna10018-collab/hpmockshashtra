@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Premium Plans | HPMockShashtra</title>
+<style>
+:root{--bg:#eef4fc;--nav1:#182b5e;--nav2:#35265d;--text:#13295a;--muted:#64748b;--line:#cfe0f6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#edf4fc 0%,#f7faff 48%,#edf4fc 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.topbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:9999;width:calc(100% - 28px);min-height:70px;padding:8px 12px 8px 14px;display:flex;align-items:center;border:1px solid rgba(126,176,255,.30);border-radius:17px;background:linear-gradient(135deg,#182b5e,#35265d);backdrop-filter:blur(16px) saturate(120%);-webkit-backdrop-filter:blur(16px) saturate(120%);box-shadow:0 12px 28px rgba(8,18,45,.18)}
+.nav{width:100%;min-height:54px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;flex:0 0 auto}.logo img{width:72px;height:58px;object-fit:contain;display:block}.brand-title{font-size:21px;font-weight:950;line-height:1;color:#fff;letter-spacing:-.6px}.brand-hp{color:#fff}.brand-mock{color:#2563eb}.brand-shashtra{color:#fff}.tagline{font-size:7px;font-weight:700;color:#9db0d0;margin-top:4px}
+.header-links{margin-left:auto;display:flex;align-items:center;gap:16px}.header-links a{padding:8px 3px;color:#fff;font-size:10px;font-weight:900;white-space:nowrap}.header-links a:hover{color:#67e8f9}
+.header-user{display:flex;align-items:center;gap:7px;color:#fff;font-size:11px;font-weight:850;white-space:nowrap}.header-user span:last-child{color:#fff;max-width:110px;overflow:hidden;text-overflow:ellipsis}.avatar{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#3658e8,#6449e8);color:#fff;font-weight:950}
+.login,.join-btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:9px;font-size:9px;font-weight:950;white-space:nowrap}.login{color:#fff;border:1px solid rgba(147,197,253,.28);background:rgba(255,255,255,.08)}.join-btn{color:#06152d;background:linear-gradient(135deg,#58e5ff,#27d99a);border:1px solid rgba(130,255,230,.55)}
+.mobile-menu-btn{display:none}.mobile-menu{display:none}
+.page{padding-top:112px;min-height:calc(100vh - 350px)}
+.premium-plans{width:calc(100% - 40px);max-width:none;margin:28px auto 48px}.plans-head{text-align:center;margin:0 0 24px}.plans-head h1{margin:0;font-size:32px;line-height:1.12;font-weight:950;letter-spacing:-.8px;color:#152b5c}.plans-head h1 span{color:#2563eb}.plans-head p{margin:8px 0 0;color:#64748b;font-size:11px;font-weight:650}
+.plans-grid{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;align-items:stretch}
+.plan-card{position:relative;overflow:hidden;min-width:0;min-height:410px;display:flex;flex-direction:column;text-align:left;padding:22px;border-radius:20px;border:1px solid rgba(126,176,255,.30);background:linear-gradient(145deg,#142b4e,#1e4164);box-shadow:0 18px 38px rgba(8,18,45,.16);color:#fff;transition:transform .2s,box-shadow .2s,border-color .2s}.plan-card:hover{transform:translateY(-4px);box-shadow:0 24px 46px rgba(8,18,45,.23);border-color:rgba(103,232,249,.50)}.plan-card.featured{background:linear-gradient(145deg,#1a2850,#30336e);border-color:rgba(129,140,248,.40)}.plan-card.office{background:linear-gradient(145deg,#20234f,#3a2866);border-color:rgba(167,139,250,.42)}.plan-card.maha{background:linear-gradient(145deg,#101a3b,#241850 58%,#30205d);border-color:rgba(103,232,249,.45);box-shadow:0 20px 45px rgba(12,15,45,.28)}
+.plan-badge{display:inline-flex;width:max-content;padding:6px 10px;border-radius:999px;font-size:8px;line-height:1;font-weight:950;letter-spacing:.35px;color:#dbeafe;background:rgba(96,165,250,.12);border:1px solid rgba(147,197,253,.30)}.plan-card.maha .plan-badge{color:#f1e9ff;background:rgba(139,92,246,.16);border-color:rgba(196,181,253,.38)}
+.plan-card h2{margin:14px 0 9px;font-size:19px;line-height:1.2;font-weight:950;letter-spacing:-.25px}.plan-price{display:flex;align-items:baseline;gap:6px;margin:4px 0 5px}.plan-price b{font-size:31px;line-height:1;font-weight:950;letter-spacing:-.8px}.plan-price span{font-size:9px;font-weight:750;color:#c2cee5}.plan-validity{font-size:9px;line-height:1.35;font-weight:900;color:#68e8d0;margin:8px 0 15px}.plan-features{list-style:none;margin:0;padding:0;display:grid;gap:9px;flex:1}.plan-features li{position:relative;padding-left:19px;font-size:10px;line-height:1.45;font-weight:650;color:#e0e8f7}.plan-features li:before{content:"✓";position:absolute;left:0;top:0;color:#5eead4;font-size:11px;font-weight:950}.plan-note{margin-top:16px;padding-top:12px;min-height:40px;border-top:1px solid rgba(255,255,255,.15);font-size:8.5px;line-height:1.5;font-weight:650;color:#b9c7e5}.plan-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;margin-top:17px;border-radius:10px;font-size:9px;font-weight:950;color:#fff;background:linear-gradient(135deg,#3159d8,#4f46e5);border:1px solid rgba(147,197,253,.20);box-shadow:0 8px 16px rgba(0,0,0,.15)}.plan-card.maha .plan-btn{background:linear-gradient(135deg,#19b9df,#5865e8)}.plan-card.free-plan .plan-btn{background:linear-gradient(135deg,#294a78,#365f91)}
+.footer{background:linear-gradient(145deg,#061125,#0b1f3b);border-top:1px solid rgba(107,174,255,.10);color:#fff;margin-top:20px}.footer-inner{width:calc(100% - 40px);max-width:1250px;margin:auto}.footer-top{padding:38px 0 27px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}.footer h3,.footer h4{margin:0 0 12px;color:#fff}.footer h3{font-size:17px}.footer h4{font-size:11px}.footer p{margin:0;max-width:330px;font-size:9px;line-height:1.6;color:#8095b1}.footer-links{display:grid;gap:8px}.footer-links a{font-size:9px;color:#91a5be}.footer-links a:hover{color:#66d9ff}.footer-bottom{min-height:52px;border-top:1px solid #ffffff0c;display:flex;align-items:center;justify-content:space-between;color:#657a96;font-size:8px}.footer-bottom-links{display:flex;gap:16px}.footer-bottom-links a{color:#8095b1}
+@media(max-width:900px){.header-links{display:none}.mobile-menu-btn{display:grid;place-items:center;order:4;width:40px;height:40px;border:1px solid rgba(126,176,255,.25);border-radius:9px;background:rgba(255,255,255,.07);color:#dff7ff;font-size:21px;cursor:pointer;margin-left:auto}.brand{order:1}.header-user{order:2}.login{order:3}.join-btn{order:5}.mobile-menu{position:absolute;top:76px;right:0;left:0;display:none;flex-direction:column;padding:10px;border:1px solid rgba(126,176,255,.25);border-radius:13px;background:linear-gradient(145deg,#14234c,#30235b);box-shadow:0 18px 35px rgba(5,15,40,.35)}.mobile-menu.open{display:flex}.mobile-menu a{padding:12px 14px;border-radius:8px;color:#fff;font-size:10px;font-weight:900}.mobile-menu a:hover{background:rgba(255,255,255,.08)}.plans-grid{grid-template-columns:1fr}.premium-plans{width:calc(100% - 28px)}.footer-top{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column;gap:7px;justify-content:center;padding:12px 0}.page{padding-top:105px}}
+@media(max-width:560px){.topbar{top:8px;width:calc(100% - 16px)}.logo img{width:58px;height:50px}.brand-title{font-size:17px}.header-user{display:none!important}.login{display:none!important}.join-btn{display:none!important}.plans-head h1{font-size:27px}.plan-card{min-height:0}.footer-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar">
+
+<nav class="nav">
+
+<button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
+<a class="brand" href="../homepage.html">
+<div class="logo"><img src="../logo.png" alt="HPMockShashtra Logo"></div>
+<div>
+<div class="brand-title"><span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span></div>
+<div class="tagline">Prepare Today, Serve Tomorrow</div>
+</div>
+</a>
+
+<div class="header-links">
+<a href="../homepage.html">Home</a>
+<a href="../joa/new-joa-series.html">JOA (IT)</a>
+<a href="../patwari/patwari-series.html">Patwari</a>
+<a href="../about.html">About</a>
+<a href="mahapack-plans.html">Premium Plans</a>
+</div>
+
+<div class="header-user" id="headerUser" style="display:none">
+<span class="avatar" id="headerAvatar">U</span>
+<span id="headerUserName">User</span>
+</div>
+
+<a class="login" id="loginLink" href="../firebase-login.html">Login</a>
+<a class="join-btn" id="joinBtn" href="../firebase-signup.html">Join Free</a>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="../homepage.html">Home</a>
+<a href="../joa/new-joa-series.html">JOA (IT)</a>
+<a href="../patwari/patwari-series.html">Patwari</a>
+<a href="../about.html">About</a>
+<a href="mahapack-plans.html">Premium Plans</a>
+<a href="../firebase-login.html" id="mobileLogin">Login</a>
+<a href="../firebase-signup.html" id="mobileJoin">Join Free</a>
+</div>
+
+</nav>
+
+</header>
+<main class="page">
+<section class="premium-plans" id="premium-plans">
+<div class="plans-head"><h1>Premium <span>Plans</span></h1><p>Choose the computer preparation plan that fits your JOA (IT) preparation.</p></div>
+<div class="plans-grid">
+
+<div class="plan-card">
+<span class="plan-badge">FREE</span>
+<h3>Free Tests</h3>
+<div class="plan-price">
+<b>₹0</b>
+<span>Cost</span>
+</div>
+<div class="plan-validity">Free access • No payment required</div>
+<ul class="plan-features">
+<li>15 questions per subject</li>
+<li>All 15 computer subjects available</li>
+<li>Bilingual practice</li>
+<li>Basic test practice</li>
+<li>No premium payment required</li>
+</ul>
+<div class="plan-note">Best for trying the subjects before choosing a premium plan.</div>
+<a class="plan-btn" href="joa-mahapack.html#computer-subjects">Start Free Tests →</a>
+</div>
+
+<div class="plan-card featured">
+<span class="plan-badge">INDIVIDUAL SUBJECT</span>
+<h3>Individual Subject</h3>
+<div class="plan-price">
+<b>₹59</b>
+<span>/ subject</span>
+</div>
+<div class="plan-validity">3 Months Validity</div>
+<ul class="plan-features">
+<li>400 questions per subject</li>
+<li>Detailed performance analysis</li>
+<li>Practice, review and learning</li>
+<li>Choose any individual computer subject</li>
+<li>Premium subject access for 3 months</li>
+</ul>
+<div class="plan-note">One subject • 400 premium questions • 3-month access.</div>
+<a class="plan-btn" href="joa-mahapack.html#computer-subjects">Choose Subject →</a>
+</div>
+
+<div class="plan-card featured">
+<span class="plan-badge">MS OFFICE PACK</span>
+<h3>MS Office Pack</h3>
+<div class="plan-price">
+<b>₹179</b>
+<span>/ pack</span>
+</div>
+<div class="plan-validity">5 Months Validity</div>
+<ul class="plan-features">
+<li>MS Word — 400 questions</li>
+<li>MS Excel — 400 questions</li>
+<li>MS PowerPoint — 400 questions</li>
+<li>MS Access — 400 questions</li>
+<li>1,600 questions total</li>
+</ul>
+<div class="plan-note">4 MS Office subjects • 400 questions per subject • 5-month access.</div>
+<a class="plan-btn" href="../payment.html?product=ms-office">Buy MS Office Pack →</a>
+</div>
+
+<div class="plan-card maha">
+<span class="plan-badge">JOA IT MAHA PACK</span>
+<h3>JOA IT MahaPack</h3>
+<div class="plan-price">
+<b>₹399</b>
+<span>/ pack</span>
+</div>
+<div class="plan-validity">6 Months Validity</div>
+<ul class="plan-features">
+<li>15 computer subjects</li>
+<li>400 questions per subject</li>
+<li>6,000 questions total</li>
+<li>Detailed performance analysis</li>
+<li>Complete premium computer preparation</li>
+</ul>
+<div class="plan-note">15 subjects • 400 questions each • 6,000 questions • 6-month access.</div>
+<a class="plan-btn" href="../payment.html?product=computer-master">Buy MahaPack →</a>
+</div>
+
+</div>
+</section>
+</main>
+<footer class="footer">
+
+<div class="footer-inner">
+
+<div class="footer-top">
+
+<div>
+<h3>HPMockShashtra</h3>
+<p>
+A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.
+</p>
+</div>
+
+<div>
+<h4>Preparation</h4>
+<div class="footer-links">
+<a href="../joa/new-joa-series.html">JOA (IT) Mock Tests</a>
+<a href="../patwari/patwari-series.html">HP Patwari Mock Tests</a>
+<a href="joa-mahapack.html">JOA IT Maha Pack</a>
+<a href="mahapack-plans.html">Premium Plans</a>
+</div>
+</div>
+
+<div>
+<h4>Account</h4>
+<div class="footer-links">
+<a href="../firebase-login.html">Login</a>
+<a href="../firebase-signup.html">Create Account</a>
+<a href="my-purchase.html">My Purchases</a>
+</div>
+</div>
+
+<div>
+<h4>Information</h4>
+<div class="footer-links">
+<a href="../about.html">About</a>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms &amp; Conditions</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<div>© 2026 HPMockShashtra. All rights reserved.</div>
+<div class="footer-bottom-links">
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms &amp; Conditions</a>
+</div>
+</div>
+
+</div>
+
+</footer>
+<script>
+const mobileMenuBtn=document.getElementById('mobileMenuBtn'),mobileMenu=document.getElementById('mobileMenu');
+if(mobileMenuBtn&&mobileMenu){mobileMenuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');mobileMenuBtn.setAttribute('aria-expanded',open?'true':'false');mobileMenuBtn.textContent=open?'✕':'☰'});mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');mobileMenuBtn.setAttribute('aria-expanded','false');mobileMenuBtn.textContent='☰'}));}
+</script>
+<script type="module">
+import {initializeApp,getApps} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import {getAuth,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import {getFirestore,doc,getDoc} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+const firebaseConfig={apiKey:"AIzaSyBqHKXxQzFOEkp450RqG3vEktF9iQeCGiI",authDomain:"hpmockshashtra.firebaseapp.com",projectId:"hpmockshashtra",storageBucket:"hpmockshashtra.firebasestorage.app",messagingSenderId:"591547064527",appId:"1:591547064527:web:cc2edfa5f077dc30e717ba"};
+const app=getApps().length?getApps()[0]:initializeApp(firebaseConfig);const auth=getAuth(app);const db=getFirestore(app);
+const headerUser=document.getElementById('headerUser'),headerUserName=document.getElementById('headerUserName'),headerAvatar=document.getElementById('headerAvatar'),loginLink=document.getElementById('loginLink'),joinBtn=document.getElementById('joinBtn'),mobileLogin=document.getElementById('mobileLogin'),mobileJoin=document.getElementById('mobileJoin');
+function showLoggedOut(){headerUser.style.display='none';loginLink.style.display='inline-flex';joinBtn.style.display='inline-flex';joinBtn.textContent='Join Free';joinBtn.href='../firebase-signup.html';joinBtn.onclick=null;mobileLogin.style.display='block';mobileLogin.textContent='Login';mobileLogin.href='../firebase-login.html';mobileJoin.style.display='block';mobileJoin.textContent='Join Free';mobileJoin.href='../firebase-signup.html';}
+function showLoggedIn(name){headerUserName.textContent=name;headerAvatar.textContent=name.trim().charAt(0).toUpperCase()||'U';headerUser.style.display='flex';loginLink.style.display='none';joinBtn.style.display='inline-flex';joinBtn.textContent='Logout';joinBtn.href='#';joinBtn.onclick=async e=>{e.preventDefault();await signOut(auth);location.reload()};mobileLogin.style.display='block';mobileLogin.textContent=name;mobileLogin.href='#';mobileJoin.style.display='block';mobileJoin.textContent='Logout';mobileJoin.href='#';mobileJoin.onclick=async e=>{e.preventDefault();await signOut(auth);location.reload()};}
+onAuthStateChanged(auth,async user=>{if(!user){showLoggedOut();return}let name=user.displayName||'';if(!name){try{const snap=await getDoc(doc(db,'users',user.uid));if(snap.exists())name=snap.data().name||''}catch(e){console.warn('Could not load user name:',e)}}if(!name)name=(user.email||'User').split('@')[0];showLoggedIn(name);});
+</script>
+</body>
+</html>
