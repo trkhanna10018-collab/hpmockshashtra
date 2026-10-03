@@ -1,7 +1,7 @@
 const questions = [
 // Question 1
 {
-  en: "What is MS Word?", 
+  en: "What is MS Word?",  
   hi: "MS Word क्या है?",
 
   options: [
