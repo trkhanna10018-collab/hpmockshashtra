@@ -1,4 +1,4 @@
-const questions = [
+const questions = [ 
 // Question 1
 {
   en: "What is MS Word?", 
