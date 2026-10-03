@@ -24,12 +24,12 @@ min-height:70px;
 padding:8px 12px 8px 14px;
 display:flex;
 align-items:center;
-border:1px solid rgba(180,140,255,.38);
+border:1px solid rgba(185,155,255,.48);
 border-radius:17px;
-background:linear-gradient(135deg,rgba(18,40,78,.96),rgba(55,35,92,.96));
+background:linear-gradient(135deg,rgba(24,35,82,.98),rgba(70,38,105,.98));
 backdrop-filter:blur(22px) saturate(150%);
 -webkit-backdrop-filter:blur(22px) saturate(150%);
-box-shadow:0 18px 55px #0008,0 0 30px rgba(137,92,255,.12)
+box-shadow:0 16px 45px rgba(0,0,0,.35),0 0 24px rgba(110,90,220,.16)
 }
 
 .nav{
@@ -165,6 +165,7 @@ display:none
 .hero{
 position:relative;
 overflow:hidden;
+padding-top:96px;
 background:linear-gradient(135deg,#eef6ff,#f8fbff 55%,#eef2ff);
 border-bottom:1px solid #dce8f7
 }
@@ -674,6 +675,8 @@ color:#155e75
 
 /* ================= BUTTONS ================= */
 
+.free-test-btn{display:flex;align-items:center;justify-content:center;min-height:34px;margin-top:10px;padding:0 10px;border-radius:8px;color:#075e54;background:linear-gradient(135deg,#ecfeff,#dffcf4);border:1px solid #7ddbd0;font-size:9px;font-weight:950;box-shadow:0 5px 13px rgba(13,148,136,.10);transition:.2s}.free-test-btn:hover{transform:translateY(-1px);filter:brightness(1.03);box-shadow:0 7px 16px rgba(13,148,136,.15)}
+
 .actions2{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -877,8 +880,10 @@ order:5
 display:none
 }
 
+.header-user,
+.login,
 .join-btn{
-display:none
+display:none!important
 }
 
 .mobile-menu-btn{
@@ -928,7 +933,7 @@ color:#67e8f9
 
 .hero-inner{
 display:block;
-padding:38px 0
+padding:20px 0 38px
 }
 
 .hero-copy,
@@ -1347,8 +1352,9 @@ alt="Computer Fundamentals"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/computer-fundamental.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1390,8 +1396,9 @@ data-paid-page="paid-ms-word.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/ms-word.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1433,8 +1440,9 @@ data-paid-page="paid-ms-excel.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/ms-excel.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1476,8 +1484,9 @@ data-paid-page="paid-ms-powerpoint.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/ms-powerpoint.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1519,8 +1528,9 @@ data-paid-page="paid-ms-access.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/ms-access.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1562,8 +1572,9 @@ data-paid-page="paid-dbms-sql.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/dbms-sql.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1605,8 +1616,9 @@ data-paid-page="paid-computer-networking.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/computer-networking.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1648,8 +1660,9 @@ data-paid-page="paid-cyber-security.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/cyber-security.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1691,8 +1704,9 @@ data-paid-page="paid-c-programming.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/c-programming.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1734,8 +1748,9 @@ data-paid-page="paid-html.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/html.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1777,8 +1792,9 @@ data-paid-page="paid-css-css3.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/css-css3.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1820,8 +1836,9 @@ data-paid-page="paid-cloud-computing.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/cloud-computing.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1863,8 +1880,9 @@ data-paid-page="paid-data-structure.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/data-structure.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1911,8 +1929,9 @@ Computer Organisation &amp; Architecture
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/computer-organisation-architecture.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
@@ -1954,8 +1973,9 @@ data-paid-page="paid-operating-system.html"
 ● Premium Test
 </span>
 
-<div class="actions2">
+<a class="free-test-btn" href="free/operating-system.html">✓ &nbsp;Free Test</a>
 
+<div class="actions2">
 <div class="locked-status">
 🔒 Locked
 </div>
