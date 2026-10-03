@@ -191,6 +191,22 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
       <img src="qr.png" alt="UPI Payment QR Code">
     </div>
     <div class="amount">Amount to Pay <strong id="amount">₹—</strong></div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">✓</div>
+        <div>
+          <strong>Keep the payment screenshot</strong>
+          <p>After successful payment, keep the screenshot ready to attach on WhatsApp.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">✓</div>
+        <div>
+          <strong>Access will be verified manually</strong>
+          <p>Your name, email, UID, product, amount and required access details are sent with your WhatsApp message.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -266,12 +282,24 @@ import { auth, db } from "./firebase-config.js";
 
 const PRODUCTS = {
   "joa": {
-    name:"JOA (IT) Full Series", price:99, validity:"Full Series",
-    access:"joaitFullSeries", accessValue:"true", kind:"legacy"
+    name:"JOA (IT) Mock Test Series", price:99, validity:"Full Series",
+    access:"joaitFullSeries", accessValue:"true", kind:"legacy-joa",
+    questions:"1,600 Questions (16 Tests × 100)", details:"Old JOA (IT) Mock Test Series"
+  },
+  "joa-new": {
+    name:"JOA IT Mock Test Series — New", price:149, validity:"As per assigned expiry",
+    access:"joaAccess", kind:"new-joa",
+    questions:"1,200 Questions (10 Tests × 120)", details:"New JOA IT Mock Test Series • 120 questions/test • 90 minutes/test"
   },
   "patwari": {
-    name:"HP Patwari Full Series", price:149, validity:"Full Series",
-    access:"patwariFullSeries", accessValue:"true", kind:"legacy"
+    name:"HP Patwari Mock Test Series", price:149, validity:"Full Series",
+    access:"patwariFullSeries", accessValue:"true", kind:"legacy-patwari",
+    questions:"1,320 Questions (11 Tests × 120)", details:"HP Patwari Mock Test Series"
+  },
+  "patwari-new": {
+    name:"HP Patwari Mock Test Series — New", price:149, validity:"As per assigned expiry",
+    access:"patwariAccess", kind:"new-patwari",
+    questions:"1,320 Questions (11 Tests × 120)", details:"HP Patwari Mock Test Series • 120 questions/test • 90 minutes/test"
   },
 
   "computer-fundamentals": {name:"Computer Fundamentals",price:59,validity:"3 Months",kind:"course",id:"computer-fundamentals"},
@@ -304,12 +332,16 @@ function productPlan(p){
   if(p.kind === "course") return "Individual Subject";
   if(p.kind === "pack" && p.id === "ms-office") return "MS Office Pack";
   if(p.kind === "pack" && p.id === "computer-master") return "JOA IT Maha Pack";
-  if(p.kind === "legacy") return "Full Series";
+  if(p.kind === "legacy-joa") return "Old JOA (IT) Full Series";
+  if(p.kind === "new-joa") return "New JOA IT Full Series";
+  if(p.kind === "legacy-patwari") return "Old HP Patwari Full Series";
+  if(p.kind === "new-patwari") return "New HP Patwari Full Series";
   return "—";
 }
 
 function productQuestions(p){
   if(!p) return "—";
+  if(p.questions) return p.questions;
   if(p.kind === "course") return "400 Premium Questions";
   if(p.id === "ms-office") return "1,600 Premium Questions";
   if(p.id === "computer-master") return "6,000 Premium Questions";
@@ -321,15 +353,19 @@ function productAccessLabel(p){
   if(p.kind === "course") return "1 Computer Subject";
   if(p.id === "ms-office") return "4 MS Office Subjects";
   if(p.id === "computer-master") return "All 15 Computer Subjects";
-  if(p.kind === "legacy") return p.name;
+  if(p.kind === "legacy-joa") return "Legacy: joaitFullSeries = true";
+  if(p.kind === "new-joa") return "testAccess.joaAccess";
+  if(p.kind === "legacy-patwari") return "Legacy: patwariFullSeries = true";
+  if(p.kind === "new-patwari") return "testAccess.patwariAccess";
   return "—";
 }
 
 function productDetails(p){
   if(!p) return "";
-  if(p.id === "ms-office") return "Word + Excel + PowerPoint + Access";
+  if(p.details) return p.details;
+  if(p.id === "ms-office") return "MS Word + MS Excel + PowerPoint + MS Access";
   if(p.id === "computer-master") return "All 15 Computer Subjects";
-  if(p.kind === "course") return "1 Computer Subject";
+  if(p.kind === "course") return "1 Computer Subject • 400 questions";
   return p.validity;
 }
 
@@ -370,11 +406,18 @@ if (!product) {
 function accessInstruction(user, displayName) {
   let accessLine = "";
 
-  if (product.kind === "legacy") {
+  if (product.kind === "legacy-joa" || product.kind === "legacy-patwari") {
     accessLine =
 `Access to Grant:
 testAccess/${user.uid}
 ${product.access} = true`;
+  } else if (product.kind === "new-joa" || product.kind === "new-patwari") {
+    accessLine =
+`Access to Grant:
+testAccess/${user.uid}
+${product.access}
+purchasedAt = payment verification date
+expiresAt = according to the approved validity`;
   } else if (product.kind === "course") {
     accessLine =
 `Access to Grant:
@@ -406,6 +449,7 @@ UID: ${user.uid}
 Product: ${product.name}
 Plan: ${productPlan(product)}
 Details: ${productDetails(product)}
+Access Type: ${productAccessLabel(product)}
 Questions: ${productQuestions(product)}
 Validity: ${product.validity}
 Amount: ₹${product.price}
