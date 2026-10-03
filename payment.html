@@ -56,7 +56,6 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
 }
 .card h2{font-size:18px;margin-bottom:5px}.sub{font-size:11px;color:var(--muted);line-height:1.55}
 
-
 .payment-summary{
   margin-top:17px;
   border:1px solid #dbe7f5;
@@ -191,6 +190,22 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
       <img src="qr.png" alt="UPI Payment QR Code">
     </div>
     <div class="amount">Amount to Pay <strong id="amount">₹—</strong></div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">✓</div>
+        <div>
+          <strong>Keep the payment screenshot</strong>
+          <p>After successful payment, keep the screenshot ready to attach on WhatsApp.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">✓</div>
+        <div>
+          <strong>Access will be verified manually</strong>
+          <p>Your name, email, UID, product, amount and required access details are sent with your WhatsApp message.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -222,6 +237,7 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
     <div class="summary-row"><span>Plan</span><strong id="summaryPlan">—</strong></div>
     <div class="summary-row"><span>Questions</span><strong id="summaryQuestions">—</strong></div>
     <div class="summary-row"><span>Validity</span><strong id="summaryValidity">—</strong></div>
+    <div class="summary-row"><span>Access</span><strong id="summaryAccess">—</strong></div>
     <div class="summary-total"><span>Amount to Pay</span><strong id="summaryAmount">₹—</strong></div>
   </div>
 
@@ -238,7 +254,7 @@ h1{font-size:31px;line-height:1.1;margin:8px 0 8px;letter-spacing:-.7px}
   </div>
 
   <a id="whatsappBtn" class="whatsapp" href="#" target="_blank">💬 Send Payment on WhatsApp</a>
-  <div class="note">Your message is prepared automatically. You only need to attach the payment screenshot and tap Send.</div>
+  <div class="note">Your message is prepared automatically with your name, email, UID, plan, validity, amount and access details. Attach the payment screenshot and tap Send.</div>
   <div id="status" class="status"></div>
 </section>
 
@@ -265,31 +281,38 @@ import { auth, db } from "./firebase-config.js";
 
 const PRODUCTS = {
   "joa": {
-    name:"JOA (IT) Full Series", price:99, validity:"Full Series",
-    access:"joaitFullSeries", accessValue:"true", kind:"legacy"
+    name:"JOA (IT) Mock Test Series", price:99, validity:"Full Series",
+    access:"joaitFullSeries", accessValue:"true", kind:"legacy-joa",
+    questions:"1,600 Questions (16 Tests × 100)", details:"Old JOA (IT) Mock Test Series"
+  },
+  "joa-new": {
+    name:"JOA IT Mock Test Series — New", price:149, validity:"2 Months",
+    access:"joaAccess", kind:"new-joa",
+    questions:"1,200 Questions (10 Tests × 120)", details:"New JOA IT Mock Test Series • 120 questions/test • 90 minutes/test"
   },
   "patwari": {
-    name:"HP Patwari Full Series", price:149, validity:"Full Series",
-    access:"patwariFullSeries", accessValue:"true", kind:"legacy"
+    name:"HP Patwari Mock Test Series", price:149, validity:"2 Months",
+    access:"patwariAccess", kind:"new-patwari",
+    questions:"1,320 Questions (11 Tests × 120)", details:"HP Patwari Mock Test Series • 120 questions/test • 90 minutes/test"
   },
 
-  "computer-fundamentals": {name:"Computer Fundamentals",price:59,validity:"6 Months",kind:"course",id:"computer-fundamentals"},
-  "ms-word": {name:"MS Word",price:59,validity:"6 Months",kind:"course",id:"ms-word"},
-  "ms-excel": {name:"MS Excel",price:59,validity:"6 Months",kind:"course",id:"ms-excel"},
-  "ms-powerpoint": {name:"MS PowerPoint",price:59,validity:"6 Months",kind:"course",id:"ms-powerpoint"},
-  "ms-access": {name:"MS Access",price:59,validity:"6 Months",kind:"course",id:"ms-access"},
-  "dbms-sql": {name:"DBMS & SQL",price:59,validity:"6 Months",kind:"course",id:"dbms-sql"},
-  "computer-networking": {name:"Computer Networking",price:59,validity:"6 Months",kind:"course",id:"computer-networking"},
-  "cyber-security": {name:"Cyber Security",price:59,validity:"6 Months",kind:"course",id:"cyber-security"},
-  "c-programming": {name:"C Programming",price:59,validity:"6 Months",kind:"course",id:"c-programming"},
-  "html": {name:"HTML",price:59,validity:"6 Months",kind:"course",id:"html"},
-  "css-css3": {name:"CSS/CSS3",price:59,validity:"6 Months",kind:"course",id:"css-css3"},
-  "cloud-computing": {name:"Cloud Computing",price:59,validity:"6 Months",kind:"course",id:"cloud-computing"},
-  "data-structure": {name:"Data Structure",price:59,validity:"6 Months",kind:"course",id:"data-structure"},
-  "computer-organisation": {name:"Computer Organisation & Architecture",price:59,validity:"6 Months",kind:"course",id:"computer-organisation"},
-  "operating-system": {name:"Operating System",price:59,validity:"6 Months",kind:"course",id:"operating-system"},
+  "computer-fundamentals": {name:"Computer Fundamentals",price:59,validity:"3 Months",kind:"course",id:"computer-fundamentals"},
+  "ms-word": {name:"MS Word",price:59,validity:"3 Months",kind:"course",id:"ms-word"},
+  "ms-excel": {name:"MS Excel",price:59,validity:"3 Months",kind:"course",id:"ms-excel"},
+  "ms-powerpoint": {name:"MS PowerPoint",price:59,validity:"3 Months",kind:"course",id:"ms-powerpoint"},
+  "ms-access": {name:"MS Access",price:59,validity:"3 Months",kind:"course",id:"ms-access"},
+  "dbms-sql": {name:"DBMS & SQL",price:59,validity:"3 Months",kind:"course",id:"dbms-sql"},
+  "computer-networking": {name:"Computer Networking",price:59,validity:"3 Months",kind:"course",id:"computer-networking"},
+  "cyber-security": {name:"Cyber Security",price:59,validity:"3 Months",kind:"course",id:"cyber-security"},
+  "c-programming": {name:"C Programming",price:59,validity:"3 Months",kind:"course",id:"c-programming"},
+  "html": {name:"HTML",price:59,validity:"3 Months",kind:"course",id:"html"},
+  "css-css3": {name:"CSS/CSS3",price:59,validity:"3 Months",kind:"course",id:"css-css3"},
+  "cloud-computing": {name:"Cloud Computing",price:59,validity:"3 Months",kind:"course",id:"cloud-computing"},
+  "data-structure": {name:"Data Structure",price:59,validity:"3 Months",kind:"course",id:"data-structure"},
+  "computer-organisation": {name:"Computer Organisation & Architecture",price:59,validity:"3 Months",kind:"course",id:"computer-organisation"},
+  "operating-system": {name:"Operating System",price:59,validity:"3 Months",kind:"course",id:"operating-system"},
 
-  "ms-office": {name:"MS Office Pack",price:199,validity:"6 Months",kind:"pack",id:"ms-office"},
+  "ms-office": {name:"MS Office Pack",price:179,validity:"5 Months",kind:"pack",id:"ms-office"},
   "computer-master": {name:"JOA IT Maha Pack",price:399,validity:"6 Months",kind:"pack",id:"computer-master"}
 };
 
@@ -303,23 +326,38 @@ function productPlan(p){
   if(p.kind === "course") return "Individual Subject";
   if(p.kind === "pack" && p.id === "ms-office") return "MS Office Pack";
   if(p.kind === "pack" && p.id === "computer-master") return "JOA IT Maha Pack";
-  if(p.kind === "legacy") return "Full Series";
+  if(p.kind === "legacy-joa") return "Old JOA (IT) Full Series";
+  if(p.kind === "new-joa") return "New JOA IT Full Series";
+  if(p.kind === "new-patwari") return "HP Patwari Full Series";
   return "—";
 }
 
 function productQuestions(p){
   if(!p) return "—";
+  if(p.questions) return p.questions;
   if(p.kind === "course") return "400 Premium Questions";
   if(p.id === "ms-office") return "1,600 Premium Questions";
   if(p.id === "computer-master") return "6,000 Premium Questions";
   return "—";
 }
 
+function productAccessLabel(p){
+  if(!p) return "—";
+  if(p.kind === "course") return "1 Computer Subject";
+  if(p.id === "ms-office") return "4 MS Office Subjects";
+  if(p.id === "computer-master") return "All 15 Computer Subjects";
+  if(p.kind === "legacy-joa") return "Legacy: joaitFullSeries = true";
+  if(p.kind === "new-joa") return "testAccess.joaAccess";
+  if(p.kind === "new-patwari") return "testAccess.patwariAccess";
+  return "—";
+}
+
 function productDetails(p){
   if(!p) return "";
-  if(p.id === "ms-office") return "Word + Excel + PowerPoint + Access";
+  if(p.details) return p.details;
+  if(p.id === "ms-office") return "MS Word + MS Excel + PowerPoint + MS Access";
   if(p.id === "computer-master") return "All 15 Computer Subjects";
-  if(p.kind === "course") return "1 Computer Subject";
+  if(p.kind === "course") return "1 Computer Subject • 400 questions";
   return p.validity;
 }
 
@@ -340,6 +378,7 @@ if (!product) {
   $("summaryPlan").textContent = "—";
   $("summaryQuestions").textContent = "—";
   $("summaryValidity").textContent = "—";
+  $("summaryAccess").textContent = "—";
   $("summaryAmount").textContent = "₹—";
   $("whatsappBtn").style.display = "none";
 } else {
@@ -352,31 +391,40 @@ if (!product) {
   $("summaryPlan").textContent = productPlan(product);
   $("summaryQuestions").textContent = productQuestions(product);
   $("summaryValidity").textContent = product.validity;
+  $("summaryAccess").textContent = productAccessLabel(product);
   $("summaryAmount").textContent = `₹${product.price}`;
 }
 
 function accessInstruction(user, displayName) {
   let accessLine = "";
 
-  if (product.kind === "legacy") {
+  if (product.kind === "legacy-joa") {
     accessLine =
-`Access:
+`Access to Grant:
 testAccess/${user.uid}
 ${product.access} = true`;
+  } else if (product.kind === "new-joa" || product.kind === "new-patwari") {
+    accessLine =
+`Access to Grant:
+testAccess/${user.uid}
+${product.access}
+purchasedAt = payment verification date
+expiresAt = according to the approved validity`;
   } else if (product.kind === "course") {
     accessLine =
-`Access:
+`Access to Grant:
 testAccess/${user.uid}
-computerAccess.courses.${product.id}
+mahapackAccess.courses.${product.id}
 purchasedAt = payment verification date
-expiresAt = purchasedAt + 6 months`;
+expiresAt = purchasedAt + 3 months`;
   } else if (product.kind === "pack") {
+    const validityMonths = product.id === "ms-office" ? 5 : 6;
     accessLine =
-`Access:
+`Access to Grant:
 testAccess/${user.uid}
-computerAccess.packs.${product.id}
+mahapackAccess.packs.${product.id}
 purchasedAt = payment verification date
-expiresAt = purchasedAt + 6 months`;
+expiresAt = purchasedAt + ${validityMonths} months`;
   }
 
   return `ADMIN ACCESS
@@ -393,11 +441,14 @@ UID: ${user.uid}
 Product: ${product.name}
 Plan: ${productPlan(product)}
 Details: ${productDetails(product)}
+Access Type: ${productAccessLabel(product)}
 Questions: ${productQuestions(product)}
 Validity: ${product.validity}
 Amount: ₹${product.price}
 
 Payment screenshot attached.
+
+Please verify the payment and then grant the access mentioned below.
 
 ${accessInstruction(user, displayName)}`;
 }
