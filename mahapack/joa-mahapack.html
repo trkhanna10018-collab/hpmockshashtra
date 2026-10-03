@@ -638,8 +638,6 @@ color:#155e75
 
 /* ================= BUTTONS ================= */
 
-.free-test-btn{display:flex;align-items:center;justify-content:center;min-height:34px;margin-top:10px;padding:0 10px;border-radius:8px;color:#075e54;background:linear-gradient(135deg,#ecfeff,#dffcf4);border:1px solid #7ddbd0;font-size:9px;font-weight:950;box-shadow:0 5px 13px rgba(13,148,136,.10);transition:.2s}.free-test-btn:hover{transform:translateY(-1px);filter:brightness(1.03);box-shadow:0 7px 16px rgba(13,148,136,.15)}
-
 .actions2{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -721,170 +719,6 @@ color:#b42318
 }
 
 
-
-/* ================= PREMIUM PLANS ================= */
-
-.premium-plans{
-margin-top:48px;
-padding:34px 0 8px
-}
-
-.plans-head{
-text-align:center;
-margin-bottom:24px
-}
-
-.plans-head h2{
-margin:0;
-font-size:28px;
-color:#172554
-}
-
-.plans-head p{
-margin:6px auto 0;
-max-width:700px;
-color:#64748b;
-font-size:11px
-}
-
-.plans-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px
-}
-
-
-.plan-card{
-position:relative;
-overflow:hidden;
-border:1px solid rgba(148,163,184,.22);
-border-radius:18px;
-padding:20px;
-background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(247,250,255,.98));
-box-shadow:0 12px 30px rgba(15,23,42,.08),inset 0 1px 0 rgba(255,255,255,.9);
-transition:transform .22s,box-shadow .22s,border-color .22s
-}
-
-.plan-card.featured{
-border-color:#a5d8ff;
-background:linear-gradient(145deg,#f7fbff,#f4f0ff);
-box-shadow:0 12px 32px rgba(37,99,235,.10)
-}
-
-.plan-card.maha{
-border-color:#8b7cf6;
-background:linear-gradient(145deg,#eef8ff,#f3edff 55%,#fff);
-box-shadow:0 14px 36px rgba(79,70,229,.14)
-}
-
-.plan-badge{
-display:inline-flex;
-padding:5px 9px;
-border-radius:999px;
-font-size:8px;
-font-weight:950;
-color:#1d4ed8;
-background:#eff6ff;
-border:1px solid #bfdbfe;
-margin-bottom:10px
-}
-
-.plan-card.maha .plan-badge{
-color:#5b21b6;
-background:#f5f3ff;
-border-color:#c4b5fd
-}
-
-.plan-card h3{
-font-size:19px;
-color:#172554;
-margin:0 0 5px
-}
-
-.plan-price{
-display:flex;
-align-items:baseline;
-gap:3px;
-margin:10px 0 5px
-}
-
-.plan-price b{
-font-size:30px;
-color:#172554
-}
-
-.plan-price span{
-font-size:10px;
-color:#64748b
-}
-
-.plan-validity{
-font-size:9px;
-font-weight:850;
-color:#0f766e;
-margin-bottom:15px
-}
-
-.plan-features{
-display:grid;
-gap:8px;
-margin:0;
-padding:0;
-list-style:none
-}
-
-.plan-features li{
-display:flex;
-align-items:flex-start;
-gap:7px;
-font-size:9px;
-line-height:1.45;
-color:#475569
-}
-
-.plan-features li::before{
-content:"✓";
-flex:0 0 auto;
-font-size:10px;
-font-weight:950;
-color:#0f9d74
-}
-
-.plan-note{
-margin-top:15px;
-padding-top:12px;
-border-top:1px solid #e2e8f0;
-font-size:8px;
-color:#64748b;
-font-weight:700
-}
-
-.plan-btn{
-display:flex;
-align-items:center;
-justify-content:center;
-min-height:36px;
-margin-top:16px;
-border-radius:8px;
-font-size:9px;
-font-weight:950;
-color:#fff;
-background:linear-gradient(135deg,#2563eb,#4f46e5)
-}
-
-.plan-card.maha .plan-btn{
-background:linear-gradient(135deg,#4f46e5,#7c3aed)
-}
-
-@media(max-width:820px){
-.plans-grid{grid-template-columns:1fr}
-}
-
-@media(max-width:560px){
-.premium-plans{margin-top:34px;padding-top:25px}
-.plans-head h2{font-size:24px}
-.plan-card{padding:18px}
-}
 
 /* ================= FOOTER ================= */
 
@@ -1314,65 +1148,172 @@ box-shadow:0 8px 20px rgba(34,211,238,.16)
 }
 
 
-/* Final premium header and plan refinements */
+/* CLEAN FINAL UI OVERRIDES */
 .topbar{
-background:linear-gradient(135deg,rgba(24,43,94,.96),rgba(55,38,91,.96));
-backdrop-filter:blur(18px) saturate(125%);
--webkit-backdrop-filter:blur(18px) saturate(125%);
-border:1px solid rgba(151,178,255,.28);
-box-shadow:0 16px 40px rgba(8,18,48,.24)
-}
-.header-links a{
-color:#f1f5ff;
-text-shadow:none
-}
-.header-links a:hover{
-color:#67e8f9
-}
-.login{
-color:#eef4ff!important;
-background:rgba(255,255,255,.07)!important;
-border-color:rgba(255,255,255,.20)!important
-}
-.join-btn{
-box-shadow:none!important
-}
-.mobile-menu-btn{
-background:rgba(255,255,255,.08)!important;
-color:#f1f5ff!important;
-border-color:rgba(255,255,255,.20)!important
-}
-.mobile-menu{
-background:linear-gradient(145deg,#162a5d,#35245d)!important;
-border-color:rgba(151,178,255,.28)!important
-}
-.mobile-menu a{
-color:#f1f5ff!important
-}
-.plan-card.maha .plan-price b{
-color:#ffffff!important;
-text-shadow:0 1px 8px rgba(255,255,255,.08)
-}
-.plan-card.maha .plan-price span,
-.plan-card.maha .plan-validity,
-.plan-card.maha .plan-features li,
-.plan-card.maha .plan-note{
-color:#e6edff!important
-}
-.plan-card.maha .plan-features li::before{
-color:#5eead4!important
-}
-.plan-card.maha .plan-note{
-border-top-color:rgba(255,255,255,.18)!important
-}
-.plan-card.free-plan .plan-btn{
-background:linear-gradient(135deg,#1d3b68,#294d7a)!important;
-box-shadow:0 7px 16px rgba(29,59,104,.16)!important
-}
-.plan-card.free-plan .plan-btn:hover{
-background:linear-gradient(135deg,#244775,#315987)!important
+background:linear-gradient(135deg,#182b5e,#35265d);
+border:1px solid rgba(126,176,255,.30);
+backdrop-filter:blur(16px) saturate(120%);
+-webkit-backdrop-filter:blur(16px) saturate(120%);
+box-shadow:0 12px 28px rgba(8,18,45,.18)
 }
 
+.header-user{
+color:#fff;
+display:none;
+align-items:center;
+gap:7px;
+font-size:11px;
+font-weight:850;
+white-space:nowrap
+}
+
+.header-user span:last-child{
+color:#fff;
+max-width:110px;
+overflow:hidden;
+text-overflow:ellipsis
+}
+
+.avatar{
+background:linear-gradient(135deg,#3658e8,#6449e8);
+color:#fff
+}
+
+.free-test-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:34px;
+margin-top:10px;
+padding:0 10px;
+border-radius:8px;
+color:#e8f0ff;
+background:linear-gradient(135deg,#1b315d,#294574);
+border:1px solid rgba(126,176,255,.32);
+font-size:9px;
+font-weight:950;
+box-shadow:0 5px 12px rgba(15,30,65,.12);
+transition:.2s
+}
+
+.free-test-btn:hover{
+transform:translateY(-1px);
+background:linear-gradient(135deg,#223d70,#315487);
+box-shadow:0 7px 15px rgba(15,30,65,.16)
+}
+
+.plans-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px
+}
+
+.plan-card{
+position:relative;
+overflow:hidden;
+min-height:385px;
+border-radius:18px;
+padding:20px;
+border:1px solid rgba(126,176,255,.22);
+background:linear-gradient(145deg,#17284d,#22345f);
+box-shadow:0 14px 30px rgba(8,18,45,.16);
+color:#fff;
+transition:transform .2s,box-shadow .2s,border-color .2s
+}
+
+.plan-card:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 36px rgba(8,18,45,.22);
+border-color:rgba(103,232,249,.42)
+}
+
+.plan-card.free-plan{
+background:linear-gradient(145deg,#142b4e,#1e4164);
+border-color:rgba(96,165,250,.30)
+}
+
+.plan-card.featured{
+background:linear-gradient(145deg,#1a2850,#30336e);
+border-color:rgba(129,140,248,.34)
+}
+
+.plan-card.office{
+background:linear-gradient(145deg,#20234f,#3a2866);
+border-color:rgba(167,139,250,.34)
+}
+
+.plan-card.maha{
+background:linear-gradient(145deg,#111a3b,#241850 58%,#30205d);
+border-color:rgba(103,232,249,.38);
+box-shadow:0 16px 34px rgba(12,15,45,.25)
+}
+
+.plan-card h3,
+.plan-card .plan-price b{
+color:#fff
+}
+
+.plan-card .plan-price span{
+color:#b9c7e5
+}
+
+.plan-card .plan-validity{
+color:#68e8d0
+}
+
+.plan-card .plan-features li{
+color:#d7e1f5
+}
+
+.plan-card .plan-features li::before{
+color:#5eead4
+}
+
+.plan-card .plan-note{
+color:#aebcda;
+border-top-color:rgba(255,255,255,.14)
+}
+
+.plan-badge{
+color:#dbeafe;
+background:rgba(96,165,250,.10);
+border:1px solid rgba(147,197,253,.30)
+}
+
+.plan-card.maha .plan-badge{
+color:#e9ddff;
+background:rgba(139,92,246,.14);
+border-color:rgba(196,181,253,.34)
+}
+
+.plan-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:38px;
+margin-top:16px;
+border-radius:9px;
+font-size:9px;
+font-weight:950;
+color:#fff;
+background:linear-gradient(135deg,#3159d8,#4f46e5);
+border:1px solid rgba(147,197,253,.18);
+box-shadow:0 7px 15px rgba(0,0,0,.14)
+}
+
+.plan-card.free-plan .plan-btn{
+background:linear-gradient(135deg,#294a78,#365f91);
+color:#f4f8ff
+}
+
+.plan-card.maha .plan-btn{
+background:linear-gradient(135deg,#19b9df,#5865e8);
+color:#fff
+}
+
+@media(max-width:820px){
+.plans-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 
@@ -1410,7 +1351,7 @@ background:linear-gradient(135deg,#244775,#315987)!important
 
 <div class="mobile-menu" id="mobileMenu">
 <a href="../homepage.html">Home</a>
-<a href="../joa/joa-series.html">JOA (IT)</a>
+<a href="../joa/new-joa-series.html">JOA (IT)</a>
 <a href="../patwari/patwari-series.html">Patwari</a>
 <a href="../about.html">About</a>
 <a href="mahapack-plans.html">Premium Plans</a>
