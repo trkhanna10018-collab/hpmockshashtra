@@ -122,6 +122,25 @@ font-weight:800
 background:#eff6ff
 }
 
+.join-btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-height:40px;
+padding:0 16px;
+border-radius:9px;
+color:#fff;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+font-size:12px;
+font-weight:850;
+box-shadow:0 7px 16px rgba(37,99,235,.16)
+}
+
+.join-btn:hover{
+transform:translateY(-1px);
+filter:brightness(1.04)
+}
+
 .mobile-menu-btn{
 display:none
 }
@@ -182,6 +201,11 @@ font-size:11px;
 font-weight:900;
 box-shadow:0 4px 16px rgba(180,125,0,.10);
 animation:premiumBlink 1.35s ease-in-out infinite
+}
+
+@keyframes mahaPremiumGlow{
+0%,100%{box-shadow:0 20px 45px rgba(37,69,115,.13),0 0 0 1px rgba(234,179,8,.10),0 0 20px rgba(234,179,8,.12)}
+50%{box-shadow:0 22px 48px rgba(37,69,115,.16),0 0 0 1px rgba(234,179,8,.25),0 0 38px rgba(234,179,8,.30)}
 }
 
 @keyframes premiumBlink{
@@ -308,10 +332,13 @@ place-items:center
 width:min(510px,100%);
 height:255px;
 border-radius:18px;
-background:#fff;
-border:1px solid #d7e4f4;
-box-shadow:0 20px 45px rgba(37,69,115,.13);
-overflow:hidden
+background:linear-gradient(145deg,#fffdf5,#fff9e8 52%,#fff);
+border:1px solid #e2b84a;
+box-shadow:0 20px 45px rgba(37,69,115,.13),0 0 0 1px rgba(234,179,8,.10),0 0 28px rgba(234,179,8,.16);
+overflow:hidden;
+position:relative;
+transform:rotate(-1deg);
+animation:mahaPremiumGlow 2.4s ease-in-out infinite
 }
 
 .visual-top{
@@ -360,7 +387,9 @@ border-radius:999px;
 font-size:6px;
 color:#8a5a00;
 background:#fff8df;
-border:1px solid #e9c45b
+border:1px solid #dcae32;
+box-shadow:0 2px 10px rgba(202,138,4,.16);
+animation:premiumBlink 1.35s ease-in-out infinite
 }
 
 .hero-pack-grid{
@@ -804,7 +833,7 @@ margin:auto
 .footer-top{
 padding:35px 0 25px;
 display:grid;
-grid-template-columns:1.4fr 1fr 1fr;
+grid-template-columns:1.4fr 1fr 1fr 1fr;
 gap:35px
 }
 
@@ -898,6 +927,8 @@ min-height:76px
 .header-links{
 display:none
 }
+
+.join-btn{display:none}
 
 .mobile-menu-btn{
 display:grid;
@@ -1113,62 +1144,40 @@ font-size:9px
 
 <nav class="nav">
 
-<button
-class="mobile-menu-btn"
-id="mobileMenuBtn"
-type="button"
-aria-label="Open menu"
-aria-expanded="false"
->☰</button>
+<button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
 
 <a class="brand" href="../homepage.html">
-
-<div class="logo">
-<img src="../logo.png" alt="HPMockShashtra Logo">
-</div>
-
+<div class="logo"><img src="../logo.png" alt="HPMockShashtra Logo"></div>
 <div>
-<div class="brand-title">
-<span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span>
+<div class="brand-title"><span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span></div>
+<div class="tagline">Prepare Today, Serve Tomorrow</div>
 </div>
-
-<div class="tagline">
-Prepare Today, Serve Tomorrow
-</div>
-
-</div>
-
 </a>
 
 <div class="header-links">
-
 <a href="../homepage.html">Home</a>
-<a href="../joa/new-joa-series.html">JOA (IT)</a>
-<a href="../patwari/patwari-series.html">Patwari</a>
+<a href="../homepage.html#mock-tests">Test Series</a>
 <a href="mahapack-plans.html">Premium Plans</a>
-<a href="my-purchase.html">My Purchases</a>
-
+<a href="../homepage.html#resources">How It Works</a>
+<a href="../about.html">About</a>
 </div>
 
 <div class="header-user" id="headerUser" style="display:none">
-
 <span class="avatar" id="headerAvatar">U</span>
 <span id="headerUserName">User</span>
-
 </div>
 
-<a class="login" id="loginLink" href="../firebase-login.html">
-Login
-</a>
+<a class="login" id="loginLink" href="../firebase-login.html">Login</a>
+<a class="join-btn" id="joinBtn" href="../firebase-signup.html">Join Free</a>
 
 <div class="mobile-menu" id="mobileMenu">
-
 <a href="../homepage.html">Home</a>
-<a href="../joa/new-joa-series.html">JOA (IT)</a>
-<a href="../patwari/patwari-series.html">Patwari</a>
+<a href="../homepage.html#mock-tests">Test Series</a>
 <a href="mahapack-plans.html">Premium Plans</a>
-<a href="my-purchase.html">My Purchases</a>
-
+<a href="../homepage.html#resources">How It Works</a>
+<a href="../about.html">About</a>
+<a href="../firebase-login.html" id="mobileLogin">Login</a>
+<a href="../firebase-signup.html" id="mobileJoin">Join Free</a>
 </div>
 
 </nav>
@@ -2048,86 +2057,15 @@ Buy ₹59
 
 
 <footer class="footer">
-
 <div class="footer-inner">
-
 <div class="footer-top">
-
-<div>
-<h3>HPMockShashtra</h3>
-<p>
-A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.
-</p>
+<div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div>
+<div><h4>Preparation</h4><div class="footer-links"><a href="../joa/new-joa-series.html">JOA (IT) Mock Tests</a><a href="../patwari/patwari-series.html">HP Patwari Mock Tests</a><a href="joa-mahapack.html">JOA IT Maha Pack</a><a href="mahapack-plans.html">Premium Plans</a></div></div>
+<div><h4>Account</h4><div class="footer-links"><a href="../firebase-login.html">Login</a><a href="../firebase-signup.html">Create Account</a><a href="my-purchase.html">My Purchases</a></div></div>
+<div><h4>Information</h4><div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms &amp; Conditions</a></div></div>
 </div>
-
-<div>
-
-<h4>Mock Tests</h4>
-
-<div class="footer-links">
-
-<a href="../joa/new-joa-series.html">
-JOA (IT) Mock Tests
-</a>
-
-<a href="joa-mahapack.html">
-JOA IT Maha Pack
-</a>
-
-<a href="../patwari/patwari-series.html">
-HP Patwari Mock Tests
-</a>
-
-<a href="#computer-subjects">
-Free Test Access
-</a>
-
-<a href="mahapack-plans.html">
-Premium Plans
-</a>
-
+<div class="footer-bottom"><div>© 2026 HPMockShashtra. All rights reserved.</div><div class="footer-bottom-links"><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms &amp; Conditions</a></div></div>
 </div>
-
-</div>
-
-<div>
-
-<h4>Information</h4>
-
-<div class="footer-links">
-
-<a href="../about.html">
-About
-</a>
-
-<a href="../privacy.html">
-Privacy Policy
-</a>
-
-<a href="../terms.html">
-Terms &amp; Conditions
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-<span>
-© 2026 HPMockShashtra. All rights reserved.
-</span>
-
-<span>
-JOA IT Maha Pack
-</span>
-
-</div>
-
-</div>
-
 </footer>
 
 
@@ -2210,7 +2148,8 @@ from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 import {
 getAuth,
-onAuthStateChanged
+onAuthStateChanged,
+signOut
 }
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
@@ -2254,6 +2193,12 @@ document.getElementById('headerAvatar');
 
 const loginLink=
 document.getElementById('loginLink');
+const joinBtn=
+document.getElementById('joinBtn');
+const mobileLogin=
+document.getElementById('mobileLogin');
+const mobileJoin=
+document.getElementById('mobileJoin');
 
 
 const office=[
@@ -2491,72 +2436,49 @@ e
 }
 
 
-onAuthStateChanged(
-auth,
-async user=>{
-
-if(!user){
-
+function showLoggedOut(){
 headerUser.style.display='none';
-
-loginLink.style.display=
-'inline-flex';
-
-return;
-
+loginLink.style.display='inline-flex';
+joinBtn.style.display='inline-flex';
+joinBtn.textContent='Join Free';
+joinBtn.href='../firebase-signup.html';
+joinBtn.onclick=null;
+mobileLogin.style.display='block';
+mobileLogin.textContent='Login';
+mobileLogin.href='../firebase-login.html';
+mobileLogin.onclick=null;
+mobileJoin.style.display='block';
+mobileJoin.textContent='Join Free';
+mobileJoin.href='../firebase-signup.html';
+mobileJoin.onclick=null;
 }
 
-
-let name=
-user.displayName||'';
-
-
-if(!name){
-
-try{
-
-const snap=
-await getDoc(
-doc(db,'users',user.uid)
-);
-
-if(snap.exists())
-name=
-snap.data().name||'';
-
-}catch(e){
-
-console.warn(
-'Could not load user name:',
-e
-);
-
+function showLoggedIn(name){
+headerUserName.textContent=name;
+headerAvatar.textContent=name.trim().charAt(0).toUpperCase()||'U';
+headerUser.style.display='flex';
+loginLink.style.display='none';
+joinBtn.style.display='inline-flex';
+joinBtn.textContent='Logout';
+joinBtn.href='#';
+joinBtn.onclick=async e=>{e.preventDefault();await signOut(auth);location.reload()};
+mobileLogin.style.display='block';
+mobileLogin.textContent=name;
+mobileLogin.href='#';
+mobileLogin.onclick=e=>e.preventDefault();
+mobileJoin.style.display='block';
+mobileJoin.textContent='Logout';
+mobileJoin.href='#';
+mobileJoin.onclick=async e=>{e.preventDefault();await signOut(auth);location.reload()};
 }
 
-}
-
-
-if(!name)
-name=
-(user.email||'User')
-.split('@')[0];
-
-
-headerUserName.textContent=
-name;
-
-headerAvatar.textContent=
-name.trim().charAt(0).toUpperCase()||'U';
-
-headerUser.style.display=
-'flex';
-
-loginLink.style.display=
-'none';
-
-
+onAuthStateChanged(auth,async user=>{
+if(!user){showLoggedOut();return}
+let name=user.displayName||'';
+if(!name){try{const snap=await getDoc(doc(db,'users',user.uid));if(snap.exists())name=snap.data().name||''}catch(e){console.warn('Could not load user name:',e)}}
+if(!name)name=(user.email||'User').split('@')[0];
+showLoggedIn(name);
 await loadAccess(user);
-
 });
 
 </script>
