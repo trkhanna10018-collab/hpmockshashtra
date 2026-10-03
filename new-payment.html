@@ -292,12 +292,7 @@ const PRODUCTS = {
     questions:"1,200 Questions (10 Tests × 120)", details:"New JOA IT Mock Test Series • 120 questions/test • 90 minutes/test"
   },
   "patwari": {
-    name:"HP Patwari Mock Test Series", price:149, validity:"Full Series",
-    access:"patwariFullSeries", accessValue:"true", kind:"legacy-patwari",
-    questions:"1,320 Questions (11 Tests × 120)", details:"HP Patwari Mock Test Series"
-  },
-  "patwari-new": {
-    name:"HP Patwari Mock Test Series — New", price:149, validity:"As per assigned expiry",
+    name:"HP Patwari Mock Test Series", price:149, validity:"As per assigned expiry",
     access:"patwariAccess", kind:"new-patwari",
     questions:"1,320 Questions (11 Tests × 120)", details:"HP Patwari Mock Test Series • 120 questions/test • 90 minutes/test"
   },
@@ -334,8 +329,7 @@ function productPlan(p){
   if(p.kind === "pack" && p.id === "computer-master") return "JOA IT Maha Pack";
   if(p.kind === "legacy-joa") return "Old JOA (IT) Full Series";
   if(p.kind === "new-joa") return "New JOA IT Full Series";
-  if(p.kind === "legacy-patwari") return "Old HP Patwari Full Series";
-  if(p.kind === "new-patwari") return "New HP Patwari Full Series";
+  if(p.kind === "new-patwari") return "HP Patwari Full Series";
   return "—";
 }
 
@@ -355,7 +349,6 @@ function productAccessLabel(p){
   if(p.id === "computer-master") return "All 15 Computer Subjects";
   if(p.kind === "legacy-joa") return "Legacy: joaitFullSeries = true";
   if(p.kind === "new-joa") return "testAccess.joaAccess";
-  if(p.kind === "legacy-patwari") return "Legacy: patwariFullSeries = true";
   if(p.kind === "new-patwari") return "testAccess.patwariAccess";
   return "—";
 }
@@ -406,7 +399,7 @@ if (!product) {
 function accessInstruction(user, displayName) {
   let accessLine = "";
 
-  if (product.kind === "legacy-joa" || product.kind === "legacy-patwari") {
+  if (product.kind === "legacy-joa") {
     accessLine =
 `Access to Grant:
 testAccess/${user.uid}
