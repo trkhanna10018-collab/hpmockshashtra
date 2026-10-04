@@ -522,6 +522,85 @@ body:before{display:none!important}
 <style>
 .study-header{background:linear-gradient(135deg,#8fb6e8,#a5c4ed)!important;border-color:#7fa9df!important}
 </style>
+
+<style>
+/* Footer updated to match joa-mahapack.html */
+.footer{
+  display:block!important;
+  width:100%;
+  background:linear-gradient(145deg,#061125,#0b1f3b)!important;
+  border-top:1px solid rgba(107,174,255,.10);
+  margin-top:35px;
+  color:#fff!important;
+  text-align:left!important;
+  font-size:inherit!important;
+}
+.footer-inner{
+  width:calc(100% - 40px);
+  max-width:none;
+  margin:auto;
+}
+.footer-top{
+  padding:35px 0 25px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:35px;
+}
+.footer h3{
+  margin:0 0 7px;
+  font-size:18px;
+  color:#fff!important;
+}
+.footer h4{
+  margin:0 0 9px;
+  font-size:12px;
+  color:#fff!important;
+}
+.footer p{
+  max-width:450px;
+  color:#8095b1!important;
+  font-size:10px;
+  line-height:1.7;
+}
+.footer-links{
+  display:grid;
+  gap:7px;
+}
+.footer-links a{
+  margin:0!important;
+  font-size:10px;
+  color:#91a5be!important;
+  text-decoration:none;
+}
+.footer-links a:hover{color:#66d9ff!important}
+.footer-bottom{
+  padding:14px 0;
+  border-top:1px solid #ffffff0c;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:#91a5be!important;
+  font-size:9px;
+}
+.footer-bottom-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.footer-bottom-links a{
+  margin:0!important;
+  color:#91a5be!important;
+  font-size:9px;
+  text-decoration:none;
+}
+.footer-bottom-links a:hover{color:#66d9ff!important}
+@media(max-width:560px){
+  .footer-inner{width:calc(100% - 24px)}
+  .footer-top{grid-template-columns:1fr;gap:22px;padding:28px 0 22px}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
+</style>
+
 </head>
 
 <body>
@@ -581,12 +660,60 @@ body:before{display:none!important}
 
   <div id="errorArea" class="error-box hidden"></div>
 
-  <div class="footer">
-    © 2026 HPMockShashtra •
-    <a href="about.html">About</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms.html">Terms &amp; Conditions</a>
-  </div>
+<footer class="footer">
+
+<div class="footer-inner">
+
+<div class="footer-top">
+
+<div>
+<h3>HPMockShashtra</h3>
+<p>
+A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.
+</p>
+</div>
+
+<div>
+<h4>Preparation</h4>
+<div class="footer-links">
+<a href="../joa/new-joa-series.html">JOA (IT) Mock Tests</a>
+<a href="../patwari/patwari-series.html">HP Patwari Mock Tests</a>
+<a href="joa-mahapack.html">JOA IT Maha Pack</a>
+<a href="mahapack-plans.html">Premium Plans</a>
+</div>
+</div>
+
+<div>
+<h4>Account</h4>
+<div class="footer-links">
+<a href="../firebase-login.html">Login</a>
+<a href="../firebase-signup.html">Create Account</a>
+<a href="my-purchase.html">My Purchases</a>
+</div>
+</div>
+
+<div>
+<h4>Information</h4>
+<div class="footer-links">
+<a href="../about.html">About</a>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms &amp; Conditions</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<div>© 2026 HPMockShashtra. All rights reserved.</div>
+<div class="footer-bottom-links">
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms &amp; Conditions</a>
+</div>
+</div>
+
+</div>
+
+</footer>
 
 </main>
 
