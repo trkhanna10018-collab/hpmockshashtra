@@ -540,6 +540,9 @@ body:before,body:after{display:none!important}
       <a href="../patwari/patwari-series.html">Patwari</a>
       <a href="../about.html">About</a>
       <a href="mahapack-plans.html">Premium Plans</a>
+      <a href="my-purchase.html">My Purchases</a>
+      <div class="menu-user" id="mobileMenuAccount" style="padding:10px 13px;font-size:12px;"></div>
+      <a href="#" class="menu-logout" id="menuLogoutBtn">Logout</a>
     </div>
 
     <div class="header-user">
@@ -729,12 +732,12 @@ const PRODUCTS = {
   },
   "ms-office": {
     name:"MS Office Pack", type:"Premium Pack", icon:"▤",
-    image:"icon/ms-word.png",
+    image:"icon/ms-office.png",
     desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
-    name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
-    image:"icon/computer-fundamentals.png",
+    name:"JOA IT Maha Pack", type:"Premium Pack", icon:"♛",
+    image:"icon/mahapack.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
@@ -823,7 +826,7 @@ function addRow(product,value,paymentProduct){
     <td>
       ${
         active
-        ? `<a class="action-btn start-btn" href="${escapeHtml(actionUrl)}">${actionLabel}</a>`
+        ? `<a class="action-btn ${submitted ? "review-btn" : "start-btn"}" href="${escapeHtml(actionUrl)}">${actionLabel}</a>`
         : `<a class="action-btn renew-btn" href="${escapeHtml(renew)}">Renew →</a>`
       }
     </td>
@@ -1035,6 +1038,36 @@ $("logoutBtn").addEventListener("click",async()=>{
     console.error(error);
   }
 });
+</script>
+<script>
+
+/* Mobile menu account/logout helpers */
+(function () {
+  const menu = document.getElementById('mobileMenu');
+  const toggle = document.getElementById('mobileMenuBtn');
+  const account = document.getElementById('mobileMenuAccount');
+  const menuLogout = document.getElementById('menuLogoutBtn');
+  const name = document.getElementById('headerUserName');
+  if (account && name) account.textContent = name.textContent ? ('Signed in as ' + name.textContent.trim()) : 'Your account';
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function (event) {
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  if (menuLogout) menuLogout.addEventListener('click', function (event) {
+    event.preventDefault();
+    const existingLogout = document.getElementById('logoutBtn');
+    if (existingLogout) existingLogout.click();
+  });
+})();
+
 </script>
 </body>
 </html>
