@@ -672,6 +672,42 @@ body:before,body:after{display:none!important}
 }
 </style>
 
+<style>
+
+/* Purchase table alignment and date visibility refinements */
+.purchase-table th:last-child,
+.purchase-table td:last-child {
+  text-align: center;
+}
+.purchase-table td:last-child .action-btn,
+.purchase-table td:last-child a,
+.purchase-table td:last-child button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 94px;
+  width: 94px;
+  min-height: 38px;
+  margin-inline: auto;
+  white-space: nowrap;
+}
+.valid-till,
+.valid-date,
+.purchase-table td:nth-child(4) {
+  color: #dc2626 !important;
+  font-weight: 850 !important;
+}
+@media (max-width: 700px) {
+  .purchase-table td:last-child .action-btn,
+  .purchase-table td:last-child a,
+  .purchase-table td:last-child button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -723,14 +759,7 @@ body:before,body:after{display:none!important}
 
 <main class="main">
 
-  <section class="page-head">
-    <div class="page-head-content">
-      <h1>My <span>Purchases</span></h1>
-      <p>Courses and premium access linked to your account.</p>
-    </div>
-  </section>
-
-  <section class="section-head">
+<section class="section-head">
     <div>
       <h2>Purchase Details</h2>
       <p>Active and expired purchases are listed below.</p>
@@ -892,12 +921,12 @@ const PRODUCTS = {
   },
   "ms-office": {
     name:"MS Office Pack", type:"Premium Pack", icon:"▤",
-    image:"icon/ms-office.png",
+    image:"icon/ms-word.png",
     desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
-    name:"JOA IT Maha Pack", type:"Premium Pack", icon:"♛",
-    image:"icon/mahapack.png",
+    name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
+    image:"icon/computer-fundamentals.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
