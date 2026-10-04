@@ -8,7 +8,7 @@
 
 <style>
 :root{
-  --bg:#edf4fc;
+  --bg:#edf3fb;
   --card:#ffffff;
   --text:#142b4e;
   --muted:#647994;
@@ -22,9 +22,16 @@
 
 *{box-sizing:border-box}
 
+html{
+  width:100%;
+  overflow-x:hidden;
+}
+
 body{
   margin:0;
   min-height:100vh;
+  width:100%;
+  overflow-x:hidden;
   font-family:Arial,Helvetica,sans-serif;
   color:var(--text);
   background:var(--bg);
@@ -48,27 +55,27 @@ button,a{-webkit-tap-highlight-color:transparent}
   text-align:center;
 }
 
-/* Blue title panel with statistics inside */
+/* Course header */
 .course-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:22px;
-  padding:21px 23px;
+  gap:20px;
+  padding:19px 22px;
   margin-bottom:13px;
-  border:1px solid #b5ccef;
+  border:1px solid #a9c3e8;
   border-radius:16px;
-  background:linear-gradient(115deg,#dceaff 0%,#cbdfff 100%);
+  background:linear-gradient(120deg,#c4dafa 0%,#b4cef3 100%);
 }
 
 .course-info{
-  flex:1 1 250px;
+  flex:0 1 310px;
   min-width:0;
 }
 
 .course-label{
   margin-bottom:7px;
-  color:#2455bd;
+  color:#244f9e;
   font-size:10px;
   font-weight:800;
   letter-spacing:.5px;
@@ -81,18 +88,20 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1.3;
   font-weight:800;
   color:#143767;
+  overflow-wrap:anywhere;
 }
 
-/* Four compact stat cards inside the title panel */
+/* Stats cards */
 .stats{
-  flex:1.5 1 560px;
+  flex:1 1 560px;
   display:grid;
-  grid-template-columns:repeat(4,minmax(85px,1fr));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:8px;
   min-width:0;
 }
 
 .stat{
+  min-width:0;
   min-height:65px;
   display:flex;
   flex-direction:column;
@@ -100,9 +109,9 @@ button,a{-webkit-tap-highlight-color:transparent}
   align-items:center;
   gap:7px;
   padding:7px 4px;
-  border:1px solid rgba(160,190,231,.85);
-  border-radius:13px;
-  background:rgba(255,255,255,.82);
+  border:1px solid #c8d9ef;
+  border-radius:12px;
+  background:#f9fbff;
 }
 
 .stat-number{
@@ -115,20 +124,22 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:var(--muted);
   font-size:9px;
   font-weight:800;
+  text-align:center;
   text-transform:uppercase;
 }
 
 .attempted .stat-number{color:#168b71}
 .correct .stat-number{color:#13a875}
 .wrong .stat-number{color:#e04455}
-.unattempted .stat-number{color:#ef922d}
+.unattempted .stat-number{color:#e58a27}
 
+/* Question panel */
 .question-card{
   padding:25px 26px 23px;
-  border:1px solid var(--border);
+  border:1px solid #ccdaec;
   border-radius:17px;
-  background:#fff;
-  box-shadow:0 5px 20px rgba(31,66,112,.035);
+  background:#f9fbff;
+  box-shadow:0 5px 20px rgba(31,66,112,.045);
 }
 
 .question-number{
@@ -145,6 +156,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   font-size:19px;
   line-height:1.55;
   font-weight:800;
+  overflow-wrap:anywhere;
 }
 
 .question-en{display:block}
@@ -156,8 +168,10 @@ button,a{-webkit-tap-highlight-color:transparent}
   font-size:16px;
   line-height:1.65;
   font-weight:600;
+  overflow-wrap:anywhere;
 }
 
+/* Options */
 .options{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -170,6 +184,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   align-items:flex-start;
   gap:10px;
   width:100%;
+  min-width:0;
   min-height:59px;
   padding:12px 13px;
   border:1px solid var(--border);
@@ -203,8 +218,16 @@ button,a{-webkit-tap-highlight-color:transparent}
   font-weight:800;
 }
 
-.option-content{flex:1;min-width:0}
-.option-en{display:block;font-weight:700}
+.option-content{
+  flex:1;
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+
+.option-en{
+  display:block;
+  font-weight:700;
+}
 
 .option-hi{
   display:block;
@@ -214,7 +237,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1.55;
 }
 
-/* Correct answer: green */
+/* Correct answer */
 .option.correct-answer,
 .option.correct{
   border-color:#69d5aa;
@@ -227,7 +250,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:#087e53;
 }
 
-/* Selected incorrect answer: red */
+/* Incorrect selected answer */
 .option.wrong{
   border-color:#f0a0aa;
   background:var(--red-bg);
@@ -238,10 +261,9 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:#c72d42;
 }
 
-/* No separate Correct/Wrong text */
 .answer-status{display:none!important}
 
-/* Green explanation panel */
+/* Explanation */
 .explanation{
   display:none;
   margin-top:12px;
@@ -252,6 +274,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:#205c46;
   font-size:13px;
   line-height:1.7;
+  overflow-wrap:anywhere;
 }
 
 .explanation.show{display:block!important}
@@ -264,6 +287,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .explanation-hi{margin-top:6px}
 
+/* Navigation */
 .action-area{
   display:flex;
   justify-content:flex-end;
@@ -286,6 +310,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   cursor:not-allowed;
 }
 
+/* Completed and access */
 .completed,.access-box{
   display:none;
   padding:32px 20px;
@@ -419,61 +444,176 @@ button,a{-webkit-tap-highlight-color:transparent}
   text-align:center;
 }
 
+/* Tablet */
 @media(max-width:900px){
   .course-header{
     align-items:stretch;
     flex-direction:column;
-    gap:16px;
+    gap:13px;
+    padding:18px;
+  }
+
+  .course-info{
+    flex:0 0 auto;
   }
 
   .stats{
-    flex:1 1 auto;
+    flex:0 0 auto;
     width:100%;
   }
 }
 
-@media(max-width:700px){
-  .page{padding:12px 8px 25px}
+/* Mobile */
+@media(max-width:600px){
+  .page{
+    padding:10px 9px 22px;
+  }
 
-  .course-header{padding:17px 14px}
+  .course-header{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:11px;
+    width:100%;
+    padding:14px 13px 13px;
+    margin-bottom:10px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#c0d8fa 0%,#b4cef2 100%);
+  }
 
-  .course-title{font-size:21px}
+  .course-info{
+    flex:0 0 auto;
+    width:100%;
+    min-width:0;
+  }
 
-  .stats{gap:5px}
+  .course-label{
+    margin-bottom:5px;
+    font-size:9px;
+  }
+
+  .course-title{
+    font-size:21px;
+    line-height:1.3;
+  }
+
+  .stats{
+    flex:0 0 auto;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+    width:100%;
+    min-width:0;
+    margin:0;
+  }
 
   .stat{
-    min-height:59px;
-    padding:6px 2px;
+    width:100%;
+    min-width:0;
+    min-height:53px;
+    padding:7px 4px;
+    gap:5px;
     border-radius:10px;
+    background:#f9fbff;
   }
 
-  .stat-number{font-size:17px}
-  .stat-label{font-size:7px}
+  .stat-number{font-size:19px}
 
-  .question-card{padding:20px 15px}
+  .stat-label{
+    font-size:8px;
+    line-height:1.2;
+    white-space:normal;
+  }
 
-  .question{font-size:17px}
-  .question-hi{font-size:14px}
+  .question-card{
+    width:100%;
+    min-width:0;
+    padding:17px 13px 15px;
+    border-radius:14px;
+    background:#fff;
+  }
+
+  .question-number{
+    margin-bottom:12px;
+    font-size:10px;
+  }
+
+  .question{
+    font-size:17px;
+    line-height:1.55;
+  }
+
+  .question-hi{
+    margin-top:9px;
+    font-size:15px;
+    line-height:1.65;
+  }
 
   .options{
-    grid-template-columns:1fr;
-    gap:9px;
-    margin-top:18px;
+    grid-template-columns:minmax(0,1fr);
+    gap:8px;
+    width:100%;
+    margin-top:17px;
   }
 
-  .option{min-height:55px;font-size:12px}
-  .option-hi{font-size:11px}
+  .option{
+    min-height:53px;
+    padding:10px;
+    gap:9px;
+    border-radius:11px;
+    font-size:12px;
+  }
 
-  .action-area{justify-content:stretch}
-  .next-btn{width:100%}
+  .option-letter{
+    flex-basis:26px;
+    width:26px;
+    height:26px;
+  }
 
-  .modal{padding:21px 17px}
+  .option-hi{
+    font-size:11px;
+    line-height:1.55;
+  }
+
+  .explanation{
+    margin-top:10px;
+    padding:11px 12px;
+    font-size:12px;
+    line-height:1.7;
+  }
+
+  .action-area{
+    margin-top:13px;
+  }
+
+  .next-btn{
+    width:100%;
+    min-height:43px;
+  }
+
+  .modal{
+    padding:21px 16px;
+    border-radius:15px;
+  }
+
   .modal h2{font-size:20px}
+
+  .instructions li{
+    font-size:12px;
+    line-height:1.6;
+  }
 }
 
 @media(max-width:360px){
-  .stat-label{font-size:6px}
-  .stat-number{font-size:15px}
+  .page{padding:8px 7px 18px}
+  .course-header{padding:12px 10px}
+  .course-title{font-size:19px}
+  .stats{gap:5px}
+  .stat-number{font-size:17px}
+  .stat-label{font-size:7px}
+  .question-card{padding:15px 11px}
+  .question{font-size:16px}
+  .question-hi{font-size:14px}
 }
 </style>
 </head>
@@ -615,7 +755,7 @@ try{
   QUESTIONS = Array.isArray(bank.QUESTIONS) ? bank.QUESTIONS : [];
 
   if(!QUESTIONS.length){
-    throw new Error("The question bank does not export a non-empty QUESTIONS array.");
+    throw new Error("Question bank does not export a non-empty QUESTIONS array.");
   }
 
   $("instructionTotal").textContent =
@@ -656,7 +796,6 @@ function activeAccess(item){
     (!purchase || purchase.getTime() <= Date.now());
 }
 
-/* Client-side access check; Firestore Rules must enforce access too. */
 function hasCourseAccess(data){
   if(activeAccess(data?.mahapackAccess?.courses?.[COURSE_ID])) return true;
 
@@ -790,7 +929,6 @@ async function saveSession(){
   }
 }
 
-/* Return true only when a new session is created. */
 async function loadSession(){
   const snap = await getDoc(sessionRef);
 
@@ -922,13 +1060,12 @@ async function selectAnswer(index){
   if(state.answers[state.current] !== undefined) return;
 
   state.answers[state.current] = index;
-
   renderQuestion();
 
   const saved = await saveSession();
 
   if(!saved){
-    console.warn("Answer is displayed but cloud save failed. Check Firebase Rules/network.");
+    console.warn("Answer displayed but cloud save failed. Check Firebase Rules/network.");
   }
 }
 
@@ -941,12 +1078,13 @@ async function nextQuestion(){
 
   try{
     if(state.current < QUESTIONS.length-1){
+      const previous = state.current;
       state.current++;
 
       const saved = await saveSession();
 
       if(!saved){
-        state.current--;
+        state.current = previous;
         renderQuestion();
         alert("Progress save नहीं हो पाया। कृपया दोबारा कोशिश करें।");
         return;
@@ -1057,7 +1195,6 @@ onAuthStateChanged(auth,async user=>{
   currentUser = user;
 
   try{
-    /* Keep Firebase premium access verification */
     const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
     const accessData = accessSnap.exists() ? accessSnap.data() : {};
 
