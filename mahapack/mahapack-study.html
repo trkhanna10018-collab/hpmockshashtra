@@ -979,13 +979,69 @@ $('nextPageBottom').onclick=()=>goPage(1);
 
 onAuthStateChanged(auth,async user=>{
   if(!user){
-    location.href='firebase-login.html';
+    location.replace('../firebase-login.html');
     return;
   }
 
   try{
     if(!config){
       throw new Error('Invalid test ID.');
+    }
+
+    /*
+      Verify Mahapack access before opening Study Mode.
+      Access data is stored in testAccess/{uid}.
+      Users without active course/pack access are sent to the root login page.
+    */
+    const accessSnap = await getDoc(doc(db,'testAccess',user.uid));
+    const accessData = accessSnap.exists() ? (accessSnap.data() || {}) : {};
+    const courseKey = ({
+      computer_fundamentals_01:'computer-fundamentals',
+      ms_word_01:'ms-word',
+      ms_excel_01:'ms-excel',
+      ms_powerpoint_01:'ms-powerpoint',
+      ms_access_01:'ms-access',
+      dbms_sql_01:'dbms-sql',
+      computer_networking_01:'computer-networking',
+      cyber_security_01:'cyber-security',
+      c_programming_01:'c-programming',
+      html_01:'html',
+      css_css3_01:'css-css3',
+      cloud_computing_01:'cloud-computing',
+      data_structure_01:'data-structure',
+      computer_organisation_01:'computer-organisation',
+      operating_system_01:'operating-system'
+    })[TEST_ID];
+
+    const OFFICE_COURSES = ['ms-word','ms-excel','ms-powerpoint','ms-access'];
+
+    function activeAccess(item){
+      if(!item || !item.expiresAt) return false;
+      const expiry = typeof item.expiresAt.toDate === 'function'
+        ? item.expiresAt.toDate()
+        : new Date(item.expiresAt);
+      const purchase = !item.purchasedAt ? null :
+        (typeof item.purchasedAt.toDate === 'function'
+          ? item.purchasedAt.toDate()
+          : new Date(item.purchasedAt));
+      return !Number.isNaN(expiry.getTime()) &&
+        expiry.getTime() > Date.now() &&
+        (!purchase || (!Number.isNaN(purchase.getTime()) && purchase.getTime() <= Date.now()));
+    }
+
+    const hasCourseAccess =
+      activeAccess(accessData?.mahapackAccess?.courses?.[courseKey]) ||
+      (OFFICE_COURSES.includes(courseKey) &&
+        activeAccess(accessData?.mahapackAccess?.packs?.['ms-office'])) ||
+      activeAccess(accessData?.mahapackAccess?.packs?.['computer-master']) ||
+      activeAccess(accessData?.computerAccess?.courses?.[courseKey]) ||
+      (OFFICE_COURSES.includes(courseKey) &&
+        activeAccess(accessData?.computerAccess?.packs?.['ms-office'])) ||
+      activeAccess(accessData?.computerAccess?.packs?.['computer-master']);
+
+    if(!courseKey || !hasCourseAccess){
+      location.replace('../firebase-login.html');
+      return;
     }
 
     $('pageTitle').textContent=`${config.name} — Study Mode`;
