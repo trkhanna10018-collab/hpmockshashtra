@@ -11516,4 +11516,32 @@ export const QUESTIONS = [
 
   explanation: "Page Range setting से user specific pages या page range select करके केवल उन्हीं pages को print कर सकता है।"
 },
+// Question 400
+{
+  en: "Which feature allows multiple selected objects in a Word document to be treated as a single object for moving or formatting?",
+  hi: "Word document में multiple selected objects को moving या formatting के लिए एक single object की तरह treat करने के लिए किस feature का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "Layering",
+      hi: "Layering"
+    },
+    {
+      en: "Sorting",
+      hi: "Sorting"
+    },
+    {
+      en: "Grouping",
+      hi: "Grouping"
+    },
+    {
+      en: "Cross-reference",
+      hi: "Cross-reference"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Grouping multiple objects को एक group में combine करता है, जिससे उन्हें एक single object की तरह move या format किया जा सकता है।"
+}
 ];
