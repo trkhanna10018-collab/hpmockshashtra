@@ -557,6 +557,9 @@ body:before,body:after{display:none!important}
       <a href="../patwari/patwari-series.html">Patwari</a>
       <a href="../about.html">About</a>
       <a href="mahapack-plans.html">Premium Plans</a>
+      <a href="my-purchase.html">My Purchases</a>
+      <div class="menu-user" id="mobileMenuAccount">Signed in to your account</div>
+      <a href="#" class="menu-logout" id="menuLogoutBtn">Logout</a>
     </div>
   </nav>
 </header>
@@ -1048,12 +1051,20 @@ $("logoutBtn").addEventListener("click",async()=>{
   const account = document.getElementById('mobileMenuAccount');
   const menuLogout = document.getElementById('menuLogoutBtn');
   const name = document.getElementById('headerUserName');
-  if (account && name) account.textContent = name.textContent ? ('Signed in as ' + name.textContent.trim()) : 'Your account';
+  const updateMenuAccount = () => {
+    if (account && name) {
+      const userName = (name.textContent || '').trim();
+      account.textContent = userName && userName !== 'User'
+        ? ('Signed in as ' + userName)
+        : 'Your account';
+    }
+  };
+  updateMenuAccount();
+  if (name && account) {
+    const accountObserver = new MutationObserver(updateMenuAccount);
+    accountObserver.observe(name, { childList: true, characterData: true, subtree: true });
+  }
   if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      const open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
     document.addEventListener('click', function (event) {
       if (!menu.contains(event.target) && !toggle.contains(event.target)) {
         menu.classList.remove('open');
