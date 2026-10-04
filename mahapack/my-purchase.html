@@ -205,6 +205,11 @@ button,input{font:inherit}
 .status-badge.expired{color:#ff8b96;background:#ff5c6c12;border:1px solid #ff5c6c38}
 .status-badge.expired .status-dot{background:#ff5c6c}
 
+.attempt-badge{display:inline-flex;align-items:center;justify-content:center;padding:6px 8px;border-radius:999px;font-size:8px;font-weight:900;white-space:nowrap}
+.attempt-badge.attempted{color:#78b5ff;background:#168cff15;border:1px solid #168cff45}
+.attempt-badge.in-progress{color:#ffc76b;background:#ffb02015;border:1px solid #ffb02045}
+.attempt-badge.not-attempted{color:#9aabc0;background:#ffffff08;border:1px solid #ffffff18}
+
 .action-btn{
   display:inline-flex;align-items:center;justify-content:center;
   min-width:70px;min-height:34px;padding:7px 11px;border-radius:9px;
@@ -494,10 +499,10 @@ body:before,body:after{display:none!important}
 
     <div class="header-links">
       <a href="../homepage.html">Home</a>
-      <a href="joa-series.html">JOA (IT)</a>
-      <a href="patwari-series.html">Patwari</a>
+      <a href="../joa/new-joa-series.html">JOA (IT)</a>
+      <a href="../patwari/patwari-series.html">Patwari</a>
       <a href="../about.html">About</a>
-      <a href="mahapack/mahapack-plans.html">Premium Plans</a>
+      <a href="mahapack-plans.html">Premium Plans</a>
     </div>
 
     <div class="header-user">
@@ -508,10 +513,10 @@ body:before,body:after{display:none!important}
 
     <div class="mobile-menu" id="mobileMenu">
       <a href="../homepage.html">Home</a>
-      <a href="joa-series.html">JOA (IT)</a>
-      <a href="patwari-series.html">Patwari</a>
+      <a href="../joa/new-joa-series.html">JOA (IT)</a>
+      <a href="../patwari/patwari-series.html">Patwari</a>
       <a href="../about.html">About</a>
-      <a href="mahapack/mahapack-plans.html">Premium Plans</a>
+      <a href="mahapack-plans.html">Premium Plans</a>
     </div>
   </nav>
 </header>
@@ -540,12 +545,13 @@ body:before,body:after{display:none!important}
     <table class="purchase-table">
       <thead>
         <tr>
-          <th style="width:31%">Product</th>
+          <th style="width:27%">Product</th>
           <th style="width:15%">Type</th>
           <th style="width:14%">Purchased On</th>
           <th style="width:15%">Valid Till</th>
-          <th style="width:11%">Status</th>
-          <th style="width:14%">Action</th>
+          <th style="width:9%">Access</th>
+          <th style="width:13%">Attempt Status</th>
+          <th style="width:13%">Action</th>
         </tr>
       </thead>
       <tbody id="purchaseTableBody"></tbody>
@@ -571,10 +577,10 @@ body:before,body:after{display:none!important}
       <div>
         <h4>Preparation</h4>
         <div class="footer-links">
-          <a href="joa-series.html">JOA (IT) Mock Tests</a>
-          <a href="patwari-series.html">HP Patwari Mock Tests</a>
-          <a href="mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
-          <a href="mahapack/mahapack-plans.html">Premium Plans</a>
+          <a href="../joa/new-joa-series.html">JOA (IT) Mock Tests</a>
+          <a href="../patwari/patwari-series.html">HP Patwari Mock Tests</a>
+          <a href="joa-mahapack.html">JOA IT Maha Pack</a>
+          <a href="mahapack-plans.html">Premium Plans</a>
         </div>
       </div>
       <div>
@@ -690,12 +696,12 @@ const PRODUCTS = {
   },
   "ms-office": {
     name:"MS Office Pack", type:"Premium Pack", icon:"▤",
-    image:"icon/ms-office.png",
+    image:"icon/ms-word.png",
     desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
     name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
-    image:"icon/computer-master.png",
+    image:"icon/computer-fundamentals.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
@@ -737,16 +743,22 @@ function addRow(product,value,paymentProduct){
   // This applies to individual MahaPack courses; JOA and Patwari series keep their own destinations.
   const isDedicatedSeries = paymentProduct === "joa" || paymentProduct === "patwari" ||
     String(paymentProduct || "").startsWith("access:");
+  const attemptStatusRaw = String(
+    value?.attemptStatus || value?.attempt_status || value?.sessionStatus ||
+    value?.status || value?.state || ""
+  ).toLowerCase().replace(/[ _-]+/g, "");
   const submitted = !isDedicatedSeries && (
-    value?.submitted === true ||
-    value?.isSubmitted === true ||
-    value?.testSubmitted === true ||
-    value?.completed === true ||
-    value?.isCompleted === true ||
-    ["submitted","completed","complete","attempted"].includes(
-      String(value?.status || value?.state || "").toLowerCase()
-    )
+    value?.submitted === true || value?.isSubmitted === true ||
+    value?.testSubmitted === true || value?.completed === true ||
+    value?.isCompleted === true || value?.attempted === true ||
+    ["submitted","completed","complete","attempted","review"].includes(attemptStatusRaw)
   );
+  const inProgress = !submitted && (
+    value?.inProgress === true || value?.isInProgress === true ||
+    value?.sessionActive === true || value?.attemptInProgress === true ||
+    ["inprogress","started","ongoing","active","session"].includes(attemptStatusRaw)
+  );
+  const visibleAttemptStatus = submitted ? "Attempted" : (inProgress ? "In Progress" : "Not Attempted");
   const actionUrl = submitted ? "mahapack-study.html" : start;
   const actionLabel = submitted ? "Review →" : "Start →";
 
@@ -755,7 +767,7 @@ function addRow(product,value,paymentProduct){
   row.innerHTML=`
     <td>
       <div class="product-cell">
-        <div class="product-icon">${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}">` : escapeHtml(product.icon)}</div>
+        <div class="product-icon">${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.style.display='none';this.parentElement.textContent='${escapeHtml(product.icon)}'">` : escapeHtml(product.icon)}</div>
         <div>
           <div class="product-name">${escapeHtml(product.name)}</div>
           <div class="product-desc">${escapeHtml(product.desc)}</div>
@@ -768,6 +780,11 @@ function addRow(product,value,paymentProduct){
     <td>
       <span class="status-badge ${active?"active":"expired"}">
         <span class="status-dot"></span>${active?"Active":"Expired"}
+      </span>
+    </td>
+    <td>
+      <span class="attempt-badge ${submitted?"attempted":(inProgress?"in-progress":"not-attempted")}">
+        ${escapeHtml(visibleAttemptStatus)}
       </span>
     </td>
     <td>
@@ -856,7 +873,7 @@ function render(data){
     const value=typeof mahapack==="object" ? mahapack : {};
     addUnique({
       name:"JOA IT Maha Pack",type:"Maha Pack",icon:"♛",
-      image:"icon/computer-master.png",desc:"All 15 computer subjects",
+      image:"icon/computer-fundamentals.png",desc:"All 15 computer subjects",
       start:"mahapack/joa-mahapack.html"
     },value,"computer-master","access:mahapack");
   }
