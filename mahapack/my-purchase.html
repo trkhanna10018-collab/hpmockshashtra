@@ -482,8 +482,8 @@ body:before,body:after{display:none!important}
 <header class="topbar">
   <nav class="nav">
     <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-    <a class="brand" href="homepage.html">
-      <div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div>
+    <a class="brand" href="../homepage.html">
+      <div class="logo"><img src="../logo.png" alt="HPMockShashtra Logo"></div>
       <div>
         <div class="brand-title">
           <span class="brand-hp">HP</span><span class="brand-mock">Mock</span><span class="brand-shashtra">Shashtra</span>
@@ -493,11 +493,11 @@ body:before,body:after{display:none!important}
     </a>
 
     <div class="header-links">
-      <a href="homepage.html">Home</a>
-      <a href="joa-series.html">JOA (IT)</a>
-      <a href="patwari-series.html">Patwari</a>
-      <a href="about.html">About</a>
-      <a href="mahapack/mahapack-plans.html">Premium Plans</a>
+      <a href="../homepage.html">Home</a>
+      <a href="../joa/new-joa-series.html">JOA (IT)</a>
+      <a href="../patwari/patwari-series.html">Patwari</a>
+      <a href="../about.html">About</a>
+      <a href="mahapack-plans.html">Premium Plans</a>
     </div>
 
     <div class="header-user">
@@ -507,11 +507,11 @@ body:before,body:after{display:none!important}
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="homepage.html">Home</a>
-      <a href="joa-series.html">JOA (IT)</a>
-      <a href="patwari-series.html">Patwari</a>
-      <a href="about.html">About</a>
-      <a href="mahapack/mahapack-plans.html">Premium Plans</a>
+      <a href="../homepage.html">Home</a>
+      <a href="../joa/new-joa-series.html">JOA (IT)</a>
+      <a href="../patwari/patwari-series.html">Patwari</a>
+      <a href="../about.html">About</a>
+      <a href="mahapack-plans.html">Premium Plans</a>
     </div>
   </nav>
 </header>
@@ -571,10 +571,10 @@ body:before,body:after{display:none!important}
       <div>
         <h4>Preparation</h4>
         <div class="footer-links">
-          <a href="joa-series.html">JOA (IT) Mock Tests</a>
-          <a href="patwari-series.html">HP Patwari Mock Tests</a>
+          <a href="../joa/new-joa-series.html">JOA (IT) Mock Tests</a>
+          <a href="../patwari/patwari-series.html">HP Patwari Mock Tests</a>
           <a href="mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
-          <a href="mahapack/mahapack-plans.html">Premium Plans</a>
+          <a href="mahapack-plans.html">Premium Plans</a>
         </div>
       </div>
       <div>
@@ -588,17 +588,17 @@ body:before,body:after{display:none!important}
       <div>
         <h4>Information</h4>
         <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="../about.html">About</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Conditions</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 HPMockShashtra. All rights reserved.</span>
       <span class="footer-bottom-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms &amp; Conditions</a>
       </span>
     </div>
   </div>
@@ -606,7 +606,7 @@ body:before,body:after{display:none!important}
 
 </div>
 <script type="module">
-import { auth, db } from "./firebase-config.js";
+import { auth, db } from "../firebase-config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
@@ -615,87 +615,87 @@ const $ = id => document.getElementById(id);
 const PRODUCTS = {
   "computer-fundamentals": {
     name:"Computer Fundamentals", type:"Individual Subject", icon:"⌘",
-    image:"mahapack/computer-fundamentals.png",
-    desc:"400 premium questions", start:"paid-computer-fundamentals.html"
+    image:"computer-fundamentals.png",
+    desc:"400 premium questions", start:"../paid-computer-fundamentals.html"
   },
   "ms-word": {
     name:"MS Word", type:"Individual Subject", icon:"W",
-    image:"mahapack/ms-word.png",
-    desc:"400 premium questions", start:"paid-ms-word.html"
+    image:"ms-word.png",
+    desc:"400 premium questions", start:"../paid-ms-word.html"
   },
   "ms-excel": {
     name:"MS Excel", type:"Individual Subject", icon:"X",
-    image:"mahapack/ms-excel.png",
-    desc:"400 premium questions", start:"paid-ms-excel.html"
+    image:"ms-excel.png",
+    desc:"400 premium questions", start:"../paid-ms-excel.html"
   },
   "ms-powerpoint": {
     name:"MS PowerPoint", type:"Individual Subject", icon:"P",
-    image:"mahapack/ms-powerpoint.png",
-    desc:"400 premium questions", start:"paid-ms-powerpoint.html"
+    image:"ms-powerpoint.png",
+    desc:"400 premium questions", start:"../paid-ms-powerpoint.html"
   },
   "ms-access": {
     name:"MS Access", type:"Individual Subject", icon:"▤",
-    image:"mahapack/ms-access.png",
-    desc:"400 premium questions", start:"paid-ms-access.html"
+    image:"ms-access.png",
+    desc:"400 premium questions", start:"../paid-ms-access.html"
   },
   "dbms-sql": {
     name:"DBMS & SQL", type:"Individual Subject", icon:"DB",
-    image:"mahapack/dbms-sql.png",
-    desc:"400 premium questions", start:"paid-dbms-sql.html"
+    image:"dbms-sql.png",
+    desc:"400 premium questions", start:"../paid-dbms-sql.html"
   },
   "computer-networking": {
     name:"Computer Networking", type:"Individual Subject", icon:"↔",
-    image:"mahapack/computer-networking.png",
-    desc:"400 premium questions", start:"paid-computer-networking.html"
+    image:"computer-networking.png",
+    desc:"400 premium questions", start:"../paid-computer-networking.html"
   },
   "cyber-security": {
     name:"Cyber Security", type:"Individual Subject", icon:"⌾",
-    image:"mahapack/cyber-security.png",
-    desc:"400 premium questions", start:"paid-cyber-security.html"
+    image:"cyber-security.png",
+    desc:"400 premium questions", start:"../paid-cyber-security.html"
   },
   "c-programming": {
     name:"C Programming", type:"Individual Subject", icon:"C",
-    image:"mahapack/c-programming.png",
-    desc:"400 premium questions", start:"paid-c-programming.html"
+    image:"c-programming.png",
+    desc:"400 premium questions", start:"../paid-c-programming.html"
   },
   "html": {
     name:"HTML", type:"Individual Subject", icon:"<>",
-    image:"mahapack/html.png",
-    desc:"400 premium questions", start:"paid-html.html"
+    image:"html.png",
+    desc:"400 premium questions", start:"../paid-html.html"
   },
   "css-css3": {
     name:"CSS/CSS3", type:"Individual Subject", icon:"#",
-    image:"mahapack/css-css3.png",
-    desc:"400 premium questions", start:"paid-css-css3.html"
+    image:"css-css3.png",
+    desc:"400 premium questions", start:"../paid-css-css3.html"
   },
   "cloud-computing": {
     name:"Cloud Computing", type:"Individual Subject", icon:"☁",
-    image:"mahapack/cloud-computing.png",
-    desc:"400 premium questions", start:"paid-cloud-computing.html"
+    image:"cloud-computing.png",
+    desc:"400 premium questions", start:"../paid-cloud-computing.html"
   },
   "data-structure": {
     name:"Data Structure", type:"Individual Subject", icon:"⌘",
-    image:"mahapack/data-structure.png",
-    desc:"400 premium questions", start:"paid-data-structure.html"
+    image:"data-structure.png",
+    desc:"400 premium questions", start:"../paid-data-structure.html"
   },
   "computer-organisation": {
     name:"Computer Organisation & Architecture", type:"Individual Subject", icon:"▦",
-    image:"mahapack/computer-organisation-architecture.png",
+    image:"computer-organisation-architecture.png",
     desc:"400 premium questions", start:"paid-computer-organisation.html"
   },
   "operating-system": {
     name:"Operating System", type:"Individual Subject", icon:"OS",
-    image:"mahapack/operating-system.png",
-    desc:"400 premium questions", start:"paid-operating-system.html"
+    image:"operating-system.png",
+    desc:"400 premium questions", start:"../paid-operating-system.html"
   },
   "ms-office": {
     name:"MS Office Pack", type:"Premium Pack", icon:"▤",
-    image:"mahapack/ms-office.png",
+    image:"ms-office.png",
     desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
     name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
-    image:"mahapack/computer-master.png",
+    image:"computer-master.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
@@ -806,13 +806,13 @@ function render(data){
     const value=typeof joaValue==="object" ? joaValue : {};
     addUnique({
       name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      desc:"15 mock tests • Full Series access",start:"joa-series.html"
+      desc:"15 mock tests • Full Series access",start:"../joa-series.html"
     },value,"joa","access:joa");
   }
   if(data?.joaitFullSeries===true){
     addUnique({
       name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      desc:"15 mock tests • Full Series access",start:"joa-series.html"
+      desc:"15 mock tests • Full Series access",start:"../joa-series.html"
     },{},"joa","access:joa");
   }
 
@@ -822,13 +822,13 @@ function render(data){
     const value=typeof patwariValue==="object" ? patwariValue : {};
     addUnique({
       name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      desc:"Full Series access",start:"patwari-series.html"
+      desc:"Full Series access",start:"../patwari-series.html"
     },value,"patwari","access:patwari");
   }
   if(data?.patwariFullSeries===true){
     addUnique({
       name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      desc:"Full Series access",start:"patwari-series.html"
+      desc:"Full Series access",start:"../patwari-series.html"
     },{},"patwari","access:patwari");
   }
 
@@ -839,8 +839,8 @@ function render(data){
     const value=typeof mahapack==="object" ? mahapack : {};
     addUnique({
       name:"JOA IT Maha Pack",type:"Maha Pack",icon:"♛",
-      image:"mahapack/computer-master.png",desc:"All 15 computer subjects",
-      start:"mahapack/joa-mahapack.html"
+      image:"computer-master.png",desc:"All 15 computer subjects",
+      start:"joa-mahapack.html"
     },value,"computer-master","access:mahapack");
   }
 
@@ -885,7 +885,7 @@ onAuthStateChanged(auth, async user => {
       <div class="empty-icon">🔐</div>
       <h3>Sign In to View Your Purchases</h3>
       <p>Please sign in to your HPMockShashtra account to view your purchased courses and test series.</p>
-      <a class="primary-btn" href="firebase-login.html?redirect=my-purchase.html">Login to Your Account</a>
+      <a class="primary-btn" href="../firebase-login.html?redirect=mahapack%2Fmy-purchase.html">Login to Your Account</a>
     `;
     return;
   }
@@ -928,7 +928,7 @@ if(mobileMenuBtn && mobileMenu){
 $("logoutBtn").addEventListener("click",async()=>{
   try{
     await signOut(auth);
-    window.location.href="firebase-login.html";
+    window.location.href="../firebase-login.html";
   }catch(error){
     console.error(error);
   }
