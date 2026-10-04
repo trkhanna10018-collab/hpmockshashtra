@@ -173,6 +173,7 @@ button,input{font:inherit}
 .purchase-table tbody tr:hover{background:#168cff09}
 
 .product-cell{display:flex;align-items:center;gap:10px;min-width:0}
+.product-icon.image-fallback{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e7efff,#d9f6ff);color:#2456d8;font-weight:900;font-size:24px;border:1px solid #c7dcff}
 .product-icon{
    width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;
    border-radius:14px;background:linear-gradient(145deg,#263c70,#15274a);
@@ -528,10 +529,6 @@ body:before,body:after{display:none!important}
       <h1>My <span>Purchases</span></h1>
       <p>Courses and premium access linked to your account.</p>
     </div>
-    <div class="account-info">
-      <div class="account-chip">Name: <strong id="profileName">—</strong></div>
-      <div class="account-chip">Email: <strong id="profileEmail">—</strong></div>
-    </div>
   </section>
 
   <section class="section-head">
@@ -701,7 +698,7 @@ const PRODUCTS = {
   },
   "computer-master": {
     name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
-    image:"icon/computer-fundamentals.png",
+    image:"joa-mahapack-banner.jpg",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
@@ -767,7 +764,7 @@ function addRow(product,value,paymentProduct){
   row.innerHTML=`
     <td>
       <div class="product-cell">
-        <div class="product-icon">${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.style.display='none';this.parentElement.textContent='${escapeHtml(product.icon)}'">` : escapeHtml(product.icon)}</div>
+        <div class="product-icon">${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('image-fallback');this.parentElement.textContent='${escapeHtml(product.icon)}'">` : escapeHtml(product.icon)}</div>
         <div>
           <div class="product-name">${escapeHtml(product.name)}</div>
           <div class="product-desc">${escapeHtml(product.desc)}</div>
@@ -840,13 +837,13 @@ function render(data){
     const value=typeof joaValue==="object" ? joaValue : {};
     addUnique({
       name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
+      image:"../joa/joa-banner.jpg",desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
     },value,"joa","access:joa");
   }
   if(data?.joaitFullSeries===true){
     addUnique({
       name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
+      image:"../joa/joa-banner.jpg",desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
     },{},"joa","access:joa");
   }
 
@@ -856,13 +853,13 @@ function render(data){
     const value=typeof patwariValue==="object" ? patwariValue : {};
     addUnique({
       name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      desc:"Full Series access",start:"../patwari/patwari-series.html"
+      image:"../patwari/patwari-banner.jpg",desc:"Full Series access",start:"../patwari/patwari-series.html"
     },value,"patwari","access:patwari");
   }
   if(data?.patwariFullSeries===true){
     addUnique({
       name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      desc:"Full Series access",start:"../patwari/patwari-series.html"
+      image:"../patwari/patwari-banner.jpg",desc:"Full Series access",start:"../patwari/patwari-series.html"
     },{},"patwari","access:patwari");
   }
 
@@ -873,8 +870,8 @@ function render(data){
     const value=typeof mahapack==="object" ? mahapack : {};
     addUnique({
       name:"JOA IT Maha Pack",type:"Maha Pack",icon:"♛",
-      image:"icon/computer-fundamentals.png",desc:"All 15 computer subjects",
-      start:"mahapack/joa-mahapack.html"
+      image:"joa-mahapack-banner.jpg",desc:"All 15 computer subjects",
+      start:"joa-mahapack.html"
     },value,"computer-master","access:mahapack");
   }
 
@@ -911,8 +908,6 @@ onAuthStateChanged(auth, async user => {
     $("headerUserName").textContent = "Guest";
     $("headerAvatar").textContent = "G";
     $("logoutBtn").style.display = "none";
-    $("profileName").textContent = "Guest";
-    $("profileEmail").textContent = "Sign in to view your purchases";
     $("tableShell").style.display = "none";
     $("emptyState").style.display = "block";
     $("emptyState").innerHTML = `
@@ -927,8 +922,6 @@ onAuthStateChanged(auth, async user => {
   const displayName = user.displayName || user.email?.split("@")[0] || "Student";
   $("headerUserName").textContent = displayName;
   $("headerAvatar").textContent = initial(displayName);
-  $("profileName").textContent = displayName;
-  $("profileEmail").textContent = user.email || "—";
   $("logoutBtn").style.display = "";
 
   try {
