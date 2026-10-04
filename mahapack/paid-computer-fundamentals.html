@@ -1,2910 +1,971 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Loading | HPMockShashtra</title>
+<title>Computer Fundamentals | HPMockShashtra</title>
 
 <style>
-
 :root{
-  --bg:#050b1d;
-  --bg2:#081633;
-
-  --card:#0b1936;
-  --card2:#0e2043;
-
-  --blue:#2196ff;
-  --blue2:#38bdf8;
-  --purple:#6957e8;
-
-  --green:#20d39b;
-  --red:#ff6075;
-  --yellow:#ffd166;
-
-  --text:#f5f9ff;
-  --muted:#91a5c0;
-
-  --border:rgba(74,157,255,.22);
+  --bg:#edf4fc;
+  --card:#ffffff;
+  --text:#142b4e;
+  --muted:#647994;
+  --border:#d3e1f2;
+  --blue:#3264f5;
+  --blue-light:#f3f8ff;
+  --green:#13a875;
+  --green-bg:#e9fbf3;
+  --red:#df394c;
+  --red-bg:#fff0f2;
+  --orange:#f59b37;
 }
 
-/* =========================
-   BASIC
-========================= */
+*{box-sizing:border-box}
 
-*{
-  box-sizing:border-box;
-}
-
-html,
 body{
   margin:0;
-  padding:0;
-  min-height:100%;
-}
-
-body{
-
   min-height:100vh;
-
+  font-family:Arial,Helvetica,sans-serif;
   color:var(--text);
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  background:
-
-    radial-gradient(
-      circle at 15% 10%,
-      rgba(30,120,255,.16),
-      transparent 28%
-    ),
-
-    radial-gradient(
-      circle at 85% 15%,
-      rgba(100,75,230,.16),
-      transparent 30%
-    ),
-
-    linear-gradient(
-      135deg,
-      #030817,
-      #06152f 48%,
-      #0a1030
-    );
-
-  overflow-x:hidden;
+  background:var(--bg);
 }
 
-
-/* =========================
-   SUBTLE BACKGROUND
-========================= */
-
-body::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  pointer-events:none;
-
-  opacity:.13;
-
-  background-image:
-
-    radial-gradient(
-      rgba(74,157,255,.45) 1px,
-      transparent 1px
-    );
-
-  background-size:28px 28px;
-}
-
-
-/* =========================
-   MAIN CONTAINER
-========================= */
+button,a{-webkit-tap-highlight-color:transparent}
 
 .page{
-
   width:100%;
-
   min-height:100vh;
-
-  padding:
-    25px 25px 50px;
+  padding:25px;
 }
-
-
-/* =========================
-   COURSE TITLE
-========================= */
 
 .course-header{
-
-  width:100%;
-
-  margin-bottom:16px;
-
-  padding:
-    20px 22px;
-
-  border:
-    1px solid
-    rgba(74,157,255,.25);
-
-  border-radius:16px;
-
-  background:
-
-    linear-gradient(
-      135deg,
-      rgba(9,28,60,.96),
-      rgba(20,19,61,.94)
-    );
-
-  box-shadow:
-    0 16px 45px
-    rgba(0,0,0,.30);
+  padding:19px 22px;
+  margin-bottom:15px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:#fff;
 }
-
 
 .course-label{
-
-  color:#4dbbff;
-
-  font-size:9px;
-
-  font-weight:900;
-
-  letter-spacing:1px;
-
+  margin-bottom:7px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.5px;
   text-transform:uppercase;
-
-  margin-bottom:5px;
 }
-
 
 .course-title{
-
   margin:0;
-
-  font-size:27px;
-
-  line-height:1.25;
-
-  font-weight:950;
-
-  color:#fff;
+  font-size:26px;
+  line-height:1.3;
+  font-weight:800;
 }
-
-
-/* =========================
-   LIVE STATS
-========================= */
 
 .stats{
-
-  width:100%;
-
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:9px;
-
-  margin-bottom:16px;
+  margin-bottom:15px;
 }
-
 
 .stat{
-
-  min-height:70px;
-
+  min-height:69px;
   display:flex;
-
   flex-direction:column;
-
-  align-items:center;
-
   justify-content:center;
-
-  text-align:center;
-
-  border:
-    1px solid
-    rgba(74,157,255,.18);
-
+  align-items:center;
+  gap:7px;
+  border:1px solid var(--border);
   border-radius:12px;
-
-  background:
-
-    linear-gradient(
-      145deg,
-      rgba(12,32,67,.95),
-      rgba(8,24,52,.95)
-    );
-
-  box-shadow:
-    inset 0 1px 0
-    rgba(255,255,255,.025);
+  background:#fff;
 }
-
 
 .stat-number{
-
-  font-size:22px;
-
+  font-size:21px;
+  font-weight:800;
   line-height:1;
-
-  font-weight:950;
 }
-
 
 .stat-label{
-
-  margin-top:6px;
-
-  color:#8198b5;
-
-  font-size:7px;
-
-  font-weight:850;
-
-  letter-spacing:.5px;
-
+  color:var(--muted);
+  font-size:9px;
+  font-weight:800;
   text-transform:uppercase;
 }
 
-
-.stat.attempted
-.stat-number{
-  color:#45baff;
-}
-
-.stat.correct
-.stat-number{
-  color:var(--green);
-}
-
-.stat.wrong
-.stat-number{
-  color:var(--red);
-}
-
-.stat.unattempted
-.stat-number{
-  color:var(--yellow);
-}
-
-
-/* =========================
-   QUESTION CARD
-========================= */
+.attempted .stat-number{color:#16a875}
+.correct .stat-number{color:#16a875}
+.wrong .stat-number{color:#e04455}
+.unattempted .stat-number{color:#ef922d}
 
 .question-card{
-
-  width:100%;
-
-  padding:
-    27px 30px;
-
-  border:
-    1px solid
-    rgba(74,157,255,.24);
-
-  border-radius:16px;
-
-  background:
-
-    linear-gradient(
-      145deg,
-      rgba(9,27,57,.98),
-      rgba(10,24,52,.98)
-    );
-
-  box-shadow:
-
-    0 18px 50px
-    rgba(0,0,0,.34);
+  padding:25px 29px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:#fff;
+  box-shadow:0 5px 20px rgba(31,66,112,.035);
 }
-
 
 .question-number{
-
-  color:#45baff;
-
-  font-size:9px;
-
-  font-weight:900;
-
-  letter-spacing:.8px;
-
+  margin-bottom:15px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.4px;
   text-transform:uppercase;
-
-  margin-bottom:11px;
 }
-
 
 .question{
-
   margin:0;
-
-  font-size:20px;
-
+  font-size:19px;
   line-height:1.55;
-
-  font-weight:850;
-
-  color:#f7faff;
+  font-weight:800;
 }
 
-
-.question-en{
-
-  display:block;
-}
-
+.question-en{display:block}
 
 .question-hi{
-
   display:block;
-
   margin-top:9px;
-
-  color:#c4d7eb;
-
+  color:#344d70;
   font-size:16px;
-
-  line-height:1.55;
-
-  font-weight:650;
-}
-
-
-/* =========================
-   OPTIONS
-========================= */
-
-.options{
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:12px;
-
-  margin-top:23px;
-}
-
-
-.option{
-
-  width:100%;
-
-  min-height:65px;
-
-  display:flex;
-
-  align-items:flex-start;
-
-  padding:
-    12px 14px;
-
-  border:
-    1px solid
-    rgba(74,157,255,.18);
-
-  border-radius:12px;
-
-  background:
-
-    linear-gradient(
-      145deg,
-      rgba(13,39,79,.94),
-      rgba(9,29,60,.96)
-    );
-
-  color:#e0ebf8;
-
-  text-align:left;
-
-  font-size:11px;
-
-  font-weight:700;
-
-  line-height:1.5;
-
-  cursor:pointer;
-
-  transition:
-    .18s ease;
-}
-
-
-.option:hover:not(:disabled){
-
-  border-color:
-    rgba(54,175,255,.65);
-
-  background:
-
-    linear-gradient(
-      120deg,
-      rgba(20,117,225,.23),
-      rgba(100,78,220,.18)
-    );
-
-  transform:
-    translateY(-1px);
-
-  box-shadow:
-    0 7px 20px
-    rgba(23,130,255,.08);
-}
-
-
-.option:disabled{
-  cursor:default;
-}
-
-
-.option-letter{
-
-  width:29px;
-
-  height:29px;
-
-  flex:
-    0 0 29px;
-
-  display:grid;
-
-  place-items:center;
-
-  margin-right:9px;
-
-  border-radius:8px;
-
-  background:
-    rgba(40,135,230,.12);
-
-  border:
-    1px solid
-    rgba(69,166,255,.20);
-
-  color:#72c8ff;
-
-  font-size:9px;
-
-  font-weight:950;
-}
-
-
-.option-content{
-  flex:1;
-}
-
-
-.option-en{
-  display:block;
-}
-
-
-.option-hi{
-
-  display:block;
-
-  margin-top:4px;
-
-  color:#9fb5cf;
-
-  font-size:9px;
-
+  line-height:1.65;
   font-weight:600;
 }
 
-
-/* =========================
-   CORRECT
-========================= */
-
-.option.correct{
-
-  border-color:
-    rgba(32,211,155,.75)
-    !important;
-
-  background:
-    rgba(32,211,155,.13)
-    !important;
-
-  color:#e4fff5;
+.options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:23px;
 }
 
-
-.option.correct .option-letter{
-
-  background:
-    rgba(32,211,155,.20);
-
-  color:#4de3b0;
-
-  border-color:
-    rgba(32,211,155,.38);
+.option{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  width:100%;
+  min-height:62px;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  color:var(--text);
+  text-align:left;
+  font-size:12px;
+  line-height:1.55;
+  cursor:pointer;
+  transition:background .15s,border-color .15s;
 }
 
+.option:hover:not(:disabled){
+  border-color:#8eb4ff;
+  background:var(--blue-light);
+}
 
-/* =========================
-   WRONG
-========================= */
+.option:disabled{cursor:default}
+
+.option-letter{
+  flex:0 0 28px;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e9eff8;
+  color:#27466e;
+  font-size:11px;
+  font-weight:800;
+}
+
+.option-content{flex:1;min-width:0}
+.option-en{display:block;font-weight:700}
+.option-hi{
+  display:block;
+  margin-top:4px;
+  color:#617793;
+  font-size:11px;
+  line-height:1.55;
+}
+
+.option.correct,
+.option.correct-answer{
+  border-color:#69d5aa;
+  background:var(--green-bg);
+}
+
+.option.correct .option-letter,
+.option.correct-answer .option-letter{
+  background:#c9f5e2;
+  color:#087e53;
+}
 
 .option.wrong{
-
-  border-color:
-    rgba(255,96,117,.78)
-    !important;
-
-  background:
-    rgba(255,96,117,.13)
-    !important;
-
-  color:#ffe5e9;
+  border-color:#f0a0aa;
+  background:var(--red-bg);
 }
-
 
 .option.wrong .option-letter{
-
-  background:
-    rgba(255,96,117,.20);
-
-  color:#ff8798;
-
-  border-color:
-    rgba(255,96,117,.38);
+  background:#ffdade;
+  color:#c72d42;
 }
-
-
-/* =========================
-   CORRECT ANSWER REVEAL
-========================= */
-
-.option.correct-answer{
-
-  border-color:
-    rgba(32,211,155,.52)
-    !important;
-
-  background:
-    rgba(32,211,155,.075)
-    !important;
-}
-
-
-/* =========================
-   ANSWER STATUS
-========================= */
 
 .answer-status{
-
   display:none;
-
   margin-top:17px;
-
-  padding:
-    12px 14px;
-
+  padding:13px 15px;
   border-radius:10px;
-
-  font-size:10px;
-
-  font-weight:850;
-
-  line-height:1.5;
-}
-
-
-.answer-status.show{
-  display:block;
-}
-
-
-.answer-status.correct{
-
-  color:#54e5b3;
-
-  background:
-    rgba(32,211,155,.08);
-
-  border:
-    1px solid
-    rgba(32,211,155,.20);
-}
-
-
-.answer-status.wrong{
-
-  color:#ff7b8d;
-
-  background:
-    rgba(255,96,117,.08);
-
-  border:
-    1px solid
-    rgba(255,96,117,.20);
-}
-
-
-/* =========================
-   NEXT BUTTON
-========================= */
-
-.action-area{
-
-  display:flex;
-
-  justify-content:flex-end;
-
-  margin-top:18px;
-}
-
-
-.next-btn{
-
-  border:0;
-
-  border-radius:10px;
-
-  padding:
-    11px 21px;
-
-  color:#fff;
-
-  background:
-
-    linear-gradient(
-      100deg,
-      #168eff,
-      #5968f4,
-      #8055f4
-    );
-
-  box-shadow:
-    0 7px 22px
-    rgba(37,99,235,.22);
-
-  font-size:10px;
-
-  font-weight:900;
-
-  cursor:pointer;
-
-  transition:.18s ease;
-}
-
-
-.next-btn:hover:not(:disabled){
-
-  transform:
-    translateY(-1px);
-
-  box-shadow:
-    0 10px 28px
-    rgba(37,99,235,.32);
-}
-
-
-.next-btn:disabled{
-
-  opacity:.38;
-
-  cursor:not-allowed;
-}
-
-
-/* =========================
-   LOADING
-========================= */
-
-.loading{
-
-  min-height:80vh;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  color:#7fcaff;
-
-  font-size:11px;
-}
-
-
-/* =========================
-   COMPLETED
-========================= */
-
-.completed{
-
-  display:none;
-
-  width:100%;
-
-  padding:
-    35px 25px;
-
-  text-align:center;
-
-  border:
-    1px solid
-    rgba(74,157,255,.24);
-
-  border-radius:16px;
-
-  background:
-
-    linear-gradient(
-      145deg,
-      rgba(9,28,60,.97),
-      rgba(20,19,61,.95)
-    );
-}
-
-
-.completed-title{
-
-  font-size:24px;
-
-  font-weight:950;
-}
-
-
-.completed-sub{
-
-  margin-top:7px;
-
-  color:#91a6c0;
-
-  font-size:9px;
-}
-
-
-.review-btn{
-
-  display:inline-block;
-
-  margin-top:20px;
-
-  padding:
-    11px 22px;
-
-  border-radius:10px;
-
-  color:#fff;
-
-  background:
-
-    linear-gradient(
-      100deg,
-      #168eff,
-      #5968f4,
-      #8055f4
-    );
-
-  text-decoration:none;
-
-  font-size:10px;
-
-  font-weight:900;
-}
-
-
-/* =========================
-   ACCESS DENIED
-========================= */
-
-.access-box{
-
-  display:none;
-
-  width:100%;
-
-  padding:
-    45px 20px;
-
-  text-align:center;
-
-  border:
-    1px solid
-    rgba(255,96,117,.25);
-
-  border-radius:16px;
-
-  background:
-    rgba(255,96,117,.055);
-}
-
-
-.access-box h2{
-
-  margin:0;
-
-  font-size:19px;
-}
-
-
-.access-box p{
-
-  color:#9fb2ca;
-
-  font-size:10px;
-
+  font-size:12px;
+  font-weight:800;
   line-height:1.6;
 }
 
-
-.buy-btn{
-
-  display:inline-block;
-
-  margin-top:8px;
-
-  padding:
-    11px 21px;
-
-  border-radius:10px;
-
-  color:#fff;
-
-  background:
-
-    linear-gradient(
-      100deg,
-      #168eff,
-      #5968f4,
-      #8055f4
-    );
-
-  text-decoration:none;
-
-  font-size:10px;
-
-  font-weight:900;
+.answer-status.show{display:block}
+.answer-status.correct{
+  color:#087d53;
+  border:1px solid #bcebd7;
+  background:var(--green-bg);
+}
+.answer-status.wrong{
+  color:#c32d42;
+  border:1px solid #f4c6cc;
+  background:var(--red-bg);
 }
 
+.explanation{
+  display:none;
+  margin-top:10px;
+  padding:13px 15px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#f6f9fe;
+  color:#344d70;
+  font-size:12px;
+  line-height:1.7;
+}
 
-/* =========================
-   RESPONSIVE
-========================= */
+.explanation.show{display:block}
+.explanation-title{
+  margin-bottom:5px;
+  color:#254b83;
+  font-weight:800;
+}
+
+.action-area{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:18px;
+}
+
+.next-btn,.primary-btn{
+  padding:12px 22px;
+  border:0;
+  border-radius:10px;
+  background:var(--blue);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.next-btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.loading{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#536d8e;
+  font-size:13px;
+  text-align:center;
+}
+
+.completed,.access-box{
+  display:none;
+  padding:32px 20px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:#fff;
+  text-align:center;
+}
+
+.completed h2,.access-box h2{margin:0 0 9px}
+.completed p,.access-box p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+.review-btn,.buy-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 21px;
+  border-radius:9px;
+  background:var(--blue);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* START INSTRUCTIONS POPUP */
+
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  background:rgba(15,34,61,.48);
+}
+
+.modal{
+  width:100%;
+  max-width:510px;
+  max-height:90vh;
+  overflow:auto;
+  padding:25px;
+  border:1px solid #d4e1f2;
+  border-radius:17px;
+  background:#fff;
+  box-shadow:0 20px 70px rgba(20,45,80,.22);
+}
+
+.modal h2{
+  margin:0 0 7px;
+  font-size:22px;
+}
+
+.modal-subtitle{
+  margin:0 0 18px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.instructions{
+  display:grid;
+  gap:11px;
+  margin:0 0 22px;
+  padding:0;
+  list-style:none;
+}
+
+.instructions li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  color:#334c6d;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.instruction-mark{
+  flex:0 0 23px;
+  width:23px;
+  height:23px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e8f0ff;
+  color:#3264f5;
+  font-size:12px;
+  font-weight:800;
+}
+
+.modal-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.cancel-btn,.start-btn{
+  flex:1;
+  min-height:44px;
+  padding:11px 15px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.cancel-btn{
+  border:1px solid var(--border);
+  background:#f5f8fd;
+  color:#425b7b;
+}
+
+.start-btn{
+  border:0;
+  background:var(--blue);
+  color:#fff;
+}
+
+.countdown-number{
+  margin:15px 0;
+  color:var(--blue);
+  font-size:43px;
+  font-weight:900;
+  text-align:center;
+}
+
+.countdown-caption{
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+}
 
 @media(max-width:700px){
-
-  .page{
-
-    padding:
-      12px 8px 35px;
-  }
-
-
-  .course-header{
-
-    padding:
-      17px 15px;
-  }
-
-
-  .course-title{
-
-    font-size:21px;
-  }
-
-
-  .stats{
-
-    grid-template-columns:
-      repeat(4,1fr);
-
-    gap:5px;
-  }
-
-
-  .stat{
-
-    min-height:62px;
-
-    padding:
-      7px 3px;
-  }
-
-
-  .stat-number{
-
-    font-size:16px;
-  }
-
-
-  .stat-label{
-
-    font-size:5.5px;
-  }
-
-
-  .question-card{
-
-    padding:
-      20px 15px;
-  }
-
-
-  .question{
-
-    font-size:17px;
-  }
-
-
-  .question-hi{
-
-    font-size:14px;
-  }
-
-
-  .options{
-
-    grid-template-columns:1fr;
-
-    gap:9px;
-  }
-
-
-  .option{
-
-    min-height:58px;
-
-    font-size:10px;
-  }
-
-
-  .option-hi{
-
-    font-size:8.5px;
-  }
-
-
-  .action-area{
-
-    justify-content:stretch;
-  }
-
-
-  .next-btn{
-
-    width:100%;
-  }
-
+  .page{padding:12px 8px 30px}
+  .course-header{padding:17px 15px}
+  .course-title{font-size:21px}
+  .stats{gap:5px}
+  .stat{min-height:62px;padding:7px 2px}
+  .stat-number{font-size:17px}
+  .stat-label{font-size:7px}
+  .question-card{padding:20px 15px}
+  .question{font-size:17px}
+  .question-hi{font-size:14px}
+  .options{grid-template-columns:1fr;gap:9px;margin-top:18px}
+  .option{min-height:57px;font-size:12px}
+  .option-hi{font-size:11px}
+  .action-area{justify-content:stretch}
+  .next-btn{width:100%}
+  .modal{padding:21px 17px}
+  .modal h2{font-size:20px}
 }
 
-
-@media(max-width:400px){
-
-  .course-title{
-
-    font-size:19px;
-  }
-
-
-  .stat-number{
-
-    font-size:14px;
-  }
-
-
-  .stat-label{
-
-    font-size:5px;
-  }
-
+@media(max-width:360px){
+  .stat-label{font-size:6px}
+  .stat-number{font-size:15px}
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
 <main class="page">
 
+  <div class="loading" id="loading">Loading course...</div>
 
-  <!-- LOADING -->
-
-  <div
-    class="loading"
-    id="loading">
-
-    Loading practice...
-
+  <div class="access-box" id="accessBox">
+    <h2>Premium Access Required</h2>
+    <p id="accessMessage">Your course access is not active.</p>
+    <a class="buy-btn" id="buyBtn" href="#">Buy Access</a>
   </div>
 
-
-  <!-- =========================
-       ACCESS BOX
-  ========================= -->
-
-  <div
-    class="access-box"
-    id="accessBox">
-
-    <h2>
-      Premium Access Required
-    </h2>
-
-    <p id="accessMessage">
-      Your course access is not active.
-    </p>
-
-    <a
-      href="#"
-      class="buy-btn"
-      id="buyBtn">
-
-      Buy Access →
-
-    </a>
-
-  </div>
-
-
-  <!-- =========================
-       PRACTICE
-  ========================= -->
-
-  <section
-    id="practice"
-    style="display:none;">
-
-
-    <!-- COURSE NAME -->
+  <section id="practice" style="display:none">
 
     <div class="course-header">
-
-      <div class="course-label">
-        JOA IT Maha Pack
-      </div>
-
-      <h1
-        class="course-title"
-        id="courseTitle">
-
-        Computer Fundamentals
-
-      </h1>
-
+      <div class="course-label">JOA IT Maha Pack</div>
+      <h1 class="course-title" id="courseTitle">Computer Fundamentals</h1>
     </div>
-
-
-    <!-- =========================
-         LIVE STATS
-    ========================= -->
 
     <div class="stats">
-
-
       <div class="stat attempted">
-
-        <div
-          class="stat-number"
-          id="attemptedCount">
-
-          0
-
-        </div>
-
-        <div class="stat-label">
-          Attempted
-        </div>
-
+        <div class="stat-number" id="attemptedCount">0</div>
+        <div class="stat-label">Attempted</div>
       </div>
-
-
       <div class="stat correct">
-
-        <div
-          class="stat-number"
-          id="correctCount">
-
-          0
-
-        </div>
-
-        <div class="stat-label">
-          Correct
-        </div>
-
+        <div class="stat-number" id="correctCount">0</div>
+        <div class="stat-label">Correct</div>
       </div>
-
-
       <div class="stat wrong">
-
-        <div
-          class="stat-number"
-          id="wrongCount">
-
-          0
-
-        </div>
-
-        <div class="stat-label">
-          Wrong
-        </div>
-
+        <div class="stat-number" id="wrongCount">0</div>
+        <div class="stat-label">Wrong</div>
       </div>
-
-
       <div class="stat unattempted">
-
-        <div
-          class="stat-number"
-          id="unattemptedCount">
-
-          400
-
-        </div>
-
-        <div class="stat-label">
-          Not Attempted
-        </div>
-
+        <div class="stat-number" id="unattemptedCount">400</div>
+        <div class="stat-label">Not Attempted</div>
       </div>
-
-
     </div>
 
-
-    <!-- =========================
-         QUESTION
-    ========================= -->
-
-    <section
-      class="question-card"
-      id="questionCard">
-
-
-      <div
-        class="question-number"
-        id="questionNumber">
-
-        Question 1 of 400
-
-      </div>
-
-
-      <div
-        class="question"
-        id="questionText">
-      </div>
-
-
-      <div
-        class="options"
-        id="options">
-      </div>
-
-
-      <!-- IMMEDIATE ANSWER STATUS -->
-
-      <div
-        class="answer-status"
-        id="answerStatus">
-      </div>
-
-
+    <section class="question-card" id="questionCard">
+      <div class="question-number" id="questionNumber">Question 1</div>
+      <div class="question" id="questionText"></div>
+      <div class="options" id="options"></div>
+      <div class="answer-status" id="answerStatus"></div>
+      <div class="explanation" id="explanation"></div>
       <div class="action-area">
-
-        <button
-          class="next-btn"
-          id="nextBtn"
-          disabled>
-
-          Next Question →
-
-        </button>
-
+        <button class="next-btn" id="nextBtn" disabled>Next Question →</button>
       </div>
-
-
     </section>
 
-
-    <!-- =========================
-         COMPLETED
-    ========================= -->
-
-    <section
-      class="completed"
-      id="completed">
-
-      <div class="completed-title">
-        Practice Completed
-      </div>
-
-      <div
-        class="completed-sub"
-        id="completedSub">
-
-        Your one attempt has been completed.
-
-      </div>
-
-      <a
-        href="#"
-        class="review-btn"
-        id="reviewBtn">
-
-        Review Practice →
-
-      </a>
-
+    <section class="completed" id="completed">
+      <h2>Practice Completed</h2>
+      <p>Your attempt has been saved. You can review your answers and explanations.</p>
+      <a class="review-btn" id="reviewBtn" href="#">Review Practice →</a>
     </section>
-
 
   </section>
-
-
 </main>
 
+<!-- START POPUP -->
+<div class="modal-backdrop" id="startModal" style="display:none">
+  <div class="modal">
+    <h2 id="modalTitle">Before You Start</h2>
+    <p class="modal-subtitle">Please read the instructions before starting your practice.</p>
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+    <ul class="instructions">
+      <li><span class="instruction-mark">✓</span><span id="instructionTotal">This course contains 400 questions.</span></li>
+      <li><span class="instruction-mark">✓</span><span>There is no time limit. You can attempt the questions whenever you want.</span></li>
+      <li><span class="instruction-mark">✓</span><span>Your progress is automatically saved. You can leave at any time and resume from where you stopped.</span></li>
+      <li><span class="instruction-mark">✓</span><span>The correct or wrong answer appears immediately after you select an option.</span></li>
+      <li><span class="instruction-mark">✓</span><span>An explanation is also shown after answering each question.</span></li>
+      <li><span class="instruction-mark">✓</span><span>You have one attempt. After completion, you can review your saved attempt.</span></li>
+    </ul>
+
+    <div class="modal-buttons">
+      <button class="cancel-btn" id="cancelBtn">Cancel</button>
+      <button class="start-btn" id="startBtn">Start Practice →</button>
+    </div>
+
+    <div id="countdownArea" style="display:none">
+      <div class="countdown-number" id="countdownNumber">5</div>
+      <div class="countdown-caption">Your practice will start shortly...</div>
+    </div>
+  </div>
+</div>
 
 <script type="module">
+import {auth,db} from "../firebase-config.js";
 
-
-/* =====================================================
-   FIREBASE
-===================================================== */
-
-import {
-  auth,
-  db
-} from "../firebase-config.js";
-
+import {onAuthStateChanged} from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 import {
-  onAuthStateChanged,
-  signOut
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+  doc,getDoc,setDoc,serverTimestamp
+} from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
+const $ = id => document.getElementById(id);
 
-import {
-  doc,
-  getDoc,
-  setDoc,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+const fileName = location.pathname.split("/").pop().replace(/\.html$/i,"");
+const COURSE_ID = fileName.replace(/^paid-/i,"").toLowerCase();
+const TEST_ID = COURSE_ID.replace(/-/g,"_") + "_01";
 
-
-/* =====================================================
-   HELPER
-===================================================== */
-
-const $ =
-  id => document.getElementById(id);
-
-
-/* =====================================================
-   FILE / COURSE DETECTION
-===================================================== */
-
-const fileName =
-  location.pathname
-    .split("/")
-    .pop()
-    .replace(/\.html$/i,"");
-
-
-/*
-  Example:
-
-  paid-computer-fundamentals
-  →
-  computer-fundamentals
-*/
-
-const COURSE_ID =
-  fileName
-    .replace(/^paid-/i,"")
-    .toLowerCase();
-
-
-/*
-  computer-fundamentals
-  →
-  computer_fundamentals_01
-*/
-
-const TEST_ID =
-  COURSE_ID
-    .replace(/-/g,"_")
-    + "_01";
-
-
-/* =====================================================
-   COURSE TITLES
-===================================================== */
-
-const COURSE_TITLES = {
-
-  "computer-fundamentals":
-    "Computer Fundamentals",
-
-  "ms-word":
-    "MS Word",
-
-  "ms-excel":
-    "MS Excel",
-
-  "ms-powerpoint":
-    "MS PowerPoint",
-
-  "ms-access":
-    "MS Access",
-
-  "dbms-sql":
-    "DBMS & SQL",
-
-  "computer-networking":
-    "Computer Networking",
-
-  "cyber-security":
-    "Cyber Security",
-
-  "c-programming":
-    "C Programming",
-
-  "html":
-    "HTML",
-
-  "css-css3":
-    "CSS & CSS3",
-
-  "cloud-computing":
-    "Cloud Computing",
-
-  "data-structure":
-    "Data Structure",
-
-  "computer-organisation":
-    "Computer Organisation",
-
-  "operating-system":
-    "Operating System"
-
+const TITLES = {
+  "computer-fundamentals":"Computer Fundamentals",
+  "ms-word":"MS Word",
+  "ms-excel":"MS Excel",
+  "ms-powerpoint":"MS PowerPoint",
+  "ms-access":"MS Access",
+  "dbms-sql":"DBMS & SQL",
+  "computer-networking":"Computer Networking",
+  "cyber-security":"Cyber Security",
+  "c-programming":"C Programming",
+  "html":"HTML",
+  "css-css3":"CSS & CSS3",
+  "cloud-computing":"Cloud Computing",
+  "data-structure":"Data Structure",
+  "computer-organisation":"Computer Organisation",
+  "operating-system":"Operating System"
 };
 
+const COURSE_TITLE = TITLES[COURSE_ID] ||
+  COURSE_ID.split("-").map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join(" ");
 
-const COURSE_TITLE =
-  COURSE_TITLES[COURSE_ID]
-  ||
-  COURSE_ID
-    .split("-")
-    .map(
-      word =>
-        word.charAt(0).toUpperCase()
-        +
-        word.slice(1)
-    )
-    .join(" ");
-
-
-/* =====================================================
-   PAGE TITLE
-===================================================== */
-
-document.title =
-  `${COURSE_TITLE} | HPMockShashtra`;
-
-$("courseTitle").textContent =
-  COURSE_TITLE;
-
-$("buyBtn").href =
-  `../payment.html?product=${encodeURIComponent(COURSE_ID)}`;
-
-$("reviewBtn").href =
-  `mahapack-study.html?test=${TEST_ID}`;
-
-
-/* =====================================================
-   QUESTION BANK
-===================================================== */
-
-/*
-  IMPORTANT:
-
-  This page is inside /mahapack/
-
-  Therefore:
-
-  paid-computer-fundamentals.html
-  loads:
-
-  ./computer-fundamentals.js
-
-  NOT:
-
-  ./mahapack/computer-fundamentals.js
-*/
+document.title = `${COURSE_TITLE} | HPMockShashtra`;
+$("courseTitle").textContent = COURSE_TITLE;
+$("modalTitle").textContent = `${COURSE_TITLE} – Instructions`;
+$("buyBtn").href = `../payment.html?product=${encodeURIComponent(COURSE_ID)}`;
+$("reviewBtn").href = `./mahapack-study.html?test=${TEST_ID}`;
 
 let QUESTIONS = [];
 
-
 try{
-
-  const module =
-    await import(
-      `./${COURSE_ID}.js`
-    );
-
-
-  QUESTIONS =
-    Array.isArray(module.QUESTIONS)
-      ? module.QUESTIONS
-      : [];
-
-
-  if(
-    QUESTIONS.length === 0
-  ){
-
-    throw new Error(
-      `No QUESTIONS found in ${COURSE_ID}.js`
-    );
-
-  }
-
-}
-catch(error){
-
-  console.error(
-    "QUESTION BANK ERROR:",
-    error
-  );
-
-
-  $("loading").textContent =
-    `Question bank load नहीं हो सका: ${COURSE_ID}.js`;
-
+  const bank = await import(`./${COURSE_ID}.js`);
+  QUESTIONS = Array.isArray(bank.QUESTIONS) ? bank.QUESTIONS : [];
+  if(!QUESTIONS.length) throw new Error("QUESTIONS array missing");
+  $("instructionTotal").textContent =
+    `This course contains ${QUESTIONS.length} questions.`;
+  $("unattemptedCount").textContent = QUESTIONS.length;
+}catch(error){
+  console.error("Question bank load error:",error);
+  $("loading").textContent = `Question bank could not be loaded: ${COURSE_ID}.js`;
   throw error;
-
 }
 
-
-/* =====================================================
-   FIRESTORE REFERENCES
-===================================================== */
+const OFFICE_COURSES = ["ms-word","ms-excel","ms-powerpoint","ms-access"];
 
 let currentUser = null;
-
 let sessionRef = null;
-
 let attemptRef = null;
-
-
-/* =====================================================
-   STATE
-===================================================== */
-
-let state = {
-
-  current:0,
-
-  answers:{},
-
-  submitted:false
-
-};
-
-
-/* =====================================================
-   OFFICE COURSES
-===================================================== */
-
-const OFFICE_COURSES = [
-
-  "ms-word",
-  "ms-excel",
-  "ms-powerpoint",
-  "ms-access"
-
-];
-
-
-/* =====================================================
-   DATE HELPER
-===================================================== */
+let state = {current:0,answers:{},submitted:false};
+let countdownStarted = false;
 
 function toDate(value){
-
-  if(!value){
-    return null;
-  }
-
-
-  if(
-    typeof value.toDate === "function"
-  ){
-
-    return value.toDate();
-
-  }
-
-
-  const date =
-    new Date(value);
-
-
-  if(
-    Number.isNaN(
-      date.getTime()
-    )
-  ){
-
-    return null;
-
-  }
-
-
-  return date;
-
+  if(!value) return null;
+  if(typeof value.toDate === "function") return value.toDate();
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? null : d;
 }
 
-
-/* =====================================================
-   ACTIVE ACCESS
-===================================================== */
-
-function activeAccess(access){
-
-  if(!access){
-    return false;
-  }
-
-
-  const expiresAt =
-    toDate(
-      access.expiresAt
-    );
-
-
-  const purchasedAt =
-    toDate(
-      access.purchasedAt
-    );
-
-
-  if(
-    !expiresAt
-    ||
-    expiresAt.getTime()
-      <= Date.now()
-  ){
-
-    return false;
-
-  }
-
-
-  if(
-    purchasedAt
-    &&
-    purchasedAt.getTime()
-      > Date.now()
-  ){
-
-    return false;
-
-  }
-
-
-  return true;
-
+function activeAccess(item){
+  if(!item) return false;
+  const expiry = toDate(item.expiresAt);
+  const purchase = toDate(item.purchasedAt);
+  return !!expiry &&
+    expiry.getTime() > Date.now() &&
+    (!purchase || purchase.getTime() <= Date.now());
 }
-
-
-/* =====================================================
-   COURSE ACCESS
-===================================================== */
 
 function hasCourseAccess(data){
+  if(activeAccess(data?.mahapackAccess?.courses?.[COURSE_ID])) return true;
 
+  if(OFFICE_COURSES.includes(COURSE_ID) &&
+     activeAccess(data?.mahapackAccess?.packs?.["ms-office"])) return true;
 
-  /* =========================
-     INDIVIDUAL COURSE
-  ========================= */
+  if(activeAccess(data?.mahapackAccess?.packs?.["computer-master"])) return true;
 
-  const individual =
-    data
-      ?.mahapackAccess
-      ?.courses
-      ?.[COURSE_ID];
+  if(activeAccess(data?.computerAccess?.courses?.[COURSE_ID])) return true;
 
+  if(OFFICE_COURSES.includes(COURSE_ID) &&
+     activeAccess(data?.computerAccess?.packs?.["ms-office"])) return true;
 
-  if(
-    activeAccess(individual)
-  ){
-
-    return true;
-
-  }
-
-
-  /* =========================
-     MS OFFICE PACK
-  ========================= */
-
-  if(
-    OFFICE_COURSES
-      .includes(COURSE_ID)
-  ){
-
-    const office =
-      data
-        ?.mahapackAccess
-        ?.packs
-        ?.["ms-office"];
-
-
-    if(
-      activeAccess(office)
-    ){
-
-      return true;
-
-    }
-
-  }
-
-
-  /* =========================
-     COMPUTER MASTER
-  ========================= */
-
-  const master =
-    data
-      ?.mahapackAccess
-      ?.packs
-      ?.["computer-master"];
-
-
-  if(
-    activeAccess(master)
-  ){
-
-    return true;
-
-  }
-
-
-  /* =========================
-     LEGACY FALLBACK
-  ========================= */
-
-  const oldIndividual =
-    data
-      ?.computerAccess
-      ?.courses
-      ?.[COURSE_ID];
-
-
-  if(
-    activeAccess(oldIndividual)
-  ){
-
-    return true;
-
-  }
-
-
-  if(
-    OFFICE_COURSES
-      .includes(COURSE_ID)
-  ){
-
-    const oldOffice =
-      data
-        ?.computerAccess
-        ?.packs
-        ?.["ms-office"];
-
-
-    if(
-      activeAccess(oldOffice)
-    ){
-
-      return true;
-
-    }
-
-  }
-
-
-  const oldMaster =
-    data
-      ?.computerAccess
-      ?.packs
-      ?.["computer-master"];
-
-
-  if(
-    activeAccess(oldMaster)
-  ){
-
-    return true;
-
-  }
-
-
-  return false;
-
+  return activeAccess(data?.computerAccess?.packs?.["computer-master"]);
 }
-
-
-/* =====================================================
-   NORMALIZE ANSWERS
-===================================================== */
 
 function normalizeAnswers(data){
-
-  const result = {};
-
-
-  if(
-    !data
-    ||
-    typeof data !== "object"
-  ){
-
-    return result;
-
+  const out = {};
+  if(!data || typeof data !== "object") return out;
+  for(const key of Object.keys(data)){
+    const value = Number(data[key]);
+    if(Number.isInteger(value)) out[key] = value;
   }
-
-
-  Object.keys(data)
-    .forEach(key => {
-
-      const value =
-        Number(data[key]);
-
-
-      if(
-        Number.isInteger(value)
-      ){
-
-        result[key] =
-          value;
-
-      }
-
-    });
-
-
-  return result;
-
+  return out;
 }
-
-
-/* =====================================================
-   ANSWER INDEX
-===================================================== */
 
 function answerIndex(answer){
+  if(typeof answer === "number") return answer;
+  if(typeof answer !== "string") return -1;
 
-  if(
-    typeof answer === "number"
-  ){
+  const value = answer.trim().toUpperCase();
+  if(["A","B","C","D"].includes(value)) return value.charCodeAt(0)-65;
 
-    return answer;
-
-  }
-
-
-  if(
-    typeof answer === "string"
-  ){
-
-    const value =
-      answer
-        .trim()
-        .toUpperCase();
-
-
-    if(
-      ["A","B","C","D"]
-        .includes(value)
-    ){
-
-      return (
-        value.charCodeAt(0)
-        - 65
-      );
-
-    }
-
-
-    const number =
-      Number(value);
-
-
-    if(
-      Number.isInteger(number)
-    ){
-
-      return number;
-
-    }
-
-  }
-
-
-  return -1;
-
+  const n = Number(value);
+  return Number.isInteger(n) ? n : -1;
 }
 
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHTML(value){
-
-  return String(
-    value ?? ""
-  ).replace(
-    /[&<>"']/g,
-    character => ({
-
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#039;"
-
-    }[character])
-  );
-
+function esc(value){
+  return String(value ?? "").replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  })[c]);
 }
 
-
-/* =====================================================
-   OPTION TEXT
-===================================================== */
-
-function optionText(
-  option,
-  language
-){
-
-  if(
-    option
-    &&
-    typeof option === "object"
-  ){
-
-    return (
-      option[language]
-      ??
-      option.en
-      ??
-      option.hi
-      ??
-      ""
-    );
-
+function bilingual(value,lang){
+  if(value && typeof value === "object"){
+    return value[lang] ?? value.en ?? value.hi ?? "";
   }
-
-
-  return option ?? "";
-
+  return value ?? "";
 }
 
-
-/* =====================================================
-   UPDATE STATS
-===================================================== */
+function explanationText(question,lang){
+  const explanation = question.explanation ?? question.explain ?? "";
+  if(explanation && typeof explanation === "object"){
+    return explanation[lang] ?? explanation.en ?? explanation.hi ?? "";
+  }
+  return explanation;
+}
 
 function updateStats(){
-
-  const attempted =
-    Object.keys(
-      state.answers
-    ).length;
-
-
+  const keys = Object.keys(state.answers);
   let correct = 0;
 
+  for(const key of keys){
+    const q = QUESTIONS[Number(key)];
+    if(q && answerIndex(q.answer) === Number(state.answers[key])) correct++;
+  }
 
-  Object.keys(
-    state.answers
-  )
-  .forEach(key => {
-
-    const questionIndex =
-      Number(key);
-
-
-    if(
-      QUESTIONS[questionIndex]
-      &&
-      answerIndex(
-        QUESTIONS[questionIndex].answer
-      )
-      ===
-      Number(
-        state.answers[key]
-      )
-    ){
-
-      correct++;
-
-    }
-
-  });
-
-
-  const wrong =
-    attempted - correct;
-
-
-  const unattempted =
-    QUESTIONS.length - attempted;
-
-
-  $("attemptedCount")
-    .textContent =
-    attempted;
-
-
-  $("correctCount")
-    .textContent =
-    correct;
-
-
-  $("wrongCount")
-    .textContent =
-    wrong;
-
-
-  $("unattemptedCount")
-    .textContent =
-    unattempted;
-
+  const attempted = keys.length;
+  $("attemptedCount").textContent = attempted;
+  $("correctCount").textContent = correct;
+  $("wrongCount").textContent = attempted-correct;
+  $("unattemptedCount").textContent = QUESTIONS.length-attempted;
 }
-
-
-/* =====================================================
-   SAVE SESSION
-===================================================== */
 
 async function saveSession(){
-
-  if(!sessionRef){
-    return false;
-  }
-
-
   try{
-
-    await setDoc(
-      sessionRef,
-      {
-
-        uid:
-          currentUser.uid,
-
-        testId:
-          TEST_ID,
-
-        current:
-          state.current,
-
-        answers:
-          state.answers,
-
-        status:
-          "in_progress",
-
-        questionCount:
-          QUESTIONS.length,
-
-        updatedAt:
-          serverTimestamp()
-
-      },
-      {
-        merge:true
-      }
-    );
-
-
+    await setDoc(sessionRef,{
+      uid:currentUser.uid,
+      testId:TEST_ID,
+      current:state.current,
+      answers:state.answers,
+      status:"in_progress",
+      questionCount:QUESTIONS.length,
+      updatedAt:serverTimestamp()
+    },{merge:true});
     return true;
-
-  }
-  catch(error){
-
-    console.error(
-      "SESSION SAVE ERROR:",
-      error
-    );
-
+  }catch(error){
+    console.error("Session save error:",error);
     return false;
-
   }
-
 }
-
-
-/* =====================================================
-   LOAD SESSION
-===================================================== */
 
 async function loadSession(){
+  const snap = await getDoc(sessionRef);
 
-  const snap =
-    await getDoc(
-      sessionRef
-    );
-
-
-  if(
-    snap.exists()
-  ){
-
-    const data =
-      snap.data();
-
-
-    state.current =
-      Math.max(
-        0,
-        Math.min(
-          Number(data.current) || 0,
-          QUESTIONS.length - 1
-        )
-      );
-
-
-    state.answers =
-      normalizeAnswers(
-        data.answers
-      );
-
-
-  }
-  else{
-
-    state = {
-
-      current:0,
-
-      answers:{},
-
-      submitted:false
-
-    };
-
-
+  if(snap.exists()){
+    const data = snap.data();
+    state.current = Math.max(0,Math.min(
+      Number(data.current)||0,QUESTIONS.length-1
+    ));
+    state.answers = normalizeAnswers(data.answers);
+  }else{
+    state = {current:0,answers:{},submitted:false};
     await saveSession();
-
   }
-
 }
-
-
-/* =====================================================
-   RENDER QUESTION
-===================================================== */
 
 function renderQuestion(){
-
-  if(
-    state.submitted
-  ){
-
+  if(state.submitted){
     showCompleted();
-
     return;
-
   }
 
+  const q = QUESTIONS[state.current];
+  if(!q) return;
 
-  const question =
-    QUESTIONS[
-      state.current
-    ];
+  const selected = state.answers[state.current];
+  const answered = selected !== undefined;
+  const correct = answerIndex(q.answer);
 
+  $("questionNumber").textContent =
+    `Question ${state.current+1} of ${QUESTIONS.length}`;
 
-  if(!question){
+  $("questionText").innerHTML = `
+    <span class="question-en">${esc(q.en || "")}</span>
+    ${q.hi ? `<span class="question-hi">${esc(q.hi)}</span>` : ""}
+  `;
 
-    return;
+  const options = $("options");
+  options.innerHTML = "";
 
-  }
+  q.options.forEach((option,index)=>{
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "option";
 
+    const en = bilingual(option,"en");
+    const hi = bilingual(option,"hi");
 
-  const selected =
-    state.answers[
-      state.current
-    ];
-
-
-  const hasAnswer =
-    selected !== undefined;
-
-
-  const correct =
-    answerIndex(
-      question.answer
-    );
-
-
-  /* =========================
-     QUESTION NUMBER
-  ========================= */
-
-  $("questionNumber")
-    .textContent =
-    `Question ${state.current + 1} of ${QUESTIONS.length}`;
-
-
-  /* =========================
-     QUESTION TEXT
-  ========================= */
-
-  $("questionText")
-    .innerHTML =
-
-    `
-      <span class="question-en">
-        ${escapeHTML(
-          question.en || ""
-        )}
+    button.innerHTML = `
+      <span class="option-letter">${String.fromCharCode(65+index)}</span>
+      <span class="option-content">
+        <span class="option-en">${esc(en)}</span>
+        ${hi ? `<span class="option-hi">${esc(hi)}</span>` : ""}
       </span>
-
-      ${
-        question.hi
-        ?
-        `
-          <span class="question-hi">
-            ${escapeHTML(
-              question.hi
-            )}
-          </span>
-        `
-        :
-        ""
-      }
     `;
 
+    if(answered){
+      button.disabled = true;
 
-  /* =========================
-     OPTIONS
-  ========================= */
-
-  const options =
-    $("options");
-
-
-  options.innerHTML =
-    "";
-
-
-  question.options
-    .forEach(
-      (option,index) => {
-
-        const button =
-          document.createElement(
-            "button"
-          );
-
-
-        button.type =
-          "button";
-
-
-        button.className =
-          "option";
-
-
-        const english =
-          optionText(
-            option,
-            "en"
-          );
-
-
-        const hindi =
-          optionText(
-            option,
-            "hi"
-          );
-
-
-        button.innerHTML =
-
-          `
-            <span class="option-letter">
-              ${String.fromCharCode(
-                65 + index
-              )}
-            </span>
-
-            <span class="option-content">
-
-              <span class="option-en">
-                ${escapeHTML(
-                  english
-                )}
-              </span>
-
-              ${
-                hindi
-                ?
-                `
-                  <span class="option-hi">
-                    ${escapeHTML(
-                      hindi
-                    )}
-                  </span>
-                `
-                :
-                ""
-              }
-
-            </span>
-          `;
-
-
-        /* =========================
-           ALREADY ANSWERED
-        ========================= */
-
-        if(
-          hasAnswer
-        ){
-
-          button.disabled =
-            true;
-
-
-          /* Correct option */
-
-          if(
-            index === correct
-          ){
-
-            button.classList.add(
-              "correct-answer"
-            );
-
-          }
-
-
-          /* User selected correct */
-
-          if(
-            index === selected
-            &&
-            selected === correct
-          ){
-
-            button.classList.add(
-              "correct"
-            );
-
-          }
-
-
-          /* User selected wrong */
-
-          if(
-            index === selected
-            &&
-            selected !== correct
-          ){
-
-            button.classList.add(
-              "wrong"
-            );
-
-          }
-
-        }
-        else{
-
-          button.onclick =
-            () => selectAnswer(index);
-
-        }
-
-
-        options.appendChild(
-          button
-        );
-
-      }
-    );
-
-
-  /* =========================
-     ANSWER STATUS
-  ========================= */
-
-  const status =
-    $("answerStatus");
-
-
-  if(
-    hasAnswer
-  ){
-
-    const isCorrect =
-      selected === correct;
-
-
-    status.className =
-      `answer-status show ${
-        isCorrect
-          ? "correct"
-          : "wrong"
-      }`;
-
-
-    if(
-      isCorrect
-    ){
-
-      status.textContent =
-        "✓ Correct Answer";
-
-    }
-    else{
-
-      status.textContent =
-        `✕ Wrong Answer — Correct Answer: ${String.fromCharCode(
-          65 + correct
-        )}`;
-
+      if(index === correct) button.classList.add("correct-answer");
+      if(index === selected && selected === correct) button.classList.add("correct");
+      if(index === selected && selected !== correct) button.classList.add("wrong");
+    }else{
+      button.addEventListener("click",()=>selectAnswer(index));
     }
 
+    options.appendChild(button);
+  });
+
+  const status = $("answerStatus");
+  const explanation = $("explanation");
+
+  if(answered){
+    const isCorrect = selected === correct;
+    status.className = `answer-status show ${isCorrect?"correct":"wrong"}`;
+    status.textContent = isCorrect
+      ? "✓ Correct Answer"
+      : `✕ Wrong Answer — Correct Answer: ${String.fromCharCode(65+correct)}`;
+
+    const enExplanation = explanationText(q,"en");
+    const hiExplanation = explanationText(q,"hi");
+
+    if(enExplanation || hiExplanation){
+      explanation.className = "explanation show";
+      explanation.innerHTML = `
+        <div class="explanation-title">Explanation</div>
+        ${enExplanation ? `<div>${esc(enExplanation)}</div>` : ""}
+        ${hiExplanation ? `<div style="margin-top:5px">${esc(hiExplanation)}</div>` : ""}
+      `;
+    }else{
+      explanation.className = "explanation";
+      explanation.innerHTML = "";
+    }
+  }else{
+    status.className = "answer-status";
+    status.textContent = "";
+    explanation.className = "explanation";
+    explanation.innerHTML = "";
   }
-  else{
 
-    status.className =
-      "answer-status";
-
-    status.textContent =
-      "";
-
-  }
-
-
-  /* =========================
-     NEXT BUTTON
-  ========================= */
-
-  $("nextBtn").disabled =
-    !hasAnswer;
-
-
+  $("nextBtn").disabled = !answered;
   $("nextBtn").textContent =
-
-    state.current ===
-    QUESTIONS.length - 1
-
+    state.current === QUESTIONS.length-1
       ? "Finish Practice →"
-
       : "Next Question →";
 
-
-  /* =========================
-     STATS
-  ========================= */
-
   updateStats();
-
 }
-
-
-/* =====================================================
-   SELECT ANSWER
-===================================================== */
 
 async function selectAnswer(index){
+  if(state.answers[state.current] !== undefined) return;
 
-  if(
-    state.answers[
-      state.current
-    ] !== undefined
-  ){
+  state.answers[state.current] = index;
 
-    return;
-
-  }
-
-
-  state.answers[
-    state.current
-  ] = index;
-
-
-  /*
-    Immediately show
-    correct / wrong.
-  */
-
+  /* Show answer and explanation immediately */
   renderQuestion();
 
-
-  /*
-    Immediately save
-    answer to Firebase.
-  */
-
+  /* Save immediately */
   await saveSession();
-
 }
-
-
-/* =====================================================
-   NEXT QUESTION
-===================================================== */
 
 async function nextQuestion(){
+  if(state.answers[state.current] === undefined) return;
 
-  if(
-    state.answers[
-      state.current
-    ] === undefined
-  ){
-
-    return;
-
-  }
-
-
-  /* =========================
-     MORE QUESTIONS
-  ========================= */
-
-  if(
-    state.current
-    <
-    QUESTIONS.length - 1
-  ){
-
+  if(state.current < QUESTIONS.length-1){
     state.current++;
-
-
     await saveSession();
-
-
     renderQuestion();
-
-
-    window.scrollTo({
-
-      top:0,
-
-      behavior:"smooth"
-
-    });
-
-
+    window.scrollTo({top:0,behavior:"smooth"});
     return;
-
   }
-
-
-  /* =========================
-     FINAL QUESTION
-  ========================= */
 
   await completeAttempt();
-
 }
-
-
-/* =====================================================
-   COMPLETE ATTEMPT
-===================================================== */
 
 async function completeAttempt(){
-
-  const attempted =
-    Object.keys(
-      state.answers
-    ).length;
-
-
+  const keys = Object.keys(state.answers);
   let correct = 0;
 
+  for(const key of keys){
+    const q = QUESTIONS[Number(key)];
+    if(q && answerIndex(q.answer) === Number(state.answers[key])) correct++;
+  }
 
-  Object.keys(
-    state.answers
-  )
-  .forEach(key => {
-
-    const index =
-      Number(key);
-
-
-    if(
-      QUESTIONS[index]
-      &&
-      answerIndex(
-        QUESTIONS[index].answer
-      )
-      ===
-      Number(
-        state.answers[key]
-      )
-    ){
-
-      correct++;
-
-    }
-
-  });
-
-
-  const wrong =
-    attempted - correct;
-
-
-  const unattempted =
-    QUESTIONS.length - attempted;
-
+  const attempted = keys.length;
 
   try{
+    await setDoc(attemptRef,{
+      uid:currentUser.uid,
+      testId:TEST_ID,
+      questionCount:QUESTIONS.length,
+      attempted,
+      correct,
+      wrong:attempted-correct,
+      unattempted:QUESTIONS.length-attempted,
+      answers:state.answers,
+      status:"completed",
+      completedAt:serverTimestamp()
+    });
 
-    /*
-      FINAL RESULT
-    */
+    await setDoc(sessionRef,{
+      status:"completed",
+      completedAt:serverTimestamp(),
+      updatedAt:serverTimestamp()
+    },{merge:true});
 
-    await setDoc(
-      attemptRef,
-      {
-
-        uid:
-          currentUser.uid,
-
-        testId:
-          TEST_ID,
-
-        questionCount:
-          QUESTIONS.length,
-
-        attempted:
-          attempted,
-
-        correct:
-          correct,
-
-        wrong:
-          wrong,
-
-        unattempted:
-          unattempted,
-
-        answers:
-          state.answers,
-
-        status:
-          "completed",
-
-        completedAt:
-          serverTimestamp()
-
-      }
-    );
-
-
-    /*
-      Mark session completed
-    */
-
-    await setDoc(
-      sessionRef,
-      {
-
-        status:
-          "completed",
-
-        completedAt:
-          serverTimestamp(),
-
-        updatedAt:
-          serverTimestamp()
-
-      },
-      {
-        merge:true
-      }
-    );
-
-
-    state.submitted =
-      true;
-
-
+    state.submitted = true;
     showCompleted();
-
+  }catch(error){
+    console.error("Attempt save error:",error);
+    alert("Attempt save नहीं हो पाया। कृपया फिर से कोशिश करें।");
   }
-  catch(error){
-
-    console.error(
-      "FINAL ATTEMPT ERROR:",
-      error
-    );
-
-
-    alert(
-      "Attempt save नहीं हो पाया। कृपया फिर से कोशिश करें।"
-    );
-
-  }
-
 }
-
-
-/* =====================================================
-   COMPLETED
-===================================================== */
 
 function showCompleted(){
-
-  $("questionCard")
-    .style.display =
-    "none";
-
-
-  $("completed")
-    .style.display =
-    "block";
-
-
+  $("questionCard").style.display = "none";
+  $("completed").style.display = "block";
+  $("startModal").style.display = "none";
   updateStats();
-
 }
 
-
-/* =====================================================
-   NEXT BUTTON
-===================================================== */
-
-$("nextBtn").onclick =
-  nextQuestion;
-
-
-/* =====================================================
-   AUTH
-===================================================== */
-
-onAuthStateChanged(
-  auth,
-  async user => {
-
-    /* =========================
-       NOT LOGGED IN
-    ========================= */
-
-    if(!user){
-
-      const redirect =
-        encodeURIComponent(
-          location.pathname
-            .split("/")
-            .pop()
-        );
-
-
-      location.href =
-        `../firebase-login.html?redirect=${redirect}`;
-
-
-      return;
-
-    }
-
-
-    currentUser =
-      user;
-
-
-    try{
-
-      /* =========================
-         CHECK ACCESS
-      ========================= */
-
-      const accessSnap =
-        await getDoc(
-          doc(
-            db,
-            "testAccess",
-            user.uid
-          )
-        );
-
-
-      const accessData =
-        accessSnap.exists()
-          ? accessSnap.data()
-          : {};
-
-
-      if(
-        !hasCourseAccess(
-          accessData
-        )
-      ){
-
-        $("loading")
-          .style.display =
-          "none";
-
-
-        $("accessBox")
-          .style.display =
-          "block";
-
-
-        $("accessMessage")
-          .textContent =
-          `${COURSE_TITLE} access is not active. Please purchase this course.`;
-
-
-        return;
-
-      }
-
-
-      /* =========================
-         FIRESTORE REFERENCES
-      ========================= */
-
-      sessionRef =
-        doc(
-          db,
-          "users",
-          user.uid,
-          "mahapackSessions",
-          TEST_ID
-        );
-
-
-      attemptRef =
-        doc(
-          db,
-          "users",
-          user.uid,
-          "mahapackAttempts",
-          TEST_ID
-        );
-
-
-      /* =========================
-         CHECK COMPLETED ATTEMPT
-      ========================= */
-
-      const finalSnap =
-        await getDoc(
-          attemptRef
-        );
-
-
-      if(
-        finalSnap.exists()
-      ){
-
-        const finalData =
-          finalSnap.data();
-
-
-        state.answers =
-          normalizeAnswers(
-            finalData.answers
-          );
-
-
-        state.submitted =
-          true;
-
-      }
-      else{
-
-        await loadSession();
-
-      }
-
-
-      /* =========================
-         SHOW PAGE
-      ========================= */
-
-      $("loading")
-        .style.display =
-        "none";
-
-
-      $("practice")
-        .style.display =
-        "block";
-
-
-      updateStats();
-
-
-      /* =========================
-         COMPLETED
-      ========================= */
-
-      if(
-        state.submitted
-      ){
-
-        showCompleted();
-
-        return;
-
-      }
-
-
-      /* =========================
-         SHOW QUESTION
-      ========================= */
-
+function startCountdown(){
+  if(countdownStarted) return;
+  countdownStarted = true;
+
+  $("cancelBtn").style.display = "none";
+  $("startBtn").style.display = "none";
+  $("countdownArea").style.display = "block";
+
+  let seconds = 5;
+  $("countdownNumber").textContent = seconds;
+
+  const timer = setInterval(()=>{
+    seconds--;
+    $("countdownNumber").textContent = seconds;
+
+    if(seconds <= 0){
+      clearInterval(timer);
+      $("startModal").style.display = "none";
       renderQuestion();
-
-
     }
-    catch(error){
+  },1000);
+}
 
-      console.error(
-        "INITIALIZATION ERROR:",
-        error
-      );
+$("cancelBtn").addEventListener("click",()=>{
+  location.href = "./joa-mahapack.html";
+});
 
+$("startBtn").addEventListener("click",startCountdown);
+$("nextBtn").addEventListener("click",nextQuestion);
 
-      $("loading")
-        .textContent =
-        "Practice load नहीं हो सकी। Please refresh the page.";
+onAuthStateChanged(auth,async user=>{
+  if(!user){
+    const redirect = encodeURIComponent(location.pathname.split("/").pop());
+    location.href = `../firebase-login.html?redirect=${redirect}`;
+    return;
+  }
 
+  currentUser = user;
+
+  try{
+    const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
+    const accessData = accessSnap.exists() ? accessSnap.data() : {};
+
+    if(!hasCourseAccess(accessData)){
+      $("loading").style.display = "none";
+      $("accessBox").style.display = "block";
+      $("accessMessage").textContent = `${COURSE_TITLE} access is not active.`;
+      return;
     }
 
-  });
+    sessionRef = doc(db,"users",user.uid,"mahapackSessions",TEST_ID);
+    attemptRef = doc(db,"users",user.uid,"mahapackAttempts",TEST_ID);
 
+    const finalSnap = await getDoc(attemptRef);
 
+    if(finalSnap.exists()){
+      const finalData = finalSnap.data();
+      state.answers = normalizeAnswers(finalData.answers);
+      state.submitted = true;
+    }else{
+      await loadSession();
+    }
+
+    $("loading").style.display = "none";
+    $("practice").style.display = "block";
+    updateStats();
+
+    if(state.submitted){
+      showCompleted();
+      return;
+    }
+
+    $("startModal").style.display = "flex";
+  }catch(error){
+    console.error("Initialization error:",error);
+    $("loading").textContent = "Practice load नहीं हो सकी। Please refresh करें।";
+  }
+});
 </script>
-
 </body>
 </html>
