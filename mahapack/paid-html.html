@@ -1,0 +1,1541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Fundamentals | HPMockShashtra</title>
+
+<style>
+:root{
+  --bg:#edf3fb;
+  --text:#142b4e;
+  --muted:#647994;
+  --border:#d3e1f2;
+  --blue:#3264f5;
+  --green:#13a875;
+  --red:#df394c;
+}
+
+*{box-sizing:border-box}
+html{width:100%;overflow-x:hidden}
+body{
+  margin:0;
+  min-height:100vh;
+  width:100%;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+button,a{-webkit-tap-highlight-color:transparent}
+
+.page{
+  width:100%;
+  min-height:100vh;
+  padding:23px;
+}
+
+.loading{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#536d8e;
+  font-size:13px;
+  text-align:center;
+}
+
+/* Course title and compact statistics */
+.course-header{
+  display:grid;
+  grid-template-columns:minmax(245px,285px) minmax(0,1fr);
+  align-items:center;
+  gap:18px;
+  padding:15px 20px;
+  margin-bottom:13px;
+  border:1px solid #94b6e8;
+  border-radius:17px;
+  background:linear-gradient(120deg,#b1cef4 0%,#a5c3ed 100%);
+}
+
+.course-info{min-width:0}
+
+.course-label{
+  margin-bottom:6px;
+  color:#244f9e;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+
+.course-title{
+  margin:0;
+  font-size:23px;
+  line-height:1.25;
+  font-weight:800;
+  color:#143767;
+  overflow-wrap:anywhere;
+}
+
+/* Compact Go To Question control */
+.course-title-row{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:9px;
+}
+.go-to-btn{
+  flex:0 0 auto;
+  padding:6px 9px;
+  border:1px solid #7ea2dd;
+  border-radius:7px;
+  background:#f4f8ff;
+  color:#244f9e;
+  font-size:10px;
+  font-weight:800;
+  cursor:pointer;
+}
+.go-to-panel{
+  display:none;
+  align-items:center;
+  gap:6px;
+  margin-top:8px;
+}
+.go-to-panel.show{display:flex}
+.go-to-input{
+  width:82px;
+  min-width:0;
+  padding:7px 8px;
+  border:1px solid #b9cce8;
+  border-radius:7px;
+  font-size:12px;
+  color:var(--text);
+  background:#fff;
+}
+.go-to-submit{
+  padding:7px 10px;
+  border:0;
+  border-radius:7px;
+  background:var(--blue);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+.go-to-error{
+  display:none;
+  margin-top:5px;
+  color:#c72d42;
+  font-size:11px;
+}
+.go-to-error.show{display:block}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  width:100%;
+  min-width:0;
+}
+
+.stat{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  min-width:0;
+  min-height:57px;
+  padding:7px 4px;
+  border:1px solid transparent;
+  border-radius:20px;
+  text-align:center;
+}
+
+.stat-number{
+  font-size:20px;
+  font-weight:800;
+  line-height:1;
+}
+
+.stat-label{
+  font-size:8px;
+  font-weight:800;
+  color:#526783;
+  text-transform:uppercase;
+  line-height:1.2;
+}
+
+.attempted{
+  background:#f0f8ff;
+  border-color:#c5def7;
+}
+.attempted .stat-number{color:#178a79}
+
+.correct{
+  background:#e7f9f0;
+  border-color:#b6e8cf;
+}
+.correct .stat-number{color:#0c9a66}
+
+.wrong{
+  background:#fff0f2;
+  border-color:#f4c7ce;
+}
+.wrong .stat-number{color:#df394c}
+
+.unattempted{
+  background:#fff7e8;
+  border-color:#f0dfb9;
+}
+.unattempted .stat-number{color:#dc861e}
+
+/* Question */
+.question-card{
+  padding:25px 26px 23px;
+  border:1px solid #ccdaec;
+  border-radius:17px;
+  background:#f9fbff;
+  box-shadow:0 5px 20px rgba(31,66,112,.045);
+}
+
+.question-number{
+  margin-bottom:15px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.4px;
+  text-transform:uppercase;
+}
+
+.question{
+  margin:0;
+  font-size:19px;
+  line-height:1.55;
+  font-weight:800;
+  overflow-wrap:anywhere;
+}
+
+.question-en{display:block;white-space:pre-line}
+
+.question-hi{
+  display:block;
+  margin-top:9px;
+  color:#344d70;
+  font-size:16px;
+  line-height:1.65;
+  font-weight:600;
+  overflow-wrap:anywhere;
+  white-space:pre-line;
+}
+
+/* Answer options */
+.options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:23px;
+}
+
+.option{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  width:100%;
+  min-width:0;
+  min-height:59px;
+  padding:12px 13px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  color:var(--text);
+  text-align:left;
+  font-size:12px;
+  line-height:1.55;
+  cursor:pointer;
+  transition:background .15s,border-color .15s;
+}
+
+.option:hover:not(:disabled){
+  border-color:#8eb4ff;
+  background:#f3f8ff;
+}
+.option:disabled{cursor:default}
+
+.option-letter{
+  flex:0 0 27px;
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e9eff8;
+  color:#27466e;
+  font-size:11px;
+  font-weight:800;
+}
+
+.option-content{
+  flex:1;
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+
+.option-en{
+  display:block;
+  font-weight:700;
+}
+
+.option-hi{
+  display:block;
+  margin-top:4px;
+  color:#617793;
+  font-size:11px;
+  line-height:1.55;
+}
+
+/* Answer cannot be changed after selection */
+.option.correct-answer,
+.option.correct{
+  border-color:#69d5aa;
+  background:#e9fbf3;
+}
+.option.correct-answer .option-letter,
+.option.correct .option-letter{
+  background:#c9f5e2;
+  color:#087e53;
+}
+
+.option.wrong{
+  border-color:#f0a0aa;
+  background:#fff0f2;
+}
+.option.wrong .option-letter{
+  background:#ffdade;
+  color:#c72d42;
+}
+
+.answer-status{display:none!important}
+
+/* Explanation */
+.explanation{
+  display:none;
+  margin-top:12px;
+  padding:13px 15px;
+  border:1px solid #a8e5c9;
+  border-radius:11px;
+  background:#eafaf2;
+  color:#205c46;
+  font-size:13px;
+  line-height:1.7;
+  overflow-wrap:anywhere;
+}
+.explanation.show{display:block!important}
+
+.explanation-title{
+  margin-bottom:6px;
+  color:#087e53;
+  font-weight:800;
+}
+.explanation-hi{margin-top:6px}
+
+/* Previous and Next */
+.action-area{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:17px;
+}
+
+.nav-btn{
+  min-height:41px;
+  padding:11px 19px;
+  border:0;
+  border-radius:10px;
+  background:var(--blue);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.nav-btn:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+
+#previousBtn{
+  margin-right:auto;
+  background:#e5edfb;
+  border:1px solid #cbdaf1;
+  color:#31547e;
+}
+
+#nextBtn{margin-left:auto}
+
+/* Completion and access */
+.completed,.access-box{
+  display:none;
+  padding:32px 20px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:#fff;
+  text-align:center;
+}
+
+.completed h2,.access-box h2{margin:0 0 9px}
+
+.completed p,.access-box p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+.review-btn,.buy-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 21px;
+  border-radius:9px;
+  background:var(--blue);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* Instructions popup */
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  background:rgba(15,34,61,.48);
+}
+
+.modal{
+  width:100%;
+  max-width:510px;
+  max-height:90vh;
+  overflow:auto;
+  padding:25px;
+  border:1px solid #d4e1f2;
+  border-radius:17px;
+  background:#fff;
+  box-shadow:0 20px 70px rgba(20,45,80,.22);
+}
+
+.modal h2{
+  margin:0 0 7px;
+  font-size:22px;
+}
+
+.modal-subtitle{
+  margin:0 0 18px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.instructions{
+  display:grid;
+  gap:11px;
+  margin:0 0 22px;
+  padding:0;
+  list-style:none;
+}
+
+.instructions li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  color:#334c6d;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.goto-instruction{
+  padding:12px;
+  border:2px solid #f59e0b;
+  border-radius:12px;
+  background:#fff7df;
+  color:#713f12 !important;
+  box-shadow:0 0 0 3px rgba(245,158,11,.12);
+}
+.goto-instruction strong{color:#92400e}
+
+.instruction-mark{
+  flex:0 0 23px;
+  width:23px;
+  height:23px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e8f0ff;
+  color:#3264f5;
+  font-size:12px;
+  font-weight:800;
+}
+
+.modal-buttons{display:flex;gap:10px}
+
+.cancel-btn,.start-btn{
+  flex:1;
+  min-height:44px;
+  padding:11px 15px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.cancel-btn{
+  border:1px solid var(--border);
+  background:#f5f8fd;
+  color:#425b7b;
+}
+
+.start-btn{
+  border:0;
+  background:var(--blue);
+  color:#fff;
+}
+
+.countdown-number{
+  margin:15px 0;
+  color:var(--blue);
+  font-size:43px;
+  font-weight:900;
+  text-align:center;
+}
+
+.countdown-caption{
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+}
+
+
+/* Submit confirmation popup */
+.submit-modal{
+  max-width:430px;
+  padding:24px;
+}
+.submit-modal-header{
+  text-align:center;
+  margin-bottom:18px;
+}
+.submit-modal-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:#e8f0ff;
+  color:#3264f5;
+  font-size:24px;
+  font-weight:900;
+}
+.submit-modal-header h2{
+  margin:0 0 6px;
+  color:#173b70;
+  font-size:22px;
+}
+.submit-modal-subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+.submit-counts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:18px 0;
+}
+.submit-count-card{
+  padding:15px 10px;
+  border:1px solid transparent;
+  border-radius:13px;
+  text-align:center;
+}
+.submit-count-card strong{
+  display:block;
+  margin-bottom:5px;
+  font-size:27px;
+  line-height:1.1;
+}
+.submit-count-card span{
+  font-size:11px;
+  font-weight:800;
+}
+.submit-attempted{
+  background:#e7f8ef;
+  border-color:#b6e8cf;
+  color:#138754;
+}
+.submit-unattempted{
+  background:#fff4e2;
+  border-color:#f0dfb9;
+  color:#b87512;
+}
+.submit-question{
+  margin:0 0 13px;
+  color:#334c6d;
+  font-size:13px;
+  line-height:1.6;
+}
+.submit-warning{
+  margin-bottom:18px;
+  padding:12px;
+  border:1px solid #f2c9ce;
+  border-radius:10px;
+  background:#fff2f2;
+  color:#b42336;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.6;
+}
+.submit-modal-buttons{
+  display:flex;
+  gap:10px;
+}
+.submit-cancel-btn,.submit-confirm-btn{
+  flex:1;
+  min-height:43px;
+  padding:11px 12px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+.submit-cancel-btn{
+  border:1px solid var(--border);
+  background:#f5f8fd;
+  color:#425b7b;
+}
+.submit-confirm-btn{
+  border:0;
+  background:var(--blue);
+  color:#fff;
+}
+.submit-confirm-btn:disabled{
+  opacity:.6;
+  cursor:wait;
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .course-header{
+    grid-template-columns:minmax(0,1fr);
+    gap:12px;
+    padding:15px 17px;
+  }
+  .course-title{font-size:23px}
+  .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .page{padding:10px 9px 22px}
+
+  .course-header{
+    grid-template-columns:minmax(0,1fr);
+    gap:10px;
+    width:100%;
+    padding:13px 12px;
+    margin-bottom:10px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#b8d2f6 0%,#a9c6ef 100%);
+  }
+
+  .course-label{
+    margin-bottom:5px;
+    font-size:9px;
+  }
+
+  .course-title{
+    font-size:21px;
+    line-height:1.3;
+  }
+
+  .stats{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;
+  }
+
+  .stat{
+    min-height:48px;
+    padding:6px 2px;
+    gap:4px;
+    border-radius:15px;
+  }
+
+  .stat-number{font-size:16px}
+  .stat-label{font-size:7px}
+
+  .question-card{
+    width:100%;
+    min-width:0;
+    padding:17px 13px 15px;
+    border-radius:14px;
+    background:#fff;
+  }
+
+  .question-number{
+    margin-bottom:12px;
+    font-size:10px;
+  }
+
+  .question{
+    font-size:17px;
+    line-height:1.55;
+  }
+
+  .question-hi{
+    margin-top:9px;
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .options{
+    grid-template-columns:minmax(0,1fr);
+    gap:8px;
+    width:100%;
+    margin-top:17px;
+  }
+
+  .option{
+    min-height:53px;
+    padding:10px;
+    gap:9px;
+    border-radius:11px;
+    font-size:12px;
+  }
+
+  .option-letter{
+    flex-basis:26px;
+    width:26px;
+    height:26px;
+  }
+
+  .option-hi{
+    font-size:11px;
+    line-height:1.55;
+  }
+
+  .explanation{
+    margin-top:10px;
+    padding:11px 12px;
+    font-size:12px;
+    line-height:1.7;
+  }
+
+  .action-area{margin-top:13px}
+
+  .nav-btn{
+    min-height:42px;
+    padding:10px 13px;
+    font-size:11px;
+  }
+
+  .submit-modal{padding:21px 16px}
+  .submit-modal-header h2{font-size:20px}
+  .submit-count-card{padding:13px 8px}
+  .submit-count-card strong{font-size:24px}
+
+  .modal{
+    padding:21px 16px;
+    border-radius:15px;
+  }
+
+  .modal h2{font-size:20px}
+
+  .instructions li{
+    font-size:12px;
+    line-height:1.6;
+  }
+}
+
+@media(max-width:360px){
+  .page{padding:8px 7px 18px}
+  .course-header{padding:12px 9px}
+  .course-title{font-size:19px}
+  .stats{gap:4px}
+  .stat{padding:6px 1px}
+  .stat-number{font-size:14px}
+  .stat-label{font-size:6px}
+  .question-card{padding:15px 11px}
+  .question{font-size:16px}
+  .question-hi{font-size:14px}
+  .nav-btn{padding:10px 9px}
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+  <div class="loading" id="loading">Loading course...</div>
+
+  <div class="access-box" id="accessBox">
+    <h2>Premium Access Required</h2>
+    <p id="accessMessage">Your course access is not active.</p>
+    <a class="buy-btn" id="buyBtn" href="#">Buy Access</a>
+  </div>
+
+  <section id="practice" style="display:none">
+
+    <div class="course-header">
+      <div class="course-info">
+        <div class="course-label">JOA IT Maha Pack</div>
+        <div class="course-title-row">
+          <h1 class="course-title" id="courseTitle">Computer Fundamentals</h1>
+          <button class="go-to-btn" id="goToToggleBtn" type="button" aria-expanded="false" aria-controls="goToPanel">Go To</button>
+        </div>
+        <div class="go-to-panel" id="goToPanel">
+          <input class="go-to-input" id="goToInput" type="number" min="1" step="1" placeholder="Q. number" aria-label="Question number">
+          <button class="go-to-submit" id="goToSubmitBtn" type="button">Go</button>
+        </div>
+        <div class="go-to-error" id="goToError" role="status"></div>
+      </div>
+
+      <div class="stats">
+        <div class="stat attempted">
+          <div class="stat-number" id="attemptedCount">0</div>
+          <div class="stat-label">Attempted</div>
+        </div>
+        <div class="stat correct">
+          <div class="stat-number" id="correctCount">0</div>
+          <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat wrong">
+          <div class="stat-number" id="wrongCount">0</div>
+          <div class="stat-label">Wrong</div>
+        </div>
+        <div class="stat unattempted">
+          <div class="stat-number" id="unattemptedCount">400</div>
+          <div class="stat-label">Not Attempted</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="question-card" id="questionCard">
+      <div class="question-number" id="questionNumber">Question 1</div>
+      <div class="question" id="questionText"></div>
+      <div class="options" id="options"></div>
+      <div class="answer-status" id="answerStatus"></div>
+      <div class="explanation" id="explanation"></div>
+
+      <div class="action-area">
+        <button class="nav-btn" id="previousBtn" disabled>← Previous</button>
+        <button class="nav-btn" id="nextBtn">Next Question →</button>
+      </div>
+    </section>
+
+    <section class="completed" id="completed">
+      <h2>Practice Completed</h2>
+      <p>Your attempt has been saved. You can review your answers and explanations.</p>
+      <a class="review-btn" id="reviewBtn" href="#">Review Practice →</a>
+    </section>
+
+  </section>
+</main>
+
+<div class="modal-backdrop" id="startModal" style="display:none">
+  <div class="modal">
+    <h2 id="modalTitle">Course Instructions</h2>
+    <p class="modal-subtitle" id="modalSubtitle">Please read the instructions before starting your practice.</p>
+
+    <ul class="instructions">
+      <li><span class="instruction-mark">✓</span><span id="instructionTotal">This course contains 400 questions.</span></li>
+      <li><span class="instruction-mark">✓</span><span>There is no time limit. You can attempt questions whenever you want.</span></li>
+      <li><span class="instruction-mark">✓</span><span>Your progress is automatically saved. You can leave at any time and resume where you stopped.</span></li>
+      <li><span class="instruction-mark">✓</span><span>The selected answer is marked immediately: green for correct and red for an incorrect selection.</span></li>
+      <li><span class="instruction-mark">✓</span><span>An explanation is shown after answering whenever it is available in the question bank.</span></li>
+      <li class="goto-instruction"><span class="instruction-mark">↗</span><span><strong>Go To option:</strong> Use the <strong>Go To</strong> button beside the course title to jump directly to any question number. Skipped questions will remain unattempted unless you select an answer.</span></li>
+      <li><span class="instruction-mark">✓</span><span>You have one attempt. After completion, you can review your saved attempt.</span></li>
+    </ul>
+
+    <div class="modal-buttons">
+      <button class="cancel-btn" id="cancelBtn">Cancel</button>
+      <button class="start-btn" id="startBtn">Start Practice →</button>
+    </div>
+
+    <div id="countdownArea" style="display:none">
+      <div class="countdown-number" id="countdownNumber">5</div>
+      <div class="countdown-caption">Your practice will start shortly...</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-backdrop" id="submitModal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="submitModalTitle">
+  <div class="modal submit-modal">
+    <div class="submit-modal-header">
+      <div class="submit-modal-icon">✓</div>
+      <h2 id="submitModalTitle">Submit Your Practice?</h2>
+      <p class="submit-modal-subtitle" id="submitCourseSubtitle">Review your progress before submitting.</p>
+    </div>
+
+    <div class="submit-counts">
+      <div class="submit-count-card submit-attempted">
+        <strong id="submitAttemptedCount">0</strong>
+        <span>Attempted</span>
+      </div>
+      <div class="submit-count-card submit-unattempted">
+        <strong id="submitUnattemptedCount">0</strong>
+        <span>Not Attempted</span>
+      </div>
+    </div>
+
+    <p class="submit-question">Are you sure you want to submit your practice?</p>
+    <div class="submit-warning">
+      Warning: You will not be able to attempt any remaining questions or change your answers after submission.
+    </div>
+
+    <div class="submit-modal-buttons">
+      <button class="submit-cancel-btn" id="cancelSubmitBtn" type="button">Cancel</button>
+      <button class="submit-confirm-btn" id="confirmSubmitBtn" type="button">Submit Practice</button>
+    </div>
+  </div>
+</div>
+
+
+<script type="module">
+import {auth,db} from "../firebase-config.js";
+
+import {onAuthStateChanged} from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+  doc,getDoc,setDoc,serverTimestamp
+} from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const $ = id => document.getElementById(id);
+
+const fileName = location.pathname.split("/").pop().replace(/\.html$/i,"");
+const COURSE_ID = fileName.replace(/^paid-/i,"").toLowerCase();
+const TEST_ID = COURSE_ID.replace(/-/g,"_") + "_01";
+
+const TITLES = {
+  "computer-fundamentals":"Computer Fundamentals",
+  "ms-word":"MS Word",
+  "ms-excel":"MS Excel",
+  "ms-powerpoint":"MS PowerPoint",
+  "ms-access":"MS Access",
+  "dbms-sql":"DBMS & SQL",
+  "computer-networking":"Computer Networking",
+  "cyber-security":"Cyber Security",
+  "c-programming":"C Programming",
+  "html":"HTML",
+  "css-css3":"CSS & CSS3",
+  "cloud-computing":"Cloud Computing",
+  "data-structure":"Data Structure",
+  "computer-organisation":"Computer Organisation",
+  "operating-system":"Operating System"
+};
+
+const COURSE_TITLE = TITLES[COURSE_ID] ||
+  COURSE_ID.split("-").map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join(" ");
+
+document.title = `${COURSE_TITLE} | HPMockShashtra`;
+$("courseTitle").textContent = COURSE_TITLE;
+$("modalTitle").textContent = `${COURSE_TITLE} – Instructions`;
+$("buyBtn").href = `../payment.html?product=${encodeURIComponent(COURSE_ID)}`;
+$("reviewBtn").href = `./mahapack-study.html?test=${TEST_ID}`;
+
+let QUESTIONS = [];
+
+try{
+  const bank = await import(`./${COURSE_ID}.js`);
+  QUESTIONS = Array.isArray(bank.QUESTIONS) ? bank.QUESTIONS : [];
+
+  if(!QUESTIONS.length){
+    throw new Error("Question bank does not export a non-empty QUESTIONS array.");
+  }
+
+  $("instructionTotal").textContent =
+    `This course contains ${QUESTIONS.length} questions.`;
+
+  $("unattemptedCount").textContent = QUESTIONS.length;
+}catch(error){
+  console.error("Question bank load error:",error);
+  $("loading").textContent =
+    `Question bank could not be loaded: ${COURSE_ID}.js`;
+  throw error;
+}
+
+const OFFICE_COURSES = ["ms-word","ms-excel","ms-powerpoint","ms-access"];
+
+let currentUser = null;
+let sessionRef = null;
+let attemptRef = null;
+let state = {current:0,answers:{},submitted:false};
+let countdownStarted = false;
+let moving = false;
+
+function toDate(value){
+  if(!value) return null;
+  if(typeof value.toDate === "function") return value.toDate();
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function activeAccess(item){
+  if(!item) return false;
+
+  const expiry = toDate(item.expiresAt);
+  const purchase = toDate(item.purchasedAt);
+
+  return !!expiry &&
+    expiry.getTime() > Date.now() &&
+    (!purchase || purchase.getTime() <= Date.now());
+}
+
+function hasCourseAccess(data){
+  if(activeAccess(data?.mahapackAccess?.courses?.[COURSE_ID])) return true;
+
+  if(
+    OFFICE_COURSES.includes(COURSE_ID) &&
+    activeAccess(data?.mahapackAccess?.packs?.["ms-office"])
+  ) return true;
+
+  if(activeAccess(data?.mahapackAccess?.packs?.["computer-master"])) return true;
+
+  /* Legacy access support */
+  if(activeAccess(data?.computerAccess?.courses?.[COURSE_ID])) return true;
+
+  if(
+    OFFICE_COURSES.includes(COURSE_ID) &&
+    activeAccess(data?.computerAccess?.packs?.["ms-office"])
+  ) return true;
+
+  return activeAccess(data?.computerAccess?.packs?.["computer-master"]);
+}
+
+function normalizeAnswers(data){
+  const out = {};
+  if(!data || typeof data !== "object") return out;
+
+  for(const key of Object.keys(data)){
+    const value = Number(data[key]);
+
+    if(
+      Number.isInteger(value) &&
+      value >= 0 &&
+      value < QUESTIONS.length
+    ){
+      out[key] = value;
+    }
+  }
+
+  return out;
+}
+
+function answerIndex(answer){
+  if(typeof answer === "number") return answer;
+  if(typeof answer !== "string") return -1;
+
+  const value = answer.trim().toUpperCase();
+
+  if(["A","B","C","D"].includes(value)){
+    return value.charCodeAt(0)-65;
+  }
+
+  const n = Number(value);
+  return Number.isInteger(n) ? n : -1;
+}
+
+function esc(value){
+  return String(value ?? "").replace(/[&<>"']/g,c=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
+  })[c]);
+}
+
+function bilingual(value,lang){
+  if(value && typeof value === "object"){
+    return value[lang] ?? value.en ?? value.hi ?? "";
+  }
+  return value ?? "";
+}
+
+function getExplanation(q){
+  const value =
+    q.explanation ??
+    q.explain ??
+    q.explanation_en ??
+    q.explanation_hi ??
+    "";
+
+  if(typeof value === "string"){
+    return {en:value,hi:""};
+  }
+
+  if(value && typeof value === "object"){
+    return {
+      en:value.en ?? value.english ?? "",
+      hi:value.hi ?? value.hindi ?? ""
+    };
+  }
+
+  return {en:"",hi:""};
+}
+
+function updateStats(){
+  const keys = Object.keys(state.answers);
+  let correct = 0;
+
+  for(const key of keys){
+    const q = QUESTIONS[Number(key)];
+    if(q && answerIndex(q.answer) === Number(state.answers[key])){
+      correct++;
+    }
+  }
+
+  const attempted = keys.length;
+
+  $("attemptedCount").textContent = attempted;
+  $("correctCount").textContent = correct;
+  $("wrongCount").textContent = attempted-correct;
+  $("unattemptedCount").textContent = QUESTIONS.length-attempted;
+}
+
+async function saveSession(){
+  try{
+    await setDoc(sessionRef,{
+      uid:currentUser.uid,
+      testId:TEST_ID,
+      current:state.current,
+      answers:state.answers,
+      status:"in_progress",
+      questionCount:QUESTIONS.length,
+      updatedAt:serverTimestamp()
+    },{merge:true});
+
+    return true;
+  }catch(error){
+    console.error("Session save error:",error);
+    return false;
+  }
+}
+
+async function loadSession(){
+  const snap = await getDoc(sessionRef);
+
+  if(snap.exists()){
+    const data = snap.data();
+
+    state.current = Math.max(
+      0,
+      Math.min(Number(data.current)||0,QUESTIONS.length-1)
+    );
+
+    state.answers = normalizeAnswers(data.answers);
+    state.submitted = false;
+
+    return false;
+  }
+
+  state = {current:0,answers:{},submitted:false};
+
+  const saved = await saveSession();
+
+  if(!saved){
+    throw new Error("Could not initialize the practice session.");
+  }
+
+  return true;
+}
+
+function renderQuestion(){
+  if(state.submitted){
+    showCompleted();
+    return;
+  }
+
+  const q = QUESTIONS[state.current];
+  if(!q) return;
+
+  const selected = state.answers[state.current];
+  const answered = selected !== undefined;
+  const correct = answerIndex(q.answer);
+
+  $("questionNumber").textContent =
+    `Question ${state.current+1} of ${QUESTIONS.length}`;
+
+  $("questionText").innerHTML = `
+    <span class="question-en">${esc(q.en || "")}</span>
+    ${q.hi ? `<span class="question-hi">${esc(q.hi)}</span>` : ""}
+  `;
+
+  const options = $("options");
+  options.innerHTML = "";
+
+  q.options.forEach((option,index)=>{
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "option";
+
+    const optionEn = bilingual(option,"en");
+    const optionHi = bilingual(option,"hi");
+
+    button.innerHTML = `
+      <span class="option-letter">${String.fromCharCode(65+index)}</span>
+      <span class="option-content">
+        <span class="option-en">${esc(optionEn)}</span>
+        ${optionHi ? `<span class="option-hi">${esc(optionHi)}</span>` : ""}
+      </span>
+    `;
+
+    if(answered){
+      button.disabled = true;
+
+      if(index === correct){
+        button.classList.add("correct-answer");
+      }
+
+      if(index === selected && selected === correct){
+        button.classList.add("correct");
+      }
+
+      if(index === selected && selected !== correct){
+        button.classList.add("wrong");
+      }
+    }else{
+      button.addEventListener("click",()=>selectAnswer(index));
+    }
+
+    options.appendChild(button);
+  });
+
+  const explanation = $("explanation");
+
+  if(answered){
+    const exp = getExplanation(q);
+
+    if(String(exp.en).trim() || String(exp.hi).trim()){
+      explanation.className = "explanation show";
+      explanation.innerHTML = `
+        <div class="explanation-title">Explanation</div>
+        ${exp.en ? `<div>${esc(exp.en)}</div>` : ""}
+        ${exp.hi ? `<div class="explanation-hi">${esc(exp.hi)}</div>` : ""}
+      `;
+    }else{
+      explanation.className = "explanation";
+      explanation.innerHTML = "";
+    }
+  }else{
+    explanation.className = "explanation";
+    explanation.innerHTML = "";
+  }
+
+  $("previousBtn").disabled = state.current === 0;
+
+  $("nextBtn").textContent =
+    state.current === QUESTIONS.length-1
+      ? "Finish Practice →"
+      : "Next Question →";
+
+  /* Navigation is allowed even when a question is unanswered. */
+  $("nextBtn").disabled = false;
+
+  updateStats();
+}
+
+async function selectAnswer(index){
+  /* Once answered, an answer cannot be changed. */
+  if(state.answers[state.current] !== undefined) return;
+
+  state.answers[state.current] = index;
+  renderQuestion();
+
+  const saved = await saveSession();
+
+  if(!saved){
+    console.warn("Answer displayed, but cloud save failed. Check Firebase Rules/network.");
+  }
+}
+
+async function navigateTo(index){
+  if(moving || state.submitted) return;
+  if(index < 0 || index >= QUESTIONS.length) return;
+
+  moving = true;
+  $("previousBtn").disabled = true;
+  $("nextBtn").disabled = true;
+
+  const oldIndex = state.current;
+  state.current = index;
+
+  try{
+    const saved = await saveSession();
+
+    if(!saved){
+      state.current = oldIndex;
+      renderQuestion();
+      alert("Progress save नहीं हो पाया। कृपया दोबारा कोशिश करें।");
+      return;
+    }
+
+    renderQuestion();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }finally{
+    moving = false;
+    if(!state.submitted) renderQuestion();
+  }
+}
+
+async function nextQuestion(){
+  if(moving || state.submitted) return;
+
+  if(state.current < QUESTIONS.length-1){
+    await navigateTo(state.current+1);
+  }else{
+    await completeAttempt();
+  }
+}
+
+async function previousQuestion(){
+  if(moving || state.submitted || state.current <= 0) return;
+  await navigateTo(state.current-1);
+}
+
+async function completeAttempt(){
+  if(moving || state.submitted) return;
+
+  const attempted = Object.keys(state.answers).length;
+  const unattempted = QUESTIONS.length - attempted;
+
+  $("submitAttemptedCount").textContent = attempted;
+  $("submitUnattemptedCount").textContent = unattempted;
+  $("submitCourseSubtitle").textContent =
+    `${COURSE_TITLE} · ${QUESTIONS.length} Questions`;
+  $("submitModal").style.display = "flex";
+}
+
+async function submitAttempt(){
+  if(moving || state.submitted) return;
+
+  moving = true;
+  $("cancelSubmitBtn").disabled = true;
+  $("confirmSubmitBtn").disabled = true;
+  $("confirmSubmitBtn").textContent = "Submitting...";
+  $("previousBtn").disabled = true;
+  $("nextBtn").disabled = true;
+
+  const keys = Object.keys(state.answers);
+  let correct = 0;
+
+  for(const key of keys){
+    const q = QUESTIONS[Number(key)];
+    if(q && answerIndex(q.answer) === Number(state.answers[key])){
+      correct++;
+    }
+  }
+
+  const attempted = keys.length;
+
+  try{
+    await setDoc(attemptRef,{
+      uid:currentUser.uid,
+      testId:TEST_ID,
+      questionCount:QUESTIONS.length,
+      attempted,
+      correct,
+      wrong:attempted-correct,
+      unattempted:QUESTIONS.length-attempted,
+      answers:state.answers,
+      status:"completed",
+      completedAt:serverTimestamp()
+    });
+
+    await setDoc(sessionRef,{
+      status:"completed",
+      completedAt:serverTimestamp(),
+      updatedAt:serverTimestamp()
+    },{merge:true});
+
+    state.submitted = true;
+    $("submitModal").style.display = "none";
+    showCompleted();
+  }catch(error){
+    console.error("Attempt save error:",error);
+    alert("Your attempt could not be submitted. Please try again.");
+    $("cancelSubmitBtn").disabled = false;
+    $("confirmSubmitBtn").disabled = false;
+    $("confirmSubmitBtn").textContent = "Submit Practice";
+    renderQuestion();
+  }finally{
+    moving = false;
+  }
+}
+
+function showCompleted(){
+  $("questionCard").style.display = "none";
+  $("completed").style.display = "block";
+  $("startModal").style.display = "none";
+  $("submitModal").style.display = "none";
+  updateStats();
+}
+
+function startCountdown(){
+  if(countdownStarted) return;
+  countdownStarted = true;
+
+  // Once Start Practice is clicked, show only the 5-second countdown.
+  $("modalTitle").style.display = "none";
+  $("modalSubtitle").style.display = "none";
+  document.querySelector("#startModal .instructions").style.display = "none";
+  document.querySelector("#startModal .modal-buttons").style.display = "none";
+  $("countdownArea").style.display = "block";
+
+  let seconds = 5;
+  $("countdownNumber").textContent = seconds;
+
+  const timer = setInterval(()=>{
+    seconds--;
+    $("countdownNumber").textContent = seconds;
+
+    if(seconds <= 0){
+      clearInterval(timer);
+      $("startModal").style.display = "none";
+      renderQuestion();
+    }
+  },1000);
+}
+
+$("cancelBtn").addEventListener("click",()=>{
+  location.href = "./joa-mahapack.html";
+});
+
+$("startBtn").addEventListener("click",startCountdown);
+$("cancelSubmitBtn").addEventListener("click",()=>{
+  if(moving) return;
+  $("submitModal").style.display = "none";
+});
+$("confirmSubmitBtn").addEventListener("click",submitAttempt);
+$("previousBtn").addEventListener("click",previousQuestion);
+$("nextBtn").addEventListener("click",nextQuestion);
+
+/* Jump directly to a question without marking skipped questions as attempted. */
+function submitGoToQuestion(){
+  const input = $("goToInput");
+  const error = $("goToError");
+  const questionNumber = Number(input.value);
+
+  if(!Number.isInteger(questionNumber) || questionNumber < 1 || questionNumber > QUESTIONS.length){
+    error.textContent = `Enter a question number from 1 to ${QUESTIONS.length}.`;
+    error.classList.add("show");
+    input.focus();
+    return;
+  }
+
+  error.textContent = "";
+  error.classList.remove("show");
+  $("goToPanel").classList.remove("show");
+  $("goToToggleBtn").setAttribute("aria-expanded","false");
+  input.value = "";
+  navigateTo(questionNumber - 1);
+}
+
+$("goToToggleBtn").addEventListener("click",()=>{
+  const panel = $("goToPanel");
+  const isOpen = panel.classList.toggle("show");
+  $("goToToggleBtn").setAttribute("aria-expanded",String(isOpen));
+  $("goToError").classList.remove("show");
+  if(isOpen){
+    $("goToInput").focus();
+  }
+});
+$("goToSubmitBtn").addEventListener("click",submitGoToQuestion);
+$("goToInput").addEventListener("keydown",event=>{
+  if(event.key === "Enter") submitGoToQuestion();
+});
+
+onAuthStateChanged(auth,async user=>{
+  if(!user){
+    const redirect = encodeURIComponent(location.pathname.split("/").pop());
+    location.href = `../firebase-login.html?redirect=${redirect}`;
+    return;
+  }
+
+  currentUser = user;
+
+  try{
+    const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
+    const accessData = accessSnap.exists() ? accessSnap.data() : {};
+
+    if(!hasCourseAccess(accessData)){
+      $("loading").style.display = "none";
+      $("accessBox").style.display = "block";
+      $("accessMessage").textContent =
+        `${COURSE_TITLE} access is not active.`;
+      return;
+    }
+
+    sessionRef = doc(
+      db,"users",user.uid,"mahapackSessions",TEST_ID
+    );
+
+    attemptRef = doc(
+      db,"users",user.uid,"mahapackAttempts",TEST_ID
+    );
+
+    const finalSnap = await getDoc(attemptRef);
+
+    if(finalSnap.exists()){
+      const finalData = finalSnap.data();
+
+      state.answers = normalizeAnswers(finalData.answers);
+      state.submitted = true;
+
+      $("loading").style.display = "none";
+      $("practice").style.display = "block";
+      showCompleted();
+      return;
+    }
+
+    const isFreshSession = await loadSession();
+
+    $("loading").style.display = "none";
+    $("practice").style.display = "block";
+    updateStats();
+
+    // Show instructions only before the first answer has been attempted.
+    // Returning users with saved answers go straight back to their session.
+    if(Object.keys(state.answers).length === 0){
+      countdownStarted = false;
+      $("modalTitle").style.display = "";
+      $("modalSubtitle").style.display = "";
+      document.querySelector("#startModal .instructions").style.display = "";
+      document.querySelector("#startModal .modal-buttons").style.display = "";
+      $("startBtn").style.display = "";
+      $("cancelBtn").style.display = "";
+      $("countdownArea").style.display = "none";
+      $("startModal").style.display = "flex";
+    }else{
+      $("startModal").style.display = "none";
+      renderQuestion();
+    }
+
+  }catch(error){
+    console.error("Initialization error:",error);
+    $("loading").textContent =
+      "Practice load नहीं हो सकी। Firebase access, Rules और network जाँचें।";
+  }
+});
+</script>
+</body>
+</html>
