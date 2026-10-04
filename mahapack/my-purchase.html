@@ -459,6 +459,17 @@ body:before,body:after{display:none!important}
   .footer-bottom{flex-direction:column!important;gap:8px!important}
 }
 
+
+/* Public My Purchases page: signed-out visitor prompt */
+.primary-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:12px;padding:11px 20px;border-radius:9px;
+  color:#fff!important;text-decoration:none!important;font-size:12px;font-weight:800;
+  background:linear-gradient(135deg,#2563eb,#4f46e5);
+  box-shadow:0 5px 14px rgba(37,99,235,.18);
+}
+.primary-btn:hover{filter:brightness(1.06)}
+
 </style>
 </head>
 
@@ -545,7 +556,7 @@ body:before,body:after{display:none!important}
     <div class="empty-icon">▣</div>
     <h3>No purchases found</h3>
     <p>Your account does not have any purchase records yet.</p>
-    <a class="explore" href="joa-mahapack.html">Explore Courses →</a>
+    
   </div>
 
 </main>
@@ -848,31 +859,53 @@ function render(data){
   const count=items.length;
   $("tableShell").style.display=count ? "block" : "none";
   $("emptyState").style.display=count ? "none" : "block";
+  if (!count) {
+    $("emptyState").innerHTML = `
+      <div class="empty-icon">▣</div>
+      <h3>No Purchases Yet</h3>
+      <p>No purchased courses or test series are linked to your account.</p>
+    `;
+  }
 }
 
-onAuthStateChanged(auth,async user=>{
-  if(!user){
-    window.location.href="firebase-login.html?redirect=my-purchase.html";
+onAuthStateChanged(auth, async user => {
+  // Public page: guests can view the page, but never any purchase records.
+  $("loadingScreen").classList.add("hidden");
+  $("page").classList.remove("hidden");
+
+  if (!user) {
+    $("headerUserName").textContent = "Guest";
+    $("headerAvatar").textContent = "G";
+    $("logoutBtn").style.display = "none";
+    $("profileName").textContent = "Guest";
+    $("profileEmail").textContent = "Sign in to view your purchases";
+    $("tableShell").style.display = "none";
+    $("emptyState").style.display = "block";
+    $("emptyState").innerHTML = `
+      <div class="empty-icon">🔐</div>
+      <h3>Sign In to View Your Purchases</h3>
+      <p>Please sign in to your HPMockShashtra account to view your purchased courses and test series.</p>
+      <a class="primary-btn" href="firebase-login.html?redirect=my-purchase.html">Login to Your Account</a>
+    `;
     return;
   }
 
-  const displayName=user.displayName || user.email?.split("@")[0] || "Student";
+  const displayName = user.displayName || user.email?.split("@")[0] || "Student";
+  $("headerUserName").textContent = displayName;
+  $("headerAvatar").textContent = initial(displayName);
+  $("profileName").textContent = displayName;
+  $("profileEmail").textContent = user.email || "—";
+  $("logoutBtn").style.display = "";
 
-  $("headerUserName").textContent=displayName;
-  $("headerAvatar").textContent=initial(displayName);
-  $("profileName").textContent=displayName;
-  $("profileEmail").textContent=user.email || "—";
-
-  try{
-    const snap=await getDoc(doc(db,"testAccess",user.uid));
-    render(snap.exists()?snap.data():{});
-  }catch(error){
-    console.error("My Purchase error:",error);
+  try {
+    const snap = await getDoc(doc(db, "testAccess", user.uid));
+    // render() lists only access records belonging to this authenticated user.
+    // If no purchase/access exists, it shows the normal empty state.
+    render(snap.exists() ? snap.data() : {});
+  } catch (error) {
+    console.error("My Purchase error:", error);
     render({});
   }
-
-  $("loadingScreen").classList.add("hidden");
-  $("page").classList.remove("hidden");
 });
 
 const mobileMenuBtn=$("mobileMenuBtn");
