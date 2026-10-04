@@ -378,6 +378,87 @@ body:before{
 .product-name{font-size:11px}
 .product-desc{font-size:8.5px}
 
+
+/* Shared header/footer theme from mahapack/joa-mahapack.html */
+body{background:#f5f8fd!important;color:#172554!important}
+body:before,body:after{display:none!important}
+.topbar{
+  top:12px!important;left:50%!important;transform:translateX(-50%)!important;
+  width:calc(100% - 28px)!important;min-height:70px!important;
+  padding:8px 12px 8px 14px!important;
+  border:1px solid rgba(185,155,255,.48)!important;border-radius:17px!important;
+  background:rgba(35,38,91,.96)!important;backdrop-filter:blur(24px) saturate(140%)!important;
+  box-shadow:none!important;
+}
+.nav{width:calc(100% - 40px)!important;max-width:none!important;min-height:88px!important;margin:auto!important;gap:22px!important}
+.logo,.logo img{width:72px!important;height:68px!important}
+.brand-title{font-size:22px!important}
+.brand-hp,.brand-shashtra{color:#fff!important}
+.brand-mock{color:#2563eb!important}
+.tagline{display:block!important;color:#91a5c2!important;font-size:8px!important;font-weight:700!important;margin-top:4px!important}
+.header-links{display:flex!important;align-items:center!important;gap:18px!important}
+.header-links a{padding:0!important;border:0!important;background:none!important;box-shadow:none!important;color:#dce8ff!important;font-size:11px!important;font-weight:800!important}
+.header-links a:hover,.header-links a.active{color:#67e8f9!important;background:none!important;border:0!important;box-shadow:none!important}
+.header-user{display:flex!important;align-items:center!important;gap:7px!important;padding:0!important;border:0!important;background:none!important;color:#fff!important;font-size:12px!important}
+.avatar{background:linear-gradient(135deg,#2563eb,#4f46e5)!important;color:#fff!important;border:0!important;box-shadow:none!important}
+.logout-btn{padding:11px 17px!important;border-radius:9px!important;color:#fff!important;background:linear-gradient(135deg,#58e5ff,#27d99a)!important;font-size:11px!important}
+.page-head{background:linear-gradient(135deg,#eef6ff,#f8fbff 55%,#eef2ff)!important;border-color:#dce8f7!important;box-shadow:0 10px 25px rgba(15,23,42,.05)!important}
+.page-head h1{color:#172554!important}
+.page-head h1 span{background:linear-gradient(90deg,#2563eb,#4f46e5)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+.page-head p,.account-chip{color:#64748b!important}
+.account-chip{background:#fff!important;border-color:#dbe7f5!important}
+.account-chip strong{color:#172554!important}
+.section-head h2{color:#172554!important}
+.section-head p{color:#64748b!important}
+.table-shell{background:#fff!important;border:1px solid #dbe7f5!important;box-shadow:0 8px 25px rgba(15,23,42,.06)!important}
+.purchase-table th{background:#f1f6fd!important;color:#64748b!important;border-bottom-color:#dbe7f5!important}
+.purchase-table td{color:#475569!important;border-bottom-color:#e7eef7!important}
+.purchase-table tbody tr:hover{background:#f5f9ff!important}
+.product-icon{background:#eef4ff!important;border-color:#dbe7f5!important;color:#2563eb!important;box-shadow:none!important}
+.product-name{color:#172554!important}
+.product-desc{color:#64748b!important}
+.type-badge{background:#eff6ff!important;border-color:#bfdbfe!important;color:#1d4ed8!important}
+.date{color:#475569!important}
+.empty{background:#fff!important;border-color:#bfdbfe!important;color:#172554!important}
+.empty h3{color:#172554!important}
+.empty p{color:#64748b!important}
+.footer{background:linear-gradient(145deg,#061125,#0b1f3b)!important;border-top:1px solid rgba(107,174,255,.10)!important;margin-top:35px!important;color:#fff!important}
+.footer-inner{width:calc(100% - 40px)!important;max-width:none!important;margin:auto!important}
+.footer-top{padding:35px 0 25px!important;display:grid!important;grid-template-columns:1.4fr 1fr 1fr 1fr!important;gap:35px!important}
+.footer h3{margin:0 0 7px!important;font-size:18px!important;color:#fff!important}
+.footer h4{margin:0 0 9px!important;font-size:12px!important;color:#fff!important}
+.footer p{max-width:450px!important;color:#8095b1!important;font-size:10px!important;line-height:1.7!important}
+.footer-links{display:grid!important;gap:7px!important}
+.footer-links a{font-size:10px!important;color:#91a5be!important}
+.footer-links a:hover{color:#66d9ff!important}
+.footer-bottom{padding:14px 0!important;border-top:1px solid #ffffff0c!important;display:flex!important;justify-content:space-between!important;gap:12px!important;color:#91a5be!important;font-size:9px!important}
+.footer-bottom-links{display:flex;flex-wrap:wrap;gap:14px}
+.footer-bottom-links a{color:#91a5be!important;font-size:9px!important}
+.footer-bottom-links a:hover{color:#66d9ff!important}
+@media(max-width:820px){
+  .nav{width:calc(100% - 20px)!important;min-height:70px!important;gap:10px!important}
+  .header-links{gap:10px!important}
+  .header-links a{font-size:9px!important}
+}
+@media(max-width:620px){
+  .nav{width:calc(100% - 20px)!important;min-height:70px!important;gap:7px!important}
+  .logo,.logo img{width:55px!important;height:52px!important}
+  .brand-title{font-size:17px!important}
+  .tagline{font-size:7px!important}
+  .header-links{display:none!important}
+  .mobile-menu-btn{display:grid!important;order:0!important;margin-left:0!important}
+  .brand{order:1!important}
+  .header-user{order:2!important;max-width:116px!important}
+  .logout-btn{font-size:8px!important;padding:8px 9px!important}
+  .mobile-menu{position:absolute!important;top:calc(100% + 7px)!important;left:0!important;right:0!important;z-index:10000!important;background:linear-gradient(145deg,#07152f,#17234a)!important;border:1px solid rgba(126,176,255,.25)!important;border-radius:12px!important;padding:8px!important}
+  .mobile-menu.open{display:grid!important;gap:4px!important}
+  .mobile-menu a{padding:10px 11px!important;border-radius:8px!important;color:#dce8ff!important;font-size:12px!important;font-weight:800!important}
+  .main{padding-top:100px!important}
+  .footer-inner{width:calc(100% - 24px)!important}
+  .footer-top{grid-template-columns:1fr!important;gap:22px!important}
+  .footer-bottom{flex-direction:column!important;gap:8px!important}
+}
+
 </style>
 </head>
 
@@ -390,7 +471,7 @@ body:before{
 <header class="topbar">
   <nav class="nav">
     <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-    <a class="brand" href="joa-mahapack.html">
+    <a class="brand" href="homepage.html">
       <div class="logo"><img src="logo.png" alt="HPMockShashtra Logo"></div>
       <div>
         <div class="brand-title">
@@ -401,9 +482,11 @@ body:before{
     </a>
 
     <div class="header-links">
-      <a href="joa-mahapack.html">Paid Courses</a>
-      <a href="my-purchase.html" class="active">My Purchases</a>
-      <a href="master-progress.html">Master Progress</a>
+      <a href="homepage.html">Home</a>
+      <a href="joa-series.html">JOA (IT)</a>
+      <a href="patwari-series.html">Patwari</a>
+      <a href="about.html">About</a>
+      <a href="mahapack/mahapack-plans.html">Premium Plans</a>
     </div>
 
     <div class="header-user">
@@ -413,9 +496,11 @@ body:before{
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="joa-mahapack.html">Paid Courses</a>
-      <a href="my-purchase.html" class="active">My Purchases</a>
-      <a href="master-progress.html">Master Progress</a>
+      <a href="homepage.html">Home</a>
+      <a href="joa-series.html">JOA (IT)</a>
+      <a href="patwari-series.html">Patwari</a>
+      <a href="about.html">About</a>
+      <a href="mahapack/mahapack-plans.html">Premium Plans</a>
     </div>
   </nav>
 </header>
@@ -426,6 +511,7 @@ body:before{
     <div class="page-head-content">
       <h1>My <span>Purchases</span></h1>
       <p>Courses and premium access linked to your account.</p>
+    </div>
     <div class="account-info">
       <div class="account-chip">Name: <strong id="profileName">—</strong></div>
       <div class="account-chip">Email: <strong id="profileEmail">—</strong></div>
@@ -475,9 +561,17 @@ body:before{
         <h4>Preparation</h4>
         <div class="footer-links">
           <a href="joa-series.html">JOA (IT) Mock Tests</a>
-          <a href="joa-mahapack.html">JOA IT Maha Pack</a>
           <a href="patwari-series.html">HP Patwari Mock Tests</a>
-          <a href="my-progress.html">My Progress</a>
+          <a href="mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
+          <a href="mahapack/mahapack-plans.html">Premium Plans</a>
+        </div>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <div class="footer-links">
+          <a href="firebase-login.html">Login</a>
+          <a href="firebase-signup.html">Create Account</a>
+          <a href="my-purchase.html">My Purchases</a>
         </div>
       </div>
       <div>
@@ -491,7 +585,10 @@ body:before{
     </div>
     <div class="footer-bottom">
       <span>© 2026 HPMockShashtra. All rights reserved.</span>
-      <span>My Purchases</span>
+      <span class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </span>
     </div>
   </div>
 </footer>
@@ -662,47 +759,78 @@ function render(data){
   tbody.innerHTML="";
 
   const items=[];
+  const seen=new Set();
 
-  const courses=data?.computerAccess?.courses || {};
-  const packs=data?.computerAccess?.packs || {};
-
-  Object.entries(courses).forEach(([id,value])=>{
-    const product=PRODUCTS[id];
-    if(product && value) items.push({product,value,paymentProduct:id});
-  });
-
-  Object.entries(packs).forEach(([id,value])=>{
-    const product=PRODUCTS[id];
-    if(product && value) items.push({product,value,paymentProduct:id});
-  });
-
-  // Legacy access flags.
-  if(data?.joaitFullSeries === true){
-    items.push({
-      product:{
-        name:"JOA (IT) Full Series",
-        type:"Mock Test Series",
-        icon:"J",
-        desc:"15 mock tests • Full Series access",
-        start:"joa-series.html"
-      },
-      value:{},
-      paymentProduct:"joa"
-    });
+  function addUnique(product,value,paymentProduct,key){
+    const uniqueKey=key || product.name;
+    if(seen.has(uniqueKey)) return;
+    seen.add(uniqueKey);
+    items.push({product,value:value || {},paymentProduct});
   }
 
-  if(data?.patwariFullSeries === true){
-    items.push({
-      product:{
-        name:"HP Patwari Full Series",
-        type:"Mock Test Series",
-        icon:"P",
-        desc:"Full Series access",
-        start:"patwari-series.html"
-      },
-      value:{},
-      paymentProduct:"patwari"
+  // Existing individual-subject and pack access.
+  const computerCourses=data?.computerAccess?.courses || {};
+  const computerPacks=data?.computerAccess?.packs || {};
+  const mahapack=data?.mahapackAccess || {};
+  const mahapackCourses=mahapack?.courses || {};
+  const mahapackPacks=mahapack?.packs || {};
+
+  [computerCourses,mahapackCourses].forEach(collection=>{
+    Object.entries(collection).forEach(([id,value])=>{
+      const product=PRODUCTS[id];
+      if(product && value) addUnique(product,value,id,`course:${id}`);
     });
+  });
+
+  [computerPacks,mahapackPacks].forEach(collection=>{
+    Object.entries(collection).forEach(([id,value])=>{
+      const product=PRODUCTS[id];
+      if(product && value) addUnique(product,value,id,`pack:${id}`);
+    });
+  });
+
+  // Dedicated JOA access (supports object-based access and legacy boolean flags).
+  const joaValue=data?.joaAccess;
+  if(joaValue && (typeof joaValue==="object" || joaValue===true)){
+    const value=typeof joaValue==="object" ? joaValue : {};
+    addUnique({
+      name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
+      desc:"15 mock tests • Full Series access",start:"joa-series.html"
+    },value,"joa","access:joa");
+  }
+  if(data?.joaitFullSeries===true){
+    addUnique({
+      name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
+      desc:"15 mock tests • Full Series access",start:"joa-series.html"
+    },{},"joa","access:joa");
+  }
+
+  // Dedicated Patwari access (supports object-based access and legacy boolean flags).
+  const patwariValue=data?.patwariAccess;
+  if(patwariValue && (typeof patwariValue==="object" || patwariValue===true)){
+    const value=typeof patwariValue==="object" ? patwariValue : {};
+    addUnique({
+      name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
+      desc:"Full Series access",start:"patwari-series.html"
+    },value,"patwari","access:patwari");
+  }
+  if(data?.patwariFullSeries===true){
+    addUnique({
+      name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
+      desc:"Full Series access",start:"patwari-series.html"
+    },{},"patwari","access:patwari");
+  }
+
+  // If MahaPack is stored as one top-level access record rather than nested packs/courses,
+  // show it as a single purchase. Nested course/pack entries above take precedence.
+  if(mahapack && (mahapack===true || (typeof mahapack==="object" &&
+      !Object.keys(mahapackCourses).length && !Object.keys(mahapackPacks).length))){
+    const value=typeof mahapack==="object" ? mahapack : {};
+    addUnique({
+      name:"JOA IT Maha Pack",type:"Maha Pack",icon:"♛",
+      image:"mahapack/computer-master.png",desc:"All 15 computer subjects",
+      start:"mahapack/joa-mahapack.html"
+    },value,"computer-master","access:mahapack");
   }
 
   // Active purchases first, expired purchases afterward.
