@@ -457,6 +457,116 @@ button,a{-webkit-tap-highlight-color:transparent}
   text-align:center;
 }
 
+
+/* Submit confirmation popup */
+.submit-modal{
+  max-width:430px;
+  padding:24px;
+}
+.submit-modal-header{
+  text-align:center;
+  margin-bottom:18px;
+}
+.submit-modal-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:#e8f0ff;
+  color:#3264f5;
+  font-size:24px;
+  font-weight:900;
+}
+.submit-modal-header h2{
+  margin:0 0 6px;
+  color:#173b70;
+  font-size:22px;
+}
+.submit-modal-subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+.submit-counts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:18px 0;
+}
+.submit-count-card{
+  padding:15px 10px;
+  border:1px solid transparent;
+  border-radius:13px;
+  text-align:center;
+}
+.submit-count-card strong{
+  display:block;
+  margin-bottom:5px;
+  font-size:27px;
+  line-height:1.1;
+}
+.submit-count-card span{
+  font-size:11px;
+  font-weight:800;
+}
+.submit-attempted{
+  background:#e7f8ef;
+  border-color:#b6e8cf;
+  color:#138754;
+}
+.submit-unattempted{
+  background:#fff4e2;
+  border-color:#f0dfb9;
+  color:#b87512;
+}
+.submit-question{
+  margin:0 0 13px;
+  color:#334c6d;
+  font-size:13px;
+  line-height:1.6;
+}
+.submit-warning{
+  margin-bottom:18px;
+  padding:12px;
+  border:1px solid #f2c9ce;
+  border-radius:10px;
+  background:#fff2f2;
+  color:#b42336;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.6;
+}
+.submit-modal-buttons{
+  display:flex;
+  gap:10px;
+}
+.submit-cancel-btn,.submit-confirm-btn{
+  flex:1;
+  min-height:43px;
+  padding:11px 12px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+.submit-cancel-btn{
+  border:1px solid var(--border);
+  background:#f5f8fd;
+  color:#425b7b;
+}
+.submit-confirm-btn{
+  border:0;
+  background:var(--blue);
+  color:#fff;
+}
+.submit-confirm-btn:disabled{
+  opacity:.6;
+  cursor:wait;
+}
+
 /* Tablet */
 @media(max-width:900px){
   .course-header{
@@ -571,6 +681,11 @@ button,a{-webkit-tap-highlight-color:transparent}
     padding:10px 13px;
     font-size:11px;
   }
+
+  .submit-modal{padding:21px 16px}
+  .submit-modal-header h2{font-size:20px}
+  .submit-count-card{padding:13px 8px}
+  .submit-count-card strong{font-size:24px}
 
   .modal{
     padding:21px 16px;
@@ -687,6 +802,39 @@ button,a{-webkit-tap-highlight-color:transparent}
     </div>
   </div>
 </div>
+
+
+<div class="modal-backdrop" id="submitModal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="submitModalTitle">
+  <div class="modal submit-modal">
+    <div class="submit-modal-header">
+      <div class="submit-modal-icon">✓</div>
+      <h2 id="submitModalTitle">Submit Your Practice?</h2>
+      <p class="submit-modal-subtitle" id="submitCourseSubtitle">Review your progress before submitting.</p>
+    </div>
+
+    <div class="submit-counts">
+      <div class="submit-count-card submit-attempted">
+        <strong id="submitAttemptedCount">0</strong>
+        <span>Attempted</span>
+      </div>
+      <div class="submit-count-card submit-unattempted">
+        <strong id="submitUnattemptedCount">0</strong>
+        <span>Not Attempted</span>
+      </div>
+    </div>
+
+    <p class="submit-question">Are you sure you want to submit your practice?</p>
+    <div class="submit-warning">
+      Warning: You will not be able to attempt any remaining questions or change your answers after submission.
+    </div>
+
+    <div class="submit-modal-buttons">
+      <button class="submit-cancel-btn" id="cancelSubmitBtn" type="button">Cancel</button>
+      <button class="submit-confirm-btn" id="confirmSubmitBtn" type="button">Submit Practice</button>
+    </div>
+  </div>
+</div>
+
 
 <script type="module">
 import {auth,db} from "../firebase-config.js";
@@ -1095,13 +1243,23 @@ async function previousQuestion(){
 async function completeAttempt(){
   if(moving || state.submitted) return;
 
-  const confirmed = confirm(
-    "क्या आप यह practice पूरी करके अपना एकमात्र attempt submit करना चाहते हैं? Unattempted questions भी ऐसे ही दर्ज होंगे। इसके बाद answers बदल नहीं सकेंगे।"
-  );
+  const attempted = Object.keys(state.answers).length;
+  const unattempted = QUESTIONS.length - attempted;
 
-  if(!confirmed) return;
+  $("submitAttemptedCount").textContent = attempted;
+  $("submitUnattemptedCount").textContent = unattempted;
+  $("submitCourseSubtitle").textContent =
+    `${COURSE_TITLE} · ${QUESTIONS.length} Questions`;
+  $("submitModal").style.display = "flex";
+}
+
+async function submitAttempt(){
+  if(moving || state.submitted) return;
 
   moving = true;
+  $("cancelSubmitBtn").disabled = true;
+  $("confirmSubmitBtn").disabled = true;
+  $("confirmSubmitBtn").textContent = "Submitting...";
   $("previousBtn").disabled = true;
   $("nextBtn").disabled = true;
 
@@ -1138,10 +1296,14 @@ async function completeAttempt(){
     },{merge:true});
 
     state.submitted = true;
+    $("submitModal").style.display = "none";
     showCompleted();
   }catch(error){
     console.error("Attempt save error:",error);
-    alert("Attempt save नहीं हो पाया। कृपया फिर से कोशिश करें।");
+    alert("Your attempt could not be submitted. Please try again.");
+    $("cancelSubmitBtn").disabled = false;
+    $("confirmSubmitBtn").disabled = false;
+    $("confirmSubmitBtn").textContent = "Submit Practice";
     renderQuestion();
   }finally{
     moving = false;
@@ -1152,6 +1314,7 @@ function showCompleted(){
   $("questionCard").style.display = "none";
   $("completed").style.display = "block";
   $("startModal").style.display = "none";
+  $("submitModal").style.display = "none";
   updateStats();
 }
 
@@ -1183,6 +1346,11 @@ $("cancelBtn").addEventListener("click",()=>{
 });
 
 $("startBtn").addEventListener("click",startCountdown);
+$("cancelSubmitBtn").addEventListener("click",()=>{
+  if(moving) return;
+  $("submitModal").style.display = "none";
+});
+$("confirmSubmitBtn").addEventListener("click",submitAttempt);
 $("previousBtn").addEventListener("click",previousQuestion);
 $("nextBtn").addEventListener("click",nextQuestion);
 
