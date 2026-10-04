@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,17 +8,17 @@
 
 <style>
 :root{
-  --bg:#e9f0f6;
-  --panel:#f7fafc;
-  --panel2:#eef4f8;
-  --line:#cbd9e5;
-  --text:#1d2a3a;
-  --muted:#60758a;
-  --blue:#2296ff;
+  --bg:#edf3fb;
+  --panel:#ffffff;
+  --panel2:#f5f8ff;
+  --line:#cddcf3;
+  --text:#17345a;
+  --muted:#58749a;
+  --blue:#315efb;
   --violet:#8b5cf6;
-  --green:#12c98b;
-  --red:#ff6075;
-  --gold:#ffd166;
+  --green:#00a86b;
+  --red:#ed394b;
+  --gold:#f59e0b;
 }
 *{box-sizing:border-box}
 body{
@@ -25,28 +26,20 @@ body{
   min-height:100vh;
   color:var(--text);
   font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  background:
-    radial-gradient(circle at 80% 8%,rgba(93,61,180,.12),transparent 30%),
-    radial-gradient(circle at 8% 75%,rgba(0,130,255,.08),transparent 28%),
-    var(--bg);
+  background:var(--bg);
 }
-body:before{display:none}
 .hidden{display:none!important}
-
 .wrap{
   width:min(1120px,calc(100% - 28px));
   margin:22px auto 40px;
   position:relative;
   z-index:1;
 }
-
-/* Header */
 .study-header{
-  border:1px solid rgba(126,176,255,.28);
+  border:1px solid #9fc2f4;
   border-radius:18px;
   padding:20px 22px;
-  background:linear-gradient(120deg,#f4f8fb,#eaf1f7);
-  box-shadow:0 10px 30px rgba(31,52,73,.10);
+  background:#b5cff2;
   margin-bottom:14px;
 }
 .header-row{
@@ -57,7 +50,7 @@ body:before{display:none}
 }
 .brand-area{min-width:0}
 .kicker{
-  color:#66c8ff;
+  color:#315efb;
   font-size:9px;
   font-weight:900;
   letter-spacing:1.2px;
@@ -84,14 +77,14 @@ body:before{display:none}
   min-width:70px;
   height:68px;
   padding:7px 6px;
-  border:1px solid #dbe5ee;
+  border:1px solid #d7e3f3;
   border-radius:12px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   gap:4px;
-  background:#eef4f8;
+  background:#f1f7ff;
 }
 .stat-number{
   width:34px;
@@ -99,29 +92,29 @@ body:before{display:none}
   border-radius:50%;
   display:grid;
   place-items:center;
-  background:#f7fafc;
+  background:transparent;
   font-size:11px;
   font-weight:950;
 }
 .stat-label{
   font-size:7px;
   font-weight:800;
-  color:#64748b;
+  color:var(--muted);
   white-space:nowrap;
 }
-.stat.correct .stat-number{color:#087f57}
-.stat.correct{border-color:rgba(18,201,139,.32)}
-.stat.wrong .stat-number{color:#c72f49}
-.stat.wrong{border-color:rgba(255,96,117,.32)}
-.stat.unattempted .stat-number{color:#53657c}
-.stat.unattempted{border-color:rgba(156,163,175,.24)}
+.stat.correct{background:#e6f7ef;border-color:#bcebd2}
+.stat.correct .stat-number{color:#009b65}
+.stat.wrong{background:#fff0f1;border-color:#ffd0d5}
+.stat.wrong .stat-number{color:#ed394b}
+.stat.unattempted{background:#fff7e9;border-color:#f5dfb6}
+.stat.unattempted .stat-number{color:#d97706}
 .score-box{
   height:68px;
   min-width:128px;
   padding:7px 11px;
   border:1px solid #d9cef9;
   border-radius:12px;
-  background:#f1edff;
+  background:#f2edff;
   display:flex;
   align-items:center;
   gap:9px;
@@ -133,7 +126,7 @@ body:before{display:none}
   display:grid;
   place-items:center;
   position:relative;
-  background:conic-gradient(var(--green) var(--score,0%),rgba(255,255,255,.12) 0);
+  background:conic-gradient(var(--green) var(--score,0%),#e4e7ef 0);
 }
 .score-ring:before{
   content:"";
@@ -141,21 +134,25 @@ body:before{display:none}
   width:36px;
   height:36px;
   border-radius:50%;
-  background:#f7fafc;
+  background:#f2edff;
 }
 .score-ring span{position:relative;font-size:9px;font-weight:950}
 .score-text strong{display:block;font-size:16px}
-.score-text small{display:block;margin-top:3px;color:var(--muted);font-size:7px;font-weight:700}
-
-/* Main */
+.score-text small{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:7px;
+  font-weight:700;
+}
 .loading,.error-box{
   padding:45px 20px;
   border:1px solid var(--line);
   border-radius:16px;
-  background:#f7fafc;
+  background:#fff;
   text-align:center;
   color:var(--muted);
-  box-shadow:0 8px 22px rgba(31,52,73,.08);
+  box-shadow:0 5px 18px rgba(43,79,130,.06);
 }
 .error-box h2{margin:0 0 8px;color:var(--text);font-size:20px}
 .error-box p{margin:0 0 16px;font-size:10px}
@@ -167,14 +164,14 @@ body:before{display:none}
   margin-bottom:12px;
 }
 .page-info{
-  color:#64748b;
+  color:var(--muted);
   font-size:9px;
   font-weight:800;
 }
 .nav-btn{
-  border:1px solid rgba(126,176,255,.22);
-  background:#edf3f7;
-  color:#334155;
+  border:1px solid var(--line);
+  background:#edf3ff;
+  color:#244b83;
   border-radius:9px;
   padding:9px 14px;
   font-size:9px;
@@ -182,21 +179,17 @@ body:before{display:none}
   cursor:pointer;
 }
 .nav-btn:hover:not(:disabled){
-  border-color:#35aaff;
-  background:#e3edf4;
+  border-color:#86aaff;
+  background:#e2ecff;
 }
 .nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.question-list{
-  display:grid;
-  gap:12px;
-}
+.question-list{display:grid;gap:12px}
 .question-card{
   border:1px solid var(--line);
   border-radius:15px;
-  background:#f7fafc;
-  box-shadow:0 8px 22px rgba(31,52,73,.08);
-  padding:18px 20px;
+  background:#fff;
+  box-shadow:0 5px 18px rgba(43,79,130,.06);
+  padding:22px 24px;
 }
 .question-head{
   display:flex;
@@ -206,33 +199,44 @@ body:before{display:none}
   margin-bottom:10px;
 }
 .q-no{
-  color:#66c8ff;
+  color:var(--blue);
   font-size:9px;
   font-weight:950;
   letter-spacing:.7px;
 }
 .status{
-  padding:5px 9px;
-  border-radius:7px;
-  font-size:8px;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:9px;
   font-weight:900;
 }
-.status.correct{background:rgba(18,201,139,.13);color:#4de3b0;border:1px solid rgba(18,201,139,.25)}
-.status.wrong{background:rgba(255,96,117,.13);color:#ff8293;border:1px solid rgba(255,96,117,.25)}
-.status.unattempted{background:rgba(156,163,175,.10);color:#aab8ca;border:1px solid rgba(156,163,175,.18)}
-
+.status.correct{
+  background:#e6f7ef;
+  color:#087f57;
+  border:1px solid #bcebd2;
+}
+.status.wrong{
+  background:#fff0f1;
+  color:#c72f49;
+  border:1px solid #ffd0d5;
+}
+.status.unattempted{
+  background:#f1f5f9;
+  color:#64748b;
+  border:1px solid #dbe3ec;
+}
 .question-en{
-  font-size:16px;
-  line-height:1.5;
+  font-size:19px;
+  line-height:1.58;
   font-weight:850;
-  color:#172033;
+  color:var(--text);
 }
 .question-hi{
-  margin-top:5px;
-  font-size:13px;
-  line-height:1.55;
+  margin-top:7px;
+  font-size:15px;
+  line-height:1.65;
   font-weight:650;
-  color:#475569;
+  color:var(--muted);
 }
 .options{
   display:grid;
@@ -242,110 +246,77 @@ body:before{display:none}
 }
 .option{
   min-width:0;
-  padding:10px 11px;
-  border:1px solid rgba(126,176,255,.16);
+  padding:13px 14px;
+  border:1px solid var(--line);
   border-radius:9px;
-  background:#eef4f8;
-  color:#334155;
-  font-size:9px;
-  line-height:1.5;
+  background:#fff;
+  color:var(--text);
+  font-size:11px;
+  line-height:1.55;
   display:flex;
   align-items:flex-start;
-  gap:8px;
-}
-.option.correct{
-  border-color:rgba(18,201,139,.75);
-  background:rgba(18,201,139,.12);
-  color:#dffff2;
-}
-.option.wrong{
-  border-color:rgba(255,96,117,.75);
-  background:rgba(255,96,117,.12);
-  color:#ffe1e5;
+  gap:10px;
 }
 .option-letter{
-  flex:0 0 21px;
-  width:21px;
-  height:21px;
-  border-radius:5px;
+  flex:0 0 28px;
+  width:28px;
+  height:28px;
+  border-radius:7px;
   display:grid;
   place-items:center;
-  background:#e4edf4;
-  color:#2563a6;
-  font-size:7px;
+  background:#eaf1ff;
+  color:#315baf;
+  font-size:9px;
   font-weight:950;
 }
-.option-text{
-  min-width:0;
-  flex:1;
-}
-.option-en{
-  display:block;
-  color:inherit;
-  font-weight:750;
-}
+.option-text{min-width:0;flex:1}
+.option-en{display:block;color:inherit;font-weight:750}
 .option-hi{
   display:block;
-  margin-top:3px;
-  color:#64748b;
-  font-size:8px;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:10px;
   font-weight:600;
-  line-height:1.45;
+  line-height:1.5;
 }
-.option.correct .option-hi{color:#a9ddca}
-.option.wrong .option-hi{color:#e2aeb6}
-
+.option.correct{
+  border-color:#19b879;
+  background:#e8f8f0;
+  color:#15583d;
+}
+.option.wrong{
+  border-color:#f06b78;
+  background:#fff0f1;
+  color:#8d2430;
+}
+.option.correct .option-hi{color:#39765d}
+.option.wrong .option-hi{color:#9e4b54}
 .explanation{
-  margin-top:11px;
-  padding:11px 13px;
+  margin-top:13px;
+  padding:13px 15px;
   border-left:3px solid var(--green);
   border-radius:0 9px 9px 0;
-  background:rgba(18,201,139,.045);
-  color:#bdd6ca;
-  font-size:9px;
-  line-height:1.65;
+  background:#effaf4;
+  color:#315f49;
+  font-size:10px;
+  line-height:1.7;
 }
 .explanation strong{
   display:block;
-  color:#4de3b0;
-  font-size:8px;
+  color:#078653;
+  font-size:9px;
   letter-spacing:.7px;
   text-transform:uppercase;
-  margin-bottom:3px;
+  margin-bottom:4px;
 }
-
-/* Footer */
 .footer{
   text-align:center;
   margin-top:18px;
-  color:#71859f;
+  color:var(--muted);
   font-size:8px;
 }
-.footer a{color:#8fa8c5;text-decoration:none;margin:0 7px}
+.footer a{color:var(--blue);text-decoration:none;margin:0 7px}
 
-/* Responsive */
-@media(max-width:850px){
-  .header-row{flex-direction:column;align-items:stretch}
-  .summary{justify-content:flex-start;flex-wrap:wrap}
-}
-@media(max-width:600px){
-  .wrap{width:calc(100% - 18px);margin-top:12px}
-  .study-header{padding:17px 15px}
-  .title{font-size:21px}
-  .summary{display:grid;grid-template-columns:repeat(3,1fr)}
-  .stat{min-width:0;height:60px}
-  .score-box{grid-column:1/-1;justify-content:center;height:60px}
-  .score-ring{width:42px;height:42px}
-  .score-ring:before{width:32px;height:32px}
-  .top-actions{margin-bottom:10px}
-  .nav-btn{padding:9px 11px}
-  .question-card{padding:15px}
-  .question-en{font-size:15px}
-  .question-hi{font-size:12px}
-  .options{grid-template-columns:1fr}
-}
-
-/* Content protection — discourages casual copying/selection */
 html,body,.wrap{
   -webkit-user-select:none;
   user-select:none;
@@ -355,152 +326,13 @@ img{
   -webkit-user-drag:none;
   user-drag:none;
 }
-
-
-/* Eye-comfort palette inspired by the paid practice page */
-.study-header{background:linear-gradient(120deg,#f3f7fa,#e8f0f6);border-color:rgba(65,115,160,.24)}
-.question-card{background:#f7fafc;border-color:#cbd9e5}
-.option{background:#edf3f7;color:#304458}
-.option-letter{background:#e1ebf2;color:#2d6b9f}
-.explanation{background:rgba(18,201,139,.055)}
-</style>
-
-<style>
-/* HPMockShashtra Study Mode — light blue theme matching the paid practice page */
-:root{
-  --bg:#edf3fb;
-  --panel:#ffffff;
-  --panel2:#f5f8ff;
-  --line:#cddcf3;
-  --text:#17345a;
-  --muted:#58749a;
-  --blue:#315efb;
-  --violet:#8b5cf6;
-  --green:#00a86b;
-  --red:#ed394b;
-  --gold:#f59e0b;
-}
-body{
-  color:var(--text)!important;
-  background:#edf3fb!important;
-}
-body:before{display:none!important}
-.study-header{
-  border-color:#9fc2f4!important;
-  background:#b5cff2!important;
-  box-shadow:none!important;
-}
-.kicker,.q-no{color:#315efb!important}
-.title,.question-en{color:#17345a!important}
-.subtitle,.page-info,.stat-label,.score-text small,.question-hi,.option-hi,.footer{
-  color:#58749a!important;
-}
-.stat{
-  border-color:#d7e3f3!important;
-  background:#f1f7ff!important;
-}
-.stat-number{background:transparent!important}
-.stat.correct{background:#e6f7ef!important;border-color:#bcebd2!important}
-.stat.correct .stat-number{color:#009b65!important}
-.stat.wrong{background:#fff0f1!important;border-color:#ffd0d5!important}
-.stat.wrong .stat-number{color:#ed394b!important}
-.stat.unattempted{background:#fff7e9!important;border-color:#f5dfb6!important}
-.stat.unattempted .stat-number{color:#d97706!important}
-.score-box{
-  border-color:#d9cef9!important;
-  background:#f2edff!important;
-}
-.score-ring:before{background:#f2edff!important}
-.loading,.error-box,.question-card{
-  border-color:#cddcf3!important;
-  background:#ffffff!important;
-  box-shadow:0 5px 18px rgba(43,79,130,.06)!important;
-}
-.error-box h2{color:#17345a!important}
-.nav-btn{
-  border-color:#cddcf3!important;
-  background:#edf3ff!important;
-  color:#244b83!important;
-}
-.nav-btn:hover:not(:disabled){
-  border-color:#86aaff!important;
-  background:#e2ecff!important;
-}
-.option{
-  border-color:#cddcf3!important;
-  background:#ffffff!important;
-  color:#17345a!important;
-}
-.option:hover{background:#f5f8ff!important}
-.option-letter{
-  background:#eaf1ff!important;
-  color:#315baf!important;
-}
-.option.correct{
-  border-color:#19b879!important;
-  background:#e8f8f0!important;
-  color:#15583d!important;
-}
-.option.wrong{
-  border-color:#f06b78!important;
-  background:#fff0f1!important;
-  color:#8d2430!important;
-}
-.option.correct .option-hi{color:#39765d!important}
-.option.wrong .option-hi{color:#9e4b54!important}
-.explanation{
-  background:#effaf4!important;
-  color:#315f49!important;
-  border-left-color:#00a86b!important;
-}
-.explanation strong{color:#078653!important}
-.status.correct{
-  background:#e6f7ef!important;
-  color:#087f57!important;
-  border-color:#bcebd2!important;
-}
-.status.wrong{
-  background:#fff0f1!important;
-  color:#c72f49!important;
-  border-color:#ffd0d5!important;
-}
-.status.unattempted{
-  background:#f1f5f9!important;
-  color:#64748b!important;
-  border-color:#dbe3ec!important;
-}
-.footer a{color:#315efb!important}
-</style>
-
-<style>
-/* Readability-only adjustments: no layout/logic changes */
-.question-en{font-size:19px!important;line-height:1.58!important}
-.question-hi{font-size:15px!important;line-height:1.65!important;margin-top:7px!important}
-.option{padding:13px 14px!important;font-size:11px!important;line-height:1.55!important;gap:10px!important}
-.option-letter{flex:0 0 28px!important;width:28px!important;height:28px!important;border-radius:7px!important;font-size:9px!important}
-.option-en{font-size:11px!important;line-height:1.55!important}
-.option-hi{font-size:10px!important;line-height:1.5!important;margin-top:4px!important}
-.status{padding:6px 10px!important;font-size:9px!important;border-radius:8px!important}
-.question-card{padding:22px 24px!important}
-.explanation{padding:13px 15px!important;font-size:10px!important;line-height:1.7!important;margin-top:13px!important}
-.explanation strong{font-size:9px!important;margin-bottom:4px!important}
-@media(max-width:600px){
-  .question-card{padding:18px 16px!important}
-  .question-en{font-size:17px!important}
-  .question-hi{font-size:14px!important}
-  .option{padding:12px!important;font-size:10px!important}
-  .option-en{font-size:10px!important}
-  .option-hi{font-size:9px!important}
-  .option-letter{width:27px!important;height:27px!important;flex-basis:27px!important}
-  .status{font-size:8px!important}
-  .explanation{font-size:9.5px!important}
-}
-</style>
-<style>
-/* Small-screen refinements for the shared Study Mode page */
 @media(max-width:850px){
-  .header-row{gap:14px}
-  .summary{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .header-row{flex-direction:column;align-items:stretch;gap:14px}
+  .summary{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
   .score-box{grid-column:1/-1;justify-content:center}
 }
 @media(max-width:600px){
@@ -511,16 +343,27 @@ body:before{display:none!important}
   .stat{min-width:0;height:60px;padding:6px 3px}
   .stat-label{font-size:7px}
   .score-box{height:60px;min-width:0}
+  .score-ring{width:42px;height:42px}
+  .score-ring:before{width:32px;height:32px}
   .top-actions{gap:7px}
   .page-info{font-size:8px;text-align:center}
   .nav-btn{padding:9px 10px;font-size:9px;white-space:nowrap}
+  .question-card{padding:18px 16px}
+  .question-en{font-size:17px}
+  .question-hi{font-size:14px}
+  .option{padding:12px;font-size:10px}
+  .option-en{font-size:10px}
+  .option-hi{font-size:9px}
+  .option-letter{width:27px;height:27px;flex-basis:27px}
+  .status{font-size:8px}
+  .explanation{font-size:9.5px}
+  .options{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 <main class="wrap">
-
   <header class="study-header">
     <div class="header-row">
       <div class="brand-area">
@@ -581,17 +424,16 @@ body:before{display:none!important}
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="terms.html">Terms &amp; Conditions</a>
   </div>
-
 </main>
 
 <script type="module">
-import {auth,db} from './firebase-config.js';
+/* firebase-config.js is in the repository root. */
+import {auth,db} from '../firebase-config.js';
 import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
 import {doc,getDoc} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
+
 let QUESTIONS=[];
-
 const $=id=>document.getElementById(id);
-
 const params=new URLSearchParams(location.search);
 const TEST_ID=params.get('test') || 'computer_fundamentals_01';
 
@@ -599,7 +441,7 @@ const TEST_CONFIG={
   computer_fundamentals_01:{
     name:'Computer Fundamentals',
     practicePage:'paid-computer-fundamentals.html',
-    questionFile:'./fundamentals.js'
+    questionFile:'./computer-fundamentals.js'
   },
   ms_word_01:{
     name:'MS Word',
@@ -674,7 +516,6 @@ const TEST_CONFIG={
 };
 
 const config=TEST_CONFIG[TEST_ID];
-
 let answers={};
 let currentPage=0;
 const PAGE_SIZE=10;
@@ -711,10 +552,8 @@ function normalizeAnswers(a){
 
 function updateSummary(){
   let correct=0,wrong=0,unattempted=0;
-
   QUESTIONS.forEach((q,i)=>{
     const selected=answers[i];
-
     if(selected===undefined){
       unattempted++;
     }else if(selected===q.answer){
@@ -726,7 +565,6 @@ function updateSummary(){
 
   const total=QUESTIONS.length;
   const percentage=total?Math.round(correct/total*100):0;
-
   $('correctCount').textContent=correct;
   $('wrongCount').textContent=wrong;
   $('unattemptedCount').textContent=unattempted;
@@ -743,7 +581,6 @@ function renderPage(){
 
   $('pageInfo').textContent=`Questions ${start+1}–${end} of ${total}`;
   $('pageInfoBottom').textContent=`Questions ${start+1}–${end} of ${total}`;
-
   $('prevPage').disabled=currentPage===0;
   $('prevPageBottom').disabled=currentPage===0;
 
@@ -759,13 +596,11 @@ function renderPage(){
     const selected=answers[i];
     const attempted=selected!==undefined;
     const isCorrect=attempted && selected===q.answer;
-
     const card=document.createElement('article');
     card.className='question-card';
 
     let statusClass='unattempted';
     let statusText='Not Attempted';
-
     if(isCorrect){
       statusClass='correct';
       statusText='✓ Correct';
@@ -775,11 +610,9 @@ function renderPage(){
     }
 
     let optionsHtml='';
-
     q.options.forEach((o,j)=>{
       const optionEn=typeof o==='object'?(o.en||''):o;
       const optionHi=typeof o==='object'?(o.hi||''):'';
-
       const isCorrectOption=String.fromCharCode(65+j)===q.answer;
       const isWrongSelected=attempted && selected===String.fromCharCode(65+j) && !isCorrectOption;
 
@@ -803,18 +636,14 @@ function renderPage(){
         <div class="q-no">QUESTION ${i+1}</div>
         <div class="status ${statusClass}">${statusText}</div>
       </div>
-
       <div class="question-en">${esc(q.en||'')}</div>
       <div class="question-hi">${esc(q.hi||'')}</div>
-
       <div class="options">${optionsHtml}</div>
-
       <div class="explanation">
         <strong>Explanation</strong>
         ${esc(q.explanation||'Explanation is not available for this question.')}
       </div>
     `;
-
     list.appendChild(card);
   }
 
@@ -825,7 +654,6 @@ function showError(title,message,buttonText,buttonHref){
   $('loading').classList.add('hidden');
   $('reviewArea').classList.add('hidden');
   $('errorArea').classList.remove('hidden');
-
   $('errorArea').innerHTML=`
     <h2>${esc(title)}</h2>
     <p>${esc(message)}</p>
@@ -846,15 +674,12 @@ $('nextPageBottom').onclick=()=>goPage(1);
 
 onAuthStateChanged(auth,async user=>{
   if(!user){
-    location.href='firebase-login.html';
+    location.href='../firebase-login.html';
     return;
   }
 
   try{
-    if(!config){
-      throw new Error('Invalid test ID.');
-    }
-
+    if(!config)throw new Error('Invalid test ID.');
     $('pageTitle').textContent=`${config.name} — Study Mode`;
 
     const questionModule=await import(config.questionFile);
@@ -870,12 +695,7 @@ onAuthStateChanged(auth,async user=>{
       return;
     }
 
-    const attemptRef=doc(
-      db,
-      'testAttempts',
-      user.uid+'_'+TEST_ID
-    );
-
+    const attemptRef=doc(db,'testAttempts',user.uid+'_'+TEST_ID);
     const snap=await getDoc(attemptRef);
 
     if(!snap.exists()){
@@ -889,46 +709,37 @@ onAuthStateChanged(auth,async user=>{
     }
 
     const attempt=snap.data();
-
     if(attempt.testId!==TEST_ID){
       throw new Error('Invalid practice record.');
     }
 
     answers=normalizeAnswers(attempt.answers);
-
     updateSummary();
-
     $('loading').classList.add('hidden');
     $('reviewArea').classList.remove('hidden');
-
     renderPage();
 
   }catch(e){
-    console.error(e);
-
+    console.error('Study Mode loading error:',e);
     showError(
       'Unable to Load Study Mode',
-      'Please refresh the page and try again.',
+      `Error: ${e.message || 'Please refresh the page and try again.'}`,
       'Back to Practice',
       config?.practicePage || 'paid-computer-fundamentals.html'
     );
   }
 });
 
-/* Casual copy/inspect protection. This is not a substitute for server-side protection. */
+/* Casual copy/inspect protection — not a substitute for server-side protection. */
 document.addEventListener('contextmenu',e=>e.preventDefault());
-
 document.addEventListener('copy',e=>e.preventDefault());
 document.addEventListener('cut',e=>e.preventDefault());
 document.addEventListener('dragstart',e=>e.preventDefault());
-
-document.addEventListener('selectstart',e=>{
-  e.preventDefault();
-});
+document.addEventListener('selectstart',e=>e.preventDefault());
 
 document.addEventListener('keydown',e=>{
   const key=(e.key||'').toLowerCase();
-  const blocked =
+  const blocked=
     (e.ctrlKey && ['c','x','a','u','s','p'].includes(key)) ||
     (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(key)) ||
     e.key==='F12';
@@ -938,7 +749,6 @@ document.addEventListener('keydown',e=>{
     e.stopPropagation();
   }
 });
-
 </script>
 </body>
 </html>
