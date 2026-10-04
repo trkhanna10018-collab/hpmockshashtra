@@ -1,7 +1,7 @@
 export const QUESTIONS = [
 
   // Question 1
-{
+{ 
   en: "Which statement most accurately defines a computer in terms of its fundamental operation?",
   hi: "कंप्यूटर के मूलभूत कार्य के संदर्भ में निम्नलिखित में से कौन-सा कथन कंप्यूटर को सबसे सटीक रूप से परिभाषित करता है?",
 
