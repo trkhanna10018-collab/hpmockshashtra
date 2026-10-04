@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,8 +34,11 @@ body:before{display:none}
 .hidden{display:none!important}
 
 .wrap{
-  width:min(1120px,calc(100% - 28px));
-  margin:22px auto 40px;
+  width:100%;
+  max-width:none;
+  margin:22px 0 40px;
+  padding-left:23px;
+  padding-right:23px;
   position:relative;
   z-index:1;
 }
@@ -276,8 +278,15 @@ body:before{display:none}
   font-size:7px;
   font-weight:950;
 }
-.option-text{min-width:0;flex:1}
-.option-en{display:block;color:inherit;font-weight:750}
+.option-text{
+  min-width:0;
+  flex:1;
+}
+.option-en{
+  display:block;
+  color:inherit;
+  font-weight:750;
+}
 .option-hi{
   display:block;
   margin-top:3px;
@@ -323,7 +332,7 @@ body:before{display:none}
   .summary{justify-content:flex-start;flex-wrap:wrap}
 }
 @media(max-width:600px){
-  .wrap{width:calc(100% - 18px);margin-top:12px}
+  .wrap{width:100%;margin:12px 0 28px;padding-left:9px;padding-right:9px}
   .study-header{padding:17px 15px}
   .title{font-size:21px}
   .summary{display:grid;grid-template-columns:repeat(3,1fr)}
@@ -339,15 +348,19 @@ body:before{display:none}
   .options{grid-template-columns:1fr}
 }
 
-/* Content protection */
+/* Content protection — discourages casual copying/selection */
 html,body,.wrap{
   -webkit-user-select:none;
   user-select:none;
   -webkit-touch-callout:none;
 }
-img{-webkit-user-drag:none;user-drag:none}
+img{
+  -webkit-user-drag:none;
+  user-drag:none;
+}
 
-/* Eye-comfort palette */
+
+/* Eye-comfort palette inspired by the paid practice page */
 .study-header{background:linear-gradient(120deg,#f3f7fa,#e8f0f6);border-color:rgba(65,115,160,.24)}
 .question-card{background:#f7fafc;border-color:#cbd9e5}
 .option{background:#edf3f7;color:#304458}
@@ -356,7 +369,7 @@ img{-webkit-user-drag:none;user-drag:none}
 </style>
 
 <style>
-/* HPMockShashtra Study Mode — light blue theme */
+/* HPMockShashtra Study Mode — light blue theme matching the paid practice page */
 :root{
   --bg:#edf3fb;
   --panel:#ffffff;
@@ -370,7 +383,10 @@ img{-webkit-user-drag:none;user-drag:none}
   --red:#ed394b;
   --gold:#f59e0b;
 }
-body{color:var(--text)!important;background:#edf3fb!important}
+body{
+  color:var(--text)!important;
+  background:#edf3fb!important;
+}
 body:before{display:none!important}
 .study-header{
   border-color:#9fc2f4!important;
@@ -379,8 +395,13 @@ body:before{display:none!important}
 }
 .kicker,.q-no{color:#315efb!important}
 .title,.question-en{color:#17345a!important}
-.subtitle,.page-info,.stat-label,.score-text small,.question-hi,.option-hi,.footer{color:#58749a!important}
-.stat{border-color:#d7e3f3!important;background:#f1f7ff!important}
+.subtitle,.page-info,.stat-label,.score-text small,.question-hi,.option-hi,.footer{
+  color:#58749a!important;
+}
+.stat{
+  border-color:#d7e3f3!important;
+  background:#f1f7ff!important;
+}
 .stat-number{background:transparent!important}
 .stat.correct{background:#e6f7ef!important;border-color:#bcebd2!important}
 .stat.correct .stat-number{color:#009b65!important}
@@ -388,7 +409,10 @@ body:before{display:none!important}
 .stat.wrong .stat-number{color:#ed394b!important}
 .stat.unattempted{background:#fff7e9!important;border-color:#f5dfb6!important}
 .stat.unattempted .stat-number{color:#d97706!important}
-.score-box{border-color:#d9cef9!important;background:#f2edff!important}
+.score-box{
+  border-color:#d9cef9!important;
+  background:#f2edff!important;
+}
 .score-ring:before{background:#f2edff!important}
 .loading,.error-box,.question-card{
   border-color:#cddcf3!important;
@@ -396,25 +420,63 @@ body:before{display:none!important}
   box-shadow:0 5px 18px rgba(43,79,130,.06)!important;
 }
 .error-box h2{color:#17345a!important}
-.nav-btn{border-color:#cddcf3!important;background:#edf3ff!important;color:#244b83!important}
-.nav-btn:hover:not(:disabled){border-color:#86aaff!important;background:#e2ecff!important}
-.option{border-color:#cddcf3!important;background:#ffffff!important;color:#17345a!important}
+.nav-btn{
+  border-color:#cddcf3!important;
+  background:#edf3ff!important;
+  color:#244b83!important;
+}
+.nav-btn:hover:not(:disabled){
+  border-color:#86aaff!important;
+  background:#e2ecff!important;
+}
+.option{
+  border-color:#cddcf3!important;
+  background:#ffffff!important;
+  color:#17345a!important;
+}
 .option:hover{background:#f5f8ff!important}
-.option-letter{background:#eaf1ff!important;color:#315baf!important}
-.option.correct{border-color:#19b879!important;background:#e8f8f0!important;color:#15583d!important}
-.option.wrong{border-color:#f06b78!important;background:#fff0f1!important;color:#8d2430!important}
+.option-letter{
+  background:#eaf1ff!important;
+  color:#315baf!important;
+}
+.option.correct{
+  border-color:#19b879!important;
+  background:#e8f8f0!important;
+  color:#15583d!important;
+}
+.option.wrong{
+  border-color:#f06b78!important;
+  background:#fff0f1!important;
+  color:#8d2430!important;
+}
 .option.correct .option-hi{color:#39765d!important}
 .option.wrong .option-hi{color:#9e4b54!important}
-.explanation{background:#effaf4!important;color:#315f49!important;border-left-color:#00a86b!important}
+.explanation{
+  background:#effaf4!important;
+  color:#315f49!important;
+  border-left-color:#00a86b!important;
+}
 .explanation strong{color:#078653!important}
-.status.correct{background:#e6f7ef!important;color:#087f57!important;border-color:#bcebd2!important}
-.status.wrong{background:#fff0f1!important;color:#c72f49!important;border-color:#ffd0d5!important}
-.status.unattempted{background:#f1f5f9!important;color:#64748b!important;border-color:#dbe3ec!important}
+.status.correct{
+  background:#e6f7ef!important;
+  color:#087f57!important;
+  border-color:#bcebd2!important;
+}
+.status.wrong{
+  background:#fff0f1!important;
+  color:#c72f49!important;
+  border-color:#ffd0d5!important;
+}
+.status.unattempted{
+  background:#f1f5f9!important;
+  color:#64748b!important;
+  border-color:#dbe3ec!important;
+}
 .footer a{color:#315efb!important}
 </style>
 
 <style>
-/* Readability-only adjustments */
+/* Readability-only adjustments: no layout/logic changes */
 .question-en{font-size:19px!important;line-height:1.58!important}
 .question-hi{font-size:15px!important;line-height:1.65!important;margin-top:7px!important}
 .option{padding:13px 14px!important;font-size:11px!important;line-height:1.55!important;gap:10px!important}
@@ -438,13 +500,14 @@ body:before{display:none!important}
 }
 </style>
 <style>
+/* Small-screen refinements for the shared Study Mode page */
 @media(max-width:850px){
   .header-row{gap:14px}
   .summary{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
   .score-box{grid-column:1/-1;justify-content:center}
 }
 @media(max-width:600px){
-  .wrap{width:calc(100% - 18px);margin:12px auto 28px}
+  .wrap{width:100%;margin:12px 0 28px;padding-left:9px;padding-right:9px}
   .study-header{padding:16px 14px;border-radius:15px}
   .title{font-size:21px;overflow-wrap:anywhere}
   .summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
@@ -455,19 +518,15 @@ body:before{display:none!important}
   .page-info{font-size:8px;text-align:center}
   .nav-btn{padding:9px 10px;font-size:9px;white-space:nowrap}
 }
-</style>
-
+/* Slightly darker title/header container, as requested */
 <style>
-/* Slightly darker title/header container */
-.study-header{
-  background:linear-gradient(135deg,#8fb6e8,#a5c4ed)!important;
-  border-color:#7fa9df!important;
-}
+.study-header{background:linear-gradient(135deg,#8fb6e8,#a5c4ed)!important;border-color:#7fa9df!important}
 </style>
 </head>
 
 <body>
 <main class="wrap">
+
   <header class="study-header">
     <div class="header-row">
       <div class="brand-area">
@@ -475,13 +534,28 @@ body:before{display:none!important}
         <h1 class="title" id="pageTitle">Computer Fundamentals</h1>
         <p class="subtitle">Review your completed practice — correct and incorrect answers with explanations.</p>
       </div>
+
       <div class="summary">
-        <div class="stat correct"><div class="stat-number" id="correctCount">0</div><div class="stat-label">Correct</div></div>
-        <div class="stat wrong"><div class="stat-number" id="wrongCount">0</div><div class="stat-label">Wrong</div></div>
-        <div class="stat unattempted"><div class="stat-number" id="unattemptedCount">0</div><div class="stat-label">Not Attempted</div></div>
+        <div class="stat correct">
+          <div class="stat-number" id="correctCount">0</div>
+          <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat wrong">
+          <div class="stat-number" id="wrongCount">0</div>
+          <div class="stat-label">Wrong</div>
+        </div>
+        <div class="stat unattempted">
+          <div class="stat-number" id="unattemptedCount">0</div>
+          <div class="stat-label">Not Attempted</div>
+        </div>
         <div class="score-box">
-          <div class="score-ring" id="scoreRing" style="--score:0%"><span id="scoreRingText">0%</span></div>
-          <div class="score-text"><strong id="score">0 / 0</strong><small id="percentage">Score</small></div>
+          <div class="score-ring" id="scoreRing" style="--score:0%">
+            <span id="scoreRingText">0%</span>
+          </div>
+          <div class="score-text">
+            <strong id="score">0 / 0</strong>
+            <small id="percentage">Score</small>
+          </div>
         </div>
       </div>
     </div>
@@ -495,7 +569,9 @@ body:before{display:none!important}
       <div class="page-info" id="pageInfo">Questions 1–10</div>
       <button class="nav-btn" id="nextPage">Next 10 →</button>
     </div>
+
     <div class="question-list" id="questionList"></div>
+
     <div class="top-actions" style="margin-top:12px">
       <button class="nav-btn" id="prevPageBottom">← Previous 10</button>
       <div class="page-info" id="pageInfoBottom">Questions 1–10</div>
@@ -511,52 +587,119 @@ body:before{display:none!important}
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="terms.html">Terms &amp; Conditions</a>
   </div>
+
 </main>
 
 <script type="module">
 import {auth,db} from '../firebase-config.js';
 import {onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
 import {doc,getDoc} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
-
 let QUESTIONS=[];
+
 const $=id=>document.getElementById(id);
+
 const params=new URLSearchParams(location.search);
 const TEST_ID=params.get('test') || 'computer_fundamentals_01';
 
 const TEST_CONFIG={
-  computer_fundamentals_01:{name:'Computer Fundamentals',practicePage:'paid-computer-fundamentals.html',questionFile:'./computer-fundamentals.js'},
-  ms_word_01:{name:'MS Word',practicePage:'paid-ms-word.html',questionFile:'./ms-word.js'},
-  ms_excel_01:{name:'MS Excel',practicePage:'paid-ms-excel.html',questionFile:'./ms-excel.js'},
-  ms_powerpoint_01:{name:'MS PowerPoint',practicePage:'paid-ms-powerpoint.html',questionFile:'./ms-powerpoint.js'},
-  ms_access_01:{name:'MS Access',practicePage:'paid-ms-access.html',questionFile:'./ms-access.js'},
-  dbms_sql_01:{name:'DBMS & SQL',practicePage:'paid-dbms-sql.html',questionFile:'./dbms-sql.js'},
-  computer_networking_01:{name:'Computer Networking',practicePage:'paid-computer-networking.html',questionFile:'./computer-networking.js'},
-  cyber_security_01:{name:'Cyber Security',practicePage:'paid-cyber-security.html',questionFile:'./cyber-security.js'},
-  c_programming_01:{name:'C Programming',practicePage:'paid-c-programming.html',questionFile:'./c-programming.js'},
-  html_01:{name:'HTML',practicePage:'paid-html.html',questionFile:'./html.js'},
-  css_css3_01:{name:'CSS/CSS3',practicePage:'paid-css-css3.html',questionFile:'./css-css3.js'},
-  cloud_computing_01:{name:'Cloud Computing',practicePage:'paid-cloud-computing.html',questionFile:'./cloud-computing.js'},
-  data_structure_01:{name:'Data Structure',practicePage:'paid-data-structure.html',questionFile:'./data-structure.js'},
-  computer_organisation_01:{name:'Computer Organisation & Architecture',practicePage:'paid-computer-organisation-architecture.html',questionFile:'./computer-organisation.js'},
-  operating_system_01:{name:'Operating System',practicePage:'paid-operating-system.html',questionFile:'./operating-system.js'}
+  computer_fundamentals_01:{
+    name:'Computer Fundamentals',
+    practicePage:'paid-computer-fundamentals.html',
+    questionFile:'./fundamentals.js'
+  },
+  ms_word_01:{
+    name:'MS Word',
+    practicePage:'paid-ms-word.html',
+    questionFile:'./ms-word.js'
+  },
+  ms_excel_01:{
+    name:'MS Excel',
+    practicePage:'paid-ms-excel.html',
+    questionFile:'./ms-excel.js'
+  },
+  ms_powerpoint_01:{
+    name:'MS PowerPoint',
+    practicePage:'paid-ms-powerpoint.html',
+    questionFile:'./ms-powerpoint.js'
+  },
+  ms_access_01:{
+    name:'MS Access',
+    practicePage:'paid-ms-access.html',
+    questionFile:'./ms-access.js'
+  },
+  dbms_sql_01:{
+    name:'DBMS & SQL',
+    practicePage:'paid-dbms-sql.html',
+    questionFile:'./dbms-sql.js'
+  },
+  computer_networking_01:{
+    name:'Computer Networking',
+    practicePage:'paid-computer-networking.html',
+    questionFile:'./computer-networking.js'
+  },
+  cyber_security_01:{
+    name:'Cyber Security',
+    practicePage:'paid-cyber-security.html',
+    questionFile:'./cyber-security.js'
+  },
+  c_programming_01:{
+    name:'C Programming',
+    practicePage:'paid-c-programming.html',
+    questionFile:'./c-programming.js'
+  },
+  html_01:{
+    name:'HTML',
+    practicePage:'paid-html.html',
+    questionFile:'./html.js'
+  },
+  css_css3_01:{
+    name:'CSS/CSS3',
+    practicePage:'paid-css-css3.html',
+    questionFile:'./css-css3.js'
+  },
+  cloud_computing_01:{
+    name:'Cloud Computing',
+    practicePage:'paid-cloud-computing.html',
+    questionFile:'./cloud-computing.js'
+  },
+  data_structure_01:{
+    name:'Data Structure',
+    practicePage:'paid-data-structure.html',
+    questionFile:'./data-structure.js'
+  },
+  computer_organisation_01:{
+    name:'Computer Organisation & Architecture',
+    practicePage:'paid-computer-organisation-architecture.html',
+    questionFile:'./computer-organisation.js'
+  },
+  operating_system_01:{
+    name:'Operating System',
+    practicePage:'paid-operating-system.html',
+    questionFile:'./operating-system.js'
+  }
 };
 
 const config=TEST_CONFIG[TEST_ID];
+
 let answers={};
 let currentPage=0;
 const PAGE_SIZE=10;
 
 function esc(v){
   return String(v??'').replace(/[&<>"']/g,c=>({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#039;'
   }[c]));
 }
 
 function normalizeAnswerValue(v){
-  if(v===0||v==="0")return "A";
-  if(v===1||v==="1")return "B";
-  if(v===2||v==="2")return "C";
-  if(v===3||v==="3")return "D";
+  if(v===0||v==="0") return "A";
+  if(v===1||v==="1") return "B";
+  if(v===2||v==="2") return "C";
+  if(v===3||v==="3") return "D";
   const x=String(v??"").trim().toUpperCase();
   return ["A","B","C","D"].includes(x)?x:undefined;
 }
@@ -574,14 +717,22 @@ function normalizeAnswers(a){
 
 function updateSummary(){
   let correct=0,wrong=0,unattempted=0;
+
   QUESTIONS.forEach((q,i)=>{
     const selected=answers[i];
-    if(selected===undefined)unattempted++;
-    else if(selected===q.answer)correct++;
-    else wrong++;
+
+    if(selected===undefined){
+      unattempted++;
+    }else if(selected===q.answer){
+      correct++;
+    }else{
+      wrong++;
+    }
   });
+
   const total=QUESTIONS.length;
   const percentage=total?Math.round(correct/total*100):0;
+
   $('correctCount').textContent=correct;
   $('wrongCount').textContent=wrong;
   $('unattemptedCount').textContent=unattempted;
@@ -595,13 +746,17 @@ function renderPage(){
   const total=QUESTIONS.length;
   const start=currentPage*PAGE_SIZE;
   const end=Math.min(start+PAGE_SIZE,total);
+
   $('pageInfo').textContent=`Questions ${start+1}–${end} of ${total}`;
   $('pageInfoBottom').textContent=`Questions ${start+1}–${end} of ${total}`;
+
   $('prevPage').disabled=currentPage===0;
   $('prevPageBottom').disabled=currentPage===0;
+
   const lastPage=Math.max(0,Math.ceil(total/PAGE_SIZE)-1);
   $('nextPage').disabled=currentPage>=lastPage;
   $('nextPageBottom').disabled=currentPage>=lastPage;
+
   const list=$('questionList');
   list.innerHTML='';
 
@@ -609,23 +764,35 @@ function renderPage(){
     const q=QUESTIONS[i];
     const selected=answers[i];
     const attempted=selected!==undefined;
-    const isCorrect=attempted&&selected===q.answer;
+    const isCorrect=attempted && selected===q.answer;
+
     const card=document.createElement('article');
     card.className='question-card';
+
     let statusClass='unattempted';
     let statusText='Not Attempted';
-    if(isCorrect){statusClass='correct';statusText='✓ Correct'}
-    else if(attempted){statusClass='wrong';statusText='✕ Incorrect'}
+
+    if(isCorrect){
+      statusClass='correct';
+      statusText='✓ Correct';
+    }else if(attempted){
+      statusClass='wrong';
+      statusText='✕ Incorrect';
+    }
 
     let optionsHtml='';
+
     q.options.forEach((o,j)=>{
       const optionEn=typeof o==='object'?(o.en||''):o;
       const optionHi=typeof o==='object'?(o.hi||''):'';
+
       const isCorrectOption=String.fromCharCode(65+j)===q.answer;
-      const isWrongSelected=attempted&&selected===String.fromCharCode(65+j)&&!isCorrectOption;
+      const isWrongSelected=attempted && selected===String.fromCharCode(65+j) && !isCorrectOption;
+
       let cls='option';
       if(isCorrectOption)cls+=' correct';
       else if(isWrongSelected)cls+=' wrong';
+
       optionsHtml+=`
         <div class="${cls}">
           <span class="option-letter">${String.fromCharCode(65+j)}</span>
@@ -633,7 +800,8 @@ function renderPage(){
             <span class="option-en">${esc(optionEn)}</span>
             ${optionHi?`<span class="option-hi">${esc(optionHi)}</span>`:''}
           </span>
-        </div>`;
+        </div>
+      `;
     });
 
     card.innerHTML=`
@@ -641,15 +809,21 @@ function renderPage(){
         <div class="q-no">QUESTION ${i+1}</div>
         <div class="status ${statusClass}">${statusText}</div>
       </div>
+
       <div class="question-en">${esc(q.en||'')}</div>
       <div class="question-hi">${esc(q.hi||'')}</div>
+
       <div class="options">${optionsHtml}</div>
+
       <div class="explanation">
         <strong>Explanation</strong>
         ${esc(q.explanation||'Explanation is not available for this question.')}
-      </div>`;
+      </div>
+    `;
+
     list.appendChild(card);
   }
+
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -657,10 +831,12 @@ function showError(title,message,buttonText,buttonHref){
   $('loading').classList.add('hidden');
   $('reviewArea').classList.add('hidden');
   $('errorArea').classList.remove('hidden');
+
   $('errorArea').innerHTML=`
     <h2>${esc(title)}</h2>
     <p>${esc(message)}</p>
-    ${buttonText?`<a class="nav-btn" style="display:inline-block;text-decoration:none" href="${esc(buttonHref||'#')}">${esc(buttonText)}</a>`:''}`;
+    ${buttonText?`<a class="nav-btn" style="display:inline-block;text-decoration:none" href="${esc(buttonHref||'#')}">${esc(buttonText)}</a>`:''}
+  `;
 }
 
 function goPage(delta){
@@ -676,19 +852,27 @@ $('nextPageBottom').onclick=()=>goPage(1);
 
 onAuthStateChanged(auth,async user=>{
   if(!user){
-    location.href='../firebase-login.html';
+    location.href='firebase-login.html';
     return;
   }
 
   try{
-    if(!config)throw new Error('Invalid test ID.');
+    if(!config){
+      throw new Error('Invalid test ID.');
+    }
+
     $('pageTitle').textContent=`${config.name} — Study Mode`;
 
     const questionModule=await import(config.questionFile);
     QUESTIONS=Array.isArray(questionModule.QUESTIONS)?questionModule.QUESTIONS:[];
 
     if(!QUESTIONS.length){
-      showError('Question Bank Empty','No questions are available for this practice.','Back to Practice',config.practicePage);
+      showError(
+        'Question Bank Empty',
+        'No questions are available for this practice.',
+        'Back to Practice',
+        config.practicePage
+      );
       return;
     }
 
@@ -699,6 +883,7 @@ onAuthStateChanged(auth,async user=>{
       'mahapackAttempts',
       TEST_ID
     );
+
     const snap=await getDoc(attemptRef);
 
     if(!snap.exists()){
@@ -712,37 +897,52 @@ onAuthStateChanged(auth,async user=>{
     }
 
     const attempt=snap.data();
+
     answers=normalizeAnswers(attempt.answers);
+
     updateSummary();
+
     $('loading').classList.add('hidden');
     $('reviewArea').classList.remove('hidden');
+
     renderPage();
 
   }catch(e){
     console.error(e);
+
     showError(
       'Unable to Load Study Mode',
       'Please refresh the page and try again.',
       'Back to Practice',
-      config?.practicePage||'paid-computer-fundamentals.html'
+      config?.practicePage || 'paid-computer-fundamentals.html'
     );
   }
 });
 
-/* Casual copy/inspect protection */
+/* Casual copy/inspect protection. This is not a substitute for server-side protection. */
 document.addEventListener('contextmenu',e=>e.preventDefault());
+
 document.addEventListener('copy',e=>e.preventDefault());
 document.addEventListener('cut',e=>e.preventDefault());
 document.addEventListener('dragstart',e=>e.preventDefault());
-document.addEventListener('selectstart',e=>e.preventDefault());
+
+document.addEventListener('selectstart',e=>{
+  e.preventDefault();
+});
+
 document.addEventListener('keydown',e=>{
   const key=(e.key||'').toLowerCase();
-  const blocked=
-    (e.ctrlKey&&['c','x','a','u','s','p'].includes(key))||
-    (e.ctrlKey&&e.shiftKey&&['i','j','c'].includes(key))||
+  const blocked =
+    (e.ctrlKey && ['c','x','a','u','s','p'].includes(key)) ||
+    (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(key)) ||
     e.key==='F12';
-  if(blocked){e.preventDefault();e.stopPropagation()}
+
+  if(blocked){
+    e.preventDefault();
+    e.stopPropagation();
+  }
 });
+
 </script>
 </body>
 </html>
