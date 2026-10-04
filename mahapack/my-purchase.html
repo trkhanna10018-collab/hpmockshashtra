@@ -221,6 +221,40 @@ button,input{font:inherit}
   box-shadow:0 8px 22px rgba(16,185,129,.18);
 }
 .start-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+
+/* REVIEW: prominent, full button treatment on desktop and mobile */
+.action-btn.review-btn,
+.purchase-table .action-btn.review-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:92px;
+  min-height:36px;
+  padding:9px 15px;
+  border-radius:10px;
+  color:#ffffff !important;
+  background:linear-gradient(135deg,#6d28d9 0%,#9333ea 48%,#db2777 100%) !important;
+  border:1px solid rgba(233,213,255,.85) !important;
+  box-shadow:0 7px 18px rgba(147,51,234,.30),inset 0 1px 0 rgba(255,255,255,.22);
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.15px;
+  text-decoration:none !important;
+  white-space:nowrap;
+  transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+}
+.action-btn.review-btn:hover,
+.purchase-table .action-btn.review-btn:hover{
+  filter:brightness(1.12);
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.action-btn.review-btn:focus-visible,
+.purchase-table .action-btn.review-btn:focus-visible{
+  outline:3px solid #f0abfc;
+  outline-offset:3px;
+}
+
 .renew-btn{
   color:#ffd4da;background:linear-gradient(135deg,#8f3150,#b84267);
   border:1px solid #ff7d9a66;
@@ -635,22 +669,6 @@ body:before,body:after{display:none!important}
   .main { padding-top: 105px !important; }
   .page-head { display: none !important; }
   .section-head { margin-top: 0 !important; }
-  .action-btn.review-btn,
-  .purchase-table .action-btn.review-btn,
-  .purchase-table a[href*="mahapack-study.html"] {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 42px !important;
-    padding: 11px 18px !important;
-    border-radius: 12px !important;
-    background: linear-gradient(135deg,#7c3aed,#ec4899) !important;
-    color: #fff !important;
-    font-weight: 900 !important;
-    border: 0 !important;
-    box-shadow: 0 8px 20px rgba(124,58,237,.28) !important;
-    text-decoration: none !important;
-  }
 }
 </style>
 
@@ -874,12 +892,12 @@ const PRODUCTS = {
   },
   "ms-office": {
     name:"MS Office Pack", type:"Premium Pack", icon:"▤",
-    image:"icon/ms-word.png",
+    image:"icon/ms-office.png",
     desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
-    name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
-    image:"icon/computer-fundamentals.png",
+    name:"JOA IT Maha Pack", type:"Premium Pack", icon:"♛",
+    image:"icon/mahapack.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
