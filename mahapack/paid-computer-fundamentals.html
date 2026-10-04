@@ -9,24 +9,16 @@
 <style>
 :root{
   --bg:#edf3fb;
-  --card:#ffffff;
   --text:#142b4e;
   --muted:#647994;
   --border:#d3e1f2;
   --blue:#3264f5;
   --green:#13a875;
-  --green-bg:#e9fbf3;
   --red:#df394c;
-  --red-bg:#fff0f2;
 }
 
 *{box-sizing:border-box}
-
-html{
-  width:100%;
-  overflow-x:hidden;
-}
-
+html{width:100%;overflow-x:hidden}
 body{
   margin:0;
   min-height:100vh;
@@ -36,7 +28,6 @@ body{
   color:var(--text);
   background:var(--bg);
 }
-
 button,a{-webkit-tap-highlight-color:transparent}
 
 .page{
@@ -55,26 +46,23 @@ button,a{-webkit-tap-highlight-color:transparent}
   text-align:center;
 }
 
-/* Course header */
+/* Course title and compact statistics */
 .course-header{
-  display:flex;
+  display:grid;
+  grid-template-columns:minmax(245px,285px) minmax(0,1fr);
   align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  padding:19px 22px;
+  gap:18px;
+  padding:15px 20px;
   margin-bottom:13px;
-  border:1px solid #a9c3e8;
-  border-radius:16px;
-  background:linear-gradient(120deg,#c4dafa 0%,#b4cef3 100%);
+  border:1px solid #94b6e8;
+  border-radius:17px;
+  background:linear-gradient(120deg,#b1cef4 0%,#a5c3ed 100%);
 }
 
-.course-info{
-  flex:0 1 310px;
-  min-width:0;
-}
+.course-info{min-width:0}
 
 .course-label{
-  margin-bottom:7px;
+  margin-bottom:6px;
   color:#244f9e;
   font-size:10px;
   font-weight:800;
@@ -84,56 +72,74 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .course-title{
   margin:0;
-  font-size:26px;
-  line-height:1.3;
+  font-size:23px;
+  line-height:1.25;
   font-weight:800;
   color:#143767;
   overflow-wrap:anywhere;
 }
 
-/* Stats cards */
 .stats{
-  flex:1 1 560px;
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:8px;
+  width:100%;
   min-width:0;
 }
 
 .stat{
-  min-width:0;
-  min-height:65px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  gap:7px;
+  gap:5px;
+  min-width:0;
+  min-height:57px;
   padding:7px 4px;
-  border:1px solid #c8d9ef;
-  border-radius:12px;
-  background:#f9fbff;
+  border:1px solid transparent;
+  border-radius:20px;
+  text-align:center;
 }
 
 .stat-number{
-  font-size:21px;
+  font-size:20px;
   font-weight:800;
   line-height:1;
 }
 
 .stat-label{
-  color:var(--muted);
-  font-size:9px;
+  font-size:8px;
   font-weight:800;
-  text-align:center;
+  color:#526783;
   text-transform:uppercase;
+  line-height:1.2;
 }
 
-.attempted .stat-number{color:#168b71}
-.correct .stat-number{color:#13a875}
-.wrong .stat-number{color:#e04455}
-.unattempted .stat-number{color:#e58a27}
+.attempted{
+  background:#f0f8ff;
+  border-color:#c5def7;
+}
+.attempted .stat-number{color:#178a79}
 
-/* Question panel */
+.correct{
+  background:#e7f9f0;
+  border-color:#b6e8cf;
+}
+.correct .stat-number{color:#0c9a66}
+
+.wrong{
+  background:#fff0f2;
+  border-color:#f4c7ce;
+}
+.wrong .stat-number{color:#df394c}
+
+.unattempted{
+  background:#fff7e8;
+  border-color:#f0dfb9;
+}
+.unattempted .stat-number{color:#dc861e}
+
+/* Question */
 .question-card{
   padding:25px 26px 23px;
   border:1px solid #ccdaec;
@@ -171,7 +177,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   overflow-wrap:anywhere;
 }
 
-/* Options */
+/* Answer options */
 .options{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -202,7 +208,6 @@ button,a{-webkit-tap-highlight-color:transparent}
   border-color:#8eb4ff;
   background:#f3f8ff;
 }
-
 .option:disabled{cursor:default}
 
 .option-letter{
@@ -237,25 +242,22 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1.55;
 }
 
-/* Correct answer */
+/* Answer cannot be changed after selection */
 .option.correct-answer,
 .option.correct{
   border-color:#69d5aa;
-  background:var(--green-bg);
+  background:#e9fbf3;
 }
-
 .option.correct-answer .option-letter,
 .option.correct .option-letter{
   background:#c9f5e2;
   color:#087e53;
 }
 
-/* Incorrect selected answer */
 .option.wrong{
   border-color:#f0a0aa;
-  background:var(--red-bg);
+  background:#fff0f2;
 }
-
 .option.wrong .option-letter{
   background:#ffdade;
   color:#c72d42;
@@ -276,7 +278,6 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1.7;
   overflow-wrap:anywhere;
 }
-
 .explanation.show{display:block!important}
 
 .explanation-title{
@@ -284,18 +285,20 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:#087e53;
   font-weight:800;
 }
-
 .explanation-hi{margin-top:6px}
 
-/* Navigation */
+/* Previous and Next */
 .action-area{
   display:flex;
-  justify-content:flex-end;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
   margin-top:17px;
 }
 
-.next-btn,.primary-btn{
-  padding:12px 21px;
+.nav-btn{
+  min-height:41px;
+  padding:11px 19px;
   border:0;
   border-radius:10px;
   background:var(--blue);
@@ -305,12 +308,21 @@ button,a{-webkit-tap-highlight-color:transparent}
   cursor:pointer;
 }
 
-.next-btn:disabled{
-  opacity:.45;
+.nav-btn:disabled{
+  opacity:.4;
   cursor:not-allowed;
 }
 
-/* Completed and access */
+#previousBtn{
+  margin-right:auto;
+  background:#e5edfb;
+  border:1px solid #cbdaf1;
+  color:#31547e;
+}
+
+#nextBtn{margin-left:auto}
+
+/* Completion and access */
 .completed,.access-box{
   display:none;
   padding:32px 20px;
@@ -447,44 +459,26 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* Tablet */
 @media(max-width:900px){
   .course-header{
-    align-items:stretch;
-    flex-direction:column;
-    gap:13px;
-    padding:18px;
+    grid-template-columns:minmax(0,1fr);
+    gap:12px;
+    padding:15px 17px;
   }
-
-  .course-info{
-    flex:0 0 auto;
-  }
-
-  .stats{
-    flex:0 0 auto;
-    width:100%;
-  }
+  .course-title{font-size:23px}
+  .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 
 /* Mobile */
 @media(max-width:600px){
-  .page{
-    padding:10px 9px 22px;
-  }
+  .page{padding:10px 9px 22px}
 
   .course-header{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:11px;
+    grid-template-columns:minmax(0,1fr);
+    gap:10px;
     width:100%;
-    padding:14px 13px 13px;
+    padding:13px 12px;
     margin-bottom:10px;
     border-radius:14px;
-    background:linear-gradient(135deg,#c0d8fa 0%,#b4cef2 100%);
-  }
-
-  .course-info{
-    flex:0 0 auto;
-    width:100%;
-    min-width:0;
+    background:linear-gradient(135deg,#b8d2f6 0%,#a9c6ef 100%);
   }
 
   .course-label{
@@ -498,32 +492,19 @@ button,a{-webkit-tap-highlight-color:transparent}
   }
 
   .stats{
-    flex:0 0 auto;
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:7px;
-    width:100%;
-    min-width:0;
-    margin:0;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;
   }
 
   .stat{
-    width:100%;
-    min-width:0;
-    min-height:53px;
-    padding:7px 4px;
-    gap:5px;
-    border-radius:10px;
-    background:#f9fbff;
+    min-height:48px;
+    padding:6px 2px;
+    gap:4px;
+    border-radius:15px;
   }
 
-  .stat-number{font-size:19px}
-
-  .stat-label{
-    font-size:8px;
-    line-height:1.2;
-    white-space:normal;
-  }
+  .stat-number{font-size:16px}
+  .stat-label{font-size:7px}
 
   .question-card{
     width:100%;
@@ -582,13 +563,12 @@ button,a{-webkit-tap-highlight-color:transparent}
     line-height:1.7;
   }
 
-  .action-area{
-    margin-top:13px;
-  }
+  .action-area{margin-top:13px}
 
-  .next-btn{
-    width:100%;
-    min-height:43px;
+  .nav-btn{
+    min-height:42px;
+    padding:10px 13px;
+    font-size:11px;
   }
 
   .modal{
@@ -606,14 +586,16 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 @media(max-width:360px){
   .page{padding:8px 7px 18px}
-  .course-header{padding:12px 10px}
+  .course-header{padding:12px 9px}
   .course-title{font-size:19px}
-  .stats{gap:5px}
-  .stat-number{font-size:17px}
-  .stat-label{font-size:7px}
+  .stats{gap:4px}
+  .stat{padding:6px 1px}
+  .stat-number{font-size:14px}
+  .stat-label{font-size:6px}
   .question-card{padding:15px 11px}
   .question{font-size:16px}
   .question-hi{font-size:14px}
+  .nav-btn{padding:10px 9px}
 }
 </style>
 </head>
@@ -665,7 +647,8 @@ button,a{-webkit-tap-highlight-color:transparent}
       <div class="explanation" id="explanation"></div>
 
       <div class="action-area">
-        <button class="next-btn" id="nextBtn" disabled>Next Question →</button>
+        <button class="nav-btn" id="previousBtn" disabled>← Previous</button>
+        <button class="nav-btn" id="nextBtn">Next Question →</button>
       </div>
     </section>
 
@@ -776,7 +759,7 @@ let sessionRef = null;
 let attemptRef = null;
 let state = {current:0,answers:{},submitted:false};
 let countdownStarted = false;
-let movingToNext = false;
+let moving = false;
 
 function toDate(value){
   if(!value) return null;
@@ -864,7 +847,6 @@ function bilingual(value,lang){
   if(value && typeof value === "object"){
     return value[lang] ?? value.en ?? value.hi ?? "";
   }
-
   return value ?? "";
 }
 
@@ -896,7 +878,6 @@ function updateStats(){
 
   for(const key of keys){
     const q = QUESTIONS[Number(key)];
-
     if(q && answerIndex(q.answer) === Number(state.answers[key])){
       correct++;
     }
@@ -946,11 +927,7 @@ async function loadSession(){
     return false;
   }
 
-  state = {
-    current:0,
-    answers:{},
-    submitted:false
-  };
+  state = {current:0,answers:{},submitted:false};
 
   const saved = await saveSession();
 
@@ -1022,9 +999,6 @@ function renderQuestion(){
     options.appendChild(button);
   });
 
-  $("answerStatus").className = "answer-status";
-  $("answerStatus").textContent = "";
-
   const explanation = $("explanation");
 
   if(answered){
@@ -1046,17 +1020,21 @@ function renderQuestion(){
     explanation.innerHTML = "";
   }
 
-  $("nextBtn").disabled = !answered;
+  $("previousBtn").disabled = state.current === 0;
 
   $("nextBtn").textContent =
     state.current === QUESTIONS.length-1
       ? "Finish Practice →"
       : "Next Question →";
 
+  /* Navigation is allowed even when a question is unanswered. */
+  $("nextBtn").disabled = false;
+
   updateStats();
 }
 
 async function selectAnswer(index){
+  /* Once answered, an answer cannot be changed. */
   if(state.answers[state.current] !== undefined) return;
 
   state.answers[state.current] = index;
@@ -1065,54 +1043,72 @@ async function selectAnswer(index){
   const saved = await saveSession();
 
   if(!saved){
-    console.warn("Answer displayed but cloud save failed. Check Firebase Rules/network.");
+    console.warn("Answer displayed, but cloud save failed. Check Firebase Rules/network.");
+  }
+}
+
+async function navigateTo(index){
+  if(moving || state.submitted) return;
+  if(index < 0 || index >= QUESTIONS.length) return;
+
+  moving = true;
+  $("previousBtn").disabled = true;
+  $("nextBtn").disabled = true;
+
+  const oldIndex = state.current;
+  state.current = index;
+
+  try{
+    const saved = await saveSession();
+
+    if(!saved){
+      state.current = oldIndex;
+      renderQuestion();
+      alert("Progress save नहीं हो पाया। कृपया दोबारा कोशिश करें।");
+      return;
+    }
+
+    renderQuestion();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }finally{
+    moving = false;
+    if(!state.submitted) renderQuestion();
   }
 }
 
 async function nextQuestion(){
-  if(movingToNext) return;
-  if(state.answers[state.current] === undefined) return;
+  if(moving || state.submitted) return;
 
-  movingToNext = true;
-  $("nextBtn").disabled = true;
-
-  try{
-    if(state.current < QUESTIONS.length-1){
-      const previous = state.current;
-      state.current++;
-
-      const saved = await saveSession();
-
-      if(!saved){
-        state.current = previous;
-        renderQuestion();
-        alert("Progress save नहीं हो पाया। कृपया दोबारा कोशिश करें।");
-        return;
-      }
-
-      renderQuestion();
-      window.scrollTo({top:0,behavior:"smooth"});
-      return;
-    }
-
+  if(state.current < QUESTIONS.length-1){
+    await navigateTo(state.current+1);
+  }else{
     await completeAttempt();
-  }finally{
-    movingToNext = false;
-
-    if(!state.submitted){
-      $("nextBtn").disabled =
-        state.answers[state.current] === undefined;
-    }
   }
 }
 
+async function previousQuestion(){
+  if(moving || state.submitted || state.current <= 0) return;
+  await navigateTo(state.current-1);
+}
+
 async function completeAttempt(){
+  if(moving || state.submitted) return;
+
+  const confirmed = confirm(
+    "क्या आप यह practice पूरी करके अपना एकमात्र attempt submit करना चाहते हैं? Unattempted questions भी ऐसे ही दर्ज होंगे। इसके बाद answers बदल नहीं सकेंगे।"
+  );
+
+  if(!confirmed) return;
+
+  moving = true;
+  $("previousBtn").disabled = true;
+  $("nextBtn").disabled = true;
+
   const keys = Object.keys(state.answers);
   let correct = 0;
 
   for(const key of keys){
     const q = QUESTIONS[Number(key)];
-
     if(q && answerIndex(q.answer) === Number(state.answers[key])){
       correct++;
     }
@@ -1145,6 +1141,9 @@ async function completeAttempt(){
   }catch(error){
     console.error("Attempt save error:",error);
     alert("Attempt save नहीं हो पाया। कृपया फिर से कोशिश करें।");
+    renderQuestion();
+  }finally{
+    moving = false;
   }
 }
 
@@ -1183,6 +1182,7 @@ $("cancelBtn").addEventListener("click",()=>{
 });
 
 $("startBtn").addEventListener("click",startCountdown);
+$("previousBtn").addEventListener("click",previousQuestion);
 $("nextBtn").addEventListener("click",nextQuestion);
 
 onAuthStateChanged(auth,async user=>{
@@ -1237,6 +1237,7 @@ onAuthStateChanged(auth,async user=>{
     if(isFreshSession){
       $("startModal").style.display = "flex";
     }else{
+      /* Existing session resumes directly without the popup. */
       $("startModal").style.display = "none";
       renderQuestion();
     }
