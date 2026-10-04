@@ -733,6 +733,23 @@ function addRow(product,value,paymentProduct){
   const renew=`../payment.html?product=${encodeURIComponent(paymentProduct)}`;
   const start=product.start || "joa-mahapack.html";
 
+  // A submitted/completed course should open Study Mode for review instead of starting again.
+  // This applies to individual MahaPack courses; JOA and Patwari series keep their own destinations.
+  const isDedicatedSeries = paymentProduct === "joa" || paymentProduct === "patwari" ||
+    String(paymentProduct || "").startsWith("access:");
+  const submitted = !isDedicatedSeries && (
+    value?.submitted === true ||
+    value?.isSubmitted === true ||
+    value?.testSubmitted === true ||
+    value?.completed === true ||
+    value?.isCompleted === true ||
+    ["submitted","completed","complete","attempted"].includes(
+      String(value?.status || value?.state || "").toLowerCase()
+    )
+  );
+  const actionUrl = submitted ? "mahapack-study.html" : start;
+  const actionLabel = submitted ? "Review →" : "Start →";
+
   const row=document.createElement("tr");
 
   row.innerHTML=`
@@ -756,7 +773,7 @@ function addRow(product,value,paymentProduct){
     <td>
       ${
         active
-        ? `<a class="action-btn start-btn" href="${escapeHtml(start)}">Start →</a>`
+        ? `<a class="action-btn start-btn" href="${escapeHtml(actionUrl)}">${actionLabel}</a>`
         : `<a class="action-btn renew-btn" href="${escapeHtml(renew)}">Renew →</a>`
       }
     </td>
