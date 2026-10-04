@@ -173,7 +173,6 @@ button,input{font:inherit}
 .purchase-table tbody tr:hover{background:#168cff09}
 
 .product-cell{display:flex;align-items:center;gap:10px;min-width:0}
-.product-icon.image-fallback{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e7efff,#d9f6ff);color:#2456d8;font-weight:900;font-size:24px;border:1px solid #c7dcff}
 .product-icon{
    width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;
    border-radius:14px;background:linear-gradient(145deg,#263c70,#15274a);
@@ -698,7 +697,7 @@ const PRODUCTS = {
   },
   "computer-master": {
     name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
-    image:"joa-mahapack-banner.jpg",
+    image:"icon/computer-fundamentals.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
@@ -764,7 +763,7 @@ function addRow(product,value,paymentProduct){
   row.innerHTML=`
     <td>
       <div class="product-cell">
-        <div class="product-icon">${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('image-fallback');this.parentElement.textContent='${escapeHtml(product.icon)}'">` : escapeHtml(product.icon)}</div>
+        <div class="product-icon">${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" onerror="this.style.display='none';this.parentElement.textContent='${escapeHtml(product.icon)}'">` : escapeHtml(product.icon)}</div>
         <div>
           <div class="product-name">${escapeHtml(product.name)}</div>
           <div class="product-desc">${escapeHtml(product.desc)}</div>
@@ -837,13 +836,13 @@ function render(data){
     const value=typeof joaValue==="object" ? joaValue : {};
     addUnique({
       name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      image:"../joa/joa-banner.jpg",desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
+      desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
     },value,"joa","access:joa");
   }
   if(data?.joaitFullSeries===true){
     addUnique({
       name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      image:"../joa/joa-banner.jpg",desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
+      desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
     },{},"joa","access:joa");
   }
 
@@ -853,13 +852,13 @@ function render(data){
     const value=typeof patwariValue==="object" ? patwariValue : {};
     addUnique({
       name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      image:"../patwari/patwari-banner.jpg",desc:"Full Series access",start:"../patwari/patwari-series.html"
+      desc:"Full Series access",start:"../patwari/patwari-series.html"
     },value,"patwari","access:patwari");
   }
   if(data?.patwariFullSeries===true){
     addUnique({
       name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      image:"../patwari/patwari-banner.jpg",desc:"Full Series access",start:"../patwari/patwari-series.html"
+      desc:"Full Series access",start:"../patwari/patwari-series.html"
     },{},"patwari","access:patwari");
   }
 
@@ -870,8 +869,8 @@ function render(data){
     const value=typeof mahapack==="object" ? mahapack : {};
     addUnique({
       name:"JOA IT Maha Pack",type:"Maha Pack",icon:"♛",
-      image:"joa-mahapack-banner.jpg",desc:"All 15 computer subjects",
-      start:"joa-mahapack.html"
+      image:"icon/computer-fundamentals.png",desc:"All 15 computer subjects",
+      start:"mahapack/joa-mahapack.html"
     },value,"computer-master","access:mahapack");
   }
 
@@ -908,6 +907,7 @@ onAuthStateChanged(auth, async user => {
     $("headerUserName").textContent = "Guest";
     $("headerAvatar").textContent = "G";
     $("logoutBtn").style.display = "none";
+
     $("tableShell").style.display = "none";
     $("emptyState").style.display = "block";
     $("emptyState").innerHTML = `
@@ -922,13 +922,51 @@ onAuthStateChanged(auth, async user => {
   const displayName = user.displayName || user.email?.split("@")[0] || "Student";
   $("headerUserName").textContent = displayName;
   $("headerAvatar").textContent = initial(displayName);
+
   $("logoutBtn").style.display = "";
 
   try {
     const snap = await getDoc(doc(db, "testAccess", user.uid));
-    // render() lists only access records belonging to this authenticated user.
-    // If no purchase/access exists, it shows the normal empty state.
-    render(snap.exists() ? snap.data() : {});
+    const accessData = snap.exists() ? snap.data() : {};
+
+    // Check each purchased MahaPack course's actual attempt/session records.
+    // The course page stores final submissions at:
+    // users/{uid}/mahapackAttempts/{course_id_with_underscores}_01
+    const courseIds = Object.keys(PRODUCTS).filter(id =>
+      !["ms-office", "computer-master"].includes(id)
+    );
+
+    await Promise.all(courseIds.map(async courseId => {
+      const testId = courseId.replace(/-/g, "_") + "_01";
+      try {
+        const [attemptSnap, sessionSnap] = await Promise.all([
+          getDoc(doc(db, "users", user.uid, "mahapackAttempts", testId)),
+          getDoc(doc(db, "users", user.uid, "mahapackSessions", testId))
+        ]);
+
+        const accessValue = accessData.computerAccess?.courses?.[courseId]
+          || accessData.mahapackAccess?.courses?.[courseId];
+
+        if (accessValue && typeof accessValue === "object") {
+          if (attemptSnap.exists()) {
+            accessValue.submitted = true;
+            accessValue.attemptStatus = "submitted";
+          } else if (sessionSnap.exists()) {
+            const sessionData = sessionSnap.data() || {};
+            const answers = sessionData.answers || {};
+            const hasAnswers = Object.keys(answers).length > 0;
+            if (hasAnswers) {
+              accessValue.inProgress = true;
+              accessValue.attemptStatus = "in-progress";
+            }
+          }
+        }
+      } catch (attemptError) {
+        console.warn("Could not check attempt for", courseId, attemptError);
+      }
+    }));
+
+    render(accessData);
   } catch (error) {
     console.error("My Purchase error:", error);
     render({});
