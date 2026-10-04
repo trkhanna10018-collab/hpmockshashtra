@@ -514,6 +514,99 @@ body:before,body:after{display:none!important}
   }
 </style>
 
+
+/* Mobile polish: place the hamburger at the RIGHT and keep purchase cards readable. */
+@media (max-width: 620px) {
+  .topbar { margin: 12px 10px 0 !important; width: calc(100% - 20px) !important; }
+  .nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 76px !important;
+    padding: 10px 12px !important;
+    gap: 9px !important;
+  }
+  .brand { order: 0 !important; flex: 1 1 auto !important; min-width: 0 !important; }
+  .brand-title { white-space: nowrap !important; font-size: clamp(15px, 4.1vw, 20px) !important; }
+  .tagline { white-space: nowrap !important; font-size: 8px !important; }
+  .logo img { width: 48px !important; height: 48px !important; object-fit: contain !important; }
+  .header-user { order: 1 !important; flex: 0 0 auto !important; max-width: 112px !important; gap: 5px !important; }
+  .header-user #headerUserName { max-width: 42px !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+  .avatar { flex: 0 0 31px !important; width: 31px !important; height: 31px !important; }
+  .logout-btn { padding: 8px 10px !important; font-size: 10px !important; }
+  .mobile-menu-btn {
+    order: 2 !important;
+    display: grid !important;
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0 0 0 2px !important;
+    place-items: center !important;
+    font-size: 22px !important;
+  }
+  .header-links { display: none !important; }
+  .mobile-menu {
+    left: auto !important;
+    right: 0 !important;
+    width: min(245px, calc(100vw - 44px)) !important;
+    top: calc(100% + 8px) !important;
+    z-index: 10000 !important;
+  }
+  .main { padding: 10px !important; }
+  .page-head { padding: 22px 18px !important; min-height: 0 !important; margin-top: 12px !important; }
+  .page-head h1 { font-size: clamp(30px, 8vw, 40px) !important; line-height: 1.12 !important; }
+  .page-head p { font-size: 13px !important; line-height: 1.5 !important; }
+  .section-head { margin-top: 24px !important; margin-bottom: 12px !important; }
+  .section-head h2 { font-size: 24px !important; }
+  .table-shell { overflow: visible !important; border-radius: 16px !important; }
+  .purchase-table,.purchase-table tbody,.purchase-table tr,.purchase-table td { display: block !important; width: 100% !important; }
+  .purchase-table thead { display: none !important; }
+  .purchase-table tbody tr {
+    display: block !important;
+    padding: 13px 14px !important;
+    margin: 0 0 12px !important;
+    border: 1px solid #dbe7f5 !important;
+    border-radius: 16px !important;
+    background: rgba(255,255,255,.92) !important;
+    box-shadow: 0 7px 20px rgba(25,55,95,.06) !important;
+  }
+  .purchase-table td { border: 0 !important; padding: 7px 0 !important; overflow-wrap: anywhere !important; }
+  .purchase-table td:first-child { padding-bottom: 13px !important; }
+  .purchase-table td:nth-child(n+2) {
+    display: grid !important;
+    grid-template-columns: minmax(95px, 34%) minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 9px !important;
+  }
+  .purchase-table td:nth-child(2)::before { content: "TYPE"; }
+  .purchase-table td:nth-child(3)::before { content: "PURCHASED ON"; }
+  .purchase-table td:nth-child(4)::before { content: "VALID TILL"; }
+  .purchase-table td:nth-child(5)::before { content: "ACCESS"; }
+  .purchase-table td:nth-child(6)::before { content: "ATTEMPT"; }
+  .purchase-table td:nth-child(7)::before { content: "ACTION"; }
+  .purchase-table td:nth-child(n+2)::before {
+    display: block !important;
+    color: #71839b !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: .5px !important;
+  }
+  .purchase-table td:nth-child(7) .action-btn,
+  .purchase-table td:nth-child(7) button,
+  .purchase-table td:nth-child(7) a { width: 100% !important; text-align: center !important; }
+}
+@media (max-width: 380px) {
+  .nav { padding: 9px 8px !important; gap: 6px !important; }
+  .logo img { width: 39px !important; height: 39px !important; }
+  .brand-title { font-size: 14px !important; }
+  .tagline { font-size: 7px !important; }
+  .header-user { max-width: 88px !important; }
+  .header-user #headerUserName { display: none !important; }
+  .logout-btn { padding: 7px 8px !important; }
+  .mobile-menu-btn { width: 36px !important; height: 36px !important; flex-basis: 36px !important; }
+}
+
 </head>
 
 <body>
@@ -729,13 +822,13 @@ const PRODUCTS = {
     desc:"400 premium questions", start:"paid-operating-system.html"
   },
   "ms-office": {
-    name:"MS Office Pack", type:"Premium Pack", icon:"MSO",
-    image:"icon/ms-office.png",
+    name:"MS Office Pack", type:"Premium Pack", icon:"▤",
+    image:"icon/ms-word.png",
     desc:"Word • Excel • PowerPoint • Access", start:"joa-mahapack.html"
   },
   "computer-master": {
-    name:"JOA IT Maha Pack", type:"Premium Pack", icon:"MP",
-    image:"icon/mahapack.png",
+    name:"JOA IT Maha Pack", type:"Maha Pack", icon:"♛",
+    image:"icon/computer-fundamentals.png",
     desc:"All 15 computer subjects", start:"joa-mahapack.html"
   }
 };
