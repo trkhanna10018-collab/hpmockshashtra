@@ -366,35 +366,110 @@ img{
 </style>
 
 <style>
-/* Match paid-computer-fundamentals.html visual theme */
-:root{--bg:#061326;--panel:#0c1d39;--panel2:#0f2343;--line:rgba(100,170,255,.22);--text:#f5f8ff;--muted:#9eb0c8;--blue:#2296ff;--violet:#8b5cf6;--green:#12c98b;--red:#ff6075;--gold:#ffd166}
-body{color:var(--text)!important;background:radial-gradient(circle at 80% 15%,rgba(93,61,180,.18),transparent 30%),radial-gradient(circle at 10% 70%,rgba(0,130,255,.12),transparent 28%),#061326!important}
-body:before{display:block!important;content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:38px 38px}
-.study-header{border-color:rgba(126,176,255,.32)!important;background:linear-gradient(135deg,rgba(13,34,66,.94),rgba(24,23,62,.88))!important;box-shadow:0 15px 40px rgba(0,0,0,.22)!important}
-.kicker,.q-no{color:#66c8ff!important}
-.title,.question-en{color:#f5f8ff!important}
-.subtitle,.page-info,.stat-label,.score-text small,.question-hi,.option-hi,.footer{color:#9eb0c8!important}
-.stat{border-color:rgba(126,176,255,.16)!important;background:rgba(255,255,255,.035)!important}
-.stat-number{background:rgba(255,255,255,.045)!important}
-.score-box{border-color:rgba(139,92,246,.35)!important;background:rgba(139,92,246,.10)!important}
-.score-ring:before{background:#0c1d39!important}
-.loading,.error-box,.question-card{border-color:rgba(100,170,255,.22)!important;background:rgba(12,29,57,.94)!important;box-shadow:0 15px 40px rgba(0,0,0,.22)!important}
-.error-box h2{color:#f5f8ff!important}
-.nav-btn{border-color:rgba(126,176,255,.22)!important;background:#0c2040!important;color:#cfe0f3!important}
-.nav-btn:hover:not(:disabled){border-color:#35aaff!important;background:#102b50!important}
-.option{border-color:rgba(126,176,255,.19)!important;background:#0c2040!important;color:#dce8f6!important}
-.option:hover{background:#102b50!important}
-.option-letter{background:rgba(255,255,255,.06)!important;color:#9fc9ee!important}
-.option.correct{border-color:#12c98b!important;background:rgba(18,201,139,.14)!important;color:#dffff2!important}
-.option.wrong{border-color:#ff6075!important;background:rgba(255,96,117,.14)!important;color:#ffe1e5!important}
-.option.correct .option-hi{color:#a9ddca!important}
-.option.wrong .option-hi{color:#e2aeb6!important}
-.explanation{background:rgba(18,201,139,.06)!important;color:#cdebdc!important;border-left-color:#12c98b!important}
-.explanation strong{color:#4de3b0!important}
-.status.correct{background:rgba(18,201,139,.13)!important;color:#4de3b0!important}
-.status.wrong{background:rgba(255,96,117,.13)!important;color:#ff8293!important}
-.status.unattempted{background:rgba(255,255,255,.045)!important;color:#9eb0c8!important}
-.footer a{color:#8fa8c5!important}
+/* HPMockShashtra Study Mode — light blue theme matching the paid practice page */
+:root{
+  --bg:#edf3fb;
+  --panel:#ffffff;
+  --panel2:#f5f8ff;
+  --line:#cddcf3;
+  --text:#17345a;
+  --muted:#58749a;
+  --blue:#315efb;
+  --violet:#8b5cf6;
+  --green:#00a86b;
+  --red:#ed394b;
+  --gold:#f59e0b;
+}
+body{
+  color:var(--text)!important;
+  background:#edf3fb!important;
+}
+body:before{display:none!important}
+.study-header{
+  border-color:#9fc2f4!important;
+  background:#b5cff2!important;
+  box-shadow:none!important;
+}
+.kicker,.q-no{color:#315efb!important}
+.title,.question-en{color:#17345a!important}
+.subtitle,.page-info,.stat-label,.score-text small,.question-hi,.option-hi,.footer{
+  color:#58749a!important;
+}
+.stat{
+  border-color:#d7e3f3!important;
+  background:#f1f7ff!important;
+}
+.stat-number{background:transparent!important}
+.stat.correct{background:#e6f7ef!important;border-color:#bcebd2!important}
+.stat.correct .stat-number{color:#009b65!important}
+.stat.wrong{background:#fff0f1!important;border-color:#ffd0d5!important}
+.stat.wrong .stat-number{color:#ed394b!important}
+.stat.unattempted{background:#fff7e9!important;border-color:#f5dfb6!important}
+.stat.unattempted .stat-number{color:#d97706!important}
+.score-box{
+  border-color:#d9cef9!important;
+  background:#f2edff!important;
+}
+.score-ring:before{background:#f2edff!important}
+.loading,.error-box,.question-card{
+  border-color:#cddcf3!important;
+  background:#ffffff!important;
+  box-shadow:0 5px 18px rgba(43,79,130,.06)!important;
+}
+.error-box h2{color:#17345a!important}
+.nav-btn{
+  border-color:#cddcf3!important;
+  background:#edf3ff!important;
+  color:#244b83!important;
+}
+.nav-btn:hover:not(:disabled){
+  border-color:#86aaff!important;
+  background:#e2ecff!important;
+}
+.option{
+  border-color:#cddcf3!important;
+  background:#ffffff!important;
+  color:#17345a!important;
+}
+.option:hover{background:#f5f8ff!important}
+.option-letter{
+  background:#eaf1ff!important;
+  color:#315baf!important;
+}
+.option.correct{
+  border-color:#19b879!important;
+  background:#e8f8f0!important;
+  color:#15583d!important;
+}
+.option.wrong{
+  border-color:#f06b78!important;
+  background:#fff0f1!important;
+  color:#8d2430!important;
+}
+.option.correct .option-hi{color:#39765d!important}
+.option.wrong .option-hi{color:#9e4b54!important}
+.explanation{
+  background:#effaf4!important;
+  color:#315f49!important;
+  border-left-color:#00a86b!important;
+}
+.explanation strong{color:#078653!important}
+.status.correct{
+  background:#e6f7ef!important;
+  color:#087f57!important;
+  border-color:#bcebd2!important;
+}
+.status.wrong{
+  background:#fff0f1!important;
+  color:#c72f49!important;
+  border-color:#ffd0d5!important;
+}
+.status.unattempted{
+  background:#f1f5f9!important;
+  color:#64748b!important;
+  border-color:#dbe3ec!important;
+}
+.footer a{color:#315efb!important}
 </style>
 
 <style>
@@ -419,6 +494,26 @@ body:before{display:block!important;content:"";position:fixed;inset:0;pointer-ev
   .option-letter{width:27px!important;height:27px!important;flex-basis:27px!important}
   .status{font-size:8px!important}
   .explanation{font-size:9.5px!important}
+}
+</style>
+<style>
+/* Small-screen refinements for the shared Study Mode page */
+@media(max-width:850px){
+  .header-row{gap:14px}
+  .summary{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .score-box{grid-column:1/-1;justify-content:center}
+}
+@media(max-width:600px){
+  .wrap{width:calc(100% - 18px);margin:12px auto 28px}
+  .study-header{padding:16px 14px;border-radius:15px}
+  .title{font-size:21px;overflow-wrap:anywhere}
+  .summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .stat{min-width:0;height:60px;padding:6px 3px}
+  .stat-label{font-size:7px}
+  .score-box{height:60px;min-width:0}
+  .top-actions{gap:7px}
+  .page-info{font-size:8px;text-align:center}
+  .nav-btn{padding:9px 10px;font-size:9px;white-space:nowrap}
 }
 </style>
 </head>
