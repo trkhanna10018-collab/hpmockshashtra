@@ -1,1350 +1,1199 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Loading | HPMockShashtra</title>
 
 <style>
+
 :root{
-  --bg:#061326;
-  --panel:#0c1d39;
-  --panel2:#0f2343;
-  --line:rgba(100,170,255,.22);
-  --text:#f5f8ff;
-  --muted:#9eb0c8;
-  --blue:#2296ff;
-  --violet:#8b5cf6;
-  --green:#12c98b;
+  --bg:#050b1d;
+  --bg2:#081633;
+
+  --card:#0b1936;
+  --card2:#0e2043;
+
+  --blue:#2196ff;
+  --blue2:#38bdf8;
+  --purple:#6957e8;
+
+  --green:#20d39b;
   --red:#ff6075;
-  --gold:#ffd166;
+  --yellow:#ffd166;
+
+  --text:#f5f9ff;
+  --muted:#91a5c0;
+
+  --border:rgba(74,157,255,.22);
 }
+
+/* =========================
+   BASIC
+========================= */
 
 *{
   box-sizing:border-box;
 }
 
-html{
+html,
+body{
+  margin:0;
+  padding:0;
   min-height:100%;
-  background:var(--bg);
 }
 
 body{
-  margin:0;
+
   min-height:100vh;
+
   color:var(--text);
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   background:
-    radial-gradient(circle at 80% 10%,rgba(93,61,180,.20),transparent 30%),
-    radial-gradient(circle at 10% 70%,rgba(0,130,255,.12),transparent 28%),
-    #061326;
+
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(30,120,255,.16),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(100,75,230,.16),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #030817,
+      #06152f 48%,
+      #0a1030
+    );
+
+  overflow-x:hidden;
 }
 
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.16;
-  background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:38px 38px;
-}
 
 /* =========================
-   HEADER
+   SUBTLE BACKGROUND
 ========================= */
 
-.topbar{
-  position:sticky;
-  top:8px;
-  z-index:50;
-  width:calc(100% - 20px);
-  margin:8px 10px 0;
-  border:1px solid rgba(126,176,255,.30);
-  border-radius:16px;
-  background:
-    linear-gradient(
-      110deg,
-      rgba(7,20,42,.97),
-      rgba(37,21,70,.94)
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  pointer-events:none;
+
+  opacity:.13;
+
+  background-image:
+
+    radial-gradient(
+      rgba(74,157,255,.45) 1px,
+      transparent 1px
     );
-  box-shadow:0 12px 40px rgba(0,0,0,.35);
+
+  background-size:28px 28px;
 }
 
-.nav{
-  min-height:64px;
-  padding:8px 14px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  min-width:0;
-  text-decoration:none;
-  color:#fff;
-}
-
-.logo,
-.logo img{
-  width:42px;
-  height:42px;
-}
-
-.logo img{
-  display:block;
-  object-fit:contain;
-}
-
-.brand-title{
-  font-size:18px;
-  font-weight:900;
-  letter-spacing:-.6px;
-  white-space:nowrap;
-}
-
-.hp,
-.sh{
-  color:#fff;
-}
-
-.mock{
-  color:#37b8ff;
-}
-
-.tagline{
-  font-size:7px;
-  color:#8ea2bd;
-  margin-top:3px;
-}
-
-.nav-right{
-  margin-left:auto;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.nav-pill,
-.user{
-  border:1px solid rgba(126,176,255,.22);
-  border-radius:9px;
-  background:rgba(255,255,255,.045);
-}
-
-.nav-pill{
-  padding:8px 11px;
-  font-size:9px;
-  font-weight:850;
-  color:#cbd9ea;
-}
-
-.user{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:4px 8px 4px 5px;
-}
-
-.avatar{
-  width:28px;
-  height:28px;
-  border-radius:8px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,#2497ff,#9a5cff);
-  font-size:10px;
-  font-weight:900;
-}
-
-.user-name{
-  max-width:130px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  font-size:9px;
-  font-weight:800;
-}
-
-.logout{
-  border:0;
-  background:none;
-  color:#879ab3;
-  font-size:8px;
-  cursor:pointer;
-}
 
 /* =========================
-   MAIN
+   MAIN CONTAINER
 ========================= */
 
 .page{
+
   width:100%;
-  margin:18px 0 50px;
-  padding:0 10px;
+
+  min-height:100vh;
+
+  padding:
+    25px 25px 50px;
 }
 
-.exam-head{
+
+/* =========================
+   COURSE TITLE
+========================= */
+
+.course-header{
+
   width:100%;
-  border:1px solid var(--line);
+
+  margin-bottom:16px;
+
+  padding:
+    20px 22px;
+
+  border:
+    1px solid
+    rgba(74,157,255,.25);
+
   border-radius:16px;
+
   background:
+
     linear-gradient(
       135deg,
-      rgba(13,34,66,.96),
-      rgba(24,23,62,.90)
+      rgba(9,28,60,.96),
+      rgba(20,19,61,.94)
     );
-  box-shadow:0 15px 40px rgba(0,0,0,.22);
-  padding:18px 20px;
-  position:relative;
+
+  box-shadow:
+    0 16px 45px
+    rgba(0,0,0,.30);
 }
 
-.eyebrow{
+
+.course-label{
+
+  color:#4dbbff;
+
   font-size:9px;
-  color:#66c8ff;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   text-transform:uppercase;
+
+  margin-bottom:5px;
 }
 
-.exam-title{
-  margin:5px 0 4px;
-  font-size:26px;
-  line-height:1.2;
-}
 
-.exam-sub{
+.course-title{
+
   margin:0;
-  color:var(--muted);
-  font-size:10px;
-  line-height:1.6;
+
+  font-size:27px;
+
+  line-height:1.25;
+
+  font-weight:950;
+
+  color:#fff;
 }
 
-.cloud-status{
-  margin-top:10px;
-  display:flex;
-  align-items:center;
-  gap:7px;
-  color:#8fa5bd;
-  font-size:8px;
-}
-
-.dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#12c98b;
-  box-shadow:0 0 10px rgba(18,201,139,.55);
-}
-
-.dot.saving{
-  background:#ffd166;
-}
-
-.dot.error{
-  background:#ff6075;
-}
 
 /* =========================
    LIVE STATS
 ========================= */
 
-.live-stats{
-  display:grid;
-  grid-template-columns:
-    repeat(5,minmax(70px,1fr));
-  gap:8px;
-  margin-top:15px;
-}
+.stats{
 
-.live-stat{
-  border:1px solid rgba(126,176,255,.15);
-  border-radius:10px;
-  background:rgba(255,255,255,.035);
-  padding:9px 5px;
-  text-align:center;
-}
-
-.live-number{
-  font-size:17px;
-  font-weight:950;
-  line-height:1;
-}
-
-.live-label{
-  margin-top:5px;
-  color:#91a6be;
-  font-size:7px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.4px;
-}
-
-.live-stat.attempted .live-number{
-  color:#66c8ff;
-}
-
-.live-stat.correct .live-number{
-  color:#3ce0aa;
-}
-
-.live-stat.wrong .live-number{
-  color:#ff7284;
-}
-
-.live-stat.unattempted .live-number{
-  color:#ffd166;
-}
-
-.live-stat.score .live-number{
-  color:#b894ff;
-}
-
-/* =========================
-   PROGRESS
-========================= */
-
-.progress-area{
-  margin-top:14px;
-}
-
-.progress-top{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:6px;
-  color:#91a6be;
-  font-size:8px;
-}
-
-.progress-bar{
   width:100%;
-  height:7px;
-  border-radius:99px;
-  overflow:hidden;
-  background:#07162c;
-  border:1px solid rgba(126,176,255,.10);
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:9px;
+
+  margin-bottom:16px;
 }
 
-.progress-fill{
-  height:100%;
-  width:0%;
-  border-radius:99px;
+
+.stat{
+
+  min-height:70px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  border:
+    1px solid
+    rgba(74,157,255,.18);
+
+  border-radius:12px;
+
   background:
+
     linear-gradient(
-      90deg,
-      var(--blue),
-      var(--violet)
+      145deg,
+      rgba(12,32,67,.95),
+      rgba(8,24,52,.95)
     );
-  transition:width .25s ease;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.025);
 }
+
+
+.stat-number{
+
+  font-size:22px;
+
+  line-height:1;
+
+  font-weight:950;
+}
+
+
+.stat-label{
+
+  margin-top:6px;
+
+  color:#8198b5;
+
+  font-size:7px;
+
+  font-weight:850;
+
+  letter-spacing:.5px;
+
+  text-transform:uppercase;
+}
+
+
+.stat.attempted
+.stat-number{
+  color:#45baff;
+}
+
+.stat.correct
+.stat-number{
+  color:var(--green);
+}
+
+.stat.wrong
+.stat-number{
+  color:var(--red);
+}
+
+.stat.unattempted
+.stat-number{
+  color:var(--yellow);
+}
+
 
 /* =========================
-   QUESTION
+   QUESTION CARD
 ========================= */
 
 .question-card{
+
   width:100%;
-  margin-top:14px;
-  padding:28px 30px;
-  border:1px solid var(--line);
+
+  padding:
+    27px 30px;
+
+  border:
+    1px solid
+    rgba(74,157,255,.24);
+
   border-radius:16px;
-  background:rgba(11,29,56,.97);
-  box-shadow:0 15px 40px rgba(0,0,0,.20);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(9,27,57,.98),
+      rgba(10,24,52,.98)
+    );
+
+  box-shadow:
+
+    0 18px 50px
+    rgba(0,0,0,.34);
 }
 
-.q-number{
+
+.question-number{
+
+  color:#45baff;
+
   font-size:9px;
-  color:#61bdff;
+
   font-weight:900;
+
   letter-spacing:.8px;
+
   text-transform:uppercase;
+
+  margin-bottom:11px;
 }
+
 
 .question{
-  margin:11px 0 22px;
-  max-width:1100px;
+
+  margin:0;
+
   font-size:20px;
+
   line-height:1.55;
+
   font-weight:850;
+
+  color:#f7faff;
 }
+
 
 .question-en{
+
   display:block;
 }
 
+
 .question-hi{
+
   display:block;
+
   margin-top:9px;
-  color:#d7e4f4;
+
+  color:#c4d7eb;
+
   font-size:16px;
+
   line-height:1.55;
+
   font-weight:650;
 }
+
 
 /* =========================
    OPTIONS
 ========================= */
 
 .options{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:12px;
+
+  margin-top:23px;
 }
+
 
 .option{
+
   width:100%;
-  min-height:64px;
-  padding:12px 14px;
-  text-align:left;
-  cursor:pointer;
-  color:#dce8f6;
-  background:#0c2040;
-  border:1px solid rgba(126,176,255,.19);
-  border-radius:12px;
-  font-size:11px;
-  font-weight:700;
+
+  min-height:65px;
+
   display:flex;
+
   align-items:flex-start;
+
+  padding:
+    12px 14px;
+
+  border:
+    1px solid
+    rgba(74,157,255,.18);
+
+  border-radius:12px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(13,39,79,.94),
+      rgba(9,29,60,.96)
+    );
+
+  color:#e0ebf8;
+
+  text-align:left;
+
+  font-size:11px;
+
+  font-weight:700;
+
   line-height:1.5;
+
+  cursor:pointer;
+
   transition:
-    border-color .15s,
-    background .15s,
-    transform .15s;
+    .18s ease;
 }
 
+
 .option:hover:not(:disabled){
-  border-color:#35aaff;
+
+  border-color:
+    rgba(54,175,255,.65);
+
   background:
+
     linear-gradient(
-      100deg,
-      rgba(24,143,255,.22),
-      rgba(127,85,240,.18)
+      120deg,
+      rgba(20,117,225,.23),
+      rgba(100,78,220,.18)
     );
-  transform:translateY(-1px);
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 7px 20px
+    rgba(23,130,255,.08);
 }
+
 
 .option:disabled{
   cursor:default;
 }
 
+
 .option-letter{
+
+  width:29px;
+
+  height:29px;
+
+  flex:
+    0 0 29px;
+
   display:grid;
+
   place-items:center;
-  flex:0 0 27px;
-  width:27px;
-  height:27px;
+
   margin-right:9px;
-  border-radius:7px;
-  background:rgba(255,255,255,.06);
-  color:#9fc9ee;
+
+  border-radius:8px;
+
+  background:
+    rgba(40,135,230,.12);
+
+  border:
+    1px solid
+    rgba(69,166,255,.20);
+
+  color:#72c8ff;
+
   font-size:9px;
-  font-weight:900;
+
+  font-weight:950;
 }
+
 
 .option-content{
   flex:1;
 }
 
+
 .option-en{
   display:block;
 }
 
+
 .option-hi{
+
   display:block;
+
   margin-top:4px;
-  color:#aebfd3;
+
+  color:#9fb5cf;
+
   font-size:9px;
+
   font-weight:600;
 }
 
-/* Correct / Wrong */
+
+/* =========================
+   CORRECT
+========================= */
 
 .option.correct{
-  border-color:#12c98b !important;
-  background:rgba(18,201,139,.14) !important;
-  color:#dffff2;
+
+  border-color:
+    rgba(32,211,155,.75)
+    !important;
+
+  background:
+    rgba(32,211,155,.13)
+    !important;
+
+  color:#e4fff5;
 }
+
 
 .option.correct .option-letter{
-  background:rgba(18,201,139,.20);
+
+  background:
+    rgba(32,211,155,.20);
+
   color:#4de3b0;
+
+  border-color:
+    rgba(32,211,155,.38);
 }
+
+
+/* =========================
+   WRONG
+========================= */
 
 .option.wrong{
-  border-color:#ff6075 !important;
-  background:rgba(255,96,117,.14) !important;
-  color:#ffe1e5;
+
+  border-color:
+    rgba(255,96,117,.78)
+    !important;
+
+  background:
+    rgba(255,96,117,.13)
+    !important;
+
+  color:#ffe5e9;
 }
+
 
 .option.wrong .option-letter{
-  background:rgba(255,96,117,.20);
-  color:#ff9aaa;
+
+  background:
+    rgba(255,96,117,.20);
+
+  color:#ff8798;
+
+  border-color:
+    rgba(255,96,117,.38);
 }
+
+
+/* =========================
+   CORRECT ANSWER REVEAL
+========================= */
 
 .option.correct-answer{
-  border-color:#12c98b !important;
-  background:rgba(18,201,139,.10) !important;
+
+  border-color:
+    rgba(32,211,155,.52)
+    !important;
+
+  background:
+    rgba(32,211,155,.075)
+    !important;
 }
 
+
 /* =========================
-   ANSWER RESULT
+   ANSWER STATUS
 ========================= */
 
-.answer-result{
+.answer-status{
+
   display:none;
-  margin-top:18px;
-  padding:15px 17px;
-  border-radius:11px;
-  border:1px solid rgba(18,201,139,.25);
-  background:rgba(18,201,139,.055);
-}
 
-.answer-result.show{
-  display:block;
-}
+  margin-top:17px;
 
-.answer-result.wrong-result{
-  border-color:rgba(255,96,117,.25);
-  background:rgba(255,96,117,.045);
-}
+  padding:
+    12px 14px;
 
-.answer-result-title{
-  font-size:12px;
-  font-weight:950;
-  margin-bottom:6px;
-}
+  border-radius:10px;
 
-.answer-result.correct-result .answer-result-title{
-  color:#4de3b0;
-}
-
-.answer-result.wrong-result .answer-result-title{
-  color:#ff7d8d;
-}
-
-.correct-answer-line{
   font-size:10px;
-  color:#d5e4f3;
-  line-height:1.6;
-}
 
-.correct-answer-line b{
-  color:#4de3b0;
-}
-
-.explanation{
-  margin-top:11px;
-  padding:11px 12px;
-  border-radius:9px;
-  background:rgba(255,255,255,.035);
-  color:#cdebdc;
-  font-size:9.5px;
-  line-height:1.7;
-}
-
-.explanation strong{
-  display:block;
-  color:#66c8ff;
-  margin-bottom:4px;
-  font-size:8px;
-  text-transform:uppercase;
-  letter-spacing:.7px;
-}
-
-/* =========================
-   QUESTION STATUS
-========================= */
-
-.question-status{
-  margin-top:10px;
-  font-size:9px;
-  color:#8095ae;
-}
-
-.question-status.correct-status{
-  color:#4de3b0;
   font-weight:850;
-}
 
-.question-status.wrong-status{
-  color:#ff7284;
-  font-weight:850;
-}
-
-/* =========================
-   ACTIONS
-========================= */
-
-.page-actions{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-top:20px;
-  padding:13px 15px;
-  border:1px solid rgba(126,176,255,.15);
-  border-radius:12px;
-  background:rgba(8,22,43,.7);
-}
-
-.save-note{
-  color:#8095ae;
-  font-size:8px;
   line-height:1.5;
 }
 
-.next-btn{
-  border:0;
-  border-radius:10px;
-  padding:11px 19px;
-  font-size:10px;
-  font-weight:900;
-  cursor:pointer;
-  color:#fff;
+
+.answer-status.show{
+  display:block;
+}
+
+
+.answer-status.correct{
+
+  color:#54e5b3;
+
   background:
+    rgba(32,211,155,.08);
+
+  border:
+    1px solid
+    rgba(32,211,155,.20);
+}
+
+
+.answer-status.wrong{
+
+  color:#ff7b8d;
+
+  background:
+    rgba(255,96,117,.08);
+
+  border:
+    1px solid
+    rgba(255,96,117,.20);
+}
+
+
+/* =========================
+   NEXT BUTTON
+========================= */
+
+.action-area{
+
+  display:flex;
+
+  justify-content:flex-end;
+
+  margin-top:18px;
+}
+
+
+.next-btn{
+
+  border:0;
+
+  border-radius:10px;
+
+  padding:
+    11px 21px;
+
+  color:#fff;
+
+  background:
+
     linear-gradient(
       100deg,
       #168eff,
-      #8a54f6
+      #5968f4,
+      #8055f4
     );
+
+  box-shadow:
+    0 7px 22px
+    rgba(37,99,235,.22);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+  transition:.18s ease;
 }
 
+
+.next-btn:hover:not(:disabled){
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 10px 28px
+    rgba(37,99,235,.32);
+}
+
+
 .next-btn:disabled{
-  opacity:.4;
+
+  opacity:.38;
+
   cursor:not-allowed;
 }
 
-/* =========================
-   COMPLETED RESULT
-========================= */
-
-.completed{
-  display:none;
-  width:100%;
-  margin-top:14px;
-  padding:24px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(13,34,66,.97),
-      rgba(24,23,62,.94)
-    );
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
-}
-
-.completed-title{
-  text-align:center;
-}
-
-.completed-title .big{
-  font-size:24px;
-  font-weight:950;
-}
-
-.completed-title .small{
-  margin-top:5px;
-  color:#9eb0c8;
-  font-size:9px;
-}
-
-.final-score{
-  margin:18px auto;
-  text-align:center;
-  font-size:52px;
-  line-height:1;
-  font-weight:950;
-  background:
-    linear-gradient(
-      90deg,
-      #38baff,
-      #9b65ff
-    );
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.final-score-label{
-  text-align:center;
-  color:#91a6be;
-  font-size:8px;
-  margin-top:-10px;
-}
-
-.final-stats{
-  display:grid;
-  grid-template-columns:
-    repeat(5,minmax(90px,1fr));
-  gap:9px;
-  margin-top:20px;
-}
-
-.final-stat{
-  padding:12px 8px;
-  text-align:center;
-  border:1px solid rgba(126,176,255,.15);
-  border-radius:10px;
-  background:rgba(255,255,255,.035);
-}
-
-.final-stat strong{
-  display:block;
-  font-size:17px;
-}
-
-.final-stat span{
-  display:block;
-  margin-top:4px;
-  color:#91a6be;
-  font-size:7px;
-  text-transform:uppercase;
-}
-
-.final-stat.correct strong{
-  color:#3ce0aa;
-}
-
-.final-stat.wrong strong{
-  color:#ff7284;
-}
-
-.final-stat.unattempted strong{
-  color:#ffd166;
-}
-
-.review-button-area{
-  display:flex;
-  justify-content:center;
-  margin-top:22px;
-}
-
-.review-btn{
-  display:inline-block;
-  text-decoration:none;
-  border:0;
-  border-radius:10px;
-  padding:12px 22px;
-  font-size:10px;
-  font-weight:900;
-  color:#fff;
-  background:
-    linear-gradient(
-      100deg,
-      #168eff,
-      #8a54f6
-    );
-}
-
-/* =========================
-   ACCESS BOX
-========================= */
-
-.access-box{
-  display:none;
-  width:100%;
-  margin-top:20px;
-  padding:35px 20px;
-  text-align:center;
-  border:1px solid rgba(255,96,117,.30);
-  border-radius:15px;
-  background:rgba(255,60,90,.07);
-}
-
-.access-box h2{
-  margin:0 0 7px;
-  font-size:19px;
-}
-
-.access-box p{
-  color:#aebbd0;
-  font-size:10px;
-  line-height:1.6;
-}
-
-.buy-btn{
-  display:inline-block;
-  margin-top:8px;
-  text-decoration:none;
-  border-radius:10px;
-  padding:11px 20px;
-  font-size:10px;
-  font-weight:900;
-  color:#fff;
-  background:
-    linear-gradient(
-      100deg,
-      #168eff,
-      #8a54f6
-    );
-}
 
 /* =========================
    LOADING
 ========================= */
 
 .loading{
-  width:100%;
-  padding:80px 20px;
+
+  min-height:80vh;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
   text-align:center;
-  color:#9db0c8;
+
+  color:#7fcaff;
+
   font-size:11px;
 }
+
 
 /* =========================
-   START MODAL
+   COMPLETED
 ========================= */
 
-.practice-modal{
-  position:fixed;
-  inset:0;
-  z-index:1000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  background:rgba(2,8,20,.75);
-  backdrop-filter:blur(7px);
-}
+.completed{
 
-.practice-modal-card{
-  width:min(520px,100%);
-  border:1px solid rgba(93,171,255,.35);
-  border-radius:18px;
-  padding:25px;
+  display:none;
+
+  width:100%;
+
+  padding:
+    35px 25px;
+
+  text-align:center;
+
+  border:
+    1px solid
+    rgba(74,157,255,.24);
+
+  border-radius:16px;
+
   background:
+
     linear-gradient(
       145deg,
-      #0c2040,
-      #19163f
+      rgba(9,28,60,.97),
+      rgba(20,19,61,.95)
     );
-  box-shadow:0 25px 80px rgba(0,0,0,.55);
 }
 
-.modal-badge{
+
+.completed-title{
+
+  font-size:24px;
+
+  font-weight:950;
+}
+
+
+.completed-sub{
+
+  margin-top:7px;
+
+  color:#91a6c0;
+
+  font-size:9px;
+}
+
+
+.review-btn{
+
   display:inline-block;
-  padding:5px 9px;
-  border-radius:999px;
-  background:rgba(42,164,255,.12);
-  border:1px solid rgba(42,164,255,.28);
-  color:#65c5ff;
-  font-size:8px;
-  font-weight:900;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-}
 
-.practice-modal-card h2{
-  margin:10px 0 7px;
-  font-size:22px;
-}
+  margin-top:20px;
 
-.modal-lead{
-  color:#d8e6f5;
-  font-size:11px;
-  line-height:1.6;
-}
+  padding:
+    11px 22px;
 
-.modal-points{
-  margin:12px 0;
-  padding:13px 14px;
-  border-radius:11px;
-  background:rgba(255,255,255,.035);
-  border:1px solid rgba(126,176,255,.14);
-  color:#a9bdd3;
-  font-size:9px;
-  line-height:1.8;
-}
+  border-radius:10px;
 
-.modal-points b{
-  color:#f0f6ff;
-}
-
-.modal-actions{
-  display:flex;
-  gap:9px;
-  margin-top:17px;
-}
-
-.modal-btn{
-  flex:1;
-  border-radius:9px;
-  padding:11px 15px;
-  font-size:9px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.modal-start{
-  border:0;
   color:#fff;
+
   background:
+
     linear-gradient(
       100deg,
       #168eff,
-      #8a54f6
+      #5968f4,
+      #8055f4
     );
+
+  text-decoration:none;
+
+  font-size:10px;
+
+  font-weight:900;
 }
 
-.modal-later{
-  border:1px solid rgba(126,176,255,.22);
-  color:#cbd9ea;
-  background:#0b1f3d;
+
+/* =========================
+   ACCESS DENIED
+========================= */
+
+.access-box{
+
+  display:none;
+
+  width:100%;
+
+  padding:
+    45px 20px;
+
+  text-align:center;
+
+  border:
+    1px solid
+    rgba(255,96,117,.25);
+
+  border-radius:16px;
+
+  background:
+    rgba(255,96,117,.055);
 }
+
+
+.access-box h2{
+
+  margin:0;
+
+  font-size:19px;
+}
+
+
+.access-box p{
+
+  color:#9fb2ca;
+
+  font-size:10px;
+
+  line-height:1.6;
+}
+
+
+.buy-btn{
+
+  display:inline-block;
+
+  margin-top:8px;
+
+  padding:
+    11px 21px;
+
+  border-radius:10px;
+
+  color:#fff;
+
+  background:
+
+    linear-gradient(
+      100deg,
+      #168eff,
+      #5968f4,
+      #8055f4
+    );
+
+  text-decoration:none;
+
+  font-size:10px;
+
+  font-weight:900;
+}
+
 
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media(max-width:850px){
-
-  .live-stats{
-    grid-template-columns:
-      repeat(5,minmax(60px,1fr));
-  }
-
-  .final-stats{
-    grid-template-columns:
-      repeat(3,1fr);
-  }
-
-}
-
 @media(max-width:700px){
 
-  .nav{
-    min-height:58px;
-  }
-
-  .brand-title{
-    font-size:14px;
-  }
-
-  .tagline{
-    display:none;
-  }
-
-  .nav-pill{
-    display:none;
-  }
-
-  .user-name{
-    max-width:65px;
-  }
-
   .page{
-    padding:0 7px;
-    margin-top:12px;
+
+    padding:
+      12px 8px 35px;
   }
 
-  .exam-head{
-    padding:17px 15px;
+
+  .course-header{
+
+    padding:
+      17px 15px;
   }
 
-  .exam-title{
+
+  .course-title{
+
     font-size:21px;
   }
 
-  .live-stats{
+
+  .stats{
+
     grid-template-columns:
-      repeat(5,1fr);
+      repeat(4,1fr);
+
     gap:5px;
   }
 
-  .live-stat{
-    padding:8px 3px;
+
+  .stat{
+
+    min-height:62px;
+
+    padding:
+      7px 3px;
   }
 
-  .live-number{
-    font-size:13px;
+
+  .stat-number{
+
+    font-size:16px;
   }
 
-  .live-label{
-    font-size:6px;
-  }
 
-  .question-card{
-    padding:20px 16px;
-  }
+  .stat-label{
 
-  .question{
-    font-size:17px;
-  }
-
-  .question-hi{
-    font-size:14px;
-  }
-
-  .options{
-    grid-template-columns:1fr;
-  }
-
-  .option{
-    min-height:57px;
-    font-size:10px;
-  }
-
-  .option-hi{
-    font-size:8.5px;
-  }
-
-  .page-actions{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .next-btn{
-    width:100%;
-  }
-
-  .final-stats{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .final-stat:last-child{
-    grid-column:1/-1;
-  }
-
-}
-
-@media(max-width:400px){
-
-  .brand-title{
-    max-width:115px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-
-  .user-name{
-    display:none;
-  }
-
-  .live-number{
-    font-size:12px;
-  }
-
-  .live-label{
     font-size:5.5px;
   }
 
-  .practice-modal-card{
-    padding:20px;
+
+  .question-card{
+
+    padding:
+      20px 15px;
   }
 
-  .practice-modal-card h2{
-    font-size:19px;
+
+  .question{
+
+    font-size:17px;
   }
 
-  .modal-actions{
-    flex-direction:column-reverse;
+
+  .question-hi{
+
+    font-size:14px;
   }
 
-  .modal-btn{
+
+  .options{
+
+    grid-template-columns:1fr;
+
+    gap:9px;
+  }
+
+
+  .option{
+
+    min-height:58px;
+
+    font-size:10px;
+  }
+
+
+  .option-hi{
+
+    font-size:8.5px;
+  }
+
+
+  .action-area{
+
+    justify-content:stretch;
+  }
+
+
+  .next-btn{
+
     width:100%;
   }
 
 }
+
+
+@media(max-width:400px){
+
+  .course-title{
+
+    font-size:19px;
+  }
+
+
+  .stat-number{
+
+    font-size:14px;
+  }
+
+
+  .stat-label{
+
+    font-size:5px;
+  }
+
+}
+
 </style>
 </head>
 
+
 <body>
-
-<header class="topbar">
-  <nav class="nav">
-
-    <a class="brand" href="joa-mahapack.html">
-
-      <div class="logo">
-        <img src="logo.png" alt="HPMockShashtra">
-      </div>
-
-      <div>
-        <div class="brand-title">
-          <span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span>
-        </div>
-
-        <div class="tagline">
-          Prepare Today, Serve Tomorrow
-        </div>
-      </div>
-
-    </a>
-
-    <div class="nav-right">
-
-      <span class="nav-pill" id="navCourse">
-        Loading...
-      </span>
-
-      <div class="user">
-
-        <span class="avatar" id="avatar">
-          U
-        </span>
-
-        <span class="user-name" id="userName">
-          User
-        </span>
-
-        <button class="logout" id="logoutBtn">
-          Logout
-        </button>
-
-      </div>
-
-    </div>
-
-  </nav>
-</header>
 
 
 <!-- =========================
-     START MODAL
+     MAIN
 ========================= -->
-
-<div class="practice-modal" id="practiceModal">
-
-  <div class="practice-modal-card">
-
-    <span class="modal-badge">
-      Study & Practice
-    </span>
-
-    <h2 id="modalTitle">
-      Start Practice
-    </h2>
-
-    <p class="modal-lead">
-      This practice contains
-      <b id="modalTotal">400</b>
-      questions.
-      You do not need to complete all questions in one sitting.
-    </p>
-
-    <div class="modal-points">
-
-      <b>No timer.</b><br>
-
-      You can leave the practice whenever you want.
-      Your progress and answers are saved automatically.
-
-      <br><br>
-
-      When you return later, the practice will open from
-      <b>exactly where you left off.</b>
-
-      <br><br>
-
-      <b>One attempt only.</b>
-      After completing all questions, your attempt will be available for review.
-
-    </div>
-
-    <div class="modal-actions">
-
-      <button
-        class="modal-btn modal-later"
-        id="laterBtn">
-        Do It Later
-      </button>
-
-      <button
-        class="modal-btn modal-start"
-        id="startBtn">
-        Start Practice →
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
 
 <main class="page">
 
-  <div id="loading" class="loading">
-    Checking your premium access...
+
+  <!-- LOADING -->
+
+  <div
+    class="loading"
+    id="loading">
+
+    Loading practice...
+
   </div>
 
 
   <!-- =========================
-       ACCESS DENIED
+       ACCESS BOX
   ========================= -->
 
-  <div id="accessBox" class="access-box">
+  <div
+    class="access-box"
+    id="accessBox">
 
     <h2>
       Premium Access Required
     </h2>
 
     <p id="accessMessage">
-      Your access for this course is not active.
+      Your course access is not active.
     </p>
 
     <a
+      href="#"
       class="buy-btn"
-      id="buyBtn"
-      href="#">
+      id="buyBtn">
+
       Buy Access →
+
     </a>
 
   </div>
 
 
   <!-- =========================
-       EXAM
+       PRACTICE
   ========================= -->
 
-  <section id="exam" style="display:none">
+  <section
+    id="practice"
+    style="display:none;">
 
-    <div class="exam-head">
 
-      <div class="eyebrow" id="eyebrow">
-        Study & Practice
+    <!-- COURSE NAME -->
+
+    <div class="course-header">
+
+      <div class="course-label">
+        JOA IT Maha Pack
       </div>
 
-      <h1 class="exam-title" id="examTitle">
+      <h1
+        class="course-title"
+        id="courseTitle">
+
         Computer Fundamentals
+
       </h1>
-
-      <p class="exam-sub">
-        Practice at your own pace. No timer. Your progress is saved automatically.
-      </p>
-
-      <div class="cloud-status">
-
-        <span
-          class="dot"
-          id="cloudDot">
-        </span>
-
-        <span id="cloudStatus">
-          Progress saved to your account
-        </span>
-
-      </div>
-
-
-      <!-- LIVE STATS -->
-
-      <div class="live-stats">
-
-        <div class="live-stat attempted">
-          <div
-            class="live-number"
-            id="liveAttempted">
-            0
-          </div>
-
-          <div class="live-label">
-            Attempted
-          </div>
-        </div>
-
-
-        <div class="live-stat correct">
-          <div
-            class="live-number"
-            id="liveCorrect">
-            0
-          </div>
-
-          <div class="live-label">
-            Correct
-          </div>
-        </div>
-
-
-        <div class="live-stat wrong">
-          <div
-            class="live-number"
-            id="liveWrong">
-            0
-          </div>
-
-          <div class="live-label">
-            Wrong
-          </div>
-        </div>
-
-
-        <div class="live-stat unattempted">
-          <div
-            class="live-number"
-            id="liveUnattempted">
-            400
-          </div>
-
-          <div class="live-label">
-            Not Attempted
-          </div>
-        </div>
-
-
-        <div class="live-stat score">
-          <div
-            class="live-number"
-            id="liveScore">
-            0%
-          </div>
-
-          <div class="live-label">
-            Score
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- PROGRESS -->
-
-      <div class="progress-area">
-
-        <div class="progress-top">
-
-          <span id="progressQuestion">
-            Question 1 of 400
-          </span>
-
-          <span id="progressPercent">
-            0% completed
-          </span>
-
-        </div>
-
-        <div class="progress-bar">
-
-          <div
-            class="progress-fill"
-            id="progressFill">
-          </div>
-
-        </div>
-
-      </div>
 
     </div>
 
 
-    <!-- QUESTION CARD -->
+    <!-- =========================
+         LIVE STATS
+    ========================= -->
+
+    <div class="stats">
+
+
+      <div class="stat attempted">
+
+        <div
+          class="stat-number"
+          id="attemptedCount">
+
+          0
+
+        </div>
+
+        <div class="stat-label">
+          Attempted
+        </div>
+
+      </div>
+
+
+      <div class="stat correct">
+
+        <div
+          class="stat-number"
+          id="correctCount">
+
+          0
+
+        </div>
+
+        <div class="stat-label">
+          Correct
+        </div>
+
+      </div>
+
+
+      <div class="stat wrong">
+
+        <div
+          class="stat-number"
+          id="wrongCount">
+
+          0
+
+        </div>
+
+        <div class="stat-label">
+          Wrong
+        </div>
+
+      </div>
+
+
+      <div class="stat unattempted">
+
+        <div
+          class="stat-number"
+          id="unattemptedCount">
+
+          400
+
+        </div>
+
+        <div class="stat-label">
+          Not Attempted
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         QUESTION
+    ========================= -->
 
     <section
       class="question-card"
       id="questionCard">
 
+
       <div
-        class="q-number"
-        id="qNumber">
+        class="question-number"
+        id="questionNumber">
+
         Question 1 of 400
+
       </div>
 
 
@@ -1360,282 +1209,274 @@ body:before{
       </div>
 
 
-      <!-- IMMEDIATE RESULT -->
+      <!-- IMMEDIATE ANSWER STATUS -->
 
       <div
-        class="answer-result"
-        id="answerResult">
-
-        <div
-          class="answer-result-title"
-          id="answerResultTitle">
-        </div>
-
-        <div
-          class="correct-answer-line"
-          id="correctAnswerLine">
-        </div>
-
-        <div
-          class="explanation"
-          id="explanation">
-        </div>
-
+        class="answer-status"
+        id="answerStatus">
       </div>
 
 
-      <div
-        class="question-status"
-        id="questionStatus">
-        Select one option
-      </div>
-
-
-      <div class="page-actions">
-
-        <div
-          class="save-note"
-          id="saveNote">
-          Your answer is saved automatically.
-        </div>
+      <div class="action-area">
 
         <button
           class="next-btn"
           id="nextBtn"
           disabled>
+
           Next Question →
+
         </button>
 
       </div>
 
+
     </section>
 
-  </section>
 
+    <!-- =========================
+         COMPLETED
+    ========================= -->
 
-  <!-- =========================
-       COMPLETED
-  ========================= -->
+    <section
+      class="completed"
+      id="completed">
 
-  <section
-    class="completed"
-    id="completed">
-
-    <div class="completed-title">
-
-      <div class="big">
+      <div class="completed-title">
         Practice Completed
       </div>
 
       <div
-        class="small"
-        id="completedSubtitle">
+        class="completed-sub"
+        id="completedSub">
+
         Your one attempt has been completed.
+
       </div>
-
-    </div>
-
-
-    <div
-      class="final-score"
-      id="finalScore">
-      0%
-    </div>
-
-    <div class="final-score-label">
-      Final Score
-    </div>
-
-
-    <div class="final-stats">
-
-      <div class="final-stat">
-        <strong id="finalAttempted">0</strong>
-        <span>Attempted</span>
-      </div>
-
-      <div class="final-stat correct">
-        <strong id="finalCorrect">0</strong>
-        <span>Correct</span>
-      </div>
-
-      <div class="final-stat wrong">
-        <strong id="finalWrong">0</strong>
-        <span>Wrong</span>
-      </div>
-
-      <div class="final-stat unattempted">
-        <strong id="finalUnattempted">0</strong>
-        <span>Not Attempted</span>
-      </div>
-
-      <div class="final-stat">
-        <strong id="finalTotal">400</strong>
-        <span>Total Questions</span>
-      </div>
-
-    </div>
-
-
-    <div class="review-button-area">
 
       <a
+        href="#"
         class="review-btn"
-        id="reviewPracticeBtn"
-        href="#">
+        id="reviewBtn">
+
         Review Practice →
+
       </a>
 
-    </div>
+    </section>
+
 
   </section>
+
 
 </main>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script type="module">
 
-/* =========================================================
+
+/* =====================================================
    FIREBASE
-========================================================= */
+===================================================== */
 
 import {
   auth,
   db
-} from './firebase-config.js';
+} from "../firebase-config.js";
+
 
 import {
   onAuthStateChanged,
   signOut
-} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 
 import {
   doc,
   getDoc,
   setDoc,
   serverTimestamp
-} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
-/* =========================================================
-   HELPERS
-========================================================= */
+/* =====================================================
+   HELPER
+===================================================== */
 
-const $ = id => document.getElementById(id);
+const $ =
+  id => document.getElementById(id);
 
 
-/* =========================================================
-   UNIVERSAL COURSE DETECTION
-========================================================= */
+/* =====================================================
+   FILE / COURSE DETECTION
+===================================================== */
 
 const fileName =
   location.pathname
-    .split('/')
+    .split("/")
     .pop()
-    .replace(/\.html$/i,'');
+    .replace(/\.html$/i,"");
+
+
+/*
+  Example:
+
+  paid-computer-fundamentals
+  →
+  computer-fundamentals
+*/
 
 const COURSE_ID =
   fileName
-    .replace(/^paid-/i,'')
+    .replace(/^paid-/i,"")
     .toLowerCase();
 
 
+/*
+  computer-fundamentals
+  →
+  computer_fundamentals_01
+*/
+
 const TEST_ID =
   COURSE_ID
-    .replace(/-/g,'_') +
-  '_01';
+    .replace(/-/g,"_")
+    + "_01";
 
 
-/* =========================================================
+/* =====================================================
    COURSE TITLES
-========================================================= */
+===================================================== */
 
 const COURSE_TITLES = {
 
-  'computer-fundamentals':
-    'Computer Fundamentals',
+  "computer-fundamentals":
+    "Computer Fundamentals",
 
-  'ms-word':
-    'MS Word',
+  "ms-word":
+    "MS Word",
 
-  'ms-excel':
-    'MS Excel',
+  "ms-excel":
+    "MS Excel",
 
-  'ms-powerpoint':
-    'MS PowerPoint',
+  "ms-powerpoint":
+    "MS PowerPoint",
 
-  'ms-access':
-    'MS Access',
+  "ms-access":
+    "MS Access",
 
-  'dbms-sql':
-    'DBMS & SQL',
+  "dbms-sql":
+    "DBMS & SQL",
 
-  'computer-networking':
-    'Computer Networking',
+  "computer-networking":
+    "Computer Networking",
 
-  'cyber-security':
-    'Cyber Security',
+  "cyber-security":
+    "Cyber Security",
 
-  'c-programming':
-    'C Programming',
+  "c-programming":
+    "C Programming",
 
-  'html':
-    'HTML',
+  "html":
+    "HTML",
 
-  'css-css3':
-    'CSS & CSS3',
+  "css-css3":
+    "CSS & CSS3",
 
-  'cloud-computing':
-    'Cloud Computing',
+  "cloud-computing":
+    "Cloud Computing",
 
-  'data-structure':
-    'Data Structure',
+  "data-structure":
+    "Data Structure",
 
-  'computer-organisation':
-    'Computer Organisation',
+  "computer-organisation":
+    "Computer Organisation",
 
-  'operating-system':
-    'Operating System'
+  "operating-system":
+    "Operating System"
 
 };
 
 
 const COURSE_TITLE =
-  COURSE_TITLES[COURSE_ID] ||
+  COURSE_TITLES[COURSE_ID]
+  ||
   COURSE_ID
-    .split('-')
+    .split("-")
     .map(
       word =>
-        word.charAt(0).toUpperCase() +
+        word.charAt(0).toUpperCase()
+        +
         word.slice(1)
     )
-    .join(' ');
+    .join(" ");
 
 
-/* =========================================================
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+document.title =
+  `${COURSE_TITLE} | HPMockShashtra`;
+
+$("courseTitle").textContent =
+  COURSE_TITLE;
+
+$("buyBtn").href =
+  `../payment.html?product=${encodeURIComponent(COURSE_ID)}`;
+
+$("reviewBtn").href =
+  `mahapack-study.html?test=${TEST_ID}`;
+
+
+/* =====================================================
    QUESTION BANK
-   Automatically loads:
-   ./mahapack/{course-id}.js
-========================================================= */
+===================================================== */
+
+/*
+  IMPORTANT:
+
+  This page is inside /mahapack/
+
+  Therefore:
+
+  paid-computer-fundamentals.html
+  loads:
+
+  ./computer-fundamentals.js
+
+  NOT:
+
+  ./mahapack/computer-fundamentals.js
+*/
 
 let QUESTIONS = [];
 
-try {
+
+try{
 
   const module =
     await import(
-      `./mahapack/${COURSE_ID}.js`
+      `./${COURSE_ID}.js`
     );
+
 
   QUESTIONS =
     Array.isArray(module.QUESTIONS)
       ? module.QUESTIONS
       : [];
 
-  if(QUESTIONS.length === 0){
+
+  if(
+    QUESTIONS.length === 0
+  ){
 
     throw new Error(
-      `Question bank is empty: ${COURSE_ID}.js`
+      `No QUESTIONS found in ${COURSE_ID}.js`
     );
 
   }
@@ -1644,47 +1485,22 @@ try {
 catch(error){
 
   console.error(
-    'Question bank loading error:',
+    "QUESTION BANK ERROR:",
     error
   );
 
-  $('loading').textContent =
-    `Unable to load ${COURSE_TITLE} question bank.`;
+
+  $("loading").textContent =
+    `Question bank load नहीं हो सका: ${COURSE_ID}.js`;
 
   throw error;
-}
-
-
-/* =========================================================
-   400 QUESTION CHECK
-========================================================= */
-
-if(QUESTIONS.length !== 400){
-
-  console.warn(
-    `${COURSE_TITLE} contains ${QUESTIONS.length} questions. Expected 400.`
-  );
 
 }
 
 
-/* =========================================================
-   OFFICE COURSE LIST
-========================================================= */
-
-const OFFICE_COURSES = [
-
-  'ms-word',
-  'ms-excel',
-  'ms-powerpoint',
-  'ms-access'
-
-];
-
-
-/* =========================================================
-   FIRESTORE
-========================================================= */
+/* =====================================================
+   FIRESTORE REFERENCES
+===================================================== */
 
 let currentUser = null;
 
@@ -1692,56 +1508,39 @@ let sessionRef = null;
 
 let attemptRef = null;
 
+
+/* =====================================================
+   STATE
+===================================================== */
+
 let state = {
 
   current:0,
 
   answers:{},
 
-  submitted:false,
-
-  startedAt:null,
-
-  completedAt:null
+  submitted:false
 
 };
 
 
-/* =========================================================
-   DYNAMIC UI
-========================================================= */
+/* =====================================================
+   OFFICE COURSES
+===================================================== */
 
-document.title =
-  `${COURSE_TITLE} | HPMockShashtra`;
+const OFFICE_COURSES = [
 
-$('navCourse').textContent =
-  COURSE_TITLE;
+  "ms-word",
+  "ms-excel",
+  "ms-powerpoint",
+  "ms-access"
 
-$('eyebrow').textContent =
-  `Study & Practice • ${COURSE_TITLE}`;
-
-$('examTitle').textContent =
-  COURSE_TITLE;
-
-$('modalTitle').textContent =
-  `Start ${COURSE_TITLE} Practice`;
-
-$('reviewPracticeBtn').href =
-  `mahapack-study.html?test=${TEST_ID}`;
-
-$('buyBtn').href =
-  `payment.html?product=${encodeURIComponent(COURSE_ID)}`;
-
-$('finalTotal').textContent =
-  QUESTIONS.length;
-
-$('modalTotal').textContent =
-  QUESTIONS.length;
+];
 
 
-/* =========================================================
+/* =====================================================
    DATE HELPER
-========================================================= */
+===================================================== */
 
 function toDate(value){
 
@@ -1749,24 +1548,39 @@ function toDate(value){
     return null;
   }
 
+
   if(
-    typeof value.toDate === 'function'
+    typeof value.toDate === "function"
   ){
+
     return value.toDate();
+
   }
 
-  const d =
+
+  const date =
     new Date(value);
 
-  return Number.isNaN(d.getTime())
-    ? null
-    : d;
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  ){
+
+    return null;
+
+  }
+
+
+  return date;
+
 }
 
 
-/* =========================================================
-   ACCESS CHECK
-========================================================= */
+/* =====================================================
+   ACTIVE ACCESS
+===================================================== */
 
 function activeAccess(access){
 
@@ -1774,48 +1588,58 @@ function activeAccess(access){
     return false;
   }
 
+
   const expiresAt =
-    toDate(access.expiresAt);
+    toDate(
+      access.expiresAt
+    );
+
 
   const purchasedAt =
-    toDate(access.purchasedAt);
+    toDate(
+      access.purchasedAt
+    );
+
 
   if(
-    !expiresAt ||
-    expiresAt.getTime() <= Date.now()
+    !expiresAt
+    ||
+    expiresAt.getTime()
+      <= Date.now()
   ){
+
     return false;
+
   }
 
+
   if(
-    purchasedAt &&
-    purchasedAt.getTime() > Date.now()
+    purchasedAt
+    &&
+    purchasedAt.getTime()
+      > Date.now()
   ){
+
     return false;
+
   }
+
 
   return true;
+
 }
 
 
-/*
-  New system:
-  mahapackAccess
-
-  Individual:
-  mahapackAccess.courses[COURSE_ID]
-
-  MS Office:
-  mahapackAccess.packs.ms-office
-
-  Computer Master:
-  mahapackAccess.packs.computer-master
-
-  Legacy fallback:
-  computerAccess
-*/
+/* =====================================================
+   COURSE ACCESS
+===================================================== */
 
 function hasCourseAccess(data){
+
+
+  /* =========================
+     INDIVIDUAL COURSE
+  ========================= */
 
   const individual =
     data
@@ -1823,42 +1647,60 @@ function hasCourseAccess(data){
       ?.courses
       ?.[COURSE_ID];
 
+
   if(
     activeAccess(individual)
   ){
+
     return true;
+
   }
 
 
+  /* =========================
+     MS OFFICE PACK
+  ========================= */
+
   if(
-    OFFICE_COURSES.includes(COURSE_ID)
+    OFFICE_COURSES
+      .includes(COURSE_ID)
   ){
 
-    const officePack =
+    const office =
       data
         ?.mahapackAccess
         ?.packs
-        ?.['ms-office'];
+        ?.["ms-office"];
+
 
     if(
-      activeAccess(officePack)
+      activeAccess(office)
     ){
+
       return true;
+
     }
 
   }
 
 
-  const masterPack =
+  /* =========================
+     COMPUTER MASTER
+  ========================= */
+
+  const master =
     data
       ?.mahapackAccess
       ?.packs
-      ?.['computer-master'];
+      ?.["computer-master"];
+
 
   if(
-    activeAccess(masterPack)
+    activeAccess(master)
   ){
+
     return true;
+
   }
 
 
@@ -1872,27 +1714,34 @@ function hasCourseAccess(data){
       ?.courses
       ?.[COURSE_ID];
 
+
   if(
     activeAccess(oldIndividual)
   ){
+
     return true;
+
   }
 
 
   if(
-    OFFICE_COURSES.includes(COURSE_ID)
+    OFFICE_COURSES
+      .includes(COURSE_ID)
   ){
 
     const oldOffice =
       data
         ?.computerAccess
         ?.packs
-        ?.['ms-office'];
+        ?.["ms-office"];
+
 
     if(
       activeAccess(oldOffice)
     ){
+
       return true;
+
     }
 
   }
@@ -1902,268 +1751,215 @@ function hasCourseAccess(data){
     data
       ?.computerAccess
       ?.packs
-      ?.['computer-master'];
+      ?.["computer-master"];
+
 
   if(
     activeAccess(oldMaster)
   ){
+
     return true;
+
   }
 
 
   return false;
-}
-
-
-/* =========================================================
-   CLOUD STATUS
-========================================================= */
-
-function setCloudStatus(
-  type,
-  text
-){
-
-  $('cloudStatus').textContent =
-    text;
-
-  $('cloudDot').className =
-    'dot' +
-    (
-      type === 'saving'
-        ? ' saving'
-        : type === 'error'
-          ? ' error'
-          : ''
-    );
 
 }
 
 
-/* =========================================================
-   ANSWER NORMALIZATION
-========================================================= */
+/* =====================================================
+   NORMALIZE ANSWERS
+===================================================== */
 
 function normalizeAnswers(data){
 
-  const output = {};
+  const result = {};
+
 
   if(
-    !data ||
-    typeof data !== 'object'
+    !data
+    ||
+    typeof data !== "object"
   ){
-    return output;
+
+    return result;
+
   }
 
-  Object.keys(data).forEach(key => {
+
+  Object.keys(data)
+    .forEach(key => {
+
+      const value =
+        Number(data[key]);
+
+
+      if(
+        Number.isInteger(value)
+      ){
+
+        result[key] =
+          value;
+
+      }
+
+    });
+
+
+  return result;
+
+}
+
+
+/* =====================================================
+   ANSWER INDEX
+===================================================== */
+
+function answerIndex(answer){
+
+  if(
+    typeof answer === "number"
+  ){
+
+    return answer;
+
+  }
+
+
+  if(
+    typeof answer === "string"
+  ){
 
     const value =
-      Number(data[key]);
+      answer
+        .trim()
+        .toUpperCase();
+
 
     if(
-      Number.isInteger(value)
+      ["A","B","C","D"]
+        .includes(value)
     ){
-      output[key] = value;
+
+      return (
+        value.charCodeAt(0)
+        - 65
+      );
+
     }
 
-  });
 
-  return output;
-}
+    const number =
+      Number(value);
 
 
-/* =========================================================
-   RESTORE STATE
-========================================================= */
+    if(
+      Number.isInteger(number)
+    ){
 
-function restoreState(data){
+      return number;
 
-  state = {
+    }
 
-    current:
-      Math.max(
-        0,
-        Math.min(
-          Number(data?.current) || 0,
-          QUESTIONS.length - 1
-        )
-      ),
+  }
 
-    answers:
-      normalizeAnswers(
-        data?.answers
-      ),
 
-    submitted:
-      data?.submitted === true,
-
-    startedAt:
-      data?.startedAt || null,
-
-    completedAt:
-      data?.completedAt || null
-
-  };
+  return -1;
 
 }
 
 
-/* =========================================================
-   SAVE SESSION
-========================================================= */
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
-async function saveSession(
-  firstSave = false
-){
+function escapeHTML(value){
 
-  setCloudStatus(
-    'saving',
-    'Saving progress...'
+  return String(
+    value ?? ""
+  ).replace(
+    /[&<>"']/g,
+    character => ({
+
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+
+    }[character])
   );
 
-  try{
-
-    const payload = {
-
-      uid:
-        currentUser.uid,
-
-      testId:
-        TEST_ID,
-
-      current:
-        state.current,
-
-      answers:
-        state.answers,
-
-      status:
-        'in_progress',
-
-      questionCount:
-        QUESTIONS.length,
-
-      updatedAt:
-        serverTimestamp()
-
-    };
-
-
-    if(
-      firstSave &&
-      !state.startedAt
-    ){
-
-      payload.startedAt =
-        serverTimestamp();
-
-    }
-
-
-    await setDoc(
-      sessionRef,
-      payload,
-      {
-        merge:true
-      }
-    );
-
-
-    setCloudStatus(
-      'ok',
-      'Progress saved automatically'
-    );
-
-    return true;
-
-  }
-  catch(error){
-
-    console.error(
-      'Session save error:',
-      error
-    );
-
-    setCloudStatus(
-      'error',
-      'Could not save progress'
-    );
-
-    return false;
-
-  }
-
 }
 
 
-/* =========================================================
-   LOAD SESSION
-========================================================= */
+/* =====================================================
+   OPTION TEXT
+===================================================== */
 
-async function loadSession(){
-
-  const snap =
-    await getDoc(sessionRef);
+function optionText(
+  option,
+  language
+){
 
   if(
-    snap.exists()
+    option
+    &&
+    typeof option === "object"
   ){
 
-    restoreState(
-      snap.data()
+    return (
+      option[language]
+      ??
+      option.en
+      ??
+      option.hi
+      ??
+      ""
     );
 
   }
-  else{
 
-    state = {
 
-      current:0,
-
-      answers:{},
-
-      submitted:false,
-
-      startedAt:null,
-
-      completedAt:null
-
-    };
-
-    await saveSession(true);
-
-  }
+  return option ?? "";
 
 }
 
 
-/* =========================================================
-   CALCULATE LIVE STATS
-========================================================= */
+/* =====================================================
+   UPDATE STATS
+===================================================== */
 
-function calculateStats(){
+function updateStats(){
 
   const attempted =
     Object.keys(
       state.answers
     ).length;
 
+
   let correct = 0;
+
 
   Object.keys(
     state.answers
-  ).forEach(key => {
+  )
+  .forEach(key => {
 
-    const index =
+    const questionIndex =
       Number(key);
 
+
     if(
-      QUESTIONS[index] &&
+      QUESTIONS[questionIndex]
+      &&
+      answerIndex(
+        QUESTIONS[questionIndex].answer
+      )
+      ===
       Number(
         state.answers[key]
-      ) ===
-      Number(
-        QUESTIONS[index].answer
       )
     ){
 
@@ -2177,238 +1973,155 @@ function calculateStats(){
   const wrong =
     attempted - correct;
 
+
   const unattempted =
     QUESTIONS.length - attempted;
 
-  const score =
-    attempted > 0
-      ? Math.round(
-          (correct / attempted) * 100
-        )
-      : 0;
+
+  $("attemptedCount")
+    .textContent =
+    attempted;
 
 
-  return {
-
-    attempted,
-    correct,
-    wrong,
-    unattempted,
-    score
-
-  };
-
-}
+  $("correctCount")
+    .textContent =
+    correct;
 
 
-/* =========================================================
-   UPDATE LIVE STATS
-========================================================= */
-
-function updateStats(){
-
-  const stats =
-    calculateStats();
+  $("wrongCount")
+    .textContent =
+    wrong;
 
 
-  $('liveAttempted').textContent =
-    stats.attempted;
-
-  $('liveCorrect').textContent =
-    stats.correct;
-
-  $('liveWrong').textContent =
-    stats.wrong;
-
-  $('liveUnattempted').textContent =
-    stats.unattempted;
-
-  $('liveScore').textContent =
-    `${stats.score}%`;
-
-
-  const percentage =
-    QUESTIONS.length > 0
-      ? Math.round(
-          (stats.attempted /
-            QUESTIONS.length) *
-          100
-        )
-      : 0;
-
-
-  $('progressFill').style.width =
-    `${percentage}%`;
-
-  $('progressQuestion').textContent =
-    `Question ${Math.min(
-      state.current + 1,
-      QUESTIONS.length
-    )} of ${QUESTIONS.length}`;
-
-  $('progressPercent').textContent =
-    `${percentage}% completed`;
+  $("unattemptedCount")
+    .textContent =
+    unattempted;
 
 }
 
 
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
+/* =====================================================
+   SAVE SESSION
+===================================================== */
 
-function escapeHTML(value){
+async function saveSession(){
 
-  return String(
-    value ?? ''
-  ).replace(
-    /[&<>"']/g,
-    char => ({
-
-      '&':'&amp;',
-      '<':'&lt;',
-      '>':'&gt;',
-      '"':'&quot;',
-      "'":'&#039;'
-
-    }[char])
-  );
-
-}
+  if(!sessionRef){
+    return false;
+  }
 
 
-/* =========================================================
-   GET OPTION TEXT
-========================================================= */
+  try{
 
-function optionText(
-  option,
-  language
-){
+    await setDoc(
+      sessionRef,
+      {
 
-  if(
-    option &&
-    typeof option === 'object'
-  ){
+        uid:
+          currentUser.uid,
 
-    return (
-      option[language] ??
-      option.en ??
-      option.hi ??
-      ''
+        testId:
+          TEST_ID,
+
+        current:
+          state.current,
+
+        answers:
+          state.answers,
+
+        status:
+          "in_progress",
+
+        questionCount:
+          QUESTIONS.length,
+
+        updatedAt:
+          serverTimestamp()
+
+      },
+      {
+        merge:true
+      }
     );
 
+
+    return true;
+
   }
+  catch(error){
 
-  return option ?? '';
-
-}
-
-
-/* =========================================================
-   CORRECT OPTION LETTER
-========================================================= */
-
-function correctLetter(
-  answer
-){
-
-  const n =
-    Number(answer);
-
-  if(
-    Number.isInteger(n) &&
-    n >= 0 &&
-    n <= 3
-  ){
-
-    return String.fromCharCode(
-      65 + n
+    console.error(
+      "SESSION SAVE ERROR:",
+      error
     );
 
-  }
-
-
-  if(
-    typeof answer === 'string'
-  ){
-
-    const letter =
-      answer.trim().toUpperCase();
-
-    if(
-      ['A','B','C','D']
-        .includes(letter)
-    ){
-
-      return letter;
-
-    }
+    return false;
 
   }
-
-  return '';
 
 }
 
 
-/* =========================================================
-   ANSWER INDEX
-========================================================= */
+/* =====================================================
+   LOAD SESSION
+===================================================== */
 
-function answerIndex(
-  answer
-){
+async function loadSession(){
 
-  if(
-    typeof answer === 'number'
-  ){
-
-    return answer;
-
-  }
+  const snap =
+    await getDoc(
+      sessionRef
+    );
 
 
   if(
-    typeof answer === 'string'
+    snap.exists()
   ){
 
-    const value =
-      answer.trim().toUpperCase();
+    const data =
+      snap.data();
 
-    if(
-      ['A','B','C','D']
-        .includes(value)
-    ){
 
-      return (
-        value.charCodeAt(0) -
-        65
+    state.current =
+      Math.max(
+        0,
+        Math.min(
+          Number(data.current) || 0,
+          QUESTIONS.length - 1
+        )
       );
 
-    }
 
+    state.answers =
+      normalizeAnswers(
+        data.answers
+      );
 
-    const numeric =
-      Number(value);
-
-    if(
-      Number.isInteger(numeric)
-    ){
-
-      return numeric;
-
-    }
 
   }
+  else{
 
-  return -1;
+    state = {
+
+      current:0,
+
+      answers:{},
+
+      submitted:false
+
+    };
+
+
+    await saveSession();
+
+  }
 
 }
 
 
-/* =========================================================
+/* =====================================================
    RENDER QUESTION
-========================================================= */
+===================================================== */
 
 function renderQuestion(){
 
@@ -2424,11 +2137,15 @@ function renderQuestion(){
 
 
   const question =
-    QUESTIONS[state.current];
+    QUESTIONS[
+      state.current
+    ];
 
 
   if(!question){
+
     return;
+
   }
 
 
@@ -2438,161 +2155,211 @@ function renderQuestion(){
     ];
 
 
+  const hasAnswer =
+    selected !== undefined;
+
+
   const correct =
     answerIndex(
       question.answer
     );
 
 
-  const hasAnswer =
-    selected !== undefined;
+  /* =========================
+     QUESTION NUMBER
+  ========================= */
 
-
-  $('qNumber').textContent =
+  $("questionNumber")
+    .textContent =
     `Question ${state.current + 1} of ${QUESTIONS.length}`;
 
 
-  $('questionText').innerHTML =
+  /* =========================
+     QUESTION TEXT
+  ========================= */
 
-    `<span class="question-en">
-      ${escapeHTML(question.en || '')}
-    </span>
+  $("questionText")
+    .innerHTML =
 
-    <span class="question-hi">
-      ${escapeHTML(question.hi || '')}
-    </span>`;
+    `
+      <span class="question-en">
+        ${escapeHTML(
+          question.en || ""
+        )}
+      </span>
 
-
-  const optionsBox =
-    $('options');
-
-  optionsBox.innerHTML =
-    '';
-
-
-  question.options.forEach(
-    (option,index) => {
-
-      const button =
-        document.createElement(
-          'button'
-        );
-
-
-      button.type =
-        'button';
-
-      button.className =
-        'option';
-
-
-      if(
-        hasAnswer
-      ){
-
-        button.disabled =
-          true;
-
-
-        if(
-          index === correct
-        ){
-
-          button.classList.add(
-            'correct-answer'
-          );
-
-        }
-
-
-        if(
-          index === selected &&
-          selected === correct
-        ){
-
-          button.classList.add(
-            'correct'
-          );
-
-        }
-
-
-        if(
-          index === selected &&
-          selected !== correct
-        ){
-
-          button.classList.add(
-            'wrong'
-          );
-
-        }
-
-      }
-
-
-      const en =
-        optionText(
-          option,
-          'en'
-        );
-
-      const hi =
-        optionText(
-          option,
-          'hi'
-        );
-
-
-      button.innerHTML =
-
-        `<span class="option-letter">
-          ${String.fromCharCode(65 + index)}
-        </span>
-
-        <span class="option-content">
-
-          <span class="option-en">
-            ${escapeHTML(en)}
+      ${
+        question.hi
+        ?
+        `
+          <span class="question-hi">
+            ${escapeHTML(
+              question.hi
+            )}
           </span>
-
-          ${
-            hi
-              ? `
-                <span class="option-hi">
-                  ${escapeHTML(hi)}
-                </span>
-              `
-              : ''
-          }
-
-        </span>`;
-
-
-      if(
-        !hasAnswer
-      ){
-
-        button.onclick =
-          () => selectAnswer(index);
-
+        `
+        :
+        ""
       }
-
-
-      optionsBox.appendChild(
-        button
-      );
-
-    }
-  );
+    `;
 
 
   /* =========================
-     ANSWER RESULT
+     OPTIONS
   ========================= */
 
-  const result =
-    $('answerResult');
+  const options =
+    $("options");
+
+
+  options.innerHTML =
+    "";
+
+
+  question.options
+    .forEach(
+      (option,index) => {
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+
+        button.type =
+          "button";
+
+
+        button.className =
+          "option";
+
+
+        const english =
+          optionText(
+            option,
+            "en"
+          );
+
+
+        const hindi =
+          optionText(
+            option,
+            "hi"
+          );
+
+
+        button.innerHTML =
+
+          `
+            <span class="option-letter">
+              ${String.fromCharCode(
+                65 + index
+              )}
+            </span>
+
+            <span class="option-content">
+
+              <span class="option-en">
+                ${escapeHTML(
+                  english
+                )}
+              </span>
+
+              ${
+                hindi
+                ?
+                `
+                  <span class="option-hi">
+                    ${escapeHTML(
+                      hindi
+                    )}
+                  </span>
+                `
+                :
+                ""
+              }
+
+            </span>
+          `;
+
+
+        /* =========================
+           ALREADY ANSWERED
+        ========================= */
+
+        if(
+          hasAnswer
+        ){
+
+          button.disabled =
+            true;
+
+
+          /* Correct option */
+
+          if(
+            index === correct
+          ){
+
+            button.classList.add(
+              "correct-answer"
+            );
+
+          }
+
+
+          /* User selected correct */
+
+          if(
+            index === selected
+            &&
+            selected === correct
+          ){
+
+            button.classList.add(
+              "correct"
+            );
+
+          }
+
+
+          /* User selected wrong */
+
+          if(
+            index === selected
+            &&
+            selected !== correct
+          ){
+
+            button.classList.add(
+              "wrong"
+            );
+
+          }
+
+        }
+        else{
+
+          button.onclick =
+            () => selectAnswer(index);
+
+        }
+
+
+        options.appendChild(
+          button
+        );
+
+      }
+    );
+
+
+  /* =========================
+     ANSWER STATUS
+  ========================= */
+
+  const status =
+    $("answerStatus");
 
 
   if(
@@ -2603,135 +2370,75 @@ function renderQuestion(){
       selected === correct;
 
 
-    result.className =
-      `answer-result show ${
+    status.className =
+      `answer-status show ${
         isCorrect
-          ? 'correct-result'
-          : 'wrong-result'
+          ? "correct"
+          : "wrong"
       }`;
 
 
-    $('answerResultTitle')
-      .textContent =
-        isCorrect
-          ? '✓ Correct Answer'
-          : '✕ Wrong Answer';
-
-
-    const correctText =
-      optionText(
-        question.options[correct],
-        'en'
-      );
-
-
-    const correctHindi =
-      optionText(
-        question.options[correct],
-        'hi'
-      );
-
-
-    $('correctAnswerLine')
-      .innerHTML =
-
-      `Correct Answer:
-       <b>${correctLetter(question.answer)}</b>
-       — ${escapeHTML(correctText)}
-       ${
-         correctHindi
-           ? ` / ${escapeHTML(correctHindi)}`
-           : ''
-       }`;
-
-
-    $('explanation')
-      .innerHTML =
-
-      `<strong>Explanation</strong>
-       ${escapeHTML(
-         question.explanation ||
-         'Explanation not available.'
-       )}`;
-
-
-    $('questionStatus').textContent =
+    if(
       isCorrect
-        ? '✓ Correct — answer saved'
-        : '✕ Wrong — correct answer highlighted';
+    ){
 
+      status.textContent =
+        "✓ Correct Answer";
 
-    $('questionStatus').className =
-      `question-status ${
-        isCorrect
-          ? 'correct-status'
-          : 'wrong-status'
-      }`;
+    }
+    else{
 
+      status.textContent =
+        `✕ Wrong Answer — Correct Answer: ${String.fromCharCode(
+          65 + correct
+        )}`;
 
-    $('saveNote').textContent =
-      'Answer saved automatically.';
-
+    }
 
   }
   else{
 
-    result.className =
-      'answer-result';
+    status.className =
+      "answer-status";
 
-
-    $('answerResultTitle')
-      .textContent =
-      '';
-
-
-    $('correctAnswerLine')
-      .textContent =
-      '';
-
-
-    $('explanation')
-      .textContent =
-      '';
-
-
-    $('questionStatus').textContent =
-      'Select one option';
-
-
-    $('questionStatus').className =
-      'question-status';
-
-
-    $('saveNote').textContent =
-      'Your answer will be saved automatically.';
+    status.textContent =
+      "";
 
   }
 
 
-  $('nextBtn').disabled =
+  /* =========================
+     NEXT BUTTON
+  ========================= */
+
+  $("nextBtn").disabled =
     !hasAnswer;
 
 
-  $('nextBtn').textContent =
+  $("nextBtn").textContent =
+
     state.current ===
     QUESTIONS.length - 1
-      ? 'Finish Practice →'
-      : 'Next Question →';
 
+      ? "Finish Practice →"
+
+      : "Next Question →";
+
+
+  /* =========================
+     STATS
+  ========================= */
 
   updateStats();
 
 }
 
 
-/* =========================================================
+/* =====================================================
    SELECT ANSWER
-========================================================= */
+===================================================== */
 
-async function selectAnswer(
-  index
-){
+async function selectAnswer(index){
 
   if(
     state.answers[
@@ -2749,17 +2456,27 @@ async function selectAnswer(
   ] = index;
 
 
+  /*
+    Immediately show
+    correct / wrong.
+  */
+
   renderQuestion();
 
 
-  await saveSession(false);
+  /*
+    Immediately save
+    answer to Firebase.
+  */
+
+  await saveSession();
 
 }
 
 
-/* =========================================================
+/* =====================================================
    NEXT QUESTION
-========================================================= */
+===================================================== */
 
 async function nextQuestion(){
 
@@ -2774,31 +2491,33 @@ async function nextQuestion(){
   }
 
 
+  /* =========================
+     MORE QUESTIONS
+  ========================= */
+
   if(
-    state.current <
+    state.current
+    <
     QUESTIONS.length - 1
   ){
 
     state.current++;
 
-    const saved =
-      await saveSession(false);
 
-    if(saved){
+    await saveSession();
 
-      renderQuestion();
 
-      window.scrollTo({
-        top:
-          document
-            .querySelector(
-              '.question-card'
-            )
-            .offsetTop - 20,
-        behavior:'smooth'
-      });
+    renderQuestion();
 
-    }
+
+    window.scrollTo({
+
+      top:0,
+
+      behavior:"smooth"
+
+    });
+
 
     return;
 
@@ -2806,38 +2525,69 @@ async function nextQuestion(){
 
 
   /* =========================
-     FINAL SUBMISSION
+     FINAL QUESTION
   ========================= */
-
-  const saved =
-    await saveSession(false);
-
-  if(!saved){
-    return;
-  }
-
 
   await completeAttempt();
 
 }
 
 
-/* =========================================================
+/* =====================================================
    COMPLETE ATTEMPT
-========================================================= */
+===================================================== */
 
 async function completeAttempt(){
 
-  const stats =
-    calculateStats();
+  const attempted =
+    Object.keys(
+      state.answers
+    ).length;
+
+
+  let correct = 0;
+
+
+  Object.keys(
+    state.answers
+  )
+  .forEach(key => {
+
+    const index =
+      Number(key);
+
+
+    if(
+      QUESTIONS[index]
+      &&
+      answerIndex(
+        QUESTIONS[index].answer
+      )
+      ===
+      Number(
+        state.answers[key]
+      )
+    ){
+
+      correct++;
+
+    }
+
+  });
+
+
+  const wrong =
+    attempted - correct;
+
+
+  const unattempted =
+    QUESTIONS.length - attempted;
 
 
   try{
 
     /*
-      One-time final attempt.
-      Firestore Rules also prevent
-      later updates.
+      FINAL RESULT
     */
 
     await setDoc(
@@ -2854,32 +2604,22 @@ async function completeAttempt(){
           QUESTIONS.length,
 
         attempted:
-          stats.attempted,
+          attempted,
 
         correct:
-          stats.correct,
+          correct,
 
         wrong:
-          stats.wrong,
+          wrong,
 
         unattempted:
-          stats.unattempted,
-
-        percentage:
-          QUESTIONS.length
-            ? Math.round(
-                (
-                  stats.correct /
-                  QUESTIONS.length
-                ) * 100
-              )
-            : 0,
+          unattempted,
 
         answers:
           state.answers,
 
         status:
-          'completed',
+          "completed",
 
         completedAt:
           serverTimestamp()
@@ -2889,9 +2629,7 @@ async function completeAttempt(){
 
 
     /*
-      Mark session completed.
-      This is done only after final
-      attempt is successfully created.
+      Mark session completed
     */
 
     await setDoc(
@@ -2899,7 +2637,7 @@ async function completeAttempt(){
       {
 
         status:
-          'completed',
+          "completed",
 
         completedAt:
           serverTimestamp(),
@@ -2918,27 +2656,19 @@ async function completeAttempt(){
       true;
 
 
-    state.completedAt =
-      new Date().toISOString();
-
-
     showCompleted();
 
   }
   catch(error){
 
     console.error(
-      'Final attempt error:',
+      "FINAL ATTEMPT ERROR:",
       error
     );
 
-    setCloudStatus(
-      'error',
-      'Final result could not be saved'
-    );
 
     alert(
-      'Final result save नहीं हो पाया। Please try again.'
+      "Attempt save नहीं हो पाया। कृपया फिर से कोशिश करें।"
     );
 
   }
@@ -2946,163 +2676,60 @@ async function completeAttempt(){
 }
 
 
-/* =========================================================
-   SHOW COMPLETED
-========================================================= */
+/* =====================================================
+   COMPLETED
+===================================================== */
 
 function showCompleted(){
 
-  $('exam').style.display =
-    'none';
-
-  $('completed').style.display =
-    'block';
+  $("questionCard")
+    .style.display =
+    "none";
 
 
-  const stats =
-    calculateStats();
+  $("completed")
+    .style.display =
+    "block";
 
 
-  const percentage =
-    QUESTIONS.length
-      ? Math.round(
-          (
-            stats.correct /
-            QUESTIONS.length
-          ) * 100
-        )
-      : 0;
-
-
-  $('finalScore').textContent =
-    `${percentage}%`;
-
-  $('finalAttempted').textContent =
-    stats.attempted;
-
-  $('finalCorrect').textContent =
-    stats.correct;
-
-  $('finalWrong').textContent =
-    stats.wrong;
-
-  $('finalUnattempted').textContent =
-    stats.unattempted;
-
-  $('finalTotal').textContent =
-    QUESTIONS.length;
-
-
-  $('completedSubtitle').textContent =
-    `${COURSE_TITLE} — one attempt completed. Review your answers anytime.`;
-
-
-  setCloudStatus(
-    'ok',
-    'Practice completed'
-  );
+  updateStats();
 
 }
 
 
-/* =========================================================
-   START / LATER
-========================================================= */
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
 
-function openStartModal(){
-
-  $('modalTotal').textContent =
-    QUESTIONS.length;
-
-  $('practiceModal').style.display =
-    'flex';
-
-}
-
-
-function closeStartModal(){
-
-  $('practiceModal').style.display =
-    'none';
-
-}
-
-
-$('startBtn').onclick =
-  () => {
-
-    closeStartModal();
-
-    renderQuestion();
-
-    window.scrollTo({
-      top:0,
-      behavior:'smooth'
-    });
-
-  };
-
-
-$('laterBtn').onclick =
-  () => {
-
-    closeStartModal();
-
-    if(
-      history.length > 1
-    ){
-
-      history.back();
-
-    }
-    else{
-
-      location.href =
-        'joa-mahapack.html';
-
-    }
-
-  };
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-$('nextBtn').onclick =
+$("nextBtn").onclick =
   nextQuestion;
 
 
-$('logoutBtn').onclick =
-  async () => {
-
-    await signOut(auth);
-
-    location.href =
-      'firebase-login.html';
-
-  };
-
-
-/* =========================================================
+/* =====================================================
    AUTH
-========================================================= */
+===================================================== */
 
 onAuthStateChanged(
   auth,
   async user => {
+
+    /* =========================
+       NOT LOGGED IN
+    ========================= */
 
     if(!user){
 
       const redirect =
         encodeURIComponent(
           location.pathname
-            .split('/')
+            .split("/")
             .pop()
         );
 
+
       location.href =
-        `firebase-login.html?redirect=${redirect}`;
+        `../firebase-login.html?redirect=${redirect}`;
+
 
       return;
 
@@ -3113,34 +2740,17 @@ onAuthStateChanged(
       user;
 
 
-    const displayName =
-      user.displayName ||
-      user.email
-        ?.split('@')[0] ||
-      'User';
-
-
-    $('userName').textContent =
-      displayName;
-
-
-    $('avatar').textContent =
-      displayName
-        .charAt(0)
-        .toUpperCase();
-
-
     try{
 
       /* =========================
-         ACCESS
+         CHECK ACCESS
       ========================= */
 
       const accessSnap =
         await getDoc(
           doc(
             db,
-            'testAccess',
+            "testAccess",
             user.uid
           )
         );
@@ -3158,14 +2768,20 @@ onAuthStateChanged(
         )
       ){
 
-        $('loading').style.display =
-          'none';
+        $("loading")
+          .style.display =
+          "none";
 
-        $('accessBox').style.display =
-          'block';
 
-        $('accessMessage').textContent =
-          `${COURSE_TITLE} access is not active. Please purchase or activate your course access.`;
+        $("accessBox")
+          .style.display =
+          "block";
+
+
+        $("accessMessage")
+          .textContent =
+          `${COURSE_TITLE} access is not active. Please purchase this course.`;
+
 
         return;
 
@@ -3173,15 +2789,15 @@ onAuthStateChanged(
 
 
       /* =========================
-         NEW MAHAPACK PATH
+         FIRESTORE REFERENCES
       ========================= */
 
       sessionRef =
         doc(
           db,
-          'users',
+          "users",
           user.uid,
-          'mahapackSessions',
+          "mahapackSessions",
           TEST_ID
         );
 
@@ -3189,15 +2805,15 @@ onAuthStateChanged(
       attemptRef =
         doc(
           db,
-          'users',
+          "users",
           user.uid,
-          'mahapackAttempts',
+          "mahapackAttempts",
           TEST_ID
         );
 
 
       /* =========================
-         CHECK FINAL ATTEMPT
+         CHECK COMPLETED ATTEMPT
       ========================= */
 
       const finalSnap =
@@ -3214,26 +2830,14 @@ onAuthStateChanged(
           finalSnap.data();
 
 
-        state = {
+        state.answers =
+          normalizeAnswers(
+            finalData.answers
+          );
 
-          current:
-            QUESTIONS.length - 1,
 
-          answers:
-            normalizeAnswers(
-              finalData.answers
-            ),
-
-          submitted:true,
-
-          startedAt:
-            null,
-
-          completedAt:
-            finalData.completedAt ||
-            null
-
-        };
+        state.submitted =
+          true;
 
       }
       else{
@@ -3243,16 +2847,25 @@ onAuthStateChanged(
       }
 
 
-      $('loading').style.display =
-        'none';
+      /* =========================
+         SHOW PAGE
+      ========================= */
+
+      $("loading")
+        .style.display =
+        "none";
 
 
-      $('exam').style.display =
-        'block';
+      $("practice")
+        .style.display =
+        "block";
+
+
+      updateStats();
 
 
       /* =========================
-         ALREADY COMPLETED
+         COMPLETED
       ========================= */
 
       if(
@@ -3267,46 +2880,29 @@ onAuthStateChanged(
 
 
       /* =========================
-         FIRST VISIT
+         SHOW QUESTION
       ========================= */
 
-      if(
-        Object.keys(
-          state.answers
-        ).length === 0
-      ){
+      renderQuestion();
 
-        updateStats();
-
-        openStartModal();
-
-      }
-      else{
-
-        /*
-          Existing progress:
-          resume exactly where
-          user left.
-        */
-
-        renderQuestion();
-
-      }
 
     }
     catch(error){
 
       console.error(
-        'Page initialization error:',
+        "INITIALIZATION ERROR:",
         error
       );
 
-      $('loading').textContent =
-        'Unable to load your practice. Please refresh and try again.';
+
+      $("loading")
+        .textContent =
+        "Practice load नहीं हो सकी। Please refresh the page.";
 
     }
 
   });
+
 
 </script>
 
