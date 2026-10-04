@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -459,6 +458,16 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1.65;
 }
 
+.goto-instruction{
+  padding:12px;
+  border:2px solid #f59e0b;
+  border-radius:12px;
+  background:#fff7df;
+  color:#713f12 !important;
+  box-shadow:0 0 0 3px rgba(245,158,11,.12);
+}
+.goto-instruction strong{color:#92400e}
+
 .instruction-mark{
   flex:0 0 23px;
   width:23px;
@@ -849,6 +858,7 @@ button,a{-webkit-tap-highlight-color:transparent}
       <li><span class="instruction-mark">✓</span><span>Your progress is automatically saved. You can leave at any time and resume where you stopped.</span></li>
       <li><span class="instruction-mark">✓</span><span>The selected answer is marked immediately: green for correct and red for an incorrect selection.</span></li>
       <li><span class="instruction-mark">✓</span><span>An explanation is shown after answering whenever it is available in the question bank.</span></li>
+      <li class="goto-instruction"><span class="instruction-mark">↗</span><span><strong>Go To option:</strong> Use the <strong>Go To</strong> button beside the course title to jump directly to any question number. Skipped questions will remain unattempted unless you select an answer.</span></li>
       <li><span class="instruction-mark">✓</span><span>You have one attempt. After completion, you can review your saved attempt.</span></li>
     </ul>
 
@@ -1499,13 +1509,9 @@ onAuthStateChanged(auth,async user=>{
     $("practice").style.display = "block";
     updateStats();
 
-    if(isFreshSession){
-      $("startModal").style.display = "flex";
-    }else{
-      /* Existing session resumes directly without the popup. */
-      $("startModal").style.display = "none";
-      renderQuestion();
-    }
+    /* Always show instructions until the user explicitly starts practice.
+       Existing sessions still resume at their saved question after Start Practice. */
+    $("startModal").style.display = "flex";
 
   }catch(error){
     console.error("Initialization error:",error);
