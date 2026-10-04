@@ -42,7 +42,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .course-header{
   padding:19px 22px;
-  margin-bottom:15px;
+  margin-bottom:12px;
   border:1px solid var(--border);
   border-radius:15px;
   background:#fff;
@@ -68,11 +68,11 @@ button,a{-webkit-tap-highlight-color:transparent}
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:9px;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 
 .stat{
-  min-height:69px;
+  min-height:65px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -96,8 +96,8 @@ button,a{-webkit-tap-highlight-color:transparent}
   text-transform:uppercase;
 }
 
-.attempted .stat-number{color:#16a875}
-.correct .stat-number{color:#16a875}
+.attempted .stat-number{color:#168b71}
+.correct .stat-number{color:#13a875}
 .wrong .stat-number{color:#e04455}
 .unattempted .stat-number{color:#ef922d}
 
@@ -183,6 +183,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .option-content{flex:1;min-width:0}
 .option-en{display:block;font-weight:700}
+
 .option-hi{
   display:block;
   margin-top:4px;
@@ -191,18 +192,20 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1.55;
 }
 
-.option.correct,
-.option.correct-answer{
+/* Correct answer is green */
+.option.correct-answer,
+.option.correct{
   border-color:#69d5aa;
   background:var(--green-bg);
 }
 
-.option.correct .option-letter,
-.option.correct-answer .option-letter{
+.option.correct-answer .option-letter,
+.option.correct .option-letter{
   background:#c9f5e2;
   color:#087e53;
 }
 
+/* Selected wrong answer is red */
 .option.wrong{
   border-color:#f0a0aa;
   background:var(--red-bg);
@@ -213,46 +216,30 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:#c72d42;
 }
 
-.answer-status{
-  display:none;
-  margin-top:17px;
-  padding:13px 15px;
-  border-radius:10px;
-  font-size:12px;
-  font-weight:800;
-  line-height:1.6;
-}
-
-.answer-status.show{display:block}
-.answer-status.correct{
-  color:#087d53;
-  border:1px solid #bcebd7;
-  background:var(--green-bg);
-}
-.answer-status.wrong{
-  color:#c32d42;
-  border:1px solid #f4c6cc;
-  background:var(--red-bg);
-}
+/* Hide separate correct/wrong message */
+.answer-status{display:none!important}
 
 .explanation{
   display:none;
-  margin-top:10px;
+  margin-top:12px;
   padding:13px 15px;
   border:1px solid var(--border);
   border-radius:10px;
-  background:#f6f9fe;
+  background:#f3f8ff;
   color:#344d70;
-  font-size:12px;
+  font-size:13px;
   line-height:1.7;
 }
 
-.explanation.show{display:block}
+.explanation.show{display:block!important}
+
 .explanation-title{
-  margin-bottom:5px;
+  margin-bottom:6px;
   color:#254b83;
   font-weight:800;
 }
+
+.explanation-hi{margin-top:6px}
 
 .action-area{
   display:flex;
@@ -296,6 +283,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 
 .completed h2,.access-box h2{margin:0 0 9px}
+
 .completed p,.access-box p{
   color:var(--muted);
   font-size:13px;
@@ -314,7 +302,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   text-decoration:none;
 }
 
-/* START INSTRUCTIONS POPUP */
+/* Instructions popup */
 
 .modal-backdrop{
   position:fixed;
@@ -506,18 +494,17 @@ button,a{-webkit-tap-highlight-color:transparent}
   </section>
 </main>
 
-<!-- START POPUP -->
 <div class="modal-backdrop" id="startModal" style="display:none">
   <div class="modal">
-    <h2 id="modalTitle">Before You Start</h2>
+    <h2 id="modalTitle">Course Instructions</h2>
     <p class="modal-subtitle">Please read the instructions before starting your practice.</p>
 
     <ul class="instructions">
       <li><span class="instruction-mark">✓</span><span id="instructionTotal">This course contains 400 questions.</span></li>
-      <li><span class="instruction-mark">✓</span><span>There is no time limit. You can attempt the questions whenever you want.</span></li>
-      <li><span class="instruction-mark">✓</span><span>Your progress is automatically saved. You can leave at any time and resume from where you stopped.</span></li>
-      <li><span class="instruction-mark">✓</span><span>The correct or wrong answer appears immediately after you select an option.</span></li>
-      <li><span class="instruction-mark">✓</span><span>An explanation is also shown after answering each question.</span></li>
+      <li><span class="instruction-mark">✓</span><span>There is no time limit. You can attempt questions whenever you want.</span></li>
+      <li><span class="instruction-mark">✓</span><span>Your progress is automatically saved. You can leave at any time and resume where you stopped.</span></li>
+      <li><span class="instruction-mark">✓</span><span>The selected answer is marked immediately: green for correct and red for an incorrect selection.</span></li>
+      <li><span class="instruction-mark">✓</span><span>An explanation is shown after answering whenever it is available in the question bank.</span></li>
       <li><span class="instruction-mark">✓</span><span>You have one attempt. After completion, you can review your saved attempt.</span></li>
     </ul>
 
@@ -582,13 +569,19 @@ let QUESTIONS = [];
 try{
   const bank = await import(`./${COURSE_ID}.js`);
   QUESTIONS = Array.isArray(bank.QUESTIONS) ? bank.QUESTIONS : [];
-  if(!QUESTIONS.length) throw new Error("QUESTIONS array missing");
+
+  if(!QUESTIONS.length){
+    throw new Error("The question bank does not export a non-empty QUESTIONS array.");
+  }
+
   $("instructionTotal").textContent =
     `This course contains ${QUESTIONS.length} questions.`;
+
   $("unattemptedCount").textContent = QUESTIONS.length;
 }catch(error){
   console.error("Question bank load error:",error);
-  $("loading").textContent = `Question bank could not be loaded: ${COURSE_ID}.js`;
+  $("loading").textContent =
+    `Question bank could not be loaded: ${COURSE_ID}.js`;
   throw error;
 }
 
@@ -599,6 +592,7 @@ let sessionRef = null;
 let attemptRef = null;
 let state = {current:0,answers:{},submitted:false};
 let countdownStarted = false;
+let movingToNext = false;
 
 function toDate(value){
   if(!value) return null;
@@ -609,36 +603,54 @@ function toDate(value){
 
 function activeAccess(item){
   if(!item) return false;
+
   const expiry = toDate(item.expiresAt);
   const purchase = toDate(item.purchasedAt);
+
   return !!expiry &&
     expiry.getTime() > Date.now() &&
     (!purchase || purchase.getTime() <= Date.now());
 }
 
+/* Client-side access display check; Firestore Rules must enforce access too. */
 function hasCourseAccess(data){
   if(activeAccess(data?.mahapackAccess?.courses?.[COURSE_ID])) return true;
 
-  if(OFFICE_COURSES.includes(COURSE_ID) &&
-     activeAccess(data?.mahapackAccess?.packs?.["ms-office"])) return true;
+  if(
+    OFFICE_COURSES.includes(COURSE_ID) &&
+    activeAccess(data?.mahapackAccess?.packs?.["ms-office"])
+  ) return true;
 
   if(activeAccess(data?.mahapackAccess?.packs?.["computer-master"])) return true;
 
+  /* Legacy access support */
   if(activeAccess(data?.computerAccess?.courses?.[COURSE_ID])) return true;
 
-  if(OFFICE_COURSES.includes(COURSE_ID) &&
-     activeAccess(data?.computerAccess?.packs?.["ms-office"])) return true;
+  if(
+    OFFICE_COURSES.includes(COURSE_ID) &&
+    activeAccess(data?.computerAccess?.packs?.["ms-office"])
+  ) return true;
 
   return activeAccess(data?.computerAccess?.packs?.["computer-master"]);
 }
 
 function normalizeAnswers(data){
   const out = {};
+
   if(!data || typeof data !== "object") return out;
+
   for(const key of Object.keys(data)){
     const value = Number(data[key]);
-    if(Number.isInteger(value)) out[key] = value;
+
+    if(
+      Number.isInteger(value) &&
+      value >= 0 &&
+      value < QUESTIONS.length
+    ){
+      out[key] = value;
+    }
   }
+
   return out;
 }
 
@@ -647,7 +659,10 @@ function answerIndex(answer){
   if(typeof answer !== "string") return -1;
 
   const value = answer.trim().toUpperCase();
-  if(["A","B","C","D"].includes(value)) return value.charCodeAt(0)-65;
+
+  if(["A","B","C","D"].includes(value)){
+    return value.charCodeAt(0)-65;
+  }
 
   const n = Number(value);
   return Number.isInteger(n) ? n : -1;
@@ -655,7 +670,11 @@ function answerIndex(answer){
 
 function esc(value){
   return String(value ?? "").replace(/[&<>"']/g,c=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
   })[c]);
 }
 
@@ -663,15 +682,30 @@ function bilingual(value,lang){
   if(value && typeof value === "object"){
     return value[lang] ?? value.en ?? value.hi ?? "";
   }
+
   return value ?? "";
 }
 
-function explanationText(question,lang){
-  const explanation = question.explanation ?? question.explain ?? "";
-  if(explanation && typeof explanation === "object"){
-    return explanation[lang] ?? explanation.en ?? explanation.hi ?? "";
+function getExplanation(q){
+  const value =
+    q.explanation ??
+    q.explain ??
+    q.explanation_en ??
+    q.explanation_hi ??
+    "";
+
+  if(typeof value === "string"){
+    return {en:value,hi:""};
   }
-  return explanation;
+
+  if(value && typeof value === "object"){
+    return {
+      en:value.en ?? value.english ?? "",
+      hi:value.hi ?? value.hindi ?? ""
+    };
+  }
+
+  return {en:"",hi:""};
 }
 
 function updateStats(){
@@ -680,10 +714,14 @@ function updateStats(){
 
   for(const key of keys){
     const q = QUESTIONS[Number(key)];
-    if(q && answerIndex(q.answer) === Number(state.answers[key])) correct++;
+
+    if(q && answerIndex(q.answer) === Number(state.answers[key])){
+      correct++;
+    }
   }
 
   const attempted = keys.length;
+
   $("attemptedCount").textContent = attempted;
   $("correctCount").textContent = correct;
   $("wrongCount").textContent = attempted-correct;
@@ -701,6 +739,7 @@ async function saveSession(){
       questionCount:QUESTIONS.length,
       updatedAt:serverTimestamp()
     },{merge:true});
+
     return true;
   }catch(error){
     console.error("Session save error:",error);
@@ -708,19 +747,40 @@ async function saveSession(){
   }
 }
 
+/*
+  Returns true only when there was no previous session.
+  Existing session means resume without showing the popup.
+*/
 async function loadSession(){
   const snap = await getDoc(sessionRef);
 
   if(snap.exists()){
     const data = snap.data();
-    state.current = Math.max(0,Math.min(
-      Number(data.current)||0,QUESTIONS.length-1
-    ));
+
+    state.current = Math.max(
+      0,
+      Math.min(Number(data.current)||0,QUESTIONS.length-1)
+    );
+
     state.answers = normalizeAnswers(data.answers);
-  }else{
-    state = {current:0,answers:{},submitted:false};
-    await saveSession();
+    state.submitted = false;
+
+    return false;
   }
+
+  state = {
+    current:0,
+    answers:{},
+    submitted:false
+  };
+
+  const saved = await saveSession();
+
+  if(!saved){
+    throw new Error("Could not initialize the practice session.");
+  }
+
+  return true;
 }
 
 function renderQuestion(){
@@ -752,23 +812,34 @@ function renderQuestion(){
     button.type = "button";
     button.className = "option";
 
-    const en = bilingual(option,"en");
-    const hi = bilingual(option,"hi");
+    const optionEn = bilingual(option,"en");
+    const optionHi = bilingual(option,"hi");
 
     button.innerHTML = `
       <span class="option-letter">${String.fromCharCode(65+index)}</span>
       <span class="option-content">
-        <span class="option-en">${esc(en)}</span>
-        ${hi ? `<span class="option-hi">${esc(hi)}</span>` : ""}
+        <span class="option-en">${esc(optionEn)}</span>
+        ${optionHi ? `<span class="option-hi">${esc(optionHi)}</span>` : ""}
       </span>
     `;
 
     if(answered){
       button.disabled = true;
 
-      if(index === correct) button.classList.add("correct-answer");
-      if(index === selected && selected === correct) button.classList.add("correct");
-      if(index === selected && selected !== correct) button.classList.add("wrong");
+      /* Correct option always green after an answer */
+      if(index === correct){
+        button.classList.add("correct-answer");
+      }
+
+      /* Chosen correct option */
+      if(index === selected && selected === correct){
+        button.classList.add("correct");
+      }
+
+      /* Chosen wrong option */
+      if(index === selected && selected !== correct){
+        button.classList.add("wrong");
+      }
     }else{
       button.addEventListener("click",()=>selectAnswer(index));
     }
@@ -779,35 +850,33 @@ function renderQuestion(){
   const status = $("answerStatus");
   const explanation = $("explanation");
 
+  /* No separate Correct/Wrong message */
+  status.className = "answer-status";
+  status.textContent = "";
+
   if(answered){
-    const isCorrect = selected === correct;
-    status.className = `answer-status show ${isCorrect?"correct":"wrong"}`;
-    status.textContent = isCorrect
-      ? "✓ Correct Answer"
-      : `✕ Wrong Answer — Correct Answer: ${String.fromCharCode(65+correct)}`;
+    const exp = getExplanation(q);
+    const expEn = exp.en;
+    const expHi = exp.hi;
 
-    const enExplanation = explanationText(q,"en");
-    const hiExplanation = explanationText(q,"hi");
-
-    if(enExplanation || hiExplanation){
+    if(String(expEn).trim() || String(expHi).trim()){
       explanation.className = "explanation show";
       explanation.innerHTML = `
         <div class="explanation-title">Explanation</div>
-        ${enExplanation ? `<div>${esc(enExplanation)}</div>` : ""}
-        ${hiExplanation ? `<div style="margin-top:5px">${esc(hiExplanation)}</div>` : ""}
+        ${expEn ? `<div>${esc(expEn)}</div>` : ""}
+        ${expHi ? `<div class="explanation-hi">${esc(expHi)}</div>` : ""}
       `;
     }else{
       explanation.className = "explanation";
       explanation.innerHTML = "";
     }
   }else{
-    status.className = "answer-status";
-    status.textContent = "";
     explanation.className = "explanation";
     explanation.innerHTML = "";
   }
 
   $("nextBtn").disabled = !answered;
+
   $("nextBtn").textContent =
     state.current === QUESTIONS.length-1
       ? "Finish Practice →"
@@ -821,25 +890,51 @@ async function selectAnswer(index){
 
   state.answers[state.current] = index;
 
-  /* Show answer and explanation immediately */
+  /* Immediately display green/red and explanation */
   renderQuestion();
 
-  /* Save immediately */
-  await saveSession();
+  /* Save the answer immediately */
+  const saved = await saveSession();
+
+  if(!saved){
+    console.warn("Answer is displayed but cloud save failed. Check Firebase Rules/network.");
+  }
 }
 
 async function nextQuestion(){
+  if(movingToNext) return;
   if(state.answers[state.current] === undefined) return;
 
-  if(state.current < QUESTIONS.length-1){
-    state.current++;
-    await saveSession();
-    renderQuestion();
-    window.scrollTo({top:0,behavior:"smooth"});
-    return;
-  }
+  movingToNext = true;
+  $("nextBtn").disabled = true;
 
-  await completeAttempt();
+  try{
+    if(state.current < QUESTIONS.length-1){
+      state.current++;
+
+      const saved = await saveSession();
+
+      if(!saved){
+        state.current--;
+        renderQuestion();
+        alert("Progress save नहीं हो पाया। कृपया दोबारा कोशिश करें।");
+        return;
+      }
+
+      renderQuestion();
+      window.scrollTo({top:0,behavior:"smooth"});
+      return;
+    }
+
+    await completeAttempt();
+  }finally{
+    movingToNext = false;
+
+    if(!state.submitted){
+      $("nextBtn").disabled =
+        state.answers[state.current] === undefined;
+    }
+  }
 }
 
 async function completeAttempt(){
@@ -848,12 +943,19 @@ async function completeAttempt(){
 
   for(const key of keys){
     const q = QUESTIONS[Number(key)];
-    if(q && answerIndex(q.answer) === Number(state.answers[key])) correct++;
+
+    if(q && answerIndex(q.answer) === Number(state.answers[key])){
+      correct++;
+    }
   }
 
   const attempted = keys.length;
 
   try{
+    /*
+      Create final attempt once. Firestore Rules should prohibit
+      modifying a completed attempt.
+    */
     await setDoc(attemptRef,{
       uid:currentUser.uid,
       testId:TEST_ID,
@@ -928,42 +1030,62 @@ onAuthStateChanged(auth,async user=>{
   currentUser = user;
 
   try{
+    /* Keep Firebase premium access verification */
     const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
     const accessData = accessSnap.exists() ? accessSnap.data() : {};
 
     if(!hasCourseAccess(accessData)){
       $("loading").style.display = "none";
       $("accessBox").style.display = "block";
-      $("accessMessage").textContent = `${COURSE_TITLE} access is not active.`;
+      $("accessMessage").textContent =
+        `${COURSE_TITLE} access is not active.`;
       return;
     }
 
-    sessionRef = doc(db,"users",user.uid,"mahapackSessions",TEST_ID);
-    attemptRef = doc(db,"users",user.uid,"mahapackAttempts",TEST_ID);
+    sessionRef = doc(
+      db,"users",user.uid,"mahapackSessions",TEST_ID
+    );
 
+    attemptRef = doc(
+      db,"users",user.uid,"mahapackAttempts",TEST_ID
+    );
+
+    /* Completed attempt: review only, no new attempt */
     const finalSnap = await getDoc(attemptRef);
 
     if(finalSnap.exists()){
       const finalData = finalSnap.data();
+
       state.answers = normalizeAnswers(finalData.answers);
       state.submitted = true;
-    }else{
-      await loadSession();
+
+      $("loading").style.display = "none";
+      $("practice").style.display = "block";
+      showCompleted();
+      return;
     }
+
+    /*
+      Popup only for a fresh session.
+      Returning users resume directly from their saved position.
+    */
+    const isFreshSession = await loadSession();
 
     $("loading").style.display = "none";
     $("practice").style.display = "block";
     updateStats();
 
-    if(state.submitted){
-      showCompleted();
-      return;
+    if(isFreshSession){
+      $("startModal").style.display = "flex";
+    }else{
+      $("startModal").style.display = "none";
+      renderQuestion();
     }
 
-    $("startModal").style.display = "flex";
   }catch(error){
     console.error("Initialization error:",error);
-    $("loading").textContent = "Practice load नहीं हो सकी। Please refresh करें।";
+    $("loading").textContent =
+      "Practice load नहीं हो सकी। Firebase access, Rules और network जाँचें।";
   }
 });
 </script>
