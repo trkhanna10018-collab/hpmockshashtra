@@ -14,12 +14,10 @@
   --muted:#647994;
   --border:#d3e1f2;
   --blue:#3264f5;
-  --blue-light:#f3f8ff;
   --green:#13a875;
   --green-bg:#e9fbf3;
   --red:#df394c;
   --red-bg:#fff0f2;
-  --orange:#f59b37;
 }
 
 *{box-sizing:border-box}
@@ -37,20 +35,40 @@ button,a{-webkit-tap-highlight-color:transparent}
 .page{
   width:100%;
   min-height:100vh;
-  padding:25px;
+  padding:23px;
 }
 
+.loading{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#536d8e;
+  font-size:13px;
+  text-align:center;
+}
+
+/* Blue title panel with statistics inside */
 .course-header{
-  padding:19px 22px;
-  margin-bottom:12px;
-  border:1px solid var(--border);
-  border-radius:15px;
-  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:21px 23px;
+  margin-bottom:13px;
+  border:1px solid #b5ccef;
+  border-radius:16px;
+  background:linear-gradient(115deg,#dceaff 0%,#cbdfff 100%);
+}
+
+.course-info{
+  flex:1 1 250px;
+  min-width:0;
 }
 
 .course-label{
   margin-bottom:7px;
-  color:var(--blue);
+  color:#2455bd;
   font-size:10px;
   font-weight:800;
   letter-spacing:.5px;
@@ -62,13 +80,16 @@ button,a{-webkit-tap-highlight-color:transparent}
   font-size:26px;
   line-height:1.3;
   font-weight:800;
+  color:#143767;
 }
 
+/* Four compact stat cards inside the title panel */
 .stats{
+  flex:1.5 1 560px;
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:9px;
-  margin-bottom:12px;
+  grid-template-columns:repeat(4,minmax(85px,1fr));
+  gap:8px;
+  min-width:0;
 }
 
 .stat{
@@ -78,9 +99,10 @@ button,a{-webkit-tap-highlight-color:transparent}
   justify-content:center;
   align-items:center;
   gap:7px;
-  border:1px solid var(--border);
-  border-radius:12px;
-  background:#fff;
+  padding:7px 4px;
+  border:1px solid rgba(160,190,231,.85);
+  border-radius:13px;
+  background:rgba(255,255,255,.82);
 }
 
 .stat-number{
@@ -102,7 +124,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .unattempted .stat-number{color:#ef922d}
 
 .question-card{
-  padding:25px 29px;
+  padding:25px 26px 23px;
   border:1px solid var(--border);
   border-radius:17px;
   background:#fff;
@@ -148,8 +170,8 @@ button,a{-webkit-tap-highlight-color:transparent}
   align-items:flex-start;
   gap:10px;
   width:100%;
-  min-height:62px;
-  padding:12px 14px;
+  min-height:59px;
+  padding:12px 13px;
   border:1px solid var(--border);
   border-radius:12px;
   background:#fff;
@@ -163,15 +185,15 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .option:hover:not(:disabled){
   border-color:#8eb4ff;
-  background:var(--blue-light);
+  background:#f3f8ff;
 }
 
 .option:disabled{cursor:default}
 
 .option-letter{
-  flex:0 0 28px;
-  width:28px;
-  height:28px;
+  flex:0 0 27px;
+  width:27px;
+  height:27px;
   display:grid;
   place-items:center;
   border-radius:50%;
@@ -192,7 +214,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1.55;
 }
 
-/* Correct answer is green */
+/* Correct answer: green */
 .option.correct-answer,
 .option.correct{
   border-color:#69d5aa;
@@ -205,7 +227,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:#087e53;
 }
 
-/* Selected wrong answer is red */
+/* Selected incorrect answer: red */
 .option.wrong{
   border-color:#f0a0aa;
   background:var(--red-bg);
@@ -216,17 +238,18 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:#c72d42;
 }
 
-/* Hide separate correct/wrong message */
+/* No separate Correct/Wrong text */
 .answer-status{display:none!important}
 
+/* Green explanation panel */
 .explanation{
   display:none;
   margin-top:12px;
   padding:13px 15px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  background:#f3f8ff;
-  color:#344d70;
+  border:1px solid #a8e5c9;
+  border-radius:11px;
+  background:#eafaf2;
+  color:#205c46;
   font-size:13px;
   line-height:1.7;
 }
@@ -235,7 +258,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .explanation-title{
   margin-bottom:6px;
-  color:#254b83;
+  color:#087e53;
   font-weight:800;
 }
 
@@ -244,11 +267,11 @@ button,a{-webkit-tap-highlight-color:transparent}
 .action-area{
   display:flex;
   justify-content:flex-end;
-  margin-top:18px;
+  margin-top:17px;
 }
 
 .next-btn,.primary-btn{
-  padding:12px 22px;
+  padding:12px 21px;
   border:0;
   border-radius:10px;
   background:var(--blue);
@@ -261,16 +284,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 .next-btn:disabled{
   opacity:.45;
   cursor:not-allowed;
-}
-
-.loading{
-  min-height:70vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#536d8e;
-  font-size:13px;
-  text-align:center;
 }
 
 .completed,.access-box{
@@ -303,7 +316,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 
 /* Instructions popup */
-
 .modal-backdrop{
   position:fixed;
   inset:0;
@@ -369,10 +381,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   font-weight:800;
 }
 
-.modal-buttons{
-  display:flex;
-  gap:10px;
-}
+.modal-buttons{display:flex;gap:10px}
 
 .cancel-btn,.start-btn{
   flex:1;
@@ -410,22 +419,54 @@ button,a{-webkit-tap-highlight-color:transparent}
   text-align:center;
 }
 
+@media(max-width:900px){
+  .course-header{
+    align-items:stretch;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .stats{
+    flex:1 1 auto;
+    width:100%;
+  }
+}
+
 @media(max-width:700px){
-  .page{padding:12px 8px 30px}
-  .course-header{padding:17px 15px}
+  .page{padding:12px 8px 25px}
+
+  .course-header{padding:17px 14px}
+
   .course-title{font-size:21px}
+
   .stats{gap:5px}
-  .stat{min-height:62px;padding:7px 2px}
+
+  .stat{
+    min-height:59px;
+    padding:6px 2px;
+    border-radius:10px;
+  }
+
   .stat-number{font-size:17px}
   .stat-label{font-size:7px}
+
   .question-card{padding:20px 15px}
+
   .question{font-size:17px}
   .question-hi{font-size:14px}
-  .options{grid-template-columns:1fr;gap:9px;margin-top:18px}
-  .option{min-height:57px;font-size:12px}
+
+  .options{
+    grid-template-columns:1fr;
+    gap:9px;
+    margin-top:18px;
+  }
+
+  .option{min-height:55px;font-size:12px}
   .option-hi{font-size:11px}
+
   .action-area{justify-content:stretch}
   .next-btn{width:100%}
+
   .modal{padding:21px 17px}
   .modal h2{font-size:20px}
 }
@@ -451,26 +492,28 @@ button,a{-webkit-tap-highlight-color:transparent}
   <section id="practice" style="display:none">
 
     <div class="course-header">
-      <div class="course-label">JOA IT Maha Pack</div>
-      <h1 class="course-title" id="courseTitle">Computer Fundamentals</h1>
-    </div>
+      <div class="course-info">
+        <div class="course-label">JOA IT Maha Pack</div>
+        <h1 class="course-title" id="courseTitle">Computer Fundamentals</h1>
+      </div>
 
-    <div class="stats">
-      <div class="stat attempted">
-        <div class="stat-number" id="attemptedCount">0</div>
-        <div class="stat-label">Attempted</div>
-      </div>
-      <div class="stat correct">
-        <div class="stat-number" id="correctCount">0</div>
-        <div class="stat-label">Correct</div>
-      </div>
-      <div class="stat wrong">
-        <div class="stat-number" id="wrongCount">0</div>
-        <div class="stat-label">Wrong</div>
-      </div>
-      <div class="stat unattempted">
-        <div class="stat-number" id="unattemptedCount">400</div>
-        <div class="stat-label">Not Attempted</div>
+      <div class="stats">
+        <div class="stat attempted">
+          <div class="stat-number" id="attemptedCount">0</div>
+          <div class="stat-label">Attempted</div>
+        </div>
+        <div class="stat correct">
+          <div class="stat-number" id="correctCount">0</div>
+          <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat wrong">
+          <div class="stat-number" id="wrongCount">0</div>
+          <div class="stat-label">Wrong</div>
+        </div>
+        <div class="stat unattempted">
+          <div class="stat-number" id="unattemptedCount">400</div>
+          <div class="stat-label">Not Attempted</div>
+        </div>
       </div>
     </div>
 
@@ -480,6 +523,7 @@ button,a{-webkit-tap-highlight-color:transparent}
       <div class="options" id="options"></div>
       <div class="answer-status" id="answerStatus"></div>
       <div class="explanation" id="explanation"></div>
+
       <div class="action-area">
         <button class="next-btn" id="nextBtn" disabled>Next Question →</button>
       </div>
@@ -612,7 +656,7 @@ function activeAccess(item){
     (!purchase || purchase.getTime() <= Date.now());
 }
 
-/* Client-side access display check; Firestore Rules must enforce access too. */
+/* Client-side access check; Firestore Rules must enforce access too. */
 function hasCourseAccess(data){
   if(activeAccess(data?.mahapackAccess?.courses?.[COURSE_ID])) return true;
 
@@ -636,7 +680,6 @@ function hasCourseAccess(data){
 
 function normalizeAnswers(data){
   const out = {};
-
   if(!data || typeof data !== "object") return out;
 
   for(const key of Object.keys(data)){
@@ -747,10 +790,7 @@ async function saveSession(){
   }
 }
 
-/*
-  Returns true only when there was no previous session.
-  Existing session means resume without showing the popup.
-*/
+/* Return true only when a new session is created. */
 async function loadSession(){
   const snap = await getDoc(sessionRef);
 
@@ -826,17 +866,14 @@ function renderQuestion(){
     if(answered){
       button.disabled = true;
 
-      /* Correct option always green after an answer */
       if(index === correct){
         button.classList.add("correct-answer");
       }
 
-      /* Chosen correct option */
       if(index === selected && selected === correct){
         button.classList.add("correct");
       }
 
-      /* Chosen wrong option */
       if(index === selected && selected !== correct){
         button.classList.add("wrong");
       }
@@ -847,24 +884,20 @@ function renderQuestion(){
     options.appendChild(button);
   });
 
-  const status = $("answerStatus");
-  const explanation = $("explanation");
+  $("answerStatus").className = "answer-status";
+  $("answerStatus").textContent = "";
 
-  /* No separate Correct/Wrong message */
-  status.className = "answer-status";
-  status.textContent = "";
+  const explanation = $("explanation");
 
   if(answered){
     const exp = getExplanation(q);
-    const expEn = exp.en;
-    const expHi = exp.hi;
 
-    if(String(expEn).trim() || String(expHi).trim()){
+    if(String(exp.en).trim() || String(exp.hi).trim()){
       explanation.className = "explanation show";
       explanation.innerHTML = `
         <div class="explanation-title">Explanation</div>
-        ${expEn ? `<div>${esc(expEn)}</div>` : ""}
-        ${expHi ? `<div class="explanation-hi">${esc(expHi)}</div>` : ""}
+        ${exp.en ? `<div>${esc(exp.en)}</div>` : ""}
+        ${exp.hi ? `<div class="explanation-hi">${esc(exp.hi)}</div>` : ""}
       `;
     }else{
       explanation.className = "explanation";
@@ -890,10 +923,8 @@ async function selectAnswer(index){
 
   state.answers[state.current] = index;
 
-  /* Immediately display green/red and explanation */
   renderQuestion();
 
-  /* Save the answer immediately */
   const saved = await saveSession();
 
   if(!saved){
@@ -952,10 +983,6 @@ async function completeAttempt(){
   const attempted = keys.length;
 
   try{
-    /*
-      Create final attempt once. Firestore Rules should prohibit
-      modifying a completed attempt.
-    */
     await setDoc(attemptRef,{
       uid:currentUser.uid,
       testId:TEST_ID,
@@ -1050,7 +1077,6 @@ onAuthStateChanged(auth,async user=>{
       db,"users",user.uid,"mahapackAttempts",TEST_ID
     );
 
-    /* Completed attempt: review only, no new attempt */
     const finalSnap = await getDoc(attemptRef);
 
     if(finalSnap.exists()){
@@ -1065,10 +1091,6 @@ onAuthStateChanged(auth,async user=>{
       return;
     }
 
-    /*
-      Popup only for a fresh session.
-      Returning users resume directly from their saved position.
-    */
     const isFreshSession = await loadSession();
 
     $("loading").style.display = "none";
