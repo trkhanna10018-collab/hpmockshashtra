@@ -79,6 +79,59 @@ button,a{-webkit-tap-highlight-color:transparent}
   overflow-wrap:anywhere;
 }
 
+/* Compact Go To Question control */
+.course-title-row{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:9px;
+}
+.go-to-btn{
+  flex:0 0 auto;
+  padding:6px 9px;
+  border:1px solid #7ea2dd;
+  border-radius:7px;
+  background:#f4f8ff;
+  color:#244f9e;
+  font-size:10px;
+  font-weight:800;
+  cursor:pointer;
+}
+.go-to-panel{
+  display:none;
+  align-items:center;
+  gap:6px;
+  margin-top:8px;
+}
+.go-to-panel.show{display:flex}
+.go-to-input{
+  width:82px;
+  min-width:0;
+  padding:7px 8px;
+  border:1px solid #b9cce8;
+  border-radius:7px;
+  font-size:12px;
+  color:var(--text);
+  background:#fff;
+}
+.go-to-submit{
+  padding:7px 10px;
+  border:0;
+  border-radius:7px;
+  background:var(--blue);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+.go-to-error{
+  display:none;
+  margin-top:5px;
+  color:#c72d42;
+  font-size:11px;
+}
+.go-to-error.show{display:block}
+
 .stats{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
@@ -732,7 +785,15 @@ button,a{-webkit-tap-highlight-color:transparent}
     <div class="course-header">
       <div class="course-info">
         <div class="course-label">JOA IT Maha Pack</div>
-        <h1 class="course-title" id="courseTitle">Computer Fundamentals</h1>
+        <div class="course-title-row">
+          <h1 class="course-title" id="courseTitle">Computer Fundamentals</h1>
+          <button class="go-to-btn" id="goToToggleBtn" type="button" aria-expanded="false" aria-controls="goToPanel">Go To</button>
+        </div>
+        <div class="go-to-panel" id="goToPanel">
+          <input class="go-to-input" id="goToInput" type="number" min="1" step="1" placeholder="Q. number" aria-label="Question number">
+          <button class="go-to-submit" id="goToSubmitBtn" type="button">Go</button>
+        </div>
+        <div class="go-to-error" id="goToError" role="status"></div>
       </div>
 
       <div class="stats">
@@ -1353,6 +1414,41 @@ $("cancelSubmitBtn").addEventListener("click",()=>{
 $("confirmSubmitBtn").addEventListener("click",submitAttempt);
 $("previousBtn").addEventListener("click",previousQuestion);
 $("nextBtn").addEventListener("click",nextQuestion);
+
+/* Jump directly to a question without marking skipped questions as attempted. */
+function submitGoToQuestion(){
+  const input = $("goToInput");
+  const error = $("goToError");
+  const questionNumber = Number(input.value);
+
+  if(!Number.isInteger(questionNumber) || questionNumber < 1 || questionNumber > QUESTIONS.length){
+    error.textContent = `Enter a question number from 1 to ${QUESTIONS.length}.`;
+    error.classList.add("show");
+    input.focus();
+    return;
+  }
+
+  error.textContent = "";
+  error.classList.remove("show");
+  $("goToPanel").classList.remove("show");
+  $("goToToggleBtn").setAttribute("aria-expanded","false");
+  input.value = "";
+  navigateTo(questionNumber - 1);
+}
+
+$("goToToggleBtn").addEventListener("click",()=>{
+  const panel = $("goToPanel");
+  const isOpen = panel.classList.toggle("show");
+  $("goToToggleBtn").setAttribute("aria-expanded",String(isOpen));
+  $("goToError").classList.remove("show");
+  if(isOpen){
+    $("goToInput").focus();
+  }
+});
+$("goToSubmitBtn").addEventListener("click",submitGoToQuestion);
+$("goToInput").addEventListener("keydown",event=>{
+  if(event.key === "Enter") submitGoToQuestion();
+});
 
 onAuthStateChanged(auth,async user=>{
   if(!user){
