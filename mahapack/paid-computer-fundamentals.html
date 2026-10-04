@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -850,7 +851,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 <div class="modal-backdrop" id="startModal" style="display:none">
   <div class="modal">
     <h2 id="modalTitle">Course Instructions</h2>
-    <p class="modal-subtitle">Please read the instructions before starting your practice.</p>
+    <p class="modal-subtitle" id="modalSubtitle">Please read the instructions before starting your practice.</p>
 
     <ul class="instructions">
       <li><span class="instruction-mark">✓</span><span id="instructionTotal">This course contains 400 questions.</span></li>
@@ -1393,8 +1394,11 @@ function startCountdown(){
   if(countdownStarted) return;
   countdownStarted = true;
 
-  $("cancelBtn").style.display = "none";
-  $("startBtn").style.display = "none";
+  // Once Start Practice is clicked, show only the 5-second countdown.
+  $("modalTitle").style.display = "none";
+  $("modalSubtitle").style.display = "none";
+  document.querySelector("#startModal .instructions").style.display = "none";
+  document.querySelector("#startModal .modal-buttons").style.display = "none";
   $("countdownArea").style.display = "block";
 
   let seconds = 5;
@@ -1509,9 +1513,22 @@ onAuthStateChanged(auth,async user=>{
     $("practice").style.display = "block";
     updateStats();
 
-    /* Always show instructions until the user explicitly starts practice.
-       Existing sessions still resume at their saved question after Start Practice. */
-    $("startModal").style.display = "flex";
+    // Show instructions only before the first answer has been attempted.
+    // Returning users with saved answers go straight back to their session.
+    if(Object.keys(state.answers).length === 0){
+      countdownStarted = false;
+      $("modalTitle").style.display = "";
+      $("modalSubtitle").style.display = "";
+      document.querySelector("#startModal .instructions").style.display = "";
+      document.querySelector("#startModal .modal-buttons").style.display = "";
+      $("startBtn").style.display = "";
+      $("cancelBtn").style.display = "";
+      $("countdownArea").style.display = "none";
+      $("startModal").style.display = "flex";
+    }else{
+      $("startModal").style.display = "none";
+      renderQuestion();
+    }
 
   }catch(error){
     console.error("Initialization error:",error);
