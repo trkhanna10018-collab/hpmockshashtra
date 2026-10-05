@@ -1406,6 +1406,40 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
   .previous-joa-card{min-height:0}
 }
 
+
+/* Final requested refinements */
+.series-grid{align-items:stretch}
+.series-card{position:relative;overflow:hidden;min-width:0}
+.series-image{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  background:#edf4fb;
+}
+.new-joa-card{border:1px solid #b8caff;box-shadow:0 8px 24px rgba(37,99,235,.09)}
+.new-joa-card .series-image{padding-top:0}
+.premium-new-tag{
+  position:absolute;top:13px;right:13px;z-index:5;
+  padding:8px 14px;border-radius:999px;
+  color:#fff;font-size:13px;font-weight:1000;letter-spacing:1.4px;
+  background:linear-gradient(110deg,#b88718,#f7d66b,#a96c05);
+  border:1px solid rgba(255,255,255,.92);
+  box-shadow:0 4px 16px rgba(145,99,0,.30);
+  animation:newTagPulse 1.15s ease-in-out infinite;
+  text-shadow:0 1px 2px rgba(0,0,0,.25)
+}
+@keyframes newTagPulse{
+  0%,100%{transform:scale(1);filter:brightness(1);box-shadow:0 4px 14px rgba(145,99,0,.28)}
+  50%{transform:scale(1.08);filter:brightness(1.16);box-shadow:0 5px 22px rgba(245,190,42,.55)}
+}
+@media(prefers-reduced-motion:reduce){.premium-new-tag{animation:none}}
+@media(max-width:800px){
+  .nav-links-home{display:none}
+  .mobile-menu a{white-space:normal}
+}
+
 </style>
 </head>
 
@@ -1428,6 +1462,7 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
 
       <nav class="nav nav-links-home" aria-label="Main navigation">
         <a class="nav-link-home" href="joa/new-joa-series.html">JOA (IT)</a>
+        <a class="nav-link-home" href="joa-series.html">Previous JOA (IT)</a>
         <a class="nav-link-home" href="patwari/patwari-series.html">Patwari</a>
         <a class="nav-link-home" href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
       </nav>
@@ -1448,6 +1483,7 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
 
       <div class="mobile-menu" id="mobileMenu">
         <a href="joa/new-joa-series.html">JOA (IT)</a>
+      <a href="joa-series.html">Previous JOA (IT)</a>
         <a href="patwari/patwari-series.html">Patwari</a>
         <a href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
         <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
@@ -1529,26 +1565,9 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
 
     <div class="series-grid">
 
-      <!-- PREVIOUS JOA (IT) — legacy series without a banner -->
-      <article class="series-card previous-joa-card">
-        <div class="series-body">
-          <div class="badges">
-            <span class="badge badge-live">PREVIOUS SERIES</span>
-          </div>
-
-          <h3 class="series-title">Previous JOA (IT)</h3>
-          <p class="series-description">
-            Access the previous JOA (IT) mock test series.
-          </p>
-
-          <div class="previous-joa-action">
-            <a href="joa-series.html" class="card-btn card-outline">Previous JOA (IT) →</a>
-          </div>
-        </div>
-      </article>
-
       <!-- NEW JOA (IT) MOCK TEST SERIES -->
-      <article class="series-card">
+      <article class="series-card new-joa-card">
+        <div class="premium-new-tag" aria-label="New premium series">✦ NEW ✦</div>
         <img src="joa/joa-banner.jpg" alt="JOA (IT) Mock Test Series — 10 tests" class="series-image">
 
         <div class="series-body">
