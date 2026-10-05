@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071a36">
 
-<title>HPMockShashtra | Himachal Competitive Exam Preparation</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#071a36">
+
+<title>
+HPMockShashtra | Himachal Competitive Exam Preparation
+</title>
+
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -19,9 +32,15 @@ html{
 }
 
 body{
-    font-family:Inter,Segoe UI,Arial,sans-serif;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
     background:#f5f8fc;
     color:#10254b;
+
     overflow-x:hidden;
 }
 
@@ -34,33 +53,58 @@ button{
     font-family:inherit;
 }
 
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
 .container{
     width:min(1180px,92%);
-    margin:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
+
 
 /* =========================================================
    HEADER
 ========================================================= */
 
 .site-header{
+
     position:sticky;
     top:10px;
+
     z-index:1000;
+
     width:min(1180px,92%);
+
     margin:10px auto 0;
 }
 
+
 .header-box{
+
     min-height:68px;
-    padding:10px 14px 10px 18px;
+
+    padding:
+        10px
+        14px
+        10px
+        18px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     gap:18px;
 
-    background:rgba(5,20,43,.92);
-    border:1px solid rgba(255,255,255,.16);
+    background:
+        rgba(5,20,43,.92);
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
     border-radius:24px;
 
     box-shadow:
@@ -69,159 +113,439 @@ button{
 
     backdrop-filter:blur(16px);
     -webkit-backdrop-filter:blur(16px);
+
+    position:relative;
 }
 
+
+/* BRAND */
+
 .brand{
+
     display:flex;
     align-items:center;
+
     gap:11px;
+
     flex-shrink:0;
 }
 
 .brand-logo{
+
     width:42px;
     height:42px;
+
     border-radius:13px;
+
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:linear-gradient(135deg,#1478ff,#2563eb);
-    color:white;
+    background:
+        linear-gradient(
+            135deg,
+            #1478ff,
+            #2563eb
+        );
+
+    color:#fff;
+
     font-weight:900;
     font-size:16px;
 
-    box-shadow:0 6px 18px rgba(37,99,235,.4);
+    box-shadow:
+        0 6px 18px
+        rgba(37,99,235,.4);
 }
 
 .brand-text strong{
+
     display:block;
+
     color:#fff;
+
     font-size:17px;
+
     line-height:1.1;
 }
 
 .brand-text span{
+
     display:block;
+
     color:#b8c7df;
+
     font-size:10px;
+
     margin-top:3px;
 }
 
+
+/* DESKTOP NAV */
+
 .nav{
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     gap:4px;
 }
 
 .nav a{
+
     color:#dbe6f7;
+
     font-size:13px;
     font-weight:600;
-    padding:10px 11px;
+
+    padding:
+        10px
+        11px;
+
     border-radius:10px;
+
     transition:.2s;
+
     white-space:nowrap;
 }
 
 .nav a:hover{
+
     color:#fff;
-    background:rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.08);
 }
 
+
+/* HEADER RIGHT */
+
 .header-right{
+
     display:flex;
     align-items:center;
+
     gap:8px;
+
     flex-shrink:0;
 }
 
+
+/* =========================================================
+   DESKTOP USER
+========================================================= */
+
 .user-box{
+
     display:flex;
     align-items:center;
+
     gap:8px;
-    padding:5px 9px 5px 5px;
+
+    padding:
+        5px
+        9px
+        5px
+        5px;
+
     border-radius:14px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 }
 
 .avatar{
+
     width:30px;
     height:30px;
+
     border-radius:50%;
+
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:linear-gradient(135deg,#60a5fa,#2563eb);
+    background:
+        linear-gradient(
+            135deg,
+            #60a5fa,
+            #2563eb
+        );
+
     color:#fff;
+
     font-size:13px;
     font-weight:800;
 }
 
 .user-name{
+
     color:#fff;
+
     font-size:12px;
-    max-width:95px;
+    font-weight:600;
+
+    max-width:110px;
+
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
 }
 
 .logout-btn{
-    border:1px solid rgba(255,255,255,.16);
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
     background:transparent;
+
     color:#ff7d7d;
-    padding:9px 12px;
+
+    padding:
+        9px
+        12px;
+
     border-radius:10px;
+
     font-size:12px;
     font-weight:700;
+
     cursor:pointer;
 }
 
 .login-btn{
-    border:1px solid rgba(255,255,255,.16);
-    background:rgba(255,255,255,.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    background:
+        rgba(255,255,255,.07);
+
     color:#fff;
-    padding:10px 14px;
+
+    padding:
+        10px
+        14px;
+
     border-radius:11px;
+
     font-size:12px;
     font-weight:700;
 }
 
+
 .explore-header{
-    padding:11px 16px;
+
+    padding:
+        11px
+        16px;
+
     border-radius:11px;
-    background:linear-gradient(135deg,#2b83ff,#1769ed);
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b83ff,
+            #1769ed
+        );
+
     color:#fff;
+
     font-size:12px;
     font-weight:800;
-    box-shadow:0 7px 20px rgba(31,111,238,.3);
+
+    box-shadow:
+        0 7px 20px
+        rgba(31,111,238,.3);
 }
 
-/* Mobile menu */
+
+/* HAMBURGER */
 
 .menu-btn{
+
     display:none;
-    width:40px;
-    height:40px;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:11px;
-    background:rgba(255,255,255,.07);
+
+    width:42px;
+    height:42px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.07);
+
     color:white;
-    font-size:20px;
+
+    font-size:22px;
+
     cursor:pointer;
 }
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu{
+
+    display:none;
+
+    position:absolute;
+
+    top:76px;
+
+    left:0;
+    right:0;
+
+    padding:8px;
+
+    background:
+        rgba(5,20,43,.98);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 18px 35px
+        rgba(0,0,0,.35);
+
+    backdrop-filter:blur(15px);
+}
+
+.mobile-menu.active{
+    display:block;
+}
+
+
+/* Mobile user area */
+
+.mobile-user{
+
+    padding:
+        12px;
+
+    margin-bottom:5px;
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.mobile-user .avatar{
+
+    width:36px;
+    height:36px;
+}
+
+.mobile-user-info{
+    flex:1;
+    min-width:0;
+}
+
+.mobile-user-name{
+
+    color:#fff;
+
+    font-size:13px;
+    font-weight:700;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.mobile-user-email{
+
+    color:#93a8c7;
+
+    font-size:10px;
+
+    margin-top:2px;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.mobile-logout{
+
+    color:#ff7c7c;
+
+    background:transparent;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    padding:
+        7px
+        9px;
+
+    border-radius:8px;
+
+    font-size:10px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+
+.mobile-menu a{
+
+    display:block;
+
+    padding:
+        12px
+        14px;
+
+    color:#dce7f8;
+
+    font-size:13px;
+
+    border-radius:9px;
+}
+
+.mobile-menu a:hover{
+
+    background:
+        rgba(255,255,255,.07);
+}
+
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
+
     position:relative;
+
     margin-top:-78px;
+
     min-height:690px;
 
     display:flex;
@@ -232,30 +556,44 @@ button{
     background:#071a36;
 }
 
-/* MAIN BACKGROUND IMAGE */
+
+/* BACKGROUND IMAGE */
 
 .hero::before{
+
     content:"";
+
     position:absolute;
+
     inset:0;
 
-    background-image:url("mahapack/homepage-bg-2.jpg");
+    background-image:
+        url("mahapack/homepage-bg-2.jpg");
+
     background-position:center center;
+
     background-size:cover;
+
     background-repeat:no-repeat;
 
     opacity:.92;
+
     z-index:0;
 }
 
-/* Dark transparent overlay */
+
+/* DARK OVERLAY */
 
 .hero::after{
+
     content:"";
+
     position:absolute;
+
     inset:0;
 
     background:
+
         linear-gradient(
             90deg,
             rgba(3,18,40,.88) 0%,
@@ -267,35 +605,61 @@ button{
     z-index:1;
 }
 
+
+/* HERO CONTENT */
+
 .hero-content{
+
     position:relative;
+
     z-index:2;
 
     padding-top:125px;
     padding-bottom:75px;
-
-    width:auto;
 }
+
+
+/* HERO GRID */
 
 .hero-grid{
+
     display:grid;
-    grid-template-columns:minmax(0,680px) minmax(240px,1fr);
+
+    grid-template-columns:
+        minmax(0,680px)
+        minmax(240px,1fr);
+
     gap:40px;
+
     align-items:center;
 }
 
+
+/* BADGE */
+
 .hero-badge{
+
     display:inline-flex;
+
     align-items:center;
+
     gap:8px;
 
-    padding:8px 14px;
+    padding:
+        8px
+        14px;
+
     border-radius:999px;
 
-    background:rgba(255,255,255,.10);
-    border:1px solid rgba(255,255,255,.22);
+    background:
+        rgba(255,255,255,.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
 
     color:#e7f0ff;
+
     font-size:12px;
     font-weight:700;
 
@@ -303,75 +667,135 @@ button{
 }
 
 .hero-badge::before{
+
     content:"";
+
     width:8px;
     height:8px;
+
     border-radius:50%;
+
     background:#19e58c;
-    box-shadow:0 0 10px #19e58c;
+
+    box-shadow:
+        0 0 10px #19e58c;
 }
 
+
+/* HERO HEADING */
+
 .hero h1{
+
     margin-top:20px;
+
     color:white;
 
-    font-size:clamp(42px,5.5vw,72px);
+    font-size:
+        clamp(
+            42px,
+            5.5vw,
+            72px
+        );
+
     line-height:.99;
+
     letter-spacing:-2.8px;
+
     font-weight:900;
 }
 
 .hero h1 span{
+
     display:block;
+
     color:#3390ff;
 }
 
+
+/* DESCRIPTION */
+
 .hero-description{
+
     max-width:650px;
+
     margin-top:20px;
 
     color:#e0eaf8;
+
     font-size:17px;
+
     line-height:1.65;
 }
 
+
+/* BUTTONS */
+
 .hero-actions{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:12px;
+
     margin-top:27px;
 }
 
 .primary-btn{
+
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
+
     gap:12px;
 
-    padding:14px 22px;
+    padding:
+        14px
+        22px;
+
     border-radius:10px;
 
-    background:linear-gradient(135deg,#1679ff,#2167ec);
+    background:
+        linear-gradient(
+            135deg,
+            #1679ff,
+            #2167ec
+        );
+
     color:#fff;
 
     font-size:13px;
     font-weight:800;
 
-    box-shadow:0 10px 28px rgba(20,112,255,.28);
+    box-shadow:
+        0 10px 28px
+        rgba(20,112,255,.28);
 }
 
 .secondary-btn{
+
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
+
     gap:10px;
 
-    padding:14px 22px;
+    padding:
+        14px
+        22px;
+
     border-radius:10px;
 
     color:#fff;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.38);
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.38);
 
     font-size:13px;
     font-weight:800;
@@ -379,98 +803,150 @@ button{
     backdrop-filter:blur(8px);
 }
 
+
+/* HERO POINTS */
+
 .hero-points{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:24px;
+
     margin-top:25px;
 }
 
 .hero-point{
+
     color:#f2f7ff;
+
     font-size:12px;
+
     font-weight:600;
 }
 
 .hero-point::before{
+
     content:"✓";
+
     color:#13df89;
+
     font-size:18px;
+
     font-weight:900;
+
     margin-right:7px;
 }
 
+
+/* JOURNEY BOX */
+
 .hero-journey{
+
     justify-self:end;
 
     width:245px;
+
     padding:22px;
 
     border-radius:20px;
 
-    background:rgba(20,77,145,.36);
-    border:1px solid rgba(255,255,255,.18);
+    background:
+        rgba(20,77,145,.36);
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
 
     backdrop-filter:blur(13px);
-    -webkit-backdrop-filter:blur(13px);
 
     color:white;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.2);
+    box-shadow:
+        0 20px 40px
+        rgba(0,0,0,.2);
 }
 
 .journey-icon{
+
     font-size:34px;
+
     margin-bottom:10px;
 }
 
 .hero-journey strong{
+
     display:block;
+
     font-size:19px;
+
     line-height:1.2;
 }
 
 .journey-line{
+
     width:42px;
     height:3px;
+
     margin-top:15px;
+
     border-radius:5px;
+
     background:#fff;
 }
+
 
 /* =========================================================
    STATS
 ========================================================= */
 
 .stats-wrap{
+
     position:relative;
+
     z-index:10;
+
     margin-top:-38px;
 }
 
 .stats-box{
+
     background:#fff;
+
     border-radius:22px;
 
     box-shadow:
-        0 16px 40px rgba(19,49,91,.12),
-        0 3px 12px rgba(19,49,91,.06);
+        0 16px 40px
+        rgba(19,49,91,.12),
+        0 3px 12px
+        rgba(19,49,91,.06);
 
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
 
     overflow:hidden;
 }
 
 .stat{
+
     min-height:76px;
-    padding:14px 24px;
+
+    padding:
+        14px
+        24px;
 
     display:flex;
+
     align-items:center;
+
     gap:14px;
 
-    border-right:1px solid #e5ebf3;
+    border-right:
+        1px solid
+        #e5ebf3;
 }
 
 .stat:last-child{
@@ -478,89 +954,136 @@ button{
 }
 
 .stat-icon{
+
     width:44px;
     height:44px;
+
     flex-shrink:0;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     border-radius:50%;
+
     background:#edf4ff;
 
     font-size:21px;
 }
 
 .stat strong{
+
     display:block;
+
     font-size:22px;
+
     line-height:1.1;
+
     color:#0c2451;
 }
 
 .stat span{
+
     display:block;
+
     color:#71809a;
+
     font-size:11px;
+
     margin-top:4px;
 }
+
 
 /* =========================================================
    SERIES SECTION
 ========================================================= */
 
 .series-section{
-    padding:75px 0 90px;
+
+    padding:
+        75px
+        0
+        90px;
 }
 
 .section-heading{
+
     text-align:center;
+
     margin-bottom:28px;
 }
 
 .eyebrow{
+
     color:#1266e9;
+
     font-size:10px;
+
     letter-spacing:2px;
+
     font-weight:900;
+
     text-transform:uppercase;
 }
 
 .section-heading h2{
+
     margin-top:9px;
+
     color:#0c2451;
+
     font-size:36px;
+
     letter-spacing:-1px;
 }
 
 .section-heading p{
-    margin:8px auto 0;
+
+    margin:
+        8px
+        auto
+        0;
+
     max-width:700px;
+
     color:#71809a;
+
     font-size:14px;
 }
 
+
 /* =========================================================
-   CARDS
+   EXAM CARDS
 ========================================================= */
 
 .exam-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:16px;
 }
 
 .exam-card{
+
     position:relative;
 
     background:#fff;
-    border:1px solid #e2e9f2;
+
+    border:
+        1px solid
+        #e2e9f2;
+
     border-radius:18px;
 
     overflow:hidden;
 
-    box-shadow:0 8px 28px rgba(21,49,86,.08);
+    box-shadow:
+        0 8px 28px
+        rgba(21,49,86,.08);
 
     transition:
         transform .25s ease,
@@ -568,316 +1091,603 @@ button{
 }
 
 .exam-card:hover{
+
     transform:translateY(-5px);
-    box-shadow:0 18px 38px rgba(21,49,86,.13);
+
+    box-shadow:
+        0 18px 38px
+        rgba(21,49,86,.13);
 }
 
-/* IMAGE IS NOT CLICKABLE */
+
+/* IMAGE */
 
 .exam-image{
+
     position:relative;
+
     width:100%;
 
     background:#edf3f9;
+
     overflow:hidden;
 
     display:flex;
+
     justify-content:center;
     align-items:center;
 }
 
 .exam-image img{
+
     display:block;
+
     width:100%;
+
     height:auto;
+
     max-width:100%;
 
     object-fit:contain;
 }
 
-/* LATEST RIBBON */
+
+/* LATEST */
 
 .latest-ribbon{
+
     position:absolute;
+
     top:18px;
+
     left:-48px;
 
     width:175px;
+
     padding:9px 0;
 
     text-align:center;
 
-    background:linear-gradient(
-        135deg,
-        #ff3f58,
-        #ff7a18
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff3f58,
+            #ff7a18
+        );
 
     color:#fff;
+
     font-size:15px;
+
     font-weight:1000;
+
     letter-spacing:.4px;
 
     transform:rotate(-35deg);
 
     box-shadow:
-        0 7px 16px rgba(255,61,65,.35);
+        0 7px 16px
+        rgba(255,61,65,.35);
 
     z-index:5;
 
-    animation:ribbonBlink 1.25s infinite;
+    animation:
+        ribbonBlink
+        1.25s
+        infinite;
 }
 
 .latest-ribbon::before{
+
     content:"★";
+
     margin-right:5px;
 }
 
 @keyframes ribbonBlink{
+
     0%,100%{
         filter:brightness(1);
         opacity:1;
     }
+
     50%{
         filter:brightness(1.3);
         opacity:.78;
     }
 }
 
+
+/* CARD BODY */
+
 .exam-body{
-    padding:17px 19px 18px;
+
+    padding:
+        17px
+        19px
+        18px;
 }
 
 .exam-body h3{
+
     color:#0d2552;
+
     font-size:20px;
+
     letter-spacing:-.3px;
 }
 
 .exam-body p{
+
     min-height:42px;
+
     margin-top:7px;
 
     color:#71809a;
+
     font-size:12px;
+
     line-height:1.55;
 }
 
+
+/* CARD STATS */
+
 .exam-stats{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:7px;
+
     margin-top:14px;
 }
 
 .exam-stat{
-    padding:11px 4px;
+
+    padding:
+        11px
+        4px;
+
     text-align:center;
+
     border-radius:9px;
+
     background:#f4f7fb;
 }
 
 .exam-stat strong{
+
     display:block;
+
     color:#0d3470;
+
     font-size:16px;
 }
 
 .exam-stat span{
+
     display:block;
+
     margin-top:3px;
+
     color:#7b8ba5;
+
     font-size:10px;
 }
 
+
+/* NOTE */
+
 .exam-note{
+
     display:flex;
+
     align-items:flex-start;
+
     gap:7px;
 
     margin-top:13px;
 
     color:#6d7e98;
+
     font-size:10.5px;
+
     line-height:1.45;
 }
 
 .exam-note::before{
+
     content:"✓";
+
     color:#0bb875;
+
     font-size:16px;
+
     font-weight:900;
+
     line-height:1;
 }
 
-/* ONLY THIS IS CLICKABLE */
+
+/* ACTION ONLY CLICKABLE */
 
 .exam-action{
+
     margin-top:15px;
 }
 
 .exam-action a{
+
     width:100%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     gap:10px;
 
-    padding:12px 15px;
+    padding:
+        12px
+        15px;
 
     border-radius:9px;
 
-    background:linear-gradient(135deg,#1977ff,#2168ec);
+    background:
+        linear-gradient(
+            135deg,
+            #1977ff,
+            #2168ec
+        );
+
     color:#fff;
 
     font-size:12px;
+
     font-weight:800;
 
-    box-shadow:0 7px 17px rgba(28,105,238,.18);
+    box-shadow:
+        0 7px 17px
+        rgba(28,105,238,.18);
 
     transition:.2s;
 }
 
 .exam-action a:hover{
+
     transform:translateY(-1px);
-    box-shadow:0 10px 20px rgba(28,105,238,.28);
+
+    box-shadow:
+        0 10px 20px
+        rgba(28,105,238,.28);
 }
 
 .exam-action a span{
+
     font-size:17px;
 }
+
 
 /* =========================================================
    FEATURES
 ========================================================= */
 
 .features-section{
-    padding:75px 0;
+
+    padding:
+        75px
+        0;
+
     background:#fff;
-    border-top:1px solid #e8edf4;
+
+    border-top:
+        1px solid
+        #e8edf4;
 }
 
 .features-grid{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:16px;
 }
 
 .feature{
+
     padding:22px;
-    border:1px solid #e3e9f1;
+
+    border:
+        1px solid
+        #e3e9f1;
+
     border-radius:14px;
+
     background:#fff;
-    box-shadow:0 6px 20px rgba(20,47,80,.04);
+
+    box-shadow:
+        0 6px 20px
+        rgba(20,47,80,.04);
 }
 
 .feature-icon{
+
     width:42px;
     height:42px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     border-radius:10px;
 
     background:#eaf2ff;
+
     color:#176bea;
 
     font-size:19px;
 }
 
 .feature h3{
+
     margin-top:14px;
+
     color:#102858;
+
     font-size:13px;
 }
 
 .feature p{
+
     margin-top:7px;
+
     color:#7a89a0;
+
     font-size:11px;
+
     line-height:1.55;
 }
 
+
 /* =========================================================
-   CTA
+   BOTTOM CTA
 ========================================================= */
 
 .bottom-cta{
+
     position:relative;
+
     overflow:hidden;
 
-    padding:60px 0;
+    padding:
+        65px
+        0;
 
     background:
+
         linear-gradient(
-            rgba(3,28,62,.85),
-            rgba(3,28,62,.92)
+            rgba(3,28,62,.82),
+            rgba(3,28,62,.94)
         ),
-        url("mahapack/homepage-bg-2.jpg") center/cover no-repeat;
+
+        url("mahapack/homepage-bg-2.jpg")
+        center/cover
+        no-repeat;
 
     color:white;
+
     text-align:center;
 }
 
 .bottom-cta h2{
+
     font-size:30px;
+
     letter-spacing:-.6px;
 }
 
 .bottom-cta p{
-    margin:8px auto 20px;
+
+    margin:
+        8px
+        auto
+        20px;
+
     color:#d3e0f2;
+
     font-size:13px;
 }
 
 .cta-btn{
+
     display:inline-flex;
+
     align-items:center;
+
     gap:9px;
 
-    padding:12px 22px;
+    padding:
+        12px
+        22px;
 
     border-radius:10px;
 
     background:white;
+
     color:#1468eb;
 
     font-size:12px;
+
     font-weight:900;
 }
 
+
 /* =========================================================
-   FOOTER
+   PREMIUM FOOTER
 ========================================================= */
 
 footer{
-    background:#06172f;
+
+    background:#041329;
+
     color:#aabbd5;
-    padding:24px 0;
+
+    padding:
+        42px
+        0
+        20px;
 }
 
-.footer-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+.footer-top{
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap:35px;
+
+    padding-bottom:32px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.09);
+}
+
+
+/* FOOTER BRAND */
+
+.footer-brand-area{
+
+    max-width:300px;
 }
 
 .footer-brand{
-    color:white;
-    font-weight:800;
-    font-size:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
 }
 
-.footer-text{
-    font-size:11px;
+.footer-brand-logo{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1478ff,
+            #2563eb
+        );
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:900;
 }
+
+.footer-brand strong{
+
+    color:#fff;
+
+    font-size:16px;
+}
+
+.footer-brand-area p{
+
+    margin-top:12px;
+
+    color:#8296b5;
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+
+/* FOOTER COLUMNS */
+
+.footer-column h4{
+
+    color:#fff;
+
+    font-size:12px;
+
+    margin-bottom:12px;
+}
+
+.footer-column a{
+
+    display:block;
+
+    color:#8fa3c1;
+
+    font-size:11px;
+
+    margin-bottom:9px;
+
+    transition:.2s;
+}
+
+.footer-column a:hover{
+
+    color:#4d9aff;
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+
+    padding-top:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.footer-bottom span{
+
+    color:#7186a6;
+
+    font-size:10px;
+}
+
+.footer-made{
+
+    color:#7186a6;
+
+    font-size:10px;
+}
+
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
 @media(max-width:1050px){
@@ -887,12 +1697,19 @@ footer{
     }
 
     .nav a{
-        padding:9px 7px;
+
+        padding:
+            9px
+            7px;
+
         font-size:11px;
     }
 
     .hero-grid{
-        grid-template-columns:1fr 230px;
+
+        grid-template-columns:
+            1fr
+            230px;
     }
 
     .hero h1{
@@ -904,6 +1721,11 @@ footer{
     }
 
 }
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
 
 @media(max-width:850px){
 
@@ -920,17 +1742,38 @@ footer{
         margin-left:auto;
     }
 
+
     .hero{
+
         margin-top:-78px;
+
         min-height:auto;
     }
 
-    .hero-content{
+
+    /*
+       IMPORTANT MOBILE FIX
+
+       Hero content ko fixed mobile width di ja rahi hai.
+       Isse text bilkul screen edge se nahi lagega.
+    */
+
+    .hero > .container.hero-content{
+
+        width:
+            calc(100% - 32px) !important;
+
+        margin-left:auto !important;
+        margin-right:auto !important;
+
         padding-top:130px;
+
         padding-bottom:80px;
     }
 
+
     .hero-grid{
+
         grid-template-columns:1fr;
     }
 
@@ -938,36 +1781,79 @@ footer{
         display:none;
     }
 
-    .hero h1{
-        font-size:48px;
-    }
 
     .exam-grid{
+
         grid-template-columns:1fr;
     }
 
+
     .features-grid{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .footer-top{
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media(max-width:600px){
 
+    .container{
+
+        width:
+            calc(100% - 32px);
+
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+
+    /* HEADER */
+
     .site-header{
-        width:calc(100% - 20px);
-        margin:10px auto 0;
+
+        width:
+            calc(100% - 20px);
+
+        margin:
+            10px auto 0;
     }
 
     .header-box{
+
         min-height:62px;
-        padding:8px 10px 8px 12px;
+
+        padding:
+            8px
+            10px
+            8px
+            12px;
+
         border-radius:20px;
     }
 
+    .brand{
+
+        gap:9px;
+    }
+
     .brand-logo{
+
         width:38px;
         height:38px;
+
         border-radius:11px;
     }
 
@@ -979,27 +1865,26 @@ footer{
         font-size:8px;
     }
 
-    .user-box{
-        padding:4px;
-        background:transparent;
-        border:0;
-    }
 
-    .user-name,
-    .logout-btn{
-        display:none;
-    }
+    /* HERO */
 
     .hero{
+
         margin-top:-72px;
     }
 
+
     .hero::before{
-        background-position:center center;
+
+        background-position:
+            center center;
     }
 
+
     .hero::after{
+
         background:
+
             linear-gradient(
                 90deg,
                 rgba(3,18,40,.88),
@@ -1007,55 +1892,104 @@ footer{
             );
     }
 
-    .hero-content{
+
+    /*
+       MAIN MOBILE FIX
+    */
+
+    .hero > .container.hero-content{
+
+        width:
+            calc(100% - 32px) !important;
+
+        max-width:none;
+
         padding-top:115px;
+
         padding-bottom:70px;
     }
 
+
     .hero h1{
+
         margin-top:16px;
+
         font-size:43px;
+
         letter-spacing:-1.8px;
+
+        line-height:1.02;
     }
 
+
     .hero-description{
+
         margin-top:17px;
+
         font-size:14px;
+
         line-height:1.55;
     }
 
+
     .hero-actions{
+
         margin-top:22px;
+
         flex-direction:column;
+
         align-items:stretch;
     }
 
+
     .primary-btn,
     .secondary-btn{
+
         width:100%;
+
+        min-height:58px;
     }
 
+
     .hero-points{
-        gap:8px 18px;
+
+        gap:
+            9px
+            18px;
+
         margin-top:21px;
     }
 
+
     .hero-point{
+
         font-size:10px;
     }
 
+
+    /* STATS */
+
     .stats-wrap{
+
         margin-top:-25px;
     }
 
     .stats-box{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
         border-radius:17px;
     }
 
     .stat{
+
         min-height:75px;
-        padding:11px 13px;
+
+        padding:
+            11px
+            13px;
+
         gap:9px;
     }
 
@@ -1065,12 +1999,17 @@ footer{
 
     .stat:nth-child(1),
     .stat:nth-child(2){
-        border-bottom:1px solid #e5ebf3;
+
+        border-bottom:
+            1px solid
+            #e5ebf3;
     }
 
     .stat-icon{
+
         width:36px;
         height:36px;
+
         font-size:17px;
     }
 
@@ -1082,100 +2021,161 @@ footer{
         font-size:9px;
     }
 
+
+    /* SERIES */
+
     .series-section{
-        padding:55px 0 65px;
+
+        padding:
+            55px
+            0
+            65px;
     }
 
     .section-heading{
+
         margin-bottom:22px;
     }
 
     .section-heading h2{
+
         font-size:29px;
     }
 
     .section-heading p{
+
         font-size:12px;
     }
 
+
+    /* CARD */
+
     .exam-card{
+
         border-radius:16px;
     }
 
     .exam-body{
+
         padding:16px;
     }
 
     .latest-ribbon{
+
         top:15px;
+
         left:-54px;
+
         width:170px;
+
         font-size:13px;
     }
 
+
+    /* FEATURES */
+
     .features-section{
-        padding:60px 0;
+
+        padding:
+            60px
+            0;
     }
 
     .features-grid{
+
         grid-template-columns:1fr;
     }
 
+
+    /* CTA */
+
     .bottom-cta{
-        padding:50px 0;
+
+        padding:
+            50px
+            0;
     }
 
     .bottom-cta h2{
+
         font-size:25px;
     }
 
-    .footer-inner{
+
+    /* FOOTER */
+
+    footer{
+
+        padding:
+            38px
+            0
+            18px;
+    }
+
+    .footer-top{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:28px 20px;
+    }
+
+    .footer-brand-area{
+
+        grid-column:
+            1 / -1;
+
+        max-width:none;
+    }
+
+    .footer-bottom{
+
         flex-direction:column;
+
         text-align:center;
+
+        padding-top:17px;
     }
 
 }
 
+
 /* =========================================================
-   MOBILE NAV
+   VERY SMALL PHONES
 ========================================================= */
 
-.mobile-menu{
-    display:none;
-    position:absolute;
-    top:72px;
-    left:0;
-    right:0;
+@media(max-width:380px){
 
-    padding:8px;
+    .hero h1{
 
-    background:rgba(5,20,43,.97);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:17px;
+        font-size:38px;
+    }
 
-    box-shadow:0 18px 35px rgba(0,0,0,.3);
-}
+    .hero-description{
 
-.mobile-menu.active{
-    display:block;
-}
+        font-size:13px;
+    }
 
-.mobile-menu a{
-    display:block;
-    padding:12px 14px;
-    color:#dce7f8;
-    font-size:13px;
-    border-radius:9px;
-}
+    .hero > .container.hero-content{
 
-.mobile-menu a:hover{
-    background:rgba(255,255,255,.07);
+        width:
+            calc(100% - 28px) !important;
+    }
+
+    .container{
+
+        width:
+            calc(100% - 28px);
+    }
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =======================================================
      HEADER
@@ -1185,19 +2185,34 @@ footer{
 
     <div class="header-box">
 
-        <a href="homepage.html" class="brand">
+
+        <!-- BRAND -->
+
+        <a
+            href="homepage.html"
+            class="brand"
+        >
 
             <div class="brand-logo">
                 HP
             </div>
 
             <div class="brand-text">
-                <strong>HPMockShashtra</strong>
-                <span>Smart Practice. Better Preparation.</span>
+
+                <strong>
+                    HPMockShashtra
+                </strong>
+
+                <span>
+                    Smart Practice. Better Preparation.
+                </span>
+
             </div>
 
         </a>
 
+
+        <!-- DESKTOP NAV -->
 
         <nav class="nav">
 
@@ -1220,26 +2235,47 @@ footer{
         </nav>
 
 
+        <!-- HEADER RIGHT -->
+
         <div class="header-right">
 
-            <div id="userArea">
 
-                <!-- Login/User area generated by Firebase -->
+            <!-- Firebase User/Login -->
+            <div id="userArea"></div>
 
-            </div>
 
-            <a href="#series" class="explore-header">
+            <a
+                href="#series"
+                class="explore-header"
+            >
                 Explore Tests
             </a>
 
-            <button class="menu-btn" id="menuBtn">
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open Menu"
+            >
                 ☰
             </button>
 
         </div>
 
 
-        <div class="mobile-menu" id="mobileMenu">
+        <!-- =================================================
+             MOBILE MENU
+        ================================================== -->
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+
+            <!-- Firebase user will be inserted here -->
+
+            <div id="mobileUserArea"></div>
+
 
             <a href="joa/joa-series.html">
                 JOA(IT) 2026
@@ -1268,92 +2304,139 @@ footer{
 </header>
 
 
+
 <!-- =======================================================
      HERO
 ======================================================= -->
 
 <section class="hero">
 
+
     <div class="container hero-content">
+
 
         <div class="hero-grid">
 
+
             <div>
 
+
                 <div class="hero-badge">
+
                     Himachal Pradesh Competitive Exam Preparation
+
                 </div>
 
 
                 <h1>
+
                     Prepare with purpose.
-                    <span>Perform with confidence.</span>
+
+                    <span>
+                        Perform with confidence.
+                    </span>
+
                 </h1>
 
 
                 <p class="hero-description">
+
                     HPMockShashtra brings structured mock tests,
                     focused practice and performance-oriented
                     preparation together in one platform for
                     Himachal Pradesh aspirants.
+
                 </p>
 
 
                 <div class="hero-actions">
 
-                    <a href="#series" class="primary-btn">
+
+                    <a
+                        href="#series"
+                        class="primary-btn"
+                    >
+
                         Explore Test Series
-                        <span>→</span>
+
+                        <span>
+                            →
+                        </span>
+
                     </a>
 
-                    <a href="firebase-signup.html" class="secondary-btn">
+
+                    <a
+                        href="firebase-signup.html"
+                        class="secondary-btn"
+                    >
+
                         ♙
+
                         Create Free Account
+
                     </a>
+
 
                 </div>
 
 
                 <div class="hero-points">
 
+
                     <div class="hero-point">
                         Latest syllabus focused
                     </div>
+
 
                     <div class="hero-point">
                         Timed mock tests
                     </div>
 
+
                     <div class="hero-point">
                         Performance tracking
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
+            <!-- JOURNEY BOX -->
+
             <div class="hero-journey">
+
 
                 <div class="journey-icon">
                     📈
                 </div>
 
+
                 <strong>
+
                     Your Journey<br>
                     to a Better Future<br>
                     Starts Here
+
                 </strong>
+
 
                 <div class="journey-line"></div>
 
+
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
+
 
 
 <!-- =======================================================
@@ -1362,9 +2445,12 @@ footer{
 
 <section class="stats-wrap">
 
+
     <div class="container">
 
+
         <div class="stats-box">
+
 
             <div class="stat">
 
@@ -1373,8 +2459,15 @@ footer{
                 </div>
 
                 <div>
-                    <strong>120</strong>
-                    <span>Questions per Test</span>
+
+                    <strong>
+                        120
+                    </strong>
+
+                    <span>
+                        Questions per Test
+                    </span>
+
                 </div>
 
             </div>
@@ -1387,8 +2480,15 @@ footer{
                 </div>
 
                 <div>
-                    <strong>90 Min</strong>
-                    <span>Timed Practice</span>
+
+                    <strong>
+                        90 Min
+                    </strong>
+
+                    <span>
+                        Timed Practice
+                    </span>
+
                 </div>
 
             </div>
@@ -1401,8 +2501,15 @@ footer{
                 </div>
 
                 <div>
-                    <strong>15</strong>
-                    <span>MahaPack Subjects</span>
+
+                    <strong>
+                        15
+                    </strong>
+
+                    <span>
+                        MahaPack Subjects
+                    </span>
+
                 </div>
 
             </div>
@@ -1415,11 +2522,19 @@ footer{
                 </div>
 
                 <div>
-                    <strong>6000+</strong>
-                    <span>Practice Questions</span>
+
+                    <strong>
+                        6000+
+                    </strong>
+
+                    <span>
+                        Practice Questions
+                    </span>
+
                 </div>
 
             </div>
+
 
         </div>
 
@@ -1428,46 +2543,62 @@ footer{
 </section>
 
 
+
 <!-- =======================================================
      TEST SERIES
 ======================================================= -->
 
-<section class="series-section" id="series">
+<section
+    class="series-section"
+    id="series"
+>
+
 
     <div class="container">
 
+
         <div class="section-heading">
+
 
             <div class="eyebrow">
                 Our Test Series
             </div>
 
+
             <h2>
                 Choose your preparation.
             </h2>
 
+
             <p>
+
                 Focused resources, structured practice and
                 exam-oriented preparation—all in one place.
+
             </p>
 
+
         </div>
+
 
 
         <div class="exam-grid">
 
 
             <!-- =================================================
-                 JOA IT
+                 JOA
             ================================================== -->
 
             <div class="exam-card">
 
+
                 <div class="exam-image">
+
 
                     <div class="latest-ribbon">
                         LATEST
                     </div>
+
 
                     <img
                         src="joa/joa-banner.jpg"
@@ -1475,60 +2606,97 @@ footer{
                         loading="lazy"
                     >
 
+
                 </div>
 
 
                 <div class="exam-body">
 
+
                     <h3>
                         JOA (IT)
                     </h3>
 
+
                     <p>
+
                         Complete online mock test series for JOA (IT)
                         aspirants with focused exam preparation.
+
                     </p>
 
 
                     <div class="exam-stats">
 
-                        <div class="exam-stat">
-                            <strong>10</strong>
-                            <span>Tests</span>
-                        </div>
 
                         <div class="exam-stat">
-                            <strong>120</strong>
-                            <span>Questions</span>
+
+                            <strong>
+                                10
+                            </strong>
+
+                            <span>
+                                Tests
+                            </span>
+
                         </div>
 
+
                         <div class="exam-stat">
-                            <strong>90</strong>
-                            <span>Minutes</span>
+
+                            <strong>
+                                120
+                            </strong>
+
+                            <span>
+                                Questions
+                            </span>
+
                         </div>
+
+
+                        <div class="exam-stat">
+
+                            <strong>
+                                90
+                            </strong>
+
+                            <span>
+                                Minutes
+                            </span>
+
+                        </div>
+
 
                     </div>
 
 
                     <div class="exam-note">
+
                         Based on Latest Syllabus of Himachal Pradesh Rajya Chayan Ayog
+
                     </div>
 
-
-                    <!-- ONLY THIS LINK IS CLICKABLE -->
 
                     <div class="exam-action">
 
                         <a href="joa/new-joa-series.html">
+
                             Start Preparation
-                            <span>→</span>
+
+                            <span>
+                                →
+                            </span>
+
                         </a>
 
                     </div>
 
+
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -1537,7 +2705,9 @@ footer{
 
             <div class="exam-card">
 
+
                 <div class="exam-image">
+
 
                     <img
                         src="patwari/patwari-banner.jpg"
@@ -1545,60 +2715,97 @@ footer{
                         loading="lazy"
                     >
 
+
                 </div>
 
 
                 <div class="exam-body">
 
+
                     <h3>
                         HP Patwari
                     </h3>
 
+
                     <p>
+
                         Structured mock tests designed for Himachal
                         Pradesh Patwari examination preparation.
+
                     </p>
 
 
                     <div class="exam-stats">
 
-                        <div class="exam-stat">
-                            <strong>10</strong>
-                            <span>Tests</span>
-                        </div>
 
                         <div class="exam-stat">
-                            <strong>120</strong>
-                            <span>Questions</span>
+
+                            <strong>
+                                10
+                            </strong>
+
+                            <span>
+                                Tests
+                            </span>
+
                         </div>
 
+
                         <div class="exam-stat">
-                            <strong>90</strong>
-                            <span>Minutes</span>
+
+                            <strong>
+                                120
+                            </strong>
+
+                            <span>
+                                Questions
+                            </span>
+
                         </div>
+
+
+                        <div class="exam-stat">
+
+                            <strong>
+                                90
+                            </strong>
+
+                            <span>
+                                Minutes
+                            </span>
+
+                        </div>
+
 
                     </div>
 
 
                     <div class="exam-note">
+
                         Based on Latest Syllabus of Himachal Pradesh Rajya Chayan Ayog
+
                     </div>
 
-
-                    <!-- ONLY THIS LINK IS CLICKABLE -->
 
                     <div class="exam-action">
 
                         <a href="patwari/patwari-series.html">
+
                             Start Preparation
-                            <span>→</span>
+
+                            <span>
+                                →
+                            </span>
+
                         </a>
 
                     </div>
 
+
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -1607,7 +2814,9 @@ footer{
 
             <div class="exam-card">
 
+
                 <div class="exam-image">
+
 
                     <img
                         src="mahapack/joa-mahapack-banner.jpg"
@@ -1615,56 +2824,92 @@ footer{
                         loading="lazy"
                     >
 
+
                 </div>
 
 
                 <div class="exam-body">
 
+
                     <h3>
                         JOA (IT) MahaPack
                     </h3>
 
+
                     <p>
+
                         A complete preparation library covering
                         multiple subjects with a large question bank.
+
                     </p>
 
 
                     <div class="exam-stats">
 
-                        <div class="exam-stat">
-                            <strong>15</strong>
-                            <span>Subjects</span>
-                        </div>
 
                         <div class="exam-stat">
-                            <strong>6000+</strong>
-                            <span>Questions</span>
+
+                            <strong>
+                                15
+                            </strong>
+
+                            <span>
+                                Subjects
+                            </span>
+
                         </div>
 
+
                         <div class="exam-stat">
-                            <strong>6</strong>
-                            <span>Months</span>
+
+                            <strong>
+                                6000+
+                            </strong>
+
+                            <span>
+                                Questions
+                            </span>
+
                         </div>
+
+
+                        <div class="exam-stat">
+
+                            <strong>
+                                6
+                            </strong>
+
+                            <span>
+                                Months
+                            </span>
+
+                        </div>
+
 
                     </div>
 
 
                     <div class="exam-note">
+
                         15 subjects • 6000+ questions • 6 months validity
+
                     </div>
 
-
-                    <!-- ONLY THIS LINK IS CLICKABLE -->
 
                     <div class="exam-action">
 
                         <a href="mahapack/joa-mahapack.html">
+
                             Explore MahaPack
-                            <span>→</span>
+
+                            <span>
+                                →
+                            </span>
+
                         </a>
 
                     </div>
+
 
                 </div>
 
@@ -1678,33 +2923,44 @@ footer{
 </section>
 
 
+
 <!-- =======================================================
      FEATURES
 ======================================================= -->
 
 <section class="features-section">
 
+
     <div class="container">
 
+
         <div class="section-heading">
+
 
             <div class="eyebrow">
                 Why HPMockShashtra
             </div>
 
+
             <h2>
                 Built for serious preparation.
             </h2>
 
+
             <p>
+
                 A cleaner and smarter way to practise,
                 revise and measure your preparation.
+
             </p>
+
 
         </div>
 
 
+
         <div class="features-grid">
+
 
             <div class="feature">
 
@@ -1717,8 +2973,10 @@ footer{
                 </h3>
 
                 <p>
+
                     Questions and timed tests designed around
                     competitive examination preparation.
+
                 </p>
 
             </div>
@@ -1735,8 +2993,10 @@ footer{
                 </h3>
 
                 <p>
+
                     Track your scores and identify the areas
                     where your preparation needs improvement.
+
                 </p>
 
             </div>
@@ -1753,8 +3013,10 @@ footer{
                 </h3>
 
                 <p>
+
                     Use focused study resources and practise
                     important concepts before your next test.
+
                 </p>
 
             </div>
@@ -1771,11 +3033,14 @@ footer{
                 </h3>
 
                 <p>
+
                     Use scores, progress and leaderboards to
                     stay motivated throughout your preparation.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1784,200 +3049,598 @@ footer{
 </section>
 
 
+
 <!-- =======================================================
-     CTA
+     BOTTOM CTA
 ======================================================= -->
 
 <section class="bottom-cta">
 
+
     <div class="container">
+
 
         <h2>
             Your preparation starts here.
         </h2>
 
+
         <p>
+
             Create your account, choose your test series
             and start turning practice into progress.
+
         </p>
 
-        <a href="firebase-signup.html" class="cta-btn">
+
+        <a
+            href="firebase-signup.html"
+            class="cta-btn"
+        >
+
             Get Started
+
             →
+
         </a>
+
 
     </div>
 
 </section>
 
 
+
 <!-- =======================================================
-     FOOTER
+     PREMIUM FOOTER
 ======================================================= -->
 
 <footer>
 
-    <div class="container footer-inner">
 
-        <div class="footer-brand">
-            HPMockShashtra
+    <div class="container">
+
+
+        <div class="footer-top">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand-area">
+
+
+                <div class="footer-brand">
+
+
+                    <div class="footer-brand-logo">
+                        HP
+                    </div>
+
+
+                    <strong>
+                        HPMockShashtra
+                    </strong>
+
+
+                </div>
+
+
+                <p>
+
+                    Smart practice, structured preparation
+                    and exam-focused mock tests for Himachal
+                    Pradesh competitive examinations.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- TEST SERIES -->
+
+            <div class="footer-column">
+
+
+                <h4>
+                    Test Series
+                </h4>
+
+
+                <a href="joa/new-joa-series.html">
+                    JOA (IT)
+                </a>
+
+
+                <a href="patwari/patwari-series.html">
+                    HP Patwari
+                </a>
+
+
+                <a href="mahapack/joa-mahapack.html">
+                    JOA (IT) MahaPack
+                </a>
+
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+
+                <h4>
+                    Quick Links
+                </h4>
+
+
+                <a href="homepage.html">
+                    Home
+                </a>
+
+
+                <a href="#series">
+                    Test Series
+                </a>
+
+
+                <a href="firebase-login.html">
+                    Login
+                </a>
+
+
+                <a href="firebase-signup.html">
+                    Create Account
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SUPPORT -->
+
+            <div class="footer-column">
+
+
+                <h4>
+                    HPMockShashtra
+                </h4>
+
+
+                <a href="#series">
+                    Latest Tests
+                </a>
+
+
+                <a href="joa/joa-series.html">
+                    JOA(IT) 2026
+                </a>
+
+
+                <a href="patwari/patwari-series.html">
+                    Patwari
+                </a>
+
+
+                <a href="mahapack/joa-mahapack.html">
+                    MahaPack
+                </a>
+
+
+            </div>
+
+
         </div>
 
-        <div class="footer-text">
-            © 2026 HPMockShashtra. Smart Practice. Better Preparation.
+
+
+        <div class="footer-bottom">
+
+
+            <span>
+
+                © 2026 HPMockShashtra.
+                All Rights Reserved.
+
+            </span>
+
+
+            <span class="footer-made">
+
+                Smart Practice. Better Preparation.
+
+            </span>
+
+
         </div>
+
 
     </div>
 
 </footer>
 
 
+
 <!-- =======================================================
-     FIREBASE AUTH
+     FIREBASE AUTHENTICATION
 ======================================================= -->
 
 <script type="module">
 
-import {
-    initializeApp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
+
+    initializeApp
+
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+
     getAuth,
     onAuthStateChanged,
     signOut
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
 
 
 /*
-=========================================================
- IMPORTANT
+============================================================
 
-Yahan apne existing Firebase Login/Signup page wala
-SAME firebaseConfig paste karna hai.
+ IMPORTANT:
 
-Example:
+YAHAN APNE EXISTING LOGIN/SIGNUP PAGE WALA
+SAME FIREBASE CONFIG PASTE KARNA HAI.
 
-const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
-};
-
-=========================================================
+============================================================
 */
 
+
 const firebaseConfig = {
 
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+
+    apiKey:
+        "YOUR_API_KEY",
+
+
+    authDomain:
+        "YOUR_AUTH_DOMAIN",
+
+
+    projectId:
+        "YOUR_PROJECT_ID",
+
+
+    storageBucket:
+        "YOUR_STORAGE_BUCKET",
+
+
+    messagingSenderId:
+        "YOUR_MESSAGING_SENDER_ID",
+
+
+    appId:
+        "YOUR_APP_ID"
 
 };
 
 
-const userArea = document.getElementById("userArea");
+
+const userArea =
+    document.getElementById(
+        "userArea"
+    );
 
 
-/* =====================================================
-   FIREBASE ONLY IF CONFIG HAS BEEN ADDED
-===================================================== */
-
-if(
-    firebaseConfig.apiKey &&
-    firebaseConfig.apiKey !== "YOUR_API_KEY"
-){
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+const mobileUserArea =
+    document.getElementById(
+        "mobileUserArea"
+    );
 
 
-    onAuthStateChanged(auth, (user) => {
 
-        if(user){
-
-            const displayName =
-                user.displayName ||
-                user.email?.split("@")[0] ||
-                "User";
-
-            const initial =
-                displayName
-                .charAt(0)
-                .toUpperCase();
+/* =========================================================
+   SHOW LOGGED-IN USER
+========================================================= */
 
 
-            userArea.innerHTML = `
+function showLoggedInUser(user){
 
-                <div class="user-box">
 
-                    <div class="avatar">
-                        ${initial}
-                    </div>
+    const displayName =
 
-                    <span class="user-name">
-                        ${displayName}
-                    </span>
+        user.displayName ||
 
-                    <button
-                        class="logout-btn"
-                        id="logoutBtn"
-                    >
-                        Logout
-                    </button>
+        user.email?.split("@")[0] ||
+
+        "User";
+
+
+    const initial =
+
+        displayName
+            .charAt(0)
+            .toUpperCase();
+
+
+
+    /*
+    ========================================================
+    DESKTOP HEADER
+    ========================================================
+    */
+
+    userArea.innerHTML = `
+
+
+        <div class="user-box">
+
+
+            <div class="avatar">
+
+                ${initial}
+
+            </div>
+
+
+            <span class="user-name">
+
+                ${displayName}
+
+            </span>
+
+
+            <button
+                class="logout-btn"
+                id="desktopLogoutBtn"
+            >
+
+                Logout
+
+            </button>
+
+
+        </div>
+
+    `;
+
+
+
+    /*
+    ========================================================
+    MOBILE HAMBURGER
+    ========================================================
+    */
+
+    mobileUserArea.innerHTML = `
+
+
+        <div class="mobile-user">
+
+
+            <div class="avatar">
+
+                ${initial}
+
+            </div>
+
+
+            <div class="mobile-user-info">
+
+
+                <div class="mobile-user-name">
+
+                    ${displayName}
 
                 </div>
 
-            `;
+
+                <div class="mobile-user-email">
+
+                    ${user.email || ""}
+
+                </div>
 
 
-            document
-                .getElementById("logoutBtn")
-                .addEventListener("click", async () => {
+            </div>
 
-                    try{
 
-                        await signOut(auth);
+            <button
+                class="mobile-logout"
+                id="mobileLogoutBtn"
+            >
 
-                        window.location.reload();
+                Logout
 
-                    }catch(error){
+            </button>
 
-                        console.error(error);
 
-                    }
+        </div>
 
-                });
+    `;
 
-        }else{
 
-            userArea.innerHTML = `
 
-                <a
-                    href="firebase-login.html"
-                    class="login-btn"
-                >
-                    Login
-                </a>
+    /*
+    DESKTOP LOGOUT
+    */
 
-            `;
+    const desktopLogout =
+        document.getElementById(
+            "desktopLogoutBtn"
+        );
+
+
+    if(desktopLogout){
+
+        desktopLogout.addEventListener(
+            "click",
+            logoutUser
+        );
+
+    }
+
+
+
+    /*
+    MOBILE LOGOUT
+    */
+
+    const mobileLogout =
+        document.getElementById(
+            "mobileLogoutBtn"
+        );
+
+
+    if(mobileLogout){
+
+        mobileLogout.addEventListener(
+            "click",
+            logoutUser
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+
+async function logoutUser(){
+
+
+    try{
+
+
+        await signOut(auth);
+
+
+        window.location.reload();
+
+
+    }catch(error){
+
+
+        console.error(
+            "Logout error:",
+            error
+        );
+
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FIREBASE
+========================================================= */
+
+
+if(
+
+    firebaseConfig.apiKey &&
+
+    firebaseConfig.apiKey !==
+        "YOUR_API_KEY"
+
+){
+
+
+    const app =
+        initializeApp(
+            firebaseConfig
+        );
+
+
+    const auth =
+        getAuth(app);
+
+
+
+    onAuthStateChanged(
+        auth,
+        (user) => {
+
+
+            if(user){
+
+
+                showLoggedInUser(
+                    user
+                );
+
+
+            }else{
+
+
+                /*
+                ==========================================
+                LOGGED OUT
+                ==========================================
+                */
+
+
+                userArea.innerHTML = `
+
+                    <a
+                        href="firebase-login.html"
+                        class="login-btn"
+                    >
+                        Login
+                    </a>
+
+                `;
+
+
+                mobileUserArea.innerHTML = `
+
+                    <a
+                        href="firebase-login.html"
+                        style="
+                            display:block;
+                            padding:12px 14px;
+                            color:#fff;
+                            background:rgba(255,255,255,.06);
+                            border-radius:10px;
+                            margin-bottom:5px;
+                            font-weight:700;
+                        "
+                    >
+                        🔐 Login to your account
+                    </a>
+
+                `;
+
+            }
 
         }
+    );
 
-    });
 
 }else{
 
+
     /*
-       Firebase config not added yet.
-       Show Login button so homepage still works.
+    ========================================================
+    FIREBASE CONFIG NOT ADDED
+    ========================================================
     */
+
 
     userArea.innerHTML = `
 
@@ -1990,42 +3653,92 @@ if(
 
     `;
 
+
+    mobileUserArea.innerHTML = `
+
+        <a
+            href="firebase-login.html"
+            style="
+                display:block;
+                padding:12px 14px;
+                color:#fff;
+                background:rgba(255,255,255,.06);
+                border-radius:10px;
+                margin-bottom:5px;
+                font-weight:700;
+            "
+        >
+            🔐 Login to your account
+        </a>
+
+    `;
+
 }
 
 
-/* =====================================================
+
+/* =========================================================
    MOBILE MENU
-===================================================== */
+========================================================= */
+
 
 const menuBtn =
-    document.getElementById("menuBtn");
+    document.getElementById(
+        "menuBtn"
+    );
+
 
 const mobileMenu =
-    document.getElementById("mobileMenu");
+    document.getElementById(
+        "mobileMenu"
+    );
 
 
-menuBtn.addEventListener("click", () => {
-
-    mobileMenu.classList.toggle("active");
-
-});
+menuBtn.addEventListener(
+    "click",
+    () => {
 
 
-/* Close mobile menu after clicking a link */
+        mobileMenu.classList.toggle(
+            "active"
+        );
+
+
+    }
+);
+
+
+
+/*
+Close menu after navigation
+*/
 
 document
-    .querySelectorAll(".mobile-menu a")
-    .forEach(link => {
+    .querySelectorAll(
+        ".mobile-menu a"
+    )
+    .forEach(
+        (link) => {
 
-        link.addEventListener("click", () => {
 
-            mobileMenu.classList.remove("active");
+            link.addEventListener(
+                "click",
+                () => {
 
-        });
+                    mobileMenu.classList.remove(
+                        "active"
+                    );
 
-    });
+                }
+            );
+
+
+        }
+    );
+
 
 </script>
+
 
 </body>
 </html>
