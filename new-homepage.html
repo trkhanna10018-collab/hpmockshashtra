@@ -1440,6 +1440,16 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
   .mobile-menu a{white-space:normal}
 }
 
+
+/* Keep the navigation above page content while cards scroll underneath it */
+.topbar{
+  position:fixed !important;
+  z-index:9999 !important;
+  isolation:isolate;
+}
+.mobile-menu{z-index:10000 !important}
+.series-section,.series-grid,.series-card{position:relative;z-index:1}
+
 </style>
 </head>
 
@@ -1590,6 +1600,8 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
           <div class="price-row">
             <div class="card-buttons">
               <a href="joa/new-joa-series.html" class="card-btn card-outline">View Details</a>
+              <a href="joa/joa-progress.html" class="card-btn card-progress">My Progress</a>
+              <a href="payment.html?product=joa" class="card-btn card-primary" id="joaBuyBtn">Buy Now</a>
             </div>
           </div>
         </div>
@@ -1757,22 +1769,25 @@ hamburgerBtn?.addEventListener("click",()=>{
 mobileMenu?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
 
 async function updatePurchasedButtons(user){
-  const joaBuy=document.querySelector('a[href="payment.html?product=joa"]');
+  const joaBuy=document.getElementById("joaBuyBtn");
   const patwariBuy=document.querySelector('a[href="payment.html?product=patwari"]');
 
-  if(!joaBuy && !patwariBuy) return;
+  if(joaBuy) joaBuy.style.display="inline-flex";
+  if(patwariBuy) patwariBuy.style.display="inline-flex";
 
-  if(!user){
-    if(joaBuy) joaBuy.style.display="inline-flex";
-    if(patwariBuy) patwariBuy.style.display="inline-flex";
-    return;
-  }
+  if(!user) return;
 
   try{
     const snap=await getDoc(doc(db,"testAccess",user.uid));
     const data=snap.exists()?snap.data():{};
-    if(data.joaitFullSeries===true && joaBuy) joaBuy.style.display="none";
-    if(data.patwariFullSeries===true && patwariBuy) patwariBuy.style.display="none";
+
+    // Hide Buy Now only when the signed-in user already has JOA access.
+    if(joaBuy && (data.joaAccess===true || data.joaitFullSeries===true)){
+      joaBuy.style.display="none";
+    }
+    if(patwariBuy && data.patwariFullSeries===true){
+      patwariBuy.style.display="none";
+    }
   }catch(e){
     console.warn("Could not check purchased series:",e);
   }
