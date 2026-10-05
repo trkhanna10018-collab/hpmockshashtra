@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,103 +6,137 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Master Progress | HPMockShashtra</title>
 <style>
-:root{--bg:#07152c;--bg2:#0b1d3d;--card:#10284c;--card2:#0d2140;--line:#6baeff2d;--text:#f5f9ff;--muted:#91a7c2;--blue:#1696ff;--cyan:#55dfff;--violet:#9a67ff;--green:#27d99a;--orange:#ffad3d;--red:#ff6578}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 8%,#7b4cff20,transparent 30%),radial-gradient(circle at 5% 55%,#168cff16,transparent 28%),linear-gradient(135deg,#061329,#0a1c3b 48%,#111633)}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:44px 44px}
-a{text-decoration:none;color:inherit}button{font:inherit}
-/* HEADER */
-.topbar{position:fixed;top:8px;left:50%;transform:translateX(-50%);width:min(1400px,calc(100% - 24px));z-index:9999;border:1px solid #9c75ff55;border-radius:17px;background:linear-gradient(135deg,#12294df5,#35215bf5);backdrop-filter:blur(20px);box-shadow:0 16px 45px #0009,0 0 28px #8d5cff18}
-.nav{min-height:68px;padding:7px 14px;display:flex;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}.logo,.logo img{width:47px;height:47px}.logo img{display:block;object-fit:contain;border-radius:9px}.brand-title{font-size:19px;font-weight:950;letter-spacing:-.7px;white-space:nowrap}.hp,.sh{color:#fff}.mock{color:#39a9ff}.tagline{font-size:8px;color:#8fa7c5;margin-top:1px}.nav-links{display:flex;align-items:center;gap:6px}.nav-link{padding:9px 12px;border:1px solid #7eb0ff42;border-radius:9px;color:#e6efff;font-size:11px;font-weight:850;background:#fff0;transition:.2s}.nav-link:hover,.nav-link.active{background:linear-gradient(135deg,#168cff35,#9b6cff35);border-color:#66c8ff88;color:#fff}.user{display:flex;align-items:center;gap:7px;padding:4px 7px;border:1px solid #7eb0ff2b;border-radius:10px;background:#ffffff08;font-size:10px;font-weight:800}.avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ffd19c,#ff8b58);color:#17304f;border:2px solid #fff;font-size:10px;font-weight:950}.user-name{max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.logout{border:0;background:none;color:#91a7c2;font-size:8px;font-weight:850;cursor:pointer}.menu-btn{display:none;width:39px;height:39px;border:1px solid #7eb0ff55;border-radius:9px;background:#fff0;color:#fff;font-size:21px;cursor:pointer}.mobile-menu{display:none}
-/* PAGE */
-.wrap{width:min(1400px,calc(100% - 24px));margin:auto;padding-top:100px}.loading{text-align:center;padding:85px 20px;color:var(--muted);font-size:12px}.error-box{display:none;padding:25px;text-align:center;border:1px solid #ff657855;border-radius:15px;background:#ff3d5d0d;color:#ffe1e6}.dashboard{display:none}
-.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;padding:20px 22px;background:radial-gradient(circle at 70% 35%,#168cff1d,transparent 28%),radial-gradient(circle at 92% 75%,#a35dff18,transparent 30%),linear-gradient(135deg,#0a1a35,#10264a 48%,#181b3b);box-shadow:0 18px 50px #0005}.hero h1{margin:5px 0 4px;font-size:28px;letter-spacing:-.7px}.hero h1 span{color:#35aaff}.hero p{margin:0;color:#9eb0c8;font-size:10px;line-height:1.55}.eyebrow{font-size:8px;color:#65c8ff;font-weight:950;letter-spacing:1.2px;text-transform:uppercase}.access-banner{margin-top:16px;display:flex;align-items:center;gap:13px;padding:13px 15px;border:1px solid #6baeff30;border-radius:13px;background:#081a35cc}.access-icon{width:40px;height:40px;flex:0 0 40px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:linear-gradient(145deg,#173b69,#24215c)}.access-copy{flex:1;min-width:0}.access-copy strong{display:block;font-size:12px}.access-copy span{display:block;margin-top:3px;color:#8fa7c2;font-size:8px;line-height:1.5}.access-actions{display:flex;gap:7px}.primary,.secondary{border-radius:9px;padding:9px 13px;font-size:8px;font-weight:950;cursor:pointer;white-space:nowrap}.primary{border:1px solid #66c8ff55;background:linear-gradient(135deg,#168cff,#665cff);color:#fff;box-shadow:0 7px 20px #168cff22}.secondary{border:1px solid #7eb0ff35;background:#ffffff08;color:#dbe8f7}.primary:hover,.secondary:hover{filter:brightness(1.08)}
-.stats-row{display:grid;grid-template-columns:1.15fr repeat(5,1fr);gap:9px;margin-top:14px}.overall{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid #6baeff28;border-radius:14px;background:linear-gradient(145deg,#12294d,#0d2040)}.ring{width:82px;height:82px;flex:0 0 82px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#35aaff var(--p,0%),#ffffff12 0);position:relative}.ring:before{content:"";position:absolute;inset:7px;border-radius:50%;background:#0b1d3a}.ring-inner{position:relative;text-align:center}.ring-value{font-size:18px;font-weight:950}.ring-label{display:block;color:#8299b4;font-size:6px;text-transform:uppercase;font-weight:850}.overall-copy h2{margin:0 0 4px;font-size:13px}.overall-copy p{margin:0;color:#8fa7c2;font-size:8px;line-height:1.5}.stat{padding:13px;border:1px solid #6baeff25;border-radius:13px;background:linear-gradient(145deg,#12294d,#0d2040)}.stat strong{display:block;font-size:17px}.stat span{display:block;margin-top:4px;color:#8299b4;font-size:7px;font-weight:800}.stat.blue strong{color:#63c7ff}.stat.green strong{color:#4be5b2}.stat.red strong{color:#ff7788}.stat.violet strong{color:#b18aff}
-.section{margin-top:18px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:9px}.section-title{margin:0;font-size:16px}.section-sub{margin:4px 0 0;color:#8299b4;font-size:9px}.subject-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.subject-card{position:relative;min-height:175px;padding:15px;border:1px solid #6baeff25;border-radius:15px;background:linear-gradient(145deg,#12294d,#0d2040);box-shadow:0 9px 25px #0003;overflow:hidden;transition:.18s}.subject-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 0,#168cff12,transparent 42%);pointer-events:none}.subject-card:hover{transform:translateY(-3px);border-color:#5eb7ff66;box-shadow:0 18px 38px #0007}.subject-head{position:relative;display:flex;align-items:flex-start;gap:10px}.subject-icon{width:45px;height:45px;flex:0 0 45px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#263c70,#15274a);border:1px solid #83c4ff28;overflow:hidden;font-size:18px;font-weight:900}.subject-icon img{width:100%;height:100%;object-fit:contain}.subject-info{min-width:0;flex:1}.subject-name{font-size:12px;font-weight:950;line-height:1.3}.subject-count{margin-top:4px;color:#8299b4;font-size:7.5px;line-height:1.4}.percent{font-size:14px;font-weight:950;color:#63c7ff}.bar{height:6px;margin-top:13px;background:#06152c;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#168eff,#925aff)}.subject-foot{position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}.accuracy{color:#91a7c2;font-size:7.5px;line-height:1.5}.accuracy b{color:#dce8f6}.action{display:inline-flex;align-items:center;justify-content:center;min-width:70px;padding:7px 9px;border-radius:8px;font-size:8px;font-weight:950;white-space:nowrap}.start{background:linear-gradient(135deg,#0ea5e9,#10b981);color:#021a16;border:1px solid #66ffd766}.review{background:linear-gradient(135deg,#9b6cff,#5f8cff);color:#fff;border:1px solid #c4b4ff66}.locked{background:#ffffff08;border:1px solid #7eb0ff2b;color:#9db0c8}.guest .subject-card,.noaccess .subject-card{min-height:118px}.guest .subject-foot,.noaccess .subject-foot{margin-top:12px}.guest .subject-card .bar,.noaccess .subject-card .bar{display:none}.guest .subject-count,.noaccess .subject-count{font-size:8px}.guest .subject-card,.noaccess .subject-card{opacity:.96}
-.resume-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.resume-card{padding:13px;border:1px solid #6baeff25;border-radius:13px;background:linear-gradient(145deg,#12294d,#0d2040)}.resume-top{display:flex;justify-content:space-between;gap:7px}.resume-name{font-size:10px;font-weight:900}.resume-status{font-size:7px;color:#4de3b0;font-weight:900}.resume-meta{margin-top:5px;color:#91a7c2;font-size:7.5px}.mini{height:5px;margin:9px 0;background:#06152c;border-radius:99px;overflow:hidden}.mini span{display:block;height:100%;background:linear-gradient(90deg,#168eff,#925aff)}.resume-bottom{display:flex;justify-content:space-between;align-items:center}.resume-bottom strong{font-size:8px}.resume-btn{padding:7px 9px;border-radius:8px;background:linear-gradient(135deg,#0d8cff,#386cff,#9858ff);color:#fff;font-size:8px;font-weight:900}
-.milestones{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;padding:12px;border:1px solid #6baeff25;border-radius:16px;background:linear-gradient(145deg,#12294d,#0d2040)}.milestone{padding:13px 8px;text-align:center;border:1px solid #7eb0ff2b;border-radius:12px;background:#0c2040}.milestone.done{border-color:#27d99a88;background:linear-gradient(145deg,#0d4c4a,#123543)}.milestone-icon{font-size:22px}.milestone-title{margin-top:7px;font-size:8px;font-weight:900}.milestone-count{margin-top:4px;font-size:7px;color:#8299b4}.milestone.done .milestone-title{color:#69f2c1}.milestone.done .milestone-count{color:#b9ffe5}
-/* FOOTER */
-.footer{margin-top:25px;border-top:1px solid #6baeff1e;background:linear-gradient(145deg,#040b19,#071a34)}.footer-inner{width:min(1400px,calc(100% - 24px));margin:auto}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px;padding:30px 0 22px}.footer h3{margin:0 0 6px;font-size:17px}.footer h4{margin:0 0 8px;font-size:10px;color:#eaf3ff}.footer p{margin:0;max-width:440px;color:#7188a5;font-size:8px;line-height:1.7}.footer-links{display:grid;gap:6px}.footer-links a{color:#8399b3;font-size:8px}.footer-links a:hover{color:#55c7ff}.footer-bottom{padding:12px 0;border-top:1px solid #fff1;display:flex;justify-content:space-between;color:#647a96;font-size:7.5px}
-/* CELEBRATION */
-.celebration{position:fixed;inset:0;z-index:100000;pointer-events:none;overflow:hidden;background:#167cff0b}.celebration-message{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);padding:20px 27px;text-align:center;border-radius:17px;border:1px solid #7ed2ff88;background:linear-gradient(145deg,#071935f5,#2b1648f5);box-shadow:0 20px 60px #0009,0 0 35px #6096ff45;animation:pop .55s ease-out}.celebration-title{margin-top:7px;font-size:19px;font-weight:950}.celebration-sub{margin-top:4px;color:#8fe9ff;font-size:9px;font-weight:800}.confetti{position:absolute;top:-40px;animation:fall linear forwards}@keyframes fall{0%{transform:translate3d(0,-50px,0) rotate(0);opacity:0}8%{opacity:1}100%{transform:translate3d(40px,110vh,0) rotate(620deg);opacity:.95}}@keyframes pop{0%{transform:translate(-50%,-50%) scale(.65);opacity:0}70%{transform:translate(-50%,-50%) scale(1.05)}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}
-@media(max-width:1050px){.nav-links{display:none}.menu-btn{display:block;margin-left:auto}.user{display:none}.stats-row{grid-template-columns:1fr repeat(2,1fr)}.overall{grid-row:span 2}.subject-grid{grid-template-columns:repeat(2,1fr)}.resume-grid{grid-template-columns:1fr 1fr}.milestones{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:650px){.topbar{top:5px;width:calc(100% - 14px);margin-top:0}.nav{min-height:62px;padding:6px 8px}.logo,.logo img{width:39px;height:39px}.brand-title{font-size:14px}.tagline{display:none}.mobile-menu{position:absolute;top:61px;left:0;right:0;padding:8px;border:1px solid #7eb0ff35;border-radius:12px;background:#0b1b34;box-shadow:0 15px 40px #0008}.mobile-menu.open{display:grid;gap:6px}.mobile-menu a,.mobile-menu button{padding:10px;border:1px solid #7eb0ff22;border-radius:8px;background:#ffffff08;color:#dbe8f7;text-align:left;font-size:9px;font-weight:850}.mobile-menu a.active{background:linear-gradient(135deg,#168cff35,#9b6cff35);color:#fff}.wrap{width:calc(100% - 14px);padding-top:82px}.hero{padding:17px 14px}.hero h1{font-size:23px}.access-banner{align-items:flex-start;flex-wrap:wrap}.access-copy{min-width:calc(100% - 55px)}.access-actions{width:100%;margin-left:53px}.primary,.secondary{flex:1;text-align:center}.stats-row{grid-template-columns:repeat(2,1fr)}.overall{grid-column:1/-1;grid-row:auto}.subject-grid,.resume-grid{grid-template-columns:1fr}.subject-card{min-height:165px}.guest .subject-card,.noaccess .subject-card{min-height:112px}.milestones{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr;gap:20px;padding:25px 0 18px}.footer-bottom{flex-direction:column;gap:5px}.footer-inner{width:calc(100% - 14px)}}
+:root{--bg:#07152c;--text:#f5f9ff;--muted:#91a7c2;--blue:#1696ff;--green:#27d99a;--violet:#9a67ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 80% 8%,#7b4cff20,transparent 30%),linear-gradient(135deg,#061329,#0a1c3b 48%,#111633)}
+a{text-decoration:none;color:inherit}
+.topbar{position:sticky;top:8px;width:calc(100% - 24px);max-width:1400px;margin:8px auto 0;z-index:99;border:1px solid #9c75ff55;border-radius:17px;background:linear-gradient(135deg,#12294df5,#35215bf5);box-shadow:0 16px 45px #0009}
+.nav{min-height:68px;padding:8px 15px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:900;margin-right:auto}
+.mock{color:#39a9ff}
+.nav-links{display:flex;gap:7px;flex-wrap:wrap}
+.nav-link{padding:9px 12px;border:1px solid #7eb0ff42;border-radius:9px;font-size:11px;font-weight:800;background:#ffffff08}
+.nav-link.active,.nav-link:hover{background:linear-gradient(135deg,#168cff55,#9b6cff55)}
+.wrap{width:min(1400px,calc(100% - 28px));margin:25px auto 40px}
+.hero{padding:24px;border:1px solid #6baeff30;border-radius:18px;background:linear-gradient(135deg,#0a1a35,#10264a 48%,#181b3b);box-shadow:0 18px 50px #0005}
+.eyebrow{font-size:10px;color:#65c8ff;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
+h1{font-size:30px;margin:8px 0}
+p{color:var(--muted);font-size:12px;line-height:1.6}
+.access{margin-top:20px;padding:18px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;border:1px solid #6baeff30;border-radius:14px;background:#081a35}
+.access-copy{flex:1;min-width:200px}
+.access-copy strong{font-size:14px}
+.access-copy p{margin:5px 0}
+.btn{display:inline-block;padding:10px 15px;border-radius:9px;background:linear-gradient(135deg,#168cff,#665cff);color:white;font-size:11px;font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:15px}
+.stat{padding:16px;border:1px solid #6baeff25;border-radius:13px;background:linear-gradient(145deg,#12294d,#0d2040)}
+.stat strong{display:block;font-size:22px;color:#63c7ff}
+.stat span{display:block;margin-top:5px;color:#91a7c2;font-size:10px}
+.section{margin-top:24px}
+.section h2{font-size:19px;margin-bottom:5px}
+.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.subject-card{padding:17px;border:1px solid #6baeff25;border-radius:15px;background:linear-gradient(145deg,#12294d,#0d2040);box-shadow:0 9px 25px #0003}
+.subject-card h3{font-size:14px;margin:0 0 8px}
+.subject-card p{font-size:10px}
+.bar{height:6px;background:#06152c;border-radius:99px;overflow:hidden;margin:12px 0}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,#168eff,#925aff)}
+.action{display:inline-block;padding:8px 11px;border-radius:8px;background:linear-gradient(135deg,#0ea5e9,#10b981);color:#021a16;font-size:10px;font-weight:900}
+.milestones{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.milestone{text-align:center;padding:16px 8px;border:1px solid #6baeff25;border-radius:12px;background:#10284c}
+.milestone strong{display:block;font-size:22px}
+.milestone span{display:block;margin-top:7px;font-size:10px;color:#91a7c2}
+.footer{margin-top:35px;padding:30px 0 15px;border-top:1px solid #6baeff25;background:#040b19}
+.footer-inner{width:min(1400px,calc(100% - 28px));margin:auto}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:25px}
+.footer h3,.footer h4{margin:0 0 10px}
+.footer p,.footer a{font-size:11px;color:#91a7c2}
+.footer-links{display:grid;gap:8px}
+.footer-bottom{margin-top:22px;padding-top:14px;border-top:1px solid #ffffff12;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#657a96}
+@media(max-width:850px){.nav-links{width:100%;flex-wrap:wrap}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.milestones{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:550px){.nav{gap:10px}.brand{font-size:16px}.nav-links{gap:5px}.nav-link{padding:8px;font-size:10px}.wrap{width:calc(100% - 18px)}.hero{padding:18px}h1{font-size:24px}.stats,.subject-grid{grid-template-columns:1fr}.milestones{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
 </style>
 </head>
 <body>
 <header class="topbar">
 <nav class="nav">
-<a class="brand" href="homepage.html"><div class="logo"><img src="logo.png" alt="HPMockShashtra"></div><div><div class="brand-title"><span class="hp">HP</span><span class="mock">Mock</span><span class="sh">Shashtra</span></div><div class="tagline">Prepare Today, Serve Tomorrow</div></div></a>
-<div class="nav-links"><a class="nav-link" href="homepage.html">Home</a><a class="nav-link" href="joa-mahapack.html">Paid Courses</a><a class="nav-link" href="my-purchase.html">My Purchases</a><a class="nav-link active" href="master-progress.html">Master Progress</a></div>
-<div class="user" id="userBox"><span class="avatar" id="avatar">U</span><span class="user-name" id="userName">User</span><button class="logout" id="logoutBtn">Logout</button></div>
-<button class="menu-btn" id="menuBtn">☰</button>
-<div class="mobile-menu" id="mobileMenu"><a href="homepage.html">Home</a><a href="joa-mahapack.html">Paid Courses</a><a href="my-purchase.html">My Purchases</a><a class="active" href="master-progress.html">Master Progress</a><button id="mobileLogout">Logout</button></div>
+<a class="brand" href="homepage.html">HP<span class="mock">Mock</span>Shashtra</a>
+<div class="nav-links">
+<a class="nav-link" href="homepage.html">Home</a>
+<a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
+<a class="nav-link" href="my-purchase.html">My Purchases</a>
+<a class="nav-link active" href="master-progress.html">Master Progress</a>
+</div>
 </nav>
 </header>
-
 <main class="wrap">
-<div id="loading" class="loading">Loading Master Progress...</div>
-<div id="errorBox" class="error-box"><strong>Unable to load your progress</strong><div style="margin-top:6px;font-size:9px">Please refresh the page and try again.</div></div>
-<div class="dashboard" id="dashboard">
 <section class="hero">
-<div class="eyebrow">HPMockShashtra • 15 Computer Subjects</div>
-<h1>Master <span>Progress</span></h1>
-<p id="heroText">Track your complete Computer preparation in one place.</p>
-<div class="access-banner" id="accessBanner"></div>
-</section>
-
-<section class="stats-row" id="statsRow" style="display:none">
-<div class="overall"><div class="ring" id="overallRing"><div class="ring-inner"><div class="ring-value" id="overallPercent">0%</div><span class="ring-label">Overall</span></div></div><div class="overall-copy"><h2 id="overallTitle">Your journey starts here</h2><p id="overallText">Start practicing to build your progress.</p></div></div>
-<div class="stat blue"><strong id="totalAttempted">0</strong><span>Questions Attempted</span></div><div class="stat green"><strong id="totalCorrect">0</strong><span>Correct Answers</span></div><div class="stat red"><strong id="totalWrong">0</strong><span>Wrong Answers</span></div><div class="stat violet"><strong id="totalNotAttempted">0</strong><span>Not Attempted</span></div><div class="stat blue"><strong id="overallAccuracy">0%</strong><span>Overall Accuracy</span></div>
-</section>
-
-<section class="section" id="resumeSection" style="display:none"><div class="section-head"><div><h2 class="section-title">Continue Practice</h2><p class="section-sub">Pick up exactly where you left off.</p></div></div><div class="resume-grid" id="resumeGrid"></div></section>
-
-<section class="section"><div class="section-head"><div><h2 class="section-title">All Computer Subjects</h2><p class="section-sub" id="subjectSub">Explore all 15 subjects included in the Master Pack.</p></div></div><div class="subject-grid" id="subjectGrid"></div></section>
-
-<section class="section" id="milestoneSection" style="display:none"><div class="section-head"><div><h2 class="section-title">Milestones</h2><p class="section-sub">Keep building your Computer preparation.</p></div></div><div class="milestones" id="milestones"></div></section>
-
-<footer class="footer"><div class="footer-inner"><div class="footer-top"><div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div><div><h4>Preparation</h4><div class="footer-links"><a href="joa-series.html">JOA (IT) Mock Tests</a><a href="joa-mahapack.html">JOA IT Maha Pack</a><a href="patwari-series.html">HP Patwari Mock Tests</a><a href="my-progress.html">My Progress</a></div></div><div><h4>Information</h4><div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div></div><div class="footer-bottom"><span>© 2026 HPMockShashtra. All rights reserved.</span><span>Master Progress</span></div></div></footer>
+<div class="eyebrow">Your preparation dashboard</div>
+<h1>Master Progress</h1>
+<p>Track your preparation across all 15 Computer subjects in one place.</p>
+<div class="access">
+<div class="access-copy">
+<strong>🔐 Please Login to View Your Progress</strong>
+<p>Login or register to access your personal progress, scores and performance.</p>
 </div>
+<a class="btn" href="firebase-login.html?redirect=master-progress.html">Login / Register →</a>
+</div>
+<div class="access">
+<div class="access-copy">
+<strong>🔓 Unlock Your Master Progress Dashboard</strong>
+<p>Purchase the Master Pack to track your preparation across all 15 subjects.</p>
+</div>
+<a class="btn" href="joa-mahapack.html">Buy Master Pack →</a>
+<a class="nav-link" href="my-purchase.html">My Purchases</a>
+</div>
+</section>
+<section class="stats">
+<div class="stat"><strong>68%</strong><span>Overall Progress</span></div>
+<div class="stat"><strong>1,840</strong><span>Questions Attempted</span></div>
+<div class="stat"><strong>1,420</strong><span>Correct Answers</span></div>
+<div class="stat"><strong>420</strong><span>Wrong Answers</span></div>
+<div class="stat"><strong>77%</strong><span>Overall Accuracy</span></div>
+</section>
+<section class="section">
+<h2>Subject Progress</h2>
+<p>Explore all 15 subjects. Personal progress is visible only to the signed-in eligible user.</p>
+<div class="subject-grid">
+<div class="subject-card"><h3>💻 Computer Fundamentals</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:78%"></span></div><a class="action" href="mahapack/paid-computer-fundamentals.html">View Progress →</a></div>
+<div class="subject-card"><h3>📝 MS Word</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:62%"></span></div><a class="action" href="mahapack/paid-ms-word.html">View Progress →</a></div>
+<div class="subject-card"><h3>📊 MS Excel</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:65%"></span></div><a class="action" href="mahapack/paid-ms-excel.html">View Progress →</a></div>
+<div class="subject-card"><h3>📽️ MS PowerPoint</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:55%"></span></div><a class="action" href="mahapack/paid-ms-powerpoint.html">View Progress →</a></div>
+<div class="subject-card"><h3>🗃️ MS Access</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:35%"></span></div><a class="action" href="mahapack/paid-ms-access.html">View Progress →</a></div>
+<div class="subject-card"><h3>🗄️ DBMS & SQL</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:42%"></span></div><a class="action" href="mahapack/paid-dbms-sql.html">View Progress →</a></div>
+<div class="subject-card"><h3>🌐 Computer Networking</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:58%"></span></div><a class="action" href="mahapack/paid-computer-networking.html">View Progress →</a></div>
+<div class="subject-card"><h3>🔐 Cyber Security</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:45%"></span></div><a class="action" href="mahapack/paid-cyber-security.html">View Progress →</a></div>
+<div class="subject-card"><h3>💻 C Programming</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:30%"></span></div><a class="action" href="mahapack/paid-c-programming.html">View Progress →</a></div>
+<div class="subject-card"><h3>🌐 HTML</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:48%"></span></div><a class="action" href="mahapack/paid-html.html">View Progress →</a></div>
+<div class="subject-card"><h3>🎨 CSS / CSS3</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:40%"></span></div><a class="action" href="mahapack/paid-css-css3.html">View Progress →</a></div>
+<div class="subject-card"><h3>☁️ Cloud Computing</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:32%"></span></div><a class="action" href="mahapack/paid-cloud-computing.html">View Progress →</a></div>
+<div class="subject-card"><h3>⌘ Data Structure</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:38%"></span></div><a class="action" href="mahapack/paid-data-structure.html">View Progress →</a></div>
+<div class="subject-card"><h3>🧩 Computer Organisation & Architecture</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:52%"></span></div><a class="action" href="mahapack/paid-computer-organisation-architecture.html">View Progress →</a></div>
+<div class="subject-card"><h3>⚙️ Operating System</h3><p>Questions • Practice tests</p><div class="bar"><span style="width:50%"></span></div><a class="action" href="mahapack/paid-operating-system.html">View Progress →</a></div>
+</div>
+</section>
+<section class="section">
+<h2>Milestones</h2>
+<p>Keep building your Computer preparation.</p>
+<div class="milestones">
+<div class="milestone"><strong>🏁</strong>100 Questions<span>Locked</span></div>
+<div class="milestone"><strong>🚀</strong>2,500 Questions<span>Locked</span></div>
+<div class="milestone"><strong>💎</strong>3,500 Questions<span>Locked</span></div>
+<div class="milestone"><strong>🏆</strong>5,000 Questions<span>Locked</span></div>
+<div class="milestone"><strong>👑</strong>6,000 Questions<span>Locked</span></div>
+</div>
+</section>
 </main>
-
-<script type="module">
-import {auth,db} from './firebase-config.js';
-import {onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
-import {doc,getDoc} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
-const $=id=>document.getElementById(id);
-const SUBJECTS=[
-{id:'computer_fundamentals_01',name:'Computer Fundamentals',course:'computer-fundamentals',file:'paid-computer-fundamentals.html',image:'mahapack/computer-fundamentals.png',icon:'💻'},
-{id:'ms_word_01',name:'MS Word',course:'ms-word',file:'paid-ms-word.html',image:'mahapack/ms-word.png',icon:'W',pack:'ms-office'},
-{id:'ms_excel_01',name:'MS Excel',course:'ms-excel',file:'paid-ms-excel.html',image:'mahapack/ms-excel.png',icon:'X',pack:'ms-office'},
-{id:'ms_powerpoint_01',name:'MS PowerPoint',course:'ms-powerpoint',file:'paid-ms-powerpoint.html',image:'mahapack/ms-powerpoint.png',icon:'P',pack:'ms-office'},
-{id:'ms_access_01',name:'MS Access',course:'ms-access',file:'paid-ms-access.html',image:'mahapack/ms-access.png',icon:'▤',pack:'ms-office'},
-{id:'dbms_sql_01',name:'DBMS & SQL',course:'dbms-sql',file:'paid-dbms-sql.html',image:'mahapack/dbms-sql.png',icon:'▱'},
-{id:'computer_networking_01',name:'Computer Networking',course:'computer-networking',file:'paid-computer-networking.html',image:'mahapack/computer-networking.png',icon:'⌁'},
-{id:'cyber_security_01',name:'Cyber Security',course:'cyber-security',file:'paid-cyber-security.html',image:'mahapack/cyber-security.png',icon:'♢'},
-{id:'c_programming_01',name:'C Programming',course:'c-programming',file:'paid-c-programming.html',image:'mahapack/c-programming.png',icon:'</>'},
-{id:'html_01',name:'HTML',course:'html',file:'paid-html.html',image:'mahapack/html.png',icon:'H'},
-{id:'css_css3_01',name:'CSS / CSS3',course:'css-css3',file:'paid-css-css3.html',image:'mahapack/css-css3.png',icon:'C'},
-{id:'cloud_computing_01',name:'Cloud Computing',course:'cloud-computing',file:'paid-cloud-computing.html',image:'mahapack/cloud-computing.png',icon:'☁'},
-{id:'data_structure_01',name:'Data Structure',course:'data-structure',file:'paid-data-structure.html',image:'mahapack/data-structure.png',icon:'⌘'},
-{id:'computer_organisation_01',name:'Computer Organisation & Architecture',course:'computer-organisation',file:'paid-computer-organisation-architecture.html',image:'mahapack/computer-organisation-architecture.png',icon:'▣',accessAliases:['computer-organisation-architecture']},
-{id:'operating_system_01',name:'Operating System',course:'operating-system',file:'paid-operating-system.html',image:'mahapack/operating-system.png',icon:'⚙'}];
-const DEFAULT_COUNT=400;
-function date(v){if(!v)return null;if(v.toDate)return v.toDate();const d=new Date(v);return Number.isNaN(d.getTime())?null:d}
-function active(v){if(!v)return false;const d=date(v?.expiresAt),p=date(v?.purchasedAt);return !!(d&&d.getTime()>Date.now()&&(!p||p.getTime()<=Date.now()))}
-function normalizeAnswers(a){const o={};if(a&&typeof a==='object')Object.keys(a).forEach(k=>{const v=a[k];if(v===0||v==='0')o[k]='A';else if(v===1||v==='1')o[k]='B';else if(v===2||v==='2')o[k]='C';else if(v===3||v==='3')o[k]='D';else{const x=String(v??'').trim().toUpperCase();if(['A','B','C','D'].includes(x))o[k]=x}});return o}
-function pct(n,d){return d?Math.round(n/d*100):0}function fmt(n){return Number(n||0).toLocaleString('en-IN')}function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
-function hasAccess(s,a){const keys=[s.course,...(s.accessAliases||[])];if(keys.some(k=>active(a?.courses?.[k])))return true;if(active(a?.packs?.['computer-master']))return true;if(s.pack&&active(a?.packs?.[s.pack]))return true;return false}
-async function buildData(subject,session,result){let answers={},completed=false,current=0,updatedAt=null,questionCount=DEFAULT_COUNT;if(result){answers=normalizeAnswers(result.answers);completed=result.status==='completed';current=Math.max(0,questionCount-1);updatedAt=date(result.completedAt);questionCount=Number(result.questionCount)||DEFAULT_COUNT}else if(session){answers=normalizeAnswers(session.answers);current=Math.max(0,Math.min(Number(session.current)||0,DEFAULT_COUNT-1));updatedAt=date(session.updatedAt);questionCount=Number(session.questionCount)||DEFAULT_COUNT}const attempted=Object.keys(answers).length;let correct=Number(result?.correct??0),wrong=Number(result?.wrong??0);if(!result&&attempted&&subject.id==='computer_fundamentals_01'){try{const m=await import('./fundamentals.js');const q=Array.isArray(m.QUESTIONS)?m.QUESTIONS:[];correct=Object.keys(answers).reduce((n,k)=>q[Number(k)]&&String(answers[k]).toUpperCase()===String(q[Number(k)].answer).toUpperCase()?n+1:n,0);wrong=attempted-correct}catch(e){correct=0;wrong=0}}return {...subject,answers,completed,current,updatedAt,questionCount,attempted,correct,wrong,accuracy:pct(correct,attempted),progress:pct(attempted,questionCount),inProgress:attempted>0&&!completed}}
-async function loadSubject(uid,s){try{const [ss,rs]=await Promise.all([getDoc(doc(db,'testSessions',`${uid}_${s.id}`)),getDoc(doc(db,'testAttempts',`${uid}_${s.id}`))]);return buildData(s,ss.exists()?ss.data():null,rs.exists()?rs.data():null)}catch(e){return buildData(s,null,null)}}
-function practiceUrl(s){return `${s.file}?test=${encodeURIComponent(s.id)}`}
-function renderAccess(state){const b=$('accessBanner');if(state==='guest'){b.innerHTML='<div class="access-icon">🔐</div><div class="access-copy"><strong>Please Login to View Your Progress</strong><span>Login or register to access your personal progress, scores and performance.</span></div><div class="access-actions"><a class="primary" href="firebase-login.html?redirect=master-progress.html">Login / Register →</a></div>';$('heroText').textContent='Explore all 15 Computer subjects. Your personal data stays private.'}else if(state==='noaccess'){b.innerHTML='<div class="access-icon">🔓</div><div class="access-copy"><strong>Unlock Your Master Progress Dashboard</strong><span>You can see all 15 subjects here, but personal progress is available after purchasing the Master Pack.</span></div><div class="access-actions"><a class="primary" href="joa-mahapack.html">Buy Master Pack →</a><a class="secondary" href="my-purchase.html">My Purchases</a></div>';$('heroText').textContent='Your complete Computer preparation dashboard is available with the Master Pack.'}else{b.innerHTML='<div class="access-icon">📊</div><div class="access-copy"><strong>Your personal Master Progress is ready</strong><span>All progress shown below belongs only to your account.</span></div><div class="access-actions"><a class="secondary" href="my-purchase.html">My Purchases</a></div>';}}
-function renderPublicSubjects(state,data){const grid=$('subjectGrid');grid.className=`subject-grid ${state}`;if(state==='master'){grid.innerHTML=data.map(s=>{const action=s.completed?'Review →':s.inProgress?'Continue →':'Start →';const href=s.completed?`mahapack-study.html?test=${encodeURIComponent(s.id)}`:practiceUrl(s);return `<div class="subject-card"><div class="subject-head"><div class="subject-icon"><img src="${esc(s.image)}" alt="${esc(s.name)}" onerror="this.style.display='none';this.parentElement.textContent='${esc(s.icon)}'"></div><div class="subject-info"><div class="subject-name">${esc(s.name)}</div><div class="subject-count">${s.attempted} / ${s.questionCount} Questions • ${Math.max(0,s.questionCount-s.attempted)} Not Attempted</div></div><div class="percent">${s.progress}%</div></div><div class="bar"><span style="width:${s.progress}%"></span></div><div class="subject-foot"><span class="accuracy">Correct: <b>${s.correct}</b> • Wrong: <b>${s.wrong}</b> • Accuracy: <b>${s.attempted?s.accuracy+'%':'—'}</b></span><a class="action ${s.completed?'review':'start'}" href="${href}">${action}</a></div></div>`}).join('');return}grid.innerHTML=SUBJECTS.map(s=>`<div class="subject-card"><div class="subject-head"><div class="subject-icon"><img src="${esc(s.image)}" alt="${esc(s.name)}" onerror="this.style.display='none';this.parentElement.textContent='${esc(s.icon)}'"></div><div class="subject-info"><div class="subject-name">${esc(s.name)}</div><div class="subject-count">Full Tests • Practice</div></div></div><div class="subject-foot"><span class="accuracy">${state==='guest'?'Login required for personal progress':'Included in Master Pack'}</span><a class="action locked" href="${state==='guest'?'firebase-login.html?redirect=master-progress.html':'joa-mahapack.html'}">${state==='guest'?'Login':'Buy Pack'}</a></div></div>`).join('')}
-function renderOverall(data){const total=data.reduce((n,s)=>n+s.questionCount,0),attempted=data.reduce((n,s)=>n+s.attempted,0),correct=data.reduce((n,s)=>n+s.correct,0),wrong=data.reduce((n,s)=>n+s.wrong,0),progress=pct(attempted,total);$('overallPercent').textContent=progress+'%';$('overallRing').style.setProperty('--p',progress+'%');$('totalAttempted').textContent=fmt(attempted);$('totalCorrect').textContent=fmt(correct);$('totalWrong').textContent=fmt(wrong);$('totalNotAttempted').textContent=fmt(Math.max(0,total-attempted));$('overallAccuracy').textContent=pct(correct,attempted)+'%';if(!attempted){$('overallTitle').textContent='Your journey starts here';$('overallText').textContent='Start practicing any subject below and your progress will appear here.'}else{$('overallTitle').textContent=progress>=100?'Computer Master complete!':'Keep building your preparation';$('overallText').textContent=`You have attempted ${fmt(attempted)} of ${fmt(total)} available questions.`}}
-function renderResume(data){const list=data.filter(s=>s.inProgress).sort((a,b)=>(b.updatedAt?.getTime()||0)-(a.updatedAt?.getTime()||0)).slice(0,3);$('resumeGrid').innerHTML=list.length?list.map(s=>`<div class="resume-card"><div class="resume-top"><span class="resume-name">${esc(s.name)}</span><span class="resume-status">IN PROGRESS</span></div><div class="resume-meta">Question ${Math.min(s.current+1,s.questionCount)} of ${s.questionCount} • ${s.progress}% completed</div><div class="mini"><span style="width:${s.progress}%"></span></div><div class="resume-bottom"><strong>${s.accuracy}% accuracy</strong><a class="resume-btn" href="${practiceUrl(s)}">Continue →</a></div></div>`).join(''):'<div style="grid-column:1/-1" class="resume-card"><span style="color:#8299b4;font-size:9px">No practice is currently in progress. Start any subject below.</span></div>'}
-function renderMilestones(data){const attempted=data.reduce((n,s)=>n+s.attempted,0),ms=[{n:100,l:'100 Questions',i:'🏁'},{n:2500,l:'2,500 Questions',i:'🚀'},{n:3500,l:'3,500 Questions',i:'💎'},{n:5000,l:'5,000 Questions',i:'🏆'},{n:6000,l:'6,000 Questions',i:'👑'}];$('milestones').innerHTML=ms.map(m=>{const d=attempted>=m.n;return `<div class="milestone ${d?'done':''}"><div class="milestone-icon">${m.i}</div><div class="milestone-title">${m.l}</div><div class="milestone-count">${d?'✓ Completed':'Locked'}</div></div>`}).join('')}
-async function init(user){let state='master',data=[];if(!user){state='guest';renderAccess(state);renderPublicSubjects(state,[]);$('loading').style.display='none';$('dashboard').style.display='block';return}const name=user.displayName||user.email?.split('@')[0]||'User';$('userBox').style.display='flex';$('userName').textContent=name;$('avatar').textContent=name[0].toUpperCase();let access={};try{const snap=await getDoc(doc(db,'testAccess',user.uid));const raw=snap.exists()?snap.data()||{}:{};access=raw.mahapackAccess||raw.computerAccess||{}}catch(e){}const master=active(access?.packs?.['computer-master']);state=master?'master':'noaccess';renderAccess(state);if(state==='master'){data=await Promise.all(SUBJECTS.map(s=>loadSubject(user.uid,s)));renderOverall(data);renderResume(data);renderMilestones(data);$('statsRow').style.display='grid';$('resumeSection').style.display='block';$('milestoneSection').style.display='block';$('subjectSub').textContent='Your personal progress across all 15 Computer subjects.'}renderPublicSubjects(state,data);$('loading').style.display='none';$('dashboard').style.display='block')}
-$('menuBtn').onclick=()=>$('mobileMenu').classList.toggle('open');$('logoutBtn').onclick=async()=>{await signOut(auth);location.href='firebase-login.html'};$('mobileLogout').onclick=async()=>{await signOut(auth);location.href='firebase-login.html'};
-onAuthStateChanged(auth,async user=>{try{await init(user)}catch(e){console.error(e);$('loading').style.display='none';$('errorBox').style.display='block'}});
-</script>
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-top">
+<div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div>
+<div><h4>Preparation</h4><div class="footer-links"><a href="joa-series.html">JOA (IT) Mock Tests</a><a href="joa-mahapack.html">JOA IT Maha Pack</a><a href="patwari-series.html">HP Patwari Mock Tests</a><a href="my-progress.html">My Progress</a></div></div>
+<div><h4>Information</h4><div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div>
+</div>
+<div class="footer-bottom"><span>© 2026 HPMockShashtra. All rights reserved.</span><span>Master Progress</span></div>
+</div>
+</footer>
 </body>
 </html>
