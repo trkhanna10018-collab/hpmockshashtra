@@ -1192,6 +1192,37 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 }
 
+
+/* Hero background image requested by user */
+.clean-hero{
+  position:relative;
+  background:
+    linear-gradient(90deg,rgba(247,250,255,.93) 0%,rgba(247,250,255,.84) 46%,rgba(247,250,255,.30) 100%),
+    url("joa/homepage-bg.jpg") center center / cover no-repeat;
+}
+.clean-hero-content{
+  display:block;
+  min-height:390px;
+  padding:58px 0 48px;
+}
+.clean-hero-copy{
+  max-width:720px;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:18px;
+  background:rgba(255,255,255,.78);
+  box-shadow:0 10px 32px rgba(25,52,95,.08);
+  backdrop-filter:blur(5px);
+}
+@media(max-width:900px){
+  .clean-hero-content{min-height:0;padding:34px 0}
+  .clean-hero-copy{max-width:100%;padding:22px}
+}
+@media(max-width:620px){
+  .clean-hero-content{padding:24px 0}
+  .clean-hero-copy{padding:18px;border-radius:14px}
+}
+
 </style>
 </head>
 
@@ -1257,11 +1288,7 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
           <a href="firebase-signup.html" class="secondary-btn">Create Free Account</a>
         </div>
       </div>
-      <div class="clean-hero-links" aria-label="Available exam preparation">
-        <a href="joa/new-joa-series.html"><span class="clean-link-icon">01</span><span><strong>JOA (IT)</strong><small>Mock Test Series</small></span><b>→</b></a>
-        <a href="patwari/patwari-series.html"><span class="clean-link-icon">02</span><span><strong>HP Patwari</strong><small>Mock Test Series</small></span><b>→</b></a>
-        <a href="mahapack/joa-mahapack.html"><span class="clean-link-icon">03</span><span><strong>JOA IT Maha Pack</strong><small>Computer Practice</small></span><b>→</b></a>
-      </div>
+
     </div>
 
   </div>
