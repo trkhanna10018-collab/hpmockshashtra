@@ -62,6 +62,7 @@ button{font:inherit;cursor:pointer}
   white-space:nowrap;
 }
 .mock{color:#70c8ff}
+.nav-menu{display:flex;align-items:center;gap:12px}
 .user-tools{display:flex;align-items:center;gap:8px;margin-left:4px}
 .user-area{
   display:flex;
@@ -569,25 +570,31 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 }
 @media(max-width:650px){
   .topbar{top:5px;width:calc(100% - 14px);margin-top:5px}
-  .nav{min-height:58px;padding:9px 11px;gap:9px;justify-content:space-between}
+  .nav{position:relative;min-height:58px;padding:9px 11px;gap:9px;justify-content:space-between;flex-wrap:nowrap}
   .brand{font-size:16px;flex:1;min-width:0}
-  .menu-toggle{display:block;flex:0 0 42px}
-  .nav-links{
+  .menu-toggle{display:block;flex:0 0 42px;margin-left:auto}
+  .nav-menu{
     display:none;
-    order:3;
-    flex:0 0 100%;
-    width:100%;
-    padding:8px 0 4px;
+    position:absolute;
+    top:calc(100% + 8px);
+    right:0;
+    width:min(270px,calc(100vw - 28px));
+    padding:10px;
     flex-direction:column;
     align-items:stretch;
+    gap:10px;
+    border:1px solid #315582;
+    border-radius:13px;
+    background:linear-gradient(145deg,#172b59 0%,#20295f 58%,#38265f 100%);
+    box-shadow:0 12px 28px #102b5040;
   }
-  .nav-links.open{display:flex}
-  .nav-link{width:100%;padding:12px;text-align:center}
-  .user-tools{display:none;order:4;flex:0 0 100%;width:100%;justify-content:center;flex-wrap:wrap;margin:2px 0 4px}
-  .nav-links.open ~ .user-tools{display:flex}
-  .user-area{justify-content:center;max-width:100%}
-  .user-name{max-width:180px}
-  .logout-btn{padding:12px;text-align:center;width:100%}
+  .nav-menu.open{display:flex}
+  .nav-links{display:flex;flex-direction:column;align-items:stretch;width:100%;gap:7px}
+  .nav-link{width:100%;padding:12px;text-align:left;justify-content:flex-start}
+  .user-tools{display:flex;width:100%;justify-content:space-between;flex-wrap:wrap;margin:0;padding-top:9px;border-top:1px solid #ffffff30}
+  .user-area{justify-content:flex-start;max-width:100%;min-width:0}
+  .user-name{max-width:145px}
+  .logout-btn{padding:10px 12px;text-align:center;width:auto}
   .wrap{width:calc(100% - 18px);margin-top:16px}
   .hero{padding:18px}
   h1{font-size:25px}
@@ -610,25 +617,28 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 
 <body>
 <header class="topbar">
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <a class="brand" href="../homepage.html">HP<span class="mock">Mock</span>Shashtra</a>
 
     <button class="menu-toggle" id="menuToggle" type="button"
-      aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">☰</button>
 
-    <div class="nav-links" id="navLinks">
-      <a class="nav-link" href="../homepage.html">Home</a>
-      <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
-      <a class="nav-link" href="my-purchase.html">My Purchases</a>
-      <a class="nav-link active" href="master-progress.html">Master Progress</a>
-    </div>
-
-    <div class="user-tools">
-      <div class="user-area" id="userArea">
-        <span class="avatar">?</span>
-        <span class="user-name">Checking…</span>
+    <div class="nav-menu" id="navMenu">
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="../homepage.html">Home</a>
+        <a class="nav-link" href="../joa/new-joa-series.html">JOA (IT)</a>
+        <a class="nav-link" href="../patwari/patwari-series.html">Patwari</a>
+        <a class="nav-link" href="my-purchase.html">My Purchase</a>
+        <a class="nav-link" href="mahapack-plans.html">Premium Plans</a>
       </div>
-      <button class="logout-btn hidden" id="logoutBtn" type="button">Logout</button>
+
+      <div class="user-tools">
+        <div class="user-area" id="userArea">
+          <span class="avatar">?</span>
+          <span class="user-name">Checking…</span>
+        </div>
+        <button class="logout-btn hidden" id="logoutBtn" type="button">Logout</button>
+      </div>
     </div>
   </nav>
 </header>
@@ -802,19 +812,27 @@ function setGuestUI(){
   $("logoutBtn").classList.add("hidden");
 }
 
-/* Mobile navigation */
-$("menuToggle").addEventListener("click", () => {
-  const open = $("navLinks").classList.toggle("open");
-  $("menuToggle").setAttribute("aria-expanded", String(open));
-  $("menuToggle").setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
-  $("menuToggle").textContent = open ? "×" : "☰";
+/* Responsive navigation */
+function closeNavMenu(){
+  $("navMenu").classList.remove("open");
+  $("menuToggle").setAttribute("aria-expanded","false");
+  $("menuToggle").setAttribute("aria-label","Open navigation menu");
+  $("menuToggle").textContent="☰";
+}
+$("menuToggle").addEventListener("click",()=>{
+  const open=$("navMenu").classList.toggle("open");
+  $("menuToggle").setAttribute("aria-expanded",String(open));
+  $("menuToggle").setAttribute("aria-label",open?"Close navigation menu":"Open navigation menu");
+  $("menuToggle").textContent=open?"×":"☰";
 });
-$("navLinks").addEventListener("click", event => {
-  if(event.target.closest("a")) {
-    $("navLinks").classList.remove("open");
-    $("menuToggle").setAttribute("aria-expanded","false");
-    $("menuToggle").textContent = "☰";
-  }
+$("navMenu").addEventListener("click",event=>{
+  if(event.target.closest("a")) closeNavMenu();
+});
+document.addEventListener("click",event=>{
+  if(!event.target.closest(".nav")) closeNavMenu();
+});
+window.addEventListener("resize",()=>{
+  if(window.innerWidth>650) closeNavMenu();
 });
 $("logoutBtn").addEventListener("click", async () => {
   try {
