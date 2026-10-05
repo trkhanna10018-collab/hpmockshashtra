@@ -605,24 +605,6 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
-
-/* Subject icons — match joa-mahapack.html */
-.subject-card .icon,
-.subject-card .icon img,
-.subject-card-icon,
-.subject-card-icon img,
-.subject-icon,
-.subject-icon img,
-.subject-image,
-.subject-image img {
-  width: 58px;
-  height: 58px;
-  max-width: 58px;
-  max-height: 58px;
-  border-radius: 12px;
-  object-fit: contain;
-  overflow: hidden;
-}
 </style>
 </head>
 
@@ -848,7 +830,7 @@ function renderPublicSubjects(){
   $("subjectGrid").innerHTML = SUBJECTS.map(subject => `
     <article class="subject-card">
       <div class="subject-title-row">
-        <h3>${subject.iconImage ? `<img class="subject-icon-img" src="${escapeHTML(subject.iconImage)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"> <span hidden>${subject.icon}</span>` : subject.icon} ${escapeHTML(subject.name)}</h3>
+        <h3>${subject.iconImage ? ` <span hidden>${subject.icon}</span>` : subject.icon} ${escapeHTML(subject.name)}</h3>
         <span class="subject-status">Sign in</span>
       </div>
       <p class="subject-subtitle">Maha Pack • Practice and progress tracking</p>
@@ -1089,7 +1071,7 @@ function renderSubjects(rows){
     return `
       <article class="subject-card ${state}">
         <div class="subject-title-row">
-          <h3>${row.subject.iconImage ? `<img class="subject-icon-img" src="${escapeHTML(row.subject.iconImage)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"> <span hidden>${row.subject.icon}</span>` : row.subject.icon} ${escapeHTML(row.subject.name)}</h3>
+          <h3>${row.subject.iconImage ? ` <span hidden>${row.subject.icon}</span>` : row.subject.icon} ${escapeHTML(row.subject.name)}</h3>
           <span class="subject-status ${perf.status}">${escapeHTML(perf.level)}</span>
         </div>
 
