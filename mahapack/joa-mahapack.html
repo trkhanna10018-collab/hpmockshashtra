@@ -2700,52 +2700,64 @@ return active(master)
 }
 
 
-function markSubject(card,a){
+const subjectTestIds={
+'computer-fundamentals':'computer_fundamentals_01',
+'ms-word':'ms_word_01',
+'ms-excel':'ms_excel_01',
+'ms-powerpoint':'ms_powerpoint_01',
+'ms-access':'ms_access_01',
+'dbms-sql':'dbms_sql_01',
+'computer-networking':'computer_networking_01',
+'cyber-security':'cyber_security_01',
+'c-programming':'c_programming_01',
+'html':'html_01',
+'css-css3':'css_css3_01',
+'cloud-computing':'cloud_computing_01',
+'data-structure':'data_structure_01',
+'computer-organisation':'computer_organisation_01',
+'operating-system':'operating_system_01'
+};
 
-const lock=
-card.querySelector('.locked-status');
+async function subjectHasAttempts(uid,key){
+const testId=subjectTestIds[key];
+if(!testId)return false;
+try{
+const [sessionSnap,resultSnap]=await Promise.all([
+getDoc(doc(db,'testSessions',`${uid}_${testId}`)),
+getDoc(doc(db,'testAttempts',`${uid}_${testId}`))
+]);
+if(resultSnap.exists())return true;
+if(!sessionSnap.exists())return false;
+const session=sessionSnap.data()||{};
+const answers=session.answers;
+return !!(answers&&typeof answers==='object'&&Object.keys(answers).length>0);
+}catch(e){
+console.warn('Subject attempt status could not be loaded for',key,e);
+return false;
+}
+}
 
-
+async function markSubject(card,a,user){
+const lock=card.querySelector('.locked-status');
 if(lock){
-
-const x=
-document.createElement('div');
-
-x.className=
-'purchased-status';
-
-x.innerHTML=
-`<small>Expiring on ${fmt(a.expiresAt)}</small>`;
-
+const x=document.createElement('div');
+x.className='purchased-status';
+x.innerHTML=`<small>Expiring on ${fmt(a.expiresAt)}</small>`;
 lock.replaceWith(x);
-
 }
 
-
-const buy=
-card.querySelector('.subject-buy');
-
-const page=
-card.dataset.paidPage;
-
-
+const buy=card.querySelector('.subject-buy');
+const page=card.dataset.paidPage;
 if(buy&&page){
-
-const x=
-document.createElement('a');
-
-x.className=
-'paid-start';
-
-x.href=page;
-
-x.textContent=
-'Start →';
-
+const attempted=await subjectHasAttempts(user.uid,card.dataset.purchaseKey);
+const x=document.createElement('a');
+x.className='paid-start';
+x.href=attempted
+?`mahapack-study.html?test=${encodeURIComponent(subjectTestIds[card.dataset.purchaseKey])}`
+:page;
+x.textContent=attempted?'Review →':'Start →';
 buy.replaceWith(x);
-
 }
-
 }
 
 
@@ -2780,7 +2792,7 @@ card.dataset.purchaseKey
 );
 
 if(a)
-markSubject(card,a);
+markSubject(card,a,user);
 
 });
 
