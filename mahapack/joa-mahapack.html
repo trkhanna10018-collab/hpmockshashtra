@@ -2641,15 +2641,15 @@ return Number.isNaN(d.getTime())
 
 
 function active(v){
+  if(v===true) return true;
+  if(!v || typeof v!=='object') return false;
+  if(v.active===false || v.enabled===false || v.revoked===true) return false;
 
-const d=
-toDate(v?.expiresAt);
+  const status=String(v.status||v.state||'').toLowerCase();
+  if(['expired','revoked','inactive','disabled','cancelled'].includes(status)) return false;
 
-return !!(
-d&&
-d.getTime()>Date.now()
-)
-
+  const expiry=toDate(v.expiresAt);
+  return !expiry || expiry.getTime()>Date.now();
 }
 
 
@@ -2672,33 +2672,25 @@ year:'numeric'
 
 
 function access(data,key){
+  const mp=data?.mahapackAccess||{};
 
-// Current access records
-const course=data?.mahapackAccess?.courses?.[key];
-if(active(course)) return course;
+  // Individual MahaPack subject access.
+  const course=mp?.courses?.[key] ?? mp?.subjects?.[key] ?? mp?.[key];
+  if(active(course)) return course===true ? {active:true} : course;
 
-const officePack=data?.mahapackAccess?.packs?.['ms-office'];
-if(office.includes(key)&&active(officePack)) return officePack;
+  // MS Office pack covers Word, Excel, PowerPoint and Access only.
+  const officePack=mp?.packs?.['ms-office'] ?? mp?.['ms-office'];
+  if(office.includes(key) && active(officePack)) {
+    return officePack===true ? {active:true} : officePack;
+  }
 
-const masterPack=data?.mahapackAccess?.packs?.['computer-master'];
-if(active(masterPack)) return masterPack;
+  // Computer Master pack covers all 15 computer subjects.
+  const masterPack=mp?.packs?.['computer-master'] ?? mp?.['computer-master'];
+  if(active(masterPack)) return masterPack===true ? {active:true} : masterPack;
 
-// Backward compatibility: purchases saved under mahapackAccess
-const legacyCourse=data?.mahapackAccess?.courses?.[key];
-if(active(legacyCourse)) return legacyCourse;
-
-const legacyOffice=data?.mahapackAccess?.packs?.['ms-office'];
-if(office.includes(key)&&active(legacyOffice)) return legacyOffice;
-
-const legacyMaster=data?.mahapackAccess?.packs?.['computer-master'];
-if(active(legacyMaster)) return legacyMaster;
-
-// Some older records store course access directly by course key.
-const direct=data?.mahapackAccess?.[key]||data?.mahapackAccess?.[key];
-if(active(direct)) return direct;
-
-return null;
+  return null;
 }
+
 
 
 const subjectTestIds={
@@ -2745,7 +2737,7 @@ async function subjectHasAttempts(uid,key,accessRecord){
 
   // Check both current user-centric MahaPack records and legacy top-level records.
   const checks=[
-    getDoc(doc(db,'users',uid,'mahapack','sessions',testId)).then(snap=>snap.exists()).catch(error=>{
+    getDoc(doc(db,'users',uid,'mahapack','sessions',testId)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(error=>{
       console.warn('Could not read MahaPack session for',key,error?.code||error);
       return false;
     }),
@@ -2798,6 +2790,7 @@ async function markSubject(card,a,user){
     ? `mahapack-study.html?test=${encodeURIComponent(subjectTestIds[key]||key)}`
     : page;
   action.textContent=attempted?'Review →':'Start →';
+  action.setAttribute('aria-label',`${attempted?'Review':'Start'} ${key}`);
   oldAction.replaceWith(action);
 }
 
@@ -2837,7 +2830,7 @@ await Promise.all(pending);
 /* Kept for compatibility with existing purchase data */
 
 const officePack=
-data?.mahapackAccess?.packs?.['ms-office']||data?.mahapackAccess?.packs?.['ms-office'];
+data?.mahapackAccess?.packs?.['ms-office']||data?.mahapackAccess?.['ms-office'];
 
 document
 .querySelectorAll(
@@ -2864,7 +2857,7 @@ b.replaceWith(x);
 
 
 const master=
-data?.mahapackAccess?.packs?.['computer-master']||data?.mahapackAccess?.packs?.['computer-master'];
+data?.mahapackAccess?.packs?.['computer-master']||data?.mahapackAccess?.['computer-master'];
 
 document
 .querySelectorAll(
