@@ -2700,7 +2700,7 @@ return active(master)
 }
 
 
-function markSubject(card,a){
+async function markSubject(card,a,user){
 
 const lock=
 card.querySelector('.locked-status');
@@ -2744,6 +2744,44 @@ x.textContent=
 
 buy.replaceWith(x);
 
+
+/* Review is shown ONLY after final submission.
+   Saved/in-progress sessions do not change Start. */
+
+try{
+
+const testId=
+page
+.replace(/^paid-/i,'')
+.replace(/\.html$/i,'')
+.toLowerCase()
+.replace(/-/g,'_')+'_01';
+
+const attemptSnap=
+await getDoc(
+doc(db,'users',user.uid,'mahapackAttempts',testId)
+);
+
+if(
+attemptSnap.exists() &&
+attemptSnap.data()?.status==='completed'
+){
+
+x.href='mahapack-study.html';
+
+x.textContent='Review →';
+
+}
+
+}catch(e){
+
+console.warn(
+'Completed test status could not be loaded:',
+e
+);
+
+}
+
 }
 
 }
@@ -2767,11 +2805,12 @@ const data=
 snap.data()||{};
 
 
-document
-.querySelectorAll(
+const subjectCards=
+document.querySelectorAll(
 '.subject[data-purchase-key]'
-)
-.forEach(card=>{
+);
+
+for(const card of subjectCards){
 
 const a=
 access(
@@ -2780,9 +2819,9 @@ card.dataset.purchaseKey
 );
 
 if(a)
-markSubject(card,a);
+await markSubject(card,a,user);
 
-});
+}
 
 
 /* Kept for compatibility with existing purchase data */
@@ -2854,6 +2893,16 @@ e
 
 function showLoggedOut(){
 
+/* Visitors who are not signed in must log in before starting a purchase. */
+document.querySelectorAll('.subject-buy').forEach(buy=>{
+
+if(!buy.dataset.paymentHref)
+buy.dataset.paymentHref=buy.getAttribute('href')||'../payment.html';
+
+buy.href='../firebase-login.html';
+
+});
+
 headerUser.style.display='none';
 
 loginLink.style.display='inline-flex';
@@ -2886,6 +2935,14 @@ mobileJoin.onclick=null;
 
 
 function showLoggedIn(name){
+
+/* Signed-in users without access can continue to the existing payment page. */
+document.querySelectorAll('.subject-buy').forEach(buy=>{
+
+if(buy.dataset.paymentHref)
+buy.href=buy.dataset.paymentHref;
+
+});
 
 headerUserName.textContent=name;
 
