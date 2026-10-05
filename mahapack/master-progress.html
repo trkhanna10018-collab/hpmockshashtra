@@ -605,38 +605,33 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
-
-/* Minimal back navigation */
-.master-back-wrap {
-  width: min(1200px, calc(100% - 32px));
-  margin: 18px auto 10px;
-}
-.master-back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border: 1px solid #bfd5f5;
-  border-radius: 10px;
-  background: #173a63;
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background .2s ease, transform .2s ease;
-}
-.master-back-button:hover {
-  background: #245184;
-  transform: translateY(-1px);
-}
-
 </style>
 </head>
 
 <body>
-  <div class="master-back-wrap">
-    <a class="master-back-button" href="joa-mahapack.html" aria-label="Back to Maha Pack">← Back to Maha Pack</a>
-  </div>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="../homepage.html">HP<span class="mock">Mock</span>Shashtra</a>
 
+    <button class="menu-toggle" id="menuToggle" type="button"
+      aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="../homepage.html">Home</a>
+      <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
+      <a class="nav-link" href="my-purchase.html">My Purchases</a>
+      <a class="nav-link active" href="master-progress.html">Master Progress</a>
+    </div>
+
+    <div class="user-tools">
+      <div class="user-area" id="userArea">
+        <span class="avatar">?</span>
+        <span class="user-name">Checking…</span>
+      </div>
+      <button class="logout-btn hidden" id="logoutBtn" type="button">Logout</button>
+    </div>
+  </nav>
+</header>
 
 <main class="wrap">
     <div id="loginBox" class="access-box hidden">
