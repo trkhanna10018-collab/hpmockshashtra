@@ -2714,27 +2714,44 @@ const subjectTestIds={
 'css-css3':'css_css3_01',
 'cloud-computing':'cloud_computing_01',
 'data-structure':'data_structure_01',
+'computer-organisation-architecture':'computer_organisation_01',
 'computer-organisation':'computer_organisation_01',
 'operating-system':'operating_system_01'
 };
 
-async function subjectHasAttempts(uid,key){
-const testId=subjectTestIds[key];
-if(!testId)return false;
-try{
-const [sessionSnap,resultSnap]=await Promise.all([
-getDoc(doc(db,'testSessions',`${uid}_${testId}`)),
-getDoc(doc(db,'testAttempts',`${uid}_${testId}`))
-]);
-if(resultSnap.exists())return true;
-if(!sessionSnap.exists())return false;
-const session=sessionSnap.data()||{};
-const answers=session.answers;
-return !!(answers&&typeof answers==='object'&&Object.keys(answers).length>0);
-}catch(e){
-console.warn('Subject attempt status could not be loaded for',key,e);
-return false;
+function hasSavedAttempt(record){
+  if(!record || typeof record!=='object') return false;
+  const status=String(record.status||record.state||record.attemptStatus||record.attempt_status||record.sessionStatus||'').toLowerCase().replace(/[ _-]+/g,'');
+  if(record.submitted===true || record.isSubmitted===true || record.completed===true || record.isCompleted===true || record.attempted===true || ['submitted','completed','complete','attempted','review','inprogress','started','ongoing','active'].includes(status)) return true;
+  const answers=record.answers||record.responses||record.userAnswers;
+  if(answers && typeof answers==='object' && Object.keys(answers).length>0) return true;
+  if(Number(record.current)>0 || Number(record.currentQuestion)>0 || Number(record.lastQuestion)>0 || Number(record.attemptedCount)>0 || Number(record.answeredCount)>0) return true;
+  return false;
 }
+
+async function subjectHasAttempts(uid,key,accessRecord){
+  if(hasSavedAttempt(accessRecord)) return true;
+  const testId=subjectTestIds[key];
+  if(!testId) return false;
+  const variants=[...new Set([
+    testId,
+    key,
+    key.replace(/-/g,'_'),
+    key.replace(/_/g,'-'),
+    key==='computer-organisation-architecture'?'computer_organisation_01':null
+  ].filter(Boolean))];
+  try{
+    for(const id of variants){
+      const [sessionSnap,resultSnap]=await Promise.all([
+        getDoc(doc(db,'testSessions',`${uid}_${id}`)),
+        getDoc(doc(db,'testAttempts',`${uid}_${id}`))
+      ]);
+      if(resultSnap.exists() || (sessionSnap.exists() && hasSavedAttempt(sessionSnap.data()))) return true;
+    }
+  }catch(e){
+    console.warn('Subject attempt status could not be loaded for',key,e);
+  }
+  return false;
 }
 
 async function markSubject(card,a,user){
@@ -2749,11 +2766,11 @@ lock.replaceWith(x);
 const buy=card.querySelector('.subject-buy');
 const page=card.dataset.paidPage;
 if(buy&&page){
-const attempted=await subjectHasAttempts(user.uid,card.dataset.purchaseKey);
+const attempted=await subjectHasAttempts(user.uid,card.dataset.purchaseKey,a);
 const x=document.createElement('a');
 x.className='paid-start';
 x.href=attempted
-?`mahapack-study.html?test=${encodeURIComponent(subjectTestIds[card.dataset.purchaseKey])}`
+?`mahapack-study.html?test=${encodeURIComponent(subjectTestIds[card.dataset.purchaseKey]||card.dataset.purchaseKey)}`
 :page;
 x.textContent=attempted?'Review →':'Start →';
 buy.replaceWith(x);
