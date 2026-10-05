@@ -6,162 +6,272 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Master Progress | HPMockShashtra</title>
 <style>
-:root{--navy:#102b50;--navy2:#173d6b;--blue:#2476d2;--line:#d5e3f5;--text:#17304f;--muted:#637a98;--green:#168653;--red:#c33d4b;--amber:#986100}
+:root{--navy:#102b50;--navy2:#173d6b;--blue:#2476d2;--blue2:#58a7f8;--line:#d5e3f5;--text:#17304f;--muted:#637a98;--green:#168653;--red:#c33d4b;--amber:#986100;--purple:#6949bd}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#eaf2fc 0,#f7faff 360px,#fff 100%)}
+body{margin:0;color:var(--text);font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#eaf2fc,#f7faff 350px,#fff)}
 a{text-decoration:none;color:inherit}
-.topbar{position:sticky;top:8px;width:calc(100% - 24px);max-width:1400px;margin:8px auto 0;z-index:99;border:1px solid #244a7c;border-radius:16px;background:linear-gradient(110deg,#102b50,#173d6b);box-shadow:0 8px 24px #17385d20}
-.nav{min-height:68px;padding:9px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.brand{font-size:19px;font-weight:900;margin-right:auto;color:#fff}
+button{font:inherit;cursor:pointer}
+.hidden{display:none!important}
+.topbar{position:sticky;top:7px;z-index:99;width:calc(100% - 24px);max-width:1400px;margin:7px auto 0;border:1px solid #244a7c;border-radius:16px;background:linear-gradient(110deg,#102b50,#173d6b);box-shadow:0 8px 24px #17385d20}
+.nav{min-height:68px;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.brand{font-size:19px;font-weight:900;margin-right:auto;color:#fff;white-space:nowrap}
 .mock{color:#70c8ff}
-.nav-links{display:flex;gap:7px;flex-wrap:wrap}
-.nav-link{padding:9px 12px;border:1px solid #ffffff35;border-radius:9px;font-size:11px;font-weight:800;color:#fff;background:#ffffff0c}
+.nav-links{display:flex;align-items:center;gap:7px}
+.nav-link{padding:10px 12px;border:1px solid #ffffff35;border-radius:9px;font-size:11px;font-weight:800;color:#fff;background:#ffffff0c;white-space:nowrap}
 .nav-link.active,.nav-link:hover{background:#fff;color:#15365f}
-#userArea{font-size:11px;color:#e4efff}
-.wrap{width:min(1400px,calc(100% - 28px));margin:24px auto 40px}
-.hero{padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#fff,#f3f8ff);box-shadow:0 8px 25px #24466d0b}
+.userbox{display:flex;align-items:center;gap:8px;color:#fff;font-size:11px;font-weight:800;max-width:210px}
+.avatar{width:31px;height:31px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;background:#d7ebff;color:var(--navy);font-weight:900}
+.username{max-width:125px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.logout{padding:8px 10px;border:1px solid #ffffff65;border-radius:8px;background:#ffffff12;color:#fff;font-size:10px;font-weight:900}
+.menu-btn{display:none;border:1px solid #ffffff60;background:#ffffff12;color:#fff;border-radius:9px;padding:8px 11px;font-size:20px}
+.mobile-menu{display:none;padding:8px 12px 14px;border-top:1px solid #ffffff30}
+.mobile-menu.open{display:grid;gap:7px}
+.mobile-menu a,.mobile-menu button{display:block;text-align:left;padding:11px 12px;border:1px solid #ffffff28;border-radius:8px;background:#ffffff0c;color:white;font-size:12px;font-weight:800}
+.mobile-menu .active{background:#fff;color:var(--navy)}
+.mobile-menu button{background:#ffffff18}
+.wrap{width:min(1400px,calc(100% - 28px));margin:22px auto 38px}
+.hero{padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#fff,#f2f7ff);box-shadow:0 8px 25px #24466d0b}
 .eyebrow{font-size:10px;color:var(--blue);font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
 h1{font-size:30px;margin:8px 0;color:var(--navy)}
+h2{font-size:20px;margin:0 0 6px;color:var(--navy)}
 p{color:var(--muted);font-size:12px;line-height:1.6}
-.access{margin-top:14px;padding:17px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;border:1px solid #cbdcf1;border-radius:13px;background:#f5f9ff}
+.hero p{margin-bottom:0}
+.welcome{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.welcome-name{font-weight:900;color:var(--navy)}
+.access{margin-top:15px;padding:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border:1px solid #cbdcf1;border-radius:13px;background:#f5f9ff}
 .access-copy{flex:1;min-width:200px}
 .access-copy strong{font-size:14px;color:var(--navy)}
 .access-copy p{margin:5px 0}
-.btn{display:inline-block;padding:10px 15px;border:0;border-radius:9px;background:linear-gradient(135deg,#2476d2,#1658a7);color:white;font-size:11px;font-weight:900}
-.secondary{display:inline-block;padding:9px 12px;border:1px solid #a9c4e7;border-radius:9px;font-size:11px;font-weight:800;color:var(--navy);background:#fff}
-.section{margin-top:24px}
-.section h2{font-size:20px;margin:0 0 5px;color:var(--navy)}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
-.stat{padding:17px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 5px 18px #23466d09;position:relative;overflow:hidden}
-.stat:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,#2476d2)}
-.stat strong{display:block;font-size:25px;color:var(--accent,#2476d2)}
-.stat span{display:block;margin-top:5px;font-size:11px;font-weight:800;color:var(--text)}
-.stat small{display:block;margin-top:5px;font-size:10px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:0;border-radius:9px;background:linear-gradient(135deg,#2476d2,#1658a7);color:white;font-size:11px;font-weight:900}
+.secondary{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border:1px solid #a9c4e7;border-radius:9px;font-size:11px;font-weight:800;color:var(--navy);background:#fff}
+.notice{padding:14px;border:1px solid #cbdcf1;border-radius:12px;background:#f5f9ff;margin-top:14px;color:var(--navy);font-size:12px}
+.section{margin-top:26px}
+.section-sub{margin:4px 0 0}
+.overall-panel{padding:22px;border:1px solid #b9d2f1;border-radius:19px;background:linear-gradient(135deg,#fff 0%,#f1f7ff 100%);box-shadow:0 10px 28px #1d4e8420;position:relative;overflow:hidden}
+.overall-panel:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(#2476d2,#58a7f8)}
+.overall-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.overall-head p{margin:5px 0 0}
+.summary-tag{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;background:#e0edff;border:1px solid #c4daf7;border-radius:99px;color:#1a579f;font-size:10px;font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:18px}
+.stat{padding:15px;border:1px solid var(--line);border-radius:13px;background:#fff;min-width:0;box-shadow:0 4px 12px #23466d08}
+.stat strong{display:block;font-size:27px;line-height:1.15;color:var(--accent,#2476d2);overflow-wrap:anywhere}
+.stat span{display:block;margin-top:7px;font-size:11px;font-weight:850;color:var(--text)}
+.stat small{display:block;margin-top:4px;font-size:10px;color:var(--muted)}
 .stat.attempted{--accent:#2476d2}
 .stat.unattempted{--accent:#986100}
 .stat.correct{--accent:#168653}
 .stat.wrong{--accent:#c33d4b}
-.stat.accuracy{--accent:#6446bd}
+.stat.accuracy{--accent:#6949bd}
 .stat.completion{--accent:#087e91}
-.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:13px}
-.subject-card{padding:17px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 5px 18px #23466d09}
-.subject-card h3{font-size:14px;margin:0 0 8px;color:var(--navy)}
-.subject-card p{font-size:11px;margin:6px 0}
-.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}
-.metric{padding:9px;border-radius:9px;background:#f1f6fd;border:1px solid #e2ebf7}
-.metric span{display:block;font-size:10px;color:var(--muted)}
-.metric strong{display:block;margin-top:3px;font-size:16px;color:var(--navy)}
-.metric.correct strong{color:var(--green)}
-.metric.wrong strong{color:var(--red)}
-.metric.unattempted strong{color:var(--amber)}
-.bar{height:8px;background:#e4edf8;border-radius:99px;overflow:hidden;margin:12px 0 6px}
-.bar span{display:block;height:100%;background:linear-gradient(90deg,#2476d2,#58a7f8);border-radius:99px}
-.action{display:inline-block;margin-top:8px;padding:9px 12px;border-radius:8px;background:var(--navy2);color:#fff;font-size:10px;font-weight:900}
-.badge{display:inline-block;padding:5px 8px;border-radius:20px;font-size:10px;font-weight:900}
+.overall-foot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.mini-panel{padding:14px;border:1px solid #d8e5f6;border-radius:12px;background:#fff}
+.mini-title{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:11px;font-weight:900;color:var(--navy)}
+.progress-track{height:9px;background:#e5edf8;border-radius:99px;overflow:hidden;margin-top:10px}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#2476d2,#58a7f8);border-radius:99px;transition:width .4s}
+.accuracy-fill{background:linear-gradient(90deg,#168653,#48bd86)}
+.chart-panel{margin-top:18px;padding:16px;border:1px solid #d8e5f6;border-radius:13px;background:#fff}
+.chart-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.chart-heading strong{font-size:13px;color:var(--navy)}
+.chart-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:10px;color:var(--muted)}
+.legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.subject-chart{display:grid;gap:11px;margin-top:17px}
+.chart-row{display:grid;grid-template-columns:minmax(120px,220px) minmax(80px,1fr) 48px;gap:12px;align-items:center}
+.chart-name{font-size:11px;font-weight:800;color:var(--text);overflow-wrap:anywhere}
+.chart-track{height:12px;border-radius:99px;background:#e9eff8;overflow:hidden}
+.chart-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,#2476d2,#58a7f8)}
+.chart-percent{text-align:right;font-size:11px;font-weight:900;color:var(--navy)}
+.section-title-row{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sort-note{font-size:10px;color:var(--muted)}
+.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:14px}
+.subject-card{padding:17px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 5px 18px #23466d09;min-width:0}
+.subject-card.in-progress{border-color:#82b6ee;box-shadow:0 6px 20px #2476d21b}
+.subject-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.subject-card h3{font-size:14px;line-height:1.45;margin:0;color:var(--navy)}
+.badge{display:inline-block;padding:5px 8px;border-radius:20px;font-size:9px;font-weight:900;white-space:nowrap}
 .badge.good{background:#ddf5e8;color:#167447}
 .badge.low{background:#fde8e9;color:#b42332}
 .badge.neutral{background:#eaf1fb;color:#34577f}
-.notice{padding:15px;border:1px solid #cbdcf1;border-radius:12px;background:#f5f9ff;margin-top:14px;color:var(--navy)}
-.hidden{display:none!important}
-.footer{margin-top:35px;padding:30px 0 15px;border-top:1px solid #d6e3f3;background:#102b50}
+.badge.live{background:#dcecff;color:#155cb2}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:14px}
+.metric{padding:9px;border-radius:9px;background:#f4f7fc;border:1px solid #e2ebf7;min-width:0}
+.metric span{display:block;font-size:10px;color:var(--muted)}
+.metric strong{display:block;margin-top:4px;font-size:16px;color:var(--navy);overflow-wrap:anywhere}
+.metric.correct strong{color:var(--green)}
+.metric.wrong strong{color:var(--red)}
+.metric.unattempted strong{color:var(--amber)}
+.card-bars{display:grid;gap:9px;margin-top:15px}
+.card-bar-head{display:flex;justify-content:space-between;gap:8px;font-size:10px;font-weight:800;color:var(--muted)}
+.bar{height:8px;background:#e4edf8;border-radius:99px;overflow:hidden;margin-top:5px}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,#2476d2,#58a7f8);border-radius:99px}
+.bar.accuracy span{background:linear-gradient(90deg,#168653,#48bd86)}
+.review-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.review-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:9px;background:var(--navy2);color:#fff;font-size:10px;font-weight:900}
+.review-btn.secondary-btn{background:#edf4ff;border:1px solid #c8dcf7;color:var(--navy)}
+.empty-state{grid-column:1/-1;padding:22px;border:1px dashed #b9cee8;border-radius:13px;background:#f7faff;color:var(--muted);font-size:12px}
+.footer{margin-top:35px;padding:30px 0 15px;background:#102b50}
 .footer-inner{width:min(1400px,calc(100% - 28px));margin:auto}
 .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:25px}
 .footer h3,.footer h4{margin:0 0 10px;color:#fff}
 .footer p,.footer a{font-size:11px;color:#d0def0}
 .footer-links{display:grid;gap:8px}
+.footer a:hover{color:#70c8ff}
 .footer-bottom{margin-top:22px;padding-top:14px;border-top:1px solid #ffffff25;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#b3c5dc}
-@media(max-width:850px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:550px){.nav{gap:10px}.brand{font-size:16px}.nav-links{gap:5px}.nav-link{padding:8px;font-size:10px}.wrap{width:calc(100% - 18px)}.hero{padding:18px}h1{font-size:24px}.stats,.subject-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
+@media(max-width:1050px){.nav{flex-wrap:wrap}.brand{margin-right:auto}.userbox{order:2}.nav-links{order:3;width:100%;flex-wrap:wrap}.nav-link{padding:8px 10px}.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){
+ .topbar{width:calc(100% - 16px);top:5px}.nav{min-height:58px;padding:9px 12px;gap:8px}.brand{font-size:17px}.menu-btn{display:block}.userbox{order:initial;max-width:160px}.username{max-width:75px}.logout{padding:7px}.nav-links{display:none}
+ .wrap{width:calc(100% - 18px);margin-top:16px}.hero{padding:18px}h1{font-size:25px}.overall-panel{padding:16px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{padding:12px}.stat strong{font-size:23px}.overall-foot{grid-template-columns:1fr}.subject-grid{grid-template-columns:1fr}
+ .chart-row{grid-template-columns:minmax(90px,125px) minmax(40px,1fr) 38px;gap:8px}.chart-name,.chart-percent{font-size:10px}.chart-panel{padding:12px}.footer-top{grid-template-columns:1fr;gap:22px}.footer-bottom{flex-direction:column}
+}
+@media(max-width:380px){.username{display:none}.stats{gap:7px}.stat strong{font-size:21px}.chart-row{grid-template-columns:95px minmax(30px,1fr) 34px}}
 </style>
 </head>
 <body>
+
 <header class="topbar">
-<nav class="nav">
-<a class="brand" href="homepage.html">HP<span class="mock">Mock</span>Shashtra</a>
-<div id="userArea">Checking account…</div>
-<div class="nav-links">
-<a class="nav-link" href="homepage.html">Home</a>
-<a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
-<a class="nav-link" href="my-purchase.html">My Purchases</a>
-<a class="nav-link active" href="master-progress.html">Master Progress</a>
-</div>
-</nav>
+  <nav class="nav">
+    <a class="brand" href="../homepage.html">HP<span class="mock">Mock</span>Shashtra</a>
+    <div class="userbox" id="userBox">
+      <span class="avatar" id="avatar">U</span>
+      <span class="username" id="userName">Checking…</span>
+      <button class="logout" id="logoutBtn" type="button">Logout</button>
+    </div>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a class="nav-link" href="../homepage.html">Home</a>
+      <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
+      <a class="nav-link" href="../my-purchases.html">My Purchases</a>
+      <a class="nav-link active" href="master-progress.html">Master Progress</a>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../homepage.html">Home</a>
+    <a href="joa-mahapack.html">Paid Courses</a>
+    <a href="../my-purchases.html">My Purchases</a>
+    <a class="active" href="master-progress.html">Master Progress</a>
+    <button id="mobileLogout" type="button">Logout</button>
+  </div>
 </header>
 
 <main class="wrap">
-<section class="hero">
-<div class="eyebrow">Your preparation dashboard</div>
-<h1>Master Progress</h1>
-<p>Track your preparation across your accessible Computer subjects.</p>
+  <section class="hero">
+    <div class="eyebrow">Your preparation dashboard</div>
+    <h1>Master Progress</h1>
+    <p>Track your preparation across your accessible Computer subjects.</p>
 
-<div id="loginBox" class="access hidden">
-<div class="access-copy">
-<strong>🔐 Please Login to View Your Progress</strong>
-<p>Login or register to access your personal progress, scores and performance.</p>
-</div>
-<a class="btn" href="../firebase-login.html?redirect=mahapack%2Fmaster-progress.html">Login / Register →</a>
-</div>
+    <div id="loginBox" class="access hidden">
+      <div class="access-copy">
+        <strong>🔐 Please log in to view your progress</strong>
+        <p>Login or register to access your personal progress, scores and performance.</p>
+      </div>
+      <a class="btn" href="../firebase-login.html?redirect=mahapack%2Fmaster-progress.html">Login / Register →</a>
+    </div>
 
-<div id="purchaseBox" class="access hidden">
-<div class="access-copy">
-<strong>🔒 Unlock Your Master Progress Dashboard</strong>
-<p>Your account is signed in, but Master Pack access could not be confirmed. Check your purchase or buy the pack to track your subjects.</p>
-</div>
-<a class="btn" href="joa-mahapack.html">Buy Master Pack →</a>
-<a class="secondary" href="my-purchase.html">My Purchases</a>
-</div>
+    <div id="purchaseBox" class="access hidden">
+      <div class="access-copy">
+        <strong>🔒 Unlock your Master Progress Dashboard</strong>
+        <p>Your account is signed in, but eligible Master Pack access could not be confirmed. Check your purchase or buy the pack.</p>
+      </div>
+      <a class="btn" href="joa-mahapack.html">View Maha Pack →</a>
+      <a class="secondary" href="../my-purchases.html">My Purchases</a>
+    </div>
+    <div id="loadingBox" class="notice">Checking your account and access…</div>
+    <div id="statusBox" class="notice hidden"></div>
+  </section>
 
-<div id="loadingBox" class="notice">Checking your account and access…</div>
-<div id="statusBox" class="notice hidden"></div>
-</section>
+  <section id="statsSection" class="section hidden">
+    <div class="overall-panel">
+      <div class="overall-head">
+        <div>
+          <div class="eyebrow">Your performance at a glance</div>
+          <h2 style="font-size:24px;margin-top:7px">Overall Performance</h2>
+          <p>Only your accessible Computer Maha Pack subjects are counted. JOA and Patwari results are excluded.</p>
+        </div>
+        <span class="summary-tag">📊 Live progress summary</span>
+      </div>
 
-<section id="statsSection" class="section hidden">
-<h2>Overall Performance</h2>
-<p>Summary of your accessible Maha Pack subjects only. JOA and Patwari test records are not included.</p>
-<div class="stats">
-<div class="stat attempted"><strong id="attemptedCount">—</strong><span>Questions Attempted</span></div>
-<div class="stat unattempted"><strong id="unattemptedCount">—</strong><span>Questions Unattempted</span><small id="totalQuestionsLabel">Out of — available questions</small></div>
-<div class="stat correct"><strong id="correctCount">—</strong><span>Correct Answers</span></div>
-<div class="stat wrong"><strong id="wrongCount">—</strong><span>Wrong Answers</span></div>
-<div class="stat accuracy"><strong id="accuracyCount">—</strong><span>Overall Accuracy</span></div>
-<div class="stat completion"><strong id="overallProgress">—</strong><span>Completion</span></div>
-</div>
-</section>
+      <div class="stats">
+        <div class="stat attempted"><strong id="attemptedCount">—</strong><span>Questions Attempted</span><small>Questions answered</small></div>
+        <div class="stat unattempted"><strong id="unattemptedCount">—</strong><span>Questions Unattempted</span><small id="totalQuestionsLabel">Out of — questions</small></div>
+        <div class="stat correct"><strong id="correctCount">—</strong><span>Correct Answers</span><small>Answers marked correct</small></div>
+        <div class="stat wrong"><strong id="wrongCount">—</strong><span>Wrong Answers</span><small>Answers needing revision</small></div>
+        <div class="stat accuracy"><strong id="accuracyCount">—</strong><span>Overall Accuracy</span><small>Correct ÷ attempted</small></div>
+        <div class="stat completion"><strong id="overallProgress">—</strong><span>Overall Completion</span><small>Attempted ÷ available</small></div>
+      </div>
 
-<section class="section">
-<h2>Subject-wise Performance</h2>
-<p id="subjectIntro">Your personal progress is visible only to the signed-in eligible user.</p>
-<div id="subjectGrid" class="subject-grid"></div>
-</section>
+      <div class="overall-foot">
+        <div class="mini-panel">
+          <div class="mini-title"><span>Question completion</span><span id="completionLabel">0%</span></div>
+          <div class="progress-track"><div class="progress-fill" id="completionBar"></div></div>
+        </div>
+        <div class="mini-panel">
+          <div class="mini-title"><span>Answer accuracy</span><span id="accuracyLabel">—</span></div>
+          <div class="progress-track"><div class="progress-fill accuracy-fill" id="accuracyBar"></div></div>
+        </div>
+      </div>
 
-<section id="milestonesSection" class="section hidden">
-<h2>Milestones</h2>
-<p>Milestones are based on recorded question attempts.</p>
-<div id="milestones" class="subject-grid"></div>
-</section>
+      <div class="chart-panel">
+        <div class="chart-heading">
+          <strong>Subject-wise Accuracy Comparison</strong>
+          <div class="chart-legend">
+            <span><i class="legend-dot" style="background:#2476d2"></i>Accuracy</span>
+            <span>Based on attempted answers</span>
+          </div>
+        </div>
+        <div id="subjectChart" class="subject-chart">
+          <div class="empty-state">Your subject comparison will appear here when progress loads.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title-row">
+      <div>
+        <h2>Subject-wise Performance</h2>
+        <p id="subjectIntro" class="section-sub">Your personal progress is visible only to the signed-in eligible user.</p>
+      </div>
+      <span id="sortNote" class="sort-note">In-progress tests appear first</span>
+    </div>
+    <div id="subjectGrid" class="subject-grid"></div>
+  </section>
 </main>
 
 <footer class="footer">
-<div class="footer-inner">
-<div class="footer-top">
-<div><h3>HPMockShashtra</h3><p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p></div>
-<div><h4>Preparation</h4><div class="footer-links">
-<a href="../joa-series.html">JOA (IT) Mock Tests</a>
-<a href="joa-mahapack.html">JOA IT Maha Pack</a>
-<a href="../patwari-series.html">HP Patwari Mock Tests</a>
-<a href="../my-progress.html">My Progress</a>
-</div></div>
-<div><h4>Information</h4><div class="footer-links">
-<a href="../about.html">About</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms &amp; Conditions</a>
-</div></div>
-</div>
-<div class="footer-bottom"><span>© 2026 HPMockShashtra. All rights reserved.</span><span>Master Progress</span></div>
-</div>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <h3>HPMockShashtra</h3>
+        <p>Practice, improve and track your preparation for competitive examinations.</p>
+      </div>
+      <div>
+        <h4>Preparation</h4>
+        <div class="footer-links">
+          <a href="../homepage.html">Home</a>
+          <a href="../joa/new-joa-series.htm">JOA (IT) Test Series</a>
+          <a href="../patwari/patwari-series.html">HP Patwari Test Series</a>
+          <a href="joa-mahapack.html">Computer Maha Pack</a>
+          <a href="master-progress.html">Master Progress</a>
+        </div>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <div class="footer-links">
+          <a href="../about.html">About</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HPMockShashtra. All rights reserved.</span>
+      <span>Master Progress</span>
+    </div>
+  </div>
 </footer>
 
 <script type="module">
 import { auth, db } from "../firebase-config.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const $ = id => document.getElementById(id);
@@ -184,256 +294,340 @@ const SUBJECTS = [
 {id:"operating_system_01",name:"Operating System",course:"operating-system",file:"paid-operating-system.html",icon:"⚙️"}
 ];
 
-function active(value) {
-  if (value === true) return true;
-  if (!value || typeof value !== "object") return false;
-  if (value.active === false || value.enabled === false || value.status === "expired") return false;
-  const expiry = value.expiresAt?.toDate ? value.expiresAt.toDate() : (value.expiresAt ? new Date(value.expiresAt) : null);
-  return !expiry || Number.isNaN(expiry.getTime()) || expiry.getTime() > Date.now();
+$("menuBtn").addEventListener("click",()=>{
+  const open=$("mobileMenu").classList.toggle("open");
+  $("menuBtn").setAttribute("aria-expanded",String(open));
+  $("menuBtn").textContent=open?"✕":"☰";
+});
+
+async function logoutUser(){
+  try{
+    await signOut(auth);
+    window.location.href="../firebase-login.html";
+  }catch(error){
+    console.error("Logout failed:",error);
+    alert("Logout failed. Please try again.");
+  }
+}
+$("logoutBtn").addEventListener("click",logoutUser);
+$("mobileLogout").addEventListener("click",logoutUser);
+
+function active(value){
+  if(value===true)return true;
+  if(!value||typeof value!=="object")return false;
+  if(value.active===false||value.enabled===false||value.status==="expired")return false;
+  const raw=value.expiresAt;
+  const expiry=raw?.toDate?raw.toDate():(raw?new Date(raw):null);
+  return !expiry||Number.isNaN(expiry.getTime())||expiry.getTime()>Date.now();
 }
 
-function setStatus(message) {
-  $("statusBox").textContent = message;
+function setStatus(message){
+  $("statusBox").textContent=message;
   $("statusBox").classList.remove("hidden");
 }
 
-function renderPublicSubjects() {
-  $("subjectGrid").innerHTML = SUBJECTS.map(s => `
-    <article class="subject-card">
-      <h3>${s.icon} ${s.name}</h3>
-      <p>Questions • Practice tests</p>
-      <p>Sign in and confirm course access to view your personal progress.</p>
-    </article>`).join("");
-}
-
-function renderProgressCards(rows) {
-  if (!rows.length) {
-    $("subjectGrid").innerHTML = '<div class="notice">No subject access was found for this account. Please check My Purchases.</div>';
-    return;
-  }
-
-  $("subjectGrid").innerHTML = rows.map(({subject,total,attempted,unattempted,correct,wrong,percent,completion}) => {
-    const badge = attempted < 10
-      ? '<span class="badge neutral">Build more data</span>'
-      : percent >= 75
-        ? '<span class="badge good">Strong subject</span>'
-        : percent < 50
-          ? '<span class="badge low">Needs improvement</span>'
-          : '<span class="badge neutral">Keep practising</span>';
-
-    return `<article class="subject-card">
-      <h3>${subject.icon} ${subject.name}</h3>${badge}
-      <div class="metrics">
-        <div class="metric"><span>Total questions</span><strong>${total.toLocaleString("en-IN")}</strong></div>
-        <div class="metric"><span>Attempted</span><strong>${attempted.toLocaleString("en-IN")}</strong></div>
-        <div class="metric unattempted"><span>Unattempted</span><strong>${unattempted.toLocaleString("en-IN")}</strong></div>
-        <div class="metric correct"><span>Correct</span><strong>${correct.toLocaleString("en-IN")}</strong></div>
-        <div class="metric wrong"><span>Wrong</span><strong>${wrong.toLocaleString("en-IN")}</strong></div>
-        <div class="metric"><span>Accuracy</span><strong>${attempted ? percent + "%" : "—"}</strong></div>
-      </div>
-      <div class="bar"><span style="width:${completion}%"></span></div>
-      <p>${completion}% questions completed${attempted < 10 ? " • Attempt at least 10 questions for a more reliable comparison." : ""}</p>
-      <a class="action" href="${subject.file}">Open Subject →</a>
-    </article>`;
-  }).join("");
-}
-
-function showLogin() {
+function showLogin(){
   $("loadingBox").classList.add("hidden");
   $("loginBox").classList.remove("hidden");
   $("purchaseBox").classList.add("hidden");
   $("statsSection").classList.add("hidden");
-  $("milestonesSection").classList.add("hidden");
-  $("userArea").textContent = "Guest";
-  $("subjectIntro").textContent = "All 15 subjects are listed below. Sign in to access your own progress.";
+  $("userBox").classList.add("hidden");
+  $("subjectIntro").textContent="All 15 Computer Subjects are listed for reference. Login to view personal progress.";
   renderPublicSubjects();
 }
 
-function showNoAccess() {
+function showNoAccess(){
   $("loadingBox").classList.add("hidden");
   $("loginBox").classList.add("hidden");
   $("purchaseBox").classList.remove("hidden");
   $("statsSection").classList.add("hidden");
-  $("milestonesSection").classList.add("hidden");
-  $("subjectIntro").textContent = "Subject list is public. Personal scores are hidden until eligible access is confirmed.";
+  $("subjectIntro").textContent="Personal progress is shown only after eligible Computer Maha Pack access is confirmed.";
   renderPublicSubjects();
 }
 
-function getAccessForSubject(data, subject) {
-  const collections = [
-    data?.computerAccess?.courses,
-    data?.mahapackAccess?.courses
-  ];
+function renderPublicSubjects(){
+  $("subjectGrid").innerHTML=SUBJECTS.map(s=>`
+    <article class="subject-card">
+      <h3>${s.icon} ${s.name}</h3>
+      <p>Computer subject • Practice and progress tracking</p>
+      <p>Sign in and confirm course access to view your personal performance.</p>
+    </article>`).join("");
+  $("subjectChart").innerHTML='<div class="empty-state">Sign in with eligible access to compare your subject accuracy.</div>';
+}
 
-  for (const collection of collections) {
-    if (!collection) continue;
-    for (const key of [subject.course, ...(subject.accessAliases || [])]) {
-      if (active(collection[key])) return true;
+function getAccessForSubject(data,s){
+  const collections=[data?.computerAccess?.courses,data?.mahapackAccess?.courses];
+  for(const collection of collections){
+    if(!collection)continue;
+    for(const key of [s.course,...(s.accessAliases||[])]){
+      if(active(collection[key]))return true;
     }
   }
-
-  if (subject.pack && (
-    active(data?.computerAccess?.packs?.[subject.pack]) ||
-    active(data?.mahapackAccess?.packs?.[subject.pack])
-  )) return true;
-
-  return active(data?.computerAccess?.packs?.["computer-master"]) ||
-         active(data?.mahapackAccess?.packs?.["computer-master"]) ||
+  if(s.pack&&(active(data?.computerAccess?.packs?.[s.pack])||active(data?.mahapackAccess?.packs?.[s.pack])))return true;
+  return active(data?.computerAccess?.packs?.["computer-master"])||
+         active(data?.mahapackAccess?.packs?.["computer-master"])||
          active(data?.mahapackAccess);
 }
 
-async function loadSubjectProgress(user, subject) {
-  const [attemptSnap, sessionSnap] = await Promise.all([
-    getDoc(doc(db,"users",user.uid,"mahapackAttempts",subject.id)),
-    getDoc(doc(db,"users",user.uid,"mahapackSessions",subject.id))
-  ]);
-
-  const attempt = attemptSnap.exists() ? attemptSnap.data() : null;
-  const session = sessionSnap.exists() ? sessionSnap.data() : null;
-  const source = attempt || session || {};
-  const answers = source.answers && typeof source.answers === "object" ? source.answers : {};
-  const values = Array.isArray(answers) ? answers : Object.values(answers);
-
-  let attempted = values.filter(v => v !== null && v !== undefined && v !== "").length;
-  let correct = 0;
-  let wrong = 0;
-
-  if (Array.isArray(source.results)) {
-    attempted = source.results.length;
-    correct = source.results.filter(r => r?.isCorrect === true || r?.correct === true).length;
-    wrong = source.results.filter(r => r?.isCorrect === false || r?.correct === false).length;
-  } else if (Array.isArray(source.answers)) {
-    attempted = source.answers.length;
-    correct = source.answers.filter(a => a?.isCorrect === true || a?.correct === true).length;
-    wrong = source.answers.filter(a => a?.isCorrect === false || a?.correct === false).length;
-  } else if (source.correctAnswers != null || source.wrongAnswers != null) {
-    correct = Number(source.correctAnswers || 0);
-    wrong = Number(source.wrongAnswers || 0);
-    attempted = Math.max(attempted, correct + wrong);
-  } else {
-    correct = values.filter(v => v === true || v?.isCorrect === true || v?.correct === true).length;
-    wrong = values.filter(v => v === false || v?.isCorrect === false || v?.correct === false).length;
+function pickNumber(obj,keys){
+  for(const key of keys){
+    const n=Number(obj?.[key]);
+    if(obj?.[key]!==undefined&&obj?.[key]!==null&&obj?.[key]!==""&&Number.isFinite(n))return n;
   }
+  return null;
+}
 
-  attempted = Math.max(0, Number(attempted) || 0);
-  correct = Math.min(attempted, Math.max(0, Number(correct) || 0));
-
-  if (source.wrongAnswers == null && !Array.isArray(source.results) && !Array.isArray(source.answers)) {
-    wrong = Math.max(0, attempted - correct);
-  } else if (source.wrongAnswers == null && (Array.isArray(source.results) || Array.isArray(source.answers))) {
-    const graded = Array.isArray(source.results) ? source.results : source.answers;
-    if (!graded.some(a => a?.isCorrect === false || a?.correct === false)) {
-      wrong = Math.max(0, attempted - correct);
-    }
+function isAnswered(value){
+  if(value===null||value===undefined||value==="")return false;
+  if(typeof value==="object"){
+    if("selectedAnswer" in value)return value.selectedAnswer!==null&&value.selectedAnswer!=="";
+    if("userAnswer" in value)return value.userAnswer!==null&&value.userAnswer!=="";
+    if("answer" in value)return value.answer!==null&&value.answer!=="";
+    if("selectedOption" in value)return value.selectedOption!==null&&value.selectedOption!=="";
+    return "isCorrect" in value||"correct" in value;
   }
+  return true;
+}
 
-  wrong = Math.min(Math.max(0, attempted - correct), Math.max(0, Number(wrong) || 0));
+function isCorrectAnswer(value){
+  if(value===true)return true;
+  if(!value||typeof value!=="object")return false;
+  return value.isCorrect===true||value.correct===true;
+}
 
-  const totalRaw = Number(source.totalQuestions || source.questionCount || source.total || 400);
-  const total = Math.max(attempted, Number.isFinite(totalRaw) && totalRaw > 0 ? totalRaw : 400);
-  const unattempted = Math.max(0, total - attempted);
+function isWrongAnswer(value){
+  if(value===false)return true;
+  if(!value||typeof value!=="object")return false;
+  return value.isCorrect===false||value.correct===false;
+}
 
-  return {
+function progressFrom(source,subject){
+  source=source||{};
+  const rawAnswers=source.answers??source.userAnswers??source.responses??source.results??{};
+  const values=Array.isArray(rawAnswers)?rawAnswers:Object.values(rawAnswers||{});
+  const answered=values.filter(isAnswered);
+
+  let attempted=pickNumber(source,["attemptedQuestions","questionsAttempted","attemptedCount","attempted"]);
+  if(attempted===null)attempted=answered.length;
+
+  let correct=pickNumber(source,["correctAnswers","correctCount","correct"]);
+  let wrong=pickNumber(source,["wrongAnswers","wrongCount","incorrectAnswers","incorrect"]);
+
+  const graded=values.filter(v=>isCorrectAnswer(v)||isWrongAnswer(v));
+  if(correct===null)correct=graded.filter(isCorrectAnswer).length;
+  if(wrong===null)wrong=graded.filter(isWrongAnswer).length;
+
+  // Do not assume unanswered answers are wrong when the saved record is ungraded.
+  if(wrong===null)wrong=Math.max(0,attempted-correct);
+  attempted=Math.max(0,attempted||0);
+  correct=Math.max(0,Math.min(attempted,correct||0));
+  wrong=Math.max(0,Math.min(attempted-correct,wrong||0));
+
+  const totalRaw=pickNumber(source,["totalQuestions","questionCount","total","questionsTotal"]);
+  const total=Math.max(attempted,totalRaw&&totalRaw>0?totalRaw:400);
+  const unattempted=Math.max(0,total-attempted);
+  const statusText=String(source.status||source.state||source.testStatus||"").toLowerCase();
+  const completedFlag=source.completed===true||source.isCompleted===true||source.submitted===true||
+    ["completed","complete","submitted","finished"].includes(statusText);
+  const inProgress=source.inProgress===true||source.isInProgress===true||
+    ["in-progress","in_progress","started","ongoing","inprogress"].includes(statusText)||
+    (attempted>0&&!completedFlag);
+
+  return{
     subject,total,attempted,unattempted,correct,wrong,
-    percent: attempted ? Math.round(correct / attempted * 100) : 0,
-    completion: total ? Math.min(100,Math.round(attempted / total * 100)) : 0
+    percent:attempted?Math.round(correct/attempted*100):0,
+    completion:total?Math.min(100,Math.round(attempted/total*100)):0,
+    inProgress,completed:completedFlag,
+    updatedAt:source.updatedAt||source.lastUpdated||source.startedAt||null
   };
 }
 
-function renderStats(rows) {
-  const total = rows.reduce((n,r) => n + r.total,0);
-  const attempted = rows.reduce((n,r) => n + r.attempted,0);
-  const correct = rows.reduce((n,r) => n + r.correct,0);
-  const wrong = rows.reduce((n,r) => n + r.wrong,0);
-  const unattempted = Math.max(0,total - attempted);
+async function loadSubjectProgress(user,subject){
+  // These are the current dashboard paths. If your test pages save to other
+  // collection/document paths, those paths must be aligned with the test code.
+  const [attemptSnap,sessionSnap]=await Promise.all([
+    getDoc(doc(db,"users",user.uid,"mahapackAttempts",subject.id)),
+    getDoc(doc(db,"users",user.uid,"mahapackSessions",subject.id))
+  ]);
+  const attempt=attemptSnap.exists()?attemptSnap.data():null;
+  const session=sessionSnap.exists()?sessionSnap.data():null;
 
-  $("attemptedCount").textContent = attempted.toLocaleString("en-IN");
-  $("unattemptedCount").textContent = unattempted.toLocaleString("en-IN");
-  $("totalQuestionsLabel").textContent = `Out of ${total.toLocaleString("en-IN")} available questions`;
-  $("correctCount").textContent = correct.toLocaleString("en-IN");
-  $("wrongCount").textContent = wrong.toLocaleString("en-IN");
-  $("accuracyCount").textContent = attempted ? Math.round(correct / attempted * 100) + "%" : "—";
-  $("overallProgress").textContent = total ? Math.min(100,Math.round(attempted / total * 100)) + "%" : "0%";
+  // Prefer a live session while a test is in progress; otherwise use the
+  // latest available saved attempt/session record.
+  const candidates=[session,attempt].filter(Boolean);
+  let source=candidates[0]||{};
+  if(session&&attempt){
+    const sessionStatus=String(session.status||session.state||"").toLowerCase();
+    const sessionLive=session.inProgress===true||session.isInProgress===true||
+      ["in-progress","in_progress","started","ongoing","inprogress"].includes(sessionStatus);
+    source=sessionLive?session:attempt;
+  }
+  return progressFrom(source,subject);
+}
+
+function renderStats(rows){
+  const total=rows.reduce((n,r)=>n+r.total,0);
+  const attempted=rows.reduce((n,r)=>n+r.attempted,0);
+  const correct=rows.reduce((n,r)=>n+r.correct,0);
+  const wrong=rows.reduce((n,r)=>n+r.wrong,0);
+  const unattempted=Math.max(0,total-attempted);
+  const accuracy=attempted?Math.round(correct/attempted*100):0;
+  const completion=total?Math.min(100,Math.round(attempted/total*100)):0;
+
+  $("attemptedCount").textContent=attempted.toLocaleString("en-IN");
+  $("unattemptedCount").textContent=unattempted.toLocaleString("en-IN");
+  $("totalQuestionsLabel").textContent=`Out of ${total.toLocaleString("en-IN")} available questions`;
+  $("correctCount").textContent=correct.toLocaleString("en-IN");
+  $("wrongCount").textContent=wrong.toLocaleString("en-IN");
+  $("accuracyCount").textContent=attempted?accuracy+"%":"—";
+  $("overallProgress").textContent=completion+"%";
+  $("completionLabel").textContent=completion+"%";
+  $("accuracyLabel").textContent=attempted?accuracy+"%":"No graded attempts";
+  $("completionBar").style.width=completion+"%";
+  $("accuracyBar").style.width=accuracy+"%";
   $("statsSection").classList.remove("hidden");
 }
 
-function renderMilestones(total) {
-  const milestones = [100,2500,3500,5000,6000];
-  $("milestones").innerHTML = milestones.map(n => `
-    <article class="subject-card">
-      <h3>${total >= n ? "🏆" : "🔒"} ${n.toLocaleString("en-IN")} Questions</h3>
-      <p>${total >= n ? "Achieved" : `${Math.max(0,n-total).toLocaleString("en-IN")} more to go`}</p>
-    </article>`).join("");
-  $("milestonesSection").classList.remove("hidden");
+function renderChart(rows){
+  const chartRows=[...rows].sort((a,b)=>{
+    if(!a.attempted&&!b.attempted)return a.subject.name.localeCompare(b.subject.name);
+    if(!a.attempted)return 1;
+    if(!b.attempted)return -1;
+    return b.percent-a.percent;
+  });
+  $("subjectChart").innerHTML=chartRows.map(r=>`
+    <div class="chart-row">
+      <div class="chart-name">${r.subject.name}</div>
+      <div class="chart-track" title="${r.attempted?r.percent+'% accuracy':'No attempts yet'}">
+        <div class="chart-bar" style="width:${r.attempted?r.percent:0}%"></div>
+      </div>
+      <div class="chart-percent">${r.attempted?r.percent+"%":"—"}</div>
+    </div>`).join("");
 }
 
-onAuthStateChanged(auth, async user => {
+function renderProgressCards(rows){
+  if(!rows.length){
+    $("subjectGrid").innerHTML='<div class="empty-state">No subject access was found for this account. Please check My Purchases.</div>';
+    return;
+  }
+
+  // Active/in-progress tests first, then other subjects by accuracy.
+  rows.sort((a,b)=>{
+    if(a.inProgress!==b.inProgress)return a.inProgress?-1:1;
+    if(a.attempted===0&&b.attempted>0)return 1;
+    if(b.attempted===0&&a.attempted>0)return -1;
+    return b.percent-a.percent;
+  });
+
+  $("subjectGrid").innerHTML=rows.map(r=>{
+    let badge;
+    if(r.inProgress)badge='<span class="badge live">In progress</span>';
+    else if(r.completed)badge='<span class="badge good">Completed</span>';
+    else if(r.attempted<10)badge='<span class="badge neutral">Build more data</span>';
+    else if(r.percent>=75)badge='<span class="badge good">Strong subject</span>';
+    else if(r.percent<50)badge='<span class="badge low">Needs improvement</span>';
+    else badge='<span class="badge neutral">Keep practising</span>';
+
+    const actionLabel=r.inProgress?"Continue Test":r.completed?"Review Subject":"Open Subject";
+    return `<article class="subject-card ${r.inProgress?"in-progress":""}">
+      <div class="subject-top">
+        <h3>${r.subject.icon} ${r.subject.name}</h3>${badge}
+      </div>
+      <div class="metrics">
+        <div class="metric"><span>Total questions</span><strong>${r.total.toLocaleString("en-IN")}</strong></div>
+        <div class="metric"><span>Attempted</span><strong>${r.attempted.toLocaleString("en-IN")}</strong></div>
+        <div class="metric unattempted"><span>Unattempted</span><strong>${r.unattempted.toLocaleString("en-IN")}</strong></div>
+        <div class="metric correct"><span>Correct</span><strong>${r.correct.toLocaleString("en-IN")}</strong></div>
+        <div class="metric wrong"><span>Wrong</span><strong>${r.wrong.toLocaleString("en-IN")}</strong></div>
+        <div class="metric"><span>Accuracy</span><strong>${r.attempted?r.percent+"%":"—"}</strong></div>
+      </div>
+      <div class="card-bars">
+        <div>
+          <div class="card-bar-head"><span>Completion</span><span>${r.completion}%</span></div>
+          <div class="bar"><span style="width:${r.completion}%"></span></div>
+        </div>
+        <div>
+          <div class="card-bar-head"><span>Accuracy</span><span>${r.attempted?r.percent+"%":"No data yet"}</span></div>
+          <div class="bar accuracy"><span style="width:${r.attempted?r.percent:0}%"></span></div>
+        </div>
+      </div>
+      <p>${r.inProgress?"You have an in-progress test. Continue where you left off.":r.attempted<10?"Attempt more questions for a more reliable performance comparison.":r.percent>=75?"Good work! Keep this subject strong.":r.percent<50?"Focus on revision and practice in this subject.":"Keep practising to improve your accuracy."}</p>
+      <div class="review-row">
+        <a class="review-btn" href="${r.subject.file}">${actionLabel} →</a>
+        <a class="review-btn secondary-btn" href="${r.subject.file}">Review →</a>
+      </div>
+    </article>`;
+  }).join("");
+}
+
+onAuthStateChanged(auth,async user=>{
   $("loadingBox").classList.remove("hidden");
   $("loginBox").classList.add("hidden");
   $("purchaseBox").classList.add("hidden");
   $("statusBox").classList.add("hidden");
   $("statsSection").classList.add("hidden");
-  $("milestonesSection").classList.add("hidden");
 
-  if (!user) {
+  if(!user){
     showLogin();
     return;
   }
 
-  $("userArea").textContent = user.displayName || user.email || "Signed in";
+  $("userBox").classList.remove("hidden");
+  const name=user.displayName||user.email?.split("@")[0]||"User";
+  $("userName").textContent=name;
+  $("avatar").textContent=name.trim().charAt(0).toUpperCase()||"U";
 
-  try {
-    const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
-    const data = accessSnap.exists() ? accessSnap.data() : {};
-
-    const masterAccess =
-      active(data?.computerAccess?.packs?.["computer-master"]) ||
-      active(data?.mahapackAccess?.packs?.["computer-master"]) ||
+  try{
+    const accessSnap=await getDoc(doc(db,"testAccess",user.uid));
+    const data=accessSnap.exists()?accessSnap.data():{};
+    const masterAccess=
+      active(data?.computerAccess?.packs?.["computer-master"])||
+      active(data?.mahapackAccess?.packs?.["computer-master"])||
       active(data?.mahapackAccess);
 
     $("loadingBox").classList.add("hidden");
 
-    if (!masterAccess) {
+    if(!masterAccess){
       showNoAccess();
       return;
     }
 
     $("loginBox").classList.add("hidden");
     $("purchaseBox").classList.add("hidden");
-    $("subjectIntro").textContent = "Your progress is loaded from your signed-in account. Only accessible computer subjects are included.";
+    $("subjectIntro").textContent="Your progress is loaded from your signed-in account. In-progress tests are shown first.";
+    const allowed=SUBJECTS.filter(s=>getAccessForSubject(data,s));
 
-    const allowed = SUBJECTS.filter(s => getAccessForSubject(data,s));
-
-    const results = await Promise.all(allowed.map(async subject => {
-      try {
+    const results=await Promise.all(allowed.map(async subject=>{
+      try{
         return await loadSubjectProgress(user,subject);
-      } catch (e) {
-        console.warn("Progress could not be loaded for",subject.id,e);
-        return {
+      }catch(error){
+        console.warn("Progress could not be loaded for",subject.id,error);
+        return{
           subject,total:400,attempted:0,unattempted:400,
-          correct:0,wrong:0,percent:0,completion:0
+          correct:0,wrong:0,percent:0,completion:0,
+          inProgress:false,completed:false
         };
       }
     }));
 
-    if (!results.length) {
+    if(!results.length){
       showNoAccess();
-      setStatus("Master Pack access could not be matched to any of the 15 computer subjects. Please verify the access keys in testAccess.");
+      setStatus("Master Pack access was found, but it could not be matched to any of the 15 Computer Subjects. Please verify the access keys in testAccess.");
       return;
     }
 
     renderStats(results);
+    renderChart(results);
     renderProgressCards(results);
-    renderMilestones(results.reduce((n,r) => n + r.attempted,0));
 
-    if (!results.some(r => r.attempted)) {
-      setStatus("Master Pack access is confirmed, but no readable attempt data was found for these subjects yet. The saved field names and collection paths may need to be matched to your test pages.");
+    if(!results.some(r=>r.attempted)){
+      setStatus("Access is confirmed, but no readable question attempts were found. Check whether the test pages save progress to users/{uid}/mahapackAttempts/{subjectId} or users/{uid}/mahapackSessions/{subjectId}.");
     }
-  } catch (error) {
+  }catch(error){
     console.error("Master Progress loading error:",error);
     $("loadingBox").classList.add("hidden");
-    setStatus("We could not verify your access or load progress. Please refresh the page or open My Purchases. Check the browser console if this continues.");
     showNoAccess();
+    setStatus("We could not verify your access or load progress. Please refresh the page and check My Purchases.");
   }
 });
 </script>
