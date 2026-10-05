@@ -883,6 +883,101 @@ img{display:block;max-width:100%}
   .hero-content{padding-top:32px;}
 }
 
+
+/* Desktop-mode phone and tablet hero visibility fix */
+@media (max-width:1100px){
+  .hero{
+    min-height:900px;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero-bg-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+  }
+  .hero-inner{
+    position:relative;
+    inset:auto;
+    width:calc(100% - 36px);
+    max-width:var(--content);
+    padding:118px 0 42px;
+    margin:0 auto;
+  }
+  .hero-content{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:24px;
+    padding:22px 0 0;
+    align-items:start;
+  }
+  .hero-content > div:first-child{
+    width:100%;
+    min-width:0;
+  }
+  .hero h1{
+    max-width:100%;
+    font-size:clamp(32px,5vw,48px);
+    line-height:1.08;
+    letter-spacing:-.8px;
+    overflow-wrap:break-word;
+  }
+  .hero-copy{
+    display:block;
+    max-width:100%;
+    font-size:15px;
+    line-height:1.55;
+    overflow-wrap:anywhere;
+  }
+  .hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+  }
+  .primary-btn,.secondary-btn{
+    min-height:44px;
+    white-space:normal;
+    text-align:center;
+  }
+  .hero-glass{
+    display:block;
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    padding:22px;
+    margin:0;
+  }
+  .hero-glass h2{
+    font-size:clamp(20px,3vw,25px);
+    line-height:1.25;
+  }
+  .hero-glass ul{
+    display:grid;
+    gap:10px;
+    font-size:14px;
+    line-height:1.45;
+  }
+}
+@media (max-width:620px){
+  .hero{min-height:0;padding-bottom:28px}
+  .hero-inner{
+    width:calc(100% - 28px);
+    padding:88px 0 10px;
+  }
+  .hero-content{padding-top:22px;gap:20px}
+  .eyebrow{font-size:9px;margin-bottom:12px}
+  .hero h1{font-size:clamp(30px,8vw,38px);line-height:1.08}
+  .hero-copy{font-size:14px;line-height:1.5}
+  .hero-buttons{align-items:stretch}
+  .primary-btn,.secondary-btn{flex:1 1 180px;padding:10px 12px}
+  .hero-glass{padding:18px;border-radius:16px}
+  .hero-glass ul{font-size:13px;gap:9px}
+}
+
 </style>
 </head>
 
