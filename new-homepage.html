@@ -735,6 +735,110 @@ img{display:block;max-width:100%}
 .logout-btn{min-height:34px;padding:0 10px;border-radius:8px;color:#fff;background:rgba(255,92,108,.12);border:1px solid rgba(255,130,142,.35);font-size:9px;font-weight:900;cursor:pointer}
 .logout-btn:hover{background:rgba(255,92,108,.22)}
 @media(max-width:620px){.actions{gap:5px}.user-round{width:31px;height:31px;flex-basis:31px}.logout-btn{min-height:31px;padding:0 8px}}
+
+/* HEADER UI aligned with my-progress.html */
+.topbar{
+  position:fixed;
+  top:8px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1000;
+  width:calc(100% - 24px);
+  max-width:1400px;
+  min-height:68px;
+  padding:0;
+  border:1px solid #244a7c;
+  border-radius:16px;
+  background:linear-gradient(110deg,#172b59 0%,#20295f 52%,#38265f 100%);
+  box-shadow:0 8px 24px rgba(23,56,93,.13);
+}
+.topbar .brand{gap:10px}
+.topbar .brand img{width:42px;height:42px;border-radius:10px}
+.topbar .brand-name{font-size:19px}
+.nav-links-home{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  margin-left:auto;
+}
+.nav-link-home{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:9px 12px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:9px;
+  color:#fff;
+  background:rgba(255,255,255,.05);
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+  transition:background .18s ease,color .18s ease,transform .18s ease;
+}
+.nav-link-home:hover{
+  color:#15365f;
+  background:#fff;
+  transform:translateY(-1px);
+}
+.topbar .actions{gap:8px}
+.topbar .user-area{display:flex;align-items:center;gap:8px}
+.topbar .user-round{
+  width:32px;height:32px;flex:0 0 32px;
+  border-radius:50%;display:grid;place-items:center;
+  background:#d9eaff;color:#15365f;font-size:12px;
+}
+.topbar .user-name{font-size:11px;max-width:120px}
+.topbar .logout-btn{
+  min-height:34px;padding:0 12px;border-radius:9px;
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;background:rgba(255,255,255,.08);
+  font-size:10px;font-weight:900;
+}
+.topbar .logout-btn:hover{background:rgba(255,255,255,.18)}
+@media(max-width:1000px){
+  .nav-links-home{gap:5px}
+  .nav-link-home{padding:8px 9px;font-size:10px}
+  .topbar .brand img{width:38px;height:38px}
+  .topbar .brand-name{font-size:17px}
+}
+@media(max-width:800px){
+  .topbar{
+    top:8px;width:calc(100% - 20px);min-height:64px;
+    padding:6px 10px;
+  }
+  .nav-links-home{display:none}
+  .topbar .actions{margin-left:auto;padding-right:48px}
+  .topbar .actions .maha-btn,
+  .topbar .actions .login-btn,
+  .topbar .actions .join-btn,
+  .topbar .actions .user-area{display:none!important}
+  .hamburger-btn{top:11px;right:12px}
+  .mobile-menu{
+    top:calc(100% + 8px);left:0;right:0;
+    padding:8px;border:1px solid rgba(180,140,255,.38);
+    border-radius:14px;
+    background:linear-gradient(135deg,rgba(11,27,58,.98),rgba(47,27,82,.98));
+    box-shadow:0 18px 45px rgba(0,0,0,.6);z-index:10000;
+  }
+  .mobile-menu.open{display:grid;gap:6px}
+  .mobile-menu>a{
+    display:flex;align-items:center;min-height:42px;padding:10px 12px;
+    border:1px solid rgba(126,176,255,.22);border-radius:10px;
+    background:rgba(255,255,255,.06);color:#e8efff;
+    font-size:11px;font-weight:800;
+  }
+  .mobile-menu>a:hover{
+    background:linear-gradient(135deg,rgba(34,150,255,.30),rgba(155,108,255,.28));
+    border-color:rgba(105,190,255,.60);color:#fff;
+  }
+}
+@media(min-width:801px){
+  .hamburger-btn{display:none}
+  .mobile-menu{display:none!important}
+}
+
 </style>
 </head>
 
@@ -756,11 +860,10 @@ img{display:block;max-width:100%}
         </div>
       </a>
 
-      <nav class="nav">
-        <a href="#mock-tests">Mock Tests</a>
-        <a href="#free-tests">Free Tests</a>
-        <a href="#resources">Resources</a>
-        <a href="about.html">About</a>
+      <nav class="nav nav-links-home" aria-label="Main navigation">
+        <a class="nav-link-home" href="joa/new-joa-series.html">JOA (IT)</a>
+        <a class="nav-link-home" href="patwari/patwari-series.html">Patwari</a>
+        <a class="nav-link-home" href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
       </nav>
 
       <div class="actions">
@@ -780,11 +883,9 @@ img{display:block;max-width:100%}
     </button>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#mock-tests">Mock Tests</a>
-      <a href="#free-tests">Free Tests</a>
-      <a href="#resources">Resources</a>
-      <a href="about.html">About</a>
-      <a href="mahapack/joa-mahapack.html">JOA IT Maha Pack</a>
+      <a href="joa/new-joa-series.html">JOA (IT)</a>
+      <a href="patwari/patwari-series.html">Patwari</a>
+      <a href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
       <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
       <a href="firebase-signup.html" id="mobileJoinBtn">Join Free</a>
       <div class="mobile-user-area" id="mobileUserArea" style="display:none">
