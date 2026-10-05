@@ -2683,18 +2683,18 @@ if(office.includes(key)&&active(officePack)) return officePack;
 const masterPack=data?.mahapackAccess?.packs?.['computer-master'];
 if(active(masterPack)) return masterPack;
 
-// Backward compatibility: purchases saved under computerAccess
-const legacyCourse=data?.computerAccess?.courses?.[key];
+// Backward compatibility: purchases saved under mahapackAccess
+const legacyCourse=data?.mahapackAccess?.courses?.[key];
 if(active(legacyCourse)) return legacyCourse;
 
-const legacyOffice=data?.computerAccess?.packs?.['ms-office'];
+const legacyOffice=data?.mahapackAccess?.packs?.['ms-office'];
 if(office.includes(key)&&active(legacyOffice)) return legacyOffice;
 
-const legacyMaster=data?.computerAccess?.packs?.['computer-master'];
+const legacyMaster=data?.mahapackAccess?.packs?.['computer-master'];
 if(active(legacyMaster)) return legacyMaster;
 
 // Some older records store course access directly by course key.
-const direct=data?.computerAccess?.[key]||data?.mahapackAccess?.[key];
+const direct=data?.mahapackAccess?.[key]||data?.mahapackAccess?.[key];
 if(active(direct)) return direct;
 
 return null;
@@ -2837,7 +2837,7 @@ await Promise.all(pending);
 /* Kept for compatibility with existing purchase data */
 
 const officePack=
-data?.mahapackAccess?.packs?.['ms-office']||data?.computerAccess?.packs?.['ms-office'];
+data?.mahapackAccess?.packs?.['ms-office']||data?.mahapackAccess?.packs?.['ms-office'];
 
 document
 .querySelectorAll(
@@ -2864,7 +2864,7 @@ b.replaceWith(x);
 
 
 const master=
-data?.mahapackAccess?.packs?.['computer-master']||data?.computerAccess?.packs?.['computer-master'];
+data?.mahapackAccess?.packs?.['computer-master']||data?.mahapackAccess?.packs?.['computer-master'];
 
 document
 .querySelectorAll(
