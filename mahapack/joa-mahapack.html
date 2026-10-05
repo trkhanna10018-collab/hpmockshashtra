@@ -2742,27 +2742,38 @@ async function subjectHasAttempts(uid,key,accessRecord){
   const testId=subjectTestIds[key];
   if(!testId) return false;
 
-  // A subject-level access record may itself contain saved progress in some older records.
-  if(hasSavedAttempt(accessRecord)) return true;
+  // Check both current user-centric MahaPack records and legacy top-level records.
+  const checks=[
+    getDoc(doc(db,'users',uid,'mahapack','sessions',testId)).then(snap=>snap.exists()).catch(error=>{
+      console.warn('Could not read MahaPack session for',key,error?.code||error);
+      return false;
+    }),
+    getDoc(doc(db,'users',uid,'mahapack','attempts',testId)).then(snap=>snap.exists()).catch(error=>{
+      console.warn('Could not read MahaPack attempt for',key,error?.code||error);
+      return false;
+    }),
+    getDoc(doc(db,'testSessions',`${uid}_${testId}`)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(error=>{
+      console.warn('Could not read legacy session for',key,error?.code||error);
+      return false;
+    }),
+    getDoc(doc(db,'testAttempts',`${uid}_${testId}`)).then(snap=>snap.exists()).catch(error=>{
+      console.warn('Could not read legacy result for',key,error?.code||error);
+      return false;
+    })
+  ];
 
-  const ids=[...new Set([testId,key,key.replace(/-/g,'_'),key.replace(/_/g,'-')].filter(Boolean))];
-  const checks=[];
-
-  for(const id of ids){
+  // Older versions may have used the course slug as the test document suffix.
+  const legacyIds=[key,key.replace(/-/g,'_'),key.replace(/_/g,'-')];
+  for(const id of [...new Set(legacyIds)]){
+    if(id===testId) continue;
     checks.push(
-      getDoc(doc(db,'testSessions',`${uid}_${id}`)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(error=>{
-        console.warn('Could not read saved session for',key,id,error?.code||error);
-        return false;
-      }),
-      getDoc(doc(db,'testAttempts',`${uid}_${id}`)).then(snap=>snap.exists()).catch(error=>{
-        console.warn('Could not read saved result for',key,id,error?.code||error);
-        return false;
-      })
+      getDoc(doc(db,'testSessions',`${uid}_${id}`)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(()=>false),
+      getDoc(doc(db,'testAttempts',`${uid}_${id}`)).then(snap=>snap.exists()).catch(()=>false)
     );
   }
 
   const found=await Promise.all(checks);
-  return found.some(Boolean);
+  return found.some(Boolean)||hasSavedAttempt(accessRecord);
 }
 
 async function markSubject(card,a,user){
