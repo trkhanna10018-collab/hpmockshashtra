@@ -3,1863 +3,1487 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HPMockShashtra – HP Mock Tests, JOA IT & Patwari Exam Preparation</title>
-<meta name="description" content="HPMockShashtra (HP Mock Shashtra) offers Himachal Pradesh HP mock tests, JOA IT mock test series, HP Patwari practice tests, bilingual questions and progress tracking. Prepare smarter for HP competitive exams.">
-<meta name="keywords" content="HPMockShashtra, HP Mock Shashtra, HP Mock Test, Himachal Pradesh Mock Test, JOA IT Mock Test, HP Patwari Mock Test, Himachal Pradesh Competitive Exams">
-<meta property="og:title" content="HPMockShashtra | HP Mock Tests for Himachal Pradesh Exams">
-<meta property="og:description" content="Practice JOA (IT), HP Patwari and computer subjects with mock tests, bilingual questions and progress tracking.">
+<meta name="theme-color" content="#173b7a">
+<meta name="description" content="HPMockShashtra - Smart online mock tests and practice platform for Himachal Pradesh competitive exams.">
+<title>HPMockShashtra | Smart Practice. Better Preparation.</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:"Segoe UI",Arial,sans-serif;
-  color:#12234f;
-  background:#eef4fb;
-  line-height:1.5;
-}
-a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-
 :root{
-  --content:1000px;
-  --blue:#2563eb;
-  --deep:#102c63;
-  --purple:#5546e8;
-  --border:rgba(255,255,255,.55);
+  --primary:#173b7a;
+  --primary2:#2456a6;
+  --accent:#f5a623;
+  --text:#172033;
+  --muted:#64748b;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --border:#e6eaf0;
+  --success:#15803d;
+  --shadow:0 12px 35px rgba(19,43,82,.08);
+  --radius:18px;
 }
 
-/* =========================
-   HERO / FIRST BACKGROUND
-========================= */
-.hero{
-  position:relative;
-  overflow:visible;
-  background:#f7f9fc;
-}
-.hero-bg-img{
-  display:block;
-  width:100%;
-  height:auto;
-  position:relative;
-  z-index:1;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:2;
-  background:linear-gradient(
-    90deg,
-    rgba(255,255,255,.10) 0%,
-    rgba(255,255,255,.03) 48%,
-    rgba(0,20,50,.08) 100%
-  );
-  pointer-events:none;
-}
-.hero-inner{
-  position:relative;
-  inset:auto;
-  z-index:3;
-  width:min(1180px,calc(100% - 40px));
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 0 34px;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-/* transparent / translucent top navigation — fixed while scrolling */
-.topbar{
-  position:fixed;
-  top:18px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:30;
-  width:min(var(--content),calc(100% - 28px));
-  width:100%;
-  min-height:76px;
-  padding:9px 12px 9px 14px;
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.site-header{
+  position:sticky;
+  top:14px;
+  z-index:1000;
+  width:min(1180px,92%);
+  margin:14px auto 0;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(225,230,238,.95);
+  border-radius:18px;
+  box-shadow:0 8px 28px rgba(17,38,72,.08);
+}
+
+.navbar{
+  min-height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:18px;
-  background:linear-gradient(135deg,rgba(24,48,86,.70),rgba(54,44,91,.70));
-  backdrop-filter:blur(9px);
-  -webkit-backdrop-filter:blur(9px);
-  box-shadow:0 12px 30px rgba(0,0,0,.24);
+  gap:20px;
+  padding:0 22px;
 }
+
 .brand{
   display:flex;
   align-items:center;
   gap:11px;
-  min-width:0;
-}
-.brand img{
-  width:62px;
-  height:62px;
-  object-fit:contain;
-  border-radius:12px;
-}
-.brand-name{
-  font-size:21px;
-  font-weight:900;
-  line-height:1.05;
-  color:#fff;
-}
-.brand-name span{color:#2563eb}
-.brand-tagline{
-  display:block;
-  margin-top:3px;
-  font-size:10px;
-  color:#a9bfdf;
-  font-weight:600;
-}
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  margin-left:auto;
-}
-.nav a{
-  font-size:11px;
-  font-weight:800;
-  color:#d7e6ff;
-}
-.nav a:hover{color:#58b6ff}
-.actions{
-  display:flex;
-  gap:8px;
-  align-items:center;
-}
-.login-btn,.join-btn{
-  min-height:38px;
-  padding:0 15px;
-  border-radius:9px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  font-size:11px;
-  font-weight:900;
-}
-.login-btn{
-  color:#1d4ed8;
-  border:1px solid #9ebcf2;
-  background:rgba(255,255,255,.55);
-}
-.join-btn{
-  color:#fff;
-  background:linear-gradient(135deg,#2563eb,#5546e8);
-  box-shadow:0 6px 14px rgba(37,99,235,.2);
+  min-width:max-content;
 }
 
-.hero-content{
-  padding:78px 0 0;
-  display:grid;
-  grid-template-columns:minmax(0,1.15fr) minmax(290px,.72fr);
-  gap:42px;
-  align-items:center;
-}
-.eyebrow{
-  display:inline-flex;
-  padding:7px 12px;
-  border-radius:999px;
-  background:rgba(219,234,254,.84);
-  color:#174ea6;
-  font-size:10px;
-  font-weight:900;
-  margin-bottom:15px;
-}
-.hero h1{
-  max-width:700px;
-  font-size:51px;
-  line-height:1.05;
-  letter-spacing:-1.7px;
-  color:#10265b;
-  text-shadow:0 2px 12px rgba(255,255,255,.45);
-}
-.hero h1 span{color:#2563eb}
-.hero-copy{
-  max-width:660px;
-  margin-top:16px;
-  color:#102b58;
-  font-size:16px;
-  font-weight:700;
-  text-shadow:0 1px 6px rgba(255,255,255,.72);
-}
-.hero-buttons{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:24px;
-}
-.primary-btn,.secondary-btn{
-  min-height:43px;
-  padding:0 19px;
-  border-radius:10px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-  font-weight:900;
-}
-.primary-btn{
-  color:#fff;
-  background:linear-gradient(135deg,#2563eb,#5546e8);
-  box-shadow:0 8px 18px rgba(37,99,235,.24);
-}
-.secondary-btn{
-  color:#16449a;
-  background:rgba(255,255,255,.78);
-  border:1px solid rgba(255,255,255,.9);
-  backdrop-filter:blur(7px);
-}
-.primary-btn:hover,.secondary-btn:hover,.login-btn:hover,.join-btn:hover{transform:translateY(-1px)}
-
-.hero-glass{
-  padding:24px 25px;
-  border-radius:20px;
-  background:rgba(20,48,91,.55);
-  border:1px solid rgba(255,255,255,.42);
-  backdrop-filter:blur(7px);
-  -webkit-backdrop-filter:blur(7px);
-  box-shadow:0 15px 34px rgba(15,35,70,.16);
-  color:#fff;
-}
-.hero-glass h2{
-  font-size:22px;
-  margin-bottom:11px;
-}
-.hero-glass ul{
-  list-style:none;
-  display:grid;
-  gap:10px;
-  font-size:13px;
-  font-weight:600;
-}
-.hero-glass li::before{
-  content:"✓";
-  color:#4ade80;
-  font-weight:900;
-  margin-right:9px;
-}
-
-/* =========================
-   FEATURES
-========================= */
-.features{
-  padding:20px 0 24px;
-  background:linear-gradient(100deg,#dceeff,#edf4ff 48%,#eeeaff);
-  border-top:1px solid rgba(255,255,255,.9);
-  border-bottom:1px solid #d8e5f6;
-}
-.content{
-  width:min(var(--content),calc(100% - 28px));
-  margin:auto;
-}
-.feature-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.feature{
-  min-height:102px;
-  padding:15px 10px;
-  border-radius:15px;
-  text-align:center;
-  background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(244,248,255,.48));
-  border:1px solid rgba(255,255,255,.92);
-  box-shadow:0 7px 20px rgba(30,65,120,.07);
-}
-.feature-icon{
-  width:38px;height:38px;
-  margin:0 auto 7px;
-  border-radius:11px;
-  display:grid;place-items:center;
-  background:rgba(255,255,255,.78);
-  color:#2563eb;
-  font-weight:900;
-}
-.feature strong{display:block;font-size:13px}
-.feature small{display:block;color:#64748b;font-size:10px;margin-top:2px}
-
-/* =========================
-   SERIES
-========================= */
-.series-section{
-  padding:52px 0 48px;
-  background:linear-gradient(115deg,#edf6ff,#f7faff 48%,#f1edff);
-}
-.heading{text-align:center;max-width:700px;margin:0 auto 25px}
-.heading .tag{
-  color:#2563eb;
-  font-size:10px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.7px;
-}
-.heading h2{font-size:30px;color:#12275a;margin-top:4px}
-.heading p{font-size:13px;color:#64748b;margin-top:6px}
-.series-grid{
-  width:min(1000px,100%);
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-}
-.series-card{
-  overflow:hidden;
-  background:linear-gradient(145deg,#dfe9f5,#e9eef7);
-  border:1px solid rgba(188,205,227,.98);
-  border-radius:18px;
-  box-shadow:0 12px 28px rgba(20,55,105,.08);
-  backdrop-filter:blur(5px);
-}
-.series-image{
-  width:100%;
-  height:auto;
-  aspect-ratio:auto;
-  object-fit:contain;
-  object-position:center;
-  background:#edf4fb;
-  display:block;
-}
-.series-body{padding:18px}
-.badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
-.badge{
-  padding:4px 8px;
-  border-radius:999px;
-  font-size:9px;
-  font-weight:900;
-}
-.badge-live{background:#dcfce7;color:#15803d}
-.series-title{font-size:20px;margin-bottom:6px}
-.series-description{font-size:12px;color:#64748b;min-height:38px}
-.meta{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  margin:15px 0;
-}
-.meta-box{
-  text-align:center;
-  padding:9px 5px;
-  border-radius:10px;
-  background:rgba(244,248,253,.9);
-  border:1px solid #e2eaf4;
-}
-.meta-box strong{display:block;font-size:13px}
-.meta-box span{font-size:9px;color:#64748b}
-.price-row{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:12px;
-  border-top:1px solid #e5ebf3;
-  padding-top:14px;
-}
-.price small{display:block;font-size:9px;color:#64748b}
-.price strong{font-size:24px}
-.free{display:block;color:#16a34a;font-size:9px;font-weight:900}
-.card-buttons{display:flex;gap:7px;flex-wrap:wrap}
-.card-btn{
-  min-height:36px;
-  padding:0 12px;
-  border-radius:8px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  font-size:10px;
-  font-weight:900;
-}
-.card-outline{border:1px solid #9dbcf0;color:#000;background:rgba(255,255,255,.72)}
-.card-progress{border:1px solid #a8b7d3;color:#334d78;background:rgba(255,255,255,.86)}
-.card-primary{color:#fff;background:linear-gradient(135deg,#2563eb,#5546e8)}
-
-/* =========================
-   SECOND BACKGROUND IMAGE
-========================= */
-.promo{
-  position:relative;
-  overflow:hidden;
-  background:#081426;
-  min-height:420px;
-}
-.promo-bg-img{
-  display:block;
-  width:100%;
-  height:100%;
-  min-height:420px;
-  position:absolute;
-  inset:0;
-  z-index:1;
-  object-fit:cover;
-  object-position:center center;
-}
-.promo::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:2;
-  background:linear-gradient(90deg,rgba(2,15,35,.34),rgba(2,15,35,.10) 55%,rgba(2,15,35,.20));
-  pointer-events:none;
-}
-.promo-inner{
-  position:absolute;
-  inset:0;
-  z-index:3;
-  width:min(var(--content),calc(100% - 28px));
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
-}
-.promo-copy{
-  max-width:590px;
-  color:#fff;
-  text-shadow:0 2px 10px rgba(0,0,0,.32);
-}
-.promo-copy small{
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.8px;
-}
-.promo-copy h2{
-  font-size:36px;
-  line-height:1.1;
-  margin:7px 0 10px;
-}
-.promo-copy p{font-size:14px;font-weight:600;max-width:560px}
-.promo-buttons{display:flex;gap:9px;margin-top:19px;flex-wrap:wrap}
-.promo-buttons a{
-  min-height:40px;
-  padding:0 17px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:9px;
-  font-size:11px;
-  font-weight:900;
-  background:rgba(255,255,255,.92);
-  color:#173c78;
-  border:1px solid rgba(255,255,255,.9);
-}
-.promo-panel{
-  width:205px;
-  padding:17px;
-  border-radius:16px;
-  background:rgba(13,36,66,.48);
-  border:1px solid rgba(255,255,255,.38);
-  backdrop-filter:blur(6px);
-  color:#fff;
-}
-.promo-panel div{
-  padding:8px 0;
-  border-bottom:1px solid rgba(255,255,255,.18);
-  font-size:12px;
-  font-weight:800;
-}
-.promo-panel div:last-child{border-bottom:0}
-
-/* =========================
-   QUICK LINKS
-========================= */
-.quick{
-  padding:48px 0;
-  background:linear-gradient(115deg,#edf6ff,#f9fbff 50%,#f1edff);
-}
-.quick-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:13px;
-}
-.quick-card{
-  min-height:132px;
-  padding:18px;
-  border-radius:15px;
-  background:rgba(255,255,255,.70);
-  border:1px solid #d7e3f4;
-  box-shadow:0 8px 20px rgba(20,55,105,.05);
-}
-.quick-card h3{font-size:15px;margin-bottom:5px}
-.quick-card p{font-size:11px;color:#64748b;min-height:39px}
-.quick-card span{font-size:11px;font-weight:900;color:#2563eb}
-
-/* =========================
-   CTA
-========================= */
-.cta{padding:0 0 52px;background:linear-gradient(115deg,#edf6ff,#f9fbff 50%,#f1edff)}
-.cta-box{
-  width:min(var(--content),calc(100% - 28px));
-  margin:auto;
-  padding:27px 30px;
-  border-radius:19px;
-  background:linear-gradient(135deg,#173d7a,#2d5ed6,#4e50e7);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  box-shadow:0 15px 30px rgba(25,70,150,.18);
-}
-.cta-box h2{font-size:25px}
-.cta-box p{font-size:12px;color:#dbeafe;margin-top:2px}
-.cta-box a{
-  flex-shrink:0;
-  min-height:40px;
-  padding:0 16px;
-  border-radius:9px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff;
-  color:#1d4ed8;
-  font-size:11px;
-  font-weight:900;
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer{
-  background:#020817;
-  color:#cbd5e1;
-}
-.footer-inner{
-  width:min(var(--content),calc(100% - 28px));
-  margin:auto;
-}
-.footer-top{
-  padding:42px 0 30px;
-  display:grid;
-  grid-template-columns:1.35fr 1fr 1fr 1fr;
-  gap:35px;
-}
-.footer h3,.footer h4{color:#fff;margin-bottom:10px}
-.footer h3{font-size:17px}
-.footer h4{font-size:13px}
-.footer p{font-size:11px;color:#94a3b8;max-width:270px}
-.footer-links{display:grid;gap:7px}
-.footer-links a,.footer-links span{font-size:11px;color:#cbd5e1}
-.footer-links a:hover{color:#fff}
-.footer-bottom{
-  min-height:54px;
-  border-top:1px solid #1e293b;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  padding:13px 0;
-  font-size:10px;
-  color:#94a3b8;
-}
-.footer-bottom-links{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:16px;
-}
-.footer-bottom a{color:#cbd5e1}
-
-/* =========================
-   MOBILE MENU
-========================= */
-.hamburger-btn{
-  display:none;
-  position:absolute;
-  top:18px;
-  right:16px;
+.brand-mark{
   width:42px;
   height:42px;
-  padding:9px;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:10px;
-  background:rgba(255,255,255,.10);
-  cursor:pointer;
-  z-index:40;
-}
-.hamburger-btn span{
-  display:block;
-  height:2px;
-  margin:5px 0;
-  border-radius:2px;
-  background:#fff;
-}
-.mobile-menu{
-  display:none;
-}
-.mobile-user-area{
-  padding-top:6px;
-  border-top:1px solid rgba(255,255,255,.14);
-}
-.mobile-user-name{
+  border-radius:12px;
+  display:grid;
+  place-items:center;
   color:#fff;
-  font-size:12px;
-  font-weight:800;
-  padding:9px 0;
-}
-.mobile-user-area button{
-  width:100%;
-  min-height:36px;
-  border:1px solid rgba(255,130,142,.35);
-  border-radius:8px;
-  background:rgba(255,92,108,.12);
-  color:#fff;
-  font-size:11px;
   font-weight:900;
-  cursor:pointer;
+  font-size:19px;
+  background:linear-gradient(135deg,var(--primary),#3977d2);
+  box-shadow:0 7px 18px rgba(23,59,122,.24);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media(max-width:1000px){
-  :root{--content:940px}
-  .nav{gap:12px}
-  .hero-content{grid-template-columns:1fr .7fr;gap:25px}
+.brand-name{
+  font-weight:850;
+  font-size:19px;
+  letter-spacing:-.4px;
 }
-@media(max-width:800px){
-  .hero-inner{padding-top:102px}
-  .topbar{min-height:72px;top:14px}
-  .nav{display:none}
-  .actions{padding-right:50px}
-  .actions .maha-btn,
-  .actions .login-btn,
-  .actions .join-btn,
-  .actions .user-area{display:none !important}
-  .hamburger-btn{display:block}
-  .mobile-menu{
-    position:absolute;
-    top:96px;
-    right:0;
-    left:0;
-    padding:12px;
-    border:1px solid rgba(255,255,255,.18);
-    border-radius:15px;
-    background:linear-gradient(135deg,rgba(24,48,86,.98),rgba(54,44,91,.98));
-    box-shadow:0 16px 35px rgba(0,0,0,.28);
-    z-index:35;
-  }
-  .mobile-menu.open{display:grid;gap:4px}
-  .mobile-menu>a{
-    color:#fff;
-    font-size:12px;
-    font-weight:800;
-    padding:10px 11px;
-    border-radius:8px;
-  }
-  .mobile-menu>a:hover{background:rgba(255,255,255,.10)}
-  .hero-content{grid-template-columns:1fr;padding-top:48px}
-  .hero-glass{max-width:620px}
-  .feature-grid,.quick-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-top{grid-template-columns:repeat(2,1fr)}
-  .promo-inner{align-items:flex-start}
-}
-@media(max-width:620px){
-  /* Keep the full hero content visible on mobile instead of clipping it */
-  .hero{
-    min-height:820px;
-  }
-  .hero-bg-img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center center;
-  }
-  .hero-inner{padding-top:10px}
-  .topbar{
-    min-height:68px;
-    padding:7px 9px;
-    border-radius:14px;
-  }
-  .brand img{width:54px;height:54px}
-  .brand-name{font-size:18px}
-  .brand-tagline{font-size:8px}
-  .login-btn,.join-btn{min-height:34px;padding:0 10px;font-size:9px}
-  .hero-content{padding-top:38px}
-  .hero h1{font-size:36px;letter-spacing:-1px}
-  .hero-copy{font-size:13px}
-  .hero-glass{padding:20px}
-  .feature-grid,.series-grid,.quick-grid,.footer-top{grid-template-columns:1fr}
-  .series-image{
-    width:100%;
-    height:auto;
-    aspect-ratio:auto;
-    object-fit:contain;
-    object-position:center;
-    background:#edf4fb;
-    display:block;
-  }
-  .price-row{align-items:flex-start;flex-direction:column}
-  .card-buttons{width:100%}
-  .card-btn{flex:1;min-width:0;padding-left:8px;padding-right:8px}
-  .promo{
-    min-height:620px;
-  }
-  .promo-bg-img{
-    min-height:620px;
-    height:100%;
-    object-fit:cover;
-    object-position:center center;
-  }
-  .promo-inner{
-    position:relative;
-    inset:auto;
-    min-height:620px;
-    padding:48px 0;
-    flex-direction:column;
-    justify-content:center;
-    align-items:flex-start;
-  }
-  .promo-copy{
-    width:100%;
-    max-width:100%;
-  }
-  .promo-copy h2{font-size:29px}
-  .promo-copy p{font-size:13px;max-width:100%}
-  .promo-panel{
-    width:100%;
-    max-width:360px;
-    margin-top:6px;
-  }
-  .cta-box{flex-direction:column;align-items:flex-start;padding:24px}
-  .cta-box a{width:100%}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
-  .footer-bottom-links{justify-content:flex-start;flex-wrap:wrap}
-}
-/* JOA IT MAHA PACK + LOGIN STATE */
-.maha-btn{min-height:38px;padding:0 15px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;background:transparent;border:0;box-shadow:none;white-space:nowrap}
-.maha-btn:hover{color:#58b6ff;transform:none}
-.user-area{display:flex;align-items:center;gap:7px}
-.user-round{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#fff;font-size:11px;font-weight:900;border:1px solid rgba(255,255,255,.28);flex:0 0 34px}
-.user-name{color:#f2f7ff;font-size:10px;font-weight:800;max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.logout-btn{min-height:34px;padding:0 10px;border-radius:8px;color:#fff;background:rgba(255,92,108,.12);border:1px solid rgba(255,130,142,.35);font-size:9px;font-weight:900;cursor:pointer}
-.logout-btn:hover{background:rgba(255,92,108,.22)}
-@media(max-width:620px){.actions{gap:5px}.user-round{width:31px;height:31px;flex-basis:31px}.logout-btn{min-height:31px;padding:0 8px}}
 
-/* HEADER UI aligned with my-progress.html */
-.topbar{
-  position:fixed;
-  top:8px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:1000;
-  width:calc(100% - 24px);
-  max-width:1400px;
-  min-height:68px;
-  padding:0;
-  border:1px solid #244a7c;
-  border-radius:16px;
-  background:linear-gradient(110deg,#172b59 0%,#20295f 52%,#38265f 100%);
-  box-shadow:0 8px 24px rgba(23,56,93,.13);
+.brand-tag{
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  font-weight:600;
+  margin-top:-3px;
 }
-.topbar .brand{gap:10px}
-.topbar .brand img{width:42px;height:42px;border-radius:10px}
-.topbar .brand-name{font-size:19px}
-.nav-links-home{
+
+.nav-links{
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:7px;
-  margin-left:auto;
+  gap:26px;
 }
-.nav-link-home{
+
+.nav-links a{
+  color:#4b5568;
+  font-size:14px;
+  font-weight:650;
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:38px;
-  padding:9px 12px;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:9px;
-  color:#fff;
-  background:rgba(255,255,255,.05);
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
-  transition:background .18s ease,color .18s ease,transform .18s ease;
+  gap:8px;
+  border-radius:11px;
+  padding:11px 17px;
+  font-weight:750;
+  font-size:14px;
+  transition:.2s ease;
 }
-.nav-link-home:hover{
-  color:#15365f;
-  background:#fff;
+
+.btn:hover{
   transform:translateY(-1px);
 }
-.topbar .actions{gap:8px}
-.topbar .user-area{display:flex;align-items:center;gap:8px}
-.topbar .user-round{
-  width:32px;height:32px;flex:0 0 32px;
-  border-radius:50%;display:grid;place-items:center;
-  background:#d9eaff;color:#15365f;font-size:12px;
-}
-.topbar .user-name{font-size:11px;max-width:120px}
-.topbar .logout-btn{
-  min-height:34px;padding:0 12px;border-radius:9px;
-  border:1px solid rgba(255,255,255,.35);
-  color:#fff;background:rgba(255,255,255,.08);
-  font-size:10px;font-weight:900;
-}
-.topbar .logout-btn:hover{background:rgba(255,255,255,.18)}
-@media(max-width:1000px){
-  .nav-links-home{gap:5px}
-  .nav-link-home{padding:8px 9px;font-size:10px}
-  .topbar .brand img{width:38px;height:38px}
-  .topbar .brand-name{font-size:17px}
-}
-@media(max-width:800px){
-  .topbar{
-    top:8px;width:calc(100% - 20px);min-height:64px;
-    padding:6px 10px;
-  }
-  .nav-links-home{display:none}
-  .topbar .actions{margin-left:auto;padding-right:48px}
-  .topbar .actions .maha-btn,
-  .topbar .actions .login-btn,
-  .topbar .actions .join-btn,
-  .topbar .actions .user-area{display:none!important}
-  .hamburger-btn{top:11px;right:12px}
-  .mobile-menu{
-    top:calc(100% + 8px);left:0;right:0;
-    padding:8px;border:1px solid rgba(180,140,255,.38);
-    border-radius:14px;
-    background:linear-gradient(135deg,rgba(11,27,58,.98),rgba(47,27,82,.98));
-    box-shadow:0 18px 45px rgba(0,0,0,.6);z-index:10000;
-  }
-  .mobile-menu.open{display:grid;gap:6px}
-  .mobile-menu>a{
-    display:flex;align-items:center;min-height:42px;padding:10px 12px;
-    border:1px solid rgba(126,176,255,.22);border-radius:10px;
-    background:rgba(255,255,255,.06);color:#e8efff;
-    font-size:11px;font-weight:800;
-  }
-  .mobile-menu>a:hover{
-    background:linear-gradient(135deg,rgba(34,150,255,.30),rgba(155,108,255,.28));
-    border-color:rgba(105,190,255,.60);color:#fff;
-  }
-}
-@media(min-width:801px){
-  .hamburger-btn{display:none}
-  .mobile-menu{display:none!important}
+
+.btn-outline{
+  background:#fff;
+  border:1px solid #d9e0eb;
+  color:var(--primary);
 }
 
-
-/* Header overflow and hero text visibility fixes */
-.topbar{box-sizing:border-box; width:calc(100% - 28px); max-width:1400px; gap:14px; padding:8px 14px;}
-.topbar .brand{flex:0 1 auto; min-width:0;}
-.topbar .brand > div{min-width:0;}
-.topbar .brand-name{white-space:nowrap;}
-.topbar .nav-links-home{flex:0 1 auto; margin-left:auto; gap:6px;}
-.topbar .actions{flex:0 0 auto; margin-left:0;}
-.topbar .user-name{max-width:90px;}
-.hero-inner{padding-top:142px;}
-.hamburger-btn{position:relative; top:auto; right:auto; flex:0 0 42px; margin-left:auto;}
-.mobile-menu{position:absolute; top:calc(100% + 8px); left:auto; right:0; width:min(320px, calc(100vw - 40px)); box-sizing:border-box;}
-.mobile-menu.open{display:none;}
-@media(max-width:1250px){
-  .topbar{min-height:68px; padding-right:12px;}
-  .nav-links-home{display:none!important;}
-  .topbar .actions .login-btn,.topbar .actions .join-btn,.topbar .actions .user-area{display:none!important;}
-  .hamburger-btn{display:block;}
-  .mobile-menu.open{display:grid; gap:6px;}
-  .hero-inner{padding-top:132px;}
-}
-@media(min-width:1251px){
-  .hamburger-btn{display:none!important;}
-  .mobile-menu{display:none!important;}
-}
-@media(max-width:800px){
-  .topbar{top:8px; width:calc(100% - 20px); min-height:64px; padding:6px 10px;}
-  .topbar .brand img{width:38px;height:38px;}
-  .topbar .brand-name{font-size:17px;}
-  .topbar .brand-tagline{font-size:8px;}
-  .hero-inner{padding-top:110px;}
-  .mobile-menu{top:calc(100% + 8px); left:0; right:0; width:100%;}
-}
-@media(max-width:520px){
-  .topbar{gap:6px;}
-  .topbar .brand{gap:7px;}
-  .topbar .brand img{width:34px;height:34px;}
-  .topbar .brand-name{font-size:15px;}
-  .topbar .brand-tagline{font-size:7px;}
-  .hamburger-btn{width:38px;height:38px;flex-basis:38px; padding:7px;}
-  .hero-inner{padding-top:100px;}
-  .hero-content{padding-top:32px;}
+.btn-primary{
+  color:#fff;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  box-shadow:0 7px 18px rgba(23,59,122,.2);
 }
 
-
-/* Desktop-mode phone and tablet hero visibility fix */
-@media (max-width:1100px){
-  .hero{
-    min-height:900px;
-    overflow:hidden;
-    position:relative;
-  }
-  .hero-bg-img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center center;
-  }
-  .hero-inner{
-    position:relative;
-    inset:auto;
-    width:calc(100% - 36px);
-    max-width:var(--content);
-    padding:118px 0 42px;
-    margin:0 auto;
-  }
-  .hero-content{
-    display:grid;
-    grid-template-columns:minmax(0,1fr);
-    gap:24px;
-    padding:22px 0 0;
-    align-items:start;
-  }
-  .hero-content > div:first-child{
-    width:100%;
-    min-width:0;
-  }
-  .hero h1{
-    max-width:100%;
-    font-size:clamp(32px,5vw,48px);
-    line-height:1.08;
-    letter-spacing:-.8px;
-    overflow-wrap:break-word;
-  }
-  .hero-copy{
-    display:block;
-    max-width:100%;
-    font-size:15px;
-    line-height:1.55;
-    overflow-wrap:anywhere;
-  }
-  .hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:20px;
-  }
-  .primary-btn,.secondary-btn{
-    min-height:44px;
-    white-space:normal;
-    text-align:center;
-  }
-  .hero-glass{
-    display:block;
-    width:100%;
-    max-width:100%;
-    box-sizing:border-box;
-    padding:22px;
-    margin:0;
-  }
-  .hero-glass h2{
-    font-size:clamp(20px,3vw,25px);
-    line-height:1.25;
-  }
-  .hero-glass ul{
-    display:grid;
-    gap:10px;
-    font-size:14px;
-    line-height:1.45;
-  }
-}
-@media (max-width:620px){
-  .hero{min-height:0;padding-bottom:28px}
-  .hero-inner{
-    width:calc(100% - 28px);
-    padding:88px 0 10px;
-  }
-  .hero-content{padding-top:22px;gap:20px}
-  .eyebrow{font-size:9px;margin-bottom:12px}
-  .hero h1{font-size:clamp(30px,8vw,38px);line-height:1.08}
-  .hero-copy{font-size:14px;line-height:1.5}
-  .hero-buttons{align-items:stretch}
-  .primary-btn,.secondary-btn{flex:1 1 180px;padding:10px 12px}
-  .hero-glass{padding:18px;border-radius:16px}
-  .hero-glass ul{font-size:13px;gap:9px}
-}
-
-
-/* Clean, professional homepage hero: keeps existing header untouched */
-body{background:#f7f9fc;color:#172554}
-.clean-hero{
-  overflow:visible;
-  background:linear-gradient(180deg,#f8fbff 0%,#eef4ff 100%);
-  border-bottom:1px solid #e1e9f5;
-  padding-top:0;
-}
-.clean-hero .hero-inner{
-  width:min(1120px,calc(100% - 36px));
-  max-width:1120px;
-  padding:0 0 42px;
-}
-.clean-hero-content{
-  padding:52px 0 8px;
-  display:grid;
-  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
-  align-items:center;
-  gap:54px;
-}
-.clean-hero-copy{min-width:0}
-.clean-hero .eyebrow{
-  margin-bottom:15px;
-  padding:7px 11px;
-  font-size:10px;
-  letter-spacing:.45px;
-  background:#e2edff;
-  color:#2456a6;
-}
-.clean-hero h1{
-  max-width:650px;
-  font-size:clamp(36px,4.5vw,56px);
-  line-height:1.08;
-  letter-spacing:-1.7px;
-  color:#15284e;
-  text-shadow:none;
-}
-.clean-hero h1 span{color:#2563eb}
-.clean-hero .hero-copy{
-  max-width:580px;
-  margin-top:17px;
-  font-size:16px;
-  font-weight:400;
-  line-height:1.7;
-  color:#52627c;
-  text-shadow:none;
-}
-.clean-hero .hero-buttons{margin-top:24px;gap:11px;flex-wrap:wrap}
-.clean-hero .primary-btn,.clean-hero .secondary-btn{
-  min-height:45px;
-  padding:12px 18px;
+.menu-btn{
+  display:none;
+  background:#f2f5f9;
+  border:1px solid var(--border);
+  padding:9px 11px;
   border-radius:10px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:92px 0 80px;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(66,125,218,.14),transparent 30%),
+    radial-gradient(circle at 4% 70%,rgba(245,166,35,.08),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f7faff 100%);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:60px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#edf4ff;
+  color:#2356a0;
+  border:1px solid #d9e8ff;
   font-size:12px;
   font-weight:800;
-}
-.clean-hero-links{
-  display:grid;
-  gap:11px;
-  width:100%;
-}
-.clean-hero-links>a{
-  display:grid;
-  grid-template-columns:44px minmax(0,1fr) 24px;
-  align-items:center;
-  gap:13px;
-  min-height:76px;
-  padding:13px 16px;
-  border:1px solid #e0e8f4;
-  border-radius:14px;
-  background:rgba(255,255,255,.92);
-  box-shadow:0 5px 18px rgba(27,57,103,.045);
-  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
-}
-.clean-hero-links>a:hover{
-  transform:translateY(-2px);
-  border-color:#b7cdf4;
-  box-shadow:0 10px 24px rgba(27,57,103,.09);
-}
-.clean-link-icon{
-  display:grid;place-items:center;
-  width:42px;height:42px;border-radius:12px;
-  background:#eaf1ff;color:#2459bf;
-  font-size:12px;font-weight:900;
-}
-.clean-hero-links strong{display:block;color:#172b52;font-size:14px}
-.clean-hero-links small{display:block;margin-top:2px;color:#718096;font-size:11px}
-.clean-hero-links b{font-size:19px;color:#3568d4;text-align:right}
-.features{background:#fff}
-.feature{
-  border:1px solid #e7edf6;
-  background:#fff;
-  box-shadow:0 4px 16px rgba(24,53,95,.035);
-}
-.series-section{background:#f7f9fc}
-.heading .tag{color:#2c60c5}
-.heading h2{font-size:28px;letter-spacing:-.5px}
-.heading p{max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6}
-.series-card{
-  background:#fff;
-  border:1px solid #e3eaf4;
-  border-radius:16px;
-  box-shadow:0 8px 24px rgba(20,55,105,.055);
-  backdrop-filter:none;
-  transition:transform .18s ease,box-shadow .18s ease;
-}
-.series-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,55,105,.09)}
-.series-image{background:#f1f5fb}
-.series-body{padding:18px}
-.footer{background:#101d36}
-@media(max-width:900px){
-  .clean-hero .hero-inner{width:calc(100% - 32px);padding-bottom:32px}
-  .clean-hero-content{grid-template-columns:minmax(0,1fr);gap:28px;padding:38px 0 4px}
-  .clean-hero h1{font-size:clamp(34px,6vw,48px)}
-  .clean-hero-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-  .clean-hero-links>a{grid-template-columns:36px minmax(0,1fr);gap:9px;padding:12px;min-height:86px}
-  .clean-link-icon{width:34px;height:34px}
-  .clean-hero-links b{display:none}
-}
-@media(max-width:620px){
-  .clean-hero .hero-inner{width:calc(100% - 28px);padding-bottom:24px}
-  .clean-hero-content{padding:28px 0 0;gap:23px}
-  .clean-hero h1{font-size:34px;line-height:1.12;letter-spacing:-.9px}
-  .clean-hero .hero-copy{font-size:14px;line-height:1.6;margin-top:12px}
-  .clean-hero .hero-buttons{margin-top:18px}
-  .clean-hero .primary-btn,.clean-hero .secondary-btn{flex:1 1 145px}
-  .clean-hero-links{grid-template-columns:1fr;gap:8px}
-  .clean-hero-links>a{min-height:64px;grid-template-columns:38px minmax(0,1fr) 20px;padding:10px 12px}
-  .clean-link-icon{width:36px;height:36px}
-  .clean-hero-links b{display:block}
-  .features{padding-top:14px;padding-bottom:14px}
-  .heading h2{font-size:24px}
+  margin-bottom:20px;
 }
 
-
-/* Final layout corrections: normal-flow hero and true full-width page content */
-html,body{width:100%;max-width:100%;overflow-x:hidden}
-.topbar{
-  left:0;
-  transform:none;
-  top:10px;
-  width:calc(100% - 28px);
-  max-width:1400px;
-  margin:0 14px;
-}
-.clean-hero{
-  display:block;
-  width:100%;
-  margin:0;
-  padding-top:88px;
-  overflow:visible;
-}
-.clean-hero .hero-inner{
-  width:calc(100% - 64px);
-  max-width:1320px;
-  margin:0 auto;
-  padding:0 0 34px;
-}
-.clean-hero-content{
-  width:100%;
-  max-width:none;
-  padding:32px 0 20px;
-  grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);
-  gap:clamp(28px,4vw,64px);
-  align-items:center;
-}
-.clean-hero-copy,.clean-hero-links{min-width:0}
-.clean-hero h1{font-size:clamp(38px,4vw,58px)}
-.clean-hero .hero-copy{max-width:680px}
-.features,.series-section,.footer{width:100%}
-.content{
-  width:calc(100% - 64px);
-  max-width:1320px;
-}
-.series-grid{
-  width:100%;
-  max-width:none;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:20px;
-}
-.series-card{min-width:0}
-.series-image{width:100%;height:auto;object-fit:contain}
-.series-body{padding:16px}
-.price-row{gap:12px;flex-wrap:wrap}
-.card-buttons{display:flex;flex-wrap:wrap;gap:6px}
-@media(max-width:1100px){
-  .clean-hero{padding-top:82px}
-  .clean-hero .hero-inner,.content{width:calc(100% - 40px)}
-  .clean-hero-content{grid-template-columns:minmax(0,1fr);gap:24px;padding:28px 0 8px}
-  .clean-hero-links{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .clean-hero-links>a{grid-template-columns:36px minmax(0,1fr) 18px;min-width:0}
-  .clean-hero-links strong{font-size:12px}
-  .clean-hero-links small{font-size:10px}
-  .series-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:620px){
-  .topbar{top:8px;width:calc(100% - 16px);margin:0 8px}
-  .clean-hero{padding-top:76px}
-  .clean-hero .hero-inner,.content{width:calc(100% - 28px)}
-  .clean-hero-content{padding:20px 0 6px;gap:20px}
-  .clean-hero h1{font-size:clamp(31px,8vw,38px);line-height:1.12}
-  .clean-hero-links{grid-template-columns:1fr}
-  .clean-hero-links>a{min-height:62px}
-  .series-grid{grid-template-columns:1fr}
-  .series-section{padding:32px 0}
-  .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.badge-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#20a05a;
 }
 
-
-/* Hero background image requested by user */
-.clean-hero{
-  position:relative;
-  background:
-    linear-gradient(90deg,rgba(247,250,255,.93) 0%,rgba(247,250,255,.84) 46%,rgba(247,250,255,.30) 100%),
-    url("joa/homepage-bg.jpg") center center / cover no-repeat;
-}
-.clean-hero-content{
-  display:block;
-  min-height:390px;
-  padding:58px 0 48px;
-}
-.clean-hero-copy{
-  max-width:720px;
-  padding:28px;
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:18px;
-  background:rgba(255,255,255,.78);
-  box-shadow:0 10px 32px rgba(25,52,95,.08);
-  backdrop-filter:blur(5px);
-}
-@media(max-width:900px){
-  .clean-hero-content{min-height:0;padding:34px 0}
-  .clean-hero-copy{max-width:100%;padding:22px}
-}
-@media(max-width:620px){
-  .clean-hero-content{padding:24px 0}
-  .clean-hero-copy{padding:18px;border-radius:14px}
+.hero h1{
+  font-size:clamp(40px,5.2vw,66px);
+  line-height:1.06;
+  letter-spacing:-2.7px;
+  max-width:700px;
 }
 
+.hero h1 span{
+  background:linear-gradient(135deg,var(--primary),#3977d2);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
 
-/* =========================================================
-   HPMockShashtra — clean professional homepage refresh
-   Header markup and Firebase behaviour remain unchanged.
-========================================================= */
-:root{--content:1240px;--blue:#2563eb;--deep:#14264b;--purple:#5145cd}
-html,body{width:100%;max-width:100%;overflow-x:hidden}
-body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff;line-height:1.55}
-.topbar{
-  position:fixed;top:12px;left:14px;transform:none;
-  width:calc(100% - 28px);max-width:none;min-height:68px;
-  padding:8px 14px;border-radius:14px;z-index:1000;
-  background:linear-gradient(110deg,rgba(19,39,79,.96),rgba(48,38,91,.96));
-  border:1px solid rgba(255,255,255,.15);
-  box-shadow:0 8px 24px rgba(15,32,65,.15);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+.hero p{
+  color:var(--muted);
+  font-size:17px;
+  max-width:625px;
+  margin:22px 0 30px;
 }
-.brand img{width:44px;height:44px;border-radius:9px}
-.brand-name{font-size:20px}
-.brand-tagline{font-size:10px}
-.nav-links-home{display:flex;align-items:center;gap:8px;margin-left:auto}
-.nav-link-home{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:38px;padding:8px 12px;border:1px solid rgba(255,255,255,.22);
-  border-radius:9px;color:#fff;background:rgba(255,255,255,.05);
-  font-size:11px;font-weight:800;white-space:nowrap
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
 }
-.nav-link-home:hover{background:rgba(255,255,255,.15)}
-.actions{align-items:center;gap:8px}
-.user-area{align-items:center;gap:8px}
-.user-round{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e1ecff;color:#1e3a70;font-weight:800}
-.user-name{color:#fff;font-size:11px;font-weight:700;max-width:110px;overflow:hidden;text-overflow:ellipsis}
-.logout-btn{min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.28);border-radius:9px;color:#fff;background:rgba(255,255,255,.08);font-weight:800}
-.login-btn,.join-btn{min-height:36px;border-radius:9px}
-.hero,.clean-hero{
-  display:block;position:relative;isolation:isolate;overflow:hidden;
-  padding-top:88px;margin:0;width:100%;
-  background:
-    linear-gradient(90deg,rgba(248,250,255,.95) 0%,rgba(248,250,255,.88) 48%,rgba(248,250,255,.50) 100%),
-    url("joa/homepage-bg.jpg") center 43%/cover no-repeat;
-  border-bottom:1px solid #e5ebf5;
-}
-.hero::after{display:none}
-.hero-inner,.clean-hero .hero-inner{
-  position:relative;inset:auto;z-index:2;
-  width:calc(100% - 64px);max-width:1240px;
-  margin:0 auto;padding:0 0 38px;
-}
-.hero-content,.clean-hero-content{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:40px;min-height:350px;padding:38px 0 24px;
-}
-.clean-hero-copy{
-  max-width:720px;padding:0;border:0;border-radius:0;
-  background:transparent;box-shadow:none;backdrop-filter:none;
-}
-.eyebrow{margin-bottom:16px;padding:6px 10px;background:#e8efff;color:#2857a8;font-size:10px;letter-spacing:.45px}
-.hero h1,.clean-hero h1{
-  max-width:720px;color:#15274b;text-shadow:none;
-  font-size:clamp(38px,4.3vw,58px);line-height:1.08;letter-spacing:-1.7px;
-}
-.hero h1 span,.clean-hero h1 span{color:#2864d9}
-.hero-copy,.clean-hero .hero-copy{
-  max-width:650px;margin-top:16px;color:#52627b;
-  font-size:16px;font-weight:400;line-height:1.7;text-shadow:none;
-}
-.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.primary-btn,.secondary-btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:44px;padding:0 18px;border-radius:9px;font-size:12px;font-weight:800;
-}
-.primary-btn{background:#285ed8;color:#fff;box-shadow:0 5px 14px rgba(37,99,235,.16)}
-.secondary-btn{background:#fff;color:#244a91;border:1px solid #d7e2f3}
+
 .hero-note{
-  display:flex;align-items:center;gap:12px;flex:0 0 auto;
-  padding:16px 20px;border:1px solid rgba(214,225,242,.9);
-  border-radius:12px;background:rgba(255,255,255,.88);
-  box-shadow:0 8px 24px rgba(28,52,91,.06);
-}
-.hero-note-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e5f7ec;color:#16804a;font-weight:900}
-.hero-note strong{display:block;color:#1b2d4e;font-size:13px}
-.hero-note small{display:block;margin-top:2px;color:#64748b;font-size:11px}
-.features{padding:18px 0;background:#fff;border-top:0;border-bottom:1px solid #edf0f5}
-.content{width:calc(100% - 64px);max-width:1240px;margin:0 auto}
-.feature-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.feature{min-height:78px;padding:12px;display:grid;grid-template-columns:34px 1fr;grid-template-rows:auto auto;column-gap:10px;align-content:center;text-align:left;border:1px solid #e8edf5;border-radius:11px;background:#fff;box-shadow:none}
-.feature-icon{grid-row:1/3;width:34px;height:34px;margin:0;border-radius:9px;background:#edf3ff}
-.feature strong{align-self:end;font-size:12px;color:#253858}
-.feature small{font-size:10px}
-.series-section{padding:44px 0 52px;background:#f7f9fc}
-.heading{text-align:left;max-width:none;margin:0 0 22px}
-.heading .tag{font-size:10px;color:#2a5fc5;letter-spacing:.8px}
-.heading h2{margin-top:4px;font-size:29px;line-height:1.2;letter-spacing:-.6px;color:#172b50}
-.heading p{margin-top:7px;font-size:13px;color:#6a7890}
-.series-grid{width:100%;max-width:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.series-card{min-width:0;overflow:hidden;border:1px solid #e3e9f2;border-radius:13px;background:#fff;box-shadow:0 4px 16px rgba(23,43,78,.04);backdrop-filter:none;transition:transform .18s ease,box-shadow .18s ease}
-.series-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(23,43,78,.08)}
-.series-image{display:block;width:100%;height:auto;aspect-ratio:1.9/1;object-fit:cover;object-position:center;background:#edf2f8}
-.series-body{padding:16px}
-.badges{margin-bottom:8px}
-.badge{font-size:9px}
-.series-title{font-size:17px;line-height:1.3;margin-bottom:6px;color:#1b2e50}
-.series-description{min-height:42px;font-size:12px;line-height:1.6;color:#65738a}
-.meta{gap:7px;margin:13px 0}
-.meta-box{padding:9px 4px;background:#f7f9fc;border:1px solid #edf0f5}
-.meta-box strong{font-size:13px}
-.price-row{align-items:center;gap:10px;flex-wrap:wrap;padding-top:12px}
-.price strong{font-size:23px;color:#172b50}
-.card-buttons{display:flex;flex-wrap:wrap;gap:6px}
-.card-btn{min-height:34px;padding:0 10px;font-size:10px}
-.card-outline,.card-progress{background:#fff}
-.footer{background:#14213b}
-.footer-inner{width:calc(100% - 64px);max-width:1240px}
-@media(max-width:1050px){
-  .topbar{gap:10px}
-  .brand img{width:40px;height:40px}
-  .brand-name{font-size:17px}
-  .nav-links-home{gap:5px}
-  .nav-link-home{padding:8px 9px;font-size:10px}
-  .hero-inner,.clean-hero .hero-inner,.content,.footer-inner{width:calc(100% - 40px)}
-  .hero-content,.clean-hero-content{min-height:300px;gap:22px}
-  .hero-note{max-width:250px}
-  .series-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:800px){
-  .topbar{top:8px;left:8px;width:calc(100% - 16px);min-height:62px;margin:0;padding:7px 10px;border-radius:12px}
-  .nav-links-home{display:none}
-  .topbar .actions .user-area,.topbar .actions .login-btn,.topbar .actions .join-btn{display:none!important}
-  .hamburger-btn{display:flex}
-  .mobile-menu{top:calc(100% + 8px);left:0;right:0;z-index:1200;padding:8px;border:1px solid #dbe5f5;border-radius:12px;background:#fff;box-shadow:0 16px 34px rgba(20,35,70,.16)}
-  .mobile-menu.open{display:grid;gap:5px}
-  .mobile-menu>a{padding:12px;border-radius:8px;background:#f7f9fd;color:#20365c;font-size:12px;font-weight:800}
-  .hero,.clean-hero{padding-top:78px}
-  .hero-content,.clean-hero-content{display:block;min-height:0;padding:28px 0 24px}
-  .clean-hero-copy{max-width:680px}
-  .hero h1,.clean-hero h1{font-size:clamp(34px,6vw,46px)}
-  .hero-note{display:inline-flex;margin-top:24px;max-width:100%}
-  .series-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:620px){
-  .brand img{width:36px;height:36px}
-  .brand-name{font-size:16px}
-  .brand-tagline{font-size:9px}
-  .hero,.clean-hero{background-position:center center}
-  .hero-inner,.clean-hero .hero-inner,.content,.footer-inner{width:calc(100% - 28px)}
-  .hero-content,.clean-hero-content{padding:24px 0 22px}
-  .eyebrow{margin-bottom:12px;font-size:9px}
-  .hero h1,.clean-hero h1{font-size:34px;line-height:1.12;letter-spacing:-.8px}
-  .hero-copy,.clean-hero .hero-copy{font-size:14px;line-height:1.6;margin-top:12px}
-  .hero-buttons{margin-top:18px}
-  .primary-btn,.secondary-btn{flex:1 1 145px;padding:0 12px}
-  .hero-note{margin-top:18px;padding:12px 14px}
-  .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .feature{min-height:72px;padding:9px;grid-template-columns:28px 1fr;column-gap:8px}
-  .feature-icon{width:28px;height:28px;font-size:12px}
-  .feature strong{font-size:11px}
-  .feature small{font-size:9px}
-  .series-section{padding:32px 0 36px}
-  .heading{margin-bottom:16px}
-  .heading h2{font-size:25px}
-  .series-grid{grid-template-columns:1fr;gap:14px}
-  .series-image{aspect-ratio:1.9/1;object-fit:cover}
-  .series-body{padding:14px}
-  .series-description{min-height:0}
-  .price-row{align-items:flex-start}
-  .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-  .footer-bottom{gap:12px;flex-wrap:wrap}
+  margin-top:17px;
+  color:#7b8799;
+  font-size:12px;
 }
 
+/* HERO CARD */
 
-/* Previous JOA card is intentionally text-only, without a banner image */
-.previous-joa-card{
+.hero-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:22px;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+
+.hero-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.hero-card-title{
+  font-size:14px;
+  font-weight:800;
+}
+
+.live{
+  font-size:11px;
+  font-weight:800;
+  color:var(--success);
+  background:#eaf8ef;
+  padding:6px 9px;
+  border-radius:999px;
+}
+
+.test-card{
+  padding:17px;
+  border:1px solid #e8edf4;
+  border-radius:15px;
+  margin-bottom:11px;
   display:flex;
   align-items:center;
-  min-height:190px;
-}
-.previous-joa-card .series-body{width:100%}
-.previous-joa-card .series-description{min-height:0;margin-bottom:18px}
-.previous-joa-action{display:flex;justify-content:flex-start}
-@media(max-width:620px){
-  .previous-joa-card{min-height:0}
+  gap:13px;
 }
 
-
-/* Final requested refinements */
-.series-grid{align-items:stretch}
-.series-card{position:relative;overflow:hidden;min-width:0}
-.series-image{
-  width:100%;
-  height:auto;
-  aspect-ratio:auto;
-  object-fit:contain;
-  object-position:center;
-  background:#edf4fb;
-}
-.new-joa-card{border:1px solid #b8caff;box-shadow:0 8px 24px rgba(37,99,235,.09)}
-.new-joa-card .series-image{padding-top:0}
-.premium-new-tag{
-  position:absolute;top:13px;right:13px;z-index:5;
-  padding:8px 14px;border-radius:999px;
-  color:#fff;font-size:13px;font-weight:1000;letter-spacing:1.4px;
-  background:linear-gradient(110deg,#b88718,#f7d66b,#a96c05);
-  border:1px solid rgba(255,255,255,.92);
-  box-shadow:0 4px 16px rgba(145,99,0,.30);
-  animation:newTagPulse 1.15s ease-in-out infinite;
-  text-shadow:0 1px 2px rgba(0,0,0,.25)
-}
-@keyframes newTagPulse{
-  0%,100%{transform:scale(1);filter:brightness(1);box-shadow:0 4px 14px rgba(145,99,0,.28)}
-  50%{transform:scale(1.08);filter:brightness(1.16);box-shadow:0 5px 22px rgba(245,190,42,.55)}
-}
-@media(prefers-reduced-motion:reduce){.premium-new-tag{animation:none}}
-@media(max-width:800px){
-  .nav-links-home{display:none}
-  .mobile-menu a{white-space:normal}
+.test-icon{
+  width:43px;
+  height:43px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#edf3ff;
+  color:var(--primary);
+  font-weight:900;
 }
 
-
-/* Keep the navigation above page content while cards scroll underneath it */
-.topbar{
-  position:fixed !important;
-  z-index:9999 !important;
-  isolation:isolate;
-}
-.mobile-menu{z-index:10000 !important}
-.series-section,.series-grid,.series-card{position:relative;z-index:1}
-
-
-/* Header layering and spacing fix */
-.topbar{
-  position:fixed !important;
-  top:0 !important;
-  left:0 !important;
-  transform:none !important;
-  width:100% !important;
-  min-height:76px;
-  z-index:99999 !important;
-  border-radius:0 0 16px 16px !important;
-  background:linear-gradient(110deg,#1d315e 0%,#29275b 100%) !important;
-  backdrop-filter:none !important;
-  -webkit-backdrop-filter:none !important;
-  box-shadow:0 5px 18px rgba(15,23,42,.20) !important;
-}
-.hero.clean-hero{
-  padding-top:92px !important;
-}
-.series-section{
-  scroll-margin-top:92px;
-}
-.mobile-menu{
-  z-index:100000 !important;
+.test-info{
+  flex:1;
 }
 
+.test-info strong{
+  display:block;
+  font-size:14px;
+}
+
+.test-info small{
+  color:var(--muted);
+  font-size:11px;
+}
+
+.test-price{
+  font-weight:850;
+  color:var(--primary);
+  font-size:13px;
+}
+
+.mini-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:16px;
+}
+
+.mini-stat{
+  background:#f7f9fc;
+  border-radius:13px;
+  padding:13px;
+  text-align:center;
+}
+
+.mini-stat strong{
+  display:block;
+  font-size:18px;
+}
+
+.mini-stat span{
+  font-size:10px;
+  color:var(--muted);
+}
+
+/* ================= TRUST ================= */
+
+.trust{
+  background:#fff;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.trust-row{
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:45px;
+  flex-wrap:wrap;
+  color:#6d7889;
+  font-size:13px;
+  font-weight:700;
+}
+
+.trust-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.trust-item b{
+  color:var(--primary);
+  font-size:17px;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+  padding:82px 0;
+}
+
+.section-head{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 42px;
+}
+
+.eyebrow{
+  font-size:12px;
+  color:#2d65b5;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:8px;
+}
+
+.section-head h2{
+  font-size:clamp(28px,4vw,40px);
+  letter-spacing:-1px;
+}
+
+.section-head p{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+/* ================= EXAM CARDS ================= */
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.exam-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:0 5px 20px rgba(20,45,80,.04);
+  transition:.22s;
+  position:relative;
+  overflow:hidden;
+}
+
+.exam-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+  border-color:#d6e2f3;
+}
+
+.exam-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+.exam-icon{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  background:#edf3ff;
+  color:var(--primary);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:18px;
+}
+
+.popular{
+  font-size:10px;
+  background:#fff4df;
+  color:#a15b00;
+  padding:5px 8px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+.exam-card h3{
+  margin:18px 0 5px;
+  font-size:20px;
+}
+
+.exam-card p{
+  font-size:13px;
+  color:var(--muted);
+  min-height:43px;
+}
+
+.exam-meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:18px 0;
+}
+
+.exam-meta span{
+  font-size:11px;
+  background:#f4f6f9;
+  color:#596579;
+  padding:6px 8px;
+  border-radius:8px;
+}
+
+.exam-link{
+  font-size:13px;
+  font-weight:800;
+  color:var(--primary);
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.feature{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+}
+
+.feature-icon{
+  width:42px;
+  height:42px;
+  border-radius:11px;
+  background:#eef4ff;
+  color:var(--primary);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  margin-bottom:15px;
+}
+
+.feature h3{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.feature p{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ================= CTA ================= */
+
+.cta{
+  padding:65px 30px;
+  border-radius:25px;
+  background:linear-gradient(135deg,#112f64,#2458a8);
+  color:#fff;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.cta:after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  right:-90px;
+  top:-130px;
+}
+
+.cta h2{
+  font-size:clamp(28px,4vw,40px);
+  letter-spacing:-1px;
+}
+
+.cta p{
+  color:#dce7fa;
+  max-width:610px;
+  margin:10px auto 24px;
+}
+
+.cta .btn{
+  background:#fff;
+  color:var(--primary);
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  margin-top:80px;
+  background:#101b2e;
+  color:#c5cfdd;
+  padding:52px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:35px;
+}
+
+.footer-brand{
+  color:#fff;
+  font-size:19px;
+  font-weight:850;
+  margin-bottom:10px;
+}
+
+.footer p{
+  font-size:12px;
+  color:#91a0b5;
+  max-width:320px;
+}
+
+.footer h4{
+  color:#fff;
+  font-size:13px;
+  margin-bottom:13px;
+}
+
+.footer a{
+  display:block;
+  color:#9eabbd;
+  font-size:12px;
+  margin:8px 0;
+}
+
+.footer a:hover{
+  color:#fff;
+}
+
+.copyright{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:35px;
+  padding-top:18px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  font-size:11px;
+  color:#8190a5;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav-actions .btn-outline{
+    display:none;
+  }
+
+  .hero{
+    padding:65px 0 55px;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+
+  .hero h1{
+    letter-spacing:-1.8px;
+  }
+
+  .exam-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+  .site-header{
+    top:8px;
+    margin-top:8px;
+    border-radius:15px;
+  }
+
+  .navbar{
+    min-height:62px;
+    padding:0 13px;
+  }
+
+  .brand-mark{
+    width:38px;
+    height:38px;
+  }
+
+  .brand-name{
+    font-size:16px;
+  }
+
+  .brand-tag{
+    font-size:8px;
+  }
+
+  .hero{
+    padding:48px 0;
+  }
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .hero-card{
+    padding:16px;
+    border-radius:20px;
+  }
+
+  .exam-grid,
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .section{
+    padding:60px 0;
+  }
+
+  .trust-row{
+    gap:18px;
+    padding:18px 0;
+  }
+
+  .cta{
+    padding:45px 20px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+  }
+
+  .footer-grid>div:first-child{
+    grid-column:1/-1;
+  }
+
+  .copyright{
+    display:block;
+  }
+
+  .copyright span{
+    display:block;
+    margin-top:6px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HERO WITH FIRST IMAGE
-========================= -->
-<section class="hero clean-hero" id="home">
-  <div class="hero-inner">
+<!-- ================= HEADER ================= -->
 
-    <div class="topbar">
-      <a href="homepage.html" class="brand">
-        <img src="logo.png" alt="HPMockShashtra Logo">
-        <div>
-          <div class="brand-name">HP<span>Mock</span>Shashtra</div>
-          <span class="brand-tagline">Prepare Today, Serve Tomorrow</span>
+<header class="site-header">
+
+  <nav class="navbar">
+
+    <a href="homepage.html" class="brand">
+
+      <div class="brand-mark">
+        HP
+      </div>
+
+      <div>
+        <div class="brand-name">
+          HPMockShashtra
         </div>
+
+        <span class="brand-tag">
+          Smart Practice. Better Preparation.
+        </span>
+      </div>
+
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="#exams">
+        Mock Tests
       </a>
 
-      <nav class="nav nav-links-home" aria-label="Main navigation">
-        <a class="nav-link-home" href="joa/new-joa-series.html">JOA (IT)</a>
-        <a class="nav-link-home" href="joa-series.html">Previous JOA (IT)</a>
-        <a class="nav-link-home" href="patwari/patwari-series.html">Patwari</a>
-        <a class="nav-link-home" href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
-      </nav>
+      <a href="#features">
+        Features
+      </a>
 
-      <div class="actions">
-        <a href="firebase-login.html" class="login-btn" id="loginBtn">Login</a>
-        <div class="user-area" id="userArea" style="display:none">
-          <span class="user-round" id="userNameRound">U</span>
-          <span class="user-name" id="userNameText">User</span>
-          <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
-        </div>
-        <a href="firebase-signup.html" class="join-btn" id="joinBtn">Join Free</a>
-      </div>
+      <a href="study-mode.html">
+        Study Mode
+      </a>
 
-      <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <a href="#about">
+        About
+      </a>
+
+    </div>
+
+
+    <div class="nav-actions">
+
+      <a class="btn btn-outline"
+         href="firebase-login.html">
+        Login
+      </a>
+
+      <a class="btn btn-primary"
+         href="#exams">
+        Explore Tests
+      </a>
+
+      <button class="menu-btn"
+              aria-label="Menu"
+              onclick="toggleMenu()">
+        ☰
       </button>
 
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="joa/new-joa-series.html">JOA (IT)</a>
-      <a href="joa-series.html">Previous JOA (IT)</a>
-        <a href="patwari/patwari-series.html">Patwari</a>
-        <a href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
-        <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
-        <a href="firebase-signup.html" id="mobileJoinBtn">Join Free</a>
-        <div class="mobile-user-area" id="mobileUserArea" style="display:none">
-          <div class="mobile-user-name" id="mobileUserName">User</div>
-          <button type="button" id="mobileLogoutBtn">Logout</button>
-        </div>
-      </div>
     </div>
 
-    <div class="hero-content clean-hero-content">
-      <div class="clean-hero-copy">
-        <div class="eyebrow">HIMACHAL PRADESH COMPETITIVE EXAMS</div>
-        <h1>Prepare for HP Exams with <span>Confidence</span></h1>
-        <p class="hero-copy">
-          HPMockShashtra offers HP JOA (IT), HP Patwari and computer mock tests with bilingual practice and progress tracking.
-        </p>
-        <div class="hero-buttons">
-          <a href="#mock-tests" class="primary-btn">Explore Mock Tests</a>
-          <a href="firebase-signup.html" class="secondary-btn">Create Free Account</a>
-        </div>
+  </nav>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Built for Himachal Pradesh Aspirants
       </div>
+
+
+      <h1>
+        Prepare smarter.
+        <br>
+        <span>Score better.</span>
+      </h1>
+
+
+      <p>
+        Practice with carefully designed mock tests,
+        track your performance, strengthen weak areas
+        and prepare with confidence for competitive exams.
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a href="#exams"
+           class="btn btn-primary">
+          Start Practising →
+        </a>
+
+        <a href="firebase-login.html"
+           class="btn btn-outline">
+          Create Account
+        </a>
+
+      </div>
+
+
       <div class="hero-note">
-        <span class="hero-note-mark">✓</span>
-        <div><strong>Practice. Review. Improve.</strong><small>Structured practice for your next exam.</small></div>
+        ✓ Exam-focused questions
+        &nbsp; ✓ Performance tracking
+        &nbsp; ✓ Mobile friendly
       </div>
+
     </div>
 
-  </div>
-</section>
 
+    <!-- HERO SIDE CARD -->
 
-<!-- =========================
-     FEATURES
-========================= -->
-<section class="features">
-  <div class="content feature-grid">
+    <div class="hero-card">
 
-    <div class="feature">
-      <div class="feature-icon">✓</div>
-      <strong>Mock Test Series</strong>
-      <small>Full-length practice</small>
-    </div>
+      <div class="hero-card-head">
 
-    <div class="feature">
-      <div class="feature-icon">▤</div>
-      <strong>Previous Year Practice</strong>
-      <small>Exam-focused questions</small>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">↗</div>
-      <strong>Performance Tracking</strong>
-      <small>Know your progress</small>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">A</div>
-      <strong>Hindi + English</strong>
-      <small>Bilingual preparation</small>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- =========================
-     SERIES
-========================= -->
-<section class="series-section" id="mock-tests">
-  <div class="content">
-
-    <div class="heading">
-      <div class="tag">Mock Test Series</div>
-      <h2>Choose Your Exam</h2>
-      <p>Test information, price and free access details are shown clearly before you open a series.</p>
-    </div>
-
-    <div class="series-grid">
-
-      <!-- NEW JOA (IT) MOCK TEST SERIES -->
-      <article class="series-card new-joa-card">
-        <div class="premium-new-tag" aria-label="New premium series">✦ NEW ✦</div>
-        <img src="joa/joa-banner.jpg" alt="JOA (IT) Mock Test Series — 10 tests" class="series-image">
-
-        <div class="series-body">
-          <div class="badges">
-            <span class="badge badge-live">AVAILABLE NOW</span>
-            <span class="badge badge-live">FREE TEST AVAILABLE</span>
-          </div>
-
-          <h3 class="series-title">JOA (IT) Mock Test Series</h3>
-          <p class="series-description">
-            Practice for the Junior Office Assistant (IT) exam with bilingual questions and performance tracking.
-          </p>
-
-          <div class="meta">
-            <div class="meta-box"><strong>10</strong><span>Total Tests</span></div>
-            <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
-            <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
-          </div>
-
-          <div class="price-row">
-            <div class="price">
-              <small>Complete Series</small>
-              <strong>₹149</strong>
-              <span class="free">10 Tests · 120 Questions</span>
-            </div>
-            <div class="card-buttons">
-              <a href="joa/new-joa-series.html" class="card-btn card-outline">View Details</a>
-              <a href="joa/joa-progress.html" class="card-btn card-progress">My Progress</a>
-              <a href="payment.html?product=joa" class="card-btn card-primary" id="joaBuyBtn">Buy Now</a>
-            </div>
-          </div>
+        <div class="hero-card-title">
+          Featured Test Series
         </div>
-      </article>
+
+        <div class="live">
+          ● Available
+        </div>
+
+      </div>
+
+
+      <a href="joa/new-joa-series.html"
+         class="test-card">
+
+        <div class="test-icon">
+          IT
+        </div>
+
+        <div class="test-info">
+
+          <strong>
+            JOA (IT) Test Series
+          </strong>
+
+          <small>
+            Computer • GK • Reasoning • English
+          </small>
+
+        </div>
+
+        <div class="test-price">
+          Explore
+        </div>
+
+      </a>
+
+
+      <a href="patwari/patwari-series.html"
+         class="test-card">
+
+        <div class="test-icon">
+          P
+        </div>
+
+        <div class="test-info">
+
+          <strong>
+            HP Patwari Test Series
+          </strong>
+
+          <small>
+            Practice papers • Mock tests • Analysis
+          </small>
+
+        </div>
+
+        <div class="test-price">
+          Explore
+        </div>
+
+      </a>
+
+
+      <div class="mini-stats">
+
+        <div class="mini-stat">
+          <strong>120</strong>
+          <span>Questions*</span>
+        </div>
+
+        <div class="mini-stat">
+          <strong>90</strong>
+          <span>Minutes*</span>
+        </div>
+
+        <div class="mini-stat">
+          <strong>24×7</strong>
+          <span>Practice</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= TRUST BAR ================= -->
+
+<section class="trust">
+
+  <div class="container trust-row">
+
+    <div class="trust-item">
+      <b>✓</b>
+      Exam-focused
+    </div>
+
+    <div class="trust-item">
+      <b>✓</b>
+      Bilingual Practice
+    </div>
+
+    <div class="trust-item">
+      <b>✓</b>
+      Performance Analysis
+    </div>
+
+    <div class="trust-item">
+      <b>✓</b>
+      Mobile Friendly
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= EXAMS ================= -->
+
+<section class="section"
+         id="exams">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Choose your preparation
+      </div>
+
+      <h2>
+        Practice for the exam that matters to you.
+      </h2>
+
+      <p>
+        Focused test series designed to make your preparation
+        structured, measurable and effective.
+      </p>
+
+    </div>
+
+
+    <div class="exam-grid">
+
+
+      <!-- JOA -->
+
+      <a class="exam-card"
+         href="joa/new-joa-series.html">
+
+        <div class="exam-card-top">
+
+          <div class="exam-icon">
+            IT
+          </div>
+
+          <span class="popular">
+            POPULAR
+          </span>
+
+        </div>
+
+
+        <h3>
+          JOA (IT)
+        </h3>
+
+
+        <p>
+          Computer fundamentals, MS Office,
+          Internet, GK, reasoning and language practice.
+        </p>
+
+
+        <div class="exam-meta">
+
+          <span>
+            120 Questions
+          </span>
+
+          <span>
+            90 Minutes
+          </span>
+
+          <span>
+            Mock Tests
+          </span>
+
+        </div>
+
+
+        <div class="exam-link">
+          View JOA Series →
+        </div>
+
+      </a>
 
 
       <!-- PATWARI -->
-      <article class="series-card">
-        <img src="patwari/patwari-banner.jpg" alt="HP Patwari Mock Test Series" class="series-image">
 
-        <div class="series-body">
-          <div class="badges">
-            <span class="badge badge-live">AVAILABLE NOW</span>
-            <span class="badge badge-live">FREE TEST AVAILABLE</span>
+      <a class="exam-card"
+         href="patwari/patwari-series.html">
+
+        <div class="exam-card-top">
+
+          <div class="exam-icon">
+            P
           </div>
 
-          <h3 class="series-title">HP Patwari Mock Test Series</h3>
+          <span class="popular">
+            FEATURED
+          </span>
 
-          <p class="series-description">
-            Structured HP Patwari mock-test practice with Himachal GK,
-            general studies, Hindi, English and computer-based preparation.
-          </p>
-
-          <div class="meta">
-            <div class="meta-box"><strong>11</strong><span>Total Tests</span></div>
-            <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
-            <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
-          </div>
-
-          <div class="price-row">
-            <div class="price">
-              <small>Complete Series</small>
-              <strong>₹149</strong>
-              <span class="free">Free Test Available</span>
-            </div>
-
-            <div class="card-buttons">
-              <a href="patwari/patwari-series.html" class="card-btn card-outline">View Details</a>
-              <a href="patwari/patwari-progress.html" class="card-btn card-progress">My Progress</a>
-              <a href="payment.html?product=patwari" class="card-btn card-primary">Buy Now</a>
-            </div>
-          </div>
         </div>
-      </article>
 
-      <!-- JOA IT MAHA PACK -->
-      <article class="series-card">
-        <img src="mahapack/joa-mahapack-banner.jpg" alt="JOA IT Maha Pack" class="series-image">
-        <div class="series-body">
-          <div class="badges">
-            <span class="badge badge-live">JOA IT MAHA PACK</span>
-            <span class="badge badge-live">6000 QUESTIONS</span>
-          </div>
-          <h3 class="series-title">JOA IT Maha Pack</h3>
-          <p class="series-description">
-            Complete Computer preparation with 15 Computer subjects,
-            bilingual practice and performance tracking.
-          </p>
-          <div class="meta">
-            <div class="meta-box"><strong>15</strong><span>Subjects</span></div>
-            <div class="meta-box"><strong>6000</strong><span>Questions</span></div>
-            <div class="meta-box"><strong>6 Months</strong><span>Validity</span></div>
-          </div>
-          <div class="price-row">
-            <div class="price">
-              <small>Complete Pack</small>
-              <strong>₹399</strong>
-              <span class="free">15 Computer Subjects</span>
-            </div>
-            <div class="card-buttons">
-              <a href="mahapack/joa-mahapack.html" class="card-btn card-outline">View Details</a>
-              <a href="mahapack/master-progress.html" class="card-btn card-progress">Master Progress</a>
-            </div>
-          </div>
+
+        <h3>
+          HP Patwari
+        </h3>
+
+
+        <p>
+          Structured practice for Himachal Pradesh
+          Patwari preparation with focused mock tests.
+        </p>
+
+
+        <div class="exam-meta">
+
+          <span>
+            11 Tests
+          </span>
+
+          <span>
+            120 Questions
+          </span>
+
+          <span>
+            Analysis
+          </span>
+
         </div>
-      </article>
+
+
+        <div class="exam-link">
+          View Patwari Series →
+        </div>
+
+      </a>
+
+
+      <!-- MAHAPACK -->
+
+      <a class="exam-card"
+         href="mahapack/joa-mahapack.html">
+
+        <div class="exam-card-top">
+
+          <div class="exam-icon">
+            M
+          </div>
+
+        </div>
+
+
+        <h3>
+          HPMockShashtra MahaPack
+        </h3>
+
+
+        <p>
+          One place for multiple preparation resources,
+          subjects and practice modules.
+        </p>
+
+
+        <div class="exam-meta">
+
+          <span>
+            Multiple Courses
+          </span>
+
+          <span>
+            Study Mode
+          </span>
+
+          <span>
+            Practice
+          </span>
+
+        </div>
+
+
+        <div class="exam-link">
+          Explore MahaPack →
+        </div>
+
+      </a>
+
 
     </div>
+
   </div>
+
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-<footer class="footer">
+<!-- ================= FEATURES ================= -->
 
-  <div class="footer-inner">
+<section class="section"
+         id="features"
+         style="background:#fff;">
 
-    <div class="footer-top">
+  <div class="container">
 
-      <div>
-        <h3>HPMockShashtra</h3>
-        <p>
-          A practice platform for Himachal Pradesh competitive exam aspirants
-          with mock tests, bilingual practice and performance tracking.
-        </p>
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Why HPMockShashtra
       </div>
 
-      <div>
-        <h4>Mock Tests</h4>
-        <div class="footer-links">
-          <a href="joa-series.html">JOA (IT) Mock Tests</a>
-          <a href="patwari/patwari-series.html">HP Patwari Mock Tests</a>
-          <a href="#free-tests">Free Test Access</a>
-          <a href="#mock-tests">Test Series</a>
-        </div>
-      </div>
+      <h2>
+        Everything you need to practice with purpose.
+      </h2>
 
-      <div>
-        <h4>Account</h4>
-        <div class="footer-links">
-          <a href="firebase-login.html">Login</a>
-          <a href="firebase-signup.html">Create Account</a>
-        </div>
-      </div>
-
-      <div>
-        <h4>Information</h4>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms &amp; Conditions</a>
-        </div>
-      </div>
+      <p>
+        No clutter. No unnecessary distractions.
+        Just a focused preparation experience.
+      </p>
 
     </div>
 
-    <div class="footer-bottom">
-      <div>© 2026 HPMockShashtra. All rights reserved.</div>
 
-      <div class="footer-bottom-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms &amp; Conditions</a>
+    <div class="features">
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          01
+        </div>
+
+        <h3>
+          Real Exam Practice
+        </h3>
+
+        <p>
+          Timed mock tests designed around the
+          type of preparation competitive exams demand.
+        </p>
+
       </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          02
+        </div>
+
+        <h3>
+          Performance Tracking
+        </h3>
+
+        <p>
+          Review your scores and understand
+          where you need more practice.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          03
+        </div>
+
+        <h3>
+          Study Mode
+        </h3>
+
+        <p>
+          Revise important topics and concepts
+          before attempting your next test.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          04
+        </div>
+
+        <h3>
+          Leaderboard
+        </h3>
+
+        <p>
+          Compare your performance and stay motivated
+          to improve your preparation.
+        </p>
+
+      </div>
+
+
     </div>
 
   </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="section"
+         id="about">
+
+  <div class="container">
+
+    <div class="cta">
+
+      <h2>
+        Your preparation deserves a better system.
+      </h2>
+
+      <p>
+        Join HPMockShashtra and turn your practice
+        into measurable progress.
+      </p>
+
+      <a href="firebase-login.html"
+         class="btn">
+        Get Started Free →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <div class="footer-brand">
+          HPMockShashtra
+        </div>
+
+        <p>
+          A focused online practice platform for
+          students preparing for Himachal Pradesh
+          competitive examinations.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Platform
+        </h4>
+
+        <a href="#exams">
+          Mock Tests
+        </a>
+
+        <a href="study-mode.html">
+          Study Mode
+        </a>
+
+        <a href="firebase-login.html">
+          Login / Register
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Test Series
+        </h4>
+
+        <a href="joa/new-joa-series.html">
+          JOA (IT)
+        </a>
+
+        <a href="patwari/patwari-series.html">
+          HP Patwari
+        </a>
+
+        <a href="mahapack/joa-mahapack.html">
+          MahaPack
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Support
+        </h4>
+
+        <a href="#">
+          Contact
+        </a>
+
+        <a href="#">
+          Terms & Conditions
+        </a>
+
+        <a href="#">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+      <span>
+        © 2026 HPMockShashtra. All rights reserved.
+      </span>
+
+      <span>
+        Built for focused preparation.
+      </span>
+
+    </div>
+
+  </div>
+
 </footer>
 
-<script type="module">
-import { auth, db } from "./firebase-config.js";
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-const loginBtn=document.getElementById("loginBtn"),
-      joinBtn=document.getElementById("joinBtn"),
-      userArea=document.getElementById("userArea"),
-      userNameRound=document.getElementById("userNameRound"),
-      userNameText=document.getElementById("userNameText"),
-      logoutBtn=document.getElementById("logoutBtn"),
-      hamburgerBtn=document.getElementById("hamburgerBtn"),
-      mobileMenu=document.getElementById("mobileMenu"),
-      mobileLoginBtn=document.getElementById("mobileLoginBtn"),
-      mobileJoinBtn=document.getElementById("mobileJoinBtn"),
-      mobileUserArea=document.getElementById("mobileUserArea"),
-      mobileUserName=document.getElementById("mobileUserName"),
-      mobileLogoutBtn=document.getElementById("mobileLogoutBtn");
+<script>
 
-hamburgerBtn?.addEventListener("click",()=>{
-  const open=mobileMenu.classList.toggle("open");
-  hamburgerBtn.setAttribute("aria-expanded",open?"true":"false");
-});
+function toggleMenu(){
 
-mobileMenu?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
+  const nav =
+    document.querySelector('.nav-links');
 
-async function updatePurchasedButtons(user){
-  const joaBuy=document.getElementById("joaBuyBtn");
-  const patwariBuy=document.querySelector('a[href="payment.html?product=patwari"]');
+  if(nav.style.display === 'flex'){
 
-  if(joaBuy) joaBuy.style.display="inline-flex";
-  if(patwariBuy) patwariBuy.style.display="inline-flex";
+    nav.style.display = '';
 
-  if(!user) return;
+  }else{
 
-  try{
-    const snap=await getDoc(doc(db,"testAccess",user.uid));
-    const data=snap.exists()?snap.data():{};
+    nav.style.display = 'flex';
 
-    // Hide Buy Now only when the signed-in user already has JOA access.
-    if(joaBuy && (data.joaAccess===true || data.joaitFullSeries===true)){
-      joaBuy.style.display="none";
-    }
-    if(patwariBuy && data.patwariFullSeries===true){
-      patwariBuy.style.display="none";
-    }
-  }catch(e){
-    console.warn("Could not check purchased series:",e);
+    nav.style.position = 'absolute';
+
+    nav.style.top = '70px';
+
+    nav.style.left = '12px';
+
+    nav.style.right = '12px';
+
+    nav.style.flexDirection = 'column';
+
+    nav.style.alignItems = 'flex-start';
+
+    nav.style.padding = '18px';
+
+    nav.style.background = '#fff';
+
+    nav.style.border = '1px solid #e6eaf0';
+
+    nav.style.borderRadius = '15px';
+
+    nav.style.boxShadow =
+      '0 12px 30px rgba(0,0,0,.08)';
   }
+
 }
 
-onAuthStateChanged(auth,user=>{
-  if(user){
-    loginBtn.style.display="none";
-    joinBtn.style.display="none";
-    userArea.style.display="flex";
-
-    const name=user.displayName||user.email?.split("@")[0]||"User";
-    userNameText.textContent=name;
-    userNameRound.textContent=name.trim().charAt(0).toUpperCase();
-
-    mobileLoginBtn.style.display="none";
-    mobileJoinBtn.style.display="none";
-    mobileUserArea.style.display="block";
-    mobileUserName.textContent=name;
-  }else{
-    loginBtn.style.display="inline-flex";
-    joinBtn.style.display="inline-flex";
-    userArea.style.display="none";
-
-    mobileLoginBtn.style.display="block";
-    mobileJoinBtn.style.display="block";
-    mobileUserArea.style.display="none";
-  }
-
-  updatePurchasedButtons(user);
-});
-
-logoutBtn.addEventListener("click",async()=>{
-  try{await signOut(auth);window.location.reload()}
-  catch(e){console.error("Logout failed:",e)}
-});
-
-mobileLogoutBtn?.addEventListener("click",async()=>{
-  try{await signOut(auth);window.location.reload()}
-  catch(e){console.error("Logout failed:",e)}
-});
 </script>
+
 </body>
 </html>
