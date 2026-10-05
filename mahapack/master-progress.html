@@ -1045,56 +1045,6 @@ function renderOverall(rows){
 }
 
 
-/* One-time celebrations per browser/account when a new accuracy milestone is crossed. */
-function checkNewMilestones(uid,accuracy){
-  if(accuracy === null) return;
-  const key = `hpmockshashtra_accuracy_milestones_${uid}`;
-  let seen = [];
-  try{
-    seen = JSON.parse(localStorage.getItem(key) || "[]");
-    if(!Array.isArray(seen)) seen = [];
-  }catch{seen=[]}
-
-  const reached = MILESTONES.filter(m=>accuracy>=m.value && !seen.includes(m.value));
-  if(!reached.length) return;
-
-  localStorage.setItem(key,JSON.stringify([...seen,...reached.map(m=>m.value)]));
-  const highest = reached[reached.length-1];
-  showMilestonePopup(highest);
-}
-
-function showMilestonePopup(milestone){
-  const item = MILESTONES.find(m=>m.value===milestone);
-  if(!item) return;
-
-  const backdrop = document.createElement("div");
-  backdrop.className = "popup-backdrop";
-  backdrop.innerHTML = `
-    <div class="popup" role="dialog" aria-modal="true">
-      <div class="popup-emoji">${milestone>=90?"🏆🔥":"🌸🎉🌸"}</div>
-      <h2>${escapeHTML(item.title)}!</h2>
-      <p>${escapeHTML(item.message)}</p>
-      <button type="button" id="milestoneClose">Continue</button>
-    </div>`;
-  document.body.appendChild(backdrop);
-
-  const flowers = ["🌸","🌼","🌺","✿","❀"];
-  const count = milestone>=90 ? 90 : 50;
-  for(let i=0;i<count;i++){
-    const flower = document.createElement("span");
-    flower.className = "flower";
-    flower.textContent = flowers[Math.floor(Math.random()*flowers.length)];
-    flower.style.left = Math.random()*100+"vw";
-    flower.style.animationDuration = (2.5+Math.random()*3)+"s";
-    flower.style.animationDelay = Math.random()*1.2+"s";
-    flower.style.fontSize = (14+Math.random()*16)+"px";
-    document.body.appendChild(flower);
-    setTimeout(()=>flower.remove(),7000);
-  }
-
-  $("milestoneClose").addEventListener("click",()=>backdrop.remove());
-}
-
 function renderSubjects(rows){
   if(!rows.length){
     $("subjectGrid").innerHTML = `
@@ -1221,10 +1171,6 @@ onAuthStateChanged(auth,async user=>{
     allSubjectRows = sortSubjects(loaded);
     const summary = renderOverall(allSubjectRows);
     renderSubjects(allSubjectRows);
-
-    if(summary.graded > 0){
-      checkNewMilestones(user.uid,summary.accuracy);
-    }
 
     if(!allSubjectRows.some(row=>row.hasData)){
       showStatus("Your access is confirmed, but no saved attempts or sessions were found yet. Start a practice session to begin tracking your progress.");
