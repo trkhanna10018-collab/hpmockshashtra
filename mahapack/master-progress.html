@@ -385,8 +385,8 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   line-height:1.5;
 }
 .subject-icon-img{
-  width:22px;
-  height:22px;
+  width:32px;
+  height:32px;
   max-width:22px;
   max-height:22px;
   object-fit:contain;
@@ -605,6 +605,23 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* Subject card icons */
+.subject-icon,
+.subject-icon img,
+.subject-card-icon,
+.subject-card-icon img,
+.subject-card img.subject-image,
+.subject-card .subject-image img {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
 </style>
 </head>
 
