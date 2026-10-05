@@ -6,44 +6,70 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Master Progress | HPMockShashtra</title>
 <style>
-:root{--bg:#07152c;--text:#f5f9ff;--muted:#91a7c2;--blue:#1696ff;--green:#27d99a;--violet:#9a67ff}
+:root{--navy:#102b50;--navy2:#173d6b;--blue:#2476d2;--line:#d5e3f5;--text:#17304f;--muted:#637a98;--green:#168653;--red:#c33d4b;--amber:#986100}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 80% 8%,#7b4cff20,transparent 30%),linear-gradient(135deg,#061329,#0a1c3b 48%,#111633)}
+body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#eaf2fc 0,#f7faff 360px,#fff 100%)}
 a{text-decoration:none;color:inherit}
-button{cursor:pointer}
-.topbar{position:sticky;top:8px;width:calc(100% - 24px);max-width:1400px;margin:8px auto 0;z-index:99;border:1px solid #9c75ff55;border-radius:17px;background:linear-gradient(135deg,#12294df5,#35215bf5);box-shadow:0 16px 45px #0009}
-.nav{min-height:68px;padding:8px 15px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.brand{font-size:19px;font-weight:900;margin-right:auto}.mock{color:#39a9ff}
+.topbar{position:sticky;top:8px;width:calc(100% - 24px);max-width:1400px;margin:8px auto 0;z-index:99;border:1px solid #244a7c;border-radius:16px;background:linear-gradient(110deg,#102b50,#173d6b);box-shadow:0 8px 24px #17385d20}
+.nav{min-height:68px;padding:9px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:900;margin-right:auto;color:#fff}
+.mock{color:#70c8ff}
 .nav-links{display:flex;gap:7px;flex-wrap:wrap}
-.nav-link{padding:9px 12px;border:1px solid #7eb0ff42;border-radius:9px;font-size:11px;font-weight:800;background:#ffffff08}
-.nav-link.active,.nav-link:hover{background:linear-gradient(135deg,#168cff55,#9b6cff55)}
-.wrap{width:min(1400px,calc(100% - 28px));margin:25px auto 40px}
-.hero{padding:24px;border:1px solid #6baeff30;border-radius:18px;background:linear-gradient(135deg,#0a1a35,#10264a 48%,#181b3b);box-shadow:0 18px 50px #0005}
-.eyebrow{font-size:10px;color:#65c8ff;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
-h1{font-size:30px;margin:8px 0}p{color:var(--muted);font-size:12px;line-height:1.6}
-.access{margin-top:14px;padding:18px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;border:1px solid #6baeff30;border-radius:14px;background:#081a35}
-.access-copy{flex:1;min-width:200px}.access-copy strong{font-size:14px}.access-copy p{margin:5px 0}
-.btn{display:inline-block;padding:10px 15px;border:0;border-radius:9px;background:linear-gradient(135deg,#168cff,#665cff);color:white;font-size:11px;font-weight:900}
-.secondary{display:inline-block;padding:9px 12px;border:1px solid #7eb0ff55;border-radius:9px;font-size:11px;font-weight:800}
-.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:15px}
-.stat{padding:16px;border:1px solid #6baeff25;border-radius:13px;background:linear-gradient(145deg,#12294d,#0d2040)}
-.stat strong{display:block;font-size:22px;color:#63c7ff}.stat span{display:block;margin-top:5px;color:#91a7c2;font-size:10px}
-.section{margin-top:24px}.section h2{font-size:19px;margin-bottom:5px}
-.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
-.subject-card{padding:17px;border:1px solid #6baeff25;border-radius:15px;background:linear-gradient(145deg,#12294d,#0d2040);box-shadow:0 9px 25px #0003}
-.subject-card h3{font-size:14px;margin:0 0 8px}.subject-card p{font-size:10px}
-.bar{height:6px;background:#06152c;border-radius:99px;overflow:hidden;margin:12px 0}
-.bar span{display:block;height:100%;background:linear-gradient(90deg,#168eff,#925aff)}
-.action{display:inline-block;padding:8px 11px;border-radius:8px;background:linear-gradient(135deg,#0ea5e9,#10b981);color:#021a16;font-size:10px;font-weight:900}
-.notice{padding:15px;border:1px solid #6baeff30;border-radius:12px;background:#081a35;margin-top:14px}
+.nav-link{padding:9px 12px;border:1px solid #ffffff35;border-radius:9px;font-size:11px;font-weight:800;color:#fff;background:#ffffff0c}
+.nav-link.active,.nav-link:hover{background:#fff;color:#15365f}
+#userArea{font-size:11px;color:#e4efff}
+.wrap{width:min(1400px,calc(100% - 28px));margin:24px auto 40px}
+.hero{padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#fff,#f3f8ff);box-shadow:0 8px 25px #24466d0b}
+.eyebrow{font-size:10px;color:var(--blue);font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
+h1{font-size:30px;margin:8px 0;color:var(--navy)}
+p{color:var(--muted);font-size:12px;line-height:1.6}
+.access{margin-top:14px;padding:17px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;border:1px solid #cbdcf1;border-radius:13px;background:#f5f9ff}
+.access-copy{flex:1;min-width:200px}
+.access-copy strong{font-size:14px;color:var(--navy)}
+.access-copy p{margin:5px 0}
+.btn{display:inline-block;padding:10px 15px;border:0;border-radius:9px;background:linear-gradient(135deg,#2476d2,#1658a7);color:white;font-size:11px;font-weight:900}
+.secondary{display:inline-block;padding:9px 12px;border:1px solid #a9c4e7;border-radius:9px;font-size:11px;font-weight:800;color:var(--navy);background:#fff}
+.section{margin-top:24px}
+.section h2{font-size:20px;margin:0 0 5px;color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.stat{padding:17px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 5px 18px #23466d09;position:relative;overflow:hidden}
+.stat:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,#2476d2)}
+.stat strong{display:block;font-size:25px;color:var(--accent,#2476d2)}
+.stat span{display:block;margin-top:5px;font-size:11px;font-weight:800;color:var(--text)}
+.stat small{display:block;margin-top:5px;font-size:10px;color:var(--muted)}
+.stat.attempted{--accent:#2476d2}
+.stat.unattempted{--accent:#986100}
+.stat.correct{--accent:#168653}
+.stat.wrong{--accent:#c33d4b}
+.stat.accuracy{--accent:#6446bd}
+.stat.completion{--accent:#087e91}
+.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:13px}
+.subject-card{padding:17px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 5px 18px #23466d09}
+.subject-card h3{font-size:14px;margin:0 0 8px;color:var(--navy)}
+.subject-card p{font-size:11px;margin:6px 0}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}
+.metric{padding:9px;border-radius:9px;background:#f1f6fd;border:1px solid #e2ebf7}
+.metric span{display:block;font-size:10px;color:var(--muted)}
+.metric strong{display:block;margin-top:3px;font-size:16px;color:var(--navy)}
+.metric.correct strong{color:var(--green)}
+.metric.wrong strong{color:var(--red)}
+.metric.unattempted strong{color:var(--amber)}
+.bar{height:8px;background:#e4edf8;border-radius:99px;overflow:hidden;margin:12px 0 6px}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,#2476d2,#58a7f8);border-radius:99px}
+.action{display:inline-block;margin-top:8px;padding:9px 12px;border-radius:8px;background:var(--navy2);color:#fff;font-size:10px;font-weight:900}
+.badge{display:inline-block;padding:5px 8px;border-radius:20px;font-size:10px;font-weight:900}
+.badge.good{background:#ddf5e8;color:#167447}
+.badge.low{background:#fde8e9;color:#b42332}
+.badge.neutral{background:#eaf1fb;color:#34577f}
+.notice{padding:15px;border:1px solid #cbdcf1;border-radius:12px;background:#f5f9ff;margin-top:14px;color:var(--navy)}
 .hidden{display:none!important}
-.footer{margin-top:35px;padding:30px 0 15px;border-top:1px solid #6baeff25;background:#040b19}
+.footer{margin-top:35px;padding:30px 0 15px;border-top:1px solid #d6e3f3;background:#102b50}
 .footer-inner{width:min(1400px,calc(100% - 28px));margin:auto}
 .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:25px}
-.footer h3,.footer h4{margin:0 0 10px}.footer p,.footer a{font-size:11px;color:#91a7c2}
+.footer h3,.footer h4{margin:0 0 10px;color:#fff}
+.footer p,.footer a{font-size:11px;color:#d0def0}
 .footer-links{display:grid;gap:8px}
-.footer-bottom{margin-top:22px;padding-top:14px;border-top:1px solid #ffffff12;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#657a96}
-#userArea{font-size:11px;color:#c6d8f4}
+.footer-bottom{margin-top:22px;padding-top:14px;border-top:1px solid #ffffff25;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#b3c5dc}
 @media(max-width:850px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:550px){.nav{gap:10px}.brand{font-size:16px}.nav-links{gap:5px}.nav-link{padding:8px;font-size:10px}.wrap{width:calc(100% - 18px)}.hero{padding:18px}h1{font-size:24px}.stats,.subject-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
 </style>
@@ -66,7 +92,7 @@ h1{font-size:30px;margin:8px 0}p{color:var(--muted);font-size:12px;line-height:1
 <section class="hero">
 <div class="eyebrow">Your preparation dashboard</div>
 <h1>Master Progress</h1>
-<p>Track your preparation across all 15 Computer subjects in one place.</p>
+<p>Track your preparation across your accessible Computer subjects.</p>
 
 <div id="loginBox" class="access hidden">
 <div class="access-copy">
@@ -79,7 +105,7 @@ h1{font-size:30px;margin:8px 0}p{color:var(--muted);font-size:12px;line-height:1
 <div id="purchaseBox" class="access hidden">
 <div class="access-copy">
 <strong>🔒 Unlock Your Master Progress Dashboard</strong>
-<p>Your account is signed in, but Master Pack access could not be confirmed. Check your purchase or buy the pack to track all 15 subjects.</p>
+<p>Your account is signed in, but Master Pack access could not be confirmed. Check your purchase or buy the pack to track your subjects.</p>
 </div>
 <a class="btn" href="joa-mahapack.html">Buy Master Pack →</a>
 <a class="secondary" href="my-purchase.html">My Purchases</a>
@@ -89,17 +115,22 @@ h1{font-size:30px;margin:8px 0}p{color:var(--muted);font-size:12px;line-height:1
 <div id="statusBox" class="notice hidden"></div>
 </section>
 
-<section id="statsSection" class="stats hidden">
-<div class="stat"><strong id="overallProgress">—</strong><span>Overall Progress</span></div>
-<div class="stat"><strong id="attemptedCount">—</strong><span>Questions Attempted</span></div>
-<div class="stat"><strong id="correctCount">—</strong><span>Correct Answers</span></div>
-<div class="stat"><strong id="wrongCount">—</strong><span>Wrong Answers</span></div>
-<div class="stat"><strong id="accuracyCount">—</strong><span>Overall Accuracy</span></div>
+<section id="statsSection" class="section hidden">
+<h2>Overall Performance</h2>
+<p>Summary of your accessible Maha Pack subjects only. JOA and Patwari test records are not included.</p>
+<div class="stats">
+<div class="stat attempted"><strong id="attemptedCount">—</strong><span>Questions Attempted</span></div>
+<div class="stat unattempted"><strong id="unattemptedCount">—</strong><span>Questions Unattempted</span><small id="totalQuestionsLabel">Out of — available questions</small></div>
+<div class="stat correct"><strong id="correctCount">—</strong><span>Correct Answers</span></div>
+<div class="stat wrong"><strong id="wrongCount">—</strong><span>Wrong Answers</span></div>
+<div class="stat accuracy"><strong id="accuracyCount">—</strong><span>Overall Accuracy</span></div>
+<div class="stat completion"><strong id="overallProgress">—</strong><span>Completion</span></div>
+</div>
 </section>
 
 <section class="section">
-<h2>Subject Progress</h2>
-<p id="subjectIntro">Explore all 15 subjects. Personal progress is visible only to the signed-in eligible user.</p>
+<h2>Subject-wise Performance</h2>
+<p id="subjectIntro">Your personal progress is visible only to the signed-in eligible user.</p>
 <div id="subjectGrid" class="subject-grid"></div>
 </section>
 
@@ -134,6 +165,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/f
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const $ = id => document.getElementById(id);
+
 const SUBJECTS = [
 {id:"computer_fundamentals_01",name:"Computer Fundamentals",course:"computer-fundamentals",file:"paid-computer-fundamentals.html",icon:"💻"},
 {id:"ms_word_01",name:"MS Word",course:"ms-word",file:"paid-ms-word.html",icon:"📝",pack:"ms-office"},
@@ -159,13 +191,12 @@ function active(value) {
   const expiry = value.expiresAt?.toDate ? value.expiresAt.toDate() : (value.expiresAt ? new Date(value.expiresAt) : null);
   return !expiry || Number.isNaN(expiry.getTime()) || expiry.getTime() > Date.now();
 }
-function escapeHTML(s) {
-  return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
+
 function setStatus(message) {
   $("statusBox").textContent = message;
   $("statusBox").classList.remove("hidden");
 }
+
 function renderPublicSubjects() {
   $("subjectGrid").innerHTML = SUBJECTS.map(s => `
     <article class="subject-card">
@@ -174,16 +205,39 @@ function renderPublicSubjects() {
       <p>Sign in and confirm course access to view your personal progress.</p>
     </article>`).join("");
 }
+
 function renderProgressCards(rows) {
-  $("subjectGrid").innerHTML = rows.map(({subject,attempted,correct,percent}) => `
-    <article class="subject-card">
-      <h3>${subject.icon} ${subject.name}</h3>
-      <p>${attempted} recorded questions attempted • ${correct} correct</p>
-      <div class="bar"><span style="width:${percent}%"></span></div>
-      <p>${percent}% accuracy based on recorded answers</p>
+  if (!rows.length) {
+    $("subjectGrid").innerHTML = '<div class="notice">No subject access was found for this account. Please check My Purchases.</div>';
+    return;
+  }
+
+  $("subjectGrid").innerHTML = rows.map(({subject,total,attempted,unattempted,correct,wrong,percent,completion}) => {
+    const badge = attempted < 10
+      ? '<span class="badge neutral">Build more data</span>'
+      : percent >= 75
+        ? '<span class="badge good">Strong subject</span>'
+        : percent < 50
+          ? '<span class="badge low">Needs improvement</span>'
+          : '<span class="badge neutral">Keep practising</span>';
+
+    return `<article class="subject-card">
+      <h3>${subject.icon} ${subject.name}</h3>${badge}
+      <div class="metrics">
+        <div class="metric"><span>Total questions</span><strong>${total.toLocaleString("en-IN")}</strong></div>
+        <div class="metric"><span>Attempted</span><strong>${attempted.toLocaleString("en-IN")}</strong></div>
+        <div class="metric unattempted"><span>Unattempted</span><strong>${unattempted.toLocaleString("en-IN")}</strong></div>
+        <div class="metric correct"><span>Correct</span><strong>${correct.toLocaleString("en-IN")}</strong></div>
+        <div class="metric wrong"><span>Wrong</span><strong>${wrong.toLocaleString("en-IN")}</strong></div>
+        <div class="metric"><span>Accuracy</span><strong>${attempted ? percent + "%" : "—"}</strong></div>
+      </div>
+      <div class="bar"><span style="width:${completion}%"></span></div>
+      <p>${completion}% questions completed${attempted < 10 ? " • Attempt at least 10 questions for a more reliable comparison." : ""}</p>
       <a class="action" href="${subject.file}">Open Subject →</a>
-    </article>`).join("");
+    </article>`;
+  }).join("");
 }
+
 function showLogin() {
   $("loadingBox").classList.add("hidden");
   $("loginBox").classList.remove("hidden");
@@ -194,6 +248,7 @@ function showLogin() {
   $("subjectIntro").textContent = "All 15 subjects are listed below. Sign in to access your own progress.";
   renderPublicSubjects();
 }
+
 function showNoAccess() {
   $("loadingBox").classList.add("hidden");
   $("loginBox").classList.add("hidden");
@@ -203,78 +258,115 @@ function showNoAccess() {
   $("subjectIntro").textContent = "Subject list is public. Personal scores are hidden until eligible access is confirmed.";
   renderPublicSubjects();
 }
+
 function getAccessForSubject(data, subject) {
   const collections = [
     data?.computerAccess?.courses,
     data?.mahapackAccess?.courses
   ];
+
   for (const collection of collections) {
     if (!collection) continue;
     for (const key of [subject.course, ...(subject.accessAliases || [])]) {
       if (active(collection[key])) return true;
     }
   }
+
   if (subject.pack && (
     active(data?.computerAccess?.packs?.[subject.pack]) ||
     active(data?.mahapackAccess?.packs?.[subject.pack])
   )) return true;
+
   return active(data?.computerAccess?.packs?.["computer-master"]) ||
          active(data?.mahapackAccess?.packs?.["computer-master"]) ||
          active(data?.mahapackAccess);
 }
+
 async function loadSubjectProgress(user, subject) {
   const [attemptSnap, sessionSnap] = await Promise.all([
     getDoc(doc(db,"users",user.uid,"mahapackAttempts",subject.id)),
     getDoc(doc(db,"users",user.uid,"mahapackSessions",subject.id))
   ]);
+
   const attempt = attemptSnap.exists() ? attemptSnap.data() : null;
   const session = sessionSnap.exists() ? sessionSnap.data() : null;
-
-  // Read common answer/result field names; if no supported fields exist,
-  // show no fabricated totals.
   const source = attempt || session || {};
   const answers = source.answers && typeof source.answers === "object" ? source.answers : {};
-  const values = Object.values(answers);
+  const values = Array.isArray(answers) ? answers : Object.values(answers);
+
   let attempted = values.filter(v => v !== null && v !== undefined && v !== "").length;
   let correct = 0;
+  let wrong = 0;
 
   if (Array.isArray(source.results)) {
     attempted = source.results.length;
     correct = source.results.filter(r => r?.isCorrect === true || r?.correct === true).length;
+    wrong = source.results.filter(r => r?.isCorrect === false || r?.correct === false).length;
   } else if (Array.isArray(source.answers)) {
     attempted = source.answers.length;
     correct = source.answers.filter(a => a?.isCorrect === true || a?.correct === true).length;
+    wrong = source.answers.filter(a => a?.isCorrect === false || a?.correct === false).length;
   } else if (source.correctAnswers != null || source.wrongAnswers != null) {
     correct = Number(source.correctAnswers || 0);
-    attempted = Math.max(attempted, correct + Number(source.wrongAnswers || 0));
+    wrong = Number(source.wrongAnswers || 0);
+    attempted = Math.max(attempted, correct + wrong);
   } else {
     correct = values.filter(v => v === true || v?.isCorrect === true || v?.correct === true).length;
+    wrong = values.filter(v => v === false || v?.isCorrect === false || v?.correct === false).length;
   }
 
   attempted = Math.max(0, Number(attempted) || 0);
   correct = Math.min(attempted, Math.max(0, Number(correct) || 0));
-  return {subject, attempted, correct, percent: attempted ? Math.round(correct / attempted * 100) : 0};
+
+  if (source.wrongAnswers == null && !Array.isArray(source.results) && !Array.isArray(source.answers)) {
+    wrong = Math.max(0, attempted - correct);
+  } else if (source.wrongAnswers == null && (Array.isArray(source.results) || Array.isArray(source.answers))) {
+    const graded = Array.isArray(source.results) ? source.results : source.answers;
+    if (!graded.some(a => a?.isCorrect === false || a?.correct === false)) {
+      wrong = Math.max(0, attempted - correct);
+    }
+  }
+
+  wrong = Math.min(Math.max(0, attempted - correct), Math.max(0, Number(wrong) || 0));
+
+  const totalRaw = Number(source.totalQuestions || source.questionCount || source.total || 400);
+  const total = Math.max(attempted, Number.isFinite(totalRaw) && totalRaw > 0 ? totalRaw : 400);
+  const unattempted = Math.max(0, total - attempted);
+
+  return {
+    subject,total,attempted,unattempted,correct,wrong,
+    percent: attempted ? Math.round(correct / attempted * 100) : 0,
+    completion: total ? Math.min(100,Math.round(attempted / total * 100)) : 0
+  };
 }
+
 function renderStats(rows) {
-  const attempted = rows.reduce((n,r)=>n+r.attempted,0);
-  const correct = rows.reduce((n,r)=>n+r.correct,0);
-  const wrong = Math.max(0,attempted-correct);
-  $("overallProgress").textContent = attempted ? Math.round(attempted / (SUBJECTS.length * 400) * 100) + "%" : "0%";
+  const total = rows.reduce((n,r) => n + r.total,0);
+  const attempted = rows.reduce((n,r) => n + r.attempted,0);
+  const correct = rows.reduce((n,r) => n + r.correct,0);
+  const wrong = rows.reduce((n,r) => n + r.wrong,0);
+  const unattempted = Math.max(0,total - attempted);
+
   $("attemptedCount").textContent = attempted.toLocaleString("en-IN");
+  $("unattemptedCount").textContent = unattempted.toLocaleString("en-IN");
+  $("totalQuestionsLabel").textContent = `Out of ${total.toLocaleString("en-IN")} available questions`;
   $("correctCount").textContent = correct.toLocaleString("en-IN");
   $("wrongCount").textContent = wrong.toLocaleString("en-IN");
-  $("accuracyCount").textContent = attempted ? Math.round(correct/attempted*100)+"%" : "0%";
+  $("accuracyCount").textContent = attempted ? Math.round(correct / attempted * 100) + "%" : "—";
+  $("overallProgress").textContent = total ? Math.min(100,Math.round(attempted / total * 100)) + "%" : "0%";
   $("statsSection").classList.remove("hidden");
 }
+
 function renderMilestones(total) {
   const milestones = [100,2500,3500,5000,6000];
-  $("milestones").innerHTML = milestones.map(n=>`
+  $("milestones").innerHTML = milestones.map(n => `
     <article class="subject-card">
       <h3>${total >= n ? "🏆" : "🔒"} ${n.toLocaleString("en-IN")} Questions</h3>
       <p>${total >= n ? "Achieved" : `${Math.max(0,n-total).toLocaleString("en-IN")} more to go`}</p>
     </article>`).join("");
   $("milestonesSection").classList.remove("hidden");
 }
+
 onAuthStateChanged(auth, async user => {
   $("loadingBox").classList.remove("hidden");
   $("loginBox").classList.add("hidden");
@@ -289,11 +381,11 @@ onAuthStateChanged(auth, async user => {
   }
 
   $("userArea").textContent = user.displayName || user.email || "Signed in";
+
   try {
     const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
     const data = accessSnap.exists() ? accessSnap.data() : {};
 
-    // Accept known storage patterns, without exposing progress to other users.
     const masterAccess =
       active(data?.computerAccess?.packs?.["computer-master"]) ||
       active(data?.mahapackAccess?.packs?.["computer-master"]) ||
@@ -308,22 +400,34 @@ onAuthStateChanged(auth, async user => {
 
     $("loginBox").classList.add("hidden");
     $("purchaseBox").classList.add("hidden");
-    $("subjectIntro").textContent = "Your progress is loaded from your signed-in account.";
-    const allowed = SUBJECTS.filter(s => getAccessForSubject(data,s));
-    const targets = allowed.length ? allowed : SUBJECTS;
+    $("subjectIntro").textContent = "Your progress is loaded from your signed-in account. Only accessible computer subjects are included.";
 
-    const results = await Promise.all(targets.map(async subject => {
-      try { return await loadSubjectProgress(user,subject); }
-      catch (e) {
+    const allowed = SUBJECTS.filter(s => getAccessForSubject(data,s));
+
+    const results = await Promise.all(allowed.map(async subject => {
+      try {
+        return await loadSubjectProgress(user,subject);
+      } catch (e) {
         console.warn("Progress could not be loaded for",subject.id,e);
-        return {subject,attempted:0,correct:0,percent:0};
+        return {
+          subject,total:400,attempted:0,unattempted:400,
+          correct:0,wrong:0,percent:0,completion:0
+        };
       }
     }));
+
+    if (!results.length) {
+      showNoAccess();
+      setStatus("Master Pack access could not be matched to any of the 15 computer subjects. Please verify the access keys in testAccess.");
+      return;
+    }
+
     renderStats(results);
     renderProgressCards(results);
-    renderMilestones(results.reduce((n,r)=>n+r.attempted,0));
-    if (!results.some(r=>r.attempted)) {
-      setStatus("Master Pack access is confirmed, but no readable attempt data was found for these subjects yet. Check the field names and collection paths used by your test pages.");
+    renderMilestones(results.reduce((n,r) => n + r.attempted,0));
+
+    if (!results.some(r => r.attempted)) {
+      setStatus("Master Pack access is confirmed, but no readable attempt data was found for these subjects yet. The saved field names and collection paths may need to be matched to your test pages.");
     }
   } catch (error) {
     console.error("Master Progress loading error:",error);
