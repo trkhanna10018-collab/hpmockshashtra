@@ -61,6 +61,7 @@ button{font:inherit;cursor:pointer}
   white-space:nowrap;
 }
 .mock{color:#70c8ff}
+.user-tools{display:flex;align-items:center;gap:8px;margin-left:4px}
 .user-area{
   display:flex;
   align-items:center;
@@ -68,7 +69,9 @@ button{font:inherit;cursor:pointer}
   color:#fff;
   font-size:11px;
   font-weight:800;
+  max-width:210px;
 }
+.user-name{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .avatar{
   width:32px;height:32px;
   display:grid;place-items:center;
@@ -212,28 +215,19 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 }
 .overall-top h2{margin:0;font-size:21px}
 .overall-top p{margin:6px 0 0}
-.accuracy-highlight{
-  min-width:125px;
-  padding:12px 17px;
-  border:1px solid #c6d9f5;
-  border-radius:14px;
-  text-align:center;
-  background:white;
+.total-question-circle{
+  width:142px;height:142px;flex:0 0 142px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;text-align:center;border:7px solid #d7e8ff;
+  outline:2px solid #2476d2;background:radial-gradient(circle at 35% 25%,#fff,#edf5ff 72%);
+  box-shadow:0 8px 22px #174a9118;
 }
-.accuracy-highlight strong{
-  display:block;
-  color:var(--purple);
-  font-size:29px;
-  line-height:1.2;
-}
-.accuracy-highlight span{
-  color:var(--muted);
-  font-size:10px;
-  font-weight:800;
-}
+.total-question-circle .circle-label{font-size:9px;font-weight:900;letter-spacing:.7px;color:#41648d}
+.total-question-circle strong{font-size:27px;line-height:1.1;color:#1769c2;overflow-wrap:anywhere;max-width:115px}
+.total-question-circle .circle-note{font-size:8px;color:var(--muted);max-width:100px}
 .stats{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:11px;
   margin-top:18px;
 }
@@ -274,8 +268,7 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 .stat.unattempted{--accent:#986100}
 .stat.correct{--accent:#168653}
 .stat.wrong{--accent:#c33d4b}
-.stat.accuracy{--accent:#6446bd}
-.stat.completion{--accent:#087e91}
+
 
 /* OVERALL BARS */
 .progress-pair{
@@ -587,8 +580,9 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   .nav{min-height:58px;padding:9px 11px;gap:9px}
   .brand{font-size:16px}
   .menu-toggle{display:block}
-  .user-area{margin-left:auto}
-  .user-name{max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .user-tools{width:100%;justify-content:center;flex-wrap:wrap;margin:6px 0 0}
+  .user-area{justify-content:center;max-width:100%}
+  .user-name{max-width:180px}
   .nav-links{
     display:none;
     width:100%;
@@ -597,11 +591,17 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
     align-items:stretch;
   }
   .nav-links.open{display:flex}
-  .nav-link,.logout-btn{width:100%;padding:12px;text-align:center}
+  .nav-link{width:100%;padding:12px;text-align:center}
+  .user-tools{display:none}
+  .nav-links.open ~ .user-tools{display:flex}
+  .logout-btn{padding:12px;text-align:center}
   .wrap{width:calc(100% - 18px);margin-top:16px}
   .hero{padding:18px}
   h1{font-size:25px}
   .overall-panel{padding:14px}
+  .overall-top{align-items:center}
+  .total-question-circle{width:112px;height:112px;flex-basis:112px;border-width:5px}
+  .total-question-circle strong{font-size:22px}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .stat{padding:13px}
   .stat strong{font-size:22px}
@@ -622,20 +622,22 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   <nav class="nav">
     <a class="brand" href="../homepage.html">HP<span class="mock">Mock</span>Shashtra</a>
 
-    <div class="user-area" id="userArea">
-      <span class="avatar">?</span>
-      <span class="user-name">Checking…</span>
-    </div>
-
     <button class="menu-toggle" id="menuToggle" type="button"
       aria-label="Open navigation menu" aria-expanded="false">☰</button>
 
     <div class="nav-links" id="navLinks">
-      <button class="logout-btn hidden" id="logoutBtn" type="button">Logout</button>
       <a class="nav-link" href="../homepage.html">Home</a>
       <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
       <a class="nav-link" href="../my-purchase.html">My Purchases</a>
       <a class="nav-link active" href="master-progress.html">Master Progress</a>
+    </div>
+
+    <div class="user-tools">
+      <div class="user-area" id="userArea">
+        <span class="avatar">?</span>
+        <span class="user-name">Checking…</span>
+      </div>
+      <button class="logout-btn hidden" id="logoutBtn" type="button">Logout</button>
     </div>
   </nav>
 </header>
@@ -678,22 +680,18 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
         <h2>Overall Performance</h2>
         <p>Summary of your accessible Maha Pack subjects only.</p>
       </div>
-      <div class="accuracy-highlight">
-        <strong id="accuracyCount">—</strong>
-        <span>VERIFIED ACCURACY</span>
+      <div class="total-question-circle" aria-label="Total questions available">
+        <span class="circle-label">TOTAL QUESTIONS</span>
+        <strong id="totalQuestionsCount">0</strong>
+        <span class="circle-note">Across your active subjects</span>
       </div>
     </div>
 
     <div class="stats">
-      <div class="stat attempted">
-        <strong id="attemptedCount">0</strong>
-        <span>Questions Attempted</span>
-        <small>Questions with saved answers</small>
-      </div>
       <div class="stat unattempted">
         <strong id="unattemptedCount">0</strong>
         <span>Questions Unattempted</span>
-        <small id="totalQuestionsLabel">Out of 0 available questions</small>
+        <small>Questions not yet attempted</small>
       </div>
       <div class="stat correct">
         <strong id="correctCount">0</strong>
@@ -704,16 +702,6 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
         <strong id="wrongCount">0</strong>
         <span>Wrong Answers</span>
         <small>Verified incorrect responses</small>
-      </div>
-      <div class="stat accuracy">
-        <strong id="gradedCount">0</strong>
-        <span>Graded Answers</span>
-        <small>Used to calculate accuracy</small>
-      </div>
-      <div class="stat completion">
-        <strong id="overallProgress">0%</strong>
-        <span>Question Completion</span>
-        <small>Attempted compared with available</small>
       </div>
     </div>
 
@@ -767,7 +755,7 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
       <div>
         <h4>Preparation</h4>
         <div class="footer-links">
-          <a href="../joa/new-joa-series.htm">JOA (IT) Mock Tests</a>
+          <a href="../joa/new-joa-series.html">JOA (IT) Mock Tests</a>
           <a href="joa-mahapack.html">JOA IT Maha Pack</a>
           <a href="../patwari/patwari-series.html">HP Patwari Mock Tests</a>
           <a href="../my-progress.html">My Progress</a>
@@ -1099,14 +1087,10 @@ function renderOverall(rows){
   const accuracy = graded > 0 ? Math.round(correct/graded*100) : null;
   const completion = total > 0 ? Math.min(100,Math.round(attempted/total*100)) : 0;
 
-  $("attemptedCount").textContent = attempted.toLocaleString("en-IN");
+  $("totalQuestionsCount").textContent = total.toLocaleString("en-IN");
   $("unattemptedCount").textContent = unattempted.toLocaleString("en-IN");
-  $("totalQuestionsLabel").textContent = `Out of ${total.toLocaleString("en-IN")} available questions`;
   $("correctCount").textContent = correct.toLocaleString("en-IN");
   $("wrongCount").textContent = wrong.toLocaleString("en-IN");
-  $("gradedCount").textContent = graded.toLocaleString("en-IN");
-  $("accuracyCount").textContent = accuracy === null ? "—" : accuracy+"%";
-  $("overallProgress").textContent = completion+"%";
   $("completionLabel").textContent = completion+"%";
   $("completionBar").style.width = completion+"%";
   $("accuracyLabel").textContent = accuracy === null ? "Not enough graded data" : accuracy+"%";
