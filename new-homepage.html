@@ -3,29 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#173b7a">
-<meta name="description" content="HPMockShashtra - Smart online mock tests and practice platform for Himachal Pradesh competitive exams.">
+<meta name="theme-color" content="#071426">
 <title>HPMockShashtra | Smart Practice. Better Preparation.</title>
 
 <style>
 :root{
-  --primary:#173b7a;
-  --primary2:#2456a6;
-  --accent:#f5a623;
-  --text:#172033;
-  --muted:#64748b;
-  --bg:#f7f9fc;
-  --card:#ffffff;
-  --border:#e6eaf0;
-  --success:#15803d;
-  --shadow:0 12px 35px rgba(19,43,82,.08);
-  --radius:18px;
+  --nav:#071426;
+  --nav2:#0d1d34;
+  --blue:#2563eb;
+  --blue2:#4f8cff;
+  --gold:#f6b73c;
+  --text:#152238;
+  --muted:#68778d;
+  --bg:#f4f7fb;
+  --white:#fff;
+  --border:#e5eaf1;
+  --shadow:0 18px 50px rgba(11,31,58,.12);
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -57,25 +56,29 @@ button{
 
 .site-header{
   position:sticky;
-  top:14px;
-  z-index:1000;
-  width:min(1180px,92%);
-  margin:14px auto 0;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border:1px solid rgba(225,230,238,.95);
-  border-radius:18px;
-  box-shadow:0 8px 28px rgba(17,38,72,.08);
+  top:12px;
+  z-index:9999;
+  width:min(1220px,94%);
+  margin:12px auto 0;
+  border-radius:20px;
+  background:linear-gradient(
+    135deg,
+    rgba(5,18,35,.98),
+    rgba(12,31,55,.97)
+  );
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 16px 45px rgba(0,0,0,.24);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
 }
 
 .navbar{
-  min-height:72px;
+  min-height:74px;
+  padding:0 18px 0 22px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  padding:0 22px;
+  gap:18px;
 }
 
 .brand{
@@ -85,54 +88,59 @@ button{
   min-width:max-content;
 }
 
-.brand-mark{
-  width:42px;
-  height:42px;
-  border-radius:12px;
+.brand-logo{
+  width:43px;
+  height:43px;
+  border-radius:13px;
   display:grid;
   place-items:center;
   color:#fff;
-  font-weight:900;
-  font-size:19px;
-  background:linear-gradient(135deg,var(--primary),#3977d2);
-  box-shadow:0 7px 18px rgba(23,59,122,.24);
+  font-size:18px;
+  font-weight:950;
+  background:linear-gradient(145deg,#2463d9,#4e91ff);
+  box-shadow:0 7px 22px rgba(37,99,235,.35);
 }
 
 .brand-name{
-  font-weight:850;
+  color:#fff;
   font-size:19px;
-  letter-spacing:-.4px;
+  line-height:1.15;
+  font-weight:900;
 }
 
 .brand-tag{
+  color:#9eafc6;
   display:block;
-  font-size:10px;
-  color:var(--muted);
-  font-weight:600;
-  margin-top:-3px;
+  font-size:9px;
+  font-weight:650;
+  margin-top:2px;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:26px;
+  gap:5px;
 }
 
 .nav-links a{
-  color:#4b5568;
-  font-size:14px;
-  font-weight:650;
+  color:#d4deed;
+  font-size:12px;
+  font-weight:750;
+  padding:9px 11px;
+  border-radius:9px;
   transition:.2s;
+  white-space:nowrap;
 }
 
 .nav-links a:hover{
-  color:var(--primary);
+  color:#fff;
+  background:rgba(255,255,255,.08);
 }
 
 .nav-actions{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
 }
 
 .btn{
@@ -141,268 +149,318 @@ button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
+  gap:7px;
   border-radius:11px;
-  padding:11px 17px;
-  font-weight:750;
-  font-size:14px;
+  padding:10px 15px;
+  font-size:12px;
+  font-weight:850;
   transition:.2s ease;
+  white-space:nowrap;
 }
 
 .btn:hover{
   transform:translateY(-1px);
 }
 
-.btn-outline{
-  background:#fff;
-  border:1px solid #d9e0eb;
-  color:var(--primary);
+.login-btn{
+  color:#eaf1ff;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);
 }
 
-.btn-primary{
+.primary-btn{
   color:#fff;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
-  box-shadow:0 7px 18px rgba(23,59,122,.2);
+  background:linear-gradient(135deg,#2462d7,#4284f3);
+  box-shadow:0 7px 20px rgba(37,99,235,.28);
+}
+
+/* LOGGED USER */
+
+.user-box{
+  display:none;
+  align-items:center;
+  gap:8px;
+  color:#fff;
+  padding:6px 8px 6px 7px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  border-radius:12px;
+}
+
+.user-avatar{
+  width:30px;
+  height:30px;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  background:linear-gradient(135deg,#3979ea,#63a0ff);
+}
+
+.user-name{
+  max-width:110px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:11px;
+  font-weight:800;
+}
+
+.logout-btn{
+  border:0;
+  background:transparent;
+  color:#ffb7b7;
+  font-size:10px;
+  font-weight:800;
+  cursor:pointer;
+  padding:4px;
 }
 
 .menu-btn{
   display:none;
-  background:#f2f5f9;
-  border:1px solid var(--border);
-  padding:9px 11px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.07);
+  color:#fff;
   border-radius:10px;
+  padding:8px 10px;
 }
 
 /* ================= HERO ================= */
 
 .hero{
+  min-height:650px;
+  margin-top:-1px;
   position:relative;
+  display:flex;
+  align-items:center;
   overflow:hidden;
-  padding:92px 0 80px;
+
   background:
-    radial-gradient(circle at 88% 12%,rgba(66,125,218,.14),transparent 30%),
-    radial-gradient(circle at 4% 70%,rgba(245,166,35,.08),transparent 28%),
-    linear-gradient(180deg,#fff 0%,#f7faff 100%);
+    linear-gradient(
+      90deg,
+      rgba(4,17,34,.93) 0%,
+      rgba(5,21,41,.80) 42%,
+      rgba(5,21,41,.42) 72%,
+      rgba(5,21,41,.68) 100%
+    ),
+    url("joa/homepage-bg.jpg") center/cover no-repeat;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  gap:60px;
-  align-items:center;
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(64,130,255,.24),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(246,183,60,.10),
+      transparent 25%
+    );
 }
 
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:7px 12px;
-  border-radius:999px;
-  background:#edf4ff;
-  color:#2356a0;
-  border:1px solid #d9e8ff;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:20px;
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:105px 0 95px;
 }
 
-.badge-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#20a05a;
-}
-
-.hero h1{
-  font-size:clamp(40px,5.2vw,66px);
-  line-height:1.06;
-  letter-spacing:-2.7px;
+.hero-copy{
   max-width:700px;
 }
 
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  color:#e7f0ff;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.08);
+
+  padding:8px 13px;
+  border-radius:999px;
+
+  font-size:11px;
+  font-weight:800;
+
+  backdrop-filter:blur(10px);
+}
+
+.hero-badge i{
+  width:7px;
+  height:7px;
+  background:#38d996;
+  border-radius:50%;
+  box-shadow:0 0 12px #38d996;
+}
+
+.hero h1{
+  margin-top:22px;
+  color:#fff;
+  font-size:clamp(42px,6vw,70px);
+  line-height:1.02;
+  letter-spacing:-3px;
+}
+
 .hero h1 span{
-  background:linear-gradient(135deg,var(--primary),#3977d2);
+  background:linear-gradient(90deg,#72aaff,#bcd7ff);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
 
-.hero p{
-  color:var(--muted);
-  font-size:17px;
-  max-width:625px;
-  margin:22px 0 30px;
+.hero-text{
+  margin-top:20px;
+  max-width:630px;
+  color:#cbd7e7;
+  font-size:16px;
 }
 
 .hero-buttons{
   display:flex;
-  gap:12px;
+  gap:11px;
   flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.hero-main-btn{
+  padding:13px 19px;
+  font-size:13px;
+}
+
+.hero-second-btn{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);
+  padding:13px 19px;
+  font-size:13px;
 }
 
 .hero-note{
+  color:#9eafc5;
+  font-size:11px;
   margin-top:17px;
-  color:#7b8799;
-  font-size:12px;
 }
 
-/* HERO CARD */
+/* SECOND BACKGROUND IMAGE */
 
-.hero-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:25px;
-  padding:22px;
-  box-shadow:var(--shadow);
+.hero-image-accent{
+  position:absolute;
+  right:-100px;
+  bottom:-150px;
+
+  width:570px;
+  height:570px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(39,98,213,.35),
+      rgba(255,255,255,0)
+    ),
+    url("joa-homepage-bg-2.jpg") center/cover;
+
+  opacity:.28;
+  filter:saturate(1.15);
+
+  mask-image:radial-gradient(
+    circle,
+    #000 20%,
+    transparent 72%
+  );
+
+  -webkit-mask-image:radial-gradient(
+    circle,
+    #000 20%,
+    transparent 72%
+  );
+}
+
+/* ================= STATS ================= */
+
+.stats-wrap{
   position:relative;
+  z-index:5;
+  margin-top:-42px;
 }
 
-.hero-card-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:18px;
-}
-
-.hero-card-title{
-  font-size:14px;
-  font-weight:800;
-}
-
-.live{
-  font-size:11px;
-  font-weight:800;
-  color:var(--success);
-  background:#eaf8ef;
-  padding:6px 9px;
-  border-radius:999px;
-}
-
-.test-card{
-  padding:17px;
-  border:1px solid #e8edf4;
-  border-radius:15px;
-  margin-bottom:11px;
-  display:flex;
-  align-items:center;
-  gap:13px;
-}
-
-.test-icon{
-  width:43px;
-  height:43px;
-  border-radius:12px;
+.stats{
   display:grid;
-  place-items:center;
-  background:#edf3ff;
-  color:var(--primary);
-  font-weight:900;
-}
+  grid-template-columns:repeat(4,1fr);
 
-.test-info{
-  flex:1;
-}
-
-.test-info strong{
-  display:block;
-  font-size:14px;
-}
-
-.test-info small{
-  color:var(--muted);
-  font-size:11px;
-}
-
-.test-price{
-  font-weight:850;
-  color:var(--primary);
-  font-size:13px;
-}
-
-.mini-stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:16px;
-}
-
-.mini-stat{
-  background:#f7f9fc;
-  border-radius:13px;
-  padding:13px;
-  text-align:center;
-}
-
-.mini-stat strong{
-  display:block;
-  font-size:18px;
-}
-
-.mini-stat span{
-  font-size:10px;
-  color:var(--muted);
-}
-
-/* ================= TRUST ================= */
-
-.trust{
   background:#fff;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
+
+  border:1px solid var(--border);
+  border-radius:20px;
+
+  box-shadow:var(--shadow);
+  overflow:hidden;
 }
 
-.trust-row{
-  min-height:86px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:45px;
-  flex-wrap:wrap;
-  color:#6d7889;
-  font-size:13px;
-  font-weight:700;
+.stat{
+  padding:20px;
+  text-align:center;
+  border-right:1px solid var(--border);
 }
 
-.trust-item{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.stat:last-child{
+  border-right:0;
 }
 
-.trust-item b{
-  color:var(--primary);
-  font-size:17px;
+.stat strong{
+  display:block;
+  color:#173a73;
+  font-size:24px;
+  line-height:1.2;
 }
 
-/* ================= SECTIONS ================= */
+.stat span{
+  color:var(--muted);
+  font-size:11px;
+  font-weight:650;
+}
+
+/* ================= SECTION ================= */
 
 .section{
-  padding:82px 0;
+  padding:90px 0;
 }
 
 .section-head{
   text-align:center;
-  max-width:700px;
-  margin:0 auto 42px;
+  max-width:730px;
+  margin:0 auto 43px;
 }
 
 .eyebrow{
-  font-size:12px;
-  color:#2d65b5;
-  font-weight:850;
+  color:#2865bf;
+  font-size:11px;
+  font-weight:900;
   text-transform:uppercase;
-  letter-spacing:1.5px;
+  letter-spacing:1.8px;
   margin-bottom:8px;
 }
 
 .section-head h2{
-  font-size:clamp(28px,4vw,40px);
-  letter-spacing:-1px;
+  font-size:clamp(29px,4vw,43px);
+  line-height:1.12;
+  letter-spacing:-1.5px;
 }
 
 .section-head p{
   color:var(--muted);
-  margin-top:10px;
+  font-size:14px;
+  margin-top:11px;
 }
 
 /* ================= EXAM CARDS ================= */
@@ -410,86 +468,177 @@ button{
 .exam-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  gap:21px;
 }
 
 .exam-card{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
-  box-shadow:0 5px 20px rgba(20,45,80,.04);
-  transition:.22s;
-  position:relative;
+  border-radius:22px;
   overflow:hidden;
+
+  box-shadow:
+    0 8px 30px rgba(20,43,76,.055);
+
+  transition:.25s ease;
 }
 
 .exam-card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow);
-  border-color:#d6e2f3;
+  transform:translateY(-7px);
+
+  box-shadow:
+    0 20px 50px rgba(20,43,76,.13);
+
+  border-color:#d2dff2;
 }
 
-.exam-card-top{
+.exam-image{
+  height:190px;
+  position:relative;
+  overflow:hidden;
+  background:#dce6f6;
+}
+
+.exam-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s ease;
+}
+
+.exam-card:hover .exam-image img{
+  transform:scale(1.045);
+}
+
+.exam-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,18,35,.03),
+      rgba(5,18,35,.62)
+    );
+}
+
+.exam-label{
+  position:absolute;
+  z-index:2;
+  left:15px;
+  top:15px;
+
+  color:#fff;
+
+  background:rgba(7,20,38,.72);
+  border:1px solid rgba(255,255,255,.16);
+
+  backdrop-filter:blur(8px);
+
+  padding:6px 9px;
+  border-radius:8px;
+
+  font-size:10px;
+  font-weight:900;
+}
+
+.exam-body{
+  padding:22px;
+}
+
+.exam-body h3{
+  font-size:21px;
+  letter-spacing:-.4px;
+}
+
+.exam-description{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:7px;
+  min-height:42px;
+}
+
+.exam-details{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+  margin:19px 0;
+}
+
+.detail{
+  background:#f5f7fa;
+  border-radius:10px;
+  padding:9px 5px;
+  text-align:center;
+}
+
+.detail strong{
+  display:block;
+  color:#173b7a;
+  font-size:13px;
+}
+
+.detail span{
+  color:#7a8799;
+  font-size:9px;
+  font-weight:650;
+}
+
+.syllabus{
   display:flex;
-  justify-content:space-between;
   align-items:flex-start;
+  gap:7px;
+  color:#64748b;
+  font-size:10px;
+  line-height:1.4;
+  min-height:31px;
 }
 
-.exam-icon{
-  width:50px;
-  height:50px;
-  border-radius:14px;
-  background:#edf3ff;
-  color:var(--primary);
+.syllabus b{
+  color:#16824b;
+}
+
+.exam-action{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-top:17px;
+  padding-top:16px;
+
+  border-top:1px solid #edf0f4;
+}
+
+.exam-action span{
+  color:#1d55a0;
+  font-size:12px;
+  font-weight:900;
+}
+
+.arrow{
+  width:31px;
+  height:31px;
+
   display:grid;
   place-items:center;
+
+  border-radius:9px;
+
+  background:#edf4ff;
+  color:#245bab;
+
   font-weight:900;
-  font-size:18px;
 }
 
-.popular{
-  font-size:10px;
-  background:#fff4df;
-  color:#a15b00;
-  padding:5px 8px;
-  border-radius:999px;
-  font-weight:800;
-}
+/* ================= WHY ================= */
 
-.exam-card h3{
-  margin:18px 0 5px;
-  font-size:20px;
-}
+.why-section{
+  background:#fff;
 
-.exam-card p{
-  font-size:13px;
-  color:var(--muted);
-  min-height:43px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
-
-.exam-meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin:18px 0;
-}
-
-.exam-meta span{
-  font-size:11px;
-  background:#f4f6f9;
-  color:#596579;
-  padding:6px 8px;
-  border-radius:8px;
-}
-
-.exam-link{
-  font-size:13px;
-  font-weight:800;
-  color:var(--primary);
-}
-
-/* ================= FEATURES ================= */
 
 .features{
   display:grid;
@@ -498,22 +647,32 @@ button{
 }
 
 .feature{
-  background:#fff;
   border:1px solid var(--border);
-  border-radius:16px;
-  padding:22px;
+  background:#fbfcfe;
+  border-radius:17px;
+  padding:23px;
 }
 
 .feature-icon{
-  width:42px;
-  height:42px;
-  border-radius:11px;
-  background:#eef4ff;
-  color:var(--primary);
+  width:43px;
+  height:43px;
+  border-radius:12px;
+
   display:grid;
   place-items:center;
+
+  color:#fff;
+  font-size:12px;
   font-weight:900;
-  margin-bottom:15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1c4d9b,
+      #4a88ef
+    );
+
+  margin-bottom:16px;
 }
 
 .feature h3{
@@ -522,87 +681,103 @@ button{
 }
 
 .feature p{
-  font-size:12px;
   color:var(--muted);
+  font-size:11px;
 }
 
 /* ================= CTA ================= */
 
 .cta{
-  padding:65px 30px;
-  border-radius:25px;
-  background:linear-gradient(135deg,#112f64,#2458a8);
-  color:#fff;
-  text-align:center;
   position:relative;
   overflow:hidden;
-}
 
-.cta:after{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  border-radius:50%;
-  background:rgba(255,255,255,.06);
-  right:-90px;
-  top:-130px;
+  border-radius:25px;
+  padding:67px 30px;
+
+  text-align:center;
+  color:#fff;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(8,27,53,.97),
+      rgba(27,76,153,.92)
+    ),
+    url("joa-homepage-bg-2.jpg") center/cover;
+
+  box-shadow:
+    0 20px 55px rgba(12,37,75,.18);
 }
 
 .cta h2{
-  font-size:clamp(28px,4vw,40px);
-  letter-spacing:-1px;
+  position:relative;
+  z-index:2;
+
+  font-size:clamp(28px,4vw,42px);
+  letter-spacing:-1.3px;
 }
 
 .cta p{
-  color:#dce7fa;
-  max-width:610px;
+  position:relative;
+  z-index:2;
+
+  color:#cddcf2;
+  max-width:600px;
+
   margin:10px auto 24px;
+
+  font-size:13px;
 }
 
 .cta .btn{
+  position:relative;
+  z-index:2;
+
+  color:#12356c;
   background:#fff;
-  color:var(--primary);
+
+  padding:12px 18px;
 }
 
 /* ================= FOOTER ================= */
 
 .footer{
-  margin-top:80px;
-  background:#101b2e;
-  color:#c5cfdd;
-  padding:52px 0 25px;
+  margin-top:85px;
+  padding:54px 0 25px;
+
+  background:#071426;
+  color:#aab8ca;
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
   gap:35px;
 }
 
 .footer-brand{
   color:#fff;
-  font-size:19px;
-  font-weight:850;
-  margin-bottom:10px;
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:9px;
 }
 
 .footer p{
-  font-size:12px;
-  color:#91a0b5;
-  max-width:320px;
+  max-width:330px;
+  color:#8191a7;
+  font-size:11px;
 }
 
 .footer h4{
   color:#fff;
-  font-size:13px;
-  margin-bottom:13px;
+  font-size:12px;
+  margin-bottom:14px;
 }
 
 .footer a{
   display:block;
-  color:#9eabbd;
-  font-size:12px;
+  color:#8fa0b6;
+  font-size:11px;
   margin:8px 0;
 }
 
@@ -612,17 +787,36 @@ button{
 
 .copyright{
   border-top:1px solid rgba(255,255,255,.08);
+
   margin-top:35px;
   padding-top:18px;
+
   display:flex;
   justify-content:space-between;
+
   gap:15px;
-  flex-wrap:wrap;
-  font-size:11px;
-  color:#8190a5;
+
+  color:#708198;
+  font-size:10px;
 }
 
 /* ================= TABLET ================= */
+
+@media(max-width:1050px){
+
+  .nav-links a{
+    padding:8px 7px;
+    font-size:11px;
+  }
+
+  .brand-name{
+    font-size:17px;
+  }
+
+  .exam-grid{
+    gap:14px;
+  }
+}
 
 @media(max-width:900px){
 
@@ -634,25 +828,36 @@ button{
     display:block;
   }
 
-  .nav-actions .btn-outline{
+  .nav-actions .login-btn,
+  .nav-actions .primary-btn{
     display:none;
   }
 
   .hero{
-    padding:65px 0 55px;
+    min-height:600px;
   }
 
-  .hero-grid{
-    grid-template-columns:1fr;
-    gap:38px;
+  .hero-content{
+    padding:90px 0 85px;
   }
 
-  .hero h1{
-    letter-spacing:-1.8px;
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stat:nth-child(2){
+    border-right:0;
+  }
+
+  .stat:nth-child(1),
+  .stat:nth-child(2){
+    border-bottom:1px solid var(--border);
   }
 
   .exam-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
+    max-width:620px;
+    margin:auto;
   }
 
   .features{
@@ -669,62 +874,97 @@ button{
 @media(max-width:600px){
 
   .site-header{
-    top:8px;
-    margin-top:8px;
+    width:94%;
+    top:7px;
+    margin-top:7px;
     border-radius:15px;
   }
 
   .navbar{
-    min-height:62px;
-    padding:0 13px;
+    min-height:64px;
+    padding:0 12px;
   }
 
-  .brand-mark{
-    width:38px;
-    height:38px;
-  }
-
-  .brand-name{
-    font-size:16px;
-  }
-
-  .brand-tag{
-    font-size:8px;
-  }
-
-  .hero{
-    padding:48px 0;
-  }
-
-  .hero h1{
-    font-size:39px;
-  }
-
-  .hero p{
+  .brand-logo{
+    width:37px;
+    height:37px;
     font-size:15px;
   }
 
-  .hero-card{
-    padding:16px;
-    border-radius:20px;
+  .brand-name{
+    font-size:15px;
   }
 
-  .exam-grid,
+  .brand-tag{
+    font-size:7px;
+  }
+
+  .user-name{
+    display:none;
+  }
+
+  .hero{
+    min-height:590px;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(4,17,34,.93),
+        rgba(5,21,41,.68)
+      ),
+      url("joa/homepage-bg.jpg") center/cover no-repeat;
+  }
+
+  .hero-content{
+    padding:76px 0 82px;
+  }
+
+  .hero h1{
+    font-size:43px;
+    letter-spacing:-2px;
+  }
+
+  .hero-text{
+    font-size:14px;
+  }
+
+  .hero-image-accent{
+    width:400px;
+    height:400px;
+    right:-170px;
+    bottom:-100px;
+  }
+
+  .stats-wrap{
+    margin-top:-30px;
+  }
+
+  .stat{
+    padding:17px 10px;
+  }
+
+  .stat strong{
+    font-size:20px;
+  }
+
+  .section{
+    padding:65px 0;
+  }
+
+  .section-head{
+    margin-bottom:30px;
+  }
+
+  .exam-image{
+    height:180px;
+  }
+
   .features{
     grid-template-columns:1fr;
   }
 
-  .section{
-    padding:60px 0;
-  }
-
-  .trust-row{
-    gap:18px;
-    padding:18px 0;
-  }
-
   .cta{
-    padding:45px 20px;
+    padding:48px 19px;
   }
 
   .footer-grid{
@@ -754,732 +994,1036 @@ button{
 
 <header class="site-header">
 
-  <nav class="navbar">
+<nav class="navbar">
 
-    <a href="homepage.html" class="brand">
+<a href="homepage.html" class="brand">
 
-      <div class="brand-mark">
-        HP
-      </div>
+<div class="brand-logo">
+HP
+</div>
 
-      <div>
-        <div class="brand-name">
-          HPMockShashtra
-        </div>
+<div>
 
-        <span class="brand-tag">
-          Smart Practice. Better Preparation.
-        </span>
-      </div>
+<div class="brand-name">
+HPMockShashtra
+</div>
 
-    </a>
+<span class="brand-tag">
+Smart Practice. Better Preparation.
+</span>
 
+</div>
 
-    <div class="nav-links">
-
-      <a href="#exams">
-        Mock Tests
-      </a>
-
-      <a href="#features">
-        Features
-      </a>
-
-      <a href="study-mode.html">
-        Study Mode
-      </a>
-
-      <a href="#about">
-        About
-      </a>
-
-    </div>
+</a>
 
 
-    <div class="nav-actions">
+<div class="nav-links">
 
-      <a class="btn btn-outline"
-         href="firebase-login.html">
-        Login
-      </a>
+<a href="joa/joa-series.html">
+JOA(IT) 2026
+</a>
 
-      <a class="btn btn-primary"
-         href="#exams">
-        Explore Tests
-      </a>
+<a href="patwari/patwari-series.html">
+Patwari
+</a>
 
-      <button class="menu-btn"
-              aria-label="Menu"
-              onclick="toggleMenu()">
-        ☰
-      </button>
+<a href="joa/new-joa-series.html">
+JOA(IT)
+</a>
 
-    </div>
+<a href="mahapack/joa-mahapack.html">
+JOA(IT) MahaPack
+</a>
 
-  </nav>
+</div>
+
+
+<div class="nav-actions">
+
+<a id="loginBtn"
+class="btn login-btn"
+href="firebase-login.html">
+Login
+</a>
+
+
+<div id="userBox" class="user-box">
+
+<div id="userAvatar" class="user-avatar">
+U
+</div>
+
+<span id="userName" class="user-name">
+User
+</span>
+
+<button id="logoutBtn"
+class="logout-btn">
+Logout
+</button>
+
+</div>
+
+
+<a href="#tests"
+class="btn primary-btn">
+Explore Tests
+</a>
+
+
+<button class="menu-btn"
+onclick="toggleMenu()">
+☰
+</button>
+
+</div>
+
+</nav>
 
 </header>
-
-
-<!-- ================= MAIN ================= -->
-
-<main>
 
 
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
-  <div class="container hero-grid">
+<div class="hero-image-accent"></div>
 
-    <div>
+<div class="container hero-content">
 
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Built for Himachal Pradesh Aspirants
-      </div>
+<div class="hero-copy">
 
+<div class="hero-badge">
 
-      <h1>
-        Prepare smarter.
-        <br>
-        <span>Score better.</span>
-      </h1>
+<i></i>
+
+Himachal Pradesh Competitive Exam Preparation
+
+</div>
 
 
-      <p>
-        Practice with carefully designed mock tests,
-        track your performance, strengthen weak areas
-        and prepare with confidence for competitive exams.
-      </p>
+<h1>
+
+Prepare with purpose.
+
+<br>
+
+<span>
+Perform with confidence.
+</span>
+
+</h1>
 
 
-      <div class="hero-buttons">
+<p class="hero-text">
 
-        <a href="#exams"
-           class="btn btn-primary">
-          Start Practising →
-        </a>
+HPMockShashtra brings structured mock tests,
+focused practice and performance-oriented preparation
+together in one platform for Himachal Pradesh aspirants.
 
-        <a href="firebase-login.html"
-           class="btn btn-outline">
-          Create Account
-        </a>
-
-      </div>
+</p>
 
 
-      <div class="hero-note">
-        ✓ Exam-focused questions
-        &nbsp; ✓ Performance tracking
-        &nbsp; ✓ Mobile friendly
-      </div>
+<div class="hero-buttons">
 
-    </div>
+<a href="#tests"
+class="btn primary-btn hero-main-btn">
 
+Explore Test Series →
 
-    <!-- HERO SIDE CARD -->
+</a>
 
-    <div class="hero-card">
+<a href="firebase-login.html"
+class="btn hero-second-btn">
 
-      <div class="hero-card-head">
+Create Free Account
 
-        <div class="hero-card-title">
-          Featured Test Series
-        </div>
+</a>
 
-        <div class="live">
-          ● Available
-        </div>
-
-      </div>
+</div>
 
 
-      <a href="joa/new-joa-series.html"
-         class="test-card">
+<div class="hero-note">
 
-        <div class="test-icon">
-          IT
-        </div>
+✓ Latest syllabus focused
+&nbsp;&nbsp;
+✓ Timed mock tests
+&nbsp;&nbsp;
+✓ Performance tracking
 
-        <div class="test-info">
+</div>
 
-          <strong>
-            JOA (IT) Test Series
-          </strong>
+</div>
 
-          <small>
-            Computer • GK • Reasoning • English
-          </small>
-
-        </div>
-
-        <div class="test-price">
-          Explore
-        </div>
-
-      </a>
-
-
-      <a href="patwari/patwari-series.html"
-         class="test-card">
-
-        <div class="test-icon">
-          P
-        </div>
-
-        <div class="test-info">
-
-          <strong>
-            HP Patwari Test Series
-          </strong>
-
-          <small>
-            Practice papers • Mock tests • Analysis
-          </small>
-
-        </div>
-
-        <div class="test-price">
-          Explore
-        </div>
-
-      </a>
-
-
-      <div class="mini-stats">
-
-        <div class="mini-stat">
-          <strong>120</strong>
-          <span>Questions*</span>
-        </div>
-
-        <div class="mini-stat">
-          <strong>90</strong>
-          <span>Minutes*</span>
-        </div>
-
-        <div class="mini-stat">
-          <strong>24×7</strong>
-          <span>Practice</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= TRUST BAR ================= -->
+<!-- ================= STATS ================= -->
 
-<section class="trust">
+<div class="container stats-wrap">
 
-  <div class="container trust-row">
+<div class="stats">
 
-    <div class="trust-item">
-      <b>✓</b>
-      Exam-focused
-    </div>
+<div class="stat">
 
-    <div class="trust-item">
-      <b>✓</b>
-      Bilingual Practice
-    </div>
+<strong>
+120
+</strong>
 
-    <div class="trust-item">
-      <b>✓</b>
-      Performance Analysis
-    </div>
+<span>
+Questions per Test
+</span>
 
-    <div class="trust-item">
-      <b>✓</b>
-      Mobile Friendly
-    </div>
-
-  </div>
-
-</section>
+</div>
 
 
-<!-- ================= EXAMS ================= -->
+<div class="stat">
+
+<strong>
+90 Min
+</strong>
+
+<span>
+Timed Practice
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+15
+</strong>
+
+<span>
+MahaPack Subjects
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+6000+
+</strong>
+
+<span>
+Practice Questions
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= TEST SERIES ================= -->
 
 <section class="section"
-         id="exams">
+id="tests">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-      <div class="eyebrow">
-        Choose your preparation
-      </div>
+<div class="eyebrow">
+Our Test Series
+</div>
 
-      <h2>
-        Practice for the exam that matters to you.
-      </h2>
+<h2>
+Choose your preparation.
+</h2>
 
-      <p>
-        Focused test series designed to make your preparation
-        structured, measurable and effective.
-      </p>
+<p>
+Focused resources, structured practice and
+exam-oriented preparation—all in one place.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="exam-grid">
+<div class="exam-grid">
 
 
-      <!-- JOA -->
+<!-- JOA -->
 
-      <a class="exam-card"
-         href="joa/new-joa-series.html">
+<a href="joa/new-joa-series.html"
+class="exam-card">
 
-        <div class="exam-card-top">
+<div class="exam-image">
 
-          <div class="exam-icon">
-            IT
-          </div>
+<img
+src="joa/joa-banner.jpg"
+alt="JOA IT Test Series">
 
-          <span class="popular">
-            POPULAR
-          </span>
+<span class="exam-label">
+JOA (IT)
+</span>
 
-        </div>
+</div>
 
 
-        <h3>
-          JOA (IT)
-        </h3>
+<div class="exam-body">
 
+<h3>
+JOA (IT)
+</h3>
 
-        <p>
-          Computer fundamentals, MS Office,
-          Internet, GK, reasoning and language practice.
-        </p>
+<p class="exam-description">
 
+Complete online mock test series for
+JOA (IT) aspirants with focused exam preparation.
 
-        <div class="exam-meta">
+</p>
 
-          <span>
-            120 Questions
-          </span>
 
-          <span>
-            90 Minutes
-          </span>
+<div class="exam-details">
 
-          <span>
-            Mock Tests
-          </span>
+<div class="detail">
 
-        </div>
+<strong>
+10
+</strong>
 
+<span>
+Tests
+</span>
 
-        <div class="exam-link">
-          View JOA Series →
-        </div>
+</div>
 
-      </a>
 
+<div class="detail">
 
-      <!-- PATWARI -->
+<strong>
+120
+</strong>
 
-      <a class="exam-card"
-         href="patwari/patwari-series.html">
+<span>
+Questions
+</span>
 
-        <div class="exam-card-top">
+</div>
 
-          <div class="exam-icon">
-            P
-          </div>
 
-          <span class="popular">
-            FEATURED
-          </span>
+<div class="detail">
 
-        </div>
+<strong>
+90
+</strong>
 
+<span>
+Minutes
+</span>
 
-        <h3>
-          HP Patwari
-        </h3>
+</div>
 
+</div>
 
-        <p>
-          Structured practice for Himachal Pradesh
-          Patwari preparation with focused mock tests.
-        </p>
 
+<div class="syllabus">
 
-        <div class="exam-meta">
+<b>✓</b>
 
-          <span>
-            11 Tests
-          </span>
+<span>
+Based on Latest Syllabus of Himachal Pradesh Rajya Chayan Ayog
+</span>
 
-          <span>
-            120 Questions
-          </span>
+</div>
 
-          <span>
-            Analysis
-          </span>
 
-        </div>
+<div class="exam-action">
 
+<span>
+Start Preparation
+</span>
 
-        <div class="exam-link">
-          View Patwari Series →
-        </div>
+<div class="arrow">
+→
+</div>
 
-      </a>
+</div>
 
+</div>
 
-      <!-- MAHAPACK -->
+</a>
 
-      <a class="exam-card"
-         href="mahapack/joa-mahapack.html">
 
-        <div class="exam-card-top">
+<!-- PATWARI -->
 
-          <div class="exam-icon">
-            M
-          </div>
+<a href="patwari/patwari-series.html"
+class="exam-card">
 
-        </div>
+<div class="exam-image">
 
+<img
+src="patwari/patwari-banner.jpg"
+alt="HP Patwari Test Series">
 
-        <h3>
-          HPMockShashtra MahaPack
-        </h3>
+<span class="exam-label">
+HP PATWARI
+</span>
 
+</div>
 
-        <p>
-          One place for multiple preparation resources,
-          subjects and practice modules.
-        </p>
 
+<div class="exam-body">
 
-        <div class="exam-meta">
+<h3>
+HP Patwari
+</h3>
 
-          <span>
-            Multiple Courses
-          </span>
+<p class="exam-description">
 
-          <span>
-            Study Mode
-          </span>
+Structured mock tests designed for
+Himachal Pradesh Patwari examination preparation.
 
-          <span>
-            Practice
-          </span>
+</p>
 
-        </div>
 
+<div class="exam-details">
 
-        <div class="exam-link">
-          Explore MahaPack →
-        </div>
+<div class="detail">
 
-      </a>
+<strong>
+10
+</strong>
 
+<span>
+Tests
+</span>
 
-    </div>
+</div>
 
-  </div>
+
+<div class="detail">
+
+<strong>
+120
+</strong>
+
+<span>
+Questions
+</span>
+
+</div>
+
+
+<div class="detail">
+
+<strong>
+90
+</strong>
+
+<span>
+Minutes
+</span>
+
+</div>
+
+</div>
+
+
+<div class="syllabus">
+
+<b>✓</b>
+
+<span>
+Based on Latest Syllabus of Himachal Pradesh Rajya Chayan Ayog
+</span>
+
+</div>
+
+
+<div class="exam-action">
+
+<span>
+Start Preparation
+</span>
+
+<div class="arrow">
+→
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+
+<!-- MAHAPACK -->
+
+<a href="mahapack/joa-mahapack.html"
+class="exam-card">
+
+<div class="exam-image">
+
+<img
+src="mahapack/mahapack.jpg"
+alt="JOA IT MahaPack">
+
+<span class="exam-label">
+JOA (IT) MAHAPACK
+</span>
+
+</div>
+
+
+<div class="exam-body">
+
+<h3>
+JOA (IT) MahaPack
+</h3>
+
+<p class="exam-description">
+
+A complete preparation library covering
+multiple subjects with a large question bank.
+
+</p>
+
+
+<div class="exam-details">
+
+<div class="detail">
+
+<strong>
+15
+</strong>
+
+<span>
+Subjects
+</span>
+
+</div>
+
+
+<div class="detail">
+
+<strong>
+6000+
+</strong>
+
+<span>
+Questions
+</span>
+
+</div>
+
+
+<div class="detail">
+
+<strong>
+6
+</strong>
+
+<span>
+Months
+</span>
+
+</div>
+
+</div>
+
+
+<div class="syllabus">
+
+<b>✓</b>
+
+<span>
+15 subjects • 6000+ questions • 6 months validity
+</span>
+
+</div>
+
+
+<div class="exam-action">
+
+<span>
+Explore MahaPack
+</span>
+
+<div class="arrow">
+→
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= FEATURES ================= -->
+<!-- ================= WHY ================= -->
 
-<section class="section"
-         id="features"
-         style="background:#fff;">
+<section class="section why-section">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-      <div class="eyebrow">
-        Why HPMockShashtra
-      </div>
+<div class="eyebrow">
+Why HPMockShashtra
+</div>
 
-      <h2>
-        Everything you need to practice with purpose.
-      </h2>
+<h2>
+Built for serious preparation.
+</h2>
 
-      <p>
-        No clutter. No unnecessary distractions.
-        Just a focused preparation experience.
-      </p>
+<p>
+A cleaner and smarter way to practise,
+revise and measure your preparation.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="features">
+<div class="features">
 
 
-      <div class="feature">
+<div class="feature">
 
-        <div class="feature-icon">
-          01
-        </div>
+<div class="feature-icon">
+01
+</div>
 
-        <h3>
-          Real Exam Practice
-        </h3>
+<h3>
+Exam-Oriented Tests
+</h3>
 
-        <p>
-          Timed mock tests designed around the
-          type of preparation competitive exams demand.
-        </p>
+<p>
+Questions and timed tests designed
+around competitive examination preparation.
+</p>
 
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">
-          02
-        </div>
-
-        <h3>
-          Performance Tracking
-        </h3>
-
-        <p>
-          Review your scores and understand
-          where you need more practice.
-        </p>
-
-      </div>
+</div>
 
 
-      <div class="feature">
+<div class="feature">
 
-        <div class="feature-icon">
-          03
-        </div>
+<div class="feature-icon">
+02
+</div>
 
-        <h3>
-          Study Mode
-        </h3>
+<h3>
+Performance Tracking
+</h3>
 
-        <p>
-          Revise important topics and concepts
-          before attempting your next test.
-        </p>
+<p>
+Track your scores and identify the areas
+where your preparation needs improvement.
+</p>
 
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">
-          04
-        </div>
-
-        <h3>
-          Leaderboard
-        </h3>
-
-        <p>
-          Compare your performance and stay motivated
-          to improve your preparation.
-        </p>
-
-      </div>
+</div>
 
 
-    </div>
+<div class="feature">
 
-  </div>
+<div class="feature-icon">
+03
+</div>
+
+<h3>
+Study & Revision
+</h3>
+
+<p>
+Use focused study resources and practise
+important concepts before your next test.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+04
+</div>
+
+<h3>
+Competitive Edge
+</h3>
+
+<p>
+Use scores, progress and leaderboards
+to stay motivated throughout preparation.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- ================= CTA ================= -->
 
-<section class="section"
-         id="about">
+<section class="section">
 
-  <div class="container">
+<div class="container">
 
-    <div class="cta">
+<div class="cta">
 
-      <h2>
-        Your preparation deserves a better system.
-      </h2>
+<h2>
+Your preparation starts here.
+</h2>
 
-      <p>
-        Join HPMockShashtra and turn your practice
-        into measurable progress.
-      </p>
+<p>
+Create your account, choose your test series
+and start turning practice into progress.
+</p>
 
-      <a href="firebase-login.html"
-         class="btn">
-        Get Started Free →
-      </a>
+<a href="firebase-login.html"
+class="btn">
+Get Started →
+</a>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
-
-
-</main>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
-  <div class="container">
+<div class="container">
 
-    <div class="footer-grid">
-
-
-      <div>
-
-        <div class="footer-brand">
-          HPMockShashtra
-        </div>
-
-        <p>
-          A focused online practice platform for
-          students preparing for Himachal Pradesh
-          competitive examinations.
-        </p>
-
-      </div>
+<div class="footer-grid">
 
 
-      <div>
+<div>
 
-        <h4>
-          Platform
-        </h4>
+<div class="footer-brand">
+HPMockShashtra
+</div>
 
-        <a href="#exams">
-          Mock Tests
-        </a>
+<p>
+Smart online practice and preparation
+platform for Himachal Pradesh competitive
+examinations.
+</p>
 
-        <a href="study-mode.html">
-          Study Mode
-        </a>
-
-        <a href="firebase-login.html">
-          Login / Register
-        </a>
-
-      </div>
+</div>
 
 
-      <div>
+<div>
 
-        <h4>
-          Test Series
-        </h4>
+<h4>
+Test Series
+</h4>
 
-        <a href="joa/new-joa-series.html">
-          JOA (IT)
-        </a>
+<a href="joa/joa-series.html">
+JOA(IT) 2026
+</a>
 
-        <a href="patwari/patwari-series.html">
-          HP Patwari
-        </a>
+<a href="patwari/patwari-series.html">
+Patwari
+</a>
 
-        <a href="mahapack/joa-mahapack.html">
-          MahaPack
-        </a>
+<a href="joa/new-joa-series.html">
+JOA(IT)
+</a>
 
-      </div>
+<a href="mahapack/joa-mahapack.html">
+JOA(IT) MahaPack
+</a>
 
-
-      <div>
-
-        <h4>
-          Support
-        </h4>
-
-        <a href="#">
-          Contact
-        </a>
-
-        <a href="#">
-          Terms & Conditions
-        </a>
-
-        <a href="#">
-          Privacy Policy
-        </a>
-
-      </div>
+</div>
 
 
-    </div>
+<div>
+
+<h4>
+Platform
+</h4>
+
+<a href="#tests">
+Mock Tests
+</a>
+
+<a href="study-mode.html">
+Study Mode
+</a>
+
+<a href="firebase-login.html">
+Login / Register
+</a>
+
+</div>
 
 
-    <div class="copyright">
+<div>
 
-      <span>
-        © 2026 HPMockShashtra. All rights reserved.
-      </span>
+<h4>
+Information
+</h4>
 
-      <span>
-        Built for focused preparation.
-      </span>
+<a href="#">
+About Us
+</a>
 
-    </div>
+<a href="#">
+Privacy Policy
+</a>
 
-  </div>
+<a href="#">
+Terms & Conditions
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+<span>
+© 2026 HPMockShashtra. All rights reserved.
+</span>
+
+<span>
+Smart Practice. Better Preparation.
+</span>
+
+</div>
+
+</div>
 
 </footer>
 
+
+<!-- ================= FIREBASE LOGIN ================= -->
+
+<script type="module">
+
+/*
+==========================================================
+IMPORTANT
+
+नीचे अपना EXISTING Firebase config डालना है।
+
+firebase-login.html में जो config पहले से चल रहा है,
+वही exact config यहाँ paste करें।
+
+==========================================================
+*/
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+  apiKey: "YOUR_API_KEY",
+
+  authDomain:
+    "YOUR_PROJECT.firebaseapp.com",
+
+  projectId:
+    "YOUR_PROJECT_ID",
+
+  storageBucket:
+    "YOUR_PROJECT.appspot.com",
+
+  messagingSenderId:
+    "YOUR_SENDER_ID",
+
+  appId:
+    "YOUR_APP_ID"
+
+};
+
+
+/*
+==========================================================
+Firebase initialize
+==========================================================
+*/
+
+const app =
+  initializeApp(firebaseConfig);
+
+const auth =
+  getAuth(app);
+
+
+/*
+==========================================================
+Elements
+==========================================================
+*/
+
+const loginBtn =
+  document.getElementById("loginBtn");
+
+const userBox =
+  document.getElementById("userBox");
+
+const userName =
+  document.getElementById("userName");
+
+const userAvatar =
+  document.getElementById("userAvatar");
+
+const logoutBtn =
+  document.getElementById("logoutBtn");
+
+
+/*
+==========================================================
+LOGIN STATE
+==========================================================
+*/
+
+onAuthStateChanged(auth,(user)=>{
+
+  if(user){
+
+    /*
+    User logged in
+    */
+
+    loginBtn.style.display="none";
+
+    userBox.style.display="flex";
+
+
+    const name =
+      user.displayName ||
+      user.email ||
+      "User";
+
+
+    userName.textContent =
+      name;
+
+
+    userAvatar.textContent =
+      name
+      .charAt(0)
+      .toUpperCase();
+
+  }
+
+  else{
+
+    /*
+    User logged out
+    */
+
+    loginBtn.style.display="inline-flex";
+
+    userBox.style.display="none";
+
+  }
+
+});
+
+
+/*
+==========================================================
+LOGOUT
+==========================================================
+*/
+
+logoutBtn.addEventListener(
+  "click",
+  async()=>{
+
+    try{
+
+      await signOut(auth);
+
+      window.location.reload();
+
+    }
+
+    catch(error){
+
+      console.error(
+        "Logout error:",
+        error
+      );
+
+    }
+
+  }
+);
+
+</script>
+
+
+<!-- ================= MOBILE MENU ================= -->
 
 <script>
 
 function toggleMenu(){
 
   const nav =
-    document.querySelector('.nav-links');
+    document.querySelector(".nav-links");
 
-  if(nav.style.display === 'flex'){
 
-    nav.style.display = '';
+  if(nav.style.display === "flex"){
 
-  }else{
+    nav.style.display="";
 
-    nav.style.display = 'flex';
+    return;
 
-    nav.style.position = 'absolute';
-
-    nav.style.top = '70px';
-
-    nav.style.left = '12px';
-
-    nav.style.right = '12px';
-
-    nav.style.flexDirection = 'column';
-
-    nav.style.alignItems = 'flex-start';
-
-    nav.style.padding = '18px';
-
-    nav.style.background = '#fff';
-
-    nav.style.border = '1px solid #e6eaf0';
-
-    nav.style.borderRadius = '15px';
-
-    nav.style.boxShadow =
-      '0 12px 30px rgba(0,0,0,.08)';
   }
+
+
+  nav.style.display="flex";
+
+  nav.style.position="absolute";
+
+  nav.style.top="70px";
+
+  nav.style.left="10px";
+
+  nav.style.right="10px";
+
+  nav.style.flexDirection="column";
+
+  nav.style.alignItems="stretch";
+
+  nav.style.padding="12px";
+
+  nav.style.background="#0b1b31";
+
+  nav.style.border=
+    "1px solid rgba(255,255,255,.12)";
+
+  nav.style.borderRadius="15px";
+
+  nav.style.boxShadow=
+    "0 18px 35px rgba(0,0,0,.25)";
 
 }
 
