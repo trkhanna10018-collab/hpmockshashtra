@@ -2238,8 +2238,8 @@ Buy ₹59
 <div
 class="subject premium-card"
 data-name="Computer Organisation Architecture"
-data-purchase-key="computer-organisation"
-data-paid-page="paid-computer-organisation.html"
+data-purchase-key="computer-organisation-architecture"
+data-paid-page="paid-computer-organisation-architecture.html"
 >
 
 <div class="icon">
@@ -2274,7 +2274,7 @@ Computer Organisation &amp; Architecture
 
 <a
 class="buy subject-buy"
-href="../payment.html?product=computer-organisation"
+href="../payment.html?product=computer-organisation-architecture"
 >
 Buy ₹59
 </a>
@@ -2721,61 +2721,74 @@ const subjectTestIds={
 
 function hasSavedAttempt(record){
   if(!record || typeof record!=='object') return false;
-  const status=String(record.status||record.state||record.attemptStatus||record.attempt_status||record.sessionStatus||'').toLowerCase().replace(/[ _-]+/g,'');
-  if(record.submitted===true || record.isSubmitted===true || record.completed===true || record.isCompleted===true || record.attempted===true || ['submitted','completed','complete','attempted','review','inprogress','started','ongoing','active'].includes(status)) return true;
+
   const answers=record.answers||record.responses||record.userAnswers;
-  if(answers && typeof answers==='object' && Object.keys(answers).length>0) return true;
-  if(Number(record.current)>0 || Number(record.currentQuestion)>0 || Number(record.lastQuestion)>0 || Number(record.attemptedCount)>0 || Number(record.answeredCount)>0) return true;
-  return false;
+  const hasAnswers=Array.isArray(answers)
+    ? answers.some(v=>v!==null&&v!==undefined&&String(v).trim()!=='')
+    : !!(answers&&typeof answers==='object'&&Object.values(answers).some(v=>v!==null&&v!==undefined&&String(v).trim()!==''));
+
+  const status=String(record.status||record.state||record.attemptStatus||record.attempt_status||record.sessionStatus||'')
+    .toLowerCase().replace(/[ _-]+/g,'');
+
+  return hasAnswers || record.submitted===true || record.isSubmitted===true ||
+    record.completed===true || record.isCompleted===true ||
+    ['submitted','completed','complete','attempted','review'].includes(status) ||
+    Number(record.attempted)>0 || Number(record.attemptedCount)>0 ||
+    Number(record.answeredCount)>0 || Number(record.questionsCompleted)>0 ||
+    Number(record.current)>0 || Number(record.currentQuestion)>0 || Number(record.lastQuestion)>0;
 }
 
 async function subjectHasAttempts(uid,key,accessRecord){
-  if(hasSavedAttempt(accessRecord)) return true;
   const testId=subjectTestIds[key];
   if(!testId) return false;
-  const variants=[...new Set([
-    testId,
-    key,
-    key.replace(/-/g,'_'),
-    key.replace(/_/g,'-'),
-    key==='computer-organisation-architecture'?'computer_organisation_01':null
-  ].filter(Boolean))];
-  try{
-    for(const id of variants){
-      const [sessionSnap,resultSnap]=await Promise.all([
-        getDoc(doc(db,'testSessions',`${uid}_${id}`)),
-        getDoc(doc(db,'testAttempts',`${uid}_${id}`))
-      ]);
-      if(resultSnap.exists() || (sessionSnap.exists() && hasSavedAttempt(sessionSnap.data()))) return true;
-    }
-  }catch(e){
-    console.warn('Subject attempt status could not be loaded for',key,e);
+
+  // A subject-level access record may itself contain saved progress in some older records.
+  if(hasSavedAttempt(accessRecord)) return true;
+
+  const ids=[...new Set([testId,key,key.replace(/-/g,'_'),key.replace(/_/g,'-')].filter(Boolean))];
+  const checks=[];
+
+  for(const id of ids){
+    checks.push(
+      getDoc(doc(db,'testSessions',`${uid}_${id}`)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(error=>{
+        console.warn('Could not read saved session for',key,id,error?.code||error);
+        return false;
+      }),
+      getDoc(doc(db,'testAttempts',`${uid}_${id}`)).then(snap=>snap.exists()).catch(error=>{
+        console.warn('Could not read saved result for',key,id,error?.code||error);
+        return false;
+      })
+    );
   }
-  return false;
+
+  const found=await Promise.all(checks);
+  return found.some(Boolean);
 }
 
 async function markSubject(card,a,user){
-const lock=card.querySelector('.locked-status');
-if(lock){
-const x=document.createElement('div');
-x.className='purchased-status';
-x.innerHTML=`<small>Expiring on ${fmt(a.expiresAt)}</small>`;
-lock.replaceWith(x);
+  const lock=card.querySelector('.locked-status');
+  if(lock){
+    const expiry=document.createElement('div');
+    expiry.className='purchased-status';
+    expiry.innerHTML=`<small>Expiring on ${fmt(a.expiresAt)}</small>`;
+    lock.replaceWith(expiry);
+  }
+
+  const oldAction=card.querySelector('.subject-buy, .paid-start');
+  const page=card.dataset.paidPage;
+  const key=card.dataset.purchaseKey;
+  if(!oldAction||!page||!key) return;
+
+  const attempted=await subjectHasAttempts(user.uid,key,a);
+  const action=document.createElement('a');
+  action.className='paid-start';
+  action.href=attempted
+    ? `mahapack-study.html?test=${encodeURIComponent(subjectTestIds[key]||key)}`
+    : page;
+  action.textContent=attempted?'Review →':'Start →';
+  oldAction.replaceWith(action);
 }
 
-const buy=card.querySelector('.subject-buy');
-const page=card.dataset.paidPage;
-if(buy&&page){
-const attempted=await subjectHasAttempts(user.uid,card.dataset.purchaseKey,a);
-const x=document.createElement('a');
-x.className='paid-start';
-x.href=attempted
-?`mahapack-study.html?test=${encodeURIComponent(subjectTestIds[card.dataset.purchaseKey]||card.dataset.purchaseKey)}`
-:page;
-x.textContent=attempted?'Review →':'Start →';
-buy.replaceWith(x);
-}
-}
 
 
 async function loadAccess(user){
@@ -2796,23 +2809,18 @@ const data=
 snap.data()||{};
 
 
+const pending=[];
+
 document
 .querySelectorAll(
 '.subject[data-purchase-key]'
 )
 .forEach(card=>{
-
-const a=
-access(
-data,
-card.dataset.purchaseKey
-);
-
-if(a)
-markSubject(card,a,user);
-
+  const a=access(data,card.dataset.purchaseKey);
+  if(a) pending.push(markSubject(card,a,user));
 });
 
+await Promise.all(pending);
 
 /* Kept for compatibility with existing purchase data */
 
