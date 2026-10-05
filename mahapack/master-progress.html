@@ -1,618 +1,127 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Master Progress | HPMockShashtra</title>
 
 <style>
-:root{
+:root {
   --navy:#102b50;
   --navy2:#173d6b;
   --blue:#2476d2;
-  --sky:#eaf3ff;
   --line:#d5e3f5;
   --text:#17304f;
   --muted:#637a98;
   --green:#168653;
   --red:#c33d4b;
   --amber:#986100;
-  --purple:#6446bd;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  min-height:100vh;
-  font-family:Inter,Arial,Helvetica,sans-serif;
-  color:var(--text);
-  background:linear-gradient(180deg,#eaf2fc 0,#f7faff 360px,#fff 100%);
-}
+body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#eaf2fc 0,#f7faff 360px,#fff 100%)}
 a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer}
-.hidden{display:none!important}
+button{cursor:pointer}
 
-/* HEADER */
-.topbar{
-  position:sticky;
-  top:7px;
-  z-index:100;
-  width:calc(100% - 24px);
-  max-width:1400px;
-  margin:8px auto 0;
-  border:1px solid #244a7c;
-  border-radius:16px;
-  background:linear-gradient(110deg,#102b50,#173d6b);
-  box-shadow:0 8px 24px #17385d20;
-}
-.nav{
-  min-height:68px;
-  padding:10px 16px;
-  display:flex;
-  align-items:center;
-  gap:13px;
-}
-.brand{
-  margin-right:auto;
-  color:#fff;
-  font-size:19px;
-  font-weight:900;
-  white-space:nowrap;
-}
+.topbar{position:sticky;top:8px;width:calc(100% - 24px);max-width:1400px;margin:8px auto 0;z-index:99;border:1px solid #244a7c;border-radius:16px;background:linear-gradient(110deg,#102b50,#173d6b);box-shadow:0 8px 24px #17385d20}
+.nav{min-height:68px;padding:9px 16px;display:flex;align-items:center;gap:12px}
+.brand{font-size:19px;font-weight:900;margin-right:auto;color:#fff;white-space:nowrap}
 .mock{color:#70c8ff}
-.user-area{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#fff;
-  font-size:11px;
-  font-weight:800;
-}
-.avatar{
-  width:32px;height:32px;
-  display:grid;place-items:center;
-  border-radius:50%;
-  background:#d9eaff;
-  color:#15365f;
-  font-size:12px;
-}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-.nav-link{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 12px;
-  border:1px solid #ffffff35;
-  border-radius:9px;
-  color:#fff;
-  background:#ffffff0c;
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
-}
-.nav-link.active,.nav-link:hover{
-  color:#15365f;
-  background:#fff;
-}
-.logout-btn{
-  padding:9px 12px;
-  border:1px solid #ffffff55;
-  border-radius:9px;
-  color:#fff;
-  background:#ffffff0c;
-  font-size:11px;
-  font-weight:800;
-}
-.menu-toggle{
-  display:none;
-  width:42px;height:40px;
-  border:1px solid #ffffff55;
-  border-radius:9px;
-  color:#fff;
-  background:#ffffff12;
-  font-size:22px;
-}
+.nav-links{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.nav-link{padding:9px 12px;border:1px solid #ffffff35;border-radius:9px;font-size:11px;font-weight:800;color:#fff;background:#ffffff0c;white-space:nowrap}
+.nav-link.active,.nav-link:hover{background:#fff;color:#15365f}
+.user-controls{display:flex;align-items:center;gap:8px;order:3;margin-left:8px;color:#e4efff;font-size:11px}
+.user-name{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:800}
+.logout-btn{border:1px solid #ffffff55;border-radius:9px;background:#ffffff12;color:#fff;padding:9px 12px;font-size:11px;font-weight:900}
+.menu-toggle{display:none;border:1px solid #ffffff55;border-radius:9px;background:#ffffff12;color:#fff;font-size:20px;padding:5px 11px;line-height:1.1}
 
-/* PAGE */
-.wrap{
-  width:min(1400px,calc(100% - 28px));
-  margin:24px auto 40px;
-}
-.hero{
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:linear-gradient(135deg,#fff,#f3f8ff);
-  box-shadow:0 8px 25px #24466d0b;
-}
-.eyebrow{
-  color:var(--blue);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.2px;
-  text-transform:uppercase;
-}
+.wrap{width:min(1400px,calc(100% - 28px));margin:24px auto 40px}
+.hero{padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#fff,#f3f8ff);box-shadow:0 8px 25px #24466d0b}
+.eyebrow{font-size:10px;color:var(--blue);font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
 h1{font-size:30px;margin:8px 0;color:var(--navy)}
-h2{color:var(--navy)}
-p{color:var(--muted);font-size:12px;line-height:1.65}
-.section{margin-top:25px}
-.section-heading{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  flex-wrap:wrap;
-  gap:8px;
-}
-.section-heading h2{font-size:20px;margin:0}
-.section-heading p{margin:6px 0 0}
-
-/* ACCESS MESSAGES */
-.access-box,.notice{
-  margin-top:15px;
-  padding:16px;
-  border:1px solid #cbdcf1;
-  border-radius:13px;
-  background:#f5f9ff;
-}
-.access-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:14px;
-}
-.access-copy{flex:1;min-width:190px}
+p{color:var(--muted);font-size:12px;line-height:1.6}
+.access{margin-top:14px;padding:17px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;border:1px solid #cbdcf1;border-radius:13px;background:#f5f9ff}
+.access-copy{flex:1;min-width:200px}
 .access-copy strong{font-size:14px;color:var(--navy)}
 .access-copy p{margin:5px 0}
-.btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  padding:11px 15px;
-  border:0;
-  border-radius:9px;
-  color:white;
-  background:linear-gradient(135deg,#2476d2,#1658a7);
-  font-size:11px;
-  font-weight:900;
-}
-.btn-secondary{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  padding:10px 13px;
-  border:1px solid #a9c4e7;
-  border-radius:9px;
-  color:var(--navy);
-  background:white;
-  font-size:11px;
-  font-weight:800;
-}
+.btn{display:inline-block;padding:10px 15px;border:0;border-radius:9px;background:linear-gradient(135deg,#2476d2,#1658a7);color:white;font-size:11px;font-weight:900}
+.secondary{display:inline-block;padding:9px 12px;border:1px solid #a9c4e7;border-radius:9px;font-size:11px;font-weight:800;color:var(--navy);background:#fff}
 
-/* OVERALL PERFORMANCE */
-.overall-panel{
-  margin-top:23px;
-  padding:21px;
-  border:1px solid #bcd3f1;
-  border-radius:19px;
-  background:linear-gradient(145deg,#edf5ff,#fff 70%);
-  box-shadow:0 10px 30px #1b477510;
-}
-.overall-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.overall-top h2{margin:0;font-size:21px}
-.overall-top p{margin:6px 0 0}
-.accuracy-highlight{
-  min-width:125px;
-  padding:12px 17px;
-  border:1px solid #c6d9f5;
-  border-radius:14px;
-  text-align:center;
-  background:white;
-}
-.accuracy-highlight strong{
-  display:block;
-  color:var(--purple);
-  font-size:29px;
-  line-height:1.2;
-}
-.accuracy-highlight span{
-  color:var(--muted);
-  font-size:10px;
-  font-weight:800;
-}
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:11px;
-  margin-top:18px;
-}
-.stat{
-  position:relative;
-  overflow:hidden;
-  padding:16px;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:#fff;
-}
-.stat:before{
-  content:"";
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:4px;
-  background:var(--accent,#2476d2);
-}
-.stat strong{
-  display:block;
-  color:var(--accent,#2476d2);
-  font-size:25px;
-}
-.stat span{
-  display:block;
-  margin-top:5px;
-  color:var(--text);
-  font-size:11px;
-  font-weight:850;
-}
-.stat small{
-  display:block;
-  margin-top:4px;
-  color:var(--muted);
-  font-size:10px;
-}
-.stat.attempted{--accent:#2476d2}
+.section{margin-top:24px}
+.section h2{font-size:20px;margin:0 0 5px;color:var(--navy)}
+.overall-panel{margin-top:22px;padding:22px;border:1px solid #bfd5f2;border-radius:20px;background:linear-gradient(135deg,#fff 0%,#f2f7ff 100%);box-shadow:0 12px 30px #173d6b12}
+.overall-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
+.overall-heading h2{margin:3px 0 5px;font-size:23px}
+.total-orb{width:124px;height:124px;flex:0 0 124px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;background:radial-gradient(circle at 30% 25%,#56a9ff,#1a5db0 72%);border:7px solid #dcecff;box-shadow:0 0 0 1px #a8c9f3,0 9px 20px #1a5db033}
+.total-orb strong{font-size:25px;line-height:1.1}
+.total-orb span{font-size:9px;letter-spacing:.7px;text-transform:uppercase;font-weight:900;margin-top:5px;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.stat{padding:17px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 5px 18px #23466d09;position:relative;overflow:hidden}
+.stat:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,#2476d2)}
+.stat strong{display:block;font-size:25px;color:var(--accent,#2476d2)}
+.stat span{display:block;margin-top:5px;font-size:11px;font-weight:800;color:var(--text)}
 .stat.unattempted{--accent:#986100}
 .stat.correct{--accent:#168653}
 .stat.wrong{--accent:#c33d4b}
-.stat.accuracy{--accent:#6446bd}
-.stat.completion{--accent:#087e91}
 
-/* OVERALL BARS */
-.progress-pair{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:14px;
-}
-.progress-box{
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:#fff;
-}
-.progress-label{
-  display:flex;
-  justify-content:space-between;
-  gap:8px;
-  font-size:11px;
-  font-weight:850;
-}
-.progress-track{
-  height:10px;
-  margin-top:10px;
-  overflow:hidden;
-  border-radius:99px;
-  background:#e4edf8;
-}
-.progress-fill{
-  width:0;
-  height:100%;
-  border-radius:99px;
-  background:linear-gradient(90deg,#2476d2,#58a7f8);
-  transition:width .6s ease;
-}
-.progress-fill.green{background:linear-gradient(90deg,#168653,#49c58a)}
-.overall-remark{
-  margin-top:14px;
-  padding:14px 16px;
-  border:1px solid #c9dbf2;
-  border-radius:12px;
-  background:#fff;
-}
-.overall-remark strong{font-size:13px;color:var(--navy)}
-.overall-remark p{margin:5px 0 0}
+.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:13px}
+.subject-card{padding:17px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#fff,#f8fbff);box-shadow:0 5px 18px #23466d09;min-width:0}
+.subject-card h3{font-size:14px;margin:0 0 8px;color:var(--navy)}
+.subject-card p{font-size:11px;margin:6px 0}
+.accuracy-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:14px;font-size:11px;font-weight:900;color:var(--navy)}
+.bar{height:9px;background:#e4edf8;border-radius:99px;overflow:hidden;margin:8px 0 9px}
+.bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#2476d2,#58a7f8)}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}
+.metric{padding:9px;border-radius:9px;background:#f1f6fd;border:1px solid #e2ebf7}
+.metric span{display:block;font-size:10px;color:var(--muted)}
+.metric strong{display:block;margin-top:3px;font-size:16px;color:var(--navy)}
+.metric.correct strong{color:var(--green)}
+.metric.wrong strong{color:var(--red)}
+.metric.unattempted strong{color:var(--amber)}
+.remark{padding:9px 10px;border-radius:9px;font-size:11px;line-height:1.5;font-weight:700;background:#edf4ff;color:#31577f;border:1px solid #dce9fa}
+.remark.good{background:#e4f7ed;color:#167447;border-color:#c7ecd8}
+.remark.low{background:#fff0e5;color:#9a4e0a;border-color:#f7d9bf}
+.remark.excellent{background:#e9e5ff;color:#5233a0;border-color:#d7ceff}
+.notice{padding:15px;border:1px solid #cbdcf1;border-radius:12px;background:#f5f9ff;margin-top:14px;color:var(--navy)}
+.hidden{display:none!important}
 
-/* ACCURACY MILESTONES */
-.milestone-grid{
-  display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:10px;
-  margin-top:14px;
-}
-.milestone{
-  padding:13px 9px;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:#fff;
-  text-align:center;
-}
-.milestone .symbol{font-size:22px}
-.milestone strong{
-  display:block;
-  margin-top:5px;
-  color:var(--navy);
-  font-size:17px;
-}
-.milestone span{
-  display:block;
-  margin-top:4px;
-  color:var(--muted);
-  font-size:10px;
-  font-weight:800;
-}
-.milestone.unlocked{
-  border-color:#a7dfc2;
-  background:linear-gradient(145deg,#e7f9f0,#fff);
-}
-.milestone.current{
-  border:2px solid #2476d2;
-  box-shadow:0 4px 16px #2476d218;
-}
-
-/* SUBJECT CARDS */
-.subject-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:13px;
-  margin-top:15px;
-}
-.subject-card{
-  min-width:0;
-  padding:17px;
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:#fff;
-  box-shadow:0 5px 18px #23466d09;
-}
-.subject-card.in-progress{
-  border-color:#8dbaf1;
-  box-shadow:0 0 0 2px #d9eaff,0 7px 20px #23466d0b;
-}
-.subject-title-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:9px;
-}
-.subject-card h3{
-  margin:0;
-  color:var(--navy);
-  font-size:14px;
-  line-height:1.5;
-}
-.subject-status{
-  flex-shrink:0;
-  padding:5px 8px;
-  border-radius:20px;
-  font-size:9px;
-  font-weight:900;
-  background:#eaf1fb;
-  color:#34577f;
-}
-.subject-status.good{background:#ddf5e8;color:#167447}
-.subject-status.low{background:#fde8e9;color:#b42332}
-.subject-status.ongoing{background:#e4f0ff;color:#175ca5}
-.subject-status.excellent{background:#f2eaff;color:#6446bd}
-.subject-card .subject-subtitle{
-  margin:7px 0 12px;
-  font-size:10px;
-}
-.subject-accuracy-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:8px;
-  margin-top:13px;
-}
-.subject-accuracy-row span{
-  font-size:11px;
-  color:var(--muted);
-  font-weight:800;
-}
-.subject-accuracy-row strong{
-  font-size:23px;
-  color:var(--blue);
-}
-.subject-card .progress-track{height:9px;margin-top:7px}
-.subject-card .progress-fill.low{background:linear-gradient(90deg,#d64151,#f58b95)}
-.subject-card .progress-fill.average{background:linear-gradient(90deg,#d28b17,#f4bd55)}
-.subject-card .progress-fill.good{background:linear-gradient(90deg,#2476d2,#58a7f8)}
-.subject-card .progress-fill.excellent{background:linear-gradient(90deg,#6446bd,#ad8af5)}
-.subject-mini-stats{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:7px;
-  margin-top:13px;
-}
-.mini-stat{
-  padding:9px 6px;
-  border:1px solid #e2ebf7;
-  border-radius:9px;
-  background:#f5f8fd;
-  text-align:center;
-}
-.mini-stat strong{
-  display:block;
-  color:var(--navy);
-  font-size:15px;
-}
-.mini-stat span{
-  display:block;
-  margin-top:4px;
-  color:var(--muted);
-  font-size:9px;
-  font-weight:800;
-}
-.mini-stat.correct strong{color:var(--green)}
-.mini-stat.wrong strong{color:var(--red)}
-.subject-remark{
-  margin-top:13px;
-  padding:11px;
-  border-radius:10px;
-  background:#f2f7ff;
-  border:1px solid #e1ebf9;
-}
-.subject-remark strong{
-  color:var(--navy);
-  font-size:11px;
-}
-.subject-remark p{margin:5px 0 0;font-size:11px}
-.suggestion{
-  margin-top:9px;
-  color:#36577c;
-  font-size:11px;
-  line-height:1.6;
-}
-.suggestion b{color:#173d6b}
-.subject-actions{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:13px;
-}
-.subject-actions a{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  padding:9px 11px;
-  border-radius:8px;
-  font-size:10px;
-  font-weight:900;
-}
-.open-subject{background:var(--navy2);color:white}
-.review-subject{border:1px solid #b8cde9;color:var(--navy);background:white}
-.empty-state{
-  grid-column:1/-1;
-  padding:22px;
-  border:1px dashed #b8cde9;
-  border-radius:14px;
-  background:#f8fbff;
-  text-align:center;
-}
-.empty-state strong{color:var(--navy)}
-
-/* FOOTER */
-.footer{
-  margin-top:35px;
-  padding:30px 0 15px;
-  background:#102b50;
-}
+.footer{margin-top:35px;padding:30px 0 15px;border-top:1px solid #d6e3f3;background:#102b50}
 .footer-inner{width:min(1400px,calc(100% - 28px));margin:auto}
-.footer-top{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
-  gap:25px;
-}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:25px}
 .footer h3,.footer h4{margin:0 0 10px;color:#fff}
 .footer p,.footer a{font-size:11px;color:#d0def0}
 .footer-links{display:grid;gap:8px}
-.footer a:hover{color:#70c8ff}
-.footer-bottom{
-  margin-top:22px;
-  padding-top:14px;
-  border-top:1px solid #ffffff25;
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  font-size:10px;
-  color:#b3c5dc;
-}
+.footer-bottom{margin-top:22px;padding-top:14px;border-top:1px solid #ffffff25;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#b3c5dc}
 
-/* CELEBRATION */
-.popup-backdrop{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:grid;
-  place-items:center;
-  padding:18px;
-  background:#102b5077;
-  backdrop-filter:blur(5px);
-}
-.popup{
-  width:min(420px,100%);
-  padding:28px 22px;
-  border:1px solid #c6d9f5;
-  border-radius:22px;
-  background:linear-gradient(145deg,#fff,#edf5ff);
-  text-align:center;
-  box-shadow:0 25px 80px #071b3860;
-  animation:popIn .4s ease-out;
-}
-.popup-emoji{font-size:45px}
-.popup h2{margin:12px 0 8px;font-size:23px}
-.popup p{line-height:1.7}
-.popup button{
-  margin-top:12px;
-  padding:12px 25px;
-  border:0;
-  border-radius:10px;
-  color:#fff;
-  font-size:12px;
-  font-weight:900;
-  background:linear-gradient(135deg,#2476d2,#174a91);
-}
-.flower{
-  position:fixed;
-  top:-35px;
-  z-index:10000;
-  pointer-events:none;
-  animation:fall linear forwards;
-}
-@keyframes popIn{
-  from{opacity:0;transform:scale(.82) translateY(15px)}
-  to{opacity:1;transform:scale(1) translateY(0)}
-}
-@keyframes fall{
-  to{transform:translateY(110vh) rotate(650deg);opacity:.15}
-}
-
-/* MOBILE */
 @media(max-width:900px){
+  .nav{flex-wrap:wrap}
+  .menu-toggle{display:block;order:2}
+  .nav-links{display:none;order:4;width:100%;padding-top:10px;border-top:1px solid #ffffff25}
+  .nav-links.open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .user-controls{order:3;margin-left:auto}
+  .brand{margin-right:0}
+  .overall-panel{padding:17px}
+}
+@media(max-width:850px){
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
   .subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .milestone-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
-@media(max-width:650px){
-  .topbar{top:5px;width:calc(100% - 14px);margin-top:5px}
-  .nav{min-height:58px;padding:9px 11px;gap:9px}
+@media(max-width:550px){
+  .nav{gap:9px;padding:10px}
   .brand{font-size:16px}
-  .menu-toggle{display:block}
-  .user-area{margin-left:auto}
-  .user-name{max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .nav-links{
-    display:none;
-    width:100%;
-    padding:8px 0 4px;
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .nav-links.open{display:flex}
-  .nav-link,.logout-btn{width:100%;padding:12px;text-align:center}
-  .wrap{width:calc(100% - 18px);margin-top:16px}
+  .user-name{max-width:82px;font-size:10px}
+  .logout-btn{padding:8px;font-size:10px}
+  .nav-link{padding:9px;font-size:10px}
+  .wrap{width:calc(100% - 18px)}
   .hero{padding:18px}
-  h1{font-size:25px}
-  .overall-panel{padding:14px}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .stat{padding:13px}
-  .stat strong{font-size:22px}
-  .progress-pair{grid-template-columns:1fr}
-  .subject-grid{grid-template-columns:1fr}
-  .milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer-top{grid-template-columns:1fr;gap:20px}
+  h1{font-size:24px}
+  .overall-heading{align-items:center}
+  .overall-heading h2{font-size:20px}
+  .total-orb{width:100px;height:100px;flex-basis:100px;border-width:5px}
+  .total-orb strong{font-size:21px}
+  .stats,.subject-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
@@ -622,20 +131,18 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   <nav class="nav">
     <a class="brand" href="../homepage.html">HP<span class="mock">Mock</span>Shashtra</a>
 
-    <div class="user-area" id="userArea">
-      <span class="avatar">?</span>
-      <span class="user-name">Checking…</span>
-    </div>
-
-    <button class="menu-toggle" id="menuToggle" type="button"
-      aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
 
     <div class="nav-links" id="navLinks">
-      <button class="logout-btn hidden" id="logoutBtn" type="button">Logout</button>
       <a class="nav-link" href="../homepage.html">Home</a>
       <a class="nav-link" href="joa-mahapack.html">Paid Courses</a>
-      <a class="nav-link" href="../my-purchase.html">My Purchases</a>
+      <a class="nav-link" href="my-purchase.html">My Purchases</a>
       <a class="nav-link active" href="master-progress.html">Master Progress</a>
+    </div>
+
+    <div class="user-controls">
+      <span class="user-name" id="userArea">Checking account…</span>
+      <button class="logout-btn" id="logoutBtn" type="button">Logout</button>
     </div>
   </nav>
 </header>
@@ -644,116 +151,68 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   <section class="hero">
     <div class="eyebrow">Your preparation dashboard</div>
     <h1>Master Progress</h1>
-    <p>Track your preparation across your accessible Maha Pack computer subjects. JOA and Patwari test records are excluded.</p>
+    <p>Track your preparation across your accessible Maha Pack computer subjects.</p>
 
-    <div id="loginBox" class="access-box hidden">
-      <div class="access-row">
-        <div class="access-copy">
-          <strong>🔐 Please log in to view your progress</strong>
-          <p>Sign in to view your personal performance, scores and subject-wise progress.</p>
-        </div>
-        <a class="btn" href="../firebase-login.html?redirect=mahapack%2Fmaster-progress.html">Login / Register →</a>
+    <div id="loginBox" class="access hidden">
+      <div class="access-copy">
+        <strong>🔐 Please Login to View Your Progress</strong>
+        <p>Login or register to access your personal progress, scores and performance.</p>
       </div>
+      <a class="btn" href="../firebase-login.html?redirect=mahapack%2Fmaster-progress.html">Login / Register →</a>
     </div>
 
-    <div id="purchaseBox" class="access-box hidden">
-      <div class="access-row">
-        <div class="access-copy">
-          <strong>🔒 Unlock your Master Progress dashboard</strong>
-          <p>Your account is signed in, but Master Pack access could not be confirmed. Check your purchases or buy the pack to access eligible subjects.</p>
-        </div>
-        <a class="btn" href="joa-mahapack.html">Explore Maha Pack →</a>
-        <a class="btn-secondary" href="../my-purchase.html">My Purchases</a>
+    <div id="purchaseBox" class="access hidden">
+      <div class="access-copy">
+        <strong>🔒 Unlock Your Master Progress Dashboard</strong>
+        <p>Your account is signed in, but eligible Maha Pack access could not be confirmed. Check your purchase or buy the pack to track your accessible subjects.</p>
       </div>
+      <a class="btn" href="joa-mahapack.html">Buy Master Pack →</a>
+      <a class="secondary" href="my-purchase.html">My Purchases</a>
     </div>
 
     <div id="loadingBox" class="notice">Checking your account and access…</div>
-    <div id="statusBox" class="notice hidden" role="status"></div>
+    <div id="statusBox" class="notice hidden"></div>
   </section>
 
-  <section id="overallPanel" class="overall-panel hidden">
-    <div class="overall-top">
+  <section id="statsSection" class="overall-panel hidden">
+    <div class="overall-heading">
       <div>
         <div class="eyebrow">Performance overview</div>
         <h2>Overall Performance</h2>
-        <p>Summary of your accessible Maha Pack subjects only.</p>
+        <p>Only your accessible Maha Pack computer subjects are included. JOA and Patwari results are excluded.</p>
       </div>
-      <div class="accuracy-highlight">
-        <strong id="accuracyCount">—</strong>
-        <span>VERIFIED ACCURACY</span>
+      <div class="total-orb" aria-label="Total available questions">
+        <strong id="totalQuestionsCount">—</strong>
+        <span>Total Questions</span>
       </div>
     </div>
 
     <div class="stats">
-      <div class="stat attempted">
-        <strong id="attemptedCount">0</strong>
-        <span>Questions Attempted</span>
-        <small>Questions with saved answers</small>
-      </div>
       <div class="stat unattempted">
-        <strong id="unattemptedCount">0</strong>
+        <strong id="unattemptedCount">—</strong>
         <span>Questions Unattempted</span>
-        <small id="totalQuestionsLabel">Out of 0 available questions</small>
       </div>
       <div class="stat correct">
-        <strong id="correctCount">0</strong>
+        <strong id="correctCount">—</strong>
         <span>Correct Answers</span>
-        <small>Verified correct responses</small>
       </div>
       <div class="stat wrong">
-        <strong id="wrongCount">0</strong>
+        <strong id="wrongCount">—</strong>
         <span>Wrong Answers</span>
-        <small>Verified incorrect responses</small>
       </div>
-      <div class="stat accuracy">
-        <strong id="gradedCount">0</strong>
-        <span>Graded Answers</span>
-        <small>Used to calculate accuracy</small>
-      </div>
-      <div class="stat completion">
-        <strong id="overallProgress">0%</strong>
-        <span>Question Completion</span>
-        <small>Attempted compared with available</small>
-      </div>
-    </div>
-
-    <div class="progress-pair">
-      <div class="progress-box">
-        <div class="progress-label"><span>Question completion</span><span id="completionLabel">0%</span></div>
-        <div class="progress-track"><div class="progress-fill" id="completionBar"></div></div>
-      </div>
-      <div class="progress-box">
-        <div class="progress-label"><span>Answer accuracy</span><span id="accuracyLabel">Not enough graded data</span></div>
-        <div class="progress-track"><div class="progress-fill green" id="accuracyBar"></div></div>
-      </div>
-    </div>
-
-    <div class="overall-remark">
-      <strong id="overallRemarkTitle">Your performance summary</strong>
-      <p id="overallRemarkText">Your verified performance summary will appear here.</p>
-    </div>
-
-    <div class="section">
-      <div class="section-heading">
-        <div>
-          <h2>Accuracy Milestones</h2>
-          <p>Milestones are based on verified accuracy, not the number of questions attempted.</p>
-        </div>
-      </div>
-      <div class="milestone-grid" id="milestoneGrid"></div>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-heading">
-      <div>
-        <h2>Subject-wise Performance</h2>
-        <p id="subjectIntro">Your accessible subjects and their progress will appear here.</p>
-      </div>
-    </div>
-    <div class="subject-grid" id="subjectGrid">
-      <div class="empty-state"><strong>Loading subjects…</strong></div>
-    </div>
+    <h2>Subject-wise Performance</h2>
+    <p id="subjectIntro">Your personal progress is visible only to the signed-in eligible user.</p>
+    <div id="subjectGrid" class="subject-grid"></div>
+  </section>
+
+  <section id="milestonesSection" class="section hidden">
+    <h2>Milestones</h2>
+    <p>Milestones are based on recorded question attempts.</p>
+    <div id="milestones" class="subject-grid"></div>
   </section>
 </main>
 
@@ -764,39 +223,38 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
         <h3>HPMockShashtra</h3>
         <p>A practice platform for Himachal Pradesh competitive exam aspirants with mock tests, bilingual practice and performance tracking.</p>
       </div>
+
       <div>
         <h4>Preparation</h4>
         <div class="footer-links">
-          <a href="../joa/new-joa-series.htm">JOA (IT) Mock Tests</a>
+          <a href="../joa/new-joa-series.html">JOA (IT) Mock Tests</a>
           <a href="joa-mahapack.html">JOA IT Maha Pack</a>
           <a href="../patwari/patwari-series.html">HP Patwari Mock Tests</a>
           <a href="../my-progress.html">My Progress</a>
         </div>
       </div>
+
       <div>
         <h4>Information</h4>
         <div class="footer-links">
           <a href="../about.html">About</a>
           <a href="../privacy.html">Privacy Policy</a>
           <a href="../terms.html">Terms &amp; Conditions</a>
-          <a href="../contact.html">Contact</a>
         </div>
       </div>
     </div>
+
     <div class="footer-bottom">
       <span>© 2026 HPMockShashtra. All rights reserved.</span>
-      <span>Master Progress Dashboard</span>
+      <span>Master Progress</span>
     </div>
   </div>
 </footer>
 
 <script type="module">
 import { auth, db } from "../firebase-config.js";
-import { onAuthStateChanged, signOut }
-  from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-import {
-  doc, getDoc, collection, getDocs
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const $ = id => document.getElementById(id);
 
@@ -818,549 +276,338 @@ const SUBJECTS = [
   {id:"operating_system_01",name:"Operating System",course:"operating-system",file:"paid-operating-system.html",icon:"⚙️"}
 ];
 
-const MILESTONES = [
-  {value:50,title:"Average",message:"You have reached 50% verified accuracy. Keep revising and improving."},
-  {value:60,title:"Improving",message:"60% accuracy achieved. Your preparation is moving in the right direction."},
-  {value:70,title:"Good Progress",message:"70% accuracy! Review your mistakes and aim even higher."},
-  {value:80,title:"Excellent",message:"80% accuracy! You are building a strong command of the subjects."},
-  {value:90,title:"Outstanding 🔥",message:"90%+ accuracy! An outstanding performance—keep it consistent."}
-];
-
-let currentUser = null;
-let allSubjectRows = [];
-let previousVerifiedAccuracy = null;
-
-function escapeHTML(value){
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  })[c]);
-}
-function active(value){
-  if(value === true) return true;
-  if(!value || typeof value !== "object") return false;
-  if(value.active === false || value.enabled === false || value.status === "expired") return false;
-  const raw = value.expiresAt ?? value.expiryDate ?? value.expiry;
-  const expiry = raw?.toDate ? raw.toDate() : (raw ? new Date(raw) : null);
+function active(value) {
+  if (value === true) return true;
+  if (!value || typeof value !== "object") return false;
+  if (value.active === false || value.enabled === false || value.status === "expired") return false;
+  const expiry = value.expiresAt?.toDate
+    ? value.expiresAt.toDate()
+    : (value.expiresAt ? new Date(value.expiresAt) : null);
   return !expiry || Number.isNaN(expiry.getTime()) || expiry.getTime() > Date.now();
 }
-function showStatus(message){
+
+function escapeHTML(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+
+function setStatus(message) {
   $("statusBox").textContent = message;
   $("statusBox").classList.remove("hidden");
 }
-function showLoading(show){
-  $("loadingBox").classList.toggle("hidden", !show);
-}
-function setUserUI(user){
-  const name = user.displayName || user.email || "Signed in";
-  const initial = (name.trim()[0] || "U").toUpperCase();
-  $("userArea").innerHTML =
-    `<span class="avatar">${escapeHTML(initial)}</span><span class="user-name">${escapeHTML(name)}</span>`;
-  $("logoutBtn").classList.remove("hidden");
-}
-function setGuestUI(){
-  $("userArea").innerHTML =
-    '<span class="avatar">G</span><span class="user-name">Guest</span>';
-  $("logoutBtn").classList.add("hidden");
-}
 
-/* Mobile navigation */
-$("menuToggle").addEventListener("click", () => {
-  const open = $("navLinks").classList.toggle("open");
-  $("menuToggle").setAttribute("aria-expanded", String(open));
-  $("menuToggle").setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
-  $("menuToggle").textContent = open ? "×" : "☰";
-});
-$("navLinks").addEventListener("click", event => {
-  if(event.target.closest("a")) {
-    $("navLinks").classList.remove("open");
-    $("menuToggle").setAttribute("aria-expanded","false");
-    $("menuToggle").textContent = "☰";
-  }
-});
-$("logoutBtn").addEventListener("click", async () => {
-  try {
-    await signOut(auth);
-    location.href = "../firebase-login.html";
-  } catch(error) {
-    console.error("Logout failed:", error);
-    showStatus("Logout could not be completed. Please try again.");
-  }
-});
-
-function renderPublicSubjects(){
-  $("subjectGrid").innerHTML = SUBJECTS.map(subject => `
+function renderPublicSubjects() {
+  $("subjectGrid").innerHTML = SUBJECTS.map(s => `
     <article class="subject-card">
-      <div class="subject-title-row">
-        <h3>${subject.icon} ${escapeHTML(subject.name)}</h3>
-        <span class="subject-status">Sign in</span>
-      </div>
-      <p class="subject-subtitle">Maha Pack • Practice and progress tracking</p>
-      <p>Sign in and confirm course access to see your personal performance.</p>
-    </article>`).join("");
+      <h3>${s.icon} ${s.name}</h3>
+      <p>Questions • Practice tests</p>
+      <p>Sign in and confirm course access to view your personal progress.</p>
+    </article>
+  `).join("");
 }
-function showLogin(){
-  showLoading(false);
+
+function renderProgressCards(rows) {
+  if (!rows.length) {
+    $("subjectGrid").innerHTML = '<div class="notice">No subject access was found for this account. Please check My Purchases.</div>';
+    return;
+  }
+
+  // Completed subjects first, then in-progress subjects, then untouched subjects.
+  rows.sort((a,b) =>
+    (b.completion-a.completion) ||
+    (b.percent-a.percent) ||
+    a.subject.name.localeCompare(b.subject.name)
+  );
+
+  $("subjectGrid").innerHTML = rows.map(({subject,total,attempted,unattempted,correct,wrong,percent,completion}) => {
+    let remark = "";
+    let remarkClass = "";
+
+    if (!attempted) {
+      remark = "Not started yet — begin a test to build your performance record.";
+    } else if (percent >= 90) {
+      remark = "Outstanding accuracy! Excellent command of this subject.";
+      remarkClass = "excellent";
+    } else if (percent >= 80) {
+      remark = "Excellent performance. Keep practising to maintain this level.";
+      remarkClass = "good";
+    } else if (percent >= 70) {
+      remark = "Good performance. Review your mistakes to improve further.";
+      remarkClass = "good";
+    } else if (percent >= 60) {
+      remark = "Fairly good. Revise incorrect answers and aim for 70%+.";
+    } else if (percent >= 50) {
+      remark = "Average performance. Focus on the questions answered incorrectly.";
+    } else {
+      remark = "Needs improvement. Revise the basics and practise more questions.";
+      remarkClass = "low";
+    }
+
+    const barColor = percent >= 80
+      ? "linear-gradient(90deg,#168653,#48bd86)"
+      : percent >= 50
+        ? "linear-gradient(90deg,#2476d2,#58a7f8)"
+        : "linear-gradient(90deg,#d58a26,#edb34f)";
+
+    return `
+      <article class="subject-card">
+        <h3>${subject.icon} ${subject.name}</h3>
+
+        <div class="accuracy-row">
+          <span>Accuracy</span>
+          <strong>${attempted ? percent + "%" : "Not graded yet"}</strong>
+        </div>
+
+        <div class="bar" role="progressbar"
+             aria-label="${escapeHTML(subject.name)} accuracy"
+             aria-valuemin="0" aria-valuemax="100"
+             aria-valuenow="${attempted ? percent : 0}">
+          <span style="width:${attempted ? percent : 0}%;background:${barColor}"></span>
+        </div>
+
+        <p>${attempted.toLocaleString("en-IN")} attempted of ${total.toLocaleString("en-IN")} questions · ${completion}% completion</p>
+
+        <div class="metrics">
+          <div class="metric correct">
+            <span>Correct</span>
+            <strong>${correct.toLocaleString("en-IN")}</strong>
+          </div>
+          <div class="metric wrong">
+            <span>Wrong</span>
+            <strong>${wrong.toLocaleString("en-IN")}</strong>
+          </div>
+          <div class="metric unattempted">
+            <span>Unattempted</span>
+            <strong>${unattempted.toLocaleString("en-IN")}</strong>
+          </div>
+          <div class="metric">
+            <span>Attempted</span>
+            <strong>${attempted.toLocaleString("en-IN")}</strong>
+          </div>
+        </div>
+
+        <div class="remark ${remarkClass}" style="margin-top:12px">${remark}</div>
+      </article>
+    `;
+  }).join("");
+}
+
+function showLogin() {
+  $("loadingBox").classList.add("hidden");
   $("loginBox").classList.remove("hidden");
   $("purchaseBox").classList.add("hidden");
-  $("overallPanel").classList.add("hidden");
-  setGuestUI();
+  $("statsSection").classList.add("hidden");
+  $("milestonesSection").classList.add("hidden");
+  $("userArea").textContent = "Guest";
+  $("logoutBtn").classList.add("hidden");
   $("subjectIntro").textContent = "All 15 subjects are listed below. Sign in to view your own progress.";
   renderPublicSubjects();
 }
-function showNoAccess(){
-  showLoading(false);
+
+function showNoAccess() {
+  $("logoutBtn").classList.remove("hidden");
+  $("loadingBox").classList.add("hidden");
   $("loginBox").classList.add("hidden");
   $("purchaseBox").classList.remove("hidden");
-  $("overallPanel").classList.add("hidden");
-  $("subjectIntro").textContent = "Personal scores are available only for subjects included in your active access.";
+  $("statsSection").classList.add("hidden");
+  $("milestonesSection").classList.add("hidden");
+  $("subjectIntro").textContent = "Subject list is public. Personal scores are hidden until eligible access is confirmed.";
   renderPublicSubjects();
 }
 
-/* Access keys: only the 15 Maha Pack computer subjects are considered. */
-function hasSubjectAccess(data, subject){
-  const roots = [
-    data?.computerAccess,
-    data?.mahapackAccess,
+function getAccessForSubject(data, subject) {
+  const collections = [
     data?.computerAccess?.courses,
     data?.mahapackAccess?.courses
   ];
 
-  for(const root of roots){
-    if(!root || typeof root !== "object") continue;
-
-    for(const key of [subject.course, ...(subject.accessAliases || [])]){
-      if(active(root[key])) return true;
+  for (const collection of collections) {
+    if (!collection) continue;
+    for (const key of [subject.course, ...(subject.accessAliases || [])]) {
+      if (active(collection[key])) return true;
     }
   }
 
-  if(subject.pack){
-    if(active(data?.computerAccess?.packs?.[subject.pack])) return true;
-    if(active(data?.mahapackAccess?.packs?.[subject.pack])) return true;
-  }
+  if (subject.pack && (
+    active(data?.computerAccess?.packs?.[subject.pack]) ||
+    active(data?.mahapackAccess?.packs?.[subject.pack])
+  )) return true;
 
   return active(data?.computerAccess?.packs?.["computer-master"]) ||
          active(data?.mahapackAccess?.packs?.["computer-master"]) ||
          active(data?.mahapackAccess);
 }
-function hasMasterAccess(data){
-  return active(data?.computerAccess?.packs?.["computer-master"]) ||
-         active(data?.mahapackAccess?.packs?.["computer-master"]) ||
-         active(data?.mahapackAccess);
-}
 
-/* Normalize a saved attempt/session without inventing correct answers. */
-function getAnswerValues(answers){
-  if(Array.isArray(answers)) return answers;
-  if(answers && typeof answers === "object") return Object.values(answers);
-  return [];
-}
-function hasSelectedAnswer(value){
-  if(value === null || value === undefined || value === "") return false;
-  if(typeof value === "object"){
-    if("selected" in value) return value.selected !== null && value.selected !== undefined && value.selected !== "";
-    if("answer" in value) return value.answer !== null && value.answer !== undefined && value.answer !== "";
-    if("optionIndex" in value) return value.optionIndex !== null && value.optionIndex !== undefined;
-  }
-  return true;
-}
-function getSavedCount(data, keys){
-  for(const key of keys){
-    if(data?.[key] !== undefined && data?.[key] !== null && Number.isFinite(Number(data[key]))) {
-      return Math.max(0,Number(data[key]));
-    }
-  }
-  return null;
-}
-function extractProgress(attempt, session, subject){
-  const completed = !!attempt && (
-    attempt.status === "completed" ||
-    attempt.status === "submitted" ||
-    attempt.completed === true
-  );
-
-  const source = attempt || session || {};
-  const answers = getAnswerValues(source.answers);
-  const attemptedFromAnswers = answers.filter(hasSelectedAnswer).length;
-
-  const attempted = getSavedCount(source,["attempted","attemptedCount"]) ?? attemptedFromAnswers;
-  const explicitCorrect = getSavedCount(source,["correct","correctAnswers"]);
-  const explicitWrong = getSavedCount(source,["wrong","wrongAnswers"]);
-
-  let correct = explicitCorrect;
-  let wrong = explicitWrong;
-  let graded = explicitCorrect !== null || explicitWrong !== null;
-
-  /* Read explicit per-question grading if the test page stores it. */
-  const resultList = Array.isArray(source.results) ? source.results :
-    (Array.isArray(source.answerResults) ? source.answerResults : null);
-
-  if(resultList){
-    const gradedResults = resultList.filter(item =>
-      item && (typeof item.isCorrect === "boolean" || typeof item.correct === "boolean")
-    );
-    if(gradedResults.length){
-      correct = gradedResults.filter(item => item.isCorrect === true || item.correct === true).length;
-      wrong = gradedResults.filter(item => item.isCorrect === false || item.correct === false).length;
-      graded = true;
-    }
-  }
-
-  /*
-    Do not infer correctness from option indexes.
-    An answer index such as 0, 1, 2 or 3 does not tell us whether it is right.
-  */
-  if(correct === null) correct = 0;
-  if(wrong === null) wrong = 0;
-
-  const gradedCount = Math.min(attempted, correct + wrong);
-  const questionCount = getSavedCount(source,["questionCount","totalQuestions","total"]);
-  const total = Math.max(
-    attempted,
-    questionCount !== null && questionCount > 0 ? questionCount : 400
-  );
-
-  const unattempted = Math.max(0,total-attempted);
-  const accuracy = gradedCount > 0 ? Math.round(correct/gradedCount*100) : null;
-  const completion = total > 0 ? Math.min(100,Math.round(attempted/total*100)) : 0;
-
-  return {
-    subject, total, attempted, unattempted, correct, wrong, gradedCount,
-    accuracy, completion, completed, inProgress:!completed && attempted > 0,
-    hasData:attempted > 0,
-    accuracyVerified:graded && gradedCount > 0
-  };
-}
-
-async function loadSubjectProgress(user, subject){
-  const [attemptSnap,sessionSnap] = await Promise.all([
+async function loadSubjectProgress(user, subject) {
+  const [attemptSnap, sessionSnap] = await Promise.all([
     getDoc(doc(db,"users",user.uid,"mahapackAttempts",subject.id)),
     getDoc(doc(db,"users",user.uid,"mahapackSessions",subject.id))
   ]);
 
   const attempt = attemptSnap.exists() ? attemptSnap.data() : null;
   const session = sessionSnap.exists() ? sessionSnap.data() : null;
+  const source = attempt || session || {};
+  const answers = source.answers && typeof source.answers === "object" ? source.answers : {};
+  const values = Array.isArray(answers) ? answers : Object.values(answers);
 
-  return extractProgress(attempt,session,subject);
-}
+  let attempted = values.filter(v => v !== null && v !== undefined && v !== "").length;
+  let correct = 0;
+  let wrong = 0;
 
-function performanceFor(row){
-  if(row.accuracy === null){
-    return {
-      level:row.inProgress ? "In Progress" : "Not Enough Data",
-      status:row.inProgress ? "ongoing" : "",
-      tone:"average",
-      remark:row.inProgress
-        ? "Your practice is in progress. Accuracy will appear when graded answers are saved."
-        : "No verified accuracy is available for this subject yet.",
-      suggestion:row.inProgress
-        ? "Continue the practice and finish reviewing your answers."
-        : "Attempt a practice test to start tracking your performance."
-    };
+  if (Array.isArray(source.results)) {
+    attempted = source.results.length;
+    correct = source.results.filter(r => r?.isCorrect === true || r?.correct === true).length;
+    wrong = source.results.filter(r => r?.isCorrect === false || r?.correct === false).length;
+  } else if (Array.isArray(source.answers)) {
+    attempted = source.answers.length;
+    correct = source.answers.filter(a => a?.isCorrect === true || a?.correct === true).length;
+    wrong = source.answers.filter(a => a?.isCorrect === false || a?.correct === false).length;
+  } else if (source.correctAnswers != null || source.wrongAnswers != null) {
+    correct = Number(source.correctAnswers || 0);
+    wrong = Number(source.wrongAnswers || 0);
+    attempted = Math.max(attempted, correct + wrong);
+  } else {
+    correct = values.filter(v => v === true || v?.isCorrect === true || v?.correct === true).length;
+    wrong = values.filter(v => v === false || v?.isCorrect === false || v?.correct === false).length;
   }
-  if(row.accuracy >= 90) return {
-    level:"Outstanding 🔥",status:"excellent",tone:"excellent",
-    remark:"Exceptional accuracy. You are performing at a very high level.",
-    suggestion:"Keep this accuracy consistent across more graded questions."
-  };
-  if(row.accuracy >= 80) return {
-    level:"Very Good",status:"good",tone:"excellent",
-    remark:"Strong performance with a good command of this subject.",
-    suggestion:"Review the remaining mistakes and aim for 90%+ accuracy."
-  };
-  if(row.accuracy >= 70) return {
-    level:"Good",status:"good",tone:"good",
-    remark:"You have a solid foundation and are making good progress.",
-    suggestion:"Revise incorrect answers to move towards 80% accuracy."
-  };
-  if(row.accuracy >= 60) return {
-    level:"Improving",status:"ongoing",tone:"average",
-    remark:"Your performance is improving, but some concepts need revision.",
-    suggestion:"Review wrong answers and practise your weaker topics."
-  };
-  if(row.accuracy >= 50) return {
-    level:"Average",status:"",tone:"average",
-    remark:"Your performance is average. Focused revision can improve it.",
-    suggestion:"Revisit concepts you got wrong and try another practice test."
-  };
+
+  attempted = Math.max(0, Number(attempted) || 0);
+  correct = Math.min(attempted, Math.max(0, Number(correct) || 0));
+
+  if (source.wrongAnswers == null && !Array.isArray(source.results) && !Array.isArray(source.answers)) {
+    wrong = Math.max(0, attempted - correct);
+  } else if (source.wrongAnswers == null && (Array.isArray(source.results) || Array.isArray(source.answers))) {
+    const graded = Array.isArray(source.results) ? source.results : source.answers;
+    if (!graded.some(a => a?.isCorrect === false || a?.correct === false)) {
+      wrong = Math.max(0, attempted - correct);
+    }
+  }
+
+  wrong = Math.min(Math.max(0, attempted - correct), Math.max(0, Number(wrong) || 0));
+
+  // Each accessible subject uses 400 questions unless its saved record defines a different total.
+  const totalRaw = Number(source.totalQuestions || source.questionCount || source.total || 400);
+  const total = Math.max(attempted, Number.isFinite(totalRaw) && totalRaw > 0 ? totalRaw : 400);
+  const unattempted = Math.max(0, total - attempted);
+
   return {
-    level:"Needs Improvement",status:"low",tone:"low",
-    remark:"Your current accuracy suggests that more revision is needed.",
-    suggestion:"Strengthen the basics, then practise topic-wise questions."
+    subject,total,attempted,unattempted,correct,wrong,
+    percent:attempted ? Math.round(correct / attempted * 100) : 0,
+    completion:total ? Math.min(100, Math.round(attempted / total * 100)) : 0
   };
 }
 
-function renderOverall(rows){
-  const total = rows.reduce((sum,row)=>sum+row.total,0);
-  const attempted = rows.reduce((sum,row)=>sum+row.attempted,0);
-  const correct = rows.reduce((sum,row)=>sum+row.correct,0);
-  const wrong = rows.reduce((sum,row)=>sum+row.wrong,0);
-  const graded = rows.reduce((sum,row)=>sum+row.gradedCount,0);
-  const unattempted = Math.max(0,total-attempted);
-  const accuracy = graded > 0 ? Math.round(correct/graded*100) : null;
-  const completion = total > 0 ? Math.min(100,Math.round(attempted/total*100)) : 0;
+function renderStats(rows) {
+  const total = rows.reduce((n,r) => n + r.total, 0);
+  const attempted = rows.reduce((n,r) => n + r.attempted, 0);
+  const correct = rows.reduce((n,r) => n + r.correct, 0);
+  const wrong = rows.reduce((n,r) => n + r.wrong, 0);
+  const unattempted = Math.max(0, total - attempted);
 
-  $("attemptedCount").textContent = attempted.toLocaleString("en-IN");
+  $("totalQuestionsCount").textContent = total.toLocaleString("en-IN");
   $("unattemptedCount").textContent = unattempted.toLocaleString("en-IN");
-  $("totalQuestionsLabel").textContent = `Out of ${total.toLocaleString("en-IN")} available questions`;
   $("correctCount").textContent = correct.toLocaleString("en-IN");
   $("wrongCount").textContent = wrong.toLocaleString("en-IN");
-  $("gradedCount").textContent = graded.toLocaleString("en-IN");
-  $("accuracyCount").textContent = accuracy === null ? "—" : accuracy+"%";
-  $("overallProgress").textContent = completion+"%";
-  $("completionLabel").textContent = completion+"%";
-  $("completionBar").style.width = completion+"%";
-  $("accuracyLabel").textContent = accuracy === null ? "Not enough graded data" : accuracy+"%";
-  $("accuracyBar").style.width = (accuracy ?? 0)+"%";
+  $("statsSection").classList.remove("hidden");
+}
 
-  if(accuracy === null){
-    $("overallRemarkTitle").textContent = "Keep practising";
-    $("overallRemarkText").textContent =
-      "Your attempted questions are recorded, but verified correct/wrong results are not yet available. Accuracy will appear when the test data includes graded answers.";
-  } else if(accuracy >= 90){
-    $("overallRemarkTitle").textContent = "Outstanding performance 🔥";
-    $("overallRemarkText").textContent =
-      "Your verified overall accuracy is 90% or above. Maintain consistency across all subjects and keep reviewing any mistakes.";
-  } else if(accuracy >= 80){
-    $("overallRemarkTitle").textContent = "Excellent progress";
-    $("overallRemarkText").textContent =
-      "Your verified accuracy is very good. Review the subjects below with lower accuracy to push your overall result above 90%.";
-  } else if(accuracy >= 70){
-    $("overallRemarkTitle").textContent = "Good progress";
-    $("overallRemarkText").textContent =
-      "You have a good base. Focus on the lowest-accuracy subjects and revisit incorrect answers regularly.";
-  } else if(accuracy >= 60){
-    $("overallRemarkTitle").textContent = "Performance is improving";
-    $("overallRemarkText").textContent =
-      "Your current accuracy is improving. Use the subject-wise suggestions below to identify where revision can make the biggest difference.";
-  } else if(accuracy >= 50){
-    $("overallRemarkTitle").textContent = "Average performance";
-    $("overallRemarkText").textContent =
-      "You are at the average level. Prioritise subjects below 50% accuracy and practise the concepts you are getting wrong.";
-  } else {
-    $("overallRemarkTitle").textContent = "Revision needed";
-    $("overallRemarkText").textContent =
-      "Your current verified accuracy is below 50%. Revisit the basics and work through the lowest-performing subjects first.";
+function renderMilestones(total) {
+  const milestones = [100,2500,3500,5000,6000];
+
+  $("milestones").innerHTML = milestones.map(n => `
+    <article class="subject-card">
+      <h3>${total >= n ? "🏆" : "🔒"} ${n.toLocaleString("en-IN")} Questions</h3>
+      <p>${total >= n ? "Achieved" : `${Math.max(0,n-total).toLocaleString("en-IN")} more to go`}</p>
+    </article>
+  `).join("");
+
+  $("milestonesSection").classList.remove("hidden");
+}
+
+$("menuToggle").addEventListener("click", () => {
+  const open = $("navLinks").classList.toggle("open");
+  $("menuToggle").setAttribute("aria-expanded", String(open));
+  $("menuToggle").textContent = open ? "✕" : "☰";
+});
+
+$("logoutBtn").addEventListener("click", async () => {
+  try {
+    await signOut(auth);
+    window.location.href = "../homepage.html";
+  } catch (error) {
+    console.error("Logout failed", error);
+    alert("Logout failed. Please try again.");
   }
+});
 
-  renderMilestones(accuracy);
-  $("overallPanel").classList.remove("hidden");
-  return {total,attempted,correct,wrong,graded,accuracy,completion};
-}
-
-function renderMilestones(accuracy){
-  $("milestoneGrid").innerHTML = MILESTONES.map(item=>{
-    const unlocked = accuracy !== null && accuracy >= item.value;
-    const current = accuracy !== null &&
-      accuracy >= item.value &&
-      (item.value === 90 || accuracy < MILESTONES[MILESTONES.findIndex(m=>m.value===item.value)+1]?.value);
-    return `
-      <div class="milestone ${unlocked?"unlocked":""} ${current?"current":""}">
-        <div class="symbol">${unlocked ? (item.value>=90?"🏆":"🌟") : "🔒"}</div>
-        <strong>${item.value}%</strong>
-        <span>${item.title}</span>
-        <span>${unlocked?"Unlocked":"Not reached yet"}</span>
-      </div>`;
-  }).join("");
-}
-
-/* One-time celebrations per browser/account when a new accuracy milestone is crossed. */
-function checkNewMilestones(uid,accuracy){
-  if(accuracy === null) return;
-  const key = `hpmockshashtra_accuracy_milestones_${uid}`;
-  let seen = [];
-  try{
-    seen = JSON.parse(localStorage.getItem(key) || "[]");
-    if(!Array.isArray(seen)) seen = [];
-  }catch{seen=[]}
-
-  const reached = MILESTONES.filter(m=>accuracy>=m.value && !seen.includes(m.value));
-  if(!reached.length) return;
-
-  localStorage.setItem(key,JSON.stringify([...seen,...reached.map(m=>m.value)]));
-  const highest = reached[reached.length-1];
-  showMilestonePopup(highest);
-}
-
-function showMilestonePopup(milestone){
-  const item = MILESTONES.find(m=>m.value===milestone);
-  if(!item) return;
-
-  const backdrop = document.createElement("div");
-  backdrop.className = "popup-backdrop";
-  backdrop.innerHTML = `
-    <div class="popup" role="dialog" aria-modal="true">
-      <div class="popup-emoji">${milestone>=90?"🏆🔥":"🌸🎉🌸"}</div>
-      <h2>${escapeHTML(item.title)}!</h2>
-      <p>${escapeHTML(item.message)}</p>
-      <button type="button" id="milestoneClose">Continue</button>
-    </div>`;
-  document.body.appendChild(backdrop);
-
-  const flowers = ["🌸","🌼","🌺","✿","❀"];
-  const count = milestone>=90 ? 90 : 50;
-  for(let i=0;i<count;i++){
-    const flower = document.createElement("span");
-    flower.className = "flower";
-    flower.textContent = flowers[Math.floor(Math.random()*flowers.length)];
-    flower.style.left = Math.random()*100+"vw";
-    flower.style.animationDuration = (2.5+Math.random()*3)+"s";
-    flower.style.animationDelay = Math.random()*1.2+"s";
-    flower.style.fontSize = (14+Math.random()*16)+"px";
-    document.body.appendChild(flower);
-    setTimeout(()=>flower.remove(),7000);
-  }
-
-  $("milestoneClose").addEventListener("click",()=>backdrop.remove());
-}
-
-function renderSubjects(rows){
-  if(!rows.length){
-    $("subjectGrid").innerHTML = `
-      <div class="empty-state">
-        <strong>No accessible Maha Pack subjects were found.</strong>
-        <p>Check your purchase or confirm the subject access keys in Firestore.</p>
-      </div>`;
-    return;
-  }
-
-  $("subjectGrid").innerHTML = rows.map(row=>{
-    const perf = performanceFor(row);
-    const accuracyLabel = row.accuracy === null ? "—" : row.accuracy+"%";
-    const tone = row.accuracy === null ? "average" :
-      row.accuracy>=90 ? "excellent" :
-      row.accuracy>=70 ? "good" :
-      row.accuracy>=50 ? "average" : "low";
-
-    const state = row.inProgress ? "in-progress" : "";
-    const reviewLink = `../my-progress.html`;
-    const subjectLink = row.subject.file;
-
-    return `
-      <article class="subject-card ${state}">
-        <div class="subject-title-row">
-          <h3>${row.subject.icon} ${escapeHTML(row.subject.name)}</h3>
-          <span class="subject-status ${perf.status}">${escapeHTML(perf.level)}</span>
-        </div>
-
-        <p class="subject-subtitle">
-          ${row.completed ? "Completed attempt" :
-            row.inProgress ? "Practice in progress" :
-            "No saved attempts yet"}
-        </p>
-
-        <div class="subject-accuracy-row">
-          <span>Verified accuracy</span>
-          <strong>${accuracyLabel}</strong>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill ${tone}" style="width:${row.accuracy ?? 0}%"></div>
-        </div>
-
-        <div class="subject-mini-stats">
-          <div class="mini-stat">
-            <strong>${row.attempted.toLocaleString("en-IN")}</strong>
-            <span>Attempted</span>
-          </div>
-          <div class="mini-stat correct">
-            <strong>${row.correct.toLocaleString("en-IN")}</strong>
-            <span>Correct</span>
-          </div>
-          <div class="mini-stat wrong">
-            <strong>${row.wrong.toLocaleString("en-IN")}</strong>
-            <span>Wrong</span>
-          </div>
-        </div>
-
-        <div class="subject-remark">
-          <strong>${escapeHTML(perf.level)}</strong>
-          <p>${escapeHTML(perf.remark)}</p>
-        </div>
-        <div class="suggestion"><b>Suggestion:</b> ${escapeHTML(perf.suggestion)}</div>
-
-        <div class="subject-actions">
-          <a class="open-subject" href="${subjectLink}">Open Subject →</a>
-          <a class="review-subject" href="${reviewLink}">Review Progress</a>
-        </div>
-      </article>`;
-  }).join("");
-}
-
-/* In-progress subjects are shown before untouched subjects. */
-function sortSubjects(rows){
-  return [...rows].sort((a,b)=>{
-    const rank = row => row.inProgress ? 0 : row.completed ? 1 : row.hasData ? 2 : 3;
-    return rank(a)-rank(b) ||
-      (b.accuracy ?? -1)-(a.accuracy ?? -1) ||
-      a.subject.name.localeCompare(b.subject.name);
-  });
-}
-
-onAuthStateChanged(auth,async user=>{
-  currentUser = user;
-  showLoading(true);
+onAuthStateChanged(auth, async user => {
+  $("loadingBox").classList.remove("hidden");
   $("loginBox").classList.add("hidden");
   $("purchaseBox").classList.add("hidden");
   $("statusBox").classList.add("hidden");
-  $("overallPanel").classList.add("hidden");
+  $("statsSection").classList.add("hidden");
+  $("milestonesSection").classList.add("hidden");
 
-  if(!user){
+  if (!user) {
     showLogin();
     return;
   }
 
-  setUserUI(user);
+  $("userArea").textContent = user.displayName || user.email || "Signed in";
+  $("logoutBtn").classList.remove("hidden");
 
-  try{
+  try {
     const accessSnap = await getDoc(doc(db,"testAccess",user.uid));
-    const accessData = accessSnap.exists() ? accessSnap.data() : {};
+    const data = accessSnap.exists() ? accessSnap.data() : {};
 
-    showLoading(false);
+    const masterAccess =
+      active(data?.computerAccess?.packs?.["computer-master"]) ||
+      active(data?.mahapackAccess?.packs?.["computer-master"]) ||
+      active(data?.mahapackAccess);
 
-    const accessible = SUBJECTS.filter(subject=>hasSubjectAccess(accessData,subject));
-    const masterAccess = hasMasterAccess(accessData);
+    $("loadingBox").classList.add("hidden");
 
-    if(!masterAccess && !accessible.length){
+    if (!masterAccess) {
       showNoAccess();
       return;
     }
 
     $("loginBox").classList.add("hidden");
     $("purchaseBox").classList.add("hidden");
-    $("subjectIntro").textContent =
-      "Only subjects included in your active Maha Pack access are shown. In-progress subjects appear first.";
+    $("subjectIntro").textContent = "Your progress is loaded from your signed-in account.";
 
-    /*
-      Only the signed-in user's own attempt/session records are read.
-      JOA and Patwari test series are not included in this dashboard.
-    */
-    const loaded = await Promise.all(accessible.map(async subject=>{
-      try{
+    const allowed = SUBJECTS.filter(s => getAccessForSubject(data,s));
+    const results = await Promise.all(allowed.map(async subject => {
+      try {
         return await loadSubjectProgress(user,subject);
-      }catch(error){
-        console.error("Unable to load subject progress:",subject.id,error);
-        return extractProgress(null,null,subject);
+      } catch (e) {
+        console.warn("Progress could not be loaded for",subject.id,e);
+        return {
+          subject,total:400,attempted:0,unattempted:400,
+          correct:0,wrong:0,percent:0,completion:0
+        };
       }
     }));
 
-    allSubjectRows = sortSubjects(loaded);
-    const summary = renderOverall(allSubjectRows);
-    renderSubjects(allSubjectRows);
-
-    if(summary.graded > 0){
-      checkNewMilestones(user.uid,summary.accuracy);
+    if (!results.length) {
+      showNoAccess();
+      setStatus("Master Pack access could not be matched to any of the 15 computer subjects. Please verify the access keys in testAccess.");
+      return;
     }
 
-    if(!allSubjectRows.some(row=>row.hasData)){
-      showStatus("Your access is confirmed, but no saved attempts or sessions were found yet. Start a practice session to begin tracking your progress.");
-    }else if(summary.graded === 0){
-      showStatus("Your saved attempts were found, but verified correct/wrong counts were not available. The dashboard will not guess correctness from option indexes, so accuracy remains blank until graded data is saved.");
-    }
+    renderStats(results);
+    renderProgressCards(results);
+    renderMilestones(results.reduce((n,r) => n + r.attempted, 0));
 
-  }catch(error){
+    if (!results.some(r => r.attempted)) {
+      setStatus("Access is confirmed, but no readable attempt data was found for these subjects yet. Check the collection paths used by your test pages.");
+    }
+  } catch (error) {
     console.error("Master Progress loading error:",error);
-    showLoading(false);
-    showStatus("We could not load your progress. Refresh the page or check your Firebase access rules and browser console.");
-    $("purchaseBox").classList.remove("hidden");
+    $("loadingBox").classList.add("hidden");
+    setStatus("We could not verify your access or load progress. Please refresh the page or open My Purchases.");
+    showNoAccess();
   }
 });
 </script>
