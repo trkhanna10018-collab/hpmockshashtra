@@ -1223,6 +1223,175 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .clean-hero-copy{padding:18px;border-radius:14px}
 }
 
+
+/* =========================================================
+   HPMockShashtra — clean professional homepage refresh
+   Header markup and Firebase behaviour remain unchanged.
+========================================================= */
+:root{--content:1240px;--blue:#2563eb;--deep:#14264b;--purple:#5145cd}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff;line-height:1.55}
+.topbar{
+  position:fixed;top:12px;left:14px;transform:none;
+  width:calc(100% - 28px);max-width:none;min-height:68px;
+  padding:8px 14px;border-radius:14px;z-index:1000;
+  background:linear-gradient(110deg,rgba(19,39,79,.96),rgba(48,38,91,.96));
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(15,32,65,.15);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.brand img{width:44px;height:44px;border-radius:9px}
+.brand-name{font-size:20px}
+.brand-tagline{font-size:10px}
+.nav-links-home{display:flex;align-items:center;gap:8px;margin-left:auto}
+.nav-link-home{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:38px;padding:8px 12px;border:1px solid rgba(255,255,255,.22);
+  border-radius:9px;color:#fff;background:rgba(255,255,255,.05);
+  font-size:11px;font-weight:800;white-space:nowrap
+}
+.nav-link-home:hover{background:rgba(255,255,255,.15)}
+.actions{align-items:center;gap:8px}
+.user-area{align-items:center;gap:8px}
+.user-round{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e1ecff;color:#1e3a70;font-weight:800}
+.user-name{color:#fff;font-size:11px;font-weight:700;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+.logout-btn{min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.28);border-radius:9px;color:#fff;background:rgba(255,255,255,.08);font-weight:800}
+.login-btn,.join-btn{min-height:36px;border-radius:9px}
+.hero,.clean-hero{
+  display:block;position:relative;isolation:isolate;overflow:hidden;
+  padding-top:88px;margin:0;width:100%;
+  background:
+    linear-gradient(90deg,rgba(248,250,255,.95) 0%,rgba(248,250,255,.88) 48%,rgba(248,250,255,.50) 100%),
+    url("joa/homepage-bg.jpg") center 43%/cover no-repeat;
+  border-bottom:1px solid #e5ebf5;
+}
+.hero::after{display:none}
+.hero-inner,.clean-hero .hero-inner{
+  position:relative;inset:auto;z-index:2;
+  width:calc(100% - 64px);max-width:1240px;
+  margin:0 auto;padding:0 0 38px;
+}
+.hero-content,.clean-hero-content{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:40px;min-height:350px;padding:38px 0 24px;
+}
+.clean-hero-copy{
+  max-width:720px;padding:0;border:0;border-radius:0;
+  background:transparent;box-shadow:none;backdrop-filter:none;
+}
+.eyebrow{margin-bottom:16px;padding:6px 10px;background:#e8efff;color:#2857a8;font-size:10px;letter-spacing:.45px}
+.hero h1,.clean-hero h1{
+  max-width:720px;color:#15274b;text-shadow:none;
+  font-size:clamp(38px,4.3vw,58px);line-height:1.08;letter-spacing:-1.7px;
+}
+.hero h1 span,.clean-hero h1 span{color:#2864d9}
+.hero-copy,.clean-hero .hero-copy{
+  max-width:650px;margin-top:16px;color:#52627b;
+  font-size:16px;font-weight:400;line-height:1.7;text-shadow:none;
+}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.primary-btn,.secondary-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:0 18px;border-radius:9px;font-size:12px;font-weight:800;
+}
+.primary-btn{background:#285ed8;color:#fff;box-shadow:0 5px 14px rgba(37,99,235,.16)}
+.secondary-btn{background:#fff;color:#244a91;border:1px solid #d7e2f3}
+.hero-note{
+  display:flex;align-items:center;gap:12px;flex:0 0 auto;
+  padding:16px 20px;border:1px solid rgba(214,225,242,.9);
+  border-radius:12px;background:rgba(255,255,255,.88);
+  box-shadow:0 8px 24px rgba(28,52,91,.06);
+}
+.hero-note-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e5f7ec;color:#16804a;font-weight:900}
+.hero-note strong{display:block;color:#1b2d4e;font-size:13px}
+.hero-note small{display:block;margin-top:2px;color:#64748b;font-size:11px}
+.features{padding:18px 0;background:#fff;border-top:0;border-bottom:1px solid #edf0f5}
+.content{width:calc(100% - 64px);max-width:1240px;margin:0 auto}
+.feature-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.feature{min-height:78px;padding:12px;display:grid;grid-template-columns:34px 1fr;grid-template-rows:auto auto;column-gap:10px;align-content:center;text-align:left;border:1px solid #e8edf5;border-radius:11px;background:#fff;box-shadow:none}
+.feature-icon{grid-row:1/3;width:34px;height:34px;margin:0;border-radius:9px;background:#edf3ff}
+.feature strong{align-self:end;font-size:12px;color:#253858}
+.feature small{font-size:10px}
+.series-section{padding:44px 0 52px;background:#f7f9fc}
+.heading{text-align:left;max-width:none;margin:0 0 22px}
+.heading .tag{font-size:10px;color:#2a5fc5;letter-spacing:.8px}
+.heading h2{margin-top:4px;font-size:29px;line-height:1.2;letter-spacing:-.6px;color:#172b50}
+.heading p{margin-top:7px;font-size:13px;color:#6a7890}
+.series-grid{width:100%;max-width:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.series-card{min-width:0;overflow:hidden;border:1px solid #e3e9f2;border-radius:13px;background:#fff;box-shadow:0 4px 16px rgba(23,43,78,.04);backdrop-filter:none;transition:transform .18s ease,box-shadow .18s ease}
+.series-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(23,43,78,.08)}
+.series-image{display:block;width:100%;height:auto;aspect-ratio:1.9/1;object-fit:cover;object-position:center;background:#edf2f8}
+.series-body{padding:16px}
+.badges{margin-bottom:8px}
+.badge{font-size:9px}
+.series-title{font-size:17px;line-height:1.3;margin-bottom:6px;color:#1b2e50}
+.series-description{min-height:42px;font-size:12px;line-height:1.6;color:#65738a}
+.meta{gap:7px;margin:13px 0}
+.meta-box{padding:9px 4px;background:#f7f9fc;border:1px solid #edf0f5}
+.meta-box strong{font-size:13px}
+.price-row{align-items:center;gap:10px;flex-wrap:wrap;padding-top:12px}
+.price strong{font-size:23px;color:#172b50}
+.card-buttons{display:flex;flex-wrap:wrap;gap:6px}
+.card-btn{min-height:34px;padding:0 10px;font-size:10px}
+.card-outline,.card-progress{background:#fff}
+.footer{background:#14213b}
+.footer-inner{width:calc(100% - 64px);max-width:1240px}
+@media(max-width:1050px){
+  .topbar{gap:10px}
+  .brand img{width:40px;height:40px}
+  .brand-name{font-size:17px}
+  .nav-links-home{gap:5px}
+  .nav-link-home{padding:8px 9px;font-size:10px}
+  .hero-inner,.clean-hero .hero-inner,.content,.footer-inner{width:calc(100% - 40px)}
+  .hero-content,.clean-hero-content{min-height:300px;gap:22px}
+  .hero-note{max-width:250px}
+  .series-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:800px){
+  .topbar{top:8px;left:8px;width:calc(100% - 16px);min-height:62px;margin:0;padding:7px 10px;border-radius:12px}
+  .nav-links-home{display:none}
+  .topbar .actions .user-area,.topbar .actions .login-btn,.topbar .actions .join-btn{display:none!important}
+  .hamburger-btn{display:flex}
+  .mobile-menu{top:calc(100% + 8px);left:0;right:0;z-index:1200;padding:8px;border:1px solid #dbe5f5;border-radius:12px;background:#fff;box-shadow:0 16px 34px rgba(20,35,70,.16)}
+  .mobile-menu.open{display:grid;gap:5px}
+  .mobile-menu>a{padding:12px;border-radius:8px;background:#f7f9fd;color:#20365c;font-size:12px;font-weight:800}
+  .hero,.clean-hero{padding-top:78px}
+  .hero-content,.clean-hero-content{display:block;min-height:0;padding:28px 0 24px}
+  .clean-hero-copy{max-width:680px}
+  .hero h1,.clean-hero h1{font-size:clamp(34px,6vw,46px)}
+  .hero-note{display:inline-flex;margin-top:24px;max-width:100%}
+  .series-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .brand img{width:36px;height:36px}
+  .brand-name{font-size:16px}
+  .brand-tagline{font-size:9px}
+  .hero,.clean-hero{background-position:center center}
+  .hero-inner,.clean-hero .hero-inner,.content,.footer-inner{width:calc(100% - 28px)}
+  .hero-content,.clean-hero-content{padding:24px 0 22px}
+  .eyebrow{margin-bottom:12px;font-size:9px}
+  .hero h1,.clean-hero h1{font-size:34px;line-height:1.12;letter-spacing:-.8px}
+  .hero-copy,.clean-hero .hero-copy{font-size:14px;line-height:1.6;margin-top:12px}
+  .hero-buttons{margin-top:18px}
+  .primary-btn,.secondary-btn{flex:1 1 145px;padding:0 12px}
+  .hero-note{margin-top:18px;padding:12px 14px}
+  .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .feature{min-height:72px;padding:9px;grid-template-columns:28px 1fr;column-gap:8px}
+  .feature-icon{width:28px;height:28px;font-size:12px}
+  .feature strong{font-size:11px}
+  .feature small{font-size:9px}
+  .series-section{padding:32px 0 36px}
+  .heading{margin-bottom:16px}
+  .heading h2{font-size:25px}
+  .series-grid{grid-template-columns:1fr;gap:14px}
+  .series-image{aspect-ratio:1.9/1;object-fit:cover}
+  .series-body{padding:14px}
+  .series-description{min-height:0}
+  .price-row{align-items:flex-start}
+  .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .footer-bottom{gap:12px;flex-wrap:wrap}
+}
+
 </style>
 </head>
 
@@ -1279,16 +1448,19 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
     <div class="hero-content clean-hero-content">
       <div class="clean-hero-copy">
         <div class="eyebrow">HIMACHAL PRADESH COMPETITIVE EXAMS</div>
-        <h1>HP Mock Tests for <span>Smarter Preparation</span></h1>
+        <h1>Prepare for HP Exams with <span>Confidence</span></h1>
         <p class="hero-copy">
-          HPMockShashtra helps you prepare for HP JOA (IT), HP Patwari and computer exams with practice tests in Hindi and English.
+          HPMockShashtra offers HP JOA (IT), HP Patwari and computer mock tests with bilingual practice and progress tracking.
         </p>
         <div class="hero-buttons">
-          <a href="#mock-tests" class="primary-btn">Explore Mock Tests →</a>
+          <a href="#mock-tests" class="primary-btn">Explore Mock Tests</a>
           <a href="firebase-signup.html" class="secondary-btn">Create Free Account</a>
         </div>
       </div>
-
+      <div class="hero-note">
+        <span class="hero-note-mark">✓</span>
+        <div><strong>Practice. Review. Improve.</strong><small>Structured practice for your next exam.</small></div>
+      </div>
     </div>
 
   </div>
@@ -1455,96 +1627,6 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
       </article>
 
     </div>
-  </div>
-</section>
-
-
-<!-- =========================
-     SECOND BACKGROUND IMAGE
-========================= -->
-<section class="promo">
-  <img src="mahapack/homepage-bg-2.jpg" alt="Focused study practice" class="promo-bg-img">
-  <div class="promo-inner">
-
-    <div class="promo-copy">
-      <small>FOCUSED PRACTICE • BETTER PREPARATION</small>
-      <h2>Master Your Exams with Focused Practice</h2>
-      <p>
-        Practice with structured mock tests, analyse your performance and
-        improve your preparation for Himachal Pradesh competitive exams.
-      </p>
-
-      <div class="promo-buttons">
-        <a href="firebase-signup.html">Start Learning Today →</a>
-        <a href="#mock-tests">Explore Mock Tests →</a>
-      </div>
-    </div>
-
-    <div class="promo-panel">
-      <div>✓ Learn</div>
-      <div>✓ Practice</div>
-      <div>✓ Analyse</div>
-      <div>✓ Improve</div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- =========================
-     QUICK LINKS
-========================= -->
-<section class="quick" id="resources">
-  <div class="content">
-
-    <div class="heading">
-      <div class="tag">Quick Access</div>
-      <h2>Useful Links</h2>
-      <p>Important areas of HPMockShashtra can be opened directly from here.</p>
-    </div>
-
-    <div class="quick-grid">
-
-      <a href="joa-series.html" class="quick-card">
-        <h3>JOA (IT) Series</h3>
-        <p>See all available JOA mock tests and series details.</p>
-        <span>Open Series →</span>
-      </a>
-
-      <a href="patwari/patwari-series.html" class="quick-card">
-        <h3>Patwari Series</h3>
-        <p>See all available Patwari mock tests and series details.</p>
-        <span>Open Series →</span>
-      </a>
-
-      <a href="firebase-signup.html" class="quick-card" id="free-tests">
-        <h3>Free Test Access</h3>
-        <p>Create an account and start with the available free tests.</p>
-        <span>Register Free →</span>
-      </a>
-
-      <a href="firebase-login.html" class="quick-card">
-        <h3>Student Login</h3>
-        <p>Access your dashboard, attempts, results and available tests.</p>
-        <span>Login →</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-<section class="cta">
-  <div class="cta-box">
-    <div>
-      <h2>Start your preparation today</h2>
-      <p>Create your free account and explore the available mock tests.</p>
-    </div>
-
-    <a href="firebase-signup.html">Create Free Account</a>
   </div>
 </section>
 
