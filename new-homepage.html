@@ -839,6 +839,50 @@ img{display:block;max-width:100%}
   .mobile-menu{display:none!important}
 }
 
+
+/* Header overflow and hero text visibility fixes */
+.topbar{box-sizing:border-box; width:calc(100% - 28px); max-width:1400px; gap:14px; padding:8px 14px;}
+.topbar .brand{flex:0 1 auto; min-width:0;}
+.topbar .brand > div{min-width:0;}
+.topbar .brand-name{white-space:nowrap;}
+.topbar .nav-links-home{flex:0 1 auto; margin-left:auto; gap:6px;}
+.topbar .actions{flex:0 0 auto; margin-left:0;}
+.topbar .user-name{max-width:90px;}
+.hero-inner{padding-top:142px;}
+.hamburger-btn{position:relative; top:auto; right:auto; flex:0 0 42px; margin-left:auto;}
+.mobile-menu{position:absolute; top:calc(100% + 8px); left:auto; right:0; width:min(320px, calc(100vw - 40px)); box-sizing:border-box;}
+.mobile-menu.open{display:none;}
+@media(max-width:1250px){
+  .topbar{min-height:68px; padding-right:12px;}
+  .nav-links-home{display:none!important;}
+  .topbar .actions .login-btn,.topbar .actions .join-btn,.topbar .actions .user-area{display:none!important;}
+  .hamburger-btn{display:block;}
+  .mobile-menu.open{display:grid; gap:6px;}
+  .hero-inner{padding-top:132px;}
+}
+@media(min-width:1251px){
+  .hamburger-btn{display:none!important;}
+  .mobile-menu{display:none!important;}
+}
+@media(max-width:800px){
+  .topbar{top:8px; width:calc(100% - 20px); min-height:64px; padding:6px 10px;}
+  .topbar .brand img{width:38px;height:38px;}
+  .topbar .brand-name{font-size:17px;}
+  .topbar .brand-tagline{font-size:8px;}
+  .hero-inner{padding-top:110px;}
+  .mobile-menu{top:calc(100% + 8px); left:0; right:0; width:100%;}
+}
+@media(max-width:520px){
+  .topbar{gap:6px;}
+  .topbar .brand{gap:7px;}
+  .topbar .brand img{width:34px;height:34px;}
+  .topbar .brand-name{font-size:15px;}
+  .topbar .brand-tagline{font-size:7px;}
+  .hamburger-btn{width:38px;height:38px;flex-basis:38px; padding:7px;}
+  .hero-inner{padding-top:100px;}
+  .hero-content{padding-top:32px;}
+}
+
 </style>
 </head>
 
@@ -867,7 +911,6 @@ img{display:block;max-width:100%}
       </nav>
 
       <div class="actions">
-        <a href="mahapack/joa-mahapack.html" class="maha-btn">JOA IT Maha Pack</a>
         <a href="firebase-login.html" class="login-btn" id="loginBtn">Login</a>
         <div class="user-area" id="userArea" style="display:none">
           <span class="user-round" id="userNameRound">U</span>
@@ -876,21 +919,21 @@ img{display:block;max-width:100%}
         </div>
         <a href="firebase-signup.html" class="join-btn" id="joinBtn">Join Free</a>
       </div>
-    </div>
 
-    <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="joa/new-joa-series.html">JOA (IT)</a>
-      <a href="patwari/patwari-series.html">Patwari</a>
-      <a href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
-      <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
-      <a href="firebase-signup.html" id="mobileJoinBtn">Join Free</a>
-      <div class="mobile-user-area" id="mobileUserArea" style="display:none">
-        <div class="mobile-user-name" id="mobileUserName">User</div>
-        <button type="button" id="mobileLogoutBtn">Logout</button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="joa/new-joa-series.html">JOA (IT)</a>
+        <a href="patwari/patwari-series.html">Patwari</a>
+        <a href="mahapack/joa-mahapack.html">JOA IT Mahapack</a>
+        <a href="firebase-login.html" id="mobileLoginBtn">Login</a>
+        <a href="firebase-signup.html" id="mobileJoinBtn">Join Free</a>
+        <div class="mobile-user-area" id="mobileUserArea" style="display:none">
+          <div class="mobile-user-name" id="mobileUserName">User</div>
+          <button type="button" id="mobileLogoutBtn">Logout</button>
+        </div>
       </div>
     </div>
 
