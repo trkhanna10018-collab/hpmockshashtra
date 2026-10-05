@@ -1392,6 +1392,20 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
   .footer-bottom{gap:12px;flex-wrap:wrap}
 }
 
+
+/* Previous JOA card is intentionally text-only, without a banner image */
+.previous-joa-card{
+  display:flex;
+  align-items:center;
+  min-height:190px;
+}
+.previous-joa-card .series-body{width:100%}
+.previous-joa-card .series-description{min-height:0;margin-bottom:18px}
+.previous-joa-action{display:flex;justify-content:flex-start}
+@media(max-width:620px){
+  .previous-joa-card{min-height:0}
+}
+
 </style>
 </head>
 
@@ -1515,9 +1529,27 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
 
     <div class="series-grid">
 
-      <!-- JOA -->
+      <!-- PREVIOUS JOA (IT) — legacy series without a banner -->
+      <article class="series-card previous-joa-card">
+        <div class="series-body">
+          <div class="badges">
+            <span class="badge badge-live">PREVIOUS SERIES</span>
+          </div>
+
+          <h3 class="series-title">Previous JOA (IT)</h3>
+          <p class="series-description">
+            Access the previous JOA (IT) mock test series.
+          </p>
+
+          <div class="previous-joa-action">
+            <a href="joa-series.html" class="card-btn card-outline">Previous JOA (IT) →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- NEW JOA (IT) MOCK TEST SERIES -->
       <article class="series-card">
-        <img src="joa-banner.jpg" alt="JOA IT Mock Test Series" class="series-image">
+        <img src="joa/joa-banner.jpg" alt="JOA (IT) Mock Test Series — 10 tests" class="series-image">
 
         <div class="series-body">
           <div class="badges">
@@ -1526,29 +1558,19 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#182847;background:#fff
           </div>
 
           <h3 class="series-title">JOA (IT) Mock Test Series</h3>
-
           <p class="series-description">
-            Full-length Junior Office Assistant (IT) mock tests with bilingual
-            questions and performance analysis.
+            Practice for the Junior Office Assistant (IT) exam with bilingual questions and performance tracking.
           </p>
 
           <div class="meta">
-            <div class="meta-box"><strong>16</strong><span>Total Tests</span></div>
-            <div class="meta-box"><strong>100</strong><span>Questions/Test</span></div>
+            <div class="meta-box"><strong>10</strong><span>Total Tests</span></div>
+            <div class="meta-box"><strong>120</strong><span>Questions/Test</span></div>
             <div class="meta-box"><strong>90 Min</strong><span>Time/Test</span></div>
           </div>
 
           <div class="price-row">
-            <div class="price">
-              <small>Complete Series</small>
-              <strong>₹99</strong>
-              <span class="free">Free Test Available</span>
-            </div>
-
             <div class="card-buttons">
-              <a href="joa-series.html" class="card-btn card-outline">View Details</a>
-              <a href="my-progress.html" class="card-btn card-progress">My Progress</a>
-              <a href="payment.html?product=joa" class="card-btn card-primary">Buy Now</a>
+              <a href="joa/new-joa-series.html" class="card-btn card-outline">View Details</a>
             </div>
           </div>
         </div>
