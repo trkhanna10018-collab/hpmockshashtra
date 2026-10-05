@@ -736,21 +736,21 @@ import {
 const $ = id => document.getElementById(id);
 
 const SUBJECTS = [
-  {id:"computer_fundamentals_01",name:"Computer Fundamentals",course:"computer-fundamentals",file:"paid-computer-fundamentals.html",icon:"💻"},
-  {id:"ms_word_01",name:"MS Word",course:"ms-word",file:"paid-ms-word.html",icon:"📝",pack:"ms-office"},
-  {id:"ms_excel_01",name:"MS Excel",course:"ms-excel",file:"paid-ms-excel.html",icon:"📊",pack:"ms-office"},
-  {id:"ms_powerpoint_01",name:"MS PowerPoint",course:"ms-powerpoint",file:"paid-ms-powerpoint.html",icon:"📽️",pack:"ms-office"},
-  {id:"ms_access_01",name:"MS Access",course:"ms-access",file:"paid-ms-access.html",icon:"🗃️",pack:"ms-office"},
-  {id:"dbms_sql_01",name:"DBMS & SQL",course:"dbms-sql",file:"paid-dbms-sql.html",icon:"🗄️"},
-  {id:"computer_networking_01",name:"Computer Networking",course:"computer-networking",file:"paid-computer-networking.html",icon:"🌐"},
-  {id:"cyber_security_01",name:"Cyber Security",course:"cyber-security",file:"paid-cyber-security.html",icon:"🔐"},
-  {id:"c_programming_01",name:"C Programming",course:"c-programming",file:"paid-c-programming.html",icon:"💻"},
-  {id:"html_01",name:"HTML",course:"html",file:"paid-html.html",icon:"🌐"},
-  {id:"css_css3_01",name:"CSS / CSS3",course:"css-css3",file:"paid-css-css3.html",icon:"🎨"},
-  {id:"cloud_computing_01",name:"Cloud Computing",course:"cloud-computing",file:"paid-cloud-computing.html",icon:"☁️"},
-  {id:"data_structure_01",name:"Data Structure",course:"data-structure",file:"paid-data-structure.html",icon:"⌘"},
-  {id:"computer_organisation_01",name:"Computer Organisation & Architecture",course:"computer-organisation",file:"paid-computer-organisation-architecture.html",icon:"🧩",accessAliases:["computer-organisation-architecture"]},
-  {id:"operating_system_01",name:"Operating System",course:"operating-system",file:"paid-operating-system.html",icon:"⚙️"}
+  {id:"computer_fundamentals_01",name:"Computer Fundamentals",course:"computer-fundamentals",file:"paid-computer-fundamentals.html",icon:"💻",iconImage:"icon/computer-fundamentals.png"},
+  {id:"ms_word_01",name:"MS Word",course:"ms-word",file:"paid-ms-word.html",icon:"📝",iconImage:"icon/ms-word.png",pack:"ms-office"},
+  {id:"ms_excel_01",name:"MS Excel",course:"ms-excel",file:"paid-ms-excel.html",icon:"📊",iconImage:"icon/ms-excel.png",pack:"ms-office"},
+  {id:"ms_powerpoint_01",name:"MS PowerPoint",course:"ms-powerpoint",file:"paid-ms-powerpoint.html",icon:"📽️",iconImage:"icon/ms-powerpoint.png",pack:"ms-office"},
+  {id:"ms_access_01",name:"MS Access",course:"ms-access",file:"paid-ms-access.html",icon:"🗃️",iconImage:"icon/ms-access.png",pack:"ms-office"},
+  {id:"dbms_sql_01",name:"DBMS & SQL",course:"dbms-sql",file:"paid-dbms-sql.html",icon:"🗄️",iconImage:"icon/dbms-sql.png"},
+  {id:"computer_networking_01",name:"Computer Networking",course:"computer-networking",file:"paid-computer-networking.html",icon:"🌐",iconImage:"icon/computer-networking.png"},
+  {id:"cyber_security_01",name:"Cyber Security",course:"cyber-security",file:"paid-cyber-security.html",icon:"🔐",iconImage:"icon/cyber-security.png"},
+  {id:"c_programming_01",name:"C Programming",course:"c-programming",file:"paid-c-programming.html",icon:"💻",iconImage:"icon/c-programming.png"},
+  {id:"html_01",name:"HTML",course:"html",file:"paid-html.html",icon:"🌐",iconImage:"icon/html.png"},
+  {id:"css_css3_01",name:"CSS / CSS3",course:"css-css3",file:"paid-css-css3.html",icon:"🎨",iconImage:"icon/css-css3.png"},
+  {id:"cloud_computing_01",name:"Cloud Computing",course:"cloud-computing",file:"paid-cloud-computing.html",icon:"☁️",iconImage:"icon/cloud-computing.png"},
+  {id:"data_structure_01",name:"Data Structure",course:"data-structure",file:"paid-data-structure.html",icon:"⌘",iconImage:"icon/data-structure.png"},
+  {id:"computer_organisation_01",name:"Computer Organisation & Architecture",course:"computer-organisation",file:"paid-computer-organisation-architecture.html",icon:"🧩",iconImage:"icon/computer-organisation-architecture.png",accessAliases:["computer-organisation-architecture"]},
+  {id:"operating_system_01",name:"Operating System",course:"operating-system",file:"paid-operating-system.html",icon:"⚙️",iconImage:"icon/operating-system.png"}
 ];
 
 
@@ -819,7 +819,7 @@ function renderPublicSubjects(){
   $("subjectGrid").innerHTML = SUBJECTS.map(subject => `
     <article class="subject-card">
       <div class="subject-title-row">
-        <h3>${subject.icon} ${escapeHTML(subject.name)}</h3>
+        <h3>${subject.iconImage ? `<img class="subject-icon-img" src="${escapeHTML(subject.iconImage)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"> <span hidden>${subject.icon}</span>` : subject.icon} ${escapeHTML(subject.name)}</h3>
         <span class="subject-status">Sign in</span>
       </div>
       <p class="subject-subtitle">Maha Pack • Practice and progress tracking</p>
@@ -867,13 +867,11 @@ function hasSubjectAccess(data, subject){
   }
 
   return active(data?.computerAccess?.packs?.["computer-master"]) ||
-         active(data?.mahapackAccess?.packs?.["computer-master"]) ||
-         active(data?.mahapackAccess);
+         active(data?.mahapackAccess?.packs?.["computer-master"]);
 }
 function hasMasterAccess(data){
   return active(data?.computerAccess?.packs?.["computer-master"]) ||
-         active(data?.mahapackAccess?.packs?.["computer-master"]) ||
-         active(data?.mahapackAccess);
+         active(data?.mahapackAccess?.packs?.["computer-master"]);
 }
 
 /* Normalize a saved attempt/session without inventing correct answers. */
@@ -1062,7 +1060,7 @@ function renderSubjects(rows){
     return `
       <article class="subject-card ${state}">
         <div class="subject-title-row">
-          <h3>${row.subject.icon} ${escapeHTML(row.subject.name)}</h3>
+          <h3>${row.subject.iconImage ? `<img class="subject-icon-img" src="${escapeHTML(row.subject.iconImage)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"> <span hidden>${row.subject.icon}</span>` : row.subject.icon} ${escapeHTML(row.subject.name)}</h3>
           <span class="subject-status ${perf.status}">${escapeHTML(perf.level)}</span>
         </div>
 
