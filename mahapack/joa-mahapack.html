@@ -2641,15 +2641,15 @@ return Number.isNaN(d.getTime())
 
 
 function active(v){
-  if(v===true) return true;
-  if(!v || typeof v!=='object') return false;
-  if(v.active===false || v.enabled===false || v.revoked===true) return false;
 
-  const status=String(v.status||v.state||'').toLowerCase();
-  if(['expired','revoked','inactive','disabled','cancelled'].includes(status)) return false;
+const d=
+toDate(v?.expiresAt);
 
-  const expiry=toDate(v.expiresAt);
-  return !expiry || expiry.getTime()>Date.now();
+return !!(
+d&&
+d.getTime()>Date.now()
+)
+
 }
 
 
@@ -2672,128 +2672,81 @@ year:'numeric'
 
 
 function access(data,key){
-  const mp=data?.mahapackAccess||{};
 
-  // Individual MahaPack subject access.
-  const course=mp?.courses?.[key] ?? mp?.subjects?.[key] ?? mp?.[key];
-  if(active(course)) return course===true ? {active:true} : course;
+const course=
+data?.mahapackAccess?.courses?.[key];
 
-  // MS Office pack covers Word, Excel, PowerPoint and Access only.
-  const officePack=mp?.packs?.['ms-office'] ?? mp?.['ms-office'];
-  if(office.includes(key) && active(officePack)) {
-    return officePack===true ? {active:true} : officePack;
-  }
+if(active(course))
+return course;
 
-  // Computer Master pack covers all 15 computer subjects.
-  const masterPack=mp?.packs?.['computer-master'] ?? mp?.['computer-master'];
-  if(active(masterPack)) return masterPack===true ? {active:true} : masterPack;
 
-  return null;
+const pack=
+data?.mahapackAccess?.packs?.['ms-office'];
+
+if(
+office.includes(key)&&
+active(pack)
+)
+return pack;
+
+
+const master=
+data?.mahapackAccess?.packs?.['computer-master'];
+
+return active(master)
+?master
+:null
+
 }
 
 
+function markSubject(card,a){
 
-const subjectTestIds={
-'computer-fundamentals':'computer_fundamentals_01',
-'ms-word':'ms_word_01',
-'ms-excel':'ms_excel_01',
-'ms-powerpoint':'ms_powerpoint_01',
-'ms-access':'ms_access_01',
-'dbms-sql':'dbms_sql_01',
-'computer-networking':'computer_networking_01',
-'cyber-security':'cyber_security_01',
-'c-programming':'c_programming_01',
-'html':'html_01',
-'css-css3':'css_css3_01',
-'cloud-computing':'cloud_computing_01',
-'data-structure':'data_structure_01',
-'computer-organisation-architecture':'computer_organisation_01',
-'computer-organisation':'computer_organisation_01',
-'operating-system':'operating_system_01'
-};
+const lock=
+card.querySelector('.locked-status');
 
-function hasSavedAttempt(record){
-  if(!record || typeof record!=='object') return false;
 
-  const answers=record.answers||record.responses||record.userAnswers;
-  const hasAnswers=Array.isArray(answers)
-    ? answers.some(v=>v!==null&&v!==undefined&&String(v).trim()!=='')
-    : !!(answers&&typeof answers==='object'&&Object.values(answers).some(v=>v!==null&&v!==undefined&&String(v).trim()!==''));
+if(lock){
 
-  const status=String(record.status||record.state||record.attemptStatus||record.attempt_status||record.sessionStatus||'')
-    .toLowerCase().replace(/[ _-]+/g,'');
+const x=
+document.createElement('div');
 
-  return hasAnswers || record.submitted===true || record.isSubmitted===true ||
-    record.completed===true || record.isCompleted===true ||
-    ['submitted','completed','complete','attempted','review'].includes(status) ||
-    Number(record.attempted)>0 || Number(record.attemptedCount)>0 ||
-    Number(record.answeredCount)>0 || Number(record.questionsCompleted)>0 ||
-    Number(record.current)>0 || Number(record.currentQuestion)>0 || Number(record.lastQuestion)>0;
+x.className=
+'purchased-status';
+
+x.innerHTML=
+`<small>Expiring on ${fmt(a.expiresAt)}</small>`;
+
+lock.replaceWith(x);
+
 }
 
-async function subjectHasAttempts(uid,key,accessRecord){
-  const testId=subjectTestIds[key];
-  if(!testId) return false;
 
-  // Check both current user-centric MahaPack records and legacy top-level records.
-  const checks=[
-    getDoc(doc(db,'users',uid,'mahapack','sessions',testId)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(error=>{
-      console.warn('Could not read MahaPack session for',key,error?.code||error);
-      return false;
-    }),
-    getDoc(doc(db,'users',uid,'mahapack','attempts',testId)).then(snap=>snap.exists()).catch(error=>{
-      console.warn('Could not read MahaPack attempt for',key,error?.code||error);
-      return false;
-    }),
-    getDoc(doc(db,'testSessions',`${uid}_${testId}`)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(error=>{
-      console.warn('Could not read legacy session for',key,error?.code||error);
-      return false;
-    }),
-    getDoc(doc(db,'testAttempts',`${uid}_${testId}`)).then(snap=>snap.exists()).catch(error=>{
-      console.warn('Could not read legacy result for',key,error?.code||error);
-      return false;
-    })
-  ];
+const buy=
+card.querySelector('.subject-buy');
 
-  // Older versions may have used the course slug as the test document suffix.
-  const legacyIds=[key,key.replace(/-/g,'_'),key.replace(/_/g,'-')];
-  for(const id of [...new Set(legacyIds)]){
-    if(id===testId) continue;
-    checks.push(
-      getDoc(doc(db,'testSessions',`${uid}_${id}`)).then(snap=>snap.exists()&&hasSavedAttempt(snap.data())).catch(()=>false),
-      getDoc(doc(db,'testAttempts',`${uid}_${id}`)).then(snap=>snap.exists()).catch(()=>false)
-    );
-  }
+const page=
+card.dataset.paidPage;
 
-  const found=await Promise.all(checks);
-  return found.some(Boolean)||hasSavedAttempt(accessRecord);
+
+if(buy&&page){
+
+const x=
+document.createElement('a');
+
+x.className=
+'paid-start';
+
+x.href=page;
+
+x.textContent=
+'Start →';
+
+buy.replaceWith(x);
+
 }
 
-async function markSubject(card,a,user){
-  const lock=card.querySelector('.locked-status');
-  if(lock){
-    const expiry=document.createElement('div');
-    expiry.className='purchased-status';
-    expiry.innerHTML=`<small>Expiring on ${fmt(a.expiresAt)}</small>`;
-    lock.replaceWith(expiry);
-  }
-
-  const oldAction=card.querySelector('.subject-buy, .paid-start');
-  const page=card.dataset.paidPage;
-  const key=card.dataset.purchaseKey;
-  if(!oldAction||!page||!key) return;
-
-  const attempted=await subjectHasAttempts(user.uid,key,a);
-  const action=document.createElement('a');
-  action.className='paid-start';
-  action.href=attempted
-    ? `mahapack-study.html?test=${encodeURIComponent(subjectTestIds[key]||key)}`
-    : page;
-  action.textContent=attempted?'Review →':'Start →';
-  action.setAttribute('aria-label',`${attempted?'Review':'Start'} ${key}`);
-  oldAction.replaceWith(action);
 }
-
 
 
 async function loadAccess(user){
@@ -2814,23 +2767,28 @@ const data=
 snap.data()||{};
 
 
-const pending=[];
-
 document
 .querySelectorAll(
 '.subject[data-purchase-key]'
 )
 .forEach(card=>{
-  const a=access(data,card.dataset.purchaseKey);
-  if(a) pending.push(markSubject(card,a,user));
+
+const a=
+access(
+data,
+card.dataset.purchaseKey
+);
+
+if(a)
+markSubject(card,a);
+
 });
 
-await Promise.all(pending);
 
 /* Kept for compatibility with existing purchase data */
 
 const officePack=
-data?.mahapackAccess?.packs?.['ms-office']||data?.mahapackAccess?.['ms-office'];
+data?.mahapackAccess?.packs?.['ms-office'];
 
 document
 .querySelectorAll(
@@ -2857,7 +2815,7 @@ b.replaceWith(x);
 
 
 const master=
-data?.mahapackAccess?.packs?.['computer-master']||data?.mahapackAccess?.['computer-master'];
+data?.mahapackAccess?.packs?.['computer-master'];
 
 document
 .querySelectorAll(
