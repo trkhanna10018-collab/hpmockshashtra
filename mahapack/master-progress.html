@@ -51,6 +51,7 @@ button{font:inherit;cursor:pointer}
   padding:10px 16px;
   display:flex;
   align-items:center;
+  flex-wrap:wrap;
   gap:13px;
 }
 .brand{
@@ -460,28 +461,9 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   font-size:11px;
 }
 .subject-remark p{margin:5px 0 0;font-size:11px}
-.suggestion{
-  margin-top:9px;
-  color:#36577c;
-  font-size:11px;
-  line-height:1.6;
-}
+
 .suggestion b{color:#173d6b}
-.subject-actions{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:13px;
-}
-.subject-actions a{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  padding:9px 11px;
-  border-radius:8px;
-  font-size:10px;
-  font-weight:900;
-}
+
 .open-subject{background:var(--navy2);color:white}
 .review-subject{border:1px solid #b8cde9;color:var(--navy);background:white}
 .empty-state{
@@ -573,18 +555,16 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
 /* MOBILE */
 @media(max-width:900px){
   .subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .milestone-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
 @media(max-width:650px){
   .topbar{top:5px;width:calc(100% - 14px);margin-top:5px}
-  .nav{min-height:58px;padding:9px 11px;gap:9px}
-  .brand{font-size:16px}
-  .menu-toggle{display:block}
-  .user-tools{width:100%;justify-content:center;flex-wrap:wrap;margin:6px 0 0}
-  .user-area{justify-content:center;max-width:100%}
-  .user-name{max-width:180px}
+  .nav{min-height:58px;padding:9px 11px;gap:9px;justify-content:space-between}
+  .brand{font-size:16px;flex:1;min-width:0}
+  .menu-toggle{display:block;flex:0 0 42px}
   .nav-links{
     display:none;
+    order:3;
+    flex:0 0 100%;
     width:100%;
     padding:8px 0 4px;
     flex-direction:column;
@@ -592,9 +572,11 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   }
   .nav-links.open{display:flex}
   .nav-link{width:100%;padding:12px;text-align:center}
-  .user-tools{display:none}
+  .user-tools{display:none;order:4;flex:0 0 100%;width:100%;justify-content:center;flex-wrap:wrap;margin:2px 0 4px}
   .nav-links.open ~ .user-tools{display:flex}
-  .logout-btn{padding:12px;text-align:center}
+  .user-area{justify-content:center;max-width:100%}
+  .user-name{max-width:180px}
+  .logout-btn{padding:12px;text-align:center;width:100%}
   .wrap{width:calc(100% - 18px);margin-top:16px}
   .hero{padding:18px}
   h1{font-size:25px}
@@ -605,9 +587,7 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .stat{padding:13px}
   .stat strong{font-size:22px}
-  .progress-pair{grid-template-columns:1fr}
   .subject-grid{grid-template-columns:1fr}
-  .milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .footer-top{grid-template-columns:1fr;gap:20px}
   .footer-bottom{flex-direction:column}
 }
@@ -705,31 +685,6 @@ p{color:var(--muted);font-size:12px;line-height:1.65}
       </div>
     </div>
 
-    <div class="progress-pair">
-      <div class="progress-box">
-        <div class="progress-label"><span>Question completion</span><span id="completionLabel">0%</span></div>
-        <div class="progress-track"><div class="progress-fill" id="completionBar"></div></div>
-      </div>
-      <div class="progress-box">
-        <div class="progress-label"><span>Answer accuracy</span><span id="accuracyLabel">Not enough graded data</span></div>
-        <div class="progress-track"><div class="progress-fill green" id="accuracyBar"></div></div>
-      </div>
-    </div>
-
-    <div class="overall-remark">
-      <strong id="overallRemarkTitle">Your performance summary</strong>
-      <p id="overallRemarkText">Your verified performance summary will appear here.</p>
-    </div>
-
-    <div class="section">
-      <div class="section-heading">
-        <div>
-          <h2>Accuracy Milestones</h2>
-          <p>Milestones are based on verified accuracy, not the number of questions attempted.</p>
-        </div>
-      </div>
-      <div class="milestone-grid" id="milestoneGrid"></div>
-    </div>
   </section>
 
   <section class="section">
@@ -806,13 +761,6 @@ const SUBJECTS = [
   {id:"operating_system_01",name:"Operating System",course:"operating-system",file:"paid-operating-system.html",icon:"⚙️"}
 ];
 
-const MILESTONES = [
-  {value:50,title:"Average",message:"You have reached 50% verified accuracy. Keep revising and improving."},
-  {value:60,title:"Improving",message:"60% accuracy achieved. Your preparation is moving in the right direction."},
-  {value:70,title:"Good Progress",message:"70% accuracy! Review your mistakes and aim even higher."},
-  {value:80,title:"Excellent",message:"80% accuracy! You are building a strong command of the subjects."},
-  {value:90,title:"Outstanding 🔥",message:"90%+ accuracy! An outstanding performance—keep it consistent."}
-];
 
 let currentUser = null;
 let allSubjectRows = [];
@@ -1091,61 +1039,11 @@ function renderOverall(rows){
   $("unattemptedCount").textContent = unattempted.toLocaleString("en-IN");
   $("correctCount").textContent = correct.toLocaleString("en-IN");
   $("wrongCount").textContent = wrong.toLocaleString("en-IN");
-  $("completionLabel").textContent = completion+"%";
-  $("completionBar").style.width = completion+"%";
-  $("accuracyLabel").textContent = accuracy === null ? "Not enough graded data" : accuracy+"%";
-  $("accuracyBar").style.width = (accuracy ?? 0)+"%";
 
-  if(accuracy === null){
-    $("overallRemarkTitle").textContent = "Keep practising";
-    $("overallRemarkText").textContent =
-      "Your attempted questions are recorded, but verified correct/wrong results are not yet available. Accuracy will appear when the test data includes graded answers.";
-  } else if(accuracy >= 90){
-    $("overallRemarkTitle").textContent = "Outstanding performance 🔥";
-    $("overallRemarkText").textContent =
-      "Your verified overall accuracy is 90% or above. Maintain consistency across all subjects and keep reviewing any mistakes.";
-  } else if(accuracy >= 80){
-    $("overallRemarkTitle").textContent = "Excellent progress";
-    $("overallRemarkText").textContent =
-      "Your verified accuracy is very good. Review the subjects below with lower accuracy to push your overall result above 90%.";
-  } else if(accuracy >= 70){
-    $("overallRemarkTitle").textContent = "Good progress";
-    $("overallRemarkText").textContent =
-      "You have a good base. Focus on the lowest-accuracy subjects and revisit incorrect answers regularly.";
-  } else if(accuracy >= 60){
-    $("overallRemarkTitle").textContent = "Performance is improving";
-    $("overallRemarkText").textContent =
-      "Your current accuracy is improving. Use the subject-wise suggestions below to identify where revision can make the biggest difference.";
-  } else if(accuracy >= 50){
-    $("overallRemarkTitle").textContent = "Average performance";
-    $("overallRemarkText").textContent =
-      "You are at the average level. Prioritise subjects below 50% accuracy and practise the concepts you are getting wrong.";
-  } else {
-    $("overallRemarkTitle").textContent = "Revision needed";
-    $("overallRemarkText").textContent =
-      "Your current verified accuracy is below 50%. Revisit the basics and work through the lowest-performing subjects first.";
-  }
-
-  renderMilestones(accuracy);
   $("overallPanel").classList.remove("hidden");
   return {total,attempted,correct,wrong,graded,accuracy,completion};
 }
 
-function renderMilestones(accuracy){
-  $("milestoneGrid").innerHTML = MILESTONES.map(item=>{
-    const unlocked = accuracy !== null && accuracy >= item.value;
-    const current = accuracy !== null &&
-      accuracy >= item.value &&
-      (item.value === 90 || accuracy < MILESTONES[MILESTONES.findIndex(m=>m.value===item.value)+1]?.value);
-    return `
-      <div class="milestone ${unlocked?"unlocked":""} ${current?"current":""}">
-        <div class="symbol">${unlocked ? (item.value>=90?"🏆":"🌟") : "🔒"}</div>
-        <strong>${item.value}%</strong>
-        <span>${item.title}</span>
-        <span>${unlocked?"Unlocked":"Not reached yet"}</span>
-      </div>`;
-  }).join("");
-}
 
 /* One-time celebrations per browser/account when a new accuracy milestone is crossed. */
 function checkNewMilestones(uid,accuracy){
@@ -1258,12 +1156,6 @@ function renderSubjects(rows){
         <div class="subject-remark">
           <strong>${escapeHTML(perf.level)}</strong>
           <p>${escapeHTML(perf.remark)}</p>
-        </div>
-        <div class="suggestion"><b>Suggestion:</b> ${escapeHTML(perf.suggestion)}</div>
-
-        <div class="subject-actions">
-          <a class="open-subject" href="${subjectLink}">Open Subject →</a>
-          <a class="review-subject" href="${reviewLink}">Review Progress</a>
         </div>
       </article>`;
   }).join("");
