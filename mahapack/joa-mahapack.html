@@ -2673,30 +2673,31 @@ year:'numeric'
 
 function access(data,key){
 
-const course=
-data?.mahapackAccess?.courses?.[key];
+// Current access records
+const course=data?.mahapackAccess?.courses?.[key];
+if(active(course)) return course;
 
-if(active(course))
-return course;
+const officePack=data?.mahapackAccess?.packs?.['ms-office'];
+if(office.includes(key)&&active(officePack)) return officePack;
 
+const masterPack=data?.mahapackAccess?.packs?.['computer-master'];
+if(active(masterPack)) return masterPack;
 
-const pack=
-data?.mahapackAccess?.packs?.['ms-office'];
+// Backward compatibility: purchases saved under computerAccess
+const legacyCourse=data?.computerAccess?.courses?.[key];
+if(active(legacyCourse)) return legacyCourse;
 
-if(
-office.includes(key)&&
-active(pack)
-)
-return pack;
+const legacyOffice=data?.computerAccess?.packs?.['ms-office'];
+if(office.includes(key)&&active(legacyOffice)) return legacyOffice;
 
+const legacyMaster=data?.computerAccess?.packs?.['computer-master'];
+if(active(legacyMaster)) return legacyMaster;
 
-const master=
-data?.mahapackAccess?.packs?.['computer-master'];
+// Some older records store course access directly by course key.
+const direct=data?.computerAccess?.[key]||data?.mahapackAccess?.[key];
+if(active(direct)) return direct;
 
-return active(master)
-?master
-:null
-
+return null;
 }
 
 
@@ -2836,7 +2837,7 @@ await Promise.all(pending);
 /* Kept for compatibility with existing purchase data */
 
 const officePack=
-data?.mahapackAccess?.packs?.['ms-office'];
+data?.mahapackAccess?.packs?.['ms-office']||data?.computerAccess?.packs?.['ms-office'];
 
 document
 .querySelectorAll(
@@ -2863,7 +2864,7 @@ b.replaceWith(x);
 
 
 const master=
-data?.mahapackAccess?.packs?.['computer-master'];
+data?.mahapackAccess?.packs?.['computer-master']||data?.computerAccess?.packs?.['computer-master'];
 
 document
 .querySelectorAll(
