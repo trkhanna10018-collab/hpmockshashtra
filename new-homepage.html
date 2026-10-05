@@ -7,9 +7,10 @@
 <title>HPMockShashtra | Smart Practice. Better Preparation.</title>
 
 <style>
+
 :root{
-  --nav:#071426;
-  --nav2:#0d1d34;
+  --nav:#061426;
+  --nav2:#0c2039;
   --blue:#2563eb;
   --blue2:#4f8cff;
   --gold:#f6b73c;
@@ -32,7 +33,8 @@ html{
 }
 
 body{
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,
+  "Segoe UI",Arial,sans-serif;
   color:var(--text);
   background:var(--bg);
   line-height:1.6;
@@ -52,32 +54,46 @@ button{
   margin:auto;
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================================
+   PREMIUM HEADER
+========================================================= */
 
 .site-header{
   position:sticky;
-  top:12px;
+  top:10px;
   z-index:9999;
+
   width:min(1220px,94%);
-  margin:12px auto 0;
+  margin:10px auto 0;
+
   border-radius:20px;
-  background:linear-gradient(
-    135deg,
-    rgba(5,18,35,.98),
-    rgba(12,31,55,.97)
-  );
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:0 16px 45px rgba(0,0,0,.24);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4,15,30,.985),
+      rgba(11,30,53,.975)
+    );
+
+  border:1px solid rgba(255,255,255,.11);
+
+  box-shadow:
+    0 16px 45px rgba(0,0,0,.28);
+
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
 }
 
 .navbar{
   min-height:74px;
+
   padding:0 18px 0 22px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   gap:18px;
 }
 
@@ -91,14 +107,25 @@ button{
 .brand-logo{
   width:43px;
   height:43px;
+
   border-radius:13px;
+
   display:grid;
   place-items:center;
+
   color:#fff;
   font-size:18px;
   font-weight:950;
-  background:linear-gradient(145deg,#2463d9,#4e91ff);
-  box-shadow:0 7px 22px rgba(37,99,235,.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      #2463d9,
+      #4e91ff
+    );
+
+  box-shadow:
+    0 7px 22px rgba(37,99,235,.35);
 }
 
 .brand-name{
@@ -126,9 +153,13 @@ button{
   color:#d4deed;
   font-size:12px;
   font-weight:750;
+
   padding:9px 11px;
+
   border-radius:9px;
+
   transition:.2s;
+
   white-space:nowrap;
 }
 
@@ -146,15 +177,22 @@ button{
 .btn{
   border:0;
   cursor:pointer;
+
   display:inline-flex;
   align-items:center;
   justify-content:center;
+
   gap:7px;
+
   border-radius:11px;
+
   padding:10px 15px;
+
   font-size:12px;
   font-weight:850;
+
   transition:.2s ease;
+
   white-space:nowrap;
 }
 
@@ -164,46 +202,75 @@ button{
 
 .login-btn{
   color:#eaf1ff;
+
   border:1px solid rgba(255,255,255,.16);
+
   background:rgba(255,255,255,.06);
 }
 
 .primary-btn{
   color:#fff;
-  background:linear-gradient(135deg,#2462d7,#4284f3);
-  box-shadow:0 7px 20px rgba(37,99,235,.28);
+
+  background:
+    linear-gradient(
+      135deg,
+      #2462d7,
+      #4284f3
+    );
+
+  box-shadow:
+    0 7px 20px rgba(37,99,235,.28);
 }
 
-/* LOGGED USER */
+
+/* USER */
 
 .user-box{
   display:none;
+
   align-items:center;
   gap:8px;
+
   color:#fff;
+
   padding:6px 8px 6px 7px;
+
   border:1px solid rgba(255,255,255,.12);
+
   background:rgba(255,255,255,.06);
+
   border-radius:12px;
 }
 
 .user-avatar{
   width:30px;
   height:30px;
+
   border-radius:9px;
+
   display:grid;
   place-items:center;
+
   color:#fff;
+
   font-size:12px;
   font-weight:900;
-  background:linear-gradient(135deg,#3979ea,#63a0ff);
+
+  background:
+    linear-gradient(
+      135deg,
+      #3979ea,
+      #63a0ff
+    );
 }
 
 .user-name{
   max-width:110px;
+
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+
   font-size:11px;
   font-weight:800;
 }
@@ -211,206 +278,344 @@ button{
 .logout-btn{
   border:0;
   background:transparent;
+
   color:#ffb7b7;
+
   font-size:10px;
   font-weight:800;
+
   cursor:pointer;
+
   padding:4px;
 }
 
 .menu-btn{
   display:none;
+
   border:1px solid rgba(255,255,255,.13);
+
   background:rgba(255,255,255,.07);
+
   color:#fff;
+
   border-radius:10px;
+
   padding:8px 10px;
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-  min-height:650px;
-  margin-top:-1px;
+
   position:relative;
+
+  min-height:760px;
+
+  margin-top:-1px;
+
   display:flex;
   align-items:center;
+
   overflow:hidden;
 
   background:
+
     linear-gradient(
       90deg,
-      rgba(4,17,34,.93) 0%,
-      rgba(5,21,41,.80) 42%,
-      rgba(5,21,41,.42) 72%,
-      rgba(5,21,41,.68) 100%
+      rgba(3,15,30,.72) 0%,
+      rgba(5,20,40,.55) 38%,
+      rgba(5,20,40,.28) 72%,
+      rgba(5,20,40,.46) 100%
     ),
-    url("joa/homepage-bg.jpg") center/cover no-repeat;
+
+    url("joa/homepage-bg.jpg")
+    center center/
+    cover
+    no-repeat;
 }
 
-.hero:before{
+
+/* SECOND BACKGROUND */
+
+.hero:after{
+
   content:"";
+
   position:absolute;
+
   inset:0;
 
   background:
+
     radial-gradient(
-      circle at 78% 35%,
-      rgba(64,130,255,.24),
-      transparent 27%
+      circle at 82% 32%,
+      rgba(80,145,255,.20),
+      transparent 28%
     ),
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(246,183,60,.10),
-      transparent 25%
+
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.06),
+      rgba(0,0,0,.20)
     );
+
+  pointer-events:none;
 }
 
+
+/* SECOND IMAGE */
+
+.hero-image-accent{
+
+  position:absolute;
+
+  right:-100px;
+  bottom:-160px;
+
+  width:620px;
+  height:620px;
+
+  border-radius:50%;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(35,100,220,.25),
+      rgba(255,255,255,0)
+    ),
+
+    url("joa-homepage-bg-2.jpg")
+    center/
+    cover;
+
+  opacity:.30;
+
+  filter:saturate(1.12);
+
+  mask-image:
+    radial-gradient(
+      circle,
+      #000 20%,
+      transparent 72%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle,
+      #000 20%,
+      transparent 72%
+    );
+
+  z-index:1;
+}
+
+
 .hero-content{
+
   position:relative;
-  z-index:2;
-  padding:105px 0 95px;
+
+  z-index:3;
+
+  width:100%;
+
+  padding:
+    150px
+    0
+    135px;
 }
 
 .hero-copy{
-  max-width:700px;
+  max-width:720px;
 }
 
 .hero-badge{
+
   display:inline-flex;
+
   align-items:center;
+
   gap:8px;
 
-  color:#e7f0ff;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(255,255,255,.08);
+  color:#edf4ff;
 
-  padding:8px 13px;
+  border:
+    1px solid
+    rgba(255,255,255,.20);
+
+  background:
+    rgba(255,255,255,.10);
+
+  padding:9px 14px;
+
   border-radius:999px;
 
   font-size:11px;
   font-weight:800;
 
   backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.12);
 }
 
 .hero-badge i{
+
   width:7px;
   height:7px;
+
   background:#38d996;
+
   border-radius:50%;
-  box-shadow:0 0 12px #38d996;
+
+  box-shadow:
+    0 0 12px #38d996;
 }
 
 .hero h1{
-  margin-top:22px;
+
+  margin-top:24px;
+
   color:#fff;
-  font-size:clamp(42px,6vw,70px);
-  line-height:1.02;
-  letter-spacing:-3px;
+
+  font-size:
+    clamp(
+      46px,
+      6vw,
+      76px
+    );
+
+  line-height:1.01;
+
+  letter-spacing:-3.4px;
+
+  text-shadow:
+    0 6px 25px rgba(0,0,0,.20);
 }
 
 .hero h1 span{
-  background:linear-gradient(90deg,#72aaff,#bcd7ff);
+
+  background:
+    linear-gradient(
+      90deg,
+      #69a3ff,
+      #c7ddff
+    );
+
   -webkit-background-clip:text;
+
   background-clip:text;
+
   color:transparent;
 }
 
 .hero-text{
-  margin-top:20px;
-  max-width:630px;
-  color:#cbd7e7;
+
+  margin-top:23px;
+
+  max-width:650px;
+
+  color:#d7e2f1;
+
   font-size:16px;
+
+  text-shadow:
+    0 2px 12px rgba(0,0,0,.25);
 }
 
 .hero-buttons{
+
   display:flex;
+
   gap:11px;
+
   flex-wrap:wrap;
-  margin-top:30px;
+
+  margin-top:31px;
 }
 
 .hero-main-btn{
-  padding:13px 19px;
+
+  padding:14px 20px;
+
   font-size:13px;
 }
 
 .hero-second-btn{
+
   color:#fff;
-  border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.08);
-  padding:13px 19px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.24);
+
+  background:
+    rgba(255,255,255,.10);
+
+  padding:14px 20px;
+
   font-size:13px;
+
+  backdrop-filter:blur(10px);
 }
 
 .hero-note{
-  color:#9eafc5;
+
+  color:#afbed1;
+
   font-size:11px;
-  margin-top:17px;
+
+  margin-top:18px;
 }
 
-/* SECOND BACKGROUND IMAGE */
 
-.hero-image-accent{
-  position:absolute;
-  right:-100px;
-  bottom:-150px;
-
-  width:570px;
-  height:570px;
-
-  border-radius:50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(39,98,213,.35),
-      rgba(255,255,255,0)
-    ),
-    url("joa-homepage-bg-2.jpg") center/cover;
-
-  opacity:.28;
-  filter:saturate(1.15);
-
-  mask-image:radial-gradient(
-    circle,
-    #000 20%,
-    transparent 72%
-  );
-
-  -webkit-mask-image:radial-gradient(
-    circle,
-    #000 20%,
-    transparent 72%
-  );
-}
-
-/* ================= STATS ================= */
+/* =========================================================
+   STATS
+========================================================= */
 
 .stats-wrap{
+
   position:relative;
+
   z-index:5;
-  margin-top:-42px;
+
+  margin-top:-45px;
 }
 
 .stats{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
 
   background:#fff;
 
-  border:1px solid var(--border);
-  border-radius:20px;
+  border:
+    1px solid
+    var(--border);
 
-  box-shadow:var(--shadow);
+  border-radius:21px;
+
+  box-shadow:
+    0 20px 55px
+    rgba(11,31,58,.13);
+
   overflow:hidden;
 }
 
 .stat{
-  padding:20px;
+
+  padding:21px;
+
   text-align:center;
-  border-right:1px solid var(--border);
+
+  border-right:
+    1px solid
+    var(--border);
 }
 
 .stat:last-child{
@@ -418,180 +623,465 @@ button{
 }
 
 .stat strong{
+
   display:block;
+
   color:#173a73;
-  font-size:24px;
+
+  font-size:25px;
+
   line-height:1.2;
 }
 
 .stat span{
+
   color:var(--muted);
+
   font-size:11px;
+
   font-weight:650;
 }
 
-/* ================= SECTION ================= */
+
+/* =========================================================
+   SECTION
+========================================================= */
 
 .section{
-  padding:90px 0;
+  padding:92px 0;
 }
 
 .section-head{
+
   text-align:center;
+
   max-width:730px;
-  margin:0 auto 43px;
+
+  margin:
+    0
+    auto
+    43px;
 }
 
 .eyebrow{
+
   color:#2865bf;
+
   font-size:11px;
+
   font-weight:900;
+
   text-transform:uppercase;
+
   letter-spacing:1.8px;
+
   margin-bottom:8px;
 }
 
 .section-head h2{
-  font-size:clamp(29px,4vw,43px);
+
+  font-size:
+    clamp(
+      29px,
+      4vw,
+      43px
+    );
+
   line-height:1.12;
+
   letter-spacing:-1.5px;
 }
 
 .section-head p{
+
   color:var(--muted);
+
   font-size:14px;
+
   margin-top:11px;
 }
 
-/* ================= EXAM CARDS ================= */
+
+/* =========================================================
+   EXAM GRID
+========================================================= */
 
 .exam-grid{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:21px;
 }
 
+
+/* =========================================================
+   EXAM CARD
+========================================================= */
+
 .exam-card{
+
+  position:relative;
+
   background:#fff;
-  border:1px solid var(--border);
+
+  border:
+    1px solid
+    var(--border);
+
   border-radius:22px;
+
   overflow:hidden;
 
   box-shadow:
-    0 8px 30px rgba(20,43,76,.055);
+    0 8px 30px
+    rgba(20,43,76,.055);
 
-  transition:.25s ease;
+  transition:
+    .28s ease;
 }
 
 .exam-card:hover{
-  transform:translateY(-7px);
+
+  transform:
+    translateY(-8px);
 
   box-shadow:
-    0 20px 50px rgba(20,43,76,.13);
+    0 24px 60px
+    rgba(20,43,76,.15);
 
-  border-color:#d2dff2;
+  border-color:#cddcf1;
 }
 
+
+/* =========================================================
+   LATEST PREMIUM RIBBON
+========================================================= */
+
+.latest-ribbon{
+
+  position:absolute;
+
+  z-index:20;
+
+  top:28px;
+  left:-43px;
+
+  width:155px;
+
+  padding:10px 0;
+
+  text-align:center;
+
+  color:#fff;
+
+  font-size:13px;
+
+  font-weight:950;
+
+  letter-spacing:1.4px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #ffb300,
+      #ff7a00
+    );
+
+  box-shadow:
+
+    0 7px 22px
+    rgba(255,135,0,.45);
+
+  transform:
+    rotate(-42deg);
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.5);
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.25);
+
+  animation:
+    latestPulse
+    1.45s
+    ease-in-out
+    infinite;
+}
+
+.latest-ribbon:before,
+.latest-ribbon:after{
+
+  content:"";
+
+  position:absolute;
+
+  bottom:-7px;
+
+  border-style:solid;
+}
+
+.latest-ribbon:before{
+
+  left:0;
+
+  border-width:
+    7px
+    7px
+    0
+    0;
+
+  border-color:
+    #a94e00
+    transparent
+    transparent
+    transparent;
+}
+
+.latest-ribbon:after{
+
+  right:0;
+
+  border-width:
+    7px
+    0
+    0
+    7px;
+
+  border-color:
+    #a94e00
+    transparent
+    transparent
+    transparent;
+}
+
+@keyframes latestPulse{
+
+  0%,100%{
+    opacity:1;
+    filter:
+      brightness(1)
+      drop-shadow(
+        0 0 0
+        rgba(255,174,0,0)
+      );
+  }
+
+  50%{
+    opacity:.68;
+    filter:
+      brightness(1.28)
+      drop-shadow(
+        0 0 14px
+        rgba(255,174,0,.85)
+      );
+  }
+}
+
+
+/* =========================================================
+   EXAM IMAGE
+========================================================= */
+
 .exam-image{
-  height:190px;
+
   position:relative;
+
+  width:100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dce7f7,
+      #f4f7fb
+    );
+
   overflow:hidden;
-  background:#dce6f6;
+
+  /*
+    Banner ratio is preserved.
+    No crop.
+  */
+
+  aspect-ratio:
+    16 / 9;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
 }
 
 .exam-image img{
+
+  display:block;
+
   width:100%;
   height:100%;
-  object-fit:cover;
-  transition:.4s ease;
+
+  object-fit:contain;
+
+  background:#e9eff7;
+
+  transition:
+    transform
+    .4s
+    ease;
 }
 
-.exam-card:hover .exam-image img{
-  transform:scale(1.045);
+.exam-card:hover
+.exam-image img{
+
+  transform:
+    scale(1.025);
 }
+
+
+/* dark lower gradient */
 
 .exam-image:after{
+
   content:"";
+
   position:absolute;
+
   inset:0;
+
+  pointer-events:none;
 
   background:
     linear-gradient(
       180deg,
-      rgba(5,18,35,.03),
-      rgba(5,18,35,.62)
+      rgba(5,18,35,0),
+      rgba(5,18,35,.28)
     );
 }
 
+
+/* exam label */
+
 .exam-label{
+
   position:absolute;
-  z-index:2;
-  left:15px;
-  top:15px;
+
+  z-index:5;
+
+  left:14px;
+  bottom:14px;
 
   color:#fff;
 
-  background:rgba(7,20,38,.72);
-  border:1px solid rgba(255,255,255,.16);
+  background:
+    rgba(6,20,39,.78);
 
-  backdrop-filter:blur(8px);
+  border:
+    1px solid
+    rgba(255,255,255,.18);
 
-  padding:6px 9px;
+  backdrop-filter:
+    blur(8px);
+
+  padding:
+    6px
+    9px;
+
   border-radius:8px;
 
   font-size:10px;
+
   font-weight:900;
 }
+
+
+/* =========================================================
+   EXAM BODY
+========================================================= */
 
 .exam-body{
   padding:22px;
 }
 
 .exam-body h3{
+
   font-size:21px;
+
   letter-spacing:-.4px;
 }
 
 .exam-description{
+
   color:var(--muted);
+
   font-size:12px;
+
   margin-top:7px;
+
   min-height:42px;
 }
 
 .exam-details{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:7px;
+
   margin:19px 0;
 }
 
 .detail{
+
   background:#f5f7fa;
+
   border-radius:10px;
-  padding:9px 5px;
+
+  padding:
+    9px
+    5px;
+
   text-align:center;
 }
 
 .detail strong{
+
   display:block;
+
   color:#173b7a;
+
   font-size:13px;
 }
 
 .detail span{
+
   color:#7a8799;
+
   font-size:9px;
+
   font-weight:650;
 }
 
 .syllabus{
+
   display:flex;
+
   align-items:flex-start;
+
   gap:7px;
+
   color:#64748b;
+
   font-size:10px;
+
   line-height:1.4;
+
   min-height:31px;
 }
 
@@ -600,69 +1090,105 @@ button{
 }
 
 .exam-action{
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   margin-top:17px;
+
   padding-top:16px;
 
-  border-top:1px solid #edf0f4;
+  border-top:
+    1px solid
+    #edf0f4;
 }
 
 .exam-action span{
+
   color:#1d55a0;
+
   font-size:12px;
+
   font-weight:900;
 }
 
 .arrow{
+
   width:31px;
   height:31px;
 
   display:grid;
+
   place-items:center;
 
   border-radius:9px;
 
   background:#edf4ff;
+
   color:#245bab;
 
   font-weight:900;
 }
 
-/* ================= WHY ================= */
+
+/* =========================================================
+   WHY SECTION
+========================================================= */
 
 .why-section{
+
   background:#fff;
 
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
+  border-top:
+    1px solid
+    var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
 }
 
 .features{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:15px;
 }
 
 .feature{
-  border:1px solid var(--border);
+
+  border:
+    1px solid
+    var(--border);
+
   background:#fbfcfe;
+
   border-radius:17px;
+
   padding:23px;
 }
 
 .feature-icon{
+
   width:43px;
   height:43px;
+
   border-radius:12px;
 
   display:grid;
+
   place-items:center;
 
   color:#fff;
+
   font-size:12px;
+
   font-weight:900;
 
   background:
@@ -676,108 +1202,173 @@ button{
 }
 
 .feature h3{
+
   font-size:15px;
+
   margin-bottom:6px;
 }
 
 .feature p{
+
   color:var(--muted);
+
   font-size:11px;
 }
 
-/* ================= CTA ================= */
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
+
   position:relative;
+
   overflow:hidden;
 
   border-radius:25px;
+
   padding:67px 30px;
 
   text-align:center;
+
   color:#fff;
 
   background:
+
     linear-gradient(
       110deg,
-      rgba(8,27,53,.97),
-      rgba(27,76,153,.92)
+      rgba(8,27,53,.94),
+      rgba(27,76,153,.88)
     ),
-    url("joa-homepage-bg-2.jpg") center/cover;
+
+    url("joa-homepage-bg-2.jpg")
+    center/
+    cover;
 
   box-shadow:
-    0 20px 55px rgba(12,37,75,.18);
+    0 20px 55px
+    rgba(12,37,75,.18);
 }
 
 .cta h2{
+
   position:relative;
+
   z-index:2;
 
-  font-size:clamp(28px,4vw,42px);
+  font-size:
+    clamp(
+      28px,
+      4vw,
+      42px
+    );
+
   letter-spacing:-1.3px;
 }
 
 .cta p{
+
   position:relative;
+
   z-index:2;
 
   color:#cddcf2;
+
   max-width:600px;
 
-  margin:10px auto 24px;
+  margin:
+    10px
+    auto
+    24px;
 
   font-size:13px;
 }
 
 .cta .btn{
+
   position:relative;
+
   z-index:2;
 
   color:#12356c;
+
   background:#fff;
 
-  padding:12px 18px;
+  padding:
+    12px
+    18px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer{
+
   margin-top:85px;
-  padding:54px 0 25px;
+
+  padding:
+    54px
+    0
+    25px;
 
   background:#071426;
+
   color:#aab8ca;
 }
 
 .footer-grid{
+
   display:grid;
-  grid-template-columns:1.5fr 1fr 1fr 1fr;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1fr;
+
   gap:35px;
 }
 
 .footer-brand{
+
   color:#fff;
+
   font-size:20px;
+
   font-weight:900;
+
   margin-bottom:9px;
 }
 
 .footer p{
+
   max-width:330px;
+
   color:#8191a7;
+
   font-size:11px;
 }
 
 .footer h4{
+
   color:#fff;
+
   font-size:12px;
+
   margin-bottom:14px;
 }
 
 .footer a{
+
   display:block;
+
   color:#8fa0b6;
+
   font-size:11px;
+
   margin:8px 0;
 }
 
@@ -786,37 +1377,46 @@ button{
 }
 
 .copyright{
-  border-top:1px solid rgba(255,255,255,.08);
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.08);
 
   margin-top:35px;
+
   padding-top:18px;
 
   display:flex;
+
   justify-content:space-between;
 
   gap:15px;
 
   color:#708198;
+
   font-size:10px;
 }
 
-/* ================= TABLET ================= */
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:1050px){
 
   .nav-links a{
-    padding:8px 7px;
+    padding:
+      8px
+      7px;
+
     font-size:11px;
   }
 
   .brand-name{
     font-size:17px;
   }
-
-  .exam-grid{
-    gap:14px;
-  }
 }
+
 
 @media(max-width:900px){
 
@@ -828,21 +1428,30 @@ button{
     display:block;
   }
 
-  .nav-actions .login-btn,
-  .nav-actions .primary-btn{
+  .nav-actions
+  .login-btn,
+  .nav-actions
+  .primary-btn{
     display:none;
   }
 
   .hero{
-    min-height:600px;
+
+    min-height:680px;
   }
 
   .hero-content{
-    padding:90px 0 85px;
+
+    padding:
+      125px
+      0
+      115px;
   }
 
   .stats{
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .stat:nth-child(2){
@@ -851,43 +1460,66 @@ button{
 
   .stat:nth-child(1),
   .stat:nth-child(2){
-    border-bottom:1px solid var(--border);
+    border-bottom:
+      1px solid
+      var(--border);
   }
 
   .exam-grid{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
     max-width:620px;
+
     margin:auto;
   }
 
   .features{
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .footer-grid{
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+      repeat(2,1fr);
   }
 }
 
-/* ================= MOBILE ================= */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:600px){
 
   .site-header{
+
     width:94%;
+
     top:7px;
+
     margin-top:7px;
+
     border-radius:15px;
   }
 
   .navbar{
+
     min-height:64px;
-    padding:0 12px;
+
+    padding:
+      0
+      12px;
   }
 
   .brand-logo{
+
     width:37px;
     height:37px;
+
     font-size:15px;
   }
 
@@ -903,178 +1535,283 @@ button{
     display:none;
   }
 
+
   .hero{
-    min-height:590px;
+
+    min-height:650px;
 
     background:
+
       linear-gradient(
         90deg,
-        rgba(4,17,34,.93),
-        rgba(5,21,41,.68)
+        rgba(3,15,30,.74),
+        rgba(5,21,41,.48)
       ),
-      url("joa/homepage-bg.jpg") center/cover no-repeat;
+
+      url("joa/homepage-bg.jpg")
+      center/
+      cover
+      no-repeat;
   }
+
 
   .hero-content{
-    padding:76px 0 82px;
+
+    padding:
+      105px
+      0
+      105px;
   }
 
+
   .hero h1{
+
     font-size:43px;
+
     letter-spacing:-2px;
   }
 
+
   .hero-text{
+
     font-size:14px;
   }
 
+
   .hero-image-accent{
+
     width:400px;
     height:400px;
+
     right:-170px;
     bottom:-100px;
   }
 
+
   .stats-wrap{
+
     margin-top:-30px;
   }
 
+
   .stat{
-    padding:17px 10px;
+
+    padding:
+      17px
+      10px;
   }
+
 
   .stat strong{
     font-size:20px;
   }
 
+
   .section{
-    padding:65px 0;
+
+    padding:
+      65px
+      0;
   }
 
+
   .section-head{
+
     margin-bottom:30px;
   }
 
-  .exam-image{
-    height:180px;
+
+  .exam-grid{
+
+    grid-template-columns:
+      1fr;
   }
+
+
+  .exam-image{
+
+    /*
+      Mobile par bhi पूरा banner
+      बिना crop दिखेगा
+    */
+
+    aspect-ratio:
+      16 / 9;
+
+    height:auto;
+  }
+
+
+  .latest-ribbon{
+
+    top:25px;
+    left:-45px;
+
+    width:150px;
+
+    font-size:12px;
+  }
+
 
   .features{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
   }
+
 
   .cta{
-    padding:48px 19px;
+
+    padding:
+      48px
+      19px;
   }
 
+
   .footer-grid{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr 1fr;
+
     gap:25px;
   }
 
-  .footer-grid>div:first-child{
-    grid-column:1/-1;
+
+  .footer-grid>
+  div:first-child{
+
+    grid-column:
+      1/-1;
   }
+
 
   .copyright{
+
     display:block;
   }
 
+
   .copyright span{
+
     display:block;
+
     margin-top:6px;
   }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="site-header">
 
 <nav class="navbar">
 
-<a href="homepage.html" class="brand">
 
-<div class="brand-logo">
-HP
-</div>
+<a href="homepage.html"
+   class="brand">
 
-<div>
+  <div class="brand-logo">
+    HP
+  </div>
 
-<div class="brand-name">
-HPMockShashtra
-</div>
+  <div>
 
-<span class="brand-tag">
-Smart Practice. Better Preparation.
-</span>
+    <div class="brand-name">
+      HPMockShashtra
+    </div>
 
-</div>
+    <span class="brand-tag">
+      Smart Practice. Better Preparation.
+    </span>
+
+  </div>
 
 </a>
 
 
 <div class="nav-links">
 
-<a href="joa/joa-series.html">
-JOA(IT) 2026
-</a>
+  <a href="joa/joa-series.html">
+    JOA(IT) 2026
+  </a>
 
-<a href="patwari/patwari-series.html">
-Patwari
-</a>
+  <a href="patwari/patwari-series.html">
+    Patwari
+  </a>
 
-<a href="joa/new-joa-series.html">
-JOA(IT)
-</a>
+  <a href="joa/new-joa-series.html">
+    JOA(IT)
+  </a>
 
-<a href="mahapack/joa-mahapack.html">
-JOA(IT) MahaPack
-</a>
+  <a href="mahapack/joa-mahapack.html">
+    JOA(IT) MahaPack
+  </a>
 
 </div>
 
 
 <div class="nav-actions">
 
+
 <a id="loginBtn"
-class="btn login-btn"
-href="firebase-login.html">
-Login
+   class="btn login-btn"
+   href="firebase-login.html">
+
+  Login
+
 </a>
 
 
-<div id="userBox" class="user-box">
+<div id="userBox"
+     class="user-box">
 
-<div id="userAvatar" class="user-avatar">
-U
-</div>
+  <div id="userAvatar"
+       class="user-avatar">
 
-<span id="userName" class="user-name">
-User
-</span>
+    U
 
-<button id="logoutBtn"
-class="logout-btn">
-Logout
-</button>
+  </div>
+
+  <span id="userName"
+        class="user-name">
+
+    User
+
+  </span>
+
+  <button id="logoutBtn"
+          class="logout-btn">
+
+    Logout
+
+  </button>
 
 </div>
 
 
 <a href="#tests"
-class="btn primary-btn">
-Explore Tests
+   class="btn primary-btn">
+
+  Explore Tests
+
 </a>
 
 
 <button class="menu-btn"
-onclick="toggleMenu()">
-☰
+        onclick="toggleMenu()">
+
+  ☰
+
 </button>
+
 
 </div>
 
@@ -1083,75 +1820,86 @@ onclick="toggleMenu()">
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
+
 <div class="hero-image-accent"></div>
+
 
 <div class="container hero-content">
 
+
 <div class="hero-copy">
+
 
 <div class="hero-badge">
 
-<i></i>
+  <i></i>
 
-Himachal Pradesh Competitive Exam Preparation
+  Himachal Pradesh Competitive Exam Preparation
 
 </div>
 
 
 <h1>
 
-Prepare with purpose.
+  Prepare with purpose.
 
-<br>
+  <br>
 
-<span>
-Perform with confidence.
-</span>
+  <span>
+    Perform with confidence.
+  </span>
 
 </h1>
 
 
 <p class="hero-text">
 
-HPMockShashtra brings structured mock tests,
-focused practice and performance-oriented preparation
-together in one platform for Himachal Pradesh aspirants.
+  HPMockShashtra brings structured mock tests,
+  focused practice and performance-oriented preparation
+  together in one platform for Himachal Pradesh aspirants.
 
 </p>
 
 
 <div class="hero-buttons">
 
-<a href="#tests"
-class="btn primary-btn hero-main-btn">
 
-Explore Test Series →
+<a href="#tests"
+   class="btn primary-btn hero-main-btn">
+
+  Explore Test Series →
 
 </a>
+
 
 <a href="firebase-login.html"
-class="btn hero-second-btn">
+   class="btn hero-second-btn">
 
-Create Free Account
+  Create Free Account
 
 </a>
+
 
 </div>
 
 
 <div class="hero-note">
 
-✓ Latest syllabus focused
-&nbsp;&nbsp;
-✓ Timed mock tests
-&nbsp;&nbsp;
-✓ Performance tracking
+  ✓ Latest syllabus focused
+  &nbsp;&nbsp;
+  ✓ Timed mock tests
+  &nbsp;&nbsp;
+  ✓ Performance tracking
 
 </div>
+
 
 </div>
 
@@ -1160,399 +1908,459 @@ Create Free Account
 </section>
 
 
-<!-- ================= STATS ================= -->
+
+<!-- =====================================================
+     STATS
+===================================================== -->
 
 <div class="container stats-wrap">
 
+
 <div class="stats">
 
-<div class="stat">
-
-<strong>
-120
-</strong>
-
-<span>
-Questions per Test
-</span>
-
-</div>
-
 
 <div class="stat">
 
-<strong>
-90 Min
-</strong>
+  <strong>
+    120
+  </strong>
 
-<span>
-Timed Practice
-</span>
+  <span>
+    Questions per Test
+  </span>
 
 </div>
 
 
 <div class="stat">
 
-<strong>
-15
-</strong>
+  <strong>
+    90 Min
+  </strong>
 
-<span>
-MahaPack Subjects
-</span>
+  <span>
+    Timed Practice
+  </span>
 
 </div>
 
 
 <div class="stat">
 
-<strong>
-6000+
-</strong>
+  <strong>
+    15
+  </strong>
 
-<span>
-Practice Questions
-</span>
+  <span>
+    MahaPack Subjects
+  </span>
+
+</div>
+
+
+<div class="stat">
+
+  <strong>
+    6000+
+  </strong>
+
+  <span>
+    Practice Questions
+  </span>
+
+</div>
+
 
 </div>
 
 </div>
 
-</div>
 
 
-<!-- ================= TEST SERIES ================= -->
+<!-- =====================================================
+     TEST SERIES
+===================================================== -->
 
 <section class="section"
-id="tests">
+         id="tests">
+
 
 <div class="container">
 
+
 <div class="section-head">
 
-<div class="eyebrow">
-Our Test Series
+  <div class="eyebrow">
+    Our Test Series
+  </div>
+
+  <h2>
+    Choose your preparation.
+  </h2>
+
+  <p>
+    Focused resources, structured practice and
+    exam-oriented preparation—all in one place.
+  </p>
+
 </div>
 
-<h2>
-Choose your preparation.
-</h2>
-
-<p>
-Focused resources, structured practice and
-exam-oriented preparation—all in one place.
-</p>
-
-</div>
 
 
 <div class="exam-grid">
 
 
-<!-- JOA -->
+<!-- =====================================================
+     JOA IT
+===================================================== -->
 
 <a href="joa/new-joa-series.html"
-class="exam-card">
+   class="exam-card">
+
+
+<!-- PREMIUM LATEST RIBBON -->
+
+<div class="latest-ribbon">
+  LATEST
+</div>
+
 
 <div class="exam-image">
 
-<img
-src="joa/joa-banner.jpg"
-alt="JOA IT Test Series">
+  <img
+    src="joa/joa-banner.jpg"
+    alt="JOA IT Test Series">
 
-<span class="exam-label">
-JOA (IT)
-</span>
+  <span class="exam-label">
+    JOA (IT)
+  </span>
 
 </div>
 
 
 <div class="exam-body">
 
+
 <h3>
-JOA (IT)
+  JOA (IT)
 </h3>
+
 
 <p class="exam-description">
 
-Complete online mock test series for
-JOA (IT) aspirants with focused exam preparation.
+  Complete online mock test series for
+  JOA (IT) aspirants with focused exam preparation.
 
 </p>
 
 
 <div class="exam-details">
 
+
 <div class="detail">
 
-<strong>
-10
-</strong>
+  <strong>
+    10
+  </strong>
 
-<span>
-Tests
-</span>
+  <span>
+    Tests
+  </span>
 
 </div>
 
 
 <div class="detail">
 
-<strong>
-120
-</strong>
+  <strong>
+    120
+  </strong>
 
-<span>
-Questions
-</span>
+  <span>
+    Questions
+  </span>
 
 </div>
 
 
 <div class="detail">
 
-<strong>
-90
-</strong>
+  <strong>
+    90
+  </strong>
 
-<span>
-Minutes
-</span>
+  <span>
+    Minutes
+  </span>
 
 </div>
+
 
 </div>
 
 
 <div class="syllabus">
 
-<b>✓</b>
+  <b>
+    ✓
+  </b>
 
-<span>
-Based on Latest Syllabus of Himachal Pradesh Rajya Chayan Ayog
-</span>
+  <span>
+
+    Based on Latest Syllabus of
+    Himachal Pradesh Rajya Chayan Ayog
+
+  </span>
 
 </div>
 
 
 <div class="exam-action">
 
-<span>
-Start Preparation
-</span>
+  <span>
+    Start Preparation
+  </span>
 
-<div class="arrow">
-→
+  <div class="arrow">
+    →
+  </div>
+
 </div>
 
-</div>
 
 </div>
 
 </a>
 
 
-<!-- PATWARI -->
+
+<!-- =====================================================
+     PATWARI
+===================================================== -->
 
 <a href="patwari/patwari-series.html"
-class="exam-card">
+   class="exam-card">
+
 
 <div class="exam-image">
 
-<img
-src="patwari/patwari-banner.jpg"
-alt="HP Patwari Test Series">
+  <img
+    src="patwari/patwari-banner.jpg"
+    alt="HP Patwari Test Series">
 
-<span class="exam-label">
-HP PATWARI
-</span>
+  <span class="exam-label">
+    HP PATWARI
+  </span>
 
 </div>
 
 
 <div class="exam-body">
 
+
 <h3>
-HP Patwari
+  HP Patwari
 </h3>
+
 
 <p class="exam-description">
 
-Structured mock tests designed for
-Himachal Pradesh Patwari examination preparation.
+  Structured mock tests designed for
+  Himachal Pradesh Patwari examination preparation.
 
 </p>
 
 
 <div class="exam-details">
 
+
 <div class="detail">
 
-<strong>
-10
-</strong>
+  <strong>
+    10
+  </strong>
 
-<span>
-Tests
-</span>
+  <span>
+    Tests
+  </span>
 
 </div>
 
 
 <div class="detail">
 
-<strong>
-120
-</strong>
+  <strong>
+    120
+  </strong>
 
-<span>
-Questions
-</span>
+  <span>
+    Questions
+  </span>
 
 </div>
 
 
 <div class="detail">
 
-<strong>
-90
-</strong>
+  <strong>
+    90
+  </strong>
 
-<span>
-Minutes
-</span>
+  <span>
+    Minutes
+  </span>
 
 </div>
+
 
 </div>
 
 
 <div class="syllabus">
 
-<b>✓</b>
+  <b>
+    ✓
+  </b>
 
-<span>
-Based on Latest Syllabus of Himachal Pradesh Rajya Chayan Ayog
-</span>
+  <span>
+
+    Based on Latest Syllabus of
+    Himachal Pradesh Rajya Chayan Ayog
+
+  </span>
 
 </div>
 
 
 <div class="exam-action">
 
-<span>
-Start Preparation
-</span>
+  <span>
+    Start Preparation
+  </span>
 
-<div class="arrow">
-→
+  <div class="arrow">
+    →
+  </div>
+
 </div>
 
-</div>
 
 </div>
 
 </a>
 
 
-<!-- MAHAPACK -->
+
+<!-- =====================================================
+     MAHAPACK
+===================================================== -->
 
 <a href="mahapack/joa-mahapack.html"
-class="exam-card">
+   class="exam-card">
+
 
 <div class="exam-image">
 
-<img
-src="mahapack/mahapack.jpg"
-alt="JOA IT MahaPack">
+  <img
+    src="mahapack/mahapack-banner.jpg"
+    alt="JOA IT MahaPack">
 
-<span class="exam-label">
-JOA (IT) MAHAPACK
-</span>
+  <span class="exam-label">
+    JOA (IT) MAHAPACK
+  </span>
 
 </div>
 
 
 <div class="exam-body">
 
+
 <h3>
-JOA (IT) MahaPack
+  JOA (IT) MahaPack
 </h3>
+
 
 <p class="exam-description">
 
-A complete preparation library covering
-multiple subjects with a large question bank.
+  A complete preparation library covering
+  multiple subjects with a large question bank.
 
 </p>
 
 
 <div class="exam-details">
 
+
 <div class="detail">
 
-<strong>
-15
-</strong>
+  <strong>
+    15
+  </strong>
 
-<span>
-Subjects
-</span>
+  <span>
+    Subjects
+  </span>
 
 </div>
 
 
 <div class="detail">
 
-<strong>
-6000+
-</strong>
+  <strong>
+    6000+
+  </strong>
 
-<span>
-Questions
-</span>
+  <span>
+    Questions
+  </span>
 
 </div>
 
 
 <div class="detail">
 
-<strong>
-6
-</strong>
+  <strong>
+    6
+  </strong>
 
-<span>
-Months
-</span>
+  <span>
+    Months
+  </span>
 
 </div>
+
 
 </div>
 
 
 <div class="syllabus">
 
-<b>✓</b>
+  <b>
+    ✓
+  </b>
 
-<span>
-15 subjects • 6000+ questions • 6 months validity
-</span>
+  <span>
+
+    15 subjects • 6000+ questions •
+    6 months validity
+
+  </span>
 
 </div>
 
 
 <div class="exam-action">
 
-<span>
-Explore MahaPack
-</span>
+  <span>
+    Explore MahaPack
+  </span>
 
-<div class="arrow">
-→
+  <div class="arrow">
+    →
+  </div>
+
 </div>
 
-</div>
 
 </div>
 
@@ -1566,26 +2374,31 @@ Explore MahaPack
 </section>
 
 
-<!-- ================= WHY ================= -->
+
+<!-- =====================================================
+     WHY HPMOCKSHASHTRA
+===================================================== -->
 
 <section class="section why-section">
 
+
 <div class="container">
+
 
 <div class="section-head">
 
-<div class="eyebrow">
-Why HPMockShashtra
-</div>
+  <div class="eyebrow">
+    Why HPMockShashtra
+  </div>
 
-<h2>
-Built for serious preparation.
-</h2>
+  <h2>
+    Built for serious preparation.
+  </h2>
 
-<p>
-A cleaner and smarter way to practise,
-revise and measure your preparation.
-</p>
+  <p>
+    A cleaner and smarter way to practise,
+    revise and measure your preparation.
+  </p>
 
 </div>
 
@@ -1595,72 +2408,80 @@ revise and measure your preparation.
 
 <div class="feature">
 
-<div class="feature-icon">
-01
-</div>
+  <div class="feature-icon">
+    01
+  </div>
 
-<h3>
-Exam-Oriented Tests
-</h3>
+  <h3>
+    Exam-Oriented Tests
+  </h3>
 
-<p>
-Questions and timed tests designed
-around competitive examination preparation.
-</p>
+  <p>
 
-</div>
+    Questions and timed tests designed
+    around competitive examination preparation.
 
-
-<div class="feature">
-
-<div class="feature-icon">
-02
-</div>
-
-<h3>
-Performance Tracking
-</h3>
-
-<p>
-Track your scores and identify the areas
-where your preparation needs improvement.
-</p>
+  </p>
 
 </div>
 
 
 <div class="feature">
 
-<div class="feature-icon">
-03
-</div>
+  <div class="feature-icon">
+    02
+  </div>
 
-<h3>
-Study & Revision
-</h3>
+  <h3>
+    Performance Tracking
+  </h3>
 
-<p>
-Use focused study resources and practise
-important concepts before your next test.
-</p>
+  <p>
+
+    Track your scores and identify the areas
+    where your preparation needs improvement.
+
+  </p>
 
 </div>
 
 
 <div class="feature">
 
-<div class="feature-icon">
-04
+  <div class="feature-icon">
+    03
+  </div>
+
+  <h3>
+    Study & Revision
+  </h3>
+
+  <p>
+
+    Use focused study resources and practise
+    important concepts before your next test.
+
+  </p>
+
 </div>
 
-<h3>
-Competitive Edge
-</h3>
 
-<p>
-Use scores, progress and leaderboards
-to stay motivated throughout preparation.
-</p>
+<div class="feature">
+
+  <div class="feature-icon">
+    04
+  </div>
+
+  <h3>
+    Competitive Edge
+  </h3>
+
+  <p>
+
+    Use scores, progress and leaderboards
+    to stay motivated throughout preparation.
+
+  </p>
 
 </div>
 
@@ -1672,27 +2493,40 @@ to stay motivated throughout preparation.
 </section>
 
 
-<!-- ================= CTA ================= -->
+
+<!-- =====================================================
+     CTA
+===================================================== -->
 
 <section class="section">
 
+
 <div class="container">
+
 
 <div class="cta">
 
+
 <h2>
-Your preparation starts here.
+  Your preparation starts here.
 </h2>
 
+
 <p>
-Create your account, choose your test series
-and start turning practice into progress.
+
+  Create your account, choose your test series
+  and start turning practice into progress.
+
 </p>
 
+
 <a href="firebase-login.html"
-class="btn">
-Get Started →
+   class="btn">
+
+  Get Started →
+
 </a>
+
 
 </div>
 
@@ -1701,93 +2535,100 @@ Get Started →
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
+
 <div class="container">
+
 
 <div class="footer-grid">
 
 
 <div>
 
-<div class="footer-brand">
-HPMockShashtra
-</div>
+  <div class="footer-brand">
+    HPMockShashtra
+  </div>
 
-<p>
-Smart online practice and preparation
-platform for Himachal Pradesh competitive
-examinations.
-</p>
+  <p>
 
-</div>
+    Smart online practice and preparation
+    platform for Himachal Pradesh competitive
+    examinations.
 
-
-<div>
-
-<h4>
-Test Series
-</h4>
-
-<a href="joa/joa-series.html">
-JOA(IT) 2026
-</a>
-
-<a href="patwari/patwari-series.html">
-Patwari
-</a>
-
-<a href="joa/new-joa-series.html">
-JOA(IT)
-</a>
-
-<a href="mahapack/joa-mahapack.html">
-JOA(IT) MahaPack
-</a>
+  </p>
 
 </div>
 
 
 <div>
 
-<h4>
-Platform
-</h4>
+  <h4>
+    Test Series
+  </h4>
 
-<a href="#tests">
-Mock Tests
-</a>
+  <a href="joa/joa-series.html">
+    JOA(IT) 2026
+  </a>
 
-<a href="study-mode.html">
-Study Mode
-</a>
+  <a href="patwari/patwari-series.html">
+    Patwari
+  </a>
 
-<a href="firebase-login.html">
-Login / Register
-</a>
+  <a href="joa/new-joa-series.html">
+    JOA(IT)
+  </a>
+
+  <a href="mahapack/joa-mahapack.html">
+    JOA(IT) MahaPack
+  </a>
 
 </div>
 
 
 <div>
 
-<h4>
-Information
-</h4>
+  <h4>
+    Platform
+  </h4>
 
-<a href="#">
-About Us
-</a>
+  <a href="#tests">
+    Mock Tests
+  </a>
 
-<a href="#">
-Privacy Policy
-</a>
+  <a href="study-mode.html">
+    Study Mode
+  </a>
 
-<a href="#">
-Terms & Conditions
-</a>
+  <a href="firebase-login.html">
+    Login / Register
+  </a>
+
+</div>
+
+
+<div>
+
+  <h4>
+    Information
+  </h4>
+
+  <a href="#">
+    About Us
+  </a>
+
+  <a href="#">
+    Privacy Policy
+  </a>
+
+  <a href="#">
+    Terms & Conditions
+  </a>
 
 </div>
 
@@ -1797,51 +2638,63 @@ Terms & Conditions
 
 <div class="copyright">
 
-<span>
-© 2026 HPMockShashtra. All rights reserved.
-</span>
+  <span>
+    © 2026 HPMockShashtra. All rights reserved.
+  </span>
 
-<span>
-Smart Practice. Better Preparation.
-</span>
+  <span>
+    Smart Practice. Better Preparation.
+  </span>
 
 </div>
+
 
 </div>
 
 </footer>
 
 
-<!-- ================= FIREBASE LOGIN ================= -->
+
+<!-- =====================================================
+     FIREBASE AUTH
+===================================================== -->
 
 <script type="module">
+
 
 /*
 ==========================================================
 IMPORTANT
 
-नीचे अपना EXISTING Firebase config डालना है।
+यहाँ अपने existing Firebase config की values डालना।
 
-firebase-login.html में जो config पहले से चल रहा है,
-वही exact config यहाँ paste करें।
+firebase-login.html में जो Firebase config है,
+वही EXACT config यहाँ use करना।
 
 ==========================================================
 */
 
+
 import {
   initializeApp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 import {
   getAuth,
   onAuthStateChanged,
   signOut
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
 const firebaseConfig = {
 
-  apiKey: "YOUR_API_KEY",
+  apiKey:
+    "YOUR_API_KEY",
 
   authDomain:
     "YOUR_PROJECT.firebaseapp.com",
@@ -1861,90 +2714,92 @@ const firebaseConfig = {
 };
 
 
-/*
-==========================================================
-Firebase initialize
-==========================================================
-*/
-
 const app =
   initializeApp(firebaseConfig);
+
 
 const auth =
   getAuth(app);
 
 
-/*
-==========================================================
-Elements
-==========================================================
-*/
-
 const loginBtn =
-  document.getElementById("loginBtn");
+  document.getElementById(
+    "loginBtn"
+  );
+
 
 const userBox =
-  document.getElementById("userBox");
+  document.getElementById(
+    "userBox"
+  );
+
 
 const userName =
-  document.getElementById("userName");
+  document.getElementById(
+    "userName"
+  );
+
 
 const userAvatar =
-  document.getElementById("userAvatar");
+  document.getElementById(
+    "userAvatar"
+  );
+
 
 const logoutBtn =
-  document.getElementById("logoutBtn");
+  document.getElementById(
+    "logoutBtn"
+  );
 
 
 /*
 ==========================================================
-LOGIN STATE
+CHECK USER LOGIN
 ==========================================================
 */
 
-onAuthStateChanged(auth,(user)=>{
+onAuthStateChanged(
+  auth,
+  (user)=>{
 
-  if(user){
+    if(user){
 
-    /*
-    User logged in
-    */
+      loginBtn.style.display =
+        "none";
 
-    loginBtn.style.display="none";
-
-    userBox.style.display="flex";
-
-
-    const name =
-      user.displayName ||
-      user.email ||
-      "User";
+      userBox.style.display =
+        "flex";
 
 
-    userName.textContent =
-      name;
+      const name =
+        user.displayName ||
+        user.email ||
+        "User";
 
 
-    userAvatar.textContent =
-      name
-      .charAt(0)
-      .toUpperCase();
+      userName.textContent =
+        name;
+
+
+      userAvatar.textContent =
+        name
+        .charAt(0)
+        .toUpperCase();
+
+    }
+
+    else{
+
+      loginBtn.style.display =
+        "inline-flex";
+
+      userBox.style.display =
+        "none";
+
+    }
 
   }
-
-  else{
-
-    /*
-    User logged out
-    */
-
-    loginBtn.style.display="inline-flex";
-
-    userBox.style.display="none";
-
-  }
-
-});
+);
 
 
 /*
@@ -1980,54 +2835,74 @@ logoutBtn.addEventListener(
 </script>
 
 
-<!-- ================= MOBILE MENU ================= -->
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
 
 <script>
 
 function toggleMenu(){
 
   const nav =
-    document.querySelector(".nav-links");
+    document.querySelector(
+      ".nav-links"
+    );
 
 
-  if(nav.style.display === "flex"){
+  if(
+    nav.style.display ===
+    "flex"
+  ){
 
-    nav.style.display="";
+    nav.style.display =
+      "";
 
     return;
 
   }
 
 
-  nav.style.display="flex";
+  nav.style.display =
+    "flex";
 
-  nav.style.position="absolute";
+  nav.style.position =
+    "absolute";
 
-  nav.style.top="70px";
+  nav.style.top =
+    "70px";
 
-  nav.style.left="10px";
+  nav.style.left =
+    "10px";
 
-  nav.style.right="10px";
+  nav.style.right =
+    "10px";
 
-  nav.style.flexDirection="column";
+  nav.style.flexDirection =
+    "column";
 
-  nav.style.alignItems="stretch";
+  nav.style.alignItems =
+    "stretch";
 
-  nav.style.padding="12px";
+  nav.style.padding =
+    "12px";
 
-  nav.style.background="#0b1b31";
+  nav.style.background =
+    "#0b1b31";
 
-  nav.style.border=
+  nav.style.border =
     "1px solid rgba(255,255,255,.12)";
 
-  nav.style.borderRadius="15px";
+  nav.style.borderRadius =
+    "15px";
 
-  nav.style.boxShadow=
+  nav.style.boxShadow =
     "0 18px 35px rgba(0,0,0,.25)";
 
 }
 
 </script>
+
 
 </body>
 </html>
