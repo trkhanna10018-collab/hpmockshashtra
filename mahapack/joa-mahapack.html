@@ -1543,6 +1543,16 @@ letter-spacing:.1px;
   .topbar .mobile-menu #mobileJoin{display:block!important;text-align:center;color:#fff;background:#ffffff12}
 }
 
+
+/* Premium animated labels for Previous and Latest JOA navigation links */
+.topbar .header-links a.nav-course,
+.topbar .mobile-menu a.nav-course{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.nav-tag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 6px;font-size:8px;font-weight:900;letter-spacing:.65px;line-height:1.2;white-space:nowrap;border:1px solid currentColor;animation:navTagGlow 1.35s ease-in-out infinite}
+.previous-tag{color:#ffd778;background:linear-gradient(120deg,#553a08,#9c6a12);box-shadow:0 0 8px #eab30855}
+.latest-tag{color:#a7f3d0;background:linear-gradient(120deg,#064e3b,#047857);box-shadow:0 0 9px #10b98177}
+@keyframes navTagGlow{0%,100%{opacity:1;filter:brightness(1);transform:translateY(0)}50%{opacity:.72;filter:brightness(1.45);transform:translateY(-1px)}}
+@media(prefers-reduced-motion:reduce){.nav-tag{animation:none}}
+
 </style>
 </head>
 
@@ -1559,11 +1569,12 @@ letter-spacing:.1px;
 
   <div class="header-links">
     <a href="../homepage.html">Home</a>
-    <a href="../joa/new-joa-series.html">JOA (IT)</a>
+    <a class="nav-course nav-previous" href="../joa-series.html">JOA (IT) <span class="nav-tag previous-tag">PREVIOUS</span></a>
+    <a class="nav-course nav-latest" href="../joa/new-joa-series.html">JOA (IT) <span class="nav-tag latest-tag">LATEST</span></a>
     <a href="../patwari/patwari-series.html">Patwari</a>
-    <a href="my-purchase.html">My Purchase</a>
-    <a href="master-progress.html">Master Progress</a>
     <a href="mahapack-plans.html">Premium Plans</a>
+    <a href="master-progress.html">Master Progress</a>
+    <a href="../firebase-dashboard.html">Dashboard</a>
   </div>
 
   <div class="header-user" id="headerUser" style="display:none">
@@ -1576,11 +1587,12 @@ letter-spacing:.1px;
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="../homepage.html">Home</a>
-    <a href="../joa/new-joa-series.html">JOA (IT)</a>
+    <a class="nav-course nav-previous" href="../joa-series.html">JOA (IT) <span class="nav-tag previous-tag">PREVIOUS</span></a>
+    <a class="nav-course nav-latest" href="../joa/new-joa-series.html">JOA (IT) <span class="nav-tag latest-tag">LATEST</span></a>
     <a href="../patwari/patwari-series.html">Patwari</a>
-    <a href="my-purchase.html">My Purchase</a>
-    <a href="master-progress.html">Master Progress</a>
     <a href="mahapack-plans.html">Premium Plans</a>
+    <a href="master-progress.html">Master Progress</a>
+    <a href="../firebase-dashboard.html">Dashboard</a>
     <a href="../firebase-login.html" id="mobileLogin">Login</a>
     <a href="../firebase-signup.html" id="mobileJoin">Join Free</a>
   </div>
