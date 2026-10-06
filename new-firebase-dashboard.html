@@ -110,6 +110,32 @@ a{color:inherit}
   color:var(--blue);
 }
 
+/* PREVIOUS SERIES HEADER TAG */
+
+.nav-joa-link{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+
+.previous-tag{
+  display:inline-block;
+  padding:3px 5px;
+  border-radius:4px;
+  background:#fff0d9;
+  color:#a95b00;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.45px;
+  animation:previousBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes previousBlink{
+  0%,100%{opacity:1}
+  50%{opacity:.45}
+}
+
 .account{
   display:flex;
   align-items:center;
@@ -299,7 +325,7 @@ a{color:inherit}
   box-shadow:0 16px 35px rgba(27,43,77,.09);
 }
 
-/* COMPLETE IMAGE: NEVER CROP */
+/* COMPLETE IMAGE */
 
 .image-wrap{
   height:175px;
@@ -321,11 +347,13 @@ a{color:inherit}
   object-position:center;
 }
 
+/* IMAGE LABELS */
+
 .image-label{
   position:absolute;
   top:14px;
   left:14px;
-  z-index:2;
+  z-index:3;
   border-radius:7px;
   padding:6px 9px;
   background:#e94747;
@@ -348,6 +376,48 @@ a{color:inherit}
   color:#6441c5;
   border:1px solid #dfd5ff;
   box-shadow:none;
+}
+
+/* PREMIUM TILTED BLINKING LATEST RIBBON */
+
+.image-label.latest-ribbon{
+  top:17px;
+  left:12px;
+  padding:7px 13px;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+  background:linear-gradient(115deg,#ff355d,#c20d39);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:5px 2px 5px 2px;
+  box-shadow:0 5px 13px rgba(194,13,57,.28);
+  transform:rotate(-8deg) skewX(-5deg);
+  transform-origin:center;
+  animation:latestPulse 1.4s ease-in-out infinite;
+}
+
+.image-label.latest-ribbon::after{
+  content:"";
+  position:absolute;
+  right:-6px;
+  top:4px;
+  width:7px;
+  height:80%;
+  background:#8f0929;
+  transform:skewY(-30deg);
+  z-index:-1;
+}
+
+@keyframes latestPulse{
+  0%,100%{
+    opacity:1;
+    filter:brightness(1);
+  }
+  50%{
+    opacity:.72;
+    filter:brightness(1.15);
+  }
 }
 
 /* CARD CONTENT */
@@ -480,21 +550,30 @@ a{color:inherit}
   background:#f5f7fb;
 }
 
-.btn-primary{
-  border:1px solid var(--blue);
+/* START SERIES BUTTON */
+
+.btn-start{
   color:#fff;
-  background:var(--blue);
-  box-shadow:0 4px 10px rgba(40,100,232,.14);
+  background:linear-gradient(135deg,#2864e8,#1749b8);
+  border:1px solid #2864e8;
+  box-shadow:0 4px 12px rgba(40,100,232,.19);
+  padding:0 14px;
 }
 
-.btn-primary:hover{
-  background:var(--blue-dark);
+.btn-start:hover{
+  background:linear-gradient(135deg,#194fc7,#123d9d);
+  box-shadow:0 6px 16px rgba(40,100,232,.26);
+  transform:translateY(-1px);
 }
 
 .btn-active{
   border-color:#159957;
   background:#159957;
   box-shadow:0 4px 10px rgba(21,153,87,.13);
+}
+
+.btn-active:hover{
+  background:#107b45;
 }
 
 /* MAHAPACK CARD */
@@ -515,45 +594,146 @@ a{color:inherit}
 
 /* FOOTER */
 
-.footer{
+.site-footer{
+  margin-top:44px;
+  padding:30px max(24px,calc((100% - 1320px)/2)) 0;
+  background:#151d33;
+  color:#c4ccdc;
+  border-top:3px solid #3169e8;
+}
+
+.footer-inner{
   max-width:1320px;
-  width:calc(100% - 48px);
-  margin:42px auto 0;
-  padding:19px 0 24px;
-  border-top:1px solid #e4e9f1;
+  margin:0 auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:15px;
-  color:#8a94a5;
+  gap:25px;
+  padding-bottom:25px;
+}
+
+.footer-logo{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+}
+
+.footer-logo img{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+}
+
+.footer-brand p{
+  margin-top:9px;
+  color:#9ba8c1;
+  font-size:10px;
+  line-height:1.7;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.footer-links a{
+  text-decoration:none;
+  color:#c4ccdc;
+  font-size:10px;
+  transition:color .2s;
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  max-width:1320px;
+  margin:0 auto;
+  min-height:48px;
+  border-top:1px solid rgba(255,255,255,.12);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  color:#8f9bb2;
   font-size:9px;
 }
 
-.footer strong{
-  color:#566176;
-}
-
-/* MOBILE NAV */
+/* RESPONSIVE */
 
 @media(max-width:1050px){
-  .header{gap:12px;padding:0 14px}
-  .nav a{padding:9px 7px;font-size:10px}
-  .account-name{max-width:85px}
-  .exam-grid{gap:13px}
-  .card-body{padding:15px}
-  .image-wrap{height:155px}
-  .card-title{font-size:15px}
-  .card-footer{align-items:flex-start;flex-direction:column}
-  .card-buttons{width:100%}
-  .card-buttons .btn{flex:1}
+  .header{
+    gap:12px;
+    padding:0 14px;
+  }
+
+  .nav a{
+    padding:9px 7px;
+    font-size:10px;
+  }
+
+  .account-name{
+    max-width:85px;
+  }
+
+  .exam-grid{
+    gap:13px;
+  }
+
+  .card-body{
+    padding:15px;
+  }
+
+  .image-wrap{
+    height:155px;
+  }
+
+  .card-title{
+    font-size:15px;
+  }
+
+  .card-footer{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .card-buttons{
+    width:100%;
+  }
+
+  .card-buttons .btn{
+    flex:1;
+  }
 }
 
 @media(max-width:760px){
-  .header-shell{padding:12px 12px 0}
-  .header{min-height:63px;border-radius:17px}
-  .menu-toggle{display:block}
-  .account-name{display:none}
-  .account{gap:7px}
+  .header-shell{
+    padding:12px 12px 0;
+  }
+
+  .header{
+    min-height:63px;
+    border-radius:17px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .account-name{
+    display:none;
+  }
+
+  .account{
+    gap:7px;
+  }
+
   .nav{
     display:none;
     position:absolute;
@@ -568,37 +748,147 @@ a{color:inherit}
     align-items:stretch;
     flex-direction:column;
   }
-  .nav.open{display:flex}
-  .nav a{font-size:12px;padding:12px}
-  .page{width:calc(100% - 28px);margin-top:27px}
-  .welcome{align-items:flex-start;flex-direction:column;margin-bottom:27px}
-  .welcome h1{font-size:27px}
-  .purchase-link{padding:11px 14px}
-  .exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .section-heading h2{font-size:17px}
-  .section-note{font-size:9px}
-  .footer{width:calc(100% - 28px)}
+
+  .nav.open{
+    display:flex;
+  }
+
+  .nav a{
+    font-size:12px;
+    padding:12px;
+  }
+
+  .page{
+    width:calc(100% - 28px);
+    margin-top:27px;
+  }
+
+  .welcome{
+    align-items:flex-start;
+    flex-direction:column;
+    margin-bottom:27px;
+  }
+
+  .welcome h1{
+    font-size:27px;
+  }
+
+  .purchase-link{
+    padding:11px 14px;
+  }
+
+  .exam-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .section-heading h2{
+    font-size:17px;
+  }
+
+  .section-note{
+    font-size:9px;
+  }
+
+  .site-footer{
+    padding:25px 18px 0;
+    margin-top:32px;
+  }
+
+  .footer-inner{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .footer-links{
+    gap:13px;
+  }
+
+  .footer-bottom{
+    align-items:flex-start;
+    flex-direction:column;
+    justify-content:center;
+    padding:12px 0;
+    line-height:1.7;
+  }
 }
 
 @media(max-width:520px){
-  .brand-name{font-size:15px}
-  .brand-tagline{font-size:7px}
-  .brand img{width:34px;height:34px}
-  .logout{padding:9px;font-size:9px}
-  .avatar{width:32px;height:32px}
-  .page{margin-top:23px}
-  .welcome h1{font-size:25px}
-  .welcome p{font-size:11px}
-  .section-heading{align-items:flex-start}
-  .section-note{padding-top:4px}
-  .exam-grid{grid-template-columns:1fr;gap:15px}
-  .image-wrap{height:auto;min-height:0;aspect-ratio:2.15/1;padding:8px}
-  .card-body{padding:17px}
-  .card-title{font-size:17px}
-  .card-footer{flex-direction:row;align-items:center}
-  .card-buttons{width:auto}
-  .card-buttons .btn{flex:initial}
-  .footer{flex-direction:column;text-align:center;gap:8px}
+  .brand-name{
+    font-size:15px;
+  }
+
+  .brand-tagline{
+    font-size:7px;
+  }
+
+  .brand img{
+    width:34px;
+    height:34px;
+  }
+
+  .logout{
+    padding:9px;
+    font-size:9px;
+  }
+
+  .avatar{
+    width:32px;
+    height:32px;
+  }
+
+  .page{
+    margin-top:23px;
+  }
+
+  .welcome h1{
+    font-size:25px;
+  }
+
+  .welcome p{
+    font-size:11px;
+  }
+
+  .section-heading{
+    align-items:flex-start;
+  }
+
+  .section-note{
+    padding-top:4px;
+  }
+
+  .exam-grid{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .image-wrap{
+    height:auto;
+    min-height:0;
+    aspect-ratio:2.15/1;
+    padding:8px;
+  }
+
+  .card-body{
+    padding:17px;
+  }
+
+  .card-title{
+    font-size:17px;
+  }
+
+  .card-footer{
+    flex-direction:row;
+    align-items:center;
+  }
+
+  .card-buttons{
+    width:auto;
+  }
+
+  .card-buttons .btn{
+    flex:initial;
+  }
 }
 </style>
 </head>
@@ -617,8 +907,12 @@ a{color:inherit}
     </a>
 
     <nav class="nav" id="mainNav">
-      <a class="current" href="new-firebase-dashboard.html">Dashboard</a>
-      <a href="joa/new-joa-series.html">JOA (IT)</a>
+      <a class="current nav-joa-link" href="joa-series.html">
+        JOA (IT) 2026
+        <span class="previous-tag">PREVIOUS</span>
+      </a>
+
+      <a href="joa/new-joa-series.html">New JOA</a>
       <a href="patwari/patwari-series.html">Patwari</a>
       <a href="mahapack/joa-mahapack.html">MahaPack</a>
       <a href="mahapack/my-purchase.html">My Purchases</a>
@@ -627,7 +921,11 @@ a{color:inherit}
     <div class="account">
       <div class="avatar" id="userAvatar">U</div>
       <div class="account-name" id="userName">Student</div>
-      <button class="logout" id="logoutBtn" type="button">Logout</button>
+
+      <button class="logout" id="logoutBtn" type="button">
+        Logout
+      </button>
+
       <button class="menu-toggle" id="menuToggle"
               type="button" aria-label="Open navigation"
               aria-expanded="false">☰</button>
@@ -664,18 +962,22 @@ a{color:inherit}
         <h2 id="seriesHeading">Explore Test Series</h2>
         <p>Select a series to view details, plans and available tests.</p>
       </div>
+
       <div class="section-note">Choose your goal</div>
     </div>
 
     <div class="exam-grid">
 
-      <!-- JOA IT -->
+      <!-- JOA IT NEW SERIES -->
 
       <article class="exam-card">
         <div class="image-wrap">
           <img src="joa/joa-banner.jpg"
                alt="JOA IT mock test series">
-          <span class="image-label">LATEST</span>
+
+          <span class="image-label latest-ribbon">
+            ✦ LATEST ✦
+          </span>
         </div>
 
         <div class="card-body">
@@ -701,28 +1003,34 @@ a{color:inherit}
             <div>
               <div class="price-label">SERIES PRICE</div>
               <div class="price">₹149</div>
-              <div class="price-note" id="joaAccessNote">Full series access</div>
+              <div class="price-note" id="joaAccessNote">
+                Full series access
+              </div>
             </div>
 
             <div class="card-buttons">
-              <a class="btn btn-details"
-                 href="joa/new-joa-series.html">Details</a>
+              <a class="btn btn-start"
+                 href="joa/new-joa-series.html">Start Series →</a>
 
-              <a class="btn btn-primary"
+              <a class="btn btn-start"
                  id="joaAction"
-                 href="payment.html?product=joa">Buy Now</a>
+                 href="payment.html?product=joa"
+                 style="display:none">Buy Now</a>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- PATWARI -->
+      <!-- PATWARI SERIES -->
 
       <article class="exam-card">
         <div class="image-wrap">
           <img src="patwari/patwari-banner.jpg"
                alt="HP Patwari mock test series">
-          <span class="image-label standard">HP EXAM SERIES</span>
+
+          <span class="image-label standard">
+            HP EXAM SERIES
+          </span>
         </div>
 
         <div class="card-body">
@@ -748,28 +1056,34 @@ a{color:inherit}
             <div>
               <div class="price-label">SERIES PRICE</div>
               <div class="price">₹149</div>
-              <div class="price-note" id="patwariAccessNote">Full series access</div>
+              <div class="price-note" id="patwariAccessNote">
+                Full series access
+              </div>
             </div>
 
             <div class="card-buttons">
-              <a class="btn btn-details"
-                 href="patwari/patwari-series.html">Details</a>
+              <a class="btn btn-start"
+                 href="patwari/patwari-series.html">Start Series →</a>
 
-              <a class="btn btn-primary"
+              <a class="btn btn-start"
                  id="patwariAction"
-                 href="payment.html?product=patwari">Buy Now</a>
+                 href="payment.html?product=patwari"
+                 style="display:none">Buy Now</a>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- MAHAPACK -->
+      <!-- JOA IT MAHAPACK -->
 
       <article class="exam-card mahapack-card">
         <div class="image-wrap">
           <img src="mahapack/joa-mahapack-banner.jpg"
                alt="JOA IT MahaPack">
-          <span class="image-label premium">COMPLETE PREP</span>
+
+          <span class="image-label premium">
+            COMPLETE PREP
+          </span>
         </div>
 
         <div class="card-body">
@@ -794,7 +1108,9 @@ a{color:inherit}
           <div class="card-footer">
             <div>
               <div class="price-label">FLEXIBLE PLANS</div>
-              <div class="price" style="font-size:18px">Explore Plans</div>
+              <div class="price" style="font-size:18px">
+                Explore Plans
+              </div>
               <div class="price-note">Choose a suitable plan</div>
             </div>
 
@@ -813,9 +1129,31 @@ a{color:inherit}
 
 </main>
 
-<footer class="footer">
-  <div>© 2026 <strong>HPMockShashtra</strong></div>
-  <div>Prepare with purpose. Progress with confidence.</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a href="homepage.html" class="footer-logo">
+        <img src="logo.png" alt="HPMockShashtra">
+        <span>HPMockShashtra</span>
+      </a>
+
+      <p>Prepare with purpose. Progress with confidence.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="homepage.html">Home</a>
+      <a href="joa-series.html">JOA (IT) 2026</a>
+      <a href="patwari/patwari-series.html">Patwari</a>
+      <a href="mahapack/my-purchase.html">My Purchases</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 HPMockShashtra. All rights reserved.</span>
+    <span>Built for Himachal Pradesh aspirants.</span>
+  </div>
 </footer>
 
 <script type="module">
@@ -835,8 +1173,10 @@ const userNameEl = document.getElementById("userName");
 const welcomeNameEl = document.getElementById("welcomeName");
 const userAvatarEl = document.getElementById("userAvatar");
 const logoutBtn = document.getElementById("logoutBtn");
+
 const joaAction = document.getElementById("joaAction");
 const patwariAction = document.getElementById("patwariAction");
+
 const joaAccessNote = document.getElementById("joaAccessNote");
 const patwariAccessNote = document.getElementById("patwariAccessNote");
 
@@ -849,6 +1189,7 @@ function professionalName(user) {
   }
 
   const emailName = (user.email || "").split("@")[0].trim();
+
   if (!emailName) return "Student";
 
   const cleaned = emailName
@@ -863,7 +1204,7 @@ function professionalName(user) {
 }
 
 /*
-  Matches the access structure in your Firestore rules:
+  Checks the existing Firestore access structure:
   purchasedAt <= current time < expiresAt
 */
 function hasActiveTimedAccess(access) {
@@ -892,9 +1233,10 @@ function hasActiveTimedAccess(access) {
          expiresMs > now;
 }
 
-function setContinueButton(button, url) {
+function setContinueButton(button, url, label) {
   button.href = url;
-  button.textContent = "Continue →";
+  button.textContent = label;
+  button.style.display = "inline-flex";
   button.classList.add("btn-active");
 }
 
@@ -908,35 +1250,50 @@ async function loadUserAccess(user) {
     const data = accessSnap.data();
 
     /*
-      Legacy JOA access remains supported:
+      Preserve legacy JOA access:
       joaitFullSeries === true
     */
     const legacyJoa = data.joaitFullSeries === true;
     const newJoa = hasActiveTimedAccess(data.joaAccess);
 
     if (legacyJoa || newJoa) {
-      setContinueButton(joaAction, "joa/joa-progress.html");
-      joaAccessNote.textContent = legacyJoa && !newJoa
-        ? "Existing full-series access"
-        : "Access active";
+      setContinueButton(
+        joaAction,
+        "joa/joa-progress.html",
+        "Continue →"
+      );
+
+      joaAccessNote.textContent =
+        legacyJoa && !newJoa
+          ? "Existing full-series access"
+          : "Access active";
+    } else {
+      joaAction.style.display = "none";
     }
 
     if (hasActiveTimedAccess(data.patwariAccess)) {
-      setContinueButton(patwariAction, "patwari/patwari-progress.html");
+      setContinueButton(
+        patwariAction,
+        "patwari/patwari-progress.html",
+        "Continue →"
+      );
+
       patwariAccessNote.textContent = "Access active";
+    } else {
+      patwariAction.style.display = "none";
     }
 
     /*
-      MahaPack has a different nested access structure
-      (courses / packs). Its plans page remains available
-      from the Explore Plans button.
+      MahaPack retains its existing plans page.
+      No assumptions are made about its separate access structure.
     */
+
   } catch (error) {
     console.error("Unable to read course access:", error);
 
     /*
-      Firestore errors must not sign the user out.
-      Only the auth observer below decides login status.
+      A Firestore error must not sign the user out.
+      Login redirection is controlled only by auth state.
     */
   }
 }
@@ -969,18 +1326,23 @@ logoutBtn.addEventListener("click", async () => {
   }
 });
 
+/* MOBILE NAVIGATION */
+
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 menuToggle.addEventListener("click", () => {
   const isOpen = mainNav.classList.toggle("open");
+
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.textContent = isOpen ? "×" : "☰";
 });
 
 document.addEventListener("click", (event) => {
-  if (!mainNav.contains(event.target) &&
-      !menuToggle.contains(event.target)) {
+  if (
+    !mainNav.contains(event.target) &&
+    !menuToggle.contains(event.target)
+  ) {
     mainNav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.textContent = "☰";
