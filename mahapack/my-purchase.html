@@ -1024,91 +1024,113 @@ function addRow(product,value,paymentProduct){
   $("purchaseTableBody").appendChild(row);
 }
 
+function isActiveAccess(value, requirePurchaseDate = false){
+  if(value === true) return true; // Explicit legacy boolean access only.
+  if(!value || typeof value !== "object" || Array.isArray(value)) return false;
+
+  const now = Date.now();
+  const expiry = toDate(value.expiresAt);
+  if(!expiry || expiry.getTime() <= now) return false;
+
+  if(requirePurchaseDate){
+    const purchased = toDate(value.purchasedAt);
+    if(!purchased || purchased.getTime() > now) return false;
+  }
+  return true;
+}
+
 function render(data){
   const tbody=$("purchaseTableBody");
   tbody.innerHTML="";
 
   const items=[];
   const seen=new Set();
+  const now=Date.now();
+  const COURSE_IDS=Object.keys(PRODUCTS).filter(id =>
+    !["ms-office", "computer-master"].includes(id)
+  );
+  const OFFICE_COURSES=["ms-word","ms-excel","ms-powerpoint","ms-access"];
+  const newPack=data?.mahapackAccess?.packs || {};
+  const oldPack=data?.computerAccess?.packs || {};
+  const newCourses=data?.mahapackAccess?.courses || {};
+  const oldCourses=data?.computerAccess?.courses || {};
 
-  function addUnique(product,value,paymentProduct,key){
-    const uniqueKey=key || product.name;
-    if(seen.has(uniqueKey)) return;
-    seen.add(uniqueKey);
-    items.push({product,value:value || {},paymentProduct});
+  function addCourse(id, value, source){
+    const product=PRODUCTS[id];
+    if(!product || !isActiveAccess(value, source === "new-course")) return;
+    const key=`course:${id}`;
+    if(seen.has(key)) return;
+    seen.add(key);
+    items.push({product,value,paymentProduct:id});
   }
 
-  // Existing individual-subject and pack access.
-  const computerCourses=data?.computerAccess?.courses || {};
-  const computerPacks=data?.computerAccess?.packs || {};
-  const mahapack=data?.mahapackAccess || {};
-  const mahapackCourses=mahapack?.courses || {};
-  const mahapackPacks=mahapack?.packs || {};
+  function addCourseWithPack(id, packValue, packKey){
+    const product=PRODUCTS[id];
+    if(!product || !isActiveAccess(packValue)) return;
+    const key=`course:${id}`;
+    if(seen.has(key)) return;
+    seen.add(key);
+    // Show the individual subject, never the pack itself.
+    items.push({product,value:packValue,paymentProduct:id,sourcePack:packKey});
+  }
 
-  [computerCourses,mahapackCourses].forEach(collection=>{
-    Object.entries(collection).forEach(([id,value])=>{
-      const product=PRODUCTS[id];
-      if(product && value) addUnique(product,value,id,`course:${id}`);
+  // 1) A valid Computer Master / MahaPack grants all 15 individual subjects.
+  // It must not create a separate "JOA IT Maha Pack" row.
+  const masterPack = isActiveAccess(newPack["computer-master"])
+    ? newPack["computer-master"]
+    : (isActiveAccess(oldPack["computer-master"]) ? oldPack["computer-master"] : null);
+
+  if(masterPack){
+    COURSE_IDS.forEach(id => addCourseWithPack(id, masterPack, "computer-master"));
+  } else {
+    // 2) MS Office pack grants exactly four individual Office subjects.
+    const officePack = isActiveAccess(newPack["ms-office"])
+      ? newPack["ms-office"]
+      : (isActiveAccess(oldPack["ms-office"]) ? oldPack["ms-office"] : null);
+
+    if(officePack){
+      OFFICE_COURSES.forEach(id => addCourseWithPack(id, officePack, "ms-office"));
+    }
+
+    // 3) Individual courses are shown only if that specific access is active.
+    COURSE_IDS.forEach(id => {
+      addCourse(id, newCourses[id], "new-course");
+      addCourse(id, oldCourses[id], "legacy-course");
     });
-  });
+  }
 
-  [computerPacks,mahapackPacks].forEach(collection=>{
-    Object.entries(collection).forEach(([id,value])=>{
-      const product=PRODUCTS[id];
-      if(product && value) addUnique(product,value,id,`pack:${id}`);
-    });
-  });
-
-  // Dedicated JOA access (supports object-based access and legacy boolean flags).
+  // Dedicated JOA access: new rules require purchasedAt <= now < expiresAt.
   const joaValue=data?.joaAccess;
-  if(joaValue && (typeof joaValue==="object" || joaValue===true)){
-    const value=typeof joaValue==="object" ? joaValue : {};
-    addUnique({
-      name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
-    },value,"joa","access:joa");
-  }
-  if(data?.joaitFullSeries===true){
-    addUnique({
-      name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-      desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
-    },{},"joa","access:joa");
+  if(isActiveAccess(joaValue, true) || data?.joaitFullSeries===true){
+    const value=isActiveAccess(joaValue, true) ? joaValue : {};
+    if(!seen.has("access:joa")){
+      seen.add("access:joa");
+      items.push({product:{
+        name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
+        desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
+      },value,paymentProduct:"joa"});
+    }
   }
 
-  // Dedicated Patwari access (supports object-based access and legacy boolean flags).
+  // Patwari access follows the same active expiry window as Firestore Rules.
   const patwariValue=data?.patwariAccess;
-  if(patwariValue && (typeof patwariValue==="object" || patwariValue===true)){
-    const value=typeof patwariValue==="object" ? patwariValue : {};
-    addUnique({
-      name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      desc:"Full Series access",start:"../patwari/patwari-series.html"
-    },value,"patwari","access:patwari");
-  }
-  if(data?.patwariFullSeries===true){
-    addUnique({
-      name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
-      desc:"Full Series access",start:"../patwari/patwari-series.html"
-    },{},"patwari","access:patwari");
+  if(isActiveAccess(patwariValue, true)){
+    const value=patwariValue;
+    if(!seen.has("access:patwari")){
+      seen.add("access:patwari");
+      items.push({product:{
+        name:"HP Patwari Full Series",type:"Mock Test Series",icon:"P",
+        desc:"Full Series access",start:"../patwari/patwari-series.html"
+      },value,paymentProduct:"patwari"});
+    }
   }
 
-  // If MahaPack is stored as one top-level access record rather than nested packs/courses,
-  // show it as a single purchase. Nested course/pack entries above take precedence.
-  if(mahapack && (mahapack===true || (typeof mahapack==="object" &&
-      !Object.keys(mahapackCourses).length && !Object.keys(mahapackPacks).length))){
-    const value=typeof mahapack==="object" ? mahapack : {};
-    addUnique({
-      name:"JOA IT Maha Pack",type:"Maha Pack",icon:"♛",
-      image:"icon/computer-fundamentals.png",desc:"All 15 computer subjects",
-      start:"joa-mahapack.html"
-    },value,"computer-master","access:mahapack");
-  }
-
-  // Active purchases first, expired purchases afterward.
+  // Active purchases first, expired/invalid records are not shown at all.
   items.sort((a,b)=>{
     const aExpiry=toDate(a.value?.expiresAt);
     const bExpiry=toDate(b.value?.expiresAt);
-    const aActive=!aExpiry || aExpiry.getTime()>Date.now();
-    const bActive=!bExpiry || bExpiry.getTime()>Date.now();
+    const aActive=!aExpiry || aExpiry.getTime()>now;
+    const bActive=!bExpiry || bExpiry.getTime()>now;
     if(aActive!==bActive) return aActive ? -1 : 1;
     return (a.product.name||"").localeCompare(b.product.name||"");
   });
@@ -1118,11 +1140,11 @@ function render(data){
   const count=items.length;
   $("tableShell").style.display=count ? "block" : "none";
   $("emptyState").style.display=count ? "none" : "block";
-  if (!count) {
-    $("emptyState").innerHTML = `
+  if(!count){
+    $("emptyState").innerHTML=`
       <div class="empty-icon">▣</div>
       <h3>No Purchases Yet</h3>
-      <p>No purchased courses or test series are linked to your account.</p>
+      <p>No active purchased courses or test series are linked to your account.</p>
     `;
   }
 }
@@ -1176,7 +1198,7 @@ onAuthStateChanged(auth, async user => {
         const accessValue = accessData.computerAccess?.courses?.[courseId]
           || accessData.mahapackAccess?.courses?.[courseId];
 
-        if (accessValue && typeof accessValue === "object") {
+        if (accessValue && typeof accessValue === "object" && isActiveAccess(accessValue, accessData.mahapackAccess?.courses?.[courseId] === accessValue)) {
           if (attemptSnap.exists()) {
             accessValue.submitted = true;
             accessValue.attemptStatus = "submitted";
