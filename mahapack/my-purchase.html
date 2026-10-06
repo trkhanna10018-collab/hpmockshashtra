@@ -776,7 +776,7 @@ body:before,body:after{display:none!important}
           <th style="width:15%">Valid Till</th>
           <th style="width:9%">Access</th>
           <th style="width:13%">Attempt Status</th>
-          <th style="width:13%">Action</th>
+          <th style="width:13%">Status / Action</th>
         </tr>
       </thead>
       <tbody id="purchaseTableBody"></tbody>
@@ -1009,16 +1009,19 @@ function addRow(product,value,paymentProduct){
       </span>
     </td>
     <td>
-      <span class="attempt-badge ${submitted?"attempted":(inProgress?"in-progress":"not-attempted")}">
-        ${escapeHtml(visibleAttemptStatus)}
-      </span>
+      ${hideAction ? "" : `
+        <span class="attempt-badge ${submitted?"attempted":(inProgress?"in-progress":"not-attempted")}">
+          ${escapeHtml(visibleAttemptStatus)}
+        </span>
+      `}
     </td>
     <td class="${hideAction ? "no-action-cell" : ""}">
-      ${hideAction ? "" : (
-        active
-        ? `<a class="action-btn ${submitted ? "review-btn" : "start-btn"}" href="${escapeHtml(actionUrl)}">${actionLabel}</a>`
-        : `<a class="action-btn renew-btn" href="${escapeHtml(renew)}">Renew →</a>`
-      )}
+      ${hideAction
+        ? `<span class="status-badge ${active?"active":"expired"}"><span class="status-dot"></span>${active?"Active":"Expired"}</span>`
+        : (active
+          ? `<a class="action-btn ${submitted ? "review-btn" : "start-btn"}" href="${escapeHtml(actionUrl)}">${actionLabel}</a>`
+          : `<a class="action-btn renew-btn" href="${escapeHtml(renew)}">Renew →</a>`
+        )}
     </td>
   `;
 
