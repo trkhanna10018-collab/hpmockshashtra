@@ -775,8 +775,7 @@ body:before,body:after{display:none!important}
           <th style="width:14%">Purchased On</th>
           <th style="width:15%">Valid Till</th>
           <th style="width:9%">Access</th>
-          <th style="width:13%">Attempt Status</th>
-          <th style="width:13%">Status / Action</th>
+          <th style="width:22%">Status</th>
         </tr>
       </thead>
       <tbody id="purchaseTableBody"></tbody>
@@ -986,7 +985,7 @@ function addRow(product,value,paymentProduct){
   const visibleAttemptStatus = submitted ? "Attempted" : (inProgress ? "In Progress" : "Not Attempted");
   const actionUrl = submitted ? "mahapack-study.html" : start;
   const actionLabel = submitted ? "Review →" : "Start →";
-  const hideAction = product.noAction === true;
+  const hideAction = true; // This page is status-only: never show Start, Review, or Renew buttons.
 
   const row=document.createElement("tr");
 
@@ -1008,20 +1007,8 @@ function addRow(product,value,paymentProduct){
         <span class="status-dot"></span>${active?"Active":"Expired"}
       </span>
     </td>
-    <td>
-      ${hideAction ? "" : `
-        <span class="attempt-badge ${submitted?"attempted":(inProgress?"in-progress":"not-attempted")}">
-          ${escapeHtml(visibleAttemptStatus)}
-        </span>
-      `}
-    </td>
-    <td class="${hideAction ? "no-action-cell" : ""}">
-      ${hideAction
-        ? `<span class="status-badge ${active?"active":"expired"}"><span class="status-dot"></span>${active?"Active":"Expired"}</span>`
-        : (active
-          ? `<a class="action-btn ${submitted ? "review-btn" : "start-btn"}" href="${escapeHtml(actionUrl)}">${actionLabel}</a>`
-          : `<a class="action-btn renew-btn" href="${escapeHtml(renew)}">Renew →</a>`
-        )}
+    <td class="no-action-cell">
+      <span class="status-badge ${active?"active":"expired"}"><span class="status-dot"></span>${active?"Active":"Expired"}</span>
     </td>
   `;
 
