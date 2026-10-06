@@ -8,7 +8,7 @@
 <style>
 :root{--bg:#f3f6fb;--card:#fff;--text:#172033;--muted:#667085;--primary:#2457d6;--soft:#eaf0ff;--border:#dce3ee;--good:#147a43;--goodbg:#e9f8ef;--bad:#b42318;--badbg:#fff0ef}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-.wrap{width:min(980px,100% - 28px);margin:24px auto}.header,.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 26px #1428500d}
+.wrap{width:100%;max-width:none;margin:0 auto;padding:18px 24px}.header,.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 26px #1428500d}
 .header{padding:22px;margin-bottom:16px}.topline{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
 h1{font-size:clamp(22px,4vw,30px);margin:0 0 8px}.sub{color:var(--muted);margin:0;line-height:1.5}
 .pill{border-radius:999px;padding:8px 12px;background:var(--soft);color:var(--primary);font-weight:700;font-size:13px;white-space:nowrap}
@@ -24,8 +24,8 @@ button{border:0;border-radius:10px;padding:11px 16px;font-size:15px;font-weight:
 .side-title{font-weight:700;margin:0 0 12px}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .result{display:none;margin-top:16px}.score{font-size:28px;font-weight:800;margin:0 0 8px}
 .explanation{padding:14px;border-radius:12px;background:#f5f7fb;border:1px solid var(--border);margin-top:12px;line-height:1.6}
-.review-item{padding:14px 0;border-top:1px solid var(--border)}.review-item h3{font-size:16px;line-height:1.5}.review-item p{line-height:1.5;margin:7px 0}.small{font-size:13px;color:var(--muted)}
-@media(max-width:720px){.wrap{width:calc(100% - 20px);max-width:none;margin:10px auto}.layout{display:block}.panel{padding:16px}.question-meta{flex-wrap:wrap}#questionText{font-size:19px}.option{padding:13px 11px;gap:9px}.actions button{flex:1;min-width:120px}}
+.small{font-size:13px;color:var(--muted)}
+@media(max-width:720px){.wrap{width:100%;padding:10px}.layout{display:block}.panel{padding:16px}.question-meta{flex-wrap:wrap}#questionText{font-size:19px}.option{padding:13px 11px;gap:9px}.actions button{flex:1;min-width:120px}}
 </style>
 </head>
 <body>
@@ -35,9 +35,7 @@ button{border:0;border-radius:10px;padding:11px 16px;font-size:15px;font-weight:
 <section class="panel">
 <div class="question-meta"><span id="questionCounter">Question 1</span><span id="answeredCounter">Answered: 0</span></div>
 <h2 id="questionText">Loading questions…</h2><div id="optionsArea"></div>
-<div class="actions"><button class="btn-secondary" id="prevBtn" type="button">← Previous</button><button class="btn-primary" id="nextBtn" type="button">Next →</button></div>
-<div class="actions"><button class="btn-danger" id="submitBtn" type="button">Submit Test</button></div>
-<p class="small">Answers and scores are kept only in this browser page. They are not saved to Firebase or a server.</p>
+<div class="actions"><button class="btn-primary" id="nextBtn" type="button">Next →</button><button class="btn-danger" id="submitBtn" type="button" style="display:none">Submit Test</button></div>
 </section>
 </div>
 <section class="panel result" id="resultPanel" aria-live="polite"><p class="score" id="scoreText"></p><p id="resultSummary"></p><div id="reviewArea"></div><div class="actions"><button class="btn-primary" id="restartBtn" type="button">Try Again</button></div></section>
@@ -114,8 +112,8 @@ const QUESTIONS = [
       if(submitted){if(i===normalize(q.answer))label.classList.add("correct");else if(answers[current]===i)label.classList.add("wrong");}
       $("optionsArea").appendChild(label);
     });
-    $("prevBtn").disabled=current===0||submitted;
-    $("nextBtn").disabled=current===QUESTIONS.length-1||submitted;
+    $("nextBtn").style.display = current === QUESTIONS.length - 1 ? "none" : "inline-block";
+    $("submitBtn").style.display = current === QUESTIONS.length - 1 ? "inline-block" : "none";
     $("submitBtn").disabled=submitted;renderPalette();
   }
   function submit(){
@@ -127,24 +125,30 @@ const QUESTIONS = [
     $("quizLayout").style.display="none";$("resultPanel").style.display="block";
     $("scoreText").textContent=`${score} / ${QUESTIONS.length}`;
     $("resultSummary").textContent=`Correct: ${score} · Incorrect: ${answers.filter((a,i)=>a!==null&&a!==normalize(QUESTIONS[i].answer)).length} · Unanswered: ${unanswered}`;
-    $("reviewArea").innerHTML="";
-    QUESTIONS.forEach((q,i)=>{
-      const item=document.createElement("div");item.className="review-item";
-      const h=document.createElement("h3");h.textContent=`${i+1}. ${bilingual(q.en,q.hi)}`;
-      const your=document.createElement("p");your.textContent=`Your answer: ${answers[i]===null?"Not answered":letters[answers[i]]}`;
-      const ci=normalize(q.answer);const correct=document.createElement("p");
-      correct.textContent=`Correct answer: ${letters[ci]||"Not set"}${q.options&&q.options[ci]?" — "+bilingual(q.options[ci].en,q.options[ci].hi):""}`;
-      const exp=document.createElement("div");exp.className="explanation";exp.textContent=`Explanation: ${q.explanation||"No explanation provided."}`;
-      item.append(h,your,correct,exp);$("reviewArea").appendChild(item);
-    });
+    $("reviewArea").innerHTML = `<div class="explanation"><strong>For more practice, visit <a href="https://hpmockshashtra.in" target="_blank" rel="noopener noreferrer">hpmockshashtra.in</a>.</strong><br>अधिक अभ्यास के लिए हमारी वेबसाइट पर जाएँ।</div>`;
     window.scrollTo({top:0,behavior:"smooth"});
   }
-  $("prevBtn").addEventListener("click",()=>{if(current>0){current--;render();}});
-  $("nextBtn").addEventListener("click",()=>{if(current<QUESTIONS.length-1){current++;render();}});
+  $("nextBtn").addEventListener("click",()=>{if(current<QUESTIONS.length-1){if(answers[current]===null && !confirm("You have not selected an answer. Continue anyway?"))return;current++;render();}});
   $("submitBtn").addEventListener("click",submit);
   $("restartBtn").addEventListener("click",()=>location.reload());
   render();
 })();
 </script>
+
+<script>
+// Basic copy deterrents. These discourage casual copying only; browser-delivered
+// questions cannot be made completely uncopyable with client-side code.
+document.addEventListener("contextmenu", event => event.preventDefault());
+document.addEventListener("copy", event => event.preventDefault());
+document.addEventListener("cut", event => event.preventDefault());
+document.addEventListener("dragstart", event => event.preventDefault());
+document.addEventListener("keydown", event => {
+  const key = (event.key || "").toLowerCase();
+  if ((event.ctrlKey || event.metaKey) && ["c","x","u","s","p"].includes(key)) {
+    event.preventDefault();
+  }
+});
+</script>
+
 </body>
 </html>
