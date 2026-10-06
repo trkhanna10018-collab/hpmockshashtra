@@ -57,7 +57,15 @@ button,input{font:inherit}
 .brand-title{font-weight:900;font-size:20px;white-space:nowrap}
 .brand-hp{color:#fff}.brand-mock{color:#39a9ff}.brand-shashtra{color:#fff}
 .tagline{font-size:8px;color:#93a7c2}
-.header-links{display:flex;gap:7px}
+ .header-links{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.nav-badge{
+  display:inline-block;margin-left:5px;padding:2px 5px;border-radius:5px;
+  font-size:8px;font-weight:950;letter-spacing:.45px;line-height:1.25;
+  vertical-align:middle;color:#071329;background:linear-gradient(120deg,#ffe78a,#ffb547);
+  box-shadow:0 0 10px #ffc85766;animation:navBadgeBlink 1.15s ease-in-out infinite;
+}
+.nav-badge.previous{color:#fff;background:linear-gradient(120deg,#a855f7,#ec4899);box-shadow:0 0 10px #c084fc66}
+@keyframes navBadgeBlink{0%,100%{opacity:1;filter:brightness(1)}50%{opacity:.58;filter:brightness(1.25)}}
 .header-links a{
   font-size:12px;font-weight:800;color:#e2eaff;
   padding:9px 13px;border-radius:10px;
@@ -731,11 +739,12 @@ body:before,body:after{display:none!important}
 
     <div class="header-links">
       <a href="../homepage.html">Home</a>
-      <a href="../joa/new-joa-series.html">JOA (IT)</a>
+      <a href="../joa/new-joa-series.html">JOA (IT) <span class="nav-badge">LATEST</span></a>
+      <a href="../joa/joa-series.html">JOA (IT) <span class="nav-badge previous">PREVIOUS</span></a>
       <a href="../patwari/patwari-series.html">Patwari</a>
-      <a href="../about.html">About</a>
       <a href="mahapack-plans.html">Premium Plans</a>
-      <a href="my-purchase.html">My Purchases</a>
+      <a href="joa-mahapack.html">MahaPack</a>
+      <a href="../firebase-dashboard.html">Dashboard</a>
      </div>
 
     <div class="header-user">
@@ -746,11 +755,12 @@ body:before,body:after{display:none!important}
 
     <div class="mobile-menu" id="mobileMenu">
       <a href="../homepage.html">Home</a>
-      <a href="../joa/new-joa-series.html">JOA (IT)</a>
+      <a href="../joa/new-joa-series.html">JOA (IT) <span class="nav-badge">LATEST</span></a>
+      <a href="../joa/joa-series.html">JOA (IT) <span class="nav-badge previous">PREVIOUS</span></a>
       <a href="../patwari/patwari-series.html">Patwari</a>
-      <a href="../about.html">About</a>
       <a href="mahapack-plans.html">Premium Plans</a>
-      <a href="my-purchase.html">My Purchases</a>
+      <a href="joa-mahapack.html">MahaPack</a>
+      <a href="../firebase-dashboard.html">Dashboard</a>
       <div class="menu-user" id="mobileMenuAccount">Your account</div>
       <a href="#" class="menu-logout" id="menuLogoutBtn">Logout</a>
     </div>
