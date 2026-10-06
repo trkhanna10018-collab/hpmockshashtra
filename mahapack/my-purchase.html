@@ -986,6 +986,7 @@ function addRow(product,value,paymentProduct){
   const visibleAttemptStatus = submitted ? "Attempted" : (inProgress ? "In Progress" : "Not Attempted");
   const actionUrl = submitted ? "mahapack-study.html" : start;
   const actionLabel = submitted ? "Review →" : "Start →";
+  const hideAction = product.noAction === true;
 
   const row=document.createElement("tr");
 
@@ -1012,12 +1013,12 @@ function addRow(product,value,paymentProduct){
         ${escapeHtml(visibleAttemptStatus)}
       </span>
     </td>
-    <td>
-      ${
+    <td class="${hideAction ? "no-action-cell" : ""}">
+      ${hideAction ? "" : (
         active
         ? `<a class="action-btn ${submitted ? "review-btn" : "start-btn"}" href="${escapeHtml(actionUrl)}">${actionLabel}</a>`
         : `<a class="action-btn renew-btn" href="${escapeHtml(renew)}">Renew →</a>`
-      }
+      )}
     </td>
   `;
 
@@ -1099,17 +1100,25 @@ function render(data){
     });
   }
 
-  // Dedicated JOA access: new rules require purchasedAt <= now < expiresAt.
+  // Previous JOA (IT) 2026 series: legacy access is controlled by joaitFullSeries.
+  // It is intentionally a separate purchase row and has no action button.
+  if(data?.joaitFullSeries === true && !seen.has("access:joa-2026")){
+    seen.add("access:joa-2026");
+    items.push({product:{
+      name:"JOA (IT) 2026",type:"Mock Test Series",icon:"J",
+      desc:"Previous JOA (IT) 2026 test series",start:"../joa/joa-series.html",noAction:true
+    },value:{},paymentProduct:"access:joa-2026"});
+  }
+
+  // Latest JOA (IT) series: new access is valid only for purchasedAt <= now < expiresAt.
+  // It is intentionally independent of joaitFullSeries and has no action button.
   const joaValue=data?.joaAccess;
-  if(isActiveAccess(joaValue, true) || data?.joaitFullSeries===true){
-    const value=isActiveAccess(joaValue, true) ? joaValue : {};
-    if(!seen.has("access:joa")){
-      seen.add("access:joa");
-      items.push({product:{
-        name:"JOA (IT) Full Series",type:"Mock Test Series",icon:"J",
-        desc:"15 mock tests • Full Series access",start:"../joa/new-joa-series.html"
-      },value,paymentProduct:"joa"});
-    }
+  if(isActiveAccess(joaValue, true) && !seen.has("access:joa-latest")){
+    seen.add("access:joa-latest");
+    items.push({product:{
+      name:"JOA (IT)",type:"Mock Test Series",icon:"J",
+      desc:"Latest JOA (IT) test series",start:"../joa/new-joa-series.html",noAction:true
+    },value:joaValue,paymentProduct:"access:joa-latest"});
   }
 
   // Patwari access follows the same active expiry window as Firestore Rules.
