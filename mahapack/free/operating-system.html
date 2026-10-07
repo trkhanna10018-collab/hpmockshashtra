@@ -1684,17 +1684,24 @@ button:active{
 
 <script>
 
-// ===================== EDIT THIS SECTION =====================
-// 1) Change the title below.
-// 2) Add/edit/remove question objects inside QUESTIONS.
-// 3) answer must be "A", "B", "C", or "D".
-// No separate question file is needed.
+// ================= UNIVERSAL TEST SETTINGS =================
+// For each new test, normally change ONLY these two things:
+// 1) QUIZ_TITLE below.
+// 2) The QUESTIONS list below (add/remove question objects as needed).
+// Save/copy this HTML using a DIFFERENT filename for every test page.
+// Progress storage is generated automatically from the page filename,
+// so you do not need to manually change a storage key.
+// Each question must have: en, hi, 4 options (each with en and hi), answer.
+// answer must be "A", "B", "C", or "D".
 
-const QUIZ_TITLE = "Operating System Practice Test";
+const QUIZ_TITLE = "My Practice Test";
 
-// Keep this key unique for each separate free-test page.
-// Completed result/progress is remembered for 24 hours, including after Back navigation.
-const TEST_STORAGE_KEY = "hpmockshashtra_free_test_os_practice_v1";
+// Automatically unique per HTML filename; no manual editing needed.
+const TEST_PAGE_ID = (window.location.pathname.split("/").pop() || "practice-test.html")
+  .replace(/\.html?$/i, "")
+  .toLowerCase()
+  .replace(/[^a-z0-9_-]+/g, "-");
+const TEST_STORAGE_KEY = "hpmockshashtra_free_test_" + TEST_PAGE_ID + "_v1";
 const TEST_SAVE_DURATION_MS = 24 * 60 * 60 * 1000;
 
 
