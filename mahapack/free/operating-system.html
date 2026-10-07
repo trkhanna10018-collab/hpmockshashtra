@@ -1692,6 +1692,11 @@ button:active{
 
 const QUIZ_TITLE = "Operating System Practice Test";
 
+// Keep this key unique for each separate free-test page.
+// Completed result/progress is remembered for 24 hours, including after Back navigation.
+const TEST_STORAGE_KEY = "hpmockshashtra_free_test_os_practice_v1";
+const TEST_SAVE_DURATION_MS = 24 * 60 * 60 * 1000;
+
 
 const QUESTIONS = [
 
@@ -2267,6 +2272,56 @@ const QUESTIONS = [
 
   let current = 0;
   let submitted = false;
+  let languageMode = "both";
+
+  const saveProgress = () => {
+    try {
+      localStorage.setItem(TEST_STORAGE_KEY, JSON.stringify({
+        savedAt: Date.now(),
+        answers,
+        current,
+        submitted,
+        languageMode
+      }));
+    } catch (error) {
+      // The test still works if browser storage is unavailable.
+    }
+  };
+
+  const clearSavedProgress = () => {
+    try { localStorage.removeItem(TEST_STORAGE_KEY); } catch (error) {}
+  };
+
+  const restoreProgress = () => {
+    try {
+      const raw = localStorage.getItem(TEST_STORAGE_KEY);
+      if (!raw) return null;
+      const saved = JSON.parse(raw);
+      if (!saved.savedAt || Date.now() - saved.savedAt > TEST_SAVE_DURATION_MS) {
+        clearSavedProgress();
+        return null;
+      }
+      if (!Array.isArray(saved.answers) || saved.answers.length !== QUESTIONS.length) {
+        clearSavedProgress();
+        return null;
+      }
+      saved.answers.forEach((value, index) => {
+        answers[index] = Number.isInteger(value) && value >= 0 && value <= 3 ? value : null;
+      });
+      current = Number.isInteger(saved.current)
+        ? Math.max(0, Math.min(saved.current, Math.max(0, QUESTIONS.length - 1)))
+        : 0;
+      submitted = saved.submitted === true;
+      languageMode = ["both", "en", "hi"].includes(saved.languageMode)
+        ? saved.languageMode : "both";
+      return saved;
+    } catch (error) {
+      clearSavedProgress();
+      return null;
+    }
+  };
+
+  const restoredProgress = restoreProgress();
 
   const $ = id =>
     document.getElementById(id);
@@ -2288,9 +2343,6 @@ const QUESTIONS = [
             .toUpperCase()
         );
 
-  let languageMode = "both";
-
-
   const bilingual = (en,hi) => {
 
     if(languageMode === "en")
@@ -2305,6 +2357,8 @@ const QUESTIONS = [
 
 
   function render(){
+
+    saveProgress();
 
     if(!QUESTIONS.length){
 
@@ -2494,7 +2548,12 @@ const QUESTIONS = [
 
 
     submitted = true;
+    saveProgress();
+    showResult();
+  }
 
+
+  function showResult(){
 
     let score = 0;
 
@@ -2568,6 +2627,8 @@ const QUESTIONS = [
   }
 
 
+  $("languageMode").value = languageMode;
+
   $("languageMode")
     .addEventListener(
       "change",
@@ -2575,6 +2636,7 @@ const QUESTIONS = [
         languageMode =
           e.target.value;
 
+        saveProgress();
         render();
       }
     );
@@ -2605,11 +2667,29 @@ const QUESTIONS = [
   $("restartBtn")
     .addEventListener(
       "click",
-      ()=>location.reload()
+      ()=>{
+        clearSavedProgress();
+        answers.fill(null);
+        current = 0;
+        submitted = false;
+        languageMode = "both";
+        $("languageMode").value = languageMode;
+        $("resultPanel").style.display = "none";
+        $("quizLayout").style.display = "grid";
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     );
 
 
-  render();
+  if (submitted) {
+    // Recreate the completed result immediately when returning with Back.
+    showResult();
+  } else {
+    $("resultPanel").style.display = "none";
+    $("quizLayout").style.display = "grid";
+    render();
+  }
 
 })();
 
