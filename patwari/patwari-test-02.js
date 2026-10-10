@@ -2822,7 +2822,7 @@ const questions = [
 
   explanation: "सिरमौर रियासत में प्रजा मंडल आंदोलन का उद्देश्य निरंकुश शासन के विरुद्ध आवाज उठाना और जनता के अधिकारों तथा उत्तरदायी शासन की माँग करना था। इसलिए सही उत्तर सिरमौर प्रजा मंडल है।"
 },
-```js id="history21"
+
 // Question 99
 {
   en: "The Dhami firing incident of 16 July 1939, an important episode in the history of Praja Mandal movements in Himachal Pradesh, was primarily associated with the demand for:",
@@ -2937,7 +2937,7 @@ const questions = [
 
   explanation: "हिमाचल प्रदेश राज्य अधिनियम, 1970 के प्रावधानों के तहत हिमाचल प्रदेश को पूर्ण राज्य का दर्जा मिला। यह अधिनियम 25 जनवरी 1971 से प्रभावी हुआ।"
 },
-```js id="history23"
+
 // Question 103
 {
   en: "After Himachal Pradesh attained full statehood in 1971, which of the following correctly describes the administrative reorganisation carried out in 1972?",
