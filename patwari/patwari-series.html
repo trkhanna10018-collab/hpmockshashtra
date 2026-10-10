@@ -933,7 +933,7 @@ onAuthStateChanged(auth, updateHeader);
       freeTestAction.className = "action-btn attempted-btn";
       freeTestAction.textContent = "Review Test";
       freeTestAction.removeAttribute("target");
-      freeTestAction.href = `patwari-study-mode.html?test=${FREE_TEST_ID}`;
+      freeTestAction.href = `/patwari/patwari-study-mode.html?test=${FREE_TEST_ID}`;
       freeTestAction.onclick = null;
     }
 
@@ -1012,7 +1012,7 @@ onAuthStateChanged(auth, updateHeader);
       test.action.className = "action-btn attempted-btn";
       test.action.textContent = "Review Test";
       test.action.removeAttribute("target");
-      test.action.href = `patwari-study-mode.html?test=${test.testId}`;
+      test.action.href = `/patwari/patwari-study-mode.html?test=${test.testId}`;
       test.action.onclick = null;
     }
 
