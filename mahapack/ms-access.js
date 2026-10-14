@@ -1,3861 +1,4472 @@
 export const QUESTIONS = [
-
-  // Question 1
-{ 
-  en: "Which statement most accurately defines a computer in terms of its fundamental operation?",
-  hi: "कंप्यूटर के मूलभूत कार्य के संदर्भ में निम्नलिखित में से कौन-सा कथन कंप्यूटर को सबसे सटीक रूप से परिभाषित करता है?", 
+// Question 1
+{
+  en: "What is Microsoft Access?",
+  hi: "Microsoft Access क्या है?",
 
   options: [
     {
-      en: "A machine that can independently understand and make decisions without predefined instructions",
-      hi: "एक ऐसी मशीन जो पूर्वनिर्धारित निर्देशों के बिना स्वतंत्र रूप से समझ सकती है और निर्णय ले सकती है"
+      en: "A word processing software",
+      hi: "वर्ड प्रोसेसिंग सॉफ्टवेयर"
     },
     {
-      en: "An electronic programmable device that accepts data as input, processes it according to a set of instructions, and produces output",
-      hi: "एक इलेक्ट्रॉनिक प्रोग्राम योग्य उपकरण जो डेटा को इनपुट के रूप में स्वीकार करता है, निर्देशों के अनुसार उसे संसाधित करता है और आउटपुट उत्पन्न करता है"
+      en: "A database management system",
+      hi: "डेटाबेस मैनेजमेंट सिस्टम"
     },
     {
-      en: "A mechanical device designed exclusively for performing arithmetic calculations",
-      hi: "एक यांत्रिक उपकरण जिसे केवल अंकगणितीय गणनाएँ करने के लिए डिज़ाइन किया गया है"
+      en: "A presentation software",
+      hi: "प्रेजेंटेशन सॉफ्टवेयर"
     },
     {
-      en: "A communication device that converts all forms of information directly into human language",
-      hi: "एक संचार उपकरण जो सभी प्रकार की सूचनाओं को सीधे मानव भाषा में परिवर्तित करता है"
+      en: "A web browser",
+      hi: "वेब ब्राउज़र"
     }
   ],
 
   answer: "B",
 
-  explanation: "Computer data को input लेकर दिए गए instructions के अनुसार process करता है और output देता है।"
+  explanation: "Microsoft Access is a database management system used to create, organize, store, and manage databases."
 },
-
 
 // Question 2
 {
-  en: "Which sequence best represents the basic Input-Process-Output (IPO) model of a computer?",
-  hi: "कौन-सा क्रम कंप्यूटर के मूल इनपुट-प्रोसेस-आउटपुट (IPO) मॉडल को सबसे अच्छी तरह दर्शाता है?",
+  en: "Which of the following best defines a database?",
+  hi: "निम्नलिखित में से कौन डेटाबेस को सबसे अच्छी तरह परिभाषित करता है?",
 
   options: [
     {
-      en: "Input → Processing → Output",
-      hi: "इनपुट → प्रोसेसिंग → आउटपुट"
+      en: "A collection of related data organized for easy access and management",
+      hi: "आसान पहुँच और प्रबंधन के लिए व्यवस्थित संबंधित डेटा का संग्रह"
     },
     {
-      en: "Processing → Input → Output",
-      hi: "प्रोसेसिंग → इनपुट → आउटपुट"
+      en: "A program used only for creating presentations",
+      hi: "केवल प्रेजेंटेशन बनाने के लिए उपयोग किया जाने वाला प्रोग्राम"
     },
     {
-      en: "Output → Input → Processing",
-      hi: "आउटपुट → इनपुट → प्रोसेसिंग"
+      en: "A collection of computer hardware components",
+      hi: "कंप्यूटर हार्डवेयर घटकों का संग्रह"
     },
     {
-      en: "Input → Output → Processing",
-      hi: "इनपुट → आउटपुट → प्रोसेसिंग"
+      en: "A document containing only text",
+      hi: "केवल टेक्स्ट वाला दस्तावेज़"
     }
   ],
 
   answer: "A",
 
-  explanation: "Basic IPO cycle में पहले Input, फिर Processing और अंत में Output होता है।"
+  explanation: "A database is an organized collection of related data that can be easily accessed, managed, and updated."
 },
-
 
 // Question 3
 {
-  en: "Which characteristic most fundamentally distinguishes a general-purpose computer from a device designed to perform only a fixed set of calculations?",
-  hi: "कौन-सी विशेषता सामान्य प्रयोजन वाले कंप्यूटर को केवल निश्चित प्रकार की गणनाएँ करने वाले उपकरण से अलग करती है?",
+  en: "What does DBMS stand for?",
+  hi: "DBMS का पूर्ण रूप क्या है?",
 
   options: [
     {
-      en: "It performs operations at high speed",
-      hi: "यह कार्यों को उच्च गति से करता है"
+      en: "Data Backup Management System",
+      hi: "डेटा बैकअप मैनेजमेंट सिस्टम"
     },
     {
-      en: "It can store data and results",
-      hi: "यह डेटा और परिणामों को संग्रहीत कर सकता है"
+      en: "Database Memory Storage",
+      hi: "डेटाबेस मेमोरी स्टोरेज"
     },
     {
-      en: "It can be programmed to perform different tasks by executing different sets of instructions",
-      hi: "इसे विभिन्न निर्देशों के सेट द्वारा अलग-अलग कार्य करने के लिए प्रोग्राम किया जा सकता है"
+      en: "Database Management System",
+      hi: "डेटाबेस मैनेजमेंट सिस्टम"
     },
     {
-      en: "It uses electronic components for processing",
-      hi: "यह प्रोसेसिंग के लिए इलेक्ट्रॉनिक घटकों का उपयोग करता है"
+      en: "Digital Business Management Software",
+      hi: "डिजिटल बिजनेस मैनेजमेंट सॉफ्टवेयर"
     }
   ],
 
   answer: "C",
 
-  explanation: "General-purpose computer को अलग-अलग instructions देकर विभिन्न tasks के लिए program किया जा सकता है।"
+  explanation: "DBMS stands for Database Management System. It is software used to create, store, retrieve, and manage data in a database."
 },
-
 
 // Question 4
 {
-  en: "Why is a computer generally described as a programmable data-processing machine rather than an independent thinking machine?",
-  hi: "कंप्यूटर को स्वतंत्र रूप से सोचने वाली मशीन के बजाय प्रोग्राम योग्य डेटा-प्रसंस्करण मशीन क्यों कहा जाता है?",
+  en: "Which statement best describes a relational database?",
+  hi: "कौन-सा कथन रिलेशनल डेटाबेस का सबसे अच्छा वर्णन करता है?",
 
   options: [
     {
-      en: "Because a computer cannot store data permanently",
-      hi: "क्योंकि कंप्यूटर डेटा को स्थायी रूप से संग्रहीत नहीं कर सकता"
+      en: "It stores data only in the form of images",
+      hi: "यह डेटा को केवल चित्रों के रूप में संग्रहीत करता है"
     },
     {
-      en: "Because a computer processes data according to instructions provided to it",
-      hi: "क्योंकि कंप्यूटर उसे दिए गए निर्देशों के अनुसार डेटा को संसाधित करता है"
+      en: "It organizes related data into tables consisting of rows and columns",
+      hi: "यह संबंधित डेटा को पंक्तियों और स्तंभों वाली तालिकाओं में व्यवस्थित करता है"
     },
     {
-      en: "Because a computer can perform only mathematical calculations",
-      hi: "क्योंकि कंप्यूटर केवल गणितीय गणनाएँ ही कर सकता है"
+      en: "It stores data only in a single text file",
+      hi: "यह डेटा को केवल एक टेक्स्ट फ़ाइल में संग्रहीत करता है"
     },
     {
-      en: "Because a computer cannot produce output without a printer",
-      hi: "क्योंकि कंप्यूटर प्रिंटर के बिना आउटपुट उत्पन्न नहीं कर सकता"
+      en: "It is used only for creating charts",
+      hi: "इसका उपयोग केवल चार्ट बनाने के लिए किया जाता है"
     }
   ],
 
   answer: "B",
 
-  explanation: "Computer दिए गए instructions के अनुसार data process करता है; यह स्वयं instructions निर्धारित नहीं करता।"
+  explanation: "A relational database organizes data into tables made up of rows and columns. Relationships can be established between tables using common fields."
 },
-
 
 // Question 5
 {
-  en: "Which of the following correctly represents the four main functions of a computer?",
-  hi: "निम्नलिखित में से कौन-सा कंप्यूटर के चार मुख्य कार्यों को सही रूप से दर्शाता है?",
+  en: "Which of the following is a primary use of MS Access?",
+  hi: "निम्नलिखित में से MS Access का मुख्य उपयोग क्या है?",
 
   options: [
     {
-      en: "Input, Processing, Output and Storage",
-      hi: "इनपुट, प्रोसेसिंग, आउटपुट और स्टोरेज"
+      en: "Creating and managing databases",
+      hi: "डेटाबेस बनाना और उनका प्रबंधन करना"
     },
     {
-      en: "Input, Calculation, Printing and Communication",
-      hi: "इनपुट, गणना, प्रिंटिंग और संचार"
+      en: "Editing videos",
+      hi: "वीडियो संपादित करना"
     },
     {
-      en: "Reading, Writing, Printing and Scanning",
-      hi: "रीडिंग, राइटिंग, प्रिंटिंग और स्कैनिंग"
+      en: "Designing operating systems",
+      hi: "ऑपरेटिंग सिस्टम डिज़ाइन करना"
     },
     {
-      en: "Data Entry, Typing, Processing and Networking",
-      hi: "डेटा एंट्री, टाइपिंग, प्रोसेसिंग और नेटवर्किंग"
+      en: "Creating web browsers",
+      hi: "वेब ब्राउज़र बनाना"
     }
   ],
 
   answer: "A",
 
-  explanation: "कंप्यूटर के चार मुख्य कार्य Input, Processing, Output और Storage हैं।"
+  explanation: "MS Access is primarily used to create and manage databases, including tables, queries, forms, and reports."
 },
-
 // Question 6
 {
-  en: "Which statement correctly distinguishes data from information?",
-  hi: "निम्नलिखित में से कौन-सा कथन डेटा और सूचना के बीच सही अंतर बताता है?",
+  en: "Which MS Access object is primarily used to retrieve specific data based on specified conditions?",
+  hi: "निर्धारित शर्तों के आधार पर विशिष्ट डेटा प्राप्त करने के लिए मुख्य रूप से किस MS Access ऑब्जेक्ट का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Data is always meaningful, whereas information is always meaningless",
-      hi: "डेटा हमेशा अर्थपूर्ण होता है, जबकि सूचना हमेशा अर्थहीन होती है"
+      en: "Form",
+      hi: "फॉर्म"
     },
     {
-      en: "Data consists of raw facts, while information is processed and meaningful data",
-      hi: "डेटा कच्चे तथ्यों से मिलकर बना होता है, जबकि सूचना संसाधित और अर्थपूर्ण डेटा होती है"
+      en: "Report",
+      hi: "रिपोर्ट"
     },
     {
-      en: "Data and information are exactly the same in all contexts",
-      hi: "सभी संदर्भों में डेटा और सूचना बिल्कुल समान होते हैं"
+      en: "Query",
+      hi: "क्वेरी"
     },
     {
-      en: "Information is collected first and data is produced after processing",
-      hi: "सूचना पहले एकत्र की जाती है और प्रोसेसिंग के बाद डेटा उत्पन्न होता है"
+      en: "Table",
+      hi: "टेबल"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "Data कच्चे facts होते हैं, जबकि processing के बाद प्राप्त अर्थपूर्ण data को information कहा जाता है।"
+  explanation: "A query retrieves specific data from one or more tables based on specified criteria."
 },
-
 
 // Question 7
 {
-  en: "In a basic computer working cycle, what normally happens immediately after the computer receives input data?",
-  hi: "कंप्यूटर के मूल कार्य-चक्र में input data प्राप्त करने के तुरंत बाद सामान्यतः क्या होता है?",
+  en: "Which MS Access object provides a user-friendly interface for entering and viewing data?",
+  hi: "डेटा दर्ज करने और देखने के लिए उपयोगकर्ता-अनुकूल इंटरफेस कौन-सा MS Access ऑब्जेक्ट प्रदान करता है?",
 
   options: [
     {
-      en: "The data is automatically deleted",
-      hi: "डेटा स्वतः डिलीट हो जाता है"
+      en: "Query",
+      hi: "क्वेरी"
     },
     {
-      en: "The processed result is displayed",
-      hi: "प्रोसेस किया गया परिणाम प्रदर्शित होता है"
+      en: "Form",
+      hi: "फॉर्म"
     },
     {
-      en: "The input data is processed according to the given instructions",
-      hi: "दिए गए निर्देशों के अनुसार input data को process किया जाता है"
+      en: "Report",
+      hi: "रिपोर्ट"
     },
     {
-      en: "The computer shuts down after storing the input",
-      hi: "इनपुट को स्टोर करने के बाद कंप्यूटर बंद हो जाता है"
+      en: "Relationship",
+      hi: "रिलेशनशिप"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Input प्राप्त होने के बाद data को दिए गए instructions के अनुसार process किया जाता है।"
+  explanation: "A form provides a user-friendly interface for entering, viewing, and editing database records."
 },
-
 
 // Question 8
 {
-  en: "A student enters the marks 72, 85, 68 and 75 into a computer. The computer calculates their average and displays 75. Which option correctly identifies the stages involved?",
-  hi: "एक छात्र 72, 85, 68 और 75 अंक कंप्यूटर में दर्ज करता है। कंप्यूटर उनका औसत निकालकर 75 प्रदर्शित करता है। निम्नलिखित में से कौन-सा विकल्प शामिल चरणों की सही पहचान करता है?",
+  en: "Which statement correctly describes a basic difference between MS Access and Microsoft Excel?",
+  hi: "कौन-सा कथन MS Access और Microsoft Excel के बीच मूल अंतर का सही वर्णन करता है?",
 
   options: [
     {
-      en: "72, 85, 68, 75 = Information; 75 = Data",
-      hi: "72, 85, 68, 75 = सूचना; 75 = डेटा"
+      en: "Excel is primarily a database management system, while Access is primarily a spreadsheet program",
+      hi: "Excel मुख्य रूप से डेटाबेस मैनेजमेंट सिस्टम है, जबकि Access मुख्य रूप से स्प्रेडशीट प्रोग्राम है"
     },
     {
-      en: "Entered marks = Input/Data; calculation = Processing; 75 = Output/Information",
-      hi: "दर्ज किए गए अंक = Input/Data; गणना = Processing; 75 = Output/Information"
+      en: "Access is designed for database management, while Excel is primarily designed for spreadsheets and numerical data analysis",
+      hi: "Access डेटाबेस प्रबंधन के लिए बनाया गया है, जबकि Excel मुख्य रूप से स्प्रेडशीट और संख्यात्मक डेटा विश्लेषण के लिए बनाया गया है"
     },
     {
-      en: "Entered marks = Output; calculation = Storage; 75 = Input",
-      hi: "दर्ज किए गए अंक = Output; गणना = Storage; 75 = Input"
+      en: "Access is a word processor, while Excel is a presentation program",
+      hi: "Access एक वर्ड प्रोसेसर है, जबकि Excel एक प्रेजेंटेशन प्रोग्राम है"
     },
     {
-      en: "Entered marks = Processing; calculation = Input; 75 = Storage",
-      hi: "दर्ज किए गए अंक = Processing; गणना = Input; 75 = Storage"
+      en: "Both Access and Excel are primarily word processing applications",
+      hi: "Access और Excel दोनों मुख्य रूप से वर्ड प्रोसेसिंग एप्लिकेशन हैं"
     }
   ],
 
   answer: "B",
 
-  explanation: "दर्ज अंक Input/Data हैं, average निकालना Processing है और 75 प्राप्त Output/Information है।"
+  explanation: "MS Access is designed for managing relational databases, while Microsoft Excel is primarily used for spreadsheets, calculations, and numerical data analysis."
 },
-
 
 // Question 9
 {
-  en: "A computer is asked to perform the same large-scale calculation repeatedly. Which combination of characteristics most directly explains why it can continue producing consistent results without becoming tired or losing concentration?",
-  hi: "कंप्यूटर को एक ही बड़े पैमाने की गणना बार-बार करने के लिए कहा जाता है। कौन-सी विशेषताओं का संयोजन यह सबसे सीधे समझाता है कि वह बिना थके या एकाग्रता खोए लगातार समान परिणाम दे सकता है?",
+  en: "While working in Microsoft Access, a user wants to change the command displayed on the Ribbon without switching to another Ribbon tab. Which statement best explains the relationship between Ribbon tabs, groups, and commands?",
+  hi: "Microsoft Access में काम करते समय, एक उपयोगकर्ता किसी दूसरे Ribbon टैब पर जाए बिना Ribbon पर प्रदर्शित कमांड बदलना चाहता है। Ribbon टैब, ग्रुप और कमांड के बीच संबंध को कौन-सा कथन सबसे अच्छी तरह समझाता है?",
 
   options: [
     {
-      en: "Versatility and reliability",
-      hi: "बहुमुखी प्रतिभा और विश्वसनीयता"
+      en: "Ribbon tabs contain commands directly, while groups are displayed only in the Navigation Pane.",
+      hi: "Ribbon टैब में कमांड सीधे होते हैं, जबकि ग्रुप केवल Navigation Pane में प्रदर्शित होते हैं।"
     },
     {
-      en: "Diligence and accuracy",
-      hi: "कार्यनिष्ठा और शुद्धता"
+      en: "Ribbon tabs organize groups, and groups contain related commands for performing specific tasks.",
+      hi: "Ribbon टैब में ग्रुप व्यवस्थित होते हैं और ग्रुप में विशिष्ट कार्य करने के लिए संबंधित कमांड होते हैं।"
     },
     {
-      en: "Speed and versatility",
-      hi: "गति और बहुमुखी प्रतिभा"
+      en: "Groups organize Ribbon tabs, while commands determine which database object opens in the Work Area.",
+      hi: "ग्रुप Ribbon टैब को व्यवस्थित करते हैं, जबकि कमांड यह निर्धारित करते हैं कि Work Area में कौन-सा डेटाबेस ऑब्जेक्ट खुलेगा।"
     },
     {
-      en: "Reliability and storage capacity",
-      hi: "विश्वसनीयता और संग्रहण क्षमता"
+      en: "Commands are organized under the File Tab, while Ribbon tabs provide only shortcuts to database objects.",
+      hi: "कमांड File टैब के अंतर्गत व्यवस्थित होते हैं, जबकि Ribbon टैब केवल डेटाबेस ऑब्जेक्ट के शॉर्टकट प्रदान करते हैं।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Diligence के कारण कंप्यूटर बिना थके कार्य दोहराता है और accuracy के कारण सही परिणाम देता है।"
+  explanation: "Ribbon tabs organize commands into groups, and each group contains related commands used to perform specific tasks."
 },
-
 
 // Question 10
 {
-  en: "A computer processes millions of records rapidly, but its results are incorrect because the instructions or input data contain errors. Which conclusion best reflects the relationship between speed and accuracy?",
-  hi: "एक कंप्यूटर लाखों records को तेजी से process करता है, लेकिन उसके परिणाम गलत हैं क्योंकि instructions या input data में errors हैं। कौन-सा निष्कर्ष speed और accuracy के बीच संबंध को सबसे सही दर्शाता है?",
+  en: "A user clicks the File tab in Microsoft Access and sees options such as Open, Save, and Print instead of the usual database-editing commands. Which explanation is correct?",
+  hi: "एक उपयोगकर्ता Microsoft Access में File टैब पर क्लिक करता है और सामान्य डेटाबेस-संपादन कमांड के बजाय Open, Save और Print जैसे विकल्प देखता है। इसका सही कारण क्या है?",
 
   options: [
     {
-      en: "High processing speed guarantees accurate results",
-      hi: "उच्च processing speed सही परिणामों की गारंटी देती है"
+      en: "The Navigation Pane has temporarily replaced the Ribbon.",
+      hi: "Navigation Pane ने अस्थायी रूप से Ribbon का स्थान ले लिया है।"
     },
     {
-      en: "Accuracy depends only on the processing speed of the computer",
-      hi: "Accuracy केवल कंप्यूटर की processing speed पर निर्भर करती है"
+      en: "The Work Area has switched to the design view of the selected object.",
+      hi: "Work Area चयनित ऑब्जेक्ट के Design View में बदल गया है।"
     },
     {
-      en: "A computer can be fast while still producing incorrect results if the input or instructions are erroneous",
-      hi: "यदि input या instructions में errors हों, तो कंप्यूटर तेज होने के बावजूद गलत परिणाम दे सकता है"
+      en: "The File tab opens Backstage view, which provides file-related and database-management options.",
+      hi: "File टैब Backstage View खोलता है, जो फ़ाइल-संबंधी और डेटाबेस-प्रबंधन विकल्प प्रदान करता है।"
     },
     {
-      en: "Accuracy and speed are two names for the same characteristic",
-      hi: "Accuracy और speed एक ही विशेषता के दो नाम हैं"
+      en: "The Quick Access Toolbar has expanded to display commands unavailable on the Ribbon.",
+      hi: "Quick Access Toolbar उन कमांड को दिखाने के लिए विस्तृत हो गया है जो Ribbon पर उपलब्ध नहीं हैं।"
     }
   ],
 
   answer: "C",
 
-  explanation: "Computer की speed सही परिणाम की गारंटी नहीं देती; गलत input या instructions से गलत output मिल सकता है।"
+  explanation: "Clicking the File tab opens Backstage view, which provides file-related options such as Open, Save, and Print, along with other database-management options."
 },
-
 // Question 11
 {
-  en: "A single computer system is used for accounting, scientific calculations, document preparation, data analysis and multimedia applications, without changing its fundamental hardware for each task. Which characteristic is most directly demonstrated?",
-  hi: "एक ही कंप्यूटर सिस्टम का उपयोग accounting, scientific calculations, document preparation, data analysis और multimedia applications के लिए किया जाता है, बिना प्रत्येक कार्य के लिए उसके मूल hardware को बदले। कौन-सी विशेषता सबसे सीधे प्रदर्शित होती है?",
+  en: "A database contains several tables, queries, forms, and reports. A user wants to locate a particular query and open it without navigating through the database manually. Which interface component is primarily designed for this purpose?",
+  hi: "एक डेटाबेस में कई टेबल, क्वेरी, फॉर्म और रिपोर्ट हैं। एक उपयोगकर्ता डेटाबेस में मैन्युअल रूप से खोजे बिना किसी विशेष क्वेरी को ढूँढ़कर खोलना चाहता है। इस उद्देश्य के लिए मुख्य रूप से किस इंटरफेस घटक को डिज़ाइन किया गया है?",
 
   options: [
     {
-      en: "Diligence",
-      hi: "कार्यनिष्ठा"
+      en: "Status Bar",
+      hi: "स्टेटस बार"
     },
     {
-      en: "Versatility",
-      hi: "बहुमुखी प्रतिभा"
+      en: "Navigation Pane",
+      hi: "नेविगेशन पेन"
     },
     {
-      en: "Accuracy",
-      hi: "शुद्धता"
+      en: "View Buttons",
+      hi: "व्यू बटन"
     },
     {
-      en: "Reliability",
-      hi: "विश्वसनीयता"
+      en: "Quick Access Toolbar",
+      hi: "क्विक एक्सेस टूलबार"
     }
   ],
 
   answer: "B",
 
-  explanation: "एक ही कंप्यूटर द्वारा विभिन्न प्रकार के कार्य करना उसकी versatility को दर्शाता है।"
+  explanation: "The Navigation Pane displays database objects such as tables, queries, forms, and reports, allowing users to locate and open them easily."
 },
-
 
 // Question 12
 {
-  en: "Which situation best demonstrates the characteristic of diligence rather than merely speed?",
-  hi: "निम्नलिखित में से कौन-सी स्थिति केवल speed के बजाय diligence की विशेषता को सबसे अच्छी तरह दर्शाती है?",
+  en: "A user opens two database objects in separate Object Tabs. After selecting the second tab, the first object is no longer visible, but it has not been closed. Which interpretation is most accurate?",
+  hi: "एक उपयोगकर्ता दो डेटाबेस ऑब्जेक्ट अलग-अलग Object Tabs में खोलता है। दूसरा टैब चुनने के बाद पहला ऑब्जेक्ट दिखाई नहीं देता, लेकिन वह बंद नहीं हुआ है। इसकी सबसे सटीक व्याख्या क्या है?",
 
   options: [
     {
-      en: "A computer completes a calculation in a fraction of a second",
-      hi: "कंप्यूटर एक calculation को एक सेकंड के अंश में पूरा करता है"
+      en: "The first object has been removed from the database but remains temporarily cached.",
+      hi: "पहला ऑब्जेक्ट डेटाबेस से हटा दिया गया है, लेकिन अस्थायी रूप से कैश में बना हुआ है।"
     },
     {
-      en: "A computer produces the same result after processing identical instructions repeatedly for a long period without fatigue or loss of concentration",
-      hi: "कंप्यूटर लंबे समय तक समान instructions को बार-बार process करने के बाद बिना थके या एकाग्रता खोए समान परिणाम देता है"
+      en: "The Navigation Pane has replaced the first object's contents with the second object's contents.",
+      hi: "Navigation Pane ने पहले ऑब्जेक्ट की सामग्री को दूसरे ऑब्जेक्ट की सामग्री से बदल दिया है।"
     },
     {
-      en: "A computer is used for accounting as well as entertainment",
-      hi: "कंप्यूटर का उपयोग accounting के साथ-साथ entertainment के लिए भी किया जाता है"
+      en: "The second object has overwritten the first object's data in the Work Area.",
+      hi: "दूसरे ऑब्जेक्ट ने Work Area में पहले ऑब्जेक्ट के डेटा को ओवरराइट कर दिया है।"
     },
     {
-      en: "A computer produces correct results when correct data and instructions are supplied",
-      hi: "सही data और instructions दिए जाने पर कंप्यूटर सही परिणाम देता है"
+      en: "The selected Object Tab determines which open object is currently displayed in the Work Area.",
+      hi: "चुना गया Object Tab यह निर्धारित करता है कि Work Area में वर्तमान में कौन-सा खुला ऑब्जेक्ट प्रदर्शित होगा।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "बिना थके लंबे समय तक लगातार कार्य करना कंप्यूटर की diligence को दर्शाता है।"
+  explanation: "Selecting an Object Tab displays that open object in the Work Area. The other object remains open until it is explicitly closed."
 },
-
 
 // Question 13
 {
-  en: "Which characteristic of a computer refers to its ability to store a large amount of data and retrieve it when required?",
-  hi: "कंप्यूटर की कौन-सी विशेषता बड़ी मात्रा में डेटा को संग्रहीत करने और आवश्यकता पड़ने पर उसे पुनः प्राप्त करने की क्षमता को दर्शाती है?",
+  en: "Consider the following statements about the Quick Access Toolbar in Microsoft Access:\n\n1. It provides convenient access to frequently used commands.\n2. It can provide access to commands independently of the currently selected Ribbon tab.\n3. Its primary purpose is to display and organize database objects such as tables and queries.\n\nWhich statements are correct?",
+  hi: "Microsoft Access में Quick Access Toolbar के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. यह बार-बार उपयोग किए जाने वाले कमांड तक सुविधाजनक पहुँच प्रदान करता है।\n2. यह वर्तमान में चुने गए Ribbon टैब से स्वतंत्र रूप से कमांड तक पहुँच प्रदान कर सकता है।\n3. इसका मुख्य उद्देश्य टेबल और क्वेरी जैसे डेटाबेस ऑब्जेक्ट को प्रदर्शित और व्यवस्थित करना है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Storage Capacity",
-      hi: "स्टोरेज क्षमता"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "Automation",
-      hi: "स्वचालन"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "Multitasking",
-      hi: "मल्टीटास्किंग"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "Consistency",
-      hi: "निरंतरता"
+      en: "1, 2 and 3",
+      hi: "1, 2 और 3"
     }
   ],
 
   answer: "A",
 
-  explanation: "बड़ी मात्रा में data को store और आवश्यकता पर retrieve करना storage capacity को दर्शाता है।"
+  explanation: "The Quick Access Toolbar provides convenient access to frequently used commands regardless of the selected Ribbon tab. Displaying and organizing database objects is primarily the function of the Navigation Pane."
 },
-
 
 // Question 14
 {
-  en: "A computer is performing a calculation automatically after receiving properly programmed instructions, without requiring human intervention at every step. Which characteristic is demonstrated?",
-  hi: "उचित रूप से programmed instructions प्राप्त करने के बाद कंप्यूटर प्रत्येक चरण में मानव हस्तक्षेप के बिना स्वतः calculation कर रहा है। कौन-सी विशेषता प्रदर्शित होती है?",
+  en: "A user accidentally clicks Maximize/Restore while Access is already displaying a maximized window. Which result should the user generally expect?",
+  hi: "जब Access की विंडो पहले से अधिकतम आकार में हो, तब उपयोगकर्ता गलती से Maximize/Restore पर क्लिक कर देता है। सामान्यतः क्या परिणाम अपेक्षित है?",
 
   options: [
     {
-      en: "Consistency",
-      hi: "निरंतरता"
+      en: "Access closes the active database but keeps the application running.",
+      hi: "Access सक्रिय डेटाबेस को बंद कर देता है, लेकिन एप्लिकेशन चालू रहता है।"
     },
     {
-      en: "Automation",
-      hi: "स्वचालन"
+      en: "Access minimizes the application to the taskbar.",
+      hi: "Access एप्लिकेशन को टास्कबार पर मिनिमाइज़ कर देता है।"
     },
     {
-      en: "Storage Capacity",
-      hi: "स्टोरेज क्षमता"
+      en: "The window switches from maximized to its previous restored size.",
+      hi: "विंडो अधिकतम आकार से अपने पिछले सामान्य आकार में लौट आती है।"
     },
     {
-      en: "Multitasking",
-      hi: "मल्टीटास्किंग"
+      en: "All open Object Tabs close, while the main Access window remains maximized.",
+      hi: "सभी खुले Object Tabs बंद हो जाते हैं, जबकि मुख्य Access विंडो अधिकतम आकार में रहती है।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "मानव हस्तक्षेप के बिना programmed instructions के अनुसार कार्य करना automation कहलाता है।"
+  explanation: "The Restore command returns a maximized window to its previous restored size. It does not close the database or minimize the application."
 },
-
 
 // Question 15
 {
-  en: "A computer is simultaneously playing music, downloading a file, running a word processor and performing a virus scan. Which characteristic is primarily demonstrated?",
-  hi: "एक कंप्यूटर एक साथ music चला रहा है, file download कर रहा है, word processor चला रहा है और virus scan कर रहा है। कौन-सी विशेषता मुख्य रूप से प्रदर्शित होती है?",
+  en: "A user wants to determine which view is currently being used for an Access object and switch to another available view. Which statement correctly distinguishes the relevant interface features?",
+  hi: "एक उपयोगकर्ता यह जानना चाहता है कि Access ऑब्जेक्ट वर्तमान में किस व्यू में है और उसे किसी अन्य उपलब्ध व्यू में बदलना चाहता है। संबंधित इंटरफेस सुविधाओं में सही अंतर कौन-सा कथन बताता है?",
 
   options: [
     {
-      en: "Consistency",
-      hi: "निरंतरता"
+      en: "The Status Bar selects object views, while the Navigation Pane changes the zoom level.",
+      hi: "Status Bar ऑब्जेक्ट व्यू चुनता है, जबकि Navigation Pane ज़ूम स्तर बदलता है।"
     },
     {
-      en: "Storage Capacity",
-      hi: "स्टोरेज क्षमता"
+      en: "View Buttons can help switch views, while the Status Bar provides status information and may display view-related controls depending on the context.",
+      hi: "View Buttons व्यू बदलने में सहायता कर सकते हैं, जबकि Status Bar स्थिति संबंधी जानकारी देता है और संदर्भ के अनुसार व्यू-संबंधी नियंत्रण भी दिखा सकता है।"
     },
     {
-      en: "Multitasking",
-      hi: "मल्टीटास्किंग"
+      en: "The Quick Access Toolbar changes the object's view automatically, while the Title Bar displays all available views.",
+      hi: "Quick Access Toolbar ऑब्जेक्ट का व्यू अपने आप बदलता है, जबकि Title Bar सभी उपलब्ध व्यू दिखाता है।"
     },
     {
-      en: "Automation",
-      hi: "स्वचालन"
+      en: "The File tab is the only interface component through which an object's view can be changed.",
+      hi: "File टैब ही एकमात्र इंटरफेस घटक है जिसके माध्यम से किसी ऑब्जेक्ट का व्यू बदला जा सकता है।"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "एक साथ कई tasks को execute करना multitasking कहलाता है।"
+  explanation: "View Buttons can provide a way to switch between available views. The Status Bar mainly displays status information, and its available controls can vary with the current context."
 },
-
 // Question 16
 {
-  en: "Which statement correctly describes an important limitation of computers?",
-  hi: "निम्नलिखित में से कौन-सा कथन कंप्यूटर की एक महत्वपूर्ण सीमा का सही वर्णन करता है?",
+  en: "A user increases the Zoom setting while viewing a report in Microsoft Access. Which outcome most accurately describes the purpose of this action?",
+  hi: "Microsoft Access में रिपोर्ट देखते समय एक उपयोगकर्ता Zoom सेटिंग बढ़ाता है। इस क्रिया का उद्देश्य सबसे सटीक रूप से क्या है?",
 
   options: [
     {
-      en: "A computer cannot perform repetitive tasks accurately",
-      hi: "कंप्यूटर दोहराए जाने वाले कार्यों को सटीक रूप से नहीं कर सकता"
+      en: "It increases the actual font size stored in the report's design.",
+      hi: "यह रिपोर्ट के डिज़ाइन में संग्रहीत वास्तविक फ़ॉन्ट आकार को बढ़ाता है।"
     },
     {
-      en: "A computer cannot store large amounts of data",
-      hi: "कंप्यूटर बड़ी मात्रा में डेटा संग्रहीत नहीं कर सकता"
+      en: "It enlarges the database file and increases the storage allocated to the report.",
+      hi: "यह डेटाबेस फ़ाइल का आकार बढ़ाता है और रिपोर्ट के लिए आवंटित स्टोरेज बढ़ाता है।"
     },
     {
-      en: "A computer cannot perform more than one task at a time",
-      hi: "कंप्यूटर एक समय में एक से अधिक कार्य नहीं कर सकता"
+      en: "It changes the report's underlying data and recalculates its field values.",
+      hi: "यह रिपोर्ट के अंतर्निहित डेटा को बदलता है और उसके फ़ील्ड मानों की दोबारा गणना करता है।"
     },
     {
-      en: "A computer cannot make independent judgments or decisions like a human unless appropriate instructions or programmed logic are provided",
-      hi: "उचित निर्देश या प्रोग्राम की गई logic दिए बिना कंप्यूटर मनुष्य की तरह स्वतंत्र निर्णय या judgment नहीं कर सकता"
+      en: "It changes the magnification of the displayed content without inherently changing the underlying report data.",
+      hi: "यह रिपोर्ट के अंतर्निहित डेटा को बदले बिना प्रदर्शित सामग्री का आवर्धन बदलता है।"
     }
   ],
 
   answer: "D",
 
-  explanation: "कंप्यूटर स्वयं मानव जैसी judgment नहीं कर सकता; उसे instructions या programmed logic की आवश्यकता होती है।"
+  explanation: "The Zoom setting changes how large the report appears on screen. It does not inherently change the report's design, stored data, or database file size."
 },
-
 
 // Question 17
 {
-  en: "A bank uses a computer to process thousands of transactions every hour. If the same transaction is processed repeatedly using the same correct data and instructions, which combination of advantages is most directly responsible for obtaining fast and dependable results?",
-  hi: "एक बैंक हर घंटे हजारों transactions को process करने के लिए कंप्यूटर का उपयोग करता है। यदि समान transaction को समान सही data और instructions के साथ बार-बार process किया जाता है, तो तेज और विश्वसनीय परिणाम प्राप्त करने में कौन-से लाभ सबसे सीधे जिम्मेदार हैं?",
+  en: "A college stores student details, examination results, and fee records in an organized collection of related data. Which statement most accurately distinguishes the database from the DBMS used to manage it?",
+  hi: "एक कॉलेज विद्यार्थियों का विवरण, परीक्षा परिणाम और शुल्क रिकॉर्ड संबंधित डेटा के एक व्यवस्थित संग्रह में रखता है। डेटाबेस और उसे प्रबंधित करने वाले DBMS के बीच अंतर को कौन-सा कथन सबसे सटीक रूप से बताता है?",
 
   options: [
     {
-      en: "Large storage and human intelligence",
-      hi: "बड़ी storage capacity और मानव बुद्धिमत्ता"
+      en: "The database consists only of tables, whereas the DBMS consists only of queries.",
+      hi: "डेटाबेस में केवल टेबल होती हैं, जबकि DBMS में केवल क्वेरी होती हैं।"
     },
     {
-      en: "Fast processing and reliability",
-      hi: "तेज processing और विश्वसनीयता"
+      en: "The database is the organized collection of data, whereas the DBMS is the software used to define, access, manipulate, and manage that data.",
+      hi: "डेटाबेस डेटा का व्यवस्थित संग्रह है, जबकि DBMS उस डेटा को परिभाषित करने, उस तक पहुँचने, उसमें बदलाव करने और उसे प्रबंधित करने वाला सॉफ्टवेयर है।"
     },
     {
-      en: "Automation and human judgment",
-      hi: "स्वचालन और मानव judgment"
+      en: "The database performs data validation independently, whereas the DBMS merely displays stored information.",
+      hi: "डेटाबेस स्वतंत्र रूप से डेटा का सत्यापन करता है, जबकि DBMS केवल संग्रहीत जानकारी प्रदर्शित करता है।"
     },
     {
-      en: "Repetition and independent decision-making",
-      hi: "दोहराव और स्वतंत्र निर्णय लेना"
+      en: "The database is the software interface, whereas the DBMS is the physical storage medium containing records.",
+      hi: "डेटाबेस सॉफ्टवेयर इंटरफेस है, जबकि DBMS रिकॉर्ड रखने वाला भौतिक स्टोरेज माध्यम है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Fast processing तेजी से परिणाम देता है और reliability लगातार dependable results प्रदान करती है।"
+  explanation: "A database is an organized collection of data. A DBMS is the software that enables users to define, access, modify, and manage the data."
 },
-
 
 // Question 18
 {
-  en: "A computer is programmed to generate a monthly salary statement automatically. The system performs the same calculations every month without requiring the operator to manually repeat each calculation. Which advantage is primarily demonstrated?",
-  hi: "एक कंप्यूटर को monthly salary statement स्वतः generate करने के लिए program किया गया है। सिस्टम हर महीने समान calculations करता है और operator को प्रत्येक calculation manually दोहराने की आवश्यकता नहीं होती। कौन-सा लाभ मुख्य रूप से प्रदर्शित होता है?",
+  en: "Consider the following statements about data and information:\n\n1. Data may consist of raw facts that have not yet been meaningfully interpreted.\n2. Information is obtained when data is processed or organized to convey meaning.\n3. The same data can produce different information depending on the context and method of processing.\n\nWhich statements are correct?",
+  hi: "डेटा और सूचना के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. डेटा में ऐसे कच्चे तथ्य हो सकते हैं जिनकी अभी सार्थक व्याख्या नहीं की गई है।\n2. जब डेटा को अर्थ प्रदान करने के लिए संसाधित या व्यवस्थित किया जाता है, तो सूचना प्राप्त होती है।\n3. संदर्भ और संसाधित करने की विधि के आधार पर एक ही डेटा से अलग-अलग सूचना प्राप्त हो सकती है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Large storage",
-      hi: "बड़ी storage capacity"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "Accuracy",
-      hi: "शुद्धता"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "Automation",
-      hi: "स्वचालन"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "Human intelligence",
-      hi: "मानव बुद्धिमत्ता"
+      en: "1, 2 and 3",
+      hi: "1, 2 और 3"
     }
   ],
 
-  answer: "C",
+  answer: "D",
 
-  explanation: "बिना बार-बार मानव हस्तक्षेप के programmed कार्य करना automation को दर्शाता है।"
+  explanation: "All three statements are correct. Data can be raw facts, processing or organizing data can produce meaningful information, and the interpretation of the same data can vary with context and processing method."
 },
-
 
 // Question 19
 {
-  en: "A computer can repeatedly execute a calculation with great speed and consistency, but it produces an incorrect result because an employee entered incorrect data. What does this situation best demonstrate?",
-  hi: "एक कंप्यूटर किसी calculation को तेज गति और consistency के साथ बार-बार कर सकता है, लेकिन employee द्वारा गलत data दर्ज करने के कारण गलत परिणाम देता है। यह स्थिति क्या दर्शाती है?",
+  en: "A database application stores customer details in one table and order details in another. Each order contains a CustomerID that refers to a customer record. Which concept does this design primarily illustrate?",
+  hi: "एक डेटाबेस एप्लिकेशन ग्राहक का विवरण एक टेबल में और ऑर्डर का विवरण दूसरी टेबल में रखता है। प्रत्येक ऑर्डर में CustomerID होता है, जो ग्राहक के रिकॉर्ड को संदर्भित करता है। यह डिज़ाइन मुख्य रूप से किस अवधारणा को दर्शाता है?",
 
   options: [
     {
-      en: "Computer accuracy is dependent on correct input data and instructions",
-      hi: "कंप्यूटर की accuracy सही input data और instructions पर निर्भर करती है"
+      en: "A relational relationship established through a common field, typically implemented using a foreign key",
+      hi: "एक सामान्य फ़ील्ड के माध्यम से स्थापित रिलेशनल संबंध, जिसे आमतौर पर Foreign Key से लागू किया जाता है"
     },
     {
-      en: "Fast processing prevents errors in input data",
-      hi: "तेज processing input data में errors को रोकती है"
+      en: "A requirement that every field in both tables must contain identical values",
+      hi: "यह आवश्यकता कि दोनों टेबल के प्रत्येक फ़ील्ड में समान मान होने चाहिए"
     },
     {
-      en: "Automation eliminates the need for human supervision",
-      hi: "Automation मानव supervision की आवश्यकता को समाप्त कर देता है"
+      en: "A hierarchical database structure in which orders physically contain customer tables",
+      hi: "एक पदानुक्रमित डेटाबेस संरचना जिसमें ऑर्डर के अंदर भौतिक रूप से ग्राहक टेबल होती हैं"
     },
     {
-      en: "Repetition guarantees that the original data is correct",
-      hi: "Repetition यह सुनिश्चित करता है कि मूल data सही है"
+      en: "A requirement that both tables must have the same primary key values for every record",
+      hi: "यह आवश्यकता कि दोनों टेबल के प्रत्येक रिकॉर्ड में समान Primary Key मान होने चाहिए"
     }
   ],
 
   answer: "A",
 
-  explanation: "गलत input data होने पर कंप्यूटर तेज और consistent processing के बावजूद गलत result दे सकता है।"
+  explanation: "CustomerID in the Orders table typically acts as a foreign key referencing the customer record in the Customers table, establishing a relationship between the two tables."
 },
-
 
 // Question 20
 {
-  en: "Which statement most accurately describes the fundamental limitation of a computer despite its advantages in processing, storage and automation?",
-  hi: "Processing, storage और automation में अनेक लाभों के बावजूद कौन-सा कथन कंप्यूटर की मूलभूत सीमा को सबसे सटीक रूप से दर्शाता है?",
+  en: "Which statement most accurately distinguishes a relational database from a database that merely stores data in tabular form?",
+  hi: "कौन-सा कथन रिलेशनल डेटाबेस और केवल सारणीबद्ध रूप में डेटा संग्रहीत करने वाले डेटाबेस के बीच अंतर को सबसे सटीक रूप से बताता है?",
 
   options: [
     {
-      en: "A computer cannot perform the same task repeatedly",
-      hi: "कंप्यूटर एक ही कार्य को बार-बार नहीं कर सकता"
+      en: "Any collection of tables automatically constitutes a relational database, even if no relationships or relational constraints are supported.",
+      hi: "टेबलों का कोई भी संग्रह अपने आप रिलेशनल डेटाबेस बन जाता है, भले ही उसमें संबंधों या रिलेशनल प्रतिबंधों का समर्थन न हो।"
     },
     {
-      en: "A computer cannot process large quantities of data quickly",
-      hi: "कंप्यूटर बड़ी मात्रा में डेटा को तेजी से process नहीं कर सकता"
+      en: "A relational database cannot contain tables unless every table has exactly the same number of fields.",
+      hi: "रिलेशनल डेटाबेस में टेबल तभी हो सकती हैं जब प्रत्येक टेबल में फ़ील्ड की संख्या बिल्कुल समान हो।"
     },
     {
-      en: "A computer cannot store information for future use",
-      hi: "कंप्यूटर भविष्य में उपयोग के लिए information store नहीं कर सकता"
+      en: "A relational database organizes data into relations and can use keys and relational constraints to represent and maintain relationships between data.",
+      hi: "रिलेशनल डेटाबेस डेटा को रिलेशन में व्यवस्थित करता है और डेटा के बीच संबंधों को दर्शाने तथा बनाए रखने के लिए Keys और रिलेशनल प्रतिबंधों का उपयोग कर सकता है।"
     },
     {
-      en: "A computer does not possess human intelligence and cannot independently apply human-like judgment beyond its programmed instructions",
-      hi: "कंप्यूटर में मानव जैसी बुद्धिमत्ता नहीं होती और वह अपनी programmed instructions से आगे स्वतंत्र रूप से मानव जैसा judgment लागू नहीं कर सकता"
-    }
-  ],
-
-  answer: "D",
-
-  explanation: "कंप्यूटर अपनी programmed instructions और logic के आधार पर कार्य करता है; उसमें मानव जैसी स्वतंत्र judgment नहीं होती।"
-},
-
-// Question 21
-{
-  en: "Which of the following is a limitation of a computer?",
-  hi: "निम्नलिखित में से कौन-सी कंप्यूटर की एक सीमा है?",
-
-  options: [
-    {
-      en: "It can process data quickly",
-      hi: "यह डेटा को तेजी से process कर सकता है"
-    },
-    {
-      en: "It can store a large amount of data",
-      hi: "यह बड़ी मात्रा में डेटा store कर सकता है"
-    },
-    {
-      en: "It does not possess human emotions",
-      hi: "इसमें मानव जैसी भावनाएँ नहीं होती हैं"
-    },
-    {
-      en: "It can perform repetitive tasks",
-      hi: "यह दोहराए जाने वाले कार्य कर सकता है"
+      en: "A relational database requires every field to contain a unique value, making separate primary keys unnecessary.",
+      hi: "रिलेशनल डेटाबेस में प्रत्येक फ़ील्ड का मान अद्वितीय होना आवश्यक है, इसलिए अलग Primary Key की आवश्यकता नहीं होती।"
     }
   ],
 
   answer: "C",
 
-  explanation: "कंप्यूटर में मानव जैसी भावनाएँ नहीं होती हैं, जो इसकी एक सीमा है।"
+  explanation: "A relational database organizes data into relations and uses keys and constraints to define and maintain relationships and data integrity. Merely displaying data in tables does not establish all these relational features."
 },
+// Question 21
+{
+  en: "Consider the following statements regarding DBMS and RDBMS:\n\n1. An RDBMS is a type of DBMS designed around the relational model.\n2. Every DBMS must organize all its data into related tables.\n3. An RDBMS can use primary keys and foreign keys to enforce relationships and referential integrity.\n\nWhich statements are correct?",
+  hi: "DBMS और RDBMS के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. RDBMS, DBMS का एक प्रकार है जिसे रिलेशनल मॉडल के आधार पर डिज़ाइन किया गया है।\n2. प्रत्येक DBMS के लिए अपने सभी डेटा को संबंधित टेबलों में व्यवस्थित करना अनिवार्य है।\n3. RDBMS संबंधों और संदर्भात्मक अखंडता को लागू करने के लिए Primary Key और Foreign Key का उपयोग कर सकता है।\n\nकौन-से कथन सही हैं?",
 
+  options: [
+    {
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
+    },
+    {
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
+    },
+    {
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
+    },
+    {
+      en: "1, 2 and 3",
+      hi: "1, 2 और 3"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Statements 1 and 3 are correct. An RDBMS is based on the relational model and can use primary keys and foreign keys to maintain relationships and referential integrity. Statement 2 is incorrect because not every DBMS organizes data into related tables."
+},
 
 // Question 22
 {
-  en: "A computer is given two possible courses of action but has no programmed instructions or logical rules to determine which one should be selected. What is the main limitation involved?",
-  hi: "कंप्यूटर को दो संभावित कार्य-विकल्प दिए जाते हैं, लेकिन यह निर्धारित करने के लिए कोई programmed instructions या logical rules नहीं हैं कि कौन-सा विकल्प चुना जाना चाहिए। इसमें मुख्य सीमा क्या है?",
+  en: "In a student table, StudentID identifies each student uniquely, Name stores the student's name, and each row represents one student. Which interpretation is correct?",
+  hi: "एक Student टेबल में StudentID प्रत्येक विद्यार्थी की विशिष्ट पहचान करता है, Name विद्यार्थी का नाम संग्रहीत करता है और प्रत्येक पंक्ति एक विद्यार्थी को दर्शाती है। कौन-सी व्याख्या सही है?",
 
   options: [
     {
-      en: "Lack of storage capacity",
-      hi: "Storage capacity की कमी"
+      en: "StudentID is a record, Name is a field, and each row is a table.",
+      hi: "StudentID एक रिकॉर्ड है, Name एक फ़ील्ड है और प्रत्येक पंक्ति एक टेबल है।"
     },
     {
-      en: "Lack of independent decision-making",
-      hi: "स्वतंत्र निर्णय लेने की क्षमता की कमी"
+      en: "StudentID is a table, Name is a record, and each row is a field.",
+      hi: "StudentID एक टेबल है, Name एक रिकॉर्ड है और प्रत्येक पंक्ति एक फ़ील्ड है।"
     },
     {
-      en: "Lack of processing speed",
-      hi: "Processing speed की कमी"
+      en: "StudentID and Name are records, while each row represents a relationship.",
+      hi: "StudentID और Name रिकॉर्ड हैं, जबकि प्रत्येक पंक्ति एक संबंध दर्शाती है।"
     },
     {
-      en: "Lack of accuracy",
-      hi: "Accuracy की कमी"
+      en: "StudentID and Name are fields, while each row represents a record.",
+      hi: "StudentID और Name फ़ील्ड हैं, जबकि प्रत्येक पंक्ति एक रिकॉर्ड दर्शाती है।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "बिना programmed logic या instructions के कंप्यूटर स्वतंत्र रूप से निर्णय नहीं ले सकता।"
+  explanation: "StudentID and Name are fields (columns) in the table, while each row contains the values for one student and represents a record."
 },
-
 
 // Question 23
 {
-  en: "A user enters 250 instead of 2500 into a computer, and the computer performs the calculation correctly using the entered value. What does this situation illustrate?",
-  hi: "एक user कंप्यूटर में 2500 के बजाय 250 दर्ज करता है और कंप्यूटर दर्ज किए गए value का उपयोग करके calculation सही रूप से करता है। यह स्थिति क्या दर्शाती है?",
+  en: "A user creates a table, a query, a form, and a report in Microsoft Access. Which statement best explains the role of these objects in database management?",
+  hi: "एक उपयोगकर्ता Microsoft Access में टेबल, क्वेरी, फॉर्म और रिपोर्ट बनाता है। कौन-सा कथन डेटाबेस प्रबंधन में इन ऑब्जेक्ट की भूमिका को सबसे अच्छी तरह समझाता है?",
 
   options: [
     {
-      en: "A computer cannot process numerical data",
-      hi: "कंप्यूटर numerical data को process नहीं कर सकता"
+      en: "Tables store structured data, queries retrieve or manipulate data, forms support user interaction, and reports present data in a formatted manner.",
+      hi: "टेबल संरचित डेटा संग्रहीत करती हैं, क्वेरी डेटा प्राप्त करने या उसमें बदलाव करने में मदद करती हैं, फॉर्म उपयोगकर्ता के साथ इंटरैक्शन में सहायता करते हैं और रिपोर्ट डेटा को व्यवस्थित प्रारूप में प्रस्तुत करती हैं।"
     },
     {
-      en: "A computer always produces incorrect output",
-      hi: "कंप्यूटर हमेशा गलत output देता है"
+      en: "Tables and reports store the same data independently, while queries are used exclusively to format printed pages.",
+      hi: "टेबल और रिपोर्ट स्वतंत्र रूप से समान डेटा संग्रहीत करती हैं, जबकि क्वेरी का उपयोग केवल मुद्रित पृष्ठों को प्रारूपित करने के लिए किया जाता है।"
     },
     {
-      en: "An incorrect input can lead to an incorrect output",
-      hi: "गलत input से गलत output प्राप्त हो सकता है"
+      en: "Forms define relationships between databases, reports enforce referential integrity, and queries act as physical storage devices.",
+      hi: "फॉर्म डेटाबेस के बीच संबंध निर्धारित करते हैं, रिपोर्ट संदर्भात्मक अखंडता लागू करती हैं और क्वेरी भौतिक स्टोरेज डिवाइस की तरह कार्य करती हैं।"
     },
     {
-      en: "A computer lacks processing speed",
-      hi: "कंप्यूटर में processing speed की कमी होती है"
+      en: "Queries store all permanent records, while tables are used only to display the results of forms.",
+      hi: "क्वेरी सभी स्थायी रिकॉर्ड संग्रहीत करती हैं, जबकि टेबल का उपयोग केवल फॉर्म के परिणाम प्रदर्शित करने के लिए किया जाता है।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Computer दिए गए input के अनुसार calculation करता है; गलत input से गलत output मिल सकता है।"
+  explanation: "Tables store data, queries retrieve or manipulate data, forms provide an interface for entering and viewing data, and reports present data in a formatted layout."
 },
-
 
 // Question 24
 {
-  en: "Which statement best explains the relationship between incorrect input and computer output?",
-  hi: "गलत input और computer output के बीच संबंध को कौन-सा कथन सबसे अच्छी तरह समझाता है?",
+  en: "A company wants to maintain customer information and order information separately while preventing an order from referring to a nonexistent customer. Which design best supports this requirement in a relational database?",
+  hi: "एक कंपनी ग्राहक की जानकारी और ऑर्डर की जानकारी अलग-अलग रखना चाहती है तथा यह भी सुनिश्चित करना चाहती है कि कोई ऑर्डर ऐसे ग्राहक को संदर्भित न करे जो मौजूद ही नहीं है। रिलेशनल डेटाबेस में कौन-सा डिज़ाइन इस आवश्यकता को सबसे अच्छी तरह पूरा करता है?",
 
   options: [
     {
-      en: "Correct processing can always convert incorrect input into correct information",
-      hi: "सही processing हमेशा गलत input को सही information में बदल सकती है"
+      en: "Store all customer and order details in unrelated tables without any common identifiers.",
+      hi: "ग्राहक और ऑर्डर का पूरा विवरण बिना किसी सामान्य पहचानकर्ता के असंबंधित टेबलों में रखें।"
     },
     {
-      en: "Incorrect input may produce incorrect output even when the computer processes it correctly",
-      hi: "कंप्यूटर द्वारा सही processing किए जाने पर भी गलत input से गलत output प्राप्त हो सकता है"
+      en: "Use the customer's name as the only identifier and allow duplicate customer names without additional constraints.",
+      hi: "ग्राहक के नाम को एकमात्र पहचानकर्ता के रूप में उपयोग करें और अतिरिक्त प्रतिबंधों के बिना समान नामों की अनुमति दें।"
     },
     {
-      en: "Incorrect input has no effect on the final output",
-      hi: "गलत input का final output पर कोई प्रभाव नहीं पड़ता"
+      en: "Assign a primary key to the customer table and use a corresponding foreign key in the order table, enforcing referential integrity.",
+      hi: "ग्राहक टेबल में Primary Key निर्धारित करें और ऑर्डर टेबल में संबंधित Foreign Key का उपयोग करके संदर्भात्मक अखंडता लागू करें।"
     },
     {
-      en: "A computer automatically detects and corrects every incorrect input",
-      hi: "कंप्यूटर स्वतः प्रत्येक गलत input को detect और correct कर देता है"
+      en: "Make every field in both tables a primary key so that no relationship needs to be defined.",
+      hi: "दोनों टेबल के प्रत्येक फ़ील्ड को Primary Key बना दें, ताकि किसी संबंध को परिभाषित करने की आवश्यकता न पड़े।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "कंप्यूटर सही processing कर सकता है, लेकिन गलत input होने पर output भी गलत हो सकता है।"
+  explanation: "A primary key uniquely identifies each customer, while a foreign key in the order table references that customer. Referential integrity prevents an order from referencing a nonexistent customer when the constraint is enforced."
 },
-
 
 // Question 25
 {
-  en: "Which statement most accurately defines “data” in the context of a computer system?",
-  hi: "कंप्यूटर सिस्टम के संदर्भ में “data” को कौन-सा कथन सबसे सटीक रूप से परिभाषित करता है?",
+  en: "A user creates a new database in Microsoft Access 2019 using the Blank Database option. Which statement most accurately describes the resulting file?",
+  hi: "एक उपयोगकर्ता Blank Database विकल्प का उपयोग करके Microsoft Access 2019 में नया डेटाबेस बनाता है। बनने वाली फ़ाइल का सबसे सटीक वर्णन कौन-सा है?",
 
   options: [
     {
-      en: "Processed facts that always have a specific meaning",
-      hi: "संसाधित तथ्य जिनका हमेशा एक विशिष्ट अर्थ होता है"
+      en: "Access creates an empty table automatically and saves it with the .MDB extension by default.",
+      hi: "Access अपने आप एक खाली टेबल बनाता है और डिफ़ॉल्ट रूप से उसे .MDB एक्सटेंशन के साथ सहेजता है।"
     },
     {
-      en: "Raw facts and figures that may require processing to become meaningful",
-      hi: "कच्चे तथ्य और आँकड़े जिन्हें अर्थपूर्ण बनने के लिए processing की आवश्यकता हो सकती है"
+      en: "Access creates a database file in the .ACCDB format, but the user may still need to create the required tables and other objects.",
+      hi: "Access .ACCDB प्रारूप में डेटाबेस फ़ाइल बनाता है, लेकिन उपयोगकर्ता को आवश्यक टेबल और अन्य ऑब्जेक्ट अभी भी बनाने पड़ सकते हैं।"
     },
     {
-      en: "Final results obtained after analysis and interpretation",
-      hi: "Analysis और interpretation के बाद प्राप्त अंतिम परिणाम"
+      en: "Access creates a database template that cannot be modified until it is converted into an .MDB file.",
+      hi: "Access एक डेटाबेस टेम्पलेट बनाता है जिसे .MDB फ़ाइल में परिवर्तित करने तक संशोधित नहीं किया जा सकता।"
     },
     {
-      en: "Information that has already been organized for decision-making",
-      hi: "Decision-making के लिए पहले से व्यवस्थित information"
+      en: "Access creates a database file only after the user enters at least one record into a table.",
+      hi: "Access डेटाबेस फ़ाइल तभी बनाता है जब उपयोगकर्ता किसी टेबल में कम-से-कम एक रिकॉर्ड दर्ज कर देता है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Data कच्चे facts और figures होते हैं, जिन्हें meaningful information में बदलने के लिए processing की आवश्यकता हो सकती है।"
+  explanation: "Microsoft Access 2019 uses the .ACCDB format by default for new databases. Choosing Blank Database creates the database file, but the user may still need to create tables and other database objects."
 },
-
 // Question 26
 {
-  en: "Which statement best defines “information”?",
-  hi: "निम्नलिखित में से कौन-सा कथन “information” को सबसे अच्छी तरह परिभाषित करता है?",
+  en: "Consider the following statements about Microsoft Access database file extensions:\n\n1. .ACCDB is the standard database file format introduced with Access 2007.\n2. .MDB was used by earlier Access database formats.\n3. An .MDB file must always be converted to .ACCDB before it can be opened in any version of Microsoft Access.\n\nWhich statements are correct?",
+  hi: "Microsoft Access डेटाबेस फ़ाइल एक्सटेंशन के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. .ACCDB मानक डेटाबेस फ़ाइल प्रारूप है, जिसे Access 2007 के साथ शुरू किया गया था।\n2. .MDB का उपयोग Access के पुराने डेटाबेस प्रारूपों में किया जाता था।\n3. Microsoft Access के किसी भी संस्करण में खोलने से पहले .MDB फ़ाइल को हमेशा .ACCDB में बदलना आवश्यक है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Unprocessed facts collected from different sources",
-      hi: "विभिन्न स्रोतों से एकत्र किए गए असंसाधित तथ्य"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "Random symbols entered into a computer without any context",
-      hi: "बिना किसी संदर्भ के कंप्यूटर में दर्ज किए गए यादृच्छिक symbols"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "Data that has been processed, organized or interpreted to make it meaningful and useful",
-      hi: "ऐसा data जिसे meaningful और useful बनाने के लिए process, organize या interpret किया गया हो"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "Any data stored permanently in a computer",
-      hi: "कंप्यूटर में स्थायी रूप से stored कोई भी data"
+      en: "1, 2 and 3",
+      hi: "1, 2 और 3"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Processed, organized या interpreted data जो meaningful और useful हो, information कहलाता है।"
+  explanation: "Statements 1 and 2 are correct. The .ACCDB format was introduced with Access 2007, while .MDB was used by earlier Access versions. Statement 3 is incorrect because compatible .MDB files can be opened in Microsoft Access without always converting them to .ACCDB."
 },
-
 
 // Question 27
 {
-  en: "A school database contains the following entries for one student: “Rahul, 18, 82, 76, 91”. After processing these values, the system generates “Rahul has an average score of 83%.” Which statement correctly identifies the data and information?",
-  hi: "एक school database में एक student के लिए “Rahul, 18, 82, 76, 91” entries हैं। इन values को process करने के बाद system “Rahul has an average score of 83%.” generate करता है। निम्नलिखित में से कौन-सा कथन data और information की सही पहचान करता है?",
+  en: "A user creates a database using an Access template instead of the Blank Database option. Which statement best describes the main distinction between these two approaches?",
+  hi: "एक उपयोगकर्ता Blank Database विकल्प के बजाय Access टेम्पलेट का उपयोग करके डेटाबेस बनाता है। इन दोनों तरीकों के बीच मुख्य अंतर को कौन-सा कथन सबसे अच्छी तरह बताता है?",
 
   options: [
     {
-      en: "“Rahul has an average score of 83%” is data, while the individual marks are information",
-      hi: "“Rahul has an average score of 83%” data है, जबकि individual marks information हैं"
+      en: "A template-based database cannot contain tables or queries until data is imported.",
+      hi: "टेम्पलेट-आधारित डेटाबेस में डेटा आयात करने तक टेबल या क्वेरी नहीं हो सकतीं।"
     },
     {
-      en: "Both the individual marks and the average score are data because they are stored digitally",
-      hi: "Individual marks और average score दोनों data हैं क्योंकि वे digitally stored हैं"
+      en: "A blank database automatically contains more predefined objects than a template-based database.",
+      hi: "खाली डेटाबेस में टेम्पलेट-आधारित डेटाबेस की तुलना में अपने आप अधिक पूर्वनिर्धारित ऑब्जेक्ट होते हैं।"
     },
     {
-      en: "The individual entries are data, while the calculated and meaningful average is information",
-      hi: "Individual entries data हैं, जबकि calculated और meaningful average information है"
+      en: "A template-based database provides a predefined structure and may include ready-made objects, whereas a blank database starts with minimal predefined content.",
+      hi: "टेम्पलेट-आधारित डेटाबेस में पहले से निर्धारित संरचना और तैयार ऑब्जेक्ट हो सकते हैं, जबकि खाली डेटाबेस में शुरुआत में बहुत कम पूर्वनिर्धारित सामग्री होती है।"
     },
     {
-      en: "The individual entries are information, while the calculated average is raw data",
-      hi: "Individual entries information हैं, जबकि calculated average raw data है"
+      en: "A template-based database is saved only in .MDB format, whereas a blank database is saved only in .ACCDB format.",
+      hi: "टेम्पलेट-आधारित डेटाबेस केवल .MDB प्रारूप में सहेजा जाता है, जबकि खाली डेटाबेस केवल .ACCDB प्रारूप में सहेजा जाता है।"
     }
   ],
 
   answer: "C",
 
-  explanation: "Individual entries raw data हैं, जबकि process किया गया meaningful average information है।"
+  explanation: "An Access template provides a predefined database structure and may include ready-made tables, forms, queries, or reports. A blank database starts with minimal predefined content, allowing the user to build the required objects."
 },
-
 
 // Question 28
 {
-  en: "Consider the following sequence: Raw facts → Processing → Meaningful result. Which statement best explains this sequence?",
-  hi: "निम्नलिखित क्रम पर विचार करें: Raw facts → Processing → Meaningful result. कौन-सा कथन इस क्रम को सबसे अच्छी तरह समझाता है?",
+  en: "An organization has an existing Access database containing tables, queries, forms, and reports. An employee creates a new blank database and then imports a table from the existing database. Which statement is correct?",
+  hi: "एक संगठन के मौजूदा Access डेटाबेस में टेबल, क्वेरी, फॉर्म और रिपोर्ट हैं। एक कर्मचारी नया खाली डेटाबेस बनाता है और फिर मौजूदा डेटाबेस से एक टेबल आयात करता है। कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "Information is converted into data through processing",
-      hi: "Processing के द्वारा information को data में बदला जाता है"
+      en: "The imported table becomes the entire database file, replacing the blank database.",
+      hi: "आयात की गई टेबल पूरी डेटाबेस फ़ाइल बन जाती है और खाली डेटाबेस का स्थान ले लेती है।"
     },
     {
-      en: "Data is processed to produce information that can be useful for understanding or decision-making",
-      hi: "Data को process करके ऐसी information प्राप्त की जाती है जो understanding या decision-making में उपयोगी हो सकती है"
+      en: "The original database file is automatically deleted after the table is imported.",
+      hi: "टेबल आयात होने के बाद मूल डेटाबेस फ़ाइल अपने आप हट जाती है।"
     },
     {
-      en: "Data and information remain identical before and after processing",
-      hi: "Processing से पहले और बाद में data और information समान रहते हैं"
+      en: "The new database and the imported table must have the same file extension as the original database.",
+      hi: "नए डेटाबेस और आयात की गई टेबल का फ़ाइल एक्सटेंशन मूल डेटाबेस के समान होना आवश्यक है।"
     },
     {
-      en: "Processing changes information into unrelated data without adding meaning",
-      hi: "Processing information को बिना कोई meaning जोड़े unrelated data में बदल देता है"
+      en: "The new database file can contain the imported table along with other database objects, while the original file remains separate unless deliberately modified or deleted.",
+      hi: "नई डेटाबेस फ़ाइल में आयात की गई टेबल के साथ अन्य डेटाबेस ऑब्जेक्ट भी हो सकते हैं, जबकि मूल फ़ाइल अलग रहती है, जब तक उसे जानबूझकर बदला या हटाया न जाए।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Raw data को process करने पर meaningful information प्राप्त होती है।"
+  explanation: "Importing a table adds a copy of that table to the destination database. The destination database can contain other objects, and the original database file remains separate unless it is deliberately modified or deleted."
 },
-
 
 // Question 29
 {
-  en: "Which of the following is the best example of raw data?",
-  hi: "निम्नलिखित में से raw data का सबसे अच्छा उदाहरण कौन-सा है?",
+  en: "Which statement correctly distinguishes an Access database file from a table stored within that file?",
+  hi: "कौन-सा कथन Access डेटाबेस फ़ाइल और उसमें संग्रहीत टेबल के बीच सही अंतर बताता है?",
 
   options: [
     {
-      en: "“The average temperature this week was 28°C.”",
-      hi: "“इस सप्ताह का औसत तापमान 28°C था।”"
+      en: "A database file can contain multiple objects, including tables, queries, forms, and reports, whereas a table organizes data into fields and records.",
+      hi: "डेटाबेस फ़ाइल में टेबल, क्वेरी, फॉर्म और रिपोर्ट सहित कई ऑब्जेक्ट हो सकते हैं, जबकि टेबल डेटा को फ़ील्ड और रिकॉर्ड में व्यवस्थित करती है।"
     },
     {
-      en: "“Sales increased by 15% this month.”",
-      hi: "“इस महीने sales में 15% की वृद्धि हुई।”"
+      en: "A table is the physical file that stores all database objects, whereas the database file contains only table names.",
+      hi: "टेबल वह भौतिक फ़ाइल है जिसमें सभी डेटाबेस ऑब्जेक्ट संग्रहीत होते हैं, जबकि डेटाबेस फ़ाइल में केवल टेबल के नाम होते हैं।"
     },
     {
-      en: "25, 32, 28, 31, 29",
-      hi: "25, 32, 28, 31, 29"
+      en: "A database file can contain only one table, but a table can contain several independent databases.",
+      hi: "डेटाबेस फ़ाइल में केवल एक टेबल हो सकती है, लेकिन एक टेबल में कई स्वतंत्र डेटाबेस हो सकते हैं।"
     },
     {
-      en: "“The highest temperature recorded was 32°C.”",
-      hi: "“रिकॉर्ड किया गया highest temperature 32°C था।”"
+      en: "A database file and a table are interchangeable terms because both necessarily contain the same records.",
+      hi: "डेटाबेस फ़ाइल और टेबल एक-दूसरे के स्थान पर उपयोग किए जा सकने वाले शब्द हैं, क्योंकि दोनों में अनिवार्य रूप से समान रिकॉर्ड होते हैं।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "25, 32, 28, 31, 29 बिना processing के raw values हैं, इसलिए ये raw data का उदाहरण हैं।"
+  explanation: "An Access database file can contain multiple database objects, such as tables, queries, forms, and reports. A table stores data in fields (columns) and records (rows)."
 },
-
 
 // Question 30
 {
-  en: "What is meant by processed data?",
-  hi: "Processed data से क्या अभिप्राय है?",
+  en: "Consider the following statements about opening and closing an Access database:\n\n1. Closing a database is conceptually different from deleting its file.\n2. Closing a database necessarily removes all tables and records stored in it.\n3. A database file may be opened again later, provided the file remains available and accessible.\n\nWhich statements are correct?",
+  hi: "Access डेटाबेस को खोलने और बंद करने के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. डेटाबेस को बंद करना उसकी फ़ाइल को हटाने से अलग है।\n2. डेटाबेस बंद करने से उसमें संग्रहीत सभी टेबल और रिकॉर्ड अनिवार्य रूप से हट जाते हैं।\n3. यदि डेटाबेस फ़ाइल उपलब्ध और सुलभ रहती है, तो उसे बाद में फिर से खोला जा सकता है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Data that has been collected but not examined",
-      hi: "ऐसा data जो collect किया गया है लेकिन examine नहीं किया गया"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "Raw data that has been organized, calculated or transformed to produce a useful result",
-      hi: "ऐसा raw data जिसे useful result प्राप्त करने के लिए organize, calculate या transform किया गया हो"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "Random facts that have no relationship with each other",
-      hi: "ऐसे random facts जिनका आपस में कोई संबंध नहीं है"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "Data that is permanently deleted after processing",
-      hi: "ऐसा data जिसे processing के बाद permanently delete कर दिया गया हो"
+      en: "1, 2 and 3",
+      hi: "1, 2 और 3"
     }
   ],
 
   answer: "B",
 
-  explanation: "Raw data को organize, calculate या transform करके useful result में बदलना data processing है।"
+  explanation: "Statements 1 and 3 are correct. Closing a database does not delete its file or remove its stored tables and records. The database can be opened again later if the file remains available and accessible."
 },
-
 // Question 31
 {
-  en: "A shop records daily sales as ₹2,000, ₹2,500, ₹3,000 and ₹2,500. After processing, the computer reports that the average daily sale is ₹2,500. In this case, what is the “₹2,500 average”?",
-  hi: "एक दुकान में दैनिक बिक्री ₹2,000, ₹2,500, ₹3,000 और ₹2,500 दर्ज की जाती है। Processing के बाद कंप्यूटर औसत दैनिक बिक्री ₹2,500 बताता है। इस स्थिति में “₹2,500 average” क्या है?",
+  en: "A user attempts to open an existing Access database file but receives an error indicating that the file cannot be accessed. Which conclusion is the most appropriate?",
+  hi: "एक उपयोगकर्ता Microsoft Access की मौजूदा डेटाबेस फ़ाइल खोलने का प्रयास करता है, लेकिन उसे फ़ाइल एक्सेस न होने का त्रुटि संदेश मिलता है। सबसे उपयुक्त निष्कर्ष क्या है?",
 
   options: [
     {
-      en: "Raw data",
-      hi: "Raw data"
+      en: "Every inaccessible database file must have an invalid extension.",
+      hi: "जिस डेटाबेस फ़ाइल को एक्सेस नहीं किया जा सकता, उसका एक्सटेंशन अवश्य अमान्य होगा।"
     },
     {
-      en: "Input device",
-      hi: "Input device"
+      en: "Changing the file extension from .MDB to .ACCDB will necessarily make the database accessible.",
+      hi: "फ़ाइल का एक्सटेंशन .MDB से .ACCDB बदलने से डेटाबेस निश्चित रूप से एक्सेस होने लगेगा।"
     },
     {
-      en: "Processed data producing meaningful information",
-      hi: "Meaningful information उत्पन्न करने वाला processed data"
+      en: "The problem could involve file location, permissions, file corruption, or compatibility; the extension alone does not establish the cause.",
+      hi: "समस्या फ़ाइल के स्थान, अनुमतियों, फ़ाइल के खराब होने या संगतता से संबंधित हो सकती है; केवल एक्सटेंशन से कारण निर्धारित नहीं किया जा सकता।"
     },
     {
-      en: "Unprocessed data",
-      hi: "Unprocessed data"
+      en: "An existing database can be opened only on the computer on which it was originally created.",
+      hi: "किसी मौजूदा डेटाबेस को केवल उसी कंप्यूटर पर खोला जा सकता है, जिस पर उसे मूल रूप से बनाया गया था।"
     }
   ],
 
   answer: "C",
 
-  explanation: "₹2,500 average raw sales data को process करने के बाद प्राप्त meaningful result है।"
+  explanation: "An Access database may be inaccessible because of an incorrect file path, insufficient permissions, file corruption, or compatibility issues. The file extension alone does not identify the cause."
 },
-
 
 // Question 32
 {
-  en: "Which sequence most accurately represents the basic process through which raw data becomes meaningful information?",
-  hi: "निम्नलिखित में से कौन-सा क्रम उस मूल प्रक्रिया को सबसे सटीक रूप से दर्शाता है जिसके द्वारा raw data meaningful information में बदलता है?",
+  en: "A user wants to create a new Access database using an existing database as a starting point while preserving the original database unchanged. Which approach most directly supports this objective?",
+  hi: "एक उपयोगकर्ता मूल डेटाबेस को बिना बदले सुरक्षित रखते हुए, मौजूदा डेटाबेस के आधार पर नया Access डेटाबेस बनाना चाहता है। कौन-सा तरीका इस उद्देश्य के लिए सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Information → Data Processing → Raw Data",
-      hi: "Information → Data Processing → Raw Data"
+      en: "Open the original database and delete its existing tables before creating new ones.",
+      hi: "मूल डेटाबेस खोलकर नई टेबल बनाने से पहले उसकी मौजूदा टेबल हटा देना।"
     },
     {
-      en: "Raw Data → Data Processing → Meaningful Information",
-      hi: "Raw Data → Data Processing → Meaningful Information"
+      en: "Rename the original database file without creating a separate copy.",
+      hi: "अलग कॉपी बनाए बिना मूल डेटाबेस फ़ाइल का नाम बदल देना।"
     },
     {
-      en: "Data Processing → Raw Data → Meaningful Information",
-      hi: "Data Processing → Raw Data → Meaningful Information"
+      en: "Close the original database and change its extension to .ACCDB.",
+      hi: "मूल डेटाबेस बंद करके उसका एक्सटेंशन .ACCDB कर देना।"
     },
     {
-      en: "Raw Data → Meaningful Information → Data Processing",
-      hi: "Raw Data → Meaningful Information → Data Processing"
+      en: "Create a separate copy of the database file or use an appropriate copy-based workflow, then modify the copy.",
+      hi: "डेटाबेस फ़ाइल की अलग कॉपी बनाना या कॉपी-आधारित उपयुक्त प्रक्रिया अपनाना और फिर कॉपी में बदलाव करना।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Raw data को process करने के बाद meaningful information प्राप्त होती है।"
+  explanation: "Creating a separate copy preserves the original database. The user can then modify the copy without affecting the original file."
 },
-
 
 // Question 33
 {
-  en: "Which sequence correctly represents the basic stages of the Data Processing Cycle?",
-  hi: "निम्नलिखित में से कौन-सा क्रम Data Processing Cycle के मूल चरणों को सही रूप से दर्शाता है?",
+  en: "While creating a new blank database in Microsoft Access, a user specifies a file name and selects a storage location before clicking Create. Which statement best describes this step?",
+  hi: "Microsoft Access में नया खाली डेटाबेस बनाते समय, उपयोगकर्ता Create पर क्लिक करने से पहले फ़ाइल का नाम और संग्रहण स्थान चुनता है। यह चरण किस कथन द्वारा सबसे अच्छी तरह समझाया गया है?",
 
   options: [
     {
-      en: "Processing → Input → Storage → Output",
-      hi: "Processing → Input → Storage → Output"
+      en: "Access creates only a table definition, and the database file is created after the first record is entered.",
+      hi: "Access केवल टेबल की संरचना बनाता है और डेटाबेस फ़ाइल पहला रिकॉर्ड दर्ज करने के बाद बनती है।"
     },
     {
-      en: "Input → Processing → Output → Storage",
-      hi: "Input → Processing → Output → Storage"
+      en: "Access creates the database file at the specified location, after which the user can create and configure database objects.",
+      hi: "Access निर्दिष्ट स्थान पर डेटाबेस फ़ाइल बनाता है, जिसके बाद उपयोगकर्ता डेटाबेस ऑब्जेक्ट बना और कॉन्फ़िगर कर सकता है।"
     },
     {
-      en: "Output → Processing → Input → Storage",
-      hi: "Output → Processing → Input → Storage"
+      en: "Access saves the database only in the default Documents folder, regardless of the selected location.",
+      hi: "चुने गए स्थान की परवाह किए बिना Access डेटाबेस को केवल डिफ़ॉल्ट Documents फ़ोल्डर में सहेजता है।"
     },
     {
-      en: "Storage → Input → Output → Processing",
-      hi: "Storage → Input → Output → Processing"
+      en: "Access creates a database template that must be converted into a blank database before tables can be added.",
+      hi: "Access एक डेटाबेस टेम्पलेट बनाता है, जिसे टेबल जोड़ने से पहले खाली डेटाबेस में बदलना आवश्यक है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Data Processing Cycle का मूल क्रम Input → Processing → Output → Storage है।"
+  explanation: "When the user clicks Create, Access creates the database file at the selected location. The user can then create tables and other database objects."
 },
-
 
 // Question 34
 {
-  en: "In the Data Processing Cycle, which stage involves entering raw data into a computer system for processing?",
-  hi: "Data Processing Cycle में raw data को processing के लिए computer system में दर्ज करने का कार्य किस stage में होता है?",
+  en: "A user creates a database using a predefined Access template. Which statement most accurately distinguishes this process from creating a blank database?",
+  hi: "एक उपयोगकर्ता पहले से निर्धारित Access टेम्पलेट का उपयोग करके डेटाबेस बनाता है। कौन-सा कथन इस प्रक्रिया और खाली डेटाबेस बनाने के बीच सबसे सटीक अंतर बताता है?",
 
   options: [
     {
-      en: "Input",
-      hi: "Input"
+      en: "A template-based database cannot be customized after creation.",
+      hi: "टेम्पलेट से बनाए गए डेटाबेस को बनने के बाद अनुकूलित नहीं किया जा सकता।"
     },
     {
-      en: "Output",
-      hi: "Output"
+      en: "A blank database always contains predefined forms and reports, whereas a template contains only tables.",
+      hi: "खाली डेटाबेस में हमेशा पहले से निर्धारित फ़ॉर्म और रिपोर्ट होते हैं, जबकि टेम्पलेट में केवल टेबल होती हैं।"
     },
     {
-      en: "Storage",
-      hi: "Storage"
+      en: "A template-based database necessarily uses the .MDB extension, while a blank database necessarily uses .ACCDB.",
+      hi: "टेम्पलेट से बने डेटाबेस का एक्सटेंशन अनिवार्य रूप से .MDB होता है, जबकि खाली डेटाबेस का एक्सटेंशन अनिवार्य रूप से .ACCDB होता है।"
     },
     {
-      en: "Processing",
-      hi: "Processing"
+      en: "A template can provide predefined database objects and structure, while a blank database starts with minimal predefined content.",
+      hi: "टेम्पलेट में पहले से निर्धारित डेटाबेस ऑब्जेक्ट और संरचना मिल सकती है, जबकि खाली डेटाबेस में शुरुआत में बहुत कम सामग्री निर्धारित होती है।"
     }
   ],
 
-  answer: "A",
+  answer: "D",
 
-  explanation: "Raw data को computer में enter करना Input stage कहलाता है।"
+  explanation: "An Access template can provide a predefined structure and objects such as tables, forms, or reports. A blank database starts with minimal predefined content and allows the user to build the required objects."
 },
-
 
 // Question 35
 {
-  en: "A student enters marks into a computer, the computer calculates the total and percentage, and the results are displayed on the screen. Which sequence correctly identifies these stages?",
-  hi: "एक छात्र कंप्यूटर में marks दर्ज करता है, कंप्यूटर total और percentage calculate करता है और परिणाम screen पर प्रदर्शित होते हैं। कौन-सा क्रम इन stages की सही पहचान करता है?",
+  en: "An employee creates a new Access database and wants to begin entering student records. Which sequence most appropriately represents the initial setup process?",
+  hi: "एक कर्मचारी नया Access डेटाबेस बनाता है और उसमें विद्यार्थियों के रिकॉर्ड दर्ज करना चाहता है। प्रारंभिक सेटअप की सबसे उपयुक्त प्रक्रिया कौन-सी है?",
 
   options: [
     {
-      en: "Processing → Input → Storage",
-      hi: "Processing → Input → Storage"
+      en: "Create or open the database, create a table with suitable fields, save the table design, and then enter records.",
+      hi: "डेटाबेस बनाएँ या खोलें, उपयुक्त फ़ील्ड वाली टेबल बनाएँ, टेबल की संरचना सहेजें और फिर रिकॉर्ड दर्ज करें।"
     },
     {
-      en: "Input → Processing → Output",
-      hi: "Input → Processing → Output"
+      en: "Enter records before defining fields, save the database, and then choose the database file name.",
+      hi: "फ़ील्ड निर्धारित करने से पहले रिकॉर्ड दर्ज करें, डेटाबेस सहेजें और फिर डेटाबेस फ़ाइल का नाम चुनें।"
     },
     {
-      en: "Storage → Processing → Input",
-      hi: "Storage → Processing → Input"
+      en: "Create a report, enter records directly into the report, and convert it into a table.",
+      hi: "रिपोर्ट बनाएँ, उसमें सीधे रिकॉर्ड दर्ज करें और फिर उसे टेबल में बदल दें।"
     },
     {
-      en: "Output → Input → Processing",
-      hi: "Output → Input → Processing"
+      en: "Create a relationship first, enter records into the Navigation Pane, and then create the database file.",
+      hi: "पहले रिलेशनशिप बनाएँ, Navigation Pane में रिकॉर्ड दर्ज करें और फिर डेटाबेस फ़ाइल बनाएँ।"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "Marks दर्ज करना Input, total और percentage calculate करना Processing और result दिखाना Output है।"
+  explanation: "A table defines the fields used to store data. After creating and saving the table design, the user can enter student records into the table."
 },
-
-// Question 36
+ // Question 36
 {
-  en: "Which statement correctly describes the role of the storage stage in the Data Processing Cycle?",
-  hi: "निम्नलिखित में से कौन-सा कथन Data Processing Cycle में storage stage की भूमिका को सही रूप से दर्शाता है?",
+  en: "While creating a database, a user selects an inappropriate folder for saving the file. Which statement about the database location is correct?",
+  hi: "डेटाबेस बनाते समय, एक उपयोगकर्ता फ़ाइल को सहेजने के लिए अनुपयुक्त फ़ोल्डर चुनता है। डेटाबेस के स्थान के बारे में कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "It converts raw data into meaningful information",
-      hi: "यह raw data को meaningful information में बदलता है"
+      en: "The database location is permanently fixed when Access is installed and cannot be changed.",
+      hi: "Access इंस्टॉल होने पर डेटाबेस का स्थान स्थायी रूप से तय हो जाता है और इसे बदला नहीं जा सकता।"
     },
     {
-      en: "It displays the processed result to the user",
-      hi: "यह processed result को user के सामने display करता है"
+      en: "The database can be moved only by exporting every table separately.",
+      hi: "डेटाबेस को केवल प्रत्येक टेबल को अलग-अलग एक्सपोर्ट करके ही स्थानांतरित किया जा सकता है।"
     },
     {
-      en: "It stores data, instructions or processed results for present or future use",
-      hi: "यह data, instructions या processed results को वर्तमान या भविष्य में उपयोग के लिए store करता है"
+      en: "The user can specify a suitable save location during creation; choosing an accessible and organized location helps with later retrieval and management.",
+      hi: "उपयोगकर्ता डेटाबेस बनाते समय उपयुक्त सेव लोकेशन चुन सकता है; आसानी से उपलब्ध और व्यवस्थित स्थान चुनने से बाद में फ़ाइल ढूँढ़ने और प्रबंधित करने में सुविधा होती है।"
     },
     {
-      en: "It is responsible only for entering data into the computer",
-      hi: "यह केवल computer में data enter करने के लिए जिम्मेदार है"
+      en: "The database location determines which data types can be used in its tables.",
+      hi: "डेटाबेस का स्थान निर्धारित करता है कि उसकी टेबल में कौन-से डेटा टाइप इस्तेमाल किए जा सकते हैं।"
     }
   ],
 
   answer: "C",
 
-  explanation: "Storage stage में data, instructions और processed results को वर्तमान या भविष्य के उपयोग के लिए store किया जाता है।"
+  explanation: "Microsoft Access allows the user to specify the database file's save location during creation. Choosing an accessible location helps with file retrieval and management."
 },
-
 
 // Question 37
 {
-  en: "In the Input-Process-Output (IPO) concept, which stage is primarily responsible for transforming the entered data according to specified instructions?",
-  hi: "Input-Process-Output (IPO) concept में entered data को दिए गए instructions के अनुसार transform करने के लिए कौन-सी stage मुख्य रूप से जिम्मेदार होती है?",
+  en: "A user enters a database name while creating a new database in Access. Which statement correctly describes the relationship between the database name and its objects?",
+  hi: "Access में नया डेटाबेस बनाते समय उपयोगकर्ता डेटाबेस का नाम दर्ज करता है। डेटाबेस के नाम और उसके ऑब्जेक्ट के बीच संबंध को कौन-सा कथन सही ढंग से बताता है?",
 
   options: [
     {
-      en: "Input",
-      hi: "Input"
+      en: "The database name automatically becomes the primary key of the first table.",
+      hi: "डेटाबेस का नाम अपने आप पहली टेबल की प्राइमरी की बन जाता है।"
     },
     {
-      en: "Output",
-      hi: "Output"
+      en: "The database file name identifies the database file, whereas individual tables and other objects have their own names within the database.",
+      hi: "डेटाबेस फ़ाइल का नाम डेटाबेस फ़ाइल की पहचान करता है, जबकि डेटाबेस के भीतर प्रत्येक टेबल और अन्य ऑब्जेक्ट के अपने अलग नाम होते हैं।"
     },
     {
-      en: "Processing",
-      hi: "Processing"
+      en: "Every table created in the database must use the database file name as its table name.",
+      hi: "डेटाबेस में बनाई गई प्रत्येक टेबल का नाम डेटाबेस फ़ाइल के नाम के समान होना चाहिए।"
     },
     {
-      en: "Storage",
-      hi: "Storage"
+      en: "The database name determines the number of records that each table can contain.",
+      hi: "डेटाबेस का नाम निर्धारित करता है कि प्रत्येक टेबल में कितने रिकॉर्ड हो सकते हैं।"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Processing stage में entered data पर दिए गए instructions के अनुसार operations किए जाते हैं।"
+  explanation: "The database file name identifies the Access database file. Tables, queries, forms, reports, and other objects within the database have their own names."
 },
-
 
 // Question 38
 {
-  en: "A user enters a number through the keyboard, the CPU performs a mathematical operation on it, and the result appears on the monitor. Which part of the IPO concept is represented by the monitor?",
-  hi: "एक user keyboard के माध्यम से number enter करता है, CPU उस पर mathematical operation करता है और result monitor पर दिखाई देता है। IPO concept में monitor किस भाग को दर्शाता है?",
+  en: "A user has created a new database but has not yet created any tables. Which statement is most accurate?",
+  hi: "एक उपयोगकर्ता ने नया डेटाबेस बना लिया है, लेकिन अभी तक कोई टेबल नहीं बनाई है। कौन-सा कथन सबसे सटीक है?",
 
   options: [
     {
-      en: "Input",
-      hi: "Input"
+      en: "The database cannot exist until at least one record has been entered.",
+      hi: "जब तक कम-से-कम एक रिकॉर्ड दर्ज नहीं किया जाता, डेटाबेस मौजूद नहीं हो सकता।"
     },
     {
-      en: "Processing",
-      hi: "Processing"
+      en: "Access automatically creates a fully populated table whenever a blank database is created.",
+      hi: "जब भी खाली डेटाबेस बनाया जाता है, Access अपने आप पूरी तरह भरी हुई टेबल बनाता है।"
     },
     {
-      en: "Storage",
-      hi: "Storage"
+      en: "The database file is invalid until a primary key is assigned to its first table.",
+      hi: "पहली टेबल को प्राइमरी की दिए जाने तक डेटाबेस फ़ाइल अमान्य रहती है।"
     },
     {
-      en: "Output",
-      hi: "Output"
+      en: "The database file can exist without user-created tables; the user can subsequently create the required tables and other objects.",
+      hi: "डेटाबेस फ़ाइल उपयोगकर्ता द्वारा बनाई गई टेबल के बिना भी मौजूद हो सकती है; उपयोगकर्ता बाद में आवश्यक टेबल और अन्य ऑब्जेक्ट बना सकता है।"
     }
   ],
 
   answer: "D",
 
-  explanation: "Monitor processed result को user तक पहुंचाता है, इसलिए यह Output को दर्शाता है।"
+  explanation: "An Access database file can exist before the user creates any tables. The required tables and other database objects can be added later."
 },
-
 
 // Question 39
 {
-  en: "Which situation correctly represents the Input-Process-Output concept?",
-  hi: "निम्नलिखित में से कौन-सी स्थिति Input-Process-Output concept को सही रूप से दर्शाती है?",
+  en: "A user wants to work on an existing student database rather than create a separate database. Which action best matches this requirement?",
+  hi: "एक उपयोगकर्ता अलग डेटाबेस बनाने के बजाय मौजूदा विद्यार्थी डेटाबेस पर काम करना चाहता है। कौन-सी कार्रवाई इस आवश्यकता के सबसे अनुरूप है?",
 
   options: [
     {
-      en: "Keyboard enters data → CPU performs calculations → Monitor displays the result",
-      hi: "Keyboard data enter करता है → CPU calculations करता है → Monitor result display करता है"
+      en: "Use the Open workflow to access the existing database file instead of creating a new blank database.",
+      hi: "नया खाली डेटाबेस बनाने के बजाय मौजूदा डेटाबेस फ़ाइल खोलने के लिए Open विकल्प का उपयोग करें।"
     },
     {
-      en: "Monitor enters data → Keyboard processes it → CPU displays the result",
-      hi: "Monitor data enter करता है → Keyboard उसे process करता है → CPU result display करता है"
+      en: "Select Blank Database and give it the same name as the existing database to continue working on the original file.",
+      hi: "Blank Database चुनें और मूल फ़ाइल पर काम जारी रखने के लिए उसे मौजूदा डेटाबेस जैसा ही नाम दें।"
     },
     {
-      en: "CPU enters data → Printer processes it → Keyboard displays the result",
-      hi: "CPU data enter करता है → Printer उसे process करता है → Keyboard result display करता है"
+      en: "Create a template-based database because existing databases cannot be opened directly.",
+      hi: "टेम्पलेट-आधारित डेटाबेस बनाएँ, क्योंकि मौजूदा डेटाबेस सीधे नहीं खोले जा सकते।"
     },
     {
-      en: "Printer enters data → Monitor stores it → Keyboard processes the result",
-      hi: "Printer data enter करता है → Monitor उसे store करता है → Keyboard result process करता है"
+      en: "Create a new table first, because Access cannot open a database containing existing tables.",
+      hi: "पहले नई टेबल बनाएँ, क्योंकि Access मौजूदा टेबल वाले डेटाबेस को नहीं खोल सकता।"
     }
   ],
 
   answer: "A",
 
-  explanation: "Keyboard Input, CPU Processing और Monitor Output का कार्य करता है।"
+  explanation: "To work with an existing database, use the Open workflow and select the existing database file. Creating a blank database creates a separate database rather than opening the original one."
 },
-
 
 // Question 40
 {
-  en: "A computer receives two numbers and an instruction to determine which number is larger. It compares the numbers and displays the larger one. Which option correctly identifies the three IPO stages?",
-  hi: "एक कंप्यूटर को दो numbers और यह निर्धारित करने का instruction मिलता है कि कौन-सा number बड़ा है। वह numbers की तुलना करता है और बड़े number को display करता है। कौन-सा विकल्प तीनों IPO stages की सही पहचान करता है?",
+  en: "Consider the following statements about creating and setting up an Access database:\n\n1. Choosing a suitable database name and location is part of the creation process.\n2. Creating a database file and creating a table are separate operations.\n3. A database template may provide predefined objects that reduce the amount of initial setup.\n4. Creating a new blank database necessarily imports all objects from the most recently opened database.\n\nWhich statements are correct?",
+  hi: "Access डेटाबेस बनाने और उसका प्रारंभिक सेटअप करने के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. उपयुक्त डेटाबेस नाम और स्थान चुनना डेटाबेस बनाने की प्रक्रिया का हिस्सा है।\n2. डेटाबेस फ़ाइल बनाना और टेबल बनाना अलग-अलग प्रक्रियाएँ हैं।\n3. डेटाबेस टेम्पलेट पहले से निर्धारित ऑब्जेक्ट प्रदान कर सकता है, जिससे प्रारंभिक सेटअप का काम कम हो जाता है।\n4. नया खाली डेटाबेस बनाने पर हाल ही में खोले गए डेटाबेस के सभी ऑब्जेक्ट अनिवार्य रूप से उसमें इम्पोर्ट हो जाते हैं।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Input: comparison result; Process: entering numbers; Output: instruction",
-      hi: "Input: comparison result; Process: numbers enter करना; Output: instruction"
+      en: "1 and 4 only",
+      hi: "केवल 1 और 4"
     },
     {
-      en: "Input: two numbers and instruction; Process: comparison; Output: larger number",
-      hi: "Input: दो numbers और instruction; Process: comparison; Output: larger number"
+      en: "2 and 4 only",
+      hi: "केवल 2 और 4"
     },
     {
-      en: "Input: larger number; Process: instruction; Output: two numbers",
-      hi: "Input: larger number; Process: instruction; Output: दो numbers"
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
     },
     {
-      en: "Input: comparison; Process: larger number; Output: instruction",
-      hi: "Input: comparison; Process: larger number; Output: instruction"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "दो numbers और instruction Input हैं, comparison Processing है और larger number Output है।"
-},
-
-// Question 41
-{
-  en: "Which of the following is an example of numeric data?",
-  hi: "निम्नलिखित में से numeric data का उदाहरण कौन-सा है?",
-
-  options: [
-    {
-      en: "HP-PATWARI",
-      hi: "HP-PATWARI"
-    },
-    {
-      en: "45872",
-      hi: "45872"
-    },
-    {
-      en: "COMPUTER",
-      hi: "COMPUTER"
-    },
-    {
-      en: "A45B7",
-      hi: "A45B7"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "45872 में केवल numeric digits हैं, इसलिए यह numeric data का उदाहरण है।"
-},
-
-
-// Question 42
-{
-  en: "Which type of data consists primarily of letters of the alphabet?",
-  hi: "किस प्रकार के data में मुख्य रूप से alphabet के letters होते हैं?",
-
-  options: [
-    {
-      en: "Numeric Data",
-      hi: "Numeric Data"
-    },
-    {
-      en: "Alphanumeric Data",
-      hi: "Alphanumeric Data"
-    },
-    {
-      en: "Alphabetic Data",
-      hi: "Alphabetic Data"
-    },
-    {
-      en: "Binary Data",
-      hi: "Binary Data"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
   answer: "C",
 
-  explanation: "Alphabetic data में मुख्य रूप से alphabet के letters होते हैं।"
+  explanation: "Statements 1, 2, and 3 are correct. A user chooses the database name and location, creates tables separately from the database file, and may use a template with predefined objects. A new blank database does not automatically import objects from the most recently opened database."
 },
-
-
-// Question 43
+// Question 41
 {
-  en: "Which of the following is an example of alphanumeric data?",
-  hi: "निम्नलिखित में से alphanumeric data का उदाहरण कौन-सा है?",
+  en: "In Microsoft Access, a table contains the fields StudentID, Name, and Marks. Which statement correctly describes the structure of a record in this table?",
+  hi: "Microsoft Access में एक टेबल में StudentID, Name और Marks फ़ील्ड हैं। कौन-सा कथन इस टेबल में रिकॉर्ड की संरचना का सही वर्णन करता है?",
 
   options: [
     {
-      en: "987654",
-      hi: "987654"
+      en: "A record is a complete column containing all StudentID values, while a field represents an entire row.",
+      hi: "रिकॉर्ड एक पूरा कॉलम होता है जिसमें सभी StudentID मान होते हैं, जबकि फ़ील्ड एक पूरी पंक्ति होती है।"
     },
     {
-      en: "HIMACHAL",
-      hi: "HIMACHAL"
+      en: "A record is a single cell, while a field is the complete collection of cells in the table.",
+      hi: "रिकॉर्ड एक सेल होता है, जबकि फ़ील्ड टेबल के सभी सेल का पूरा संग्रह होता है।"
     },
     {
-      en: "125.50",
-      hi: "125.50"
+      en: "A record contains the values associated with one entry across the table's fields, while each field defines a particular attribute.",
+      hi: "रिकॉर्ड में टेबल के विभिन्न फ़ील्ड से संबंधित एक प्रविष्टि के मान होते हैं, जबकि प्रत्येक फ़ील्ड एक विशेष विशेषता को दर्शाता है।"
     },
     {
-      en: "HP2026",
-      hi: "HP2026"
+      en: "A record defines the data type of the table, while fields determine the number of tables in the database.",
+      hi: "रिकॉर्ड टेबल का डेटा टाइप निर्धारित करता है, जबकि फ़ील्ड डेटाबेस में टेबल की संख्या निर्धारित करते हैं।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A record is a row containing the values for one entry, such as one student's ID, name, and marks. A field is a column representing a particular attribute."
+},
+
+// Question 42
+{
+  en: "A user opens a table in Datasheet View and then switches to Design View. Which task is most appropriately performed in Design View rather than directly editing records in Datasheet View?",
+  hi: "एक उपयोगकर्ता टेबल को Datasheet View में खोलता है और फिर Design View में जाता है। कौन-सा कार्य Datasheet View में रिकॉर्ड संपादित करने के बजाय Design View में करना सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Changing a student's Marks value in an existing record.",
+      hi: "किसी मौजूदा रिकॉर्ड में विद्यार्थी के Marks मान को बदलना।"
+    },
+    {
+      en: "Defining field names, selecting data types, and configuring field properties.",
+      hi: "फ़ील्ड के नाम निर्धारित करना, डेटा टाइप चुनना और फ़ील्ड की प्रॉपर्टीज़ कॉन्फ़िगर करना।"
+    },
+    {
+      en: "Sorting student records alphabetically by Name.",
+      hi: "विद्यार्थियों के रिकॉर्ड को Name के अनुसार वर्णानुक्रम में क्रमबद्ध करना।"
+    },
+    {
+      en: "Navigating between records to inspect their values.",
+      hi: "रिकॉर्ड के मान देखने के लिए उनके बीच नेविगेट करना।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Design View is used to define or modify a table's structure, including field names, data types, and field properties. Datasheet View is primarily used to view and edit records."
+},
+
+// Question 43
+{
+  en: "A table contains 250 records. A user deletes one record from the Datasheet View. Which statement best describes the expected result?",
+  hi: "एक टेबल में 250 रिकॉर्ड हैं। उपयोगकर्ता Datasheet View से एक रिकॉर्ड हटाता है। अपेक्षित परिणाम का सबसे अच्छा वर्णन कौन-सा कथन करता है?",
+
+  options: [
+    {
+      en: "The selected record is removed from the table, while the remaining records continue to exist.",
+      hi: "चयनित रिकॉर्ड टेबल से हट जाता है, जबकि शेष रिकॉर्ड मौजूद रहते हैं।"
+    },
+    {
+      en: "The selected record's values are cleared, but the record necessarily remains as a blank row in the table.",
+      hi: "चयनित रिकॉर्ड के मान मिट जाते हैं, लेकिन रिकॉर्ड अनिवार्य रूप से टेबल में खाली पंक्ति के रूप में बना रहता है।"
+    },
+    {
+      en: "The entire field containing the selected record's first value is deleted.",
+      hi: "चयनित रिकॉर्ड का पहला मान रखने वाला पूरा फ़ील्ड हट जाता है।"
+    },
+    {
+      en: "The table's structure is automatically converted into a worksheet.",
+      hi: "टेबल की संरचना अपने आप वर्कशीट में बदल जाती है।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Deleting a record removes the selected row from the table. The remaining records and the table's structure remain intact."
+},
+
+// Question 44
+{
+  en: "A user needs to add a new field named DateOfBirth to an existing Access table while preserving the existing records. Which approach is most appropriate?",
+  hi: "एक उपयोगकर्ता मौजूदा रिकॉर्ड सुरक्षित रखते हुए Access की एक मौजूदा टेबल में DateOfBirth नाम का नया फ़ील्ड जोड़ना चाहता है। कौन-सा तरीका सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Insert a new record and use its first cell to define the new field permanently.",
+      hi: "एक नया रिकॉर्ड जोड़कर उसके पहले सेल का उपयोग नए फ़ील्ड को स्थायी रूप से निर्धारित करने के लिए करना।"
+    },
+    {
+      en: "Rename an existing record to DateOfBirth without changing the table structure.",
+      hi: "टेबल की संरचना बदले बिना किसी मौजूदा रिकॉर्ड का नाम बदलकर DateOfBirth कर देना।"
+    },
+    {
+      en: "Create a separate database file because fields cannot be added to existing tables.",
+      hi: "अलग डेटाबेस फ़ाइल बनाना, क्योंकि मौजूदा टेबल में फ़ील्ड नहीं जोड़े जा सकते।"
+    },
+    {
+      en: "Modify the table structure to add the field, choosing a suitable data type and configuring its properties as required.",
+      hi: "फ़ील्ड जोड़ने के लिए टेबल की संरचना में बदलाव करना, उपयुक्त डेटा टाइप चुनना और आवश्यकतानुसार उसकी प्रॉपर्टीज़ कॉन्फ़िगर करना।"
     }
   ],
 
   answer: "D",
 
-  explanation: "HP2026 में letters और numbers दोनों हैं, इसलिए यह alphanumeric data है।"
+  explanation: "A new field can be added by modifying the table's design and selecting an appropriate data type. This changes the table structure without requiring the existing records to be deleted."
 },
-
-
-// Question 44
-{
-  en: "Which option correctly matches the data type with its example?",
-  hi: "कौन-सा विकल्प data type को उसके उदाहरण के साथ सही रूप से match करता है?",
-
-  options: [
-    {
-      en: "Numeric Data – 1250",
-      hi: "Numeric Data – 1250"
-    },
-    {
-      en: "Alphabetic Data – 12345",
-      hi: "Alphabetic Data – 12345"
-    },
-    {
-      en: "Alphanumeric Data – 7865",
-      hi: "Alphanumeric Data – 7865"
-    },
-    {
-      en: "Numeric Data – HP2026",
-      hi: "Numeric Data – HP2026"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "1250 में केवल numeric digits हैं, इसलिए यह numeric data है।"
-},
-
 
 // Question 45
 {
-  en: "Which of the following is the best example of text data in a computer system?",
-  hi: "निम्नलिखित में से computer system में text data का सबसे अच्छा उदाहरण कौन-सा है?",
+  en: "Consider the following statements about Datasheet View and Table Design in MS Access:\n\n1. Datasheet View displays table data in rows and columns.\n2. Design View is used to define and modify the table's structure.\n3. Editing a field's data type in Design View is conceptually different from changing a record's field value in Datasheet View.\n\nWhich statements are correct?",
+  hi: "MS Access में Datasheet View और Table Design के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Datasheet View टेबल के डेटा को पंक्तियों और कॉलम में दिखाता है।\n2. Design View का उपयोग टेबल की संरचना निर्धारित करने और उसमें बदलाव करने के लिए किया जाता है।\n3. Design View में किसी फ़ील्ड का डेटा टाइप बदलना, Datasheet View में किसी रिकॉर्ड के फ़ील्ड का मान बदलने से अलग प्रक्रिया है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "A photograph stored as a JPEG file",
-      hi: "JPEG file के रूप में stored photograph"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "A recorded speech stored as an audio file",
-      hi: "Audio file के रूप में stored recorded speech"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "A document containing letters, words and sentences",
-      hi: "Letters, words और sentences वाला document"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "A movie containing moving frames and sound",
-      hi: "Moving frames और sound वाली movie"
+      en: "1, 2 and 3",
+      hi: "1, 2 और 3"
     }
   ],
 
-  answer: "C",
+  answer: "D",
 
-  explanation: "Letters, words और sentences वाला document text data का उदाहरण है।"
+  explanation: "All three statements are correct. Datasheet View displays and supports editing of records, while Design View is used to define or modify the table's structure and field properties."
 },
-
 // Question 46
 {
-  en: "A digital photograph is stored in a computer as a collection of binary values representing its visual elements. Which type of data does it primarily represent?",
-  hi: "एक digital photograph कंप्यूटर में अपने visual elements को दर्शाने वाले binary values के रूप में store होती है। यह मुख्य रूप से किस प्रकार के data को दर्शाती है?",
+  en: "A user changes the Marks value from 75 to 82 in an existing student record. No field is added or removed. Which interpretation is correct?",
+  hi: "एक उपयोगकर्ता किसी मौजूदा विद्यार्थी रिकॉर्ड में Marks का मान 75 से बदलकर 82 कर देता है। कोई फ़ील्ड जोड़ा या हटाया नहीं जाता। सही व्याख्या कौन-सी है?",
 
   options: [
     {
-      en: "Audio Data",
-      hi: "Audio Data"
+      en: "The user has modified the table structure because the value of a field has changed.",
+      hi: "फ़ील्ड का मान बदलने के कारण उपयोगकर्ता ने टेबल की संरचना में बदलाव किया है।"
     },
     {
-      en: "Image Data",
-      hi: "Image Data"
+      en: "The user has edited an existing record without necessarily changing the table's structure.",
+      hi: "उपयोगकर्ता ने टेबल की संरचना बदले बिना मौजूदा रिकॉर्ड को संपादित किया है।"
     },
     {
-      en: "Text Data",
-      hi: "Text Data"
+      en: "The user has created a new field because the Marks value is different.",
+      hi: "Marks का मान अलग होने के कारण उपयोगकर्ता ने एक नया फ़ील्ड बनाया है।"
     },
     {
-      en: "Alphabetic Data",
-      hi: "Alphabetic Data"
+      en: "The user has deleted the original record and must recreate the entire table.",
+      hi: "उपयोगकर्ता ने मूल रिकॉर्ड हटा दिया है और उसे पूरी टेबल दोबारा बनानी होगी।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Digital photograph visual information को represent करती है, इसलिए यह image data है।"
+  explanation: "Changing a field value in an existing record edits the data, not the table structure. The field definition remains unchanged."
 },
-
 
 // Question 47
 {
-  en: "Which statement correctly distinguishes audio data from video data?",
-  hi: "निम्नलिखित में से कौन-सा कथन audio data और video data के बीच सही अंतर बताता है?",
+  en: "Which statement most accurately distinguishes an MS Access table from a worksheet in Microsoft Excel?",
+  hi: "कौन-सा कथन MS Access की टेबल और Microsoft Excel की वर्कशीट के बीच अंतर को सबसे सटीक रूप से बताता है?",
 
   options: [
     {
-      en: "Audio data represents sound, whereas video data can represent moving visual content and may also include sound",
-      hi: "Audio data sound को दर्शाता है, जबकि video data moving visual content को दर्शा सकता है और इसमें sound भी शामिल हो सकता है"
+      en: "An Access table and an Excel worksheet both enforce relational database constraints automatically in exactly the same way.",
+      hi: "Access की टेबल और Excel की वर्कशीट दोनों रिलेशनल डेटाबेस की बाध्यताओं को बिल्कुल एक ही तरीके से अपने आप लागू करती हैं।"
     },
     {
-      en: "Audio data always contains images, whereas video data contains only text",
-      hi: "Audio data में हमेशा images होती हैं, जबकि video data में केवल text होता है"
+      en: "An Access table can store only text, while an Excel worksheet can store numbers and dates.",
+      hi: "Access की टेबल में केवल टेक्स्ट रखा जा सकता है, जबकि Excel की वर्कशीट में संख्याएँ और तारीखें रखी जा सकती हैं।"
     },
     {
-      en: "Video data cannot contain audio information",
-      hi: "Video data में audio information शामिल नहीं हो सकती"
+      en: "An Access table defines structured fields and records within a database and can participate in relationships and integrity constraints; an Excel worksheet provides a general spreadsheet grid.",
+      hi: "Access की टेबल डेटाबेस में व्यवस्थित फ़ील्ड और रिकॉर्ड निर्धारित करती है तथा रिलेशनशिप और डेटा की अखंडता संबंधी नियमों का हिस्सा बन सकती है; Excel की वर्कशीट एक सामान्य स्प्रेडशीट ग्रिड प्रदान करती है।"
     },
     {
-      en: "Audio and video data are identical because both are stored digitally",
-      hi: "Audio और video data समान होते हैं क्योंकि दोनों digitally stored होते हैं"
+      en: "An Excel worksheet cannot contain rows and columns unless it is imported into Access.",
+      hi: "Excel की वर्कशीट में पंक्तियाँ और कॉलम तब तक नहीं हो सकते, जब तक उसे Access में इम्पोर्ट न किया जाए।"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "Audio sound को represent करता है, जबकि video moving visuals को और इसमें audio भी शामिल हो सकता है।"
+  explanation: "Access tables store structured data using fields and records and can participate in relationships and integrity constraints. Excel worksheets provide a flexible grid for spreadsheet calculations and data analysis."
 },
-
 
 // Question 48
 {
-  en: "Which statement best explains the term “digital data”?",
-  hi: "“Digital data” शब्द को कौन-सा कथन सबसे अच्छी तरह समझाता है?",
+  en: "A user creates a table in Access and enters records in Datasheet View. Later, the user notices that a field was assigned an unsuitable data type. Which statement is the most accurate?",
+  hi: "एक उपयोगकर्ता Access में टेबल बनाकर Datasheet View में रिकॉर्ड दर्ज करता है। बाद में उसे पता चलता है कि किसी फ़ील्ड को अनुपयुक्त डेटा टाइप दिया गया था। कौन-सा कथन सबसे सटीक है?",
 
   options: [
     {
-      en: "Data that can exist only in printed form",
-      hi: "ऐसा data जो केवल printed form में मौजूद हो सकता है"
+      en: "The data type can always be changed without any risk of data loss or conversion problems.",
+      hi: "डेटा टाइप को हमेशा बिना डेटा खोने या कन्वर्ज़न संबंधी समस्या के बदला जा सकता है।"
     },
     {
-      en: "Data represented and processed electronically using discrete values, commonly binary digits",
-      hi: "ऐसा data जिसे electronic रूप से discrete values, सामान्यतः binary digits, का उपयोग करके represent और process किया जाता है"
+      en: "The data type cannot be changed after the first record is entered.",
+      hi: "पहला रिकॉर्ड दर्ज होने के बाद डेटा टाइप नहीं बदला जा सकता।"
     },
     {
-      en: "Data that contains only numerical information",
-      hi: "ऐसा data जिसमें केवल numerical information होती है"
+      en: "The only possible solution is to delete the entire database and create it again.",
+      hi: "एकमात्र समाधान पूरे डेटाबेस को हटाकर दोबारा बनाना है।"
     },
     {
-      en: "Data that cannot be stored or transmitted electronically",
-      hi: "ऐसा data जिसे electronic रूप से store या transmit नहीं किया जा सकता"
+      en: "The user can attempt to change the field's data type in Design View, but existing values and compatibility may affect whether the change succeeds safely.",
+      hi: "उपयोगकर्ता Design View में फ़ील्ड का डेटा टाइप बदलने का प्रयास कर सकता है, लेकिन मौजूदा मान और उनकी संगतता यह प्रभावित कर सकते हैं कि बदलाव सुरक्षित रूप से हो पाएगा या नहीं।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Digital data को electronic रूप से discrete values, सामान्यतः 0 और 1, के रूप में represent और process किया जाता है।"
+  explanation: "A field's data type can be modified in Design View, but existing data may not be compatible with the new type. The user should check for possible data conversion issues or data loss before making the change."
 },
-
 
 // Question 49
 {
-  en: "Which of the following correctly matches the early calculating device with its inventor or associated person?",
-  hi: "निम्नलिखित में से कौन-सा early calculating device को उसके inventor या associated person के साथ सही रूप से match करता है?",
+  en: "A user is entering student records in Datasheet View and wants to change the Field Size property of an existing Short Text field. Which action is most appropriate?",
+  hi: "एक उपयोगकर्ता Datasheet View में विद्यार्थियों के रिकॉर्ड दर्ज कर रहा है और मौजूदा Short Text फ़ील्ड की Field Size प्रॉपर्टी बदलना चाहता है। कौन-सी कार्रवाई सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Pascaline — Gottfried Wilhelm Leibniz",
-      hi: "Pascaline — Gottfried Wilhelm Leibniz"
+      en: "Select the field's cell in Datasheet View and type the required Field Size value into the cell.",
+      hi: "Datasheet View में फ़ील्ड का सेल चुनकर उसमें आवश्यक Field Size मान टाइप करना।"
     },
     {
-      en: "Napier's Bones — Blaise Pascal",
-      hi: "Napier's Bones — Blaise Pascal"
+      en: "Switch to Design View and modify the field's properties, considering any implications for existing data.",
+      hi: "Design View में जाकर फ़ील्ड की प्रॉपर्टीज़ बदलना और मौजूदा डेटा पर पड़ने वाले संभावित प्रभावों पर विचार करना।"
     },
     {
-      en: "Leibniz Calculator — Gottfried Wilhelm Leibniz",
-      hi: "Leibniz Calculator — Gottfried Wilhelm Leibniz"
+      en: "Open the Navigation Pane and rename the table to change the Field Size.",
+      hi: "Navigation Pane खोलकर टेबल का नाम बदलना, ताकि Field Size बदल जाए।"
     },
     {
-      en: "Abacus — John Napier",
-      hi: "Abacus — John Napier"
+      en: "Use the Status Bar to convert the selected record into a field definition.",
+      hi: "Status Bar का उपयोग करके चयनित रिकॉर्ड को फ़ील्ड की परिभाषा में बदलना।"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Leibniz Calculator का विकास Gottfried Wilhelm Leibniz ने किया था।"
+  explanation: "Field Size is a field property configured in Design View. Changing it may affect existing values, particularly if the new size is smaller than the stored text."
 },
-
 
 // Question 50
 {
-  en: "Which device was specifically developed to simplify multiplication and division by using numbered rods based on logarithmic principles?",
-  hi: "किस device को logarithmic principles पर आधारित numbered rods का उपयोग करके multiplication और division को सरल बनाने के लिए विकसित किया गया था?",
+  en: "Consider the following statements about Datasheet View and Design View in MS Access:\n\n1. Datasheet View displays records in a tabular layout.\n2. Design View allows the user to define field names and data types.\n3. Switching to Design View automatically deletes all records previously entered in the table.\n4. Both views can be used while working with the same table, but they serve different purposes.\n\nWhich statements are correct?",
+  hi: "MS Access में Datasheet View और Design View के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Datasheet View रिकॉर्ड को टेबल के रूप में प्रदर्शित करता है।\n2. Design View उपयोगकर्ता को फ़ील्ड के नाम और डेटा टाइप निर्धारित करने देता है।\n3. Design View में जाने से टेबल में पहले दर्ज किए गए सभी रिकॉर्ड अपने आप हट जाते हैं।\n4. दोनों व्यू का उपयोग एक ही टेबल पर काम करते समय किया जा सकता है, लेकिन उनके उद्देश्य अलग-अलग हैं।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Pascaline",
-      hi: "Pascaline"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "Napier's Bones",
-      hi: "Napier's Bones"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "Abacus",
-      hi: "Abacus"
+      en: "1, 2 and 4 only",
+      hi: "केवल 1, 2 और 4"
     },
     {
-      en: "Leibniz Calculator",
-      hi: "Leibniz Calculator"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "Napier's Bones में numbered rods का उपयोग multiplication और division को सरल बनाने के लिए किया जाता था।"
+  explanation: "Statements 1, 2, and 4 are correct. Datasheet View displays records, while Design View defines or modifies the table structure. Switching views does not automatically delete existing records."
 },
-
 // Question 51
 {
-  en: "Which statement most accurately distinguishes the Pascaline from the Leibniz Calculator?",
-  hi: "निम्नलिखित में से कौन-सा कथन Pascaline और Leibniz Calculator के बीच अंतर को सबसे सटीक रूप से दर्शाता है?",
+  en: "A user creates a field named AdmissionDate in Design View and assigns it the Date/Time data type. What is the primary purpose of defining the data type at this stage?",
+  hi: "एक उपयोगकर्ता Design View में AdmissionDate नाम का फ़ील्ड बनाता है और उसे Date/Time डेटा टाइप देता है। इस चरण में डेटा टाइप निर्धारित करने का मुख्य उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Pascaline was based on rods, while Leibniz Calculator was based on counting beads",
-      hi: "Pascaline rods पर आधारित था, जबकि Leibniz Calculator counting beads पर आधारित था"
+      en: "To specify the kind of values the field is intended to store and the operations appropriate to those values.",
+      hi: "यह निर्धारित करना कि फ़ील्ड में किस प्रकार के मान संग्रहीत किए जाने हैं और उन मानों पर कौन-सी क्रियाएँ उपयुक्त हैं।"
     },
     {
-      en: "Pascaline was a mechanical calculator primarily designed for addition and subtraction, while Leibniz Calculator extended mechanical calculation to multiplication and division",
-      hi: "Pascaline एक mechanical calculator था जो मुख्य रूप से addition और subtraction के लिए बनाया गया था, जबकि Leibniz Calculator ने mechanical calculation को multiplication और division तक विस्तारित किया"
+      en: "To determine the number of records that must be entered before the table can be saved.",
+      hi: "यह निर्धारित करना कि टेबल को सहेजने से पहले कितने रिकॉर्ड दर्ज करना आवश्यक है।"
     },
     {
-      en: "Pascaline was electronic, while Leibniz Calculator was mechanical",
-      hi: "Pascaline electronic था, जबकि Leibniz Calculator mechanical था"
+      en: "To ensure that the field automatically becomes the table's primary key.",
+      hi: "यह सुनिश्चित करना कि फ़ील्ड अपने आप टेबल की प्राइमरी की बन जाए।"
     },
     {
-      en: "Pascaline was invented by John Napier, while Leibniz Calculator was invented by Blaise Pascal",
-      hi: "Pascaline का आविष्कार John Napier ने किया था, जबकि Leibniz Calculator का आविष्कार Blaise Pascal ने किया था"
+      en: "To determine the order in which all records must appear in Datasheet View.",
+      hi: "यह निर्धारित करना कि Datasheet View में सभी रिकॉर्ड किस क्रम में दिखाई देने चाहिए।"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "Pascaline मुख्यतः addition और subtraction के लिए था, जबकि Leibniz Calculator multiplication और division भी कर सकता था।"
+  explanation: "A field's data type specifies the kind of data it is intended to store, such as dates, numbers, or text. It also affects the operations and validation appropriate for that data."
 },
-
 
 // Question 52
 {
-  en: "Arrange the following computing devices in chronological order of their development: 1. Pascaline 2. Abacus 3. Leibniz Calculator 4. Napier's Bones",
-  hi: "निम्नलिखित computing devices को उनके विकास के कालानुक्रमिक क्रम में व्यवस्थित करें: 1. Pascaline 2. Abacus 3. Leibniz Calculator 4. Napier's Bones",
+  en: "A user attempts to enter the text \"Absent\" into a field defined with the Number data type. Which statement best explains the possible outcome?",
+  hi: "एक उपयोगकर्ता Number डेटा टाइप वाले फ़ील्ड में \"Absent\" टेक्स्ट दर्ज करने का प्रयास करता है। संभावित परिणाम की सबसे अच्छी व्याख्या कौन-सी है?",
 
   options: [
     {
-      en: "2 → 4 → 1 → 3",
-      hi: "2 → 4 → 1 → 3"
+      en: "Access must accept the text because Datasheet View permits any value in every field.",
+      hi: "Access को यह टेक्स्ट स्वीकार करना ही होगा, क्योंकि Datasheet View प्रत्येक फ़ील्ड में कोई भी मान दर्ज करने की अनुमति देता है।"
     },
     {
-      en: "4 → 2 → 1 → 3",
-      hi: "4 → 2 → 1 → 3"
+      en: "Access automatically changes the field's data type to Short Text after the first entry.",
+      hi: "पहली प्रविष्टि के बाद Access अपने आप फ़ील्ड का डेटा टाइप Short Text में बदल देता है।"
     },
     {
-      en: "2 → 1 → 4 → 3",
-      hi: "2 → 1 → 4 → 3"
+      en: "The entire table is deleted because the entered value conflicts with the field definition.",
+      hi: "दर्ज किया गया मान फ़ील्ड की परिभाषा से मेल न खाने के कारण पूरी टेबल हटा दी जाती है।"
     },
     {
-      en: "1 → 2 → 4 → 3",
-      hi: "1 → 2 → 4 → 3"
+      en: "Access may reject the entry or report a data-conversion error because the value is incompatible with the field's data type.",
+      hi: "फ़ील्ड के डेटा टाइप के अनुकूल न होने के कारण Access इस प्रविष्टि को अस्वीकार कर सकता है या डेटा कन्वर्ज़न संबंधी त्रुटि दिखा सकता है।"
     }
   ],
 
-  answer: "A",
+  answer: "D",
 
-  explanation: "सामान्य कालानुक्रमिक क्रम Abacus → Napier's Bones → Pascaline → Leibniz Calculator है।"
+  explanation: "A Number field is intended to store numeric values. Entering non-numeric text such as \"Absent\" may cause Access to reject the entry or report a data-conversion error."
 },
-
 
 // Question 53
 {
-  en: "Who designed the Difference Engine?",
-  hi: "Difference Engine को किसने design किया था?",
+  en: "A table is open in Datasheet View. The user switches to Design View, changes a field's name, and returns to Datasheet View. Which result should generally be expected?",
+  hi: "एक टेबल Datasheet View में खुली है। उपयोगकर्ता Design View में जाकर किसी फ़ील्ड का नाम बदलता है और फिर Datasheet View में लौटता है। सामान्यतः क्या परिणाम अपेक्षित है?",
 
   options: [
     {
-      en: "Charles Babbage",
-      hi: "Charles Babbage"
+      en: "The field's stored values are automatically transferred to a newly created table.",
+      hi: "फ़ील्ड में संग्रहीत मान अपने आप नई बनाई गई टेबल में स्थानांतरित हो जाते हैं।"
     },
     {
-      en: "Herman Hollerith",
-      hi: "Herman Hollerith"
+      en: "The changed field name is reflected in the table's structure and displayed column heading, while the existing data generally remains associated with that field.",
+      hi: "बदला हुआ फ़ील्ड नाम टेबल की संरचना और दिखाई देने वाले कॉलम शीर्षक में प्रदर्शित होता है, जबकि मौजूदा डेटा सामान्यतः उसी फ़ील्ड से जुड़ा रहता है।"
     },
     {
-      en: "John Mauchly",
-      hi: "John Mauchly"
+      en: "The table is converted into an Excel worksheet, so its field properties are lost.",
+      hi: "टेबल Excel वर्कशीट में बदल जाती है, इसलिए उसकी फ़ील्ड प्रॉपर्टीज़ समाप्त हो जाती हैं।"
     },
     {
-      en: "Howard Aiken",
-      hi: "Howard Aiken"
+      en: "All records must be re-entered because changing a field name necessarily clears the table.",
+      hi: "सभी रिकॉर्ड दोबारा दर्ज करने पड़ते हैं, क्योंकि फ़ील्ड का नाम बदलने से टेबल अनिवार्य रूप से खाली हो जाती है।"
     }
   ],
 
-  answer: "A",
+  answer: "B",
 
-  explanation: "Charles Babbage ने Difference Engine को design किया था।"
+  explanation: "Changing a field name in Design View modifies the table's structure. The new name appears as the column heading, while the existing values generally remain associated with the renamed field."
 },
-
 
 // Question 54
 {
-  en: "Which machine was developed by Herman Hollerith for processing large amounts of census data using punched cards?",
-  hi: "Herman Hollerith ने punched cards का उपयोग करके बड़ी मात्रा में census data को process करने के लिए कौन-सी machine विकसित की थी?",
+  en: "Which task is most directly associated with Design View rather than ordinary record entry in Datasheet View?",
+  hi: "कौन-सा कार्य Datasheet View में सामान्य रिकॉर्ड दर्ज करने के बजाय सीधे Design View से संबंधित है?",
 
   options: [
     {
-      en: "Analytical Engine",
-      hi: "Analytical Engine"
+      en: "Entering a student's name into an existing record.",
+      hi: "किसी मौजूदा रिकॉर्ड में विद्यार्थी का नाम दर्ज करना।"
     },
     {
-      en: "Tabulating Machine",
-      hi: "Tabulating Machine"
+      en: "Correcting a student's marks from 68 to 86.",
+      hi: "किसी विद्यार्थी के अंक 68 से बदलकर 86 करना।"
     },
     {
-      en: "Mark-I",
-      hi: "Mark-I"
+      en: "Defining a field's Default Value or Required property.",
+      hi: "किसी फ़ील्ड की Default Value या Required प्रॉपर्टी निर्धारित करना।"
     },
     {
-      en: "ENIAC",
-      hi: "ENIAC"
+      en: "Moving between records to inspect their stored values.",
+      hi: "संग्रहीत मान देखने के लिए विभिन्न रिकॉर्ड के बीच जाना।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "Herman Hollerith ने census data processing के लिए Tabulating Machine विकसित की थी।"
+  explanation: "Design View is used to configure field properties such as Default Value and Required. Datasheet View is primarily used to view, enter, and edit records."
 },
-
 
 // Question 55
 {
-  en: "Which of the following correctly distinguishes the Analytical Engine from the Difference Engine?",
-  hi: "निम्नलिखित में से कौन-सा कथन Analytical Engine और Difference Engine के बीच सही अंतर बताता है?",
+  en: "A user wants to add a new record while viewing a table in Datasheet View. Which statement most accurately describes this operation?",
+  hi: "एक उपयोगकर्ता Datasheet View में टेबल देखते समय नया रिकॉर्ड जोड़ना चाहता है। इस प्रक्रिया का सबसे सटीक वर्णन कौन-सा कथन करता है?",
 
   options: [
     {
-      en: "The Analytical Engine was designed as a general-purpose programmable mechanical machine, whereas the Difference Engine was designed primarily for automatic calculation of mathematical tables",
-      hi: "Analytical Engine को general-purpose programmable mechanical machine के रूप में design किया गया था, जबकि Difference Engine मुख्य रूप से mathematical tables की automatic calculation के लिए design किया गया था"
+      en: "The user can enter values in the new record's fields, subject to field definitions and applicable validation or key constraints.",
+      hi: "उपयोगकर्ता नए रिकॉर्ड के फ़ील्ड में मान दर्ज कर सकता है, बशर्ते वे फ़ील्ड की परिभाषाओं तथा लागू वैलिडेशन या की संबंधी नियमों के अनुरूप हों।"
     },
     {
-      en: "The Difference Engine was electronic, whereas the Analytical Engine was fully electronic",
-      hi: "Difference Engine electronic था, जबकि Analytical Engine fully electronic था"
+      en: "The user must first redefine every field in Design View because Datasheet View cannot be used for data entry.",
+      hi: "उपयोगकर्ता को पहले Design View में प्रत्येक फ़ील्ड दोबारा निर्धारित करना होगा, क्योंकि Datasheet View में डेटा दर्ज नहीं किया जा सकता।"
     },
     {
-      en: "The Analytical Engine was developed by Herman Hollerith, whereas the Difference Engine was developed by Howard Aiken",
-      hi: "Analytical Engine को Herman Hollerith ने विकसित किया था, जबकि Difference Engine को Howard Aiken ने विकसित किया था"
+      en: "The user can enter values only after converting the table into a query.",
+      hi: "उपयोगकर्ता केवल टेबल को क्वेरी में बदलने के बाद ही मान दर्ज कर सकता है।"
     },
     {
-      en: "The Difference Engine used punched cards for census processing, whereas the Analytical Engine was designed only for census data",
-      hi: "Difference Engine ने census processing के लिए punched cards का उपयोग किया था, जबकि Analytical Engine केवल census data के लिए design किया गया था"
+      en: "The user must create a separate database file for each additional record.",
+      hi: "प्रत्येक अतिरिक्त रिकॉर्ड के लिए उपयोगकर्ता को अलग डेटाबेस फ़ाइल बनानी होगी।"
     }
   ],
 
   answer: "A",
 
-  explanation: "Analytical Engine general-purpose programmable machine की अवधारणा पर आधारित था, जबकि Difference Engine mathematical tables की गणना के लिए था।"
+  explanation: "Datasheet View supports adding records directly to a table. The entered values must comply with the field definitions and any applicable validation rules, required-field settings, or key constraints."
 },
-
 // Question 56
 {
-  en: "Which sequence correctly represents the historical development of the following machines from earlier to later?",
-  hi: "निम्नलिखित machines के ऐतिहासिक विकास को पहले से बाद के क्रम में कौन-सा क्रम सही रूप से दर्शाता है?",
+  en: "Consider the following statements about switching between table views:\n\n1. Switching views changes how the table is displayed and worked with.\n2. Design View focuses on the table's structure, while Datasheet View focuses on its records.\n3. Switching views by itself necessarily creates a duplicate copy of the table.\n4. Some structural changes may require saving the design before they can be used or retained as intended.\n\nWhich statements are correct?",
+  hi: "टेबल के विभिन्न व्यू के बीच स्विच करने के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. व्यू बदलने से टेबल को प्रदर्शित करने और उसके साथ काम करने का तरीका बदलता है।\n2. Design View टेबल की संरचना पर केंद्रित होता है, जबकि Datasheet View उसके रिकॉर्ड पर केंद्रित होता है।\n3. केवल व्यू बदलने से अनिवार्य रूप से टेबल की एक डुप्लिकेट कॉपी बन जाती है।\n4. कुछ संरचनात्मक बदलावों को सही ढंग से लागू या सुरक्षित रखने के लिए डिज़ाइन को सहेजना आवश्यक हो सकता है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Analytical Engine → Difference Engine → Hollerith Machine → ENIAC",
-      hi: "Analytical Engine → Difference Engine → Hollerith Machine → ENIAC"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "Difference Engine → Analytical Engine → Hollerith Machine → ENIAC",
-      hi: "Difference Engine → Analytical Engine → Hollerith Machine → ENIAC"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "Hollerith Machine → Difference Engine → Analytical Engine → ENIAC",
-      hi: "Hollerith Machine → Difference Engine → Analytical Engine → ENIAC"
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
     },
     {
-      en: "Difference Engine → Hollerith Machine → Analytical Engine → ENIAC",
-      hi: "Difference Engine → Hollerith Machine → Analytical Engine → ENIAC"
+      en: "1, 2 and 4 only",
+      hi: "केवल 1, 2 और 4"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "सही ऐतिहासिक क्रम Difference Engine → Analytical Engine → Hollerith Machine → ENIAC है।"
+  explanation: "Statements 1, 2, and 4 are correct. Switching views changes the way a table is displayed and edited, but does not create a duplicate table. Structural changes may need to be saved to retain them."
 },
-
 
 // Question 57
 {
-  en: "Who is widely regarded as the “Father of the Computer” for his work on the Difference Engine and Analytical Engine?",
-  hi: "Difference Engine और Analytical Engine पर अपने कार्य के लिए किसे व्यापक रूप से “Father of the Computer” कहा जाता है?",
+  en: "A table contains the following fields: EmployeeID, Name, and Salary. In the record where EmployeeID = 105, Name = \"Amit\", and Salary = 35000, which statement is correct?",
+  hi: "एक टेबल में EmployeeID, Name और Salary फ़ील्ड हैं। उस रिकॉर्ड में EmployeeID = 105, Name = \"Amit\" और Salary = 35000 है। कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "Blaise Pascal",
-      hi: "Blaise Pascal"
+      en: "\"Salary\" is a field value, whereas 35000 is the field name.",
+      hi: "\"Salary\" फ़ील्ड का मान है, जबकि 35000 फ़ील्ड का नाम है।"
     },
     {
-      en: "Charles Babbage",
-      hi: "Charles Babbage"
+      en: "The complete row is a field, whereas each column is a record.",
+      hi: "पूरी पंक्ति एक फ़ील्ड होती है, जबकि प्रत्येक कॉलम एक रिकॉर्ड होता है।"
     },
     {
-      en: "Gottfried Wilhelm Leibniz",
-      hi: "Gottfried Wilhelm Leibniz"
+      en: "\"Salary\" is a field name, 35000 is its field value, and the complete set of values for EmployeeID 105 forms one record.",
+      hi: "\"Salary\" फ़ील्ड का नाम है, 35000 उसका मान है और EmployeeID 105 के लिए सभी मानों का पूरा समूह एक रिकॉर्ड बनाता है।"
     },
     {
-      en: "Ada Lovelace",
-      hi: "Ada Lovelace"
+      en: "EmployeeID = 105 is the record selector, and the entire table row is a field value.",
+      hi: "EmployeeID = 105 रिकॉर्ड सेलेक्टर है और टेबल की पूरी पंक्ति एक फ़ील्ड का मान है।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "Charles Babbage को Difference Engine और Analytical Engine पर उनके कार्य के कारण “Father of the Computer” कहा जाता है।"
+  explanation: "A field name identifies an attribute, such as Salary. The value 35000 is the Salary field's value in that record, and all values for EmployeeID 105 together form one record."
 },
-
 
 // Question 58
 {
-  en: "Ada Lovelace is best known in computer history for which contribution?",
-  hi: "Computer history में Ada Lovelace को किस योगदान के लिए सबसे अधिक जाना जाता है?",
+  en: "In an Access table opened in Datasheet View, a user clicks the record selector beside a particular row. Which interpretation is most accurate?",
+  hi: "Datasheet View में खुली Access टेबल में उपयोगकर्ता किसी पंक्ति के पास दिए गए रिकॉर्ड सेलेक्टर पर क्लिक करता है। इसकी सबसे सटीक व्याख्या क्या है?",
 
   options: [
     {
-      en: "Inventing the Pascaline",
-      hi: "Pascaline का आविष्कार करने के लिए"
+      en: "The selector identifies the entire record, allowing record-level operations; it does not itself identify a single field value.",
+      hi: "सेलेक्टर पूरे रिकॉर्ड की पहचान करता है और रिकॉर्ड-स्तर की क्रियाओं की अनुमति देता है; यह स्वयं किसी एक फ़ील्ड के मान की पहचान नहीं करता।"
     },
     {
-      en: "Designing the Difference Engine",
-      hi: "Difference Engine को design करने के लिए"
+      en: "The selector automatically makes the first field of that record the primary key.",
+      hi: "सेलेक्टर अपने आप उस रिकॉर्ड के पहले फ़ील्ड को प्राइमरी की बना देता है।"
     },
     {
-      en: "Writing an algorithm intended for the Analytical Engine",
-      hi: "Analytical Engine के लिए एक algorithm लिखने के लिए"
+      en: "The selector selects every record having the same value in the first field.",
+      hi: "सेलेक्टर पहले फ़ील्ड में समान मान वाले सभी रिकॉर्ड चुन लेता है।"
     },
     {
-      en: "Inventing the mechanical calculator",
-      hi: "Mechanical calculator का आविष्कार करने के लिए"
+      en: "The selector changes the selected record into a field definition in Design View.",
+      hi: "सेलेक्टर चुने गए रिकॉर्ड को Design View में फ़ील्ड की परिभाषा में बदल देता है।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Ada Lovelace ने Analytical Engine के लिए एक प्रसिद्ध algorithm लिखा था।"
+  explanation: "The record selector beside a row identifies the record as a whole and can be used for record-level operations, such as selecting or deleting a record."
 },
-
 
 // Question 59
 {
-  en: "Which of the following correctly matches the person with the invention or contribution?",
-  hi: "निम्नलिखित में से कौन-सा व्यक्ति को उसके invention या contribution के साथ सही रूप से match करता है?",
+  en: "A user edits the Salary value of an existing employee record without adding or deleting any row or column. Which statement correctly describes the change?",
+  hi: "एक उपयोगकर्ता किसी मौजूदा कर्मचारी रिकॉर्ड में Salary का मान बदलता है, लेकिन कोई पंक्ति या कॉलम जोड़ता या हटाता नहीं है। इस बदलाव का सही वर्णन कौन-सा कथन करता है?",
 
   options: [
     {
-      en: "Blaise Pascal — Pascaline",
-      hi: "Blaise Pascal — Pascaline"
+      en: "Both the field name and the table structure must change whenever a field value changes.",
+      hi: "जब भी किसी फ़ील्ड का मान बदलता है, तो फ़ील्ड का नाम और टेबल की संरचना दोनों बदलना अनिवार्य है।"
     },
     {
-      en: "Charles Babbage — Pascaline",
-      hi: "Charles Babbage — Pascaline"
+      en: "A new field is created because the original Salary value has been replaced.",
+      hi: "मूल Salary मान बदलने के कारण एक नया फ़ील्ड बन जाता है।"
     },
     {
-      en: "Ada Lovelace — Leibniz Calculator",
-      hi: "Ada Lovelace — Leibniz Calculator"
+      en: "The existing record is necessarily deleted and recreated whenever one value is edited.",
+      hi: "किसी एक मान को संपादित करने पर मौजूदा रिकॉर्ड अनिवार्य रूप से हटाकर दोबारा बनाया जाता है।"
     },
     {
-      en: "Gottfried Wilhelm Leibniz — Analytical Engine",
-      hi: "Gottfried Wilhelm Leibniz — Analytical Engine"
+      en: "The field value has changed, but the field name and table structure need not change.",
+      hi: "फ़ील्ड का मान बदल गया है, लेकिन फ़ील्ड का नाम और टेबल की संरचना बदलना आवश्यक नहीं है।"
     }
   ],
 
-  answer: "A",
+  answer: "D",
 
-  explanation: "Blaise Pascal ने Pascaline का आविष्कार किया था।"
+  explanation: "Editing the Salary value changes the data stored in an existing record. It does not require changing the field name or the table structure."
 },
-
 
 // Question 60
 {
-  en: "Which statement best distinguishes the contributions of Charles Babbage and Ada Lovelace?",
-  hi: "निम्नलिखित में से कौन-सा कथन Charles Babbage और Ada Lovelace के योगदान के बीच सबसे सही अंतर बताता है?",
+  en: "Consider the following statements about records and fields in MS Access:\n\n1. A record generally represents one complete entry across the fields of a table.\n2. A field represents a particular attribute stored for records.\n3. Deleting one record necessarily deletes the field definitions used by all records.\n4. A field can contain different values in different records, subject to its data type and other constraints.\n\nWhich statements are correct?",
+  hi: "MS Access में रिकॉर्ड और फ़ील्ड के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. एक रिकॉर्ड सामान्यतः टेबल के विभिन्न फ़ील्ड में एक पूरी प्रविष्टि को दर्शाता है।\n2. एक फ़ील्ड रिकॉर्ड में संग्रहीत किसी विशेष विशेषता को दर्शाता है।\n3. एक रिकॉर्ड हटाने से सभी रिकॉर्ड में उपयोग की जाने वाली फ़ील्ड परिभाषाएँ अनिवार्य रूप से हट जाती हैं।\n4. डेटा टाइप और अन्य नियमों के अधीन, एक फ़ील्ड में अलग-अलग रिकॉर्ड के लिए अलग-अलग मान हो सकते हैं।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Babbage invented the Pascaline, while Lovelace invented the Leibniz Calculator",
-      hi: "Babbage ने Pascaline का आविष्कार किया, जबकि Lovelace ने Leibniz Calculator का आविष्कार किया"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "Babbage developed the concepts of the Difference and Analytical Engines, while Lovelace developed an algorithm for the Analytical Engine",
-      hi: "Babbage ने Difference और Analytical Engines की अवधारणाएँ विकसित कीं, जबकि Lovelace ने Analytical Engine के लिए एक algorithm विकसित किया"
+      en: "1, 2 and 4 only",
+      hi: "केवल 1, 2 और 4"
     },
     {
-      en: "Babbage invented punched cards, while Lovelace invented the Tabulating Machine",
-      hi: "Babbage ने punched cards का आविष्कार किया, जबकि Lovelace ने Tabulating Machine का आविष्कार किया"
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
     },
     {
-      en: "Babbage developed the first electronic computer, while Lovelace developed its operating system",
-      hi: "Babbage ने पहला electronic computer विकसित किया, जबकि Lovelace ने उसका operating system विकसित किया"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
   answer: "B",
 
-  explanation: "Babbage ने Difference और Analytical Engines पर काम किया, जबकि Lovelace ने Analytical Engine के लिए algorithm लिखा।"
+  explanation: "Statements 1, 2, and 4 are correct. Records represent entries, while fields represent attributes. Deleting a record does not delete the table's field definitions."
 },
 // Question 61
 {
-  en: "Herman Hollerith is best known for developing a machine that used punched cards primarily for which purpose?",
-  hi: "Herman Hollerith द्वारा विकसित machine में punched cards का मुख्य रूप से किस उद्देश्य के लिए उपयोग किया जाता था?",
+  en: "A user selects a record in Datasheet View and deletes it. Which statement best distinguishes this operation from deleting a field?",
+  hi: "एक उपयोगकर्ता Datasheet View में किसी रिकॉर्ड को चुनकर हटा देता है। कौन-सा कथन इस प्रक्रिया और किसी फ़ील्ड को हटाने के बीच अंतर को सबसे अच्छी तरह बताता है?",
 
   options: [
     {
-      en: "Performing scientific calculations",
-      hi: "Scientific calculations करना"
+      en: "Deleting a record removes one row of data, while deleting a field changes the table structure and removes that field from the table.",
+      hi: "रिकॉर्ड हटाने से डेटा की एक पंक्ति हटती है, जबकि फ़ील्ड हटाने से टेबल की संरचना बदलती है और वह फ़ील्ड टेबल से हट जाता है।"
     },
     {
-      en: "Processing census data",
-      hi: "Census data को process करना"
+      en: "Deleting a record removes a column, while deleting a field removes only one cell.",
+      hi: "रिकॉर्ड हटाने से एक कॉलम हटता है, जबकि फ़ील्ड हटाने से केवल एक सेल हटता है।"
     },
     {
-      en: "Controlling electronic circuits",
-      hi: "Electronic circuits को control करना"
+      en: "Both operations remove the entire table, but the Navigation Pane continues to display its name.",
+      hi: "दोनों प्रक्रियाओं से पूरी टेबल हट जाती है, लेकिन Navigation Pane में उसका नाम दिखाई देता रहता है।"
     },
     {
-      en: "Storing audio data",
-      hi: "Audio data को store करना"
+      en: "Deleting a field affects only the currently selected record and leaves the field in all other records.",
+      hi: "फ़ील्ड हटाने से केवल वर्तमान रिकॉर्ड प्रभावित होता है और अन्य सभी रिकॉर्ड में वह फ़ील्ड बना रहता है।"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "Hollerith की punched-card tabulating machine का प्रमुख उपयोग census data processing में हुआ था।"
+  explanation: "Deleting a record removes a row of data. Deleting a field removes a column and changes the table's structure, affecting that field across the table."
 },
-
 
 // Question 62
 {
-  en: "John Mauchly and J. Presper Eckert are most closely associated with the development of which computer?",
-  hi: "John Mauchly और J. Presper Eckert किस computer के development से सबसे अधिक जुड़े हैं?",
+  en: "A table contains 500 employee records. A user navigates to the last record using the record navigation controls and edits its Department value. What is the most accurate conclusion?",
+  hi: "एक टेबल में कर्मचारियों के 500 रिकॉर्ड हैं। उपयोगकर्ता रिकॉर्ड नेविगेशन कंट्रोल की सहायता से अंतिम रिकॉर्ड पर जाता है और उसका Department मान संपादित करता है। सबसे सटीक निष्कर्ष क्या है?",
 
   options: [
     {
-      en: "ENIAC",
-      hi: "ENIAC"
+      en: "Navigating to the last record automatically sorts the table by Department.",
+      hi: "अंतिम रिकॉर्ड पर जाने से टेबल अपने आप Department के अनुसार क्रमबद्ध हो जाती है।"
     },
     {
-      en: "UNIVAC",
-      hi: "UNIVAC"
+      en: "The last record becomes a new field because its value has been edited.",
+      hi: "मान संपादित करने के कारण अंतिम रिकॉर्ड एक नया फ़ील्ड बन जाता है।"
     },
     {
-      en: "Mark-I",
-      hi: "Mark-I"
+      en: "Navigation changes which record is displayed or active; editing Department changes a field value in that record without necessarily changing the table structure.",
+      hi: "नेविगेशन से प्रदर्शित या सक्रिय रिकॉर्ड बदलता है; Department संपादित करने से उस रिकॉर्ड में फ़ील्ड का मान बदलता है, लेकिन टेबल की संरचना बदलना आवश्यक नहीं है।"
     },
     {
-      en: "EDVAC",
-      hi: "EDVAC"
+      en: "Access must create a second table before an existing record can be edited.",
+      hi: "मौजूदा रिकॉर्ड को संपादित करने से पहले Access को दूसरी टेबल बनानी ही होगी।"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "John Mauchly और J. Presper Eckert ENIAC के प्रमुख developers के रूप में जाने जाते हैं।"
+  explanation: "Record navigation changes which record is active or displayed. Editing the Department value modifies data in that record without necessarily changing the table's structure."
 },
-
 
 // Question 63
 {
-  en: "Which statement correctly matches the persons with their major contributions?",
-  hi: "निम्नलिखित में से कौन-सा कथन व्यक्तियों को उनके प्रमुख योगदान के साथ सही रूप से match करता है?",
+  en: "Which statement most accurately distinguishes selecting a record from selecting a field in Access Datasheet View?",
+  hi: "Access Datasheet View में किसी रिकॉर्ड को चुनने और किसी फ़ील्ड को चुनने के बीच अंतर को कौन-सा कथन सबसे सटीक रूप से बताता है?",
 
   options: [
     {
-      en: "Herman Hollerith — ENIAC; John Mauchly — Tabulating Machine",
-      hi: "Herman Hollerith — ENIAC; John Mauchly — Tabulating Machine"
+      en: "Selecting a record always selects every record with the same field value, whereas selecting a field selects the entire database.",
+      hi: "रिकॉर्ड चुनने से हमेशा समान फ़ील्ड मान वाले सभी रिकॉर्ड चुने जाते हैं, जबकि फ़ील्ड चुनने से पूरा डेटाबेस चुना जाता है।"
     },
     {
-      en: "Herman Hollerith — punched-card tabulation; John Mauchly and J. Presper Eckert — ENIAC",
-      hi: "Herman Hollerith — punched-card tabulation; John Mauchly और J. Presper Eckert — ENIAC"
+      en: "Selecting a field necessarily changes its data type, whereas selecting a record changes its primary key.",
+      hi: "फ़ील्ड चुनने से उसका डेटा टाइप अनिवार्य रूप से बदल जाता है, जबकि रिकॉर्ड चुनने से उसकी प्राइमरी की बदल जाती है।"
     },
     {
-      en: "Herman Hollerith — Analytical Engine; J. Presper Eckert — Pascaline",
-      hi: "Herman Hollerith — Analytical Engine; J. Presper Eckert — Pascaline"
+      en: "Selecting a record and selecting a field are identical operations because both select a complete row.",
+      hi: "रिकॉर्ड चुनना और फ़ील्ड चुनना एक ही प्रक्रिया है, क्योंकि दोनों में पूरी पंक्ति चुनी जाती है।"
     },
     {
-      en: "John Mauchly — Difference Engine; J. Presper Eckert — Napier's Bones",
-      hi: "John Mauchly — Difference Engine; J. Presper Eckert — Napier's Bones"
+      en: "Selecting a record targets a row of related values, whereas selecting a field or column targets values belonging to a particular attribute across records.",
+      hi: "रिकॉर्ड चुनने से संबंधित मानों वाली एक पंक्ति चुनी जाती है, जबकि फ़ील्ड या कॉलम चुनने से विभिन्न रिकॉर्ड में किसी विशेष विशेषता से संबंधित मान चुने जाते हैं।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Hollerith punched-card tabulation से और Mauchly-Eckert ENIAC के development से जुड़े थे।"
+  explanation: "A record represents a row of related values, while a field represents an attribute. Selecting a field or column targets that attribute's values across records."
 },
-
 
 // Question 64
 {
-  en: "Which distinction between Herman Hollerith and the ENIAC developers is correct?",
-  hi: "Herman Hollerith और ENIAC developers के बीच कौन-सा अंतर सही है?",
+  en: "An Access table has 12 fields and 80 records. A user adds one new field and then adds two new records. Assuming no other changes, what will the table contain?",
+  hi: "एक Access टेबल में 12 फ़ील्ड और 80 रिकॉर्ड हैं। उपयोगकर्ता एक नया फ़ील्ड और फिर दो नए रिकॉर्ड जोड़ता है। अन्य कोई बदलाव न होने पर टेबल में कितने फ़ील्ड और रिकॉर्ड होंगे?",
 
   options: [
     {
-      en: "Hollerith developed a punched-card tabulating system for data processing, whereas Mauchly and Eckert developed ENIAC as an early electronic general-purpose computer",
-      hi: "Hollerith ने data processing के लिए punched-card tabulating system विकसित किया, जबकि Mauchly और Eckert ने ENIAC को एक प्रारंभिक electronic general-purpose computer के रूप में विकसित किया"
+      en: "12 fields and 82 records",
+      hi: "12 फ़ील्ड और 82 रिकॉर्ड"
     },
     {
-      en: "Hollerith developed ENIAC, whereas Mauchly and Eckert developed the punched-card tabulating machine",
-      hi: "Hollerith ने ENIAC विकसित किया, जबकि Mauchly और Eckert ने punched-card tabulating machine विकसित की"
+      en: "13 fields and 82 records",
+      hi: "13 फ़ील्ड और 82 रिकॉर्ड"
     },
     {
-      en: "Hollerith and Mauchly independently developed the Analytical Engine",
-      hi: "Hollerith और Mauchly ने स्वतंत्र रूप से Analytical Engine विकसित किया"
+      en: "13 fields and 80 records",
+      hi: "13 फ़ील्ड और 80 रिकॉर्ड"
     },
     {
-      en: "Hollerith developed the Mark-I, whereas Mauchly and Eckert developed the Pascaline",
-      hi: "Hollerith ने Mark-I विकसित किया, जबकि Mauchly और Eckert ने Pascaline विकसित किया"
+      en: "14 fields and 82 records",
+      hi: "14 फ़ील्ड और 82 रिकॉर्ड"
     }
   ],
 
-  answer: "A",
+  answer: "B",
 
-  explanation: "Hollerith का कार्य punched-card tabulation से, जबकि Mauchly और Eckert का ENIAC के development से संबंधित था।"
+  explanation: "Adding one field increases the total from 12 to 13. Adding two records increases the total from 80 to 82."
 },
-
 
 // Question 65
 {
-  en: "Which electronic component was the defining technology of First Generation computers?",
-  hi: "First Generation computers की प्रमुख electronic technology कौन-सी थी?",
+  en: "A database designer needs to store the following values in separate fields:\n\n1. Employee name, limited to a defined character length\n2. Detailed employee remarks that may exceed the Short Text field limit\n3. The number of employees in a department\n4. A monetary salary value requiring fixed-point precision\n\nWhich sequence of data types is most appropriate?",
+  hi: "एक डेटाबेस डिज़ाइनर को निम्नलिखित मान अलग-अलग फ़ील्ड में संग्रहीत करने हैं:\n\n1. कर्मचारी का नाम, जिसकी अधिकतम वर्ण लंबाई निर्धारित हो\n2. कर्मचारी के विस्तृत विवरण, जो Short Text फ़ील्ड की सीमा से अधिक हो सकते हैं\n3. किसी विभाग में कर्मचारियों की संख्या\n4. निश्चित दशमलव परिशुद्धता वाली मौद्रिक वेतन राशि\n\nडेटा टाइप का कौन-सा क्रम सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Transistors",
-      hi: "Transistors"
+      en: "Long Text, Short Text, Currency, Number",
+      hi: "Long Text, Short Text, Currency, Number"
     },
     {
-      en: "Vacuum tubes",
-      hi: "Vacuum tubes"
+      en: "Short Text, Long Text, Number, Currency",
+      hi: "Short Text, Long Text, Number, Currency"
     },
     {
-      en: "Integrated circuits",
-      hi: "Integrated circuits"
+      en: "Short Text, Hyperlink, Large Number, AutoNumber",
+      hi: "Short Text, Hyperlink, Large Number, AutoNumber"
     },
     {
-      en: "Microprocessors",
-      hi: "Microprocessors"
+      en: "Long Text, Attachment, Number, Date/Time",
+      hi: "Long Text, Attachment, Number, Date/Time"
     }
   ],
 
   answer: "B",
 
-  explanation: "First Generation computers में मुख्य electronic component vacuum tubes थे।"
+  explanation: "Short Text is suitable for employee names with a defined length. Long Text supports lengthy remarks, Number stores numerical counts, and Currency is designed for monetary values with fixed-point precision."
 },
-
 // Question 66
 {
-  en: "Which combination correctly represents the technological progression from the First to the Fourth Generation of computers?",
-  hi: "निम्नलिखित में से कौन-सा संयोजन First से Fourth Generation of computers तक technological progression को सही रूप से दर्शाता है?",
+  en: "A user needs to store an automatically generated unique identifier for each new record. The identifier is not intended to be manually entered or used for mathematical calculations. Which data type is most appropriate?",
+  hi: "एक उपयोगकर्ता प्रत्येक नए रिकॉर्ड के लिए अपने आप बनने वाला विशिष्ट पहचानकर्ता संग्रहीत करना चाहता है। इस पहचानकर्ता को न तो मैन्युअल रूप से दर्ज करना है और न ही गणितीय गणनाओं में उपयोग करना है। कौन-सा डेटा टाइप सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Vacuum tubes → Transistors → Integrated circuits → Microprocessors",
-      hi: "Vacuum tubes → Transistors → Integrated circuits → Microprocessors"
+      en: "Number",
+      hi: "Number"
     },
     {
-      en: "Transistors → Vacuum tubes → Microprocessors → Integrated circuits",
-      hi: "Transistors → Vacuum tubes → Microprocessors → Integrated circuits"
+      en: "Currency",
+      hi: "Currency"
     },
     {
-      en: "Vacuum tubes → Integrated circuits → Transistors → Microprocessors",
-      hi: "Vacuum tubes → Integrated circuits → Transistors → Microprocessors"
+      en: "AutoNumber",
+      hi: "AutoNumber"
     },
     {
-      en: "Integrated circuits → Transistors → Vacuum tubes → Microprocessors",
-      hi: "Integrated circuits → Transistors → Vacuum tubes → Microprocessors"
+      en: "Calculated",
+      hi: "Calculated"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "First से Fourth Generation का क्रम Vacuum tubes → Transistors → ICs → Microprocessors है।"
+  explanation: "AutoNumber automatically generates a unique value for each new record, making it suitable for identifiers that do not need to be entered manually or used in calculations."
 },
-
 
 // Question 67
 {
-  en: "A computer system uses integrated circuits but does not use microprocessors as its primary processing technology. To which generation would it generally belong?",
-  hi: "एक computer system integrated circuits का उपयोग करता है, लेकिन microprocessors को अपनी primary processing technology के रूप में उपयोग नहीं करता। यह सामान्यतः किस generation से संबंधित होगा?",
+  en: "Consider the following statements about MS Access data types:\n\n1. Short Text can store textual values and can also be used for codes containing digits that are not intended for arithmetic.\n2. Number is generally appropriate for values on which mathematical calculations are required.\n3. Currency is designed for monetary values and helps avoid the floating-point rounding behavior associated with certain approximate numeric types.\n4. AutoNumber guarantees that records will always be numbered consecutively without gaps, even after deletions.\n\nWhich statements are correct?",
+  hi: "MS Access के डेटा टाइप के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Short Text में टेक्स्ट के साथ-साथ ऐसे अंकों वाले कोड भी रखे जा सकते हैं जिन पर गणितीय गणना नहीं करनी होती।\n2. Number सामान्यतः उन मानों के लिए उपयुक्त है जिन पर गणितीय गणनाएँ करनी होती हैं।\n3. Currency मौद्रिक मानों के लिए बनाया गया है और कुछ अनुमानित संख्यात्मक डेटा टाइप में होने वाली फ़्लोटिंग-पॉइंट राउंडिंग संबंधी समस्या से बचने में मदद करता है।\n4. AutoNumber यह सुनिश्चित करता है कि रिकॉर्ड हमेशा बिना किसी अंतराल के क्रमिक संख्या में होंगे, भले ही रिकॉर्ड हटा दिए जाएँ।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "First Generation",
-      hi: "First Generation"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "Second Generation",
-      hi: "Second Generation"
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
     },
     {
-      en: "Third Generation",
-      hi: "Third Generation"
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
     },
     {
-      en: "Fourth Generation",
-      hi: "Fourth Generation"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Third Generation computers की प्रमुख technology integrated circuits (ICs) थी।"
-},
-
-
-// Question 68
-{
-  en: "Which statement most accurately distinguishes the Fourth Generation from the Third Generation of computers?",
-  hi: "निम्नलिखित में से कौन-सा कथन Fourth Generation और Third Generation के computers के बीच अंतर को सबसे सटीक रूप से दर्शाता है?",
-
-  options: [
-    {
-      en: "Fourth Generation introduced transistors, while Third Generation used vacuum tubes",
-      hi: "Fourth Generation में transistors introduced हुए, जबकि Third Generation में vacuum tubes का उपयोग हुआ"
-    },
-    {
-      en: "Fourth Generation was based on microprocessors, whereas Third Generation primarily used integrated circuits",
-      hi: "Fourth Generation microprocessors पर आधारित थी, जबकि Third Generation में मुख्य रूप से integrated circuits का उपयोग हुआ"
-    },
-    {
-      en: "Fourth Generation used vacuum tubes, whereas Third Generation used microprocessors",
-      hi: "Fourth Generation में vacuum tubes का उपयोग हुआ, जबकि Third Generation में microprocessors का उपयोग हुआ"
-    },
-    {
-      en: "Fourth Generation eliminated electronic components, whereas Third Generation used mechanical components",
-      hi: "Fourth Generation में electronic components समाप्त कर दिए गए, जबकि Third Generation में mechanical components का उपयोग हुआ"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
   answer: "B",
 
-  explanation: "Third Generation में ICs और Fourth Generation में microprocessors प्रमुख technology थे।"
+  explanation: "Statements 1, 2, and 3 are correct. Short Text is suitable for codes such as postal codes that are not used in arithmetic. Number supports mathematical calculations, and Currency is designed for monetary values. AutoNumber values are not guaranteed to remain consecutive because deletions and other operations can leave gaps."
 },
 
-
-// Question 69
+// Question 68
 {
-  en: "Which technology is most closely associated with the Fifth Generation of computers?",
-  hi: "Fifth Generation of computers के साथ कौन-सी technology सबसे अधिक closely associated है?",
+  en: "A table requires a field to store a large integer identifier whose values may exceed the range of the standard Long Integer field size. Which data type is the most appropriate in an Access version that supports it?",
+  hi: "एक टेबल में बड़े पूर्णांक पहचानकर्ता को संग्रहीत करने के लिए फ़ील्ड चाहिए, जिसके मान मानक Long Integer की सीमा से अधिक हो सकते हैं। इसे सपोर्ट करने वाले Access संस्करण में कौन-सा डेटा टाइप सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Vacuum tubes",
-      hi: "Vacuum tubes"
+      en: "Large Number",
+      hi: "Large Number"
     },
     {
-      en: "Transistors",
-      hi: "Transistors"
+      en: "Currency",
+      hi: "Currency"
     },
     {
-      en: "Artificial Intelligence and advanced parallel processing",
-      hi: "Artificial Intelligence और advanced parallel processing"
+      en: "Short Text",
+      hi: "Short Text"
     },
     {
-      en: "Integrated circuits",
-      hi: "Integrated circuits"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Fifth Generation की प्रमुख अवधारणाएँ Artificial Intelligence और advanced parallel processing से जुड़ी हैं।"
-},
-
-
-// Question 70
-{
-  en: "Which option correctly matches the computer generation with its primary technology?",
-  hi: "कौन-सा विकल्प computer generation को उसकी primary technology के साथ सही रूप से match करता है?",
-
-  options: [
-    {
-      en: "First Generation — Transistors",
-      hi: "First Generation — Transistors"
-    },
-    {
-      en: "Second Generation — Vacuum tubes",
-      hi: "Second Generation — Vacuum tubes"
-    },
-    {
-      en: "Third Generation — Integrated Circuits",
-      hi: "Third Generation — Integrated Circuits"
-    },
-    {
-      en: "Fourth Generation — Artificial Intelligence",
-      hi: "Fourth Generation — Artificial Intelligence"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Third Generation computers की primary technology integrated circuits (ICs) थी।"
-},
-
-// Question 71
-{
-  en: "Which sequence correctly represents the major technological development across the first five generations?",
-  hi: "पहली पाँच पीढ़ियों में प्रमुख तकनीकी विकास को कौन-सा क्रम सही रूप से दर्शाता है?",
-
-  options: [
-    {
-      en: "Vacuum tubes → Transistors → Integrated Circuits → Microprocessors → Artificial Intelligence",
-      hi: "वैक्यूम ट्यूब → ट्रांजिस्टर → इंटीग्रेटेड सर्किट → माइक्रोप्रोसेसर → आर्टिफिशियल इंटेलिजेंस"
-    },
-    {
-      en: "Transistors → Vacuum tubes → Integrated Circuits → Artificial Intelligence → Microprocessors",
-      hi: "ट्रांजिस्टर → वैक्यूम ट्यूब → इंटीग्रेटेड सर्किट → आर्टिफिशियल इंटेलिजेंस → माइक्रोप्रोसेसर"
-    },
-    {
-      en: "Vacuum tubes → Integrated Circuits → Transistors → Microprocessors → Artificial Intelligence",
-      hi: "वैक्यूम ट्यूब → इंटीग्रेटेड सर्किट → ट्रांजिस्टर → माइक्रोप्रोसेसर → आर्टिफिशियल इंटेलिजेंस"
-    },
-    {
-      en: "Integrated Circuits → Vacuum tubes → Transistors → Microprocessors → Artificial Intelligence",
-      hi: "इंटीग्रेटेड सर्किट → वैक्यूम ट्यूब → ट्रांजिस्टर → माइक्रोप्रोसेसर → आर्टिफिशियल इंटेलिजेंस"
+      en: "AutoNumber in every case, regardless of the required identifier format",
+      hi: "हर स्थिति में AutoNumber, चाहे पहचानकर्ता का आवश्यक प्रारूप कुछ भी हो"
     }
   ],
 
   answer: "A",
 
-  explanation: "पहली से पाँचवीं पीढ़ी का सामान्य क्रम Vacuum Tubes → Transistors → ICs → Microprocessors → AI है।"
+  explanation: "Large Number supports large integer values beyond the range of a standard Long Integer. It is appropriate when the field must store such values and the Access version supports this data type."
+},
+
+// Question 69
+{
+  en: "A database designer wants a field that displays the result of an expression calculated from other fields, rather than requiring the user to enter the result directly. Which data type is specifically intended for this purpose in supported versions of Access?",
+  hi: "एक डेटाबेस डिज़ाइनर ऐसा फ़ील्ड चाहता है जो अन्य फ़ील्ड से गणना किए गए एक्सप्रेशन का परिणाम दिखाए, ताकि उपयोगकर्ता को परिणाम सीधे दर्ज न करना पड़े। Access के समर्थित संस्करणों में इस उद्देश्य के लिए विशेष रूप से कौन-सा डेटा टाइप बनाया गया है?",
+
+  options: [
+    {
+      en: "Attachment",
+      hi: "Attachment"
+    },
+    {
+      en: "Hyperlink",
+      hi: "Hyperlink"
+    },
+    {
+      en: "Long Text",
+      hi: "Long Text"
+    },
+    {
+      en: "Calculated",
+      hi: "Calculated"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The Calculated data type, available in supported Access versions, displays a value calculated from an expression involving other fields."
+},
+
+// Question 70
+{
+  en: "A user must store scanned identity documents directly with the relevant employee records. Which data type is most appropriate for this requirement?",
+  hi: "एक उपयोगकर्ता स्कैन किए गए पहचान दस्तावेज़ों को संबंधित कर्मचारी रिकॉर्ड के साथ सीधे संग्रहीत करना चाहता है। इस आवश्यकता के लिए कौन-सा डेटा टाइप सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Hyperlink, because it stores the complete contents of every linked document inside the field",
+      hi: "Hyperlink, क्योंकि यह लिंक किए गए प्रत्येक दस्तावेज़ की पूरी सामग्री फ़ील्ड के भीतर संग्रहीत करता है।"
+    },
+    {
+      en: "Attachment, because it allows files to be associated with a record",
+      hi: "Attachment, क्योंकि इससे फ़ाइलों को किसी रिकॉर्ड के साथ जोड़ा जा सकता है।"
+    },
+    {
+      en: "Long Text, because it automatically converts binary files into readable text",
+      hi: "Long Text, क्योंकि यह बाइनरी फ़ाइलों को अपने आप पढ़ने योग्य टेक्स्ट में बदल देता है।"
+    },
+    {
+      en: "Large Number, because documents are internally represented as numerical values",
+      hi: "Large Number, क्योंकि दस्तावेज़ आंतरिक रूप से संख्यात्मक मानों के रूप में दर्शाए जाते हैं।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Attachment data type allows files, such as scanned identity documents, to be associated directly with database records. A Hyperlink field stores a link rather than the complete document contents."
+},
+// Question 71
+{
+  en: "Consider the following requirements:\n\n- A website address must be stored as a clickable link.\n- A field must represent whether an employee is currently active.\n- A field must store a date of joining.\n\nWhich sequence of data types is most appropriate?",
+  hi: "निम्नलिखित आवश्यकताओं पर विचार करें:\n\n- वेबसाइट का पता क्लिक करने योग्य लिंक के रूप में संग्रहीत होना चाहिए।\n- एक फ़ील्ड में यह दर्शाया जाना चाहिए कि कर्मचारी वर्तमान में सक्रिय है या नहीं।\n- एक फ़ील्ड में नियुक्ति की तारीख संग्रहीत होनी चाहिए।\n\nडेटा टाइप का कौन-सा क्रम सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Attachment, Number, Short Text",
+      hi: "Attachment, Number, Short Text"
+    },
+    {
+      en: "Short Text, AutoNumber, Currency",
+      hi: "Short Text, AutoNumber, Currency"
+    },
+    {
+      en: "Hyperlink, Yes/No, Date/Time",
+      hi: "Hyperlink, Yes/No, Date/Time"
+    },
+    {
+      en: "Calculated, Yes/No, Large Number",
+      hi: "Calculated, Yes/No, Large Number"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Hyperlink stores clickable links, Yes/No represents Boolean values such as active or inactive, and Date/Time stores dates and times."
 },
 
 // Question 72
 {
-  en: "Which combination correctly matches a generation with its characteristic and a commonly cited example?",
-  hi: "कौन-सा संयोजन किसी पीढ़ी को उसकी प्रमुख तकनीक और सामान्यतः उद्धृत उदाहरण के साथ सही रूप से मिलाता है?",
+  en: "A designer is selecting data types for a database. Which statement is the most accurate?",
+  hi: "एक डिज़ाइनर डेटाबेस के लिए डेटा टाइप चुन रहा है। कौन-सा कथन सबसे सटीक है?",
 
   options: [
     {
-      en: "First Generation — Microprocessor technology — IBM PC",
-      hi: "पहली पीढ़ी — माइक्रोप्रोसेसर तकनीक — IBM PC"
+      en: "A field's data type defines the kind of data it can store and influences valid operations; the field name identifies the attribute, while the field value is the data stored in a particular record.",
+      hi: "फ़ील्ड का डेटा टाइप यह निर्धारित करता है कि उसमें किस प्रकार का डेटा संग्रहीत किया जा सकता है और कौन-सी क्रियाएँ उपयुक्त हैं; फ़ील्ड का नाम विशेषता की पहचान करता है, जबकि फ़ील्ड का मान किसी विशेष रिकॉर्ड में संग्रहीत डेटा होता है।"
     },
     {
-      en: "Second Generation — Vacuum tubes — ENIAC",
-      hi: "दूसरी पीढ़ी — वैक्यूम ट्यूब — ENIAC"
+      en: "A field name determines the physical data type automatically, so choosing a data type is unnecessary.",
+      hi: "फ़ील्ड का नाम अपने आप डेटा टाइप निर्धारित कर देता है, इसलिए डेटा टाइप चुनना आवश्यक नहीं है।"
     },
     {
-      en: "Third Generation — Integrated circuits — IBM System/360",
-      hi: "तीसरी पीढ़ी — इंटीग्रेटेड सर्किट — IBM System/360"
+      en: "All numeric-looking values must use Number, including phone numbers, postal codes, and identifiers containing leading zeros.",
+      hi: "संख्याओं जैसे दिखने वाले सभी मानों के लिए Number का उपयोग करना आवश्यक है, जिसमें फ़ोन नंबर, डाक कोड और शुरुआत में शून्य वाले पहचानकर्ता भी शामिल हैं।"
     },
     {
-      en: "Fourth Generation — Artificial Intelligence — modern expert systems",
-      hi: "चौथी पीढ़ी — आर्टिफिशियल इंटेलिजेंस — आधुनिक एक्सपर्ट सिस्टम"
+      en: "Changing a field's data type never affects existing data, validation, storage, or compatibility.",
+      hi: "फ़ील्ड का डेटा टाइप बदलने से मौजूदा डेटा, वैलिडेशन, स्टोरेज या संगतता पर कभी कोई प्रभाव नहीं पड़ता।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Third Generation computers में Integrated Circuits (ICs) का उपयोग हुआ; IBM System/360 इसका सामान्य उदाहरण है।"
+  explanation: "The data type defines the kind of data a field can store. The field name identifies the attribute, and the field value is the actual data stored for a particular record. Values such as phone numbers and postal codes are often stored as text when arithmetic is not required."
 },
 
 // Question 73
 {
-  en: "An analog computer primarily processes information in the form of:",
-  hi: "एक एनालॉग कंप्यूटर मुख्य रूप से सूचना को किस रूप में संसाधित करता है?",
+  en: "A field in an MS Access table stores employee codes such as \"EMP001\", \"EMP002\", and \"EMP003\". The designer wants to restrict the maximum number of characters that can be stored in the field. Which property is most directly relevant when the field uses the Short Text data type?",
+  hi: "MS Access की एक टेबल में फ़ील्ड कर्मचारी कोड जैसे \"EMP001\", \"EMP002\" और \"EMP003\" संग्रहीत करता है। डिज़ाइनर इस फ़ील्ड में संग्रहीत किए जा सकने वाले अधिकतम वर्णों की संख्या सीमित करना चाहता है। यदि फ़ील्ड का डेटा टाइप Short Text है, तो कौन-सी प्रॉपर्टी सबसे अधिक प्रासंगिक है?",
 
   options: [
     {
-      en: "Continuous physical quantities",
-      hi: "निरंतर भौतिक राशियाँ"
+      en: "Format",
+      hi: "Format"
     },
     {
-      en: "Binary digits only",
-      hi: "केवल बाइनरी अंक"
+      en: "Field Size",
+      hi: "Field Size"
     },
     {
-      en: "Alphabetic characters only",
-      hi: "केवल वर्णमाला के अक्षर"
+      en: "Caption",
+      hi: "Caption"
     },
     {
-      en: "Punched cards only",
-      hi: "केवल पंच्ड कार्ड"
+      en: "Input Mask",
+      hi: "Input Mask"
     }
   ],
 
-  answer: "A",
+  answer: "B",
 
-  explanation: "Analog computers निरंतर बदलने वाली भौतिक राशियों, जैसे तापमान, गति या वोल्टेज, को process करते हैं।"
+  explanation: "For a Short Text field, the Field Size property specifies the maximum number of characters that can be stored. Input Mask controls the pattern of data entry rather than the maximum storage length."
 },
 
 // Question 74
 {
-  en: "Which of the following is a common example of an analog computer?",
-  hi: "निम्नलिखित में से कौन-सा एनालॉग कंप्यूटर का एक सामान्य उदाहरण है?",
+  en: "A field stores a numeric value representing a percentage. The designer wants the value to be stored with its original precision but displayed with exactly two decimal places. Which property is primarily used to control the number of decimal places displayed for an appropriate numeric field?",
+  hi: "एक फ़ील्ड में प्रतिशत दर्शाने वाला संख्यात्मक मान संग्रहीत है। डिज़ाइनर चाहता है कि मान अपनी मूल परिशुद्धता के साथ संग्रहीत रहे, लेकिन प्रदर्शित ठीक दो दशमलव स्थानों तक हो। उपयुक्त संख्यात्मक फ़ील्ड में प्रदर्शित दशमलव स्थानों की संख्या नियंत्रित करने के लिए मुख्यतः किस प्रॉपर्टी का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Digital calculator",
-      hi: "डिजिटल कैलकुलेटर"
+      en: "Validation Rule",
+      hi: "Validation Rule"
     },
     {
-      en: "Electronic voting machine",
-      hi: "इलेक्ट्रॉनिक वोटिंग मशीन"
+      en: "Field Size",
+      hi: "Field Size"
     },
     {
-      en: "Speedometer",
-      hi: "स्पीडोमीटर"
+      en: "Decimal Places",
+      hi: "Decimal Places"
     },
     {
-      en: "Desktop computer",
-      hi: "डेस्कटॉप कंप्यूटर"
+      en: "Required",
+      hi: "Required"
     }
   ],
 
   answer: "C",
 
-  explanation: "पारंपरिक स्पीडोमीटर गति जैसी निरंतर भौतिक मात्रा को प्रदर्शित करता है, इसलिए इसे एनालॉग उपकरण का सामान्य उदाहरण माना जाता है।"
+  explanation: "The Decimal Places property controls the number of decimal places displayed for supported numeric fields. It should not be confused with the field's underlying storage precision."
 },
 
 // Question 75
 {
-  en: "Which statement correctly describes an analog computer?",
-  hi: "कौन-सा कथन एनालॉग कंप्यूटर का सही वर्णन करता है?",
+  en: "Consider the following statements about MS Access field properties:\n\n1. Caption can provide a more descriptive display label without changing the underlying field name.\n2. Default Value supplies an initial value for a new record when no other value is entered for that field.\n3. Validation Text specifies the message displayed when the field's validation rule is violated.\n4. Required = Yes and Allow Zero Length = No are identical settings and always enforce exactly the same behavior.\n\nWhich statements are correct?",
+  hi: "MS Access की फ़ील्ड प्रॉपर्टीज़ के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Caption, मूल फ़ील्ड नाम बदले बिना, प्रदर्शित करने के लिए अधिक स्पष्ट लेबल दे सकता है।\n2. Default Value नए रिकॉर्ड के लिए प्रारंभिक मान प्रदान करता है, जब उस फ़ील्ड में कोई दूसरा मान दर्ज नहीं किया जाता।\n3. Validation Text वह संदेश निर्धारित करता है जो फ़ील्ड का Validation Rule पूरा न होने पर प्रदर्शित होता है।\n4. Required = Yes और Allow Zero Length = No एक जैसी सेटिंग्स हैं और हमेशा बिल्कुल समान व्यवहार लागू करती हैं।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "It processes only discrete numerical values",
-      hi: "यह केवल असतत संख्यात्मक मानों को संसाधित करता है"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "It represents data using continuously varying physical quantities",
-      hi: "यह निरंतर बदलने वाली भौतिक राशियों का उपयोग करके डेटा को प्रदर्शित करता है"
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
     },
     {
-      en: "It can process only text data",
-      hi: "यह केवल टेक्स्ट डेटा को संसाधित कर सकता है"
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
     },
     {
-      en: "It always uses microprocessors to represent data",
-      hi: "यह डेटा को प्रदर्शित करने के लिए हमेशा माइक्रोप्रोसेसर का उपयोग करता है"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
   answer: "B",
 
-  explanation: "Analog computers डेटा को निरंतर बदलने वाली भौतिक राशियों के रूप में represent और process करते हैं।"
+  explanation: "Statements 1, 2, and 3 are correct. Caption changes the displayed label, Default Value supplies an initial value, and Validation Text provides a message when a validation rule is violated. Required controls whether a value must be provided, whereas Allow Zero Length controls whether an empty string is permitted in applicable text fields."
 },
-
 // Question 76
 {
-  en: "Which of the following is most suitable for an analog computer?",
-  hi: "निम्नलिखित में से कौन-सा कार्य एनालॉग कंप्यूटर के लिए सबसे उपयुक्त है?",
+  en: "A field named Marks must accept values only between 0 and 100, inclusive. Which configuration most directly enforces this requirement at the field level?",
+  hi: "Marks नाम के फ़ील्ड में केवल 0 से 100 तक के मान स्वीकार किए जाने चाहिए, जिसमें 0 और 100 भी शामिल हों। फ़ील्ड स्तर पर इस आवश्यकता को लागू करने के लिए कौन-सी सेटिंग सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Measuring continuously varying temperature",
-      hi: "लगातार बदलते तापमान को मापना"
+      en: "Format: Between 0 And 100",
+      hi: "Format: Between 0 And 100"
     },
     {
-      en: "Storing a digital document",
-      hi: "डिजिटल दस्तावेज़ को संग्रहीत करना"
+      en: "Caption: \"Marks between 0 and 100\"",
+      hi: "Caption: \"Marks between 0 and 100\""
     },
     {
-      en: "Processing binary-coded text",
-      hi: "बाइनरी-कोडित टेक्स्ट को संसाधित करना"
+      en: "Default Value: 0",
+      hi: "Default Value: 0"
     },
     {
-      en: "Creating a spreadsheet",
-      hi: "स्प्रेडशीट बनाना"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Analog computers निरंतर बदलने वाली भौतिक राशियों, जैसे तापमान, को मापने और process करने के लिए उपयुक्त होते हैं।"
-},
-
-// Question 77
-{
-  en: "Which statement most accurately distinguishes a digital computer from an analog computer?",
-  hi: "कौन-सा कथन डिजिटल कंप्यूटर को एनालॉग कंप्यूटर से सबसे सही रूप से अलग करता है?",
-
-  options: [
-    {
-      en: "A digital computer processes continuously varying physical quantities only",
-      hi: "डिजिटल कंप्यूटर केवल निरंतर बदलने वाली भौतिक राशियों को संसाधित करता है"
-    },
-    {
-      en: "A digital computer processes data in discrete form, commonly using binary digits",
-      hi: "डिजिटल कंप्यूटर डेटा को असतत रूप में संसाधित करता है, सामान्यतः बाइनरी अंकों का उपयोग करते हुए"
-    },
-    {
-      en: "A digital computer cannot perform arithmetic operations",
-      hi: "डिजिटल कंप्यूटर अंकगणितीय गणनाएँ नहीं कर सकता"
-    },
-    {
-      en: "A digital computer is used only for scientific measurements",
-      hi: "डिजिटल कंप्यूटर का उपयोग केवल वैज्ञानिक मापों के लिए किया जाता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Digital computers डेटा को discrete रूप में, सामान्यतः 0 और 1 के binary digits के रूप में process करते हैं।"
-},
-
-// Question 78
-{
-  en: "Which of the following is the best example of a digital computer?",
-  hi: "निम्नलिखित में से डिजिटल कंप्यूटर का सबसे अच्छा उदाहरण कौन-सा है?",
-
-  options: [
-    {
-      en: "Mercury thermometer",
-      hi: "पारा थर्मामीटर"
-    },
-    {
-      en: "Analog speedometer",
-      hi: "एनालॉग स्पीडोमीटर"
-    },
-    {
-      en: "Digital calculator",
-      hi: "डिजिटल कैलकुलेटर"
-    },
-    {
-      en: "Traditional analog voltmeter",
-      hi: "पारंपरिक एनालॉग वोल्टमीटर"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Digital calculator संख्यात्मक डेटा को discrete digital form में process करता है, इसलिए यह डिजिटल कंप्यूटर का उदाहरण है।"
-},
-
-// Question 79
-{
-  en: "A hybrid computer is designed to combine the characteristics of which two types of computers?",
-  hi: "हाइब्रिड कंप्यूटर को किन दो प्रकार के कंप्यूटरों की विशेषताओं को संयोजित करने के लिए बनाया गया है?",
-
-  options: [
-    {
-      en: "Mechanical and electronic computers",
-      hi: "मैकेनिकल और इलेक्ट्रॉनिक कंप्यूटर"
-    },
-    {
-      en: "Analog and digital computers",
-      hi: "एनालॉग और डिजिटल कंप्यूटर"
-    },
-    {
-      en: "Mainframe and supercomputers",
-      hi: "मेनफ्रेम और सुपरकंप्यूटर"
-    },
-    {
-      en: "Personal and mini computers",
-      hi: "पर्सनल और मिनी कंप्यूटर"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Hybrid computer में analog और digital दोनों प्रकार के computers की विशेषताओं को संयोजित किया जाता है।"
-},
-
-// Question 80
-{
-  en: "Which application best illustrates the use of a hybrid computer?",
-  hi: "कौन-सा अनुप्रयोग हाइब्रिड कंप्यूटर के उपयोग को सबसे अच्छी तरह दर्शाता है?",
-
-  options: [
-    {
-      en: "A system that combines continuous measurement of a patient's vital signs with digital processing and analysis",
-      hi: "ऐसी प्रणाली जो रोगी के vital signs का निरंतर मापन करके digital processing और analysis करती है"
-    },
-    {
-      en: "A basic calculator performing only integer addition",
-      hi: "केवल पूर्णांक जोड़ने वाला एक सामान्य कैलकुलेटर"
-    },
-    {
-      en: "A digital word processor used for typing documents",
-      hi: "दस्तावेज़ टाइप करने के लिए उपयोग किया जाने वाला डिजिटल वर्ड प्रोसेसर"
-    },
-    {
-      en: "A mechanical device used only to measure length",
-      hi: "केवल लंबाई मापने के लिए उपयोग किया जाने वाला मैकेनिकल उपकरण"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Hybrid system continuous analog measurements को digital processing और analysis के साथ जोड़ता है।"
-},
-
-// Question 81
-{
-  en: "Which characteristic most accurately distinguishes a general-purpose computer from a special-purpose computer?",
-  hi: "कौन-सी विशेषता सामान्य-उद्देश्य कंप्यूटर को विशेष-उद्देश्य कंप्यूटर से सबसे सही रूप से अलग करती है?",
-
-  options: [
-    {
-      en: "It is designed to perform only one specific type of operation",
-      hi: "इसे केवल एक विशिष्ट प्रकार का कार्य करने के लिए डिज़ाइन किया गया है"
-    },
-    {
-      en: "It can be programmed to perform a wide variety of tasks by using different software",
-      hi: "इसे विभिन्न सॉफ्टवेयर का उपयोग करके कई प्रकार के कार्य करने के लिए प्रोग्राम किया जा सकता है"
-    },
-    {
-      en: "It can process only numerical data",
-      hi: "यह केवल संख्यात्मक डेटा को संसाधित कर सकता है"
-    },
-    {
-      en: "It cannot be used for business or educational applications",
-      hi: "इसका उपयोग व्यावसायिक या शैक्षणिक अनुप्रयोगों के लिए नहीं किया जा सकता"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "General-purpose computer को अलग-अलग software के माध्यम से विभिन्न प्रकार के कार्य करने के लिए program किया जा सकता है।"
-},
-
-// Question 82
-{
-  en: "A computer is used for word processing, spreadsheet calculations, internet browsing, accounting and presentation creation by installing different software. Which classification does this computer best represent?",
-  hi: "एक कंप्यूटर में अलग-अलग सॉफ्टवेयर स्थापित करके वर्ड प्रोसेसिंग, स्प्रेडशीट गणना, इंटरनेट ब्राउज़िंग, अकाउंटिंग और प्रेजेंटेशन बनाने जैसे कार्य किए जाते हैं। यह कंप्यूटर किस वर्ग का सबसे अच्छा उदाहरण है?",
-
-  options: [
-    {
-      en: "Special-purpose computer",
-      hi: "विशेष-उद्देश्य कंप्यूटर"
-    },
-    {
-      en: "Analog computer",
-      hi: "एनालॉग कंप्यूटर"
-    },
-    {
-      en: "General-purpose computer",
-      hi: "सामान्य-उद्देश्य कंप्यूटर"
-    },
-    {
-      en: "Hybrid computer",
-      hi: "हाइब्रिड कंप्यूटर"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "विभिन्न software के माध्यम से अनेक प्रकार के कार्य करना general-purpose computer की प्रमुख विशेषता है।"
-},
-
-// Question 83
-{
-  en: "Which situation best demonstrates the flexibility that is a defining feature of a general-purpose computer?",
-  hi: "कौन-सी स्थिति सामान्य-उद्देश्य कंप्यूटर की प्रमुख विशेषता, अर्थात flexibility, को सबसे अच्छी तरह दर्शाती है?",
-
-  options: [
-    {
-      en: "A computer permanently designed to control a particular industrial machine",
-      hi: "किसी विशेष औद्योगिक मशीन को नियंत्रित करने के लिए स्थायी रूप से डिज़ाइन किया गया कंप्यूटर"
-    },
-    {
-      en: "A system designed exclusively to calculate aircraft navigation parameters",
-      hi: "केवल विमान के नेविगेशन पैरामीटर की गणना करने के लिए डिज़ाइन की गई प्रणाली"
-    },
-    {
-      en: "A computer that performs different tasks by changing the programs or software being executed",
-      hi: "ऐसा कंप्यूटर जो चलाए जा रहे programs या software को बदलकर अलग-अलग कार्य करता है"
-    },
-    {
-      en: "A device that measures only continuously varying temperature",
-      hi: "केवल लगातार बदलते तापमान को मापने वाला उपकरण"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Programs या software बदलकर अलग-अलग कार्य करना general-purpose computer की flexibility को दर्शाता है।"
-},
-
-// Question 84
-{
-  en: "Which statement about a general-purpose computer is CORRECT?",
-  hi: "सामान्य-उद्देश्य कंप्यूटर के बारे में कौन-सा कथन सही है?",
-
-  options: [
-    {
-      en: "Its hardware and operation are restricted to a single predefined application",
-      hi: "इसका hardware और operation केवल एक पूर्वनिर्धारित application तक सीमित होता है"
-    },
-    {
-      en: "It is intended to perform multiple types of tasks according to the programs and instructions supplied to it",
-      hi: "इसे दिए गए programs और instructions के अनुसार कई प्रकार के कार्य करने के लिए बनाया गया है"
-    },
-    {
-      en: "It can operate without any software or instructions",
-      hi: "यह किसी software या instructions के बिना कार्य कर सकता है"
-    },
-    {
-      en: "It is necessarily an analog computer",
-      hi: "यह अनिवार्य रूप से एक analog computer होता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "General-purpose computer दिए गए programs और instructions के अनुसार विभिन्न प्रकार के कार्य कर सकता है।"
-},
-
-// Question 85
-{
-  en: "Which of the following best describes a special-purpose computer?",
-  hi: "निम्नलिखित में से कौन-सा विशेष-उद्देश्य कंप्यूटर का सबसे सही वर्णन करता है?",
-
-  options: [
-    {
-      en: "A computer designed to perform a specific task or a limited set of closely related tasks",
-      hi: "ऐसा कंप्यूटर जिसे किसी विशिष्ट कार्य या सीमित संख्या में संबंधित कार्यों के लिए डिज़ाइन किया गया हो"
-    },
-    {
-      en: "A computer that can perform any task without software",
-      hi: "ऐसा कंप्यूटर जो बिना software के कोई भी कार्य कर सकता हो"
-    },
-    {
-      en: "A computer designed primarily for general office applications",
-      hi: "मुख्य रूप से सामान्य कार्यालयी applications के लिए डिज़ाइन किया गया कंप्यूटर"
-    },
-    {
-      en: "A computer that can operate only on analog data",
-      hi: "ऐसा कंप्यूटर जो केवल analog data पर कार्य कर सकता हो"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Special-purpose computer किसी विशिष्ट कार्य या सीमित और संबंधित कार्यों को करने के लिए बनाया जाता है।"
-},
-
-// Question 86
-{
-  en: "Which of the following is the most appropriate example of a special-purpose computer?",
-  hi: "निम्नलिखित में से विशेष-उद्देश्य कंप्यूटर का सबसे उपयुक्त उदाहरण कौन-सा है?",
-
-  options: [
-    {
-      en: "Desktop computer used for word processing and browsing",
-      hi: "वर्ड प्रोसेसिंग और ब्राउज़िंग के लिए उपयोग किया जाने वाला डेस्कटॉप कंप्यूटर"
-    },
-    {
-      en: "Laptop used for programming and presentations",
-      hi: "प्रोग्रामिंग और प्रेजेंटेशन के लिए उपयोग किया जाने वाला लैपटॉप"
-    },
-    {
-      en: "Embedded computer controlling the operation of an automatic washing machine",
-      hi: "स्वचालित वॉशिंग मशीन के संचालन को नियंत्रित करने वाला एम्बेडेड कंप्यूटर"
-    },
-    {
-      en: "General-purpose server used for multiple applications",
-      hi: "कई applications के लिए उपयोग किया जाने वाला सामान्य-उद्देश्य सर्वर"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Washing machine में लगा embedded computer एक विशिष्ट कार्य के लिए डिज़ाइन किया जाता है, इसलिए यह special-purpose computer का उदाहरण है।"
-},
-
-// Question 87
-{
-  en: "A computer system is permanently configured to control traffic signals at an intersection and is not intended for unrelated applications. How should it be classified based on purpose?",
-  hi: "एक कंप्यूटर सिस्टम को किसी चौराहे पर ट्रैफिक सिग्नल नियंत्रित करने के लिए स्थायी रूप से कॉन्फ़िगर किया गया है और इसका उद्देश्य अन्य असंबंधित applications के लिए उपयोग करना नहीं है। उद्देश्य के आधार पर इसे कैसे वर्गीकृत किया जाना चाहिए?",
-
-  options: [
-    {
-      en: "General-purpose computer",
-      hi: "सामान्य-उद्देश्य कंप्यूटर"
-    },
-    {
-      en: "Special-purpose computer",
-      hi: "विशेष-उद्देश्य कंप्यूटर"
-    },
-    {
-      en: "Hybrid computer",
-      hi: "हाइब्रिड कंप्यूटर"
-    },
-    {
-      en: "Supercomputer",
-      hi: "सुपरकंप्यूटर"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "किसी विशिष्ट कार्य, जैसे traffic signals को नियंत्रित करने के लिए समर्पित कंप्यूटर special-purpose computer कहलाता है।"
-},
-
-// Question 88
-{
-  en: "Which statement correctly compares general-purpose and special-purpose computers?",
-  hi: "कौन-सा कथन general-purpose और special-purpose computers की सही तुलना करता है?",
-
-  options: [
-    {
-      en: "General-purpose computers are designed for a range of tasks using different software, whereas special-purpose computers are designed for a specific task or application",
-      hi: "General-purpose computers विभिन्न software का उपयोग करके कई प्रकार के कार्यों के लिए बनाए जाते हैं, जबकि special-purpose computers किसी विशिष्ट कार्य या application के लिए बनाए जाते हैं"
-    },
-    {
-      en: "General-purpose computers can process only numerical data, whereas special-purpose computers process only text",
-      hi: "General-purpose computers केवल संख्यात्मक data को process कर सकते हैं, जबकि special-purpose computers केवल text को process करते हैं"
-    },
-    {
-      en: "Special-purpose computers are always analog, whereas general-purpose computers are always digital",
-      hi: "Special-purpose computers हमेशा analog होते हैं, जबकि general-purpose computers हमेशा digital होते हैं"
-    },
-    {
-      en: "General-purpose computers cannot be programmed, whereas special-purpose computers can be programmed for multiple unrelated tasks",
-      hi: "General-purpose computers को program नहीं किया जा सकता, जबकि special-purpose computers को कई असंबंधित कार्यों के लिए program किया जा सकता है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "General-purpose computers कई प्रकार के कार्य कर सकते हैं, जबकि special-purpose computers विशिष्ट कार्यों के लिए बनाए जाते हैं।"
-},
-
-// Question 89
-{
-  en: "Which type of computer is generally designed for individual users and is commonly used for tasks such as word processing, browsing and personal applications?",
-  hi: "किस प्रकार का कंप्यूटर सामान्यतः व्यक्तिगत उपयोगकर्ताओं के लिए बनाया जाता है और word processing, browsing तथा personal applications जैसे कार्यों के लिए उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "Mainframe Computer",
-      hi: "मेनफ्रेम कंप्यूटर"
-    },
-    {
-      en: "Minicomputer",
-      hi: "मिनी कंप्यूटर"
-    },
-    {
-      en: "Microcomputer",
-      hi: "माइक्रोकंप्यूटर"
-    },
-    {
-      en: "Supercomputer",
-      hi: "सुपरकंप्यूटर"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Microcomputers व्यक्तिगत उपयोगकर्ताओं के लिए बनाए जाते हैं और सामान्यतः word processing, browsing तथा personal applications में उपयोग होते हैं।"
-},
-
-// Question 90
-{
-  en: "Which type of computer traditionally occupied a position between microcomputers and mainframe computers in terms of processing capability and number of users?",
-  hi: "Processing capability और users की संख्या के संदर्भ में कौन-सा कंप्यूटर पारंपरिक रूप से microcomputers और mainframe computers के बीच की श्रेणी में आता था?",
-
-  options: [
-    {
-      en: "Minicomputer",
-      hi: "मिनी कंप्यूटर"
-    },
-    {
-      en: "Microcomputer",
-      hi: "माइक्रोकंप्यूटर"
-    },
-    {
-      en: "Analog Computer",
-      hi: "एनालॉग कंप्यूटर"
-    },
-    {
-      en: "Supercomputer",
-      hi: "सुपरकंप्यूटर"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Minicomputers को पारंपरिक वर्गीकरण में microcomputers से अधिक और mainframes से कम processing capability वाले कंप्यूटर माना जाता था।"
-},
-
-// Question 91
-{
-  en: "A large organization needs a computer system capable of supporting a very large number of users and processing huge volumes of business transactions simultaneously. Which type is most appropriate?",
-  hi: "एक बड़े संगठन को ऐसी कंप्यूटर प्रणाली की आवश्यकता है जो बहुत बड़ी संख्या में users को support कर सके और एक साथ बड़ी मात्रा में business transactions को process कर सके। कौन-सा प्रकार सबसे उपयुक्त है?",
-
-  options: [
-    {
-      en: "Microcomputer",
-      hi: "माइक्रोकंप्यूटर"
-    },
-    {
-      en: "Minicomputer",
-      hi: "मिनी कंप्यूटर"
-    },
-    {
-      en: "Mainframe Computer",
-      hi: "मेनफ्रेम कंप्यूटर"
-    },
-    {
-      en: "Personal Computer",
-      hi: "पर्सनल कंप्यूटर"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Mainframe computers बड़ी संख्या में users और विशाल मात्रा में business transactions को एक साथ process करने के लिए उपयुक्त होते हैं।"
-},
-
-// Question 92
-{
-  en: "Which sequence correctly represents the traditional classification of computers by increasing size and processing capacity among the three given categories?",
-  hi: "दिए गए तीन प्रकारों में आकार और processing capacity के बढ़ते क्रम के अनुसार कंप्यूटरों का पारंपरिक वर्गीकरण कौन-सा है?",
-
-  options: [
-    {
-      en: "Mainframe → Minicomputer → Microcomputer",
-      hi: "मेनफ्रेम → मिनीकंप्यूटर → माइक्रोकंप्यूटर"
-    },
-    {
-      en: "Microcomputer → Minicomputer → Mainframe",
-      hi: "माइक्रोकंप्यूटर → मिनीकंप्यूटर → मेनफ्रेम"
-    },
-    {
-      en: "Minicomputer → Microcomputer → Mainframe",
-      hi: "मिनीकंप्यूटर → माइक्रोकंप्यूटर → मेनफ्रेम"
-    },
-    {
-      en: "Microcomputer → Mainframe → Minicomputer",
-      hi: "माइक्रोकंप्यूटर → मेनफ्रेम → मिनीकंप्यूटर"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "पारंपरिक वर्गीकरण में microcomputer → minicomputer → mainframe का क्रम आकार और processing capacity के बढ़ते स्तर को दर्शाता है।"
-},
-
-// Question 93
-{
-  en: "Which characteristic most clearly distinguishes a supercomputer from other computers classified primarily for general business use?",
-  hi: "कौन-सी विशेषता supercomputer को मुख्य रूप से सामान्य business use के लिए वर्गीकृत अन्य computers से सबसे स्पष्ट रूप से अलग करती है?",
-
-  options: [
-    {
-      en: "It is designed mainly for word processing and office automation",
-      hi: "इसे मुख्य रूप से word processing और office automation के लिए डिज़ाइन किया गया है"
-    },
-    {
-      en: "It provides extremely high computational performance for solving complex scientific and engineering problems",
-      hi: "यह जटिल scientific और engineering problems को हल करने के लिए अत्यंत उच्च computational performance प्रदान करता है"
-    },
-    {
-      en: "It is intended primarily for individual users",
-      hi: "यह मुख्य रूप से individual users के लिए बनाया गया है"
-    },
-    {
-      en: "It is designed to support only a small number of simultaneous users",
-      hi: "इसे केवल कुछ users को एक साथ support करने के लिए डिज़ाइन किया गया है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Supercomputers अत्यंत उच्च computational performance प्रदान करते हैं और complex scientific तथा engineering problems के लिए उपयोग किए जाते हैं।"
-},
-
-// Question 94
-{
-  en: "Which of the following is a major application area of supercomputers?",
-  hi: "निम्नलिखित में से supercomputers का प्रमुख application area कौन-सा है?",
-
-  options: [
-    {
-      en: "Preparing ordinary text documents",
-      hi: "सामान्य text documents तैयार करना"
-    },
-    {
-      en: "Managing personal email",
-      hi: "व्यक्तिगत email प्रबंधित करना"
-    },
-    {
-      en: "Weather and climate modelling",
-      hi: "मौसम और जलवायु modelling"
-    },
-    {
-      en: "Creating basic spreadsheets",
-      hi: "बुनियादी spreadsheets बनाना"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Supercomputers का उपयोग complex calculations वाले weather और climate modelling जैसे कार्यों में किया जाता है।"
-},
-
-// Question 95
-{
-  en: "A research institution needs to perform extremely large numbers of calculations involving atmospheric conditions, physical equations and climate models. Which type of computer would be most suitable?",
-  hi: "एक research institution को atmospheric conditions, physical equations और climate models से संबंधित बहुत बड़ी संख्या में calculations करनी हैं। इसके लिए कौन-सा computer type सबसे उपयुक्त होगा?",
-
-  options: [
-    {
-      en: "Microcomputer",
-      hi: "माइक्रोकंप्यूटर"
-    },
-    {
-      en: "Minicomputer",
-      hi: "मिनी कंप्यूटर"
-    },
-    {
-      en: "Mainframe computer",
-      hi: "मेनफ्रेम कंप्यूटर"
-    },
-    {
-      en: "Supercomputer",
-      hi: "सुपरकंप्यूटर"
+      en: "Validation Rule: Between 0 And 100",
+      hi: "Validation Rule: Between 0 And 100"
     }
   ],
 
   answer: "D",
 
-  explanation: "Supercomputers अत्यधिक जटिल और विशाल गणनाओं, जैसे climate modelling और atmospheric simulations, के लिए उपयुक्त होते हैं।"
+  explanation: "The Validation Rule property restricts acceptable values. The expression Between 0 And 100 allows values from 0 through 100, inclusive."
 },
-// Question 96
+
+// Question 77
 {
-  en: "Which combination most accurately represents the characteristics and applications of a supercomputer?",
-  hi: "कौन-सा संयोजन supercomputer की विशेषताओं और applications को सबसे सही रूप से दर्शाता है?",
+  en: "A Short Text field must accept a value containing exactly six characters in the pattern of two letters followed by four digits. Which property is most appropriate for guiding and restricting data entry to this pattern?",
+  hi: "एक Short Text फ़ील्ड में ठीक छह वर्णों वाला मान स्वीकार होना चाहिए, जिसमें पहले दो अक्षर और उसके बाद चार अंक हों। डेटा प्रविष्टि को इस पैटर्न के अनुसार निर्देशित और सीमित करने के लिए कौन-सी प्रॉपर्टी सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Very high computational speed — scientific simulations, weather forecasting and complex research calculations",
-      hi: "बहुत उच्च computational speed — scientific simulations, weather forecasting और complex research calculations"
+      en: "Input Mask",
+      hi: "Input Mask"
     },
     {
-      en: "Low processing speed — routine data entry and document typing",
-      hi: "कम processing speed — routine data entry और document typing"
+      en: "Decimal Places",
+      hi: "Decimal Places"
     },
     {
-      en: "Small storage capacity — personal communication and basic accounting",
-      hi: "कम storage capacity — personal communication और basic accounting"
+      en: "Allow Zero Length",
+      hi: "Allow Zero Length"
     },
     {
-      en: "Limited computational capability — simple household applications",
-      hi: "सीमित computational capability — simple household applications"
+      en: "Caption",
+      hi: "Caption"
     }
   ],
 
   answer: "A",
 
-  explanation: "Supercomputers अत्यंत उच्च computational speed के कारण scientific simulations, weather forecasting और complex calculations में उपयोग होते हैं।"
+  explanation: "Input Mask defines a pattern for data entry. It can guide and restrict entry to two letters followed by four digits."
+},
+
+// Question 78
+{
+  en: "A designer wants to prevent duplicate non-null values in an EmployeeCode field and also wants the field to be searchable efficiently. Which Indexed property setting is most appropriate in a supported Access table design?",
+  hi: "एक डिज़ाइनर EmployeeCode फ़ील्ड में गैर-Null मानों की पुनरावृत्ति रोकना चाहता है और साथ ही फ़ील्ड में कुशलतापूर्वक खोज करना चाहता है। समर्थित Access टेबल डिज़ाइन में Indexed प्रॉपर्टी की कौन-सी सेटिंग सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "No",
+      hi: "No"
+    },
+    {
+      en: "Yes (Duplicates OK)",
+      hi: "Yes (Duplicates OK)"
+    },
+    {
+      en: "Yes (No Duplicates)",
+      hi: "Yes (No Duplicates)"
+    },
+    {
+      en: "Required (Duplicates OK)",
+      hi: "Required (Duplicates OK)"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Yes (No Duplicates) creates an index that supports efficient searching and prevents duplicate indexed values. If EmployeeCode must also contain a value in every record, the Required property should be set separately to Yes."
+},
+
+// Question 79
+{
+  en: "A Short Text field has Required set to No and Allow Zero Length set to No. Which statement best describes the intended distinction between these properties?",
+  hi: "एक Short Text फ़ील्ड में Required को No और Allow Zero Length को No पर सेट किया गया है। इन दोनों प्रॉपर्टीज़ के बीच अंतर को कौन-सा कथन सबसे अच्छी तरह बताता है?",
+
+  options: [
+    {
+      en: "The field must contain a value because Allow Zero Length is set to No.",
+      hi: "Allow Zero Length को No पर सेट करने के कारण फ़ील्ड में मान होना अनिवार्य है।"
+    },
+    {
+      en: "The field may be left null, but an empty string is not permitted as a valid zero-length text value.",
+      hi: "फ़ील्ड को Null छोड़ा जा सकता है, लेकिन खाली स्ट्रिंग को मान्य शून्य-लंबाई वाले टेक्स्ट मान के रूप में स्वीकार नहीं किया जाता।"
+    },
+    {
+      en: "The field accepts only zero-length strings and rejects null values.",
+      hi: "फ़ील्ड केवल शून्य-लंबाई वाली स्ट्रिंग स्वीकार करता है और Null मान अस्वीकार करता है।"
+    },
+    {
+      en: "The field automatically receives the value defined by its Caption property.",
+      hi: "फ़ील्ड को अपने आप Caption प्रॉपर्टी में निर्धारित मान मिल जाता है।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Required = No allows the field to be left Null. Allow Zero Length = No prevents an empty string from being stored as a valid text value. Null and an empty string are different."
+},
+
+// Question 80
+{
+  en: "A designer sets a field's Default Value to 10, applies a Format property to control its display, and defines a Validation Rule requiring the value to be greater than 0. Which statement correctly describes these settings?",
+  hi: "एक डिज़ाइनर किसी फ़ील्ड की Default Value को 10 पर सेट करता है, उसके प्रदर्शन को नियंत्रित करने के लिए Format प्रॉपर्टी लागू करता है और मान 0 से अधिक होने की शर्त वाला Validation Rule निर्धारित करता है। कौन-सा कथन इन सेटिंग्स का सही वर्णन करता है?",
+
+  options: [
+    {
+      en: "Default Value prevents the user from entering any value other than 10.",
+      hi: "Default Value उपयोगकर्ता को 10 के अलावा कोई अन्य मान दर्ज करने से रोकता है।"
+    },
+    {
+      en: "Format enforces the condition that the value must be greater than 0.",
+      hi: "Format यह शर्त लागू करता है कि मान 0 से अधिक होना चाहिए।"
+    },
+    {
+      en: "Validation Rule automatically changes every invalid entry to 10.",
+      hi: "Validation Rule प्रत्येक अमान्य प्रविष्टि को अपने आप 10 में बदल देता है।"
+    },
+    {
+      en: "Default Value supplies an initial value, Format controls presentation, and Validation Rule restricts acceptable values.",
+      hi: "Default Value प्रारंभिक मान देता है, Format प्रदर्शन को नियंत्रित करता है और Validation Rule स्वीकार्य मानों को सीमित करता है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Default Value supplies an initial value for a new record, Format controls how a value is displayed, and Validation Rule restricts values that can be accepted."
+},
+// Question 81
+{
+  en: "What is the primary purpose of setting a primary key in an MS Access table?",
+  hi: "MS Access की टेबल में प्राइमरी की निर्धारित करने का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To automatically sort all records in ascending order.",
+      hi: "सभी रिकॉर्ड को अपने आप आरोही क्रम में क्रमबद्ध करना।"
+    },
+    {
+      en: "To uniquely identify each record and prevent duplicate or Null primary key values.",
+      hi: "प्रत्येक रिकॉर्ड की विशिष्ट पहचान करना तथा प्राइमरी की के मानों को डुप्लिकेट या Null होने से रोकना।"
+    },
+    {
+      en: "To establish a relationship with every other table automatically.",
+      hi: "अन्य सभी टेबल के साथ अपने आप रिलेशनशिप स्थापित करना।"
+    },
+    {
+      en: "To ensure that every field in the table contains a unique value.",
+      hi: "यह सुनिश्चित करना कि टेबल के प्रत्येक फ़ील्ड में एक विशिष्ट मान हो।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A primary key uniquely identifies each record in a table. Its values must be unique and cannot be Null."
+},
+
+// Question 82
+{
+  en: "A student table contains StudentID, Name, and Class. Two students have the same name and class, but different StudentID values. Which field is most suitable as the primary key?",
+  hi: "एक विद्यार्थी टेबल में StudentID, Name और Class फ़ील्ड हैं। दो विद्यार्थियों का नाम और कक्षा समान हैं, लेकिन उनके StudentID अलग-अलग हैं। प्राइमरी की के लिए कौन-सा फ़ील्ड सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Name",
+      hi: "Name"
+    },
+    {
+      en: "Class",
+      hi: "Class"
+    },
+    {
+      en: "Name and Class together, regardless of StudentID",
+      hi: "StudentID की परवाह किए बिना Name और Class को एक साथ लेना"
+    },
+    {
+      en: "StudentID",
+      hi: "StudentID"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "StudentID is the most suitable primary key because it uniquely identifies each student, even when multiple students have the same name and class."
+},
+
+// Question 83
+{
+  en: "A user attempts to set a field containing duplicate values as the primary key. What is the most likely outcome?",
+  hi: "एक उपयोगकर्ता डुप्लिकेट मानों वाले फ़ील्ड को प्राइमरी की बनाने का प्रयास करता है। सबसे संभावित परिणाम क्या होगा?",
+
+  options: [
+    {
+      en: "Access cannot establish that field as the primary key until the duplicate values are resolved.",
+      hi: "डुप्लिकेट मानों को ठीक किए जाने तक Access उस फ़ील्ड को प्राइमरी की के रूप में निर्धारित नहीं कर सकता।"
+    },
+    {
+      en: "Access automatically deletes every duplicate record without warning.",
+      hi: "Access बिना किसी चेतावनी के सभी डुप्लिकेट रिकॉर्ड अपने आप हटा देता है।"
+    },
+    {
+      en: "Access converts the field into a foreign key.",
+      hi: "Access उस फ़ील्ड को फॉरेन की में बदल देता है।"
+    },
+    {
+      en: "Access allows the duplicate values because primary keys need only be unique when records are printed.",
+      hi: "Access डुप्लिकेट मानों की अनुमति देता है, क्योंकि प्राइमरी की का विशिष्ट होना केवल रिकॉर्ड प्रिंट करते समय आवश्यक है।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "A primary key must contain unique, non-Null values. Duplicate values must be resolved before the field can be successfully designated as the primary key."
+},
+
+// Question 84
+{
+  en: "Consider the following statements about a primary key in MS Access:\n\n1. A primary key can consist of a single field.\n2. A primary key can consist of multiple fields.\n3. A primary key field cannot contain Null values.\n4. Every field in a table must be part of its primary key.\n\nWhich statements are correct?",
+  hi: "MS Access में प्राइमरी की के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. प्राइमरी की एक फ़ील्ड से बन सकती है।\n2. प्राइमरी की कई फ़ील्ड से मिलकर बन सकती है।\n3. प्राइमरी की फ़ील्ड में Null मान नहीं हो सकते।\n4. टेबल के प्रत्येक फ़ील्ड का प्राइमरी की का हिस्सा होना अनिवार्य है।\n\nकौन-से कथन सही हैं?",
+
+  options: [
+    {
+      en: "1 and 4 only",
+      hi: "केवल 1 और 4"
+    },
+    {
+      en: "2 and 4 only",
+      hi: "केवल 2 और 4"
+    },
+    {
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
+    },
+    {
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A primary key can be a single field or a combination of fields. Primary key values must be unique and non-Null, but not every field in a table must be part of the primary key."
+},
+
+// Question 85
+{
+  en: "A table has no single field that uniquely identifies every record. The combination of DepartmentID and EmployeeNumber is unique for each record. Which approach is most appropriate?",
+  hi: "एक टेबल में ऐसा कोई एकल फ़ील्ड नहीं है जो प्रत्येक रिकॉर्ड की विशिष्ट पहचान कर सके। DepartmentID और EmployeeNumber का संयोजन प्रत्येक रिकॉर्ड के लिए विशिष्ट है। कौन-सा तरीका सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Set DepartmentID and EmployeeNumber as two separate primary keys.",
+      hi: "DepartmentID और EmployeeNumber को दो अलग-अलग प्राइमरी की निर्धारित करना।"
+    },
+    {
+      en: "Make EmployeeNumber a foreign key without defining any relationship.",
+      hi: "कोई रिलेशनशिप निर्धारित किए बिना EmployeeNumber को फॉरेन की बनाना।"
+    },
+    {
+      en: "Create a composite primary key using DepartmentID and EmployeeNumber together.",
+      hi: "DepartmentID और EmployeeNumber को एक साथ उपयोग करके कंपोज़िट प्राइमरी की बनाना।"
+    },
+    {
+      en: "Set every field in the table as a primary key.",
+      hi: "टेबल के प्रत्येक फ़ील्ड को प्राइमरी की निर्धारित करना।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A composite primary key combines multiple fields to uniquely identify each record when no single field is sufficient. Here, DepartmentID and EmployeeNumber together form the key."
+},
+// Question 86
+{
+  en: "A user wants to replace an existing primary key with another field in an Access table. Which procedure is most appropriate?",
+  hi: "एक उपयोगकर्ता Access टेबल में मौजूदा प्राइमरी की को किसी दूसरे फ़ील्ड से बदलना चाहता है। कौन-सी प्रक्रिया सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Rename the existing primary key field; Access will automatically make every other field a primary key.",
+      hi: "मौजूदा प्राइमरी की फ़ील्ड का नाम बदल दें; Access अपने आप अन्य सभी फ़ील्ड को प्राइमरी की बना देगा।"
+    },
+    {
+      en: "Remove the existing primary key designation and set the intended field as the new primary key, after ensuring its values meet the requirements.",
+      hi: "मौजूदा प्राइमरी की की सेटिंग हटाएँ और यह सुनिश्चित करने के बाद कि नए फ़ील्ड के मान आवश्यक शर्तें पूरी करते हैं, उसे नई प्राइमरी की निर्धारित करें।"
+    },
+    {
+      en: "Delete the entire table and recreate it because a primary key cannot be changed.",
+      hi: "पूरी टेबल हटाकर दोबारा बनाएँ, क्योंकि प्राइमरी की बदली नहीं जा सकती।"
+    },
+    {
+      en: "Change the field's Caption property; this automatically changes the primary key.",
+      hi: "फ़ील्ड की Caption प्रॉपर्टी बदल दें; इससे प्राइमरी की अपने आप बदल जाएगी।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "To replace a primary key, remove the existing primary key designation and assign it to the intended field. The new field must contain unique, non-Null values, and any existing relationships or dependencies must be considered."
+},
+
+// Question 87
+{
+  en: "Consider a database with two tables: Customers and Orders. CustomerID is the primary key in Customers and is stored in Orders to identify the customer associated with each order. Which statement is correct?",
+  hi: "एक डेटाबेस में Customers और Orders नाम की दो टेबल हैं। CustomerID, Customers टेबल की प्राइमरी की है और प्रत्येक ऑर्डर से संबंधित ग्राहक की पहचान करने के लिए Orders टेबल में भी संग्रहीत है। कौन-सा कथन सही है?",
+
+  options: [
+    {
+      en: "CustomerID must be a primary key in both tables, even if one customer has multiple orders.",
+      hi: "CustomerID दोनों टेबल में प्राइमरी की होना चाहिए, भले ही एक ग्राहक के कई ऑर्डर हों।"
+    },
+    {
+      en: "CustomerID is an ordinary field in Customers and a composite primary key in Orders by definition.",
+      hi: "CustomerID, Customers टेबल में एक सामान्य फ़ील्ड और परिभाषा के अनुसार Orders में कंपोज़िट प्राइमरी की है।"
+    },
+    {
+      en: "CustomerID must be unique in Orders because it is unique in Customers.",
+      hi: "CustomerID का Customers में विशिष्ट होने के कारण Orders में भी विशिष्ट होना अनिवार्य है।"
+    },
+    {
+      en: "CustomerID can be the primary key in Customers and a foreign key in Orders, where its value may appear in multiple records.",
+      hi: "CustomerID, Customers में प्राइमरी की और Orders में फॉरेन की हो सकती है, जहाँ इसका मान कई रिकॉर्ड में आ सकता है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "CustomerID uniquely identifies each customer in Customers and can serve as a foreign key in Orders. Since one customer can place multiple orders, the same CustomerID may appear in multiple Orders records."
+},
+
+// Question 88
+{
+  en: "An Access table uses a composite primary key consisting of ProductID and WarehouseID. Which statement correctly describes the uniqueness requirement?",
+  hi: "एक Access टेबल में ProductID और WarehouseID से बनी कंपोज़िट प्राइमरी की है। विशिष्टता की आवश्यकता का सही वर्णन कौन-सा कथन करता है?",
+
+  options: [
+    {
+      en: "Each individual field must necessarily contain unique values throughout the entire table.",
+      hi: "पूरी टेबल में प्रत्येक फ़ील्ड के मान अलग-अलग होना अनिवार्य है।"
+    },
+    {
+      en: "The combination of ProductID and WarehouseID must be unique, although either field may repeat individually.",
+      hi: "ProductID और WarehouseID का संयोजन विशिष्ट होना चाहिए, हालाँकि दोनों में से किसी एक फ़ील्ड का मान अलग-अलग रिकॉर्ड में दोहराया जा सकता है।"
+    },
+    {
+      en: "Duplicate combinations are allowed as long as ProductID is not Null.",
+      hi: "यदि ProductID Null नहीं है, तो दोनों फ़ील्ड के समान संयोजन की अनुमति है।"
+    },
+    {
+      en: "The composite primary key automatically creates a separate table for each warehouse.",
+      hi: "कंपोज़िट प्राइमरी की अपने आप प्रत्येक वेयरहाउस के लिए अलग टेबल बना देती है।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A composite primary key requires the combination of ProductID and WarehouseID to be unique. Either field may repeat individually, but the same combination cannot occur more than once."
+},
+
+// Question 89
+{
+  en: "A user creates an AutoNumber field in an MS Access table and selects the Increment option. Which statement best describes its normal behavior?",
+  hi: "एक उपयोगकर्ता MS Access टेबल में AutoNumber फ़ील्ड बनाकर Increment विकल्प चुनता है। इसके सामान्य व्यवहार का सबसे अच्छा वर्णन कौन-सा है?",
+
+  options: [
+    {
+      en: "It generates a number only when the user manually enters a value in the field.",
+      hi: "यह संख्या तभी बनाता है जब उपयोगकर्ता फ़ील्ड में मैन्युअल रूप से कोई मान दर्ज करता है।"
+    },
+    {
+      en: "It generates values automatically for new records, typically increasing by 1 from the previous generated value.",
+      hi: "यह नए रिकॉर्ड के लिए अपने आप मान बनाता है, जो सामान्यतः पिछले जनरेट किए गए मान से 1 अधिक होता है।"
+    },
+    {
+      en: "It guarantees that every record will always have a consecutive number without any gaps.",
+      hi: "यह सुनिश्चित करता है कि प्रत्येक रिकॉर्ड को बिना किसी अंतराल के क्रमिक संख्या मिलेगी।"
+    },
+    {
+      en: "It recalculates all existing values whenever a record is deleted.",
+      hi: "रिकॉर्ड हटाए जाने पर यह सभी मौजूदा मानों की दोबारा गणना करता है।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Increment option generates AutoNumber values automatically, normally increasing by 1. Gaps may occur when records are deleted or insertions fail, so consecutive numbering is not guaranteed."
+},
+
+// Question 90
+{
+  en: "Consider the following statements about the AutoNumber data type in MS Access:\n\n1. AutoNumber generates a value automatically when a new record is added.\n2. An AutoNumber field can be used as a primary key.\n3. AutoNumber values are guaranteed to be consecutive even after failed insertions or record deletions.\n4. AutoNumber is intended primarily for record identification rather than arithmetic calculations.\n\nWhich statements are correct?",
+  hi: "MS Access में AutoNumber डेटा टाइप के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. नया रिकॉर्ड जोड़ने पर AutoNumber अपने आप एक मान जनरेट करता है।\n2. AutoNumber फ़ील्ड का उपयोग प्राइमरी की के रूप में किया जा सकता है।\n3. असफल प्रविष्टियों या रिकॉर्ड हटाए जाने के बाद भी AutoNumber मानों का बिना अंतराल के क्रमिक होना सुनिश्चित है।\n4. AutoNumber मुख्यतः रिकॉर्ड की पहचान के लिए होता है, न कि गणितीय गणनाओं के लिए।\n\nकौन-से कथन सही हैं?",
+
+  options: [
+    {
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
+    },
+    {
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
+    },
+    {
+      en: "1, 2 and 4 only",
+      hi: "केवल 1, 2 और 4"
+    },
+    {
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Statements 1, 2, and 4 are correct. AutoNumber generates values automatically and can identify records through a primary key. It does not guarantee consecutive values because gaps can occur after deletions or failed insertions."
+},
+// Question 91
+{
+  en: "A user deletes the record having AutoNumber value 25 from a table. The next new record receives value 26. Which conclusion is most accurate?",
+  hi: "एक उपयोगकर्ता टेबल से AutoNumber मान 25 वाला रिकॉर्ड हटा देता है। अगले नए रिकॉर्ड को 26 मान मिलता है। सबसे सटीक निष्कर्ष क्या है?",
+
+  options: [
+    {
+      en: "Access has automatically renumbered all records to remove the gap.",
+      hi: "Access ने अंतराल हटाने के लिए सभी रिकॉर्ड की संख्याएँ अपने आप दोबारा निर्धारित कर दी हैं।"
+    },
+    {
+      en: "The AutoNumber field has been converted into a Number field.",
+      hi: "AutoNumber फ़ील्ड को Number फ़ील्ड में बदल दिया गया है।"
+    },
+    {
+      en: "Deleting a record necessarily resets the AutoNumber sequence to 1.",
+      hi: "रिकॉर्ड हटाने से AutoNumber क्रम अनिवार्य रूप से 1 से दोबारा शुरू हो जाता है।"
+    },
+    {
+      en: "Deleting a record does not necessarily cause its AutoNumber value to be reused or the remaining records to be renumbered.",
+      hi: "रिकॉर्ड हटाने से उसका AutoNumber मान अनिवार्य रूप से दोबारा उपयोग नहीं होता और न ही शेष रिकॉर्ड की संख्याएँ अपने आप बदलती हैं।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Deleting a record does not normally renumber the remaining records or guarantee reuse of the deleted AutoNumber value. AutoNumber values may contain gaps."
+},
+
+// Question 92
+{
+  en: "An Access table requires automatically generated identifiers, but the designer does not require the identifiers to increase sequentially. Which AutoNumber option is relevant in versions that support it?",
+  hi: "एक Access टेबल में अपने आप बनने वाले पहचानकर्ता आवश्यक हैं, लेकिन डिज़ाइनर नहीं चाहता कि उनकी संख्याएँ क्रमिक रूप से बढ़ें। इसे सपोर्ट करने वाले संस्करणों में AutoNumber का कौन-सा विकल्प प्रासंगिक है?",
+
+  options: [
+    {
+      en: "Currency",
+      hi: "Currency"
+    },
+    {
+      en: "Random",
+      hi: "Random"
+    },
+    {
+      en: "Calculated",
+      hi: "Calculated"
+    },
+    {
+      en: "Decimal Places",
+      hi: "Decimal Places"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "In Access versions that support it, the Random AutoNumber option generates identifiers that are not sequentially incremented."
+},
+
+// Question 93
+{
+  en: "Which statement correctly distinguishes AutoNumber from Number in MS Access?",
+  hi: "MS Access में AutoNumber और Number के बीच अंतर को कौन-सा कथन सही ढंग से बताता है?",
+
+  options: [
+    {
+      en: "AutoNumber generates values automatically, whereas Number is generally used when numeric values need to be entered, stored, or calculated under the application's requirements.",
+      hi: "AutoNumber अपने आप मान जनरेट करता है, जबकि Number का उपयोग सामान्यतः तब किया जाता है जब एप्लिकेशन की आवश्यकताओं के अनुसार संख्यात्मक मान दर्ज, संग्रहीत या गणना किए जाने हों।"
+    },
+    {
+      en: "AutoNumber accepts decimal calculations, whereas Number cannot store numeric values.",
+      hi: "AutoNumber दशमलव गणनाएँ स्वीकार करता है, जबकि Number संख्यात्मक मान संग्रहीत नहीं कर सकता।"
+    },
+    {
+      en: "Number automatically generates a unique value for every new record, whereas AutoNumber requires manual entry.",
+      hi: "Number प्रत्येक नए रिकॉर्ड के लिए अपने आप विशिष्ट मान जनरेट करता है, जबकि AutoNumber में मान मैन्युअल रूप से दर्ज करना पड़ता है।"
+    },
+    {
+      en: "AutoNumber and Number are identical in purpose and differ only in their display format.",
+      hi: "AutoNumber और Number का उद्देश्य एक ही है और उनमें केवल प्रदर्शन प्रारूप का अंतर है।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "AutoNumber generates values automatically, commonly for record identification. Number stores numeric values that may be entered or used in calculations, depending on the application's requirements."
+},
+
+// Question 94
+{
+  en: "An AutoNumber field is used as the primary key of an Orders table. The user wants to change an existing order's identifier from 108 to 500 manually. Which statement is most accurate?",
+  hi: "Orders टेबल में AutoNumber फ़ील्ड को प्राइमरी की के रूप में उपयोग किया गया है। उपयोगकर्ता किसी मौजूदा ऑर्डर का पहचानकर्ता मैन्युअल रूप से 108 से बदलकर 500 करना चाहता है। कौन-सा कथन सबसे सटीक है?",
+
+  options: [
+    {
+      en: "The value can always be edited directly because every primary key is manually editable.",
+      hi: "मान को हमेशा सीधे संपादित किया जा सकता है, क्योंकि प्रत्येक प्राइमरी की को मैन्युअल रूप से संपादित किया जा सकता है।"
+    },
+    {
+      en: "Changing the field's Caption property changes the stored AutoNumber value.",
+      hi: "फ़ील्ड की Caption प्रॉपर्टी बदलने से संग्रहीत AutoNumber मान बदल जाता है।"
+    },
+    {
+      en: "AutoNumber values are generated and managed by Access; the field is not intended for ordinary manual assignment or editing of identifiers.",
+      hi: "AutoNumber मान Access द्वारा जनरेट और प्रबंधित किए जाते हैं; यह फ़ील्ड पहचानकर्ताओं को सामान्य रूप से मैन्युअल रूप से निर्धारित या संपादित करने के लिए नहीं है।"
+    },
+    {
+      en: "The value can be changed only by setting the field's Decimal Places property to zero.",
+      hi: "मान केवल फ़ील्ड की Decimal Places प्रॉपर्टी को शून्य पर सेट करके बदला जा सकता है।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "AutoNumber values are generated and managed by Access. The field is not intended for ordinary manual editing or assignment of identifiers."
+},
+
+// Question 95
+{
+  en: "A developer uses AutoNumber as the primary key in an Orders table and stores that identifier in a separate OrderDetails table. Which statement best explains the benefit of this design?",
+  hi: "एक डेवलपर Orders टेबल में AutoNumber को प्राइमरी की के रूप में उपयोग करता है और उस पहचानकर्ता को अलग OrderDetails टेबल में संग्रहीत करता है। इस डिज़ाइन का लाभ कौन-सा कथन सबसे अच्छी तरह समझाता है?",
+
+  options: [
+    {
+      en: "AutoNumber guarantees that the OrderDetails table will contain exactly one record for each order.",
+      hi: "AutoNumber यह सुनिश्चित करता है कि OrderDetails टेबल में प्रत्येक ऑर्डर के लिए ठीक एक रिकॉर्ड होगा।"
+    },
+    {
+      en: "AutoNumber automatically calculates the total price of each order.",
+      hi: "AutoNumber प्रत्येक ऑर्डर की कुल कीमत अपने आप निकालता है।"
+    },
+    {
+      en: "The same AutoNumber value can never be stored in any other table.",
+      hi: "एक ही AutoNumber मान किसी दूसरी टेबल में कभी संग्रहीत नहीं किया जा सकता।"
+    },
+    {
+      en: "The generated identifier can provide a stable reference to an order, while a corresponding foreign key in OrderDetails can associate multiple detail records with that order.",
+      hi: "जनरेट किया गया पहचानकर्ता किसी ऑर्डर का स्थिर संदर्भ प्रदान कर सकता है, जबकि OrderDetails में संबंधित फॉरेन की उस ऑर्डर के साथ कई विवरण रिकॉर्ड जोड़ सकती है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "An AutoNumber primary key uniquely identifies an order. Storing that identifier as a foreign key in OrderDetails allows multiple detail records to be associated with the same order."
+},
+// Question 96
+{
+  en: "A table uses the Random option for its AutoNumber field. Which statement should a database designer keep in mind?",
+  hi: "एक टेबल अपने AutoNumber फ़ील्ड के लिए Random विकल्प का उपयोग करती है। डेटाबेस डिज़ाइनर को किस बात का ध्यान रखना चाहिए?",
+
+  options: [
+    {
+      en: "Random AutoNumber values are guaranteed to be generated in ascending order.",
+      hi: "Random AutoNumber मानों का आरोही क्रम में जनरेट होना सुनिश्चित है।"
+    },
+    {
+      en: "The values are not intended to represent a chronological sequence, and uniqueness constraints still matter when the field is used as a key.",
+      hi: "ये मान कालानुक्रमिक क्रम दर्शाने के लिए नहीं होते, और फ़ील्ड को की के रूप में उपयोग करने पर विशिष्टता संबंधी नियम फिर भी महत्वपूर्ण होते हैं।"
+    },
+    {
+      en: "Random AutoNumber prevents the table from having a primary key.",
+      hi: "Random AutoNumber टेबल में प्राइमरी की रखने से रोकता है।"
+    },
+    {
+      en: "Random AutoNumber requires the user to enter a different random value manually for every record.",
+      hi: "Random AutoNumber के लिए उपयोगकर्ता को प्रत्येक रिकॉर्ड में अलग यादृच्छिक मान मैन्युअल रूप से दर्ज करना पड़ता है।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Random AutoNumber generates values automatically without a sequential order. When used as a primary key, the values must still uniquely identify records."
 },
 
 // Question 97
 {
-  en: "Which feature most clearly distinguishes a desktop computer from a laptop computer?",
-  hi: "कौन-सी विशेषता desktop computer को laptop computer से सबसे स्पष्ट रूप से अलग करती है?",
+  en: "A table contains thousands of employee records. A user frequently searches for employees by EmployeeCode. Which statement best explains the benefit of creating an index on EmployeeCode?",
+  hi: "एक टेबल में कर्मचारियों के हजारों रिकॉर्ड हैं। उपयोगकर्ता अक्सर EmployeeCode के आधार पर कर्मचारियों को खोजता है। EmployeeCode पर इंडेक्स बनाने का लाभ कौन-सा कथन सबसे अच्छी तरह समझाता है?",
 
   options: [
     {
-      en: "A desktop computer is generally designed to remain at a fixed location, whereas a laptop is designed for portability",
-      hi: "Desktop computer सामान्यतः एक निश्चित स्थान पर रखने के लिए बनाया जाता है, जबकि laptop portability के लिए बनाया जाता है"
+      en: "It permanently sorts the physical storage of all records and prevents any other sorting.",
+      hi: "यह सभी रिकॉर्ड के भौतिक स्टोरेज को स्थायी रूप से क्रमबद्ध कर देता है और किसी अन्य क्रम में सॉर्ट करने से रोकता है।"
     },
     {
-      en: "A desktop computer cannot run application software, whereas a laptop can",
-      hi: "Desktop computer application software नहीं चला सकता, जबकि laptop चला सकता है"
+      en: "It automatically converts EmployeeCode into the table's primary key.",
+      hi: "यह EmployeeCode को अपने आप टेबल की प्राइमरी की में बदल देता है।"
     },
     {
-      en: "A desktop computer uses only touch input, whereas a laptop uses only a keyboard",
-      hi: "Desktop computer केवल touch input का उपयोग करता है, जबकि laptop केवल keyboard का उपयोग करता है"
+      en: "It can improve the efficiency of searches and retrievals based on EmployeeCode, although the actual benefit depends on the query and data.",
+      hi: "यह EmployeeCode के आधार पर खोज और डेटा प्राप्त करने की दक्षता बढ़ा सकता है, हालाँकि वास्तविक लाभ क्वेरी और डेटा पर निर्भर करता है।"
     },
     {
-      en: "A desktop computer cannot connect to the internet, whereas a laptop can",
-      hi: "Desktop computer internet से connect नहीं हो सकता, जबकि laptop हो सकता है"
+      en: "It guarantees that every query on the table will execute instantly.",
+      hi: "यह सुनिश्चित करता है कि टेबल पर प्रत्येक क्वेरी तुरंत निष्पादित होगी।"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "Desktop computer सामान्यतः fixed location पर उपयोग होता है, जबकि laptop portable होता है।"
+  explanation: "An index can improve the efficiency of searches and retrievals based on EmployeeCode. However, the performance benefit depends on the query, data distribution, and other factors."
 },
 
 // Question 98
 {
-  en: "Which statement best describes the relationship between a notebook and a laptop computer?",
-  hi: "Notebook और laptop computer के बीच संबंध को कौन-सा कथन सबसे सही रूप से बताता है?",
+  en: "Consider the following statements about indexes in MS Access:\n\n1. An index can improve the performance of searches and sorting on indexed fields.\n2. Indexes can require additional storage space.\n3. Indexes can add overhead to operations that modify indexed data.\n4. Every indexed field must be a primary key.\n\nWhich statements are correct?",
+  hi: "MS Access में इंडेक्स के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. इंडेक्स किए गए फ़ील्ड पर खोज और सॉर्टिंग के प्रदर्शन में सुधार हो सकता है।\n2. इंडेक्स के लिए अतिरिक्त स्टोरेज स्पेस की आवश्यकता हो सकती है।\n3. इंडेक्स किए गए डेटा में बदलाव करने वाली प्रक्रियाओं पर इंडेक्स अतिरिक्त कार्यभार डाल सकते हैं।\n4. प्रत्येक इंडेक्स किए गए फ़ील्ड का प्राइमरी की होना अनिवार्य है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "A notebook is necessarily a tablet without a physical keyboard",
-      hi: "Notebook अनिवार्य रूप से physical keyboard के बिना एक tablet होता है"
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
     },
     {
-      en: "A notebook is generally a compact, lightweight form of portable computer, often used interchangeably with the term laptop",
-      hi: "Notebook सामान्यतः एक compact और lightweight portable computer होता है, और इसे अक्सर laptop शब्द के समानार्थी रूप में उपयोग किया जाता है"
+      en: "1 and 4 only",
+      hi: "केवल 1 और 4"
     },
     {
-      en: "A notebook is a type of desktop computer designed for office use",
-      hi: "Notebook office use के लिए बनाया गया एक प्रकार का desktop computer है"
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
     },
     {
-      en: "A notebook can perform only basic calculations and cannot run general applications",
-      hi: "Notebook केवल basic calculations कर सकता है और general applications नहीं चला सकता"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "Notebook एक compact और lightweight portable computer को संदर्भित करता है और term laptop के साथ अक्सर interchangeably उपयोग होता है।"
+  explanation: "Statements 1, 2, and 3 are correct. Indexes can speed up searches and sorting, require additional storage, and add overhead when indexed data is inserted, updated, or deleted. An indexed field does not have to be a primary key."
 },
 
 // Question 99
 {
-  en: "A user needs a highly portable device with a touchscreen for reading, browsing, video consumption and lightweight applications, but does not require a traditional physical keyboard. Which device best fits these requirements?",
-  hi: "एक user को reading, browsing, video consumption और lightweight applications के लिए touchscreen वाला अत्यधिक portable device चाहिए, लेकिन traditional physical keyboard की आवश्यकता नहीं है। कौन-सा device इन आवश्यकताओं के लिए सबसे उपयुक्त है?",
+  en: "A database designer wants to prevent duplicate non-Null values in an indexed EmployeeCode field without making that field the table's primary key. Which Indexed property setting is appropriate?",
+  hi: "एक डेटाबेस डिज़ाइनर EmployeeCode फ़ील्ड में डुप्लिकेट गैर-Null मानों को रोकना चाहता है, लेकिन उस फ़ील्ड को टेबल की प्राइमरी की नहीं बनाना चाहता। Indexed प्रॉपर्टी की कौन-सी सेटिंग उपयुक्त है?",
 
   options: [
     {
-      en: "Desktop Computer",
-      hi: "Desktop Computer"
+      en: "No",
+      hi: "No"
     },
     {
-      en: "Laptop",
-      hi: "Laptop"
+      en: "Yes (Duplicates OK)",
+      hi: "Yes (Duplicates OK)"
     },
     {
-      en: "Tablet",
-      hi: "Tablet"
+      en: "Required",
+      hi: "Required"
     },
     {
-      en: "Mainframe Computer",
-      hi: "Mainframe Computer"
+      en: "Yes (No Duplicates)",
+      hi: "Yes (No Duplicates)"
     }
   ],
 
-  answer: "C",
+  answer: "D",
 
-  explanation: "Tablet touchscreen, portability और lightweight applications के लिए उपयुक्त होता है तथा इसमें traditional physical keyboard आवश्यक नहीं होता।"
+  explanation: "Yes (No Duplicates) creates a unique index that prevents duplicate indexed values without requiring the field to be the table's primary key. The Required property can be configured separately if Null values must also be prohibited."
 },
 
 // Question 100
 {
-  en: "Which option correctly distinguishes a smartphone from a tablet in terms of their typical design and primary use?",
-  hi: "कौन-सा विकल्प smartphone और tablet को उनके सामान्य design और primary use के आधार पर सही रूप से अलग करता है?",
+  en: "An indexed field is configured with the Indexed property set to Yes (Duplicates OK). Which conclusion is correct?",
+  hi: "किसी फ़ील्ड की Indexed प्रॉपर्टी को Yes (Duplicates OK) पर सेट किया गया है। कौन-सा निष्कर्ष सही है?",
 
   options: [
     {
-      en: "A smartphone is generally designed as a handheld communication device with cellular connectivity, while a tablet usually has a larger display and is less focused on voice communication",
-      hi: "Smartphone सामान्यतः cellular connectivity वाला handheld communication device होता है, जबकि tablet में आमतौर पर बड़ा display होता है और यह voice communication पर कम केंद्रित होता है"
+      en: "Access will reject every record containing a value already present in the field.",
+      hi: "Access ऐसे प्रत्येक रिकॉर्ड को अस्वीकार कर देगा जिसका मान पहले से फ़ील्ड में मौजूद है।"
     },
     {
-      en: "A tablet cannot access the internet, whereas a smartphone can",
-      hi: "Tablet internet access नहीं कर सकता, जबकि smartphone कर सकता है"
+      en: "Duplicate values are permitted in the indexed field, although the index can still help with searches and sorting.",
+      hi: "इंडेक्स किए गए फ़ील्ड में डुप्लिकेट मानों की अनुमति है, हालाँकि इंडेक्स खोज और सॉर्टिंग में फिर भी मदद कर सकता है।"
     },
     {
-      en: "A smartphone always has a larger screen than a tablet",
-      hi: "Smartphone की screen हमेशा tablet से बड़ी होती है"
+      en: "The field automatically becomes the primary key.",
+      hi: "फ़ील्ड अपने आप प्राइमरी की बन जाता है।"
     },
     {
-      en: "A tablet is designed only for making telephone calls, whereas a smartphone is designed only for typing documents",
-      hi: "Tablet केवल telephone calls करने के लिए बनाया जाता है, जबकि smartphone केवल documents type करने के लिए बनाया जाता है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Smartphone सामान्यतः cellular communication के लिए बनाया जाता है, जबकि tablet में बड़ा display होता है और यह multimedia तथा अन्य applications के लिए अधिक उपयोग किया जाता है।"
-},
-
-// Question 101
-{
-  en: "Which characteristic most appropriately distinguishes a workstation from a typical personal computer?",
-  hi: "कौन-सी विशेषता workstation को एक सामान्य personal computer से सबसे उपयुक्त रूप से अलग करती है?",
-
-  options: [
-    {
-      en: "A workstation is designed primarily for telephone communication",
-      hi: "Workstation मुख्य रूप से telephone communication के लिए बनाया जाता है"
-    },
-    {
-      en: "A workstation is generally optimized for demanding professional applications such as engineering, scientific analysis, graphics and 3D design",
-      hi: "Workstation सामान्यतः engineering, scientific analysis, graphics और 3D design जैसे demanding professional applications के लिए optimized होता है"
-    },
-    {
-      en: "A workstation can perform only one predefined task",
-      hi: "Workstation केवल एक पूर्वनिर्धारित कार्य कर सकता है"
-    },
-    {
-      en: "A workstation is designed exclusively to provide network services to other computers",
-      hi: "Workstation केवल अन्य computers को network services प्रदान करने के लिए बनाया जाता है"
+      en: "The index guarantees that the field cannot contain Null values.",
+      hi: "इंडेक्स यह सुनिश्चित करता है कि फ़ील्ड में Null मान नहीं हो सकते।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Workstations उच्च performance वाले computers होते हैं, जो engineering, scientific analysis, graphics और 3D design जैसे demanding professional tasks के लिए optimized होते हैं।"
+  explanation: "Yes (Duplicates OK) allows repeated values in an indexed field. The index can still improve search and sorting performance, but it does not enforce uniqueness or automatically prohibit Null values."
+},
+// Question 101
+{
+  en: "A user creates a primary key on the EmployeeID field in an Access table. Which statement about indexing is most accurate?",
+  hi: "एक उपयोगकर्ता Access टेबल में EmployeeID फ़ील्ड को Primary Key बनाता है। Indexing के बारे में कौन-सा कथन सबसे सटीक है?",
+
+  options: [
+    {
+      en: "A primary key cannot have an associated index.",
+      hi: "Primary Key के साथ कोई Index नहीं हो सकता।"
+    },
+    {
+      en: "Creating a primary key automatically indexes every field in the table.",
+      hi: "Primary Key बनाने से टेबल के प्रत्येक फ़ील्ड पर अपने आप Index बन जाता है।"
+    },
+    {
+      en: "Access automatically creates an index for the primary key, enforcing uniqueness for that key.",
+      hi: "Access Primary Key के लिए अपने आप Index बनाता है, जो उस Key की Uniqueness सुनिश्चित करता है।"
+    },
+    {
+      en: "A primary key index permits duplicate key values if the table contains more than one thousand records.",
+      hi: "यदि टेबल में एक हजार से अधिक रिकॉर्ड हों, तो Primary Key Index डुप्लिकेट Key Values की अनुमति देता है।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "In MS Access, setting a field as the primary key automatically creates a unique index for it. This prevents duplicate key values and Null values in the primary key."
 },
 
 // Question 102
 {
-  en: "Which statement best describes the primary role of a server in a computer network?",
-  hi: "Computer network में server की primary role को कौन-सा कथन सबसे सही रूप से बताता है?",
+  en: "A database designer creates indexes on nearly every field in a table, assuming that more indexes will always improve performance. Which assessment is most accurate?",
+  hi: "एक Database Designer यह मानकर टेबल के लगभग हर फ़ील्ड पर Index बनाता है कि अधिक Index हमेशा Performance बेहतर करेंगे। इसका सबसे सटीक आकलन क्या है?",
 
   options: [
     {
-      en: "It provides resources, services or applications to other computers or clients over a network",
-      hi: "यह network पर अन्य computers या clients को resources, services या applications प्रदान करता है"
+      en: "Every additional index improves both reading and writing performance.",
+      hi: "हर अतिरिक्त Index डेटा पढ़ने और लिखने, दोनों की Performance बेहतर करता है।"
     },
     {
-      en: "It is designed only for personal entertainment and gaming",
-      hi: "इसे केवल personal entertainment और gaming के लिए बनाया गया है"
+      en: "Indexes consume no storage and have no effect on data modification.",
+      hi: "Indexes कोई Storage नहीं लेते और डेटा में बदलाव पर कोई प्रभाव नहीं डालते।"
     },
     {
-      en: "It operates exclusively as an embedded controller inside electronic devices",
-      hi: "यह केवल electronic devices के अंदर embedded controller के रूप में कार्य करता है"
+      en: "Indexing every field guarantees the fastest possible database performance.",
+      hi: "हर फ़ील्ड पर Index बनाने से Database की अधिकतम Performance सुनिश्चित होती है।"
     },
     {
-      en: "It cannot communicate with multiple computers simultaneously",
-      hi: "यह एक साथ multiple computers के साथ communicate नहीं कर सकता"
+      en: "Excessive indexing can consume additional storage and slow data modifications because indexes may need to be maintained.",
+      hi: "बहुत अधिक Index बनाने से अतिरिक्त Storage खर्च हो सकती है और डेटा में बदलाव धीमे हो सकते हैं, क्योंकि Indexes को भी अपडेट करना पड़ सकता है।"
     }
   ],
 
-  answer: "A",
+  answer: "D",
 
-  explanation: "Server network पर connected clients को resources, services, data या applications प्रदान करता है।"
+  explanation: "Indexes can improve data retrieval, but they consume storage and may slow insert, update, and delete operations because the affected indexes must be maintained. Indexing every field is not always optimal."
 },
 
 // Question 103
 {
-  en: "Which situation most clearly represents an embedded computer?",
-  hi: "कौन-सी स्थिति embedded computer को सबसे स्पष्ट रूप से दर्शाती है?",
+  en: "Which statement best distinguishes an index from a primary key in MS Access?",
+  hi: "MS Access में Index और Primary Key के बीच अंतर बताने वाला सबसे उपयुक्त कथन कौन-सा है?",
 
   options: [
     {
-      en: "A high-performance workstation used for 3D engineering design",
-      hi: "3D engineering design के लिए उपयोग किया जाने वाला high-performance workstation"
+      en: "An index is a structure that can support efficient data retrieval and may enforce uniqueness; a primary key identifies records uniquely and cannot contain Null values.",
+      hi: "Index एक संरचना है जो डेटा को कुशलता से खोजने में मदद कर सकती है और Uniqueness भी लागू कर सकती है; Primary Key रिकॉर्ड की विशिष्ट पहचान करती है और इसमें Null Values नहीं हो सकतीं।"
     },
     {
-      en: "A network server managing files for hundreds of users",
-      hi: "सैकड़ों users के लिए files manage करने वाला network server"
+      en: "An index always identifies each record uniquely, whereas a primary key is used only for sorting.",
+      hi: "Index हमेशा प्रत्येक रिकॉर्ड की विशिष्ट पहचान करता है, जबकि Primary Key का उपयोग केवल Sorting के लिए होता है।"
     },
     {
-      en: "A microcontroller-based system built into a washing machine to control its programmed operations",
-      hi: "Washing machine में built-in microcontroller-based system जो उसके programmed operations को नियंत्रित करता है"
+      en: "A primary key is merely a display setting, while an index stores the actual field values.",
+      hi: "Primary Key केवल Display Setting है, जबकि Index वास्तविक Field Values को Store करता है।"
     },
     {
-      en: "A desktop computer used for preparing office documents",
-      hi: "Office documents तैयार करने के लिए उपयोग किया जाने वाला desktop computer"
+      en: "An index and a primary key are unrelated features, and a primary key can never be indexed.",
+      hi: "Index और Primary Key असंबंधित सुविधाएँ हैं और Primary Key पर कभी Index नहीं बनाया जा सकता।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Washing machine में built-in microcontroller system एक विशिष्ट कार्य के लिए dedicated होता है, इसलिए यह embedded computer का उदाहरण है।"
+  explanation: "An index helps Access retrieve records efficiently and can allow either duplicate or unique values, depending on its settings. A primary key uniquely identifies each record, cannot contain Null values, and is automatically indexed by Access."
 },
 
 // Question 104
 {
-  en: "A computer system is built into a vehicle and continuously monitors sensors and controls specific functions of the vehicle. Which classification and characteristic best describe this system?",
-  hi: "एक computer system को vehicle में built-in किया गया है और यह लगातार sensors को monitor करके vehicle के specific functions को control करता है। कौन-सा classification और characteristic इस system का सबसे सही वर्णन करता है?",
+  en: "A user wants to remove an unnecessary index from an ordinary field while retaining the field and all its stored values. Which action is most appropriate?",
+  hi: "एक उपयोगकर्ता किसी सामान्य फ़ील्ड से अनावश्यक Index हटाना चाहता है, लेकिन फ़ील्ड और उसमें मौजूद सभी Values को बनाए रखना चाहता है। कौन-सी कार्रवाई सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Server — designed primarily to provide network services",
-      hi: "Server — मुख्य रूप से network services प्रदान करने के लिए डिज़ाइन किया गया"
+      en: "Delete the entire table and recreate it without that field.",
+      hi: "पूरी टेबल को हटाकर उस फ़ील्ड के बिना दोबारा बनाएँ।"
     },
     {
-      en: "Workstation — optimized for professional desktop applications",
-      hi: "Workstation — professional desktop applications के लिए optimized"
+      en: "Remove or change the field's indexing setting, or delete the relevant index through the appropriate table-design interface, while preserving the field itself.",
+      hi: "फ़ील्ड को बनाए रखते हुए उसकी Indexing Setting बदलें या हटाएँ, अथवा Table Design Interface से संबंधित Index हटाएँ।"
     },
     {
-      en: "Embedded Computer — dedicated to performing specific control functions within a larger system",
-      hi: "Embedded Computer — एक बड़े system के भीतर specific control functions करने के लिए dedicated"
+      en: "Delete all records containing values in the indexed field.",
+      hi: "Indexed फ़ील्ड में Values वाले सभी रिकॉर्ड हटा दें।"
     },
     {
-      en: "Mainframe — designed to process large volumes of unrelated business transactions",
-      hi: "Mainframe — बड़ी मात्रा में असंबंधित business transactions को process करने के लिए डिज़ाइन किया गया"
+      en: "Change the field's data type to AutoNumber, which automatically removes every index in the table.",
+      hi: "फ़ील्ड का Data Type AutoNumber कर दें, जिससे टेबल के सभी Index अपने आप हट जाएँगे।"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Vehicle में built-in computer जो specific control functions करता है, embedded computer कहलाता है।"
+  explanation: "In Access, an ordinary field's indexing setting can be changed to No, or its index can be removed through the table's design interface. This preserves the field and its stored values. A primary key's index cannot be removed independently while the field remains the primary key."
 },
 
 // Question 105
 {
-  en: "Which statement best describes analog data in relation to its representation?",
-  hi: "Representation के संदर्भ में analog data का सबसे सही वर्णन कौन-सा है?",
+  en: "A college database contains two tables: Departments and Employees. Each department can have multiple employees, but each employee belongs to only one department. Which relationship is most appropriate?",
+  hi: "एक कॉलेज डेटाबेस में Departments और Employees नाम की दो टेबल हैं। प्रत्येक Department में कई Employees हो सकते हैं, लेकिन प्रत्येक Employee केवल एक Department से संबंधित है। कौन-सा Relationship सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "It is represented only by discrete binary values",
-      hi: "इसे केवल discrete binary values द्वारा represent किया जाता है"
+      en: "One-to-one, with EmployeeID as the primary key in both tables",
+      hi: "One-to-one Relationship, जिसमें दोनों टेबल में EmployeeID Primary Key हो।"
     },
     {
-      en: "It consists exclusively of alphabetic characters",
-      hi: "इसमें केवल alphabetic characters होते हैं"
+      en: "One-to-many, with DepartmentID as the primary key in Departments and a foreign key in Employees",
+      hi: "One-to-many Relationship, जिसमें Departments में DepartmentID Primary Key और Employees में Foreign Key हो।"
     },
     {
-      en: "It represents continuously varying physical quantities",
-      hi: "यह continuously varying physical quantities को represent करता है"
+      en: "Many-to-many, with no common field between the tables",
+      hi: "Many-to-many Relationship, जिसमें दोनों टेबल के बीच कोई Common Field न हो।"
     },
     {
-      en: "It can be processed only after conversion into text",
-      hi: "इसे केवल text में convert करने के बाद ही process किया जा सकता है"
+      en: "One-to-one, with DepartmentID repeated as a primary key in every employee record",
+      hi: "One-to-one Relationship, जिसमें प्रत्येक Employee रिकॉर्ड में DepartmentID को दोहराकर Primary Key बनाया जाए।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "This is a one-to-many relationship because one department can have multiple employees, while each employee belongs to one department. DepartmentID is the primary key in Departments and a foreign key in Employees."
+},
+// Question 106
+{
+  en: "Consider the following statements about relationships in MS Access:\n\n1. A one-to-one relationship allows each record in one table to correspond to at most one record in the related table.\n2. A one-to-many relationship allows one record in the primary table to relate to multiple records in the related table.\n3. A many-to-many relationship is commonly implemented using an intermediate junction table.\n4. A relationship can always be enforced successfully even when existing foreign-key values have no matching primary-key values, provided the tables have similar field names.\n\nWhich statements are correct?",
+  hi: "MS Access में Relationships के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. One-to-one Relationship में एक टेबल का प्रत्येक रिकॉर्ड संबंधित टेबल के अधिकतम एक रिकॉर्ड से जुड़ सकता है।\n2. One-to-many Relationship में Primary Table का एक रिकॉर्ड संबंधित टेबल के कई रिकॉर्ड से जुड़ सकता है।\n3. Many-to-many Relationship को सामान्यतः एक Intermediate Junction Table का उपयोग करके लागू किया जाता है।\n4. यदि टेबल के फ़ील्ड नाम समान हों, तो मौजूदा Foreign Key Values के लिए matching Primary Key Values न होने पर भी Relationship को हमेशा सफलतापूर्वक लागू किया जा सकता है।\n\nकौन-से कथन सही हैं?",
+
+  options: [
+    {
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
+    },
+    {
+      en: "2 and 4 only",
+      hi: "केवल 2 और 4"
+    },
+    {
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
+    },
+    {
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
   answer: "C",
 
-  explanation: "Analog data निरंतर बदलने वाली physical quantities, जैसे temperature, pressure या voltage, को represent करता है।"
-},
-
-// Question 106
-{
-  en: "Which of the following is the best example of data that is naturally analog in form?",
-  hi: "निम्नलिखित में से कौन-सा naturally analog form में data का सबसे अच्छा उदाहरण है?",
-
-  options: [
-    {
-      en: "A continuously varying temperature measured by a traditional analog thermometer",
-      hi: "पारंपरिक analog thermometer द्वारा मापा गया लगातार बदलता तापमान"
-    },
-    {
-      en: "A binary number stored in computer memory",
-      hi: "Computer memory में stored binary number"
-    },
-    {
-      en: "A text document encoded in ASCII",
-      hi: "ASCII में encoded text document"
-    },
-    {
-      en: "A digital photograph represented by pixels",
-      hi: "Pixels द्वारा represented digital photograph"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "तापमान एक continuously varying physical quantity है, इसलिए traditional analog thermometer से मापा गया तापमान analog data का उदाहरण है।"
+  explanation: "Statements 1, 2, and 3 are correct. A one-to-one relationship matches records at most one-to-one, a one-to-many relationship allows one record to relate to multiple records, and a many-to-many relationship is commonly implemented through a junction table. Statement 4 is false because referential integrity cannot be enforced if existing non-Null foreign-key values lack matching primary-key values."
 },
 
 // Question 107
 {
-  en: "A system continuously measures a patient's heartbeat and temperature, converts the measured signals into digital form, and then uses a computer to analyze the results. Which concept is most accurately represented?",
-  hi: "एक system patient की heartbeat और temperature को लगातार measure करता है, measured signals को digital form में convert करता है और फिर computer से results का analysis करता है। यह किस concept को सबसे सही रूप से दर्शाता है?",
+  en: "A database contains Students and Courses tables. A student can enrol in multiple courses, and each course can have multiple students. Which design best represents this requirement in a relational database?",
+  hi: "एक Database में Students और Courses नाम की टेबल हैं। एक Student कई Courses में Enrol हो सकता है और प्रत्येक Course में कई Students हो सकते हैं। Relational Database में इस आवश्यकता को दर्शाने के लिए कौन-सा Design सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Purely digital processing",
-      hi: "Purely digital processing"
+      en: "Create a junction table such as Enrolments containing StudentID and CourseID, with appropriate keys and relationships.",
+      hi: "Enrolments जैसी Junction Table बनाएँ, जिसमें StudentID और CourseID हों तथा उपयुक्त Keys और Relationships निर्धारित हों।"
     },
     {
-      en: "Purely analog processing",
-      hi: "Purely analog processing"
+      en: "Store all course names in a single StudentName field.",
+      hi: "सभी Course Names को एक ही StudentName फ़ील्ड में Store करें।"
     },
     {
-      en: "Hybrid processing combining analog measurement with digital processing",
-      hi: "Analog measurement को digital processing के साथ combine करने वाली hybrid processing"
+      en: "Make StudentID the only primary key in both Students and Courses, without any intermediate table.",
+      hi: "किसी Intermediate Table के बिना Students और Courses दोनों में StudentID को एकमात्र Primary Key बनाएँ।"
     },
     {
-      en: "Text-based data processing",
-      hi: "Text-based data processing"
+      en: "Create a one-to-one relationship between Students and Courses.",
+      hi: "Students और Courses के बीच One-to-one Relationship बनाएँ।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Continuous physical measurements को digital form में convert करके computer द्वारा process करना hybrid processing को दर्शाता है।"
+  explanation: "Students and Courses have a many-to-many relationship. A junction table such as Enrolments represents each student-course combination, typically using StudentID and CourseID as foreign keys and often as a composite primary key."
 },
 
 // Question 108
 {
-  en: "Which statement most accurately distinguishes hybrid processing from purely digital processing?",
-  hi: "कौन-सा कथन hybrid processing को purely digital processing से सबसे सही रूप से अलग करता है?",
+  en: "In the Access Relationships window, a user enables referential integrity between Customers.CustomerID and Orders.CustomerID. Which condition is most directly associated with enforcing this relationship?",
+  hi: "Access के Relationships Window में एक उपयोगकर्ता Customers.CustomerID और Orders.CustomerID के बीच Referential Integrity लागू करता है। इस Relationship को लागू करने के लिए कौन-सी शर्त सबसे सीधे तौर पर आवश्यक है?",
 
   options: [
     {
-      en: "Hybrid processing uses only continuous signals and does not involve digital computation",
-      hi: "Hybrid processing केवल continuous signals का उपयोग करती है और इसमें digital computation नहीं होता"
+      en: "CustomerID must contain the same value in every customer and order record.",
+      hi: "प्रत्येक Customer और Order रिकॉर्ड में CustomerID का मान समान होना चाहिए।"
     },
     {
-      en: "Hybrid processing can combine the measurement or handling of continuous physical signals with digital computation and analysis",
-      hi: "Hybrid processing continuous physical signals की measurement या handling को digital computation और analysis के साथ combine कर सकती है"
+      en: "Every customer must have at least one order.",
+      hi: "प्रत्येक Customer का कम-से-कम एक Order होना चाहिए।"
     },
     {
-      en: "Hybrid processing can process only alphabetic and numeric data",
-      hi: "Hybrid processing केवल alphabetic और numeric data को process कर सकती है"
+      en: "Orders.CustomerID must be unique across all orders.",
+      hi: "सभी Orders में Orders.CustomerID का मान Unique होना चाहिए।"
     },
     {
-      en: "Hybrid processing eliminates the need for any form of data conversion",
-      hi: "Hybrid processing किसी भी प्रकार के data conversion की आवश्यकता को समाप्त कर देती है"
+      en: "A non-Null foreign-key value in Orders must correspond to an existing CustomerID in Customers.",
+      hi: "Orders में Foreign Key का कोई Non-Null मान Customers टेबल में मौजूद CustomerID से मेल खाना चाहिए।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Hybrid processing continuous physical signals और digital computation दोनों को combine कर सकती है।"
+  explanation: "Referential integrity requires each non-Null foreign-key value in Orders.CustomerID to match an existing Customers.CustomerID. It does not require every customer to have an order or require CustomerID to be unique in the Orders table."
 },
 
 // Question 109
 {
-  en: "Which option correctly distinguishes analog, digital and hybrid computers based on the nature of data they primarily handle?",
-  hi: "मुख्य रूप से handle किए जाने वाले data की प्रकृति के आधार पर analog, digital और hybrid computers को कौन-सा विकल्प सही रूप से अलग करता है?",
+  en: "A user has established a relationship between two tables in the Relationships window. Later, the user removes the relationship line. Which statement is most accurate?",
+  hi: "एक उपयोगकर्ता Relationships Window में दो टेबल के बीच Relationship बनाता है। बाद में वह Relationship Line हटा देता है। कौन-सा कथन सबसे सटीक है?",
 
   options: [
     {
-      en: "Analog computers handle discrete data, digital computers handle continuous data, and hybrid computers handle only text",
-      hi: "Analog computers discrete data handle करते हैं, digital computers continuous data handle करते हैं और hybrid computers केवल text handle करते हैं"
+      en: "Both tables and all their records are automatically deleted.",
+      hi: "दोनों टेबल और उनके सभी रिकॉर्ड अपने आप हट जाते हैं।"
     },
     {
-      en: "Analog computers handle continuously varying data, digital computers handle discrete data, and hybrid computers combine aspects of both",
-      hi: "Analog computers continuously varying data handle करते हैं, digital computers discrete data handle करते हैं और hybrid computers दोनों के aspects को combine करते हैं"
+      en: "The relationship definition is removed, but the tables and their stored data generally remain intact.",
+      hi: "Relationship की Definition हट जाती है, लेकिन टेबल और उनमें Store किया गया डेटा सामान्यतः सुरक्षित रहता है।"
     },
     {
-      en: "Analog and digital computers both handle only continuous data, while hybrid computers handle only binary data",
-      hi: "Analog और digital computers दोनों केवल continuous data handle करते हैं, जबकि hybrid computers केवल binary data handle करते हैं"
+      en: "Every field involved in the relationship is automatically deleted.",
+      hi: "Relationship में शामिल प्रत्येक फ़ील्ड अपने आप हट जाता है।"
     },
     {
-      en: "Digital computers handle continuous data, analog computers handle binary data, and hybrid computers handle only numerical data",
-      hi: "Digital computers continuous data handle करते हैं, analog computers binary data handle करते हैं और hybrid computers केवल numerical data handle करते हैं"
+      en: "The related table is converted into a query and loses its records.",
+      hi: "Related Table को Query में बदल दिया जाता है और उसके रिकॉर्ड खो जाते हैं।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Analog computers continuous data, digital computers discrete data और hybrid computers दोनों के aspects को handle करते हैं।"
+  explanation: "Removing a relationship line deletes the relationship definition, not the underlying tables or their stored records. However, referential-integrity enforcement associated with that relationship is also removed."
 },
 
 // Question 110
 {
-  en: "A system is designed to monitor continuously changing physical parameters and then perform precise digital calculations on the measured values. Which type of computer is most appropriate, and why?",
-  hi: "एक system को continuously changing physical parameters को monitor करने और measured values पर precise digital calculations करने के लिए design किया गया है। कौन-सा computer type सबसे उपयुक्त है और क्यों?",
+  en: "A user joins two tables in a query using CustomerID, but no permanent relationship has been defined between those tables in the Relationships window. Which statement is correct?",
+  hi: "एक उपयोगकर्ता Query में CustomerID का उपयोग करके दो टेबल को Join करता है, लेकिन Relationships Window में उनके बीच कोई Permanent Relationship निर्धारित नहीं है। कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "Analog computer, because it cannot process digital values",
-      hi: "Analog computer, क्योंकि यह digital values को process नहीं कर सकता"
+      en: "Such a join is impossible because every query join requires a permanent relationship.",
+      hi: "ऐसा Join संभव नहीं है, क्योंकि प्रत्येक Query Join के लिए Permanent Relationship आवश्यक है।"
     },
     {
-      en: "Digital computer, because it deals exclusively with continuously varying signals",
-      hi: "Digital computer, क्योंकि यह exclusively continuously varying signals के साथ काम करता है"
+      en: "Creating the join automatically makes CustomerID the primary key in both tables.",
+      hi: "Join बनाने से CustomerID अपने आप दोनों टेबल की Primary Key बन जाती है।"
     },
     {
-      en: "Hybrid computer, because it combines continuous measurement with digital processing",
-      hi: "Hybrid computer, क्योंकि यह continuous measurement को digital processing के साथ combine करता है"
+      en: "A query can define a join between tables without a permanent relationship being defined; a join specifies how records are combined in that query.",
+      hi: "Permanent Relationship निर्धारित किए बिना भी Query में टेबल के बीच Join बनाया जा सकता है; Join यह निर्धारित करता है कि उस Query में रिकॉर्ड कैसे मिलाए जाएँगे।"
     },
     {
-      en: "Mainframe computer, because all physical measurements require mainframes",
-      hi: "Mainframe computer, क्योंकि सभी physical measurements के लिए mainframes आवश्यक होते हैं"
+      en: "A join always enforces referential integrity between the underlying tables.",
+      hi: "Join हमेशा मूल टेबल के बीच Referential Integrity लागू करता है।"
     }
   ],
 
   answer: "C",
 
-  explanation: "Continuous physical measurements और उनके digital calculations को combine करने के लिए hybrid computer उपयुक्त है।"
+  explanation: "MS Access allows a query to join tables using matching fields even when no permanent relationship has been defined in the Relationships window. A query join determines how records are combined for that query; it does not automatically enforce referential integrity."
 },
-
 // Question 111
 {
-  en: "Which pair is correctly matched with the type of computer and its typical application?",
-  hi: "कौन-सा pair computer के type और उसके typical application के साथ सही रूप से matched है?",
+  en: "A user wants to change an existing relationship from one-to-many to one-to-one. Which statement best describes what must be considered?",
+  hi: "एक उपयोगकर्ता मौजूदा Relationship को One-to-many से One-to-one में बदलना चाहता है। इस प्रक्रिया में किस बात पर सबसे अधिक ध्यान देना चाहिए?",
 
   options: [
     {
-      en: "Analog computer — weather forecasting using complex numerical models",
-      hi: "Analog computer — complex numerical models का उपयोग करके weather forecasting"
+      en: "The relationship can be changed solely by renaming the Relationship window.",
+      hi: "केवल Relationships Window का नाम बदलकर Relationship को बदला जा सकता है।"
     },
     {
-      en: "Digital computer — personal computing and business data processing",
-      hi: "Digital computer — personal computing और business data processing"
+      en: "The relationship type changes automatically whenever a table is sorted.",
+      hi: "टेबल को Sort करने पर Relationship का प्रकार अपने आप बदल जाता है।"
     },
     {
-      en: "Hybrid computer — simple text editing only",
-      hi: "Hybrid computer — केवल simple text editing"
+      en: "Changing the relationship type requires deleting all records from both tables.",
+      hi: "Relationship का प्रकार बदलने के लिए दोनों टेबल के सभी रिकॉर्ड हटाने आवश्यक हैं।"
     },
     {
-      en: "Analog computer — processing binary-coded financial records",
-      hi: "Analog computer — binary-coded financial records को process करना"
+      en: "The key and uniqueness constraints must support the intended one-to-one relationship; simply changing a visual setting cannot make duplicate related values valid.",
+      hi: "Key और Uniqueness Constraints को One-to-one Relationship के अनुकूल होना चाहिए; केवल Visual Setting बदलने से Duplicate Related Values मान्य नहीं हो जातीं।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Digital computers का व्यापक उपयोग personal computing और business data processing में किया जाता है।"
+  explanation: "A one-to-one relationship requires the related fields to enforce uniqueness on both sides. The key structure and existing data must support this constraint; changing a visual setting alone cannot make duplicate related values valid."
 },
 
 // Question 112
 {
-  en: "A traditional analog speedometer, a digital calculator and a medical system that measures physiological signals and digitally analyzes them represent three different approaches to computing. Which classification is correct?",
-  hi: "एक traditional analog speedometer, एक digital calculator और एक medical system जो physiological signals को measure करके उनका digital analysis करता है, computing के तीन अलग-अलग approaches को दर्शाते हैं। कौन-सा classification सही है?",
+  en: "Consider the following statements about relationships and joins in MS Access:\n\n1. Relationships can document or enforce associations between tables.\n2. A join determines how records from tables are combined in a query.\n3. A permanent relationship and a query join serve related but distinct purposes.\n4. Creating any join automatically enforces referential integrity in the underlying tables.\n\nWhich statements are correct?",
+  hi: "MS Access में Relationships और Joins के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Relationships टेबल के बीच संबंधों को दर्शा सकते हैं या उन्हें लागू कर सकते हैं।\n2. Join यह निर्धारित करता है कि Query में अलग-अलग टेबल के रिकॉर्ड कैसे संयोजित किए जाएँगे।\n3. Permanent Relationship और Query Join संबंधित लेकिन अलग-अलग उद्देश्य पूरे करते हैं।\n4. कोई भी Join बनाने से मूल टेबल में Referential Integrity अपने आप लागू हो जाती है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Digital, Analog, Hybrid",
-      hi: "Digital, Analog, Hybrid"
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
     },
     {
-      en: "Analog, Digital, Hybrid",
-      hi: "Analog, Digital, Hybrid"
+      en: "1 and 4 only",
+      hi: "केवल 1 और 4"
     },
     {
-      en: "Hybrid, Digital, Analog",
-      hi: "Hybrid, Digital, Analog"
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
     },
     {
-      en: "Analog, Hybrid, Digital",
-      hi: "Analog, Hybrid, Digital"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "Analog speedometer analog, digital calculator digital और physiological signals को measure करके digitally analyze करने वाला system hybrid है।"
+  explanation: "Statements 1, 2, and 3 are correct. Relationships can document associations and enforce referential integrity, while joins determine how records are combined in queries. Creating a query join does not automatically enforce referential integrity."
 },
 
 // Question 113
 {
-  en: "Which component of a computer is primarily responsible for accepting data and instructions from external sources and converting them into a form that can be processed by the computer?",
-  hi: "Computer का कौन-सा component external sources से data और instructions स्वीकार करके उन्हें ऐसे form में convert करने के लिए primarily responsible है जिसे computer process कर सके?",
+  en: "A Customers table has CustomerID as its primary key, while Orders contains CustomerID as a foreign key. Referential Integrity is enforced between these fields. Which operation would normally be rejected?",
+  hi: "Customers टेबल में CustomerID Primary Key है, जबकि Orders टेबल में CustomerID Foreign Key है। इन फ़ील्ड्स के बीच Referential Integrity लागू है। सामान्यतः किस कार्रवाई को अस्वीकार कर दिया जाएगा?",
 
   options: [
     {
-      en: "Memory Unit",
-      hi: "Memory Unit"
+      en: "Adding an order with a CustomerID that exists in Customers.",
+      hi: "ऐसा Order जोड़ना जिसका CustomerID, Customers टेबल में मौजूद है।"
     },
     {
-      en: "Input Unit",
-      hi: "Input Unit"
+      en: "Adding a customer who has no orders.",
+      hi: "ऐसा Customer जोड़ना जिसका कोई Order नहीं है।"
     },
     {
-      en: "Output Unit",
-      hi: "Output Unit"
+      en: "Adding an order with a non-Null CustomerID that does not exist in Customers.",
+      hi: "ऐसा Order जोड़ना जिसका Non-Null CustomerID, Customers टेबल में मौजूद नहीं है।"
     },
     {
-      en: "Control Unit",
-      hi: "Control Unit"
+      en: "Adding multiple orders for the same existing customer.",
+      hi: "एक ही मौजूदा Customer के लिए कई Orders जोड़ना।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "Input Unit external sources से data और instructions प्राप्त करके उन्हें computer द्वारा process किए जाने योग्य form में convert करता है।"
+  explanation: "Referential integrity rejects an order whose non-Null CustomerID does not match an existing CustomerID in Customers. It does not require every customer to have an order, and multiple orders can refer to the same customer."
 },
 
 // Question 114
 {
-  en: "Which statement best describes the relationship among the CPU, Memory Unit and Input Unit during data processing?",
-  hi: "Data processing के दौरान CPU, Memory Unit और Input Unit के बीच संबंध को कौन-सा कथन सबसे सही रूप से बताता है?",
+  en: "Consider the following statements about Referential Integrity in MS Access:\n\n1. It helps prevent records in a related table from referring to nonexistent records in the primary table.\n2. It requires matching related field values to have compatible data types and field properties.\n3. It guarantees that every record in the primary table must have at least one matching record in the related table.\n4. It can be enforced only when the relevant relationship satisfies the required key and data conditions.\n\nWhich statements are correct?",
+  hi: "MS Access में Referential Integrity के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. यह Related Table के रिकॉर्ड को Primary Table के ऐसे रिकॉर्ड का संदर्भ देने से रोकने में मदद करती है जो मौजूद नहीं है।\n2. संबंधित फ़ील्ड्स के Data Types और Field Properties का संगत होना आवश्यक है।\n3. यह सुनिश्चित करती है कि Primary Table के प्रत्येक रिकॉर्ड का Related Table में कम-से-कम एक Matching रिकॉर्ड हो।\n4. इसे तभी लागू किया जा सकता है जब संबंधित Relationship आवश्यक Key और Data Conditions को पूरा करती हो।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "The Input Unit stores all processed results permanently, while the CPU only displays them",
-      hi: "Input Unit सभी processed results को permanently store करता है, जबकि CPU केवल उन्हें display करता है"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "The Memory Unit accepts information from users, while the CPU performs no processing",
-      hi: "Memory Unit users से information स्वीकार करता है, जबकि CPU कोई processing नहीं करता"
+      en: "1, 2 and 4 only",
+      hi: "केवल 1, 2 और 4"
     },
     {
-      en: "The Input Unit supplies data and instructions, the Memory Unit holds them as required, and the CPU processes them",
-      hi: "Input Unit data और instructions प्रदान करता है, Memory Unit उन्हें आवश्यकता के अनुसार hold करता है और CPU उन्हें process करता है"
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
     },
     {
-      en: "The CPU only transfers data between the Input Unit and Output Unit without performing processing",
-      hi: "CPU बिना processing किए केवल Input Unit और Output Unit के बीच data transfer करता है"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Input Unit data देता है, Memory Unit आवश्यक data और instructions को hold करता है और CPU processing करता है।"
+  explanation: "Statements 1, 2, and 4 are correct. Referential integrity prevents unmatched non-Null foreign-key values and requires compatible related fields and valid key and data conditions. It does not require every record in the primary table to have a related record."
 },
 
 // Question 115
 {
-  en: "A user enters a set of instructions through a keyboard. The computer temporarily holds the required instructions and data, processes them, and sends the resulting information to a display device. Which sequence correctly identifies the major components involved?",
-  hi: "एक user keyboard के माध्यम से instructions enter करता है। Computer आवश्यक instructions और data को temporarily hold करता है, उन्हें process करता है और resulting information को display device पर भेजता है। कौन-सा sequence involved major components को सही रूप से दर्शाता है?",
+  en: "A database designer enables Cascade Update Related Fields for a relationship between Customers.CustomerID and Orders.CustomerID. What is the intended effect if a customer's primary key value is changed?",
+  hi: "एक Database Designer, Customers.CustomerID और Orders.CustomerID के बीच Relationship में Cascade Update Related Fields सक्षम करता है। यदि किसी Customer की Primary Key Value बदल दी जाती है, तो इसका अपेक्षित प्रभाव क्या होगा?",
 
   options: [
     {
-      en: "Input Unit → Memory Unit → CPU → Output Unit",
-      hi: "Input Unit → Memory Unit → CPU → Output Unit"
+      en: "The corresponding foreign-key values in related Orders records are updated to match the changed key value.",
+      hi: "संबंधित Orders रिकॉर्ड में Foreign Key Values को बदली गई Key Value के अनुसार अपडेट कर दिया जाएगा।"
     },
     {
-      en: "Memory Unit → Input Unit → Output Unit → CPU",
-      hi: "Memory Unit → Input Unit → Output Unit → CPU"
+      en: "All orders belonging to that customer are deleted automatically.",
+      hi: "उस Customer के सभी Orders अपने आप हट जाएँगे।"
     },
     {
-      en: "CPU → Input Unit → Memory Unit → Output Unit",
-      hi: "CPU → Input Unit → Memory Unit → Output Unit"
+      en: "The customer's primary key becomes an AutoNumber field automatically.",
+      hi: "Customer की Primary Key अपने आप AutoNumber Field बन जाएगी।"
     },
     {
-      en: "Input Unit → Output Unit → CPU → Memory Unit",
-      hi: "Input Unit → Output Unit → CPU → Memory Unit"
+      en: "Every unrelated record in the Orders table receives the new CustomerID value.",
+      hi: "Orders टेबल के प्रत्येक असंबंधित रिकॉर्ड में नई CustomerID Value डाल दी जाएगी।"
     }
   ],
 
   answer: "A",
 
-  explanation: "Keyboard से input प्राप्त होता है, data और instructions memory में hold होते हैं, CPU processing करता है और output display पर प्राप्त होता है।"
+  explanation: "Cascade Update Related Fields automatically updates matching foreign-key values in related records when the referenced primary-key value changes. It does not delete related records or modify unrelated records."
 },
-
 // Question 116
 {
-  en: "Which option correctly identifies the primary function of each basic component of a computer?",
-  hi: "कौन-सा विकल्प computer के प्रत्येक basic component के primary function को सही रूप से बताता है?",
+  en: "A user enables Cascade Delete Related Records for the Customers–Orders relationship. A customer with several related orders is then deleted. Which result should generally be expected?",
+  hi: "एक उपयोगकर्ता Customers–Orders Relationship के लिए Cascade Delete Related Records सक्षम करता है। इसके बाद कई संबंधित Orders वाले Customer को हटा दिया जाता है। सामान्यतः क्या परिणाम अपेक्षित है?",
 
   options: [
     {
-      en: "Input Unit—processes data; CPU—stores data permanently; Memory Unit—prints results; Output Unit—enters data",
-      hi: "Input Unit—data process करता है; CPU—data को permanently store करता है; Memory Unit—results print करता है; Output Unit—data enter करता है"
+      en: "Only the customer is deleted, while all related orders are guaranteed to remain.",
+      hi: "केवल Customer हटाया जाता है, जबकि सभी संबंधित Orders का सुरक्षित रहना सुनिश्चित होता है।"
     },
     {
-      en: "Input Unit—enters data/instructions; CPU—processes them; Memory Unit—stores data/instructions/results; Output Unit—presents results",
-      hi: "Input Unit—data/instructions enter करता है; CPU—उन्हें process करता है; Memory Unit—data/instructions/results store करता है; Output Unit—results प्रस्तुत करता है"
+      en: "The customer's orders are transferred automatically to the next CustomerID.",
+      hi: "Customer के Orders अपने आप अगले CustomerID को स्थानांतरित हो जाते हैं।"
     },
     {
-      en: "Input Unit—stores results; CPU—enters instructions; Memory Unit—displays output; Output Unit—performs calculations",
-      hi: "Input Unit—results store करता है; CPU—instructions enter करता है; Memory Unit—output display करता है; Output Unit—calculations करता है"
+      en: "The related orders become customers in the Customers table.",
+      hi: "संबंधित Orders, Customers टेबल में Customers बन जाते हैं।"
     },
     {
-      en: "Input Unit—displays results; CPU—stores files permanently; Memory Unit—enters data; Output Unit—controls processing",
-      hi: "Input Unit—results display करता है; CPU—files को permanently store करता है; Memory Unit—data enter करता है; Output Unit—processing को control करता है"
+      en: "The customer record and its related order records are deleted through the cascading relationship.",
+      hi: "Cascade Relationship के माध्यम से Customer रिकॉर्ड और उसके संबंधित Order रिकॉर्ड हटा दिए जाते हैं।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Input Unit data देता है, CPU processing करता है, Memory Unit data/instructions/results store करता है और Output Unit results प्रस्तुत करता है।"
+  explanation: "When Cascade Delete Related Records is enabled, deleting a customer also deletes the records in Orders that reference that customer. This option should be enabled only when such deletion is intended."
 },
 
 // Question 117
 {
-  en: "Which statement best describes the relationship between the Storage Unit and the CPU during computer operation?",
-  hi: "Computer operation के दौरान Storage Unit और CPU के बीच संबंध को कौन-सा कथन सबसे सही रूप से बताता है?",
+  en: "A table named OrderDetails contains OrderID values that do not correspond to any OrderID in the Orders table. Assuming these are non-Null foreign-key values and no applicable integrity rule prevents them, what are these unmatched records commonly called?",
+  hi: "OrderDetails नाम की टेबल में कुछ OrderID Values ऐसी हैं जो Orders टेबल के किसी भी OrderID से मेल नहीं खातीं। मान लें कि ये Non-Null Foreign Key Values हैं और कोई लागू Integrity Rule इन्हें रोक नहीं रहा है। ऐसे Unmatched Records को सामान्यतः क्या कहा जाता है?",
 
   options: [
     {
-      en: "The Storage Unit performs all arithmetic and logical operations for the CPU",
-      hi: "Storage Unit CPU के लिए सभी arithmetic और logical operations perform करता है"
+      en: "Primary records",
+      hi: "Primary Records"
     },
     {
-      en: "The Storage Unit holds data and instructions required by the CPU and can also retain processed results for future use",
-      hi: "Storage Unit CPU द्वारा आवश्यक data और instructions को hold करता है तथा processed results को future use के लिए भी retain कर सकता है"
+      en: "Orphan records",
+      hi: "Orphan Records"
     },
     {
-      en: "The Storage Unit converts user input directly into printed output without CPU involvement",
-      hi: "Storage Unit CPU की involvement के बिना user input को directly printed output में convert करता है"
+      en: "Cascade records",
+      hi: "Cascade Records"
     },
     {
-      en: "The Storage Unit is responsible only for displaying processed information",
-      hi: "Storage Unit केवल processed information को display करने के लिए responsible है"
+      en: "Indexed records",
+      hi: "Indexed Records"
     }
   ],
 
   answer: "B",
 
-  explanation: "Storage Unit CPU के लिए data और instructions रखता है तथा processed results को future use के लिए retain कर सकता है।"
+  explanation: "Orphan records are records in a related table whose foreign-key values do not match any record in the referenced table. Enforcing referential integrity normally prevents such unmatched non-Null foreign-key values."
 },
 
 // Question 118
 {
-  en: "A program is loaded into memory, the CPU executes its instructions, and the resulting data is saved for later retrieval. Which role of the Storage Unit is demonstrated most clearly?",
-  hi: "एक program memory में load किया जाता है, CPU उसकी instructions execute करता है और resulting data को बाद में retrieve करने के लिए save किया जाता है। Storage Unit की कौन-सी भूमिका सबसे स्पष्ट रूप से प्रदर्शित होती है?",
+  en: "Which statement most accurately distinguishes Cascade Update Related Fields from Cascade Delete Related Records?",
+  hi: "Cascade Update Related Fields और Cascade Delete Related Records के बीच अंतर बताने वाला सबसे सटीक कथन कौन-सा है?",
 
   options: [
     {
-      en: "It acts only as an input device",
-      hi: "यह केवल input device के रूप में कार्य करता है"
+      en: "Cascade Update deletes related records, while Cascade Delete changes their foreign-key values.",
+      hi: "Cascade Update संबंधित रिकॉर्ड हटाता है, जबकि Cascade Delete उनकी Foreign Key Values बदलता है।"
     },
     {
-      en: "It replaces the CPU during processing",
-      hi: "यह processing के दौरान CPU का स्थान लेता है"
+      en: "Both options perform the same operation but apply to different data types.",
+      hi: "दोनों विकल्प एक ही कार्य करते हैं, लेकिन अलग-अलग Data Types पर लागू होते हैं।"
     },
     {
-      en: "It provides a place for retaining data and results beyond the immediate processing operation",
-      hi: "यह तत्काल processing operation के बाद data और results को retain करने के लिए स्थान प्रदान करता है"
+      en: "Cascade Update propagates changes to a related key value, whereas Cascade Delete removes related records when the referenced record is deleted.",
+      hi: "Cascade Update संबंधित Key Value में किए गए बदलाव को आगे लागू करता है, जबकि Cascade Delete Referenced Record हटने पर संबंधित रिकॉर्ड भी हटा देता है।"
     },
     {
-      en: "It converts digital data into analog signals",
-      hi: "यह digital data को analog signals में convert करता है"
+      en: "Cascade Update applies only to forms, whereas Cascade Delete applies only to reports.",
+      hi: "Cascade Update केवल Forms पर लागू होता है, जबकि Cascade Delete केवल Reports पर लागू होता है।"
     }
   ],
 
   answer: "C",
 
-  explanation: "Storage Unit data और results को तत्काल processing के बाद भी retain करके future retrieval की सुविधा देता है।"
+  explanation: "Cascade Update Related Fields updates matching foreign-key values when the referenced key value changes. Cascade Delete Related Records deletes dependent records when the referenced record is deleted."
 },
 
 // Question 119
 {
-  en: "Which sequence most accurately represents the functional relationship among Input Unit, Memory/Storage, CPU and Output Unit?",
-  hi: "Input Unit, Memory/Storage, CPU और Output Unit के बीच functional relationship को कौन-सा sequence सबसे सही रूप से दर्शाता है?",
+  en: "A user tries to enforce Referential Integrity between two existing tables, but Access refuses to enable it. Which situation could explain the problem?",
+  hi: "एक उपयोगकर्ता दो मौजूदा टेबल के बीच Referential Integrity लागू करने का प्रयास करता है, लेकिन Access इसे सक्षम करने से मना कर देता है। कौन-सी स्थिति इसका कारण हो सकती है?",
 
   options: [
     {
-      en: "Input supplies data → data/instructions are held as required → CPU processes them → Output presents the results",
-      hi: "Input data प्रदान करता है → data/instructions को आवश्यकता के अनुसार hold किया जाता है → CPU उन्हें process करता है → Output results प्रस्तुत करता है"
+      en: "The related tables contain existing records whose foreign-key values do not match any primary-key value in the referenced table.",
+      hi: "Related Table में ऐसे मौजूदा रिकॉर्ड हैं जिनकी Foreign Key Values, Referenced Table की किसी भी Primary Key Value से मेल नहीं खातीं।"
     },
     {
-      en: "CPU receives output → Input stores results → Output processes data → Memory displays it",
-      hi: "CPU output प्राप्त करता है → Input results store करता है → Output data process करता है → Memory इसे display करता है"
+      en: "The primary table contains records that have no related records, even though such records are permitted.",
+      hi: "Primary Table में ऐसे रिकॉर्ड हैं जिनका कोई Related Record नहीं है, जबकि ऐसे रिकॉर्ड की अनुमति है।"
     },
     {
-      en: "Storage produces input → Output processes it → CPU stores it → Input displays results",
-      hi: "Storage input produce करता है → Output उसे process करता है → CPU उसे store करता है → Input results display करता है"
+      en: "The related table contains several records referring to the same valid primary-table record in a one-to-many relationship.",
+      hi: "One-to-many Relationship में Related Table के कई रिकॉर्ड एक ही वैध Primary Table रिकॉर्ड को Refer करते हैं।"
     },
     {
-      en: "Output receives data → CPU stores it permanently → Input processes it → Memory prints the result",
-      hi: "Output data प्राप्त करता है → CPU उसे permanently store करता है → Input उसे process करता है → Memory result print करता है"
+      en: "The primary table contains a record whose primary key is correctly referenced by multiple foreign-key records.",
+      hi: "Primary Table में ऐसा रिकॉर्ड है जिसकी Primary Key को कई Foreign Key Records सही तरीके से Refer करते हैं।"
     }
   ],
 
   answer: "A",
 
-  explanation: "Computer में input data देता है, memory/storage data और instructions को hold करता है, CPU processing करता है और output results प्रस्तुत करता है।"
+  explanation: "Access cannot normally enforce referential integrity if existing non-Null foreign-key values have no matching primary-key values. The existing data must satisfy the integrity rules before enforcement can be enabled."
 },
 
 // Question 120
 {
-  en: "Which statement correctly distinguishes the roles of the CPU and Storage Unit?",
-  hi: "कौन-सा कथन CPU और Storage Unit की भूमिकाओं को सही रूप से अलग करता है?",
+  en: "Consider the following statements about Referential Integrity:\n\n1. A foreign key may contain Null when the relationship and field settings permit it.\n2. In a one-to-many relationship, multiple related records may refer to the same primary-table record.\n3. Enforcing Referential Integrity automatically requires every primary-table record to have a matching foreign-key record.\n4. Cascade Delete should be enabled only when deleting related records is consistent with the intended data-management rules.\n\nWhich statements are correct?",
+  hi: "Referential Integrity के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. यदि Relationship और Field Settings अनुमति दें, तो Foreign Key में Null हो सकता है।\n2. One-to-many Relationship में कई Related Records एक ही Primary Table रिकॉर्ड को Refer कर सकते हैं।\n3. Referential Integrity लागू करने से Primary Table के प्रत्येक रिकॉर्ड के लिए Matching Foreign Key Record होना अनिवार्य हो जाता है।\n4. Cascade Delete तभी सक्षम करना चाहिए जब संबंधित रिकॉर्ड हटाना निर्धारित Data Management Rules के अनुरूप हो।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "CPU is primarily responsible for processing instructions and data, whereas Storage Unit primarily retains data, instructions and results",
-      hi: "CPU मुख्य रूप से instructions और data को process करने के लिए responsible है, जबकि Storage Unit मुख्य रूप से data, instructions और results को retain करता है"
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
     },
     {
-      en: "CPU and Storage Unit perform exactly the same function and are interchangeable",
-      hi: "CPU और Storage Unit बिल्कुल समान function perform करते हैं और एक-दूसरे के स्थान पर उपयोग किए जा सकते हैं"
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
     },
     {
-      en: "Storage Unit performs all arithmetic and logical operations, while CPU only stores files",
-      hi: "Storage Unit सभी arithmetic और logical operations perform करता है, जबकि CPU केवल files store करता है"
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
     },
     {
-      en: "CPU is used only for permanent storage, whereas Storage Unit is used only for temporary calculations",
-      hi: "CPU का उपयोग केवल permanent storage के लिए होता है, जबकि Storage Unit का उपयोग केवल temporary calculations के लिए होता है"
+      en: "1, 2 and 4 only",
+      hi: "केवल 1, 2 और 4"
     }
   ],
 
-  answer: "A",
+  answer: "D",
 
-  explanation: "CPU instructions और data को process करता है, जबकि Storage Unit data, instructions और results को retain करता है।"
+  explanation: "Statements 1, 2, and 4 are correct. A foreign key may be Null if its field settings permit it, and multiple related records can reference the same primary record in a one-to-many relationship. Referential integrity does not require every primary-table record to have a related record. Cascade Delete should be used only when deleting dependent records is appropriate."
 },
 // Question 121
 {
-  en: "Which statement most accurately defines computer hardware?",
-  hi: "कौन-सा कथन computer hardware को सबसे सही रूप से परिभाषित करता है?",
+  en: "A database contains a Departments table with DepartmentID as its primary key and an Employees table containing DepartmentID as a foreign key. Which statement is correct?",
+  hi: "एक Database में Departments टेबल की Primary Key DepartmentID है और Employees टेबल में DepartmentID Foreign Key के रूप में मौजूद है। कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "A set of instructions used to control computer operations",
-      hi: "Computer operations को control करने के लिए उपयोग किए जाने वाले instructions का set"
+      en: "DepartmentID must be unique in both tables because it is a primary key in the Departments table.",
+      hi: "DepartmentID दोनों टेबल में Unique होना चाहिए क्योंकि यह Departments टेबल की Primary Key है।"
     },
     {
-      en: "The physical components of a computer system that can be physically seen or touched",
-      hi: "Computer system के वे physical components जिन्हें देखा या छुआ जा सकता है"
+      en: "DepartmentID may repeat in Employees, allowing multiple employees to belong to the same department.",
+      hi: "Employees टेबल में DepartmentID दोहराया जा सकता है, जिससे कई कर्मचारी एक ही Department से संबंधित हो सकते हैं।"
     },
     {
-      en: "A collection of programs stored in computer memory",
-      hi: "Computer memory में stored programs का collection"
+      en: "DepartmentID must be the primary key of both tables, regardless of the number of employees.",
+      hi: "कर्मचारियों की संख्या चाहे जो हो, DepartmentID दोनों टेबल की Primary Key होना चाहिए।"
     },
     {
-      en: "The logical procedures used for processing data",
-      hi: "Data processing के लिए उपयोग की जाने वाली logical procedures"
+      en: "DepartmentID in Employees cannot contain a value that already exists in Departments.",
+      hi: "Employees में DepartmentID का ऐसा मान नहीं हो सकता जो Departments में पहले से मौजूद हो।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Hardware computer system के physical components होते हैं जिन्हें physically देखा और छुआ जा सकता है।"
+  explanation: "DepartmentID is unique in Departments because it is the primary key. In Employees, it is a foreign key and may repeat, allowing multiple employees to belong to the same department."
 },
 
 // Question 122
 {
-  en: "Which of the following combinations contains only hardware components?",
-  hi: "निम्नलिखित में से किस combination में केवल hardware components शामिल हैं?",
+  en: "Consider the following statements about foreign keys in a relational database:\n\n1. A foreign key establishes a reference to a candidate key, commonly the primary key, in another or the same table.\n2. A foreign key must always contain unique values.\n3. A foreign key may contain Null values if the field and relationship rules permit them.\n4. Referential integrity can restrict foreign-key values that do not match an existing referenced key.\n\nWhich statements are correct?",
+  hi: "Relational Database में Foreign Keys के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Foreign Key किसी दूसरी या उसी टेबल में मौजूद Candidate Key, सामान्यतः Primary Key, को Refer करती है।\n2. Foreign Key में हमेशा Unique Values होनी चाहिए।\n3. यदि Field और Relationship Rules अनुमति दें, तो Foreign Key में Null Values हो सकती हैं।\n4. Referential Integrity ऐसी Foreign Key Values को प्रतिबंधित कर सकती है जो किसी मौजूदा Referenced Key से मेल नहीं खातीं।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Operating System, CPU, Keyboard and RAM",
-      hi: "Operating System, CPU, Keyboard और RAM"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "MS Word, Monitor, Mouse and Printer",
-      hi: "MS Word, Monitor, Mouse और Printer"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "CPU, RAM, Keyboard and Monitor",
-      hi: "CPU, RAM, Keyboard और Monitor"
+      en: "1, 3 and 4 only",
+      hi: "केवल 1, 3 और 4"
     },
     {
-      en: "Antivirus, Hard Disk, Scanner and CPU",
-      hi: "Antivirus, Hard Disk, Scanner और CPU"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
   answer: "C",
 
-  explanation: "CPU, RAM, Keyboard और Monitor सभी physical hardware components हैं।"
+  explanation: "Statements 1, 3, and 4 are correct. A foreign key references a candidate key, may contain Null values when permitted, and can be subject to referential-integrity rules. Foreign-key values do not have to be unique."
 },
 
 // Question 123
 {
-  en: "A computer cannot perform its intended operations merely because all its physical components are present. Which statement best explains this?",
-  hi: "Computer के सभी physical components मौजूद होने मात्र से वह अपने intended operations perform नहीं कर सकता। इसे कौन-सा कथन सबसे सही रूप से समझाता है?",
+  en: "An Orders table contains OrderID as its primary key and CustomerID as a foreign key referencing Customers.CustomerID. Which design correctly reflects the purpose of these two fields?",
+  hi: "Orders टेबल में OrderID Primary Key है और CustomerID, Customers.CustomerID को Refer करने वाली Foreign Key है। इन दोनों फ़ील्ड्स का उद्देश्य सही ढंग से कौन-सा Design दर्शाता है?",
 
   options: [
     {
-      en: "Hardware requires appropriate software or instructions to perform programmed tasks",
-      hi: "Hardware को programmed tasks perform करने के लिए appropriate software या instructions की आवश्यकता होती है"
+      en: "OrderID identifies an order uniquely, while CustomerID identifies the customer associated with that order.",
+      hi: "OrderID प्रत्येक Order की विशिष्ट पहचान करता है, जबकि CustomerID उस Order से संबंधित Customer की पहचान करता है।"
     },
     {
-      en: "Hardware components automatically generate all required instructions",
-      hi: "Hardware components automatically सभी required instructions generate करते हैं"
+      en: "CustomerID identifies each order uniquely, while OrderID identifies the customer.",
+      hi: "CustomerID प्रत्येक Order की विशिष्ट पहचान करता है, जबकि OrderID Customer की पहचान करता है।"
     },
     {
-      en: "Physical components are not required for a computer system",
-      hi: "Computer system के लिए physical components आवश्यक नहीं होते"
+      en: "Both fields must contain identical values for every record.",
+      hi: "प्रत्येक रिकॉर्ड में दोनों फ़ील्ड्स के मान समान होने चाहिए।"
     },
     {
-      en: "Hardware can process data independently of any instructions",
-      hi: "Hardware किसी भी instructions के बिना independently data process कर सकता है"
+      en: "OrderID and CustomerID must each be unique throughout the Orders table.",
+      hi: "Orders टेबल में OrderID और CustomerID दोनों के मान Unique होने चाहिए।"
     }
   ],
 
   answer: "A",
 
-  explanation: "Hardware को कार्य करने के लिए appropriate software और instructions की आवश्यकता होती है।"
+  explanation: "OrderID uniquely identifies each order, while CustomerID references the customer associated with that order. Multiple orders may belong to the same customer, so CustomerID does not need to be unique in Orders."
 },
 
 // Question 124
 {
-  en: "Which situation correctly demonstrates the distinction between a physical component and a software component?",
-  hi: "कौन-सी स्थिति physical component और software component के बीच सही अंतर को दर्शाती है?",
+  en: "A user wants to create a foreign-key relationship between two Access tables. The referenced field is a primary key with the Number data type and Field Size set to Long Integer. Which statement is most accurate about the corresponding foreign-key field?",
+  hi: "एक उपयोगकर्ता दो Access टेबल के बीच Foreign-Key Relationship बनाना चाहता है। Referenced Field की Primary Key का Data Type Number और Field Size Long Integer है। संबंधित Foreign-Key Field के बारे में कौन-सा कथन सबसे सटीक है?",
 
   options: [
     {
-      en: "A keyboard is hardware because it is a physical device, while a word processor is software because it consists of instructions",
-      hi: "Keyboard hardware है क्योंकि यह एक physical device है, जबकि word processor software है क्योंकि इसमें instructions का set होता है"
+      en: "It must always be an AutoNumber field, regardless of the referenced key's configuration.",
+      hi: "Referenced Key की Configuration चाहे जो हो, Foreign-Key Field हमेशा AutoNumber होना चाहिए।"
     },
     {
-      en: "A keyboard is software because it accepts instructions, while a word processor is hardware because it is stored on a disk",
-      hi: "Keyboard software है क्योंकि यह instructions स्वीकार करता है, जबकि word processor hardware है क्योंकि यह disk पर stored होता है"
+      en: "It can use any data type because a relationship automatically converts incompatible values.",
+      hi: "इसमें कोई भी Data Type इस्तेमाल किया जा सकता है क्योंकि Relationship असंगत Values को अपने आप Convert कर देता है।"
     },
     {
-      en: "Both a keyboard and a word processor are hardware because both are used with a computer",
-      hi: "Keyboard और word processor दोनों hardware हैं क्योंकि दोनों computer के साथ उपयोग होते हैं"
+      en: "It must have a different data type from the referenced field to distinguish it as a foreign key.",
+      hi: "Foreign Key के रूप में पहचानने के लिए इसका Data Type Referenced Field से अलग होना चाहिए।"
     },
     {
-      en: "Both a keyboard and a word processor are software because both are involved in data processing",
-      hi: "Keyboard और word processor दोनों software हैं क्योंकि दोनों data processing में involved हैं"
+      en: "Its data type and field properties must be compatible with those of the referenced field; for an AutoNumber primary key, a Number field with Long Integer Field Size is a common matching choice.",
+      hi: "इसके Data Type और Field Properties, Referenced Field के अनुरूप होने चाहिए; AutoNumber Primary Key के लिए Long Integer Field Size वाला Number Field सामान्यतः उपयुक्त होता है।"
     }
   ],
 
-  answer: "A",
+  answer: "D",
 
-  explanation: "Keyboard एक physical device होने के कारण hardware है, जबकि word processor instructions पर आधारित software है।"
+  explanation: "Related fields must have compatible data types and field properties for a relationship with referential integrity. When the primary key is AutoNumber, a Number foreign key with Field Size Long Integer is a common matching configuration in Access."
 },
 
 // Question 125
 {
-  en: "Which of the following is correctly classified as an internal hardware component rather than an external peripheral?",
-  hi: "निम्नलिखित में से किसे external peripheral के बजाय internal hardware component के रूप में सही वर्गीकृत किया गया है?",
+  en: "A Library database contains Books, Members, and Loans tables. Each loan relates one member to one book for a particular borrowing transaction. Which design most appropriately uses foreign keys?",
+  hi: "एक Library Database में Books, Members और Loans नाम की टेबल हैं। प्रत्येक Loan किसी विशेष उधार लेन-देन के लिए एक Member को एक Book से जोड़ता है। Foreign Keys का सबसे उपयुक्त उपयोग कौन-सा Design करता है?",
 
   options: [
     {
-      en: "Monitor",
-      hi: "Monitor"
+      en: "Store MemberName and BookTitle as the only identifiers in Loans, without references to the other tables.",
+      hi: "Loans में अन्य टेबल के References के बिना केवल MemberName और BookTitle को Identifiers के रूप में Store करें।"
     },
     {
-      en: "Keyboard",
-      hi: "Keyboard"
+      en: "Include MemberID and BookID in Loans as foreign keys referencing the corresponding keys in Members and Books.",
+      hi: "Loans में MemberID और BookID को Foreign Keys के रूप में शामिल करें, जो Members और Books की संबंधित Keys को Refer करें।"
     },
     {
-      en: "RAM",
-      hi: "RAM"
+      en: "Make MemberID and BookID foreign keys only if each member can borrow exactly one book during their lifetime.",
+      hi: "MemberID और BookID को Foreign Keys केवल तभी बनाएँ जब प्रत्येक Member अपने पूरे जीवन में ठीक एक Book उधार ले सकता हो।"
     },
     {
-      en: "Printer",
-      hi: "Printer"
+      en: "Store all loan records inside the primary-key fields of Members and Books.",
+      hi: "सभी Loan Records को Members और Books के Primary-Key Fields में Store करें।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Loans should contain MemberID and BookID as foreign keys referencing the primary keys in Members and Books. This links each borrowing transaction to the correct member and book while avoiding reliance on names or titles as identifiers."
+},
+// Question 126
+{
+  en: "A foreign-key field in an Employees table references DepartmentID in Departments. Several employee records contain DepartmentID = 20. Assuming referential integrity is enforced, what must generally be true?",
+  hi: "Employees टेबल में एक Foreign-Key Field, Departments टेबल के DepartmentID को Refer करता है। कई Employee Records में DepartmentID = 20 है। यदि Referential Integrity लागू है, तो सामान्यतः क्या सही होना चाहिए?",
+
+  options: [
+    {
+      en: "DepartmentID = 20 must identify a different department for every employee.",
+      hi: "DepartmentID = 20 को प्रत्येक Employee के लिए अलग-अलग Department की पहचान करनी चाहिए।"
+    },
+    {
+      en: "DepartmentID = 20 must be the primary key of every employee record.",
+      hi: "DepartmentID = 20 प्रत्येक Employee Record की Primary Key होनी चाहिए।"
+    },
+    {
+      en: "A corresponding DepartmentID = 20 must exist in Departments, and multiple employees may reference that department.",
+      hi: "Departments टेबल में संबंधित DepartmentID = 20 मौजूद होना चाहिए और कई Employees उस Department को Refer कर सकते हैं।"
+    },
+    {
+      en: "The Departments table must contain one separate department record for each employee referencing DepartmentID = 20.",
+      hi: "Departments टेबल में DepartmentID = 20 को Refer करने वाले प्रत्येक Employee के लिए अलग Department Record होना चाहिए।"
     }
   ],
 
   answer: "C",
 
-  explanation: "RAM computer के अंदर motherboard पर installed एक internal hardware component है।"
-},
-
-// Question 126
-{
-  en: "Which option contains only external hardware devices?",
-  hi: "किस विकल्प में केवल external hardware devices शामिल हैं?",
-
-  options: [
-    {
-      en: "CPU, RAM, Motherboard",
-      hi: "CPU, RAM, Motherboard"
-    },
-    {
-      en: "Keyboard, Mouse, Monitor",
-      hi: "Keyboard, Mouse, Monitor"
-    },
-    {
-      en: "Cache Memory, ROM, CPU",
-      hi: "Cache Memory, ROM, CPU"
-    },
-    {
-      en: "Motherboard, SSD, RAM",
-      hi: "Motherboard, SSD, RAM"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Keyboard, Mouse और Monitor computer के बाहरी hardware devices हैं।"
+  explanation: "With referential integrity enforced, DepartmentID = 20 must exist in the Departments table. Multiple employee records may reference the same department because DepartmentID is a foreign key in Employees."
 },
 
 // Question 127
 {
-  en: "A user installs a new graphics card inside a computer and then installs the required graphics driver. Which statement correctly describes these two components?",
-  hi: "एक user computer के अंदर नया graphics card install करता है और फिर required graphics driver install करता है। कौन-सा कथन इन दोनों components का सही वर्णन करता है?",
+  en: "Which statement best distinguishes a foreign key from a primary key?",
+  hi: "Foreign Key और Primary Key के बीच अंतर बताने वाला सबसे उपयुक्त कथन कौन-सा है?",
 
   options: [
     {
-      en: "Both are hardware because both are installed in the computer",
-      hi: "दोनों hardware हैं क्योंकि दोनों computer में install किए जाते हैं"
+      en: "A primary key uniquely identifies records in its own table, whereas a foreign key references a key in a related table and may contain repeated values.",
+      hi: "Primary Key अपनी टेबल में रिकॉर्ड की विशिष्ट पहचान करती है, जबकि Foreign Key संबंधित टेबल की Key को Refer करती है और इसमें दोहराए गए मान हो सकते हैं।"
     },
     {
-      en: "Graphics card is hardware, while the driver is software",
-      hi: "Graphics card hardware है, जबकि driver software है"
+      en: "A foreign key must always be unique, whereas a primary key may contain duplicates.",
+      hi: "Foreign Key हमेशा Unique होनी चाहिए, जबकि Primary Key में Duplicate Values हो सकती हैं।"
     },
     {
-      en: "Graphics card is software, while the driver is hardware",
-      hi: "Graphics card software है, जबकि driver hardware है"
+      en: "A primary key establishes relationships only, whereas a foreign key uniquely identifies every record.",
+      hi: "Primary Key केवल Relationships बनाती है, जबकि Foreign Key प्रत्येक रिकॉर्ड की विशिष्ट पहचान करती है।"
     },
     {
-      en: "Both are software because they help control graphics",
-      hi: "दोनों software हैं क्योंकि वे graphics को control करने में मदद करते हैं"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Graphics card एक physical hardware component है, जबकि driver hardware को operate करने वाला software है।"
-},
-
-// Question 128
-{
-  en: "Which statement most accurately explains the fundamental difference between hardware and software?",
-  hi: "कौन-सा कथन hardware और software के बीच fundamental difference को सबसे सही रूप से समझाता है?",
-
-  options: [
-    {
-      en: "Hardware consists of physical components, whereas software consists of programs and instructions that direct the hardware",
-      hi: "Hardware physical components से बना होता है, जबकि software programs और instructions से बना होता है जो hardware को निर्देशित करते हैं"
-    },
-    {
-      en: "Hardware can be copied without any physical medium, whereas software can be physically touched",
-      hi: "Hardware को बिना किसी physical medium के copy किया जा सकता है, जबकि software को physically touch किया जा सकता है"
-    },
-    {
-      en: "Hardware performs all operations independently, whereas software has no role in controlling hardware",
-      hi: "Hardware सभी operations independently perform करता है, जबकि software की hardware को control करने में कोई भूमिका नहीं होती"
-    },
-    {
-      en: "Hardware and software are identical except for their storage location",
-      hi: "Hardware और software समान होते हैं, केवल उनके storage location अलग होते हैं"
+      en: "A foreign key cannot be used in a one-to-many relationship.",
+      hi: "One-to-many Relationship में Foreign Key का उपयोग नहीं किया जा सकता।"
     }
   ],
 
   answer: "A",
 
-  explanation: "Hardware physical components हैं, जबकि software programs और instructions का collection है जो hardware को निर्देशित करता है।"
+  explanation: "A primary key uniquely identifies each record in its own table. A foreign key references a key in another or the same table and can contain duplicate values, as commonly occurs in one-to-many relationships."
+},
+
+// Question 128
+{
+  en: "An Access database has a Customers table and an Orders table. An order contains CustomerID = 105, but no customer with CustomerID = 105 exists. Referential integrity is enforced between the tables. Which conclusion is correct?",
+  hi: "एक Access Database में Customers और Orders टेबल हैं। एक Order में CustomerID = 105 है, लेकिन Customers टेबल में CustomerID = 105 वाला कोई Customer मौजूद नहीं है। दोनों टेबल के बीच Referential Integrity लागू है। कौन-सा निष्कर्ष सही है?",
+
+  options: [
+    {
+      en: "Access accepts the order because foreign keys are not checked when records are added.",
+      hi: "Access Order को स्वीकार कर लेता है क्योंकि रिकॉर्ड जोड़ते समय Foreign Keys की जाँच नहीं होती।"
+    },
+    {
+      en: "Access automatically creates a customer record with CustomerID = 105.",
+      hi: "Access अपने आप CustomerID = 105 वाला Customer Record बना देता है।"
+    },
+    {
+      en: "Access changes the order's CustomerID to the next available customer number.",
+      hi: "Access Order की CustomerID को अगले उपलब्ध Customer Number में बदल देता है।"
+    },
+    {
+      en: "Access normally rejects the order because its non-Null foreign-key value does not reference an existing customer.",
+      hi: "Access सामान्यतः Order को अस्वीकार कर देता है क्योंकि उसकी Non-Null Foreign-Key Value किसी मौजूदा Customer को Refer नहीं करती।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "When referential integrity is enforced, Access normally rejects an order containing a non-Null CustomerID that does not match an existing CustomerID in the Customers table."
 },
 
 // Question 129
 {
-  en: "Which statement most accurately distinguishes a program from an individual instruction in a computer system?",
-  hi: "Computer system में program को एक individual instruction से कौन-सा कथन सबसे सही रूप से अलग करता है?",
+  en: "In Microsoft Access, a user sorts the Name field in Ascending Order. Which arrangement is generally expected for ordinary text values?",
+  hi: "Microsoft Access में एक उपयोगकर्ता Name फ़ील्ड को Ascending Order में Sort करता है। सामान्य Text Values के लिए किस क्रम की अपेक्षा की जाती है?",
 
   options: [
     {
-      en: "An instruction is a complete collection of programs, whereas a program is a single command",
-      hi: "Instruction programs का complete collection है, जबकि program एक single command है"
+      en: "Z to A",
+      hi: "Z से A"
     },
     {
-      en: "A program is a sequence of related instructions designed to accomplish a specific task",
-      hi: "Program related instructions का एक sequence है जिसे किसी specific task को पूरा करने के लिए design किया जाता है"
+      en: "Largest to smallest",
+      hi: "सबसे बड़े से सबसे छोटे तक"
     },
     {
-      en: "A program is hardware, whereas an instruction is software",
-      hi: "Program hardware है, जबकि instruction software है"
+      en: "A to Z",
+      hi: "A से Z तक"
     },
     {
-      en: "An instruction can execute only when stored permanently in ROM",
-      hi: "Instruction केवल तभी execute हो सकती है जब वह permanently ROM में stored हो"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Program किसी task को पूरा करने के लिए logically arranged related instructions का sequence होता है।"
-},
-
-// Question 130
-{
-  en: "A computer is given a set of instructions that specifies the sequence of operations required to calculate the average marks of students. This complete set of logically arranged instructions is best described as:",
-  hi: "Computer को instructions का एक set दिया गया है जो students के average marks calculate करने के लिए required operations का sequence बताता है। यह logically arranged instructions का complete set क्या कहलाता है?",
-
-  options: [
-    {
-      en: "Data",
-      hi: "Data"
-    },
-    {
-      en: "Information",
-      hi: "Information"
-    },
-    {
-      en: "Program",
-      hi: "Program"
-    },
-    {
-      en: "Hardware",
-      hi: "Hardware"
+      en: "Newest to oldest",
+      hi: "सबसे नए से सबसे पुराने तक"
     }
   ],
 
   answer: "C",
 
-  explanation: "किसी specific task को पूरा करने के लिए logically arranged instructions का complete set program कहलाता है।"
+  explanation: "Ascending order for ordinary text values generally arranges them alphabetically from A to Z. The exact ordering of some characters may depend on the database's sort and collation settings."
 },
 
-// Question 131
+// Question 130
 {
-  en: "Which of the following best explains why software is considered different from hardware?",
-  hi: "निम्नलिखित में से कौन-सा कथन सबसे सही रूप से बताता है कि software को hardware से अलग क्यों माना जाता है?",
+  en: "A table contains employee records. A user applies a filter to display only employees whose Department is \"IT\". What happens to the other records?",
+  hi: "एक टेबल में Employees के रिकॉर्ड हैं। उपयोगकर्ता केवल उन Employees को दिखाने के लिए Filter लगाता है जिनका Department \"IT\" है। अन्य रिकॉर्ड का क्या होता है?",
 
   options: [
     {
-      en: "Software consists of physical components, while hardware consists of instructions",
-      hi: "Software physical components से बना होता है, जबकि hardware instructions से बना होता है"
+      en: "They are permanently deleted from the table.",
+      hi: "वे टेबल से स्थायी रूप से हटा दिए जाते हैं।"
     },
     {
-      en: "Software is a collection of programs/instructions that directs hardware to perform tasks",
-      hi: "Software programs/instructions का collection है जो hardware को tasks perform करने के लिए निर्देशित करता है"
+      en: "They are hidden from the current filtered view but remain stored in the table.",
+      hi: "वे वर्तमान Filtered View में छिप जाते हैं, लेकिन टेबल में Store रहते हैं।"
     },
     {
-      en: "Software can operate independently without requiring any hardware",
-      hi: "Software बिना किसी hardware की आवश्यकता के independently operate कर सकता है"
+      en: "Their Department values are automatically changed to \"IT\".",
+      hi: "उनकी Department Values अपने आप \"IT\" में बदल जाती हैं।"
     },
     {
-      en: "Hardware is created by combining multiple software programs",
-      hi: "Hardware multiple software programs को combine करके बनाया जाता है"
+      en: "They are moved into a separate database file.",
+      hi: "उन्हें एक अलग Database File में स्थानांतरित कर दिया जाता है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Software programs और instructions का collection है जो hardware को विभिन्न tasks perform करने के लिए निर्देशित करता है।"
+  explanation: "A filter restricts which records are displayed; it does not delete or modify records that do not match the criteria. Those records remain stored in the table and can be displayed again by removing the filter."
+},
+// Question 131
+{
+  en: "A user selects a cell containing \"Paonta Sahib\" in a City field and applies Filter by Selection. Which result is most likely?",
+  hi: "एक उपयोगकर्ता City फ़ील्ड में \"Paonta Sahib\" वाले सेल को चुनकर Filter by Selection लागू करता है। सबसे संभावित परिणाम क्या होगा?",
+
+  options: [
+    {
+      en: "Access displays records matching the selected value or selection criterion.",
+      hi: "Access चुनी गई Value या Selection Criterion से मेल खाने वाले रिकॉर्ड दिखाता है।"
+    },
+    {
+      en: "Access sorts all city names alphabetically without restricting displayed records.",
+      hi: "Access सभी शहरों के नाम Alphabetical Order में Sort करता है, लेकिन प्रदर्शित रिकॉर्ड सीमित नहीं करता।"
+    },
+    {
+      en: "Access deletes every record whose City value differs from \"Paonta Sahib\".",
+      hi: "Access उन सभी रिकॉर्ड को हटा देता है जिनकी City Value \"Paonta Sahib\" से अलग है।"
+    },
+    {
+      en: "Access creates a new table containing only the selected cell.",
+      hi: "Access केवल चुने गए सेल वाली एक नई टेबल बनाता है।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Filter by Selection displays records that match the selected value or criterion. It does not sort all records, delete nonmatching records, or create a new table."
 },
 
 // Question 132
 {
-  en: "Consider the following statements:\n1. An instruction is a command that directs the computer to perform an operation.\n2. A program consists of a logically arranged sequence of instructions.\n3. Software refers only to a single instruction given to the CPU.\n4. Programs enable hardware to perform useful tasks.\n Which of the above statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें:\n1. Instruction एक command है जो computer को कोई operation perform करने के लिए निर्देशित करती है।\n2. Program logically arranged instructions का एक sequence होता है।\n3. Software केवल CPU को दिए गए एक single instruction को कहा जाता है।\n4. Programs hardware को useful tasks perform करने में सक्षम बनाते हैं। \n उपरोक्त में से कौन-से कथन सही हैं?",
+  en: "A user sorts a table first by Department in ascending order and then by Salary in descending order. Which result should be expected?",
+  hi: "एक उपयोगकर्ता टेबल को पहले Department के आधार पर Ascending Order में और फिर Salary के आधार पर Descending Order में Sort करता है। क्या परिणाम अपेक्षित है?",
+
+  options: [
+    {
+      en: "The entire table is sorted only by Salary, and Department is ignored.",
+      hi: "पूरी टेबल केवल Salary के आधार पर Sort होती है और Department को अनदेखा कर दिया जाता है।"
+    },
+    {
+      en: "Records are grouped by Salary first, with Department used only to filter them.",
+      hi: "रिकॉर्ड पहले Salary के आधार पर समूहित होते हैं और Department का उपयोग केवल Filter करने के लिए होता है।"
+    },
+    {
+      en: "Records from different departments are mixed according to Salary, regardless of the first sorting field.",
+      hi: "पहले Sorting Field की परवाह किए बिना अलग-अलग Departments के रिकॉर्ड Salary के अनुसार आपस में मिल जाते हैं।"
+    },
+    {
+      en: "Records are ordered by Department first, and within each department, higher salaries appear before lower salaries.",
+      hi: "रिकॉर्ड पहले Department के अनुसार क्रमबद्ध होते हैं और प्रत्येक Department के भीतर अधिक Salary वाले रिकॉर्ड पहले दिखाई देते हैं।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "In a multi-field sort, the primary sort field determines the main order. The secondary field determines the order within each group formed by the primary field. Therefore, departments appear in ascending order, with salaries descending within each department."
+},
+
+// Question 133
+{
+  en: "Consider the following statements about sorting and filtering in MS Access:\n\n1. Sorting changes the order in which records are displayed.\n2. Filtering restricts the records displayed according to specified criteria.\n3. Applying a filter necessarily deletes records that do not satisfy the criteria.\n4. Sorting and filtering can be used together.\n\nWhich statements are correct?",
+  hi: "MS Access में Sorting और Filtering के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Sorting रिकॉर्ड के प्रदर्शित होने का क्रम बदलती है।\n2. Filtering निर्धारित Criteria के अनुसार प्रदर्शित रिकॉर्ड सीमित करती है।\n3. Filter लगाने से Criteria पूरा न करने वाले रिकॉर्ड अनिवार्य रूप से हट जाते हैं।\n4. Sorting और Filtering का एक साथ उपयोग किया जा सकता है।\n\nकौन-से कथन सही हैं?",
+
+  options: [
+    {
+      en: "1 and 3 only",
+      hi: "केवल 1 और 3"
+    },
+    {
+      en: "1, 2 and 4 only",
+      hi: "केवल 1, 2 और 4"
+    },
+    {
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
+    },
+    {
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Statements 1, 2, and 4 are correct. Sorting changes display order, filtering limits the records shown, and both can be used together. A filter does not delete records that fail its criteria."
+},
+
+// Question 134
+{
+  en: "A user wants to display employees whose Department is \"IT\" and whose Salary is greater than 40000, using a form-based filtering interface. Which approach is most appropriate?",
+  hi: "एक उपयोगकर्ता Form-based Filtering Interface का उपयोग करके केवल उन Employees को दिखाना चाहता है जिनका Department \"IT\" है और Salary 40000 से अधिक है। कौन-सा तरीका सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Use ascending sorting on Department and descending sorting on Salary; sorting alone will enforce both conditions.",
+      hi: "Department को Ascending और Salary को Descending Order में Sort करें; केवल Sorting से दोनों Conditions लागू हो जाएँगी।"
+    },
+    {
+      en: "Use Filter by Selection on the Department field only, because it automatically checks Salary as well.",
+      hi: "केवल Department फ़ील्ड पर Filter by Selection लगाएँ, क्योंकि यह Salary की भी अपने आप जाँच करता है।"
+    },
+    {
+      en: "Use Filter by Form to specify criteria for both Department and Salary, then apply the filter.",
+      hi: "Filter by Form में Department और Salary, दोनों के Criteria निर्धारित करें और फिर Filter लागू करें।"
+    },
+    {
+      en: "Use Remove Filter to enter the required conditions into the table structure.",
+      hi: "टेबल की संरचना में आवश्यक Conditions दर्ज करने के लिए Remove Filter का उपयोग करें।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Filter by Form allows criteria to be specified for multiple fields. Enter Department = \"IT\" and Salary > 40000, then apply the filter to display records meeting both conditions."
+},
+
+// Question 135
+{
+  en: "A user has applied a filter to an Access table and now wants to display all records again without deleting the filtering criteria permanently from the database structure. Which action is most appropriate?",
+  hi: "एक उपयोगकर्ता ने Access टेबल पर Filter लगाया है और अब Database Structure से Filtering Criteria को स्थायी रूप से हटाए बिना सभी रिकॉर्ड फिर से दिखाना चाहता है। कौन-सी कार्रवाई सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Use the Remove Filter/Clear Filter command to restore the full record set in the current view.",
+      hi: "वर्तमान View में सभी रिकॉर्ड फिर से दिखाने के लिए Remove Filter/Clear Filter Command का उपयोग करें।"
+    },
+    {
+      en: "Delete the field on which the filter was applied.",
+      hi: "जिस फ़ील्ड पर Filter लगाया गया था, उसे हटा दें।"
+    },
+    {
+      en: "Delete and recreate the table.",
+      hi: "टेबल को हटाकर दोबारा बनाएँ।"
+    },
+    {
+      en: "Sort the filtered records in descending order; this automatically restores hidden records.",
+      hi: "Filtered Records को Descending Order में Sort करें; इससे छिपे हुए रिकॉर्ड अपने आप वापस आ जाएँगे।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The Remove Filter or Clear Filter command removes the active filtering restriction and restores the full record set in the current view. It does not delete the underlying records or require the table to be recreated."
+},
+// Question 136
+{
+  en: "A user needs to find records satisfying a complex combination of conditions involving multiple fields and wants to define criteria beyond a simple selection-based filter. Which method is most suitable among the following?",
+  hi: "एक उपयोगकर्ता कई फ़ील्ड्स से संबंधित जटिल Conditions को पूरा करने वाले रिकॉर्ड खोजना चाहता है और साधारण Selection-based Filter से अधिक विस्तृत Criteria निर्धारित करना चाहता है। निम्नलिखित में से कौन-सा तरीका सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Ascending Sort",
+      hi: "Ascending Sort"
+    },
+    {
+      en: "Descending Sort",
+      hi: "Descending Sort"
+    },
+    {
+      en: "Filter by Selection",
+      hi: "Filter by Selection"
+    },
+    {
+      en: "Advanced Filter/Sort, where the required criteria and sorting rules can be specified.",
+      hi: "Advanced Filter/Sort, जिसमें आवश्यक Criteria और Sorting Rules निर्धारित किए जा सकते हैं।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Advanced Filter/Sort allows users to specify more complex criteria involving multiple fields and define sorting rules. Simple sorting changes record order, while Filter by Selection is intended for filtering based on a selected value or criterion."
+},
+
+// Question 137
+{
+  en: "In Microsoft Access, a user wants to locate the next occurrence of the word \"Shimla\" in a table. Which command should be used after specifying the search term?",
+  hi: "Microsoft Access में एक उपयोगकर्ता टेबल में \"Shimla\" शब्द की अगली Occurrence खोजना चाहता है। Search Term दर्ज करने के बाद किस Command का उपयोग करना चाहिए?",
+
+  options: [
+    {
+      en: "Replace All",
+      hi: "Replace All"
+    },
+    {
+      en: "Remove Filter",
+      hi: "Remove Filter"
+    },
+    {
+      en: "Find Next",
+      hi: "Find Next"
+    },
+    {
+      en: "Sort Descending",
+      hi: "Sort Descending"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Find Next locates the next occurrence matching the specified search term and search settings. It is used to continue searching through matching values."
+},
+
+// Question 138
+{
+  en: "A user uses Replace All to replace \"HP\" with \"Himachal Pradesh\" in a field. What is the main purpose of this command?",
+  hi: "एक उपयोगकर्ता किसी फ़ील्ड में \"HP\" को \"Himachal Pradesh\" से बदलने के लिए Replace All का उपयोग करता है। इस Command का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To replace all matching occurrences within the specified search scope, subject to the selected search settings.",
+      hi: "चुनी गई Search Settings के अनुसार निर्धारित Search Scope में सभी Matching Occurrences को बदलना।"
+    },
+    {
+      en: "To replace only the first matching occurrence and stop.",
+      hi: "केवल पहली Matching Occurrence को बदलकर रुक जाना।"
+    },
+    {
+      en: "To delete every record containing \"HP\".",
+      hi: "\"HP\" वाले प्रत्येक रिकॉर्ड को हटा देना।"
+    },
+    {
+      en: "To create a new field named \"Himachal Pradesh\".",
+      hi: "\"Himachal Pradesh\" नाम का नया फ़ील्ड बनाना।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Replace All replaces all matching occurrences within the specified search scope, subject to the selected search settings. It does not automatically search every table and field throughout the entire database."
+},
+
+// Question 139
+{
+  en: "A user wants to find records containing the text \"Raj\" but does not want to match longer text such as \"Rajasthan\" or \"Rajesh\". Which search setting is most appropriate?",
+  hi: "एक उपयोगकर्ता ऐसे रिकॉर्ड खोजना चाहता है जिनमें \"Raj\" टेक्स्ट हो, लेकिन \"Rajasthan\" या \"Rajesh\" जैसे लंबे टेक्स्ट से Match नहीं करना चाहता। कौन-सी Search Setting सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Search Down",
+      hi: "Search Down"
+    },
+    {
+      en: "Replace All",
+      hi: "Replace All"
+    },
+    {
+      en: "Match Any Part of Field",
+      hi: "Match Any Part of Field"
+    },
+    {
+      en: "Match Whole Field",
+      hi: "Match Whole Field"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Match Whole Field searches for a value that matches the entire field value rather than just a portion of it. Match Any Part of Field would also match longer text containing \"Raj\"."
+},
+
+// Question 140
+{
+  en: "Consider the following statements about Find and Replace in MS Access:\n\n1. Find is used to locate matching text or values.\n2. Replace changes a matching value to the specified replacement value.\n3. Find Next moves to another matching occurrence.\n4. Replace All necessarily replaces matching values in every table and every field throughout the entire database, regardless of the selected search scope.\n\nWhich statements are correct?",
+  hi: "MS Access में Find और Replace के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Find का उपयोग Matching Text या Values खोजने के लिए किया जाता है।\n2. Replace किसी Matching Value को निर्धारित Replacement Value से बदलता है।\n3. Find Next अगली Matching Occurrence पर जाता है।\n4. Replace All, चुने गए Search Scope की परवाह किए बिना, पूरे Database की प्रत्येक Table और प्रत्येक Field में Matching Values को अनिवार्य रूप से बदल देता है।\n\nकौन-से कथन सही हैं?",
+
+  options: [
+    {
+      en: "1 and 4 only",
+      hi: "केवल 1 और 4"
+    },
+    {
+      en: "1, 2 and 3 only",
+      hi: "केवल 1, 2 और 3"
+    },
+    {
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
+    },
+    {
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Statements 1, 2, and 3 are correct. Find locates matching values, Replace changes matching values, and Find Next locates another occurrence. Replace All operates within the specified search scope and settings, not necessarily throughout the entire database."
+},
+// Question 141
+{
+  en: "A user opens the Find and Replace dialog and searches for \"Delhi\". The user selects the Current Field search scope. Which interpretation is correct?",
+  hi: "एक उपयोगकर्ता Find and Replace Dialog खोलकर \"Delhi\" खोजता है और Current Field Search Scope चुनता है। इसका सही अर्थ क्या है?",
+
+  options: [
+    {
+      en: "Access searches every field in every table in the database.",
+      hi: "Access Database की प्रत्येक Table के सभी Fields में Search करता है।"
+    },
+    {
+      en: "Access searches only the primary key field of the current table.",
+      hi: "Access वर्तमान Table के केवल Primary Key Field में Search करता है।"
+    },
+    {
+      en: "Access limits the search to the current field rather than searching all fields in the table.",
+      hi: "Access Search को वर्तमान Field तक सीमित रखता है, न कि Table के सभी Fields में Search करता है।"
+    },
+    {
+      en: "Access searches only records that are currently hidden by a filter.",
+      hi: "Access केवल उन Records में Search करता है जो वर्तमान में Filter के कारण छिपे हुए हैं।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The Current Field search scope limits Find and Replace to the field currently selected. It does not search every field in the table or every table in the database."
+},
+
+// Question 142
+{
+  en: "A user searches for \"Computer\" using Match Any Part of Field. Which value could match this search criterion?",
+  hi: "एक उपयोगकर्ता Match Any Part of Field का उपयोग करके \"Computer\" Search करता है। कौन-सी Value इस Search Criterion से Match कर सकती है?",
+
+  options: [
+    {
+      en: "Computer Science",
+      hi: "Computer Science"
+    },
+    {
+      en: "Mathematics",
+      hi: "Mathematics"
+    },
+    {
+      en: "Biology",
+      hi: "Biology"
+    },
+    {
+      en: "Geography",
+      hi: "Geography"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Match Any Part of Field finds a value containing the specified search text. \"Computer Science\" contains the word \"Computer\", so it matches the criterion."
+},
+
+// Question 143
+{
+  en: "A user wants to locate all records in which the City field contains \"Mandi\" and then work only with those records without modifying their stored values. Which approach best fits this requirement?",
+  hi: "एक उपयोगकर्ता उन सभी Records को देखना चाहता है जिनके City Field में \"Mandi\" मौजूद है और फिर उनके Stored Values बदले बिना केवल उन्हीं Records पर काम करना चाहता है। कौन-सा तरीका इस आवश्यकता के लिए सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Replace All, because it selects matching records without changing data.",
+      hi: "Replace All, क्योंकि यह Data बदले बिना Matching Records चुनता है।"
+    },
+    {
+      en: "Find Next, because it permanently hides every nonmatching record.",
+      hi: "Find Next, क्योंकि यह सभी Nonmatching Records को स्थायी रूप से छिपा देता है।"
+    },
+    {
+      en: "Replace, because it creates a temporary subset of the table.",
+      hi: "Replace, क्योंकि यह Table का एक Temporary Subset बनाता है।"
+    },
+    {
+      en: "Apply a filter using the City criterion; Find is primarily intended to locate occurrences rather than maintain a restricted record set.",
+      hi: "City Criterion का उपयोग करके Filter लगाएँ; Find का मुख्य उद्देश्य Matching Occurrences खोजना है, न कि Records का सीमित समूह बनाए रखना।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "A filter restricts the displayed records to those matching the City criterion, allowing the user to work with that subset without changing stored values. Find is primarily used to locate matching occurrences."
+},
+
+// Question 144
+{
+  en: "A user searches for \"Access\" in a field using Match Whole Field and enables case-sensitive searching. Which record value is the most likely exact match?",
+  hi: "एक उपयोगकर्ता Match Whole Field का उपयोग करके किसी Field में \"Access\" Search करता है और Case-sensitive Searching सक्षम करता है। कौन-सी Record Value सबसे अधिक संभावना से Exact Match होगी?",
+
+  options: [
+    {
+      en: "Microsoft Access",
+      hi: "Microsoft Access"
+    },
+    {
+      en: "access",
+      hi: "access"
+    },
+    {
+      en: "Access",
+      hi: "Access"
+    },
+    {
+      en: "Access Database",
+      hi: "Access Database"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Match Whole Field requires the entire field value to match the search term, and case-sensitive searching requires the same letter case. Therefore, the exact matching value is \"Access\"."
+},
+
+// Question 145
+{
+  en: "What is the primary purpose of a query in Microsoft Access?",
+  hi: "Microsoft Access में Query का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To permanently store all database records independently of tables.",
+      hi: "Database के सभी Records को Tables से स्वतंत्र रूप से स्थायी रूप से Store करना।"
+    },
+    {
+      en: "To retrieve, filter, calculate, or manipulate data according to specified criteria.",
+      hi: "निर्धारित Criteria के अनुसार Data को Retrieve, Filter, Calculate या Manipulate करना।"
+    },
+    {
+      en: "To display data only in a print-ready format.",
+      hi: "Data को केवल Print-ready Format में प्रदर्शित करना।"
+    },
+    {
+      en: "To replace the need for primary keys and relationships.",
+      hi: "Primary Keys और Relationships की आवश्यकता को समाप्त करना।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Queries retrieve data from one or more tables and can filter records, perform calculations, combine data, and carry out supported data-manipulation operations. They do not replace the need for tables, primary keys, or relationships."
+},
+// Question 146
+{
+  en: "A user creates a query that displays only employees whose Department is \"IT\". The user then changes an employee's Department value in the underlying table from \"IT\" to \"HR\". What will generally happen when the query is run again?",
+  hi: "एक उपयोगकर्ता ऐसी Query बनाता है जो केवल उन Employees को दिखाती है जिनका Department \"IT\" है। इसके बाद वह मूल Table में किसी Employee की Department Value को \"IT\" से बदलकर \"HR\" कर देता है। Query को दोबारा Run करने पर सामान्यतः क्या होगा?",
+
+  options: [
+    {
+      en: "The query permanently retains the employee because the record matched its criteria earlier.",
+      hi: "Query उस Employee को स्थायी रूप से दिखाती रहेगी क्योंकि रिकॉर्ड पहले उसके Criteria से Match करता था।"
+    },
+    {
+      en: "The query automatically changes the employee's Department back to \"IT\".",
+      hi: "Query अपने आप Employee के Department को वापस \"IT\" कर देगी।"
+    },
+    {
+      en: "The employee is deleted from the underlying table.",
+      hi: "Employee को मूल Table से हटा दिया जाएगा।"
+    },
+    {
+      en: "The employee will no longer appear in the query results if the updated record no longer satisfies the criteria.",
+      hi: "यदि अपडेट किया गया रिकॉर्ड Criteria को पूरा नहीं करता है, तो Employee Query Results में दिखाई नहीं देगा।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "A query evaluates its criteria against the current underlying data when it is run. Since the employee's Department is now HR rather than IT, the employee will no longer appear in the results."
+},
+
+// Question 147
+{
+  en: "Consider the following statements about queries in MS Access:\n\n1. A Select Query retrieves data according to specified criteria.\n2. An Action Query can modify data or create, delete, or otherwise act on database objects or records, depending on its type.\n3. A Parameter Query prompts the user for input that is used as a query criterion.\n4. A Crosstab Query summarizes data using row headings, column headings, and aggregate values.\n\nWhich statements are correct?",
+  hi: "MS Access में Queries के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Select Query निर्धारित Criteria के अनुसार Data Retrieve करती है।\n2. Action Query अपने प्रकार के अनुसार Data Modify कर सकती है या Database Objects अथवा Records को Create, Delete या अन्य तरीके से प्रभावित कर सकती है।\n3. Parameter Query उपयोगकर्ता से Input माँगती है, जिसका उपयोग Query Criterion के रूप में होता है।\n4. Crosstab Query Row Headings, Column Headings और Aggregate Values का उपयोग करके Data का सारांश प्रस्तुत करती है।\n\nकौन-से कथन सही हैं?",
+
+  options: [
+    {
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
+    },
+    {
+      en: "2, 3 and 4 only",
+      hi: "केवल 2, 3 और 4"
+    },
+    {
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
+    },
+    {
+      en: "1, 3 and 4 only",
+      hi: "केवल 1, 3 और 4"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "All four statements are correct. Select Queries retrieve data, Action Queries perform operations such as updating or deleting records, Parameter Queries accept user input as criteria, and Crosstab Queries summarize data in a row-and-column layout."
+},
+
+// Question 148
+{
+  en: "A user wants to run the same query repeatedly, but the department name should be entered each time the query runs. Which query type is most appropriate?",
+  hi: "एक उपयोगकर्ता एक ही Query को बार-बार Run करना चाहता है, लेकिन हर बार Query Run करते समय Department का नाम दर्ज करना चाहता है। कौन-सा Query Type सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Parameter Query",
+      hi: "Parameter Query"
+    },
+    {
+      en: "Crosstab Query",
+      hi: "Crosstab Query"
+    },
+    {
+      en: "Make-Table Query",
+      hi: "Make-Table Query"
+    },
+    {
+      en: "Delete Query",
+      hi: "Delete Query"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "A Parameter Query prompts the user to enter a value, such as a department name, when the query runs. That input is then used to filter the results."
+},
+
+// Question 149
+{
+  en: "A company wants to summarize total sales for each product category, with categories displayed as rows and months displayed as columns. Which query type is best suited to this requirement?",
+  hi: "एक कंपनी प्रत्येक Product Category की Total Sales का सारांश बनाना चाहती है, जिसमें Categories Rows और Months Columns के रूप में दिखाई दें। इस आवश्यकता के लिए कौन-सा Query Type सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Append Query",
+      hi: "Append Query"
+    },
+    {
+      en: "Parameter Query",
+      hi: "Parameter Query"
+    },
+    {
+      en: "Select Query without aggregation",
+      hi: "Aggregation के बिना Select Query"
+    },
+    {
+      en: "Crosstab Query",
+      hi: "Crosstab Query"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "A Crosstab Query summarizes data by displaying one field as row headings, another as column headings, and calculated aggregate values, such as total sales, at their intersections."
+},
+
+// Question 150
+{
+  en: "A user runs a query that displays selected fields from an Employees table and sorts the results by Salary. Which statement is most accurate?",
+  hi: "एक उपयोगकर्ता ऐसी Query Run करता है जो Employees Table के चुने हुए Fields दिखाती है और Results को Salary के आधार पर Sort करती है। कौन-सा कथन सबसे सटीक है?",
+
+  options: [
+    {
+      en: "The query necessarily creates a permanent duplicate table containing all selected records.",
+      hi: "Query अनिवार्य रूप से सभी चुने हुए Records वाली एक स्थायी Duplicate Table बनाती है।"
+    },
+    {
+      en: "The query results are a separate physical copy of the original records in every case.",
+      hi: "हर स्थिति में Query Results मूल Records की एक अलग Physical Copy होते हैं।"
+    },
+    {
+      en: "The query can present a selected and sorted view of data without necessarily storing a separate copy of the underlying records.",
+      hi: "Query मूल Records की अलग Copy Store किए बिना Data का चुना हुआ और Sorted View प्रस्तुत कर सकती है।"
+    },
+    {
+      en: "Sorting the query results automatically changes the physical order of records in the original table permanently.",
+      hi: "Query Results को Sort करने से मूल Table के Records का Physical Order अपने आप स्थायी रूप से बदल जाता है।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A typical Select Query presents data retrieved from the underlying table according to selected fields, criteria, and sorting rules. It does not necessarily create a separate physical copy or permanently reorder the original table."
+},
+// Question 151
+{
+  en: "Which statement correctly distinguishes a query from a report in MS Access?",
+  hi: "MS Access में Query और Report के बीच सही अंतर बताने वाला कथन कौन-सा है?",
+
+  options: [
+    {
+      en: "A query is used only for printing, whereas a report is used only for data entry.",
+      hi: "Query का उपयोग केवल Printing के लिए होता है, जबकि Report का उपयोग केवल Data Entry के लिए होता है।"
+    },
+    {
+      en: "A query retrieves or manipulates data according to defined criteria, whereas a report is primarily designed to present data in a formatted, printable layout.",
+      hi: "Query निर्धारित Criteria के अनुसार Data Retrieve या Manipulate करती है, जबकि Report मुख्य रूप से Data को Formatted और Printable Layout में प्रस्तुत करने के लिए बनाई जाती है।"
+    },
+    {
+      en: "A report always stores its own independent copy of the records, whereas a query cannot retrieve data from multiple tables.",
+      hi: "Report हमेशा Records की अपनी स्वतंत्र Copy Store करती है, जबकि Query कई Tables से Data Retrieve नहीं कर सकती।"
+    },
+    {
+      en: "A query and a report are identical database objects with different names.",
+      hi: "Query और Report अलग-अलग नामों वाले एक ही प्रकार के Database Objects हैं।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A query retrieves, filters, calculates, or manipulates data according to specified criteria. A report is primarily used to present data in a structured, formatted layout suitable for viewing or printing."
+},
+
+// Question 152
+{
+  en: "A user wants to create a new table containing the results of a query for a separate data-processing task. Which statement is correct?",
+  hi: "एक उपयोगकर्ता अलग Data-processing कार्य के लिए Query के Results से एक नई Table बनाना चाहता है। कौन-सा कथन सही है?",
+
+  options: [
+    {
+      en: "Every Select Query automatically creates a new table when executed.",
+      hi: "हर Select Query को Execute करने पर अपने आप एक नई Table बन जाती है।"
+    },
+    {
+      en: "A Parameter Query cannot retrieve data from existing tables.",
+      hi: "Parameter Query मौजूदा Tables से Data Retrieve नहीं कर सकती।"
+    },
+    {
+      en: "A Crosstab Query always deletes the source records after summarizing them.",
+      hi: "Crosstab Query सारांश बनाने के बाद हमेशा Source Records को Delete कर देती है।"
+    },
+    {
+      en: "A Make-Table Action Query can create a new table from the query results.",
+      hi: "Make-Table Action Query, Query Results से एक नई Table बना सकती है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "A Make-Table Action Query creates a new table using the results of a query. A normal Select Query displays matching data without automatically creating a new table."
+},
+
+// Question 153
+{
+  en: "In Microsoft Access, a user creates a Select Query using the Employees table and includes only the EmployeeName and Department fields. What will the query normally display?",
+  hi: "Microsoft Access में एक उपयोगकर्ता Employees Table से Select Query बनाता है और उसमें केवल EmployeeName तथा Department Fields शामिल करता है। Query सामान्यतः क्या दिखाएगी?",
+
+  options: [
+    {
+      en: "All fields from the Employees table, because Select Queries cannot limit displayed fields.",
+      hi: "Employees Table के सभी Fields, क्योंकि Select Queries प्रदर्शित Fields को सीमित नहीं कर सकतीं।"
+    },
+    {
+      en: "Only records in which EmployeeName and Department contain identical values.",
+      hi: "केवल वे Records जिनमें EmployeeName और Department की Values समान हों।"
+    },
+    {
+      en: "The selected fields for records satisfying any specified criteria.",
+      hi: "निर्धारित Criteria को पूरा करने वाले Records के केवल चुने गए Fields।"
+    },
+    {
+      en: "A new table containing only the selected fields, created automatically every time the query runs.",
+      hi: "केवल चुने गए Fields वाली एक नई Table, जो हर बार Query Run करने पर अपने आप बनती है।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A Select Query can display only the fields included in its design. It returns those fields for records matching any specified criteria, without automatically creating a new table."
+},
+
+// Question 154
+{
+  en: "A Select Query uses the criteria >50000 under the Salary field. Which records will satisfy this criterion?",
+  hi: "एक Select Query में Salary Field के नीचे >50000 Criterion दिया गया है। कौन-से Records इस Criterion को पूरा करेंगे?",
+
+  options: [
+    {
+      en: "Records where Salary is exactly 50000.",
+      hi: "वे Records जिनमें Salary ठीक 50000 है।"
+    },
+    {
+      en: "Records where Salary is greater than 50000.",
+      hi: "वे Records जिनमें Salary 50000 से अधिक है।"
+    },
+    {
+      en: "Records where Salary is less than 50000.",
+      hi: "वे Records जिनमें Salary 50000 से कम है।"
+    },
+    {
+      en: "Records where Salary contains the text \"50000\", regardless of its numeric value.",
+      hi: "वे Records जिनकी Salary में \"50000\" Text मौजूद है, चाहे उसका Numeric Value कुछ भी हो।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The greater-than operator (>) selects numeric values strictly greater than 50000. A Salary of exactly 50000 does not satisfy this criterion."
+},
+
+// Question 155
+{
+  en: "In Query Design, a user places criteria \">40000\" under Salary and \"IT\" under Department in the same Criteria row. Assuming both fields are included in the query, which condition must a record satisfy to match?",
+  hi: "Query Design में उपयोगकर्ता Salary के नीचे \">40000\" और Department के नीचे \"IT\" को एक ही Criteria Row में रखता है। मान लें कि दोनों Fields Query में शामिल हैं। Match करने के लिए किसी Record को कौन-सी शर्त पूरी करनी होगी?",
+
+  options: [
+    {
+      en: "Salary must be greater than 40000 OR Department must be IT.",
+      hi: "Salary 40000 से अधिक हो या Department IT हो।"
+    },
+    {
+      en: "Salary must be exactly 40000 AND Department must be IT.",
+      hi: "Salary ठीक 40000 हो और Department IT हो।"
+    },
+    {
+      en: "Every record is included because criteria in the same row are ignored.",
+      hi: "हर Record शामिल होगा क्योंकि एक ही Row में दिए गए Criteria को अनदेखा किया जाता है।"
+    },
+    {
+      en: "Salary must be greater than 40000 AND Department must be IT.",
+      hi: "Salary 40000 से अधिक हो और Department IT हो।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "In Access Query Design, criteria placed in the same Criteria row are combined using AND logic. Therefore, a record must have Salary greater than 40000 and Department equal to IT to match."
+},
+// Question 156
+{
+  en: "Consider the following statements about Select Queries in MS Access:\n\n1. A Select Query can retrieve data from one or more tables.\n2. Fields can be included in a query without necessarily displaying every field from the source table.\n3. Sorting query results necessarily changes the stored values in the underlying table.\n4. Criteria can be used to restrict which records appear in the results.\n\nWhich statements are correct?",
+  hi: "MS Access में Select Queries के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Select Query एक या अधिक Tables से Data Retrieve कर सकती है।\n2. Query में Source Table के सभी Fields दिखाना आवश्यक नहीं है; केवल चुने हुए Fields शामिल किए जा सकते हैं।\n3. Query Results को Sort करने से मूल Table में Stored Values अनिवार्य रूप से बदल जाती हैं।\n4. Results में दिखाई देने वाले Records को सीमित करने के लिए Criteria का उपयोग किया जा सकता है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
@@ -3878,5055 +4489,4183 @@ export const QUESTIONS = [
 
   answer: "A",
 
-  explanation: "Statements 1, 2 और 4 सही हैं। Statement 3 गलत है क्योंकि software केवल एक instruction तक सीमित नहीं होता।"
-},
-
-// Question 133
-{
-  en: "Which of the following correctly represents the basic classification of software based on its role in a computer system?",
-  hi: "Computer system में अपनी भूमिका के आधार पर software का basic classification कौन-सा है?",
-
-  options: [
-    {
-      en: "System software and application software",
-      hi: "System software और application software"
-    },
-    {
-      en: "Input software and output software",
-      hi: "Input software और output software"
-    },
-    {
-      en: "Internal software and external software",
-      hi: "Internal software और external software"
-    },
-    {
-      en: "Primary software and secondary software",
-      hi: "Primary software और secondary software"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Software का basic classification system software और application software के रूप में किया जाता है।"
-},
-
-// Question 134
-{
-  en: "A user opens a word processor, but the operating system is responsible for managing memory, CPU resources and communication with hardware. This situation best illustrates that:",
-  hi: "एक user word processor खोलता है, लेकिन operating system memory, CPU resources और hardware के साथ communication को manage करता है। यह स्थिति किस बात को सबसे अच्छी तरह दर्शाती है?",
-
-  options: [
-    {
-      en: "Application software directly replaces hardware",
-      hi: "Application software directly hardware का स्थान लेता है"
-    },
-    {
-      en: "System software provides the operating environment in which application software operates",
-      hi: "System software वह operating environment प्रदान करता है जिसमें application software operate करता है"
-    },
-    {
-      en: "Application software performs all hardware management independently",
-      hi: "Application software independently सभी hardware management perform करता है"
-    },
-    {
-      en: "Hardware performs software functions without system software",
-      hi: "Hardware system software के बिना software functions perform करता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Operating system एक system software है जो hardware resources manage करके application software के लिए operating environment प्रदान करता है।"
-},
-
-// Question 135
-{
-  en: "Consider the following sequence:\n\nApplication Software → ______ → Hardware\n\nWhich component most appropriately completes the sequence in a general computer system?",
-  hi: "निम्नलिखित sequence पर विचार करें:\n\nApplication Software → ______ → Hardware\n\nGeneral computer system में blank को कौन-सा component सबसे उपयुक्त रूप से पूरा करता है?",
-
-  options: [
-    {
-      en: "Data",
-      hi: "Data"
-    },
-    {
-      en: "User",
-      hi: "User"
-    },
-    {
-      en: "System Software",
-      hi: "System Software"
-    },
-    {
-      en: "Output Device",
-      hi: "Output Device"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Application software hardware resources तक पहुँचने के लिए system software, जैसे operating system, पर निर्भर करता है।"
-},
-
-// Question 136
-{
-  en: "A computer has perfectly functioning hardware, but no software is installed to provide instructions or manage the hardware. Which conclusion is most appropriate?",
-  hi: "एक computer का hardware पूरी तरह कार्य कर रहा है, लेकिन hardware को instructions देने या manage करने के लिए कोई software installed नहीं है। कौन-सा निष्कर्ष सबसे उपयुक्त है?",
-
-  options: [
-    {
-      en: "The hardware can perform all general-purpose tasks automatically",
-      hi: "Hardware सभी general-purpose tasks को automatically perform कर सकता है"
-    },
-    {
-      en: "The computer can execute user applications without any instructions",
-      hi: "Computer बिना किसी instructions के user applications execute कर सकता है"
-    },
-    {
-      en: "The hardware alone cannot perform useful programmed tasks without appropriate software",
-      hi: "Appropriate software के बिना केवल hardware useful programmed tasks perform नहीं कर सकता"
-    },
-    {
-      en: "Application software becomes unnecessary when hardware capacity is high",
-      hi: "जब hardware capacity अधिक हो तो application software unnecessary हो जाता है"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Hardware को useful programmed tasks perform करने के लिए appropriate software और instructions की आवश्यकता होती है।"
-},
-
-// Question 137
-{
-  en: "Firmware is best described as:",
-  hi: "Firmware का सबसे सही वर्णन क्या है?",
-
-  options: [
-    {
-      en: "A type of computer hardware",
-      hi: "एक प्रकार का computer hardware"
-    },
-    {
-      en: "Software permanently or semi-permanently stored in a hardware device",
-      hi: "Hardware device में permanently या semi-permanently stored software"
-    },
-    {
-      en: "A temporary file created by an application",
-      hi: "Application द्वारा बनाई गई temporary file"
-    },
-    {
-      en: "A type of input device",
-      hi: "एक प्रकार का input device"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Firmware ऐसा software है जो hardware device की memory में permanently या semi-permanently stored रहता है।"
-},
-
-// Question 138
-{
-  en: "Which of the following is a common characteristic of firmware?",
-  hi: "निम्नलिखित में से firmware की common characteristic कौन-सी है?",
-
-  options: [
-    {
-      en: "It provides basic instructions for controlling or operating hardware",
-      hi: "यह hardware को control या operate करने के लिए basic instructions प्रदान करता है"
-    },
-    {
-      en: "It is used only for creating documents",
-      hi: "इसका उपयोग केवल documents बनाने के लिए किया जाता है"
-    },
-    {
-      en: "It exists only in cloud storage",
-      hi: "यह केवल cloud storage में मौजूद रहता है"
-    },
-    {
-      en: "It cannot be stored in non-volatile memory",
-      hi: "इसे non-volatile memory में store नहीं किया जा सकता"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Firmware hardware के basic control और operation के लिए आवश्यक instructions प्रदान करता है।"
-},
-
-// Question 139
-{
-  en: "What is the primary role of firmware in the relationship between hardware and software?",
-  hi: "Hardware और software के बीच relationship में firmware की primary role क्या है?",
-
-  options: [
-    {
-      en: "To replace all application software",
-      hi: "सभी application software को replace करना"
-    },
-    {
-      en: "To act as a basic control layer that enables hardware to function properly",
-      hi: "एक basic control layer के रूप में कार्य करना जो hardware को properly function करने में सक्षम बनाती है"
-    },
-    {
-      en: "To convert hardware into an input device",
-      hi: "Hardware को input device में convert करना"
-    },
-    {
-      en: "To store users' personal documents",
-      hi: "Users के personal documents को store करना"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Firmware hardware की basic functionality को control करने वाली control layer के रूप में कार्य करता है।"
-},
-
-// Question 140
-{
-  en: "Which of the following is the best example of firmware?",
-  hi: "निम्नलिखित में से firmware का सबसे अच्छा उदाहरण कौन-सा है?",
-
-  options: [
-    {
-      en: "A photo-editing application",
-      hi: "एक photo-editing application"
-    },
-    {
-      en: "A word-processing document",
-      hi: "एक word-processing document"
-    },
-    {
-      en: "Software stored in a device's memory that controls its basic operations",
-      hi: "Device की memory में stored software जो उसके basic operations को control करता है"
-    },
-    {
-      en: "A spreadsheet file",
-      hi: "एक spreadsheet file"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Device की memory में stored और उसके basic operations को control करने वाला software firmware का उदाहरण है।"
-},
-
-// Question 141
-{
-  en: "Which of the following is an example of firmware?",
-  hi: "निम्नलिखित में से firmware का उदाहरण कौन-सा है?",
-
-  options: [
-    {
-      en: "BIOS/UEFI stored on a computer's motherboard",
-      hi: "Computer के motherboard पर stored BIOS/UEFI"
-    },
-    {
-      en: "MS Word document",
-      hi: "MS Word document"
-    },
-    {
-      en: "Web browser history",
-      hi: "Web browser history"
-    },
-    {
-      en: "Calculator application",
-      hi: "Calculator application"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "BIOS/UEFI motherboard पर stored low-level firmware है जो computer के basic hardware initialization और startup में सहायता करता है।"
-},
-
-// Question 142
-{
-  en: "Which device commonly uses firmware to control its basic operations?",
-  hi: "कौन-सा device अपने basic operations को control करने के लिए commonly firmware का उपयोग करता है?",
-
-  options: [
-    {
-      en: "Printer",
-      hi: "Printer"
-    },
-    {
-      en: "Text document",
-      hi: "Text document"
-    },
-    {
-      en: "Spreadsheet",
-      hi: "Spreadsheet"
-    },
-    {
-      en: "PDF file",
-      hi: "PDF file"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Printer जैसे hardware devices के basic operations को control करने के लिए firmware का उपयोग किया जाता है।"
-},
-
-// Question 143
-{
-  en: "The software embedded in a digital camera that controls its basic functions is an example of:",
-  hi: "Digital camera में embedded software जो उसके basic functions को control करता है, किसका उदाहरण है?",
-
-  options: [
-    {
-      en: "Application software",
-      hi: "Application software"
-    },
-    {
-      en: "Firmware",
-      hi: "Firmware"
-    },
-    {
-      en: "Word-processing software",
-      hi: "Word-processing software"
-    },
-    {
-      en: "Utility file",
-      hi: "Utility file"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Digital camera के basic functions को control करने वाला embedded software firmware कहलाता है।"
-},
-
-// Question 144
-{
-  en: "Which of the following is another common example of firmware?",
-  hi: "निम्नलिखित में से firmware का एक अन्य common example कौन-सा है?",
-
-  options: [
-    {
-      en: "Keyboard controller software stored in the device",
-      hi: "Device में stored keyboard controller software"
-    },
-    {
-      en: "A presentation file",
-      hi: "एक presentation file"
-    },
-    {
-      en: "An image file",
-      hi: "एक image file"
-    },
-    {
-      en: "A music file",
-      hi: "एक music file"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Keyboard controller software device के basic hardware functions को control करता है, इसलिए यह firmware का उदाहरण है।"
-},
-
-// Question 145
-{
-  en: "A student enters marks of 50 students using a keyboard. The computer then calculates the average and displays it on the monitor. Which sequence correctly represents the Input-Process-Output cycle?",
-  hi: "एक student keyboard का उपयोग करके 50 students के marks enter करता है। Computer average calculate करता है और उसे monitor पर display करता है। कौन-सा sequence Input-Process-Output cycle को सही रूप से दर्शाता है?",
-
-  options: [
-    {
-      en: "Processing → Input → Output",
-      hi: "Processing → Input → Output"
-    },
-    {
-      en: "Output → Processing → Input",
-      hi: "Output → Processing → Input"
-    },
-    {
-      en: "Input → Processing → Output",
-      hi: "Input → Processing → Output"
-    },
-    {
-      en: "Input → Output → Processing",
-      hi: "Input → Output → Processing"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Marks enter करना Input, average calculate करना Processing और monitor पर result दिखाना Output है।"
-},
-
-// Question 146
-{
-  en: "A user enters two numbers through the keyboard. The CPU compares them and the larger number is displayed on the screen. In this process, which statement is correct?",
-  hi: "एक उपयोगकर्ता कीबोर्ड के माध्यम से दो संख्याएँ दर्ज करता है। CPU उनकी तुलना करता है और बड़ी संख्या स्क्रीन पर प्रदर्शित होती है। इस प्रक्रिया में कौन-सा कथन सही है?",
-
-  options: [
-    {
-      en: "Keyboard performs processing and CPU provides input",
-      hi: "कीबोर्ड प्रोसेसिंग करता है और CPU इनपुट प्रदान करता है"
-    },
-    {
-      en: "Keyboard provides input, CPU processes the data, and monitor provides output",
-      hi: "कीबोर्ड इनपुट प्रदान करता है, CPU डेटा को प्रोसेस करता है और मॉनिटर आउटपुट प्रदान करता है"
-    },
-    {
-      en: "Monitor provides input, CPU provides output, and keyboard processes data",
-      hi: "मॉनिटर इनपुट प्रदान करता है, CPU आउटपुट प्रदान करता है और कीबोर्ड डेटा को प्रोसेस करता है"
-    },
-    {
-      en: "CPU provides input, keyboard processes data, and monitor stores the result",
-      hi: "CPU इनपुट प्रदान करता है, कीबोर्ड डेटा को प्रोसेस करता है और मॉनिटर परिणाम को स्टोर करता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The keyboard provides input, the CPU processes and compares the numbers, and the monitor displays the result."
-},
-
-// Question 147
-{
-  en: "Consider the following operations: \n1. Entering employee salary details through a keyboard \n2. Calculating total salary \n3. Displaying the calculated salary on the monitor \n4. Saving the result for future use. Which sequence correctly identifies the first three stages of the basic Input-Process-Output cycle?",
-  hi: "निम्नलिखित कार्यों पर विचार करें: \n1. कीबोर्ड के माध्यम से कर्मचारी के वेतन का विवरण दर्ज करना \n2. कुल वेतन की गणना करना \n3. गणना किए गए वेतन को मॉनिटर पर प्रदर्शित करना \n4. भविष्य में उपयोग के लिए परिणाम सहेजना। कौन-सा क्रम मूल Input-Process-Output चक्र के पहले तीन चरणों को सही रूप से दर्शाता है?",
-
-  options: [
-    {
-      en: "Input → Processing → Output",
-      hi: "इनपुट → प्रोसेसिंग → आउटपुट"
-    },
-    {
-      en: "Processing → Input → Output",
-      hi: "प्रोसेसिंग → इनपुट → आउटपुट"
-    },
-    {
-      en: "Input → Output → Processing",
-      hi: "इनपुट → आउटपुट → प्रोसेसिंग"
-    },
-    {
-      en: "Output → Input → Processing",
-      hi: "आउटपुट → इनपुट → प्रोसेसिंग"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "The first three stages are entering data as Input, calculating it as Processing, and displaying the result as Output."
-},
-
-// Question 148
-{
-  en: "A barcode scanner reads a product code, the CPU uses the code to determine the product price, and the billing screen displays the price. Which option correctly identifies these stages?",
-  hi: "एक बारकोड स्कैनर उत्पाद कोड पढ़ता है, CPU उस कोड का उपयोग करके उत्पाद की कीमत निर्धारित करता है और बिलिंग स्क्रीन कीमत प्रदर्शित करती है। कौन-सा विकल्प इन चरणों की सही पहचान करता है?",
-
-  options: [
-    {
-      en: "Scanner–Output, CPU–Input, Screen–Processing",
-      hi: "स्कैनर–आउटपुट, CPU–इनपुट, स्क्रीन–प्रोसेसिंग"
-    },
-    {
-      en: "Scanner–Processing, CPU–Output, Screen–Input",
-      hi: "स्कैनर–प्रोसेसिंग, CPU–आउटपुट, स्क्रीन–इनपुट"
-    },
-    {
-      en: "Scanner–Input, CPU–Processing, Screen–Output",
-      hi: "स्कैनर–इनपुट, CPU–प्रोसेसिंग, स्क्रीन–आउटपुट"
-    },
-    {
-      en: "Scanner–Input, CPU–Output, Screen–Processing",
-      hi: "स्कैनर–इनपुट, CPU–आउटपुट, स्क्रीन–प्रोसेसिंग"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "The scanner supplies the product code as input, the CPU processes it, and the screen displays the price as output."
-},
-
-// Question 149
-{
-  en: "A payroll system accepts employee attendance data, calculates salary, displays the salary statement, and saves the records for future reference. Which sequence best represents the complete processing cycle?",
-  hi: "एक पेरोल प्रणाली कर्मचारी की उपस्थिति का डेटा स्वीकार करती है, वेतन की गणना करती है, वेतन विवरण प्रदर्शित करती है और भविष्य के संदर्भ के लिए रिकॉर्ड सहेजती है। कौन-सा क्रम पूर्ण प्रोसेसिंग चक्र को सबसे अच्छी तरह दर्शाता है?",
-
-  options: [
-    {
-      en: "Input → Output → Processing → Storage",
-      hi: "इनपुट → आउटपुट → प्रोसेसिंग → स्टोरेज"
-    },
-    {
-      en: "Input → Processing → Output → Storage",
-      hi: "इनपुट → प्रोसेसिंग → आउटपुट → स्टोरेज"
-    },
-    {
-      en: "Processing → Input → Storage → Output",
-      hi: "प्रोसेसिंग → इनपुट → स्टोरेज → आउटपुट"
-    },
-    {
-      en: "Storage → Input → Processing → Output",
-      hi: "स्टोरेज → इनपुट → प्रोसेसिंग → आउटपुट"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The system first accepts attendance data, processes the salary, displays the result, and then stores the records."
-},
-
-// Question 150
-{
-  en: "Which statement most accurately describes the role of storage in relation to the IPO cycle?",
-  hi: "IPO चक्र के संदर्भ में स्टोरेज की भूमिका का सबसे सटीक वर्णन कौन-सा कथन करता है?",
-
-  options: [
-    {
-      en: "Storage only displays the processed results to the user",
-      hi: "स्टोरेज केवल प्रोसेस किए गए परिणामों को उपयोगकर्ता के सामने प्रदर्शित करता है"
-    },
-    {
-      en: "Storage replaces the CPU during the processing stage",
-      hi: "स्टोरेज प्रोसेसिंग चरण के दौरान CPU का स्थान लेता है"
-    },
-    {
-      en: "Storage retains input data, instructions, or processed results for present or future use",
-      hi: "स्टोरेज इनपुट डेटा, निर्देशों या प्रोसेस किए गए परिणामों को वर्तमान या भविष्य के उपयोग के लिए सुरक्षित रखता है"
-    },
-    {
-      en: "Storage converts output directly into input without any processing",
-      hi: "स्टोरेज बिना किसी प्रोसेसिंग के आउटपुट को सीधे इनपुट में बदल देता है"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Storage retains data, instructions, and results so they can be used immediately or retrieved later."
-},
-
-// Question 151
-{
-  en: "A user enters a list of numbers, the CPU calculates their total, the result is displayed on the monitor, and the calculated total is saved on a storage device. Which mapping is correct?",
-  hi: "एक उपयोगकर्ता संख्याओं की एक सूची दर्ज करता है, CPU उनका योग निकालता है, परिणाम मॉनिटर पर प्रदर्शित होता है और गणना किया गया योग एक स्टोरेज डिवाइस पर सहेजा जाता है। कौन-सा मैपिंग सही है?",
-
-  options: [
-    {
-      en: "Keyboard–Input, CPU–Processing, Monitor–Output, Storage device–Storage",
-      hi: "कीबोर्ड–इनपुट, CPU–प्रोसेसिंग, मॉनिटर–आउटपुट, स्टोरेज डिवाइस–स्टोरेज"
-    },
-    {
-      en: "Keyboard–Processing, CPU–Input, Monitor–Storage, Storage device–Output",
-      hi: "कीबोर्ड–प्रोसेसिंग, CPU–इनपुट, मॉनिटर–स्टोरेज, स्टोरेज डिवाइस–आउटपुट"
-    },
-    {
-      en: "Keyboard–Output, CPU–Processing, Monitor–Input, Storage device–Storage",
-      hi: "कीबोर्ड–आउटपुट, CPU–प्रोसेसिंग, मॉनिटर–इनपुट, स्टोरेज डिवाइस–स्टोरेज"
-    },
-    {
-      en: "Keyboard–Input, CPU–Output, Monitor–Processing, Storage device–Input",
-      hi: "कीबोर्ड–इनपुट, CPU–आउटपुट, मॉनिटर–प्रोसेसिंग, स्टोरेज डिवाइस–इनपुट"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "The keyboard provides input, the CPU processes the numbers, the monitor provides output, and the storage device saves the result."
-},
-
-// Question 152
-{
-  en: "Consider the following sequence of operations: \n1. Data is entered through an input device. \n2. The CPU processes the data according to instructions. \n3. The processed result is presented to the user. \n4. The result is retained for future reference. \nWhich option correctly identifies the four stages?",
-  hi: "निम्नलिखित कार्यों के क्रम पर विचार करें: \n1. इनपुट डिवाइस के माध्यम से डेटा दर्ज किया जाता है। \n2. CPU निर्देशों के अनुसार डेटा को प्रोसेस करता है। \n3. प्रोसेस किया गया परिणाम उपयोगकर्ता के सामने प्रस्तुत किया जाता है। \n4. परिणाम को भविष्य के संदर्भ के लिए सुरक्षित रखा जाता है। \nकौन-सा विकल्प इन चार चरणों की सही पहचान करता है?",
-
-  options: [
-    {
-      en: "Storage → Input → Processing → Output",
-      hi: "स्टोरेज → इनपुट → प्रोसेसिंग → आउटपुट"
-    },
-    {
-      en: "Input → Storage → Output → Processing",
-      hi: "इनपुट → स्टोरेज → आउटपुट → प्रोसेसिंग"
-    },
-    {
-      en: "Input → Processing → Output → Storage",
-      hi: "इनपुट → प्रोसेसिंग → आउटपुट → स्टोरेज"
-    },
-    {
-      en: "Processing → Input → Storage → Output",
-      hi: "प्रोसेसिंग → इनपुट → स्टोरेज → आउटपुट"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "The sequence is Input, Processing, Output, and Storage."
-},
-
-// Question 153
-{
-  en: "Which of the following is primarily used to enter text and numbers into a computer?",
-  hi: "निम्नलिखित में से किसका उपयोग मुख्य रूप से कंप्यूटर में टेक्स्ट और संख्याएँ दर्ज करने के लिए किया जाता है?",
-
-  options: [
-    {
-      en: "Mouse",
-      hi: "माउस"
-    },
-    {
-      en: "Keyboard",
-      hi: "कीबोर्ड"
-    },
-    {
-      en: "Scanner",
-      hi: "स्कैनर"
-    },
-    {
-      en: "Webcam",
-      hi: "वेबकैम"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "A keyboard is primarily used to enter text, numbers, and various commands into a computer."
-},
-
-// Question 154
-{
-  en: "Which input device is commonly used to control the pointer and select objects on the screen?",
-  hi: "स्क्रीन पर पॉइंटर को नियंत्रित करने और वस्तुओं का चयन करने के लिए सामान्यतः किस इनपुट डिवाइस का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "Mouse",
-      hi: "माउस"
-    },
-    {
-      en: "Microphone",
-      hi: "माइक्रोफोन"
-    },
-    {
-      en: "Scanner",
-      hi: "स्कैनर"
-    },
-    {
-      en: "Webcam",
-      hi: "वेबकैम"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "A mouse is commonly used to move the pointer, select objects, and perform actions on the screen."
-},
-
-// Question 155
-{
-  en: "Which device is used to capture a physical document or photograph and convert it into digital form?",
-  hi: "किस डिवाइस का उपयोग किसी भौतिक दस्तावेज़ या फोटो को कैप्चर करके उसे डिजिटल रूप में परिवर्तित करने के लिए किया जाता है?",
-
-  options: [
-    {
-      en: "Keyboard",
-      hi: "कीबोर्ड"
-    },
-    {
-      en: "Microphone",
-      hi: "माइक्रोफोन"
-    },
-    {
-      en: "Scanner",
-      hi: "स्कैनर"
-    },
-    {
-      en: "Mouse",
-      hi: "माउस"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "A scanner captures physical documents or photographs and converts them into digital form."
-},
-
-// Question 156
-{
-  en: "Which device is commonly used to capture sound and provide it as input to a computer?",
-  hi: "कंप्यूटर में ध्वनि को इनपुट के रूप में देने के लिए सामान्यतः किस डिवाइस का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "Webcam",
-      hi: "वेबकैम"
-    },
-    {
-      en: "Scanner",
-      hi: "स्कैनर"
-    },
-    {
-      en: "Mouse",
-      hi: "माउस"
-    },
-    {
-      en: "Microphone",
-      hi: "माइक्रोफोन"
-    }
-  ],
-
-  answer: "D",
-
-  explanation: "A microphone captures sound and provides it as audio input to a computer."
+  explanation: "Statements 1, 2, and 4 are correct. A Select Query can retrieve data from multiple tables, display selected fields, and filter records using criteria. Sorting query results does not necessarily change the stored values in the underlying table."
 },
 
 // Question 157
 {
-  en: "Which input device is most suitable for controlling the movement of an on-screen cursor by moving a small ball with the fingers while the device itself remains stationary?",
-  hi: "कौन-सा इनपुट डिवाइस डिवाइस को स्थिर रखते हुए उंगलियों से एक छोटी गेंद को घुमाकर स्क्रीन पर कर्सर की गति को नियंत्रित करने के लिए सबसे उपयुक्त है?",
+  en: "A user wants to display employees whose Department is \"IT\" or whose Salary exceeds 60000. In Access Query Design, which arrangement correctly represents this OR condition?",
+  hi: "एक उपयोगकर्ता उन Employees को दिखाना चाहता है जिनका Department \"IT\" है या जिनकी Salary 60000 से अधिक है। Access Query Design में इस OR Condition को सही तरीके से कैसे दर्शाया जाएगा?",
 
   options: [
     {
-      en: "Light Pen",
-      hi: "लाइट पेन"
+      en: "Enter both criteria in the same row under Department and Salary.",
+      hi: "Department और Salary के नीचे दोनों Criteria एक ही Row में दर्ज करें।"
     },
     {
-      en: "Trackball",
-      hi: "ट्रैकबॉल"
+      en: "Enter \"IT\" under Salary and \">60000\" under Department in the same row.",
+      hi: "Salary के नीचे \"IT\" और Department के नीचे \">60000\" एक ही Row में दर्ज करें।"
     },
     {
-      en: "Touchpad",
-      hi: "टचपैड"
+      en: "Place the Department criterion \"IT\" in one Criteria row and the Salary criterion \">60000\" in the Or row.",
+      hi: "Department का Criterion \"IT\" एक Criteria Row में और Salary का Criterion \">60000\" Or Row में दर्ज करें।"
     },
     {
-      en: "Joystick",
-      hi: "जॉयस्टिक"
+      en: "Leave the criteria grid empty and sort both fields in ascending order.",
+      hi: "Criteria Grid खाली छोड़ दें और दोनों Fields को Ascending Order में Sort करें।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "A trackball remains stationary while the user rotates its ball with the fingers to control the cursor."
+  explanation: "In Access Query Design, criteria on the same row are combined using AND, while criteria on separate rows are combined using OR. Placing Department = \"IT\" on one row and Salary > 60000 on the Or row returns employees satisfying either condition."
 },
 
 // Question 158
 {
-  en: "A user wants to select or draw directly on objects displayed on a screen using a pen-like device. Which input device is most appropriate?",
-  hi: "एक उपयोगकर्ता पेन जैसे डिवाइस का उपयोग करके स्क्रीन पर प्रदर्शित वस्तुओं को सीधे चुनना या उन पर चित्र बनाना चाहता है। कौन-सा इनपुट डिवाइस सबसे उपयुक्त है?",
+  en: "A Select Query retrieves EmployeeName from Employees and DepartmentName from Departments. The tables are related through DepartmentID. Which statement is most accurate?",
+  hi: "एक Select Query, Employees से EmployeeName और Departments से DepartmentName Retrieve करती है। दोनों Tables, DepartmentID के माध्यम से संबंधित हैं। कौन-सा कथन सबसे सटीक है?",
 
   options: [
     {
-      en: "Barcode Reader",
-      hi: "बारकोड रीडर"
+      en: "Access automatically combines every record from both tables correctly, even if no join condition or relationship is available.",
+      hi: "Join Condition या Relationship उपलब्ध न होने पर भी Access दोनों Tables के प्रत्येक Record को अपने आप सही तरीके से जोड़ देता है।"
     },
     {
-      en: "Light Pen",
-      hi: "लाइट पेन"
+      en: "The query needs an appropriate join between the tables to associate employee records with the correct department records.",
+      hi: "Employee Records को सही Department Records से जोड़ने के लिए Query में Tables के बीच उपयुक्त Join आवश्यक है।"
     },
     {
-      en: "Trackball",
-      hi: "ट्रैकबॉल"
+      en: "Both tables must have identical field names for a query to use them together.",
+      hi: "एक Query में दोनों Tables का उपयोग करने के लिए उनके Field Names समान होना आवश्यक है।"
     },
     {
-      en: "Touchpad",
-      hi: "टचपैड"
+      en: "A Select Query can display fields from multiple tables only if all those fields are primary keys.",
+      hi: "Select Query कई Tables के Fields तभी दिखा सकती है जब वे सभी Primary Keys हों।"
     }
   ],
 
   answer: "B",
 
-  explanation: "A light pen is a pen-like pointing input device used to select or draw directly on a compatible screen."
+  explanation: "An appropriate join using DepartmentID associates each employee with the corresponding department. Without a suitable join condition, the query may produce incorrect combinations of records, such as a Cartesian product."
 },
 
 // Question 159
 {
-  en: "Which option correctly matches the input device with its primary use?",
-  hi: "कौन-सा विकल्प इनपुट डिवाइस को उसके प्राथमिक उपयोग के साथ सही रूप से मिलाता है?",
+  en: "A query includes the fields Department and Salary. The user sorts Department in ascending order and Salary in descending order. Which result should generally be expected?",
+  hi: "एक Query में Department और Salary Fields शामिल हैं। उपयोगकर्ता Department को Ascending Order और Salary को Descending Order में Sort करता है। सामान्यतः क्या परिणाम अपेक्षित है?",
 
   options: [
     {
-      en: "Joystick — reading printed product codes",
-      hi: "जॉयस्टिक — मुद्रित उत्पाद कोड पढ़ना"
+      en: "Records are grouped by Salary first, and Department is ignored.",
+      hi: "Records पहले Salary के आधार पर समूहित होते हैं और Department को अनदेखा कर दिया जाता है।"
     },
     {
-      en: "Barcode Reader — controlling movement in games",
-      hi: "बारकोड रीडर — गेम में गति को नियंत्रित करना"
+      en: "The entire result is sorted only by Salary, regardless of the query design.",
+      hi: "Query Design की परवाह किए बिना पूरा Result केवल Salary के आधार पर Sort होता है।"
     },
     {
-      en: "Touchpad — cursor control through a touch-sensitive surface",
-      hi: "टचपैड — स्पर्श-संवेदनशील सतह के माध्यम से कर्सर को नियंत्रित करना"
+      en: "Records are sorted by Department in descending order and Salary in ascending order.",
+      hi: "Records Department के आधार पर Descending और Salary के आधार पर Ascending Order में Sort होते हैं।"
     },
     {
-      en: "QR Code Reader — capturing handwritten text directly",
-      hi: "QR कोड रीडर — हस्तलिखित टेक्स्ट को सीधे कैप्चर करना"
+      en: "Records are ordered by Department first; within each department, higher salaries appear before lower salaries.",
+      hi: "Records पहले Department के अनुसार क्रमबद्ध होते हैं; प्रत्येक Department के भीतर अधिक Salary वाले Records पहले दिखाई देते हैं।"
     }
   ],
 
-  answer: "C",
+  answer: "D",
 
-  explanation: "A touchpad uses a touch-sensitive surface to control the on-screen cursor."
+  explanation: "In a multi-field sort, the primary sort field determines the main ordering, and the secondary sort field determines the order within each primary-field group. Department is sorted ascending, with Salary sorted descending within each department."
 },
 
 // Question 160
 {
-  en: "A retail system needs to read both traditional linear product codes and two-dimensional QR codes. Which statement is correct?",
-  hi: "एक रिटेल प्रणाली को पारंपरिक रैखिक उत्पाद कोड और द्वि-आयामी QR कोड दोनों को पढ़ने की आवश्यकता है। कौन-सा कथन सही है?",
+  en: "A user creates a Select Query joining Customers and Orders on CustomerID. The query displays CustomerName and OrderID. One customer has three orders, and the join matches all three orders to that customer. What should normally appear in the query results?",
+  hi: "एक उपयोगकर्ता CustomerID के आधार पर Customers और Orders को Join करके Select Query बनाता है। Query में CustomerName और OrderID दिखाए जाते हैं। एक Customer के तीन Orders हैं और Join तीनों Orders को उस Customer से Match करता है। Query Results में सामान्यतः क्या दिखाई देगा?",
 
   options: [
     {
-      en: "A barcode reader is specifically designed for QR codes, while a QR reader is designed only for linear barcodes",
-      hi: "बारकोड रीडर विशेष रूप से QR कोड के लिए बनाया गया है, जबकि QR रीडर केवल रैखिक बारकोड के लिए बनाया गया है"
+      en: "Three rows for that customer, one for each matching order, assuming no other criteria or grouping changes the result.",
+      hi: "उस Customer के लिए तीन Rows दिखाई देंगी, प्रत्येक Matching Order के लिए एक, बशर्ते कोई अन्य Criteria या Grouping परिणाम को न बदले।"
     },
     {
-      en: "A joystick and trackball are commonly used for reading both types of codes",
-      hi: "जॉयस्टिक और ट्रैकबॉल का उपयोग सामान्यतः दोनों प्रकार के कोड पढ़ने के लिए किया जाता है"
+      en: "Exactly one row for that customer because CustomerID is unique in Customers.",
+      hi: "उस Customer के लिए केवल एक Row दिखाई देगी क्योंकि Customers में CustomerID Unique है।"
     },
     {
-      en: "Barcode readers and QR code readers are input devices used to capture coded information",
-      hi: "बारकोड रीडर और QR कोड रीडर कोडित जानकारी को कैप्चर करने के लिए उपयोग किए जाने वाले इनपुट डिवाइस हैं"
+      en: "No rows, because a Select Query cannot display multiple records for one customer.",
+      hi: "कोई Row दिखाई नहीं देगी क्योंकि Select Query एक Customer के लिए कई Records नहीं दिखा सकती।"
     },
     {
-      en: "A touchscreen is required to decode all types of barcodes and QR codes",
-      hi: "सभी प्रकार के बारकोड और QR कोड को डिकोड करने के लिए टचस्क्रीन आवश्यक है"
+      en: "One row only if OrderID is removed from the query design.",
+      hi: "केवल तभी एक Row दिखाई देगी जब Query Design से OrderID हटा दिया जाए।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Barcode and QR code readers are input devices used to capture and decode coded information."
+  explanation: "A one-to-many join returns a row for each matching customer-order combination. If one customer has three matching orders, the query normally returns three rows for that customer."
 },
-
 // Question 161
 {
-  en: "A computer processes a document and needs to present the result visually to the user. Which output device primarily performs this function?",
-  hi: "एक कंप्यूटर किसी दस्तावेज़ को प्रोसेस करता है और परिणाम को उपयोगकर्ता के सामने दृश्य रूप में प्रस्तुत करना चाहता है। कौन-सा आउटपुट डिवाइस मुख्य रूप से यह कार्य करता है?",
+  en: "In an MS Access query, the following criterion is entered under the City field:\n\n\"Shimla\"\n\nWhat does this criterion normally select?",
+  hi: "MS Access Query में City Field के नीचे निम्नलिखित Criterion दर्ज किया जाता है:\n\n\"Shimla\"\n\nयह Criterion सामान्यतः किन Records को Select करता है?",
 
   options: [
     {
-      en: "Speaker",
-      hi: "स्पीकर"
+      en: "Records in which City contains the word \"Shimla\" anywhere within a longer value.",
+      hi: "वे Records जिनमें City के लंबे Value के अंदर कहीं भी \"Shimla\" शब्द मौजूद है।"
     },
     {
-      en: "Printer",
-      hi: "प्रिंटर"
+      en: "Records in which City is not equal to \"Shimla\".",
+      hi: "वे Records जिनमें City का मान \"Shimla\" के बराबर नहीं है।"
     },
     {
-      en: "Monitor",
-      hi: "मॉनिटर"
+      en: "Records in which City matches \"Shimla\" as the specified text value.",
+      hi: "वे Records जिनमें City का मान निर्धारित Text Value \"Shimla\" से Match करता है।"
     },
     {
-      en: "Scanner",
-      hi: "स्कैनर"
+      en: "Records in which City is Null.",
+      hi: "वे Records जिनमें City का मान Null है।"
     }
   ],
 
   answer: "C",
 
-  explanation: "A monitor presents text, images, and other visual results to the user."
+  explanation: "Entering \"Shimla\" as a text criterion normally selects records whose City field matches the specified value. To search for text occurring anywhere within a longer value, a wildcard criterion such as Like \"*Shimla*\" can be used."
 },
 
 // Question 162
 {
-  en: "A user wants a permanent physical copy of a digitally prepared document. Which device should be used?",
-  hi: "एक उपयोगकर्ता डिजिटल रूप से तैयार किए गए दस्तावेज़ की स्थायी भौतिक प्रति चाहता है। किस डिवाइस का उपयोग किया जाना चाहिए?",
+  en: "A query has the criterion >50000 under the Salary field. Which records satisfy this criterion?",
+  hi: "एक Query में Salary Field के नीचे >50000 Criterion दिया गया है। कौन-से Records इस Criterion को पूरा करते हैं?",
 
   options: [
     {
-      en: "Monitor",
-      hi: "मॉनिटर"
+      en: "Records with Salary greater than 50000, excluding values equal to 50000.",
+      hi: "वे Records जिनकी Salary 50000 से अधिक है; ठीक 50000 वाले मान शामिल नहीं हैं।"
     },
     {
-      en: "Printer",
-      hi: "प्रिंटर"
+      en: "Records with Salary greater than or equal to 50000.",
+      hi: "वे Records जिनकी Salary 50000 से अधिक या उसके बराबर है।"
     },
     {
-      en: "Speaker",
-      hi: "स्पीकर"
+      en: "Records with Salary less than 50000.",
+      hi: "वे Records जिनकी Salary 50000 से कम है।"
     },
     {
-      en: "Keyboard",
-      hi: "कीबोर्ड"
+      en: "Records with Salary exactly equal to 50000.",
+      hi: "वे Records जिनकी Salary ठीक 50000 है।"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "A printer produces a permanent physical copy, known as a hard copy."
+  explanation: "The greater-than operator (>) selects values strictly greater than 50000. Values equal to 50000 are excluded; the criterion >=50000 would include them."
 },
 
 // Question 163
 {
-  en: "Which statement correctly distinguishes the three basic output devices?",
-  hi: "कौन-सा कथन तीन मूल आउटपुट डिवाइसों के बीच सही अंतर बताता है?",
+  en: "In MS Access Query Design, the criteria >40000 and \"IT\" are entered under Salary and Department, respectively, in the same Criteria row. Which logical condition is applied?",
+  hi: "MS Access Query Design में Salary और Department के नीचे क्रमशः >40000 और \"IT\" Criteria एक ही Criteria Row में दर्ज किए जाते हैं। कौन-सी Logical Condition लागू होती है?",
 
   options: [
     {
-      en: "Monitor produces soft copy, printer produces hard copy, and speaker produces audio output",
-      hi: "मॉनिटर सॉफ्ट कॉपी, प्रिंटर हार्ड कॉपी और स्पीकर ऑडियो आउटपुट प्रदान करता है"
+      en: "Salary > 40000 OR Department = \"IT\"",
+      hi: "Salary > 40000 OR Department = \"IT\""
     },
     {
-      en: "Monitor produces hard copy, printer produces audio output, and speaker produces soft copy",
-      hi: "मॉनिटर हार्ड कॉपी, प्रिंटर ऑडियो आउटपुट और स्पीकर सॉफ्ट कॉपी प्रदान करता है"
+      en: "Salary > 40000 AND Department = \"IT\"",
+      hi: "Salary > 40000 AND Department = \"IT\""
     },
     {
-      en: "Monitor stores output, printer processes output, and speaker inputs sound",
-      hi: "मॉनिटर आउटपुट को स्टोर करता है, प्रिंटर आउटपुट को प्रोसेस करता है और स्पीकर ध्वनि को इनपुट करता है"
+      en: "Salary = 40000 AND Department <> \"IT\"",
+      hi: "Salary = 40000 AND Department <> \"IT\""
     },
     {
-      en: "Monitor and printer provide input, while speaker provides only visual output",
-      hi: "मॉनिटर और प्रिंटर इनपुट प्रदान करते हैं, जबकि स्पीकर केवल दृश्य आउटपुट प्रदान करता है"
+      en: "Salary > 40000 AND Department <> \"IT\"",
+      hi: "Salary > 40000 AND Department <> \"IT\""
     }
   ],
 
-  answer: "A",
+  answer: "B",
 
-  explanation: "A monitor provides soft-copy visual output, a printer provides hard copy, and a speaker provides audio output."
+  explanation: "In Access Query Design, criteria entered under different fields in the same Criteria row are generally combined using AND. Therefore, both Salary > 40000 and Department = \"IT\" must be true."
 },
 
 // Question 164
 {
-  en: "A multimedia application produces three different forms of output: text and images on the screen, a printed report, and spoken audio. Which sequence correctly identifies the devices responsible?",
-  hi: "एक मल्टीमीडिया एप्लिकेशन तीन अलग-अलग प्रकार के आउटपुट उत्पन्न करता है: स्क्रीन पर टेक्स्ट और चित्र, एक मुद्रित रिपोर्ट और बोली गई ऑडियो। कौन-सा क्रम संबंधित डिवाइसों की सही पहचान करता है?",
+  en: "Consider the following statements about query criteria in MS Access:\n\n1. Criteria entered in the same Criteria row under different fields are generally combined using AND.\n2. Criteria entered on separate Criteria and Or rows are generally combined using OR.\n3. The NOT operator can be used to exclude values matching a specified condition.\n4. A date criterion can be used to select records within a specified date range.\n\nWhich statements are correct?",
+  hi: "MS Access में Query Criteria के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. अलग-अलग Fields के नीचे एक ही Criteria Row में दर्ज Criteria सामान्यतः AND से संयोजित होते हैं।\n2. अलग-अलग Criteria और Or Rows में दर्ज Criteria सामान्यतः OR से संयोजित होते हैं।\n3. NOT Operator का उपयोग किसी निर्धारित Condition से Match करने वाले Values को बाहर रखने के लिए किया जा सकता है।\n4. निर्धारित Date Range के भीतर Records चुनने के लिए Date Criterion का उपयोग किया जा सकता है।\n\nकौन-से कथन सही हैं?",
 
   options: [
     {
-      en: "Speaker → Monitor → Printer",
-      hi: "स्पीकर → मॉनिटर → प्रिंटर"
+      en: "1 and 2 only",
+      hi: "केवल 1 और 2"
     },
     {
-      en: "Printer → Speaker → Monitor",
-      hi: "प्रिंटर → स्पीकर → मॉनिटर"
+      en: "2 and 3 only",
+      hi: "केवल 2 और 3"
     },
     {
-      en: "Monitor → Speaker → Printer",
-      hi: "मॉनिटर → स्पीकर → प्रिंटर"
+      en: "1, 3 and 4 only",
+      hi: "केवल 1, 3 और 4"
     },
     {
-      en: "Monitor → Printer → Speaker",
-      hi: "मॉनिटर → प्रिंटर → स्पीकर"
+      en: "1, 2, 3 and 4",
+      hi: "1, 2, 3 और 4"
     }
   ],
 
   answer: "D",
 
-  explanation: "The monitor displays text and images, the printer produces the report, and the speaker provides spoken audio."
+  explanation: "All four statements are correct. Access combines criteria in the same row using AND and criteria on separate rows using OR. NOT excludes matching values, and date criteria can select records within a specified range."
 },
 
 // Question 165
 {
-  en: "A teacher wants to display the contents of a computer screen on a large wall so that an entire classroom can view it. Which output device is most appropriate?",
-  hi: "एक शिक्षक कंप्यूटर स्क्रीन की सामग्री को एक बड़ी दीवार पर प्रदर्शित करना चाहता है ताकि पूरी कक्षा उसे देख सके। कौन-सा आउटपुट डिवाइस सबसे उपयुक्त है?",
+  en: "A user wants to retrieve employees whose Department is either \"IT\" or \"HR\". Which criterion arrangement is most appropriate in Access Query Design?",
+  hi: "एक उपयोगकर्ता उन Employees को Retrieve करना चाहता है जिनका Department या तो \"IT\" है या \"HR\"। Access Query Design में कौन-सी Criterion Arrangement सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Plotter",
-      hi: "प्लॉटर"
+      en: "Enter \"IT\" and \"HR\" in the same Criteria row under Department.",
+      hi: "Department के नीचे एक ही Criteria Row में \"IT\" और \"HR\" दर्ज करें।"
     },
     {
-      en: "Headphones",
-      hi: "हेडफोन"
+      en: "Enter \"IT\" under Department and \">HR\" under Salary in the same row.",
+      hi: "एक ही Row में Department के नीचे \"IT\" और Salary के नीचे \">HR\" दर्ज करें।"
     },
     {
-      en: "Projector",
-      hi: "प्रोजेक्टर"
+      en: "Enter \"IT\" in the Criteria row and \"HR\" in the Or row under Department.",
+      hi: "Department के नीचे Criteria Row में \"IT\" और Or Row में \"HR\" दर्ज करें।"
     },
     {
-      en: "Speaker",
-      hi: "स्पीकर"
+      en: "Enter \"IT\" in the Criteria row and leave the Or row blank.",
+      hi: "Criteria Row में \"IT\" दर्ज करें और Or Row खाली छोड़ दें।"
     }
   ],
 
   answer: "C",
 
-  explanation: "A projector enlarges and displays computer content on a large screen or wall for an audience."
+  explanation: "In Access Query Design, criteria placed on separate rows are combined using OR. Entering \"IT\" in the Criteria row and \"HR\" in the Or row under Department retrieves employees from either department."
 },
-
 // Question 166
 {
-  en: "Which output device is specifically designed to produce large, precise drawings such as engineering designs, architectural plans, and maps?",
-  hi: "कौन-सा आउटपुट डिवाइस विशेष रूप से इंजीनियरिंग डिज़ाइन, वास्तु योजनाओं और मानचित्रों जैसे बड़े और सटीक चित्र बनाने के लिए डिज़ाइन किया गया है?",
+  en: "A query should display records whose JoiningDate falls on or after 1 January 2025 and before 1 January 2026. Which criterion correctly expresses this date range in MS Access?",
+  hi: "एक Query में ऐसे Records दिखाने हैं जिनकी JoiningDate 1 जनवरी 2025 को या उसके बाद हो, लेकिन 1 जनवरी 2026 से पहले हो। MS Access में कौन-सा Criterion इस Date Range को सही ढंग से दर्शाता है?",
 
   options: [
     {
-      en: "Projector",
-      hi: "प्रोजेक्टर"
+      en: "Between #01/01/2025# And #01/01/2026#",
+      hi: "Between #01/01/2025# And #01/01/2026#"
     },
     {
-      en: "Plotter",
-      hi: "प्लॉटर"
+      en: ">=#01/01/2025# And <#01/01/2026#",
+      hi: ">=#01/01/2025# And <#01/01/2026#"
     },
     {
-      en: "Headphones",
-      hi: "हेडफोन"
+      en: ">#01/01/2025# Or <#01/01/2026#",
+      hi: ">#01/01/2025# Or <#01/01/2026#"
     },
     {
-      en: "Monitor",
-      hi: "मॉनिटर"
+      en: "=#01/01/2025# And =#01/01/2026#",
+      hi: "=#01/01/2025# And =#01/01/2026#"
     }
   ],
 
   answer: "B",
 
-  explanation: "A plotter is designed to produce large and precise technical drawings, maps, and engineering designs."
+  explanation: "The criterion >=#01/01/2025# And <#01/01/2026# includes 1 January 2025 and excludes 1 January 2026. This expresses the requested half-open date range precisely, including when JoiningDate contains time values."
 },
 
 // Question 167
 {
-  en: "A user is watching a video on a computer but wants the audio to be heard privately without disturbing people nearby. Which device is most suitable?",
-  hi: "एक उपयोगकर्ता कंप्यूटर पर वीडियो देख रहा है, लेकिन वह चाहता है कि ऑडियो आसपास के लोगों को परेशान किए बिना केवल उसे सुनाई दे। कौन-सा डिवाइस सबसे उपयुक्त है?",
+  en: "A user wants to exclude employees whose Department is \"Accounts\". Which criterion most directly expresses this requirement for the Department field?",
+  hi: "एक उपयोगकर्ता उन Employees को बाहर रखना चाहता है जिनका Department \"Accounts\" है। Department Field के लिए कौन-सा Criterion इस आवश्यकता को सबसे सीधे तरीके से दर्शाता है?",
 
   options: [
     {
-      en: "Projector",
-      hi: "प्रोजेक्टर"
+      en: "NOT \"Accounts\"",
+      hi: "NOT \"Accounts\""
     },
     {
-      en: "Plotter",
-      hi: "प्लॉटर"
+      en: "<> \"Accounts\"",
+      hi: "<> \"Accounts\""
     },
     {
-      en: "Headphones",
-      hi: "हेडफोन"
+      en: "= \"Accounts\"",
+      hi: "= \"Accounts\""
     },
     {
-      en: "Printer",
-      hi: "प्रिंटर"
+      en: "> \"Accounts\"",
+      hi: "> \"Accounts\""
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Headphones allow the user to hear audio privately without disturbing nearby people."
+  explanation: "The <> operator means 'not equal to'. Therefore, <> \"Accounts\" selects records whose Department is not equal to Accounts. Records with Null Department values are not selected by this criterion."
 },
 
 // Question 168
 {
-  en: "Which option correctly matches each output device with its typical application?",
-  hi: "कौन-सा विकल्प प्रत्येक आउटपुट डिवाइस को उसके सामान्य उपयोग के साथ सही रूप से मिलाता है?",
+  en: "A query must return employees who belong to the IT department and have either Salary greater than 60000 or Experience greater than 10 years. Which logical expression correctly represents the requirement?",
+  hi: "एक Query में ऐसे Employees दिखाने हैं जो IT Department से संबंधित हों और जिनकी Salary 60000 से अधिक हो या Experience 10 वर्ष से अधिक हो। कौन-सा Logical Expression इस आवश्यकता को सही ढंग से दर्शाता है?",
 
   options: [
     {
-      en: "Headphones — large technical drawings; Projector — private audio; Plotter — classroom display",
-      hi: "हेडफोन — बड़े तकनीकी चित्र; प्रोजेक्टर — निजी ऑडियो; प्लॉटर — कक्षा में प्रदर्शन"
+      en: "(Department = \"IT\" AND Salary > 60000) OR Experience > 10",
+      hi: "(Department = \"IT\" AND Salary > 60000) OR Experience > 10"
     },
     {
-      en: "Headphones — private audio; Projector — large-screen display; Plotter — precise technical drawings",
-      hi: "हेडफोन — निजी ऑडियो; प्रोजेक्टर — बड़े स्क्रीन पर प्रदर्शन; प्लॉटर — सटीक तकनीकी चित्र"
+      en: "Department = \"IT\" OR (Salary > 60000 AND Experience > 10)",
+      hi: "Department = \"IT\" OR (Salary > 60000 AND Experience > 10)"
     },
     {
-      en: "Headphones — classroom display; Projector — technical drawings; Plotter — private audio",
-      hi: "हेडफोन — कक्षा में प्रदर्शन; प्रोजेक्टर — तकनीकी चित्र; प्लॉटर — निजी ऑडियो"
+      en: "Department = \"IT\" AND Salary > 60000 AND Experience > 10",
+      hi: "Department = \"IT\" AND Salary > 60000 AND Experience > 10"
     },
     {
-      en: "Headphones — printed documents; Projector — private audio; Plotter — general sound output",
-      hi: "हेडफोन — मुद्रित दस्तावेज़; प्रोजेक्टर — निजी ऑडियो; प्लॉटर — सामान्य ध्वनि आउटपुट"
+      en: "Department = \"IT\" AND (Salary > 60000 OR Experience > 10)",
+      hi: "Department = \"IT\" AND (Salary > 60000 OR Experience > 10)"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Headphones provide private audio, projectors provide large-screen displays, and plotters produce precise technical drawings."
+  explanation: "The employee must belong to the IT department, and at least one of the other two conditions must be true. Therefore, Department = \"IT\" is combined with the grouped condition (Salary > 60000 OR Experience > 10)."
 },
 
 // Question 169
 {
-  en: "Which statement most accurately distinguishes an SSD from a traditional Hard Disk Drive (HDD)?",
-  hi: "कौन-सा कथन SSD और पारंपरिक हार्ड डिस्क ड्राइव (HDD) के बीच सबसे सटीक अंतर बताता है?",
+  en: "In an MS Access query, which criterion selects records where the value of Marks is greater than or equal to 60 but less than 80?",
+  hi: "MS Access Query में कौन-सा Criterion उन Records को Select करता है जिनमें Marks का मान 60 या उससे अधिक, लेकिन 80 से कम हो?",
 
   options: [
     {
-      en: "SSD uses magnetic platters, while HDD uses flash memory",
-      hi: "SSD चुंबकीय प्लेटर्स का उपयोग करता है, जबकि HDD फ्लैश मेमोरी का उपयोग करता है"
+      en: ">60 AND >80",
+      hi: ">60 AND >80"
     },
     {
-      en: "SSD uses flash memory and has no moving mechanical parts, while HDD generally uses magnetic disks and moving parts",
-      hi: "SSD फ्लैश मेमोरी का उपयोग करता है और इसमें कोई गतिशील यांत्रिक भाग नहीं होता, जबकि HDD सामान्यतः चुंबकीय डिस्क और गतिशील भागों का उपयोग करता है"
+      en: "<60 OR >=80",
+      hi: "<60 OR >=80"
     },
     {
-      en: "Both SSD and HDD use only optical storage technology",
-      hi: "SSD और HDD दोनों केवल ऑप्टिकल स्टोरेज तकनीक का उपयोग करते हैं"
+      en: ">=60 AND <80",
+      hi: ">=60 AND <80"
     },
     {
-      en: "SSD can store data only temporarily, while HDD stores data permanently",
-      hi: "SSD डेटा को केवल अस्थायी रूप से स्टोर कर सकता है, जबकि HDD डेटा को स्थायी रूप से स्टोर करता है"
+      en: "BETWEEN 60 AND 80",
+      hi: "BETWEEN 60 AND 80"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "An SSD uses flash memory without moving mechanical parts, whereas a traditional HDD uses magnetic disks with moving mechanical components."
+  explanation: "The criterion >=60 AND <80 includes Marks values from 60 up to, but not including, 80. In Access, BETWEEN 60 AND 80 includes both endpoints, so it does not express the requested range exactly."
 },
 
 // Question 170
 {
-  en: "A user needs a small portable storage device that can be connected directly to a computer's USB port and used to transfer files. Which device is most appropriate?",
-  hi: "एक उपयोगकर्ता को एक छोटे पोर्टेबल स्टोरेज डिवाइस की आवश्यकता है जिसे सीधे कंप्यूटर के USB पोर्ट से जोड़ा जा सके और फाइलों को स्थानांतरित करने के लिए उपयोग किया जा सके। कौन-सा डिवाइस सबसे उपयुक्त है?",
+  en: "A user wants to retrieve employees whose Department is either \"IT\", \"HR\", or \"Accounts\". Which criterion is the most concise way to specify these alternatives for a text field in MS Access?",
+  hi: "एक उपयोगकर्ता उन Employees को Retrieve करना चाहता है जिनका Department \"IT\", \"HR\" या \"Accounts\" है। MS Access में Text Field के लिए इन विकल्पों को निर्दिष्ट करने का सबसे संक्षिप्त तरीका कौन-सा है?",
 
   options: [
     {
-      en: "Pen Drive",
-      hi: "पेन ड्राइव"
+      en: "IN (\"IT\", \"HR\", \"Accounts\")",
+      hi: "IN (\"IT\", \"HR\", \"Accounts\")"
     },
     {
-      en: "Hard Disk platter",
-      hi: "हार्ड डिस्क प्लेटर"
+      en: "BETWEEN (\"IT\", \"HR\", \"Accounts\")",
+      hi: "BETWEEN (\"IT\", \"HR\", \"Accounts\")"
     },
     {
-      en: "SSD controller",
-      hi: "SSD कंट्रोलर"
+      en: "IS NOT NULL (\"IT\", \"HR\", \"Accounts\")",
+      hi: "IS NOT NULL (\"IT\", \"HR\", \"Accounts\")"
     },
     {
-      en: "RAM",
-      hi: "RAM"
+      en: "LIKE (\"IT\", \"HR\", \"Accounts\")",
+      hi: "LIKE (\"IT\", \"HR\", \"Accounts\")"
     }
   ],
 
   answer: "A",
 
-  explanation: "A pen drive is a small portable flash-storage device that connects directly to a computer through a USB port."
+  explanation: "The IN operator tests whether a field's value matches any value in the specified list. The criterion IN (\"IT\", \"HR\", \"Accounts\") selects records belonging to any of these three departments."
 },
-
 // Question 171
 {
-  en: "Which of the following correctly describes the relationship between a pen drive and a USB flash drive?",
-  hi: "निम्नलिखित में से कौन-सा पेन ड्राइव और USB फ्लैश ड्राइव के बीच संबंध का सही वर्णन करता है?",
-
+  en: "Consider the following statements about MS Access query operators:\n1. <> is used to test whether a value is not equal to a specified value.\n2. >= includes values equal to or greater than the specified value.\n3. BETWEEN includes both boundary values in its range.\n4. IS NULL is used to find records where a field contains an empty text string, regardless of whether it is Null.\n\nWhich statements are correct?",
+  hi: "MS Access क्वेरी ऑपरेटर्स के बारे में निम्नलिखित कथनों पर विचार करें:\n1. <> का उपयोग यह जाँचने के लिए किया जाता है कि कोई मान निर्दिष्ट मान के बराबर नहीं है।\n2. >= में निर्दिष्ट मान के बराबर या उससे बड़े मान शामिल होते हैं।\n3. BETWEEN अपनी सीमा के दोनों अंतिम मानों को शामिल करता है।\n4. IS NULL का उपयोग उन रिकॉर्ड्स को खोजने के लिए किया जाता है जिनके फ़ील्ड में खाली टेक्स्ट स्ट्रिंग होती है, चाहे वह Null हो या नहीं।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "They are fundamentally different technologies because a pen drive uses magnetic storage",
-      hi: "वे मूल रूप से अलग-अलग तकनीकें हैं क्योंकि पेन ड्राइव चुंबकीय स्टोरेज का उपयोग करता है"
-    },
-    {
-      en: "A pen drive is a type of USB flash storage device",
-      hi: "पेन ड्राइव एक प्रकार का USB फ्लैश स्टोरेज डिवाइस है"
-    },
-    {
-      en: "A USB flash drive is a type of optical storage device",
-      hi: "USB फ्लैश ड्राइव एक प्रकार का ऑप्टिकल स्टोरेज डिवाइस है"
-    },
-    {
-      en: "A pen drive is used only for temporary data storage",
-      hi: "पेन ड्राइव का उपयोग केवल अस्थायी डेटा स्टोरेज के लिए किया जाता है"
-    }
+    { en: "1 and 4 only", hi: "केवल 1 और 4" },
+    { en: "1, 2 and 3 only", hi: "केवल 1, 2 और 3" },
+    { en: "2, 3 and 4 only", hi: "केवल 2, 3 और 4" },
+    { en: "1, 2, 3 and 4", hi: "1, 2, 3 और 4" }
   ],
-
   answer: "B",
-
-  explanation: "A pen drive is a portable USB flash storage device that uses flash memory."
+  explanation: "<> means not equal, >= includes equality, and BETWEEN includes both endpoints. IS NULL finds Null values, not empty text strings; an empty text string is tested using = \"\"."
 },
 
 // Question 172
 {
-  en: "Consider the following statements: \n1. HDD generally contains moving mechanical components. \n2. SSD stores data using flash memory. \n3. USB flash drives are portable storage devices. \n4. SSDs require spinning magnetic platters to read and write data. \nWhich statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें: \n1. HDD में सामान्यतः गतिशील यांत्रिक भाग होते हैं। \n2. SSD फ्लैश मेमोरी का उपयोग करके डेटा स्टोर करता है। \n3. USB फ्लैश ड्राइव पोर्टेबल स्टोरेज डिवाइस होते हैं। \n4. SSD को डेटा पढ़ने और लिखने के लिए घूमने वाले चुंबकीय प्लेटर्स की आवश्यकता होती है। \nकौन-से कथन सही हैं?",
-
+  en: "A Short Text field named EmployeeName contains values such as \"Amit\", \"Amit Kumar\", and \"Sumit\". Which criterion using the Access LIKE operator is intended to match names beginning with \"Amit\"?",
+  hi: "EmployeeName नामक Short Text फ़ील्ड में \"Amit\", \"Amit Kumar\" और \"Sumit\" जैसे मान हैं। Access के LIKE ऑपरेटर का उपयोग करके \"Amit\" से शुरू होने वाले नामों को खोजने के लिए कौन-सा क्राइटेरिया उपयुक्त है?",
   options: [
-    {
-      en: "1 and 4 only",
-      hi: "केवल 1 और 4"
-    },
-    {
-      en: "2 and 3 only",
-      hi: "केवल 2 और 3"
-    },
-    {
-      en: "1, 2 and 3 only",
-      hi: "केवल 1, 2 और 3"
-    },
-    {
-      en: "1, 2, 3 and 4",
-      hi: "1, 2, 3 और 4"
-    }
+    { en: "LIKE \"*Amit\"", hi: "LIKE \"*Amit\"" },
+    { en: "LIKE \"Amit?\"", hi: "LIKE \"Amit?\"" },
+    { en: "LIKE \"?Amit*\"", hi: "LIKE \"?Amit*\"" },
+    { en: "LIKE \"Amit*\"", hi: "LIKE \"Amit*\"" }
   ],
-
-  answer: "C",
-
-  explanation: "HDDs generally have moving parts, while SSDs and USB flash drives use solid-state flash storage. SSDs do not use spinning magnetic platters."
+  answer: "D",
+  explanation: "In Access, the asterisk (*) wildcard matches zero or more characters. LIKE \"Amit*\" matches values beginning with Amit, including \"Amit\" and \"Amit Kumar\"."
 },
 
 // Question 173
 {
-  en: "Which of the following correctly distinguishes a DVD from a CD?",
-  hi: "निम्नलिखित में से कौन-सा DVD और CD के बीच सही अंतर बताता है?",
-
+  en: "In an MS Access query, a user wants to find records where EmailAddress has a value and is not Null. Which criterion is most appropriate?",
+  hi: "MS Access क्वेरी में उपयोगकर्ता ऐसे रिकॉर्ड खोजना चाहता है जिनमें EmailAddress फ़ील्ड में कोई मान हो और वह Null न हो। इसके लिए कौन-सा क्राइटेरिया सबसे उपयुक्त है?",
   options: [
-    {
-      en: "DVD generally provides greater storage capacity than a standard CD",
-      hi: "DVD सामान्यतः एक मानक CD की तुलना में अधिक स्टोरेज क्षमता प्रदान करता है"
-    },
-    {
-      en: "CD uses flash memory, while DVD uses magnetic storage",
-      hi: "CD फ्लैश मेमोरी का उपयोग करता है, जबकि DVD चुंबकीय स्टोरेज का उपयोग करता है"
-    },
-    {
-      en: "DVD is a type of external hard disk",
-      hi: "DVD एक प्रकार की एक्सटर्नल हार्ड डिस्क है"
-    },
-    {
-      en: "CD can store only audio, whereas DVD can store only video",
-      hi: "CD केवल ऑडियो स्टोर कर सकती है, जबकि DVD केवल वीडियो स्टोर कर सकती है"
-    }
+    { en: "IS NULL", hi: "IS NULL" },
+    { en: "= \"\"", hi: "= \"\"" },
+    { en: "IS NOT NULL", hi: "IS NOT NULL" },
+    { en: "<> NULL", hi: "<> NULL" }
   ],
-
-  answer: "A",
-
-  explanation: "A standard DVD generally has a higher storage capacity than a standard CD."
+  answer: "C",
+  explanation: "IS NOT NULL selects records where EmailAddress is not Null. The criterion = \"\" checks for an empty text string, while IS NULL selects Null values. Use IS NOT NULL rather than <> NULL."
 },
 
 // Question 174
 {
-  en: "Blu-ray discs achieve higher storage capacity than traditional CDs and DVDs primarily because they use:",
-  hi: "Blu-ray डिस्क पारंपरिक CD और DVD की तुलना में अधिक स्टोरेज क्षमता मुख्य रूप से इसलिए प्राप्त करती हैं क्योंकि वे किसका उपयोग करती हैं?",
-
+  en: "A query must retrieve records where Salary is between 30000 and 50000, inclusive, and Department is not \"Temporary\". Which criterion correctly expresses this requirement?",
+  hi: "एक क्वेरी में ऐसे रिकॉर्ड प्राप्त करने हैं जिनमें Salary 30000 से 50000 के बीच हो, दोनों सीमाएँ शामिल हों, और Department \"Temporary\" न हो। कौन-सा क्राइटेरिया इस आवश्यकता को सही ढंग से व्यक्त करता है?",
   options: [
-    {
-      en: "Magnetic platters with multiple read/write heads",
-      hi: "कई रीड/राइट हेड वाले चुंबकीय प्लेटर्स"
-    },
-    {
-      en: "Flash memory cells",
-      hi: "फ्लैश मेमोरी सेल्स"
-    },
-    {
-      en: "A blue-violet laser with a shorter wavelength",
-      hi: "कम तरंगदैर्ध्य वाली नीली-बैंगनी लेज़र"
-    },
-    {
-      en: "USB-based data transfer",
-      hi: "USB-आधारित डेटा ट्रांसफर"
-    }
+    { en: "Salary BETWEEN 30000 AND 50000 AND Department <> \"Temporary\"", hi: "Salary BETWEEN 30000 AND 50000 AND Department <> \"Temporary\"" },
+    { en: "Salary BETWEEN 30000 AND 50000 OR Department <> \"Temporary\"", hi: "Salary BETWEEN 30000 AND 50000 OR Department <> \"Temporary\"" },
+    { en: "Salary > 30000 OR Salary < 50000 AND Department = \"Temporary\"", hi: "Salary > 30000 OR Salary < 50000 AND Department = \"Temporary\"" },
+    { en: "Salary IN (30000, 50000) AND Department = \"Temporary\"", hi: "Salary IN (30000, 50000) AND Department = \"Temporary\"" }
   ],
-
-  answer: "C",
-
-  explanation: "Blu-ray uses a blue-violet laser with a shorter wavelength, allowing data to be stored more densely."
+  answer: "A",
+  explanation: "BETWEEN 30000 AND 50000 includes both boundary values. AND requires the Department condition to be true as well, and <> \"Temporary\" excludes records belonging to that department."
 },
 
 // Question 175
 {
-  en: "A digital camera uses a small removable storage medium to store photographs. A user later removes it and transfers the photographs to a computer using a compatible reader. Which storage device is most appropriate?",
-  hi: "एक डिजिटल कैमरा तस्वीरों को स्टोर करने के लिए एक छोटे हटाए जा सकने वाले स्टोरेज माध्यम का उपयोग करता है। उपयोगकर्ता बाद में इसे निकालकर एक संगत रीडर की सहायता से तस्वीरों को कंप्यूटर में स्थानांतरित करता है। कौन-सा स्टोरेज डिवाइस सबसे उपयुक्त है?",
-
+  en: "A user wants to retrieve records where City is either \"Shimla\" or \"Mandi\", but only when Status is \"Active\". Which logical expression correctly represents the condition?",
+  hi: "उपयोगकर्ता ऐसे रिकॉर्ड प्राप्त करना चाहता है जिनमें City या तो \"Shimla\" हो या \"Mandi\", लेकिन केवल तभी जब Status \"Active\" हो। कौन-सा लॉजिकल एक्सप्रेशन इस शर्त को सही ढंग से व्यक्त करता है?",
   options: [
-    {
-      en: "Blu-ray Disc",
-      hi: "Blu-ray डिस्क"
-    },
-    {
-      en: "Memory Card",
-      hi: "मेमोरी कार्ड"
-    },
-    {
-      en: "DVD",
-      hi: "DVD"
-    },
-    {
-      en: "External Hard Disk",
-      hi: "एक्सटर्नल हार्ड डिस्क"
-    }
+    { en: "City = \"Shimla\" OR (City = \"Mandi\" AND Status = \"Active\")", hi: "City = \"Shimla\" OR (City = \"Mandi\" AND Status = \"Active\")" },
+    { en: "City = \"Shimla\" AND City = \"Mandi\" AND Status = \"Active\"", hi: "City = \"Shimla\" AND City = \"Mandi\" AND Status = \"Active\"" },
+    { en: "City = \"Shimla\" OR City = \"Mandi\" OR Status = \"Active\"", hi: "City = \"Shimla\" OR City = \"Mandi\" OR Status = \"Active\"" },
+    { en: "(City = \"Shimla\" OR City = \"Mandi\") AND Status = \"Active\"", hi: "(City = \"Shimla\" OR City = \"Mandi\") AND Status = \"Active\"" }
   ],
-
-  answer: "B",
-
-  explanation: "A memory card is a small removable storage medium commonly used in digital cameras."
+  answer: "D",
+  explanation: "The parentheses group the two alternative cities, and AND requires Status to be Active for either city. This ensures that only active records from Shimla or Mandi are returned."
 },
-
 // Question 176
 {
-  en: "A user wants to keep a large backup of computer files on a device that can be connected externally and used independently of the computer's internal storage. Which option best represents external storage?",
-  hi: "एक उपयोगकर्ता कंप्यूटर की फाइलों का बड़ा बैकअप ऐसे डिवाइस पर रखना चाहता है जिसे बाहरी रूप से जोड़ा जा सके और कंप्यूटर के आंतरिक स्टोरेज से स्वतंत्र रूप से उपयोग किया जा सके। कौन-सा विकल्प बाहरी स्टोरेज का सबसे अच्छा उदाहरण है?",
-
+  en: "A field named Remarks may contain either a Null value or a zero-length text string (\"\"). A user wants to retrieve records where Remarks is neither Null nor an empty string. Which criterion most directly expresses this requirement?",
+  hi: "Remarks नामक फ़ील्ड में Null मान या शून्य लंबाई वाली टेक्स्ट स्ट्रिंग (\"\") हो सकती है। उपयोगकर्ता ऐसे रिकॉर्ड प्राप्त करना चाहता है जिनमें Remarks न तो Null हो और न ही खाली स्ट्रिंग। कौन-सा क्राइटेरिया इस आवश्यकता को सबसे सीधे व्यक्त करता है?",
   options: [
-    {
-      en: "CPU register",
-      hi: "CPU रजिस्टर"
-    },
-    {
-      en: "Cache memory",
-      hi: "कैश मेमोरी"
-    },
-    {
-      en: "External Hard Disk",
-      hi: "एक्सटर्नल हार्ड डिस्क"
-    },
-    {
-      en: "RAM",
-      hi: "RAM"
-    }
+    { en: "Remarks IS NULL", hi: "Remarks IS NULL" },
+    { en: "Remarks IS NOT NULL AND Remarks <> \"\"", hi: "Remarks IS NOT NULL AND Remarks <> \"\"" },
+    { en: "Remarks = \"\" OR Remarks IS NULL", hi: "Remarks = \"\" OR Remarks IS NULL" },
+    { en: "Remarks <> NULL", hi: "Remarks <> NULL" }
   ],
-
-  answer: "C",
-
-  explanation: "An external hard disk is a secondary storage device that can be connected externally for storing and backing up files."
+  answer: "B",
+  explanation: "IS NOT NULL excludes Null values, while <> \"\" excludes zero-length text strings. Both conditions must be true, so they are combined using AND."
 },
 
 // Question 177
 {
-  en: "Which statement best explains why the CPU is commonly referred to as the “brain” of a computer?",
-  hi: "कौन-सा कथन सबसे अच्छी तरह समझाता है कि CPU को सामान्यतः कंप्यूटर का “मस्तिष्क” क्यों कहा जाता है?",
-
+  en: "In Microsoft Access SQL-style wildcard criteria, which pattern matches text values that begin with \"Comp\" and may contain any number of characters afterward?",
+  hi: "Microsoft Access के SQL-शैली वाले वाइल्डकार्ड क्राइटेरिया में कौन-सा पैटर्न उन टेक्स्ट मानों से मेल खाता है जो \"Comp\" से शुरू होते हैं और जिनके बाद कोई भी संख्या में अक्षर हो सकते हैं?",
   options: [
-    {
-      en: "It permanently stores all user files",
-      hi: "यह सभी उपयोगकर्ता फाइलों को स्थायी रूप से स्टोर करता है"
-    },
-    {
-      en: "It controls and processes instructions and coordinates major computer operations",
-      hi: "यह निर्देशों को नियंत्रित और प्रोसेस करता है तथा कंप्यूटर के प्रमुख कार्यों का समन्वय करता है"
-    },
-    {
-      en: "It converts every type of data directly into printed output",
-      hi: "यह प्रत्येक प्रकार के डेटा को सीधे मुद्रित आउटपुट में बदलता है"
-    },
-    {
-      en: "It provides only the electrical power required by the computer",
-      hi: "यह केवल कंप्यूटर के लिए आवश्यक विद्युत शक्ति प्रदान करता है"
-    }
+    { en: "LIKE \"?Comp\"", hi: "LIKE \"?Comp\"" },
+    { en: "LIKE \"*Comp\"", hi: "LIKE \"*Comp\"" },
+    { en: "LIKE \"Comp*\"", hi: "LIKE \"Comp*\"" },
+    { en: "LIKE \"Comp?\"", hi: "LIKE \"Comp?\"" }
   ],
-
-  answer: "B",
-
-  explanation: "The CPU executes instructions, processes data, and coordinates major operations, which is why it is commonly called the computer's brain."
+  answer: "C",
+  explanation: "Under the standard Access wildcard convention, * matches zero or more characters. Therefore, LIKE \"Comp*\" matches text beginning with Comp, with any number of characters afterward."
 },
 
 // Question 178
 {
-  en: "A computer receives an instruction to add two numbers. The CPU interprets the instruction, performs the required operation, and makes the result available for further use. Which aspect of the CPU is primarily demonstrated?",
-  hi: "एक कंप्यूटर को दो संख्याओं को जोड़ने का निर्देश मिलता है। CPU निर्देश की व्याख्या करता है, आवश्यक ऑपरेशन करता है और परिणाम को आगे उपयोग के लिए उपलब्ध कराता है। CPU का कौन-सा पहलू मुख्य रूप से प्रदर्शित होता है?",
-
+  en: "In an MS Access query using the standard Access wildcard convention, what does the question mark (?) represent?",
+  hi: "मानक Access वाइल्डकार्ड परंपरा का उपयोग करने वाली MS Access क्वेरी में प्रश्नवाचक चिह्न (?) क्या दर्शाता है?",
   options: [
-    {
-      en: "Processing and execution of instructions",
-      hi: "निर्देशों का प्रोसेसिंग और निष्पादन"
-    },
-    {
-      en: "Permanent storage of user data",
-      hi: "उपयोगकर्ता डेटा का स्थायी स्टोरेज"
-    },
-    {
-      en: "Physical input of numerical data",
-      hi: "संख्यात्मक डेटा का भौतिक इनपुट"
-    },
-    {
-      en: "Production of printed output",
-      hi: "मुद्रित आउटपुट का उत्पादन"
-    }
+    { en: "Exactly one character", hi: "ठीक एक अक्षर" },
+    { en: "Any number of characters, including zero", hi: "शून्य सहित किसी भी संख्या में अक्षर" },
+    { en: "One or more characters", hi: "एक या अधिक अक्षर" },
+    { en: "Any numeric digit only", hi: "केवल कोई भी संख्यात्मक अंक" }
   ],
-
   answer: "A",
-
-  explanation: "The CPU interprets and executes the addition instruction, demonstrating instruction processing and execution."
+  explanation: "In the standard Access wildcard convention, ? matches exactly one character. The asterisk (*) matches zero or more characters."
 },
 
 // Question 179
 {
-  en: "Consider the following statements about the CPU: \n1. It executes instructions supplied by computer programs. \n2. It performs arithmetic and logical operations. \n3. It coordinates the execution of various operations within the computer. \n4. It is primarily used for permanently storing files. \nWhich statements are correct?",
-  hi: "CPU के बारे में निम्नलिखित कथनों पर विचार करें: \n1. यह कंप्यूटर प्रोग्राम द्वारा दिए गए निर्देशों को निष्पादित करता है। \n2. यह अंकगणितीय और तार्किक ऑपरेशन करता है। \n3. यह कंप्यूटर के भीतर विभिन्न कार्यों के निष्पादन का समन्वय करता है। \n4. इसका मुख्य उपयोग फाइलों को स्थायी रूप से स्टोर करना है। \nकौन-से कथन सही हैं?",
-
+  en: "A user wants to find text values that contain \"wood\" anywhere within the field, including values such as \"Woodland\", \"firewood\", and \"plywood\". Which criterion is most appropriate under the standard Access wildcard convention?",
+  hi: "उपयोगकर्ता ऐसे टेक्स्ट मान खोजना चाहता है जिनमें फ़ील्ड में कहीं भी \"wood\" मौजूद हो, जैसे \"Woodland\", \"firewood\" और \"plywood\"। मानक Access वाइल्डकार्ड परंपरा के अनुसार कौन-सा क्राइटेरिया सबसे उपयुक्त है?",
   options: [
-    {
-      en: "1 and 4 only",
-      hi: "केवल 1 और 4"
-    },
-    {
-      en: "2 and 4 only",
-      hi: "केवल 2 और 4"
-    },
-    {
-      en: "1, 2 and 3 only",
-      hi: "केवल 1, 2 और 3"
-    },
-    {
-      en: "1, 2, 3 and 4",
-      hi: "1, 2, 3 और 4"
-    }
+    { en: "LIKE \"wood?\"", hi: "LIKE \"wood?\"" },
+    { en: "LIKE \"*wood*\"", hi: "LIKE \"*wood*\"" },
+    { en: "LIKE \"wood*\"", hi: "LIKE \"wood*\"" },
+    { en: "LIKE \"?wood\"", hi: "LIKE \"?wood\"" }
   ],
-
-  answer: "C",
-
-  explanation: "The CPU executes instructions, performs arithmetic and logical operations, and coordinates computer operations. Permanent file storage is not its primary function."
+  answer: "B",
+  explanation: "The asterisks on both sides of wood allow any number of characters before and after it. Thus, LIKE \"*wood*\" matches text containing wood anywhere. Matching is generally case-insensitive in typical Access text comparisons."
 },
 
 // Question 180
 {
-  en: "A computer program contains thousands of instructions. Which CPU-related activity is most directly responsible for carrying out these instructions in their required sequence?",
-  hi: "एक कंप्यूटर प्रोग्राम में हजारों निर्देश होते हैं। इन निर्देशों को आवश्यक क्रम में निष्पादित करने के लिए CPU की कौन-सी गतिविधि सबसे सीधे तौर पर जिम्मेदार होती है?",
-
+  en: "Consider the following statements about wildcards in MS Access:\n1. The asterisk (*) can represent any number of characters, including zero, in the standard Access wildcard convention.\n2. The question mark (?) represents exactly one character in the standard Access wildcard convention.\n3. The LIKE operator can be used with wildcard patterns to match text.\n4. The wildcard convention is identical in every Access query context, including ANSI-92 SQL mode.\n\nWhich statements are correct?",
+  hi: "MS Access में वाइल्डकार्ड के बारे में निम्नलिखित कथनों पर विचार करें:\n1. मानक Access वाइल्डकार्ड परंपरा में तारांकन चिह्न (*) शून्य सहित किसी भी संख्या में अक्षरों को दर्शा सकता है।\n2. मानक Access वाइल्डकार्ड परंपरा में प्रश्नवाचक चिह्न (?) ठीक एक अक्षर दर्शाता है।\n3. टेक्स्ट से मेल खाने के लिए LIKE ऑपरेटर का उपयोग वाइल्डकार्ड पैटर्न के साथ किया जा सकता है।\n4. ANSI-92 SQL मोड सहित Access के प्रत्येक क्वेरी संदर्भ में वाइल्डकार्ड परंपरा समान होती है।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "Executing and controlling the instructions during processing",
-      hi: "प्रोसेसिंग के दौरान निर्देशों का निष्पादन और नियंत्रण करना"
-    },
-    {
-      en: "Printing each instruction on paper",
-      hi: "प्रत्येक निर्देश को कागज पर प्रिंट करना"
-    },
-    {
-      en: "Storing every instruction permanently on an external drive",
-      hi: "प्रत्येक निर्देश को एक्सटर्नल ड्राइव पर स्थायी रूप से स्टोर करना"
-    },
-    {
-      en: "Converting instructions into images for display",
-      hi: "निर्देशों को प्रदर्शन के लिए चित्रों में बदलना"
-    }
+    { en: "1 and 2 only", hi: "केवल 1 और 2" },
+    { en: "2, 3 and 4 only", hi: "केवल 2, 3 और 4" },
+    { en: "1, 3 and 4 only", hi: "केवल 1, 3 और 4" },
+    { en: "1, 2 and 3 only", hi: "केवल 1, 2 और 3" }
   ],
-
-  answer: "A",
-
-  explanation: "The CPU fetches, decodes, and executes instructions while controlling their execution during processing."
+  answer: "D",
+  explanation: "Statements 1, 2, and 3 are correct. In the standard Access wildcard convention, * means zero or more characters and ? means exactly one character. ANSI-92 SQL mode uses different wildcard symbols, such as % for zero or more characters and _ for exactly one character, so statement 4 is incorrect."
 },
-
 // Question 181
 {
-  en: "Which of the following is a basic function of the CPU?",
-  hi: "निम्नलिखित में से कौन-सा CPU का एक मूल कार्य है?",
-
+  en: "A user wants to find four-character codes that begin with \"A\" and end with \"7\". Which pattern matches this requirement under the standard Access wildcard convention?",
+  hi: "एक उपयोगकर्ता ऐसे चार-अक्षर वाले कोड खोजना चाहता है जो \"A\" से शुरू हों और \"7\" पर समाप्त हों। मानक Access वाइल्डकार्ड परंपरा के अनुसार कौन-सा पैटर्न इस आवश्यकता से मेल खाता है?",
   options: [
-    {
-      en: "Processing data and executing instructions",
-      hi: "डेटा को प्रोसेस करना और निर्देशों को निष्पादित करना"
-    },
-    {
-      en: "Printing documents",
-      hi: "दस्तावेज़ों को प्रिंट करना"
-    },
-    {
-      en: "Scanning images",
-      hi: "चित्रों को स्कैन करना"
-    },
-    {
-      en: "Producing sound",
-      hi: "ध्वनि उत्पन्न करना"
-    }
+    { en: "LIKE \"A*7\"", hi: "LIKE \"A*7\"" },
+    { en: "LIKE \"A??7\"", hi: "LIKE \"A??7\"" },
+    { en: "LIKE \"A?7\"", hi: "LIKE \"A?7\"" },
+    { en: "LIKE \"?A?7\"", hi: "LIKE \"?A?7\"" }
   ],
-
-  answer: "A",
-
-  explanation: "The CPU processes data and executes program instructions."
+  answer: "B",
+  explanation: "The code must contain exactly four characters: A, two characters represented by ??, and 7. Therefore, LIKE \"A??7\" is correct."
 },
 
 // Question 182
 {
-  en: "When the CPU performs calculations such as addition and subtraction on data, this activity is part of:",
-  hi: "जब CPU डेटा पर जोड़ और घटाव जैसी गणनाएँ करता है, तो यह गतिविधि किसका हिस्सा है?",
-
+  en: "A field contains product codes such as \"AB12\", \"ABX12\", \"ABXY12\", and \"AC12\". Which criterion matches codes beginning with \"AB\", followed by exactly one character, and ending with \"12\"?",
+  hi: "एक फ़ील्ड में \"AB12\", \"ABX12\", \"ABXY12\" और \"AC12\" जैसे उत्पाद कोड हैं। कौन-सा क्राइटेरिया उन कोड से मेल खाता है जो \"AB\" से शुरू होते हैं, उसके बाद ठीक एक अक्षर होता है और अंत में \"12\" होता है?",
   options: [
-    {
-      en: "Input",
-      hi: "इनपुट"
-    },
-    {
-      en: "Processing",
-      hi: "प्रोसेसिंग"
-    },
-    {
-      en: "Output",
-      hi: "आउटपुट"
-    },
-    {
-      en: "Storage",
-      hi: "स्टोरेज"
-    }
+    { en: "LIKE \"AB?12\"", hi: "LIKE \"AB?12\"" },
+    { en: "LIKE \"AB*12\"", hi: "LIKE \"AB*12\"" },
+    { en: "LIKE \"?AB12\"", hi: "LIKE \"?AB12\"" },
+    { en: "LIKE \"AB12?\"", hi: "LIKE \"AB12?\"" }
   ],
-
-  answer: "B",
-
-  explanation: "Performing arithmetic calculations on data is part of the processing stage."
+  answer: "A",
+  explanation: "The question mark (?) represents exactly one character under the standard Access wildcard convention. LIKE \"AB?12\" therefore matches codes such as ABX12, but not AB12 or ABXY12."
 },
 
 // Question 183
 {
-  en: "Which of the following best describes CPU processing?",
-  hi: "निम्नलिखित में से कौन-सा CPU प्रोसेसिंग का सबसे अच्छा वर्णन करता है?",
-
+  en: "A user applies the criterion LIKE \"*son\" to a text field. Which value would match this criterion under the standard Access wildcard convention?",
+  hi: "एक उपयोगकर्ता टेक्स्ट फ़ील्ड पर LIKE \"*son\" क्राइटेरिया लागू करता है। मानक Access वाइल्डकार्ड परंपरा के अनुसार कौन-सा मान इससे मेल खाएगा?",
   options: [
-    {
-      en: "The CPU receives data and instructions and performs operations according to them",
-      hi: "CPU डेटा और निर्देश प्राप्त करता है और उनके अनुसार कार्य करता है"
-    },
-    {
-      en: "The CPU only stores files permanently",
-      hi: "CPU केवल फाइलों को स्थायी रूप से स्टोर करता है"
-    },
-    {
-      en: "The CPU only displays information on the monitor",
-      hi: "CPU केवल मॉनिटर पर जानकारी प्रदर्शित करता है"
-    },
-    {
-      en: "The CPU only transfers printed documents to the computer",
-      hi: "CPU केवल मुद्रित दस्तावेज़ों को कंप्यूटर में स्थानांतरित करता है"
-    }
+    { en: "Sonnet", hi: "Sonnet" },
+    { en: "Sonny", hi: "Sonny" },
+    { en: "Johnson", hi: "Johnson" },
+    { en: "Songbird", hi: "Songbird" }
   ],
-
-  answer: "A",
-
-  explanation: "CPU processing involves receiving data and instructions and performing operations according to them."
+  answer: "C",
+  explanation: "The asterisk (*) matches any number of characters before the specified ending. LIKE \"*son\" matches text ending in son, such as Johnson."
 },
 
 // Question 184
 {
-  en: "A computer receives two numbers and calculates their sum before displaying the result. Which activity is performed by the CPU?",
-  hi: "एक कंप्यूटर दो संख्याएँ प्राप्त करता है और परिणाम प्रदर्शित करने से पहले उनका योग निकालता है। CPU द्वारा कौन-सी गतिविधि की जाती है?",
-
+  en: "A database uses standard Access wildcard conventions. A user wants to match values containing exactly five characters, with \"M\" as the first character and \"a\" as the last character. Which criterion is most appropriate?",
+  hi: "एक डेटाबेस में मानक Access वाइल्डकार्ड परंपरा का उपयोग किया जाता है। उपयोगकर्ता ठीक पाँच अक्षरों वाले मान खोजना चाहता है, जिनका पहला अक्षर \"M\" और अंतिम अक्षर \"a\" हो। कौन-सा क्राइटेरिया सबसे उपयुक्त है?",
   options: [
-    {
-      en: "Printing",
-      hi: "प्रिंटिंग"
-    },
-    {
-      en: "Scanning",
-      hi: "स्कैनिंग"
-    },
-    {
-      en: "Processing",
-      hi: "प्रोसेसिंग"
-    },
-    {
-      en: "Recording audio",
-      hi: "ऑडियो रिकॉर्ड करना"
-    }
+    { en: "LIKE \"M*a\"", hi: "LIKE \"M*a\"" },
+    { en: "LIKE \"M???a\"", hi: "LIKE \"M???a\"" },
+    { en: "LIKE \"?M??a\"", hi: "LIKE \"?M??a\"" },
+    { en: "LIKE \"M??a\"", hi: "LIKE \"M??a\"" }
   ],
-
-  answer: "C",
-
-  explanation: "Calculating the sum of two numbers is a processing activity performed by the CPU."
+  answer: "B",
+  explanation: "The pattern M???a contains M, exactly three characters represented by ???, and a, making a total of five characters."
 },
 
 // Question 185
 {
-  en: "Which combination correctly identifies the three main functional parts of a CPU?",
-  hi: "कौन-सा संयोजन CPU के तीन मुख्य कार्यात्मक भागों की सही पहचान करता है?",
-
+  en: "What is the primary purpose of a Parameter Query in Microsoft Access?",
+  hi: "Microsoft Access में Parameter Query का मुख्य उद्देश्य क्या है?",
   options: [
-    {
-      en: "ALU, Control Unit and Registers",
-      hi: "ALU, कंट्रोल यूनिट और रजिस्टर"
-    },
-    {
-      en: "RAM, ROM and Cache",
-      hi: "RAM, ROM और कैश"
-    },
-    {
-      en: "Input Unit, ALU and Printer",
-      hi: "इनपुट यूनिट, ALU और प्रिंटर"
-    },
-    {
-      en: "Control Unit, Hard Disk and Registers",
-      hi: "कंट्रोल यूनिट, हार्ड डिस्क और रजिस्टर"
-    }
+    { en: "To permanently change the data type of a field whenever the query runs.", hi: "क्वेरी चलने पर हर बार फ़ील्ड का डेटा टाइप स्थायी रूप से बदलना।" },
+    { en: "To create a new table automatically from every query result.", hi: "प्रत्येक क्वेरी परिणाम से अपने-आप नई टेबल बनाना।" },
+    { en: "To allow the user to supply a value at run time that is used as a query criterion.", hi: "उपयोगकर्ता को क्वेरी चलाते समय एक मान दर्ज करने देना, जिसका उपयोग क्वेरी क्राइटेरिया के रूप में किया जाता है।" },
+    { en: "To prevent users from modifying any records in the database.", hi: "उपयोगकर्ताओं को डेटाबेस में किसी भी रिकॉर्ड को संशोधित करने से रोकना।" }
   ],
-
-  answer: "A",
-
-  explanation: "The CPU's main functional parts are the ALU, Control Unit, and Registers."
+  answer: "C",
+  explanation: "A Parameter Query prompts the user to enter a value when the query runs and uses that value as a criterion to filter the results."
 },
-
 // Question 186
 {
-  en: "During the execution of an instruction, which CPU component primarily directs and coordinates the sequence of operations performed by other components?",
-  hi: "किसी निर्देश के निष्पादन के दौरान, CPU का कौन-सा घटक मुख्य रूप से अन्य घटकों द्वारा किए जाने वाले कार्यों के क्रम को निर्देशित और समन्वित करता है?",
-
+  en: "A Parameter Query asks the user to enter a department name and then displays employees belonging to that department. Which statement best describes this behavior?",
+  hi: "एक Parameter Query उपयोगकर्ता से विभाग का नाम दर्ज करने के लिए कहती है और फिर उस विभाग के कर्मचारियों को प्रदर्शित करती है। इस व्यवहार का सबसे सही वर्णन कौन-सा है?",
   options: [
-    {
-      en: "ALU",
-      hi: "ALU"
-    },
-    {
-      en: "Register",
-      hi: "रजिस्टर"
-    },
-    {
-      en: "Control Unit",
-      hi: "कंट्रोल यूनिट"
-    },
-    {
-      en: "Cache Memory",
-      hi: "कैश मेमोरी"
-    }
+    { en: "The entered value is used as a criterion when retrieving matching employee records.", hi: "दर्ज किए गए मान का उपयोग मेल खाने वाले कर्मचारी रिकॉर्ड प्राप्त करने के लिए क्राइटेरिया के रूप में किया जाता है।" },
+    { en: "The entered value automatically replaces the Department field in every record.", hi: "दर्ज किया गया मान प्रत्येक रिकॉर्ड में Department फ़ील्ड को अपने-आप बदल देता है।" },
+    { en: "The entered value becomes the primary key of the Employees table.", hi: "दर्ज किया गया मान Employees टेबल की Primary Key बन जाता है।" },
+    { en: "The query permanently stores the entered department as a new field.", hi: "क्वेरी दर्ज किए गए विभाग को स्थायी रूप से एक नए फ़ील्ड के रूप में संग्रहीत करती है।" }
   ],
-
-  answer: "C",
-
-  explanation: "The Control Unit directs and coordinates the sequence of operations during instruction execution."
+  answer: "A",
+  explanation: "A Parameter Query uses the value entered by the user as a query criterion to retrieve matching employee records. It does not automatically modify or add fields to the table."
 },
 
 // Question 187
 {
-  en: "The CPU needs to compare two values and determine whether one is greater than, less than, or equal to the other. Which component is primarily responsible for this operation?",
-  hi: "CPU को दो मानों की तुलना करके यह निर्धारित करना है कि एक दूसरे से बड़ा, छोटा या बराबर है। इस कार्य के लिए मुख्य रूप से कौन-सा घटक जिम्मेदार है?",
-
+  en: "Consider the following statements about Parameter Queries in MS Access:\n1. A parameter prompt can request a value from the user when the query runs.\n2. A parameter can be used in a comparison criterion.\n3. A query can contain more than one parameter.\n4. Every parameter must be defined as a Short Text value, regardless of the field being compared.\n\nWhich statements are correct?",
+  hi: "MS Access में Parameter Queries के बारे में निम्नलिखित कथनों पर विचार करें:\n1. क्वेरी चलने पर पैरामीटर प्रॉम्प्ट उपयोगकर्ता से मान माँग सकता है।\n2. पैरामीटर का उपयोग तुलना संबंधी क्राइटेरिया में किया जा सकता है।\n3. एक क्वेरी में एक से अधिक पैरामीटर हो सकते हैं।\n4. तुलना किए जा रहे फ़ील्ड की परवाह किए बिना प्रत्येक पैरामीटर को Short Text मान के रूप में परिभाषित करना आवश्यक है।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "Control Unit",
-      hi: "कंट्रोल यूनिट"
-    },
-    {
-      en: "ALU",
-      hi: "ALU"
-    },
-    {
-      en: "Register",
-      hi: "रजिस्टर"
-    },
-    {
-      en: "Input Unit",
-      hi: "इनपुट यूनिट"
-    }
+    { en: "1 and 4 only", hi: "केवल 1 और 4" },
+    { en: "2 and 3 only", hi: "केवल 2 और 3" },
+    { en: "1, 2 and 4 only", hi: "केवल 1, 2 और 4" },
+    { en: "1, 2 and 3 only", hi: "केवल 1, 2 और 3" }
   ],
-
-  answer: "B",
-
-  explanation: "The ALU performs logical operations such as comparing two values."
+  answer: "D",
+  explanation: "Statements 1, 2, and 3 are correct. A query can prompt for one or more values and use them in criteria. Parameters can have appropriate data types, such as Date/Time or Number, so statement 4 is incorrect."
 },
 
 // Question 188
 {
-  en: "Consider the following statements: \n1. ALU performs arithmetic and logical operations. \n2. Control Unit coordinates and controls the execution of instructions. \n3. Registers provide very fast temporary storage within the CPU. \n4. Registers are primarily used for permanently storing user files. \nWhich statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें: \n1. ALU अंकगणितीय और तार्किक ऑपरेशन करता है। \n2. कंट्रोल यूनिट निर्देशों के निष्पादन का समन्वय और नियंत्रण करती है। \n3. रजिस्टर CPU के भीतर बहुत तेज अस्थायी स्टोरेज प्रदान करते हैं। \n4. रजिस्टर मुख्य रूप से उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करने के लिए उपयोग किए जाते हैं। \nकौन-से कथन सही हैं?",
-
+  en: "A Parameter Query uses the following criterion under the Salary field:\n>[Enter minimum salary:]\n\nWhich interpretation is correct?",
+  hi: "एक Parameter Query में Salary फ़ील्ड के अंतर्गत निम्नलिखित क्राइटेरिया दिया गया है:\n>[Enter minimum salary:]\n\nइसकी सही व्याख्या क्या है?",
   options: [
-    {
-      en: "1 and 4 only",
-      hi: "केवल 1 और 4"
-    },
-    {
-      en: "2 and 3 only",
-      hi: "केवल 2 और 3"
-    },
-    {
-      en: "1, 2 and 3 only",
-      hi: "केवल 1, 2 और 3"
-    },
-    {
-      en: "1, 2, 3 and 4",
-      hi: "1, 2, 3 और 4"
-    }
+    { en: "It selects employees whose Salary is less than the entered value.", hi: "यह उन कर्मचारियों को चुनती है जिनकी Salary दर्ज किए गए मान से कम है।" },
+    { en: "It prompts the user for a value and selects records whose Salary is greater than that value.", hi: "यह उपयोगकर्ता से मान माँगती है और उन रिकॉर्ड्स को चुनती है जिनकी Salary उस मान से अधिक है।" },
+    { en: "It changes the Salary field's data type to Number.", hi: "यह Salary फ़ील्ड का डेटा टाइप Number में बदल देती है।" },
+    { en: "It permanently sets the minimum salary for all future database records.", hi: "यह भविष्य के सभी डेटाबेस रिकॉर्ड्स के लिए न्यूनतम वेतन स्थायी रूप से निर्धारित कर देती है।" }
   ],
-
-  answer: "C",
-
-  explanation: "ALU performs calculations and logic, the Control Unit coordinates execution, and registers provide fast temporary storage. Registers are not for permanent file storage."
+  answer: "B",
+  explanation: "The expression prompts the user to enter a minimum salary and uses the > operator to retrieve records whose Salary is greater than the entered value. The boundary value itself is excluded."
 },
 
 // Question 189
 {
-  en: "A CPU is executing an instruction that requires addition of two values. Which option correctly identifies the roles of the ALU and Control Unit?",
-  hi: "CPU एक ऐसे निर्देश को निष्पादित कर रहा है जिसमें दो मानों को जोड़ना आवश्यक है। कौन-सा विकल्प ALU और कंट्रोल यूनिट की भूमिकाओं की सही पहचान करता है?",
-
+  en: "A query prompts the user to enter a joining date and retrieves employees who joined after that date. Which configuration is most appropriate for reliable parameter handling?",
+  hi: "एक क्वेरी उपयोगकर्ता से नौकरी शुरू करने की तारीख दर्ज करने के लिए कहती है और उस तारीख के बाद नौकरी शुरू करने वाले कर्मचारियों को प्राप्त करती है। पैरामीटर को सही ढंग से संभालने के लिए कौन-सा कॉन्फ़िगरेशन सबसे उपयुक्त है?",
   options: [
-    {
-      en: "ALU controls the sequence; Control Unit performs addition",
-      hi: "ALU क्रम को नियंत्रित करता है; कंट्रोल यूनिट जोड़ करती है"
-    },
-    {
-      en: "ALU performs addition; Control Unit directs and coordinates the operation",
-      hi: "ALU जोड़ करता है; कंट्रोल यूनिट ऑपरेशन को निर्देशित और समन्वित करती है"
-    },
-    {
-      en: "ALU stores the values permanently; Control Unit displays the result",
-      hi: "ALU मानों को स्थायी रूप से स्टोर करता है; कंट्रोल यूनिट परिणाम प्रदर्शित करती है"
-    },
-    {
-      en: "ALU fetches data from external devices; Control Unit performs arithmetic",
-      hi: "ALU बाहरी डिवाइसों से डेटा प्राप्त करता है; कंट्रोल यूनिट अंकगणितीय कार्य करती है"
-    }
+    { en: "Use a Date/Time parameter and a comparison criterion that selects dates after the entered date.", hi: "Date/Time पैरामीटर और ऐसा तुलना क्राइटेरिया उपयोग करें जो दर्ज की गई तारीख के बाद की तारीखों को चुने।" },
+    { en: "Use an Attachment parameter because dates are stored as files.", hi: "Attachment पैरामीटर उपयोग करें क्योंकि तारीखें फ़ाइलों के रूप में संग्रहीत होती हैं।" },
+    { en: "Use a Yes/No parameter because the query returns either matching or nonmatching records.", hi: "Yes/No पैरामीटर उपयोग करें क्योंकि क्वेरी मेल खाने वाले या न खाने वाले रिकॉर्ड लौटाती है।" },
+    { en: "Use an AutoNumber parameter because every date must be unique.", hi: "AutoNumber पैरामीटर उपयोग करें क्योंकि प्रत्येक तारीख का अद्वितीय होना आवश्यक है।" }
   ],
-
-  answer: "B",
-
-  explanation: "The ALU performs the addition, while the Control Unit directs and coordinates the operation."
+  answer: "A",
+  explanation: "A Date/Time parameter is appropriate for a joining-date prompt. A comparison criterion such as > [Enter joining date:] retrieves employees whose joining dates are later than the entered date."
 },
 
 // Question 190
 {
-  en: "Which statement most accurately distinguishes CPU registers from the ALU?",
-  hi: "कौन-सा कथन CPU रजिस्टर और ALU के बीच सबसे सटीक अंतर बताता है?",
-
+  en: "A query must prompt for a minimum salary and a department name. It should return only employees whose salary exceeds the entered minimum and whose department matches the entered department. Which approach is correct?",
+  hi: "एक क्वेरी में न्यूनतम वेतन और विभाग का नाम दर्ज करने के लिए प्रॉम्प्ट होना चाहिए। इसे केवल उन्हीं कर्मचारियों को लौटाना है जिनका वेतन दर्ज किए गए न्यूनतम वेतन से अधिक हो और जिनका विभाग दर्ज किए गए विभाग से मेल खाता हो। कौन-सा तरीका सही है?",
   options: [
-    {
-      en: "Registers perform arithmetic operations, while ALU temporarily stores data",
-      hi: "रजिस्टर अंकगणितीय ऑपरेशन करते हैं, जबकि ALU डेटा को अस्थायी रूप से स्टोर करता है"
-    },
-    {
-      en: "Registers are external storage devices, while ALU is a memory unit",
-      hi: "रजिस्टर बाहरी स्टोरेज डिवाइस हैं, जबकि ALU एक मेमोरी यूनिट है"
-    },
-    {
-      en: "Registers provide very fast temporary storage, while ALU performs arithmetic and logical operations",
-      hi: "रजिस्टर बहुत तेज अस्थायी स्टोरेज प्रदान करते हैं, जबकि ALU अंकगणितीय और तार्किक ऑपरेशन करता है"
-    },
-    {
-      en: "Both perform exactly the same function but at different speeds",
-      hi: "दोनों बिल्कुल समान कार्य करते हैं, लेकिन अलग-अलग गति से"
-    }
+    { en: "Use one parameter for both fields and combine the criteria using OR.", hi: "दोनों फ़ील्ड के लिए एक ही पैरामीटर उपयोग करें और क्राइटेरिया को OR से जोड़ें।" },
+    { en: "Use two parameters but apply both values only to the Salary field.", hi: "दो पैरामीटर उपयोग करें, लेकिन दोनों मान केवल Salary फ़ील्ड पर लागू करें।" },
+    { en: "Use separate parameters for Salary and Department, with both criteria on the same Criteria row.", hi: "Salary और Department के लिए अलग-अलग पैरामीटर उपयोग करें और दोनों क्राइटेरिया को एक ही Criteria पंक्ति में रखें।" },
+    { en: "Use separate parameters on alternative Criteria and Or rows so that either condition is sufficient.", hi: "अलग-अलग पैरामीटर को वैकल्पिक Criteria और Or पंक्तियों में रखें, ताकि कोई एक शर्त पूरी होना पर्याप्त हो।" }
   ],
-
   answer: "C",
-
-  explanation: "Registers hold data and instructions temporarily at very high speed, while the ALU performs arithmetic and logical operations."
+  explanation: "Separate parameters are needed for the minimum salary and department name. Placing both criteria on the same Criteria row combines them with AND, so both conditions must be satisfied."
 },
 // Question 191
 {
-  en: "Consider the following functions: \n1. Performing comparison and logical operations \n2. Directing the sequence of instruction execution \n3. Holding intermediate values during processing \n4. Permanently storing user files. \n Which functions are correctly associated with ALU, Control Unit and Registers?",
-  hi: "निम्नलिखित कार्यों पर विचार करें: \n1. तुलना और तार्किक ऑपरेशन करना \n2. निर्देशों के निष्पादन के क्रम को निर्देशित करना \n3. प्रोसेसिंग के दौरान मध्यवर्ती मानों को रखना \n4. उपयोगकर्ता की फाइलों को स्थायी रूप से स्टोर करना। \n ALU, कंट्रोल यूनिट और रजिस्टर के साथ कौन-से कार्य सही रूप से जुड़े हैं?",
-
+  en: "A Parameter Query compares a user-entered value with a numeric field, but the parameter is treated as text and causes unexpected comparison behavior. What is the most appropriate design consideration?",
+  hi: "एक Parameter Query में उपयोगकर्ता द्वारा दर्ज किए गए मान की तुलना एक संख्यात्मक फ़ील्ड से की जाती है, लेकिन पैरामीटर को टेक्स्ट माना जाता है, जिससे तुलना का परिणाम अप्रत्याशित होता है। सबसे उपयुक्त डिज़ाइन संबंधी विचार क्या है?",
   options: [
-    {
-      en: "ALU–1, Control Unit–2, Registers–3",
-      hi: "ALU–1, कंट्रोल यूनिट–2, रजिस्टर–3"
-    },
-    {
-      en: "ALU–2, Control Unit–1, Registers–4",
-      hi: "ALU–2, कंट्रोल यूनिट–1, रजिस्टर–4"
-    },
-    {
-      en: "ALU–3, Control Unit–4, Registers–1",
-      hi: "ALU–3, कंट्रोल यूनिट–4, रजिस्टर–1"
-    },
-    {
-      en: "ALU–4, Control Unit–3, Registers–2",
-      hi: "ALU–4, कंट्रोल यूनिट–3, रजिस्टर–2"
-    }
+    { en: "Convert the numeric field into an Attachment field.", hi: "संख्यात्मक फ़ील्ड को Attachment फ़ील्ड में बदल दें।" },
+    { en: "Remove the parameter prompt and permanently store the entered value in every record.", hi: "पैरामीटर प्रॉम्प्ट हटाकर दर्ज किए गए मान को प्रत्येक रिकॉर्ड में स्थायी रूप से संग्रहीत करें।" },
+    { en: "Change the numeric field to Hyperlink so that text can be compared.", hi: "टेक्स्ट की तुलना करने के लिए संख्यात्मक फ़ील्ड को Hyperlink में बदल दें।" },
+    { en: "Define the parameter's data type appropriately so that the supplied value is interpreted consistently with the intended comparison.", hi: "पैरामीटर का डेटा टाइप उचित रूप से निर्धारित करें, ताकि दर्ज किए गए मान की व्याख्या अपेक्षित तुलना के अनुरूप हो।" }
   ],
-
-  answer: "A",
-
-  explanation: "The ALU performs logical operations, the Control Unit directs instruction execution, and registers hold intermediate values."
+  answer: "D",
+  explanation: "Defining the parameter with an appropriate data type, such as Number or Currency, helps Access interpret the supplied value correctly for numeric comparisons."
 },
+
 // Question 192
 {
-  en: "During processing, the CPU must coordinate an instruction, temporarily hold required data, and perform a calculation. Which sequence correctly maps these tasks to CPU components?",
-  hi: "प्रोसेसिंग के दौरान CPU को किसी निर्देश का समन्वय करना, आवश्यक डेटा को अस्थायी रूप से रखना और गणना करना होता है। कौन-सा क्रम इन कार्यों को CPU के घटकों से सही रूप से जोड़ता है?",
-
+  en: "A query must retrieve orders placed between two dates entered by the user. Both boundary dates should be included. Which criterion most appropriately represents this requirement in Access Query Design?",
+  hi: "एक क्वेरी में उपयोगकर्ता द्वारा दर्ज की गई दो तारीखों के बीच दिए गए ऑर्डर प्राप्त करने हैं। दोनों अंतिम तारीखें शामिल होनी चाहिए। Access Query Design में कौन-सा क्राइटेरिया इस आवश्यकता को सबसे उपयुक्त रूप से दर्शाता है?",
   options: [
-    {
-      en: "Control Unit → Registers → ALU",
-      hi: "कंट्रोल यूनिट → रजिस्टर → ALU"
-    },
-    {
-      en: "Registers → Control Unit → ALU",
-      hi: "रजिस्टर → कंट्रोल यूनिट → ALU"
-    },
-    {
-      en: "ALU → Registers → Control Unit",
-      hi: "ALU → रजिस्टर → कंट्रोल यूनिट"
-    },
-    {
-      en: "Control Unit → ALU → Registers",
-      hi: "कंट्रोल यूनिट → ALU → रजिस्टर"
-    }
+    { en: ">[Enter start date:] OR <[Enter end date:]", hi: ">[Enter start date:] OR <[Enter end date:]" },
+    { en: "Between [Enter start date:] And [Enter end date:]", hi: "Between [Enter start date:] And [Enter end date:]" },
+    { en: "=[Enter start date:] AND =[Enter end date:]", hi: "=[Enter start date:] AND =[Enter end date:]" },
+    { en: "NOT [Enter start date:] AND NOT [Enter end date:]", hi: "NOT [Enter start date:] AND NOT [Enter end date:]" }
   ],
-
-  answer: "A",
-
-  explanation: "The Control Unit coordinates instructions, registers temporarily hold data, and the ALU performs calculations."
+  answer: "B",
+  explanation: "BETWEEN ... AND ... includes both boundary values. The parameter prompts supply the start and end dates used to filter the orders."
 },
 
 // Question 193
 {
-  en: "Which of the following operations is performed by the ALU but does NOT involve ordinary arithmetic calculation?",
-  hi: "निम्नलिखित में से कौन-सा ऑपरेशन ALU द्वारा किया जाता है लेकिन इसमें सामान्य अंकगणितीय गणना शामिल नहीं होती है?",
-
+  en: "In an MS Access query, a user wants to calculate the total amount for each order using Quantity and UnitPrice fields. Which calculated field expression is most appropriate?",
+  hi: "MS Access क्वेरी में उपयोगकर्ता Quantity और UnitPrice फ़ील्ड का उपयोग करके प्रत्येक ऑर्डर की कुल राशि की गणना करना चाहता है। कौन-सा कैलकुलेटेड फ़ील्ड एक्सप्रेशन सबसे उपयुक्त है?",
   options: [
-    {
-      en: "Addition",
-      hi: "जोड़"
-    },
-    {
-      en: "Multiplication",
-      hi: "गुणा"
-    },
-    {
-      en: "Comparison of two values",
-      hi: "दो मानों की तुलना"
-    },
-    {
-      en: "Division",
-      hi: "भाग"
-    }
+    { en: "TotalAmount: [Quantity] + [UnitPrice]", hi: "TotalAmount: [Quantity] + [UnitPrice]" },
+    { en: "TotalAmount: [Quantity] * [UnitPrice]", hi: "TotalAmount: [Quantity] * [UnitPrice]" },
+    { en: "TotalAmount: [Quantity] / [UnitPrice]", hi: "TotalAmount: [Quantity] / [UnitPrice]" },
+    { en: "TotalAmount: [Quantity] - [UnitPrice]", hi: "TotalAmount: [Quantity] - [UnitPrice]" }
   ],
-
-  answer: "C",
-
-  explanation: "Comparison is a logical operation performed by the ALU rather than an ordinary arithmetic calculation."
+  answer: "B",
+  explanation: "Multiplying Quantity by UnitPrice calculates the total amount for an order line. The expression uses TotalAmount as the calculated column name."
 },
 
 // Question 194
 {
-  en: "An ALU receives the binary values 1010 and 0011 and is instructed to perform an arithmetic operation. Which result would it produce for addition?",
-  hi: "एक ALU को बाइनरी मान 1010 और 0011 दिए जाते हैं और उसे अंकगणितीय ऑपरेशन करने का निर्देश दिया जाता है। जोड़ करने पर इसका परिणाम क्या होगा?",
-
+  en: "Consider the following statements about calculated fields and expressions in MS Access:\n1. An expression can combine field references, operators, constants, and functions.\n2. A calculated query field can display a value derived from existing fields.\n3. A calculated query field necessarily creates a new physical field in the underlying source table.\n4. Expression Builder can assist in constructing expressions.\n\nWhich statements are correct?",
+  hi: "MS Access में कैलकुलेटेड फ़ील्ड और एक्सप्रेशन के बारे में निम्नलिखित कथनों पर विचार करें:\n1. कोई एक्सप्रेशन फ़ील्ड रेफरेंस, ऑपरेटर, स्थिर मान और फ़ंक्शन को जोड़ सकता है।\n2. कैलकुलेटेड क्वेरी फ़ील्ड मौजूदा फ़ील्ड से प्राप्त मान प्रदर्शित कर सकता है।\n3. कैलकुलेटेड क्वेरी फ़ील्ड अनिवार्य रूप से स्रोत टेबल में एक नया भौतिक फ़ील्ड बनाता है।\n4. Expression Builder एक्सप्रेशन बनाने में सहायता कर सकता है।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "1101",
-      hi: "1101"
-    },
-    {
-      en: "1001",
-      hi: "1001"
-    },
-    {
-      en: "1110",
-      hi: "1110"
-    },
-    {
-      en: "1011",
-      hi: "1011"
-    }
+    { en: "1 and 2 only", hi: "केवल 1 और 2" },
+    { en: "2, 3 and 4 only", hi: "केवल 2, 3 और 4" },
+    { en: "1, 2 and 4 only", hi: "केवल 1, 2 और 4" },
+    { en: "1, 2, 3 and 4", hi: "1, 2, 3 और 4" }
   ],
-
-  answer: "A",
-
-  explanation: "In binary, 1010 (10) + 0011 (3) = 1101 (13)."
+  answer: "C",
+  explanation: "Statements 1, 2, and 4 are correct. A calculated query field derives and displays a value from an expression but does not necessarily create a physical field in the underlying source table."
 },
 
 // Question 195
 {
-  en: "Which set contains only operations that can be associated with the ALU?",
-  hi: "किस समूह में केवल वे ऑपरेशन शामिल हैं जो ALU से संबंधित हो सकते हैं?",
-
+  en: "A query contains the fields Quantity and UnitPrice. The user creates the expression:\n\nLineTotal: [Quantity] * [UnitPrice]\n\nWhat does \"LineTotal:\" represent in this expression?",
+  hi: "एक क्वेरी में Quantity और UnitPrice फ़ील्ड हैं। उपयोगकर्ता निम्नलिखित एक्सप्रेशन बनाता है:\n\nLineTotal: [Quantity] * [UnitPrice]\n\nइस एक्सप्रेशन में \"LineTotal:\" क्या दर्शाता है?",
   options: [
-    {
-      en: "Addition, subtraction, comparison",
-      hi: "जोड़, घटाव, तुलना"
-    },
-    {
-      en: "Instruction fetching, printing, scanning",
-      hi: "निर्देश प्राप्त करना, प्रिंटिंग, स्कैनिंग"
-    },
-    {
-      en: "File storage, instruction decoding, printing",
-      hi: "फाइल स्टोरेज, निर्देशों का डिकोडिंग, प्रिंटिंग"
-    },
-    {
-      en: "Data entry, permanent storage, display",
-      hi: "डेटा एंट्री, स्थायी स्टोरेज, डिस्प्ले"
-    }
+    { en: "The alias or name assigned to the calculated output column.", hi: "कैलकुलेटेड आउटपुट कॉलम को दिया गया नाम या उपनाम।" },
+    { en: "A field that Access automatically adds to the original table permanently.", hi: "एक ऐसा फ़ील्ड जिसे Access मूल टेबल में स्थायी रूप से अपने-आप जोड़ देता है।" },
+    { en: "A multiplication operator that combines two tables.", hi: "एक गुणा ऑपरेटर जो दो टेबल को जोड़ता है।" },
+    { en: "A parameter prompt requiring the user to enter a total.", hi: "एक पैरामीटर प्रॉम्प्ट जिसमें उपयोगकर्ता को कुल राशि दर्ज करनी होती है।" }
   ],
-
   answer: "A",
-
-  explanation: "The ALU performs arithmetic operations such as addition and subtraction and logical operations such as comparison."
+  explanation: "LineTotal is the alias assigned to the calculated output column. The expression calculates the value by multiplying Quantity by UnitPrice; it does not automatically create a permanent field in the source table."
 },
 // Question 196
 {
-  en: "A CPU needs to determine whether two values are equal before deciding which instruction should execute next. Which ALU capability is directly involved?",
-  hi: "CPU को यह निर्धारित करना है कि दो मान बराबर हैं या नहीं, ताकि यह तय किया जा सके कि अगला कौन-सा निर्देश निष्पादित होगा। इसमें ALU की कौन-सी क्षमता सीधे शामिल है?",
-
+  en: "A calculated field uses the expression:\n\nBalance: [OpeningBalance] + [Credit] - [Debit]\n\nIf OpeningBalance = 1000, Credit = 250, and Debit = 400, what value should the calculated field return?",
+  hi: "एक कैलकुलेटेड फ़ील्ड निम्नलिखित एक्सप्रेशन का उपयोग करता है:\n\nBalance: [OpeningBalance] + [Credit] - [Debit]\n\nयदि OpeningBalance = 1000, Credit = 250 और Debit = 400 है, तो कैलकुलेटेड फ़ील्ड का मान क्या होगा?",
   options: [
-    {
-      en: "Arithmetic addition",
-      hi: "अंकगणितीय जोड़"
-    },
-    {
-      en: "Logical comparison",
-      hi: "तार्किक तुलना"
-    },
-    {
-      en: "Permanent data storage",
-      hi: "स्थायी डेटा स्टोरेज"
-    },
-    {
-      en: "Instruction input",
-      hi: "निर्देश इनपुट"
-    }
+    { en: "650", hi: "650" },
+    { en: "1,650", hi: "1,650" },
+    { en: "1,250", hi: "1,250" },
+    { en: "850", hi: "850" }
   ],
-
-  answer: "B",
-
-  explanation: "Determining whether two values are equal is a logical comparison performed by the ALU."
+  answer: "D",
+  explanation: "Balance = 1000 + 250 - 400 = 850. Therefore, the calculated field returns 850."
 },
 
 // Question 197
 {
-  en: "Which operation is an example of a comparison performed by the ALU?",
-  hi: "निम्नलिखित में से कौन-सा ALU द्वारा की जाने वाली तुलना का उदाहरण है?",
-
+  en: "A user creates a calculated field in a query using two fields from the source table. Which statement is most accurate?",
+  hi: "एक उपयोगकर्ता स्रोत टेबल के दो फ़ील्ड का उपयोग करके क्वेरी में एक कैलकुलेटेड फ़ील्ड बनाता है। कौन-सा कथन सबसे सटीक है?",
   options: [
-    {
-      en: "15 + 5",
-      hi: "15 + 5"
-    },
-    {
-      en: "20 ÷ 4",
-      hi: "20 ÷ 4"
-    },
-    {
-      en: "25 > 18",
-      hi: "25 > 18"
-    },
-    {
-      en: "12 × 3",
-      hi: "12 × 3"
-    }
+    { en: "The calculated result must always be stored permanently in the source table.", hi: "कैलकुलेटेड परिणाम को हमेशा स्रोत टेबल में स्थायी रूप से संग्रहीत करना आवश्यक है।" },
+    { en: "The expression can calculate the result when the query runs without necessarily storing it as a separate physical field in the source table.", hi: "एक्सप्रेशन क्वेरी चलने पर परिणाम की गणना कर सकता है, और इसे स्रोत टेबल में अलग भौतिक फ़ील्ड के रूप में संग्रहीत करना आवश्यक नहीं है।" },
+    { en: "The source fields become read-only as soon as the expression is created.", hi: "एक्सप्रेशन बनते ही स्रोत फ़ील्ड केवल पढ़ने योग्य हो जाते हैं।" },
+    { en: "A calculated query field can use only addition and cannot use multiplication or division.", hi: "कैलकुलेटेड क्वेरी फ़ील्ड में केवल जोड़ का उपयोग किया जा सकता है, गुणा या भाग का नहीं।" }
   ],
-
-  answer: "C",
-
-  explanation: "The expression 25 > 18 compares two values and is therefore a logical comparison."
+  answer: "B",
+  explanation: "A calculated query field can derive a result from existing fields whenever the query runs. The result does not necessarily need to be stored as a separate physical field in the source table."
 },
 
 // Question 198
 {
-  en: "If the ALU compares two values and finds them equal, which condition is obtained?",
-  hi: "यदि ALU दो मानों की तुलना करता है और उन्हें बराबर पाता है, तो कौन-सी स्थिति प्राप्त होती है?",
-
+  en: "A user wants to display an amount calculated as Price multiplied by Quantity in a form, without necessarily adding a stored field to the underlying table. Which approach is most appropriate?",
+  hi: "एक उपयोगकर्ता फ़ॉर्म में Price को Quantity से गुणा करके प्राप्त राशि प्रदर्शित करना चाहता है, लेकिन अंतर्निहित टेबल में अलग संग्रहीत फ़ील्ड जोड़ना आवश्यक नहीं है। कौन-सा तरीका सबसे उपयुक्त है?",
   options: [
-    {
-      en: "First value is greater",
-      hi: "पहला मान बड़ा है"
-    },
-    {
-      en: "Both values are equal",
-      hi: "दोनों मान बराबर हैं"
-    },
-    {
-      en: "First value is smaller",
-      hi: "पहला मान छोटा है"
-    },
-    {
-      en: "Values are deleted",
-      hi: "मान हटा दिए जाते हैं"
-    }
+    { en: "Rename the Price field to Quantity.", hi: "Price फ़ील्ड का नाम बदलकर Quantity कर दें।" },
+    { en: "Create a primary key from Price and Quantity.", hi: "Price और Quantity से Primary Key बनाएँ।" },
+    { en: "Use a calculated control, such as a text box whose Control Source contains an appropriate expression.", hi: "Calculated Control का उपयोग करें, जैसे ऐसा Text Box जिसके Control Source में उपयुक्त एक्सप्रेशन हो।" },
+    { en: "Change the form's Status Bar text to the required formula.", hi: "फ़ॉर्म के Status Bar टेक्स्ट को आवश्यक फ़ॉर्मूले में बदल दें।" }
   ],
-
-  answer: "B",
-
-  explanation: "If the comparison finds no difference between the two values, the condition is that both values are equal."
+  answer: "C",
+  explanation: "A text box on a form can use an expression such as =[Price]*[Quantity] in its Control Source to display the calculated amount without necessarily storing it in the underlying table."
 },
 
 // Question 199
 {
-  en: "What is the primary role of the ALU within the CPU?",
-  hi: "CPU के भीतर ALU की प्राथमिक भूमिका क्या है?",
-
+  en: "A report displays the values of Quantity and UnitPrice for each order. The designer wants to show the calculated line total in the report without creating a stored field in the table. Which approach is most appropriate?",
+  hi: "एक रिपोर्ट प्रत्येक ऑर्डर के लिए Quantity और UnitPrice के मान प्रदर्शित करती है। डिज़ाइनर टेबल में संग्रहीत फ़ील्ड बनाए बिना रिपोर्ट में गणना की गई लाइन की कुल राशि दिखाना चाहता है। कौन-सा तरीका सबसे उपयुक्त है?",
   options: [
-    {
-      en: "To perform arithmetic and logical operations on data",
-      hi: "डेटा पर अंकगणितीय और तार्किक ऑपरेशन करना"
-    },
-    {
-      en: "To permanently store programs",
-      hi: "प्रोग्रामों को स्थायी रूप से स्टोर करना"
-    },
-    {
-      en: "To control external devices directly",
-      hi: "बाहरी डिवाइसों को सीधे नियंत्रित करना"
-    },
-    {
-      en: "To display results on the monitor",
-      hi: "मॉनिटर पर परिणाम प्रदर्शित करना"
-    }
+    { en: "Add a new record to the source table for every calculated total.", hi: "प्रत्येक गणना की गई कुल राशि के लिए स्रोत टेबल में नया रिकॉर्ड जोड़ें।" },
+    { en: "Use the report's Caption property to perform the multiplication.", hi: "गुणा करने के लिए रिपोर्ट की Caption प्रॉपर्टी का उपयोग करें।" },
+    { en: "Change UnitPrice to the AutoNumber data type.", hi: "UnitPrice का डेटा टाइप AutoNumber में बदल दें।" },
+    { en: "Add a calculated report control with an expression such as =[Quantity]*[UnitPrice].", hi: "=[Quantity]*[UnitPrice] जैसे एक्सप्रेशन वाला Calculated Report Control जोड़ें।" }
   ],
-
-  answer: "A",
-
-  explanation: "The ALU performs arithmetic and logical operations on data within the CPU."
+  answer: "D",
+  explanation: "A calculated control in the report can use the expression =[Quantity]*[UnitPrice] to display the line total without creating a stored field in the source table."
 },
 
 // Question 200
 {
-  en: "During the execution of a program, the ALU compares two numbers to determine which is larger. This demonstrates which function of the ALU?",
-  hi: "किसी प्रोग्राम के निष्पादन के दौरान, ALU यह निर्धारित करने के लिए दो संख्याओं की तुलना करता है कि कौन-सी बड़ी है। यह ALU के किस कार्य को दर्शाता है?",
-
+  en: "An MS Access query contains the calculated field:\n\nNetAmount: ([Quantity] * [UnitPrice]) - [Discount]\n\nWhich statement best describes the expression?",
+  hi: "एक MS Access क्वेरी में निम्नलिखित कैलकुलेटेड फ़ील्ड है:\n\nNetAmount: ([Quantity] * [UnitPrice]) - [Discount]\n\nकौन-सा कथन इस एक्सप्रेशन का सबसे सही वर्णन करता है?",
   options: [
-    {
-      en: "Data storage",
-      hi: "डेटा स्टोरेज"
-    },
-    {
-      en: "Input operation",
-      hi: "इनपुट ऑपरेशन"
-    },
-    {
-      en: "Logical/comparison operation",
-      hi: "तार्किक/तुलना ऑपरेशन"
-    },
-    {
-      en: "Output operation",
-      hi: "आउटपुट ऑपरेशन"
-    }
+    { en: "It calculates the quantity multiplied by the unit price and then subtracts the discount; parentheses make the intended calculation order explicit.", hi: "यह Quantity को UnitPrice से गुणा करता है और फिर Discount घटाता है; कोष्ठक गणना का अपेक्षित क्रम स्पष्ट करते हैं।" },
+    { en: "It adds the discount to the quantity before multiplying by the unit price.", hi: "यह UnitPrice से गुणा करने से पहले Discount को Quantity में जोड़ता है।" },
+    { en: "It permanently updates the UnitPrice field by subtracting the discount.", hi: "यह Discount घटाकर UnitPrice फ़ील्ड को स्थायी रूप से अपडेट करता है।" },
+    { en: "It creates a relationship between Quantity and Discount.", hi: "यह Quantity और Discount के बीच Relationship बनाता है।" }
   ],
-
-  answer: "C",
-
-  explanation: "Comparing two numbers to determine which is larger is a logical/comparison operation performed by the ALU."
+  answer: "A",
+  explanation: "The expression first multiplies Quantity by UnitPrice and then subtracts Discount. NetAmount is the alias for the calculated output column; the expression does not permanently update the source fields or create a relationship."
 },
-
 // Question 201
 {
-  en: "What is the primary function of the Control Unit (CU) in a CPU?",
-  hi: "CPU में कंट्रोल यूनिट (CU) का प्राथमिक कार्य क्या है?",
-
+  en: "An MS Access query contains the expression TotalSales: Sum([Amount]). What does this expression calculate when used in an appropriate aggregate query?",
+  hi: "एक MS Access क्वेरी में TotalSales: Sum([Amount]) एक्सप्रेशन दिया गया है। उपयुक्त Aggregate Query में उपयोग किए जाने पर यह एक्सप्रेशन क्या गणना करता है?",
   options: [
-    {
-      en: "To store files permanently",
-      hi: "फाइलों को स्थायी रूप से स्टोर करना"
-    },
-    {
-      en: "To perform arithmetic calculations",
-      hi: "अंकगणितीय गणनाएँ करना"
-    },
-    {
-      en: "To control and coordinate the execution of instructions",
-      hi: "निर्देशों के निष्पादन को नियंत्रित और समन्वित करना"
-    },
-    {
-      en: "To display output on the monitor",
-      hi: "मॉनिटर पर आउटपुट प्रदर्शित करना"
-    }
+    { en: "The largest value in the Amount field.", hi: "Amount फ़ील्ड का सबसे बड़ा मान।" },
+    { en: "The number of records containing an Amount value.", hi: "Amount मान वाले रिकॉर्ड्स की संख्या।" },
+    { en: "The sum of the Amount values in the applicable group of records.", hi: "संबंधित रिकॉर्ड समूह में Amount मानों का कुल योग।" },
+    { en: "The average of all values in the Amount field.", hi: "Amount फ़ील्ड के सभी मानों का औसत।" }
   ],
-
   answer: "C",
-
-  explanation: "The Control Unit controls and coordinates the execution of instructions within the CPU."
+  explanation: "The Sum aggregate function adds the applicable numeric values in the Amount field. In a grouped query, it calculates the total separately for each group."
 },
 
 // Question 202
 {
-  en: "Which CPU component directs other components about when and how to perform their required operations?",
-  hi: "CPU का कौन-सा घटक अन्य घटकों को यह निर्देश देता है कि उनके आवश्यक कार्य कब और कैसे किए जाएँ?",
-
+  en: "A table contains the following values in the Marks field: 40, 60, 80, and Null. What result will the Avg aggregate function return for Marks?",
+  hi: "एक टेबल के Marks फ़ील्ड में निम्नलिखित मान हैं: 40, 60, 80 और Null। Marks के लिए Avg Aggregate Function क्या परिणाम देगा?",
   options: [
-    {
-      en: "Control Unit",
-      hi: "कंट्रोल यूनिट"
-    },
-    {
-      en: "ALU",
-      hi: "ALU"
-    },
-    {
-      en: "Register",
-      hi: "रजिस्टर"
-    },
-    {
-      en: "Cache",
-      hi: "कैश"
-    }
+    { en: "45", hi: "45" },
+    { en: "60", hi: "60" },
+    { en: "80", hi: "80" },
+    { en: "180", hi: "180" }
   ],
-
-  answer: "A",
-
-  explanation: "The Control Unit directs and coordinates the activities of other CPU components."
+  answer: "B",
+  explanation: "Avg ignores Null values. The average is (40 + 60 + 80) / 3 = 60."
 },
 
 // Question 203
 {
-  en: "When a program instruction is being executed, the Control Unit primarily:",
-  hi: "जब किसी प्रोग्राम के निर्देश का निष्पादन हो रहा होता है, तो कंट्रोल यूनिट मुख्य रूप से:",
-
+  en: "Consider the following statements about aggregate functions in MS Access:\n1. Sum calculates the total of applicable numeric values.\n2. Avg calculates the average of applicable numeric values.\n3. Count(FieldName) counts records in which that field has a non-Null value.\n4. Count(*) counts all rows in the applicable result set, including rows containing Null values in individual fields.\n\nWhich statements are correct?",
+  hi: "MS Access में Aggregate Functions के बारे में निम्नलिखित कथनों पर विचार करें:\n1. Sum संबंधित संख्यात्मक मानों का कुल योग निकालता है।\n2. Avg संबंधित संख्यात्मक मानों का औसत निकालता है।\n3. Count(FieldName) उन रिकॉर्ड्स की गणना करता है जिनमें उस फ़ील्ड का मान Null नहीं है।\n4. Count(*) संबंधित परिणाम सेट की सभी पंक्तियों की गणना करता है, भले ही अलग-अलग फ़ील्ड में Null मान हों।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "Prints the final result",
-      hi: "अंतिम परिणाम प्रिंट करती है"
-    },
-    {
-      en: "Coordinates the activities of different components",
-      hi: "विभिन्न घटकों की गतिविधियों का समन्वय करती है"
-    },
-    {
-      en: "Stores all user files permanently",
-      hi: "सभी उपयोगकर्ता फाइलों को स्थायी रूप से स्टोर करती है"
-    },
-    {
-      en: "Performs all arithmetic calculations itself",
-      hi: "सभी अंकगणितीय गणनाएँ स्वयं करती है"
-    }
+    { en: "1 and 2 only", hi: "केवल 1 और 2" },
+    { en: "2, 3 and 4 only", hi: "केवल 2, 3 और 4" },
+    { en: "1, 2 and 3 only", hi: "केवल 1, 2 और 3" },
+    { en: "1, 2, 3 and 4", hi: "1, 2, 3 और 4" }
   ],
-
-  answer: "B",
-
-  explanation: "The Control Unit coordinates the activities of different components during instruction execution."
+  answer: "D",
+  explanation: "All four statements are correct. Sum totals applicable numeric values, Avg calculates their average, Count(FieldName) excludes Null values in that field, and Count(*) counts all rows in the result set."
 },
 
 // Question 204
 {
-  en: "Which statement correctly describes the role of the Control Unit?",
-  hi: "कौन-सा कथन कंट्रोल यूनिट की भूमिका का सही वर्णन करता है?",
-
+  en: "A query groups employee records by Department and calculates Max([Salary]) for each department. What does the result represent?",
+  hi: "एक क्वेरी कर्मचारी रिकॉर्ड्स को Department के अनुसार समूहित करती है और प्रत्येक विभाग के लिए Max([Salary]) की गणना करती है। परिणाम क्या दर्शाता है?",
   options: [
-    {
-      en: "It performs only multiplication and division",
-      hi: "यह केवल गुणा और भाग करता है"
-    },
-    {
-      en: "It permanently stores data",
-      hi: "यह डेटा को स्थायी रूप से स्टोर करता है"
-    },
-    {
-      en: "It converts printed documents into digital data",
-      hi: "यह मुद्रित दस्तावेज़ों को डिजिटल डेटा में परिवर्तित करता है"
-    },
-    {
-      en: "It manages and coordinates the sequence of operations during instruction execution",
-      hi: "यह निर्देशों के निष्पादन के दौरान ऑपरेशनों के क्रम का प्रबंधन और समन्वय करता है"
-    }
+    { en: "The highest salary within each department.", hi: "प्रत्येक विभाग में सबसे अधिक वेतन।" },
+    { en: "The highest salary across the entire database, repeated for every department.", hi: "पूरे डेटाबेस का सबसे अधिक वेतन, जिसे प्रत्येक विभाग के लिए दोहराया जाता है।" },
+    { en: "The total salary paid by each department.", hi: "प्रत्येक विभाग द्वारा दिया जाने वाला कुल वेतन।" },
+    { en: "The number of employees in each department.", hi: "प्रत्येक विभाग में कर्मचारियों की संख्या।" }
   ],
-
-  answer: "D",
-
-  explanation: "The Control Unit manages and coordinates the sequence of operations required to execute instructions."
+  answer: "A",
+  explanation: "When records are grouped by Department, Max([Salary]) returns the highest Salary value within each department group."
 },
 
 // Question 205
 {
-  en: "In the basic Fetch-Decode-Execute cycle, what happens during the Fetch stage?",
-  hi: "मूल Fetch-Decode-Execute चक्र में Fetch चरण के दौरान क्या होता है?",
-
+  en: "A table contains five records. The Marks field contains the values 25, 40, Null, 55, and 70. Which pair of results is correct for Count(*) and Count([Marks]), respectively?",
+  hi: "एक टेबल में पाँच रिकॉर्ड हैं। Marks फ़ील्ड में 25, 40, Null, 55 और 70 मान हैं। Count(*) और Count([Marks]) के लिए क्रमशः कौन-से परिणाम सही हैं?",
   options: [
-    {
-      en: "The CPU performs the arithmetic operation",
-      hi: "CPU अंकगणितीय ऑपरेशन करता है"
-    },
-    {
-      en: "The CPU retrieves the next instruction from memory",
-      hi: "CPU मेमोरी से अगला निर्देश प्राप्त करता है"
-    },
-    {
-      en: "The CPU determines the meaning of the instruction",
-      hi: "CPU निर्देश का अर्थ निर्धारित करता है"
-    },
-    {
-      en: "The CPU sends the final result to the output device",
-      hi: "CPU अंतिम परिणाम को आउटपुट डिवाइस को भेजता है"
-    }
+    { en: "4 and 5", hi: "4 और 5" },
+    { en: "5 and 5", hi: "5 और 5" },
+    { en: "5 and 4", hi: "5 और 4" },
+    { en: "4 and 4", hi: "4 और 4" }
   ],
-
-  answer: "B",
-
-  explanation: "During the Fetch stage, the CPU retrieves the next instruction from memory for processing."
+  answer: "C",
+  explanation: "Count(*) counts all five records, including the record containing Null in Marks. Count([Marks]) counts only the four records where Marks is not Null."
 },
 // Question 206
 {
-  en: "During the Decode stage, the CPU primarily:",
-  hi: "Decode चरण के दौरान CPU मुख्य रूप से क्या करता है?",
-
+  en: "An Aggregate Query groups sales records by ProductID and calculates Sum([Quantity]) for each product. If ProductID P101 appears in four records with quantities 3, 5, 2, and 4, what will the query return for P101?",
+  hi: "एक Aggregate Query बिक्री रिकॉर्ड्स को ProductID के अनुसार समूहित करती है और प्रत्येक उत्पाद के लिए Sum([Quantity]) की गणना करती है। यदि ProductID P101 चार रिकॉर्ड्स में क्रमशः 3, 5, 2 और 4 मात्राओं के साथ मौजूद है, तो क्वेरी P101 के लिए क्या परिणाम देगी?",
   options: [
-    {
-      en: "Retrieves the next instruction from memory",
-      hi: "Memory से अगला instruction प्राप्त करता है"
-    },
-    {
-      en: "Stores the final result permanently",
-      hi: "अंतिम परिणाम को स्थायी रूप से संग्रहीत करता है"
-    },
-    {
-      en: "Interprets the fetched instruction and determines the required operation",
-      hi: "प्राप्त किए गए instruction की व्याख्या करता है और आवश्यक operation निर्धारित करता है"
-    },
-    {
-      en: "Displays the processed result",
-      hi: "Processed result को प्रदर्शित करता है"
-    }
+    { en: "4", hi: "4" },
+    { en: "14", hi: "14" },
+    { en: "3.5", hi: "3.5" },
+    { en: "5", hi: "5" }
   ],
-
-  answer: "C",
-
-  explanation: "In the Decode stage, the CPU interprets the fetched instruction and determines the operation to be performed."
+  answer: "B",
+  explanation: "Sum([Quantity]) adds the quantities for all records in the P101 group: 3 + 5 + 2 + 4 = 14."
 },
 
 // Question 207
 {
-  en: "Which sequence correctly represents the basic instruction cycle of the CPU?",
-  hi: "निम्नलिखित में से कौन-सा क्रम CPU के basic instruction cycle को सही रूप से दर्शाता है?",
-
+  en: "A query uses the Avg([Marks]) aggregate function on a group containing the values 50, 70, Null, and 90. Which statement is correct?",
+  hi: "एक क्वेरी ऐसे समूह पर Avg([Marks]) Aggregate Function का उपयोग करती है जिसमें 50, 70, Null और 90 मान हैं। कौन-सा कथन सही है?",
   options: [
-    {
-      en: "Execute → Fetch → Decode",
-      hi: "Execute → Fetch → Decode"
-    },
-    {
-      en: "Decode → Execute → Fetch",
-      hi: "Decode → Execute → Fetch"
-    },
-    {
-      en: "Fetch → Decode → Execute",
-      hi: "Fetch → Decode → Execute"
-    },
-    {
-      en: "Fetch → Execute → Decode",
-      hi: "Fetch → Execute → Decode"
-    }
+    { en: "Avg returns 52.5 because Null is treated as zero.", hi: "Avg का परिणाम 52.5 होगा क्योंकि Null को शून्य माना जाता है।" },
+    { en: "Avg returns 70 because Null is excluded from the average calculation.", hi: "Avg का परिणाम 70 होगा क्योंकि औसत की गणना में Null को शामिल नहीं किया जाता।" },
+    { en: "Avg returns 210 because it adds all non-Null values.", hi: "Avg का परिणाम 210 होगा क्योंकि यह सभी गैर-Null मानों को जोड़ता है।" },
+    { en: "Avg returns Null because even one Null value invalidates the entire group.", hi: "Avg का परिणाम Null होगा क्योंकि एक Null मान पूरे समूह को अमान्य कर देता है।" }
   ],
-
-  answer: "C",
-
-  explanation: "The basic instruction cycle follows Fetch → Decode → Execute."
+  answer: "B",
+  explanation: "Avg ignores Null values. The average is (50 + 70 + 90) / 3 = 70."
 },
 
 // Question 208
 {
-  en: "A CPU fetches an instruction from memory, determines what operation it specifies, and then performs that operation. Which option correctly maps these activities?",
-  hi: "CPU memory से एक instruction प्राप्त करता है, यह निर्धारित करता है कि उसमें कौन-सा operation दिया गया है और फिर उस operation को करता है। कौन-सा विकल्प इन activities का सही मिलान करता है?",
-
+  en: "A user creates an Aggregate Query that groups records by Department and calculates Count([EmployeeID]) and Min([Salary]). One employee has a Null EmployeeID but a valid Salary. Which statement is most accurate?",
+  hi: "एक उपयोगकर्ता Aggregate Query बनाता है, जो रिकॉर्ड्स को Department के अनुसार समूहित करती है और Count([EmployeeID]) तथा Min([Salary]) की गणना करती है। एक कर्मचारी का EmployeeID Null है, लेकिन Salary मान्य है। कौन-सा कथन सबसे सटीक है?",
   options: [
-    {
-      en: "Fetch–retrieve instruction; Decode–interpret instruction; Execute–perform operation",
-      hi: "Fetch–instruction प्राप्त करना; Decode–instruction की व्याख्या करना; Execute–operation करना"
-    },
-    {
-      en: "Fetch–perform operation; Decode–retrieve instruction; Execute–store instruction",
-      hi: "Fetch–operation करना; Decode–instruction प्राप्त करना; Execute–instruction को संग्रहीत करना"
-    },
-    {
-      en: "Fetch–interpret instruction; Decode–perform operation; Execute–retrieve instruction",
-      hi: "Fetch–instruction की व्याख्या करना; Decode–operation करना; Execute–instruction प्राप्त करना"
-    },
-    {
-      en: "Fetch–store result; Decode–retrieve instruction; Execute–interpret instruction",
-      hi: "Fetch–result संग्रहीत करना; Decode–instruction प्राप्त करना; Execute–instruction की व्याख्या करना"
-    }
+    { en: "The employee is excluded from both aggregate calculations because EmployeeID is Null.", hi: "EmployeeID Null होने के कारण कर्मचारी को दोनों Aggregate Calculations से बाहर कर दिया जाता है।" },
+    { en: "Count([EmployeeID]) counts every row, while Min([Salary]) returns the average salary.", hi: "Count([EmployeeID]) प्रत्येक पंक्ति की गणना करता है, जबकि Min([Salary]) औसत वेतन देता है।" },
+    { en: "Min([Salary]) ignores every salary in a department if any EmployeeID is Null.", hi: "यदि किसी विभाग में कोई EmployeeID Null है, तो Min([Salary]) उस विभाग के सभी वेतनों को अनदेखा करता है।" },
+    { en: "Count([EmployeeID]) excludes that employee's Null EmployeeID, while Min([Salary]) can still consider the employee's valid Salary.", hi: "Count([EmployeeID]) उस कर्मचारी के Null EmployeeID को नहीं गिनता, जबकि Min([Salary]) उसके मान्य Salary को शामिल कर सकता है।" }
   ],
-
-  answer: "A",
-
-  explanation: "Fetch retrieves the instruction, Decode interprets it, and Execute performs the specified operation."
+  answer: "D",
+  explanation: "Count([EmployeeID]) counts only non-Null EmployeeID values. Min([Salary]) independently considers valid, non-Null Salary values, including the salary of the employee whose EmployeeID is Null."
 },
 
 // Question 209
 {
-  en: "What is a register in a CPU?",
-  hi: "CPU में register क्या होता है?",
-
+  en: "In an MS Access aggregate query, what is the primary purpose of GROUP BY?",
+  hi: "MS Access Aggregate Query में GROUP BY का मुख्य उद्देश्य क्या है?",
   options: [
-    {
-      en: "A high-speed storage location inside the CPU",
-      hi: "CPU के अंदर स्थित एक high-speed storage location"
-    },
-    {
-      en: "A permanent storage device",
-      hi: "एक permanent storage device"
-    },
-    {
-      en: "An external input device",
-      hi: "एक external input device"
-    },
-    {
-      en: "A type of output device",
-      hi: "एक प्रकार का output device"
-    }
+    { en: "To permanently sort the physical storage of records.", hi: "रिकॉर्ड्स के भौतिक स्टोरेज को स्थायी रूप से क्रमबद्ध करना।" },
+    { en: "To delete duplicate records from the underlying table.", hi: "अंतर्निहित टेबल से डुप्लिकेट रिकॉर्ड्स हटाना।" },
+    { en: "To divide records into groups based on common values in specified fields so aggregate calculations can be performed for each group.", hi: "निर्दिष्ट फ़ील्ड के समान मानों के आधार पर रिकॉर्ड्स को समूहों में बाँटना, ताकि प्रत्येक समूह के लिए Aggregate Calculations की जा सकें।" },
+    { en: "To create a primary key automatically for every group.", hi: "प्रत्येक समूह के लिए अपने-आप Primary Key बनाना।" }
   ],
-
-  answer: "A",
-
-  explanation: "A register is a very fast storage location inside the CPU used to hold data, instructions, or intermediate results temporarily."
+  answer: "C",
+  explanation: "GROUP BY groups records that share values in specified fields, allowing aggregate functions such as Sum, Avg, Count, Min, and Max to calculate results for each group."
 },
 
 // Question 210
 {
-  en: "What is the primary purpose of registers during CPU processing?",
-  hi: "CPU processing के दौरान registers का primary purpose क्या है?",
-
+  en: "A sales table contains ProductID and Amount. A query groups records by ProductID and calculates Sum([Amount]). What does each result row represent?",
+  hi: "एक Sales टेबल में ProductID और Amount फ़ील्ड हैं। एक क्वेरी रिकॉर्ड्स को ProductID के अनुसार समूहित करती है और Sum([Amount]) की गणना करती है। परिणाम की प्रत्येक पंक्ति क्या दर्शाती है?",
   options: [
-    {
-      en: "To store files permanently",
-      hi: "Files को permanently store करना"
-    },
-    {
-      en: "To temporarily hold data, instructions, or intermediate results",
-      hi: "Data, instructions या intermediate results को temporarily hold करना"
-    },
-    {
-      en: "To display information on the monitor",
-      hi: "Monitor पर information display करना"
-    },
-    {
-      en: "To print documents",
-      hi: "Documents को print करना"
-    }
+    { en: "The total Amount for one ProductID group.", hi: "एक ProductID समूह की कुल Amount।" },
+    { en: "The highest Amount for the entire table.", hi: "पूरी टेबल की सबसे अधिक Amount।" },
+    { en: "The number of distinct fields in the sales table.", hi: "Sales टेबल में अलग-अलग फ़ील्ड की संख्या।" },
+    { en: "Every original record, sorted by ProductID without aggregation.", hi: "बिना Aggregation के ProductID के अनुसार क्रमबद्ध प्रत्येक मूल रिकॉर्ड।" }
   ],
-
-  answer: "B",
-
-  explanation: "Registers temporarily hold data, instructions, addresses, or intermediate results during CPU processing."
+  answer: "A",
+  explanation: "Each result row represents one ProductID group and displays the sum of Amount for all records belonging to that product."
 },
 // Question 211
 {
-  en: "Compared with ordinary main memory, CPU registers are generally used for:",
-  hi: "सामान्य main memory की तुलना में CPU registers का उपयोग सामान्यतः किसके लिए किया जाता है?",
-
+  en: "Consider the following statements about grouping and totals in MS Access:\n1. GROUP BY can be used with aggregate functions to calculate results for each group.\n2. A Total Row in Datasheet View can provide calculations such as Sum, Count, or Average for displayed data, depending on the field.\n3. Sorting records by a field is equivalent to grouping them with GROUP BY.\n4. Grouping can reduce multiple source records to one result row per group when aggregate results are requested.\n\nWhich statements are correct?",
+  hi: "MS Access में Grouping और Totals के बारे में निम्नलिखित कथनों पर विचार करें:\n1. GROUP BY का उपयोग Aggregate Functions के साथ प्रत्येक समूह के लिए परिणाम निकालने हेतु किया जा सकता है।\n2. Datasheet View में Total Row, फ़ील्ड के अनुसार, प्रदर्शित डेटा के लिए Sum, Count या Average जैसी गणनाएँ प्रदान कर सकती है।\n3. किसी फ़ील्ड के अनुसार रिकॉर्ड्स को Sort करना, GROUP BY का उपयोग करके Grouping करने के समान है।\n4. Aggregate Results माँगे जाने पर Grouping कई स्रोत रिकॉर्ड्स को प्रत्येक समूह के लिए एक परिणाम पंक्ति में बदल सकती है।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "Long-term storage of large files",
-      hi: "बड़ी files के long-term storage के लिए"
-    },
-    {
-      en: "Storing backup copies of data",
-      hi: "Data की backup copies store करने के लिए"
-    },
-    {
-      en: "Very fast temporary storage during processing",
-      hi: "Processing के दौरान बहुत तेज़ temporary storage के लिए"
-    },
-    {
-      en: "Storing software permanently",
-      hi: "Software को permanently store करने के लिए"
-    }
+    { en: "1 and 3 only", hi: "केवल 1 और 3" },
+    { en: "2 and 3 only", hi: "केवल 2 और 3" },
+    { en: "1, 2 and 3 only", hi: "केवल 1, 2 और 3" },
+    { en: "1, 2 and 4 only", hi: "केवल 1, 2 और 4" }
   ],
-
-  answer: "C",
-
-  explanation: "CPU registers provide extremely fast temporary storage for data and instructions during processing."
+  answer: "D",
+  explanation: "Statements 1, 2, and 4 are correct. Sorting changes record order but does not combine records into groups or calculate aggregate results, so statement 3 is incorrect."
 },
 
 // Question 212
 {
-  en: "When the CPU needs to temporarily hold a value while performing a calculation, which component is most appropriate?",
-  hi: "जब CPU को calculation करते समय किसी value को temporarily hold करना हो, तो कौन-सा component सबसे उपयुक्त है?",
-
+  en: "A query groups employees by Department and calculates Avg([Salary]). The user wants to display only departments whose average salary exceeds 50000. Which SQL clause is most appropriate for filtering groups based on this aggregate result?",
+  hi: "एक क्वेरी कर्मचारियों को Department के अनुसार समूहित करती है और Avg([Salary]) की गणना करती है। उपयोगकर्ता केवल उन विभागों को प्रदर्शित करना चाहता है जिनका औसत वेतन 50000 से अधिक है। इस Aggregate Result के आधार पर समूहों को फ़िल्टर करने के लिए कौन-सा SQL Clause सबसे उपयुक्त है?",
   options: [
-    {
-      en: "Hard Disk",
-      hi: "Hard Disk"
-    },
-    {
-      en: "Monitor",
-      hi: "Monitor"
-    },
-    {
-      en: "Printer",
-      hi: "Printer"
-    },
-    {
-      en: "Register",
-      hi: "Register"
-    }
+    { en: "WHERE Avg([Salary]) > 50000", hi: "WHERE Avg([Salary]) > 50000" },
+    { en: "HAVING Avg([Salary]) > 50000", hi: "HAVING Avg([Salary]) > 50000" },
+    { en: "ORDER BY Avg([Salary]) > 50000", hi: "ORDER BY Avg([Salary]) > 50000" },
+    { en: "GROUP BY Avg([Salary]) > 50000", hi: "GROUP BY Avg([Salary]) > 50000" }
   ],
-
-  answer: "D",
-
-  explanation: "A register is used to hold values temporarily and provide very fast access during CPU operations."
+  answer: "B",
+  explanation: "HAVING filters groups based on aggregate results, such as Avg([Salary]) > 50000. WHERE normally filters individual source records before grouping."
 },
 
 // Question 213
 {
-  en: "Which statement best describes the general purpose of a CPU register?",
-  hi: "निम्नलिखित में से कौन-सा कथन CPU register के सामान्य purpose को सबसे अच्छी तरह दर्शाता है?",
-
+  en: "A query groups orders by CustomerID and calculates Count([OrderID]). The user wants only customers having more than five orders. Which condition is appropriate in an aggregate query?",
+  hi: "एक क्वेरी ऑर्डर्स को CustomerID के अनुसार समूहित करती है और Count([OrderID]) की गणना करती है। उपयोगकर्ता केवल उन ग्राहकों को देखना चाहता है जिनके पाँच से अधिक ऑर्डर हैं। Aggregate Query में कौन-सी शर्त उपयुक्त है?",
   options: [
-    {
-      en: "It provides temporary, high-speed storage for information currently being processed",
-      hi: "यह वर्तमान में process की जा रही information के लिए temporary, high-speed storage प्रदान करता है"
-    },
-    {
-      en: "It permanently stores all programs installed on the computer",
-      hi: "यह computer में installed सभी programs को permanently store करता है"
-    },
-    {
-      en: "It converts digital data into printed output",
-      hi: "यह digital data को printed output में convert करता है"
-    },
-    {
-      en: "It replaces secondary storage devices for long-term data storage",
-      hi: "यह long-term data storage के लिए secondary storage devices को replace करता है"
-    }
+    { en: "WHERE Count([OrderID]) > 5", hi: "WHERE Count([OrderID]) > 5" },
+    { en: "ORDER BY Count([OrderID]) > 5", hi: "ORDER BY Count([OrderID]) > 5" },
+    { en: "HAVING Count([OrderID]) > 5", hi: "HAVING Count([OrderID]) > 5" },
+    { en: "GROUP BY Count([OrderID]) > 5", hi: "GROUP BY Count([OrderID]) > 5" }
   ],
-
-  answer: "A",
-
-  explanation: "Registers provide temporary, high-speed storage for information that the CPU is currently processing."
+  answer: "C",
+  explanation: "HAVING Count([OrderID]) > 5 filters the grouped results and retains only customers whose counted orders exceed five."
 },
 
 // Question 214
 {
-  en: "Why are registers important during CPU operations?",
-  hi: "CPU operations के दौरान registers क्यों महत्वपूर्ण होते हैं?",
-
+  en: "Which statement best distinguishes WHERE from HAVING in a grouped SQL query?",
+  hi: "Grouped SQL Query में WHERE और HAVING के बीच अंतर को कौन-सा कथन सबसे सही ढंग से बताता है?",
   options: [
-    {
-      en: "They provide very fast access to small amounts of data and instructions needed by the CPU",
-      hi: "वे CPU द्वारा आवश्यक छोटे amounts of data और instructions तक बहुत तेज़ access प्रदान करते हैं"
-    },
-    {
-      en: "They provide unlimited storage capacity for user files",
-      hi: "वे user files के लिए unlimited storage capacity प्रदान करते हैं"
-    },
-    {
-      en: "They are used mainly to connect external devices to the internet",
-      hi: "इनका मुख्य उपयोग external devices को internet से connect करने के लिए होता है"
-    },
-    {
-      en: "They permanently preserve every intermediate calculation",
-      hi: "वे प्रत्येक intermediate calculation को permanently preserve करते हैं"
-    }
+    { en: "WHERE filters source rows before grouping, whereas HAVING filters groups after grouping and can use aggregate conditions.", hi: "WHERE Grouping से पहले स्रोत पंक्तियों को फ़िल्टर करता है, जबकि HAVING Grouping के बाद समूहों को फ़िल्टर करता है और Aggregate Conditions का उपयोग कर सकता है।" },
+    { en: "WHERE filters groups after aggregation, whereas HAVING sorts individual records.", hi: "WHERE Aggregation के बाद समूहों को फ़िल्टर करता है, जबकि HAVING अलग-अलग रिकॉर्ड्स को Sort करता है।" },
+    { en: "WHERE and HAVING are interchangeable in every aggregate query.", hi: "प्रत्येक Aggregate Query में WHERE और HAVING का एक-दूसरे के स्थान पर उपयोग किया जा सकता है।" },
+    { en: "HAVING can be used only when no aggregate function appears in the query.", hi: "HAVING का उपयोग केवल तभी किया जा सकता है जब क्वेरी में कोई Aggregate Function न हो।" }
   ],
-
   answer: "A",
-
-  explanation: "Registers provide the CPU with very fast access to the small amounts of data and instructions needed during processing."
+  explanation: "WHERE filters individual rows before grouping, while HAVING filters groups after aggregation. HAVING is commonly used for conditions involving aggregate functions."
 },
 
 // Question 215
 {
-  en: "Which situation most directly requires the use of a CPU register?",
-  hi: "निम्नलिखित में से किस situation में CPU register का उपयोग सबसे सीधे तौर पर आवश्यक होता है?",
-
+  en: "A table contains the following records:\n\nDepartment | Salary\nIT          | 40000\nIT          | 60000\nHR          | 45000\nHR          | 55000\n\nA query groups by Department and calculates Avg([Salary]). Which result is correct?",
+  hi: "एक टेबल में निम्नलिखित रिकॉर्ड्स हैं:\n\nDepartment | Salary\nIT          | 40000\nIT          | 60000\nHR          | 45000\nHR          | 55000\n\nएक क्वेरी Department के अनुसार Grouping करके Avg([Salary]) की गणना करती है। कौन-सा परिणाम सही है?",
   options: [
-    {
-      en: "Saving a movie permanently on a hard disk",
-      hi: "Hard disk पर movie को permanently save करना"
-    },
-    {
-      en: "Temporarily holding an operand while the CPU performs an operation",
-      hi: "CPU द्वारा operation करते समय किसी operand को temporarily hold करना"
-    },
-    {
-      en: "Printing a document through a printer",
-      hi: "Printer के माध्यम से document print करना"
-    },
-    {
-      en: "Storing a backup on an external drive",
-      hi: "External drive पर backup store करना"
-    }
+    { en: "IT = 40000, HR = 45000", hi: "IT = 40000, HR = 45000" },
+    { en: "IT = 100000, HR = 100000", hi: "IT = 100000, HR = 100000" },
+    { en: "IT = 50000, HR = 55000", hi: "IT = 50000, HR = 55000" },
+    { en: "IT = 50000, HR = 50000", hi: "IT = 50000, HR = 50000" }
   ],
-
-  answer: "B",
-
-  explanation: "Registers temporarily hold operands and other values that the CPU needs while performing operations."
+  answer: "D",
+  explanation: "IT average = (40000 + 60000) / 2 = 50000. HR average = (45000 + 55000) / 2 = 50000. Therefore, both departments have an average salary of 50000."
 },
 // Question 216
 {
-  en: "Which statement correctly distinguishes a CPU register from secondary storage?",
-  hi: "निम्नलिखित में से कौन-सा कथन CPU register और secondary storage के बीच सही अंतर बताता है?",
-
+  en: "A user groups sales records by Region, calculates Sum([SalesAmount]), and wants the qualifying regions displayed from highest total sales to lowest. Which approach best meets both requirements?",
+  hi: "एक उपयोगकर्ता बिक्री रिकॉर्ड्स को Region के अनुसार समूहित करता है, Sum([SalesAmount]) की गणना करता है और योग्य क्षेत्रों को कुल बिक्री के उच्चतम से निम्नतम क्रम में प्रदर्शित करना चाहता है। कौन-सा तरीका दोनों आवश्यकताओं को सबसे अच्छी तरह पूरा करता है?",
   options: [
-    {
-      en: "A register is slower but has much greater capacity",
-      hi: "Register धीमा होता है लेकिन इसकी capacity बहुत अधिक होती है"
-    },
-    {
-      en: "A register is mainly used for long-term storage",
-      hi: "Register का मुख्य उपयोग long-term storage के लिए होता है"
-    },
-    {
-      en: "A register is very fast and holds small amounts of information temporarily during processing",
-      hi: "Register बहुत तेज़ होता है और processing के दौरान थोड़ी मात्रा में information को temporarily hold करता है"
-    },
-    {
-      en: "A register and secondary storage perform exactly the same function",
-      hi: "Register और secondary storage बिल्कुल एक ही function करते हैं"
-    }
+    { en: "Use ORDER BY Region and omit the aggregate calculation.", hi: "ORDER BY Region का उपयोग करें और Aggregate Calculation को छोड़ दें।" },
+    { en: "Use GROUP BY Region with Sum([SalesAmount]), then order the grouped results by the calculated total in descending order.", hi: "Sum([SalesAmount]) के साथ GROUP BY Region का उपयोग करें, फिर समूहित परिणामों को गणना किए गए कुल के अनुसार Descending Order में क्रमबद्ध करें।" },
+    { en: "Use HAVING Region DESC without calculating totals.", hi: "कुल की गणना किए बिना HAVING Region DESC का उपयोग करें।" },
+    { en: "Sort the original table by SalesAmount and assume this automatically calculates regional totals.", hi: "मूल टेबल को SalesAmount के अनुसार Sort करें और मान लें कि इससे क्षेत्रीय कुल अपने-आप निकल जाएँगे।" }
   ],
-
-  answer: "C",
-
-  explanation: "Registers are extremely fast, small-capacity storage locations used temporarily during CPU processing."
+  answer: "B",
+  explanation: "GROUP BY Region groups records by region, and Sum([SalesAmount]) calculates each region's total. ORDER BY the calculated total DESC displays regions from highest to lowest total sales."
 },
 
 // Question 217
 {
-  en: "Which statement best defines a motherboard?",
-  hi: "निम्नलिखित में से motherboard को सबसे अच्छी तरह कौन-सा कथन परिभाषित करता है?",
-
+  en: "A user wants to add records from a temporary table named NewEmployees to an existing Employees table without replacing the existing records. Which query type is most appropriate?",
+  hi: "एक उपयोगकर्ता NewEmployees नामक अस्थायी टेबल से रिकॉर्ड्स को मौजूदा Employees टेबल में जोड़ना चाहता है, बिना पुराने रिकॉर्ड्स को हटाए या बदलें। कौन-सा Query Type सबसे उपयुक्त है?",
   options: [
-    {
-      en: "A removable device used only for storing files",
-      hi: "केवल files store करने के लिए उपयोग किया जाने वाला removable device"
-    },
-    {
-      en: "The main circuit board that connects and allows communication among major computer components",
-      hi: "मुख्य circuit board जो computer के प्रमुख components को connect करता है और उनके बीच communication की अनुमति देता है"
-    },
-    {
-      en: "A software program used to control hardware",
-      hi: "Hardware को control करने के लिए उपयोग किया जाने वाला software program"
-    },
-    {
-      en: "An external device used only for displaying output",
-      hi: "केवल output display करने के लिए उपयोग किया जाने वाला external device"
-    }
+    { en: "Update Query", hi: "Update Query" },
+    { en: "Append Query", hi: "Append Query" },
+    { en: "Delete Query", hi: "Delete Query" },
+    { en: "Make-Table Query", hi: "Make-Table Query" }
   ],
-
   answer: "B",
-
-  explanation: "The motherboard is the main circuit board that connects major computer components and enables communication among them."
+  explanation: "An Append Query adds records from a source table or query to an existing destination table while retaining the existing records."
 },
 
 // Question 218
 {
-  en: "Which of the following is NOT normally considered a component or connection associated with a motherboard?",
-  hi: "निम्नलिखित में से कौन-सा सामान्यतः motherboard से संबंधित component या connection नहीं माना जाता है?",
-
+  en: "An Update Query is designed to increase the Salary field by 10% for employees whose Department is \"IT\". Which expression is most appropriate for the Update To row of the Salary field?",
+  hi: "एक Update Query का उद्देश्य उन कर्मचारियों के Salary फ़ील्ड को 10% बढ़ाना है जिनका Department \"IT\" है। Salary फ़ील्ड की Update To पंक्ति में कौन-सा एक्सप्रेशन सबसे उपयुक्त है?",
   options: [
-    {
-      en: "CPU socket",
-      hi: "CPU socket"
-    },
-    {
-      en: "RAM slots",
-      hi: "RAM slots"
-    },
-    {
-      en: "Expansion slots",
-      hi: "Expansion slots"
-    },
-    {
-      en: "Printer cartridge",
-      hi: "Printer cartridge"
-    }
+    { en: "[Salary] + 10", hi: "[Salary] + 10" },
+    { en: "[Salary] * 0.10", hi: "[Salary] * 0.10" },
+    { en: "[Salary] * 1.10", hi: "[Salary] * 1.10" },
+    { en: "[Salary] / 1.10", hi: "[Salary] / 1.10" }
   ],
-
-  answer: "D",
-
-  explanation: "A printer cartridge belongs to a printer and is not a motherboard component or connection."
+  answer: "C",
+  explanation: "Multiplying Salary by 1.10 retains the original salary and adds 10%. The criterion Department = \"IT\" restricts the update to IT employees."
 },
 
 // Question 219
 {
-  en: "A motherboard primarily helps different components of a computer by:",
-  hi: "Motherboard मुख्य रूप से computer के विभिन्न components की किस प्रकार सहायता करता है?",
-
+  en: "Consider the following statements about Action Queries in MS Access:\n1. An Append Query adds records to an existing table.\n2. An Update Query modifies values in existing records.\n3. A Delete Query removes records matching the specified criteria.\n4. A Make-Table Query creates a new table using query results.\n\nWhich statements are correct?",
+  hi: "MS Access में Action Queries के बारे में निम्नलिखित कथनों पर विचार करें:\n1. Append Query मौजूदा टेबल में रिकॉर्ड्स जोड़ती है।\n2. Update Query मौजूदा रिकॉर्ड्स के मानों को संशोधित करती है।\n3. Delete Query निर्दिष्ट क्राइटेरिया से मेल खाने वाले रिकॉर्ड्स हटाती है।\n4. Make-Table Query क्वेरी के परिणामों का उपयोग करके नई टेबल बनाती है।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "Providing a common platform for their connection and communication",
-      hi: "उनके connection और communication के लिए एक common platform प्रदान करके"
-    },
-    {
-      en: "Converting all software into printed documents",
-      hi: "सभी software को printed documents में convert करके"
-    },
-    {
-      en: "Replacing the CPU during processing",
-      hi: "Processing के दौरान CPU को replace करके"
-    },
-    {
-      en: "Permanently storing every user file",
-      hi: "प्रत्येक user file को permanently store करके"
-    }
+    { en: "1 and 2 only", hi: "केवल 1 और 2" },
+    { en: "2, 3 and 4 only", hi: "केवल 2, 3 और 4" },
+    { en: "1, 3 and 4 only", hi: "केवल 1, 3 और 4" },
+    { en: "1, 2, 3 and 4", hi: "1, 2, 3 और 4" }
   ],
-
-  answer: "A",
-
-  explanation: "The motherboard provides the physical platform and pathways needed for major components to connect and communicate."
+  answer: "D",
+  explanation: "All four statements are correct. Append adds records, Update modifies existing values, Delete removes matching records, and Make-Table creates a new table from query results."
 },
 
 // Question 220
 {
-  en: "Which combination contains only components commonly found on or directly associated with a motherboard?",
-  hi: "निम्नलिखित में से किस combination में केवल वे components हैं जो सामान्यतः motherboard पर पाए जाते हैं या उससे directly associated होते हैं?",
-
+  en: "A user wants to permanently remove all records from the Orders table where OrderStatus is \"Cancelled\", while retaining the table structure. Which query type is most appropriate?",
+  hi: "एक उपयोगकर्ता Orders टेबल से उन सभी रिकॉर्ड्स को स्थायी रूप से हटाना चाहता है जिनका OrderStatus \"Cancelled\" है, लेकिन टेबल की संरचना बनाए रखना चाहता है। कौन-सा Query Type सबसे उपयुक्त है?",
   options: [
-    {
-      en: "CPU socket, RAM slots, expansion slots",
-      hi: "CPU socket, RAM slots, expansion slots"
-    },
-    {
-      en: "Keyboard, mouse, printer",
-      hi: "Keyboard, mouse, printer"
-    },
-    {
-      en: "Monitor, speaker, scanner",
-      hi: "Monitor, speaker, scanner"
-    },
-    {
-      en: "Hard-copy paper, toner, ink cartridge",
-      hi: "Hard-copy paper, toner, ink cartridge"
-    }
+    { en: "Delete Query", hi: "Delete Query" },
+    { en: "Make-Table Query", hi: "Make-Table Query" },
+    { en: "Append Query", hi: "Append Query" },
+    { en: "Update Query", hi: "Update Query" }
   ],
-
   answer: "A",
-
-  explanation: "CPU sockets, RAM slots, and expansion slots are commonly found on or directly associated with a motherboard."
+  explanation: "A Delete Query removes records matching the specified criterion, such as OrderStatus = \"Cancelled\", while retaining the table structure and its fields."
 },
-
 // Question 221
 {
-  en: "Which motherboard component provides the physical interface in which a compatible CPU is installed?",
-  hi: "Motherboard का कौन-सा component वह physical interface प्रदान करता है जिसमें compatible CPU install किया जाता है?",
-
+  en: "A user runs a Make-Table Query based on a Select Query that retrieves EmployeeID, EmployeeName, and Department from an existing table. What is the primary result?",
+  hi: "एक उपयोगकर्ता मौजूदा टेबल से EmployeeID, EmployeeName और Department प्राप्त करने वाली Select Query के आधार पर Make-Table Query चलाता है। इसका मुख्य परिणाम क्या होगा?",
   options: [
-    {
-      en: "RAM Slot",
-      hi: "RAM Slot"
-    },
-    {
-      en: "Expansion Slot",
-      hi: "Expansion Slot"
-    },
-    {
-      en: "CPU Socket",
-      hi: "CPU Socket"
-    },
-    {
-      en: "USB Port",
-      hi: "USB Port"
-    }
+    { en: "The selected records are appended to the existing source table.", hi: "चयनित रिकॉर्ड्स मौजूदा स्रोत टेबल में जोड़ दिए जाएँगे।" },
+    { en: "The selected fields and query results are used to create a new table.", hi: "चयनित फ़ील्ड और क्वेरी परिणामों का उपयोग करके एक नई टेबल बनाई जाएगी।" },
+    { en: "The source table's records are automatically deleted after copying.", hi: "कॉपी करने के बाद स्रोत टेबल के रिकॉर्ड्स अपने-आप हटा दिए जाएँगे।" },
+    { en: "Only the query design is saved; no new table is created.", hi: "केवल क्वेरी डिज़ाइन सेव होगा; कोई नई टेबल नहीं बनेगी।" }
   ],
-
-  answer: "C",
-
-  explanation: "The CPU socket provides the physical interface for installing a compatible processor on the motherboard."
+  answer: "B",
+  explanation: "A Make-Table Query creates a new table containing the fields and records returned by the underlying query. It does not automatically delete the source records."
 },
 
 // Question 222
 {
-  en: "RAM slots on a motherboard are primarily used to:",
-  hi: "Motherboard पर RAM slots का मुख्य उपयोग किसके लिए किया जाता है?",
-
+  en: "A user wants to copy records from an Archive table into an existing CurrentEmployees table. Both tables have compatible field structures, and the user wants to add only records satisfying a specified condition. Which approach is most appropriate?",
+  hi: "एक उपयोगकर्ता Archive टेबल से रिकॉर्ड्स को मौजूदा CurrentEmployees टेबल में कॉपी करना चाहता है। दोनों टेबल की फ़ील्ड संरचनाएँ संगत हैं और उपयोगकर्ता केवल निर्दिष्ट शर्त पूरी करने वाले रिकॉर्ड्स जोड़ना चाहता है। कौन-सा तरीका सबसे उपयुक्त है?",
   options: [
-    {
-      en: "Install compatible system memory modules",
-      hi: "Compatible system memory modules को install करने के लिए"
-    },
-    {
-      en: "Connect external display devices",
-      hi: "External display devices को connect करने के लिए"
-    },
-    {
-      en: "Install the CPU",
-      hi: "CPU को install करने के लिए"
-    },
-    {
-      en: "Connect the computer to a network",
-      hi: "Computer को network से connect करने के लिए"
-    }
+    { en: "Use a Delete Query on CurrentEmployees and then run a Select Query.", hi: "CurrentEmployees पर Delete Query चलाएँ और फिर Select Query चलाएँ।" },
+    { en: "Use an Update Query to create new records in CurrentEmployees.", hi: "CurrentEmployees में नए रिकॉर्ड बनाने के लिए Update Query का उपयोग करें।" },
+    { en: "Use an Append Query with the appropriate source and criteria.", hi: "उपयुक्त स्रोत और क्राइटेरिया के साथ Append Query का उपयोग करें।" },
+    { en: "Use a Make-Table Query to replace CurrentEmployees automatically.", hi: "CurrentEmployees को अपने-आप बदलने के लिए Make-Table Query का उपयोग करें।" }
   ],
-
-  answer: "A",
-
-  explanation: "RAM slots are designed to hold compatible system memory modules."
+  answer: "C",
+  explanation: "An Append Query adds qualifying records from the Archive table to the existing CurrentEmployees table. Criteria can restrict which source records are appended."
 },
 
 // Question 223
 {
-  en: "A user wants to install a dedicated graphics card on a desktop motherboard. Which motherboard feature is generally used for this purpose?",
-  hi: "एक user desktop motherboard पर dedicated graphics card install करना चाहता है। इस purpose के लिए सामान्यतः motherboard के किस feature का उपयोग किया जाता है?",
-
+  en: "A user creates an Update Query that changes the Department field from \"Sales\" to \"Marketing\" for records meeting a specified criterion. Which statement is most accurate?",
+  hi: "एक उपयोगकर्ता ऐसी Update Query बनाता है जो निर्दिष्ट क्राइटेरिया पूरा करने वाले रिकॉर्ड्स में Department फ़ील्ड को \"Sales\" से \"Marketing\" में बदल देती है। कौन-सा कथन सबसे सटीक है?",
   options: [
-    {
-      en: "CPU Socket",
-      hi: "CPU Socket"
-    },
-    {
-      en: "RAM Slot",
-      hi: "RAM Slot"
-    },
-    {
-      en: "Audio Port",
-      hi: "Audio Port"
-    },
-    {
-      en: "Expansion Slot",
-      hi: "Expansion Slot"
-    }
+    { en: "The query creates a separate table containing the modified records but leaves the original values unchanged.", hi: "क्वेरी संशोधित रिकॉर्ड्स वाली एक अलग टेबल बनाती है, लेकिन मूल मानों को अपरिवर्तित रखती है।" },
+    { en: "The query adds a new record for each matching record.", hi: "क्वेरी प्रत्येक मेल खाने वाले रिकॉर्ड के लिए एक नया रिकॉर्ड जोड़ती है।" },
+    { en: "The query deletes matching records and recreates them with new values.", hi: "क्वेरी मेल खाने वाले रिकॉर्ड्स को हटाकर नए मानों के साथ दोबारा बनाती है।" },
+    { en: "The query modifies the Department values in matching existing records.", hi: "क्वेरी मेल खाने वाले मौजूदा रिकॉर्ड्स में Department के मानों को संशोधित करती है।" }
   ],
-
   answer: "D",
-
-  explanation: "A dedicated graphics card is generally installed in a compatible expansion slot, such as a PCI Express slot."
+  explanation: "An Update Query modifies field values in existing records that meet the specified criteria. It does not create new records or a separate table."
 },
 
 // Question 224
 {
-  en: "Which statement correctly distinguishes motherboard ports/connectors from expansion slots?",
-  hi: "निम्नलिखित में से कौन-सा कथन motherboard के ports/connectors और expansion slots के बीच सही अंतर बताता है?",
-
+  en: "Before executing a Delete Query on a production database, a user wants to reduce the risk of unintended data loss. Which approach is most appropriate?",
+  hi: "प्रोडक्शन डेटाबेस पर Delete Query चलाने से पहले, उपयोगकर्ता अनजाने में डेटा खोने के जोखिम को कम करना चाहता है। कौन-सा तरीका सबसे उपयुक्त है?",
   options: [
-    {
-      en: "Ports/connectors are used only for installing RAM, while expansion slots connect keyboards",
-      hi: "Ports/connectors का उपयोग केवल RAM install करने के लिए होता है, जबकि expansion slots keyboards को connect करते हैं"
-    },
-    {
-      en: "Ports/connectors provide interfaces for connecting devices, while expansion slots allow compatible expansion cards to be installed",
-      hi: "Ports/connectors devices को connect करने के लिए interfaces प्रदान करते हैं, जबकि expansion slots compatible expansion cards को install करने की अनुमति देते हैं"
-    },
-    {
-      en: "Both are exclusively used for installing the CPU",
-      hi: "दोनों का उपयोग केवल CPU install करने के लिए होता है"
-    },
-    {
-      en: "Expansion slots are used only for permanent data storage, while ports store instructions",
-      hi: "Expansion slots का उपयोग केवल permanent data storage के लिए होता है, जबकि ports instructions को store करते हैं"
-    }
+    { en: "Run a Select Query with the same criteria to inspect the affected records, verify the criteria and backup requirements, and then execute the Delete Query.", hi: "प्रभावित रिकॉर्ड्स की जाँच के लिए समान क्राइटेरिया वाली Select Query चलाएँ, क्राइटेरिया और बैकअप की आवश्यकता सत्यापित करें, फिर Delete Query चलाएँ।" },
+    { en: "Remove all criteria so that Access can identify the intended records automatically.", hi: "सभी क्राइटेरिया हटा दें ताकि Access इच्छित रिकॉर्ड्स की पहचान अपने-आप कर सके।" },
+    { en: "Convert the Delete Query into a Make-Table Query without checking the selected records.", hi: "चयनित रिकॉर्ड्स की जाँच किए बिना Delete Query को Make-Table Query में बदल दें।" },
+    { en: "Run the Delete Query repeatedly until the confirmation message disappears.", hi: "पुष्टिकरण संदेश गायब होने तक Delete Query बार-बार चलाएँ।" }
   ],
-
-  answer: "B",
-
-  explanation: "Ports/connectors connect external or internal devices, while expansion slots are used to install compatible expansion cards."
+  answer: "A",
+  explanation: "A Select Query using the same criteria lets the user inspect which records would be affected. Verifying the criteria and ensuring an appropriate backup helps reduce the risk of unintended data loss."
 },
 
 // Question 225
 {
-  en: "Which statement best describes computer memory?",
-  hi: "निम्नलिखित में से computer memory को सबसे अच्छी तरह कौन-सा कथन वर्णित करता है?",
-
+  en: "In Microsoft Access, an Inner Join between Customers and Orders matches records using CustomerID. Which records will normally appear in the result?",
+  hi: "Microsoft Access में Customers और Orders के बीच Inner Join, CustomerID का उपयोग करके रिकॉर्ड्स का मिलान करता है। परिणाम में सामान्यतः कौन-से रिकॉर्ड दिखाई देंगे?",
   options: [
-    {
-      en: "It is used only to display information on the screen",
-      hi: "इसका उपयोग केवल screen पर information display करने के लिए होता है"
-    },
-    {
-      en: "It stores data, instructions, and results required during computer operations",
-      hi: "यह computer operations के दौरान आवश्यक data, instructions और results को store करती है"
-    },
-    {
-      en: "It is a device used only for printing documents",
-      hi: "यह केवल documents print करने के लिए उपयोग किया जाने वाला device है"
-    },
-    {
-      en: "It performs only arithmetic calculations",
-      hi: "यह केवल arithmetic calculations perform करती है"
-    }
+    { en: "All customers, including those who have no orders.", hi: "सभी ग्राहक, जिनमें वे भी शामिल हैं जिन्होंने कोई ऑर्डर नहीं दिया है।" },
+    { en: "All orders, including those whose CustomerID has no matching customer.", hi: "सभी ऑर्डर, जिनमें वे भी शामिल हैं जिनके CustomerID से मेल खाने वाला कोई ग्राहक नहीं है।" },
+    { en: "Only records with matching CustomerID values in both tables.", hi: "केवल वे रिकॉर्ड्स जिनमें दोनों टेबल में CustomerID के मान मेल खाते हैं।" },
+    { en: "Every possible combination of customers and orders, regardless of CustomerID.", hi: "CustomerID की परवाह किए बिना ग्राहकों और ऑर्डर्स के सभी संभावित संयोजन।" }
   ],
-
-  answer: "B",
-
-  explanation: "Computer memory stores data, instructions, and intermediate or processed results needed during computer operations."
+  answer: "C",
+  explanation: "An Inner Join returns records for which the join condition is satisfied in both tables. Customers without matching orders and orders without matching customers are excluded."
 },
-
 // Question 226
 {
-  en: "Why is memory necessary in a computer system?",
-  hi: "Computer system में memory आवश्यक क्यों होती है?",
-
+  en: "A user wants to display every customer, including customers who have never placed an order, along with any matching order details. Which join is most appropriate when Customers is the left table?",
+  hi: "एक उपयोगकर्ता प्रत्येक ग्राहक को प्रदर्शित करना चाहता है, जिसमें वे ग्राहक भी शामिल हैं जिन्होंने कभी कोई ऑर्डर नहीं दिया है, साथ ही उपलब्ध संबंधित ऑर्डर विवरण भी दिखाना चाहता है। यदि Customers बाईं टेबल है, तो कौन-सा Join सबसे उपयुक्त है?",
   options: [
-    {
-      en: "To provide the CPU with data and instructions needed for processing",
-      hi: "CPU को processing के लिए आवश्यक data और instructions प्रदान करने के लिए"
-    },
-    {
-      en: "To replace all input devices",
-      hi: "सभी input devices को replace करने के लिए"
-    },
-    {
-      en: "To convert digital information into printed output",
-      hi: "Digital information को printed output में convert करने के लिए"
-    },
-    {
-      en: "To supply electrical power to the motherboard",
-      hi: "Motherboard को electrical power प्रदान करने के लिए"
-    }
+    { en: "Inner Join", hi: "Inner Join" },
+    { en: "Left Join", hi: "Left Join" },
+    { en: "Right Join", hi: "Right Join" },
+    { en: "Self Join", hi: "Self Join" }
   ],
-
-  answer: "A",
-
-  explanation: "Memory provides the CPU with data and instructions required for processing."
+  answer: "B",
+  explanation: "A Left Join preserves every record from the left table, Customers, and includes matching order details from the right table. Customers without orders still appear, with Null values in the order fields."
 },
 
 // Question 227
 {
-  en: "A program is being executed and the CPU needs to access its instructions and working data repeatedly. Which role of memory is most directly involved?",
-  hi: "एक program execute हो रहा है और CPU को उसकी instructions तथा working data को बार-बार access करना पड़ता है। Memory की कौन-सी भूमिका इसमें सबसे सीधे तौर पर शामिल है?",
-
+  en: "Consider the following statements about joins in MS Access:\n1. An Inner Join returns records that satisfy the join condition in both tables.\n2. A Left Join preserves all records from the left table, including those without a match in the right table.\n3. A Right Join preserves all records from the right table, including those without a match in the left table.\n4. An Inner Join always returns every record from both tables, regardless of whether matching values exist.\n\nWhich statements are correct?",
+  hi: "MS Access में Joins के बारे में निम्नलिखित कथनों पर विचार करें:\n1. Inner Join उन रिकॉर्ड्स को लौटाता है जो दोनों टेबल में Join Condition को पूरा करते हैं।\n2. Left Join बाईं टेबल के सभी रिकॉर्ड्स को बनाए रखता है, जिनमें दाईं टेबल में मेल न खाने वाले रिकॉर्ड्स भी शामिल हैं।\n3. Right Join दाईं टेबल के सभी रिकॉर्ड्स को बनाए रखता है, जिनमें बाईं टेबल में मेल न खाने वाले रिकॉर्ड्स भी शामिल हैं।\n4. Inner Join हमेशा दोनों टेबल के सभी रिकॉर्ड्स लौटाता है, चाहे उनके मान मेल खाते हों या नहीं।\n\nकौन-से कथन सही हैं?",
   options: [
-    {
-      en: "Providing data and instructions for processing",
-      hi: "Processing के लिए data और instructions प्रदान करना"
-    },
-    {
-      en: "Producing permanent hard-copy output",
-      hi: "Permanent hard-copy output तैयार करना"
-    },
-    {
-      en: "Capturing images from the user",
-      hi: "User से images capture करना"
-    },
-    {
-      en: "Controlling the physical movement of the mouse",
-      hi: "Mouse की physical movement को control करना"
-    }
+    { en: "1 and 2 only", hi: "केवल 1 और 2" },
+    { en: "2 and 4 only", hi: "केवल 2 और 4" },
+    { en: "1, 3 and 4 only", hi: "केवल 1, 3 और 4" },
+    { en: "1, 2 and 3 only", hi: "केवल 1, 2 और 3" }
   ],
-
-  answer: "A",
-
-  explanation: "Memory provides the CPU with the instructions and working data needed during program execution."
+  answer: "D",
+  explanation: "Statements 1, 2, and 3 are correct. An Inner Join returns only records with matching values under the join condition, so statement 4 is incorrect."
 },
 
 // Question 228
 {
-  en: "Which situation best demonstrates the need for memory during computer processing?",
-  hi: "निम्नलिखित में से कौन-सी situation computer processing के दौरान memory की आवश्यकता को सबसे अच्छी तरह दर्शाती है?",
-
+  en: "A query uses a Left Join from Departments to Employees on DepartmentID. A department has no employees. What should normally happen to that department in the query results?",
+  hi: "एक क्वेरी DepartmentID के आधार पर Departments से Employees तक Left Join का उपयोग करती है। किसी विभाग में कोई कर्मचारी नहीं है। क्वेरी के परिणामों में सामान्यतः उस विभाग के साथ क्या होगा?",
   options: [
-    {
-      en: "A printer produces a paper copy of a document",
-      hi: "Printer किसी document की paper copy तैयार करता है"
-    },
-    {
-      en: "A speaker produces sound from an audio file",
-      hi: "Speaker किसी audio file से sound produce करता है"
-    },
-    {
-      en: "The CPU accesses instructions and temporarily required data while executing a program",
-      hi: "CPU किसी program को execute करते समय instructions और temporarily required data को access करता है"
-    },
-    {
-      en: "A scanner converts a paper document into digital form",
-      hi: "Scanner किसी paper document को digital form में convert करता है"
-    }
+    { en: "The department is included, with Null values in the fields from Employees where no matching record exists.", hi: "विभाग शामिल रहेगा और जहाँ Employees में कोई मेल खाने वाला रिकॉर्ड नहीं है, वहाँ Employees के फ़ील्ड में Null मान होंगे।" },
+    { en: "The department is excluded because every department must have an employee.", hi: "विभाग को हटा दिया जाएगा क्योंकि प्रत्येक विभाग में कर्मचारी होना आवश्यक है।" },
+    { en: "The department is duplicated once for every field in Employees.", hi: "Employees के प्रत्येक फ़ील्ड के लिए विभाग की एक अतिरिक्त प्रति बनेगी।" },
+    { en: "The department is included only if DepartmentID is Null.", hi: "विभाग केवल तभी शामिल होगा जब DepartmentID Null हो।" }
   ],
-
-  answer: "C",
-
-  explanation: "During program execution, the CPU needs memory to access instructions and data required for processing."
+  answer: "A",
+  explanation: "A Left Join retains all records from Departments. When no matching employee exists, the fields originating from Employees contain Null values."
 },
 
 // Question 229
 {
-  en: "Which statement most accurately distinguishes primary memory from secondary memory?",
-  hi: "निम्नलिखित में से कौन-सा कथन primary memory और secondary memory के बीच सबसे सही अंतर बताता है?",
-
+  en: "A user joins Employees and Departments using EmployeeName = DepartmentName instead of the related DepartmentID fields. What is the most important potential problem with this design?",
+  hi: "एक उपयोगकर्ता संबंधित DepartmentID फ़ील्ड के बजाय EmployeeName = DepartmentName का उपयोग करके Employees और Departments को Join करता है। इस डिज़ाइन की सबसे महत्वपूर्ण संभावित समस्या क्या है?",
   options: [
-    {
-      en: "Primary memory is directly used by the CPU for active processing, while secondary memory is mainly used for long-term data storage",
-      hi: "Primary memory का CPU द्वारा active processing में सीधे उपयोग किया जाता है, जबकि secondary memory का मुख्य उपयोग long-term data storage के लिए होता है"
-    },
-    {
-      en: "Primary memory is always external, while secondary memory is always located inside the CPU",
-      hi: "Primary memory हमेशा external होती है, जबकि secondary memory हमेशा CPU के अंदर स्थित होती है"
-    },
-    {
-      en: "Primary memory stores only output, while secondary memory stores only input",
-      hi: "Primary memory केवल output store करती है, जबकि secondary memory केवल input store करती है"
-    },
-    {
-      en: "Both primary and secondary memory serve exactly the same role in a computer",
-      hi: "Primary और secondary memory computer में बिल्कुल समान भूमिका निभाती हैं"
-    }
+    { en: "Access automatically converts the join into a primary-key relationship.", hi: "Access अपने-आप Join को Primary Key Relationship में बदल देता है।" },
+    { en: "The query becomes a Right Join regardless of its design.", hi: "डिज़ाइन की परवाह किए बिना क्वेरी Right Join बन जाती है।" },
+    { en: "The join may produce incorrect or incomplete matches because the selected fields do not represent the intended relationship reliably.", hi: "चुने गए फ़ील्ड अपेक्षित संबंध को विश्वसनीय रूप से नहीं दर्शाते, इसलिए Join गलत या अधूरे मिलान दे सकता है।" },
+    { en: "A join can only use fields named ID.", hi: "Join में केवल ID नाम वाले फ़ील्ड का उपयोग किया जा सकता है।" }
   ],
-
-  answer: "A",
-
-  explanation: "Primary memory supports active processing, while secondary storage is mainly used for long-term storage of data and programs."
+  answer: "C",
+  explanation: "EmployeeName and DepartmentName do not reliably represent the relationship between employees and departments. Joining on the related DepartmentID fields is generally more appropriate and avoids unintended matches."
 },
 
 // Question 230
 {
-  en: "A program is currently running and its required data is being accessed by the CPU, while another copy of the program is stored on an SSD for future use. Which distinction is illustrated?",
-  hi: "एक program वर्तमान में चल रहा है और उसका आवश्यक data CPU द्वारा access किया जा रहा है, जबकि उसी program की दूसरी copy future use के लिए SSD पर stored है। यह किस distinction को दर्शाता है?",
-
+  en: "A user wants to display all records from Orders, including orders that have no matching customer record, while showing customer details wherever a match exists. In the query design, Orders is the left table. Which join is most appropriate?",
+  hi: "एक उपयोगकर्ता Orders के सभी रिकॉर्ड प्रदर्शित करना चाहता है, जिनमें वे ऑर्डर भी शामिल हैं जिनका कोई संबंधित ग्राहक रिकॉर्ड नहीं है। जहाँ ग्राहक का मिलान उपलब्ध हो, वहाँ ग्राहक विवरण भी दिखाना है। क्वेरी डिज़ाइन में Orders बाईं टेबल है। कौन-सा Join सबसे उपयुक्त है?",
   options: [
-    {
-      en: "Both are examples of primary memory",
-      hi: "दोनों primary memory के उदाहरण हैं"
-    },
-    {
-      en: "Running data is in primary memory, while the stored copy is in secondary storage",
-      hi: "Running data primary memory में है, जबकि stored copy secondary storage में है"
-    },
-    {
-      en: "Running data is in secondary storage, while the stored copy is in primary memory",
-      hi: "Running data secondary storage में है, जबकि stored copy primary memory में है"
-    },
-    {
-      en: "Both are examples of CPU registers",
-      hi: "दोनों CPU registers के उदाहरण हैं"
-    }
+    { en: "Inner Join", hi: "Inner Join" },
+    { en: "Left Join", hi: "Left Join" },
+    { en: "Right Join", hi: "Right Join" },
+    { en: "A relationship without a query join", hi: "क्वेरी Join के बिना Relationship" }
   ],
-
   answer: "B",
-
-  explanation: "Data actively used by a running program is held in primary memory, while the program stored on an SSD is in secondary storage."
+  explanation: "Because Orders is the left table, a Left Join retains all orders, including those without a matching customer. Customer fields are populated when a match exists and contain Null values when it does not."
 },
 // Question 231
 {
-  en: "Which combination correctly represents the usual distinction between primary and secondary memory?",
-  hi: "निम्नलिखित में से कौन-सा combination primary और secondary memory के बीच सामान्य अंतर को सही रूप से दर्शाता है?",
-
+  en: "Which statement best distinguishes a join from a relationship in MS Access?",
+  hi: "MS Access में Join और Relationship के बीच अंतर को कौन-सा कथन सबसे सही ढंग से बताता है?",
   options: [
-    {
-      en: "Primary: long-term storage; Secondary: temporary working storage",
-      hi: "Primary: long-term storage; Secondary: temporary working storage"
-    },
-    {
-      en: "Primary: directly involved in active processing; Secondary: persistent storage of larger amounts of data",
-      hi: "Primary: active processing में सीधे involved; Secondary: अधिक मात्रा में data के persistent storage के लिए"
-    },
-    {
-      en: "Primary: only optical storage; Secondary: only semiconductor storage",
-      hi: "Primary: केवल optical storage; Secondary: केवल semiconductor storage"
-    },
-    {
-      en: "Primary: input devices; Secondary: output devices",
-      hi: "Primary: input devices; Secondary: output devices"
-    }
+    { en: "A join permanently changes the primary keys of the participating tables, whereas a relationship only sorts them.", hi: "Join संबंधित टेबल की Primary Keys को स्थायी रूप से बदलता है, जबकि Relationship केवल उन्हें क्रमबद्ध करता है।" },
+    { en: "A join combines records from tables in a query, whereas a relationship defines an association between tables and can support referential integrity.", hi: "Join क्वेरी में टेबल्स के रिकॉर्ड्स को जोड़ता है, जबकि Relationship टेबल्स के बीच संबंध निर्धारित करता है और Referential Integrity को लागू करने में सहायता कर सकता है।" },
+    { en: "A relationship is used only for reports, whereas joins are used only for forms.", hi: "Relationship का उपयोग केवल Reports के लिए होता है, जबकि Join का उपयोग केवल Forms के लिए होता है।" },
+    { en: "A join and a relationship are identical and always enforce referential integrity.", hi: "Join और Relationship समान होते हैं और हमेशा Referential Integrity लागू करते हैं।" }
   ],
-
   answer: "B",
-
-  explanation: "Primary memory supports active processing, while secondary storage provides persistent storage for larger amounts of data."
+  explanation: "A join combines related records from tables in a query. A relationship defines an association between tables and can enforce referential integrity when appropriately configured."
 },
 
 // Question 232
 {
-  en: "A computer is switched off. Which statement best explains what generally happens to data in primary memory and data stored on secondary storage?",
-  hi: "Computer को switch off कर दिया जाता है। Primary memory में data और secondary storage में stored data के साथ सामान्यतः क्या होता है?",
-
+  en: "A query joins Customers to Orders using CustomerID. One customer has three matching orders. The query uses an Inner Join and displays CustomerName and OrderID, with no grouping or filtering. How many result rows will normally appear for that customer?",
+  hi: "एक क्वेरी CustomerID का उपयोग करके Customers को Orders से Join करती है। एक ग्राहक के तीन मेल खाने वाले ऑर्डर हैं। क्वेरी Inner Join का उपयोग करती है और बिना Grouping या Filtering के CustomerName तथा OrderID प्रदर्शित करती है। उस ग्राहक के लिए सामान्यतः कितनी परिणाम पंक्तियाँ दिखाई देंगी?",
   options: [
-    {
-      en: "Both are necessarily lost when power is removed",
-      hi: "Power हटने पर दोनों का data अनिवार्य रूप से lost हो जाता है"
-    },
-    {
-      en: "Primary memory retains all data permanently, while secondary storage loses it",
-      hi: "Primary memory सभी data को permanently retain करती है, जबकि secondary storage का data lost हो जाता है"
-    },
-    {
-      en: "Data in volatile primary memory may be lost, while data stored on non-volatile secondary storage is generally retained",
-      hi: "Volatile primary memory का data lost हो सकता है, जबकि non-volatile secondary storage में stored data सामान्यतः retained रहता है"
-    },
-    {
-      en: "Secondary storage becomes temporary memory when the computer is switched off",
-      hi: "Computer switch off होने पर secondary storage temporary memory बन जाती है"
-    }
+    { en: "One row, because CustomerID is unique in Customers.", hi: "एक पंक्ति, क्योंकि Customers में CustomerID अद्वितीय है।" },
+    { en: "Zero rows, because multiple orders cannot match one customer.", hi: "शून्य पंक्तियाँ, क्योंकि एक ग्राहक से कई ऑर्डर मेल नहीं खा सकते।" },
+    { en: "One row for every field in the Customers table.", hi: "Customers टेबल के प्रत्येक फ़ील्ड के लिए एक पंक्ति।" },
+    { en: "Three rows, one for each matching order.", hi: "तीन पंक्तियाँ, प्रत्येक मेल खाने वाले ऑर्डर के लिए एक।" }
   ],
-
-  answer: "C",
-
-  explanation: "Volatile primary memory such as RAM loses its contents when power is removed, while non-volatile secondary storage generally retains data."
+  answer: "D",
+  explanation: "A one-to-many join returns one result row for each matching order. Since the customer has three matching orders and no grouping or filtering is applied, three rows will normally appear."
 },
 
 // Question 233
 {
-  en: "Which statement most accurately describes primary (main) memory?",
-  hi: "निम्नलिखित में से कौन-सा कथन primary (main) memory को सबसे सटीक रूप से वर्णित करता है?",
-
+  en: "What is the primary purpose of a Crosstab Query in MS Access?",
+  hi: "MS Access में Crosstab Query का मुख्य उद्देश्य क्या है?",
   options: [
-    {
-      en: "It is used only for permanent backup of files",
-      hi: "इसका उपयोग केवल files के permanent backup के लिए होता है"
-    },
-    {
-      en: "It is the memory directly used by the CPU for storing data and instructions needed during processing",
-      hi: "यह वह memory है जिसका CPU processing के दौरान आवश्यक data और instructions को store करने के लिए सीधे उपयोग करता है"
-    },
-    {
-      en: "It consists only of external storage devices",
-      hi: "इसमें केवल external storage devices शामिल होते हैं"
-    },
-    {
-      en: "It is used exclusively for storing multimedia files",
-      hi: "इसका उपयोग केवल multimedia files को store करने के लिए होता है"
-    }
+    { en: "To modify the structure of a table", hi: "टेबल की संरचना को संशोधित करना" },
+    { en: "To summarize data in a row-and-column format", hi: "डेटा को पंक्तियों और कॉलम के प्रारूप में सारांशित करना" },
+    { en: "To delete duplicate records", hi: "डुप्लिकेट रिकॉर्ड्स हटाना" },
+    { en: "To establish relationships between tables", hi: "टेबल्स के बीच Relationships स्थापित करना" }
   ],
-
   answer: "B",
-
-  explanation: "Primary memory is directly involved in CPU processing and holds data and instructions needed during execution."
+  explanation: "A Crosstab Query summarizes data in a matrix-like format, using row headings and column headings to organize categories and an aggregate function to calculate values."
 },
 
 // Question 234
 {
-  en: "A computer is running an application, and the program's currently required data is being accessed rapidly by the CPU. Which primary memory component is normally involved?",
-  hi: "Computer में एक application चल रहा है और program का currently required data CPU द्वारा तेजी से access किया जा रहा है। इसमें सामान्यतः primary memory का कौन-सा component involved होता है?",
-
+  en: "In a Crosstab Query, which heading displays categories vertically down the left side?",
+  hi: "Crosstab Query में कौन-सी Heading श्रेणियों को बाईं ओर ऊपर से नीचे तक लंबवत प्रदर्शित करती है?",
   options: [
-    {
-      en: "RAM",
-      hi: "RAM"
-    },
-    {
-      en: "ROM",
-      hi: "ROM"
-    },
-    {
-      en: "DVD",
-      hi: "DVD"
-    },
-    {
-      en: "Pen Drive",
-      hi: "Pen Drive"
-    }
+    { en: "Column Heading", hi: "Column Heading" },
+    { en: "Value", hi: "Value" },
+    { en: "Row Heading", hi: "Row Heading" },
+    { en: "Total", hi: "Total" }
   ],
-
-  answer: "A",
-
-  explanation: "RAM temporarily holds the programs and data currently being used by the CPU."
+  answer: "C",
+  explanation: "The Row Heading displays categories vertically down the left side of a Crosstab Query result."
 },
 
 // Question 235
 {
-  en: "Which statement correctly distinguishes RAM from ROM?",
-  hi: "निम्नलिखित में से कौन-सा कथन RAM और ROM के बीच सही अंतर बताता है?",
-
+  en: "In a Crosstab Query, which field determines the categories displayed across the top?",
+  hi: "Crosstab Query में कौन-सा फ़ील्ड ऊपर क्षैतिज रूप से प्रदर्शित होने वाली श्रेणियों को निर्धारित करता है?",
   options: [
-    {
-      en: "RAM is generally volatile and used for working data, whereas ROM is generally non-volatile and retains its contents without continuous power",
-      hi: "RAM सामान्यतः volatile होती है और working data के लिए उपयोग होती है, जबकि ROM सामान्यतः non-volatile होती है और continuous power के बिना भी अपना content retain करती है"
-    },
-    {
-      en: "RAM is permanent storage, whereas ROM loses its contents when power is removed",
-      hi: "RAM permanent storage है, जबकि power हटने पर ROM अपना content खो देती है"
-    },
-    {
-      en: "Both RAM and ROM lose all stored contents immediately when power is removed",
-      hi: "Power हटते ही RAM और ROM दोनों अपना सारा stored content खो देती हैं"
-    },
-    {
-      en: "ROM is used only for temporary program data, whereas RAM permanently stores firmware",
-      hi: "ROM का उपयोग केवल temporary program data के लिए होता है, जबकि RAM firmware को permanently store करती है"
-    }
+    { en: "Row Heading", hi: "Row Heading" },
+    { en: "Column Heading", hi: "Column Heading" },
+    { en: "Criteria", hi: "Criteria" },
+    { en: "Primary Key", hi: "Primary Key" }
   ],
-
-  answer: "A",
-
-  explanation: "RAM is generally volatile and used for active working data, while ROM is generally non-volatile and retains stored contents without continuous power."
+  answer: "B",
+  explanation: "The Column Heading determines the categories displayed horizontally across the top of the Crosstab Query result."
 },
 // Question 236
 {
-  en: "Consider the following statements:\n1. RAM is a type of primary memory.\n2. ROM is a type of primary memory.\n3. RAM is generally used for temporary working data and programs currently in use.\n4. ROM is generally non-volatile.\nWhich statements are correct?",
-  hi: "निम्नलिखित कथनों पर विचार कीजिए:\n1. RAM primary memory का एक प्रकार है।\n2. ROM primary memory का एक प्रकार है।\n3. RAM का सामान्यतः temporary working data और currently used programs के लिए उपयोग होता है।\n4. ROM सामान्यतः non-volatile होती है।\nकौन-से कथन सही हैं?",
-
+  en: "Which part of a Crosstab Query contains the data summarized by an aggregate function?",
+  hi: "Crosstab Query का कौन-सा भाग Aggregate Function द्वारा सारांशित डेटा रखता है?",
   options: [
-    {
-      en: "1 and 3 only",
-      hi: "केवल 1 और 3"
-    },
-    {
-      en: "2 and 4 only",
-      hi: "केवल 2 और 4"
-    },
-    {
-      en: "1, 2 and 3 only",
-      hi: "केवल 1, 2 और 3"
-    },
-    {
-      en: "1, 2, 3 and 4",
-      hi: "1, 2, 3 और 4"
-    }
+    { en: "Row Heading", hi: "Row Heading" },
+    { en: "Column Heading", hi: "Column Heading" },
+    { en: "Value", hi: "Value" },
+    { en: "Sort", hi: "Sort" }
   ],
-
-  answer: "D",
-
-  explanation: "RAM and ROM are commonly classified as primary memory; RAM is generally volatile, while ROM is generally non-volatile."
+  answer: "C",
+  explanation: "The Value field contains the data summarized by an aggregate function such as Sum, Count, or Average in a Crosstab Query."
 },
 
 // Question 237
 {
-  en: "What is the primary purpose of cache memory in a computer system?",
-  hi: "Computer system में cache memory का primary purpose क्या है?",
-
+  en: "A user wants to count the number of orders in each category using a Crosstab Query. Which aggregate function should be used?",
+  hi: "एक उपयोगकर्ता Crosstab Query का उपयोग करके प्रत्येक श्रेणी में ऑर्डर्स की संख्या गिनना चाहता है। किस Aggregate Function का उपयोग करना चाहिए?",
   options: [
-    {
-      en: "To permanently store large amounts of user data",
-      hi: "Large amounts of user data को permanently store करना"
-    },
-    {
-      en: "To provide the CPU with faster access to frequently or recently needed data and instructions",
-      hi: "CPU को frequently या recently needed data और instructions तक faster access प्रदान करना"
-    },
-    {
-      en: "To replace secondary storage devices",
-      hi: "Secondary storage devices को replace करना"
-    },
-    {
-      en: "To store data only when the computer is switched off",
-      hi: "केवल computer के switched off होने पर data store करना"
-    }
+    { en: "Sum", hi: "Sum" },
+    { en: "Average", hi: "Average" },
+    { en: "Count", hi: "Count" },
+    { en: "Maximum", hi: "Maximum" }
   ],
-
-  answer: "B",
-
-  explanation: "Cache memory stores frequently or recently needed data and instructions so the CPU can access them more quickly."
+  answer: "C",
+  explanation: "Count calculates the number of records or non-Null field values, depending on the field or expression being counted. It is appropriate for counting orders in each category."
 },
 
 // Question 238
 {
-  en: "Cache memory is generally placed between which two components to reduce the time required to access frequently used information?",
-  hi: "Frequently used information को access करने में लगने वाला समय कम करने के लिए cache memory सामान्यतः किन दो components के बीच होती है?",
-
+  en: "A company wants to display total sales for each product category across different years. Which aggregate function is most appropriate for the sales values?",
+  hi: "एक कंपनी अलग-अलग वर्षों में प्रत्येक उत्पाद श्रेणी की कुल बिक्री प्रदर्शित करना चाहती है। बिक्री के मानों के लिए कौन-सा Aggregate Function सबसे उपयुक्त है?",
   options: [
-    {
-      en: "CPU and main memory",
-      hi: "CPU और main memory"
-    },
-    {
-      en: "Keyboard and monitor",
-      hi: "Keyboard और monitor"
-    },
-    {
-      en: "Printer and scanner",
-      hi: "Printer और scanner"
-    },
-    {
-      en: "Hard disk and printer",
-      hi: "Hard disk और printer"
-    }
+    { en: "Count", hi: "Count" },
+    { en: "Sum", hi: "Sum" },
+    { en: "Average", hi: "Average" },
+    { en: "First", hi: "First" }
   ],
-
-  answer: "A",
-
-  explanation: "Cache memory serves as a high-speed memory layer between the CPU and main memory, reducing access time for frequently needed information."
+  answer: "B",
+  explanation: "Sum adds the sales values for each product category and year, providing the total sales for each combination."
 },
 
 // Question 239
 {
-  en: "Which statement best explains why cache memory can improve CPU performance?",
-  hi: "निम्नलिखित में से कौन-सा कथन सबसे अच्छी तरह समझाता है कि cache memory CPU performance को क्यों improve कर सकती है?",
-
+  en: "A school wants to calculate the average marks obtained by students in each subject using a Crosstab Query. Which aggregate function should be selected?",
+  hi: "एक स्कूल Crosstab Query का उपयोग करके प्रत्येक विषय में विद्यार्थियों के औसत अंक निकालना चाहता है। किस Aggregate Function का चयन करना चाहिए?",
   options: [
-    {
-      en: "It permanently increases the storage capacity of the hard disk",
-      hi: "यह hard disk की storage capacity को permanently बढ़ाती है"
-    },
-    {
-      en: "It stores frequently accessed information closer to the CPU, reducing average memory access time",
-      hi: "यह frequently accessed information को CPU के closer store करती है, जिससे average memory access time कम होता है"
-    },
-    {
-      en: "It eliminates the need for RAM in a computer",
-      hi: "यह computer में RAM की आवश्यकता को समाप्त कर देती है"
-    },
-    {
-      en: "It converts secondary storage into primary memory",
-      hi: "यह secondary storage को primary memory में convert कर देती है"
-    }
+    { en: "Count", hi: "Count" },
+    { en: "Sum", hi: "Sum" },
+    { en: "Average", hi: "Average" },
+    { en: "Minimum", hi: "Minimum" }
   ],
-
-  answer: "B",
-
-  explanation: "Cache keeps frequently accessed information close to the CPU, reducing the average time needed to access data."
+  answer: "C",
+  explanation: "Average calculates the mean of the applicable marks for each subject or subject-related group in the Crosstab Query."
 },
 
 // Question 240
 {
-  en: "A CPU repeatedly needs the same data while executing a program. If that data is available in cache memory, what is the most likely benefit?",
-  hi: "एक program execute करते समय CPU को बार-बार उसी data की आवश्यकता होती है। यदि वह data cache memory में available है, तो सबसे likely benefit क्या होगा?",
-
+  en: "In a Crosstab Query, what is the purpose of setting criteria on a field?",
+  hi: "Crosstab Query में किसी फ़ील्ड पर Criteria निर्धारित करने का क्या उद्देश्य है?",
   options: [
-    {
-      en: "The CPU can access it faster than if it had to retrieve it from slower main memory",
-      hi: "CPU इसे उस स्थिति की तुलना में अधिक तेजी से access कर सकता है जब उसे slower main memory से retrieve करना पड़े"
-    },
-    {
-      en: "The data becomes permanently stored on the computer",
-      hi: "Data computer पर permanently stored हो जाता है"
-    },
-    {
-      en: "The CPU no longer needs to execute instructions",
-      hi: "CPU को instructions execute करने की आवश्यकता नहीं रहती"
-    },
-    {
-      en: "The data is automatically transferred to a printer",
-      hi: "Data automatically printer में transfer हो जाता है"
-    }
+    { en: "To filter records according to specified conditions", hi: "निर्दिष्ट शर्तों के अनुसार रिकॉर्ड्स को फ़िल्टर करना" },
+    { en: "To create a primary key automatically", hi: "अपने-आप Primary Key बनाना" },
+    { en: "To establish referential integrity", hi: "Referential Integrity स्थापित करना" },
+    { en: "To change a field's data type automatically", hi: "फ़ील्ड का डेटा टाइप अपने-आप बदलना" }
   ],
-
   answer: "A",
-
-  explanation: "Data available in cache can generally be accessed faster than data that must be retrieved from main memory."
+  explanation: "Criteria restrict the records included in the Crosstab Query according to specified conditions before the data is summarized."
 },
 // Question 241
 {
-  en: "Which of the following is an example of secondary storage?",
-  hi: "निम्नलिखित में से कौन secondary storage का उदाहरण है?",
-
+  en: "What is the primary purpose of a Form in MS Access?",
+  hi: "MS Access में Form का मुख्य उद्देश्य क्या है?",
   options: [
-    {
-      en: "RAM",
-      hi: "RAM"
-    },
-    {
-      en: "Cache Memory",
-      hi: "Cache Memory"
-    },
-    {
-      en: "Hard Disk",
-      hi: "Hard Disk"
-    },
-    {
-      en: "CPU Register",
-      hi: "CPU Register"
-    }
+    { en: "To define relationships between tables", hi: "टेबल्स के बीच Relationships निर्धारित करना" },
+    { en: "To facilitate data entry, viewing, and editing", hi: "डेटा दर्ज करने, देखने और संपादित करने की सुविधा प्रदान करना" },
+    { en: "To create database backup files", hi: "डेटाबेस की बैकअप फ़ाइलें बनाना" },
+    { en: "To permanently delete duplicate records", hi: "डुप्लिकेट रिकॉर्ड्स को स्थायी रूप से हटाना" }
   ],
-
-  answer: "C",
-
-  explanation: "A hard disk is a secondary storage device used for long-term data storage."
+  answer: "B",
+  explanation: "A Form provides a user-friendly interface for entering, viewing, and editing data stored in tables or retrieved through queries."
 },
 
 // Question 242
 {
-  en: "Which storage device generally uses magnetic disks to store data?",
-  hi: "निम्नलिखित में से कौन-सा storage device सामान्यतः magnetic disks का उपयोग करके data store करता है?",
-
+  en: "Which feature of MS Access provides a guided process for creating a form by selecting fields from a table or query?",
+  hi: "MS Access का कौन-सा फीचर टेबल या क्वेरी से फ़ील्ड चुनकर Form बनाने की निर्देशित प्रक्रिया प्रदान करता है?",
   options: [
-    {
-      en: "Hard Disk",
-      hi: "Hard Disk"
-    },
-    {
-      en: "SSD",
-      hi: "SSD"
-    },
-    {
-      en: "RAM",
-      hi: "RAM"
-    },
-    {
-      en: "ROM",
-      hi: "ROM"
-    }
+    { en: "Query Wizard", hi: "Query Wizard" },
+    { en: "Report Wizard", hi: "Report Wizard" },
+    { en: "Form Wizard", hi: "Form Wizard" },
+    { en: "Relationship Wizard", hi: "Relationship Wizard" }
   ],
-
-  answer: "A",
-
-  explanation: "A traditional hard disk drive (HDD) stores data magnetically on rotating disks."
+  answer: "C",
+  explanation: "Form Wizard guides the user through creating a form by selecting a table or query, choosing fields, and specifying a layout."
 },
 
 // Question 243
 {
-  en: "Which of the following is a solid-state secondary storage device that has no moving mechanical parts?",
-  hi: "निम्नलिखित में से कौन-सा solid-state secondary storage device है जिसमें कोई moving mechanical parts नहीं होते?",
-
+  en: "A user wants complete control over the placement and formatting of controls on a form. Which view is most suitable for detailed customization?",
+  hi: "एक उपयोगकर्ता Form पर Controls की स्थिति और Formatting पर पूरा नियंत्रण चाहता है। विस्तृत Customization के लिए कौन-सा View सबसे उपयुक्त है?",
   options: [
-    {
-      en: "DVD",
-      hi: "DVD"
-    },
-    {
-      en: "SSD",
-      hi: "SSD"
-    },
-    {
-      en: "Magnetic Tape",
-      hi: "Magnetic Tape"
-    },
-    {
-      en: "Floppy Disk",
-      hi: "Floppy Disk"
-    }
+    { en: "Datasheet View", hi: "Datasheet View" },
+    { en: "Form View", hi: "Form View" },
+    { en: "Print Preview", hi: "Print Preview" },
+    { en: "Design View", hi: "Design View" }
   ],
-
-  answer: "B",
-
-  explanation: "An SSD uses flash memory and has no moving mechanical parts."
+  answer: "D",
+  explanation: "Design View provides detailed control over a form's structure, including the placement, size, and properties of controls."
 },
 
 // Question 244
 {
-  en: "Which of the following is an example of optical secondary storage?",
-  hi: "निम्नलिखित में से कौन optical secondary storage का उदाहरण है?",
-
+  en: "Which view allows users to interact with a form and view or edit records without displaying the underlying design grid?",
+  hi: "कौन-सा View उपयोगकर्ताओं को अंतर्निहित Design Grid दिखाए बिना Form के माध्यम से रिकॉर्ड देखने या संपादित करने की सुविधा देता है?",
   options: [
-    {
-      en: "RAM",
-      hi: "RAM"
-    },
-    {
-      en: "SSD",
-      hi: "SSD"
-    },
-    {
-      en: "Hard Disk",
-      hi: "Hard Disk"
-    },
-    {
-      en: "DVD",
-      hi: "DVD"
-    }
+    { en: "Design View", hi: "Design View" },
+    { en: "Form View", hi: "Form View" },
+    { en: "SQL View", hi: "SQL View" },
+    { en: "Layout View", hi: "Layout View" }
   ],
-
-  answer: "D",
-
-  explanation: "DVD is an optical storage medium that uses a laser to read and write data."
+  answer: "B",
+  explanation: "Form View displays the form for normal use, allowing users to navigate, view, and edit records without exposing the design grid."
 },
 
 // Question 245
 {
-  en: "Which statement correctly describes a Pen Drive?",
-  hi: "निम्नलिखित में से कौन-सा कथन Pen Drive को सही रूप से वर्णित करता है?",
-
+  en: "Which type of form displays one record at a time?",
+  hi: "किस प्रकार का Form एक समय में एक रिकॉर्ड प्रदर्शित करता है?",
   options: [
-    {
-      en: "It is a portable flash-memory-based storage device commonly connected through a USB interface",
-      hi: "यह एक portable flash-memory-based storage device है जो सामान्यतः USB interface के माध्यम से connect होती है"
-    },
-    {
-      en: "It is an optical storage disc read using a laser",
-      hi: "यह एक optical storage disc है जिसे laser का उपयोग करके read किया जाता है"
-    },
-    {
-      en: "It is a type of CPU register",
-      hi: "यह CPU register का एक प्रकार है"
-    },
-    {
-      en: "It is a volatile primary memory device",
-      hi: "यह एक volatile primary memory device है"
-    }
+    { en: "Continuous Form", hi: "Continuous Form" },
+    { en: "Split Form", hi: "Split Form" },
+    { en: "Single Item Form", hi: "Single Item Form" },
+    { en: "Datasheet Form", hi: "Datasheet Form" }
   ],
-
-  answer: "A",
-
-  explanation: "A pen drive is a portable flash-memory-based secondary storage device commonly connected through USB."
+  answer: "C",
+  explanation: "A Single Item Form displays one record at a time, making it suitable for viewing and editing individual records."
 },
 // Question 246
 {
-  en: "A smartphone stores photographs on a small removable storage device. Which device is most appropriate?",
-  hi: "एक smartphone में photographs को एक छोटे removable storage device पर store किया जाता है। कौन-सा device सबसे उपयुक्त है?",
-
+  en: "A form must display multiple records simultaneously, with each record appearing in a separate row using the same layout. Which form type is most appropriate?",
+  hi: "एक Form में एक साथ कई रिकॉर्ड प्रदर्शित करने हैं, जिसमें प्रत्येक रिकॉर्ड समान Layout का उपयोग करते हुए अलग पंक्ति में दिखाई दे। कौन-सा Form Type सबसे उपयुक्त है?",
   options: [
-    {
-      en: "Pen Drive",
-      hi: "Pen Drive"
-    },
-    {
-      en: "Memory Card",
-      hi: "Memory Card"
-    },
-    {
-      en: "Cache Memory",
-      hi: "Cache Memory"
-    },
-    {
-      en: "RAM",
-      hi: "RAM"
-    }
+    { en: "Single Item Form", hi: "Single Item Form" },
+    { en: "Continuous Form", hi: "Continuous Form" },
+    { en: "Split Form", hi: "Split Form" },
+    { en: "Navigation Form", hi: "Navigation Form" }
   ],
-
   answer: "B",
-
-  explanation: "A memory card is a small removable flash-storage device commonly used in smartphones for storing photos and other files."
+  explanation: "A Continuous Form displays multiple records simultaneously, with each record shown in a separate row using the same form layout."
 },
 
 // Question 247
 {
-  en: "Which feature is common to both a Pen Drive and a Memory Card?",
-  hi: "Pen Drive और Memory Card दोनों में कौन-सी feature common होती है?",
-
+  en: "Which type of form displays Form View and Datasheet View of the same data simultaneously?",
+  hi: "किस प्रकार का Form एक ही डेटा का Form View और Datasheet View एक साथ प्रदर्शित करता है?",
   options: [
-    {
-      en: "Both primarily use magnetic platters",
-      hi: "दोनों मुख्यतः magnetic platters का उपयोग करते हैं"
-    },
-    {
-      en: "Both are volatile memories used only during CPU processing",
-      hi: "दोनों volatile memories हैं जिनका उपयोग केवल CPU processing के दौरान होता है"
-    },
-    {
-      en: "Both commonly use flash memory for portable data storage",
-      hi: "दोनों सामान्यतः portable data storage के लिए flash memory का उपयोग करते हैं"
-    },
-    {
-      en: "Both require a laser to read and write data",
-      hi: "दोनों को data read और write करने के लिए laser की आवश्यकता होती है"
-    }
+    { en: "Single Item Form", hi: "Single Item Form" },
+    { en: "Continuous Form", hi: "Continuous Form" },
+    { en: "Split Form", hi: "Split Form" },
+    { en: "Blank Form", hi: "Blank Form" }
   ],
-
   answer: "C",
-
-  explanation: "Both pen drives and memory cards commonly use flash memory for portable, non-volatile data storage."
+  explanation: "A Split Form displays the same underlying data in Form View and Datasheet View simultaneously, allowing users to view individual records and multiple records together."
 },
 
 // Question 248
 {
-  en: "A user needs to transfer files between two computers without installing the storage device inside either computer. Which option is most suitable?",
-  hi: "एक user को दो computers के बीच files transfer करनी हैं और storage device को किसी भी computer के अंदर install नहीं करना है। कौन-सा option सबसे उपयुक्त है?",
-
+  en: "Which statement correctly distinguishes a table from a form in MS Access?",
+  hi: "MS Access में Table और Form के बीच अंतर को कौन-सा कथन सही ढंग से बताता है?",
   options: [
-    {
-      en: "CPU Register",
-      hi: "CPU Register"
-    },
-    {
-      en: "Cache Memory",
-      hi: "Cache Memory"
-    },
-    {
-      en: "RAM",
-      hi: "RAM"
-    },
-    {
-      en: "Pen Drive",
-      hi: "Pen Drive"
-    }
+    { en: "A table stores data, whereas a form provides a user-friendly interface for entering and viewing data.", hi: "Table डेटा संग्रहीत करती है, जबकि Form डेटा दर्ज करने और देखने के लिए उपयोगकर्ता-अनुकूल इंटरफ़ेस प्रदान करता है।" },
+    { en: "A form permanently stores all database records, whereas a table is only used for data entry.", hi: "Form सभी डेटाबेस रिकॉर्ड्स को स्थायी रूप से संग्रहीत करता है, जबकि Table का उपयोग केवल डेटा एंट्री के लिए होता है।" },
+    { en: "A table can contain only numbers, whereas a form can contain text.", hi: "Table में केवल संख्याएँ हो सकती हैं, जबकि Form में टेक्स्ट हो सकता है।" },
+    { en: "Forms cannot display data retrieved from queries.", hi: "Forms क्वेरी से प्राप्त डेटा प्रदर्शित नहीं कर सकते।" }
   ],
-
-  answer: "D",
-
-  explanation: "A pen drive is a portable storage device that can be connected externally to transfer files between computers."
+  answer: "A",
+  explanation: "A table stores data in records and fields. A form provides a convenient interface for entering, viewing, and editing data from a table or query."
 },
 
 // Question 249
 {
-  en: "Which statement best describes RAM?",
-  hi: "निम्नलिखित में से कौन-सा कथन RAM को सबसे अच्छी तरह वर्णित करता है?",
-
+  en: "Which control in MS Access is primarily used to display or edit data from a field in the form's record source?",
+  hi: "MS Access में Form के Record Source के किसी फ़ील्ड का डेटा प्रदर्शित करने या संपादित करने के लिए मुख्य रूप से किस Control का उपयोग किया जाता है?",
   options: [
-    {
-      en: "A permanent storage device used for long-term data retention",
-      hi: "Long-term data retention के लिए उपयोग किया जाने वाला permanent storage device"
-    },
-    {
-      en: "A volatile primary memory used to temporarily hold data and programs currently being processed",
-      hi: "एक volatile primary memory जिसका उपयोग currently processed data और programs को temporarily hold करने के लिए होता है"
-    },
-    {
-      en: "An optical storage medium used to store large files",
-      hi: "Large files को store करने के लिए उपयोग किया जाने वाला optical storage medium"
-    },
-    {
-      en: "A non-volatile memory used mainly for permanent firmware storage",
-      hi: "मुख्यतः permanent firmware storage के लिए उपयोग की जाने वाली non-volatile memory"
-    }
+    { en: "Label", hi: "Label" },
+    { en: "Text Box", hi: "Text Box" },
+    { en: "Image Control", hi: "Image Control" },
+    { en: "Command Button", hi: "Command Button" }
   ],
-
   answer: "B",
-
-  explanation: "RAM is volatile primary memory that temporarily holds data and programs currently being processed."
+  explanation: "A Text Box can be bound to a field in the form's record source to display and, when permitted, edit its value."
 },
 
 // Question 250
 {
-  en: "Why is RAM called volatile memory?",
-  hi: "RAM को volatile memory क्यों कहा जाता है?",
-
+  en: "Which control is used to display descriptive text on a form, such as a field name or instruction?",
+  hi: "Form पर फ़ील्ड का नाम या निर्देश जैसे वर्णनात्मक टेक्स्ट प्रदर्शित करने के लिए किस Control का उपयोग किया जाता है?",
   options: [
-    {
-      en: "Its contents are automatically printed when power is removed",
-      hi: "Power हटने पर इसका content automatically print हो जाता है"
-    },
-    {
-      en: "Its contents are generally lost when the power supply is switched off",
-      hi: "Power supply switch off होने पर इसका content सामान्यतः lost हो जाता है"
-    },
-    {
-      en: "It can store data only in optical form",
-      hi: "यह केवल optical form में data store कर सकती है"
-    },
-    {
-      en: "It permanently retains all running programs",
-      hi: "यह सभी running programs को permanently retain करती है"
-    }
+    { en: "Text Box", hi: "Text Box" },
+    { en: "Combo Box", hi: "Combo Box" },
+    { en: "Label", hi: "Label" },
+    { en: "Check Box", hi: "Check Box" }
   ],
-
-  answer: "B",
-
-  explanation: "RAM is called volatile because its stored contents are generally lost when power is removed."
+  answer: "C",
+  explanation: "A Label displays descriptive text, such as a field name, heading, or instruction, on a form."
 },
-
 // Question 251
 {
-  en: "A user is working on a document that is currently open in a word processor. Which role of RAM is most directly involved?",
-  hi: "एक user word processor में एक document पर काम कर रहा है जो वर्तमान में open है। इसमें RAM की कौन-सी भूमिका सबसे सीधे तौर पर involved है?",
+  en: "A user wants to execute an action, such as opening another form, by clicking a control. Which control is most appropriate?",
+  hi: "एक उपयोगकर्ता किसी कंट्रोल पर क्लिक करके कोई कार्य करना चाहता है, जैसे दूसरा फॉर्म खोलना। इसके लिए कौन-सा कंट्रोल सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Temporarily holding the program and data currently being used",
-      hi: "वर्तमान में उपयोग किए जा रहे program और data को temporarily hold करना"
+      en: "Command Button",
+      hi: "कमांड बटन"
     },
     {
-      en: "Permanently storing the document after the computer is switched off",
-      hi: "Computer switch off होने के बाद document को permanently store करना"
+      en: "Label",
+      hi: "लेबल"
     },
     {
-      en: "Printing the document on paper",
-      hi: "Document को paper पर print करना"
+      en: "Image Control",
+      hi: "इमेज कंट्रोल"
     },
     {
-      en: "Converting the document into an optical disc",
-      hi: "Document को optical disc में convert करना"
+      en: "List Box",
+      hi: "लिस्ट बॉक्स"
     }
   ],
 
   answer: "A",
 
-  explanation: "RAM temporarily holds the active word-processing program and the data currently being used."
+  explanation: "A Command Button is used to perform an action when clicked, such as opening another form, running a macro, or executing a command."
 },
 
 // Question 252
 {
-  en: "Consider the following statements about RAM:\n1. RAM is a type of primary memory.\n2. RAM is generally volatile.\n3. RAM is used to hold data and programs currently required by the CPU.\n4. RAM permanently retains its contents after power is removed. \nWhich statements are correct?",
-  hi: "RAM के बारे में निम्नलिखित कथनों पर विचार कीजिए:\n1. RAM primary memory का एक प्रकार है।\n2. RAM सामान्यतः volatile होती है।\n3. RAM का उपयोग CPU द्वारा वर्तमान में आवश्यक data और programs को hold करने के लिए होता है।\n4. Power हटने के बाद RAM अपने contents को permanently retain करती है। \nकौन-से कथन सही हैं?",
+  en: "Which control allows a user to select or clear a Boolean option, such as whether an employee is currently active?",
+  hi: "कौन-सा कंट्रोल उपयोगकर्ता को किसी Boolean विकल्प को चुनने या हटाने की सुविधा देता है, जैसे कि कोई कर्मचारी वर्तमान में सक्रिय है या नहीं?",
 
   options: [
     {
-      en: "1 and 2 only",
-      hi: "केवल 1 और 2"
+      en: "Combo Box",
+      hi: "कॉम्बो बॉक्स"
     },
     {
-      en: "2 and 4 only",
-      hi: "केवल 2 और 4"
+      en: "Check Box",
+      hi: "चेक बॉक्स"
     },
     {
-      en: "1, 2 and 3 only",
-      hi: "केवल 1, 2 और 3"
+      en: "Text Box",
+      hi: "टेक्स्ट बॉक्स"
     },
     {
-      en: "1, 2, 3 and 4",
-      hi: "1, 2, 3 और 4"
+      en: "Label",
+      hi: "लेबल"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "RAM is primary and generally volatile memory used for data and programs currently required by the CPU. Statement 4 is incorrect."
+  explanation: "A Check Box represents a Boolean or Yes/No option. The user can select it to indicate Yes or True, or clear it to indicate No or False."
 },
 
 // Question 253
 {
-  en: "Which statement best describes the purpose of RAM as temporary storage?",
-  hi: "Temporary storage के रूप में RAM के purpose को सबसे अच्छी तरह कौन-सा कथन वर्णित करता है?",
+  en: "Which control is generally used to let a user select one option from a group of mutually exclusive choices?",
+  hi: "परस्पर अनन्य विकल्पों के समूह में से केवल एक विकल्प चुनने की सुविधा देने के लिए सामान्यतः किस कंट्रोल का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "It permanently stores files even after power is removed",
-      hi: "Power हटने के बाद भी यह files को permanently store करती है"
+      en: "Check Box",
+      hi: "चेक बॉक्स"
     },
     {
-      en: "It holds data and programs that are currently needed by the CPU",
-      hi: "यह उस data और programs को hold करती है जिनकी CPU को वर्तमान में आवश्यकता होती है"
+      en: "List Box",
+      hi: "लिस्ट बॉक्स"
     },
     {
-      en: "It replaces secondary storage for long-term data retention",
-      hi: "यह long-term data retention के लिए secondary storage को replace करती है"
+      en: "Option Button",
+      hi: "ऑप्शन बटन"
     },
     {
-      en: "It stores only firmware instructions",
-      hi: "यह केवल firmware instructions को store करती है"
+      en: "Image Control",
+      hi: "इमेज कंट्रोल"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "RAM provides temporary working space for data and programs currently needed during processing."
+  explanation: "An Option Button, also called a radio button, is commonly used within an option group to select one mutually exclusive choice."
 },
 
 // Question 254
 {
-  en: "Which statement correctly distinguishes SRAM from DRAM?",
-  hi: "निम्नलिखित में से कौन-सा कथन SRAM और DRAM के बीच सही अंतर बताता है?",
+  en: "Which control allows a user to select an item from a drop-down list and may also allow typing, depending on its properties?",
+  hi: "कौन-सा कंट्रोल उपयोगकर्ता को ड्रॉप-डाउन सूची से कोई आइटम चुनने और उसकी प्रॉपर्टीज के अनुसार टाइप करने की सुविधा भी दे सकता है?",
 
   options: [
     {
-      en: "SRAM needs periodic refreshing, whereas DRAM does not",
-      hi: "SRAM को periodic refreshing की आवश्यकता होती है, जबकि DRAM को नहीं होती"
+      en: "Label",
+      hi: "लेबल"
     },
     {
-      en: "SRAM is generally faster and does not require periodic refreshing, whereas DRAM requires refreshing",
-      hi: "SRAM सामान्यतः faster होती है और इसे periodic refreshing की आवश्यकता नहीं होती, जबकि DRAM को refreshing की आवश्यकता होती है"
+      en: "Combo Box",
+      hi: "कॉम्बो बॉक्स"
     },
     {
-      en: "Both SRAM and DRAM are non-volatile memories",
-      hi: "SRAM और DRAM दोनों non-volatile memories हैं"
+      en: "Image Control",
+      hi: "इमेज कंट्रोल"
     },
     {
-      en: "DRAM is generally faster than SRAM because it uses fewer memory cells",
-      hi: "DRAM सामान्यतः SRAM से faster होती है क्योंकि यह fewer memory cells का उपयोग करती है"
+      en: "Command Button",
+      hi: "कमांड बटन"
     }
   ],
 
   answer: "B",
 
-  explanation: "SRAM is generally faster and does not require periodic refresh, while DRAM requires periodic refreshing to retain data."
+  explanation: "A Combo Box provides a drop-down list of choices. Depending on its Limit To List and other properties, users may be able to type a value instead of selecting an existing item."
 },
 
 // Question 255
 {
-  en: "A computer is running several applications simultaneously. Which function of RAM is most directly responsible for supporting this activity?",
-  hi: "Computer में कई applications simultaneously चल रहे हैं। इस activity को support करने के लिए RAM का कौन-सा function सबसे सीधे तौर पर responsible है?",
+  en: "Which control displays a list of items from which a user can select one or more items, depending on its selection settings?",
+  hi: "कौन-सा कंट्रोल आइटमों की सूची दिखाता है, जिसमें उपयोगकर्ता उसकी चयन सेटिंग्स के अनुसार एक या अधिक आइटम चुन सकता है?",
 
   options: [
     {
-      en: "Providing temporary working space for the programs and data currently in use",
-      hi: "वर्तमान में उपयोग किए जा रहे programs और data के लिए temporary working space प्रदान करना"
+      en: "List Box",
+      hi: "लिस्ट बॉक्स"
     },
     {
-      en: "Permanently storing all installed applications",
-      hi: "सभी installed applications को permanently store करना"
+      en: "Text Box",
+      hi: "टेक्स्ट बॉक्स"
     },
     {
-      en: "Generating printed output from each application",
-      hi: "प्रत्येक application से printed output generate करना"
+      en: "Label",
+      hi: "लेबल"
     },
     {
-      en: "Replacing the CPU during instruction execution",
-      hi: "Instruction execution के दौरान CPU को replace करना"
+      en: "Option Button",
+      hi: "ऑप्शन बटन"
     }
   ],
 
   answer: "A",
 
-  explanation: "RAM provides temporary working space for multiple active programs and their data."
+  explanation: "A List Box displays a list of items for selection. Its Multi Select property can allow a user to select a single item or multiple items."
 },
-
 // Question 256
 {
-  en: "Which combination correctly matches the memory type with its characteristic?",
-  hi: "निम्नलिखित में से कौन-सा combination memory type को उसकी characteristic के साथ सही रूप से match करता है?",
+  en: "Which statement correctly describes a Subform Control in MS Access?",
+  hi: "MS Access में Subform Control का सही वर्णन कौन-सा है?",
 
   options: [
     {
-      en: "SRAM — requires periodic refresh; DRAM — does not require refresh",
-      hi: "SRAM — periodic refresh की आवश्यकता होती है; DRAM — refresh की आवश्यकता नहीं होती"
+      en: "It is used only to display decorative images.",
+      hi: "इसका उपयोग केवल सजावटी चित्र दिखाने के लिए किया जाता है।"
     },
     {
-      en: "SRAM — generally faster; DRAM — generally higher density and requires refresh",
-      hi: "SRAM — सामान्यतः faster; DRAM — सामान्यतः higher density और refresh की आवश्यकता होती है"
+      en: "It permanently converts a query into a table.",
+      hi: "यह किसी क्वेरी को स्थायी रूप से टेबल में बदल देता है।"
     },
     {
-      en: "SRAM — volatile-free; DRAM — non-volatile",
-      hi: "SRAM — volatile-free; DRAM — non-volatile"
+      en: "It is used exclusively to enter passwords.",
+      hi: "इसका उपयोग केवल पासवर्ड दर्ज करने के लिए किया जाता है।"
     },
     {
-      en: "SRAM — optical storage; DRAM — magnetic storage",
-      hi: "SRAM — optical storage; DRAM — magnetic storage"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "SRAM is generally faster, while DRAM offers higher density and requires periodic refreshing."
-},
-
-// Question 257
-{
-  en: "Which statement best defines ROM?",
-  hi: "निम्नलिखित में से कौन-सा कथन ROM को सबसे अच्छी तरह परिभाषित करता है?",
-
-  options: [
-    {
-      en: "A volatile memory used only for temporary calculations",
-      hi: "केवल temporary calculations के लिए उपयोग की जाने वाली volatile memory"
-    },
-    {
-      en: "A non-volatile memory that retains stored contents even when power is removed",
-      hi: "एक non-volatile memory जो power हटने पर भी stored contents को retain करती है"
-    },
-    {
-      en: "A secondary storage device used only for backups",
-      hi: "केवल backups के लिए उपयोग किया जाने वाला secondary storage device"
-    },
-    {
-      en: "A CPU register used for temporary data",
-      hi: "Temporary data के लिए उपयोग किया जाने वाला CPU register"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "ROM is generally non-volatile and retains its stored contents when power is removed."
-},
-
-// Question 258
-{
-  en: "Why is ROM classified as non-volatile memory?",
-  hi: "ROM को non-volatile memory के रूप में क्यों classify किया जाता है?",
-
-  options: [
-    {
-      en: "It loses its contents whenever the CPU stops processing",
-      hi: "CPU के processing बंद करते ही यह अपना contents खो देती है"
-    },
-    {
-      en: "It retains its stored information even when the computer is switched off",
-      hi: "Computer switch off होने पर भी यह अपनी stored information retain करती है"
-    },
-    {
-      en: "It can store data only while applications are running",
-      hi: "यह केवल applications के running होने के दौरान data store कर सकती है"
-    },
-    {
-      en: "It requires continuous power to preserve its contents",
-      hi: "अपने contents को preserve करने के लिए इसे continuous power की आवश्यकता होती है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "ROM is non-volatile because it retains stored information even when power is removed."
-},
-
-// Question 259
-{
-  en: "Which situation best demonstrates the basic characteristic of ROM?",
-  hi: "निम्नलिखित में से कौन-सी situation ROM की basic characteristic को सबसे अच्छी तरह दर्शाती है?",
-
-  options: [
-    {
-      en: "A running application temporarily uses memory and loses its data after shutdown",
-      hi: "एक running application temporarily memory का उपयोग करती है और shutdown के बाद अपना data खो देती है"
-    },
-    {
-      en: "A stored instruction remains available even after the computer is powered off",
-      hi: "एक stored instruction computer के powered off होने के बाद भी available रहती है"
-    },
-    {
-      en: "A file is temporarily held in a CPU register during calculation",
-      hi: "Calculation के दौरान एक file को CPU register में temporarily hold किया जाता है"
-    },
-    {
-      en: "A document is printed through an output device",
-      hi: "एक document को output device के माध्यम से print किया जाता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The retention of stored instructions without continuous power demonstrates the non-volatile nature of ROM."
-},
-
-// Question 260
-{
-  en: "Consider the following statements about ROM:\n1. ROM is a type of primary memory.\n2. ROM is generally non-volatile.\n3. Its stored contents are retained when power is removed.\n4. It is primarily used as temporary working memory for currently running programs.\nWhich statements are correct?",
-  hi: "ROM के बारे में निम्नलिखित कथनों पर विचार कीजिए:\n1. ROM primary memory का एक प्रकार है।\n2. ROM सामान्यतः non-volatile होती है।\n3. Power हटने पर इसके stored contents retain रहते हैं।\n4. इसका primary use currently running programs के लिए temporary working memory के रूप में होता है। \nकौन-से कथन सही हैं?",
-
-  options: [
-    {
-      en: "1 and 2 only",
-      hi: "केवल 1 और 2"
-    },
-    {
-      en: "2, 3 and 4 only",
-      hi: "केवल 2, 3 और 4"
-    },
-    {
-      en: "1, 2 and 3 only",
-      hi: "केवल 1, 2 और 3"
-    },
-    {
-      en: "1, 2, 3 and 4",
-      hi: "1, 2, 3 और 4"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "ROM is generally classified as primary memory, is non-volatile, and retains its contents without power. Statement 4 describes RAM, not ROM."
-},
-// Question 261
-{
-  en: "What is the full form of PROM?",
-  hi: "PROM का full form क्या है?",
-
-  options: [
-    {
-      en: "Programmable Read-Only Memory",
-      hi: "Programmable Read-Only Memory"
-    },
-    {
-      en: "Permanent Read-Only Memory",
-      hi: "Permanent Read-Only Memory"
-    },
-    {
-      en: "Primary Read-Only Memory",
-      hi: "Primary Read-Only Memory"
-    },
-    {
-      en: "Program Read-Only Memory",
-      hi: "Program Read-Only Memory"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "PROM stands for Programmable Read-Only Memory."
-},
-
-// Question 262
-{
-  en: "What is the basic feature of EPROM?",
-  hi: "EPROM की basic feature क्या है?",
-
-  options: [
-    {
-      en: "It can never be programmed",
-      hi: "इसे कभी program नहीं किया जा सकता"
-    },
-    {
-      en: "It can be programmed and erased using ultraviolet (UV) light",
-      hi: "इसे program किया जा सकता है और ultraviolet (UV) light का उपयोग करके erase किया जा सकता है"
-    },
-    {
-      en: "It is a volatile memory",
-      hi: "यह volatile memory है"
-    },
-    {
-      en: "It is used only as RAM",
-      hi: "इसका उपयोग केवल RAM के रूप में होता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "EPROM can be programmed and its stored contents can be erased using ultraviolet (UV) light."
-},
-
-// Question 263
-{
-  en: "What is the basic feature of EEPROM?",
-  hi: "EEPROM की basic feature क्या है?",
-
-  options: [
-    {
-      en: "It can be programmed only once",
-      hi: "इसे केवल एक बार program किया जा सकता है"
-    },
-    {
-      en: "It can be erased only using UV light",
-      hi: "इसे केवल UV light का उपयोग करके erase किया जा सकता है"
-    },
-    {
-      en: "It can be electrically erased and reprogrammed",
-      hi: "इसे electrically erase और reprogram किया जा सकता है"
-    },
-    {
-      en: "It loses all data when power is switched off",
-      hi: "Power switch off होने पर यह सारा data खो देती है"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "EEPROM can be electrically erased and reprogrammed without using ultraviolet light."
-},
-
-// Question 264
-{
-  en: "Which of the following is correctly matched?",
-  hi: "निम्नलिखित में से कौन-सा correctly matched है?",
-
-  options: [
-    {
-      en: "PROM — Programmable once",
-      hi: "PROM — एक बार programmable"
-    },
-    {
-      en: "EPROM — Volatile memory",
-      hi: "EPROM — Volatile memory"
-    },
-    {
-      en: "EEPROM — Cannot be reprogrammed",
-      hi: "EEPROM — Reprogram नहीं किया जा सकता"
-    },
-    {
-      en: "PROM — Type of RAM",
-      hi: "PROM — RAM का एक प्रकार"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "PROM can be programmed once after manufacture and cannot normally be erased and reprogrammed."
-},
-
-// Question 265
-{
-  en: "Which statement best defines cache memory?",
-  hi: "निम्नलिखित में से कौन-सा कथन cache memory को सबसे अच्छी तरह परिभाषित करता है?",
-
-  options: [
-    {
-      en: "A high-speed memory that stores frequently or recently needed data and instructions for faster CPU access",
-      hi: "एक high-speed memory जो CPU को faster access देने के लिए frequently या recently needed data और instructions को store करती है"
-    },
-    {
-      en: "A permanent storage device used for long-term file storage",
-      hi: "Long-term file storage के लिए उपयोग किया जाने वाला permanent storage device"
-    },
-    {
-      en: "A type of input device used to transfer data to the CPU",
-      hi: "CPU को data transfer करने के लिए उपयोग किया जाने वाला input device"
-    },
-    {
-      en: "A secondary storage device used for backups",
-      hi: "Backups के लिए उपयोग किया जाने वाला secondary storage device"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Cache is high-speed memory that keeps frequently or recently needed data and instructions close to the CPU for faster access."
-},
-// Question 266
-{
-  en: "What is the main advantage of placing cache memory close to the CPU?",
-  hi: "Cache memory को CPU के close रखने का मुख्य advantage क्या है?",
-
-  options: [
-    {
-      en: "It increases the physical size of secondary storage",
-      hi: "यह secondary storage का physical size बढ़ाता है"
-    },
-    {
-      en: "It allows the CPU to access frequently needed information more quickly",
-      hi: "यह CPU को frequently needed information तक अधिक तेजी से access करने देता है"
-    },
-    {
-      en: "It permanently stores all running applications",
-      hi: "यह सभी running applications को permanently store करता है"
-    },
-    {
-      en: "It eliminates the need for RAM completely",
-      hi: "यह RAM की आवश्यकता को पूरी तरह समाप्त कर देता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Placing cache close to the CPU reduces access time for frequently needed data and instructions."
-},
-
-// Question 267
-{
-  en: "Consider a CPU repeatedly requesting the same data. If the required data is already available in cache memory, what is the likely result?",
-  hi: "एक CPU बार-बार उसी data की request कर रहा है। यदि required data पहले से cache memory में available है, तो likely result क्या होगा?",
-
-  options: [
-    {
-      en: "The CPU can obtain the data faster than retrieving it from slower main memory",
-      hi: "CPU data को slower main memory से retrieve करने की तुलना में अधिक तेजी से प्राप्त कर सकता है"
-    },
-    {
-      en: "The data is automatically moved to an optical disc",
-      hi: "Data automatically optical disc में move हो जाता है"
-    },
-    {
-      en: "The CPU stops executing the current instruction",
-      hi: "CPU current instruction को execute करना बंद कर देता है"
-    },
-    {
-      en: "The data becomes permanently stored in the cache",
-      hi: "Data cache में permanently stored हो जाता है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "A cache hit allows the CPU to obtain the required data faster than retrieving it from main memory."
-},
-
-// Question 268
-{
-  en: "Which statement correctly describes the relationship among CPU, cache, and main memory?",
-  hi: "CPU, cache और main memory के बीच relationship को कौन-सा कथन सही रूप से वर्णित करता है?",
-
-  options: [
-    {
-      en: "CPU accesses cache for frequently needed information, while cache can reduce the need to access slower main memory",
-      hi: "CPU frequently needed information के लिए cache को access करता है, जबकि cache slower main memory को access करने की आवश्यकता को कम कर सकता है"
-    },
-    {
-      en: "Cache replaces the CPU and performs all calculations independently",
-      hi: "Cache CPU को replace करता है और सभी calculations independently perform करता है"
-    },
-    {
-      en: "Main memory is located inside the CPU and cache is used only for permanent storage",
-      hi: "Main memory CPU के अंदर located होती है और cache का उपयोग केवल permanent storage के लिए होता है"
-    },
-    {
-      en: "CPU accesses secondary storage first and cache is used only for output",
-      hi: "CPU पहले secondary storage को access करता है और cache का उपयोग केवल output के लिए होता है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Cache provides faster access to frequently needed information and helps reduce accesses to slower main memory."
-},
-
-// Question 269
-{
-  en: "What is the primary purpose of cache memory in relation to CPU performance?",
-  hi: "CPU performance के संदर्भ में cache memory का primary purpose क्या है?",
-
-  options: [
-    {
-      en: "To provide faster access to frequently used data and instructions",
-      hi: "Frequently used data और instructions तक faster access प्रदान करना"
-    },
-    {
-      en: "To permanently store large user files",
-      hi: "Large user files को permanently store करना"
-    },
-    {
-      en: "To replace secondary storage devices",
-      hi: "Secondary storage devices को replace करना"
-    },
-    {
-      en: "To provide electrical power to the CPU",
-      hi: "CPU को electrical power प्रदान करना"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Cache improves CPU performance by providing faster access to frequently used data and instructions."
-},
-
-// Question 270
-{
-  en: "Which statement correctly describes the basic levels of CPU cache?",
-  hi: "निम्नलिखित में से कौन-सा कथन CPU cache के basic levels को सही रूप से वर्णित करता है?",
-
-  options: [
-    {
-      en: "L1, L2 and L3 are commonly used cache levels, with L1 generally being the smallest and fastest",
-      hi: "L1, L2 और L3 commonly used cache levels हैं, जिनमें L1 सामान्यतः सबसे छोटी और fastest होती है"
-    },
-    {
-      en: "L1, L2 and L3 are types of secondary storage",
-      hi: "L1, L2 और L3 secondary storage के types हैं"
-    },
-    {
-      en: "L1 is the slowest cache, while L3 is always the fastest",
-      hi: "L1 सबसे slowest cache है, जबकि L3 हमेशा fastest होती है"
-    },
-    {
-      en: "L1, L2 and L3 refer to different types of RAM modules",
-      hi: "L1, L2 और L3 different types of RAM modules को refer करते हैं"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "L1, L2, and L3 are common cache levels; L1 is generally the smallest and fastest, while L3 is generally larger and slower."
-},
-// Question 271
-{
-  en: "A CPU needs a frequently used piece of data. The system checks L1 cache first, then L2 and then L3 if necessary. What does this arrangement primarily aim to achieve?",
-  hi: "CPU को frequently used data की आवश्यकता है। System पहले L1 cache, फिर आवश्यकता होने पर L2 और फिर L3 को check करता है। यह arrangement मुख्य रूप से क्या achieve करने के लिए है?",
-
-  options: [
-    {
-      en: "Increase permanent storage capacity",
-      hi: "Permanent storage capacity बढ़ाना"
-    },
-    {
-      en: "Reduce the average time required to obtain frequently needed data",
-      hi: "Frequently needed data प्राप्त करने में लगने वाले average time को कम करना"
-    },
-    {
-      en: "Eliminate the need for secondary storage",
-      hi: "Secondary storage की आवश्यकता को समाप्त करना"
-    },
-    {
-      en: "Prevent the CPU from executing instructions",
-      hi: "CPU को instructions execute करने से रोकना"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Checking cache levels in order helps reduce the average time needed to obtain frequently accessed data."
-},
-
-// Question 272
-{
-  en: "Which comparison of cache levels is generally correct?",
-  hi: "Cache levels की निम्नलिखित में से कौन-सी comparison सामान्यतः सही है?",
-
-  options: [
-    {
-      en: "L1 is generally smaller and faster than L2, while L2 is generally smaller and faster than L3",
-      hi: "L1 सामान्यतः L2 से छोटी और faster होती है, जबकि L2 सामान्यतः L3 से छोटी और faster होती है"
-    },
-    {
-      en: "L3 is always smaller and faster than L1",
-      hi: "L3 हमेशा L1 से छोटी और faster होती है"
-    },
-    {
-      en: "L1, L2 and L3 always have exactly the same size and speed",
-      hi: "L1, L2 और L3 का size और speed हमेशा exactly समान होता है"
-    },
-    {
-      en: "L2 is a type of optical memory, while L3 is magnetic storage",
-      hi: "L2 एक प्रकार की optical memory है, जबकि L3 magnetic storage है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Generally, L1 is the smallest and fastest, followed by L2, while L3 is generally larger and slower."
-},
-
-// Question 273
-{
-  en: "What is the smallest unit of digital data?",
-  hi: "Digital data की सबसे छोटी unit क्या है?",
-
-  options: [
-    {
-      en: "Byte",
-      hi: "Byte"
-    },
-    {
-      en: "Bit",
-      hi: "Bit"
-    },
-    {
-      en: "Nibble",
-      hi: "Nibble"
-    },
-    {
-      en: "Kilobyte",
-      hi: "Kilobyte"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "A bit is the smallest unit of digital data and can represent a binary value of 0 or 1."
-},
-
-// Question 274
-{
-  en: "How many bits are there in one byte?",
-  hi: "One byte में कितने bits होते हैं?",
-
-  options: [
-    {
-      en: "4 bits",
-      hi: "4 bits"
-    },
-    {
-      en: "8 bits",
-      hi: "8 bits"
-    },
-    {
-      en: "16 bits",
-      hi: "16 bits"
-    },
-    {
-      en: "32 bits",
-      hi: "32 bits"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "One byte consists of 8 bits."
-},
-
-// Question 275
-{
-  en: "Which unit is equal to 4 bits?",
-  hi: "कौन-सी unit 4 bits के बराबर होती है?",
-
-  options: [
-    {
-      en: "Byte",
-      hi: "Byte"
-    },
-    {
-      en: "Kilobyte",
-      hi: "Kilobyte"
-    },
-    {
-      en: "Nibble",
-      hi: "Nibble"
-    },
-    {
-      en: "Megabyte",
-      hi: "Megabyte"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "A nibble consists of 4 bits."
-},
-
-// Question 276
-{
-  en: "Which of the following represents the correct order from smaller to larger unit?",
-  hi: "निम्नलिखित में से कौन-सा छोटे से बड़े unit का सही क्रम दर्शाता है?",
-
-  options: [
-    {
-      en: "Bit → Byte → KB → MB → GB → TB → PB",
-      hi: "Bit → Byte → KB → MB → GB → TB → PB"
-    },
-    {
-      en: "Byte → Bit → KB → MB → GB → TB → PB",
-      hi: "Byte → Bit → KB → MB → GB → TB → PB"
-    },
-    {
-      en: "Bit → Nibble → MB → KB → GB → TB → PB",
-      hi: "Bit → Nibble → MB → KB → GB → TB → PB"
-    },
-    {
-      en: "KB → MB → Byte → GB → TB → PB",
-      hi: "KB → MB → Byte → GB → TB → PB"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "The standard order from smaller to larger is Bit → Byte → KB → MB → GB → TB → PB."
-},
-
-// Question 277
-{
-  en: "Using the standard binary convention, 1 KB is equal to:",
-  hi: "Standard binary convention के अनुसार, 1 KB किसके बराबर होता है?",
-
-  options: [
-    {
-      en: "100 bytes",
-      hi: "100 bytes"
-    },
-    {
-      en: "512 bytes",
-      hi: "512 bytes"
-    },
-    {
-      en: "1024 bytes",
-      hi: "1024 bytes"
-    },
-    {
-      en: "2048 bytes",
-      hi: "2048 bytes"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Under the standard binary convention used in basic computer studies, 1 KB = 1024 bytes."
-},
-
-// Question 278
-{
-  en: "How many bytes are there in 4 KB?",
-  hi: "4 KB में कितने bytes होते हैं?",
-
-  options: [
-    {
-      en: "4096 bytes",
-      hi: "4096 bytes"
-    },
-    {
-      en: "2048 bytes",
-      hi: "2048 bytes"
-    },
-    {
-      en: "1024 bytes",
-      hi: "1024 bytes"
-    },
-    {
-      en: "8192 bytes",
-      hi: "8192 bytes"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Using 1 KB = 1024 bytes, 4 KB = 4 × 1024 = 4096 bytes."
-},
-
-// Question 279
-{
-  en: "Using the standard binary convention, 1 MB is equal to:",
-  hi: "Standard binary convention के अनुसार, 1 MB किसके बराबर होता है?",
-
-  options: [
-    {
-      en: "1024 KB",
-      hi: "1024 KB"
-    },
-    {
-      en: "1000 KB",
-      hi: "1000 KB"
-    },
-    {
-      en: "512 KB",
-      hi: "512 KB"
-    },
-    {
-      en: "2048 KB",
-      hi: "2048 KB"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Under the standard binary convention used in basic computer studies, 1 MB = 1024 KB."
-},
-
-// Question 280
-{
-  en: "A storage device has a capacity of 2 GB. Using the standard binary convention, how many MB does it represent?",
-  hi: "एक storage device की capacity 2 GB है। Standard binary convention के अनुसार यह कितने MB के बराबर है?",
-
-  options: [
-    {
-      en: "1024 MB",
-      hi: "1024 MB"
-    },
-    {
-      en: "2000 MB",
-      hi: "2000 MB"
-    },
-    {
-      en: "2048 MB",
-      hi: "2048 MB"
-    },
-    {
-      en: "4096 MB",
-      hi: "4096 MB"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Using 1 GB = 1024 MB, 2 GB = 2 × 1024 = 2048 MB."
-},
-
-// Question 281
-{
-  en: "What is meant by volatile memory?",
-  hi: "Volatile memory का क्या अर्थ है?",
-
-  options: [
-    {
-      en: "Memory that retains data permanently without power",
-      hi: "ऐसी memory जो power के बिना भी data को permanently retain करती है"
-    },
-    {
-      en: "Memory that loses its stored contents when power is removed",
-      hi: "ऐसी memory जो power हटने पर अपने stored contents को खो देती है"
-    },
-    {
-      en: "Memory used only for external storage",
-      hi: "केवल external storage के लिए उपयोग की जाने वाली memory"
-    },
-    {
-      en: "Memory that can store data without electricity",
-      hi: "ऐसी memory जो electricity के बिना data store कर सकती है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Volatile memory loses its stored contents when the power supply is removed."
-},
-
-// Question 282
-{
-  en: "Which of the following is an example of volatile memory?",
-  hi: "निम्नलिखित में से कौन volatile memory का उदाहरण है?",
-
-  options: [
-    {
-      en: "ROM",
-      hi: "ROM"
-    },
-    {
-      en: "SSD",
-      hi: "SSD"
-    },
-    {
-      en: "RAM",
-      hi: "RAM"
-    },
-    {
-      en: "DVD",
-      hi: "DVD"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "RAM is volatile memory because it generally loses its stored contents when power is removed."
-},
-
-// Question 283
-{
-  en: "What is the main characteristic of non-volatile memory?",
-  hi: "Non-volatile memory की मुख्य characteristic क्या है?",
-
-  options: [
-    {
-      en: "It loses all stored data when power is switched off",
-      hi: "Power switch off होने पर यह सभी stored data खो देती है"
-    },
-    {
-      en: "It retains stored data even when power is removed",
-      hi: "Power हटने पर भी यह stored data retain करती है"
-    },
-    {
-      en: "It can store data only temporarily",
-      hi: "यह केवल temporarily data store कर सकती है"
-    },
-    {
-      en: "It works only while the CPU is processing data",
-      hi: "यह केवल CPU के data processing के दौरान काम करती है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Non-volatile memory retains its stored data even when the power supply is removed."
-},
-
-// Question 284
-{
-  en: "Which pair is correctly matched?",
-  hi: "निम्नलिखित में से कौन-सा pair correctly matched है?",
-
-  options: [
-    {
-      en: "RAM — Non-volatile; ROM — Volatile",
-      hi: "RAM — Non-volatile; ROM — Volatile"
-    },
-    {
-      en: "RAM — Volatile; ROM — Non-volatile",
-      hi: "RAM — Volatile; ROM — Non-volatile"
-    },
-    {
-      en: "RAM — Permanent storage; ROM — Temporary storage",
-      hi: "RAM — Permanent storage; ROM — Temporary storage"
-    },
-    {
-      en: "RAM — Optical storage; ROM — Magnetic storage",
-      hi: "RAM — Optical storage; ROM — Magnetic storage"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "RAM is generally volatile, while ROM is generally non-volatile."
-},
-
-// Question 285
-{
-  en: "Which of the following is an example of RAM?",
-  hi: "निम्नलिखित में से कौन RAM का उदाहरण है?",
-
-  options: [
-    {
-      en: "8 GB DDR4 Memory Module",
-      hi: "8 GB DDR4 Memory Module"
-    },
-    {
-      en: "DVD",
-      hi: "DVD"
-    },
-    {
-      en: "SSD",
-      hi: "SSD"
-    },
-    {
-      en: "ROM Chip",
-      hi: "ROM Chip"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "An 8 GB DDR4 memory module is a type of RAM used as primary memory."
-},
-// Question 286
-{
-  en: "Which of the following is an example of ROM?",
-  hi: "निम्नलिखित में से कौन ROM का उदाहरण है?",
-
-  options: [
-    {
-      en: "RAM Module",
-      hi: "RAM Module"
-    },
-    {
-      en: "ROM Chip containing firmware",
-      hi: "Firmware वाला ROM Chip"
-    },
-    {
-      en: "Pen Drive",
-      hi: "Pen Drive"
-    },
-    {
-      en: "Hard Disk",
-      hi: "Hard Disk"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "A ROM chip containing firmware is an example of ROM used to retain essential instructions without continuous power."
-},
-
-// Question 287
-{
-  en: "Which pair is correctly matched?",
-  hi: "निम्नलिखित में से कौन-सा pair correctly matched है?",
-
-  options: [
-    {
-      en: "RAM — Temporary working memory",
-      hi: "RAM — Temporary working memory"
-    },
-    {
-      en: "ROM — Volatile memory",
-      hi: "ROM — Volatile memory"
-    },
-    {
-      en: "RAM — Optical storage",
-      hi: "RAM — Optical storage"
-    },
-    {
-      en: "ROM — External storage",
-      hi: "ROM — External storage"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "RAM is volatile primary memory used as temporary working memory during processing."
-},
-
-// Question 288
-{
-  en: "A computer uses memory to temporarily hold a running program, while another memory stores basic startup instructions. Which pair is most appropriate?",
-  hi: "Computer एक running program को temporarily hold करने के लिए एक memory का उपयोग करता है, जबकि दूसरी memory basic startup instructions store करती है। कौन-सा pair सबसे उपयुक्त है?",
-
-  options: [
-    {
-      en: "ROM and RAM",
-      hi: "ROM और RAM"
-    },
-    {
-      en: "RAM and ROM",
-      hi: "RAM और ROM"
-    },
-    {
-      en: "SSD and RAM",
-      hi: "SSD और RAM"
-    },
-    {
-      en: "DVD and ROM",
-      hi: "DVD और ROM"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "RAM temporarily holds running programs, while ROM commonly stores firmware and basic startup instructions."
-},
-
-// Question 289
-{
-  en: "Which port is commonly used to connect devices such as keyboards, mice, and USB flash drives?",
-  hi: "Keyboard, mouse और USB flash drives जैसे devices को connect करने के लिए commonly किस port का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "HDMI",
-      hi: "HDMI"
-    },
-    {
-      en: "VGA",
-      hi: "VGA"
-    },
-    {
-      en: "USB",
-      hi: "USB"
-    },
-    {
-      en: "Ethernet",
-      hi: "Ethernet"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "USB ports are commonly used to connect peripherals such as keyboards, mice, and USB flash drives."
-},
-
-// Question 290
-{
-  en: "Which port is primarily used to transmit high-quality digital audio and video signals?",
-  hi: "High-quality digital audio और video signals transmit करने के लिए primarily किस port का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "HDMI",
-      hi: "HDMI"
-    },
-    {
-      en: "VGA",
-      hi: "VGA"
-    },
-    {
-      en: "Ethernet",
-      hi: "Ethernet"
-    },
-    {
-      en: "USB",
-      hi: "USB"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "HDMI is commonly used to transmit digital video and audio signals, including high-definition content."
-},
-// Question 291
-{
-  en: "Which port is traditionally used to connect a computer to a wired Ethernet/LAN network?",
-  hi: "कंप्यूटर को वायर्ड Ethernet/LAN नेटवर्क से जोड़ने के लिए पारंपरिक रूप से किस पोर्ट का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "VGA",
-      hi: "VGA"
-    },
-    {
-      en: "Ethernet/LAN Port",
-      hi: "Ethernet/LAN पोर्ट"
-    },
-    {
-      en: "HDMI",
-      hi: "HDMI"
-    },
-    {
-      en: "USB",
-      hi: "USB"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "An Ethernet/LAN port is commonly used for wired network connections."
-},
-
-// Question 292
-{
-  en: "Which statement correctly matches the ports with their common uses?",
-  hi: "कौन-सा कथन पोर्ट्स को उनके सामान्य उपयोगों के साथ सही रूप से मिलाता है?",
-
-  options: [
-    {
-      en: "USB — Network connection; HDMI — Keyboard; VGA — LAN",
-      hi: "USB — नेटवर्क कनेक्शन; HDMI — कीबोर्ड; VGA — LAN"
-    },
-    {
-      en: "VGA — Digital audio/video; Ethernet — Display; USB — LAN",
-      hi: "VGA — डिजिटल ऑडियो/वीडियो; Ethernet — डिस्प्ले; USB — LAN"
-    },
-    {
-      en: "HDMI — Display/audio-video; VGA — Display; Ethernet — Wired network",
-      hi: "HDMI — डिस्प्ले/ऑडियो-वीडियो; VGA — डिस्प्ले; Ethernet — वायर्ड नेटवर्क"
-    },
-    {
-      en: "Ethernet — Display; VGA — USB devices; HDMI — Wired network",
-      hi: "Ethernet — डिस्प्ले; VGA — USB डिवाइस; HDMI — वायर्ड नेटवर्क"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "HDMI carries digital audio/video, VGA is used for display, and Ethernet provides wired network connectivity."
-},
-
-// Question 293
-{
-  en: "Which port is commonly used to connect a computer to a wired network?",
-  hi: "कंप्यूटर को वायर्ड नेटवर्क से जोड़ने के लिए सामान्यतः किस पोर्ट का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "HDMI",
-      hi: "HDMI"
-    },
-    {
-      en: "USB",
-      hi: "USB"
-    },
-    {
-      en: "Ethernet/LAN Port",
-      hi: "Ethernet/LAN पोर्ट"
-    },
-    {
-      en: "VGA",
-      hi: "VGA"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "The Ethernet/LAN port is commonly used for wired network connections."
-},
-
-// Question 294
-{
-  en: "A user wants to connect a computer to a modern TV to transmit both digital video and audio. Which port is most suitable?",
-  hi: "एक उपयोगकर्ता कंप्यूटर को आधुनिक TV से जोड़कर डिजिटल वीडियो और ऑडियो दोनों प्रसारित करना चाहता है। इसके लिए कौन-सा पोर्ट सबसे उपयुक्त है?",
-
-  options: [
-    {
-      en: "HDMI",
-      hi: "HDMI"
-    },
-    {
-      en: "VGA",
-      hi: "VGA"
-    },
-    {
-      en: "Ethernet",
-      hi: "Ethernet"
-    },
-    {
-      en: "USB",
-      hi: "USB"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "HDMI can carry both digital video and digital audio through a single connection."
-},
-
-// Question 295
-{
-  en: "Which port is commonly used to connect a USB flash drive to a computer?",
-  hi: "USB फ्लैश ड्राइव को कंप्यूटर से जोड़ने के लिए सामान्यतः किस पोर्ट का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "VGA",
-      hi: "VGA"
-    },
-    {
-      en: "USB",
-      hi: "USB"
-    },
-    {
-      en: "HDMI",
-      hi: "HDMI"
-    },
-    {
-      en: "Ethernet",
-      hi: "Ethernet"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "A USB port is commonly used to connect a USB flash drive to a computer."
-},
-// Question 296
-{
-  en: "A computer needs to be connected to an older monitor that uses an analog video connection. Which port would commonly be used?",
-  hi: "एक कंप्यूटर को ऐसे पुराने मॉनिटर से जोड़ा जाना है जो एनालॉग वीडियो कनेक्शन का उपयोग करता है। सामान्यतः किस पोर्ट का उपयोग किया जाएगा?",
-
-  options: [
-    {
-      en: "HDMI",
-      hi: "HDMI"
-    },
-    {
-      en: "Ethernet",
-      hi: "Ethernet"
-    },
-    {
-      en: "USB",
-      hi: "USB"
-    },
-    {
-      en: "VGA",
-      hi: "VGA"
+      en: "It displays another form within a main form, often to show related records.",
+      hi: "यह मुख्य फॉर्म के भीतर एक अन्य फॉर्म दिखाता है, जिसका उपयोग अक्सर संबंधित रिकॉर्ड दिखाने के लिए किया जाता है।"
     }
   ],
 
   answer: "D",
 
-  explanation: "VGA is a traditional analog video interface commonly used with older monitors."
+  explanation: "A Subform Control displays a form within another form. It is commonly used to show related records, such as order details within a customer or order form."
+},
+
+// Question 257
+{
+  en: "What is a Bound Control in MS Access?",
+  hi: "MS Access में Bound Control क्या होता है?",
+
+  options: [
+    {
+      en: "A control that is connected to a field in a table or query",
+      hi: "ऐसा कंट्रोल जो किसी टेबल या क्वेरी के फ़ील्ड से जुड़ा होता है"
+    },
+    {
+      en: "A control that cannot display data",
+      hi: "ऐसा कंट्रोल जो डेटा प्रदर्शित नहीं कर सकता"
+    },
+    {
+      en: "A control used only for decorative purposes",
+      hi: "ऐसा कंट्रोल जिसका उपयोग केवल सजावट के लिए किया जाता है"
+    },
+    {
+      en: "A control that always displays the current date",
+      hi: "ऐसा कंट्रोल जो हमेशा वर्तमान तारीख दिखाता है"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "A Bound Control is linked to a field in the form's record source, such as a table or query, and can display or edit the associated data."
+},
+
+// Question 258
+{
+  en: "Which property determines the field or expression linked to a control?",
+  hi: "कौन-सी प्रॉपर्टी यह निर्धारित करती है कि कोई कंट्रोल किस फ़ील्ड या एक्सप्रेशन से जुड़ा है?",
+
+  options: [
+    {
+      en: "Format",
+      hi: "फ़ॉर्मेट"
+    },
+    {
+      en: "Control Source",
+      hi: "कंट्रोल सोर्स"
+    },
+    {
+      en: "Caption",
+      hi: "कैप्शन"
+    },
+    {
+      en: "Default Value",
+      hi: "डिफ़ॉल्ट वैल्यू"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Control Source property specifies the field, expression, or value associated with a control. For a bound text box, it commonly identifies the field whose data is displayed or edited."
+},
+
+// Question 259
+{
+  en: "Which of the following is an example of an Unbound Control?",
+  hi: "निम्नलिखित में से कौन-सा Unbound Control का उदाहरण है?",
+
+  options: [
+    {
+      en: "A text box displaying the CustomerName field from a table",
+      hi: "टेबल के CustomerName फ़ील्ड को प्रदर्शित करने वाला टेक्स्ट बॉक्स"
+    },
+    {
+      en: "A text box displaying the OrderDate field from a query",
+      hi: "क्वेरी के OrderDate फ़ील्ड को प्रदर्शित करने वाला टेक्स्ट बॉक्स"
+    },
+    {
+      en: "A label displaying the text \"Customer Details\"",
+      hi: "\"Customer Details\" टेक्स्ट प्रदर्शित करने वाला लेबल"
+    },
+    {
+      en: "A text box used for temporary input that is not linked to any field",
+      hi: "अस्थायी इनपुट के लिए उपयोग किया जाने वाला ऐसा टेक्स्ट बॉक्स जो किसी फ़ील्ड से जुड़ा नहीं है"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "An Unbound Control is not linked to a field in a table or query. A text box used for temporary input without a Control Source is an example."
+},
+
+// Question 260
+{
+  en: "A text box on a form is linked to the Salary field of an Employees table. What type of control is it?",
+  hi: "किसी फॉर्म पर एक टेक्स्ट बॉक्स Employees टेबल के Salary फ़ील्ड से जुड़ा है। यह किस प्रकार का कंट्रोल है?",
+
+  options: [
+    {
+      en: "Unbound Control",
+      hi: "अनबाउंड कंट्रोल"
+    },
+    {
+      en: "Calculated Control",
+      hi: "कैलकुलेटेड कंट्रोल"
+    },
+    {
+      en: "Bound Control",
+      hi: "बाउंड कंट्रोल"
+    },
+    {
+      en: "Image Control",
+      hi: "इमेज कंट्रोल"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A text box whose Control Source is the Salary field is a Bound Control because it is connected to data in the Employees table."
+},
+// Question 261
+{
+  en: "A text box displays the total of Quantity multiplied by UnitPrice using an expression in its Control Source. What type of control is it?",
+  hi: "एक टेक्स्ट बॉक्स अपनी Control Source प्रॉपर्टी में दिए गए एक्सप्रेशन का उपयोग करके Quantity और UnitPrice का गुणनफल दिखाता है। यह किस प्रकार का कंट्रोल है?",
+
+  options: [
+    {
+      en: "Bound Control",
+      hi: "बाउंड कंट्रोल"
+    },
+    {
+      en: "Calculated Control",
+      hi: "कैलकुलेटेड कंट्रोल"
+    },
+    {
+      en: "Unbound Control with no expression",
+      hi: "बिना एक्सप्रेशन वाला अनबाउंड कंट्रोल"
+    },
+    {
+      en: "Label Control",
+      hi: "लेबल कंट्रोल"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A Calculated Control uses an expression as its Control Source to calculate and display a value, such as Quantity * UnitPrice."
+},
+
+// Question 262
+{
+  en: "A form is based on a query, and a text box is bound to the CustomerName field returned by that query. Which statement is correct?",
+  hi: "एक फॉर्म क्वेरी पर आधारित है और एक टेक्स्ट बॉक्स उस क्वेरी से प्राप्त CustomerName फ़ील्ड से जुड़ा है। कौन-सा कथन सही है?",
+
+  options: [
+    {
+      en: "The text box must be unbound because the form uses a query.",
+      hi: "फॉर्म क्वेरी का उपयोग करता है, इसलिए टेक्स्ट बॉक्स अनबाउंड होना चाहिए।"
+    },
+    {
+      en: "A control can be bound only to a table, never to a query.",
+      hi: "किसी कंट्रोल को केवल टेबल से जोड़ा जा सकता है, क्वेरी से कभी नहीं।"
+    },
+    {
+      en: "The text box cannot display data from a query.",
+      hi: "टेक्स्ट बॉक्स क्वेरी से डेटा प्रदर्शित नहीं कर सकता।"
+    },
+    {
+      en: "The text box is bound to a field supplied by the form's record source.",
+      hi: "टेक्स्ट बॉक्स फॉर्म के रिकॉर्ड सोर्स द्वारा उपलब्ध कराए गए फ़ील्ड से जुड़ा है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "A bound control can be linked to a field provided by the form's record source, whether that source is a table or a query."
+},
+
+// Question 263
+{
+  en: "What happens when an unbound text box is used on a form and its Control Source is left blank?",
+  hi: "जब किसी फॉर्म पर अनबाउंड टेक्स्ट बॉक्स का उपयोग किया जाता है और उसकी Control Source प्रॉपर्टी खाली छोड़ी जाती है, तो क्या होता है?",
+
+  options: [
+    {
+      en: "It is not directly linked to a table or query field for storing its value.",
+      hi: "इसकी वैल्यू संग्रहीत करने के लिए यह सीधे किसी टेबल या क्वेरी के फ़ील्ड से जुड़ा नहीं होता।"
+    },
+    {
+      en: "It automatically becomes the primary key.",
+      hi: "यह अपने आप प्राइमरी की बन जाता है।"
+    },
+    {
+      en: "It automatically saves every entered value to the first field of the table.",
+      hi: "यह दर्ज की गई प्रत्येक वैल्यू को अपने आप टेबल के पहले फ़ील्ड में सेव कर देता है।"
+    },
+    {
+      en: "It permanently changes the form's record source.",
+      hi: "यह फॉर्म के रिकॉर्ड सोर्स को स्थायी रूप से बदल देता है।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "An unbound text box has no Control Source linking it to a table or query field. Values entered into it are not automatically saved to a table field."
+},
+
+// Question 264
+{
+  en: "Which statement best distinguishes a bound text box from an unbound text box?",
+  hi: "कौन-सा कथन बाउंड टेक्स्ट बॉक्स और अनबाउंड टेक्स्ट बॉक्स के बीच अंतर को सबसे अच्छी तरह स्पष्ट करता है?",
+
+  options: [
+    {
+      en: "A bound text box can display numbers only, while an unbound text box can display text only.",
+      hi: "बाउंड टेक्स्ट बॉक्स केवल संख्याएँ दिखा सकता है, जबकि अनबाउंड टेक्स्ट बॉक्स केवल टेक्स्ट दिखा सकता है।"
+    },
+    {
+      en: "A bound text box is always read-only, while an unbound text box is always editable.",
+      hi: "बाउंड टेक्स्ट बॉक्स हमेशा केवल पढ़ने योग्य होता है, जबकि अनबाउंड टेक्स्ट बॉक्स हमेशा संपादन योग्य होता है।"
+    },
+    {
+      en: "A bound text box is linked to a field or expression through Control Source, whereas an unbound text box has no Control Source.",
+      hi: "बाउंड टेक्स्ट बॉक्स Control Source के माध्यम से किसी फ़ील्ड या एक्सप्रेशन से जुड़ा होता है, जबकि अनबाउंड टेक्स्ट बॉक्स की Control Source खाली होती है।"
+    },
+    {
+      en: "Both controls must always be linked to a table field.",
+      hi: "दोनों कंट्रोल हमेशा किसी टेबल फ़ील्ड से जुड़े होने चाहिए।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A bound text box has a Control Source that links it to a field or expression. An unbound text box has no Control Source, although it can still accept user input."
+},
+
+// Question 265
+{
+  en: "What is the primary purpose of the Form Header section in MS Access?",
+  hi: "MS Access में Form Header सेक्शन का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To display information at the bottom of every record",
+      hi: "प्रत्येक रिकॉर्ड के नीचे जानकारी प्रदर्शित करना"
+    },
+    {
+      en: "To display a title or heading at the top of a form",
+      hi: "फॉर्म के शीर्ष पर शीर्षक या हेडिंग प्रदर्शित करना"
+    },
+    {
+      en: "To store the records permanently",
+      hi: "रिकॉर्ड को स्थायी रूप से संग्रहीत करना"
+    },
+    {
+      en: "To define relationships between tables",
+      hi: "टेबलों के बीच संबंध निर्धारित करना"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Form Header section appears at the top of a form and is commonly used for a title, heading, or other introductory information."
+},
+// Question 266
+{
+  en: "Which form section is generally used to display controls that appear for each record in a form?",
+  hi: "फॉर्म के किस सेक्शन का उपयोग सामान्यतः उन कंट्रोल्स को प्रदर्शित करने के लिए किया जाता है जो प्रत्येक रिकॉर्ड के लिए दिखाई देते हैं?",
+
+  options: [
+    {
+      en: "Form Header",
+      hi: "फॉर्म हेडर"
+    },
+    {
+      en: "Form Footer",
+      hi: "फॉर्म फुटर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    },
+    {
+      en: "Navigation Pane",
+      hi: "नेविगेशन पेन"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The Detail Section displays controls associated with the form's records. In a continuous or datasheet-style form, it can display data for multiple records."
+},
+
+// Question 267
+{
+  en: "Which form section is commonly used to display summary information or instructions at the bottom of a form?",
+  hi: "फॉर्म के निचले भाग में सारांश जानकारी या निर्देश प्रदर्शित करने के लिए सामान्यतः किस सेक्शन का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "Form Footer",
+      hi: "फॉर्म फुटर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    },
+    {
+      en: "Form Header",
+      hi: "फॉर्म हेडर"
+    },
+    {
+      en: "Record Selector",
+      hi: "रिकॉर्ड सेलेक्टर"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The Form Footer section is commonly used for summary information, instructions, or command buttons placed at the bottom of a form."
+},
+
+// Question 268
+{
+  en: "Which property determines the title displayed in the title bar of a form?",
+  hi: "कौन-सी प्रॉपर्टी फॉर्म के टाइटल बार में प्रदर्शित होने वाला शीर्षक निर्धारित करती है?",
+
+  options: [
+    {
+      en: "Control Source",
+      hi: "कंट्रोल सोर्स"
+    },
+    {
+      en: "Default View",
+      hi: "डिफॉल्ट व्यू"
+    },
+    {
+      en: "Record Source",
+      hi: "रिकॉर्ड सोर्स"
+    },
+    {
+      en: "Caption",
+      hi: "कैप्शन"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The Caption property specifies the text displayed in the form's title bar."
+},
+
+// Question 269
+{
+  en: "In MS Access, what is the purpose of a form event such as On Click?",
+  hi: "MS Access में On Click जैसे फॉर्म इवेंट का क्या उद्देश्य है?",
+
+  options: [
+    {
+      en: "To define the data type of a table field",
+      hi: "टेबल के फ़ील्ड का डेटा टाइप निर्धारित करना"
+    },
+    {
+      en: "To specify an action that can occur when the associated event takes place",
+      hi: "संबंधित इवेंट होने पर निष्पादित किए जा सकने वाले कार्य को निर्धारित करना"
+    },
+    {
+      en: "To create a primary key automatically",
+      hi: "प्राइमरी की अपने आप बनाना"
+    },
+    {
+      en: "To determine the storage location of the database file",
+      hi: "डेटाबेस फ़ाइल का स्टोरेज स्थान निर्धारित करना"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "An event property such as On Click can be associated with a macro, an event procedure, or another supported action that runs when the event occurs."
+},
+
+// Question 270
+{
+  en: "A user wants a button on a form to open another form when clicked. Which approach is most appropriate?",
+  hi: "एक उपयोगकर्ता चाहता है कि फॉर्म पर दिए गए बटन पर क्लिक करने से दूसरा फॉर्म खुल जाए। इसके लिए कौन-सा तरीका सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Change the button's Control Source to the other form's name",
+      hi: "बटन की Control Source को दूसरे फॉर्म के नाम से बदलना"
+    },
+    {
+      en: "Set the button's Format property to Form View",
+      hi: "बटन की Format प्रॉपर्टी को Form View पर सेट करना"
+    },
+    {
+      en: "Use the button's On Click event to run the OpenForm action or an appropriate event procedure",
+      hi: "बटन के On Click इवेंट का उपयोग करके OpenForm एक्शन या उपयुक्त इवेंट प्रोसीजर चलाना"
+    },
+    {
+      en: "Change the form's Record Source to the other form",
+      hi: "फॉर्म के Record Source को दूसरे फॉर्म से बदलना"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The button's On Click event can run an OpenForm macro action or an appropriate VBA event procedure to open another form."
+},
+// Question 271
+{
+  en: "A user wants to display only records where the Status field is \"Active\" on a form. Which feature is most directly used to restrict the displayed records?",
+  hi: "एक उपयोगकर्ता फॉर्म पर केवल वे रिकॉर्ड दिखाना चाहता है जिनके Status फ़ील्ड में \"Active\" है। प्रदर्शित रिकॉर्ड को सीमित करने के लिए सीधे किस सुविधा का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "Form filtering",
+      hi: "फॉर्म फ़िल्टरिंग"
+    },
+    {
+      en: "Form Header",
+      hi: "फॉर्म हेडर"
+    },
+    {
+      en: "Control formatting",
+      hi: "कंट्रोल फ़ॉर्मेटिंग"
+    },
+    {
+      en: "Navigation controls",
+      hi: "नेविगेशन कंट्रोल्स"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Form filtering restricts the records displayed on a form according to specified criteria, such as showing only records whose Status field is \"Active\"."
+},
+
+// Question 272
+{
+  en: "A form contains a combo box for selecting a department and a command button for opening a related form. Which technique can help the command button open the related form showing only records for the selected department?",
+  hi: "एक फॉर्म में विभाग चुनने के लिए Combo Box और संबंधित फॉर्म खोलने के लिए Command Button है। कौन-सी तकनीक बटन को ऐसा संबंधित फॉर्म खोलने में मदद कर सकती है जिसमें केवल चुने गए विभाग के रिकॉर्ड दिखाई दें?",
+
+  options: [
+    {
+      en: "Change the combo box's font size",
+      hi: "Combo Box का फ़ॉन्ट साइज़ बदलना"
+    },
+    {
+      en: "Place the combo box in the Form Footer",
+      hi: "Combo Box को Form Footer में रखना"
+    },
+    {
+      en: "Change the main form's Caption property",
+      hi: "मुख्य फॉर्म की Caption प्रॉपर्टी बदलना"
+    },
+    {
+      en: "Use the selected department value in a filter or a suitable WhereCondition when opening the related form",
+      hi: "संबंधित फॉर्म खोलते समय चुने गए विभाग की वैल्यू को फ़िल्टर या उपयुक्त WhereCondition में उपयोग करना"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The selected department value can be passed as a filter or a suitable WhereCondition in the OpenForm action so that the related form displays only matching records."
+},
+
+// Question 273
+{
+  en: "What is the primary purpose of a subform in MS Access?",
+  hi: "MS Access में Subform का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To create a backup of the main database",
+      hi: "मुख्य डेटाबेस का बैकअप बनाना"
+    },
+    {
+      en: "To display related data from another form within a main form",
+      hi: "मुख्य फॉर्म के भीतर दूसरे फॉर्म से संबंधित डेटा प्रदर्शित करना"
+    },
+    {
+      en: "To replace the primary key of a table",
+      hi: "टेबल की प्राइमरी की को बदलना"
+    },
+    {
+      en: "To permanently merge two tables into one",
+      hi: "दो टेबलों को स्थायी रूप से एक टेबल में मिलाना"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A subform displays related data within a main form, commonly showing records such as orders associated with a particular customer."
+},
+
+// Question 274
+{
+  en: "In a main form displaying customer details, which component typically displays the customer's related order records?",
+  hi: "ग्राहक का विवरण दिखाने वाले मुख्य फॉर्म में ग्राहक के संबंधित ऑर्डर रिकॉर्ड सामान्यतः कौन-सा घटक दिखाता है?",
+
+  options: [
+    {
+      en: "Form Header",
+      hi: "फॉर्म हेडर"
+    },
+    {
+      en: "Navigation Pane",
+      hi: "नेविगेशन पेन"
+    },
+    {
+      en: "Subform",
+      hi: "सबफॉर्म"
+    },
+    {
+      en: "Report Footer",
+      hi: "रिपोर्ट फुटर"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A subform is commonly used to display records related to the current record in the main form, such as a customer's orders."
+},
+
+// Question 275
+{
+  en: "Which property specifies the field or fields in the main form that link it to the corresponding records in the subform?",
+  hi: "कौन-सी प्रॉपर्टी मुख्य फॉर्म के उस फ़ील्ड या फ़ील्ड्स को निर्धारित करती है जो उसे सबफॉर्म के संबंधित रिकॉर्ड से जोड़ते हैं?",
+
+  options: [
+    {
+      en: "Link Master Fields",
+      hi: "लिंक मास्टर फ़ील्ड्स"
+    },
+    {
+      en: "Link Child Fields",
+      hi: "लिंक चाइल्ड फ़ील्ड्स"
+    },
+    {
+      en: "Record Source",
+      hi: "रिकॉर्ड सोर्स"
+    },
+    {
+      en: "Control Source",
+      hi: "कंट्रोल सोर्स"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Link Master Fields specifies the field or fields in the main form used to link to the corresponding fields specified by Link Child Fields in the subform."
+},
+// Question 276
+{
+  en: "Which property specifies the field or fields in the subform that correspond to the linking fields in the main form?",
+  hi: "कौन-सी प्रॉपर्टी सबफॉर्म के उस फ़ील्ड या फ़ील्ड्स को निर्धारित करती है जो मुख्य फॉर्म के लिंकिंग फ़ील्ड्स के अनुरूप होते हैं?",
+
+  options: [
+    {
+      en: "Link Master Fields",
+      hi: "लिंक मास्टर फ़ील्ड्स"
+    },
+    {
+      en: "Default View",
+      hi: "डिफॉल्ट व्यू"
+    },
+    {
+      en: "Caption",
+      hi: "कैप्शन"
+    },
+    {
+      en: "Link Child Fields",
+      hi: "लिंक चाइल्ड फ़ील्ड्स"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Link Child Fields specifies the field or fields in the subform that correspond to the linking fields specified by Link Master Fields in the main form."
+},
+
+// Question 277
+{
+  en: "A Customers table has a one-to-many relationship with an Orders table. Which form design is most suitable for viewing a customer's details and their orders together?",
+  hi: "Customers टेबल का Orders टेबल के साथ One-to-Many संबंध है। ग्राहक का विवरण और उसके ऑर्डर एक साथ देखने के लिए कौन-सा फॉर्म डिज़ाइन सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "An Orders form containing only unrelated customer data",
+      hi: "ऐसा Orders फॉर्म जिसमें केवल असंबंधित ग्राहक डेटा हो"
+    },
+    {
+      en: "A single form with no record source",
+      hi: "ऐसा एकल फॉर्म जिसका कोई रिकॉर्ड सोर्स न हो"
+    },
+    {
+      en: "A Customers main form with an Orders subform",
+      hi: "Orders सबफॉर्म वाला Customers मुख्य फॉर्म"
+    },
+    {
+      en: "Two tables merged into one form without any linking fields",
+      hi: "बिना किसी लिंकिंग फ़ील्ड के दो टेबलों को एक फॉर्म में मिला देना"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A Customers main form with an Orders subform allows the user to view one customer's details alongside the orders associated with that customer."
+},
+
+// Question 278
+{
+  en: "In a main form and subform arrangement, what is the role of the Subform Control?",
+  hi: "मुख्य फॉर्म और सबफॉर्म की व्यवस्था में Subform Control की क्या भूमिका होती है?",
+
+  options: [
+    {
+      en: "It permanently combines the underlying tables",
+      hi: "यह अंतर्निहित टेबलों को स्थायी रूप से जोड़ देता है"
+    },
+    {
+      en: "It hosts and displays the subform within the main form",
+      hi: "यह मुख्य फॉर्म के भीतर सबफॉर्म को रखता और प्रदर्शित करता है"
+    },
+    {
+      en: "It automatically creates a primary key in both tables",
+      hi: "यह दोनों टेबलों में अपने आप प्राइमरी की बनाता है"
+    },
+    {
+      en: "It replaces the Record Source property",
+      hi: "यह Record Source प्रॉपर्टी का स्थान लेता है"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Subform Control acts as a container that hosts and displays a subform within the main form."
+},
+
+// Question 279
+{
+  en: "A main form is linked to a subform using CustomerID as the master and child field. What should normally happen when the user moves to another customer record?",
+  hi: "एक मुख्य फॉर्म को CustomerID को मास्टर और चाइल्ड फ़ील्ड के रूप में उपयोग करके सबफॉर्म से जोड़ा गया है। जब उपयोगकर्ता दूसरे ग्राहक के रिकॉर्ड पर जाता है, तो सामान्यतः क्या होना चाहिए?",
+
+  options: [
+    {
+      en: "The subform displays records related to the newly selected customer",
+      hi: "सबफॉर्म नए चुने गए ग्राहक से संबंधित रिकॉर्ड प्रदर्शित करता है"
+    },
+    {
+      en: "The subform always displays every order in the database",
+      hi: "सबफॉर्म हमेशा डेटाबेस के सभी ऑर्डर प्रदर्शित करता है"
+    },
+    {
+      en: "The main form becomes read-only automatically",
+      hi: "मुख्य फॉर्म अपने आप केवल पढ़ने योग्य हो जाता है"
+    },
+    {
+      en: "The CustomerID field is deleted from the subform",
+      hi: "CustomerID फ़ील्ड सबफॉर्म से हटा दिया जाता है"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "When Link Master Fields and Link Child Fields are configured correctly, the subform automatically displays records matching the CustomerID of the current customer in the main form."
+},
+
+// Question 280
+{
+  en: "A subform displays no related records even though matching records exist in the underlying tables. Which issue should be checked first?",
+  hi: "अंतर्निहित टेबलों में संबंधित रिकॉर्ड मौजूद होने के बावजूद सबफॉर्म कोई रिकॉर्ड प्रदर्शित नहीं करता। सबसे पहले किस समस्या की जाँच करनी चाहिए?",
+
+  options: [
+    {
+      en: "The background colour of the main form",
+      hi: "मुख्य फॉर्म का बैकग्राउंड रंग"
+    },
+    {
+      en: "The font size of the subform title",
+      hi: "सबफॉर्म के शीर्षक का फ़ॉन्ट साइज़"
+    },
+    {
+      en: "The width of the Navigation Pane",
+      hi: "नेविगेशन पेन की चौड़ाई"
+    },
+    {
+      en: "The Link Master Fields and Link Child Fields settings",
+      hi: "Link Master Fields और Link Child Fields की सेटिंग्स"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Incorrect or mismatched Link Master Fields and Link Child Fields settings can prevent the subform from displaying the expected related records."
+},
+// Question 281
+{
+  en: "What is the primary purpose of a Report in MS Access?",
+  hi: "MS Access में Report का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To establish relationships between tables",
+      hi: "टेबलों के बीच संबंध स्थापित करना"
+    },
+    {
+      en: "To present data in a formatted layout suitable for viewing and printing",
+      hi: "डेटा को देखने और प्रिंट करने के लिए उपयुक्त व्यवस्थित प्रारूप में प्रस्तुत करना"
+    },
+    {
+      en: "To enter records directly into a database table",
+      hi: "डेटाबेस टेबल में सीधे रिकॉर्ड दर्ज करना"
+    },
+    {
+      en: "To define field data types",
+      hi: "फ़ील्ड के डेटा टाइप निर्धारित करना"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A Report presents data in a structured and formatted layout, making it suitable for viewing, summarizing, and printing."
+},
+
+// Question 282
+{
+  en: "Which feature provides a guided process for creating a report by selecting fields and choosing grouping or sorting options?",
+  hi: "कौन-सी सुविधा फ़ील्ड चुनकर तथा ग्रुपिंग या सॉर्टिंग के विकल्प निर्धारित करके रिपोर्ट बनाने की निर्देशित प्रक्रिया प्रदान करती है?",
+
+  options: [
+    {
+      en: "Form Wizard",
+      hi: "फॉर्म विज़ार्ड"
+    },
+    {
+      en: "Query Wizard",
+      hi: "क्वेरी विज़ार्ड"
+    },
+    {
+      en: "Report Wizard",
+      hi: "रिपोर्ट विज़ार्ड"
+    },
+    {
+      en: "Relationship Wizard",
+      hi: "रिलेशनशिप विज़ार्ड"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Report Wizard guides users through creating a report by selecting fields and configuring options such as grouping, sorting, and layout."
+},
+
+// Question 283
+{
+  en: "Which view is most suitable for making detailed changes to the structure and design of a report?",
+  hi: "रिपोर्ट की संरचना और डिज़ाइन में विस्तृत बदलाव करने के लिए कौन-सा व्यू सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Report View",
+      hi: "रिपोर्ट व्यू"
+    },
+    {
+      en: "Print Preview",
+      hi: "प्रिंट प्रीव्यू"
+    },
+    {
+      en: "Datasheet View",
+      hi: "डेटाशीट व्यू"
+    },
+    {
+      en: "Design View",
+      hi: "डिज़ाइन व्यू"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Design View provides tools to modify a report's structure, sections, controls, and formatting in detail."
+},
+
+// Question 284
+{
+  en: "Which view allows a user to examine a report's appearance as it will be printed?",
+  hi: "कौन-सा व्यू उपयोगकर्ता को यह देखने देता है कि प्रिंट होने पर रिपोर्ट कैसी दिखाई देगी?",
+
+  options: [
+    {
+      en: "Print Preview",
+      hi: "प्रिंट प्रीव्यू"
+    },
+    {
+      en: "Form View",
+      hi: "फॉर्म व्यू"
+    },
+    {
+      en: "Table Design View",
+      hi: "टेबल डिज़ाइन व्यू"
+    },
+    {
+      en: "SQL View",
+      hi: "SQL व्यू"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Print Preview shows how a report will appear on printed pages, allowing the user to check page layout and formatting before printing."
+},
+
+// Question 285
+{
+  en: "A user wants to examine report data on the screen in a formatted report layout without opening the report in Design View. Which view is appropriate?",
+  hi: "एक उपयोगकर्ता रिपोर्ट को Design View में खोले बिना स्क्रीन पर व्यवस्थित रिपोर्ट प्रारूप में डेटा देखना चाहता है। कौन-सा व्यू उपयुक्त है?",
+
+  options: [
+    {
+      en: "Table Design View",
+      hi: "टेबल डिज़ाइन व्यू"
+    },
+    {
+      en: "Report View",
+      hi: "रिपोर्ट व्यू"
+    },
+    {
+      en: "Relationship View",
+      hi: "रिलेशनशिप व्यू"
+    },
+    {
+      en: "SQL View",
+      hi: "SQL व्यू"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Report View displays report data on the screen using the report's formatted layout without opening it for structural editing."
+},
+// Question 286
+{
+  en: "Which statement about the Report Wizard in MS Access is correct?",
+  hi: "MS Access में Report Wizard के बारे में कौन-सा कथन सही है?",
+
+  options: [
+    {
+      en: "It can only create reports from tables, not queries.",
+      hi: "यह केवल टेबल से रिपोर्ट बना सकता है, क्वेरी से नहीं।"
+    },
+    {
+      en: "It is used exclusively to define primary keys.",
+      hi: "इसका उपयोग केवल प्राइमरी की निर्धारित करने के लिए किया जाता है।"
+    },
+    {
+      en: "It guides users through selecting fields and configuring report options.",
+      hi: "यह फ़ील्ड चुनने और रिपोर्ट के विकल्प निर्धारित करने की प्रक्रिया में उपयोगकर्ताओं का मार्गदर्शन करता है।"
+    },
+    {
+      en: "It automatically converts every report into a form.",
+      hi: "यह प्रत्येक रिपोर्ट को अपने आप फॉर्म में बदल देता है।"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Report Wizard guides users through selecting fields from a table or query and configuring report options such as grouping, sorting, and layout."
+},
+
+// Question 287
+{
+  en: "A report must display employee records grouped by Department and sorted by EmployeeName within each department. Which feature is most directly used to organize the report this way?",
+  hi: "एक रिपोर्ट में कर्मचारियों के रिकॉर्ड Department के अनुसार समूहित और प्रत्येक विभाग के भीतर EmployeeName के अनुसार क्रमबद्ध दिखाने हैं। रिपोर्ट को इस प्रकार व्यवस्थित करने के लिए किस सुविधा का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "Field data types",
+      hi: "फ़ील्ड डेटा टाइप"
+    },
+    {
+      en: "Referential integrity",
+      hi: "रेफरेंशियल इंटीग्रिटी"
+    },
+    {
+      en: "Form navigation controls",
+      hi: "फॉर्म नेविगेशन कंट्रोल्स"
+    },
+    {
+      en: "Grouping and sorting options",
+      hi: "ग्रुपिंग और सॉर्टिंग विकल्प"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Grouping and sorting options organize report records into Department groups and sort EmployeeName values within each group."
+},
+
+// Question 288
+{
+  en: "Which statement correctly distinguishes a report from a form in MS Access?",
+  hi: "कौन-सा कथन MS Access में रिपोर्ट और फॉर्म के बीच सही अंतर बताता है?",
+
+  options: [
+    {
+      en: "A report is mainly used to present and print formatted information, whereas a form is commonly used for data entry and interaction.",
+      hi: "रिपोर्ट का मुख्य उपयोग व्यवस्थित जानकारी प्रदर्शित करने और प्रिंट करने के लिए होता है, जबकि फॉर्म का उपयोग सामान्यतः डेटा दर्ज करने और उसके साथ कार्य करने के लिए किया जाता है।"
+    },
+    {
+      en: "A report stores records permanently, whereas a form defines relationships.",
+      hi: "रिपोर्ट रिकॉर्ड को स्थायी रूप से संग्रहीत करती है, जबकि फॉर्म संबंध निर्धारित करता है।"
+    },
+    {
+      en: "A form can display data only, whereas a report can modify table structures.",
+      hi: "फॉर्म केवल डेटा दिखा सकता है, जबकि रिपोर्ट टेबल की संरचना बदल सकती है।"
+    },
+    {
+      en: "Reports cannot use queries as their data source.",
+      hi: "रिपोर्ट अपने डेटा सोर्स के रूप में क्वेरी का उपयोग नहीं कर सकती।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Reports are designed primarily for presenting, summarizing, and printing formatted information. Forms are commonly used for entering, editing, viewing, and interacting with data."
+},
+
+// Question 289
+{
+  en: "Which section of an MS Access report is generally printed only once at the beginning of the report?",
+  hi: "MS Access रिपोर्ट का कौन-सा सेक्शन सामान्यतः रिपोर्ट की शुरुआत में केवल एक बार प्रिंट होता है?",
+
+  options: [
+    {
+      en: "Page Header",
+      hi: "पेज हेडर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    },
+    {
+      en: "Report Header",
+      hi: "रिपोर्ट हेडर"
+    },
+    {
+      en: "Page Footer",
+      hi: "पेज फुटर"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The Report Header appears at the beginning of the report and is generally printed once. It is commonly used for the report title or introductory information."
+},
+
+// Question 290
+{
+  en: "Which report section typically appears at the top of every page?",
+  hi: "रिपोर्ट का कौन-सा सेक्शन सामान्यतः प्रत्येक पेज के शीर्ष पर दिखाई देता है?",
+
+  options: [
+    {
+      en: "Report Footer",
+      hi: "रिपोर्ट फुटर"
+    },
+    {
+      en: "Page Header",
+      hi: "पेज हेडर"
+    },
+    {
+      en: "Report Header",
+      hi: "रिपोर्ट हेडर"
+    },
+    {
+      en: "Group Footer",
+      hi: "ग्रुप फुटर"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Page Header typically appears at the top of every printed page and can contain column headings or other repeated page information."
+},
+// Question 291
+{
+  en: "Which section displays the records from the report's underlying data source, usually once for each record?",
+  hi: "रिपोर्ट का कौन-सा सेक्शन उसके अंतर्निहित डेटा सोर्स के रिकॉर्ड को सामान्यतः प्रत्येक रिकॉर्ड के लिए एक बार प्रदर्शित करता है?",
+
+  options: [
+    {
+      en: "Report Header",
+      hi: "रिपोर्ट हेडर"
+    },
+    {
+      en: "Page Footer",
+      hi: "पेज फुटर"
+    },
+    {
+      en: "Group Header",
+      hi: "ग्रुप हेडर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The Detail Section displays data from the report's record source, typically once for each record."
+},
+
+// Question 292
+{
+  en: "Which report section typically appears at the bottom of every page?",
+  hi: "रिपोर्ट का कौन-सा सेक्शन सामान्यतः प्रत्येक पेज के निचले भाग में दिखाई देता है?",
+
+  options: [
+    {
+      en: "Page Footer",
+      hi: "पेज फुटर"
+    },
+    {
+      en: "Report Header",
+      hi: "रिपोर्ट हेडर"
+    },
+    {
+      en: "Group Header",
+      hi: "ग्रुप हेडर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The Page Footer typically appears at the bottom of every printed page and can contain page numbers or other repeated information."
+},
+
+// Question 293
+{
+  en: "A report must display the grand total of sales at the end of the entire report. Which section is most appropriate?",
+  hi: "एक रिपोर्ट में पूरी रिपोर्ट के अंत में बिक्री का कुल योग दिखाना है। इसके लिए कौन-सा सेक्शन सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Page Header",
+      hi: "पेज हेडर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    },
+    {
+      en: "Report Footer",
+      hi: "रिपोर्ट फुटर"
+    },
+    {
+      en: "Page Footer",
+      hi: "पेज फुटर"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The Report Footer appears at the end of the report and is suitable for displaying report-wide summaries, such as the grand total of sales."
+},
+
+// Question 294
+{
+  en: "A report groups employee records by Department and must display the department name before the employees belonging to that department. Which section should be used?",
+  hi: "एक रिपोर्ट कर्मचारियों के रिकॉर्ड को Department के अनुसार समूहित करती है और प्रत्येक विभाग के कर्मचारियों से पहले विभाग का नाम दिखाना है। किस सेक्शन का उपयोग किया जाना चाहिए?",
+
+  options: [
+    {
+      en: "Report Footer",
+      hi: "रिपोर्ट फुटर"
+    },
+    {
+      en: "Group Header",
+      hi: "ग्रुप हेडर"
+    },
+    {
+      en: "Page Footer",
+      hi: "पेज फुटर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Group Header appears at the beginning of each group and can display the department name before the employee records in that group."
+},
+
+// Question 295
+{
+  en: "In a report grouped by Department, which section is most suitable for displaying the total salary of each department after its employee records?",
+  hi: "Department के अनुसार समूहित रिपोर्ट में प्रत्येक विभाग के कर्मचारी रिकॉर्ड के बाद उस विभाग का कुल वेतन दिखाने के लिए कौन-सा सेक्शन सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Report Header",
+      hi: "रिपोर्ट हेडर"
+    },
+    {
+      en: "Page Header",
+      hi: "पेज हेडर"
+    },
+    {
+      en: "Detail Section",
+      hi: "डिटेल सेक्शन"
+    },
+    {
+      en: "Group Footer",
+      hi: "ग्रुप फुटर"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The Group Footer appears at the end of each group and is suitable for displaying group-level summaries, such as the total salary for a department."
+},
+// Question 296
+{
+  en: "Which statement about report sections in MS Access is correct?",
+  hi: "MS Access में रिपोर्ट के सेक्शन्स के बारे में कौन-सा कथन सही है?",
+
+  options: [
+    {
+      en: "The Detail section is generally repeated for each record, while page sections are associated with individual pages.",
+      hi: "Detail सेक्शन सामान्यतः प्रत्येक रिकॉर्ड के लिए दोहराया जाता है, जबकि पेज सेक्शन्स अलग-अलग पेजों से संबंधित होते हैं।"
+    },
+    {
+      en: "The Report Header must appear at the bottom of every page.",
+      hi: "Report Header प्रत्येक पेज के निचले भाग में अनिवार्य रूप से दिखाई देता है।"
+    },
+    {
+      en: "The Page Footer is displayed only once at the end of the entire report.",
+      hi: "Page Footer पूरी रिपोर्ट के अंत में केवल एक बार प्रदर्शित होता है।"
+    },
+    {
+      en: "The Report Footer is repeated after every record.",
+      hi: "Report Footer प्रत्येक रिकॉर्ड के बाद दोहराया जाता है।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The Detail section generally displays data for each record, while Page Header and Page Footer sections are associated with individual pages. The Report Header and Report Footer typically appear at the beginning and end of the report, respectively."
 },
 
 // Question 297
 {
-  en: "Which of the following is correctly classified as an input peripheral?",
-  hi: "निम्नलिखित में से किसे सही रूप से इनपुट पेरीफेरल के रूप में वर्गीकृत किया गया है?",
+  en: "What is the primary purpose of sorting records in an MS Access report?",
+  hi: "MS Access रिपोर्ट में रिकॉर्ड को सॉर्ट करने का मुख्य उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Monitor",
-      hi: "मॉनिटर"
+      en: "To change the data type of a field",
+      hi: "किसी फ़ील्ड का डेटा टाइप बदलना"
     },
     {
-      en: "Printer",
-      hi: "प्रिंटर"
+      en: "To arrange records in a specified order",
+      hi: "रिकॉर्ड को निर्धारित क्रम में व्यवस्थित करना"
     },
     {
-      en: "Scanner",
-      hi: "स्कैनर"
+      en: "To create a new relationship between tables",
+      hi: "टेबलों के बीच नया संबंध बनाना"
     },
     {
-      en: "Speaker",
-      hi: "स्पीकर"
+      en: "To remove all duplicate records permanently",
+      hi: "सभी डुप्लिकेट रिकॉर्ड को स्थायी रूप से हटाना"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "A scanner captures information from documents and sends it to the computer, making it an input peripheral."
+  explanation: "Sorting arranges report records in a specified order, such as alphabetically by employee name or numerically by salary, without permanently changing the underlying data."
 },
 
 // Question 298
 {
-  en: "A user wants to enter handwritten information into a computer using a device that captures the information and sends it to the system. Which category does the device belong to?",
-  hi: "एक उपयोगकर्ता किसी ऐसे उपकरण की सहायता से हस्तलिखित जानकारी कंप्यूटर में दर्ज करना चाहता है जो जानकारी को कैप्चर करके सिस्टम में भेजता है। यह उपकरण किस श्रेणी में आता है?",
+  en: "A report contains employee records from several departments. Which feature allows employees to be organized into separate sections according to their department?",
+  hi: "एक रिपोर्ट में कई विभागों के कर्मचारी रिकॉर्ड हैं। कर्मचारियों को उनके विभाग के अनुसार अलग-अलग सेक्शन्स में व्यवस्थित करने के लिए किस सुविधा का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Input peripheral",
-      hi: "इनपुट पेरीफेरल"
+      en: "Filtering",
+      hi: "फ़िल्टरिंग"
     },
     {
-      en: "Output peripheral",
-      hi: "आउटपुट पेरीफेरल"
+      en: "Indexing",
+      hi: "इंडेक्सिंग"
     },
     {
-      en: "Storage peripheral",
-      hi: "स्टोरेज पेरीफेरल"
+      en: "Grouping",
+      hi: "ग्रुपिंग"
     },
     {
-      en: "Processing unit",
-      hi: "प्रोसेसिंग यूनिट"
+      en: "Validation",
+      hi: "वैलिडेशन"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "A device that captures user-provided information and sends it to the computer is an input peripheral."
+  explanation: "Grouping organizes report records into sections based on a common field value, such as Department, allowing each department's employees to appear together."
 },
 
 // Question 299
 {
-  en: "Which option contains only output peripherals?",
-  hi: "किस विकल्प में केवल आउटपुट पेरीफेरल शामिल हैं?",
+  en: "In an MS Access report, what is the purpose of a Group Header?",
+  hi: "MS Access रिपोर्ट में Group Header का क्या उद्देश्य है?",
 
   options: [
     {
-      en: "Keyboard, Mouse, Scanner",
-      hi: "कीबोर्ड, माउस, स्कैनर"
+      en: "To display information before the records belonging to a group",
+      hi: "किसी समूह के रिकॉर्ड से पहले जानकारी प्रदर्शित करना"
     },
     {
-      en: "Monitor, Printer, Speaker",
-      hi: "मॉनिटर, प्रिंटर, स्पीकर"
+      en: "To display the grand total only at the end of the report",
+      hi: "केवल रिपोर्ट के अंत में कुल योग प्रदर्शित करना"
     },
     {
-      en: "Scanner, Microphone, Webcam",
-      hi: "स्कैनर, माइक्रोफोन, वेबकैम"
+      en: "To display the database file path on every page",
+      hi: "प्रत्येक पेज पर डेटाबेस फ़ाइल का पाथ प्रदर्शित करना"
     },
     {
-      en: "Keyboard, Printer, Monitor",
-      hi: "कीबोर्ड, प्रिंटर, मॉनिटर"
+      en: "To delete records that do not belong to a group",
+      hi: "किसी समूह से संबंधित न होने वाले रिकॉर्ड हटाना"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "Monitor, printer, and speaker are all output peripherals."
+  explanation: "A Group Header appears at the beginning of a group and can display the group's identifying information, such as the department name, before its records."
 },
 
 // Question 300
 {
-  en: "A computer system uses a keyboard to enter data, a scanner to capture a document, and a printer to produce a paper copy. Which classification is correct?",
-  hi: "एक कंप्यूटर सिस्टम में डेटा दर्ज करने के लिए कीबोर्ड, दस्तावेज़ कैप्चर करने के लिए स्कैनर और कागज़ की प्रति तैयार करने के लिए प्रिंटर का उपयोग किया जाता है। सही वर्गीकरण कौन-सा है?",
+  en: "A report groups sales records by product category. Where should the subtotal for each category generally be placed?",
+  hi: "एक रिपोर्ट बिक्री रिकॉर्ड को उत्पाद श्रेणी के अनुसार समूहित करती है। प्रत्येक श्रेणी का उप-योग सामान्यतः कहाँ रखा जाना चाहिए?",
 
   options: [
     {
-      en: "Keyboard–Output, Scanner–Input, Printer–Input",
-      hi: "कीबोर्ड–आउटपुट, स्कैनर–इनपुट, प्रिंटर–इनपुट"
+      en: "Page Header",
+      hi: "पेज हेडर"
     },
     {
-      en: "Keyboard–Input, Scanner–Output, Printer–Input",
-      hi: "कीबोर्ड–इनपुट, स्कैनर–आउटपुट, प्रिंटर–इनपुट"
+      en: "Report Header",
+      hi: "रिपोर्ट हेडर"
     },
     {
-      en: "Keyboard–Input, Scanner–Input, Printer–Output",
-      hi: "कीबोर्ड–इनपुट, स्कैनर–इनपुट, प्रिंटर–आउटपुट"
+      en: "Detail section of the first record only",
+      hi: "केवल पहले रिकॉर्ड के Detail सेक्शन में"
     },
     {
-      en: "Keyboard–Output, Scanner–Output, Printer–Input",
-      hi: "कीबोर्ड–आउटपुट, स्कैनर–आउटपुट, प्रिंटर–इनपुट"
+      en: "Group Footer",
+      hi: "ग्रुप फुटर"
     }
   ],
 
-  answer: "C",
+  answer: "D",
 
-  explanation: "Keyboard and scanner are input devices, while a printer is an output device."
+  explanation: "The Group Footer appears at the end of each product category group and is commonly used to display that category's subtotal."
 },
-
 // Question 301
 {
-  en: "Which of the following is best classified as a storage peripheral rather than an input or output peripheral?",
-  hi: "निम्नलिखित में से किसे इनपुट या आउटपुट पेरीफेरल के बजाय स्टोरेज पेरीफेरल के रूप में सबसे उपयुक्त रूप से वर्गीकृत किया जाता है?",
+  en: "A report groups employee records by department and displays the total salary for each department. What does this total represent?",
+  hi: "एक रिपोर्ट कर्मचारियों के रिकॉर्ड को विभाग के अनुसार समूहित करती है और प्रत्येक विभाग का कुल वेतन दिखाती है। यह कुल योग क्या कहलाता है?",
 
   options: [
     {
-      en: "External Hard Drive",
-      hi: "एक्सटर्नल हार्ड ड्राइव"
+      en: "Grand total",
+      hi: "ग्रैंड टोटल"
     },
     {
-      en: "Keyboard",
-      hi: "कीबोर्ड"
+      en: "Subtotal",
+      hi: "सबटोटल"
     },
     {
-      en: "Monitor",
-      hi: "मॉनिटर"
+      en: "Record count only",
+      hi: "केवल रिकॉर्ड की संख्या"
     },
     {
-      en: "Microphone",
-      hi: "माइक्रोफोन"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "An external hard drive is primarily used to store and retrieve data."
-},
-
-// Question 302
-{
-  en: "Which statement correctly distinguishes internal and external peripherals?",
-  hi: "कौन-सा कथन आंतरिक और बाहरी पेरीफेरल्स के बीच सही अंतर बताता है?",
-
-  options: [
-    {
-      en: "Internal peripherals are located within or connected inside the computer system, while external peripherals are connected externally",
-      hi: "आंतरिक पेरीफेरल्स कंप्यूटर सिस्टम के अंदर स्थित या अंदर जुड़े होते हैं, जबकि बाहरी पेरीफेरल्स बाहर से जुड़े होते हैं"
-    },
-    {
-      en: "Internal peripherals can only be input devices, while external peripherals can only be output devices",
-      hi: "आंतरिक पेरीफेरल्स केवल इनपुट डिवाइस हो सकते हैं, जबकि बाहरी पेरीफेरल्स केवल आउटपुट डिवाइस हो सकते हैं"
-    },
-    {
-      en: "External peripherals cannot communicate with the computer",
-      hi: "बाहरी पेरीफेरल्स कंप्यूटर के साथ संचार नहीं कर सकते"
-    },
-    {
-      en: "Internal and external peripherals are exactly the same in physical arrangement",
-      hi: "आंतरिक और बाहरी पेरीफेरल्स भौतिक व्यवस्था में बिल्कुल समान होते हैं"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Internal devices are located within the computer system, while external peripherals are connected from outside."
-},
-
-// Question 303
-{
-  en: "A computer has an internal storage drive, while the user also connects a portable USB storage drive for backup. How should these devices generally be classified?",
-  hi: "एक कंप्यूटर में एक आंतरिक स्टोरेज ड्राइव है, जबकि उपयोगकर्ता बैकअप के लिए एक पोर्टेबल USB स्टोरेज ड्राइव भी जोड़ता है। इन उपकरणों को सामान्यतः कैसे वर्गीकृत किया जाना चाहिए?",
-
-  options: [
-    {
-      en: "Both are input peripherals",
-      hi: "दोनों इनपुट पेरीफेरल्स हैं"
-    },
-    {
-      en: "Internal drive — internal storage; USB drive — external storage",
-      hi: "आंतरिक ड्राइव — आंतरिक स्टोरेज; USB ड्राइव — बाहरी स्टोरेज"
-    },
-    {
-      en: "Internal drive — output peripheral; USB drive — input peripheral",
-      hi: "आंतरिक ड्राइव — आउटपुट पेरीफेरल; USB ड्राइव — इनपुट पेरीफेरल"
-    },
-    {
-      en: "Both are output peripherals",
-      hi: "दोनों आउटपुट पेरीफेरल्स हैं"
+      en: "Sort order",
+      hi: "सॉर्ट क्रम"
     }
   ],
 
   answer: "B",
 
-  explanation: "The drive installed inside the computer is internal storage, while the portable USB drive is external storage."
+  explanation: "A subtotal represents the total for a particular group, such as the total salary of employees in one department."
 },
 
-// Question 304
+// Question 302
 {
-  en: "Which combination correctly represents one storage peripheral, one input peripheral, and one output peripheral respectively?",
-  hi: "कौन-सा संयोजन क्रमशः एक स्टोरेज पेरीफेरल, एक इनपुट पेरीफेरल और एक आउटपुट पेरीफेरल को सही रूप से दर्शाता है?",
+  en: "A report displays the total sales of every department separately and also displays the total sales of all departments at the end. What is the total at the end called?",
+  hi: "एक रिपोर्ट प्रत्येक विभाग की बिक्री का कुल योग अलग-अलग दिखाती है और अंत में सभी विभागों की कुल बिक्री भी दिखाती है। अंत में दिए गए कुल योग को क्या कहते हैं?",
 
   options: [
     {
-      en: "External Hard Drive — Keyboard — Monitor",
-      hi: "एक्सटर्नल हार्ड ड्राइव — कीबोर्ड — मॉनिटर"
+      en: "Group Header",
+      hi: "ग्रुप हेडर"
     },
     {
-      en: "Monitor — External Hard Drive — Keyboard",
-      hi: "मॉनिटर — एक्सटर्नल हार्ड ड्राइव — कीबोर्ड"
+      en: "Detail Total",
+      hi: "डिटेल टोटल"
     },
     {
-      en: "Keyboard — Monitor — External Hard Drive",
-      hi: "कीबोर्ड — मॉनिटर — एक्सटर्नल हार्ड ड्राइव"
+      en: "Grand Total",
+      hi: "ग्रैंड टोटल"
     },
     {
-      en: "Speaker — Keyboard — Scanner",
-      hi: "स्पीकर — कीबोर्ड — स्कैनर"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "An external hard drive is storage, a keyboard is input, and a monitor is output."
-},
-
-// Question 305
-{
-  en: "Which group of keys is primarily used to enter letters, numbers, and common symbols?",
-  hi: "अक्षर, संख्याएँ और सामान्य प्रतीक दर्ज करने के लिए मुख्य रूप से किस समूह की कुंजियों का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "Function keys",
-      hi: "फंक्शन कुंजियाँ"
-    },
-    {
-      en: "Control keys",
-      hi: "कंट्रोल कुंजियाँ"
-    },
-    {
-      en: "Alphanumeric keys",
-      hi: "अल्फान्यूमेरिक कुंजियाँ"
-    },
-    {
-      en: "Navigation keys",
-      hi: "नेविगेशन कुंजियाँ"
+      en: "Sort Total",
+      hi: "सॉर्ट टोटल"
     }
   ],
 
   answer: "C",
 
-  explanation: "Alphanumeric keys are primarily used to enter letters, numbers, and common symbols."
+  explanation: "A grand total represents the combined total for all records or groups in the report, such as the total sales of all departments."
 },
-// Question 306
+
+// Question 303
 {
-  en: "Which of the following is an example of a function key on a standard keyboard?",
-  hi: "निम्नलिखित में से कौन-सी मानक कीबोर्ड पर एक फंक्शन कुंजी का उदाहरण है?",
+  en: "In MS Access, which feature is used to configure grouping levels and sorting order for a report?",
+  hi: "MS Access में रिपोर्ट के लिए ग्रुपिंग स्तर और सॉर्टिंग क्रम निर्धारित करने हेतु किस सुविधा का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "F5",
-      hi: "F5"
+      en: "Group, Sort, and Total pane",
+      hi: "ग्रुप, सॉर्ट और टोटल पेन"
     },
     {
-      en: "A",
-      hi: "A"
+      en: "Relationships window only",
+      hi: "केवल रिलेशनशिप विंडो"
     },
     {
-      en: "7",
-      hi: "7"
+      en: "Database Documenter",
+      hi: "डेटाबेस डॉक्यूमेंटर"
     },
     {
-      en: "Ctrl",
-      hi: "Ctrl"
+      en: "Navigation Pane",
+      hi: "नेविगेशन पेन"
     }
   ],
 
   answer: "A",
 
-  explanation: "F5 is one of the function keys found on a standard keyboard."
+  explanation: "The Group, Sort, and Total pane is used to configure grouping levels, sorting order, and summary calculations in an Access report."
+},
+
+// Question 304
+{
+  en: "A report must display the average salary for each department. Which approach is most appropriate?",
+  hi: "एक रिपोर्ट में प्रत्येक विभाग का औसत वेतन दिखाना है। इसके लिए कौन-सा तरीका सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Sort the Salary field in descending order only",
+      hi: "केवल Salary फ़ील्ड को अवरोही क्रम में सॉर्ट करना"
+    },
+    {
+      en: "Add a page number to the Page Footer",
+      hi: "Page Footer में पेज नंबर जोड़ना"
+    },
+    {
+      en: "Create a primary key for the report",
+      hi: "रिपोर्ट के लिए प्राइमरी की बनाना"
+    },
+    {
+      en: "Use a grouped report and an Average aggregate calculation for Salary",
+      hi: "ग्रुप की गई रिपोर्ट में Salary के लिए Average एग्रीगेट गणना का उपयोग करना"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Grouping records by department and applying the Average aggregate calculation to Salary produces the average salary for each department."
+},
+
+// Question 305
+{
+  en: "What is the primary purpose of Print Preview in MS Access?",
+  hi: "MS Access में Print Preview का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To modify the relationships between tables",
+      hi: "टेबलों के बीच संबंधों में बदलाव करना"
+    },
+    {
+      en: "To view how a report will appear when printed",
+      hi: "यह देखना कि प्रिंट होने पर रिपोर्ट कैसी दिखाई देगी"
+    },
+    {
+      en: "To permanently save a report as an Excel file",
+      hi: "रिपोर्ट को Excel फ़ाइल के रूप में स्थायी रूप से सेव करना"
+    },
+    {
+      en: "To change the data type of report fields",
+      hi: "रिपोर्ट के फ़ील्ड्स का डेटा टाइप बदलना"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "Print Preview allows users to inspect a report's printed appearance, including page layout and formatting, before sending it to the printer."
+},
+// Question 306
+{
+  en: "A user wants to print five copies of an MS Access report. Which print setting should be configured?",
+  hi: "एक उपयोगकर्ता MS Access रिपोर्ट की पाँच प्रतियाँ प्रिंट करना चाहता है। किस प्रिंट सेटिंग को कॉन्फ़िगर करना चाहिए?",
+
+  options: [
+    {
+      en: "Page Orientation",
+      hi: "पेज ओरिएंटेशन"
+    },
+    {
+      en: "Paper Size",
+      hi: "पेपर साइज़"
+    },
+    {
+      en: "Number of Copies",
+      hi: "प्रतियों की संख्या"
+    },
+    {
+      en: "Margins",
+      hi: "मार्जिन"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The Number of Copies setting specifies how many copies of a report should be printed."
 },
 
 // Question 307
 {
-  en: "Which key is commonly classified as a control key and is used with other keys to perform commands or shortcuts?",
-  hi: "किस कुंजी को सामान्यतः कंट्रोल कुंजी के रूप में वर्गीकृत किया जाता है और अन्य कुंजियों के साथ कमांड या शॉर्टकट करने के लिए उपयोग किया जाता है?",
+  en: "Which page setup option changes the page layout between Portrait and Landscape?",
+  hi: "कौन-सा पेज सेटअप विकल्प पेज के लेआउट को Portrait और Landscape के बीच बदलता है?",
 
   options: [
     {
-      en: "Ctrl",
-      hi: "Ctrl"
+      en: "Orientation",
+      hi: "ओरिएंटेशन"
     },
     {
-      en: "A",
-      hi: "A"
+      en: "Paper Size",
+      hi: "पेपर साइज़"
     },
     {
-      en: "F2",
-      hi: "F2"
+      en: "Number of Copies",
+      hi: "प्रतियों की संख्या"
+    },
+    {
+      en: "Export Format",
+      hi: "एक्सपोर्ट फ़ॉर्मेट"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The Orientation setting determines whether a page is printed in Portrait (vertical) or Landscape (horizontal) layout."
+},
+
+// Question 308
+{
+  en: "Which setting controls the blank space between the report content and the edges of the printed page?",
+  hi: "कौन-सी सेटिंग रिपोर्ट की सामग्री और प्रिंट किए गए पेज के किनारों के बीच खाली जगह को नियंत्रित करती है?",
+
+  options: [
+    {
+      en: "Orientation",
+      hi: "ओरिएंटेशन"
+    },
+    {
+      en: "Printer Selection",
+      hi: "प्रिंटर चयन"
+    },
+    {
+      en: "Number of Copies",
+      hi: "प्रतियों की संख्या"
+    },
+    {
+      en: "Margins",
+      hi: "मार्जिन"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Margins control the blank space between the report content and the edges of the printed page."
+},
+
+// Question 309
+{
+  en: "A report must be printed on A4 paper instead of Letter-size paper. Which setting should be changed?",
+  hi: "एक रिपोर्ट को Letter-size पेपर के बजाय A4 पेपर पर प्रिंट करना है। किस सेटिंग को बदलना चाहिए?",
+
+  options: [
+    {
+      en: "Page Orientation",
+      hi: "पेज ओरिएंटेशन"
+    },
+    {
+      en: "Paper Size",
+      hi: "पेपर साइज़"
+    },
+    {
+      en: "Print Preview",
+      hi: "प्रिंट प्रीव्यू"
+    },
+    {
+      en: "Export Format",
+      hi: "एक्सपोर्ट फ़ॉर्मेट"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Paper Size setting determines the paper dimensions used for printing, such as A4 or Letter."
+},
+
+// Question 310
+{
+  en: "Which option is most suitable when a user wants to share a formatted MS Access report while preserving its page layout for viewing or printing?",
+  hi: "जब कोई उपयोगकर्ता MS Access रिपोर्ट को उसके पेज लेआउट को सुरक्षित रखते हुए देखने या प्रिंट करने के लिए साझा करना चाहता है, तो कौन-सा विकल्प सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Export to a new Access table",
+      hi: "नई Access टेबल में एक्सपोर्ट करना"
+    },
+    {
+      en: "Export to a database relationship",
+      hi: "डेटाबेस रिलेशनशिप में एक्सपोर्ट करना"
+    },
+    {
+      en: "Export to PDF",
+      hi: "PDF में एक्सपोर्ट करना"
+    },
+    {
+      en: "Export to a primary key",
+      hi: "प्राइमरी की में एक्सपोर्ट करना"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Exporting a report to PDF preserves its formatted page layout and makes it convenient to share, view, and print on different devices."
+},
+// Question 311
+{
+  en: "A user wants to export report data to Excel for further calculations and analysis. Which export format should be selected?",
+  hi: "एक उपयोगकर्ता आगे की गणना और विश्लेषण के लिए रिपोर्ट डेटा को Excel में एक्सपोर्ट करना चाहता है। कौन-सा एक्सपोर्ट फ़ॉर्मेट चुनना चाहिए?",
+
+  options: [
+    {
+      en: "Microsoft Excel",
+      hi: "माइक्रोसॉफ्ट Excel"
+    },
+    {
+      en: "PDF",
+      hi: "PDF"
+    },
+    {
+      en: "Microsoft Word only",
+      hi: "केवल माइक्रोसॉफ्ट Word"
+    },
+    {
+      en: "Access Relationship Format",
+      hi: "Access रिलेशनशिप फ़ॉर्मेट"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The Microsoft Excel export format allows report data to be transferred to a spreadsheet for further calculations, sorting, and analysis."
+},
+
+// Question 312
+{
+  en: "Which statement correctly distinguishes printing from exporting a report in MS Access?",
+  hi: "MS Access में रिपोर्ट को प्रिंट करने और एक्सपोर्ट करने के बीच सही अंतर बताने वाला कथन कौन-सा है?",
+
+  options: [
+    {
+      en: "Printing always creates an editable Excel worksheet.",
+      hi: "प्रिंट करने से हमेशा संपादन योग्य Excel वर्कशीट बनती है।"
+    },
+    {
+      en: "Exporting always sends the report directly to a physical printer.",
+      hi: "एक्सपोर्ट करने से रिपोर्ट हमेशा सीधे भौतिक प्रिंटर पर भेजी जाती है।"
+    },
+    {
+      en: "Printing and exporting are identical operations.",
+      hi: "प्रिंट करना और एक्सपोर्ट करना एक ही प्रक्रिया है।"
+    },
+    {
+      en: "Printing produces a paper or printer-output copy, whereas exporting creates a file in another format for use or sharing.",
+      hi: "प्रिंट करने से कागज़ पर या प्रिंटर आउटपुट के रूप में प्रति मिलती है, जबकि एक्सपोर्ट करने से उपयोग या साझा करने के लिए किसी अन्य फ़ॉर्मेट में फ़ाइल बनती है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "Printing sends a report to a printer or produces printer output, while exporting creates a file in another format, such as PDF or Excel, for further use or sharing."
+},
+
+// Question 313
+{
+  en: "What is the primary purpose of a Macro in MS Access?",
+  hi: "MS Access में Macro का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To define the physical structure of a database file",
+      hi: "डेटाबेस फ़ाइल की भौतिक संरचना निर्धारित करना"
+    },
+    {
+      en: "To automate tasks by executing a sequence of predefined actions",
+      hi: "पहले से निर्धारित क्रियाओं के क्रम को निष्पादित करके कार्यों को स्वचालित करना"
+    },
+    {
+      en: "To permanently replace all database tables",
+      hi: "सभी डेटाबेस टेबलों को स्थायी रूप से बदलना"
+    },
+    {
+      en: "To change the operating system settings",
+      hi: "ऑपरेटिंग सिस्टम की सेटिंग्स बदलना"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A Macro automates tasks in MS Access by executing predefined actions, such as opening a form, running a query, or displaying a message."
+},
+
+// Question 314
+{
+  en: "Which component of a macro specifies the operation that MS Access should perform?",
+  hi: "मैक्रो का कौन-सा घटक वह कार्य निर्धारित करता है जिसे MS Access को निष्पादित करना चाहिए?",
+
+  options: [
+    {
+      en: "Field Property",
+      hi: "फ़ील्ड प्रॉपर्टी"
+    },
+    {
+      en: "Relationship",
+      hi: "रिलेशनशिप"
+    },
+    {
+      en: "Macro Action",
+      hi: "मैक्रो एक्शन"
+    },
+    {
+      en: "Primary Key",
+      hi: "प्राइमरी की"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A Macro Action specifies an operation for MS Access to perform, such as OpenForm, OpenReport, or RunQuery."
+},
+
+// Question 315
+{
+  en: "A user wants a macro to open a form automatically when a particular event occurs. Which feature is most directly used to trigger the macro?",
+  hi: "एक उपयोगकर्ता चाहता है कि किसी विशेष इवेंट के होने पर मैक्रो अपने आप फॉर्म खोले। मैक्रो को ट्रिगर करने के लिए सीधे किस सुविधा का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "Event property",
+      hi: "इवेंट प्रॉपर्टी"
+    },
+    {
+      en: "Field Size property",
+      hi: "फ़ील्ड साइज़ प्रॉपर्टी"
+    },
+    {
+      en: "Primary Key property",
+      hi: "प्राइमरी की प्रॉपर्टी"
+    },
+    {
+      en: "Table Index",
+      hi: "टेबल इंडेक्स"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "An event property, such as On Click or On Load, can be configured to run a macro when the associated event occurs."
+},
+// Question 316
+{
+  en: "What is an Embedded Macro in MS Access?",
+  hi: "MS Access में Embedded Macro क्या होता है?",
+
+  options: [
+    {
+      en: "A macro stored only in an Excel workbook",
+      hi: "ऐसा मैक्रो जो केवल Excel वर्कबुक में संग्रहीत होता है"
+    },
+    {
+      en: "A macro that can execute only through VBA code",
+      hi: "ऐसा मैक्रो जो केवल VBA कोड के माध्यम से निष्पादित हो सकता है"
+    },
+    {
+      en: "A macro permanently stored inside a database table's field",
+      hi: "ऐसा मैक्रो जो डेटाबेस टेबल के फ़ील्ड में स्थायी रूप से संग्रहीत होता है"
+    },
+    {
+      en: "A macro stored in an object's event property, such as a form's On Click event",
+      hi: "ऐसा मैक्रो जो किसी ऑब्जेक्ट की इवेंट प्रॉपर्टी में संग्रहीत होता है, जैसे फॉर्म का On Click इवेंट"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "An Embedded Macro is stored in an object's event property, such as a form or control's On Click event, rather than as a separate macro object."
+},
+
+// Question 317
+{
+  en: "Which statement best describes a Standalone Macro in MS Access?",
+  hi: "MS Access में Standalone Macro का सबसे सही वर्णन कौन-सा है?",
+
+  options: [
+    {
+      en: "It is a macro that can never be run independently.",
+      hi: "यह ऐसा मैक्रो है जिसे कभी स्वतंत्र रूप से नहीं चलाया जा सकता।"
+    },
+    {
+      en: "It is a separately saved macro object in the Navigation Pane.",
+      hi: "यह Navigation Pane में अलग से सेव किया गया मैक्रो ऑब्जेक्ट है।"
+    },
+    {
+      en: "It is a macro that exists only inside a report control.",
+      hi: "यह ऐसा मैक्रो है जो केवल रिपोर्ट कंट्रोल के अंदर मौजूद होता है।"
+    },
+    {
+      en: "It is a macro that cannot contain actions.",
+      hi: "यह ऐसा मैक्रो है जिसमें कोई एक्शन नहीं हो सकता।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A Standalone Macro is saved as a separate database object and can be accessed through the Navigation Pane and run independently when required."
+},
+
+// Question 318
+{
+  en: "A macro should display a message only when a specified condition is true. Which macro feature is most appropriate?",
+  hi: "एक मैक्रो को संदेश केवल तभी दिखाना चाहिए जब कोई निर्धारित शर्त सही हो। इसके लिए कौन-सी मैक्रो सुविधा सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Sort Order",
+      hi: "सॉर्ट ऑर्डर"
+    },
+    {
+      en: "Field Validation",
+      hi: "फ़ील्ड वैलिडेशन"
+    },
+    {
+      en: "Conditional execution using an If condition",
+      hi: "If शर्त का उपयोग करके सशर्त निष्पादन"
+    },
+    {
+      en: "Page Orientation",
+      hi: "पेज ओरिएंटेशन"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "An If condition allows a macro to execute specified actions, such as displaying a message, only when the given condition evaluates to True."
+},
+
+// Question 319
+{
+  en: "Which statement correctly describes the difference between a macro and VBA in MS Access?",
+  hi: "MS Access में Macro और VBA के बीच अंतर को सही ढंग से बताने वाला कथन कौन-सा है?",
+
+  options: [
+    {
+      en: "Macros use predefined actions, while VBA allows more extensive programming through code.",
+      hi: "मैक्रो पहले से निर्धारित एक्शन्स का उपयोग करते हैं, जबकि VBA कोड के माध्यम से अधिक विस्तृत प्रोग्रामिंग की सुविधा देता है।"
+    },
+    {
+      en: "Macros can store records, while VBA cannot work with database data.",
+      hi: "मैक्रो रिकॉर्ड संग्रहीत कर सकते हैं, जबकि VBA डेटाबेस डेटा के साथ काम नहीं कर सकता।"
+    },
+    {
+      en: "VBA is used only for printing, while macros are used only for queries.",
+      hi: "VBA का उपयोग केवल प्रिंटिंग के लिए होता है, जबकि मैक्रो का उपयोग केवल क्वेरी के लिए होता है।"
+    },
+    {
+      en: "Macros and VBA are identical and use the same programming syntax.",
+      hi: "मैक्रो और VBA एक समान हैं तथा एक ही प्रोग्रामिंग सिंटैक्स का उपयोग करते हैं।"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Macros automate tasks through predefined actions, while VBA is a programming language that supports more extensive logic, custom procedures, and advanced automation."
+},
+
+// Question 320
+{
+  en: "A developer wants to automate opening a form, applying a filter, and displaying a message when a button is clicked. Which approach is suitable without writing VBA code?",
+  hi: "एक डेवलपर बटन पर क्लिक करने पर फॉर्म खोलने, फ़िल्टर लगाने और संदेश दिखाने की प्रक्रिया को स्वचालित करना चाहता है। VBA कोड लिखे बिना कौन-सा तरीका उपयुक्त है?",
+
+  options: [
+    {
+      en: "Create a new primary key",
+      hi: "नई प्राइमरी की बनाना"
+    },
+    {
+      en: "Change the table's data type",
+      hi: "टेबल का डेटा टाइप बदलना"
+    },
+    {
+      en: "Create a relationship between unrelated tables",
+      hi: "असंबंधित टेबलों के बीच संबंध बनाना"
+    },
+    {
+      en: "Assign a macro containing the required actions to the button's On Click event",
+      hi: "आवश्यक एक्शन्स वाला मैक्रो बटन के On Click इवेंट को असाइन करना"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "A macro containing actions to open the form, apply the appropriate filter, and display a message can be assigned to the button's On Click event without writing VBA code."
+},
+// Question 321
+{
+  en: "Which macro action in MS Access is used to open a specified form?",
+  hi: "MS Access में किसी निर्धारित फॉर्म को खोलने के लिए किस मैक्रो एक्शन का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "OpenReport",
+      hi: "ओपन रिपोर्ट"
+    },
+    {
+      en: "CloseWindow",
+      hi: "क्लोज़ विंडो"
+    },
+    {
+      en: "OpenForm",
+      hi: "ओपन फॉर्म"
+    },
+    {
+      en: "GoToRecord",
+      hi: "गो टू रिकॉर्ड"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The OpenForm macro action opens a specified form in MS Access."
+},
+
+// Question 322
+{
+  en: "Which macro action is used to open a report in MS Access?",
+  hi: "MS Access में रिपोर्ट खोलने के लिए किस मैक्रो एक्शन का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "OpenReport",
+      hi: "ओपन रिपोर्ट"
+    },
+    {
+      en: "ApplyFilter",
+      hi: "अप्लाई फ़िल्टर"
+    },
+    {
+      en: "FindRecord",
+      hi: "फाइंड रिकॉर्ड"
+    },
+    {
+      en: "SetValue",
+      hi: "सेट वैल्यू"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The OpenReport macro action opens a specified report and can also specify its view and filter criteria."
+},
+
+// Question 323
+{
+  en: "Which macro action displays a message box containing a message and optionally an alert icon?",
+  hi: "कौन-सा मैक्रो एक्शन संदेश और वैकल्पिक रूप से अलर्ट आइकन वाला मैसेज बॉक्स प्रदर्शित करता है?",
+
+  options: [
+    {
+      en: "RunCommand",
+      hi: "रन कमांड"
+    },
+    {
+      en: "MessageBox",
+      hi: "मैसेज बॉक्स"
+    },
+    {
+      en: "CloseWindow",
+      hi: "क्लोज़ विंडो"
+    },
+    {
+      en: "GoToRecord",
+      hi: "गो टू रिकॉर्ड"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The MessageBox macro action displays a message in a dialog box and can include an appropriate alert icon and other settings."
+},
+
+// Question 324
+{
+  en: "A macro must change the value of a control or field in a form. Which action is most appropriate?",
+  hi: "एक मैक्रो को फॉर्म में किसी कंट्रोल या फ़ील्ड की वैल्यू बदलनी है। कौन-सा एक्शन सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "OpenReport",
+      hi: "ओपन रिपोर्ट"
+    },
+    {
+      en: "FindRecord",
+      hi: "फाइंड रिकॉर्ड"
+    },
+    {
+      en: "ApplyFilter",
+      hi: "अप्लाई फ़िल्टर"
+    },
+    {
+      en: "SetValue",
+      hi: "सेट वैल्यू"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The SetValue macro action sets the value of a specified field or control, provided the target and expression are valid."
+},
+
+// Question 325
+{
+  en: "Which macro action is used to apply a filter or a WHERE condition to restrict the records displayed by a form or report?",
+  hi: "फॉर्म या रिपोर्ट में प्रदर्शित रिकॉर्ड को सीमित करने के लिए फ़िल्टर या WHERE शर्त लागू करने हेतु किस मैक्रो एक्शन का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "CloseWindow",
+      hi: "क्लोज़ विंडो"
+    },
+    {
+      en: "MessageBox",
+      hi: "मैसेज बॉक्स"
+    },
+    {
+      en: "ApplyFilter",
+      hi: "अप्लाई फ़िल्टर"
+    },
+    {
+      en: "OpenForm",
+      hi: "ओपन फॉर्म"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The ApplyFilter macro action applies a filter or a WHERE condition to limit the records displayed in a form or report."
+},
+// Question 326
+{
+  en: "Which macro action is used to move to a specified record in a form or datasheet?",
+  hi: "फॉर्म या डेटाशीट में किसी निर्धारित रिकॉर्ड पर जाने के लिए किस मैक्रो एक्शन का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "GoToRecord",
+      hi: "गो टू रिकॉर्ड"
+    },
+    {
+      en: "SetValue",
+      hi: "सेट वैल्यू"
+    },
+    {
+      en: "OpenReport",
+      hi: "ओपन रिपोर्ट"
+    },
+    {
+      en: "RunCommand",
+      hi: "रन कमांड"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The GoToRecord macro action moves to a specified record in a form or datasheet. It can navigate to the next, previous, first, last, or a specific record."
+},
+
+// Question 327
+{
+  en: "A user wants a macro to locate a record matching specified search criteria in a form or datasheet. Which action is most appropriate?",
+  hi: "एक उपयोगकर्ता चाहता है कि मैक्रो फॉर्म या डेटाशीट में निर्धारित खोज मानदंडों से मेल खाने वाला रिकॉर्ड ढूँढे। कौन-सा एक्शन सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "CloseWindow",
+      hi: "क्लोज़ विंडो"
+    },
+    {
+      en: "FindRecord",
+      hi: "फाइंड रिकॉर्ड"
+    },
+    {
+      en: "MessageBox",
+      hi: "मैसेज बॉक्स"
+    },
+    {
+      en: "ApplyFilter",
+      hi: "अप्लाई फ़िल्टर"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The FindRecord macro action searches for a record matching specified criteria in a form or datasheet."
+},
+
+// Question 328
+{
+  en: "Which statement correctly describes the CloseWindow macro action?",
+  hi: "CloseWindow मैक्रो एक्शन का सही वर्णन कौन-सा है?",
+
+  options: [
+    {
+      en: "It permanently deletes the selected database object.",
+      hi: "यह चुने गए डेटाबेस ऑब्जेक्ट को स्थायी रूप से हटा देता है।"
+    },
+    {
+      en: "It closes the entire MS Access application in every case.",
+      hi: "यह हर स्थिति में पूरा MS Access एप्लिकेशन बंद कर देता है।"
+    },
+    {
+      en: "It removes all records from the active table.",
+      hi: "यह सक्रिय टेबल से सभी रिकॉर्ड हटा देता है।"
+    },
+    {
+      en: "It closes a specified open database object, such as a form or report, depending on the action's arguments.",
+      hi: "यह एक्शन के आर्ग्युमेंट्स के अनुसार किसी निर्धारित खुले डेटाबेस ऑब्जेक्ट, जैसे फॉर्म या रिपोर्ट, को बंद कर देता है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The CloseWindow macro action closes a specified open database object, such as a form or report. It does not permanently delete the object."
+},
+
+// Question 329
+{
+  en: "What is the full form of VBA in MS Access?",
+  hi: "MS Access में VBA का पूरा नाम क्या है?",
+
+  options: [
+    {
+      en: "Visual Basic Application",
+      hi: "विज़ुअल बेसिक एप्लिकेशन"
+    },
+    {
+      en: "Virtual Basic for Applications",
+      hi: "वर्चुअल बेसिक फॉर एप्लिकेशन्स"
+    },
+    {
+      en: "Visual Basic for Applications",
+      hi: "विज़ुअल बेसिक फॉर एप्लिकेशन्स"
+    },
+    {
+      en: "Visual Business Applications",
+      hi: "विज़ुअल बिज़नेस एप्लिकेशन्स"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "VBA stands for Visual Basic for Applications, Microsoft's programming language used to automate tasks and extend functionality in applications such as MS Access."
+},
+
+// Question 330
+{
+  en: "What is the primary purpose of VBA in MS Access?",
+  hi: "MS Access में VBA का मुख्य उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To write code for automating tasks and implementing custom database logic",
+      hi: "कार्यों को स्वचालित करने और कस्टम डेटाबेस लॉजिक लागू करने के लिए कोड लिखना"
+    },
+    {
+      en: "To replace all tables with spreadsheets",
+      hi: "सभी टेबलों को स्प्रेडशीट से बदलना"
+    },
+    {
+      en: "To create database files without storing data",
+      hi: "डेटा संग्रहीत किए बिना डेटाबेस फ़ाइलें बनाना"
+    },
+    {
+      en: "To change the physical components of a computer",
+      hi: "कंप्यूटर के भौतिक घटकों को बदलना"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "VBA enables developers to automate tasks, create custom procedures, respond to events, and implement advanced database logic in MS Access."
+},
+// Question 331
+{
+  en: "Which component is used to store general-purpose VBA procedures that are not associated with a particular form or report?",
+  hi: "किसी विशेष फॉर्म या रिपोर्ट से संबंधित न होने वाली सामान्य VBA प्रक्रियाओं को संग्रहीत करने के लिए किस घटक का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "Table",
+      hi: "टेबल"
+    },
+    {
+      en: "Standard Module",
+      hi: "स्टैंडर्ड मॉड्यूल"
+    },
+    {
+      en: "Query",
+      hi: "क्वेरी"
+    },
+    {
+      en: "Macro Sheet",
+      hi: "मैक्रो शीट"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A Standard Module stores general-purpose VBA procedures and functions that are not directly associated with a particular form or report."
+},
+
+// Question 332
+{
+  en: "Which type of module is commonly associated with a form or report and can contain its event procedures?",
+  hi: "किस प्रकार का मॉड्यूल सामान्यतः किसी फॉर्म या रिपोर्ट से संबंधित होता है और उसमें उसके इवेंट प्रोसीजर हो सकते हैं?",
+
+  options: [
+    {
+      en: "Standard Module",
+      hi: "स्टैंडर्ड मॉड्यूल"
+    },
+    {
+      en: "Data Module",
+      hi: "डेटा मॉड्यूल"
+    },
+    {
+      en: "Query Module",
+      hi: "क्वेरी मॉड्यूल"
+    },
+    {
+      en: "Class Module",
+      hi: "क्लास मॉड्यूल"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "A form or report has an associated class module that can contain its event procedures and other related VBA code."
+},
+
+// Question 333
+{
+  en: "In VBA, what is a Sub procedure?",
+  hi: "VBA में Sub procedure क्या होता है?",
+
+  options: [
+    {
+      en: "A database table that stores variables",
+      hi: "एक डेटाबेस टेबल जो वेरिएबल्स संग्रहीत करती है"
+    },
+    {
+      en: "A constant value that cannot be changed",
+      hi: "एक स्थिर मान जिसे बदला नहीं जा सकता"
+    },
+    {
+      en: "A block of code that performs actions and does not return a value as a function result",
+      hi: "कोड का एक ब्लॉक जो कार्य करता है और फ़ंक्शन के परिणाम के रूप में कोई मान वापस नहीं करता"
+    },
+    {
+      en: "A field property used to validate records",
+      hi: "रिकॉर्ड को वैलिडेट करने के लिए उपयोग की जाने वाली फ़ील्ड प्रॉपर्टी"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A Sub procedure executes a set of statements or actions but does not return a value as a function result. It can still modify variables or produce other side effects."
+},
+
+// Question 334
+{
+  en: "Which type of VBA procedure is designed to return a value to the code that calls it?",
+  hi: "किस प्रकार का VBA प्रोसीजर उसे कॉल करने वाले कोड को एक मान वापस करने के लिए बनाया गया है?",
+
+  options: [
+    {
+      en: "Function procedure",
+      hi: "फ़ंक्शन प्रोसीजर"
+    },
+    {
+      en: "Sub procedure",
+      hi: "सब प्रोसीजर"
+    },
+    {
+      en: "Standard module",
+      hi: "स्टैंडर्ड मॉड्यूल"
+    },
+    {
+      en: "Event property",
+      hi: "इवेंट प्रॉपर्टी"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "A Function procedure can calculate or retrieve a value and return it to the calling code through the function's return value."
+},
+
+// Question 335
+{
+  en: "Which statement about variables and constants in VBA is correct?",
+  hi: "VBA में वेरिएबल्स और कॉन्स्टेंट्स के बारे में कौन-सा कथन सही है?",
+
+  options: [
+    {
+      en: "Variables and constants must always contain text.",
+      hi: "वेरिएबल्स और कॉन्स्टेंट्स में हमेशा टेक्स्ट ही होना चाहिए।"
+    },
+    {
+      en: "A variable's value can change during execution, whereas a constant's value is defined and cannot be changed during normal execution.",
+      hi: "प्रोग्राम के निष्पादन के दौरान वेरिएबल का मान बदल सकता है, जबकि कॉन्स्टेंट का मान निर्धारित होता है और सामान्य निष्पादन के दौरान बदला नहीं जा सकता।"
+    },
+    {
+      en: "A constant can be changed freely, whereas a variable cannot be changed.",
+      hi: "कॉन्स्टेंट को आसानी से बदला जा सकता है, जबकि वेरिएबल को नहीं बदला जा सकता।"
+    },
+    {
+      en: "Variables can be declared only inside database tables.",
+      hi: "वेरिएबल्स केवल डेटाबेस टेबल के अंदर घोषित किए जा सकते हैं।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "A variable can hold different values during program execution. A constant is declared with a fixed value that cannot be reassigned during normal execution."
+},
+// Question 336
+{
+  en: "Which tool in MS Access provides an environment for writing, editing, and debugging VBA code?",
+  hi: "MS Access में VBA कोड लिखने, संपादित करने और डीबग करने के लिए कौन-सा टूल वातावरण प्रदान करता है?",
+
+  options: [
+    {
+      en: "Report Wizard",
+      hi: "रिपोर्ट विज़ार्ड"
+    },
+    {
+      en: "Relationships Window",
+      hi: "रिलेशनशिप विंडो"
+    },
+    {
+      en: "Navigation Pane",
+      hi: "नेविगेशन पेन"
+    },
+    {
+      en: "Visual Basic Editor (VBE)",
+      hi: "विज़ुअल बेसिक एडिटर (VBE)"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "The Visual Basic Editor (VBE) provides the environment for writing, editing, running, and debugging VBA code in MS Access."
+},
+
+// Question 337
+{
+  en: "In VBA, which statement is used to declare a variable explicitly?",
+  hi: "VBA में किसी वेरिएबल को स्पष्ट रूप से घोषित करने के लिए किस स्टेटमेंट का उपयोग किया जाता है?",
+
+  options: [
+    {
+      en: "Const",
+      hi: "कॉन्स्ट"
+    },
+    {
+      en: "Dim",
+      hi: "डिम"
+    },
+    {
+      en: "SetValue",
+      hi: "सेट वैल्यू"
+    },
+    {
+      en: "Define",
+      hi: "डिफाइन"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The Dim statement is used to declare variables in VBA, optionally specifying their data types, such as Integer, String, or Boolean."
+},
+
+// Question 338
+{
+  en: "Which VBA data type is most appropriate for storing True or False values?",
+  hi: "True या False मानों को संग्रहीत करने के लिए कौन-सा VBA डेटा टाइप सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "String",
+      hi: "स्ट्रिंग"
+    },
+    {
+      en: "Integer",
+      hi: "इंटीजर"
+    },
+    {
+      en: "Boolean",
+      hi: "बूलियन"
+    },
+    {
+      en: "Date",
+      hi: "डेट"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The Boolean data type stores logical values: True or False."
+},
+
+// Question 339
+{
+  en: "Which feature in MS Access allows users to create and run queries using a graphical interface without writing SQL statements manually?",
+  hi: "MS Access में कौन-सी सुविधा उपयोगकर्ताओं को SQL स्टेटमेंट मैन्युअल रूप से लिखे बिना ग्राफिकल इंटरफेस के माध्यम से क्वेरी बनाने और चलाने की सुविधा देती है?",
+
+  options: [
+    {
+      en: "Query Design View",
+      hi: "क्वेरी डिज़ाइन व्यू"
+    },
+    {
+      en: "Report View",
+      hi: "रिपोर्ट व्यू"
+    },
+    {
+      en: "Form View",
+      hi: "फॉर्म व्यू"
+    },
+    {
+      en: "Print Preview",
+      hi: "प्रिंट प्रीव्यू"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "Query Design View provides a graphical interface for creating and modifying queries by selecting tables, fields, criteria, and other query options."
+},
+
+// Question 340
+{
+  en: "What is the purpose of the If...Then...Else statement in VBA?",
+  hi: "VBA में If...Then...Else स्टेटमेंट का उद्देश्य क्या है?",
+
+  options: [
+    {
+      en: "To execute different code depending on whether a condition is True or False",
+      hi: "किसी शर्त के True या False होने के आधार पर अलग-अलग कोड निष्पादित करना"
+    },
+    {
+      en: "To repeat a block of code a fixed number of times",
+      hi: "कोड के एक ब्लॉक को निश्चित संख्या में दोहराना"
+    },
+    {
+      en: "To declare a constant",
+      hi: "कॉन्स्टेंट घोषित करना"
+    },
+    {
+      en: "To define a database relationship",
+      hi: "डेटाबेस रिलेशनशिप निर्धारित करना"
+    }
+  ],
+
+  answer: "A",
+
+  explanation: "The If...Then...Else statement performs conditional branching by executing different code depending on whether a specified condition evaluates to True or False."
+},
+// Question 341
+{
+  en: "Which VBA statement is most suitable for selecting one action from several alternatives based on the value of a single expression?",
+  hi: "एक ही एक्सप्रेशन की वैल्यू के आधार पर कई विकल्पों में से एक एक्शन चुनने के लिए कौन-सा VBA स्टेटमेंट सबसे उपयुक्त है?",
+
+  options: [
+    {
+      en: "Do While",
+      hi: "डू वाइल"
+    },
+    {
+      en: "For...Next",
+      hi: "फॉर...नेक्स्ट"
+    },
+    {
+      en: "Select Case",
+      hi: "सेलेक्ट केस"
+    },
+    {
+      en: "Dim",
+      hi: "डिम"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "Select Case evaluates an expression and executes the statements associated with the matching case."
+},
+
+// Question 342
+{
+  en: "How many times will the following VBA loop execute its body?\n\nFor i = 1 To 5\n    Debug.Print i\nNext i",
+  hi: "निम्नलिखित VBA लूप कितनी बार अपने अंदर के स्टेटमेंट को निष्पादित करेगा?\n\nFor i = 1 To 5\n    Debug.Print i\nNext i",
+
+  options: [
+    {
+      en: "4 times",
+      hi: "4 बार"
+    },
+    {
+      en: "5 times",
+      hi: "5 बार"
+    },
+    {
+      en: "6 times",
+      hi: "6 बार"
+    },
+    {
+      en: "It will execute indefinitely.",
+      hi: "यह अनिश्चित समय तक निष्पादित होता रहेगा।"
+    }
+  ],
+
+  answer: "B",
+
+  explanation: "The For...Next loop runs with i taking the values 1, 2, 3, 4, and 5, so its body executes five times."
+},
+
+// Question 343
+{
+  en: "Consider the following VBA code:\n\nDim x As Integer\nx = 1\n\nDo While x < 4\n    x = x + 1\nLoop\n\nWhat will be the final value of x?",
+  hi: "निम्नलिखित VBA कोड पर विचार करें:\n\nDim x As Integer\nx = 1\n\nDo While x < 4\n    x = x + 1\nLoop\n\nx का अंतिम मान क्या होगा?",
+
+  options: [
+    {
+      en: "2",
+      hi: "2"
+    },
+    {
+      en: "3",
+      hi: "3"
+    },
+    {
+      en: "4",
+      hi: "4"
     },
     {
       en: "5",
@@ -8934,2697 +8673,1650 @@ export const QUESTIONS = [
     }
   ],
 
-  answer: "A",
-
-  explanation: "The Ctrl key is commonly used with other keys to perform commands and keyboard shortcuts."
-},
-
-// Question 308
-{
-  en: "Which option correctly matches the keyboard key category with its typical purpose?",
-  hi: "कौन-सा विकल्प कीबोर्ड कुंजी की श्रेणी को उसके सामान्य उपयोग के साथ सही रूप से मिलाता है?",
-
-  options: [
-    {
-      en: "Alphanumeric keys — entering letters and numbers",
-      hi: "अल्फान्यूमेरिक कुंजियाँ — अक्षर और संख्याएँ दर्ज करना"
-    },
-    {
-      en: "Function keys — entering only numbers",
-      hi: "फंक्शन कुंजियाँ — केवल संख्याएँ दर्ज करना"
-    },
-    {
-      en: "Control keys — displaying output on the monitor",
-      hi: "कंट्रोल कुंजियाँ — मॉनिटर पर आउटपुट प्रदर्शित करना"
-    },
-    {
-      en: "Alphanumeric keys — controlling CPU processing",
-      hi: "अल्फान्यूमेरिक कुंजियाँ — CPU प्रोसेसिंग को नियंत्रित करना"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Alphanumeric keys are primarily used to enter letters and numbers."
-},
-
-// Question 309
-{
-  en: "Which group of keys is primarily used to move the cursor or navigate within a document?",
-  hi: "कर्सर को स्थानांतरित करने या दस्तावेज़ में नेविगेट करने के लिए मुख्य रूप से किस समूह की कुंजियों का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "Navigation keys",
-      hi: "नेविगेशन कुंजियाँ"
-    },
-    {
-      en: "Function keys",
-      hi: "फंक्शन कुंजियाँ"
-    },
-    {
-      en: "Alphanumeric keys",
-      hi: "अल्फान्यूमेरिक कुंजियाँ"
-    },
-    {
-      en: "Numeric keypad",
-      hi: "न्यूमेरिक कीपैड"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Navigation keys such as arrow keys, Home, End, Page Up, and Page Down are used for cursor movement and navigation."
-},
-
-// Question 310
-{
-  en: "What is the primary purpose of the numeric keypad on a standard keyboard?",
-  hi: "मानक कीबोर्ड पर न्यूमेरिक कीपैड का प्राथमिक उद्देश्य क्या है?",
-
-  options: [
-    {
-      en: "To perform system startup operations",
-      hi: "सिस्टम स्टार्टअप ऑपरेशन करना"
-    },
-    {
-      en: "To provide convenient entry of numbers and arithmetic operators",
-      hi: "संख्याओं और अंकगणितीय ऑपरेटरों को सुविधाजनक रूप से दर्ज करना"
-    },
-    {
-      en: "To control the movement of the mouse pointer",
-      hi: "माउस पॉइंटर की गति को नियंत्रित करना"
-    },
-    {
-      en: "To display output on the screen",
-      hi: "स्क्रीन पर आउटपुट प्रदर्शित करना"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The numeric keypad provides convenient entry of numbers and common arithmetic operators."
-},
-
-// Question 311
-{
-  en: "Which of the following is commonly considered a special key on a keyboard?",
-  hi: "निम्नलिखित में से किसे सामान्यतः कीबोर्ड पर एक विशेष कुंजी माना जाता है?",
-
-  options: [
-    {
-      en: "A",
-      hi: "A"
-    },
-    {
-      en: "7",
-      hi: "7"
-    },
-    {
-      en: "Enter",
-      hi: "Enter"
-    },
-    {
-      en: "F5",
-      hi: "F5"
-    }
-  ],
-
   answer: "C",
 
-  explanation: "Enter is commonly classified as a special key used for actions such as confirming commands or starting a new line."
-},
-
-// Question 312
-{
-  en: "Which statement correctly matches the keyboard terminology with its function?",
-  hi: "कौन-सा कथन कीबोर्ड की शब्दावली को उसके कार्य के साथ सही रूप से मिलाता है?",
-
-  options: [
-    {
-      en: "Numeric keypad — mainly used for rapid numeric entry",
-      hi: "न्यूमेरिक कीपैड — मुख्य रूप से तेज़ी से संख्यात्मक डेटा दर्ज करने के लिए उपयोग किया जाता है"
-    },
-    {
-      en: "Navigation keys — used only to enter letters",
-      hi: "नेविगेशन कुंजियाँ — केवल अक्षर दर्ज करने के लिए उपयोग की जाती हैं"
-    },
-    {
-      en: "Function keys — used exclusively for typing numbers",
-      hi: "फंक्शन कुंजियाँ — केवल संख्याएँ टाइप करने के लिए उपयोग की जाती हैं"
-    },
-    {
-      en: "Special keys — used only for arithmetic calculations",
-      hi: "विशेष कुंजियाँ — केवल अंकगणितीय गणनाओं के लिए उपयोग की जाती हैं"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "The numeric keypad is designed primarily for convenient and rapid entry of numbers."
-},
-
-// Question 313
-{
-  en: "Which key is used to move the cursor to the beginning of the next line while entering text?",
-  hi: "टेक्स्ट दर्ज करते समय कर्सर को अगली पंक्ति की शुरुआत में ले जाने के लिए किस कुंजी का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "Backspace",
-      hi: "Backspace"
-    },
-    {
-      en: "Enter",
-      hi: "Enter"
-    },
-    {
-      en: "Delete",
-      hi: "Delete"
-    },
-    {
-      en: "Shift",
-      hi: "Shift"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The Enter key normally starts a new line when entering text."
-},
-
-// Question 314
-{
-  en: "A user wants to remove the character immediately to the left of the cursor while typing. Which key should normally be used?",
-  hi: "टाइप करते समय उपयोगकर्ता कर्सर के ठीक बाईं ओर स्थित अक्षर को हटाना चाहता है। सामान्यतः किस कुंजी का उपयोग किया जाना चाहिए?",
-
-  options: [
-    {
-      en: "Delete",
-      hi: "Delete"
-    },
-    {
-      en: "Ctrl",
-      hi: "Ctrl"
-    },
-    {
-      en: "Backspace",
-      hi: "Backspace"
-    },
-    {
-      en: "Alt",
-      hi: "Alt"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Backspace normally removes the character immediately to the left of the cursor."
-},
-
-// Question 315
-{
-  en: "Which statement correctly distinguishes the Backspace and Delete keys?",
-  hi: "कौन-सा कथन Backspace और Delete कुंजियों के बीच सही अंतर बताता है?",
-
-  options: [
-    {
-      en: "Backspace usually removes the character to the left of the cursor, while Delete removes the character to the right",
-      hi: "Backspace सामान्यतः कर्सर के बाईं ओर के अक्षर को हटाता है, जबकि Delete दाईं ओर के अक्षर को हटाता है"
-    },
-    {
-      en: "Backspace removes the character to the right, while Delete removes the character to the left",
-      hi: "Backspace दाईं ओर के अक्षर को हटाता है, जबकि Delete बाईं ओर के अक्षर को हटाता है"
-    },
-    {
-      en: "Both keys always perform exactly the same operation",
-      hi: "दोनों कुंजियाँ हमेशा बिल्कुल समान कार्य करती हैं"
-    },
-    {
-      en: "Both keys are used only to insert spaces",
-      hi: "दोनों कुंजियाँ केवल स्पेस डालने के लिए उपयोग की जाती हैं"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Backspace normally deletes the character to the left of the cursor, while Delete removes the character to the right."
-},
-
-// Question 316
-{
-  en: "A user wants to type a capital letter using a standard keyboard and also wants to use a keyboard shortcut involving another key. Which statement is correct?",
-  hi: "एक उपयोगकर्ता मानक कीबोर्ड से बड़े अक्षर को टाइप करना चाहता है और किसी अन्य कुंजी के साथ कीबोर्ड शॉर्टकट का भी उपयोग करना चाहता है। कौन-सा कथन सही है?",
-
-  options: [
-    {
-      en: "Shift is commonly used with a letter key for uppercase, while Ctrl and Alt are commonly used with other keys for shortcuts",
-      hi: "Shift का उपयोग सामान्यतः अक्षर कुंजी के साथ बड़े अक्षर के लिए किया जाता है, जबकि Ctrl और Alt का उपयोग अन्य कुंजियों के साथ शॉर्टकट के लिए किया जाता है"
-    },
-    {
-      en: "Ctrl is used only to create spaces, while Alt is used only to delete characters",
-      hi: "Ctrl का उपयोग केवल स्पेस बनाने के लिए किया जाता है, जबकि Alt का उपयोग केवल अक्षर हटाने के लिए किया जाता है"
-    },
-    {
-      en: "Shift is used only to move to the next line, while Ctrl is used to erase text",
-      hi: "Shift का उपयोग केवल अगली पंक्ति में जाने के लिए किया जाता है, जबकि Ctrl का उपयोग टेक्स्ट मिटाने के लिए किया जाता है"
-    },
-    {
-      en: "Alt is used only for uppercase letters, while Shift is used only for deleting text",
-      hi: "Alt का उपयोग केवल बड़े अक्षरों के लिए किया जाता है, जबकि Shift का उपयोग केवल टेक्स्ट हटाने के लिए किया जाता है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Shift can produce uppercase letters, while Ctrl and Alt are commonly used with other keys for shortcuts."
-},
-
-// Question 317
-{
-  en: "Which key is commonly used to move the cursor to the next tab position or, in many applications, to move between fields?",
-  hi: "कर्सर को अगले टैब स्थान पर ले जाने या कई एप्लिकेशन में फ़ील्ड्स के बीच जाने के लिए सामान्यतः किस कुंजी का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "Esc",
-      hi: "Esc"
-    },
-    {
-      en: "Tab",
-      hi: "Tab"
-    },
-    {
-      en: "End",
-      hi: "End"
-    },
-    {
-      en: "Insert",
-      hi: "Insert"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The Tab key moves the cursor to the next tab position and often moves between fields in applications."
-},
-
-// Question 318
-{
-  en: "A user is editing a long document and wants to move directly to the beginning or end of the current line. Which pair of keys is most appropriate?",
-  hi: "एक उपयोगकर्ता लंबे दस्तावेज़ को संपादित कर रहा है और सीधे वर्तमान पंक्ति की शुरुआत या अंत में जाना चाहता है। कौन-सी कुंजियों की जोड़ी सबसे उपयुक्त है?",
-
-  options: [
-    {
-      en: "Page Up and Page Down",
-      hi: "Page Up और Page Down"
-    },
-    {
-      en: "Tab and Esc",
-      hi: "Tab और Esc"
-    },
-    {
-      en: "Home and End",
-      hi: "Home और End"
-    },
-    {
-      en: "Caps Lock and Num Lock",
-      hi: "Caps Lock और Num Lock"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "Home and End are commonly used to move to the beginning and end of the current line."
-},
-
-// Question 319
-{
-  en: "Which statement correctly describes the functions of Caps Lock and Num Lock?",
-  hi: "कौन-सा कथन Caps Lock और Num Lock के कार्यों का सही वर्णन करता है?",
-
-  options: [
-    {
-      en: "Caps Lock enables continuous uppercase typing, while Num Lock controls the numeric keypad mode",
-      hi: "Caps Lock लगातार बड़े अक्षरों में टाइप करने की सुविधा देता है, जबकि Num Lock न्यूमेरिक कीपैड के मोड को नियंत्रित करता है"
-    },
-    {
-      en: "Caps Lock deletes characters, while Num Lock inserts spaces",
-      hi: "Caps Lock अक्षरों को हटाता है, जबकि Num Lock स्पेस डालता है"
-    },
-    {
-      en: "Caps Lock moves to the beginning of a line, while Num Lock moves to the end",
-      hi: "Caps Lock पंक्ति की शुरुआत में ले जाता है, जबकि Num Lock पंक्ति के अंत में ले जाता है"
-    },
-    {
-      en: "Both keys are used only to scroll through a document",
-      hi: "दोनों कुंजियों का उपयोग केवल दस्तावेज़ में स्क्रॉल करने के लिए किया जाता है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Caps Lock controls continuous uppercase typing, while Num Lock controls the numeric keypad's numeric-entry mode."
-},
-
-// Question 320
-{
-  en: "A user wants to cancel or exit the current operation, move one screen upward/downward, or switch between inserting and overwriting text. Which set of keys is relevant?",
-  hi: "एक उपयोगकर्ता वर्तमान ऑपरेशन को रद्द या बाहर निकलना, एक स्क्रीन ऊपर/नीचे जाना, या टेक्स्ट को इंसर्ट और ओवरराइट मोड के बीच बदलना चाहता है। कौन-सा कुंजियों का समूह संबंधित है?",
-
-  options: [
-    {
-      en: "Tab, Caps Lock, Home",
-      hi: "Tab, Caps Lock, Home"
-    },
-    {
-      en: "Esc, Page Up/Page Down, Insert",
-      hi: "Esc, Page Up/Page Down, Insert"
-    },
-    {
-      en: "End, Num Lock, Tab",
-      hi: "End, Num Lock, Tab"
-    },
-    {
-      en: "Shift, Ctrl, Alt",
-      hi: "Shift, Ctrl, Alt"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Esc can cancel or exit operations, Page Up/Page Down move through screens, and Insert can toggle insertion and overwrite modes in applications that support it."
-},
-
-// Question 321
-{
-  en: "Which option correctly matches the computer component with its primary function?",
-  hi: "कौन-सा विकल्प कंप्यूटर के घटक को उसके प्राथमिक कार्य के साथ सही रूप से मिलाता है?",
-
-  options: [
-    {
-      en: "CPU — executes instructions and processes data",
-      hi: "CPU — निर्देशों को निष्पादित करता है और डेटा को प्रोसेस करता है"
-    },
-    {
-      en: "RAM — performs arithmetic and logical operations",
-      hi: "RAM — अंकगणितीय और तार्किक ऑपरेशन करता है"
-    },
-    {
-      en: "ALU — permanently stores user files",
-      hi: "ALU — उपयोगकर्ता की फाइलों को स्थायी रूप से संग्रहीत करता है"
-    },
-    {
-      en: "ROM — controls all input devices directly",
-      hi: "ROM — सभी इनपुट डिवाइस को सीधे नियंत्रित करता है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "The CPU executes instructions and processes data during computer operations."
-},
-
-// Question 322
-{
-  en: "A computer receives an instruction, performs a calculation, and temporarily holds the intermediate result. Which sequence of components is most appropriate?",
-  hi: "एक कंप्यूटर एक निर्देश प्राप्त करता है, गणना करता है और मध्यवर्ती परिणाम को अस्थायी रूप से रखता है। घटकों का कौन-सा क्रम सबसे उपयुक्त है?",
-
-  options: [
-    {
-      en: "ROM → CU → Hard Disk",
-      hi: "ROM → CU → हार्ड डिस्क"
-    },
-    {
-      en: "CU → ALU → RAM/Register",
-      hi: "CU → ALU → RAM/रजिस्टर"
-    },
-    {
-      en: "RAM → ROM → ALU",
-      hi: "RAM → ROM → ALU"
-    },
-    {
-      en: "Hardware → ROM → CU",
-      hi: "हार्डवेयर → ROM → CU"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The CU coordinates instruction execution, the ALU performs the calculation, and the result can be temporarily held in a register or RAM."
-},
-
-// Question 323
-{
-  en: "Which statement correctly distinguishes ALU, CU, and RAM?",
-  hi: "कौन-सा कथन ALU, CU और RAM के बीच सही अंतर बताता है?",
-
-  options: [
-    {
-      en: "ALU controls instructions, CU stores data, and RAM performs calculations",
-      hi: "ALU निर्देशों को नियंत्रित करता है, CU डेटा संग्रहीत करता है और RAM गणना करता है"
-    },
-    {
-      en: "ALU performs arithmetic/logical operations, CU coordinates instructions, and RAM temporarily stores working data",
-      hi: "ALU अंकगणितीय/तार्किक ऑपरेशन करता है, CU निर्देशों का समन्वय करता है और RAM कार्यशील डेटा को अस्थायी रूप से संग्रहीत करती है"
-    },
-    {
-      en: "ALU permanently stores programs, CU performs arithmetic, and RAM controls output",
-      hi: "ALU प्रोग्रामों को स्थायी रूप से संग्रहीत करता है, CU अंकगणितीय कार्य करता है और RAM आउटपुट को नियंत्रित करती है"
-    },
-    {
-      en: "ALU provides input, CU provides output, and RAM supplies electrical power",
-      hi: "ALU इनपुट प्रदान करता है, CU आउटपुट प्रदान करता है और RAM विद्युत शक्ति प्रदान करती है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "The ALU performs operations, the CU coordinates instruction execution, and RAM temporarily stores working data."
-},
-
-// Question 324
-{
-  en: "Consider the following statements:\n1. CPU is responsible for executing instructions and processing data.\n2. ALU performs arithmetic and logical operations.\n3. CU coordinates and controls instruction execution.\n4. RAM is generally volatile, while ROM is generally non-volatile.\n5. Hardware refers to the physical components of a computer.\nWhich option is correct?",
-  hi: "निम्नलिखित कथनों पर विचार करें:\n1. CPU निर्देशों को निष्पादित करने और डेटा को प्रोसेस करने के लिए जिम्मेदार है।\n2. ALU अंकगणितीय और तार्किक ऑपरेशन करता है।\n3. CU निर्देशों के निष्पादन का समन्वय और नियंत्रण करता है।\n4. RAM सामान्यतः volatile होती है, जबकि ROM सामान्यतः non-volatile होती है।\n5. हार्डवेयर कंप्यूटर के भौतिक घटकों को संदर्भित करता है।\nकौन-सा विकल्प सही है?",
-
-  options: [
-    {
-      en: "1, 2 and 3 only",
-      hi: "केवल 1, 2 और 3"
-    },
-    {
-      en: "2, 3 and 4 only",
-      hi: "केवल 2, 3 और 4"
-    },
-    {
-      en: "1, 2, 3, 4 and 5",
-      hi: "1, 2, 3, 4 और 5"
-    },
-    {
-      en: "1, 3, 4 and 5 only",
-      hi: "केवल 1, 3, 4 और 5"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "All five statements correctly describe the CPU, ALU, CU, RAM, ROM, and hardware."
-},
-
-// Question 325
-{
-  en: "Which option correctly distinguishes Data, Information, and Processing?",
-  hi: "कौन-सा विकल्प Data, Information और Processing के बीच सही अंतर बताता है?",
-
-  options: [
-    {
-      en: "Data is processed meaning; Information is raw facts; Processing stores files",
-      hi: "Data प्रोसेस किया हुआ अर्थ है; Information कच्चे तथ्य हैं; Processing फाइलों को संग्रहीत करता है"
-    },
-    {
-      en: "Data is raw facts; Processing transforms data; Information is the meaningful result",
-      hi: "Data कच्चे तथ्य हैं; Processing डेटा को रूपांतरित करता है; Information अर्थपूर्ण परिणाम है"
-    },
-    {
-      en: "Data is output; Processing is storage; Information is input",
-      hi: "Data आउटपुट है; Processing स्टोरेज है; Information इनपुट है"
-    },
-    {
-      en: "Data and Information are always identical, regardless of processing",
-      hi: "Processing की परवाह किए बिना Data और Information हमेशा समान होते हैं"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Data consists of raw facts, processing transforms the data, and information is the meaningful result."
-},
-// Question 326
-{
-  en: "Which sequence best represents the relationship among Input, Processing, and Output?",
-  hi: "Input, Processing और Output के बीच संबंध को कौन-सा क्रम सबसे अच्छी तरह दर्शाता है?",
-
-  options: [
-    {
-      en: "Output → Input → Processing",
-      hi: "Output → Input → Processing"
-    },
-    {
-      en: "Processing → Output → Input",
-      hi: "Processing → Output → Input"
-    },
-    {
-      en: "Input → Processing → Output",
-      hi: "Input → Processing → Output"
-    },
-    {
-      en: "Input → Output → Processing",
-      hi: "Input → Output → Processing"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "A computer generally receives data as input, processes it, and produces output."
-},
-
-// Question 327
-{
-  en: "Which statement correctly distinguishes Software, Firmware, and Hardware?",
-  hi: "कौन-सा कथन Software, Firmware और Hardware के बीच सही अंतर बताता है?",
-
-  options: [
-    {
-      en: "Software and firmware are physical components, while hardware consists of instructions",
-      hi: "Software और firmware भौतिक घटक हैं, जबकि hardware निर्देशों से बना होता है"
-    },
-    {
-      en: "Software provides programs/instructions, firmware provides low-level control instructions for hardware, and hardware consists of physical components",
-      hi: "Software प्रोग्राम/निर्देश प्रदान करता है, firmware hardware के लिए निम्न-स्तरीय नियंत्रण निर्देश प्रदान करता है, और hardware भौतिक घटकों से बना होता है"
-    },
-    {
-      en: "Firmware is always temporary memory, while software is always hardware",
-      hi: "Firmware हमेशा अस्थायी मेमोरी होती है, जबकि software हमेशा hardware होता है"
-    },
-    {
-      en: "Hardware can perform programmed tasks without any software or instructions",
-      hi: "Hardware बिना किसी software या निर्देश के प्रोग्राम किए गए कार्य कर सकता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Software consists of programs, firmware provides low-level control for hardware, and hardware consists of physical components."
-},
-
-// Question 328
-{
-  en: "A computer receives data through a keyboard, processes it using the CPU, stores the result on an SSD, and displays it on a monitor. Which classification is correct?",
-  hi: "एक कंप्यूटर कीबोर्ड के माध्यम से डेटा प्राप्त करता है, CPU द्वारा उसे प्रोसेस करता है, परिणाम को SSD पर संग्रहीत करता है और मॉनिटर पर प्रदर्शित करता है। कौन-सा वर्गीकरण सही है?",
-
-  options: [
-    {
-      en: "Keyboard–Input, CPU–Processing, SSD–Storage, Monitor–Output",
-      hi: "Keyboard–Input, CPU–Processing, SSD–Storage, Monitor–Output"
-    },
-    {
-      en: "Keyboard–Output, CPU–Storage, SSD–Processing, Monitor–Input",
-      hi: "Keyboard–Output, CPU–Storage, SSD–Processing, Monitor–Input"
-    },
-    {
-      en: "Keyboard–Processing, CPU–Input, SSD–Output, Monitor–Storage",
-      hi: "Keyboard–Processing, CPU–Input, SSD–Output, Monitor–Storage"
-    },
-    {
-      en: "Keyboard–Storage, CPU–Output, SSD–Input, Monitor–Processing",
-      hi: "Keyboard–Storage, CPU–Output, SSD–Input, Monitor–Processing"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "The keyboard provides input, the CPU processes data, the SSD stores data, and the monitor provides output."
-},
-
-// Question 329
-{
-  en: "Which statement correctly distinguishes a bit from a byte?",
-  hi: "कौन-सा कथन bit और byte के बीच सही अंतर बताता है?",
-
-  options: [
-    {
-      en: "A bit contains 8 bytes, while a byte contains 1 bit",
-      hi: "एक bit में 8 bytes होते हैं, जबकि एक byte में 1 bit होता है"
-    },
-    {
-      en: "A bit is the smallest basic unit of digital data, while 1 byte consists of 8 bits",
-      hi: "Bit डिजिटल डेटा की सबसे छोटी मूल इकाई है, जबकि 1 byte में 8 bits होते हैं"
-    },
-    {
-      en: "A bit is larger than a byte",
-      hi: "Bit, byte से बड़ा होता है"
-    },
-    {
-      en: "A byte is used only for measuring storage capacity",
-      hi: "Byte का उपयोग केवल स्टोरेज क्षमता मापने के लिए किया जाता है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "A bit is a basic unit of digital data, and one byte consists of 8 bits."
-},
-
-// Question 330
-{
-  en: "A processor has a clock speed of 3.2 GHz. What does this value primarily indicate?",
-  hi: "एक प्रोसेसर की clock speed 3.2 GHz है। यह मान मुख्य रूप से क्या दर्शाता है?",
-
-  options: [
-    {
-      en: "The storage capacity of the computer",
-      hi: "कंप्यूटर की स्टोरेज क्षमता"
-    },
-    {
-      en: "The number of bytes stored in the CPU",
-      hi: "CPU में संग्रहीत bytes की संख्या"
-    },
-    {
-      en: "The approximate number of clock cycles per second",
-      hi: "प्रति सेकंड clock cycles की अनुमानित संख्या"
-    },
-    {
-      en: "The amount of RAM installed",
-      hi: "इंस्टॉल की गई RAM की मात्रा"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "A clock speed of 3.2 GHz indicates approximately 3.2 billion clock cycles per second."
-},
-// Question 331
-{
-  en: "Which statement correctly describes the relationship between MHz and GHz?",
-  hi: "कौन-सा कथन MHz और GHz के बीच संबंध को सही रूप से दर्शाता है?",
-
-  options: [
-    {
-      en: "1 GHz = 100 MHz",
-      hi: "1 GHz = 100 MHz"
-    },
-    {
-      en: "1 GHz = 1,000 MHz",
-      hi: "1 GHz = 1,000 MHz"
-    },
-    {
-      en: "1 MHz = 1,000 GHz",
-      hi: "1 MHz = 1,000 GHz"
-    },
-    {
-      en: "1 GHz = 10 MHz",
-      hi: "1 GHz = 10 MHz"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "1 GHz = 1,000 MHz. यानी 1 gigahertz में 1,000 megahertz होते हैं."
-},
-
-// Question 332
-{
-  en: "A computer has a 512 GB SSD and a processor running at 2.5 GHz. Which statement correctly interprets these specifications?",
-  hi: "एक कंप्यूटर में 512 GB SSD और 2.5 GHz पर चलने वाला प्रोसेसर है। इन specifications की सही व्याख्या कौन-सी है?",
-
-  options: [
-    {
-      en: "512 GB represents processing frequency, while 2.5 GHz represents storage capacity",
-      hi: "512 GB processing frequency को दर्शाता है, जबकि 2.5 GHz storage capacity को दर्शाता है"
-    },
-    {
-      en: "512 GB represents storage capacity, while 2.5 GHz represents clock frequency",
-      hi: "512 GB storage capacity को दर्शाता है, जबकि 2.5 GHz clock frequency को दर्शाता है"
-    },
-    {
-      en: "Both values represent storage capacity",
-      hi: "दोनों मान storage capacity को दर्शाते हैं"
-    },
-    {
-      en: "Both values represent clock speed",
-      hi: "दोनों मान clock speed को दर्शाते हैं"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "512 GB tells us the SSD storage capacity, जबकि 2.5 GHz indicates the processor's clock frequency."
-},
-
-// Question 333
-{
-  en: "What does processing speed of a computer primarily refer to?",
-  hi: "कंप्यूटर की processing speed मुख्य रूप से किसे दर्शाती है?",
-
-  options: [
-    {
-      en: "The amount of data that can be stored permanently",
-      hi: "डेटा की वह मात्रा जिसे स्थायी रूप से संग्रहीत किया जा सकता है"
-    },
-    {
-      en: "The speed at which the computer can execute instructions and process data",
-      hi: "वह गति जिस पर कंप्यूटर instructions को execute और data को process कर सकता है"
-    },
-    {
-      en: "The physical size of the monitor",
-      hi: "मॉनिटर का भौतिक आकार"
-    },
-    {
-      en: "The number of files stored on a hard disk",
-      hi: "हार्ड डिस्क पर संग्रहीत files की संख्या"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Processing speed refers to how quickly the computer executes instructions and processes data, यानी instructions को कितनी तेजी से execute किया जाता है."
-},
-
-// Question 334
-{
-  en: "Which unit is commonly used to express the clock speed of a modern CPU?",
-  hi: "आधुनिक CPU की clock speed को व्यक्त करने के लिए सामान्यतः किस इकाई का उपयोग किया जाता है?",
-
-  options: [
-    {
-      en: "GB",
-      hi: "GB"
-    },
-    {
-      en: "MB",
-      hi: "MB"
-    },
-    {
-      en: "GHz",
-      hi: "GHz"
-    },
-    {
-      en: "Pixel",
-      hi: "Pixel"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "CPU clock speed is commonly expressed in GHz, यानी gigahertz."
-},
-
-// Question 335
-{
-  en: "What does the resolution of a display primarily indicate?",
-  hi: "डिस्प्ले की resolution मुख्य रूप से क्या दर्शाती है?",
-
-  options: [
-    {
-      en: "The number of pixels used to form the displayed image",
-      hi: "प्रदर्शित image को बनाने के लिए उपयोग किए जाने वाले pixels की संख्या"
-    },
-    {
-      en: "The processing speed of the CPU",
-      hi: "CPU की processing speed"
-    },
-    {
-      en: "The storage capacity of the computer",
-      hi: "कंप्यूटर की storage capacity"
-    },
-    {
-      en: "The amount of RAM installed",
-      hi: "इंस्टॉल की गई RAM की मात्रा"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Display resolution describes the number of pixels used to form an image, यानी screen पर image कितने pixels से बनी है."
-},
-// Question 336
-{
-  en: "Which display specification generally provides a more detailed image?",
-  hi: "निम्नलिखित में से कौन-सी display specification सामान्यतः अधिक detailed image प्रदान करती है?",
-
-  options: [
-    {
-      en: "640 × 480 pixels",
-      hi: "640 × 480 pixels"
-    },
-    {
-      en: "800 × 600 pixels",
-      hi: "800 × 600 pixels"
-    },
-    {
-      en: "1024 × 768 pixels",
-      hi: "1024 × 768 pixels"
-    },
-    {
-      en: "1920 × 1080 pixels",
-      hi: "1920 × 1080 pixels"
-    }
-  ],
-
-  answer: "D",
-
-  explanation: "1920 × 1080 has the highest pixel count among the options, so it generally provides more image detail."
-},
-
-// Question 337
-{
-  en: "Which statement correctly compares computers and humans regarding processing speed?",
-  hi: "Processing speed के संबंध में computers और humans की सही तुलना कौन-सी है?",
-
-  options: [
-    {
-      en: "Humans always process numerical data faster than computers",
-      hi: "Humans हमेशा numerical data को computers से faster process करते हैं"
-    },
-    {
-      en: "Computers can perform repetitive calculations at very high speed",
-      hi: "Computers repetitive calculations को बहुत high speed पर perform कर सकते हैं"
-    },
-    {
-      en: "Computers cannot perform calculations without human assistance",
-      hi: "Computers human assistance के बिना calculations perform नहीं कर सकते"
-    },
-    {
-      en: "Humans and computers always process information at exactly the same speed",
-      hi: "Humans और computers हमेशा information को exactly same speed पर process करते हैं"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Computers can perform repetitive calculations extremely quickly, जबकि humans generally take more time for such repetitive tasks."
-},
-
-// Question 338
-{
-  en: "Which statement best describes the difference in accuracy between a computer and a human?",
-  hi: "Computer और human के बीच accuracy के अंतर को कौन-सा कथन सबसे अच्छी तरह बताता है?",
-
-  options: [
-    {
-      en: "A computer can produce incorrect results if the input or instructions are incorrect",
-      hi: "यदि input या instructions incorrect हों, तो computer incorrect results produce कर सकता है"
-    },
-    {
-      en: "A computer always produces correct results regardless of input",
-      hi: "Input चाहे जैसा हो, computer हमेशा correct results produce करता है"
-    },
-    {
-      en: "Humans cannot make errors while performing calculations",
-      hi: "Calculations करते समय humans errors नहीं कर सकते"
-    },
-    {
-      en: "Computer accuracy does not depend on instructions",
-      hi: "Computer accuracy instructions पर depend नहीं करती"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "A computer follows the given input and instructions, so incorrect input or instructions can lead to incorrect results."
-},
-
-// Question 339
-{
-  en: "Which comparison regarding memory is most appropriate?",
-  hi: "Memory के संबंध में कौन-सी comparison सबसे उपयुक्त है?",
-
-  options: [
-    {
-      en: "Computers can store and retrieve large amounts of digital data systematically, while human memory works differently and is not directly comparable to computer storage",
-      hi: "Computers large amounts of digital data को systematically store और retrieve कर सकते हैं, जबकि human memory अलग तरीके से काम करती है और इसकी तुलना सीधे computer storage से नहीं की जा सकती"
-    },
-    {
-      en: "Human memory is always larger than computer storage",
-      hi: "Human memory हमेशा computer storage से larger होती है"
-    },
-    {
-      en: "Computers forget all stored information immediately after processing",
-      hi: "Computers processing के तुरंत बाद सभी stored information भूल जाते हैं"
-    },
-    {
-      en: "Computer memory works exactly like human memory",
-      hi: "Computer memory exactly human memory की तरह काम करती है"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Computer storage systematically stores digital data, जबकि human memory works through biological processes and is not directly equivalent to computer storage."
-},
-
-// Question 340
-{
-  en: "Which statement correctly compares computers and humans regarding emotions and decision-making?",
-  hi: "Emotions और decision-making के संबंध में computers और humans की सही तुलना कौन-सी है?",
-
-  options: [
-    {
-      en: "Computers naturally experience human emotions and make decisions based on feelings",
-      hi: "Computers naturally human emotions experience करते हैं और feelings के आधार पर decisions लेते हैं"
-    },
-    {
-      en: "Humans have emotions and can exercise judgment, while computers follow programmed instructions and logic",
-      hi: "Humans के पास emotions होते हैं और वे judgment का उपयोग कर सकते हैं, जबकि computers programmed instructions और logic follow करते हैं"
-    },
-    {
-      en: "Computers always make better decisions because they have emotions",
-      hi: "Computers हमेशा better decisions लेते हैं क्योंकि उनके पास emotions होते हैं"
-    },
-    {
-      en: "Humans cannot make decisions without computer instructions",
-      hi: "Humans computer instructions के बिना decisions नहीं ले सकते"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Humans have emotions and judgment, जबकि computers operate according to programmed instructions and logic."
-},
-// Question 341
-{
-  en: "Which statement best describes the difference between human creativity and computer operation?",
-  hi: "Human creativity और computer operation के बीच अंतर को कौन-सा कथन सबसे अच्छी तरह बताता है?",
-
-  options: [
-    {
-      en: "Computers naturally create ideas based on emotions and personal experiences",
-      hi: "Computers emotions और personal experiences के आधार पर naturally ideas create करते हैं"
-    },
-    {
-      en: "Humans can generate original ideas and concepts, while computers generally operate according to programmed instructions and algorithms",
-      hi: "Humans original ideas और concepts generate कर सकते हैं, जबकि computers generally programmed instructions और algorithms के अनुसार operate करते हैं"
-    },
-    {
-      en: "Computers always have greater creativity than humans",
-      hi: "Computers में हमेशा humans से greater creativity होती है"
-    },
-    {
-      en: "Humans can only perform tasks that have been programmed in advance",
-      hi: "Humans केवल वही tasks perform कर सकते हैं जिन्हें पहले से program किया गया हो"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "Humans can use creativity and imagination to generate ideas, जबकि computers generally follow programmed instructions and algorithms."
-},
-
-// Question 342
-{
-  en: "Why is a computer dependent on instructions to perform a task?",
-  hi: "किसी task को perform करने के लिए computer instructions पर dependent क्यों होता है?",
-
-  options: [
-    {
-      en: "A computer cannot process any data unless a monitor is connected",
-      hi: "Computer किसी भी data को process नहीं कर सकता जब तक monitor connected न हो"
-    },
-    {
-      en: "A computer requires instructions or programs that specify what operations should be performed",
-      hi: "Computer को ऐसे instructions या programs की आवश्यकता होती है जो बताते हैं कि कौन-से operations perform करने हैं"
-    },
-    {
-      en: "A computer can independently determine every task without any instructions",
-      hi: "Computer बिना किसी instructions के independently हर task determine कर सकता है"
-    },
-    {
-      en: "Instructions are needed only when using a printer",
-      hi: "Instructions की आवश्यकता केवल printer का उपयोग करते समय होती है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "A computer needs instructions or programs to know which operations to perform, यानी उसे task के लिए defined instructions चाहिए."
-},
-
-// Question 343
-{
-  en: "A computer produces a highly accurate result after processing data, but the instructions supplied to it contain an incorrect formula. What does this situation demonstrate?",
-  hi: "एक computer data को process करने के बाद highly accurate result देता है, लेकिन उसे दिए गए instructions में incorrect formula है। यह स्थिति क्या दर्शाती है?",
-
-  options: [
-    {
-      en: "Computers can independently correct all incorrect instructions",
-      hi: "Computers सभी incorrect instructions को independently correct कर सकते हैं"
-    },
-    {
-      en: "Computer results depend on the correctness of the instructions and data provided",
-      hi: "Computer results दिए गए instructions और data की correctness पर depend करते हैं"
-    },
-    {
-      en: "Computers do not require human involvement in programming",
-      hi: "Computers को programming में human involvement की आवश्यकता नहीं होती"
-    },
-    {
-      en: "Computer creativity automatically replaces human judgment",
-      hi: "Computer creativity automatically human judgment को replace कर देती है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "A computer accurately follows the given instructions, so an incorrect formula can produce an incorrect result."
+  explanation: "The loop starts with x = 1 and increments x while x < 4. When x reaches 4, the condition becomes False and the loop stops."
 },
 
 // Question 344
 {
-  en: "Which statement best explains human dependence on computers versus computer dependence on humans?",
-  hi: "Humans की computers पर dependence और computers की humans पर dependence को कौन-सा कथन सबसे अच्छी तरह समझाता है?",
+  en: "Which VBA error-handling statement allows execution to transfer to a specified error-handling label when a runtime error occurs?",
+  hi: "रनटाइम एरर होने पर निष्पादन को निर्धारित एरर-हैंडलिंग लेबल पर भेजने के लिए कौन-सा VBA स्टेटमेंट उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Computers can independently establish their own goals and instructions",
-      hi: "Computers independently अपने goals और instructions establish कर सकते हैं"
+      en: "On Error GoTo ErrorHandler",
+      hi: "ऑन एरर गो टू ErrorHandler"
     },
     {
-      en: "Humans cannot modify computer instructions once software is created",
-      hi: "Software create होने के बाद humans computer instructions को modify नहीं कर सकते"
+      en: "If...Then",
+      hi: "इफ...देन"
     },
     {
-      en: "Computers depend on humans for programming, instructions, data, and defined objectives",
-      hi: "Computers programming, instructions, data और defined objectives के लिए humans पर depend करते हैं"
+      en: "Select Case",
+      hi: "सेलेक्ट केस"
     },
     {
-      en: "Computers possess emotions that allow them to decide what humans need",
-      hi: "Computers के पास emotions होते हैं जो उन्हें यह decide करने देते हैं कि humans को क्या चाहिए"
+      en: "For...Next",
+      hi: "फॉर...नेक्स्ट"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Computers depend on humans to provide programs, instructions, data, and defined objectives."
+  explanation: "On Error GoTo ErrorHandler directs execution to the specified error-handling label when a runtime error occurs, provided the handler is correctly defined."
 },
 
 // Question 345
 {
-  en: "A school uses computers to conduct online classes, maintain student records, and provide digital learning materials. Which application of computers is primarily demonstrated?",
-  hi: "एक school online classes conduct करने, student records maintain करने और digital learning materials provide करने के लिए computers का उपयोग करता है। यह computers के किस application को primarily दर्शाता है?",
+  en: "Which SQL statement is used to retrieve data from one or more tables in MS Access?",
+  hi: "MS Access में एक या अधिक टेबलों से डेटा प्राप्त करने के लिए किस SQL स्टेटमेंट का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Banking",
-      hi: "Banking"
+      en: "UPDATE",
+      hi: "अपडेट"
     },
     {
-      en: "Education",
-      hi: "Education"
+      en: "SELECT",
+      hi: "सेलेक्ट"
     },
     {
-      en: "Healthcare",
-      hi: "Healthcare"
+      en: "DELETE",
+      hi: "डिलीट"
     },
     {
-      en: "Government",
-      hi: "Government"
+      en: "ALTER TABLE",
+      hi: "ऑल्टर टेबल"
     }
   ],
 
   answer: "B",
 
-  explanation: "Online classes, student records, and digital learning materials are common applications of computers in education."
+  explanation: "The SELECT statement retrieves data from one or more tables or queries without inherently modifying the stored records."
 },
-
 // Question 346
 {
-  en: "A bank uses computers to process transactions, maintain customer accounts, and provide ATM services. Which application is being described?",
-  hi: "एक bank transactions process करने, customer accounts maintain करने और ATM services provide करने के लिए computers का उपयोग करता है। यह किस application को दर्शाता है?",
+  en: "Consider the following SQL statement:\n\nSELECT EmployeeName, Salary\nFROM Employees\nWHERE Salary > 30000;\n\nWhat is the purpose of the WHERE clause?",
+  hi: "निम्नलिखित SQL स्टेटमेंट पर विचार करें:\n\nSELECT EmployeeName, Salary\nFROM Employees\nWHERE Salary > 30000;\n\nWHERE क्लॉज का उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Business",
-      hi: "Business"
+      en: "To sort employees by salary",
+      hi: "कर्मचारियों को वेतन के अनुसार सॉर्ट करना"
     },
     {
-      en: "Healthcare",
-      hi: "Healthcare"
+      en: "To group employees by salary",
+      hi: "कर्मचारियों को वेतन के अनुसार समूहित करना"
     },
     {
-      en: "Banking",
-      hi: "Banking"
+      en: "To filter records according to the specified condition",
+      hi: "निर्धारित शर्त के अनुसार रिकॉर्ड फ़िल्टर करना"
     },
     {
-      en: "Education",
-      hi: "Education"
+      en: "To delete employees earning less than 30000",
+      hi: "30000 से कम वेतन पाने वाले कर्मचारियों को हटाना"
     }
   ],
 
   answer: "C",
 
-  explanation: "Processing bank transactions, managing customer accounts, and providing ATM services are applications of computers in banking."
+  explanation: "The WHERE clause filters records according to a specified condition. Here, only employees whose Salary is greater than 30000 are selected."
 },
 
 // Question 347
 {
-  en: "A hospital uses computers for maintaining patient records, scheduling appointments, and managing diagnostic information. Which application is most directly represented?",
-  hi: "एक hospital patient records maintain करने, appointments schedule करने और diagnostic information manage करने के लिए computers का उपयोग करता है। यह किस application को सबसे सीधे दर्शाता है?",
+  en: "Which SQL clause is used to arrange query results in ascending or descending order?",
+  hi: "क्वेरी के परिणामों को आरोही या अवरोही क्रम में व्यवस्थित करने के लिए किस SQL क्लॉज का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Healthcare",
-      hi: "Healthcare"
+      en: "ORDER BY",
+      hi: "ऑर्डर बाय"
     },
     {
-      en: "Government",
-      hi: "Government"
+      en: "GROUP BY",
+      hi: "ग्रुप बाय"
     },
     {
-      en: "Banking",
-      hi: "Banking"
+      en: "HAVING",
+      hi: "हैविंग"
     },
     {
-      en: "Business",
-      hi: "Business"
+      en: "INSERT INTO",
+      hi: "इन्सर्ट इंटू"
     }
   ],
 
   answer: "A",
 
-  explanation: "Patient records, appointment scheduling, and diagnostic information are common computer applications in healthcare."
+  explanation: "ORDER BY sorts query results in ascending order by default or in descending order when DESC is specified."
 },
 
 // Question 348
 {
-  en: "A government department uses computers to maintain citizen records, process applications, and provide online public services. Which application of computers does this represent?",
-  hi: "एक government department citizen records maintain करने, applications process करने और online public services provide करने के लिए computers का उपयोग करता है। यह computers के किस application को दर्शाता है?",
+  en: "A user wants to calculate the total sales for each product category. Which SQL clause is generally used to group records by category before applying SUM()?",
+  hi: "एक उपयोगकर्ता प्रत्येक उत्पाद श्रेणी की कुल बिक्री की गणना करना चाहता है। SUM() लागू करने से पहले रिकॉर्ड को श्रेणी के अनुसार समूहित करने के लिए सामान्यतः किस SQL क्लॉज का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Education",
-      hi: "Education"
+      en: "WHERE",
+      hi: "व्हेयर"
     },
     {
-      en: "Business",
-      hi: "Business"
+      en: "ORDER BY",
+      hi: "ऑर्डर बाय"
     },
     {
-      en: "Healthcare",
-      hi: "Healthcare"
+      en: "HAVING",
+      hi: "हैविंग"
     },
     {
-      en: "Government",
-      hi: "Government"
+      en: "GROUP BY",
+      hi: "ग्रुप बाय"
     }
   ],
 
   answer: "D",
 
-  explanation: "Maintaining citizen records, processing applications, and providing online public services are applications of computers in government."
+  explanation: "GROUP BY groups records with the same category value, allowing SUM() to calculate the total sales separately for each product category."
 },
 
 // Question 349
 {
-  en: "A company uses computers and digital networks to enable instant exchange of messages, emails, and video calls between people in different locations. This is an application of computers in:",
-  hi: "एक company computers और digital networks का उपयोग अलग-अलग locations पर मौजूद लोगों के बीच instant messages, emails और video calls के आदान-प्रदान के लिए करती है। यह computers का किस क्षेत्र में application है?",
+  en: "Which SQL clause is used to filter groups after aggregate calculations, such as displaying only departments whose total salary exceeds 100000?",
+  hi: "एग्रीगेट गणना के बाद समूहों को फ़िल्टर करने के लिए किस SQL क्लॉज का उपयोग किया जाता है, जैसे केवल उन विभागों को दिखाना जिनका कुल वेतन 100000 से अधिक है?",
 
   options: [
     {
-      en: "Transportation",
-      hi: "Transportation"
+      en: "WHERE",
+      hi: "व्हेयर"
     },
     {
-      en: "Communication",
-      hi: "Communication"
+      en: "HAVING",
+      hi: "हैविंग"
     },
     {
-      en: "Defence",
-      hi: "Defence"
+      en: "FROM",
+      hi: "फ्रॉम"
     },
     {
-      en: "Entertainment",
-      hi: "Entertainment"
+      en: "INSERT INTO",
+      hi: "इन्सर्ट इंटू"
     }
   ],
 
   answer: "B",
 
-  explanation: "Messages, emails, and video calls are examples of computer applications in communication."
+  explanation: "HAVING filters groups based on aggregate conditions, such as retaining only departments whose SUM(Salary) exceeds 100000."
 },
 
 // Question 350
 {
-  en: "Scientists use high-performance computers to perform complex simulations, analyze experimental data, and model scientific phenomena. This represents the use of computers in:",
-  hi: "Scientists complex simulations perform करने, experimental data analyze करने और scientific phenomena को model करने के लिए high-performance computers का उपयोग करते हैं। यह computers के किस क्षेत्र में उपयोग को दर्शाता है?",
+  en: "Which SQL statement is used to add new records to an existing table in MS Access?",
+  hi: "MS Access में किसी मौजूदा टेबल में नए रिकॉर्ड जोड़ने के लिए किस SQL स्टेटमेंट का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Entertainment",
-      hi: "Entertainment"
+      en: "UPDATE",
+      hi: "अपडेट"
     },
     {
-      en: "Transportation",
-      hi: "Transportation"
+      en: "ALTER TABLE",
+      hi: "ऑल्टर टेबल"
     },
     {
-      en: "Science",
-      hi: "Science"
+      en: "INSERT INTO",
+      hi: "इन्सर्ट इंटू"
     },
     {
-      en: "Communication",
-      hi: "Communication"
+      en: "ORDER BY",
+      hi: "ऑर्डर बाय"
     }
   ],
 
   answer: "C",
 
-  explanation: "Scientific simulations, experimental data analysis, and modeling are important applications of computers in science."
+  explanation: "INSERT INTO adds new records to an existing table. UPDATE modifies values in existing records, while ALTER TABLE changes the table structure."
 },
-
 // Question 351
 {
-  en: "Computers are used in defence systems for radar monitoring, secure communication, surveillance, and simulation. Which application is primarily described?",
-  hi: "Defence systems में radar monitoring, secure communication, surveillance और simulation के लिए computers का उपयोग किया जाता है। यह मुख्य रूप से किस application को दर्शाता है?",
+  en: "Consider the following SQL statement:\n\nUPDATE Employees\nSET Salary = 40000\nWHERE EmployeeID = 101;\n\nWhat does this statement do?",
+  hi: "निम्नलिखित SQL स्टेटमेंट पर विचार करें:\n\nUPDATE Employees\nSET Salary = 40000\nWHERE EmployeeID = 101;\n\nयह स्टेटमेंट क्या करता है?",
 
   options: [
     {
-      en: "Defence",
-      hi: "Defence"
+      en: "Changes the salary to 40000 for the employee whose EmployeeID is 101",
+      hi: "उस कर्मचारी का वेतन 40000 कर देता है जिसका EmployeeID 101 है"
     },
     {
-      en: "Transportation",
-      hi: "Transportation"
+      en: "Adds a new employee with EmployeeID 101",
+      hi: "EmployeeID 101 वाला नया कर्मचारी जोड़ता है"
     },
     {
-      en: "Communication",
-      hi: "Communication"
+      en: "Deletes the employee whose EmployeeID is 101",
+      hi: "EmployeeID 101 वाले कर्मचारी को हटा देता है"
     },
     {
-      en: "Entertainment",
-      hi: "Entertainment"
+      en: "Creates a new field named Salary",
+      hi: "Salary नाम का नया फ़ील्ड बनाता है"
     }
   ],
 
   answer: "A",
 
-  explanation: "Radar monitoring, surveillance, secure communication, and simulation are important computer applications in defence."
+  explanation: "The UPDATE statement modifies existing records. Here, it sets Salary to 40000 for the employee whose EmployeeID equals 101."
 },
 
 // Question 352
 {
-  en: "A railway system uses computers for ticket booking, scheduling, route management, and monitoring of train operations. Which application is being demonstrated?",
-  hi: "एक railway system ticket booking, scheduling, route management और train operations की monitoring के लिए computers का उपयोग करता है। यह किस application को दर्शाता है?",
+  en: "Which SQL statement is used to remove records from a table, while keeping the table structure intact?",
+  hi: "टेबल की संरचना को बनाए रखते हुए उसके रिकॉर्ड हटाने के लिए किस SQL स्टेटमेंट का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Science",
-      hi: "Science"
+      en: "DROP TABLE",
+      hi: "ड्रॉप टेबल"
     },
     {
-      en: "Entertainment",
-      hi: "Entertainment"
+      en: "ALTER TABLE",
+      hi: "ऑल्टर टेबल"
     },
     {
-      en: "Transportation",
-      hi: "Transportation"
+      en: "CREATE TABLE",
+      hi: "क्रिएट टेबल"
     },
     {
-      en: "Defence",
-      hi: "Defence"
+      en: "DELETE",
+      hi: "डिलीट"
     }
   ],
 
-  answer: "C",
+  answer: "D",
 
-  explanation: "Ticket booking, scheduling, route management, and train monitoring are applications of computers in transportation."
+  explanation: "DELETE removes records from a table while preserving its structure. DROP TABLE removes the table itself."
 },
 
 // Question 353
 {
-  en: "A government office receives thousands of applications and uses a computer system to sort, calculate, classify, and generate results from the collected data. Which use of computers is primarily demonstrated?",
-  hi: "एक government office हजारों applications प्राप्त करता है और collected data को sort, calculate, classify तथा results generate करने के लिए computer system का उपयोग करता है। यह computers के किस use को primarily दर्शाता है?",
+  en: "What is a subquery in SQL?",
+  hi: "SQL में Subquery क्या होती है?",
 
   options: [
     {
-      en: "Communication",
-      hi: "Communication"
+      en: "A query that permanently deletes another query",
+      hi: "ऐसी क्वेरी जो दूसरी क्वेरी को स्थायी रूप से हटा देती है"
     },
     {
-      en: "Record Keeping",
-      hi: "Record Keeping"
+      en: "A query written inside another SQL query",
+      hi: "दूसरी SQL क्वेरी के अंदर लिखी गई क्वेरी"
     },
     {
-      en: "Data Processing",
-      hi: "Data Processing"
+      en: "A query used only to sort records",
+      hi: "केवल रिकॉर्ड सॉर्ट करने के लिए उपयोग की जाने वाली क्वेरी"
     },
     {
-      en: "Entertainment",
-      hi: "Entertainment"
+      en: "A query that cannot contain a WHERE clause",
+      hi: "ऐसी क्वेरी जिसमें WHERE क्लॉज नहीं हो सकता"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Sorting, calculating, classifying, and generating results from collected data are examples of data processing."
+  explanation: "A subquery is a query nested inside another SQL statement. Its result can be used by the outer query for filtering, comparison, or other operations."
 },
 
 // Question 354
 {
-  en: "A hospital maintains patient histories, previous diagnoses, test reports, and appointment details in a computerized system so that they can be retrieved when required. This is primarily an example of:",
-  hi: "एक hospital patient histories, previous diagnoses, test reports और appointment details को computerized system में maintain करता है ताकि आवश्यकता पड़ने पर उन्हें retrieve किया जा सके। यह मुख्य रूप से किसका उदाहरण है?",
+  en: "Which SQL operator is commonly used with a subquery to check whether a value matches any value returned by the subquery?",
+  hi: "Subquery द्वारा लौटाए गए मानों में किसी मान से मिलान जाँचने के लिए सामान्यतः किस SQL ऑपरेटर का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "Record Keeping",
-      hi: "Record Keeping"
+      en: "ORDER BY",
+      hi: "ऑर्डर बाय"
     },
     {
-      en: "Data Processing",
-      hi: "Data Processing"
+      en: "GROUP BY",
+      hi: "ग्रुप बाय"
     },
     {
-      en: "Communication",
-      hi: "Communication"
+      en: "IN",
+      hi: "इन"
     },
     {
-      en: "Transportation",
-      hi: "Transportation"
+      en: "ALTER TABLE",
+      hi: "ऑल्टर टेबल"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "Storing and retrieving patient histories and related details is an example of computerized record keeping."
+  explanation: "The IN operator checks whether a value matches any value in a specified list or the result set returned by a subquery."
 },
 
 // Question 355
 {
-  en: "A business collects sales data, processes it to calculate totals and trends, and then uses the results for reporting. Which use of computers is most directly involved?",
-  hi: "एक business sales data collect करता है, उसे process करके totals और trends calculate करता है और फिर results का reporting के लिए उपयोग करता है। इसमें computers का कौन-सा use सबसे directly involved है?",
+  en: "What is the primary purpose of a UNION query in MS Access?",
+  hi: "MS Access में UNION क्वेरी का मुख्य उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Record Keeping only",
-      hi: "केवल Record Keeping"
+      en: "To combine the results of two or more compatible SELECT queries into one result set",
+      hi: "दो या अधिक संगत SELECT क्वेरियों के परिणामों को एक ही परिणाम सेट में जोड़ना"
     },
     {
-      en: "Data Processing",
-      hi: "Data Processing"
+      en: "To create a relationship between two tables",
+      hi: "दो टेबलों के बीच संबंध बनाना"
     },
     {
-      en: "Communication only",
-      hi: "केवल Communication"
+      en: "To update matching records in two tables",
+      hi: "दो टेबलों में मिलान करने वाले रिकॉर्ड अपडेट करना"
     },
     {
-      en: "Entertainment",
-      hi: "Entertainment"
+      en: "To display records in a hierarchical form",
+      hi: "रिकॉर्ड को पदानुक्रमित रूप में प्रदर्शित करना"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "Calculating totals and trends from sales data is primarily an example of data processing."
+  explanation: "A UNION query combines the result sets of two or more compatible SELECT statements. The corresponding queries must return the same number of fields with compatible data types."
 },
-
 // Question 356
 {
-  en: "Which situation best demonstrates the combined use of computers for data processing and record keeping?",
-  hi: "कौन-सी स्थिति computers के data processing और record keeping दोनों के संयुक्त उपयोग को सबसे अच्छी तरह दर्शाती है?",
+  en: "Which statement about a UNION query in MS Access is correct?",
+  hi: "MS Access में UNION Query के संबंध में कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "A computer game displaying animated graphics",
-      hi: "एक computer game जिसमें animated graphics प्रदर्शित होते हैं"
+      en: "Every SELECT statement must return a different number of fields.",
+      hi: "प्रत्येक SELECT स्टेटमेंट में अलग-अलग संख्या में फ़ील्ड होने चाहिए।"
     },
     {
-      en: "A system storing employee records and calculating their monthly salaries",
-      hi: "एक system जो employee records store करता है और उनकी monthly salaries calculate करता है"
+      en: "UNION can combine only tables having identical names.",
+      hi: "UNION केवल समान नाम वाली टेबलों को जोड़ सकता है।"
     },
     {
-      en: "A video call between two users",
-      hi: "दो users के बीच एक video call"
+      en: "UNION always retains all duplicate rows.",
+      hi: "UNION हमेशा सभी डुप्लिकेट रो को बनाए रखता है।"
     },
     {
-      en: "A projector displaying a presentation",
-      hi: "एक projector द्वारा presentation प्रदर्शित करना"
+      en: "The SELECT statements must return the same number of fields, with corresponding fields having compatible data types.",
+      hi: "SELECT स्टेटमेंट में फ़ील्ड की संख्या समान होनी चाहिए और संबंधित फ़ील्ड के डेटा टाइप एक-दूसरे के अनुकूल होने चाहिए।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Employee records को store करना record keeping है, जबकि salaries calculate करना data processing है."
+  explanation: "A UNION query combines the results of multiple SELECT statements. Each SELECT must return the same number of fields in the same order, and corresponding fields must have compatible data types. UNION removes duplicate rows by default; UNION ALL retains them."
 },
 
 // Question 357
 {
-  en: "A bank uses a computer system to perform thousands of transactions and calculate interest amounts within seconds. Which use of computers is primarily demonstrated?",
-  hi: "एक bank computer system का उपयोग हजारों transactions perform करने और seconds में interest amounts calculate करने के लिए करता है। यह computers के किस use को primarily दर्शाता है?",
+  en: "What is the primary purpose of a Pass-Through Query in MS Access?",
+  hi: "MS Access में Pass-Through Query का मुख्य उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Research",
-      hi: "Research"
+      en: "To create a form without using a table",
+      hi: "टेबल का उपयोग किए बिना फ़ॉर्म बनाना"
     },
     {
-      en: "Calculation",
-      hi: "Calculation"
+      en: "To send SQL statements directly to an external database server for processing",
+      hi: "SQL स्टेटमेंट को प्रोसेसिंग के लिए सीधे बाहरी डेटाबेस सर्वर पर भेजना"
     },
     {
-      en: "Online Services",
-      hi: "Online Services"
+      en: "To find duplicate records in a local table only",
+      hi: "केवल स्थानीय टेबल में डुप्लिकेट रिकॉर्ड खोजना"
     },
     {
-      en: "Automation",
-      hi: "Automation"
+      en: "To automatically convert a report into a table",
+      hi: "रिपोर्ट को स्वचालित रूप से टेबल में बदलना"
     }
   ],
 
   answer: "B",
 
-  explanation: "Interest amounts calculate करना इस example में computers के calculation use को directly demonstrate करता है."
+  explanation: "A Pass-Through Query sends SQL statements directly to an external database server, such as SQL Server. The external server processes the SQL rather than Access processing the query locally."
 },
 
 // Question 358
 {
-  en: "A university maintains a large digital database containing research papers, student records, and historical documents that can be retrieved whenever required. This primarily demonstrates:",
-  hi: "एक university एक large digital database maintain करती है जिसमें research papers, student records और historical documents होते हैं जिन्हें आवश्यकता पड़ने पर retrieve किया जा सकता है। यह मुख्य रूप से क्या दर्शाता है?",
+  en: "Which query type is most appropriate for identifying records in one table that have no matching records in another table?",
+  hi: "एक टेबल में ऐसे रिकॉर्ड खोजने के लिए, जिनका दूसरी टेबल में कोई मिलान करने वाला रिकॉर्ड नहीं है, कौन-सी Query सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Information Storage",
-      hi: "Information Storage"
+      en: "Find Duplicates Query",
+      hi: "Find Duplicates Query"
     },
     {
-      en: "Automation",
-      hi: "Automation"
+      en: "Crosstab Query",
+      hi: "Crosstab Query"
     },
     {
-      en: "Calculation",
-      hi: "Calculation"
+      en: "Find Unmatched Query",
+      hi: "Find Unmatched Query"
     },
     {
-      en: "Online Services",
-      hi: "Online Services"
+      en: "Top Values Query",
+      hi: "Top Values Query"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "Large amounts of information को store और आवश्यकता पर retrieve करना information storage का example है."
+  explanation: "Find Unmatched Query identifies records in one table that do not have corresponding records in another table based on the selected matching fields."
 },
 
 // Question 359
 {
-  en: "A laboratory uses computers to analyze experimental data, run simulations, and study complex scientific models. Which use is most directly represented?",
-  hi: "एक laboratory experimental data analyze करने, simulations run करने और complex scientific models का अध्ययन करने के लिए computers का उपयोग करती है। यह किस use को सबसे directly दर्शाता है?",
+  en: "A user wants to display only the five highest-priced products in a query. Which feature is most appropriate?",
+  hi: "एक उपयोगकर्ता Query में केवल सबसे अधिक कीमत वाले पाँच उत्पाद दिखाना चाहता है। इसके लिए कौन-सी सुविधा सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Online Services",
-      hi: "Online Services"
+      en: "Top Values",
+      hi: "Top Values"
     },
     {
-      en: "Automation",
-      hi: "Automation"
+      en: "Find Unmatched",
+      hi: "Find Unmatched"
     },
     {
-      en: "Research",
-      hi: "Research"
+      en: "UNION",
+      hi: "UNION"
     },
     {
-      en: "Information Storage",
-      hi: "Information Storage"
+      en: "Pass-Through Query",
+      hi: "Pass-Through Query"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Experimental data analysis, simulations, and scientific modeling are common computer applications in research."
+  explanation: "The Top Values feature limits query results to the highest-ranking records. Sorting the price field in descending order and setting Top Values to 5 displays the five highest-priced products."
 },
 
 // Question 360
 {
-  en: "A factory uses computer-controlled machines that automatically perform repetitive production tasks according to programmed instructions without continuous manual operation. This is an example of:",
-  hi: "एक factory में computer-controlled machines programmed instructions के अनुसार repetitive production tasks को automatically perform करती हैं और continuous manual operation की आवश्यकता नहीं होती। यह किसका example है?",
+  en: "Consider the following SQL statement:\n\nSELECT EmployeeName\nFROM Employees\nWHERE Salary > 30000 AND DepartmentID = 2;\n\nWhich records will be returned?",
+  hi: "निम्न SQL स्टेटमेंट पर विचार करें:\n\nSELECT EmployeeName\nFROM Employees\nWHERE Salary > 30000 AND DepartmentID = 2;\n\nइससे कौन-से रिकॉर्ड प्राप्त होंगे?",
 
   options: [
     {
-      en: "Calculation",
-      hi: "Calculation"
+      en: "Employees earning more than 30000 or belonging to DepartmentID 2",
+      hi: "वे कर्मचारी जिनका वेतन 30000 से अधिक है या जो DepartmentID 2 से संबंधित हैं"
     },
     {
-      en: "Information Storage",
-      hi: "Information Storage"
+      en: "All employees belonging to DepartmentID 2, regardless of salary",
+      hi: "वेतन चाहे कितना भी हो, DepartmentID 2 के सभी कर्मचारी"
     },
     {
-      en: "Online Services",
-      hi: "Online Services"
+      en: "All employees earning more than 30000, regardless of department",
+      hi: "विभाग चाहे कोई भी हो, 30000 से अधिक वेतन पाने वाले सभी कर्मचारी"
     },
     {
-      en: "Automation",
-      hi: "Automation"
+      en: "Employees earning more than 30000 and belonging to DepartmentID 2",
+      hi: "वे कर्मचारी जिनका वेतन 30000 से अधिक है और जो DepartmentID 2 से संबंधित हैं"
     }
   ],
 
   answer: "D",
 
-  explanation: "Programmed instructions के अनुसार बिना continuous manual operation के tasks का automatically perform होना automation कहलाता है."
+  explanation: "The AND operator requires both conditions to be true. Therefore, the query returns the EmployeeName of employees whose Salary is greater than 30000 and whose DepartmentID equals 2."
 },
 // Question 361
 {
-  en: "Which sequence correctly represents the basic operation of a computer when a user wants to process newly entered data?",
-  hi: "जब उपयोगकर्ता नए दर्ज किए गए data को process करना चाहता है, तो computer के basic operation का कौन-सा sequence सही है?",
+  en: "What happens when data is imported from an Excel worksheet into an MS Access table?",
+  hi: "जब Excel वर्कशीट से डेटा MS Access टेबल में इम्पोर्ट किया जाता है, तो क्या होता है?",
 
   options: [
     {
-      en: "Processing → Input → Starting",
-      hi: "Processing → Input → Starting"
+      en: "The data is always linked to Excel and cannot be stored in Access.",
+      hi: "डेटा हमेशा Excel से लिंक रहता है और Access में स्टोर नहीं किया जा सकता।"
     },
     {
-      en: "Starting → Input → Processing",
-      hi: "Starting → Input → Processing"
+      en: "The Excel workbook is automatically deleted.",
+      hi: "Excel वर्कबुक अपने आप डिलीट हो जाती है।"
     },
     {
-      en: "Input → Starting → Processing",
-      hi: "Input → Starting → Processing"
+      en: "A copy of the data is brought into Access, where it can be stored in an Access table.",
+      hi: "डेटा की एक कॉपी Access में लाई जाती है, जहाँ इसे Access टेबल में स्टोर किया जा सकता है।"
     },
     {
-      en: "Starting → Processing → Input",
-      hi: "Starting → Processing → Input"
+      en: "The Excel worksheet is converted into a VBA module.",
+      hi: "Excel वर्कशीट को VBA मॉड्यूल में बदल दिया जाता है।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "The computer is first started, then data is entered as input, and finally the data is processed."
+  explanation: "Importing data from Excel creates a copy of the selected data in an Access table. The imported data is stored in Access independently of the original Excel worksheet."
 },
 
 // Question 362
 {
-  en: "When a computer is switched on and its hardware and essential system components are initialized before it becomes ready for use, this process is known as:",
-  hi: "जब computer को switch on किया जाता है और use के लिए ready होने से पहले उसके hardware और essential system components initialize होते हैं, तो इस process को क्या कहा जाता है?",
+  en: "Which option is most suitable for bringing comma-separated records from a CSV file into an MS Access table?",
+  hi: "CSV फ़ाइल से कॉमा द्वारा अलग किए गए रिकॉर्ड MS Access टेबल में लाने के लिए कौन-सा विकल्प सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Processing",
-      hi: "Processing"
+      en: "Import the text file using the Text Import Wizard or the available text import options.",
+      hi: "Text Import Wizard या उपलब्ध टेक्स्ट इम्पोर्ट विकल्पों का उपयोग करके टेक्स्ट फ़ाइल इम्पोर्ट करना।"
     },
     {
-      en: "Input",
-      hi: "Input"
+      en: "Use the Report Wizard.",
+      hi: "Report Wizard का उपयोग करना।"
     },
     {
-      en: "Booting",
-      hi: "Booting"
+      en: "Use the Relationships window.",
+      hi: "Relationships विंडो का उपयोग करना।"
     },
     {
-      en: "Output",
-      hi: "Output"
+      en: "Use the Form Wizard.",
+      hi: "Form Wizard का उपयोग करना।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Booting is the process of starting the computer and initializing essential hardware and system software."
+  explanation: "A CSV file is a delimited text file. MS Access provides text import options, including the Text Import Wizard in supported versions, to specify delimiters and import the records into a table."
 },
 
 // Question 363
 {
-  en: "A user enters the number 250 through a keyboard, and the computer then performs a calculation according to the given instructions. Which operation is represented by entering 250?",
-  hi: "एक user keyboard के माध्यम से number 250 enter करता है और फिर computer दिए गए instructions के अनुसार calculation करता है। 250 enter करना किस operation को दर्शाता है?",
+  en: "A user wants to send data from an MS Access table to an Excel workbook for further analysis. Which operation should be performed?",
+  hi: "एक उपयोगकर्ता आगे विश्लेषण करने के लिए MS Access टेबल का डेटा Excel वर्कबुक में भेजना चाहता है। उसे कौन-सी प्रक्रिया अपनानी चाहिए?",
 
   options: [
     {
-      en: "Input",
-      hi: "Input"
+      en: "Import from Excel",
+      hi: "Excel से इम्पोर्ट करना"
     },
     {
-      en: "Processing",
-      hi: "Processing"
+      en: "Create a relationship",
+      hi: "रिलेशनशिप बनाना"
     },
     {
-      en: "Storage",
-      hi: "Storage"
+      en: "Compact and Repair",
+      hi: "Compact and Repair करना"
     },
     {
-      en: "Output",
-      hi: "Output"
+      en: "Export to Excel",
+      hi: "Excel में एक्सपोर्ट करना"
     }
   ],
 
-  answer: "A",
+  answer: "D",
 
-  explanation: "Entering 250 through the keyboard is an input operation because data is being supplied to the computer."
+  explanation: "Export to Excel transfers data from an Access table or query to an Excel workbook, where it can be analyzed using Excel features."
 },
 
 // Question 364
 {
-  en: "After a user enters two numbers into a computer, the CPU compares them according to the given instruction and determines which number is larger. Which basic computer operation is being performed?",
-  hi: "एक user computer में दो numbers enter करता है। CPU दिए गए instruction के अनुसार उनकी तुलना करके निर्धारित करता है कि कौन-सा number बड़ा है। कौन-सा basic computer operation perform हो रहा है?",
+  en: "Which statement correctly describes a linked table in MS Access?",
+  hi: "MS Access में लिंक की गई टेबल का सही वर्णन कौन-सा है?",
 
   options: [
     {
-      en: "Input",
-      hi: "Input"
+      en: "It always stores an independent copy of all source data inside the Access database.",
+      hi: "यह हमेशा स्रोत के सभी डेटा की स्वतंत्र कॉपी Access डेटाबेस में स्टोर करती है।"
     },
     {
-      en: "Starting",
-      hi: "Starting"
+      en: "It provides access to data stored in an external source without importing a separate copy of that data into Access.",
+      hi: "यह डेटा की अलग कॉपी Access में इम्पोर्ट किए बिना बाहरी स्रोत में स्टोर डेटा तक पहुँच प्रदान करती है।"
     },
     {
-      en: "Output",
-      hi: "Output"
+      en: "It can never display changes made in the original data source.",
+      hi: "यह मूल डेटा स्रोत में किए गए बदलाव कभी नहीं दिखा सकती।"
     },
     {
-      en: "Processing",
-      hi: "Processing"
+      en: "It automatically converts the external source into an Access table.",
+      hi: "यह बाहरी स्रोत को अपने आप Access टेबल में बदल देती है।"
     }
   ],
 
-  answer: "D",
+  answer: "B",
 
-  explanation: "Comparing two numbers according to an instruction is a processing operation performed by the CPU."
+  explanation: "A linked table provides access to data stored in an external source without importing a separate copy of the records. Changes made in the source may be reflected in Access, depending on the source and connection."
 },
 
 // Question 365
 {
-  en: "A user enters data into a spreadsheet, performs calculations, and then views the calculated result on the monitor. The information displayed on the monitor represents:",
-  hi: "एक user spreadsheet में data enter करता है, calculations perform करता है और फिर monitor पर calculated result देखता है। Monitor पर displayed information क्या दर्शाती है?",
+  en: "What is the main difference between imported data and linked data in MS Access?",
+  hi: "MS Access में इम्पोर्ट किए गए डेटा और लिंक किए गए डेटा के बीच मुख्य अंतर क्या है?",
 
   options: [
     {
-      en: "Input",
-      hi: "Input"
+      en: "Imported data is copied into Access, whereas linked data remains in the external source.",
+      hi: "इम्पोर्ट किया गया डेटा Access में कॉपी होता है, जबकि लिंक किया गया डेटा बाहरी स्रोत में ही रहता है।"
     },
     {
-      en: "Processing",
-      hi: "Processing"
+      en: "Imported data can contain text, whereas linked data can contain numbers only.",
+      hi: "इम्पोर्ट किए गए डेटा में टेक्स्ट हो सकता है, जबकि लिंक किए गए डेटा में केवल संख्याएँ हो सकती हैं।"
     },
     {
-      en: "Output",
-      hi: "Output"
+      en: "Linked data is always stored in a report.",
+      hi: "लिंक किया गया डेटा हमेशा रिपोर्ट में स्टोर होता है।"
     },
     {
-      en: "Storage",
-      hi: "Storage"
-    }
-  ],
-
-  answer: "C",
-
-  explanation: "The calculated result displayed on the monitor is the output produced by the computer."
-},
-
-// Question 366
-{
-  en: "Which action permanently saves a document so that it can be retrieved later, even after the application is closed?",
-  hi: "कौन-सी action document को save करती है ताकि application close होने के बाद भी उसे बाद में retrieve किया जा सके?",
-
-  options: [
-    {
-      en: "Saving the file",
-      hi: "File को save करना"
-    },
-    {
-      en: "Closing the window",
-      hi: "Window को close करना"
-    },
-    {
-      en: "Minimizing the application",
-      hi: "Application को minimize करना"
-    },
-    {
-      en: "Refreshing the screen",
-      hi: "Screen को refresh करना"
+      en: "Imported data cannot be edited under any circumstances.",
+      hi: "इम्पोर्ट किए गए डेटा को किसी भी परिस्थिति में संपादित नहीं किया जा सकता।"
     }
   ],
 
   answer: "A",
 
-  explanation: "Saving the file stores the document for later retrieval, even after the application is closed."
+  explanation: "Importing copies data into an Access table, creating a separate stored copy. Linking keeps the data in its external source and allows Access to access it through a linked table. Whether linked data can be edited depends on the external source and its permissions."
+},
+// Question 366
+{
+  en: "Which tool guides a user through the process of selecting a data source and configuring how external data should be brought into MS Access?",
+  hi: "कौन-सा टूल उपयोगकर्ता को डेटा स्रोत चुनने और बाहरी डेटा को MS Access में लाने की प्रक्रिया कॉन्फ़िगर करने में मार्गदर्शन करता है?",
+
+  options: [
+    {
+      en: "Report Wizard",
+      hi: "Report Wizard"
+    },
+    {
+      en: "Form Wizard",
+      hi: "Form Wizard"
+    },
+    {
+      en: "Import Wizard",
+      hi: "Import Wizard"
+    },
+    {
+      en: "Macro Builder",
+      hi: "Macro Builder"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "The Import Wizard or the relevant import wizard in Access guides users through selecting a data source and configuring import settings. The exact wizard name and available options depend on the source type and Access version."
 },
 
 // Question 367
 {
-  en: "A user has finished working in a word-processing application and wants to stop using it while keeping the operating system running. Which action should normally be performed?",
-  hi: "एक user ने word-processing application में काम पूरा कर लिया है और operating system को running रखते हुए application का उपयोग बंद करना चाहता है। सामान्यतः कौन-सी action करनी चाहिए?",
+  en: "A user links an Excel worksheet to MS Access. Later, the user changes a value in the original Excel worksheet. What is generally true when the linked data is refreshed or viewed again?",
+  hi: "एक उपयोगकर्ता Excel वर्कशीट को MS Access से लिंक करता है। बाद में वह मूल Excel वर्कशीट में एक मान बदल देता है। लिंक किए गए डेटा को दोबारा देखने या रिफ्रेश करने पर सामान्यतः क्या होता है?",
 
   options: [
     {
-      en: "Shut down the computer",
-      hi: "Computer को shut down करना"
+      en: "Access permanently deletes the linked table.",
+      hi: "Access लिंक की गई टेबल को स्थायी रूप से डिलीट कर देता है।"
     },
     {
-      en: "Close the program",
-      hi: "Program को close करना"
+      en: "The change can be reflected in Access because the data remains in the external source.",
+      hi: "बदलाव Access में दिखाई दे सकता है, क्योंकि डेटा बाहरी स्रोत में ही रहता है।"
     },
     {
-      en: "Restart the computer",
-      hi: "Computer को restart करना"
+      en: "Access automatically creates a separate report containing the change.",
+      hi: "Access बदलाव वाली एक अलग रिपोर्ट अपने आप बना देता है।"
     },
     {
-      en: "Disconnect the power supply",
-      hi: "Power supply को disconnect करना"
+      en: "The linked table becomes an unrelated local table automatically.",
+      hi: "लिंक की गई टेबल अपने आप एक असंबंधित स्थानीय टेबल बन जाती है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Closing the program stops the application while the operating system continues running."
+  explanation: "A linked Excel table accesses data from the original workbook rather than storing an independent imported copy. Changes in the workbook can therefore be reflected when the linked data is viewed again, provided the source remains accessible and the link is valid."
 },
 
 // Question 368
 {
-  en: "Which is the appropriate basic procedure for safely turning off a computer after completing all work?",
-  hi: "सारा काम पूरा करने के बाद computer को safely turn off करने की appropriate basic procedure कौन-सी है?",
+  en: "Which statement about exporting data from MS Access is correct?",
+  hi: "MS Access से डेटा एक्सपोर्ट करने के संबंध में कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "Directly switch off the power supply",
-      hi: "Directly power supply को switch off करना"
+      en: "Exporting always removes the original records from Access.",
+      hi: "एक्सपोर्ट करने से Access के मूल रिकॉर्ड हमेशा हट जाते हैं।"
     },
     {
-      en: "Remove the storage device and then switch off",
-      hi: "Storage device को remove करके फिर switch off करना"
+      en: "Exporting can be performed only to Microsoft Excel.",
+      hi: "एक्सपोर्ट केवल Microsoft Excel में किया जा सकता है।"
     },
     {
-      en: "Close the monitor and leave the computer running",
-      hi: "Monitor को close करके computer को running छोड़ देना"
+      en: "Exporting always creates a live link to the destination file.",
+      hi: "एक्सपोर्ट करने से गंतव्य फ़ाइल के साथ हमेशा लाइव लिंक बनता है।"
     },
     {
-      en: "Use the operating system's Shut Down command",
-      hi: "Operating system के Shut Down command का उपयोग करना"
+      en: "Exporting sends data or database objects to a supported external format or destination, depending on the export options.",
+      hi: "एक्सपोर्ट विकल्पों के अनुसार डेटा या डेटाबेस ऑब्जेक्ट को किसी समर्थित बाहरी फ़ॉर्मेट या गंतव्य पर भेजा जाता है।"
     }
   ],
 
   answer: "D",
 
-  explanation: "Using the operating system's Shut Down command safely closes running processes before turning off the computer."
+  explanation: "Access can export data and supported database objects to various formats and destinations, depending on the available options. Exporting does not normally delete the original Access data or automatically create a live link."
 },
 
 // Question 369
 {
-  en: "A programmer writes a set of logically arranged instructions that directs a computer to perform a particular task. This complete set is best described as a:",
-  hi: "एक programmer logically arranged instructions का ऐसा set लिखता है जो computer को किसी particular task को perform करने के लिए निर्देश देता है। इस complete set को क्या कहा जाता है?",
+  en: "What is the primary purpose of password protection for an MS Access database?",
+  hi: "MS Access डेटाबेस को पासवर्ड से सुरक्षित करने का मुख्य उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Command",
-      hi: "Command"
+      en: "To automatically remove duplicate records",
+      hi: "डुप्लिकेट रिकॉर्ड को अपने आप हटाना"
     },
     {
-      en: "File",
-      hi: "File"
+      en: "To prevent unauthorized users from opening the protected database",
+      hi: "अनधिकृत उपयोगकर्ताओं को सुरक्षित डेटाबेस खोलने से रोकना"
     },
     {
-      en: "Program",
-      hi: "Program"
+      en: "To improve query execution speed",
+      hi: "Query के निष्पादन की गति बढ़ाना"
     },
     {
-      en: "Folder",
-      hi: "Folder"
+      en: "To create relationships between tables",
+      hi: "टेबलों के बीच रिलेशनशिप बनाना"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "A program is a complete set of logically arranged instructions designed to perform a task."
+  explanation: "Database password protection helps prevent unauthorized users from opening a protected Access database. It does not improve query speed, remove duplicates, or create table relationships."
 },
 
 // Question 370
 {
-  en: "A user selects a menu option that instructs a word processor to save the currently open document. In this context, the specific directive given to the computer is a:",
-  hi: "एक user menu option select करता है जो word processor को currently open document save करने का instruction देता है। इस context में computer को दिया गया specific directive क्या कहलाता है?",
+  en: "What is a Trusted Location in MS Access?",
+  hi: "MS Access में Trusted Location क्या होता है?",
 
   options: [
     {
-      en: "Command",
-      hi: "Command"
+      en: "A folder where database files are automatically converted into read-only files",
+      hi: "ऐसा फ़ोल्डर जहाँ डेटाबेस फ़ाइलें अपने आप केवल-पढ़ने योग्य फ़ाइलों में बदल जाती हैं"
     },
     {
-      en: "Folder",
-      hi: "Folder"
+      en: "A folder used exclusively for storing database backups",
+      hi: "ऐसा फ़ोल्डर जिसका उपयोग केवल डेटाबेस बैकअप स्टोर करने के लिए होता है"
     },
     {
-      en: "File",
-      hi: "File"
+      en: "A folder designated as a trusted location where Access may allow certain active content to run without the usual security warnings",
+      hi: "ऐसा फ़ोल्डर जिसे विश्वसनीय स्थान के रूप में निर्धारित किया जाता है, जहाँ Access कुछ सक्रिय सामग्री को सामान्य सुरक्षा चेतावनियों के बिना चलने की अनुमति दे सकता है"
     },
     {
-      en: "Program",
-      hi: "Program"
+      en: "A folder that prevents all users from modifying database records",
+      hi: "ऐसा फ़ोल्डर जो सभी उपयोगकर्ताओं को डेटाबेस रिकॉर्ड में बदलाव करने से रोकता है"
+    }
+  ],
+
+  answer: "C",
+
+  explanation: "A Trusted Location is a folder designated as trusted in Access or the relevant Office Trust Center settings. Databases opened from that location may run supported active content, such as macros, without the usual security warnings. Only trusted locations should be used for files from reliable sources."
+},
+// Question 371
+{
+  en: "What is the primary role of the Trust Center in MS Access?",
+  hi: "MS Access में Trust Center की मुख्य भूमिका क्या है?",
+
+  options: [
+    {
+      en: "To configure security and privacy settings for Office applications",
+      hi: "Office एप्लिकेशन के लिए सुरक्षा और गोपनीयता सेटिंग्स कॉन्फ़िगर करना"
+    },
+    {
+      en: "To create primary keys automatically",
+      hi: "प्राइमरी की अपने आप बनाना"
+    },
+    {
+      en: "To calculate totals in reports",
+      hi: "रिपोर्ट में कुल योग की गणना करना"
+    },
+    {
+      en: "To import data from Excel worksheets",
+      hi: "Excel वर्कशीट से डेटा इम्पोर्ट करना"
     }
   ],
 
   answer: "A",
 
-  explanation: "A command is a specific instruction given to a computer to perform an operation, जैसे Save."
-},
-// Question 371
-{
-  en: "Which statement most accurately distinguishes an instruction from a program?",
-  hi: "कौन-सा कथन instruction और program के बीच सबसे सटीक अंतर बताता है?",
-
-  options: [
-    {
-      en: "An instruction is always stored in a folder, whereas a program cannot be stored",
-      hi: "Instruction हमेशा folder में stored होती है, जबकि program को store नहीं किया जा सकता"
-    },
-    {
-      en: "An instruction is a single directive or operation, whereas a program is a collection of instructions designed to accomplish a task",
-      hi: "Instruction एक single directive या operation होती है, जबकि program किसी task को पूरा करने के लिए instructions का collection होता है"
-    },
-    {
-      en: "An instruction is a physical component, whereas a program is an input device",
-      hi: "Instruction एक physical component है, जबकि program एक input device है"
-    },
-    {
-      en: "An instruction is a file containing multiple folders, whereas a program is a single command",
-      hi: "Instruction multiple folders वाली file है, जबकि program एक single command है"
-    }
-  ],
-
-  answer: "B",
-
-  explanation: "An instruction gives a specific directive, जबकि a program is a collection of instructions designed to perform a task."
+  explanation: "The Trust Center provides security and privacy settings for Microsoft Office applications, including Access. These settings help manage trusted locations, macros, and other potentially active content."
 },
 
 // Question 372
 {
-  en: "A user creates a folder named \"Patwari_Mock\" and stores several PDF documents inside it. Which statement correctly describes the items involved?",
-  hi: "एक user \"Patwari_Mock\" नाम का folder बनाता है और उसमें कई PDF documents store करता है। कौन-सा कथन इन items का सही वर्णन करता है?",
+  en: "What does Disabled Content generally mean when a database is opened in MS Access?",
+  hi: "MS Access में डेटाबेस खोलने पर Disabled Content का सामान्यतः क्या अर्थ होता है?",
 
   options: [
     {
-      en: "The PDF documents are folders and \"Patwari_Mock\" is a command",
-      hi: "PDF documents folders हैं और \"Patwari_Mock\" एक command है"
+      en: "All tables have been permanently deleted.",
+      hi: "सभी टेबल स्थायी रूप से डिलीट कर दी गई हैं।"
     },
     {
-      en: "The PDF documents are programs and \"Patwari_Mock\" is an instruction",
-      hi: "PDF documents programs हैं और \"Patwari_Mock\" एक instruction है"
+      en: "The database has automatically become corrupted.",
+      hi: "डेटाबेस अपने आप खराब हो गया है।"
     },
     {
-      en: "\"Patwari_Mock\" is a file containing the PDF documents",
-      hi: "\"Patwari_Mock\" PDF documents वाली एक file है"
+      en: "The database cannot display any existing records.",
+      hi: "डेटाबेस कोई भी मौजूदा रिकॉर्ड प्रदर्शित नहीं कर सकता।"
     },
     {
-      en: "\"Patwari_Mock\" is a folder used to organize the PDF files",
-      hi: "\"Patwari_Mock\" PDF files को organize करने के लिए उपयोग किया जाने वाला folder है"
+      en: "Certain active content, such as macros, has been disabled because of security settings.",
+      hi: "सुरक्षा सेटिंग्स के कारण मैक्रो जैसी कुछ सक्रिय सामग्री को निष्क्रिय कर दिया गया है।"
     }
   ],
 
   answer: "D",
 
-  explanation: "\"Patwari_Mock\" is a folder used to organize and store the PDF files."
+  explanation: "Disabled Content generally indicates that Access has disabled certain active content, such as macros, because of security settings. Existing tables and records may still be available even when this content is disabled."
 },
 
 // Question 373
 {
-  en: "A user opens a word processor to create and edit a document. The word processor is best classified as:",
-  hi: "एक user document create और edit करने के लिए word processor खोलता है। Word processor को सबसे उपयुक्त रूप से किस रूप में classify किया जाता है?",
+  en: "What is the effect of opening an MS Access database in Read-Only mode?",
+  hi: "MS Access डेटाबेस को Read-Only मोड में खोलने का क्या प्रभाव होता है?",
 
   options: [
     {
-      en: "System Software",
-      hi: "System Software"
+      en: "The database file is automatically deleted after closing.",
+      hi: "बंद करने के बाद डेटाबेस फ़ाइल अपने आप डिलीट हो जाती है।"
     },
     {
-      en: "Application Software",
-      hi: "Application Software"
+      en: "Changes to the database cannot normally be saved to that read-only file.",
+      hi: "डेटाबेस में किए गए बदलाव सामान्यतः उस Read-Only फ़ाइल में सेव नहीं किए जा सकते।"
     },
     {
-      en: "Device",
-      hi: "Device"
+      en: "All database objects become invisible.",
+      hi: "डेटाबेस के सभी ऑब्जेक्ट अदृश्य हो जाते हैं।"
     },
     {
-      en: "Process",
-      hi: "Process"
+      en: "The database automatically becomes password-protected.",
+      hi: "डेटाबेस अपने आप पासवर्ड से सुरक्षित हो जाता है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "A word processor is application software designed for creating and editing documents."
+  explanation: "In Read-Only mode, users can generally view the database but cannot save changes to the read-only file. This mode does not automatically delete the file, hide database objects, or add password protection."
 },
 
 // Question 374
 {
-  en: "Which term refers to software that manages computer hardware and provides a platform for other software to run?",
-  hi: "उस software को क्या कहा जाता है जो computer hardware को manage करता है और अन्य software के run होने के लिए platform प्रदान करता है?",
+  en: "Which statement about user permissions in a database system is correct?",
+  hi: "डेटाबेस सिस्टम में उपयोगकर्ता अनुमतियों के संबंध में कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "User Software",
-      hi: "User Software"
+      en: "Permissions automatically guarantee that a database file cannot be copied.",
+      hi: "अनुमतियाँ अपने आप सुनिश्चित करती हैं कि डेटाबेस फ़ाइल कॉपी नहीं की जा सकती।"
     },
     {
-      en: "Application Software",
-      hi: "Application Software"
+      en: "Every user must always have full administrative access.",
+      hi: "प्रत्येक उपयोगकर्ता के पास हमेशा पूर्ण प्रशासनिक पहुँच होनी चाहिए।"
     },
     {
-      en: "System Software",
-      hi: "System Software"
+      en: "Permissions help control which actions users are authorized to perform.",
+      hi: "अनुमतियाँ यह नियंत्रित करने में मदद करती हैं कि उपयोगकर्ता कौन-से कार्य करने के लिए अधिकृत हैं।"
     },
     {
-      en: "Storage Software",
-      hi: "Storage Software"
+      en: "Permissions eliminate the need for database backups.",
+      hi: "अनुमतियाँ डेटाबेस बैकअप की आवश्यकता समाप्त कर देती हैं।"
     }
   ],
 
   answer: "C",
 
-  explanation: "System software manages hardware and provides the environment or platform for application software to run."
+  explanation: "Database permissions help determine which actions users are authorized to perform, such as viewing or modifying data. They do not eliminate the need for backups or automatically prevent a file from being copied. Available permission controls depend on the database system."
 },
 
 // Question 375
 {
-  en: "A keyboard, printer, scanner, and monitor are connected to a computer. In basic computer terminology, these are examples of:",
-  hi: "एक keyboard, printer, scanner और monitor computer से connected हैं। Basic computer terminology में ये किसके examples हैं?",
+  en: "Which practice is most effective for recovering database information after accidental deletion or file damage?",
+  hi: "गलती से डेटा डिलीट होने या फ़ाइल खराब होने के बाद डेटाबेस की जानकारी वापस प्राप्त करने के लिए कौन-सा तरीका सबसे प्रभावी है?",
 
   options: [
     {
-      en: "Devices",
-      hi: "Devices"
+      en: "Maintaining regular backups and periodically checking that they can be restored",
+      hi: "नियमित बैकअप रखना और समय-समय पर जाँचना कि उन्हें सफलतापूर्वक रिस्टोर किया जा सकता है"
     },
     {
-      en: "Processes",
-      hi: "Processes"
+      en: "Changing the form's background colour",
+      hi: "फ़ॉर्म का बैकग्राउंड रंग बदलना"
     },
     {
-      en: "Applications",
-      hi: "Applications"
+      en: "Sorting all tables alphabetically",
+      hi: "सभी टेबलों को वर्णानुक्रम में सॉर्ट करना"
     },
     {
-      en: "Files",
-      hi: "Files"
+      en: "Creating additional report headers",
+      hi: "अतिरिक्त रिपोर्ट हेडर बनाना"
     }
   ],
 
   answer: "A",
 
-  explanation: "Keyboard, printer, scanner, and monitor are physical hardware devices connected to a computer."
+  explanation: "Regular backups provide a recovery point after accidental deletion or database file damage. Periodically testing restoration helps verify that the backups are usable when recovery is needed."
 },
 // Question 376
 {
-  en: "A running instance of a program that is being executed by the operating system is known as a:",
-  hi: "Operating system द्वारा execute किए जा रहे program के running instance को क्या कहा जाता है?",
+  en: "Which is the most appropriate database security practice?",
+  hi: "डेटाबेस की सुरक्षा के लिए सबसे उपयुक्त तरीका कौन-सा है?",
 
   options: [
     {
-      en: "Storage",
-      hi: "Storage"
+      en: "Sharing the database password with every user",
+      hi: "डेटाबेस का पासवर्ड प्रत्येक उपयोगकर्ता के साथ साझा करना"
     },
     {
-      en: "Memory",
-      hi: "Memory"
+      en: "Keeping the only database copy on a single computer without a backup",
+      hi: "बिना बैकअप के डेटाबेस की एकमात्र कॉपी एक ही कंप्यूटर पर रखना"
     },
     {
-      en: "Device",
-      hi: "Device"
+      en: "Enabling all macros regardless of their source",
+      hi: "स्रोत की परवाह किए बिना सभी मैक्रो को सक्षम करना"
     },
     {
-      en: "Process",
-      hi: "Process"
+      en: "Using strong passwords, restricting access, maintaining backups, and enabling active content only from trusted sources",
+      hi: "मजबूत पासवर्ड का उपयोग करना, पहुँच सीमित रखना, बैकअप बनाए रखना और केवल विश्वसनीय स्रोतों की सक्रिय सामग्री को सक्षम करना"
     }
   ],
 
   answer: "D",
 
-  explanation: "A process is a running instance of a program being executed by the operating system."
+  explanation: "Good database security combines strong passwords, restricted access, regular backups, and caution when enabling macros or other active content. These measures help reduce unauthorized access, malicious activity, and data loss."
 },
 
 // Question 377
 {
-  en: "Which of the following is an example of digital data rather than a physical component?",
-  hi: "निम्नलिखित में से कौन-सा physical component के बजाय digital data का example है?",
+  en: "What is the primary purpose of the Compact and Repair Database utility in MS Access?",
+  hi: "MS Access में Compact and Repair Database यूटिलिटी का मुख्य उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Keyboard",
-      hi: "Keyboard"
+      en: "To convert every table into an Excel worksheet",
+      hi: "प्रत्येक टेबल को Excel वर्कशीट में बदलना"
     },
     {
-      en: "Monitor",
-      hi: "Monitor"
+      en: "To automatically create a backup on every computer",
+      hi: "प्रत्येक कंप्यूटर पर अपने आप बैकअप बनाना"
     },
     {
-      en: "Digital photograph stored as a file",
-      hi: "File के रूप में stored digital photograph"
+      en: "To reduce database file size where possible and help repair certain database corruption issues",
+      hi: "जहाँ संभव हो डेटाबेस फ़ाइल का आकार कम करना और डेटाबेस में कुछ प्रकार की खराबियों को ठीक करने में सहायता करना"
     },
     {
-      en: "Hard disk casing",
-      hi: "Hard disk casing"
+      en: "To permanently remove all database relationships",
+      hi: "सभी डेटाबेस रिलेशनशिप को स्थायी रूप से हटाना"
     }
   ],
 
   answer: "C",
 
-  explanation: "A digital photograph stored as a file is electronically represented information, so it is digital data."
+  explanation: "Compact and Repair can reduce the size of an Access database by reclaiming unused space and can help resolve certain database corruption issues. It does not replace the need for regular backups."
 },
 
 // Question 378
 {
-  en: "Which statement correctly describes physical hardware?",
-  hi: "कौन-सा कथन physical hardware का सही वर्णन करता है?",
+  en: "Which practice is most appropriate for protecting an MS Access database against accidental data loss?",
+  hi: "MS Access डेटाबेस को गलती से डेटा खोने से बचाने के लिए कौन-सा तरीका सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "It consists of tangible components that can be physically touched",
-      hi: "यह ऐसे tangible components से बना होता है जिन्हें physically touch किया जा सकता है"
+      en: "Maintaining regular backups and storing them separately from the working database",
+      hi: "नियमित बैकअप बनाना और उन्हें उपयोग में आने वाले डेटाबेस से अलग रखना"
     },
     {
-      en: "It consists only of instructions executed by the CPU",
-      hi: "यह केवल CPU द्वारा execute किए जाने वाले instructions से बना होता है"
+      en: "Increasing the font size of all forms",
+      hi: "सभी फ़ॉर्म का फ़ॉन्ट आकार बढ़ाना"
     },
     {
-      en: "It is always stored as binary data in a file",
-      hi: "यह हमेशा किसी file में binary data के रूप में stored होता है"
+      en: "Removing all indexes from tables",
+      hi: "टेबलों से सभी इंडेक्स हटाना"
     },
     {
-      en: "It refers only to information displayed on a screen",
-      hi: "यह केवल screen पर displayed information को refer करता है"
+      en: "Keeping only one copy of the database",
+      hi: "डेटाबेस की केवल एक कॉपी रखना"
     }
   ],
 
   answer: "A",
 
-  explanation: "Hardware consists of physical and tangible components that can be touched."
+  explanation: "Regular backups stored separately from the working database help protect against accidental deletion, file damage, and hardware failure. Separate storage reduces the risk of losing both the original database and its backup at the same time."
 },
 
 // Question 379
 {
-  en: "A computer program contains a set of instructions that tells the hardware how to perform a particular task. These instructions are classified as:",
-  hi: "एक computer program में instructions का एक set होता है जो hardware को किसी particular task को perform करने का तरीका बताता है। इन instructions को किस रूप में classify किया जाता है?",
+  en: "A database file becomes damaged and cannot be opened normally. Which action is a reasonable first troubleshooting step if a backup is available?",
+  hi: "डेटाबेस फ़ाइल खराब हो जाती है और सामान्य रूप से नहीं खुलती। यदि बैकअप उपलब्ध है, तो समस्या दूर करने के लिए पहला उचित कदम क्या है?",
 
   options: [
     {
-      en: "Physical hardware",
-      hi: "Physical hardware"
+      en: "Delete the backup immediately",
+      hi: "बैकअप को तुरंत डिलीट करना"
     },
     {
-      en: "Digital data",
-      hi: "Digital data"
+      en: "Rename every field in the database",
+      hi: "डेटाबेस के प्रत्येक फ़ील्ड का नाम बदलना"
     },
     {
-      en: "Software",
-      hi: "Software"
+      en: "Create a new relationship between all tables",
+      hi: "सभी टेबलों के बीच नई रिलेशनशिप बनाना"
     },
     {
-      en: "Storage device",
-      hi: "Storage device"
+      en: "Restore a known-good backup and verify the recovered database",
+      hi: "एक सही और विश्वसनीय बैकअप को रिस्टोर करना तथा रिकवर किए गए डेटाबेस की जाँच करना"
     }
   ],
 
-  answer: "C",
+  answer: "D",
 
-  explanation: "Software consists of programs and instructions that direct hardware to perform tasks."
+  explanation: "If a known-good backup is available, restoring it is a reasonable recovery step when the database cannot be opened normally. The restored database should be verified before it is put back into use. Keep the damaged file separately if further recovery attempts may be needed."
 },
 
 // Question 380
 {
-  en: "Which option correctly distinguishes the three concepts?",
-  hi: "कौन-सा विकल्प इन तीन concepts के बीच सही अंतर बताता है?",
+  en: "A query takes a long time to retrieve records from a large table. Which approach is most appropriate for improving its performance?",
+  hi: "एक बड़ी टेबल से रिकॉर्ड प्राप्त करने में Query को बहुत समय लगता है। इसकी कार्यक्षमता सुधारने के लिए कौन-सा तरीका सबसे उपयुक्त है?",
 
   options: [
     {
-      en: "Digital data is always physical, hardware contains instructions, and software can be touched",
-      hi: "Digital data हमेशा physical होता है, hardware में instructions होते हैं और software को touch किया जा सकता है"
+      en: "Add unnecessary calculated fields to the query",
+      hi: "Query में अनावश्यक गणना वाले फ़ील्ड जोड़ना"
     },
     {
-      en: "Digital data is electronically represented information, hardware is physical, and software consists of instructions",
-      hi: "Digital data electronically represented information है, hardware physical होता है और software instructions से बना होता है"
+      en: "Review the query criteria, joins, and indexes on frequently searched fields",
+      hi: "Query की शर्तों, जॉइन और बार-बार खोजे जाने वाले फ़ील्ड के इंडेक्स की समीक्षा करना"
     },
     {
-      en: "Digital data and hardware are both software components, while software is a physical device",
-      hi: "Digital data और hardware दोनों software components हैं, जबकि software एक physical device है"
+      en: "Duplicate every record in the table",
+      hi: "टेबल के प्रत्येक रिकॉर्ड की डुप्लिकेट कॉपी बनाना"
     },
     {
-      en: "Digital data is a device, hardware is a process, and software is a storage medium",
-      hi: "Digital data एक device है, hardware एक process है और software एक storage medium है"
+      en: "Convert every field to Short Text",
+      hi: "प्रत्येक फ़ील्ड को Short Text में बदलना"
     }
   ],
 
   answer: "B",
 
-  explanation: "Digital data is electronically represented information, hardware consists of physical components, और software consists of instructions."
+  explanation: "Query performance can often be improved by reviewing criteria and joins, retrieving only necessary fields, and indexing fields used frequently for filtering or joining. Indexes should be chosen carefully because they also add storage and can slow data updates."
 },
-
 // Question 381
 {
-  en: "Which statement best describes the interaction between hardware and software in a computer system?",
-  hi: "Computer system में hardware और software के बीच interaction को कौन-सा कथन सबसे अच्छी तरह describe करता है?",
+  en: "What is a potential benefit of indexing a field frequently used in search criteria or joins?",
+  hi: "खोज की शर्तों या जॉइन में बार-बार उपयोग किए जाने वाले फ़ील्ड को इंडेक्स करने का संभावित लाभ क्या है?",
 
   options: [
     {
-      en: "Hardware operates independently without requiring software instructions",
-      hi: "Hardware software instructions की आवश्यकता के बिना independently operate करता है"
+      en: "It guarantees that every query will execute instantly.",
+      hi: "यह सुनिश्चित करता है कि प्रत्येक Query तुरंत निष्पादित होगी।"
     },
     {
-      en: "Software provides instructions that direct hardware to perform tasks",
-      hi: "Software instructions provide करता है जो hardware को tasks perform करने के लिए direct करते हैं"
+      en: "It automatically removes duplicate records from the table.",
+      hi: "यह टेबल से डुप्लिकेट रिकॉर्ड अपने आप हटा देता है।"
     },
     {
-      en: "Software can perform all operations without any hardware",
-      hi: "Software बिना किसी hardware के सभी operations perform कर सकता है"
+      en: "It can improve retrieval speed, although indexes also require storage and maintenance.",
+      hi: "यह डेटा प्राप्त करने की गति बढ़ा सकता है, हालाँकि इंडेक्स के लिए स्टोरेज और रखरखाव की भी आवश्यकता होती है।"
     },
     {
-      en: "Hardware and software perform exactly the same functions",
-      hi: "Hardware और software exactly same functions perform करते हैं"
+      en: "It eliminates the need for primary keys.",
+      hi: "यह प्राइमरी की की आवश्यकता समाप्त कर देता है।"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "Software provides instructions that tell hardware what tasks to perform."
+  explanation: "Indexes can improve data retrieval speed for frequently searched or joined fields. However, they consume storage and may slow down insert, update, and delete operations because the indexes must also be maintained."
 },
 
 // Question 382
 {
-  en: "A printer receives a print command from a word-processing program and produces the document on paper. This demonstrates that:",
-  hi: "एक printer को word-processing program से print command मिलता है और वह document को paper पर produce करता है। यह दर्शाता है कि:",
+  en: "An MS Access database contains broken links to external data sources. What should the user do first?",
+  hi: "MS Access डेटाबेस में बाहरी डेटा स्रोतों के लिंक काम नहीं कर रहे हैं। उपयोगकर्ता को सबसे पहले क्या करना चाहिए?",
 
   options: [
     {
-      en: "Software instructions can control hardware operations",
-      hi: "Software instructions hardware operations को control कर सकते हैं"
+      en: "Check the linked table's source path, file availability, and connection settings.",
+      hi: "लिंक की गई टेबल के स्रोत पथ, फ़ाइल की उपलब्धता और कनेक्शन सेटिंग्स की जाँच करनी चाहिए।"
     },
     {
-      en: "Hardware creates software instructions automatically",
-      hi: "Hardware automatically software instructions create करता है"
+      en: "Delete every table in the database.",
+      hi: "डेटाबेस की सभी टेबल डिलीट कर देनी चाहिए।"
     },
     {
-      en: "Software and hardware are completely independent",
-      hi: "Software और hardware completely independent होते हैं"
+      en: "Change all field names to numeric values.",
+      hi: "सभी फ़ील्ड के नाम संख्यात्मक मानों में बदल देने चाहिए।"
     },
     {
-      en: "Hardware can operate without any software",
-      hi: "Hardware बिना किसी software के operate कर सकता है"
+      en: "Run a report to recreate the missing source files automatically.",
+      hi: "गुम स्रोत फ़ाइलों को अपने आप दोबारा बनाने के लिए रिपोर्ट चलानी चाहिए।"
     }
   ],
 
   answer: "A",
 
-  explanation: "The print command from software directs the printer hardware to perform the printing operation."
+  explanation: "Broken links may result from a changed file path, a missing or unavailable source file, or incorrect connection settings. Checking these details first helps identify the cause before attempting to relink the external data."
 },
 
 // Question 383
 {
-  en: "When a user opens a calculator application and enters 25 + 15, which sequence best represents the interaction?",
-  hi: "जब user calculator application खोलता है और 25 + 15 enter करता है, तो कौन-सा sequence इस interaction को सबसे अच्छी तरह दर्शाता है?",
+  en: "Which statement about database corruption and Compact and Repair is correct?",
+  hi: "डेटाबेस करप्शन और Compact and Repair के संबंध में कौन-सा कथन सही है?",
 
   options: [
     {
-      en: "Hardware generates the application, then software creates the keyboard",
-      hi: "Hardware application generate करता है, फिर software keyboard create करता है"
+      en: "Compact and Repair guarantees recovery of every corrupted database.",
+      hi: "Compact and Repair प्रत्येक खराब डेटाबेस को ठीक करने की गारंटी देता है।"
     },
     {
-      en: "Software provides instructions, hardware processes them, and the result is displayed",
-      hi: "Software instructions provide करता है, hardware उन्हें process करता है और result display होता है"
+      en: "Database corruption can occur only when a user enters incorrect data.",
+      hi: "डेटाबेस केवल तभी खराब हो सकता है जब उपयोगकर्ता गलत डेटा दर्ज करे।"
     },
     {
-      en: "Hardware provides instructions, while software physically performs the calculation",
-      hi: "Hardware instructions provide करता है, जबकि software physically calculation perform करता है"
+      en: "Compact and Repair replaces the need for maintaining backups.",
+      hi: "Compact and Repair बैकअप रखने की आवश्यकता समाप्त कर देता है।"
     },
     {
-      en: "Software stores the monitor, while hardware stores the calculation",
-      hi: "Software monitor को store करता है, जबकि hardware calculation को store करता है"
+      en: "Compact and Repair may resolve certain database problems, but a reliable backup remains important because recovery is not guaranteed.",
+      hi: "Compact and Repair डेटाबेस की कुछ समस्याओं को ठीक कर सकता है, लेकिन रिकवरी की गारंटी नहीं होने के कारण विश्वसनीय बैकअप रखना आवश्यक है।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "The calculator software provides the required instructions, hardware executes them, and the result is displayed."
+  explanation: "Compact and Repair can resolve certain Access database problems, but it cannot guarantee recovery from every type of corruption. Maintaining reliable backups remains essential for data recovery."
 },
 
 // Question 384
 {
-  en: "A computer has a functioning CPU, RAM, keyboard, and monitor, but no appropriate software instructions for performing a required task. What is the most likely situation?",
-  hi: "एक computer में functioning CPU, RAM, keyboard और monitor हैं, लेकिन required task perform करने के लिए appropriate software instructions नहीं हैं। सबसे likely situation क्या होगी?",
+  en: "Which action is most likely to improve the performance of an MS Access database over time?",
+  hi: "समय के साथ MS Access डेटाबेस की कार्यक्षमता में सुधार करने की सबसे अधिक संभावना किस कार्य से है?",
 
   options: [
     {
-      en: "The hardware will automatically determine the required task",
-      hi: "Hardware automatically required task determine कर लेगा"
+      en: "Create indexes on every field without considering usage.",
+      hi: "उपयोग पर विचार किए बिना प्रत्येक फ़ील्ड पर इंडेक्स बनाना।"
     },
     {
-      en: "The monitor will generate the necessary instructions",
-      hi: "Monitor necessary instructions generate करेगा"
+      en: "Review slow queries, use appropriate indexes, remove unnecessary data where appropriate, and maintain regular backups.",
+      hi: "धीमी Queries की समीक्षा करना, उपयुक्त इंडेक्स का उपयोग करना, जहाँ उचित हो अनावश्यक डेटा हटाना और नियमित बैकअप रखना।"
     },
     {
-      en: "The hardware may be unable to perform the intended programmed task",
-      hi: "Hardware intended programmed task perform करने में unable हो सकता है"
+      en: "Store all unrelated information in one large table.",
+      hi: "सभी असंबंधित जानकारी को एक बड़ी टेबल में स्टोर करना।"
     },
     {
-      en: "The keyboard will convert itself into system software",
-      hi: "Keyboard स्वयं को system software में convert कर लेगा"
+      en: "Avoid checking database errors and broken links.",
+      hi: "डेटाबेस की त्रुटियों और टूटे हुए लिंक की जाँच से बचना।"
     }
   ],
 
-  answer: "C",
+  answer: "B",
 
-  explanation: "Without appropriate software instructions, the hardware may not be able to perform the intended programmed task."
+  explanation: "Reviewing slow queries, applying suitable indexes, and managing unnecessary data can help improve database performance. Indexes should be selected based on actual usage rather than added to every field. Regular backups support recovery but do not directly improve query speed."
 },
 
 // Question 385
 {
-  en: "Which sequence best represents the basic flow of information in a computer system?",
-  hi: "Computer system में information के basic flow को कौन-सा sequence सबसे अच्छी तरह दर्शाता है?",
+  en: "What is the primary purpose of the Database Splitter in MS Access?",
+  hi: "MS Access में Database Splitter का मुख्य उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Output Unit → CPU → Input Unit → Storage",
-      hi: "Output Unit → CPU → Input Unit → Storage"
+      en: "To convert a database into an Excel workbook",
+      hi: "डेटाबेस को Excel वर्कबुक में बदलना"
     },
     {
-      en: "Input Unit → CPU → Memory/Storage → Output Unit",
-      hi: "Input Unit → CPU → Memory/Storage → Output Unit"
+      en: "To divide a database into separate front-end and back-end files",
+      hi: "डेटाबेस को अलग-अलग फ्रंट-एंड और बैक-एंड फ़ाइलों में विभाजित करना"
     },
     {
-      en: "Memory/Storage → Output Unit → CPU → Input Unit",
-      hi: "Memory/Storage → Output Unit → CPU → Input Unit"
+      en: "To merge all tables into a single table",
+      hi: "सभी टेबलों को एक ही टेबल में मिलाना"
     },
     {
-      en: "CPU → Input Unit → Output Unit → Memory/Storage",
-      hi: "CPU → Input Unit → Output Unit → Memory/Storage"
+      en: "To automatically create a database password",
+      hi: "डेटाबेस का पासवर्ड अपने आप बनाना"
     }
   ],
 
   answer: "B",
 
-  explanation: "In a basic model, data enters through input, is processed by the CPU, may be stored in memory/storage, and the result is presented as output."
+  explanation: "The Database Splitter divides an Access database into a back-end file containing the tables and a front-end file containing objects such as forms, queries, reports, and macros. This arrangement is particularly useful when multiple users share the database."
 },
 // Question 386
 {
-  en: "A user enters marks through a keyboard, the CPU processes them, the results are temporarily stored, and the final result is displayed on the monitor. Which sequence is most appropriate?",
-  hi: "एक उपयोगकर्ता keyboard के माध्यम से marks दर्ज करता है, CPU उन्हें process करता है, results temporarily store होते हैं और final result monitor पर display होता है। कौन-सा sequence सबसे उपयुक्त है?",
+  en: "In a split database, what does the Back-End Database typically contain?",
+  hi: "स्प्लिट डेटाबेस में Back-End Database में सामान्यतः क्या होता है?",
 
   options: [
     {
-      en: "Input Unit → CPU → Memory/Storage → Output Unit",
-      hi: "Input Unit → CPU → Memory/Storage → Output Unit"
+      en: "Only forms and reports",
+      hi: "केवल फ़ॉर्म और रिपोर्ट"
     },
     {
-      en: "CPU → Input Unit → Output Unit → Memory/Storage",
-      hi: "CPU → Input Unit → Output Unit → Memory/Storage"
+      en: "Only VBA modules and macros",
+      hi: "केवल VBA मॉड्यूल और मैक्रो"
     },
     {
-      en: "Input Unit → Memory/Storage → Output Unit → CPU",
-      hi: "Input Unit → Memory/Storage → Output Unit → CPU"
+      en: "Tables that store the database data",
+      hi: "डेटाबेस का डेटा स्टोर करने वाली टेबलें"
     },
     {
-      en: "Memory/Storage → Input Unit → CPU → Output Unit",
-      hi: "Memory/Storage → Input Unit → CPU → Output Unit"
+      en: "Only shortcuts to the front-end file",
+      hi: "केवल फ्रंट-एंड फ़ाइल के शॉर्टकट"
     }
   ],
 
-  answer: "A",
+  answer: "C",
 
-  explanation: "Keyboard से data Input Unit में आता है, CPU उसे process करता है, result Memory में temporarily store हो सकता है और फिर Output Unit पर display होता है।"
+  explanation: "In a split Access database, the back-end typically contains the tables that store the data. The front-end contains objects such as forms, queries, and reports used to work with that data."
 },
 
 // Question 387
 {
-  en: "In the basic computer architecture, which component primarily receives data and instructions from the user or external environment?",
-  hi: "Basic computer architecture में कौन-सा component मुख्य रूप से user या external environment से data और instructions प्राप्त करता है?",
+  en: "In a split database, what does the Front-End Database typically contain?",
+  hi: "स्प्लिट डेटाबेस में Front-End Database में सामान्यतः क्या होता है?",
 
   options: [
     {
-      en: "Output Unit",
-      hi: "Output Unit"
+      en: "Forms, queries, reports, macros, and other objects used to work with the data",
+      hi: "डेटा के साथ काम करने के लिए फ़ॉर्म, Queries, रिपोर्ट, मैक्रो और अन्य ऑब्जेक्ट"
     },
     {
-      en: "Memory/Storage",
-      hi: "Memory/Storage"
+      en: "All data tables exclusively, with no other objects",
+      hi: "केवल सभी डेटा टेबलें, अन्य कोई ऑब्जेक्ट नहीं"
     },
     {
-      en: "Input Unit",
-      hi: "Input Unit"
+      en: "Only database backups",
+      hi: "केवल डेटाबेस बैकअप"
     },
     {
-      en: "CPU",
-      hi: "CPU"
+      en: "Only the network operating system files",
+      hi: "केवल नेटवर्क ऑपरेटिंग सिस्टम की फ़ाइलें"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Input Unit user या external environment से data और instructions receive करके computer को उपलब्ध कराता है।"
+  explanation: "The front-end typically contains forms, queries, reports, macros, and other database objects through which users interact with the data. The tables are generally stored in the back-end."
 },
 
 // Question 388
 {
-  en: "Which component primarily performs processing on the data received from the input unit and works with memory/storage during execution?",
-  hi: "कौन-सा component मुख्य रूप से Input Unit से प्राप्त data को process करता है और execution के दौरान memory/storage के साथ कार्य करता है?",
+  en: "In a split MS Access database, how does the front-end usually access tables stored in the back-end?",
+  hi: "स्प्लिट MS Access डेटाबेस में फ्रंट-एंड, बैक-एंड में स्टोर टेबलों तक सामान्यतः कैसे पहुँचता है?",
 
   options: [
     {
-      en: "Output Unit",
-      hi: "Output Unit"
+      en: "By converting the back-end into a PDF file",
+      hi: "बैक-एंड को PDF फ़ाइल में बदलकर"
     },
     {
-      en: "CPU",
-      hi: "CPU"
+      en: "By copying every table into the front-end each time it opens",
+      hi: "हर बार खुलने पर प्रत्येक टेबल को फ्रंट-एंड में कॉपी करके"
     },
     {
-      en: "Input Unit",
-      hi: "Input Unit"
+      en: "By creating a separate database for every record",
+      hi: "प्रत्येक रिकॉर्ड के लिए अलग डेटाबेस बनाकर"
     },
     {
-      en: "Storage Device",
-      hi: "Storage Device"
+      en: "Through linked tables that refer to the back-end data",
+      hi: "लिंक की गई टेबलों के माध्यम से, जो बैक-एंड डेटा को संदर्भित करती हैं"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "CPU instructions को execute करता है और data पर processing operations perform करता है, जबकि execution के दौरान memory के साथ interact करता है।"
+  explanation: "The front-end usually accesses back-end data through linked tables. These links allow forms, queries, and reports in the front-end to work with data stored in the back-end without copying every table into the front-end each time it opens."
 },
 
 // Question 389
 {
-  en: "A computer receives raw data through an input device, temporarily stores it for processing, performs operations under the control of the CPU, and finally sends the result to an output device. Which statement best represents the distinction between data flow and control flow?",
-  hi: "एक computer input device के माध्यम से raw data प्राप्त करता है, उसे processing के लिए temporarily store करता है, CPU के control में operations perform करता है और अंत में result output device को भेजता है। Data flow और control flow के बीच अंतर को कौन-सा statement सबसे अच्छी तरह दर्शाता है?",
+  en: "Why is splitting an MS Access database generally useful in a multi-user environment?",
+  hi: "बहु-उपयोगकर्ता वातावरण में MS Access डेटाबेस को विभाजित करना सामान्यतः क्यों उपयोगी होता है?",
 
   options: [
     {
-      en: "Data flow describes movement of data between components, while control flow describes the direction/order in which operations are controlled or executed",
-      hi: "Data flow components के बीच data की movement को दर्शाता है, जबकि control flow operations के control या execution की direction/order को दर्शाता है"
+      en: "It eliminates the need for network access.",
+      hi: "यह नेटवर्क एक्सेस की आवश्यकता समाप्त कर देता है।"
     },
     {
-      en: "Data flow describes only electrical power, while control flow describes movement of files between folders",
-      hi: "Data flow केवल electrical power को दर्शाता है, जबकि control flow folders के बीच files की movement को दर्शाता है"
+      en: "Each user can have a local front-end while sharing the common back-end data.",
+      hi: "प्रत्येक उपयोगकर्ता के पास स्थानीय फ्रंट-एंड हो सकता है, जबकि सभी साझा बैक-एंड डेटा का उपयोग कर सकते हैं।"
     },
     {
-      en: "Data flow and control flow are identical because both represent only physical movement of hardware",
-      hi: "Data flow और control flow identical होते हैं क्योंकि दोनों केवल hardware की physical movement को दर्शाते हैं"
+      en: "It guarantees that simultaneous edits can never conflict.",
+      hi: "यह गारंटी देता है कि एक साथ किए गए बदलावों में कभी टकराव नहीं होगा।"
     },
     {
-      en: "Data flow refers only to output, while control flow refers only to input",
-      hi: "Data flow केवल output को दर्शाता है, जबकि control flow केवल input को दर्शाता है"
+      en: "It prevents users from running queries.",
+      hi: "यह उपयोगकर्ताओं को Queries चलाने से रोकता है।"
     }
   ],
 
-  answer: "A",
+  answer: "B",
 
-  explanation: "Data flow बताता है कि data components के बीच कैसे move करता है, जबकि control flow बताता है कि operations किस order और control के अनुसार execute होते हैं।"
+  explanation: "Splitting a database allows each user to work with a local front-end while accessing shared data in a common back-end. This arrangement can improve usability and reduce the need to distribute changes to interface objects, but it does not eliminate every concurrency or network issue."
 },
 
 // Question 390
 {
-  en: "In a basic computer block diagram, the CPU receives data from the input unit and directs the processing of that data according to instructions. Which flow is primarily associated with the CPU's directing or coordinating role?",
-  hi: "Basic computer block diagram में CPU Input Unit से data प्राप्त करता है और instructions के अनुसार उसके processing को direct करता है। CPU की directing या coordinating role मुख्य रूप से किस flow से संबंधित है?",
+  en: "What is the purpose of record locking in a multi-user database?",
+  hi: "बहु-उपयोगकर्ता डेटाबेस में Record Locking का उद्देश्य क्या है?",
 
   options: [
     {
-      en: "Data flow",
-      hi: "Data flow"
+      en: "To permanently prevent all users from opening a table",
+      hi: "सभी उपयोगकर्ताओं को टेबल खोलने से स्थायी रूप से रोकना"
     },
     {
-      en: "Storage flow",
-      hi: "Storage flow"
+      en: "To automatically delete records being edited",
+      hi: "संपादित किए जा रहे रिकॉर्ड को अपने आप डिलीट करना"
     },
     {
-      en: "Control flow",
-      hi: "Control flow"
+      en: "To help manage simultaneous access to records and reduce conflicting updates",
+      hi: "रिकॉर्ड तक एक साथ पहुँच को प्रबंधित करने और बदलावों के टकराव को कम करने में मदद करना"
     },
     {
-      en: "Output flow",
-      hi: "Output flow"
+      en: "To convert linked tables into local tables",
+      hi: "लिंक की गई टेबलों को स्थानीय टेबलों में बदलना"
     }
   ],
 
   answer: "C",
 
-  explanation: "CPU की directing और coordinating activity Control Flow से संबंधित है, क्योंकि Control Unit instructions के execution को control और coordinate करती है।"
+  explanation: "Record locking helps manage concurrent access when multiple users work with the same data. Depending on the locking settings, it can prevent or reduce conflicting updates while allowing other users to access records that are not locked."
 },
-
 // Question 391
 {
-  en: "A student's marks are entered through a keyboard, transferred for processing, stored temporarily, and the calculated result is sent to the monitor. Which interpretation of this sequence is most accurate?",
-  hi: "एक छात्र के marks keyboard के माध्यम से दर्ज किए जाते हैं, processing के लिए transfer किए जाते हैं, temporarily store होते हैं और calculated result monitor पर भेजा जाता है। इस sequence की सबसे accurate interpretation कौन-सी है?",
+  en: "What does concurrency refer to in a multi-user database?",
+  hi: "बहु-उपयोगकर्ता डेटाबेस में Concurrency का क्या अर्थ है?",
 
   options: [
     {
-      en: "It represents only control flow because no instructions are involved",
-      hi: "यह केवल control flow को दर्शाता है क्योंकि इसमें कोई instructions involved नहीं हैं"
+      en: "Multiple users or processes accessing or working with data during overlapping periods",
+      hi: "एक ही समयावधि में कई उपयोगकर्ताओं या प्रक्रियाओं द्वारा डेटा तक पहुँच प्राप्त करना या उस पर कार्य करना"
     },
     {
-      en: "It represents data flow through the major functional units of the computer",
-      hi: "यह computer की major functional units के माध्यम से data flow को दर्शाता है"
+      en: "A database containing only one table",
+      hi: "केवल एक टेबल वाला डेटाबेस"
     },
     {
-      en: "It represents only storage flow because the data is stored temporarily",
-      hi: "यह केवल storage flow को दर्शाता है क्योंकि data temporarily stored होता है"
+      en: "A process that permanently disables all queries",
+      hi: "ऐसी प्रक्रिया जो सभी Queries को स्थायी रूप से निष्क्रिय कर देती है"
     },
     {
-      en: "It represents hardware flow because all components are physical",
-      hi: "यह hardware flow को दर्शाता है क्योंकि सभी components physical हैं"
+      en: "The automatic creation of a database backup",
+      hi: "डेटाबेस का अपने आप बैकअप बनना"
     }
   ],
 
-  answer: "B",
+  answer: "A",
 
-  explanation: "यह sequence Input से Processing, temporary storage और Output तक data की movement दिखाता है, इसलिए यह मुख्यतः data flow है।"
+  explanation: "Concurrency refers to multiple users or processes accessing or working with data during overlapping periods. Database systems use mechanisms such as locking to help manage concurrent operations and reduce conflicting updates."
 },
 
 // Question 392
 {
-  en: "Which description most accurately matches a basic computer block diagram?",
-  hi: "Basic computer block diagram का सबसे accurate description कौन-सा है?",
+  en: "Which statement correctly distinguishes the front-end from the back-end in a split MS Access database?",
+  hi: "विभाजित MS Access डेटाबेस में फ्रंट-एंड और बैक-एंड के बीच सही अंतर कौन-सा है?",
 
   options: [
     {
-      en: "It shows only the physical size and shape of computer components",
-      hi: "यह केवल computer components का physical size और shape दिखाता है"
+      en: "The front-end stores all shared data, while the back-end contains only forms.",
+      hi: "फ्रंट-एंड सभी साझा डेटा स्टोर करता है, जबकि बैक-एंड में केवल फ़ॉर्म होते हैं।"
     },
     {
-      en: "It represents the functional relationship among Input, CPU, Memory/Storage, and Output units and indicates how data and control signals move between them",
-      hi: "यह Input, CPU, Memory/Storage और Output units के functional relationship को दर्शाता है तथा इनके बीच data और control signals की movement को indicate करता है"
+      en: "Both files must contain identical copies of every table.",
+      hi: "दोनों फ़ाइलों में प्रत्येक टेबल की समान कॉपी होना अनिवार्य है।"
     },
     {
-      en: "It shows only the programs installed on a computer",
-      hi: "यह केवल computer में installed programs को दिखाता है"
+      en: "The back-end is used only for printing reports.",
+      hi: "बैक-एंड का उपयोग केवल रिपोर्ट प्रिंट करने के लिए होता है।"
     },
     {
-      en: "It represents the sequence of files stored inside a storage device",
-      hi: "यह storage device के अंदर stored files के sequence को दर्शाता है"
+      en: "The front-end provides the user interface and database objects, while the back-end typically stores the shared tables.",
+      hi: "फ्रंट-एंड यूज़र इंटरफ़ेस और डेटाबेस ऑब्जेक्ट प्रदान करता है, जबकि बैक-एंड में सामान्यतः साझा टेबलें स्टोर होती हैं।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Basic block diagram computer के major functional units और उनके बीच data/control relationships को represent करता है।"
+  explanation: "In a split Access database, the front-end typically contains forms, queries, reports, macros, and other objects used by users. The back-end generally contains the shared data tables."
 },
 
 // Question 393
 {
-  en: "A computer has 8 GB RAM, a 512 GB SSD, an operating system, and a spreadsheet containing sales figures. Which classification is completely correct?",
-  hi: "एक computer में 8 GB RAM, 512 GB SSD, operating system और sales figures वाली spreadsheet है। कौन-सा classification पूरी तरह सही है?",
+  en: "Which keyboard shortcut is commonly used to create a new database in MS Access?",
+  hi: "MS Access में नया डेटाबेस बनाने के लिए सामान्यतः किस कीबोर्ड शॉर्टकट का उपयोग किया जाता है?",
 
   options: [
     {
-      en: "RAM and SSD are software, while the operating system is hardware",
-      hi: "RAM और SSD software हैं, जबकि operating system hardware है"
+      en: "Ctrl+O",
+      hi: "Ctrl+O"
     },
     {
-      en: "RAM and SSD are hardware, the operating system is software, and sales figures are data",
-      hi: "RAM और SSD hardware हैं, operating system software है और sales figures data हैं"
+      en: "Ctrl+S",
+      hi: "Ctrl+S"
     },
     {
-      en: "RAM is software, SSD is storage, and sales figures are information",
-      hi: "RAM software है, SSD storage है और sales figures information हैं"
+      en: "Ctrl+N",
+      hi: "Ctrl+N"
     },
     {
-      en: "RAM is hardware, the operating system is information, and sales figures are software",
-      hi: "RAM hardware है, operating system information है और sales figures software हैं"
+      en: "Ctrl+P",
+      hi: "Ctrl+P"
     }
   ],
 
-  answer: "B",
+  answer: "C",
 
-  explanation: "RAM और SSD physical hardware हैं, operating system software है और spreadsheet में मौजूद sales figures data हैं।"
+  explanation: "Ctrl+N is commonly used to create a new database in MS Access. Ctrl+O opens an existing file, Ctrl+S saves the current object, and Ctrl+P opens printing options."
 },
 
 // Question 394
 {
-  en: "A student enters raw marks into a computer, the system calculates the average, and the result is displayed. Which sequence correctly identifies the concepts involved?",
-  hi: "एक student computer में raw marks enter करता है, system average calculate करता है और result display होता है। कौन-सा sequence involved concepts को सही identify करता है?",
+  en: "Which statement correctly distinguishes a database from a DBMS?",
+  hi: "डेटाबेस और DBMS के बीच सही अंतर कौन-सा है?",
 
   options: [
     {
-      en: "Information → Data → Processing → Hardware",
-      hi: "Information → Data → Processing → Hardware"
+      en: "A database is an organized collection of data, whereas a DBMS is software used to create, manage, and access databases.",
+      hi: "डेटाबेस व्यवस्थित डेटा का संग्रह होता है, जबकि DBMS डेटाबेस बनाने, प्रबंधित करने और उन तक पहुँचने के लिए उपयोग किया जाने वाला सॉफ़्टवेयर है।"
     },
     {
-      en: "Data → Information → Processing → Software",
-      hi: "Data → Information → Processing → Software"
+      en: "A database is software, whereas a DBMS is a collection of printed records.",
+      hi: "डेटाबेस एक सॉफ़्टवेयर है, जबकि DBMS मुद्रित रिकॉर्ड का संग्रह है।"
     },
     {
-      en: "Data → Processing → Information, with hardware and software working together",
-      hi: "Data → Processing → Information, जिसमें hardware और software together work करते हैं"
+      en: "A database and a DBMS are exactly the same thing.",
+      hi: "डेटाबेस और DBMS बिल्कुल एक ही चीज़ हैं।"
     },
     {
-      en: "Software → Data → Information → Hardware",
-      hi: "Software → Data → Information → Hardware"
+      en: "A DBMS can manage only one field at a time.",
+      hi: "DBMS एक समय में केवल एक फ़ील्ड को प्रबंधित कर सकता है।"
     }
   ],
 
-  answer: "C",
+  answer: "A",
 
-  explanation: "Raw marks data हैं; calculation processing है और calculated average meaningful information है। इसमें hardware और software दोनों मिलकर काम करते हैं।"
+  explanation: "A database is an organized collection of related data. A Database Management System (DBMS) is software that allows users to create, store, retrieve, update, and manage databases."
 },
 
 // Question 395
 {
-  en: "Which option correctly distinguishes RAM, ROM, primary memory, and secondary memory?",
-  hi: "कौन-सा option RAM, ROM, primary memory और secondary memory के बीच सही distinction करता है?",
+  en: "What is the fundamental difference between Datasheet View and Design View in an MS Access table?",
+  hi: "MS Access टेबल में Datasheet View और Design View के बीच मूलभूत अंतर क्या है?",
 
   options: [
     {
-      en: "RAM and ROM are both secondary memory because neither is used during processing",
-      hi: "RAM और ROM दोनों secondary memory हैं क्योंकि processing के दौरान इनमें से किसी का उपयोग नहीं होता"
+      en: "Datasheet View is used only for printing, whereas Design View is used only for sorting.",
+      hi: "Datasheet View का उपयोग केवल प्रिंटिंग के लिए होता है, जबकि Design View का उपयोग केवल सॉर्टिंग के लिए होता है।"
     },
     {
-      en: "RAM is volatile primary memory, ROM is generally non-volatile primary memory, while SSD/HDD are secondary storage",
-      hi: "RAM volatile primary memory है, ROM generally non-volatile primary memory है, जबकि SSD/HDD secondary storage हैं"
+      en: "Datasheet View displays records in rows and columns, whereas Design View is used to define fields and their properties.",
+      hi: "Datasheet View रिकॉर्ड को पंक्तियों और कॉलम में दिखाता है, जबकि Design View में फ़ील्ड और उनके गुण निर्धारित किए जाते हैं।"
     },
     {
-      en: "RAM is secondary storage, ROM is volatile primary memory, and SSD is primary memory",
-      hi: "RAM secondary storage है, ROM volatile primary memory है और SSD primary memory है"
+      en: "Datasheet View defines relationships, whereas Design View displays query results only.",
+      hi: "Datasheet View रिलेशनशिप निर्धारित करता है, जबकि Design View केवल Query के परिणाम दिखाता है।"
     },
     {
-      en: "RAM and SSD are volatile, while ROM and HDD are always primary memory",
-      hi: "RAM और SSD volatile हैं, जबकि ROM और HDD हमेशा primary memory हैं"
+      en: "Both views are used exclusively to enter new records.",
+      hi: "दोनों व्यू का उपयोग केवल नए रिकॉर्ड दर्ज करने के लिए होता है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "RAM volatile primary memory है, ROM generally non-volatile primary memory मानी जाती है, जबकि SSD और HDD secondary storage हैं।"
+  explanation: "Datasheet View displays table data in rows and columns and allows users to work with records. Design View is used to define or modify fields, data types, and field properties."
 },
-
 // Question 396
 {
-  en: "A user scans a document, edits it using software, saves it on an SSD, and later prints the edited document. Which classification of the devices and storage involved is correct?",
-  hi: "एक user document को scan करता है, software का उपयोग करके उसे edit करता है, SSD पर save करता है और बाद में edited document को print करता है। Devices और storage का कौन-सा classification सही है?",
+  en: "Which statement correctly distinguishes a Select Query from an Action Query in MS Access?",
+  hi: "MS Access में Select Query और Action Query के बीच सही अंतर कौन-सा है?",
 
   options: [
     {
-      en: "Scanner—Output, SSD—Primary Memory, Printer—Input",
-      hi: "Scanner—Output, SSD—Primary Memory, Printer—Input"
+      en: "A Select Query deletes records, whereas an Action Query only displays them.",
+      hi: "Select Query रिकॉर्ड डिलीट करती है, जबकि Action Query केवल उन्हें प्रदर्शित करती है।"
     },
     {
-      en: "Scanner—Input, SSD—Secondary Storage, Printer—Output",
-      hi: "Scanner—Input, SSD—Secondary Storage, Printer—Output"
+      en: "A Select Query creates relationships, whereas an Action Query creates passwords.",
+      hi: "Select Query रिलेशनशिप बनाती है, जबकि Action Query पासवर्ड बनाती है।"
     },
     {
-      en: "Scanner—Input, SSD—RAM, Printer—Storage",
-      hi: "Scanner—Input, SSD—RAM, Printer—Storage"
+      en: "Both query types can only retrieve records without changing data.",
+      hi: "दोनों प्रकार की Queries केवल रिकॉर्ड प्राप्त कर सकती हैं और डेटा में बदलाव नहीं कर सकतीं।"
     },
     {
-      en: "Scanner—Output, SSD—Secondary Storage, Printer—Input",
-      hi: "Scanner—Output, SSD—Secondary Storage, Printer—Input"
+      en: "A Select Query retrieves and displays data, whereas an Action Query performs operations such as appending, updating, or deleting records.",
+      hi: "Select Query डेटा प्राप्त करके प्रदर्शित करती है, जबकि Action Query रिकॉर्ड जोड़ने, अपडेट करने या डिलीट करने जैसे कार्य करती है।"
     }
   ],
 
-  answer: "B",
+  answer: "D",
 
-  explanation: "Scanner data को computer में input करता है, SSD secondary storage है और printer processed document को output के रूप में देता है।"
+  explanation: "A Select Query retrieves and displays data without modifying the underlying records. An Action Query changes data or table contents through operations such as Append, Update, Delete, or Make-Table."
 },
 
 // Question 397
 {
-  en: "A traditional measuring instrument continuously represents a physical quantity such as temperature or speed, while a digital computer represents data using discrete values. Which distinction is correct?",
-  hi: "एक traditional measuring instrument temperature या speed जैसी physical quantity को continuously represent करता है, जबकि digital computer data को discrete values में represent करता है। कौन-सा distinction सही है?",
+  en: "What is the main difference between an Append Query and an Update Query in MS Access?",
+  hi: "MS Access में Append Query और Update Query के बीच मुख्य अंतर क्या है?",
 
   options: [
     {
-      en: "Analog computers use continuous data, while digital computers use discrete data",
-      hi: "Analog computers continuous data का उपयोग करते हैं, जबकि digital computers discrete data का उपयोग करते हैं"
+      en: "An Append Query changes existing field values, whereas an Update Query adds new records.",
+      hi: "Append Query मौजूदा फ़ील्ड के मान बदलती है, जबकि Update Query नए रिकॉर्ड जोड़ती है।"
     },
     {
-      en: "Analog computers use only text data, while digital computers use only images",
-      hi: "Analog computers केवल text data का उपयोग करते हैं, जबकि digital computers केवल images का उपयोग करते हैं"
+      en: "An Append Query deletes records, whereas an Update Query creates a report.",
+      hi: "Append Query रिकॉर्ड डिलीट करती है, जबकि Update Query रिपोर्ट बनाती है।"
     },
     {
-      en: "Analog computers are always general-purpose, while digital computers are always special-purpose",
-      hi: "Analog computers हमेशा general-purpose होते हैं, जबकि digital computers हमेशा special-purpose होते हैं"
+      en: "An Append Query adds records to a table, whereas an Update Query modifies values in existing records.",
+      hi: "Append Query टेबल में रिकॉर्ड जोड़ती है, जबकि Update Query मौजूदा रिकॉर्ड के मानों में बदलाव करती है।"
     },
     {
-      en: "Analog computers cannot perform calculations, while digital computers can",
-      hi: "Analog computers calculations नहीं कर सकते, जबकि digital computers कर सकते हैं"
-    }
-  ],
-
-  answer: "A",
-
-  explanation: "Analog computing continuous physical quantities को represent करता है, जबकि digital computing discrete values, commonly binary, का उपयोग करता है।"
-},
-
-// Question 398
-{
-  en: "A computer installed in a factory is designed exclusively to control a particular production machine and cannot normally be used for unrelated general computing tasks. It is best classified as a:",
-  hi: "एक factory में installed computer को exclusively एक particular production machine को control करने के लिए design किया गया है और इसे सामान्य unrelated computing tasks के लिए normally use नहीं किया जा सकता। इसे किस रूप में classify किया जाएगा?",
-
-  options: [
-    {
-      en: "General-purpose computer",
-      hi: "General-purpose computer"
-    },
-    {
-      en: "Digital computer",
-      hi: "Digital computer"
-    },
-    {
-      en: "Special-purpose computer",
-      hi: "Special-purpose computer"
-    },
-    {
-      en: "Supercomputer",
-      hi: "Supercomputer"
+      en: "Both queries perform exactly the same operation.",
+      hi: "दोनों Queries बिल्कुल एक जैसा कार्य करती हैं।"
     }
   ],
 
   answer: "C",
 
-  explanation: "क्योंकि यह computer एक specific production-control task के लिए designed है, इसलिए इसे special-purpose computer कहा जाता है।"
+  explanation: "An Append Query adds new records to an existing table, while an Update Query changes the values of specified fields in existing records that meet the query criteria."
 },
 
-// Question 399
+// Question 398
 {
-  en: "Which statement correctly distinguishes general-purpose and special-purpose computers?",
-  hi: "कौन-सा statement general-purpose और special-purpose computers के बीच सही distinction करता है?",
+  en: "Which statement correctly distinguishes a primary key from an index in MS Access?",
+  hi: "MS Access में Primary Key और Index के बीच सही अंतर कौन-सा है?",
 
   options: [
     {
-      en: "A general-purpose computer is designed for a wide range of tasks through different programs, whereas a special-purpose computer is designed for a specific task or set of related tasks",
-      hi: "General-purpose computer different programs के माध्यम से कई प्रकार के tasks के लिए designed होता है, जबकि special-purpose computer किसी specific task या related tasks के set के लिए designed होता है"
+      en: "A primary key uniquely identifies records, whereas an index is used to improve data retrieval performance and may or may not enforce uniqueness.",
+      hi: "Primary Key प्रत्येक रिकॉर्ड की विशिष्ट पहचान करती है, जबकि Index डेटा प्राप्त करने की गति सुधारने के लिए उपयोग होता है और इसमें विशिष्टता लागू हो भी सकती है और नहीं भी।"
     },
     {
-      en: "A general-purpose computer can perform only one task, whereas a special-purpose computer can perform any task",
-      hi: "General-purpose computer केवल एक task कर सकता है, जबकि special-purpose computer कोई भी task कर सकता है"
+      en: "A primary key is used only for sorting, whereas an index always identifies a record uniquely.",
+      hi: "Primary Key का उपयोग केवल सॉर्टिंग के लिए होता है, जबकि Index हमेशा किसी रिकॉर्ड की विशिष्ट पहचान करता है।"
     },
     {
-      en: "Both types are identical; the distinction depends only on their physical size",
-      hi: "दोनों types identical होते हैं; distinction केवल उनके physical size पर depend करता है"
+      en: "A primary key and an index are unrelated to database performance or data integrity.",
+      hi: "Primary Key और Index का डेटाबेस की कार्यक्षमता या डेटा की अखंडता से कोई संबंध नहीं है।"
     },
     {
-      en: "Special-purpose computers cannot contain software instructions",
-      hi: "Special-purpose computers में software instructions नहीं हो सकते"
+      en: "Every index must be a foreign key.",
+      hi: "प्रत्येक Index का Foreign Key होना अनिवार्य है।"
     }
   ],
 
   answer: "A",
 
-  explanation: "General-purpose computers multiple tasks के लिए अलग-अलग programs चला सकते हैं, जबकि special-purpose computers specific tasks के लिए designed होते हैं।"
+  explanation: "A primary key uniquely identifies each record and does not allow duplicate or Null key values. An index can improve data retrieval performance; depending on its settings, it may allow duplicates or enforce uniqueness. A primary key is also indexed in Access."
 },
 
-// Question 400
+// Question 399
 {
-  en: "A computer is turned off, and the contents of its working memory are lost, whereas the contents of another memory remain available after power is restored. Which classification is correct?",
-  hi: "Computer को turn off करने पर उसकी working memory की contents lost हो जाती हैं, जबकि दूसरी memory की contents power restore होने के बाद भी available रहती हैं। कौन-सा classification सही है?",
+  en: "Which statement correctly distinguishes an ACCDB file from an MDB file in MS Access?",
+  hi: "MS Access में ACCDB फ़ाइल और MDB फ़ाइल के बीच सही अंतर कौन-सा है?",
 
   options: [
     {
-      en: "Both memories are volatile",
-      hi: "दोनों memories volatile हैं"
+      en: "ACCDB files can store only text, whereas MDB files can store all data types.",
+      hi: "ACCDB फ़ाइलें केवल टेक्स्ट स्टोर कर सकती हैं, जबकि MDB फ़ाइलें सभी डेटा टाइप स्टोर कर सकती हैं।"
     },
     {
-      en: "First memory is volatile and second memory is non-volatile",
-      hi: "First memory volatile है और second memory non-volatile है"
+      en: "ACCDB is the newer Access database format introduced with Access 2007, whereas MDB is an older Access database format.",
+      hi: "ACCDB नया Access डेटाबेस फ़ॉर्मेट है, जिसे Access 2007 के साथ प्रस्तुत किया गया था, जबकि MDB पुराना Access डेटाबेस फ़ॉर्मेट है।"
     },
     {
-      en: "First memory is non-volatile and second memory is volatile",
-      hi: "First memory non-volatile है और second memory volatile है"
+      en: "MDB is the newer format, whereas ACCDB is used only for backups.",
+      hi: "MDB नया फ़ॉर्मेट है, जबकि ACCDB का उपयोग केवल बैकअप के लिए होता है।"
     },
     {
-      en: "Both memories are only secondary storage",
-      hi: "दोनों memories केवल secondary storage हैं"
+      en: "ACCDB and MDB are identical file formats with no differences in supported features.",
+      hi: "ACCDB और MDB बिल्कुल समान फ़ाइल फ़ॉर्मेट हैं और इनके समर्थित फीचर्स में कोई अंतर नहीं है।"
     }
   ],
 
   answer: "B",
 
-  explanation: "Power off होने पर working memory यानी RAM का data lost हो जाता है, इसलिए RAM volatile है। Power के बिना data retain करने वाली memory non-volatile होती है।"
+  explanation: "ACCDB was introduced with Access 2007 and supports newer features, such as multivalued fields and attachments. MDB is an older Access database format and does not support all ACCDB features."
+},
+
+// Question 400
+{
+  en: "Which statement correctly distinguishes SQL from a query in MS Access?",
+  hi: "MS Access में SQL और Query के बीच सही अंतर कौन-सा है?",
+
+  options: [
+    {
+      en: "SQL is a database file extension, whereas a query is a field data type.",
+      hi: "SQL डेटाबेस का फ़ाइल एक्सटेंशन है, जबकि Query फ़ील्ड का डेटा टाइप है।"
+    },
+    {
+      en: "SQL is used only to format reports, whereas queries are used only to create forms.",
+      hi: "SQL का उपयोग केवल रिपोर्ट फ़ॉर्मेट करने के लिए होता है, जबकि Queries का उपयोग केवल फ़ॉर्म बनाने के लिए होता है।"
+    },
+    {
+      en: "A query cannot use SQL statements in MS Access.",
+      hi: "MS Access में Query SQL स्टेटमेंट का उपयोग नहीं कर सकती।"
+    },
+    {
+      en: "SQL is a language used to specify database operations, whereas a query is a database object or request that can use SQL to retrieve or manipulate data.",
+      hi: "SQL डेटाबेस ऑपरेशन निर्धारित करने वाली भाषा है, जबकि Query एक डेटाबेस ऑब्जेक्ट या अनुरोध है, जो डेटा प्राप्त करने या उसमें बदलाव करने के लिए SQL का उपयोग कर सकता है।"
+    }
+  ],
+
+  answer: "D",
+
+  explanation: "SQL (Structured Query Language) is used to specify operations on database data. In Access, a query is a saved database object or request that can use SQL to retrieve, filter, aggregate, or modify data."
 }
 ];
